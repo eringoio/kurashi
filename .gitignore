@@ -1,0 +1,21 @@
+# 依存・ビルド
+node_modules/
+dist/
+.wrangler/
+*.log
+
+# 環境変数・シークレット
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# Claude Code の個人設定
+.claude/settings.local.json
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
