@@ -19,3 +19,7 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# デモ動画の書き出し・字体（どちらも作り直せる）
+demo-video/**/out/
+demo-video/**/src/fonts/*.ttf
