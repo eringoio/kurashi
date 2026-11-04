@@ -33,7 +33,7 @@ export function CardPage({ id, onLive }: { id: string; onLive: (s: string) => vo
   }
   const L = (k: UiKey) => line(ui(k), level);
   const k = stateKey(c);
-  const canPlan = (c.state === 'shown' || c.state === 'check_at_office') && c.section !== 'done' && c.section !== 'wait';
+  const canPlan = c.dayRule.kind !== 'no_day' && (c.state === 'shown' || c.state === 'check_at_office') && c.section !== 'done' && c.section !== 'wait';
   const next = () => navigate('/now');
   const more = <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>;
   const sheetEl = sheet && <SourcesSheet c={c} objects={g.objects} facts={g.out.facts} onClose={() => setSheet(false)} />;

@@ -1,5 +1,5 @@
 /* 画面の外枠：上の帯（名前・相談窓口・設定）、見るだけの帯、本文、読み上げの知らせ（aria-live）、シート */
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { chooseEntry, type Resume } from './core/entry';
 import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
@@ -18,6 +18,9 @@ import { PromisePage, ResumePage } from './pages/Entry';
 import { Review } from './pages/Review';
 import { Search } from './pages/Search';
 import { SidePanel, useWide } from './ui/SidePanel';
+
+/** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
+const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
 
 /** 入口の出し分けの入力（6A.1）。保存した進捗から作る */
 function entryOf(g: Guide, resume: Resume | null, hasProgress: boolean) {
@@ -46,6 +49,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/resume') return <ResumePage />;
   if (path === '/review') return <Review />;
   if (path === '/search') return <Search />;
+  if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;
   if (path === '/today' || path === '/past') {
     const e = entryOf(g, null, true);
     const ids = e.kind === 'promise_today' || e.kind === 'promise_past' ? e.card_ids : [];

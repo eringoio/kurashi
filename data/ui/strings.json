@@ -1190,5 +1190,225 @@
     "ja": "ほけん、ねんきん、ぎんこう、じゅうしょ",
     "ja_easy": "ほけん、ねんきん、ぎんこう、じゅうしょ",
     "en": "insurance, pension, bank, address"
+  },
+  "pat.sample": {
+    "ja": "{見本|みほん}です。{本物|ほんもの}のガイドではありません。",
+    "ja_easy": "{見本|みほん}です。{本物|ほんもの}のガイドではありません。",
+    "en": "Sample only. This is not a real guide."
+  },
+  "pat.urgent.badge": {
+    "ja": "いますぐ",
+    "ja_easy": "いますぐ",
+    "en": "Do this now"
+  },
+  "pat.urgent.call": {
+    "ja": "{電話|でんわ}する",
+    "ja_easy": "{電話|でんわ}する",
+    "en": "Call"
+  },
+  "pat.urgent.open": {
+    "ja": "{公式|こうしき}のページを{開|ひら}く",
+    "ja_easy": "{公式|こうしき}のページを{開|ひら}く",
+    "en": "Open the official page"
+  },
+  "pat.urgent.hours": {
+    "ja": "{受付|うけつけ}",
+    "ja_easy": "{受付|うけつけ}",
+    "en": "Hours"
+  },
+  "pat.urgent.first": {
+    "ja": "ほかの{質問|しつもん}より{先|さき}にしてください。",
+    "ja_easy": "ほかの{質問|しつもん}より{先|さき}にしてください。",
+    "en": "Do this before any other question."
+  },
+  "pat.pick.count": {
+    "ja": "{選|えら}んだ{数|かず}",
+    "ja_easy": "{選|えら}んだ{数|かず}",
+    "en": "Selected"
+  },
+  "pat.pick.none": {
+    "ja": "まだ{選|えら}んでいません",
+    "ja_easy": "まだ{選|えら}んでいません",
+    "en": "Nothing selected yet"
+  },
+  "pat.pick.merge": {
+    "ja": "{同|おな}じ{手続|てつづ}きは、1つにまとめて{案内|あんない}します。",
+    "ja_easy": "{同|おな}じ{手続|てつづ}きは、1つにまとめて{案内|あんない}します。",
+    "en": "Steps that are the same will be shown once."
+  },
+  "pat.status.label": {
+    "ja": "いまの{状態|じょうたい}",
+    "ja_easy": "いまの{状態|じょうたい}",
+    "en": "Current status"
+  },
+  "pat.status.have": {
+    "ja": "ある",
+    "ja_easy": "ある",
+    "en": "Have it"
+  },
+  "pat.status.lost": {
+    "ja": "なくした",
+    "ja_easy": "なくした",
+    "en": "Lost"
+  },
+  "pat.status.stopped": {
+    "ja": "{停止|ていし}した",
+    "ja_easy": "{停止|ていし}した",
+    "en": "Suspended"
+  },
+  "pat.status.reissue_wait": {
+    "ja": "{再|さい}{発行|はっこう}を{待|ま}っている",
+    "ja_easy": "{再|さい}{発行|はっこう}を{待|ま}っている",
+    "en": "Waiting for reissue"
+  },
+  "pat.status.unknown": {
+    "ja": "わからない",
+    "ja_easy": "わからない",
+    "en": "Not sure"
+  },
+  "pat.status.alt": {
+    "ja": "{代|か}わりに{使|つか}えるもの・{相談|そうだん}{先|さき}",
+    "ja_easy": "{代|か}わりに{使|つか}えるもの・{相談|そうだん}{先|さき}",
+    "en": "What you can use instead, and who to ask"
+  },
+  "pat.method.label": {
+    "ja": "{手続|てつづ}きの{方法|ほうほう}",
+    "ja_easy": "{手続|てつづ}きの{方法|ほうほう}",
+    "en": "Ways to do this"
+  },
+  "pat.method.window": {
+    "ja": "{窓口|まどぐち}",
+    "ja_easy": "{窓口|まどぐち}",
+    "en": "In person"
+  },
+  "pat.method.phone": {
+    "ja": "{電話|でんわ}",
+    "ja_easy": "{電話|でんわ}",
+    "en": "By phone"
+  },
+  "pat.method.online": {
+    "ja": "オンライン",
+    "ja_easy": "オンライン",
+    "en": "Online"
+  },
+  "pat.method.mail": {
+    "ja": "{郵送|ゆうそう}",
+    "ja_easy": "{郵送|ゆうそう}",
+    "en": "By post"
+  },
+  "pat.method.needs": {
+    "ja": "{必要|ひつよう}なもの",
+    "ja_easy": "{必要|ひつよう}なもの",
+    "en": "What to bring or prepare"
+  },
+  "pat.method.chosen": {
+    "ja": "{選|えら}んだ{方法|ほうほう}",
+    "ja_easy": "{選|えら}んだ{方法|ほうほう}",
+    "en": "Chosen"
+  },
+  "pat.rel.required": {
+    "ja": "{先|さき}に{必要|ひつよう}",
+    "ja_easy": "{先|さき}に{必要|ひつよう}",
+    "en": "Needed first"
+  },
+  "pat.rel.recommended": {
+    "ja": "おすすめの{順|じゅん}",
+    "ja_easy": "おすすめの{順|じゅん}",
+    "en": "Suggested order"
+  },
+  "pat.rel.parallel": {
+    "ja": "{同時|どうじ}にできる",
+    "ja_easy": "{同時|どうじ}にできる",
+    "en": "Can be done at the same time"
+  },
+  "pat.rel.after": {
+    "ja": "{先|さき}にすること",
+    "ja_easy": "{先|さき}にすること",
+    "en": "Do first"
+  },
+  "pat.rel.unverified": {
+    "ja": "{順番|じゅんばん}は{要|よう}{確認|かくにん}",
+    "ja_easy": "{順番|じゅんばん}は{要|よう}{確認|かくにん}",
+    "en": "Order to be confirmed"
+  },
+  "pat.wait.notDone": {
+    "ja": "{申請|しんせい}しました。まだ{終|お}わっていません。",
+    "ja_easy": "{申請|しんせい}しました。まだ{終|お}わっていません。",
+    "en": "Applied. This is not finished yet."
+  },
+  "pat.stage.done": {
+    "ja": "{済|す}み",
+    "ja_easy": "{済|す}み",
+    "en": "Done"
+  },
+  "pat.stage.current": {
+    "ja": "いまここ",
+    "ja_easy": "いまここ",
+    "en": "You are here"
+  },
+  "pat.stage.todo": {
+    "ja": "これから",
+    "ja_easy": "これから",
+    "en": "Next"
+  },
+  "pat.wait.expect": {
+    "ja": "{目安|めやす}",
+    "ja_easy": "{目安|めやす}",
+    "en": "What to expect"
+  },
+  "pat.wait.noNews": {
+    "ja": "{連絡|れんらく}が{来|こ}ないとき",
+    "ja_easy": "{連絡|れんらく}が{来|こ}ないとき",
+    "en": "If you hear nothing"
+  },
+  "pat.wait.resume": {
+    "ja": "{待|ま}っている{手続|てつづ}きを{開|ひら}く",
+    "ja_easy": "{待|ま}っている{手続|てつづ}きを{開|ひら}く",
+    "en": "Open the waiting step"
+  },
+  "pat.guide.consult": {
+    "ja": "{相談|そうだん}する",
+    "ja_easy": "{相談|そうだん}する",
+    "en": "Ask for advice"
+  },
+  "pat.guide.compare": {
+    "ja": "くらべる",
+    "ja_easy": "くらべる",
+    "en": "Compare"
+  },
+  "pat.guide.prepare": {
+    "ja": "{準備|じゅんび}する",
+    "ja_easy": "{準備|じゅんび}する",
+    "en": "Prepare"
+  },
+  "pat.guide.noDate": {
+    "ja": "{日|ひ}にちは{決|き}めなくて{大丈夫|だいじょうぶ}です。",
+    "ja_easy": "{日|ひ}にちは{決|き}めなくて{大丈夫|だいじょうぶ}です。",
+    "en": "You do not need to choose a date."
+  },
+  "pat.guide.prep": {
+    "ja": "{準備|じゅんび}するもの",
+    "ja_easy": "{準備|じゅんび}するもの",
+    "en": "Things to prepare"
+  },
+  "pat.unknown.title": {
+    "ja": "{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
+    "ja_easy": "{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
+    "en": "Check at the office (to be confirmed)"
+  },
+  "pat.unknown.reason": {
+    "ja": "わからない{理由|りゆう}",
+    "ja_easy": "わからない{理由|りゆう}",
+    "en": "Why this is not clear"
+  },
+  "pat.unknown.where": {
+    "ja": "{相談|そうだん}{先|さき}",
+    "ja_easy": "{相談|そうだん}{先|さき}",
+    "en": "Who to ask"
+  },
+  "pat.confirm": {
+    "ja": "{要|よう}{確認|かくにん}",
+    "ja_easy": "{要|よう}{確認|かくにん}",
+    "en": "To be confirmed"
   }
 }

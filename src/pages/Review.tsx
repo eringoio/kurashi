@@ -41,13 +41,14 @@ export function Review() {
     <>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="review.title" /></h1></div>
       <p className="sub"><Bi k="review.sub" /></p>
-      <fieldset>
+      {/* 本番では見本（確認済み）の切り替えを出さない（DATA_CONTRACT 5章） */}
+      {!import.meta.env.PROD && <fieldset>
         <legend className="label"><One k="review.mode" /></legend>
         <div className="chips">
           <button type="button" className="seg" aria-pressed={mode === 'public'} onClick={() => void v.put('settings', 'review_mode', 'public')}><One k="review.public" /></button>
           <button type="button" className="seg" aria-pressed={mode === 'verified'} onClick={() => void v.put('settings', 'review_mode', 'verified')}><One k="review.verified" /></button>
         </div>
-      </fieldset>
+      </fieldset>}
       <section className="group"><h2><Bi k="review.cards" />（{d.cards.length}）</h2>
         <ul className="list review" role="list">
           {d.flow.card_order.map((id) => d.cards.find((c) => c.id === id)!).map((c) => (

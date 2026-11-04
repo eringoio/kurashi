@@ -153,6 +153,7 @@ export function Reason({ c, objects, facts }: { c: CardView; objects: Record<str
 const NOTE_WHERE: Record<Note['kind'], ('page' | 'day' | 'all')[]> = {
   maybe_done: ['page', 'all'], prereq_unknown: ['page', 'day', 'all'], waits_for: ['page', 'all'],
   legal_prereq: ['day', 'all'], practical_prereq: ['day', 'all'], same_visit: ['day', 'all'], satisfied_by_answer: [],
+  parallel: ['page', 'all'], related: ['all'],
 };
 export function Notes({ c, where }: { c: CardView; where: 'page' | 'day' | 'all' }) {
   const list = c.notes.filter((n) => NOTE_WHERE[n.kind].includes(where));

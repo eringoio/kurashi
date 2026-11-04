@@ -267,3 +267,65 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .list.list--days { display: flex; }
 .world { width: 100%; max-width: 520px; align-self: center; }
 .pill--icon { display: inline-flex; align-items: center; gap: 6px; } .pill--icon svg { flex: none; }
+
+/* ===== 手続きの共通部品（src/ui/patterns）。色は tokens.css の変数だけ。状態は 印の文字＋文字＋枠の形 で示す ===== */
+.pt-grow { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.pt-hint { display: block; font-size: var(--fs-small); font-weight: 500; color: var(--ink-muted); line-height: 1.7; }
+.pt-small { font-size: var(--fs-small); }
+.pt-fieldset { border: none; margin: 0; padding: 0; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.pt-tag { display: inline-block; align-self: flex-start; border: 1.5px dashed var(--orange); border-radius: var(--radius-pill); padding: 0 8px; color: var(--orange-ink); background: var(--orange-tint); font-size: var(--fs-small); font-weight: 700; line-height: 1.7; }
+.pt-badge { display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; margin: 0; padding: 0 10px; border: 2px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); font-size: var(--fs-small); font-weight: 700; line-height: 1.8; }
+.pt-badge--urgent { border-color: var(--orange); background: var(--orange); color: var(--white); }
+.pt-badge--wait { border-style: dashed; border-color: var(--blue); color: var(--blue); }
+.pt-urgent, .pt-wait, .pt-guide, .pt-unknown { display: flex; flex-direction: column; gap: 10px; padding: 14px; border-radius: var(--radius-lg); background: var(--white); min-width: 0; }
+.pt-urgent h2, .pt-wait h2, .pt-guide h2, .pt-unknown h2 { margin: 0; font-size: max(var(--fs-title) * .8, 20px); line-height: 1.5; }
+.pt-urgent { border: 4px solid var(--orange); }
+.pt-wait { border: 3px dashed var(--blue); }
+.pt-guide { border: 2px solid var(--ink); }
+.pt-unknown { border: 3px dotted var(--ink-subtle); }
+.pt-contacts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pt-contact { text-decoration: none; }
+.pt-contact__text { display: flex; flex-direction: column; min-width: 0; gap: 0; }
+.pt-contact__act { font-weight: 700; }
+.pt-contact__num { font-size: var(--fs-title); font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.pt-contact__hours { font-size: var(--fs-small); font-weight: 500; color: var(--ink-muted); }
+.pt-contact svg { color: var(--blue); }
+.pt-belong { padding: 12px; border: 2px solid var(--ink); border-radius: var(--radius-lg); background: var(--white); }
+.pt-belong--lost { border-width: 3px; border-color: var(--orange); }
+.pt-belong--stopped { border-style: double; border-width: 6px; }
+.pt-belong--reissue_wait { border-style: dashed; border-color: var(--blue); }
+.pt-belong--unknown { border-style: dotted; border-color: var(--ink-subtle); }
+.pt-belong__name { display: flex; align-items: center; gap: 8px; padding: 0 4px; font-weight: 700; font-size: max(var(--fs-body), 17px); }
+.pt-belong__name img { width: 36px; height: 36px; }
+.pt-seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.pt-st[aria-pressed="true"]::before { content: none; }
+.pt-st[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 4px; }
+.pt-method { align-items: center; }
+.pt-method__icon { flex: none; display: inline-flex; color: var(--blue); }
+.pt-method__mark { flex: none; width: 1.2em; font-weight: 700; color: var(--blue); }
+.pt-needs { padding: 10px 12px; border-left: 4px solid var(--blue); background: var(--blue-tint); }
+.pt-needs ul, .pt-points { margin: 4px 0 0; padding-left: 1.3em; }
+.pt-points { margin: 0; }
+.pt-rel { display: flex; flex-direction: column; gap: 14px; }
+.pt-rel__group { display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: var(--radius-md); min-width: 0; }
+.pt-rel__group--required_first { border: 3px solid var(--ink); background: var(--white); }
+.pt-rel__group--recommended { border: 2px solid var(--line-dim); background: var(--paper); }
+.pt-rel__group--parallel { border: 2px dashed var(--blue); background: var(--blue-tint); }
+.pt-rel__h { margin: 0; font-size: max(var(--fs-small), 16px); font-weight: 700; line-height: 1.8; }
+.pt-step { display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 6px 10px; border: 1.5px solid var(--line-dash); border-radius: var(--radius-sm); background: var(--white); }
+.pt-step img { width: 36px; height: 36px; flex: none; }
+.pt-stages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.pt-stage { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 10px; border: 2px solid var(--line-dim); border-radius: var(--radius-sm); background: var(--white); }
+.pt-stage--done { color: var(--ink-muted); }
+.pt-stage--current { border: 3px solid var(--blue); background: var(--blue-tint); font-weight: 700; }
+.pt-stage--todo { border-style: dashed; color: var(--ink-subtle); }
+.pt-stage__mark { flex: none; width: 1.4em; text-align: center; font-weight: 700; }
+.pt-stage__state { flex: none; font-size: var(--fs-small); font-weight: 700; }
+.pt-guide--compare { border-style: double; border-width: 6px; }
+.pt-guide--prepare { border-style: dashed; }
+
+/* 見本ページ（/dev/patterns。開発のときだけ） */
+.pt-sample { padding: 8px 12px; border: 3px dashed var(--ink); border-radius: var(--radius-sm); background: var(--cream); font-weight: 700; }
+.pt-case { display: flex; flex-direction: column; gap: 14px; padding-top: 6px; border-top: 2px solid var(--line-soft); }
+.pt-case > h2 { margin: 0; font-size: max(var(--fs-title) * .8, 20px); }
+.pt-case > h3 { margin: 0; font-size: max(var(--fs-small), 16px); color: var(--ink-muted); }
