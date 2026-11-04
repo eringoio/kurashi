@@ -65,11 +65,6 @@
     "ja_easy": "いまいる{場所|ばしょ}から",
     "en": "From where I am now"
   },
-  "home.qr": {
-    "ja": "QRから{開|ひら}く",
-    "ja_easy": "QRから{開|ひら}く",
-    "en": "Open from a QR code"
-  },
   "home.about": {
     "ja": "このアプリについて",
     "ja_easy": "このアプリについて",
@@ -1845,5 +1840,85 @@
     "ja": "{今日|きょう}の{予定|よてい}にもどる",
     "ja_easy": "きょうの{予定|よてい}にもどる",
     "en": "Back to today's plan"
+  },
+  "scene.eyebrow": {
+    "ja": "QR から",
+    "ja_easy": "QR から",
+    "en": "From a QR code"
+  },
+  "scene.cards": {
+    "ja": "ここで{行|おこな}う{手続|てつづ}き",
+    "ja_easy": "ここでする{手続|てつづ}き",
+    "en": "Procedures here"
+  },
+  "scene.cardsNote": {
+    "ja": "あなたに{関係|かんけい}するかは、{答|こた}えで{変|か}わります。",
+    "ja_easy": "あなたに{関係|かんけい}あるかは、{答|こた}えで{変|か}わります。",
+    "en": "Whether each one applies to you depends on your answers."
+  },
+  "scene.toCounter": {
+    "ja": "{窓口|まどぐち}で{見|み}せる{画面|がめん}を{開|ひら}く",
+    "ja_easy": "{窓口|まどぐち}で{見|み}せる{画面|がめん}",
+    "en": "Open the screen to show at the counter"
+  },
+  "scene.toMove": {
+    "ja": "{引|ひ}っ{越|こ}しの{手続|てつづ}きを{確|たし}かめる",
+    "ja_easy": "{引|ひ}っ{越|こ}しの{手続|てつづ}きを{見|み}る",
+    "en": "Check your moving procedures"
+  },
+  "scene.notFound": {
+    "ja": "この QR の{場面|ばめん}は、{見|み}つかりませんでした",
+    "ja_easy": "この QR は、{見|み}つかりませんでした",
+    "en": "We could not find the place for this QR code"
+  },
+  "scene.menu": {
+    "ja": "{入口|いりぐち}のメニューへ",
+    "ja_easy": "はじめの{画面|がめん}へ",
+    "en": "Go to the menu"
+  },
+  "qr.title": {
+    "ja": "QR を{作|つく}る（{作者|さくしゃ}{用|よう}）",
+    "ja_easy": "QR を{作|つく}る（{作者|さくしゃ}{用|よう}）",
+    "en": "Make a QR code (for the author)"
+  },
+  "qr.sub": {
+    "ja": "スマホのカメラで QR を{読|よ}むと、その{画面|がめん}からアプリが{開|ひら}きます。QR に{入|はい}るのは{画面|がめん}の{場所|ばしょ}（パス）だけです。{答|こた}えや{日付|ひづけ}は{入|はい}りません。",
+    "ja_easy": "スマホのカメラで QR を{読|よ}むと、アプリが{開|ひら}きます。{答|こた}えは{入|はい}りません。",
+    "en": "Scan the QR code with a phone camera to open the app on that screen. Only the path goes into the QR code, never answers or dates."
+  },
+  "qr.scenes": {
+    "ja": "{場面|ばめん}から{選|えら}ぶ",
+    "ja_easy": "{場面|ばめん}から{選|えら}ぶ",
+    "en": "Choose a scene"
+  },
+  "qr.path": {
+    "ja": "アプリの{中|なか}のパス",
+    "ja_easy": "アプリの{中|なか}のパス",
+    "en": "Path in the app"
+  },
+  "qr.pathNote": {
+    "ja": "{例|れい}：/s/ward-office、/c/bank-account-open",
+    "ja_easy": "{例|れい}：/s/ward-office",
+    "en": "Example: /s/ward-office, /c/bank-account-open"
+  },
+  "qr.invalid": {
+    "ja": "このパスは QR にできません（/ から{始|はじ}め、? や # を{入|い}れない）",
+    "ja_easy": "この{文字|もじ}は QR にできません",
+    "en": "This path cannot be a QR code (start with /, no ? or #)"
+  },
+  "qr.imgLabel": {
+    "ja": "QR コード",
+    "ja_easy": "QR コード",
+    "en": "QR code"
+  },
+  "qr.download": {
+    "ja": "{印刷|いんさつ}{用|よう}の{画像|がぞう}を{保存|ほぞん}する（SVG）",
+    "ja_easy": "{画像|がぞう}を{保存|ほぞん}する",
+    "en": "Save the printable image (SVG)"
+  },
+  "qr.back": {
+    "ja": "データの{確認|かくにん}にもどる",
+    "ja_easy": "データの{確認|かくにん}にもどる",
+    "en": "Back to data review"
   }
 }

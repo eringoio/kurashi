@@ -65,7 +65,7 @@ export function Review() {
       <section className="group"><h2><Bi k="review.objects" />（{d.objects.length}）</h2>
         <ul className="list review" role="list">{d.objects.map((o) => <Item key={o.id} id={o.id} title={o.title} e={o.evidence}><span className="sub"><One t={o.purpose} /></span></Item>)}</ul>
       </section>
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
+      <div className="links"><Link to="/qr" className="link"><Bi k="qr.title" /></Link><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

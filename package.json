@@ -14,6 +14,7 @@
     "icons": "node scripts/make-icons.js",
     "furigana": "node scripts/furigana.cjs",
     "dev:drafts": "vite --mode drafts --port 5174",
+    "qr": "node scripts/make-qr.mjs",
     "shots": "node scripts/shots/run.mjs",
     "shots:report": "node scripts/shots/report.mjs",
     "shots:approve": "node scripts/shots/approve.mjs",
@@ -24,7 +25,8 @@
     "idb": "^8.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

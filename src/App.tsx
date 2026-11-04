@@ -23,6 +23,9 @@ import { Gomi } from './pages/Gomi';
 import { SidePanel, useWide } from './ui/SidePanel';
 import { VisitPage } from './pages/Visit';
 import { parseVisitPath } from './core/accompany';
+import { parseScenePath } from './core/scene';
+import { ScenePage } from './pages/Scene';
+import { QrMaker } from './pages/QrMaker';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
@@ -53,12 +56,15 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (ev) return <EventEntry key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] ? 'all' : 'now'} onLive={onLive} />;
   const card = /^\/c\/([a-z0-9-]+)$/.exec(path);
   if (card) return <CardPage key={card[1]} id={card[1]} onLive={onLive} />;
+  const scene = parseScenePath(path);
+  if (scene) return <ScenePage key={scene} id={scene} />;
   const visit = parseVisitPath(path);
   if (visit) return <VisitPage key={path} place={visit.place} stage={visit.stage} onLive={onLive} />;
   if (path === '/now') return <Now />;
   if (path === '/all') return <All />;
   if (path === '/resume') return <ResumePage />;
   if (path === '/review') return <Review />;
+  if (path === '/qr') return <QrMaker />;
   if (path === '/search') return <Search />;
   if (path === '/gomi') return <Gomi />;
   if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;

@@ -1,0 +1,41 @@
+{
+  "$comment": "場面ごとの QR（SPEC 9.8・docs/QR_SCENES.md）。QR には https://kurashi.eringo.io/s/{id} だけを入れる。開いたら、その場面のページから始める。場所・学校などの固有の名前は入れない（どこに置いても使える）。場面を足したら npm run qr で QR を作り直す。",
+  "scenes": [
+    {
+      "id": "ward-office",
+      "title": {
+        "ja": "{区役所|くやくしょ}で{行|おこな}う{手続|てつづ}き",
+        "ja_easy": "{区役所|くやくしょ}でする{手続|てつづ}き",
+        "en": "Procedures at the ward office"
+      },
+      "shows": {
+        "type": "card_list",
+        "place": "ward_office"
+      }
+    },
+    {
+      "id": "move",
+      "title": {
+        "ja": "{引|ひ}っ{越|こ}し・{住|す}む{場所|ばしょ}のこと",
+        "ja_easy": "{引|ひ}っ{越|こ}し・{住|す}む{場所|ばしょ}のこと",
+        "en": "Moving and where you live"
+      },
+      "shows": {
+        "type": "start",
+        "path": "/move"
+      }
+    },
+    {
+      "id": "search",
+      "title": {
+        "ja": "{手続|てつづ}きを{探|さが}す",
+        "ja_easy": "{手続|てつづ}きを{探|さが}す",
+        "en": "Find a procedure"
+      },
+      "shows": {
+        "type": "start",
+        "path": "/search"
+      }
+    }
+  ]
+}
