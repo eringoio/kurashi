@@ -51,6 +51,8 @@ export interface CardView {
   notes: Note[];
   dayRule: DayRule;
   plan: PlanRecord | null;
+  /** 手続きの方法（card.methods）を、使える条件（when）で評価したもの。F の方法は入れない。U は「窓口で確認」 */
+  methods: { method: NonNullable<Card['methods']>[number]; v: TV }[];
 }
 
 export interface EngineOutput {
@@ -233,7 +235,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     const reasonRules = ids.map((id) => data.rules.get(id)!).filter((r) => r.kind === 'eligibility' && (state !== 'shown' || raw.get(r.id)!.v === 'T'));
 
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
-    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan };
+    const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
+    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods };
   });
 
   // 並び順（10.3）：obligation → flow.json の順

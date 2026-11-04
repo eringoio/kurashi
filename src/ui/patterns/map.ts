@@ -1,6 +1,7 @@
 /* 写す層：エンジン・データ契約の型 → 部品の型（types.ts）。読み替えはここ1か所だけ。
    契約の counter→window、link→web、持ち物 held→have、reissue_waiting→reissue_wait。
    根拠（evidence）の status が verified でなければ「要確認」の印（mode が verified の見本表示のときは出さない）。 */
+import type { CardView } from '../../core/engine';
 import type { Card, Evidence, Question } from '../../core/schema';
 import type { BelongingVM, ContactVM, HoldStatus, LifeGuideVM, MethodKind, MethodVM, PickOptionVM, T, UrgentActionVM } from './types';
 
@@ -21,14 +22,15 @@ export function toUrgent(card: Card, onDone: () => void): UrgentActionVM | null 
 export const toPickOptions = (q: Question): PickOptionVM[] => q.options.map((o) => ({ id: String(o.value), label: o.label as T, art: o.icon }));
 
 const METHOD: Record<NonNullable<Card['methods']>[number]['type'], MethodKind> = { counter: 'window', online: 'online', mail: 'mail', phone: 'phone' };
-/** 手続きの方法。when（使える条件）があるものは、エンジンがまだ判定していないので「要確認」にして出す */
-export function toMethods(card: Card, mode: Mode): MethodVM[] {
-  return (card.methods ?? []).map((m, i) => ({
+/** 手続きの方法。エンジンが使える条件（when）を評価した結果（CardView.methods）を使う。使えない方法は来ない。
+    条件が決まらない（U）・根拠が未確認の方法は「要確認」 */
+export function toMethods(view: Pick<CardView, 'methods'>, mode: Mode): MethodVM[] {
+  return view.methods.map(({ method: m, v }, i) => ({
     id: m.type + '-' + i,
     kind: METHOD[m.type],
     label: m.text as T,
     needs: [],
-    unverified: unverified(m.evidence, mode) || !!m.when,
+    unverified: unverified(m.evidence, mode) || v === 'U',
   }));
 }
 

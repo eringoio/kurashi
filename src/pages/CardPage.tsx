@@ -67,7 +67,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const [method, setMethod] = useState<string | null>(null);
   const isGuide = c.card.kind === 'guide';
   const urgent = toUrgent(c.card, () => { void g.setPlan(c.card.id, { status: 'done' }); onLive(L('card.recordedDone')); setMode({ kind: 'done' }); });
-  const methods = toMethods(c.card, g.mode);
+  const methods = toMethods(c, g.mode);
   const alts = toAlternatives(c.card, g.mode);
   const more = <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>;
   const sheetEl = sheet && <SourcesSheet c={c} objects={g.objects} facts={g.out.facts} onClose={() => setSheet(false)} />;

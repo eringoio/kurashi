@@ -88,3 +88,12 @@ describe('データの検査（契約 v1）', () => {
     expect(() => loadData(withBundles(baseRaw(), [bad]))).toThrow(/no-such-card/);
   });
 });
+
+describe('手続きの方法（methods）の評価', () => {
+  it('使える条件が偽の方法は出さない。わからないときは要確認（U）', () => {
+    const bank = (nat: string) => go({ 'Q-fx-nationality': nat, 'Q-fx-name-change': 'yes' }).cards.find((c) => c.card.id === 'fx-bank-name')!.methods.map((m) => [m.method.type, m.v]);
+    expect(bank('foreign')).toEqual([['counter', 'T'], ['online', 'T']]);
+    expect(bank('japanese')).toEqual([['counter', 'T']]);
+    expect(bank('unknown')).toEqual([['counter', 'T'], ['online', 'U']]);
+  });
+});
