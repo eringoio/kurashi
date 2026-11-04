@@ -35,11 +35,11 @@ flow({
     async () => { await expect(h1).toHaveText('在留カードの裏に、今の住所が書いてありますか？'); await expect(page.getByRole('region', { name: /残しますか/ })).toBeVisible(); });
 
   await tap('書いてある');
-  await snap({ name: '立場', input: '書いてある', expected: '「今のおもな立場」を聞く' },
+  await snap({ name: '立場', input: '書いてある', expected: '「今のおもな立場」を聞く', why: '入口の質問（upfront）の順。立場で国民年金・国保の判定が変わる' },
     async () => { await expect(h1).toHaveText(/今のおもな立場/); });
 
   await tap(/^学生$/);
-  await snap({ name: '年齢', input: '学生', expected: '「年齢は？」' },
+  await snap({ name: '年齢', input: '学生', expected: '「年齢は？」', why: '入口の質問の順。年齢で年金（20歳）の判定が変わる' },
     async () => { await expect(h1).toHaveText('年齢は？'); });
 
   await tap('20歳から59歳まで');

@@ -1,6 +1,7 @@
 /* 文だけの画面：範囲外・準備中・免責・このアプリについて。仮の文は「仮の文です」の印を付ける（docs/TODO.md で確認） */
 import { Bi } from '../i18n/Ruby';
 import { ui, type UiKey } from '../i18n/text';
+import type { Text } from '../core/schema';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 
@@ -15,7 +16,8 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2', 'page.about.p3'], icon: 'bulb' },
 };
 
-export function Info({ id }: { id: string }) {
+/** reason：範囲外の理由（イベントの範囲のルールの reason_when_false）。あれば本文の代わりに出す（一般の文は、ほかの画面と食い違うことがあるため） */
+export function Info({ id, reason }: { id: string; reason?: Text }) {
   const page = INFO_PAGES[id];
   useFocusTitle('info:' + id);
   const draft = [page.title, ...page.body].some((k) => ui(k).status === 'draft');
@@ -28,7 +30,7 @@ export function Info({ id }: { id: string }) {
       {draft && <p className="draftmark"><Bi k="page.draftMark" /></p>}
       {page.dev && <div className="k-notice"><Bi k="page.devNote" /></div>}
       <div className="prose">
-        {page.body.map((k) => <p key={k}><Bi k={k} /></p>)}
+        {reason ? <p><Bi t={reason} /></p> : page.body.map((k) => <p key={k}><Bi k={k} /></p>)}
       </div>
       {page.link && (
         <p><a className="link" href={page.link.href} target="_blank" rel="noopener noreferrer"><Bi k={page.link.k} /></a></p>

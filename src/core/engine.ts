@@ -223,7 +223,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else section = 'later';
     }
 
-    if (card.kind === 'guide') dayRule = { kind: 'no_day' };
+    // 案内（guide）と、すぐ行う行動（電話・アプリで止めるなど。行く所が無い）は、行く日を聞かない
+    if (card.kind === 'guide' || (card.urgent && !card.place)) dayRule = { kind: 'no_day' };
 
     // 質問の選択（10.2 の手順10）：①判定の未定の原因の未回答 ②住み始めたか
     const want = new Set<string>();

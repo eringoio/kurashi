@@ -14,7 +14,8 @@ export type NowStep =
 export function nowStep(o: EngineOutput, today: string): NowStep {
   const open = o.cards.filter((c) => c.section !== 'done' && c.state !== 'excluded' && c.state !== 'out_of_scope');
   // 0. すぐ行う行動（カードの利用停止など）：当てはまるとわかったら、残りの質問より先に出す（DATA_CONTRACT 3章）
-  for (const c of open) if (c.card.urgent && c.state === 'shown' && c.plan?.status !== 'dismissed') return { kind: 'urgent', view: c };
+  // 本人が「よくわからない」と答えて当てはまるか決まらないとき（cause: unknown）も、止めるのは害が無いので先に出す
+  for (const c of open) if (c.card.urgent && (c.state === 'shown' || (c.state === 'check_at_office' && c.cause === 'unknown')) && c.plan?.status !== 'dismissed') return { kind: 'urgent', view: c };
   if (o.upfront.length) return { kind: 'upfront', q: o.upfront[0] };
   // 確かめの質問は、前提の段で並べ替える前の順（questionRank）で聞く
   const byQ = [...open].sort((a, b) => a.questionRank - b.questionRank);

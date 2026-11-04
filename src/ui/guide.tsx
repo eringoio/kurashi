@@ -20,11 +20,15 @@ export const stateKey = (c: CardView): StateKey =>
 const MARK: Record<StateKey, string> = { today: '●', check: '！', ask: '？', wait: '…', later: '→', done: '✓', excluded: '×', out: '−' };
 const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', done: 'done', excluded: 'out', out: 'out' };
 
-export function StateLabel({ k }: { k: StateKey }) {
+/** 「いま」の印の言葉は、義務の強さで分ける（AI レビューの指摘：すすめ・案内まで「必要」と言い切らない）。
+    legal・local_rule：必要／practical：したほうがよい／check・optional・none：案内 */
+export const todayWord = (ob: CardView['card']['obligation']): UiKey =>
+  (ob === 'legal' || ob === 'local_rule' ? 'st.today' : ob === 'practical' ? 'st.todayAdvised' : 'st.todayInfo') as UiKey;
+export function StateLabel({ k, ob }: { k: StateKey; ob?: CardView['card']['obligation'] }) {
   return (
     <span className={'k-state k-state--' + CLS[k]}>
       <span aria-hidden="true">{MARK[k]}</span>
-      <One k={('st.' + k) as UiKey} />
+      <One k={(k === 'today' && ob ? todayWord(ob) : 'st.' + k) as UiKey} />
     </span>
   );
 }
@@ -82,7 +86,7 @@ export function CardRow({ c, extra, current, base = '/c/' }: { c: CardView; extr
         <img src={artDim(c.card.illustration, dim)} alt="" />
         <span className="row__name"><Bi t={c.card.title} /></span>
         <span className="row__side">
-          <StateLabel k={k} />
+          <StateLabel k={k} ob={c.card.obligation} />
           {extra && <span className="row__extra">{extra}</span>}
         </span>
       </Link>
@@ -114,7 +118,14 @@ export function whyText(c: CardView): LocalizedText {
   }
   if (c.state === 'out_of_scope') return ui('why.out');
   if (c.state === 'ask') return ui('why.ask');
-  if (c.section === 'done' && c.sectionWhy === 'answer') return ui('why.byAnswer');
+  if (c.section === 'done' && c.sectionWhy === 'answer') {
+    // 済んだとした答えのルールの文を入れる（A1 の「在留カードの裏」の文を B1 に流用していた。AI レビューの指摘）
+    const n = c.notes.find((x) => x.kind === 'satisfied_by_answer');
+    const ids = n && 'satisfied_when_rule_ids' in n.relation ? n.relation.satisfied_when_rule_ids ?? [] : [];
+    const r = ids.map((id) => DATA().rules.get(id)).find((x) => !!x);
+    if (!r) return ui('why.byAnswerPlain');
+    return fill(ui('why.byAnswer'), 'rule', (_lv, k) => String(r.statement[k] ?? r.statement.ja).replace(/[。.]$/, '')) as LocalizedText;
+  }
   if (c.state === 'check_at_office') {
     if (c.cause === 'coverage' && c.card.reasons.check_at_office_coverage) return c.card.reasons.check_at_office_coverage;
     if (c.cause === 'unknown') return c.card.reasons.check_at_office ?? ui('why.unknown');
@@ -156,7 +167,14 @@ const NOTE_WHERE: Record<Note['kind'], ('page' | 'day' | 'all')[]> = {
   parallel: ['page', 'all'], related: ['all'],
 };
 export function Notes({ c, where }: { c: CardView; where: 'page' | 'day' | 'all' }) {
-  const list = c.notes.filter((n) => NOTE_WHERE[n.kind].includes(where));
+  // 同じ文の注記は1回だけ（同時に進められる関係が2つあると、同じ文が2回出ていた。AI レビューの指摘）
+  const seen = new Set<string>();
+  const list = c.notes.filter((n) => NOTE_WHERE[n.kind].includes(where)).filter((n) => {
+    const key = n.kind === 'maybe_done' ? n.kind : n.kind + JSON.stringify(n.relation.explain);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
   if (!list.length) return null;
   return (
     <>
@@ -277,7 +295,7 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
       </span>
       {/* 開いた項目では、名前がその画面の見出し（h1） */}
       {title ? <h1 id="screen-title" tabIndex={-1} className="focus__name"><Bi t={c.card.title} /></h1> : <span className="focus__name"><Bi t={c.card.title} /></span>}
-      <StateLabel k={k} />
+      <StateLabel k={k} ob={c.card.obligation} />
     </div>
   );
 }

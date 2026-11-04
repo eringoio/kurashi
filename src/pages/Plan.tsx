@@ -39,7 +39,7 @@ export function Now() {
     body = result.kind === 'planned' ? (
       <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next} />
     ) : (
-      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
+      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -74,7 +74,7 @@ export function Now() {
           <p className="eyebrow"><One k="now.eyebrow.plan" /></p>
           <Title><Bi t={dayTitle(c)} /></Title>
         </div>
-        {group.length === 1 && <p className="sub"><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} /></p>}
+        {group.length === 1 && <p className="sub"><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
           onLater={() => navigate('/all')} />

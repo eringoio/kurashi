@@ -72,7 +72,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const alts = toAlternatives(c.card, g.mode);
   const more = <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>;
   const sheetEl = sheet && <SourcesSheet c={c} objects={g.objects} facts={g.out.facts} onClose={() => setSheet(false)} />;
-  const titleWithState = <><Bi t={c.card.title} /> <StateLabel k={k} /></>;
+  const titleWithState = <><Bi t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>;
 
   if (mode.kind === 'answered' || mode.kind === 'done') {
     return (

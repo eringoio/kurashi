@@ -691,6 +691,16 @@
     "ja_easy": "{必要|ひつよう}",
     "en": "Needed"
   },
+  "st.todayAdvised": {
+    "ja": "したほうがよい",
+    "ja_easy": "したほうがいい",
+    "en": "Recommended"
+  },
+  "st.todayInfo": {
+    "ja": "{案内|あんない}",
+    "ja_easy": "{案内|あんない}",
+    "en": "Info"
+  },
   "st.check": {
     "ja": "{窓口|まどぐち}で{確認|かくにん}",
     "ja_easy": "{窓口|まどぐち}で{聞|き}く",
@@ -892,9 +902,14 @@
     "en": "Something must be done first."
   },
   "why.byAnswer": {
-    "ja": "あなたの{答|こた}え（{在留|ざいりゅう}カードの{裏|うら}の{住所|じゅうしょ}）から、{済|す}んでいるとしました。",
-    "ja_easy": "{在留|ざいりゅう}カードの{裏|うら}を{見|み}て、{終|お}わっているとしました。",
-    "en": "From your answer (the address on the back of your residence card), this is done."
+    "ja": "あなたの{答|こた}え（{rule}）から、{済|す}んでいるとしました。",
+    "ja_easy": "あなたの{答|こた}え（{rule}）から、{終|お}わっているとしました。",
+    "en": "From your answer ({rule}), this is done."
+  },
+  "why.byAnswerPlain": {
+    "ja": "あなたの{答|こた}えから、{済|す}んでいるとしました。",
+    "ja_easy": "あなたの{答|こた}えから、{終|お}わっているとしました。",
+    "en": "From your answer, this is done."
   },
   "note.orderCheck": {
     "ja": "{順番|じゅんばん}は{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
