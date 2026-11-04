@@ -39,7 +39,7 @@ export interface CardView {
   state: DisplayState;
   section: Section | null;
   /** 区分けの理由（あとで・待つの文の種類） */
-  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | null;
+  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | 'visit_need_document' | 'visit_wrong_place' | null;
   cause: Cause | null;
   /** 理由に出す答えの事実（判定に使ったものだけ）と、ルール */
   reasonFacts: string[];
@@ -62,6 +62,8 @@ export interface EngineOutput {
   scope: TV;
   upfront: Question[];
   cards: CardView[];
+  /** 確認済みの same_visit（付き添いの順に使う。6A.6） */
+  sameVisit: Extract<Relation, { type: 'same_visit' }>[];
 }
 
 const DAY = 86_400_000;
@@ -209,6 +211,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       const moved = facts.get('moved_in');
       if (status === 'done' || doneByAnswer.has(card.id)) { section = 'done'; sectionWhy = doneByAnswer.has(card.id) && status !== 'done' ? 'answer' : null; }
       else if (status === 'dismissed') section = null;
+      // 付き添いで「別の書類が要る」「ここではない」と言われた：日を決め直す前に確かめる（6A.6）
+      else if (plan?.visit_told && !plan.planned_on) { section = 'check'; sectionWhy = plan.visit_told === 'need_document' ? 'visit_need_document' : 'visit_wrong_place'; }
       else if (state === 'check_at_office' || changed) { section = 'check'; if (changed) c = 'answer_changed'; }
       else if (card.awareness_type === 'upcoming') section = 'later';
       else if (status === 'submitted' || status === 'waiting') section = 'wait';
@@ -275,7 +279,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && askNow(q));
   const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))];
 
-  return { facts, scope, upfront, cards };
+  const sameVisit = data.relations.filter((r): r is Extract<Relation, { type: 'same_visit' }> => r.type === 'same_visit' && relVerified(r));
+  return { facts, scope, upfront, cards, sameVisit };
 }
 
 function sameVisitVerified(data: GuideData, a: string, b: string, ok: (r: Relation) => boolean) {

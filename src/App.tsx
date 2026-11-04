@@ -21,6 +21,8 @@ import { Review } from './pages/Review';
 import { Search } from './pages/Search';
 import { Gomi } from './pages/Gomi';
 import { SidePanel, useWide } from './ui/SidePanel';
+import { VisitPage } from './pages/Visit';
+import { parseVisitPath } from './core/accompany';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
@@ -51,6 +53,8 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (ev) return <EventEntry key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] ? 'all' : 'now'} onLive={onLive} />;
   const card = /^\/c\/([a-z0-9-]+)$/.exec(path);
   if (card) return <CardPage key={card[1]} id={card[1]} onLive={onLive} />;
+  const visit = parseVisitPath(path);
+  if (visit) return <VisitPage key={path} place={visit.place} stage={visit.stage} onLive={onLive} />;
   if (path === '/now') return <Now />;
   if (path === '/all') return <All />;
   if (path === '/resume') return <ResumePage />;
@@ -79,7 +83,7 @@ export function App() {
   // 開いたときに一度だけ、入口を出し分ける（6A.1）。URL で開いた画面（カード・QR など）はそのまま
   // 広い画面（デスクトップ）では、右に「全体」を並べる。いま・開いた項目のときだけ（全体の画面と、最初の道のりでは出さない）
   const wide = useWide();
-  const side = wide && g.objectsDone && (path === '/now' || path.startsWith('/c/') || path === '/today' || path === '/past');
+  const side = wide && g.objectsDone && (path === '/now' || path.startsWith('/c/') || path === '/today' || path === '/past' || path.startsWith('/visit/'));
   const routed = useRef(false);
   useEffect(() => {
     if (routed.current) return;

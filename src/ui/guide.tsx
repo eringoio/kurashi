@@ -133,7 +133,7 @@ export function whyText(c: CardView): LocalizedText {
   }
   return c.reasonRules[0]?.statement ?? c.card.summary;
 }
-const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq' } as const;
+const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace' } as const;
 export function SectionWhy({ c }: { c: CardView }) {
   if (!c.sectionWhy || c.sectionWhy === 'answer' || c.sectionWhy === 'waits') return null;
   return <p className="sub"><Bi k={SECTION_WHY[c.sectionWhy]} /></p>;
@@ -190,7 +190,7 @@ export function Notes({ c, where }: { c: CardView; where: 'page' | 'day' | 'all'
 }
 
 /** 文の中の {name} を、言語ごとの文に置き換える */
-function fill(t: Text | LocalizedText, name: string, by: (lv: Level, id: string) => string): Text {
+export function fill(t: Text | LocalizedText, name: string, by: (lv: Level, id: string) => string): Text {
   const out: Text = { ja: '' };
   for (const [k, v] of Object.entries(t)) {
     if (typeof v !== 'string' || k === 'status') continue;

@@ -332,3 +332,10 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .pt-case { display: flex; flex-direction: column; gap: 14px; padding-top: 6px; border-top: 2px solid var(--line-soft); }
 .pt-case > h2 { margin: 0; font-size: max(var(--fs-title) * .8, 20px); }
 .pt-case > h3 { margin: 0; font-size: max(var(--fs-small), 16px); color: var(--ink-muted); }
+
+/* 付き添い（6A.6）：今日の行く所ごとのまとまり・窓口で見せる画面 */
+.visitgroup { display: flex; flex-direction: column; gap: 8px; }
+.plainlist { margin: 4px 0; padding-left: 1.2em; }
+.k-counter__name { margin: 0; font-size: var(--fs-body); font-weight: 700; overflow-wrap: anywhere; }
+.k-counter__ja { overflow-wrap: anywhere; }
+.k-counter .speak { align-self: flex-start; }

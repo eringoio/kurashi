@@ -24,6 +24,9 @@
         }
       ],
       "check_question": "Q-zairyu-back-address",
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
@@ -49,6 +52,9 @@
         "en": "Added to what to bring to the ward office"
       },
       "yields_when_held": [],
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
@@ -80,6 +86,9 @@
           "value": true
         }
       ],
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
@@ -110,6 +119,9 @@
           "value": "paper"
         }
       ],
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
@@ -136,6 +148,9 @@
         "en": "Added to what to bring. We ask which insurance later"
       },
       "yields_when_held": [],
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
@@ -227,6 +242,9 @@
         "en": "Added to your list of things to bring (not having one does not mean you are not a student)"
       },
       "yields_when_held": [],
+      "bring_to": [
+        "ward_office"
+      ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"

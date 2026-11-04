@@ -1645,5 +1645,205 @@
     "ja": "{持|も}ち{込|こ}む{予定|よてい}の{日|ひ}（{受付|うけつけ}の{方法|ほうほう}は、この{日|ひ}で{変|か}わります）",
     "ja_easy": "{持|も}っていく{日|ひ}",
     "en": "The day you plan to take it (the booking rules depend on this day)"
+  },
+  "why.visitNeedDocument": {
+    "ja": "{窓口|まどぐち}で、{別|べつ}の{書類|しょるい}が{要|い}ると{言|い}われました。{何|なに}が{要|い}るかを{確|たし}かめてから、{行|い}く{日|ひ}を{決|き}め{直|なお}します。",
+    "ja_easy": "{窓口|まどぐち}で、ほかの{書類|しょるい}が{要|い}ると{言|い}われました。{何|なに}が{要|い}るか{聞|き}いてから、また{日|ひ}を{決|き}めます。",
+    "en": "At the counter, you were told another document is needed. Check what is needed, then choose a new day."
+  },
+  "why.visitWrongPlace": {
+    "ja": "{窓口|まどぐち}で、ここではないと{言|い}われました。どこの{窓口|まどぐち}かを{確|たし}かめてから、{行|い}く{日|ひ}を{決|き}め{直|なお}します。",
+    "ja_easy": "{窓口|まどぐち}で、ここではないと{言|い}われました。どこに{行|い}くか{聞|き}いてから、また{日|ひ}を{決|き}めます。",
+    "en": "At the counter, you were told it is the wrong place. Check the right counter, then choose a new day."
+  },
+  "visit.start": {
+    "ja": "{place}へ{行|い}く{準備|じゅんび}をする",
+    "ja_easy": "{place}へ{行|い}く{準備|じゅんび}をする",
+    "en": "Get ready to go to {place}"
+  },
+  "visit.stage.before": {
+    "ja": "{行|い}く{前|まえ}",
+    "ja_easy": "{行|い}く{前|まえ}",
+    "en": "Before you go"
+  },
+  "visit.stage.counter": {
+    "ja": "{窓口|まどぐち}で",
+    "ja_easy": "{窓口|まどぐち}で",
+    "en": "At the counter"
+  },
+  "visit.stage.after": {
+    "ja": "{終|お}わったら",
+    "ja_easy": "{終|お}わったら",
+    "en": "After the visit"
+  },
+  "visit.stage.nav": {
+    "ja": "{付|つ}き{添|そ}いの{段階|だんかい}",
+    "ja_easy": "どこまで{進|すす}んだか",
+    "en": "Steps of the visit"
+  },
+  "visit.before.title": {
+    "ja": "{持|も}ち{物|もの}を{確|たし}かめましょう",
+    "ja_easy": "{持|も}ち{物|もの}を{確|たし}かめましょう",
+    "en": "Check what to bring"
+  },
+  "visit.items": {
+    "ja": "{今日|きょう}{行|おこな}う{手続|てつづ}き",
+    "ja_easy": "きょうする{手続|てつづ}き",
+    "en": "What you will do today"
+  },
+  "visit.ordered": {
+    "ja": "この{順|じゅん}で{手続|てつづ}きをします。",
+    "ja_easy": "この{順|じゅん}でします。",
+    "en": "Do them in this order."
+  },
+  "visit.unordered": {
+    "ja": "{順番|じゅんばん}と、{同|おな}じ{窓口|まどぐち}でできるかは、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{順番|じゅんばん}は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Ask at the counter about the order and whether one counter can do all of them (to be checked)."
+  },
+  "visit.bring.label": {
+    "ja": "{持|も}っていく{物|もの}（{入|い}れたら{押|お}す）",
+    "ja_easy": "{持|も}っていく{物|もの}（{入|い}れたら{押|お}す）",
+    "en": "What to bring (tap when packed)"
+  },
+  "visit.bring.none": {
+    "ja": "{持|も}っていく{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{持|も}っていく{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Ask at the counter what to bring (to be checked)."
+  },
+  "visit.bring.missing": {
+    "ja": "{持|も}っていない{物|もの}",
+    "ja_easy": "{持|も}っていない{物|もの}",
+    "en": "Things you don't have"
+  },
+  "visit.bring.missingNote": {
+    "ja": "{代|か}わりになる{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{代|か}わりの{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Ask at the counter what you can bring instead (to be checked)."
+  },
+  "visit.bring.alt": {
+    "ja": "{持|も}っていないときは",
+    "ja_easy": "{持|も}っていないときは",
+    "en": "If you don't have it"
+  },
+  "visit.bring.other": {
+    "ja": "ほかの{持|も}ち{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。{開|あ}いている{時間|じかん}は、{公式|こうしき}のページで{確|たし}かめてください。",
+    "ja_easy": "ほかに{要|い}る{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。{開|あ}いている{時間|じかん}は、{公式|こうしき}のページで{見|み}てください。",
+    "en": "Ask at the counter about anything else. Check opening hours on the official page."
+  },
+  "visit.bring.packed": {
+    "ja": "{入|い}れました",
+    "ja_easy": "{入|い}れました",
+    "en": "Packed"
+  },
+  "visit.bring.unpacked": {
+    "ja": "まだ{入|い}れていません",
+    "ja_easy": "まだです",
+    "en": "Not packed"
+  },
+  "visit.arrived": {
+    "ja": "{place}に{着|つ}いた",
+    "ja_easy": "{place}に{着|つ}きました",
+    "en": "I'm at {place}"
+  },
+  "visit.counter.title": {
+    "ja": "この{画面|がめん}を、{窓口|まどぐち}の{人|ひと}に{見|み}せましょう",
+    "ja_easy": "この{画面|がめん}を、{窓口|まどぐち}の{人|ひと}に{見|み}せましょう",
+    "en": "Show this screen to the staff"
+  },
+  "visit.counter.say": {
+    "ja": "{窓口|まどぐち}で{言|い}うこと",
+    "ja_easy": "{窓口|まどぐち}で{言|い}うこと",
+    "en": "What to say at the counter"
+  },
+  "visit.counter.phrase": {
+    "ja": "{name}の{手続|てつづ}きをしたいです。",
+    "ja_easy": "{name}をしたいです。",
+    "en": "I would like to do this: {name}."
+  },
+  "visit.counter.official": {
+    "ja": "{正式|せいしき}な{名前|なまえ}",
+    "ja_easy": "{正式|せいしき}な{名前|なまえ}",
+    "en": "Official name"
+  },
+  "visit.counter.finished": {
+    "ja": "{終|お}わった",
+    "ja_easy": "{終|お}わりました",
+    "en": "Finished"
+  },
+  "visit.after.title": {
+    "ja": "どうでしたか？",
+    "ja_easy": "どうでしたか？",
+    "en": "How did it go?"
+  },
+  "visit.out.all_done": {
+    "ja": "{全部|ぜんぶ}できた",
+    "ja_easy": "{全部|ぜんぶ}できました",
+    "en": "All done"
+  },
+  "visit.out.need_document": {
+    "ja": "{別|べつ}の{書類|しょるい}が{要|い}ると{言|い}われた",
+    "ja_easy": "ほかの{書類|しょるい}が{要|い}ると{言|い}われました",
+    "en": "They said I need another document"
+  },
+  "visit.out.wrong_place": {
+    "ja": "ここではないと{言|い}われた",
+    "ja_easy": "ここではないと{言|い}われました",
+    "en": "They said this is the wrong place"
+  },
+  "visit.out.not_went": {
+    "ja": "{行|い}けなかった",
+    "ja_easy": "{行|い}けませんでした",
+    "en": "I couldn't go"
+  },
+  "visit.which.title": {
+    "ja": "どの{手続|てつづ}きで{言|い}われましたか？",
+    "ja_easy": "どの{手続|てつづ}きで{言|い}われましたか？",
+    "en": "Which procedure was it about?"
+  },
+  "visit.which.note": {
+    "ja": "{選|えら}ばなかった{手続|てつづ}きは、{済|す}んだと{記録|きろく}します。",
+    "ja_easy": "{選|えら}ばなかった{手続|てつづ}きは、{終|お}わったことにします。",
+    "en": "The ones you don't choose will be marked as done."
+  },
+  "visit.which.save": {
+    "ja": "{記録|きろく}する",
+    "ja_easy": "{記録|きろく}する",
+    "en": "Save"
+  },
+  "visit.res.eyebrow": {
+    "ja": "{記録|きろく}しました",
+    "ja_easy": "{記録|きろく}しました",
+    "en": "Saved"
+  },
+  "visit.res.done": {
+    "ja": "{place}の{手続|てつづ}きが、できました",
+    "ja_easy": "{place}の{手続|てつづ}きが{終|お}わりました",
+    "en": "Done at {place}"
+  },
+  "visit.res.doneSub": {
+    "ja": "{済|す}んだと{記録|きろく}しました。",
+    "ja_easy": "{終|お}わったと{記録|きろく}しました。",
+    "en": "Marked as done."
+  },
+  "visit.res.check": {
+    "ja": "「{確|たし}かめること」に{移|うつ}しました",
+    "ja_easy": "「{確|たし}かめること」に{入|い}れました",
+    "en": "Moved to \"To check\""
+  },
+  "visit.replan.eyebrow": {
+    "ja": "{日|ひ}を{決|き}め{直|なお}す",
+    "ja_easy": "また{日|ひ}を{決|き}める",
+    "en": "Choose a new day"
+  },
+  "visit.none": {
+    "ja": "{今日|きょう}、ここで{行|おこな}う{手続|てつづ}きはありません",
+    "ja_easy": "きょう、ここでする{手続|てつづ}きはありません",
+    "en": "Nothing to do here today"
+  },
+  "visit.back": {
+    "ja": "{今日|きょう}の{予定|よてい}にもどる",
+    "ja_easy": "きょうの{予定|よてい}にもどる",
+    "en": "Back to today's plan"
   }
 }
