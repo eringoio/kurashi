@@ -15,7 +15,7 @@ const collect = (dir) => {
 collect('drafts/data');
 collect('tests/fixtures');
 const files = [];
-const walk = (d) => { for (const n of readdirSync(d)) { const p = join(d, n); statSync(p).isDirectory() ? walk(p) : /\.(js|html|json|css)$/.test(n) && files.push(p); } };
+const walk = (d) => { for (const n of readdirSync(d)) { const p = join(d, n); statSync(p).isDirectory() ? walk(p) : /\.(js|mjs|html|json|css|map|txt|svg|webmanifest)$/.test(n) && files.push(p); } };
 walk('dist');
 const hits = [];
 for (const f of files) { const s = readFileSync(f, 'utf8'); for (const id of ids) if (s.includes(`"${id}"`) || s.includes(`'${id}'`)) hits.push(`${f}: ${id}`); }
