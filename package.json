@@ -6,13 +6,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && node scripts/check-dist.mjs",
     "preview": "vite preview --port 4173 --strictPort",
     "test": "vitest run",
     "test:a11y": "playwright test",
     "check": "tsc --noEmit && node scripts/furigana.cjs --check && vitest run && playwright test",
     "icons": "node scripts/make-icons.js",
-    "furigana": "node scripts/furigana.cjs"
+    "furigana": "node scripts/furigana.cjs",
+    "dev:drafts": "vite --mode drafts --port 5174"
   },
   "dependencies": {
     "@fontsource/zen-maru-gothic": "^5.3.1",

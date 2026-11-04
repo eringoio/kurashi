@@ -11,6 +11,11 @@ import flowJson from '../../data/flow.json';
 import eventsJson from '../../data/events.json';
 
 const cardFiles = import.meta.glob('../../data/cards/*.json', { eager: true, import: 'default' });
+/** 下書き（drafts/data/*.bundle.json）は、開発で `vite --mode drafts`（npm run dev:drafts）のときだけ読む。
+    本番ビルドでは MODE が production なので読まない（SPEC 18.9。tests/core/publish.test.ts とビルドの検査で確かめる） */
+const draftFiles: Record<string, unknown> = import.meta.env.MODE === 'drafts'
+  ? import.meta.glob('../../drafts/data/*.bundle.json', { eager: true, import: 'default' })
+  : {};
 
 export interface GuideData {
   sources: Source[];
@@ -195,4 +200,6 @@ export function withBundles(base: RawData, bundles: Bundle[]): RawData {
 export const baseRaw = (): RawData => DEFAULT_RAW;
 
 let cached: GuideData | null = null;
-export const DATA = (): GuideData => (cached ??= loadData());
+export const DATA = (): GuideData => (cached ??= loadData(Object.keys(draftFiles).length ? withBundles(DEFAULT_RAW, Object.values(draftFiles) as Bundle[]) : DEFAULT_RAW));
+/** 下書きを読み込んでいるか（画面に「下書き」の帯を出すため） */
+export const DRAFTS_LOADED = Object.keys(draftFiles).length > 0;
