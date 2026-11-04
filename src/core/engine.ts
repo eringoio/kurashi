@@ -97,7 +97,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   for (const r of data.rules.values()) {
     const e = evalCond(r.condition, facts);
     raw.set(r.id, e);
-    conf.set(r.id, statusOf(r.evidence, r.keep_needs_check) === 'verified' ? e : { ...e, v: 'U', unverified: true });
+    // selection（本人の選択を言い直すだけ）は答えのとおり。制度のルールは、未確認なら U（10.4）
+    conf.set(r.id, r.kind === 'selection' || statusOf(r.evidence, r.keep_needs_check) === 'verified' ? e : { ...e, v: 'U', unverified: true });
   }
   const evalExpr = (e: RuleExpr): Eval => (typeof e === 'string' ? conf.get(e)! : 'all' in e ? combineAll(e.all.map(evalExpr)) : combineAny(e.any.map(evalExpr)));
   const exprIds = (e: RuleExpr, out: string[] = []): string[] => { if (typeof e === 'string') out.push(e); else ('all' in e ? e.all : e.any).forEach((y) => exprIds(y, out)); return out; };
@@ -239,9 +240,22 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods };
   });
 
-  // 並び順（10.3）：obligation → flow.json の順
+  // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。
+  // 前提の関係は確認状態にかかわらず「おすすめの順」にだけ使う（区分け・日の制限は今までどおり確認済みのときだけ）。
+  // 例：在留カードの再交付（法令上の義務）でも、警察への届がまだなら、その後に並べる。
+  const open = (id: string) => { const v = cards.find((c) => c.card.id === id); return !!v && v.section !== null && v.section !== 'done' && v.state !== 'excluded' && v.state !== 'out_of_scope'; };
+  const depthMemo = new Map<string, number>();
+  const depth = (id: string, seen: Set<string> = new Set()): number => {
+    if (depthMemo.has(id)) return depthMemo.get(id)!;
+    if (seen.has(id)) return 0; // 循環は読み込みの検査で止めている。ここでは念のため打ち切る
+    seen.add(id);
+    let d = 0;
+    for (const r of data.relations) if (isPrereq(r) && r.to === id && open(r.from) && satisfied(r) !== 'yes') d = Math.max(d, depth(r.from, seen) + 1);
+    depthMemo.set(id, d);
+    return d;
+  };
   const ob = ['legal', 'local_rule', 'practical', 'check', 'optional', 'none'];
-  cards.sort((a, b) => ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
+  cards.sort((a, b) => depth(a.card.id) - depth(b.card.id) || ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
 
   // 最初の質問：upfront で、未回答で、未定のルールの原因になっているもの（質問バンクの順）。範囲が F なら聞かない
   const pending = new Set<string>();
@@ -249,7 +263,11 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     for (const p of pre) p.elig.unanswered.forEach((f) => pending.add(f));
     scopeEval.unanswered.forEach((f) => pending.add(f));
   }
-  const upfront = data.questions.filter((q) => q.stage === 'upfront' && pending.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T');
+  const askNow = (q: Question) => q.stage === 'upfront' && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T';
+  const fromBank = data.questions.filter((q) => askNow(q) && pending.has(q.fact));
+  // イベントが入口で聞くと決めた質問（events.json の questions）は、その順に先に聞く（判定の原因でなくても。例：もう警察に届けたか）
+  const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && askNow(q));
+  const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))];
 
   return { facts, scope, upfront, cards };
 }

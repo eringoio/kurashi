@@ -121,6 +121,12 @@ export function checkRefs(d: GuideData): string[] {
     for (const f of factsOf(r.condition, new Set())) {
       if (!qFacts.has(f) && !objFacts.has(f)) err.push(`${r.id}：事実 ${f} を聞く質問・持ち物がない`);
     }
+    if (r.kind === 'selection') {
+      // 本人の選択だけを言い直すルール：出典は本アプリの定義だけ。持ち物から決まる事実は使わない（推測を混ぜない）
+      if (!r.evidence.source_ids.every((x) => productIds.has(x))) err.push(`${r.id}：selection の出典は本アプリの定義だけ`);
+      const eventFacts = new Set(d.events.flatMap((e) => e.facts.map((f) => f.fact)));
+      for (const f of factsOf(r.condition, new Set())) if (!qFacts.has(f) && !eventFacts.has(f)) err.push(`${r.id}：selection が質問の答えでない事実 ${f} を使っている`);
+    }
     const s = JSON.stringify(r.condition);
     if (s.includes('"unknown"')) err.push(`${r.id}：条件に "unknown" を書いている`);
   }

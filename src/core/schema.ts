@@ -55,7 +55,9 @@ export type Source = z.infer<typeof Source>;
 
 export const Rule = z.object({
   id: z.string().regex(/^R-/),
-  kind: z.enum(['eligibility', 'entry', 'coverage', 'scope', 'timing', 'document', 'relation']),
+  /** selection：本人の選択（答え）を言い直すだけのルール。制度についての主張ではないので、確認状態にかかわらず答えのとおりに判定する（SPEC 10.4 v0.4.8）。
+      出典は本アプリの定義（product）だけ、条件に使えるのは質問の答えとイベントの事実だけ（data.ts の検査） */
+  kind: z.enum(['eligibility', 'entry', 'coverage', 'scope', 'timing', 'document', 'relation', 'selection']),
   condition: Condition,
   statement: Text,
   reason_when_false: Text.optional(),

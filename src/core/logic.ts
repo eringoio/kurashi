@@ -47,7 +47,12 @@ export function evalCond(c: Condition, facts: Facts): Eval {
   const val = facts.get(c.fact);
   if (val === undefined) return mk('U', new Set([c.fact]));
   if (val === 'unknown') return mk('U', new Set(), new Set([c.fact]));
-  const hit = 'has' in c ? Array.isArray(val) && val.includes(c.has) : Array.isArray(val) ? false : 'eq' in c ? val === c.eq : c.in.includes(val);
+  if ('has' in c && Array.isArray(val)) {
+    // 複数選択：選んだ＝T。選ばなかった＝F。ただし「よくわからない」（'unknown'）も選んでいたら、選ばなかった物は U（本人にもわからない）
+    if (val.includes(c.has)) return mk('T');
+    return val.includes('unknown') ? mk('U', new Set(), new Set([c.fact])) : mk('F');
+  }
+  const hit = 'has' in c ? false : Array.isArray(val) ? false : 'eq' in c ? val === c.eq : c.in.includes(val);
   return mk(hit ? 'T' : 'F');
 }
 
