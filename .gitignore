@@ -34,3 +34,7 @@ research/_raw/
 # 無人制作の原文・実行状態（作り直せる。docs/PRODUCE.md）
 drafts/_raw/
 drafts/state/
+
+# 画面の記録：今回の候補と確認一覧は作り直せる。作者が確認した版（screenshots/approved/）は Git に入れる
+screenshots/candidate/
+screenshots/review/

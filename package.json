@@ -13,7 +13,11 @@
     "check": "tsc --noEmit && node scripts/furigana.cjs --check && vitest run && playwright test",
     "icons": "node scripts/make-icons.js",
     "furigana": "node scripts/furigana.cjs",
-    "dev:drafts": "vite --mode drafts --port 5174"
+    "dev:drafts": "vite --mode drafts --port 5174",
+    "shots": "node scripts/shots/run.mjs",
+    "shots:report": "node scripts/shots/report.mjs",
+    "shots:approve": "node scripts/shots/approve.mjs",
+    "shots:affected": "node scripts/shots/affected.mjs"
   },
   "dependencies": {
     "@fontsource/zen-maru-gothic": "^5.3.1",
