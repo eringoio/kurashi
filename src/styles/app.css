@@ -265,6 +265,7 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 /* 手続きを探す */
 .search { display: flex; flex-direction: column; gap: 8px; }
 .search input { width: 100%; min-height: 52px; border: 2.5px solid var(--ink); border-radius: var(--radius-md); padding: 0 14px; font: inherit; font-size: var(--fs-answer); background: var(--white); color: var(--ink); }
+.field { width: 100%; min-height: 52px; border: 2.5px solid var(--ink); border-radius: var(--radius-md); padding: 0 14px; font: inherit; font-size: var(--fs-answer); background: var(--white); color: var(--ink); }
 .chip { min-height: var(--target-min); padding: 0 14px; border-radius: var(--radius-pill); border: 1.5px solid var(--blue); background: var(--white); color: var(--blue); font-size: max(var(--fs-small), 15px); font-weight: 700; }
 .list.list--days { display: flex; }
 .world { width: 100%; max-width: 520px; align-self: center; }

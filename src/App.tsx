@@ -19,6 +19,7 @@ import { EventEntry } from './pages/EventEntry';
 import { PromisePage, ResumePage } from './pages/Entry';
 import { Review } from './pages/Review';
 import { Search } from './pages/Search';
+import { Gomi } from './pages/Gomi';
 import { SidePanel, useWide } from './ui/SidePanel';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
@@ -55,6 +56,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/resume') return <ResumePage />;
   if (path === '/review') return <Review />;
   if (path === '/search') return <Search />;
+  if (path === '/gomi') return <Gomi />;
   if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;
   if (path === '/today' || path === '/past') {
     const e = entryOf(g, null, true);

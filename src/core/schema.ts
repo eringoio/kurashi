@@ -173,6 +173,8 @@ export const EventDef = z.object({
   card_ids: z.array(z.string()),
   /** 範囲のルール（無ければ R-scope-nagoya-resident） */
   scope_rule: z.string().optional(),
+  /** このイベントで使う道具の画面（例：ごみの品目検索 /gomi）。一覧の上に入口を出す。契約 v1 への追加の案（作者の承認待ち。research/integration/claude_priority_review/implementation.md） */
+  tool: z.object({ path: z.string().regex(/^\/[a-z-]+$/), label: Text }).optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;

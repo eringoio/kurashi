@@ -207,6 +207,7 @@ function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
     <>
       <EvTabs base={base} current="all" />
       <div className="head"><p className="eyebrow"><One t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi k="all.title" /></h1></div>
+      {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi t={g.event.tool.label} /></Link>}
       <p className="sub"><Bi k="all.sub" /></p>
       {SECTION_ORDER.flatMap((s) => [
         group(SEC_KEY[s], by((c) => c.section === s && c.state !== 'ask'), s !== 'later'),

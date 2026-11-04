@@ -1525,5 +1525,125 @@
     "ja": "パスポートの{窓口|まどぐち}",
     "ja_easy": "パスポートの{窓口|まどぐち}",
     "en": "the passport office"
+  },
+  "gomi.title": {
+    "ja": "ごみの{出|だ}し{方|かた}",
+    "ja_easy": "ごみの{出|だ}し{方|かた}",
+    "en": "How to put out garbage"
+  },
+  "gomi.draft": {
+    "ja": "{下書|したが}きのデータです（{作者|さくしゃ}の{確認|かくにん}{待|ま}ち）。{最後|さいご}は{市|し}の{公式|こうしき}の{案内|あんない}で{確|たし}かめてください。",
+    "ja_easy": "{下書|したが}きです。{市|し}のページで{確|たし}かめてください。",
+    "en": "Draft data (not yet reviewed). Check the official city guide."
+  },
+  "gomi.search.label": {
+    "ja": "これ、{何|なに}ごみ？",
+    "ja_easy": "これ、{何|なに}ごみ？",
+    "en": "What kind of garbage is this?"
+  },
+  "gomi.search.hint": {
+    "ja": "{品物|しなもの}の{名前|なまえ}で{探|さが}します。{例|れい}：かさ、でんち、れいぞうこ",
+    "ja_easy": "{品物|しなもの}の{名前|なまえ}を{書|か}きます。れい：かさ、でんち",
+    "en": "Type the name of the item. e.g. umbrella, battery"
+  },
+  "gomi.search.none": {
+    "ja": "この{品物|しなもの}は、まだこのアプリのデータにありません。{市|し}の{分別|ふんべつ}の{検索|けんさく}で{確|たし}かめてください。",
+    "ja_easy": "この{品物|しなもの}は、まだありません。{市|し}のページで{調|しら}べてください。",
+    "en": "This item is not in our data yet. Please use the city's search."
+  },
+  "gomi.external": {
+    "ja": "（{外部|がいぶ}サイト）",
+    "ja_easy": "（ほかのサイト）",
+    "en": "(external site)"
+  },
+  "gomi.result.unknown": {
+    "ja": "このアプリでは{区分|くぶん}を{決|き}められません。{市|し}の{分別|ふんべつ}の{検索|けんさく}か、{環境|かんきょう}{事業|じぎょう}{所|しょ}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ここでは{決|き}められません。{市|し}のページで{調|しら}べてください。",
+    "en": "We cannot decide the category here. Please check the city's search or the environment office."
+  },
+  "gomi.result.unapproved": {
+    "ja": "{下書|したが}き・{要|よう}{確認|かくにん}",
+    "ja_easy": "{下書|したが}き・{要確認|ようかくにん}",
+    "en": "Draft – to be checked"
+  },
+  "gomi.result.changeAnswer": {
+    "ja": "{答|こた}えを{変|か}える",
+    "ja_easy": "{答|こた}えを{変|か}える",
+    "en": "Change the answer"
+  },
+  "gomi.result.why": {
+    "ja": "くわしく（{出典|しゅってん}・{確認|かくにん}{日|び}）",
+    "ja_easy": "くわしく",
+    "en": "Details (sources, date checked)"
+  },
+  "gomi.result.checked": {
+    "ja": "{確認|かくにん}した{日|ひ}：",
+    "ja_easy": "{確|たし}かめた{日|ひ}：",
+    "en": "Checked on:"
+  },
+  "gomi.result.again": {
+    "ja": "ほかの{品物|しなもの}を{探|さが}す",
+    "ja_easy": "ほかの{品物|しなもの}を{探|さが}す",
+    "en": "Search another item"
+  },
+  "gomi.next.date": {
+    "ja": "{次|つぎ}の{収集|しゅうしゅう}{日|び}：",
+    "ja_easy": "{次|つぎ}に{集|あつ}める{日|ひ}：",
+    "en": "Next collection day:"
+  },
+  "gomi.next.noArea": {
+    "ja": "{収集|しゅうしゅう}{日|び}は、ごみを{出|だ}す{地域|ちいき}で{決|き}まります。{下|した}で{地域|ちいき}を{選|えら}んでください。",
+    "ja_easy": "{集|あつ}める{日|ひ}は、{場所|ばしょ}で{違|ちが}います。{下|した}で{区|く}を{選|えら}んでください。",
+    "en": "Collection days depend on your area. Choose your area below."
+  },
+  "gomi.next.noData": {
+    "ja": "この{地域|ちいき}の{収集|しゅうしゅう}{日|び}は、まだこのアプリにありません。{市|し}の{収集|しゅうしゅう}{日|び}の{検索|けんさく}で{確|たし}かめてください。",
+    "ja_easy": "この{場所|ばしょ}の{日|ひ}は、まだありません。{市|し}のページで{調|しら}べてください。",
+    "en": "We do not have collection days for this area yet. Please use the city's search."
+  },
+  "gomi.area.title": {
+    "ja": "ごみを{出|だ}す{地域|ちいき}",
+    "ja_easy": "ごみを{出|だ}す{場所|ばしょ}",
+    "en": "Where you put out garbage"
+  },
+  "gomi.area.ward": {
+    "ja": "{区|く}",
+    "ja_easy": "{区|く}",
+    "en": "Ward"
+  },
+  "gomi.area.choose": {
+    "ja": "{区|く}を{選|えら}ぶ",
+    "ja_easy": "{区|く}を{選|えら}ぶ",
+    "en": "Choose a ward"
+  },
+  "gomi.area.recheck": {
+    "ja": "{引|ひ}っ{越|こ}しを{始|はじ}めたので、{前|まえ}に{選|えら}んだ{地域|ちいき}は{使|つか}いません。{新|あたら}しい{地域|ちいき}を{選|えら}んでください。",
+    "ja_easy": "{引|ひ}っ{越|こ}しをしたので、もう{一度|いちど}{選|えら}んでください。",
+    "en": "You started a move, so we no longer use the area you chose before. Choose your new area."
+  },
+  "gomi.area.wardOnly": {
+    "ja": "{収集|しゅうしゅう}{日|び}は、{区|く}だけでは{決|き}まりません。{町名|ちょうめい}・{丁目|ちょうめ}で{違|ちが}います。",
+    "ja_easy": "{区|く}だけでは、{日|ひ}は{決|き}まりません。",
+    "en": "The ward alone does not decide the collection day. It differs by town."
+  },
+  "gomi.more.title": {
+    "ja": "{必要|ひつよう}なときだけ",
+    "ja_easy": "{必要|ひつよう}なときだけ",
+    "en": "Only when you need it"
+  },
+  "gomi.more.sodai": {
+    "ja": "{粗大|そだい}ごみを{出|だ}す",
+    "ja_easy": "{大|おお}きなごみを{出|だ}す",
+    "en": "Put out bulky waste"
+  },
+  "gomi.more.mochikomi": {
+    "ja": "{自分|じぶん}で{処理|しょり}{施設|しせつ}に{持|も}ち{込|こ}む（{自己|じこ}{搬入|はんにゅう}）",
+    "ja_easy": "{自分|じぶん}で{持|も}っていく",
+    "en": "Take it to a facility yourself"
+  },
+  "gomi.delivery.day": {
+    "ja": "{持|も}ち{込|こ}む{予定|よてい}の{日|ひ}（{受付|うけつけ}の{方法|ほうほう}は、この{日|ひ}で{変|か}わります）",
+    "ja_easy": "{持|も}っていく{日|ひ}",
+    "en": "The day you plan to take it (the booking rules depend on this day)"
   }
 }

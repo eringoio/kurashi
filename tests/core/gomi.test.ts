@@ -41,10 +41,19 @@ describe('ごみの基本案内（下書き）', () => {
     expect(plain(c.deadline!.text.ja)).toContain('原則');
     expect(plain(c.summary.ja)).toContain('10キログラムまでごとに270円');
   });
-  it('収集日は、区・町名で公式の案内へ。多言語のアプリは8言語', () => {
+  it('収集日は、区・町名で公式の案内へ。多言語のアプリの独立カードは無い（/gomi と収集日のカードに統合）', () => {
     expect(plain(card('gomi-shushubi').summary.ja)).toContain('地域');
     expect(data.sources.find((s) => card('gomi-shushubi').evidence.source_ids.includes(s.source_id))!.url).toContain('https://www.city.nagoya.jp/');
-    expect(plain(card('gomi-app').summary.ja)).toContain('8言語');
+    expect(data.cards.find((c) => c.id === 'gomi-app')).toBeUndefined();
+    expect(ev.tool?.path).toBe('/gomi');
+  });
+  it('粗大ごみ・自己搬入は「あとで」（全員の今週の作業にしない）。分け方・収集日は「いま」', () => {
+    const sec = (id: string) => o.cards.find((c) => c.card.id === id)!.section;
+    expect(sec('gomi-sodai')).toBe('later');
+    expect(sec('gomi-mochikomi')).toBe('later');
+    expect(sec('gomi-bunbetsu')).toBe('today');
+    expect(sec('gomi-shushubi')).toBe('today');
+    expect(plain(card('gomi-sodai').title.ja)).toBe('粗大ごみを出す');
   });
   it('電話番号を書かない', () => {
     expect(JSON.stringify(json)).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
