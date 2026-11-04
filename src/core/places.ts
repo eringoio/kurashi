@@ -54,3 +54,9 @@ export function nearby(places: Place[], pos: { lat: number; lng: number; accurac
   for (const p of places) { const d = distanceM(pos, p); if (d < bestD) { bestD = d; best = p; } }
   return best && bestD <= NEAR_M ? { kind: 'near', place: best } : { kind: 'far' };
 }
+
+/** 地図のアプリで開くリンク（区役所の住所だけを入れる。本人の位置は入れない。6A.11） */
+export function mapLinks(p: Pick<Place, 'address' | 'name'>): { apple: string; google: string } {
+  const q = encodeURIComponent(p.address);
+  return { apple: 'https://maps.apple.com/?q=' + q, google: 'https://www.google.com/maps/search/?api=1&query=' + q };
+}

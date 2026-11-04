@@ -48,3 +48,13 @@ describe('近くの判定（端末の中だけ）', () => {
     expect(Object.keys(nearby(list, { ...north(naka, 100), accuracy: 10 }))).toEqual(['kind', 'place']);
   });
 });
+
+describe('地図のリンク', () => {
+  it('区役所の住所だけを入れる（本人の位置は入れない）', async () => {
+    const { mapLinks } = await import('../../src/core/places');
+    const m = mapLinks(naka);
+    expect(m.google).toBe('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(naka.address));
+    expect(m.apple.startsWith('https://maps.apple.com/?q=')).toBe(true);
+    expect(decodeURIComponent(m.apple)).not.toMatch(/\d+\.\d{3,}/);
+  });
+});

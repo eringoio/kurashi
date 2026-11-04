@@ -80,6 +80,150 @@
       "owner_type": "government",
       "title": "地理院地図 利用規約（住所検索 API の座標）",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-chikusa-ward-office-access",
+      "url": "https://www.city.nagoya.jp/chikusa/index.html",
+      "owner": "名古屋市千種区役所",
+      "owner_type": "government",
+      "title": "千種区公式ウェブサイト（千種区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-chikusa-temp-building",
+      "url": "https://www.city.nagoya.jp/chikusa/kurashi/1018825/1036468/1018827.html",
+      "owner": "名古屋市千種区役所",
+      "owner_type": "government",
+      "title": "千種区役所・千種保健センターは令和5年1月4日に仮設庁舎へ移転しました",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-higashi-ward-office-access",
+      "url": "https://www.city.nagoya.jp/higashi/index.html",
+      "owner": "名古屋市東区役所",
+      "owner_type": "government",
+      "title": "東区公式ウェブサイト（東区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-higashi-ward-office-plan",
+      "url": "https://www.city.nagoya.jp/sportsshimin/page/0000185750.html",
+      "owner": "名古屋市東区役所",
+      "owner_type": "government",
+      "title": "東区役所の整備について",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-kita-ward-office-access",
+      "url": "https://www.city.nagoya.jp/kita/index.html",
+      "owner": "名古屋市北区役所",
+      "owner_type": "government",
+      "title": "北区公式ウェブサイト（北区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-nishi-ward-office-access",
+      "url": "https://www.city.nagoya.jp/nishi/index.html",
+      "owner": "名古屋市西区役所",
+      "owner_type": "government",
+      "title": "西区公式ウェブサイト（西区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-nakamura-ward-office-access",
+      "url": "https://www.city.nagoya.jp/nakamura/index.html",
+      "owner": "名古屋市中村区役所",
+      "owner_type": "government",
+      "title": "中村区公式ウェブサイト（中村区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-naka-ward-office-access",
+      "url": "https://www.city.nagoya.jp/naka/index.html",
+      "owner": "名古屋市中区役所",
+      "owner_type": "government",
+      "title": "中区公式ウェブサイト（中区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-showa-ward-office-access",
+      "url": "https://www.city.nagoya.jp/showa/index.html",
+      "owner": "名古屋市昭和区役所",
+      "owner_type": "government",
+      "title": "昭和区公式ウェブサイト（昭和区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-mizuho-ward-office-access",
+      "url": "https://www.city.nagoya.jp/mizuho/index.html",
+      "owner": "名古屋市瑞穂区役所",
+      "owner_type": "government",
+      "title": "瑞穂区公式ウェブサイト（瑞穂区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-atsuta-ward-office-access",
+      "url": "https://www.city.nagoya.jp/atsuta/index.html",
+      "owner": "名古屋市熱田区役所",
+      "owner_type": "government",
+      "title": "熱田区公式ウェブサイト（熱田区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-nakagawa-ward-office-access",
+      "url": "https://www.city.nagoya.jp/nakagawa/index.html",
+      "owner": "名古屋市中川区役所",
+      "owner_type": "government",
+      "title": "中川区公式ウェブサイト（中川区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-minato-ward-office-access",
+      "url": "https://www.city.nagoya.jp/minato/index.html",
+      "owner": "名古屋市港区役所",
+      "owner_type": "government",
+      "title": "港区公式ウェブサイト（港区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-minami-ward-office-access",
+      "url": "https://www.city.nagoya.jp/minami/index.html",
+      "owner": "名古屋市南区役所",
+      "owner_type": "government",
+      "title": "南区公式ウェブサイト（南区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-moriyama-ward-office-access",
+      "url": "https://www.city.nagoya.jp/moriyama/index.html",
+      "owner": "名古屋市守山区役所",
+      "owner_type": "government",
+      "title": "守山区公式ウェブサイト（守山区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-midori-ward-office-access",
+      "url": "https://www.city.nagoya.jp/midori/index.html",
+      "owner": "名古屋市緑区役所",
+      "owner_type": "government",
+      "title": "緑区公式ウェブサイト（緑区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-meito-ward-office-access",
+      "url": "https://www.city.nagoya.jp/meito/index.html",
+      "owner": "名古屋市名東区役所",
+      "owner_type": "government",
+      "title": "名東区公式ウェブサイト（名東区役所の所在地）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-tempaku-ward-office-access",
+      "url": "https://www.city.nagoya.jp/tempaku/index.html",
+      "owner": "名古屋市天白区役所",
+      "owner_type": "government",
+      "title": "天白区公式ウェブサイト（天白区役所の所在地）",
+      "language": "ja"
     }
   ]
 }

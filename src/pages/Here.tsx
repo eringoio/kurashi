@@ -2,7 +2,7 @@
    位置は端末の中で比べ、送らない・保存しない・URL に入れない（13章）。この画面の中の状態だけに置き、離れたら消える。
    300m 以内で誤差も 300m 以下なら「〇〇の近くにいますか？」。それ以外（遠い・誤差が大きい・断られた）は、区の一覧から選ぶ。 */
 import { useState } from 'react';
-import { nearby, PLACES, type Place } from '../core/places';
+import { mapLinks, nearby, PLACES, type Place } from '../core/places';
 import { Bi, One } from '../i18n/Ruby';
 import { fill } from '../ui/guide';
 import { ui, type UiKey } from '../i18n/text';
@@ -83,6 +83,7 @@ export function Here() {
           <p className="eyebrow"><One t={p.name} /></p>
           <Title><Bi k="here.canDo" /></Title>
         </div>
+        <PlaceInfo p={p} />
         <CardList place={p.kind === 'branch' ? 'ward_office' : p.kind} stage="before" />
         <button type="button" className="link" onClick={() => setSt({ k: 'list', why: 'choose' })}><Bi k="here.other" /></button>
       </>
@@ -94,5 +95,20 @@ export function Here() {
       <p className="sub"><Bi k="here.credit" /></p>
       <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
+  );
+}
+
+/** 住所と、地図のアプリで開くリンク（外のサイト。新しいタブ） */
+function PlaceInfo({ p }: { p: Place }) {
+  const m = mapLinks(p);
+  return (
+    <section className="placeinfo" aria-labelledby="place-address">
+      <h2 id="place-address" className="label"><One k="here.address" /></h2>
+      <p lang="ja" className="placeinfo__addr">{p.address}</p>
+      <div className="links">
+        <a className="link" href={m.apple} target="_blank" rel="noopener noreferrer"><Bi k="here.mapApple" /><span className="sr-only"><One k="here.newTab" /></span></a>
+        <a className="link" href={m.google} target="_blank" rel="noopener noreferrer"><Bi k="here.mapGoogle" /><span className="sr-only"><One k="here.newTab" /></span></a>
+      </div>
+    </section>
   );
 }

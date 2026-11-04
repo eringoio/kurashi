@@ -2005,5 +2005,25 @@
     "ja": "{区役所|くやくしょ}の{住所|じゅうしょ}：{名古屋|なごや}{市|し}の{公式|こうしき}ページ。{位置|いち}：{国土|こくど}{地理|ちり}{院|いん}の{住所|じゅうしょ}{検索|けんさく}から{作成|さくせい}（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{住所|じゅうしょ}は{名古屋|なごや}{市|し}のページ、{位置|いち}は{国土|こくど}{地理|ちり}{院|いん}から{作|つく}りました。",
     "en": "Addresses: City of Nagoya official page. Locations: made from the GSI (Geospatial Information Authority of Japan) address search (to be checked)."
+  },
+  "here.address": {
+    "ja": "{住所|じゅうしょ}",
+    "ja_easy": "{住所|じゅうしょ}",
+    "en": "Address"
+  },
+  "here.mapApple": {
+    "ja": "{地図|ちず}のアプリで{開|ひら}く（Apple のマップ）",
+    "ja_easy": "{地図|ちず}で{見|み}る（Apple）",
+    "en": "Open in Apple Maps"
+  },
+  "here.mapGoogle": {
+    "ja": "Google マップで{開|ひら}く",
+    "ja_easy": "Google マップで{見|み}る",
+    "en": "Open in Google Maps"
+  },
+  "here.newTab": {
+    "ja": "（{新|あたら}しいタブで{開|ひら}きます）",
+    "ja_easy": "（{新|あたら}しいタブ）",
+    "en": "(opens in a new tab)"
   }
 }

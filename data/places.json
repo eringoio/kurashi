@@ -15,7 +15,8 @@
       "lng": 136.98048,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-chikusa-ward-office-access",
+          "nagoya-chikusa-temp-building",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -36,7 +37,8 @@
       "lng": 136.92574,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-higashi-ward-office-access",
+          "nagoya-higashi-ward-office-plan",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -57,7 +59,7 @@
       "lng": 136.91083,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-kita-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -78,7 +80,7 @@
       "lng": 136.89008,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-nishi-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -99,7 +101,7 @@
       "lng": 136.86842,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-nakamura-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -120,7 +122,7 @@
       "lng": 136.91008,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-naka-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -141,7 +143,7 @@
       "lng": 136.93399,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-showa-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -162,7 +164,7 @@
       "lng": 136.93475,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-mizuho-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -183,7 +185,7 @@
       "lng": 136.90962,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-atsuta-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -204,7 +206,7 @@
       "lng": 136.85475,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-nakagawa-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -225,7 +227,7 @@
       "lng": 136.88509,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-minato-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -246,7 +248,7 @@
       "lng": 136.93141,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-minami-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -267,7 +269,7 @@
       "lng": 136.97586,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-moriyama-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -288,7 +290,7 @@
       "lng": 136.9521,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-midori-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -309,7 +311,7 @@
       "lng": 137.01047,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-meito-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
@@ -330,7 +332,7 @@
       "lng": 136.97501,
       "evidence": {
         "source_ids": [
-          "nagoya-ward-offices-easy",
+          "nagoya-tempaku-ward-office-access",
           "gsi-address-search"
         ],
         "checked_at": "2026-11-05",
