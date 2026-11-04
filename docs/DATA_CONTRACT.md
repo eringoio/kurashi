@@ -1,7 +1,7 @@
 # データ契約 v1（2026-11-04、統括）
 
 `docs/TODAY_EXECUTION_2026-11-04.md` の T3・T6 のための、アプリ用データの共通形式。SPEC 9章・10章を広げる。
-**この文書は案。** SPEC の変更が要る点は末尾の「SPEC との差」に集め、作者の確認をもらってから SPEC に入れる。
+**作者が承認した（2026-11-04）。SPEC v0.4.7 に反映済み。**
 契約を変えるときは版を上げ、`research/handoff/LEAD-*.md` で全担当に知らせる。
 
 ## 1. いまのコードで固定されている部分（v0）
@@ -59,10 +59,10 @@
 | すぐ行う行動 | `Card.urgent: { contacts: [{ type: "phone"\|"link", label, value, evidence }] }` | カードの利用停止。質問より先に出す |
 | 手続きの方法 | `Card.methods: [{ type: "counter"\|"online"\|"mail"\|"phone", text, when?: RuleExpr, evidence }]` | 窓口・電子申請・郵送 |
 | 日を決めない案内 | `Card.kind: "procedure"（既定）\| "guide"` | 住まい探し・仕事探し・相談。「いつ行くか」を聞かない |
-| 代わりの書類 | `Card.alternatives: [{ text, evidence }]` | 身分証をなくしたとき |
+| 代わりの書類 | `Card.alternatives: [{ text, evidence }]` | 身分証をなくしたとき。カード単位（「この手続きで○○が無いとき」）。持ち物の状態ごとの案内は、写す層で `alternatives` から作る |
 | 関係 `parallel` | `{ type: "parallel", card_ids: [...] }` | 警察と銀行は同時に進めてよい |
 | 関係 `related` | `{ type: "related", from, to }` | 結婚 → 国保の変更。順番を作らない |
-| 持ち物の状態 | `objects` の値に `state?: "held"\|"lost"\|"stopped"\|"reissue_waiting"` | なくした在留カード |
+| 持ち物の状態 | `objects` の値に `state?: "held"\|"lost"\|"stopped"\|"reissue_waiting"\|"unknown"` | なくした在留カード。**名前はこちらが正**。UI の `src/ui/patterns/types.ts`（`have`・`reissue_wait`・方法の `window`・連絡先の `web`）へは、統括が写す層で読み替える（v1.1。UI-01 への答え） |
 
 順番を変えるのは、今までどおり**確認済み**の `legal_prerequisite`・`practical_prerequisite` だけ。`parallel`・`related` は注記だけ。
 
@@ -93,7 +93,7 @@
 3. `npm test` の検査を通す。作者が承認した差分だけを `data/` に移す。
 4. React の画面・判定の関数は足さない（合格条件：結婚の検証データ `tests/fixtures/marriage/` が専用コードなしで動く）。
 
-## 8. SPEC との差（作者の確認が要る）
+## 8. SPEC との差（承認済み。SPEC v0.4.7）
 
 1. 9章：`events.json`（生活イベント）を足す。6A.1 の入口のメニューをデータから作る。
 2. 9.3・9.4：質問の `multi`・`scope`、条件 `has`。
