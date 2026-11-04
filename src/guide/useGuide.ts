@@ -35,7 +35,9 @@ export function useGuide(): Guide {
     // 本番ビルドでは確認済み見本モードを使わない（保存済みの設定も無視する。DATA_CONTRACT 5章）
     const mode = !import.meta.env.PROD && v.get<string>('settings', 'review_mode') === 'verified' ? 'verified' : 'public';
     const createdOn = v.get<string>('dates', 'created_on') ?? null;
-    const out = run(DATA(), { answers, objects, plan, createdOn, today, mode });
+    // 引っ越しの経路は、引っ越しのイベントのカードだけを判定する（下書きのほかのイベントの質問が混ざらないように）。入口の質問の順は今までどおり
+    const move = DATA().events.find((e) => e.id === 'E-move');
+    const out = run(DATA(), { answers, objects, plan, createdOn, today, mode, event: move ? { ...move, questions: [], facts: [] } : undefined });
     const touch = async () => { if (!v.get('dates', 'created_on')) await v.put('dates', 'created_on', today); };
     return {
       today, answers, objects, plan, out, mode,

@@ -10,6 +10,7 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Answers, WhyAsked } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
+import { eventForOrigin, hasEntryExtras, noChangeEvents } from './moveEntry';
 
 const q = (id: string) => DATA().questions.find((x) => x.id === id)!;
 
@@ -31,7 +32,7 @@ async function finish(g: ReturnType<typeof useGuide>) {
 export function Move({ step }: { step: string }) {
   const g = useGuide();
   useFocusTitle('move:' + step);
-  useEffect(() => { void g.setResume('/move' + (step ? '/' + step : '')); }, [step]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { void g.setResume(step === 'nochange' || step === 'unsure' ? null : '/move' + (step ? '/' + step : '')); }, [step]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const answerAndGo = async (qid: string, v: Value, to: string) => { await g.answer(qid, v); navigate(to); };
 
@@ -42,8 +43,8 @@ export function Move({ step }: { step: string }) {
         <Head eyebrow={<One k="move.step" />}><Bi k="move.changed" /></Head>
         <div className="list">
           <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi k="move.yes" /></button>
-          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate('/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi k="move.no" /></button>
-          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate('/info/coming-soon'); }}><img src={art('ask')} alt="" /><Bi k="move.unknown" /></button>
+          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(noChangeEvents().length ? '/move/nochange' : '/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi k="move.no" /></button>
+          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(hasEntryExtras() ? '/move/unsure' : '/info/coming-soon'); }}><img src={art('ask')} alt="" /><Bi k="move.unknown" /></button>
         </div>
         <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
       </>
@@ -60,6 +61,9 @@ export function Move({ step }: { step: string }) {
           {qo.options.map((o) => (
             <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')}
               onClick={() => {
+                // 出発地に対応するイベントがあれば（名古屋市の中・名古屋市から出ていく）、共通の /e/{id} へ。イベントの名前では分岐しない
+                const ev = eventForOrigin(String(o.value));
+                if (ev) { void g.setResume(null); navigate('/e/' + ev.id); return; }
                 const to = o.value === 'out_of_area' ? '/info/out-of-scope' : built.includes(String(o.value)) ? '/move/objects' : '/info/coming-soon';
                 if (to !== '/move/objects') void g.setResume(null);
                 void answerAndGo('Q-origin', o.value, to);
@@ -75,6 +79,8 @@ export function Move({ step }: { step: string }) {
   }
 
   if (step === 'objects') return <Objects />;
+  if (step === 'nochange') return <NoChange />;
+  if (step === 'unsure') return <Unsure />;
 
   if (step === 'basis') {
     const qb = q('Q-residence-basis');
@@ -177,6 +183,47 @@ function Objects() {
         ))}
       </ul>
       <button type="button" className="k-answer k-answer--primary" onClick={() => void next()}><Bi k="objects.next" /></button>
+    </>
+  );
+}
+
+/** 「住所は変わっていない」：住所が変わらなくても使える案内（入口のメニューのイベント）を並べる */
+function NoChange() {
+  return (
+    <>
+      <div className="art" aria-hidden="true"><img src={art('homecheck')} alt="" /></div>
+      <Head eyebrow={<One k="move.step" />}><Bi k="move.nochange.title" /></Head>
+      <p className="sub"><Bi k="move.nochange.sub" /></p>
+      <ul className="list" role="list">
+        {noChangeEvents().map((e) => (
+          <li key={e.id}>
+            <Link to={'/e/' + e.id} className="k-answer"><img src={art(e.illustration)} alt="" /><Bi t={e.title} /></Link>
+          </li>
+        ))}
+      </ul>
+      <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>
+    </>
+  );
+}
+
+/** 「わからない」：住民票の住所と、いま住んでいる所が違うかを確かめる説明。区役所での確認（要確認）へつなぐ */
+function Unsure() {
+  const extra = noChangeEvents().length > 0;
+  return (
+    <>
+      <div className="art" aria-hidden="true"><img src={art('ask')} alt="" /></div>
+      <Head eyebrow={<One k="move.step" />}><Bi k="move.unsure.title" /></Head>
+      <div className="prose">
+        <p><Bi k="move.unsure.p1" /></p>
+        <p><Bi k="move.unsure.p2" /></p>
+        <p><Bi k="move.unsure.p3" /></p>
+      </div>
+      <div className="list">
+        <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi k="move.unsure.differ" /></button>
+        <button type="button" className="k-answer" onClick={() => navigate(extra ? '/move/nochange' : '/info/coming-soon')}><img src={art('homecheck')} alt="" /><Bi k="move.unsure.same" /></button>
+      </div>
+      <p><a className="link" href="https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007835.html" target="_blank" rel="noopener noreferrer"><Bi k="move.unsure.link" /></a></p>
+      <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

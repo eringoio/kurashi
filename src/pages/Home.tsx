@@ -19,7 +19,9 @@ function menuItems(): Item[] {
   const list: Item[] = events.map((e) => (e.id === 'E-move'
     ? { key: e.id, title: <Bi k="home.move" />, icon: 'box', to: '/move' }
     : { key: e.id, title: <Bi t={e.title} />, icon: e.illustration, to: '/e/' + e.id }));
-  return [...list, FIXED.gomi, FIXED.letter, FIXED.search];
+  // 固定の項目は、同じ group の出来事が入口のメニューにあるときは出さない（出来事のほうを使う）
+  const fixed = [FIXED.gomi, FIXED.letter, FIXED.search].filter((f) => !events.some((e) => e.group === f.key));
+  return [...list, ...fixed];
 }
 const LINKS = [
   { k: 'home.locate', to: '/info/coming-soon' },

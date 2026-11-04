@@ -16,10 +16,12 @@ export function nowStep(o: EngineOutput, today: string): NowStep {
   // 0. すぐ行う行動（カードの利用停止など）：当てはまるとわかったら、残りの質問より先に出す（DATA_CONTRACT 3章）
   for (const c of open) if (c.card.urgent && c.state === 'shown' && c.plan?.status !== 'dismissed') return { kind: 'urgent', view: c };
   if (o.upfront.length) return { kind: 'upfront', q: o.upfront[0] };
+  // 確かめの質問は、前提の段で並べ替える前の順（questionRank）で聞く
+  const byQ = [...open].sort((a, b) => a.questionRank - b.questionRank);
   // 1. 答えるとわかること（まだわからない）
-  for (const c of open) if (c.state === 'ask' && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
+  for (const c of byQ) if (c.state === 'ask' && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
   // 2. いま・確かめる項目の中の質問（住み始めたか、など）
-  for (const c of open) if ((c.section === 'today' || c.section === 'check' || c.section === 'later') && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
+  for (const c of byQ) if ((c.section === 'today' || c.section === 'check' || c.section === 'later') && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
   // 3. 日が決まっていない、いま・確かめる項目
   for (const c of open) if ((c.section === 'today' || c.section === 'check') && !c.plan?.planned_on && c.dayRule.kind !== 'no_day') return { kind: 'plan', view: c };
   // 4. 届くのを待っている

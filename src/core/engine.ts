@@ -51,6 +51,8 @@ export interface CardView {
   notes: Note[];
   dayRule: DayRule;
   plan: PlanRecord | null;
+  /** 確かめの質問の順（obligation → flow.json）。前提の段は入れない（v0.4.8：前提はすることの順だけを変え、質問の順は変えない） */
+  questionRank: number;
   /** 手続きの方法（card.methods）を、使える条件（when）で評価したもの。F の方法は入れない。U は「窓口で確認」 */
   methods: { method: NonNullable<Card['methods']>[number]; v: TV }[];
 }
@@ -214,6 +216,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (legalNotMet) { section = 'later'; sectionWhy = 'after_prereq'; }
       else if (card.requires_moved_in && moved !== 'yes') { section = 'later'; sectionWhy = moved === 'not_yet' ? 'moved_in_not_yet' : moved === 'unknown' ? 'moved_in_unknown' : 'moved_in_unanswered'; }
       else if (status === 'preparing') section = 'today';
+      // 相談・準備の案内（guide）：必要な案内はいつも「いま」。もしものときの案内（option）だけ「あとで」（v0.4.8）
+      else if (card.kind === 'guide') section = card.awareness_type === 'option' ? 'later' : 'today';
       // 規則10（確認済みの期限が7日以内）：MVP のデータには確認済みの期限がまだない
       else if (card.obligation === 'legal' || (card.first_week && x.today <= addDays(created, 14))) section = 'today';
       else section = 'later';
@@ -237,7 +241,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
 
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
     const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
-    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods };
+    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0 };
   });
 
   // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。
@@ -255,6 +259,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     return d;
   };
   const ob = ['legal', 'local_rule', 'practical', 'check', 'optional', 'none'];
+  [...cards].sort((a, b) => ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id)).forEach((c, i) => { c.questionRank = i; });
   cards.sort((a, b) => depth(a.card.id) - depth(b.card.id) || ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
 
   // 最初の質問：upfront で、未回答で、未定のルールの原因になっているもの（質問バンクの順）。範囲が F なら聞かない

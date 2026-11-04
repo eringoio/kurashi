@@ -476,6 +476,51 @@
     "ja_easy": "{引|ひ}っ{越|こ}しのこと",
     "en": "About your move"
   },
+  "move.nochange.title": {
+    "ja": "{住所|じゅうしょ}が{変|か}わっていなくても、{使|つか}える{案内|あんない}があります",
+    "ja_easy": "{住所|じゅうしょ}が{変|か}わっていなくても、{使|つか}えます",
+    "en": "You can use these even if your address has not changed"
+  },
+  "move.nochange.sub": {
+    "ja": "{知|し}りたいことを{選|えら}んでください。",
+    "ja_easy": "{知|し}りたいことを{選|えら}んでください。",
+    "en": "Choose what you want to know about."
+  },
+  "move.unsure.title": {
+    "ja": "{住民|じゅうみん}{票|ひょう}の{住所|じゅうしょ}と、いま{住|す}んでいる{所|ところ}は、{同|おな}じですか？",
+    "ja_easy": "{住民|じゅうみん}{票|ひょう}の{住所|じゅうしょ}と、いま{住|す}んでいる{所|ところ}は、{同|おな}じですか？",
+    "en": "Is the address on your resident record the same as where you live now?"
+  },
+  "move.unsure.p1": {
+    "ja": "マイナンバーカードや{在留|ざいりゅう}カードの{住所|じゅうしょ}の{欄|らん}が、いま{届|とど}け{出|で}ている{住所|じゅうしょ}です。",
+    "ja_easy": "カードの{住所|じゅうしょ}のところを{見|み}てください。そこが、いま{届|とど}けてある{住所|じゅうしょ}です。",
+    "en": "The address on your My Number Card or residence card is the address currently registered."
+  },
+  "move.unsure.p2": {
+    "ja": "いま{住|す}んでいる{所|ところ}と{違|ちが}うときは、{引|ひ}っ{越|こ}した{日|ひ}から14{日|にち}{以内|いない}に{届|とど}け{出|で}る{手続|てつづ}きがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "いま{住|す}んでいる{所|ところ}とちがうときは、{引|ひ}っ{越|こ}した{日|ひ}から14{日|にち}いないに、とどける{手続|てつづ}きがあります（{要|よう}{確認|かくにん}）。",
+    "en": "If it is different from where you live now, there is a report to file within 14 days of moving (to be checked)."
+  },
+  "move.unsure.p3": {
+    "ja": "それでもわからないときは、{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "それでもわからないときは、{住|す}んでいる{区|く}の{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "If you are still not sure, please ask at your ward office (to be checked)."
+  },
+  "move.unsure.differ": {
+    "ja": "{違|ちが}う（{引|ひ}っ{越|こ}した）",
+    "ja_easy": "ちがう（{引|ひ}っ{越|こ}した）",
+    "en": "Different (I moved)"
+  },
+  "move.unsure.same": {
+    "ja": "{同|おな}じ（{引|ひ}っ{越|こ}していない）",
+    "ja_easy": "{同|おな}じ（{引|ひ}っ{越|こ}していない）",
+    "en": "The same (I have not moved)"
+  },
+  "move.unsure.link": {
+    "ja": "{名古屋|なごや}{市|し}の{公式|こうしき}ページ（{住民|じゅうみん}{基本|きほん}{台帳|だいちょう}の{届出|とどけで}）",
+    "ja_easy": "{名古屋|なごや}{市|し}の{公式|こうしき}のページ",
+    "en": "City of Nagoya official page (resident registration reports)"
+  },
   "objects.title": {
     "ja": "{持|も}っている{物|もの}を、{全部|ぜんぶ}さわってください",
     "ja_easy": "{持|も}っている{物|もの}を、{全部|ぜんぶ}さわってください",
