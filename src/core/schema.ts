@@ -20,13 +20,16 @@ export type Evidence = z.infer<typeof Evidence>;
 export const Text = z.object({ ja: z.string() }).catchall(z.string());
 export type Text = z.infer<typeof Text>;
 
-export type Value = string | boolean;
+/** 1つの値。複数選択の質問の答えは文字列の配列（DATA_CONTRACT 3章） */
+export type Scalar = string | boolean;
+export type Value = Scalar | string[];
 export type Condition =
   | { all: Condition[] }
   | { any: Condition[] }
   | { not: Condition }
-  | { fact: string; eq: Value }
-  | { fact: string; in: Value[] };
+  | { fact: string; eq: Scalar }
+  | { fact: string; in: Scalar[] }
+  | { fact: string; has: string };
 const ValueZ = z.union([z.string(), z.boolean()]);
 export const Condition: z.ZodType<Condition> = z.lazy(() =>
   z.union([
@@ -35,6 +38,8 @@ export const Condition: z.ZodType<Condition> = z.lazy(() =>
     z.object({ not: Condition }).strict(),
     z.object({ fact: z.string(), eq: ValueZ }).strict(),
     z.object({ fact: z.string(), in: z.array(ValueZ) }).strict(),
+    /** 複数選択の答え（配列）が、その値を含むか */
+    z.object({ fact: z.string(), has: z.string() }).strict(),
   ]),
 );
 
@@ -66,6 +71,8 @@ export const RuleExpr: z.ZodType<RuleExpr> = z.lazy(() =>
 );
 
 const Fact = z.object({ text: Text, evidence: Evidence });
+/** 電話・公式リンク。value は電話番号か https の URL */
+const Contact = z.object({ type: z.enum(['phone', 'link']), label: Text, value: z.string(), evidence: Evidence });
 
 export const Card = z.object({
   id: z.string(),
@@ -86,8 +93,17 @@ export const Card = z.object({
   summary: Text,
   deadline: Fact.nullable(),
   where: Fact,
-  /** 行く所（区役所・銀行など）。同じ所の項目は、行く日を一度に聞く（6A.5）。同じ窓口で済むという意味ではない */
-  place: z.enum(['ward_office', 'bank', 'prev_city']).optional(),
+  /** 行く所（区役所・銀行・警察など）。同じ所の項目は、行く日を一度に聞く（6A.5）。同じ窓口で済むという意味ではない。
+      表示名は strings.json の place.<id>（DATA_CONTRACT 1章） */
+  place: z.string().regex(/^[a-z_]+$/).optional(),
+  /** procedure：手続き（行く日を聞く）／guide：相談・準備の案内（日を聞かない。DATA_CONTRACT 3章） */
+  kind: z.enum(['procedure', 'guide']).default('procedure'),
+  /** すぐ行う行動（カードの利用停止など）。質問より先に出す */
+  urgent: z.object({ text: Text, contacts: z.array(Contact) }).optional(),
+  /** 手続きの方法（窓口・電子申請・郵送・電話）。when が偽の方法は出さない */
+  methods: z.array(z.object({ type: z.enum(['counter', 'online', 'mail', 'phone']), text: Text, when: RuleExpr.optional(), evidence: Evidence })).optional(),
+  /** 必要な物が無いときの代わり（身分証をなくしたときなど） */
+  alternatives: z.array(Fact).optional(),
   /** 探すときの言葉（よみ・ローマ字・英語など）。画面には出さない */
   keywords: z.array(z.string()).default([]),
   reasons: z.object({ excluded: Text.optional(), check_at_office: Text.optional(), check_at_office_coverage: Text.optional() }),
@@ -100,6 +116,10 @@ export const Question = z.object({
   id: z.string().regex(/^Q-/),
   fact: z.string(),
   stage: z.enum(['upfront', 'in_card', 'object_check']),
+  /** person：人の答え（年齢など。出来事をまたいで使う）／event：出来事ごとの答え（出発地など）。DATA_CONTRACT 4章 */
+  scope: z.enum(['person', 'event']).default('event'),
+  /** 複数選択（答えは value の配列） */
+  multi: z.boolean().optional(),
   ask_when: Condition,
   text: Text,
   why_asked: Text,
@@ -126,7 +146,31 @@ export const Relation = z.discriminatedUnion('type', [
   z.object({ ...RelBase, type: z.literal('practical_prerequisite'), from: z.string(), to: z.string(), satisfied_when_rule_ids: z.array(z.string()).optional(), day_order: Evidence.optional() }),
   z.object({ ...RelBase, type: z.literal('waits_for'), card_id: z.string(), item_id: z.string(), when_rule_ids: z.array(z.string()).optional() }),
   z.object({ ...RelBase, type: z.literal('same_visit'), card_ids: z.array(z.string()), order: z.array(z.string()), office_scope: z.enum(['same_counter', 'same_building']) }),
+  /** 同時に進めてよい（注記だけ。順番を作らない） */
+  z.object({ ...RelBase, type: z.literal('parallel'), card_ids: z.array(z.string()).min(2) }),
+  /** 関連する案内（注記だけ。順番を作らない） */
+  z.object({ ...RelBase, type: z.literal('related'), from: z.string(), to: z.string() }),
 ]);
 export type Relation = z.infer<typeof Relation>;
 
 export const Flow = z.object({ card_order: z.array(z.string()), built_origins: z.array(z.string()) });
+
+/** 生活イベント（入口。DATA_CONTRACT 2.1）。同じカードを複数のイベントから参照する */
+export const EventDef = z.object({
+  id: z.string().regex(/^E-[a-z0-9-]+$/),
+  group: z.string(),
+  title: Text,
+  illustration: z.string(),
+  status: z.enum(['built', 'coming_soon']),
+  /** 入口のメニューの順（無ければメニューに出さない） */
+  menu: z.number().optional(),
+  /** このイベントを選んだら決まる事実（本人の答えのほうが強い） */
+  facts: z.array(z.object({ fact: z.string(), value: ValueZ })).default([]),
+  /** 入口で聞く質問（順に） */
+  questions: z.array(z.string()).default([]),
+  card_ids: z.array(z.string()),
+  /** 範囲のルール（無ければ R-scope-nagoya-resident） */
+  scope_rule: z.string().optional(),
+  evidence: Evidence,
+});
+export type EventDef = z.infer<typeof EventDef>;

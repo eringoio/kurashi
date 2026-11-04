@@ -1,0 +1,609 @@
+{
+  "$comment": "検証用データ（見本）：結婚。専用の React 画面・判定関数なしで足せることを確かめる（DATA_CONTRACT 7章）。内容は要確認の見本で、公開データではない。",
+  "sources": [
+    {
+      "source_id": "fx-nagoya-konin",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007825/1007827.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "婚姻届・離婚届（検証用の見本）",
+      "language": "ja"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-fx-nationality",
+      "fact": "nationality",
+      "stage": "upfront",
+      "scope": "person",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "あなたの{国籍|こくせき}は？",
+        "ja_easy": "あなたの{国籍|こくせき}は？",
+        "en": "Your nationality?"
+      },
+      "why_asked": {
+        "ja": "{手続|てつづ}きが{変|か}わるため",
+        "ja_easy": "{手続|てつづ}きが{変|か}わるから",
+        "en": "Procedures differ"
+      },
+      "options": [
+        {
+          "value": "japanese",
+          "label": {
+            "ja": "{日本|にほん}",
+            "ja_easy": "{日本|にほん}",
+            "en": "Japanese"
+          }
+        },
+        {
+          "value": "foreign",
+          "label": {
+            "ja": "{日本|にほん}{以外|いがい}",
+            "ja_easy": "{日本|にほん}ではない",
+            "en": "Other"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-fx-name-change",
+      "fact": "name_change",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{名字|みょうじ}は{変|か}わりますか",
+        "ja_easy": "{名前|なまえ}が{変|か}わりますか",
+        "en": "Will your surname change?"
+      },
+      "why_asked": {
+        "ja": "{名前|なまえ}の{変更|へんこう}が{要|い}るため",
+        "ja_easy": "{名前|なまえ}を{変|か}えるため",
+        "en": "Name updates"
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "R-fx-marriage",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "event",
+        "eq": "marriage"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}した",
+        "ja_easy": "{結婚|けっこん}した",
+        "en": "You married"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-fx-foreign",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "nationality",
+        "eq": "foreign"
+      },
+      "statement": {
+        "ja": "{外国|がいこく}{籍|せき}",
+        "ja_easy": "{外国|がいこく}の{人|ひと}",
+        "en": "Foreign national"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-fx-name-change",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "name_change",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{名字|みょうじ}が{変|か}わる",
+        "ja_easy": "{名前|なまえ}が{変|か}わる",
+        "en": "Surname changes"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-fx-scope-any",
+      "kind": "scope",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも",
+        "ja_easy": "だれでも",
+        "en": "Anyone"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "fx-konin-todoke",
+      "data_version": 1,
+      "illustration": "letter",
+      "awareness_type": "must",
+      "obligation": "legal",
+      "domain": "government",
+      "depth": "L2",
+      "first_week": false,
+      "scope": "nagoya_resident",
+      "per_move": false,
+      "requires_moved_in": false,
+      "eligibility": "R-fx-marriage",
+      "coverage_rule_ids": [],
+      "title": {
+        "ja": "{婚姻|こんいん}{届|とどけ}",
+        "ja_easy": "{結婚|けっこん}の{届|とど}け",
+        "en": "Marriage registration"
+      },
+      "official_name": {
+        "ja": "婚姻届",
+        "reading": ""
+      },
+      "summary": {
+        "ja": "{婚姻|こんいん}{届|とどけ}を{出|だ}します（{見本|みほん}）。",
+        "ja_easy": "{結婚|けっこん}の{届|とど}けを{出|だ}します（{見本|みほん}）。",
+        "en": "Submit the marriage registration (sample)."
+      },
+      "deadline": null,
+      "where": {
+        "text": {
+          "ja": "{区役所|くやくしょ}",
+          "ja_easy": "{区役所|くやくしょ}",
+          "en": "Ward office"
+        },
+        "evidence": {
+          "source_ids": [
+            "fx-nagoya-konin"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      },
+      "place": "ward_office",
+      "keywords": [],
+      "reasons": {},
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "fx-zairyu-change",
+      "data_version": 1,
+      "illustration": "letter",
+      "awareness_type": "applies",
+      "obligation": "practical",
+      "domain": "government",
+      "depth": "L2",
+      "first_week": false,
+      "scope": "nagoya_resident",
+      "per_move": false,
+      "requires_moved_in": false,
+      "eligibility": {
+        "all": [
+          "R-fx-marriage",
+          "R-fx-foreign"
+        ]
+      },
+      "coverage_rule_ids": [],
+      "title": {
+        "ja": "{在留|ざいりゅう}カードの{変更|へんこう}",
+        "ja_easy": "{在留|ざいりゅう}カードを{変|か}える",
+        "en": "Residence card update"
+      },
+      "official_name": {
+        "ja": "在留カードの変更",
+        "reading": ""
+      },
+      "summary": {
+        "ja": "{在留|ざいりゅう}カードの{記載|きさい}{事項|じこう}を{確|たし}かめます（{見本|みほん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードを{確|たし}かめます（{見本|みほん}）。",
+        "en": "Check your residence card details (sample)."
+      },
+      "deadline": null,
+      "where": {
+        "text": {
+          "ja": "{区役所|くやくしょ}",
+          "ja_easy": "{区役所|くやくしょ}",
+          "en": "Ward office"
+        },
+        "evidence": {
+          "source_ids": [
+            "fx-nagoya-konin"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      },
+      "place": "immigration",
+      "keywords": [],
+      "reasons": {},
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "fx-mynumber-name",
+      "data_version": 1,
+      "illustration": "letter",
+      "awareness_type": "applies",
+      "obligation": "practical",
+      "domain": "government",
+      "depth": "L2",
+      "first_week": false,
+      "scope": "nagoya_resident",
+      "per_move": false,
+      "requires_moved_in": false,
+      "eligibility": {
+        "all": [
+          "R-fx-marriage",
+          "R-fx-name-change"
+        ]
+      },
+      "coverage_rule_ids": [],
+      "title": {
+        "ja": "マイナンバーカードの{氏名|しめい}{変更|へんこう}",
+        "ja_easy": "マイナンバーカードの{名前|なまえ}",
+        "en": "My Number Card name change"
+      },
+      "official_name": {
+        "ja": "マイナンバーカードの氏名変更",
+        "reading": ""
+      },
+      "summary": {
+        "ja": "{氏名|しめい}が{変|か}わったら{券面|けんめん}を{変|か}えます（{見本|みほん}）。",
+        "ja_easy": "{名前|なまえ}が{変|か}わったら{直|なお}します（{見本|みほん}）。",
+        "en": "Update the card after a name change (sample)."
+      },
+      "deadline": null,
+      "where": {
+        "text": {
+          "ja": "{区役所|くやくしょ}",
+          "ja_easy": "{区役所|くやくしょ}",
+          "en": "Ward office"
+        },
+        "evidence": {
+          "source_ids": [
+            "fx-nagoya-konin"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      },
+      "place": "ward_office",
+      "keywords": [],
+      "reasons": {},
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "fx-bank-name",
+      "data_version": 1,
+      "illustration": "letter",
+      "awareness_type": "applies",
+      "obligation": "practical",
+      "domain": "government",
+      "depth": "L2",
+      "first_week": false,
+      "scope": "nagoya_resident",
+      "per_move": false,
+      "requires_moved_in": false,
+      "eligibility": {
+        "all": [
+          "R-fx-marriage",
+          "R-fx-name-change"
+        ]
+      },
+      "coverage_rule_ids": [],
+      "title": {
+        "ja": "{銀行|ぎんこう}の{氏名|しめい}{変更|へんこう}",
+        "ja_easy": "{銀行|ぎんこう}の{名前|なまえ}",
+        "en": "Bank name change"
+      },
+      "official_name": {
+        "ja": "銀行の氏名変更",
+        "reading": ""
+      },
+      "summary": {
+        "ja": "{銀行|ぎんこう}ごとに{手続|てつづ}きが{違|ちが}います（{見本|みほん}）。",
+        "ja_easy": "{銀行|ぎんこう}で{名前|なまえ}を{直|なお}します（{見本|みほん}）。",
+        "en": "Each bank has its own procedure (sample)."
+      },
+      "deadline": null,
+      "where": {
+        "text": {
+          "ja": "{区役所|くやくしょ}",
+          "ja_easy": "{区役所|くやくしょ}",
+          "en": "Ward office"
+        },
+        "evidence": {
+          "source_ids": [
+            "fx-nagoya-konin"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      },
+      "place": "bank",
+      "keywords": [],
+      "reasons": {},
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "methods": [
+        {
+          "type": "counter",
+          "text": {
+            "ja": "{窓口|まどぐち}",
+            "ja_easy": "{窓口|まどぐち}",
+            "en": "Branch counter"
+          },
+          "evidence": {
+            "source_ids": [
+              "fx-nagoya-konin"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check"
+          }
+        },
+        {
+          "type": "online",
+          "text": {
+            "ja": "アプリ",
+            "ja_easy": "アプリ",
+            "en": "App"
+          },
+          "when": "R-fx-foreign",
+          "evidence": {
+            "source_ids": [
+              "fx-nagoya-konin"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fx-consult",
+      "data_version": 1,
+      "illustration": "letter",
+      "awareness_type": "option",
+      "obligation": "optional",
+      "domain": "government",
+      "depth": "L2",
+      "first_week": false,
+      "scope": "nagoya_resident",
+      "per_move": false,
+      "requires_moved_in": false,
+      "eligibility": "R-fx-marriage",
+      "coverage_rule_ids": [],
+      "title": {
+        "ja": "{国際|こくさい}{結婚|けっこん}の{相談|そうだん}",
+        "ja_easy": "{相談|そうだん}するところ",
+        "en": "Where to ask"
+      },
+      "official_name": {
+        "ja": "国際結婚の相談",
+        "reading": ""
+      },
+      "summary": {
+        "ja": "わからないときは{相談|そうだん}{窓口|まどぐち}へ（{見本|みほん}）。",
+        "ja_easy": "わからないときは{聞|き}きます（{見本|みほん}）。",
+        "en": "Ask a consultation desk (sample)."
+      },
+      "deadline": null,
+      "where": {
+        "text": {
+          "ja": "{区役所|くやくしょ}",
+          "ja_easy": "{区役所|くやくしょ}",
+          "en": "Ward office"
+        },
+        "evidence": {
+          "source_ids": [
+            "fx-nagoya-konin"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      },
+      "kind": "guide",
+      "keywords": [],
+      "reasons": {},
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-fx-konin-mynumber",
+      "type": "legal_prerequisite",
+      "from": "fx-konin-todoke",
+      "to": "fx-mynumber-name",
+      "explain": {
+        "ja": "{婚姻|こんいん}{届|とどけ}のあと",
+        "ja_easy": "{結婚|けっこん}の{届|とど}けのあと",
+        "en": "After registration"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-fx-konin-zairyu",
+      "type": "related",
+      "from": "fx-konin-todoke",
+      "to": "fx-zairyu-change",
+      "explain": {
+        "ja": "{在留|ざいりゅう}にも{関係|かんけい}します",
+        "ja_easy": "{在留|ざいりゅう}にも{関係|かんけい}します",
+        "en": "Also affects residence"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-fx-bank-mynumber",
+      "type": "parallel",
+      "card_ids": [
+        "fx-bank-name",
+        "fx-mynumber-name"
+      ],
+      "explain": {
+        "ja": "{同時|どうじ}に{進|すす}められます",
+        "ja_easy": "いっしょにできます",
+        "en": "Can be done in parallel"
+      },
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "E-fx-marriage",
+      "group": "marriage",
+      "title": {
+        "ja": "{結婚|けっこん}",
+        "ja_easy": "{結婚|けっこん}",
+        "en": "Marriage"
+      },
+      "illustration": "letter",
+      "status": "built",
+      "facts": [
+        {
+          "fact": "event",
+          "value": "marriage"
+        }
+      ],
+      "questions": [
+        "Q-fx-nationality",
+        "Q-fx-name-change"
+      ],
+      "card_ids": [
+        "fx-konin-todoke",
+        "fx-zairyu-change",
+        "fx-mynumber-name",
+        "fx-bank-name",
+        "fx-consult"
+      ],
+      "scope_rule": "R-fx-scope-any",
+      "evidence": {
+        "source_ids": [
+          "fx-nagoya-konin"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "card_order": [
+    "fx-konin-todoke",
+    "fx-zairyu-change",
+    "fx-mynumber-name",
+    "fx-bank-name",
+    "fx-consult"
+  ]
+}

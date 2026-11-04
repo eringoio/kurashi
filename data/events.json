@@ -1,0 +1,33 @@
+{
+  "$comment": "生活イベント（入口。docs/DATA_CONTRACT.md 2.1）。同じカードを複数のイベントから参照する。イベントごとに React の画面や判定の関数を足さない。",
+  "events": [
+    {
+      "id": "E-move",
+      "group": "move",
+      "title": {
+        "ja": "{引|ひ}っ{越|こ}し",
+        "ja_easy": "{引|ひ}っ{越|こ}し",
+        "en": "Moving"
+      },
+      "illustration": "box",
+      "status": "built",
+      "menu": 1,
+      "questions": ["Q-origin", "Q-residence-basis", "Q-role", "Q-age-band"],
+      "card_ids": [
+        "move-out-notice",
+        "nagoya-tennyu-todoke",
+        "nagoya-tennyu-juukyochi",
+        "nagoya-kokuho-kanyu",
+        "kokumin-nenkin-kanyu",
+        "nenkin-at-20",
+        "bank-account-open"
+      ],
+      "scope_rule": "R-scope-nagoya-resident",
+      "evidence": {
+        "source_ids": ["kurashi-spec"],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ]
+}

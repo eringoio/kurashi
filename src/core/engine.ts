@@ -2,7 +2,7 @@
    同じ入力からは必ず同じ結果になる。答えが変わったら、毎回すべてを計算し直す（前回の結果を使わない）。 */
 import type { GuideData } from './data';
 import { combineAll, combineAny, evalCond, factsIn, type Eval, type Facts, type TV } from './logic';
-import type { Card, Evidence, Question, Relation, Rule, RuleExpr, Value } from './schema';
+import type { Card, EventDef, Evidence, Question, Relation, Rule, RuleExpr, Value } from './schema';
 import type { PlanRecord } from './entry';
 
 export type DisplayState = 'shown' | 'check_at_office' | 'ask' | 'excluded' | 'out_of_scope';
@@ -22,10 +22,17 @@ export interface EngineInput {
   today: string;
   /** 'public'：データのとおり／'verified'：確認済みデータの fixture（作者の確認用・テスト用。SPEC 18） */
   mode?: 'public' | 'verified';
+  /** 生活イベント（DATA_CONTRACT 2.1）。あれば、そのイベントのカードだけを判定し、イベントの事実と範囲のルールを使う。
+      無ければ今までどおり全カード・R-scope-nagoya-resident（A1・B1 の /move） */
+  event?: EventDef;
 }
 
-export interface Note { kind: 'legal_prereq' | 'practical_prereq' | 'same_visit' | 'waits_for' | 'prereq_unknown' | 'satisfied_by_answer' | 'maybe_done'; relation: Relation; verified: boolean }
-export type DayRule = { kind: 'free' } | { kind: 'min'; day: string; from: string } | { kind: 'need_first'; from: string };
+type Prereq = Extract<Relation, { type: 'legal_prerequisite' | 'practical_prerequisite' }>;
+const isPrereq = (r: Relation): r is Prereq => r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite';
+
+export interface Note { kind: 'legal_prereq' | 'practical_prereq' | 'same_visit' | 'waits_for' | 'prereq_unknown' | 'satisfied_by_answer' | 'maybe_done' | 'parallel' | 'related'; relation: Relation; verified: boolean }
+/** no_day：日を聞かない案内（kind: guide。DATA_CONTRACT 3章） */
+export type DayRule = { kind: 'free' } | { kind: 'min'; day: string; from: string } | { kind: 'need_first'; from: string } | { kind: 'no_day' };
 
 export interface CardView {
   card: Card;
@@ -70,9 +77,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     return s;
   };
 
-  // 1. 事実をそろえる。持ち物から決まる事実 → 本人の答え（本人の答えを優先）。ask_when が F の答えは未回答として扱う
+  // 1. 事実をそろえる。イベントの事実 → 持ち物から決まる事実 → 本人の答え（本人の答えを優先）。ask_when が F の答えは未回答として扱う
   const facts: Facts = new Map();
-  const origin = x.answers['Q-origin'];
+  x.event?.facts.forEach((f) => facts.set(f.fact, f.value));
+  const origin = x.answers['Q-origin'] ?? facts.get('origin');
   for (const o of data.objects) {
     if (x.objects[o.id] && (typeof origin !== 'string' || o.show_for.includes(origin))) o.yields_when_held.forEach((y) => facts.set(y.fact, y.value));
   }
@@ -95,8 +103,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const askable = (fact: string, stages: Question['stage'][]) =>
     data.questions.find((q) => q.fact === fact && stages.includes(q.stage) && !facts.has(fact) && evalCond(q.ask_when, facts).v === 'T');
 
-  // 3. 範囲
-  const scopeEval = conf.get('R-scope-nagoya-resident')!;
+  // 3. 範囲（イベントの範囲のルール。無ければ名古屋市に住む人）
+  const scopeEval = conf.get(x.event?.scope_rule ?? 'R-scope-nagoya-resident')!;
   const scope = scopeEval.v;
 
   // 関係の確認状態
@@ -104,7 +112,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const ruleT = (id: string) => conf.get(id)!.v;
 
   // 4. 表示状態
-  const pre = data.cards.map((card) => {
+  const inEvent = x.event ? new Set(x.event.card_ids) : null;
+  const pre = data.cards.filter((c) => !inEvent || inEvent.has(c.id)).map((card) => {
     const elig = evalExpr(card.eligibility);
     const cov = card.coverage_rule_ids.length ? combineAll(card.coverage_rule_ids.map((id) => conf.get(id)!)) : null;
     let state: DisplayState;
@@ -128,7 +137,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const stateOf = new Map(pre.map((p) => [p.card.id, p.state]));
 
   // 前提が満たされたか（9.6 の関係の規則2）：yes／no／unknown
-  const satisfied = (r: Extract<Relation, { from: string }>): 'yes' | 'no' | 'unknown' => {
+  const satisfied = (r: Prereq): 'yes' | 'no' | 'unknown' => {
     const fromPlan = x.plan[r.from];
     const sat = r.satisfied_when_rule_ids ?? [];
     if (fromPlan?.status === 'done' || sat.some((id) => ruleT(id) === 'T')) return 'yes';
@@ -138,7 +147,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   // 答えから「もう済んでいる」とわかったカード（確認済みの satisfied_when が T。6A.3）
   const doneByAnswer = new Set<string>();
   for (const r of data.relations) {
-    if ((r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite') && (r.satisfied_when_rule_ids ?? []).some((id) => ruleT(id) === 'T')) doneByAnswer.add(r.from);
+    if (isPrereq(r) && (r.satisfied_when_rule_ids ?? []).some((id) => ruleT(id) === 'T')) doneByAnswer.add(r.from);
   }
 
   const created = x.createdOn ?? x.today;
@@ -154,7 +163,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     // 関係の注記（needs_check の関係は注記だけ。9.6 の規則1）
     for (const r of data.relations) {
       const v = relVerified(r);
-      if ((r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite') && r.to === card.id) {
+      if (isPrereq(r) && r.to === card.id) {
         const s = satisfied(r);
         if (s === 'yes') continue;
         // 日の順だけを守らせる（v0.4.5）：前の項目がまだ済んでいなくて、この人に関係するとき。区分け・並び順は変えない
@@ -174,12 +183,15 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
         } else notes.push({ kind: r.type === 'legal_prerequisite' ? 'legal_prereq' : 'practical_prereq', relation: r, verified: v });
       }
       if (r.type === 'same_visit' && r.card_ids.includes(card.id) && !v) notes.push({ kind: 'same_visit', relation: r, verified: v });
+      // 同時に進めてよい・関連する案内：注記だけ。順番・区分けは変えない
+      if (r.type === 'parallel' && r.card_ids.includes(card.id) && stateOf.has(card.id)) notes.push({ kind: 'parallel', relation: r, verified: v });
+      if (r.type === 'related' && r.from === card.id) notes.push({ kind: 'related', relation: r, verified: v });
     }
     // 答えからは済んでいそうだが、その対応がまだ確認されていない（9.10：済んだことにせず、確かめることにする）
-    const maybe = data.relations.find((y) => 'from' in y && y.from === card.id && (y.satisfied_when_rule_ids ?? []).some((id) => raw.get(id)!.v === 'T' && conf.get(id)!.v === 'U'));
+    const maybe = data.relations.filter(isPrereq).find((y) => y.from === card.id && (y.satisfied_when_rule_ids ?? []).some((id) => raw.get(id)!.v === 'T' && conf.get(id)!.v === 'U'));
     if (maybe && !doneByAnswer.has(card.id)) notes.push({ kind: 'maybe_done', relation: maybe, verified: false });
     if (doneByAnswer.has(card.id)) {
-      const r = data.relations.find((y) => 'from' in y && y.from === card.id)!;
+      const r = data.relations.filter(isPrereq).find((y) => y.from === card.id)!;
       notes.push({ kind: 'satisfied_by_answer', relation: r, verified: true });
     }
 
@@ -203,6 +215,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (card.obligation === 'legal' || (card.first_week && x.today <= addDays(created, 14))) section = 'today';
       else section = 'later';
     }
+
+    if (card.kind === 'guide') dayRule = { kind: 'no_day' };
 
     // 質問の選択（10.2 の手順10）：①判定の未定の原因の未回答 ②住み始めたか
     const want = new Set<string>();

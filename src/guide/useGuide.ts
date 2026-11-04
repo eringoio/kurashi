@@ -30,7 +30,8 @@ export function useGuide(): Guide {
     const answers = Object.fromEntries(v.entries('profile')) as Record<string, Value>;
     const objects = Object.fromEntries(v.entries('objects').map(([k, o]) => [k, (o as { held: boolean }).held]));
     const plan = Object.fromEntries(v.entries('plan')) as Record<string, PlanRecord>;
-    const mode = v.get<string>('settings', 'review_mode') === 'verified' ? 'verified' : 'public';
+    // 本番ビルドでは確認済み見本モードを使わない（保存済みの設定も無視する。DATA_CONTRACT 5章）
+    const mode = !import.meta.env.PROD && v.get<string>('settings', 'review_mode') === 'verified' ? 'verified' : 'public';
     const createdOn = v.get<string>('dates', 'created_on') ?? null;
     const out = run(DATA(), { answers, objects, plan, createdOn, today, mode });
     const touch = async () => { if (!v.get('dates', 'created_on')) await v.put('dates', 'created_on', today); };

@@ -7,7 +7,8 @@ const open = (c: CardView) =>
   (c.section === 'today' || c.section === 'check') &&
   (c.state === 'shown' || c.state === 'check_at_office') &&
   !c.plan?.planned_on && c.plan?.status !== 'done' &&
-  c.questions.length === 0;
+  c.questions.length === 0 &&
+  c.dayRule.kind !== 'no_day';
 
 /** c と同じ所で、日がまだの項目（c を先頭に、一覧の順）。
     先に日を決める項目（need_first）は、その項目が同じまとまりにあるときだけ入れる（同じ日に、前の項目から順にする） */

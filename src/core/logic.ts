@@ -47,7 +47,7 @@ export function evalCond(c: Condition, facts: Facts): Eval {
   const val = facts.get(c.fact);
   if (val === undefined) return mk('U', new Set([c.fact]));
   if (val === 'unknown') return mk('U', new Set(), new Set([c.fact]));
-  const hit = 'eq' in c ? val === c.eq : c.in.includes(val);
+  const hit = 'has' in c ? Array.isArray(val) && val.includes(c.has) : Array.isArray(val) ? false : 'eq' in c ? val === c.eq : c.in.includes(val);
   return mk(hit ? 'T' : 'F');
 }
 

@@ -28,3 +28,9 @@ demo-video/use-cases/kit/fonts/
 # 自動の検査の結果（作り直せる）
 test-results/
 playwright-report/
+
+# 調査で取得した公式資料の原文（公開リポジトリに全文を置かない。TODAY_EXECUTION 5.1）
+research/_raw/
+# 無人制作の原文・実行状態（作り直せる。docs/PRODUCE.md）
+drafts/_raw/
+drafts/state/
