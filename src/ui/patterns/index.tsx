@@ -11,7 +11,8 @@ import type {
 } from './types';
 
 const safeUrl = (u: string) => u.startsWith('https://');
-const tel = (n: string) => n.replace(/[^0-9+]/g, '');
+/** tel: の番号。数字と + と # だけ残す（# は %23 に） */
+const tel = (n: string) => n.replace(/[^0-9+#]/g, '').replace(/#/g, '%23');
 
 /** 小さな線の印（文字の代わりにしない：いつも名前と一緒に出す） */
 const IP = { width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, focusable: false } as const;
@@ -148,7 +149,7 @@ export function MethodChooser({ methods, value, onChange }: { methods: MethodVM[
           </button>
         ))}
       </div>
-      {cur && (
+      {cur && cur.needs.length > 0 && (
         <div className="pt-needs" role="status" aria-live="polite">
           <p className="label"><One k="pat.method.chosen" />：{name(cur)}　<One k="pat.method.needs" /></p>
           <ul>{cur.needs.map((n, i) => <li key={i}><Bi t={n} /></li>)}</ul>

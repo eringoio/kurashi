@@ -1,5 +1,6 @@
 /* 画面の外枠：上の帯（名前・相談窓口・設定）、見るだけの帯、本文、読み上げの知らせ（aria-live）、シート */
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { DRAFTS_LOADED } from './core/data';
 import { chooseEntry, type Resume } from './core/entry';
 import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
@@ -13,7 +14,8 @@ import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
 import { All, Now } from './pages/Plan';
-import { CardPage } from './pages/CardPage';
+import { CardPage, EventCardPage } from './pages/CardPage';
+import { EventPage } from './pages/EventPage';
 import { PromisePage, ResumePage } from './pages/Entry';
 import { Review } from './pages/Review';
 import { Search } from './pages/Search';
@@ -42,6 +44,10 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (info && INFO_PAGES[info[1]]) return <Info id={info[1]} />;
   const move = /^\/move(?:\/(from|objects|basis|check|q))?$/.exec(path);
   if (move) return <Move step={move[1] ?? ''} />;
+  const evCard = /^\/e\/(E-[a-z0-9-]+)\/c\/([a-z0-9-]+)$/.exec(path);
+  if (evCard) return <EventCardPage key={evCard[1] + evCard[2]} eventId={evCard[1]} id={evCard[2]} onLive={onLive} />;
+  const ev = /^\/e\/(E-[a-z0-9-]+)(\/all)?$/.exec(path);
+  if (ev) return <EventPage key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] ? 'all' : 'now'} onLive={onLive} />;
   const card = /^\/c\/([a-z0-9-]+)$/.exec(path);
   if (card) return <CardPage key={card[1]} id={card[1]} onLive={onLive} />;
   if (path === '/now') return <Now />;
@@ -96,6 +102,7 @@ export function App() {
           <button type="button" className="pill pill--icon" onClick={() => setSheet('settings')}><GlobeIcon /><One k="nav.settings" /></button>
         </div>
       </header>
+      {DRAFTS_LOADED && <div className="draftband" role="note"><Bi k="draft.banner" /></div>}
       {v.mode === 'view_only' && (
         <div className="viewonly" role="status">
           <Bi k="viewonly.banner" />

@@ -5,7 +5,7 @@ import type { BelongingVM, ContactVM, LifeGuideVM, MethodVM, PickOptionVM, StepV
 /** ja・ja_easy・en。ふりがなは {漢字|よみ} */
 const t = (ja: string, en: string, ja_easy: string = ja): T => ({ ja, ja_easy, en });
 
-const police: ContactVM = { kind: 'phone', label: t('{警察|けいさつ}（{事件|じけん}・{事故|じこ}）', 'Police (emergency)'), value: '110' };
+const police: ContactVM = { kind: 'phone', label: t('{警察|けいさつ}{相談|そうだん}{専用|せんよう}{電話|でんわ}（{急|いそ}ぎでない{相談|そうだん}。{見本|みほん}・{要確認|ようかくにん}）', 'Police consultation line, non-emergency (sample, to be confirmed)'), value: '#9110' };
 const cardCo: ContactVM = { kind: 'phone', label: t('カード{会社|がいしゃ}（カードの{裏|うら}の{番号|ばんごう}）', 'Your card company (number on the back of the card)'), value: '0120-000-000', hours: t('24{時間|じかん}（{見本|みほん}・{要確認|ようかくにん}）', '24 hours (sample, to be confirmed)') };
 const official: ContactVM = { kind: 'web', label: t('{名古屋市|なごやし}の{公式|こうしき}ページ（{見本|みほん}）', 'City of Nagoya official page (sample)'), value: 'https://www.city.nagoya.jp/' };
 

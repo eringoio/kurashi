@@ -34,6 +34,8 @@ rt { font-size: max(.5em, 9px); font-weight: 500; }
 
 /* 見るだけの帯（色だけで示さない：文字と点線の枠） */
 .viewonly { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin: 0 12px 4px; padding: 4px 4px 4px 12px; border: 2px dashed var(--ink); border-radius: var(--radius-md); background: var(--cream); font-weight: 700; }
+.draftband { margin: 0 12px 4px; padding: 6px 12px; border: 2px dashed var(--orange); border-radius: var(--radius-md); background: var(--white); color: var(--orange-ink); font-size: var(--fs-small); font-weight: 700; }
+.draftband::before { content: "✎ "; }
 .viewonly .pill { background: var(--white); }
 
 /* 中身の列 */
@@ -107,7 +109,7 @@ p { margin: 0; }
 @media (forced-colors: active) {
   .seg[aria-pressed="true"], .k-tile[aria-pressed="true"], .speak[aria-pressed="true"] { outline: 3px solid Highlight; }
   .k-answer--primary { border: 2px solid ButtonText; }
-  .viewonly, .consent { border-color: CanvasText; }
+  .viewonly, .consent, .draftband { border-color: CanvasText; }
 }
 
 /* —— A1 の経路（2026-11-04） —— */

@@ -1,15 +1,26 @@
 /* 入口（SPEC 6A.1）。開いたときの出し分けは App（src/core/entry.ts）で行う。
    ここに来るのは、初めての人・入口にもどった人・すべて済んだ人。進捗があれば、続きへの入口を上に出す。 */
+import type { ReactNode } from 'react';
+import { DATA } from '../core/data';
 import { Bi } from '../i18n/Ruby';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 
-const MENU = [
-  { k: 'home.move', icon: 'box', to: '/move' },
-  { k: 'home.gomi', icon: 'bin', to: '/info/coming-soon' },
-  { k: 'home.letter', icon: 'letter', to: '/info/coming-soon' },
-  { k: 'home.search', icon: 'search', to: '/search' },
-] as const;
+type Item = { key: string; title: ReactNode; icon: string; to: string };
+/** 固定の項目（ごみ・書類・探す）。引っ越しなどの生活イベントは data/events.json の menu 順から作る */
+const FIXED: Record<string, Item> = {
+  gomi: { key: 'gomi', title: <Bi k="home.gomi" />, icon: 'bin', to: '/info/coming-soon' },
+  letter: { key: 'letter', title: <Bi k="home.letter" />, icon: 'letter', to: '/info/coming-soon' },
+  search: { key: 'search', title: <Bi k="home.search" />, icon: 'search', to: '/search' },
+};
+/** 引っ越し（E-move）は今までどおり /move。ほかの built のイベントは共通の /e/{id} */
+function menuItems(): Item[] {
+  const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined).sort((a, b) => a.menu! - b.menu!);
+  const list: Item[] = events.map((e) => (e.id === 'E-move'
+    ? { key: e.id, title: <Bi k="home.move" />, icon: 'box', to: '/move' }
+    : { key: e.id, title: <Bi t={e.title} />, icon: e.illustration, to: '/e/' + e.id }));
+  return [...list, FIXED.gomi, FIXED.letter, FIXED.search];
+}
 const LINKS = [
   { k: 'home.locate', to: '/info/coming-soon' },
   { k: 'home.qr', to: '/info/coming-soon' },
@@ -33,11 +44,11 @@ export function Home({ hasProgress }: { hasProgress: boolean }) {
       {hasProgress && <Link to="/now" className="k-answer k-answer--primary"><img src={art('calendar')} alt="" /><Bi k="home.continue" /></Link>}
       <nav aria-labelledby="screen-title">
         <ul className="list" role="list">
-          {MENU.map((m) => (
-            <li key={m.k}>
+          {menuItems().map((m) => (
+            <li key={m.key}>
               <Link to={m.to} className="k-answer">
                 <img src={art(m.icon)} alt="" />
-                <Bi k={m.k} />
+                {m.title}
               </Link>
             </li>
           ))}

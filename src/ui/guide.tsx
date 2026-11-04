@@ -8,7 +8,7 @@ import { LEVELS, ui, type Level, type LocalizedText, type UiKey } from '../i18n/
 import { daySuggestions } from '../core/date';
 import { earliestDay } from '../core/visit';
 import { usePrefs } from '../storage/prefs';
-import { art } from './art';
+import { art, artDim } from './art';
 import { Link } from './router';
 import { Sheet } from './Sheet';
 import { Speak } from './Speak';
@@ -73,13 +73,13 @@ export function QuestionBlock({ q, onPick }: { q: Question; onPick: (v: Value) =
 }
 
 /** 一覧の行。どの項目もここから開ける（6A.4） */
-export function CardRow({ c, extra, current }: { c: CardView; extra?: ReactNode; current?: boolean }) {
+export function CardRow({ c, extra, current, base = '/c/' }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string }) {
   const k = stateKey(c);
   const dim = k === 'ask' || k === 'excluded' || k === 'out' || k === 'later';
   return (
     <li>
-      <Link to={'/c/' + c.card.id} className={'row row--' + CLS[k]} aria-current={current ? 'page' : undefined}>
-        <img src={art(c.card.illustration + (dim ? '-dim' : ''))} alt="" />
+      <Link to={base + c.card.id} className={'row row--' + CLS[k]} aria-current={current ? 'page' : undefined}>
+        <img src={artDim(c.card.illustration, dim)} alt="" />
         <span className="row__name"><Bi t={c.card.title} /></span>
         <span className="row__side">
           <StateLabel k={k} />
@@ -184,11 +184,14 @@ function fill(t: Text | LocalizedText, name: string, by: (lv: Level, id: string)
 /** 日付を入れた文（{date} を、それぞれの言語の書き方の日付に置き換える） */
 export const fillDate = (t: Text | LocalizedText, ymd: string): Text => fill(t, 'date', (lv) => fmtDay(ymd, lv));
 
+const UI_HAS_PLACE = (place: string): LocalizedText | undefined => (ui(('place.' + place) as UiKey) as LocalizedText | undefined);
+
 /** 日を聞く見出し：行く所があれば「いつ、区役所に行きますか？」 */
 export function dayTitle(c: CardView): LocalizedText {
   const place = c.card.place;
   if (!place) return ui('day.title');
-  const p = ui(('place.' + place) as UiKey);
+  const p = UI_HAS_PLACE(place);
+  if (!p) return ui('day.title');
   return fill(ui('day.titlePlace'), 'place', (_lv, id) => p[id] ?? p.ja_easy ?? p.ja) as LocalizedText;
 }
 
@@ -267,7 +270,7 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
   return (
     <div className={'focus focus--' + CLS[k]}>
       <span className="focus__art" aria-hidden="true">
-        <img src={art(k === 'ask' ? 'ask' : c.card.illustration + (dim ? '-dim' : ''))} alt="" />
+        <img src={(k === 'ask' ? art('ask') : artDim(c.card.illustration, dim))} alt="" />
         {(k === 'excluded' || k === 'out') && <img className="focus__over" src={art('cross')} alt="" />}
         {k === 'done' && <img className="focus__badge" src={art('badge')} alt="" />}
         {(k === 'wait' || k === 'later') && <img className="focus__badge" src={art('clock')} alt="" />}
@@ -292,7 +295,7 @@ export function WorldMap({ cards }: { cards: CardView[] }) {
         return (
           <span key={c.card.id} className={'world__item world__item--' + i + ' world__item--' + CLS[k]}>
             <span className="world__pic">
-              <img src={art(k === 'ask' ? 'ask' : c.card.illustration + (dim ? '-dim' : ''))} alt="" />
+              <img src={(k === 'ask' ? art('ask') : artDim(c.card.illustration, dim))} alt="" />
               {k === 'done' && <img className="world__badge" src={art('badge')} alt="" />}
               {k === 'wait' && <img className="world__badge" src={art('clock')} alt="" />}
             </span>

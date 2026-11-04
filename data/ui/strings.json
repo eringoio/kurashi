@@ -1415,5 +1415,55 @@
     "ja": "{要|よう}{確認|かくにん}",
     "ja_easy": "{要|よう}{確認|かくにん}",
     "en": "To be confirmed"
+  },
+  "ev.alt": {
+    "ja": "{身分|みぶん}{証|しょう}の{代|か}わりになる{書類|しょるい}",
+    "ja_easy": "{身分証|みぶんしょう}の{代|か}わりに{使|つか}える{書類|しょるい}",
+    "en": "Documents you can use instead of ID"
+  },
+  "ev.startNew": {
+    "ja": "{新|あたら}しく{始|はじ}める（{前|まえ}の{出来事|できごと}の「{済|ず}み」は{使|つか}いません）",
+    "ja_easy": "{新|あたら}しく{始|はじ}める（{前|まえ}の「{終|お}わった」は{使|つか}いません）",
+    "en": "Start again (earlier \"done\" marks are not reused)"
+  },
+  "ev.startedNew": {
+    "ja": "{新|あたら}しい{出来事|できごと}として{始|はじ}めました。",
+    "ja_easy": "{新|あたら}しく{始|はじ}めました。",
+    "en": "Started as a new event."
+  },
+  "ev.pick.legend": {
+    "ja": "あてはまるものを、すべて{選|えら}んでください",
+    "ja_easy": "あてはまるものを、ぜんぶ{選|えら}んでください",
+    "en": "Choose everything that applies"
+  },
+  "ev.notFound": {
+    "ja": "この{出来事|できごと}は、まだありません",
+    "ja_easy": "この{出来事|できごと}は、まだありません",
+    "en": "This event is not available"
+  },
+  "draft.banner": {
+    "ja": "{下書|したが}き（{要|よう}{確認|かくにん}）のデータを{表示|ひょうじ}しています。{公開|こうかい}の{表示|ひょうじ}ではありません。",
+    "ja_easy": "{下書|したが}き（{要確認|ようかくにん}）のデータです。{公開|こうかい}の{表示|ひょうじ}ではありません。",
+    "en": "Showing draft data (to be confirmed). This is not the published view."
+  },
+  "place.police": {
+    "ja": "{警察|けいさつ}",
+    "ja_easy": "{警察|けいさつ}",
+    "en": "the police"
+  },
+  "place.immigration": {
+    "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+    "ja_easy": "{入管|にゅうかん}（{出入国在留管理局|しゅつにゅうこくざいりゅうかんりきょく}）",
+    "en": "the immigration office"
+  },
+  "place.license_center": {
+    "ja": "{運転|うんてん}{免許|めんきょ}の{窓口|まどぐち}",
+    "ja_easy": "{運転|うんてん}{免許|めんきょ}の{窓口|まどぐち}",
+    "en": "the driver licence office"
+  },
+  "place.pref_passport": {
+    "ja": "パスポートの{窓口|まどぐち}",
+    "ja_easy": "パスポートの{窓口|まどぐち}",
+    "en": "the passport office"
   }
 }

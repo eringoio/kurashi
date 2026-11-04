@@ -6,3 +6,8 @@ export function art(name: string): string {
   if (!url) throw new Error('絵がない：' + name);
   return url;
 }
+
+/** 点線の形（-dim）がある絵はそれを、無い絵（ask など）はそのまま使う */
+export function artDim(name: string, dim: boolean): string {
+  return dim && files[`../../design/assets/illustrations/${name}-dim.svg`] ? art(name + '-dim') : art(name);
+}

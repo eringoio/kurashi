@@ -37,7 +37,7 @@ export function Now() {
   if (result) {
     const c = g.out.cards.find((x) => x.card.id === result.cardId)!;
     body = result.kind === 'planned' ? (
-      <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} /><Bi k="res.planned.sub" /></>} onNext={next} />
+      <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next} />
     ) : (
       <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
@@ -166,11 +166,10 @@ export function All() {
 }
 
 /** 日を決めた項目の名前（まとめて決めたときは全部） */
-function PlannedList({ ids }: { ids: string[] }) {
-  const g = useGuide();
+function PlannedList({ ids, cards }: { ids: string[]; cards: CardView[] }) {
   return (
     <ul className="plain" role="list">
-      {ids.map((id) => <li key={id}><Bi t={g.out.cards.find((x) => x.card.id === id)!.card.title} /></li>)}
+      {ids.map((id) => <li key={id}><Bi t={cards.find((x) => x.card.id === id)!.card.title} /></li>)}
     </ul>
   );
 }
