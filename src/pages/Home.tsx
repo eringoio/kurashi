@@ -24,7 +24,7 @@ function menuItems(): Item[] {
   return [...list, ...fixed];
 }
 const LINKS = [
-  { k: 'home.locate', to: '/info/coming-soon' },
+  { k: 'home.locate', to: '/here' },
   { k: 'home.about', to: '/info/about' },
   { k: 'home.disclaimer', to: '/info/disclaimer' },
 ] as const;

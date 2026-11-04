@@ -56,6 +56,30 @@
       "owner_type": "public_corp",
       "title": "20歳になったときの国民年金の手続き",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-ward-offices-easy",
+      "url": "https://www.city.nagoya.jp/kurashi/easyjapanese/1017897/1017899.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "区役所などの ばしょや 電話番号（名古屋生活ガイド やさしい日本語のページ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-ward-offices-list",
+      "url": "https://www.city.nagoya.jp/shisei/gaiyou/1015754/1015781/index.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "区役所・支所",
+      "language": "ja"
+    },
+    {
+      "source_id": "gsi-address-search",
+      "url": "https://maps.gsi.go.jp/help/termsofuse.html",
+      "owner": "国土地理院",
+      "owner_type": "government",
+      "title": "地理院地図 利用規約（住所検索 API の座標）",
+      "language": "ja"
     }
   ]
 }

@@ -1920,5 +1920,90 @@
     "ja": "データの{確認|かくにん}にもどる",
     "ja_easy": "データの{確認|かくにん}にもどる",
     "en": "Back to data review"
+  },
+  "here.title": {
+    "ja": "いまいる{場所|ばしょ}から",
+    "ja_easy": "いまいる{場所|ばしょ}から",
+    "en": "From where you are now"
+  },
+  "here.privacy": {
+    "ja": "{位置|いち}は、この{端末|たんまつ}の{中|なか}で{区役所|くやくしょ}の{場所|ばしょ}と{比|くら}べるだけです。{送|おく}らず、{残|のこ}しません。",
+    "ja_easy": "{位置|いち}は、どこにも{送|おく}りません。{残|のこ}しません。",
+    "en": "Your location is only compared with ward office locations on this device. It is not sent or saved."
+  },
+  "here.use": {
+    "ja": "{位置|いち}を{使|つか}う",
+    "ja_easy": "{位置|いち}を{使|つか}う",
+    "en": "Use my location"
+  },
+  "here.asking": {
+    "ja": "{位置|いち}を{調|しら}べています",
+    "ja_easy": "{位置|いち}を{見|み}ています",
+    "en": "Finding your location"
+  },
+  "here.choose": {
+    "ja": "{区|く}の{一覧|いちらん}から{選|えら}ぶ",
+    "ja_easy": "{区|く}から{選|えら}ぶ",
+    "en": "Choose from the list of wards"
+  },
+  "here.near": {
+    "ja": "{place}の{近|ちか}くにいますか？",
+    "ja_easy": "{place}の{近|ちか}くにいますか？",
+    "en": "Are you near {place}?"
+  },
+  "here.yes": {
+    "ja": "はい。ここでできることを{見|み}る",
+    "ja_easy": "はい。ここでできることを{見|み}る",
+    "en": "Yes. Show what I can do here"
+  },
+  "here.passing": {
+    "ja": "{通|とお}っただけ",
+    "ja_easy": "{通|とお}っただけです",
+    "en": "Just passing by"
+  },
+  "here.listTitle": {
+    "ja": "どの{区役所|くやくしょ}ですか？",
+    "ja_easy": "どの{区役所|くやくしょ}ですか？",
+    "en": "Which ward office?"
+  },
+  "here.why.denied": {
+    "ja": "{位置|いち}は{使|つか}いません。{一覧|いちらん}から{選|えら}んでください。",
+    "ja_easy": "{位置|いち}は{使|つか}いません。{選|えら}んでください。",
+    "en": "We won't use your location. Please choose from the list."
+  },
+  "here.why.inaccurate": {
+    "ja": "{位置|いち}の{誤差|ごさ}が{大|おお}きいため、{一覧|いちらん}から{選|えら}んでください。",
+    "ja_easy": "{位置|いち}がよくわかりません。{選|えら}んでください。",
+    "en": "Your location is not precise enough. Please choose from the list."
+  },
+  "here.why.far": {
+    "ja": "{近|ちか}くに{区役所|くやくしょ}が{見|み}つかりませんでした。{一覧|いちらん}から{選|えら}んでください。",
+    "ja_easy": "{近|ちか}くに{区役所|くやくしょ}がありません。{選|えら}んでください。",
+    "en": "No ward office was found nearby. Please choose from the list."
+  },
+  "here.why.unavailable": {
+    "ja": "{位置|いち}を{調|しら}べられませんでした。{一覧|いちらん}から{選|えら}んでください。",
+    "ja_easy": "{位置|いち}がわかりません。{選|えら}んでください。",
+    "en": "We could not get your location. Please choose from the list."
+  },
+  "here.canDo": {
+    "ja": "ここでできること",
+    "ja_easy": "ここでできること",
+    "en": "What you can do here"
+  },
+  "here.toBefore": {
+    "ja": "{今日|きょう}の{持|も}ち{物|もの}を{確|たし}かめる（{行|い}く{前|まえ}）",
+    "ja_easy": "きょうの{持|も}ち{物|もの}を{見|み}る",
+    "en": "Check what to bring today"
+  },
+  "here.other": {
+    "ja": "ほかの{区役所|くやくしょ}を{選|えら}ぶ",
+    "ja_easy": "ほかの{区役所|くやくしょ}",
+    "en": "Choose another ward office"
+  },
+  "here.credit": {
+    "ja": "{区役所|くやくしょ}の{住所|じゅうしょ}：{名古屋|なごや}{市|し}の{公式|こうしき}ページ。{位置|いち}：{国土|こくど}{地理|ちり}{院|いん}の{住所|じゅうしょ}{検索|けんさく}から{作成|さくせい}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{住所|じゅうしょ}は{名古屋|なごや}{市|し}のページ、{位置|いち}は{国土|こくど}{地理|ちり}{院|いん}から{作|つく}りました。",
+    "en": "Addresses: City of Nagoya official page. Locations: made from the GSI (Geospatial Information Authority of Japan) address search (to be checked)."
   }
 }

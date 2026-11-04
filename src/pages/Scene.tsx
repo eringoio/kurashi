@@ -14,7 +14,8 @@ import { art } from '../ui/art';
 import { CardRow } from '../ui/guide';
 import { Link, useFocusTitle } from '../ui/router';
 
-function CardList({ place }: { place: string }) {
+/** そこで行う手続きの一覧。約束した日が今日なら、付き添いへ（QR は「窓口で」、いまいる場所からは「行く前」） */
+export function CardList({ place, stage = 'counter' }: { place: string; stage?: 'before' | 'counter' }) {
   const g = useGuide();
   const origin = typeof g.answers['Q-origin'] === 'string' ? (g.answers['Q-origin'] as string) : undefined;
   const cards = g.out.cards.filter((c) => c.card.place === place && c.state !== 'out_of_scope');
@@ -22,7 +23,7 @@ function CardList({ place }: { place: string }) {
   const today = visitsToday(g.out, DATA().objects, g.objects, origin, g.today).find((v) => v.place === place);
   return (
     <>
-      {today && <Link to={visitPath(place, 'counter')} className="k-answer k-answer--primary"><img src={art('hall')} alt="" /><Bi k="scene.toCounter" /></Link>}
+      {today && <Link to={visitPath(place, stage)} className="k-answer k-answer--primary"><img src={art('hall')} alt="" /><Bi k={stage === 'counter' ? 'scene.toCounter' : 'here.toBefore'} /></Link>}
       <section aria-labelledby="scene-cards">
         <h2 id="scene-cards" className="label"><One k="scene.cards" /></h2>
         <ul className="list" role="list">{cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>

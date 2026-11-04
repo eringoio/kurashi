@@ -1,0 +1,341 @@
+{
+  "$comment": "場所（SPEC 9章・場所）。名古屋市の16区役所（支所は含まない）。順番は市の区役所一覧のとおり。座標は国土地理院の住所検索の結果で、建物の入口ではなく番地の代表点。新しい場所は needs_check。",
+  "places": [
+    {
+      "id": "chikusa-ward-office",
+      "kind": "ward_office",
+      "ward": "chikusa",
+      "name": {
+        "ja": "{千種区役所|ちくさくやくしょ}",
+        "ja_easy": "{千種区役所|ちくさくやくしょ}",
+        "en": "Chikusa Ward Office"
+      },
+      "address": "名古屋市千種区星が丘山手103",
+      "lat": 35.16297,
+      "lng": 136.98048,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "higashi-ward-office",
+      "kind": "ward_office",
+      "ward": "higashi",
+      "name": {
+        "ja": "{東区役所|ひがしくやくしょ}",
+        "ja_easy": "{東区役所|ひがしくやくしょ}",
+        "en": "Higashi Ward Office"
+      },
+      "address": "名古屋市東区筒井一丁目7-74",
+      "lat": 35.17937,
+      "lng": 136.92574,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "kita-ward-office",
+      "kind": "ward_office",
+      "ward": "kita",
+      "name": {
+        "ja": "{北区役所|きたくやくしょ}",
+        "ja_easy": "{北区役所|きたくやくしょ}",
+        "en": "Kita Ward Office"
+      },
+      "address": "名古屋市北区清水四丁目17-1",
+      "lat": 35.19385,
+      "lng": 136.91083,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "nishi-ward-office",
+      "kind": "ward_office",
+      "ward": "nishi",
+      "name": {
+        "ja": "{西区役所|にしくやくしょ}",
+        "ja_easy": "{西区役所|にしくやくしょ}",
+        "en": "Nishi Ward Office"
+      },
+      "address": "名古屋市西区花の木二丁目18-1",
+      "lat": 35.18934,
+      "lng": 136.89008,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "nakamura-ward-office",
+      "kind": "ward_office",
+      "ward": "nakamura",
+      "name": {
+        "ja": "{中村区役所|なかむらくやくしょ}",
+        "ja_easy": "{中村区役所|なかむらくやくしょ}",
+        "en": "Nakamura Ward Office"
+      },
+      "address": "名古屋市中村区松原町一丁目23-1",
+      "lat": 35.17683,
+      "lng": 136.86842,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "naka-ward-office",
+      "kind": "ward_office",
+      "ward": "naka",
+      "name": {
+        "ja": "{中区役所|なかくやくしょ}",
+        "ja_easy": "{中区役所|なかくやくしょ}",
+        "en": "Naka Ward Office"
+      },
+      "address": "名古屋市中区栄四丁目1-8",
+      "lat": 35.16898,
+      "lng": 136.91008,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "showa-ward-office",
+      "kind": "ward_office",
+      "ward": "showa",
+      "name": {
+        "ja": "{昭和区役所|しょうわくやくしょ}",
+        "ja_easy": "{昭和区役所|しょうわくやくしょ}",
+        "en": "Showa Ward Office"
+      },
+      "address": "名古屋市昭和区阿由知通3-19",
+      "lat": 35.15011,
+      "lng": 136.93399,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "mizuho-ward-office",
+      "kind": "ward_office",
+      "ward": "mizuho",
+      "name": {
+        "ja": "{瑞穂区役所|みずほくやくしょ}",
+        "ja_easy": "{瑞穂区役所|みずほくやくしょ}",
+        "en": "Mizuho Ward Office"
+      },
+      "address": "名古屋市瑞穂区瑞穂通3-32",
+      "lat": 35.13152,
+      "lng": 136.93475,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "atsuta-ward-office",
+      "kind": "ward_office",
+      "ward": "atsuta",
+      "name": {
+        "ja": "{熱田区役所|あつたくやくしょ}",
+        "ja_easy": "{熱田区役所|あつたくやくしょ}",
+        "en": "Atsuta Ward Office"
+      },
+      "address": "名古屋市熱田区神宮三丁目1-15",
+      "lat": 35.12898,
+      "lng": 136.90962,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "nakagawa-ward-office",
+      "kind": "ward_office",
+      "ward": "nakagawa",
+      "name": {
+        "ja": "{中川区役所|なかがわくやくしょ}",
+        "ja_easy": "{中川区役所|なかがわくやくしょ}",
+        "en": "Nakagawa Ward Office"
+      },
+      "address": "名古屋市中川区高畑一丁目223",
+      "lat": 35.14145,
+      "lng": 136.85475,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "minato-ward-office",
+      "kind": "ward_office",
+      "ward": "minato",
+      "name": {
+        "ja": "{港区役所|みなとくやくしょ}",
+        "ja_easy": "{港区役所|みなとくやくしょ}",
+        "en": "Minato Ward Office"
+      },
+      "address": "名古屋市港区港明一丁目12-20",
+      "lat": 35.10817,
+      "lng": 136.88509,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "minami-ward-office",
+      "kind": "ward_office",
+      "ward": "minami",
+      "name": {
+        "ja": "{南区役所|みなみくやくしょ}",
+        "ja_easy": "{南区役所|みなみくやくしょ}",
+        "en": "Minami Ward Office"
+      },
+      "address": "名古屋市南区前浜通3-10",
+      "lat": 35.09504,
+      "lng": 136.93141,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "moriyama-ward-office",
+      "kind": "ward_office",
+      "ward": "moriyama",
+      "name": {
+        "ja": "{守山区役所|もりやまくやくしょ}",
+        "ja_easy": "{守山区役所|もりやまくやくしょ}",
+        "en": "Moriyama Ward Office"
+      },
+      "address": "名古屋市守山区小幡一丁目3-1",
+      "lat": 35.20306,
+      "lng": 136.97586,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "midori-ward-office",
+      "kind": "ward_office",
+      "ward": "midori",
+      "name": {
+        "ja": "{緑区役所|みどりくやくしょ}",
+        "ja_easy": "{緑区役所|みどりくやくしょ}",
+        "en": "Midori Ward Office"
+      },
+      "address": "名古屋市緑区青山二丁目15",
+      "lat": 35.07103,
+      "lng": 136.9521,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "meito-ward-office",
+      "kind": "ward_office",
+      "ward": "meito",
+      "name": {
+        "ja": "{名東区役所|めいとうくやくしょ}",
+        "ja_easy": "{名東区役所|めいとうくやくしょ}",
+        "en": "Meito Ward Office"
+      },
+      "address": "名古屋市名東区上社二丁目50",
+      "lat": 35.17586,
+      "lng": 137.01047,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "tempaku-ward-office",
+      "kind": "ward_office",
+      "ward": "tempaku",
+      "name": {
+        "ja": "{天白区役所|てんぱくくやくしょ}",
+        "ja_easy": "{天白区役所|てんぱくくやくしょ}",
+        "en": "Tempaku Ward Office"
+      },
+      "address": "名古屋市天白区島田二丁目201",
+      "lat": 35.12262,
+      "lng": 136.97501,
+      "evidence": {
+        "source_ids": [
+          "nagoya-ward-offices-easy",
+          "gsi-address-search"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
+}
