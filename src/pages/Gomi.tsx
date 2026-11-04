@@ -73,6 +73,7 @@ function GomiTool() {
           <input id={id} type="search" value={q} onChange={(e) => { setQ(e.target.value); setSel(null); }} autoComplete="off" enterKeyHint="search" aria-describedby={id + '-hint'} />
           <p id={id + '-hint'} className="sub"><One k="gomi.search.hint" /></p>
         </div>
+        {d.areas.business && <p className="sub"><Bi t={d.areas.business.text} /> <Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></p>}
         <div aria-live="polite">
           {q.trim() && !sel && (found.length ? (
             <ul className="list" role="list">
@@ -99,6 +100,12 @@ function GomiTool() {
                 {sel.ask.choices.map((c) => <button key={c.value} type="button" className="k-answer" onClick={() => setChoice(c.value)}><Bi t={c.label} /></button>)}
               </div>
             </fieldset>
+          )}
+          {res.kind === 'review' && sel.review && (
+            <div className="k-notice" role="note">
+              <p><span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span> <Bi t={sel.review.reason} /></p>
+              {d.areas.links[1] && <p><Ext label={d.areas.links[1].label} url={d.areas.links[1].url} /></p>}
+            </div>
           )}
           {res.kind === 'unknown' && (
             <div className="k-notice" role="note">
@@ -166,6 +173,10 @@ function GomiTool() {
         )}
       </section>
 
+      {/* ライセンスの表示（CC BY など。出典に license があるものだけ） */}
+      {d.items.sources.filter((s) => s.license).map((s) => (
+        <p key={s.source_id} className="sub"><a className="link" href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>（{s.license}）</p>
+      ))}
       <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );

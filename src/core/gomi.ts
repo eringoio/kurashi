@@ -33,13 +33,15 @@ export const GomiItem = z.object({
   category: z.string().optional(),
   ask: z.object({ text: Text, choices: z.array(Choice).min(2) }).optional(),
   note: Text.optional(),
+  /** 区分を出さず、確かめてもらう（古いデータ・基準の変更など）。理由を出す */
+  review: z.object({ reason: Text }).optional(),
   evidence: Evidence,
 });
 export type GomiItem = z.infer<typeof GomiItem>;
 
 export const GomiItems = z.object({
   as_of: z.string(),
-  sources: z.array(z.object({ source_id: z.string(), url: z.string().url(), title: z.string(), page_updated_at: z.string().nullable() })),
+  sources: z.array(z.object({ source_id: z.string(), url: z.string().url(), title: z.string(), page_updated_at: z.string().nullable(), license: z.string().optional() })),
   categories: z.array(GomiCategory),
   items: z.array(GomiItem),
 });
@@ -50,6 +52,7 @@ export type GomiItems = z.infer<typeof GomiItems>;
 export type ItemResult =
   | { kind: 'result'; item: GomiItem; category: GomiCategory; choice?: string }
   | { kind: 'ask'; item: GomiItem }
+  | { kind: 'review'; item: GomiItem }
   | { kind: 'unknown'; item: GomiItem | null };
 
 /** 区分の順：危険・専用・事業が先（袋の大きさで粗大ごみにしない） */
@@ -57,6 +60,7 @@ const ROUTE_ORDER: Route[] = ['hazard', 'special', 'business', 'not_collected', 
 
 export function judgeItem(data: GomiItems, item: GomiItem | null, choice?: string): ItemResult {
   if (!item) return { kind: 'unknown', item: null };
+  if (item.review) return { kind: 'review', item };
   const cat = (id: string | undefined) => data.categories.find((c) => c.id === id);
   if (item.category) {
     const c = cat(item.category);
@@ -89,7 +93,8 @@ export function searchItems(data: GomiItems, q: string): GomiItem[] {
     if (ws.some((w) => w.includes(n))) return 2;
     return -1;
   };
-  const routeOf = (it: GomiItem) => data.categories.find((c) => c.id === it.category)?.route ?? 'unknown';
+  // 確かめた品目（review でない）を先に。同じ順位なら危険物・専用の回収を先に
+  const routeOf = (it: GomiItem) => (it.review ? 'unknown' : data.categories.find((c) => c.id === it.category)?.route ?? 'unknown');
   return data.items
     .map((it) => ({ it, s: score(it) }))
     .filter((x) => x.s >= 0)

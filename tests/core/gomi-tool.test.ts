@@ -7,8 +7,10 @@ import { parseGomi } from '../../src/core/gomiData';
 import items from '../../drafts/gomi/items.json';
 import areas from '../../drafts/gomi/areas.json';
 import delivery from '../../drafts/gomi/delivery.json';
+import opendata from '../../drafts/gomi/opendata.json';
 
-const d = parseGomi({ items, areas, delivery });
+const d = parseGomi({ items, areas, delivery, opendata });
+const curatedOnly = parseGomi({ items, areas, delivery });
 const item = (id: string) => d.items.items.find((x) => x.id === id)!;
 const cat = (id: string, choice?: string) => { const r = judgeItem(d.items, item(id), choice); return r.kind === 'result' ? r.category.id : r.kind; };
 
@@ -73,8 +75,34 @@ describe('品目の判定（WASTE_001・005・007）', () => {
     expect(searchItems(d.items, 'カサ')[0].id).toBe('kasa');
     expect(searchItems(d.items, 'fridge')[0].id).toBe('reizouko');
     expect(searchItems(d.items, 'でんち').map((x) => x.id)).toContain('kandenchi');
-    expect(searchItems(d.items, 'ぴあの')).toEqual([]);
+    expect(searchItems(d.items, 'ろけっと')).toEqual([]);
     expect(searchItems(d.items, '  ')).toEqual([]);
+  });
+});
+
+describe('オープンデータ（BODIK、CC BY 4.0）の取り込み', () => {
+  const od = d.items.items.filter((x) => x.id.startsWith('od_'));
+  it('出典・ライセンス・件数・ハッシュを記録する', () => {
+    expect(opendata.source.license).toContain('Creative Commons Attribution');
+    expect(opendata.source.rows).toBe(1227);
+    expect(opendata.source.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(d.items.sources.find((s) => s.source_id === 'bodik-sagyo-01')?.license).toBeTruthy();
+  });
+  it('粗大ごみ・30cm の記述の行は区分を出さない（2026年10月の改定の前のデータ）', () => {
+    const raw = opendata.items as { review?: unknown; category?: string; evidence: { quote: string } }[];
+    expect(raw.some((x) => x.category === 'sodai')).toBe(false);
+    expect(raw.filter((x) => /30s*(センチ|cm)/.test(x.evidence.quote)).every((x) => x.review)).toBe(true);
+    const r = od.find((x) => x.review)!;
+    expect(judgeItem(d.items, r).kind).toBe('review');
+  });
+  it('手で確かめた品目が先。同じ品目のオープンデータの行は使わない', () => {
+    expect(searchItems(d.items, 'かさ')[0].id).toBe('kasa');
+    expect(searchItems(d.items, 'ちゃわん')[0].id).toBe('chawan');
+    expect(od.some((x) => /^茶わん/.test(x.label.ja))).toBe(false);
+    expect(d.items.items.length).toBeGreaterThan(curatedOnly.items.items.length + 500);
+  });
+  it('よみで探せる（漢字の品目をひらがなで）', () => {
+    expect(searchItems(d.items, 'かいがら').map((x) => x.label.ja)).toContain('貝殻');
   });
 });
 

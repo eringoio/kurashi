@@ -2,7 +2,7 @@
    本番ビルドでは読まないので、ごみの画面は「準備中」になる。 */
 import { z } from 'zod';
 import { Evidence, Text } from './schema';
-import { GomiItems, type DeliveryRegime, type Schedule } from './gomi';
+import { GomiItem, GomiItems, normWord, type DeliveryRegime, type Schedule } from './gomi';
 
 const files: Record<string, unknown> = import.meta.env.MODE === 'drafts'
   ? import.meta.glob('../../drafts/gomi/*.json', { eager: true, import: 'default' })
@@ -16,6 +16,8 @@ export const GomiAreas = z.object({
   schedules: z.array(z.any()).default([]),
   coverage: Text,
   links: z.array(Link),
+  /** 家庭ごみの範囲の外（事業系ごみ）への案内 */
+  business: z.object({ text: Text, link: Link }).optional(),
 });
 export type GomiAreas = z.infer<typeof GomiAreas>;
 
@@ -28,8 +30,22 @@ export const GomiDelivery = z.object({
 
 export interface GomiBundle { items: GomiItems; areas: GomiAreas; delivery: z.infer<typeof GomiDelivery> & { regimes: DeliveryRegime[] }; schedules: Schedule[] }
 
-export function parseGomi(raw: { items: unknown; areas: unknown; delivery: unknown }): GomiBundle {
+const OpenData = z.object({
+  source: z.object({ source_id: z.string(), url: z.string().url(), title: z.string(), last_modified: z.string().nullable(), attribution: z.string(), license: z.string() }).passthrough(),
+  items: z.array(z.unknown()),
+}).passthrough();
+
+/** 品目：手で確かめた品目（items.json）を先に、オープンデータ（opendata.json）を後に。同じ名前のオープンデータの行は使わない */
+export function parseGomi(raw: { items: unknown; areas: unknown; delivery: unknown; opendata?: unknown }): GomiBundle {
   const items = GomiItems.parse(raw.items);
+  if (raw.opendata) {
+    const od = OpenData.parse(raw.opendata);
+    const plainRuby = (s: string) => s.replace(/\{([^|{}]+)\|[^{}]+\}/g, '$1');
+    const known = new Set(items.items.flatMap((it) => [...Object.values(it.label).map(plainRuby), ...it.aliases]).map(normWord));
+    const extra = z.array(GomiItem).parse(od.items).filter((it) => ![it.label.ja, ...it.aliases].some((w) => known.has(normWord(w))));
+    items.items.push(...extra);
+    items.sources.push({ source_id: od.source.source_id, url: od.source.url, title: od.source.attribution, page_updated_at: od.source.last_modified?.slice(0, 10) ?? null, license: String(od.source.license ?? '') || undefined });
+  }
   const areas = GomiAreas.parse(raw.areas);
   const delivery = GomiDelivery.parse(raw.delivery);
   // 参照の検査：品目の区分・選択肢の区分がある
@@ -39,7 +55,7 @@ export function parseGomi(raw: { items: unknown; areas: unknown; delivery: unkno
   for (const it of items.items) {
     if (seen.has(it.id)) errs.push(`品目 ${it.id} が2つある`);
     seen.add(it.id);
-    if (!it.category && !it.ask) errs.push(`品目 ${it.id} に区分も質問もない`);
+    if (!it.category && !it.ask && !it.review) errs.push(`品目 ${it.id} に区分も質問もない`);
     if (it.category && !cats.has(it.category)) errs.push(`品目 ${it.id} の区分 ${it.category} がない`);
     it.ask?.choices.forEach((c) => { if (c.category && !cats.has(c.category)) errs.push(`品目 ${it.id} の選択肢の区分 ${c.category} がない`); });
   }
@@ -54,6 +70,6 @@ let cached: GomiBundle | null | undefined;
 export function gomiData(): GomiBundle | null {
   if (cached !== undefined) return cached;
   const get = (n: string) => files[`../../drafts/gomi/${n}.json`];
-  cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery') }) : null;
+  cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery'), opendata: get('opendata') }) : null;
   return cached;
 }
