@@ -295,6 +295,11 @@
     "ja_easy": "{答|こた}え",
     "en": "Answers"
   },
+  "store.occurrences": {
+    "ja": "{出来事|できごと}ごとの{答|こた}えと{手続|てつづ}き",
+    "ja_easy": "できごとごとの{答|こた}えと{手続|てつづ}き",
+    "en": "Answers and procedures for each life event"
+  },
   "store.plan": {
     "ja": "{手続|てつづ}きの{状態|じょうたい}と{約束|やくそく}した{日|ひ}",
     "ja_easy": "{手続|てつづ}きと{日|ひ}",

@@ -122,6 +122,7 @@
       "id": "Q-role",
       "fact": "role",
       "stage": "upfront",
+      "scope": "person",
       "ask_when": {
         "all": []
       },
@@ -176,6 +177,7 @@
       "id": "Q-age-band",
       "fact": "age_band",
       "stage": "upfront",
+      "scope": "person",
       "ask_when": {
         "all": []
       },
@@ -228,6 +230,7 @@
       "id": "Q-insurance",
       "fact": "insurance",
       "stage": "in_card",
+      "scope": "person",
       "ask_when": {
         "all": []
       },
@@ -288,6 +291,7 @@
       "id": "Q-age-75",
       "fact": "age_75_plus",
       "stage": "in_card",
+      "scope": "person",
       "ask_when": {
         "fact": "age_band",
         "eq": "60_plus"
@@ -333,6 +337,7 @@
       "id": "Q-pension-type",
       "fact": "pension_type",
       "stage": "in_card",
+      "scope": "person",
       "ask_when": {
         "fact": "age_band",
         "eq": "20_59"
@@ -386,6 +391,7 @@
       "id": "Q-mynumber-card",
       "fact": "has_mynumber_card",
       "stage": "in_card",
+      "scope": "person",
       "ask_when": {
         "fact": "origin",
         "eq": "other_city"
@@ -528,6 +534,7 @@
       "id": "Q-bank-account",
       "fact": "has_own_bank_account",
       "stage": "in_card",
+      "scope": "person",
       "ask_when": {
         "all": []
       },

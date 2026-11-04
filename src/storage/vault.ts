@@ -5,13 +5,14 @@
    - IndexedDB が使えないときは、メモリの中だけで動く。 */
 import { openDB, type IDBPDatabase } from 'idb';
 
-export const STORES = ['settings', 'profile', 'plan', 'items', 'dates', 'objects', 'phrases', 'consent', 'resume', 'meta'] as const;
+/** occurrences：出来事ごとの答えと進捗（SPEC 9.9 v0.4.7。SCHEMA_VERSION 2 で追加。upgrade は無いストアを作るだけで、既存の保存は消さない） */
+export const STORES = ['settings', 'profile', 'plan', 'items', 'dates', 'objects', 'phrases', 'consent', 'resume', 'meta', 'occurrences'] as const;
 export type StoreName = (typeof STORES)[number];
 /** 人が見て消せるストア（設定の「残している内容」に並べる順） */
-export const USER_STORES: StoreName[] = ['profile', 'objects', 'plan', 'items', 'dates', 'phrases', 'resume', 'settings'];
+export const USER_STORES: StoreName[] = ['profile', 'occurrences', 'objects', 'plan', 'items', 'dates', 'phrases', 'resume', 'settings'];
 
 export const DB_NAME = 'kurashi';
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 /** undecided：まだ聞いていない／kept：残す／not_kept：残さない（または何も残さない）／unavailable：残せない環境／view_only：見るだけ */
 export type Mode = 'undecided' | 'kept' | 'not_kept' | 'unavailable' | 'view_only';
@@ -80,7 +81,7 @@ export class Vault {
   }
   /** 進捗があるか（保存の同意を聞く時点。SPEC 9.9） */
   hasProgress(): boolean {
-    return (['profile', 'plan', 'objects', 'phrases', 'items'] as StoreName[]).some((s) => this.mem.get(s)!.size > 0);
+    return (['profile', 'plan', 'objects', 'phrases', 'items', 'occurrences'] as StoreName[]).some((s) => this.mem.get(s)!.size > 0);
   }
   shouldAskConsent(): boolean {
     return this.mode === 'undecided' && !this.askedThisSession && this.hasProgress();
