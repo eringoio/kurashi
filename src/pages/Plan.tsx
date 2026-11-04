@@ -76,7 +76,7 @@ export function Now() {
         </div>
         {group.length === 1 && <p className="sub"><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} /></p>}
         <DayChoice group={group} today={g.today}
-          onPick={async (d, ids) => { for (const id of ids) await g.setPlan(id, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
+          onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
           onLater={() => navigate('/all')} />
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
       </>

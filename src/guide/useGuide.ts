@@ -18,6 +18,8 @@ export interface Guide {
   answer(qid: string, v: Value): Promise<void>;
   setObjects(held: Record<string, boolean>): Promise<void>;
   setPlan(cardId: string, patch: Partial<PlanRecord>): Promise<void>;
+  /** 複数の手続きに同じ変更を書く（同じ所の日をまとめて決める）。手続きごとに別のキーなので、順に書いても消し合わない */
+  setPlans(cardIds: string[], patch: Partial<PlanRecord>): Promise<void>;
   setResume(step: string | null): Promise<void>;
   markSeenAll(): Promise<boolean>;
 }
@@ -47,6 +49,12 @@ export function useGuide(): Guide {
       async setPlan(cardId, patch) {
         const cur = plan[cardId] ?? { card_id: cardId, status: 'todo' as const };
         await v.put('plan', cardId, { ...cur, ...patch, status_changed_on: today, data_version: DATA().cards.find((c) => c.id === cardId)?.data_version });
+      },
+      async setPlans(cardIds, patch) {
+        for (const id of cardIds) {
+          const cur = (v.get<PlanRecord>('plan', id)) ?? { card_id: id, status: 'todo' as const };
+          await v.put('plan', id, { ...cur, ...patch, status_changed_on: today, data_version: DATA().cards.find((c) => c.id === id)?.data_version });
+        }
       },
       async setResume(step) {
         if (step) { if (v.get<Resume>('resume', 'value')?.step !== step) await v.put('resume', 'value', { step, started_on: today } satisfies Resume); }

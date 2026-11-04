@@ -29,6 +29,7 @@ export interface CardGuide {
   objects: Record<string, boolean>;
   answer(qid: string, v: Value): Promise<void>;
   setPlan(cardId: string, patch: Partial<PlanRecord>): Promise<void>;
+  setPlans(cardIds: string[], patch: Partial<PlanRecord>): Promise<void>;
 }
 /** 道の組み立て：引っ越し（/c/・/now・/all）とイベント（/e/{id}/c/・/e/{id}・/e/{id}/all） */
 export interface CardPaths { card: string; now: string; all: string }
@@ -102,7 +103,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
         </div>
         {/* 日を変えるときは、この項目だけ。初めて決めるときは、同じ所の項目も一緒に聞く */}
         <DayChoice group={c.plan?.planned_on ? [c] : visitGroup(g.out.cards, c)} today={g.today}
-          onPick={async (d, ids) => { for (const id of ids) await g.setPlan(id, { planned_on: d }); onLive(L('day.set') + fmtDay(d, level)); setMode({ kind: 'planned', day: d, ids }); }}
+          onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); onLive(L('day.set') + fmtDay(d, level)); setMode({ kind: 'planned', day: d, ids }); }}
           onLater={() => setMode({ kind: 'main' })} />
       </>
     );
