@@ -10,8 +10,9 @@
     "preview": "vite preview --port 4173 --strictPort",
     "test": "vitest run",
     "test:a11y": "playwright test",
-    "check": "tsc --noEmit && vitest run && playwright test",
-    "icons": "node scripts/make-icons.js"
+    "check": "tsc --noEmit && node scripts/furigana.cjs --check && vitest run && playwright test",
+    "icons": "node scripts/make-icons.js",
+    "furigana": "node scripts/furigana.cjs"
   },
   "dependencies": {
     "@fontsource/zen-maru-gothic": "^5.3.1",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "fake-indexeddb": "^6.0.0",
+    "kuromoji": "^0.1.2",
     "typescript": "^5.6.3",
     "vite": "^5.4.10",
     "vitest": "^2.1.4"

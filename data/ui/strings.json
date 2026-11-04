@@ -6,67 +6,67 @@
     "en": "kurashi"
   },
   "app.tag": {
-    "ja": "試作",
+    "ja": "{試作|しさく}",
     "ja_easy": "{試作|しさく}",
     "en": "Prototype"
   },
   "app.skip": {
-    "ja": "本文へ移る",
+    "ja": "{本文|ほんぶん}へ{移|うつ}る",
     "ja_easy": "{本文|ほんぶん}へ",
     "en": "Skip to content"
   },
   "nav.help": {
-    "ja": "相談",
+    "ja": "{相談|そうだん}",
     "ja_easy": "{相談|そうだん}",
     "en": "Help"
   },
   "nav.settings": {
-    "ja": "文字・ことば",
-    "ja_easy": "{文字|もじ}・ことば",
-    "en": "Aa · Language"
+    "ja": "{設定|せってい}・Language",
+    "ja_easy": "{設定|せってい}・Language",
+    "en": "Settings · 設定"
   },
   "nav.home": {
-    "ja": "入口にもどる",
+    "ja": "{入口|いりぐち}にもどる",
     "ja_easy": "{入口|いりぐち}にもどる",
     "en": "Back to start"
   },
   "nav.close": {
-    "ja": "閉じる",
+    "ja": "{閉|と}じる",
     "ja_easy": "{閉|と}じる",
     "en": "Close"
   },
   "home.title": {
-    "ja": "今日は、何をしますか？",
+    "ja": "{今日|きょう}は、{何|なに}をしますか？",
     "ja_easy": "きょうは、{何|なに}をしますか？",
     "en": "What would you like to do today?"
   },
   "home.move": {
-    "ja": "引っ越し・住む場所のこと",
+    "ja": "{引|ひ}っ{越|こ}し・{住|す}む{場所|ばしょ}のこと",
     "ja_easy": "{引|ひ}っ{越|こ}し・{住|す}む{場所|ばしょ}のこと",
     "en": "Moving / where I live"
   },
   "home.gomi": {
-    "ja": "ごみの出し方",
+    "ja": "ごみの{出|だ}し{方|かた}",
     "ja_easy": "ごみの{出|だ}し{方|かた}",
     "en": "How to put out garbage"
   },
   "home.letter": {
-    "ja": "届いた書類を撮る",
+    "ja": "{届|とど}いた{書類|しょるい}を{撮|と}る",
     "ja_easy": "{届|とど}いた{書類|しょるい}を{撮|と}る",
     "en": "Photograph a letter I got"
   },
   "home.search": {
-    "ja": "ほかの手続きを探す",
+    "ja": "ほかの{手続|てつづ}きを{探|さが}す",
     "ja_easy": "ほかの{手続|てつづ}きを{探|さが}す",
     "en": "Find another procedure"
   },
   "home.locate": {
-    "ja": "いまいる場所から",
+    "ja": "いまいる{場所|ばしょ}から",
     "ja_easy": "いまいる{場所|ばしょ}から",
     "en": "From where I am now"
   },
   "home.qr": {
-    "ja": "QRから開く",
+    "ja": "QRから{開|ひら}く",
     "ja_easy": "QRから{開|ひら}く",
     "en": "Open from a QR code"
   },
@@ -76,37 +76,37 @@
     "en": "About this app"
   },
   "home.disclaimer": {
-    "ja": "ご利用の前に（免責）",
+    "ja": "ご{利用|りよう}の{前|まえ}に（{免責|めんせき}）",
     "ja_easy": "{使|つか}う{前|まえ}に",
     "en": "Before you use this app"
   },
   "viewonly.banner": {
-    "ja": "見るだけ（保存しません）",
+    "ja": "{見|み}るだけ（{保存|ほぞん}しません）",
     "ja_easy": "{見|み}るだけ（{残|のこ}しません）",
     "en": "View only (nothing is saved)"
   },
   "viewonly.end": {
-    "ja": "見るだけを終わる",
+    "ja": "{見|み}るだけを{終|お}わる",
     "ja_easy": "{見|み}るだけを{終|お}わる",
     "en": "End view only"
   },
   "consent.q": {
-    "ja": "このガイドを、この端末に残しますか？",
+    "ja": "このガイドを、この{端末|たんまつ}に{残|のこ}しますか？",
     "ja_easy": "このガイドを、このスマホに{残|のこ}しますか？",
     "en": "Keep this guide on this device?"
   },
   "consent.note": {
-    "ja": "アカウントは要りません。名前や住所は聞きません。いつでも全部消せます。",
+    "ja": "アカウントは{要|い}りません。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。いつでも{全部|ぜんぶ}{消|け}せます。",
     "ja_easy": "アカウントは{要|い}りません。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。いつでも{全部|ぜんぶ}{消|け}せます。",
     "en": "No account. We never ask your name or address. You can erase everything any time."
   },
   "consent.keep": {
-    "ja": "残す",
+    "ja": "{残|のこ}す",
     "ja_easy": "{残|のこ}す",
     "en": "Keep"
   },
   "consent.no": {
-    "ja": "残さない",
+    "ja": "{残|のこ}さない",
     "ja_easy": "{残|のこ}さない",
     "en": "Don't keep"
   },
@@ -116,32 +116,32 @@
     "en": "More"
   },
   "consent.nothing": {
-    "ja": "何も残さない（次に開いたとき、また聞きます）",
+    "ja": "{何|なに}も{残|のこ}さない（{次|つぎ}に{開|ひら}いたとき、また{聞|き}きます）",
     "ja_easy": "{何|なに}も{残|のこ}さない（また{聞|き}きます）",
     "en": "Keep nothing at all (we will ask again next time)"
   },
   "consent.detail": {
-    "ja": "答えは、この端末の中だけに残します。外には送りません。ブラウザによっては、消えることがあります。学校や家族と同じ端末を使うときは、「残さない」か「見るだけ」を選んでください。",
+    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけに{残|のこ}します。{外|そと}には{送|おく}りません。ブラウザによっては、{消|き}えることがあります。{学校|がっこう}や{家族|かぞく}と{同|おな}じ{端末|たんまつ}を{使|つか}うときは、「{残|のこ}さない」か「{見|み}るだけ」を{選|えら}んでください。",
     "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけに{残|のこ}します。{外|そと}に{送|おく}りません。{消|き}えることがあります。ほかの{人|ひと}と{同|おな}じスマホを{使|つか}うときは、「{残|のこ}さない」を{選|えら}んでください。",
     "en": "Your answers stay only on this device. They are never sent. Some browsers may erase them. If you share this device with others, choose “Don't keep” or “View only”."
   },
   "consent.keptNote": {
-    "ja": "この端末に残します。設定から、いつでも消せます。",
+    "ja": "この{端末|たんまつ}に{残|のこ}します。{設定|せってい}から、いつでも{消|け}せます。",
     "ja_easy": "このスマホに{残|のこ}します。いつでも{消|け}せます。",
     "en": "Kept on this device. You can erase it in Settings at any time."
   },
   "consent.noNote": {
-    "ja": "残しません。閉じると消えます。設定から変えられます。",
+    "ja": "{残|のこ}しません。{閉|と}じると{消|き}えます。{設定|せってい}から{変|か}えられます。",
     "ja_easy": "{残|のこ}しません。{閉|と}じると{消|き}えます。",
     "en": "Not kept. It will be gone when you close the app. You can change this in Settings."
   },
   "storage.unavailable": {
-    "ja": "この画面では、この端末に残せません（プライベートブラウズなど）。閉じると消えます。",
+    "ja": "この{画面|がめん}では、この{端末|たんまつ}に{残|のこ}せません（プライベートブラウズなど）。{閉|と}じると{消|き}えます。",
     "ja_easy": "ここでは{残|のこ}せません。{閉|と}じると{消|き}えます。",
     "en": "This browser window cannot keep data (for example, private browsing). It will be gone when you close it."
   },
   "settings.title": {
-    "ja": "文字・ことば・保存",
+    "ja": "{文字|もじ}・ことば・{保存|ほぞん}",
     "ja_easy": "{文字|もじ}・ことば・{保存|ほぞん}",
     "en": "Text, language and saving"
   },
@@ -151,7 +151,7 @@
     "en": "Language"
   },
   "settings.size": {
-    "ja": "文字の大きさ",
+    "ja": "{文字|もじ}の{大|おお}きさ",
     "ja_easy": "{字|じ}の{大|おお}きさ",
     "en": "Text size"
   },
@@ -161,12 +161,12 @@
     "en": "Normal"
   },
   "settings.size1": {
-    "ja": "大きい",
+    "ja": "{大|おお}きい",
     "ja_easy": "{大|おお}きい",
     "en": "Large"
   },
   "settings.size2": {
-    "ja": "とても大きい",
+    "ja": "とても{大|おお}きい",
     "ja_easy": "とても{大|おお}きい",
     "en": "Extra large"
   },
@@ -176,87 +176,87 @@
     "en": "Furigana (reading aid)"
   },
   "settings.on": {
-    "ja": "出す",
+    "ja": "{出|だ}す",
     "ja_easy": "{出|だ}す",
     "en": "Show"
   },
   "settings.off": {
-    "ja": "出さない",
+    "ja": "{出|だ}さない",
     "ja_easy": "{出|だ}さない",
     "en": "Hide"
   },
   "settings.saving": {
-    "ja": "保存",
+    "ja": "{保存|ほぞん}",
     "ja_easy": "{残|のこ}す",
     "en": "Saving"
   },
   "settings.saving.yes": {
-    "ja": "この端末に残しています",
+    "ja": "この{端末|たんまつ}に{残|のこ}しています",
     "ja_easy": "このスマホに{残|のこ}しています",
     "en": "Kept on this device"
   },
   "settings.saving.no": {
-    "ja": "残していません",
+    "ja": "{残|のこ}していません",
     "ja_easy": "{残|のこ}していません",
     "en": "Not kept"
   },
   "settings.saving.memory": {
-    "ja": "まだ決めていません",
+    "ja": "まだ{決|き}めていません",
     "ja_easy": "まだ{決|き}めていません",
     "en": "Not decided yet"
   },
   "settings.persist.no": {
-    "ja": "ブラウザが消すことがあります",
+    "ja": "ブラウザが{消|け}すことがあります",
     "ja_easy": "ブラウザが{消|け}すことがあります",
     "en": "The browser may erase it"
   },
   "settings.stores": {
-    "ja": "残している内容",
+    "ja": "{残|のこ}している{内容|ないよう}",
     "ja_easy": "{残|のこ}しているもの",
     "en": "What is kept"
   },
   "settings.storesEmpty": {
-    "ja": "まだ何も残していません。",
+    "ja": "まだ{何|なに}も{残|のこ}していません。",
     "ja_easy": "まだ{何|なに}も{残|のこ}していません。",
     "en": "Nothing is kept yet."
   },
   "settings.deleteOne": {
-    "ja": "消す",
+    "ja": "{消|け}す",
     "ja_easy": "{消|け}す",
     "en": "Erase"
   },
   "settings.deleted": {
-    "ja": "消しました",
+    "ja": "{消|け}しました",
     "ja_easy": "{消|け}しました",
     "en": "Erased"
   },
   "settings.stop": {
-    "ja": "残すのをやめる",
+    "ja": "{残|のこ}すのをやめる",
     "ja_easy": "{残|のこ}すのをやめる",
     "en": "Stop keeping"
   },
   "settings.startKeep": {
-    "ja": "この端末に残す",
+    "ja": "この{端末|たんまつ}に{残|のこ}す",
     "ja_easy": "このスマホに{残|のこ}す",
     "en": "Keep on this device"
   },
   "settings.viewOnly": {
-    "ja": "見るだけにする",
+    "ja": "{見|み}るだけにする",
     "ja_easy": "{見|み}るだけにする",
     "en": "View only"
   },
   "settings.wipe": {
-    "ja": "全部消す",
+    "ja": "{全部|ぜんぶ}{消|け}す",
     "ja_easy": "{全部|ぜんぶ}{消|け}す",
     "en": "Erase everything"
   },
   "settings.wipeConfirm": {
-    "ja": "全部消します。ブラウザの履歴は消えません。よろしいですか？",
+    "ja": "{全部|ぜんぶ}{消|け}します。ブラウザの{履歴|りれき}は{消|き}えません。よろしいですか？",
     "ja_easy": "{全部|ぜんぶ}{消|け}します。いいですか？",
     "en": "This erases everything on this device (not your browser history). Are you sure?"
   },
   "settings.wipeYes": {
-    "ja": "全部消す",
+    "ja": "{全部|ぜんぶ}{消|け}す",
     "ja_easy": "{全部|ぜんぶ}{消|け}す",
     "en": "Erase everything"
   },
@@ -266,12 +266,12 @@
     "en": "Cancel"
   },
   "settings.wiped": {
-    "ja": "全部消しました。",
+    "ja": "{全部|ぜんぶ}{消|け}しました。",
     "ja_easy": "{全部|ぜんぶ}{消|け}しました。",
     "en": "Everything has been erased."
   },
   "settings.speech": {
-    "ja": "読み上げの速さ",
+    "ja": "{読|よ}み{上|あ}げの{速|はや}さ",
     "ja_easy": "{読|よ}む{速|はや}さ",
     "en": "Reading speed"
   },
@@ -286,127 +286,127 @@
     "en": "Slow"
   },
   "store.settings": {
-    "ja": "表示の設定",
+    "ja": "{表示|ひょうじ}の{設定|せってい}",
     "ja_easy": "{表示|ひょうじ}の{設定|せってい}",
     "en": "Display settings"
   },
   "store.profile": {
-    "ja": "答え",
+    "ja": "{答|こた}え",
     "ja_easy": "{答|こた}え",
     "en": "Answers"
   },
   "store.plan": {
-    "ja": "手続きの状態と約束した日",
+    "ja": "{手続|てつづ}きの{状態|じょうたい}と{約束|やくそく}した{日|ひ}",
     "ja_easy": "{手続|てつづ}きと{日|ひ}",
     "en": "Procedures and planned days"
   },
   "store.items": {
-    "ja": "届いたもの",
+    "ja": "{届|とど}いたもの",
     "ja_easy": "{届|とど}いたもの",
     "en": "Things that arrived"
   },
   "store.dates": {
-    "ja": "日付",
+    "ja": "{日付|ひづけ}",
     "ja_easy": "{日付|ひづけ}",
     "en": "Dates"
   },
   "store.objects": {
-    "ja": "持ち物の答え",
+    "ja": "{持|も}ち{物|もの}の{答|こた}え",
     "ja_easy": "{持|も}ち{物|もの}",
     "en": "Belongings"
   },
   "store.phrases": {
-    "ja": "残した言葉",
+    "ja": "{残|のこ}した{言葉|ことば}",
     "ja_easy": "{残|のこ}した{言葉|ことば}",
     "en": "Saved words"
   },
   "store.resume": {
-    "ja": "途中の手順",
+    "ja": "{途中|とちゅう}の{手順|てじゅん}",
     "ja_easy": "{途中|とちゅう}のこと",
     "en": "Unfinished step"
   },
   "speak.label": {
-    "ja": "読み上げる",
+    "ja": "{読|よ}み{上|あ}げる",
     "ja_easy": "{読|よ}む",
     "en": "Read aloud"
   },
   "speak.stop": {
-    "ja": "止める",
+    "ja": "{止|と}める",
     "ja_easy": "{止|と}める",
     "en": "Stop"
   },
   "help.title": {
-    "ja": "相談窓口",
+    "ja": "{相談|そうだん}{窓口|まどぐち}",
     "ja_easy": "{相談|そうだん}するところ",
     "en": "Where to get help"
   },
   "help.body": {
-    "ja": "（仮）相談窓口の連絡先は、公式のページで確かめてから載せます。いまは、名古屋市の公式ページと、学校の留学生係に聞いてください。",
+    "ja": "（{仮|かり}）{相談|そうだん}{窓口|まどぐち}の{連絡|れんらく}{先|さき}は、{公式|こうしき}のページで{確|たし}かめてから{載|の}せます。いまは、{名古屋|なごや}{市|し}の{公式|こうしき}ページと、{学校|がっこう}の{留学生|りゅうがくせい}{係|がかり}に{聞|き}いてください。",
     "ja_easy": "（{仮|かり}）{連絡先|れんらくさき}は、あとで{載|の}せます。いまは、{学校|がっこう}の{人|ひと}に{聞|き}いてください。",
     "en": "(Draft) Contact details will be added after we check the official pages. For now, ask the City of Nagoya or your school's international student office.",
     "status": "draft"
   },
   "page.outOfScope.title": {
-    "ja": "このアプリでは、まだ案内していません",
+    "ja": "このアプリでは、まだ{案内|あんない}していません",
     "ja_easy": "このアプリでは、まだ{案内|あんない}していません",
     "en": "This app does not cover this yet",
     "status": "draft"
   },
   "page.outOfScope.body": {
-    "ja": "（仮）このアプリは、名古屋市に住む人の手続きを案内しています。名古屋市の外へ引っ越す人、名古屋市以外で引っ越す人、住むためではない短い滞在の人の手続きは、まだ案内していません。あなたの場合は、引っ越し先・引っ越し前の市区町村の公式の情報で確かめてください。",
+    "ja": "（{仮|かり}）このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。{名古屋|なごや}{市|し}の{外|そと}へ{引|ひ}っ{越|こ}す{人|ひと}、{名古屋|なごや}{市|し}{以外|いがい}で{引|ひ}っ{越|こ}す{人|ひと}、{住|す}むためではない{短|みじか}い{滞在|たいざい}の{人|ひと}の{手続|てつづ}きは、まだ{案内|あんない}していません。あなたの{場合|ばあい}は、{引|ひ}っ{越|こ}し{先|さき}・{引|ひ}っ{越|こ}し{前|まえ}の{市区|しく}{町村|ちょうそん}の{公式|こうしき}の{情報|じょうほう}で{確|たし}かめてください。",
     "ja_easy": "（{仮|かり}）このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。あなたの{手続|てつづ}きは、まだ{案内|あんない}していません。{市|し}や{町|まち}の{公式|こうしき}のページで{確|たし}かめてください。",
     "en": "(Draft) This app guides people who live in Nagoya City. It does not yet cover moving out of Nagoya, moving within another city, or short stays that are not for living. Please check the official information of your city or town.",
     "status": "draft"
   },
   "page.outOfScope.link": {
-    "ja": "名古屋市の公式ページ（引っ越しの手続き）",
+    "ja": "{名古屋|なごや}{市|し}の{公式|こうしき}ページ（{引|ひ}っ{越|こ}しの{手続|てつづ}き）",
     "ja_easy": "{名古屋市|なごやし}の{公式|こうしき}のページ",
     "en": "City of Nagoya official page (moving procedures)"
   },
   "page.comingSoon.title": {
-    "ja": "準備中です",
+    "ja": "{準備|じゅんび}{中|ちゅう}です",
     "ja_easy": "じゅんびしています",
     "en": "Coming soon",
     "status": "draft"
   },
   "page.comingSoon.body": {
-    "ja": "（仮）この案内は、まだ作っていません。作るときも、出典を確かめたことだけを書きます。いまは、公式のページか相談窓口で確かめてください。",
+    "ja": "（{仮|かり}）この{案内|あんない}は、まだ{作|つく}っていません。{作|つく}るときも、{出典|しゅってん}を{確|たし}かめたことだけを{書|か}きます。いまは、{公式|こうしき}のページか{相談|そうだん}{窓口|まどぐち}で{確|たし}かめてください。",
     "ja_easy": "（{仮|かり}）まだ{作|つく}っていません。{公式|こうしき}のページか、{相談|そうだん}するところで{確|たし}かめてください。",
     "en": "(Draft) This guide is not ready yet. When it is, it will only say what we have checked in official sources. For now, please check official pages or ask for help.",
     "status": "draft"
   },
   "page.comingSoon.events": {
-    "ja": "準備中の出来事：働き始めた・仕事が変わった／学校に入った・卒業した／結婚した・パートナーと暮らし始めた／体調が悪い・病院に行きたい／子どもが生まれた／事業を始めた／何かをなくした",
+    "ja": "{準備|じゅんび}{中|ちゅう}の{出来事|できごと}：{働|はたら}き{始|はじ}めた・{仕事|しごと}が{変|か}わった／{学校|がっこう}に{入|はい}った・{卒業|そつぎょう}した／{結婚|けっこん}した・パートナーと{暮|く}らし{始|はじ}めた／{体調|たいちょう}が{悪|わる}い・{病院|びょういん}に{行|い}きたい／{子|こ}どもが{生|う}まれた／{事業|じぎょう}を{始|はじ}めた／{何|なに}かをなくした",
     "ja_easy": "じゅんびしていること：{働|はたら}く／{学校|がっこう}／{結婚|けっこん}／{病院|びょういん}／{子|こ}ども／{仕事|しごと}を{始|はじ}める／なくしもの",
     "en": "Coming later: starting or changing a job / starting or finishing school / marriage or living with a partner / feeling sick or seeing a doctor / having a baby / starting a business / losing something",
     "status": "draft"
   },
   "page.disclaimer.title": {
-    "ja": "ご利用の前に",
+    "ja": "ご{利用|りよう}の{前|まえ}に",
     "ja_easy": "{使|つか}う{前|まえ}に",
     "en": "Before you use this app",
     "status": "draft"
   },
   "page.disclaimer.p1": {
-    "ja": "（仮）このアプリは、名古屋市や国の機関が運営するものではありません。公開されている公式の情報をもとに、手続きに気づくための案内をします。",
+    "ja": "（{仮|かり}）このアプリは、{名古屋|なごや}{市|し}や{国|くに}の{機関|きかん}が{運営|うんえい}するものではありません。{公開|こうかい}されている{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きに{気|き}づくための{案内|あんない}をします。",
     "ja_easy": "（{仮|かり}）このアプリは、{市|し}や{国|くに}のものではありません。{公式|こうしき}の{情報|じょうほう}をもとに、{案内|あんない}します。",
     "en": "(Draft) This app is not run by the City of Nagoya or any government office. It helps you notice procedures, based on published official information.",
     "status": "draft"
   },
   "page.disclaimer.p2": {
-    "ja": "（仮）内容は確認した日の時点のものです。制度や期限は変わることがあります。「要確認」と書いたことは、窓口で確かめてください。最終的な判断は、手続きの窓口が行います。",
+    "ja": "（{仮|かり}）{内容|ないよう}は{確認|かくにん}した{日|ひ}の{時点|じてん}のものです。{制度|せいど}や{期限|きげん}は{変|か}わることがあります。「{要|よう}{確認|かくにん}」と{書|か}いたことは、{窓口|まどぐち}で{確|たし}かめてください。{最終|さいしゅう}{的|てき}な{判断|はんだん}は、{手続|てつづ}きの{窓口|まどぐち}が{行|おこな}います。",
     "ja_easy": "（{仮|かり}）{制度|せいど}や{期限|きげん}は{変|か}わることがあります。「{要確認|ようかくにん}」のことは、{窓口|まどぐち}で{聞|き}いてください。",
     "en": "(Draft) Information is as of the date it was checked. Rules and deadlines can change. Anything marked “to be checked” must be confirmed at the counter. The office in charge makes the final decision.",
     "status": "draft"
   },
   "page.disclaimer.p3": {
-    "ja": "（仮）在留資格・働くこと・税金・医療について、あなたの場合にどうなるかは判断しません。学校・名古屋出入国在留管理局・専門家に相談してください。",
+    "ja": "（{仮|かり}）{在留|ざいりゅう}{資格|しかく}・{働|はたら}くこと・{税金|ぜいきん}・{医療|いりょう}について、あなたの{場合|ばあい}にどうなるかは{判断|はんだん}しません。{学校|がっこう}・{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}・{専門|せんもん}{家|か}に{相談|そうだん}してください。",
     "ja_easy": "（{仮|かり}）ビザ・{仕事|しごと}・{税金|ぜいきん}・{病気|びょうき}のことは、{決|き}められません。{学校|がっこう}や{専門|せんもん}の{人|ひと}に{聞|き}いてください。",
     "en": "(Draft) We do not decide your individual case for residence status, work, tax or medical matters. Please ask your school, the Nagoya Regional Immigration Services Bureau, or a professional.",
     "status": "draft"
   },
   "page.disclaimer.p4": {
-    "ja": "（仮）このアプリは申請を代わりに行いません。特定の会社・銀行を勧めるものではありません。",
+    "ja": "（{仮|かり}）このアプリは{申請|しんせい}を{代|か}わりに{行|おこな}いません。{特定|とくてい}の{会社|かいしゃ}・{銀行|ぎんこう}を{勧|すす}めるものではありません。",
     "ja_easy": "（{仮|かり}）{申請|しんせい}は{代|か}わりにしません。{会社|かいしゃ}や{銀行|ぎんこう}を{勧|すす}めません。",
     "en": "(Draft) This app does not apply for you, and does not recommend any company or bank.",
     "status": "draft"
@@ -417,32 +417,32 @@
     "en": "About this app"
   },
   "page.about.p1": {
-    "ja": "名古屋市で暮らす人が、生活の出来事から、知らなかった手続きに気づくためのアプリです（名前は暫定です）。",
+    "ja": "{名古屋|なごや}{市|し}で{暮|く}らす{人|ひと}が、{生活|せいかつ}の{出来事|できごと}から、{知|し}らなかった{手続|てつづ}きに{気|き}づくためのアプリです（{名前|なまえ}は{暫定|ざんてい}です）。",
     "ja_easy": "{名古屋市|なごやし}で{暮|く}らす{人|ひと}が、{知|し}らなかった{手続|てつづ}きに{気|き}づくためのアプリです。",
     "en": "An app that helps people living in Nagoya notice procedures they did not know about, starting from events in their life. (The name is temporary.)"
   },
   "page.about.p2": {
-    "ja": "答えは、この端末の中だけにあります。アカウントは要りません。名前・住所・番号は聞きません。写真と位置は、押したときだけ使い、保存も送信もしません。",
+    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}と{位置|いち}は、{押|お}したときだけ{使|つか}い、{保存|ほぞん}も{送信|そうしん}もしません。",
     "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけです。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。{写真|しゃしん}と{場所|ばしょ}は{残|のこ}しません。",
     "en": "Answers stay on this device. No account. We never ask your name, address or numbers. Photos and location are used only when you tap, and are never saved or sent."
   },
   "page.about.p3": {
-    "ja": "WCAG 2.2 AA を目標にしています。確かめた範囲は、キーボード、axe、幅 320px、200% の拡大、グレースケールです（iPhone の VoiceOver は確認中）。",
+    "ja": "WCAG 2.2 AA を{目標|もくひょう}にしています。{確|たし}かめた{範囲|はんい}は、キーボード、axe、{幅|はば} 320px、200% の{拡大|かくだい}、グレースケールです（iPhone の VoiceOver は{確認|かくにん}{中|ちゅう}）。",
     "ja_easy": "{誰|だれ}でも{使|つか}えるように{作|つく}っています。",
     "en": "We aim for WCAG 2.2 AA. Checked so far: keyboard, axe, 320px width, 200% zoom and grayscale (iPhone VoiceOver: in progress)."
   },
   "page.devNote": {
-    "ja": "この画面は、実装の途中です。",
+    "ja": "この{画面|がめん}は、{実装|じっそう}の{途中|とちゅう}です。",
     "ja_easy": "この{画面|がめん}は、まだ{作|つく}っています。",
     "en": "This screen is still being built."
   },
   "page.draftMark": {
-    "ja": "仮の文です（作者の確認待ち）",
+    "ja": "{仮|かり}の{文|ぶん}です（{作者|さくしゃ}の{確認|かくにん}{待|ま}ち）",
     "ja_easy": "{仮|かり}の{文|ぶん}です",
     "en": "Draft text (waiting for review)"
   },
   "move.changed": {
-    "ja": "最近、住む場所は変わりましたか？",
+    "ja": "{最近|さいきん}、{住|す}む{場所|ばしょ}は{変|か}わりましたか？",
     "ja_easy": "{最近|さいきん}、{住|す}む{場所|ばしょ}は{変|か}わりましたか？",
     "en": "Has your home changed recently?"
   },
@@ -462,27 +462,27 @@
     "en": "I'm not sure"
   },
   "move.why": {
-    "ja": "なぜ聞くの？",
+    "ja": "なぜ{聞|き}くの？",
     "ja_easy": "なぜ{聞|き}くの？",
     "en": "Why we ask"
   },
   "move.step": {
-    "ja": "引っ越しのこと",
+    "ja": "{引|ひ}っ{越|こ}しのこと",
     "ja_easy": "{引|ひ}っ{越|こ}しのこと",
     "en": "About your move"
   },
   "objects.title": {
-    "ja": "持っている物を、全部さわってください",
+    "ja": "{持|も}っている{物|もの}を、{全部|ぜんぶ}さわってください",
     "ja_easy": "{持|も}っている{物|もの}を、{全部|ぜんぶ}さわってください",
     "en": "Tap everything you have"
   },
   "objects.note": {
-    "ja": "さわらなかった物は「持っていない」として進みます。あとで変えられます。",
+    "ja": "さわらなかった{物|もの}は「{持|も}っていない」として{進|すす}みます。あとで{変|か}えられます。",
     "ja_easy": "さわらなかった{物|もの}は「{持|も}っていない」になります。",
     "en": "Anything you do not tap counts as “I don't have it”. You can change this later."
   },
   "objects.held": {
-    "ja": "持っている",
+    "ja": "{持|も}っている",
     "ja_easy": "{持|も}っている",
     "en": "I have it"
   },
@@ -492,12 +492,12 @@
     "en": "Next"
   },
   "check.eyebrow": {
-    "ja": "確かめ（見れば答えられます）",
+    "ja": "{確|たし}かめ（{見|み}れば{答|こた}えられます）",
     "ja_easy": "{見|み}て{答|こた}えます",
     "en": "A quick check (just look)"
   },
   "q.eyebrow": {
-    "ja": "あと少し聞きます",
+    "ja": "あと{少|すこ}し{聞|き}きます",
     "ja_easy": "あと{少|すこ}し{聞|き}きます",
     "en": "A few more questions"
   },
@@ -507,52 +507,52 @@
     "en": "Now"
   },
   "tab.all": {
-    "ja": "全体",
+    "ja": "{全体|ぜんたい}",
     "ja_easy": "{全部|ぜんぶ}",
     "en": "Overview"
   },
   "tab.nav": {
-    "ja": "画面の切り替え",
+    "ja": "{画面|がめん}の{切|き}り{替|か}え",
     "ja_easy": "{画面|がめん}の{切|き}り{替|か}え",
     "en": "Switch view"
   },
   "now.eyebrow.q": {
-    "ja": "いまの1つ：確かめ",
+    "ja": "いまの1つ：{確|たし}かめ",
     "ja_easy": "いまの１つ：{確|たし}かめ",
     "en": "Now: a check"
   },
   "now.eyebrow.plan": {
-    "ja": "いまの1つ：日を決める",
+    "ja": "いまの1つ：{日|ひ}を{決|き}める",
     "ja_easy": "いまの１つ：{日|ひ}を{決|き}める",
     "en": "Now: choose a day"
   },
   "now.eyebrow.wait": {
-    "ja": "いまの1つ：届くのを待っている",
+    "ja": "いまの1つ：{届|とど}くのを{待|ま}っている",
     "ja_easy": "いまの１つ：{待|ま}っています",
     "en": "Now: waiting"
   },
   "now.eyebrow.until": {
-    "ja": "いまの1つ：約束した日を待つ",
+    "ja": "いまの1つ：{約束|やくそく}した{日|ひ}を{待|ま}つ",
     "ja_easy": "いまの１つ：{決|き}めた{日|ひ}を{待|ま}つ",
     "en": "Now: waiting for your planned day"
   },
   "now.plan.title": {
-    "ja": "いつ行きますか？",
+    "ja": "いつ{行|い}きますか？",
     "ja_easy": "いつ{行|い}きますか？",
     "en": "When will you go?"
   },
   "now.plan.go": {
-    "ja": "日を決める",
+    "ja": "{日|ひ}を{決|き}める",
     "ja_easy": "{日|ひ}を{決|き}める",
     "en": "Choose a day"
   },
   "now.wait.title": {
-    "ja": "届きましたか？",
+    "ja": "{届|とど}きましたか？",
     "ja_easy": "{届|とど}きましたか？",
     "en": "Has it arrived?"
   },
   "now.wait.yes": {
-    "ja": "届いた",
+    "ja": "{届|とど}いた",
     "ja_easy": "{届|とど}きました",
     "en": "Yes, it arrived"
   },
@@ -562,7 +562,7 @@
     "en": "Not yet"
   },
   "now.until.title": {
-    "ja": "決めた日まで、することはありません",
+    "ja": "{決|き}めた{日|ひ}まで、することはありません",
     "ja_easy": "{決|き}めた{日|ひ}まで、することはありません",
     "en": "Nothing to do until your planned day"
   },
@@ -572,12 +572,12 @@
     "en": "Nothing to do right now"
   },
   "now.idle.sub": {
-    "ja": "全体から、どの項目でも開けます。",
+    "ja": "{全体|ぜんたい}から、どの{項目|こうもく}でも{開|ひら}けます。",
     "ja_easy": "{全部|ぜんぶ}から、どれでも{見|み}られます。",
     "en": "You can open any item from the overview."
   },
   "now.seeAll": {
-    "ja": "全体を見る",
+    "ja": "{全体|ぜんたい}を{見|み}る",
     "ja_easy": "{全部|ぜんぶ}を{見|み}る",
     "en": "See the overview"
   },
@@ -592,27 +592,27 @@
     "en": "What comes next"
   },
   "all.sub": {
-    "ja": "どれからでも開けます。いまの1つは、おすすめの順番です。",
+    "ja": "どれからでも{開|ひら}けます。いまの1つは、おすすめの{順番|じゅんばん}です。",
     "ja_easy": "どれからでも{見|み}られます。",
     "en": "Open any item in any order. “Now” is only a suggestion."
   },
   "sec.today": {
-    "ja": "いま（今週）",
+    "ja": "いま（{今週|こんしゅう}）",
     "ja_easy": "いま",
     "en": "Now (this week)"
   },
   "sec.check": {
-    "ja": "窓口で確かめる",
+    "ja": "{窓口|まどぐち}で{確|たし}かめる",
     "ja_easy": "{窓口|まどぐち}で{聞|き}く",
     "en": "Ask at the counter"
   },
   "sec.ask": {
-    "ja": "まだわからない（1つ答えるとわかる）",
+    "ja": "まだわからない（1つ{答|こた}えるとわかる）",
     "ja_easy": "まだわかりません",
     "en": "Not known yet (one answer will tell)"
   },
   "sec.wait": {
-    "ja": "届くのを待つ",
+    "ja": "{届|とど}くのを{待|ま}つ",
     "ja_easy": "{待|ま}つ",
     "en": "Waiting"
   },
@@ -627,22 +627,22 @@
     "en": "Done"
   },
   "sec.excluded": {
-    "ja": "関係なかったもの（理由つき）",
+    "ja": "{関係|かんけい}なかったもの（{理由|りゆう}つき）",
     "ja_easy": "{関係|かんけい}ないもの",
     "en": "Not for you (with reasons)"
   },
   "sec.out": {
-    "ja": "このアプリでは、まだ案内していないこと",
+    "ja": "このアプリでは、まだ{案内|あんない}していないこと",
     "ja_easy": "まだ{案内|あんない}していないこと",
     "en": "Not covered by this app yet"
   },
   "st.today": {
-    "ja": "必要",
+    "ja": "{必要|ひつよう}",
     "ja_easy": "{必要|ひつよう}",
     "en": "Needed"
   },
   "st.check": {
-    "ja": "窓口で確認",
+    "ja": "{窓口|まどぐち}で{確認|かくにん}",
     "ja_easy": "{窓口|まどぐち}で{聞|き}く",
     "en": "Ask"
   },
@@ -652,7 +652,7 @@
     "en": "Not known yet"
   },
   "st.wait": {
-    "ja": "届くのを待つ",
+    "ja": "{届|とど}くのを{待|ま}つ",
     "ja_easy": "{待|ま}つ",
     "en": "Waiting"
   },
@@ -662,27 +662,27 @@
     "en": "Later"
   },
   "st.done": {
-    "ja": "済み",
+    "ja": "{済|す}み",
     "ja_easy": "{終|お}わった",
     "en": "Done"
   },
   "st.excluded": {
-    "ja": "関係なし",
+    "ja": "{関係|かんけい}なし",
     "ja_easy": "{関係|かんけい}ない",
     "en": "Not for you"
   },
   "st.out": {
-    "ja": "まだ案内していない",
+    "ja": "まだ{案内|あんない}していない",
     "ja_easy": "まだ{案内|あんない}していない",
     "en": "Not covered yet"
   },
   "card.why": {
-    "ja": "理由",
+    "ja": "{理由|りゆう}",
     "ja_easy": "なぜ",
     "en": "Why"
   },
   "card.yourAnswers": {
-    "ja": "あなたの答え",
+    "ja": "あなたの{答|こた}え",
     "ja_easy": "あなたの{答|こた}え",
     "en": "Your answers"
   },
@@ -702,277 +702,277 @@
     "en": "Where"
   },
   "card.official": {
-    "ja": "正式な名前",
+    "ja": "{正式|せいしき}な{名前|なまえ}",
     "ja_easy": "{正式|せいしき}な{名前|なまえ}",
     "en": "Official name"
   },
   "card.planned": {
-    "ja": "行く日",
+    "ja": "{行|い}く{日|ひ}",
     "ja_easy": "{行|い}く{日|ひ}",
     "en": "Planned day"
   },
   "card.more": {
-    "ja": "くわしく（理由・出典・確認日）",
+    "ja": "くわしく（{理由|りゆう}・{出典|しゅってん}・{確認|かくにん}{日|び}）",
     "ja_easy": "くわしく",
     "en": "Details (why, sources, check date)"
   },
   "card.done": {
-    "ja": "済んだと記録する",
+    "ja": "{済|す}んだと{記録|きろく}する",
     "ja_easy": "{終|お}わったと{記録|きろく}する",
     "en": "Record as done"
   },
   "card.undone": {
-    "ja": "記録を消す（まだにもどす）",
+    "ja": "{記録|きろく}を{消|け}す（まだにもどす）",
     "ja_easy": "まだにもどす",
     "en": "Undo (mark as not done)"
   },
   "card.recordedDone": {
-    "ja": "「済み」と記録しました。",
+    "ja": "「{済|ず}み」と{記録|きろく}しました。",
     "ja_easy": "「{終|お}わった」と{記録|きろく}しました。",
     "en": "Recorded as done."
   },
   "card.recordedUndone": {
-    "ja": "記録を消しました。",
+    "ja": "{記録|きろく}を{消|け}しました。",
     "ja_easy": "{記録|きろく}を{消|け}しました。",
     "en": "Record removed."
   },
   "card.nowState": {
-    "ja": "いまの状態",
+    "ja": "いまの{状態|じょうたい}",
     "ja_easy": "いま",
     "en": "Now"
   },
   "card.notFound": {
-    "ja": "この項目は見つかりませんでした。",
+    "ja": "この{項目|こうもく}は{見|み}つかりませんでした。",
     "ja_easy": "この{項目|こうもく}はありません。",
     "en": "This item was not found."
   },
   "day.title": {
-    "ja": "いつ行きますか？",
+    "ja": "いつ{行|い}きますか？",
     "ja_easy": "いつ{行|い}きますか？",
     "en": "When will you go?"
   },
   "day.today": {
-    "ja": "今日",
+    "ja": "{今日|きょう}",
     "ja_easy": "きょう",
     "en": "Today"
   },
   "day.set": {
-    "ja": "行く日を決めました：",
+    "ja": "{行|い}く{日|ひ}を{決|き}めました：",
     "ja_easy": "{行|い}く{日|ひ}を{決|き}めました：",
     "en": "Day chosen: "
   },
   "day.clear": {
-    "ja": "日を消す",
+    "ja": "{日|ひ}を{消|け}す",
     "ja_easy": "{日|ひ}を{消|け}す",
     "en": "Clear the day"
   },
   "day.cleared": {
-    "ja": "日を消しました。",
+    "ja": "{日|ひ}を{消|け}しました。",
     "ja_easy": "{日|ひ}を{消|け}しました。",
     "en": "Day cleared."
   },
   "day.blocked": {
-    "ja": "選べません",
+    "ja": "{選|えら}べません",
     "ja_easy": "{選|えら}べません",
     "en": "Not available"
   },
   "day.needFirst": {
-    "ja": "先に、次の項目の日を決めてください：",
+    "ja": "{先|さき}に、{次|つぎ}の{項目|こうもく}の{日|ひ}を{決|き}めてください：",
     "ja_easy": "{先|さき}に、この{日|ひ}を{決|き}めてください：",
     "en": "First choose a day for: "
   },
   "day.minNote": {
-    "ja": "次の項目の日より前は選べません：",
+    "ja": "{次|つぎ}の{項目|こうもく}の{日|ひ}より{前|まえ}は{選|えら}べません：",
     "ja_easy": "この{日|ひ}より{前|まえ}は{選|えら}べません：",
     "en": "You cannot choose a day before: "
   },
   "why.ask": {
-    "ja": "次の答えによって、このカードが関係するかが変わります。",
+    "ja": "{次|つぎ}の{答|こた}えによって、このカードが{関係|かんけい}するかが{変|か}わります。",
     "ja_easy": "{答|こた}えで、{関係|かんけい}するかが{変|か}わります。",
     "en": "Whether this applies to you depends on your answer below."
   },
   "why.unknown": {
-    "ja": "「わからない」と答えたので、窓口で確かめてください。関係する可能性があります（要確認）。",
+    "ja": "「わからない」と{答|こた}えたので、{窓口|まどぐち}で{確|たし}かめてください。{関係|かんけい}する{可能|かのう}{性|せい}があります（{要|よう}{確認|かくにん}）。",
     "ja_easy": "「わからない」と{答|こた}えたので、{窓口|まどぐち}で{聞|き}いてください。",
     "en": "You said you are not sure, so please ask at the counter. It may apply to you (to be checked)."
   },
   "why.unverified": {
-    "ja": "あなたに関係する可能性があります。この情報は、まだ公式の原文で確かめていません。窓口で確かめてください（要確認）。",
+    "ja": "あなたに{関係|かんけい}する{可能|かのう}{性|せい}があります。この{情報|じょうほう}は、まだ{公式|こうしき}の{原文|げんぶん}で{確|たし}かめていません。{窓口|まどぐち}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "あなたに{関係|かんけい}するかもしれません。まだ{確|たし}かめていません。{窓口|まどぐち}で{聞|き}いてください。",
     "en": "This may apply to you. We have not yet checked this against the official source. Please ask at the counter (to be checked)."
   },
   "why.noQuestion": {
-    "ja": "このアプリでは確かめる質問がありません。窓口で確認してください。",
+    "ja": "このアプリでは{確|たし}かめる{質問|しつもん}がありません。{窓口|まどぐち}で{確認|かくにん}してください。",
     "ja_easy": "ここでは{確|たし}かめられません。{窓口|まどぐち}で{聞|き}いてください。",
     "en": "This app has no question to check this. Please ask at the counter."
   },
   "why.changed": {
-    "ja": "答えが変わりました。この手続きが必要か確かめてください。",
+    "ja": "{答|こた}えが{変|か}わりました。この{手続|てつづ}きが{必要|ひつよう}か{確|たし}かめてください。",
     "ja_easy": "{答|こた}えが{変|か}わりました。{必要|ひつよう}か{確|たし}かめてください。",
     "en": "Your answers changed. Please check whether you still need this."
   },
   "why.excluded": {
-    "ja": "あなたの答えは、このカードの条件に当てはまりませんでした。ほかの理由で必要な場合は、窓口で確認してください。",
+    "ja": "あなたの{答|こた}えは、このカードの{条件|じょうけん}に{当|あ}てはまりませんでした。ほかの{理由|りゆう}で{必要|ひつよう}な{場合|ばあい}は、{窓口|まどぐち}で{確認|かくにん}してください。",
     "ja_easy": "あなたの{答|こた}えでは、{関係|かんけい}ありません。ほかの{理由|りゆう}があれば、{窓口|まどぐち}で{聞|き}いてください。",
     "en": "Your answers do not match the conditions for this card. If you need it for another reason, ask at the counter."
   },
   "why.out": {
-    "ja": "このアプリは、名古屋市に住む人の手続きを案内しています。あなたの場合は、公式の情報で確認してください。",
+    "ja": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{公式|こうしき}の{情報|じょうほう}で{確認|かくにん}してください。",
     "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。{公式|こうしき}のページで{確|たし}かめてください。",
     "en": "This app guides people living in Nagoya. Please check the official information for your case."
   },
   "why.movedNotYet": {
-    "ja": "住み始めてから届け出ます（住む前は受け付けられません。要確認）。",
+    "ja": "{住|す}み{始|はじ}めてから{届|とど}け{出|で}ます（{住|す}む{前|まえ}は{受|う}け{付|つ}けられません。{要|よう}{確認|かくにん}）。",
     "ja_easy": "{住|す}み{始|はじ}めてから{出|だ}します。",
     "en": "Register after you move in (it cannot be done before; to be checked)."
   },
   "why.movedUnknown": {
-    "ja": "住み始めてから届け出ます。住み始めたら、答えを変えてください。",
+    "ja": "{住|す}み{始|はじ}めてから{届|とど}け{出|で}ます。{住|す}み{始|はじ}めたら、{答|こた}えを{変|か}えてください。",
     "ja_easy": "{住|す}み{始|はじ}めたら、{答|こた}えを{変|か}えてください。",
     "en": "Register after you move in. Change your answer once you have moved in."
   },
   "why.movedUnanswered": {
-    "ja": "住み始めたかを、下で聞きます。",
+    "ja": "{住|す}み{始|はじ}めたかを、{下|した}で{聞|き}きます。",
     "ja_easy": "{住|す}んでいるか、{下|した}で{聞|き}きます。",
     "en": "We ask below whether you have moved in."
   },
   "why.afterPrereq": {
-    "ja": "前に済ませることがあります。そのあとでできます。",
+    "ja": "{前|まえ}に{済|す}ませることがあります。そのあとでできます。",
     "ja_easy": "{先|さき}にすることがあります。",
     "en": "Something must be done first."
   },
   "why.byAnswer": {
-    "ja": "あなたの答え（在留カードの裏の住所）から、済んでいるとしました。",
+    "ja": "あなたの{答|こた}え（{在留|ざいりゅう}カードの{裏|うら}の{住所|じゅうしょ}）から、{済|す}んでいるとしました。",
     "ja_easy": "{在留|ざいりゅう}カードの{裏|うら}を{見|み}て、{終|お}わっているとしました。",
     "en": "From your answer (the address on the back of your residence card), this is done."
   },
   "note.orderCheck": {
-    "ja": "順番は窓口で確認してください（要確認）。",
+    "ja": "{順番|じゅんばん}は{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{順番|じゅんばん}は{窓口|まどぐち}で{聞|き}いてください。",
     "en": "Please confirm the order at the counter (to be checked)."
   },
   "note.prereqUnknown": {
-    "ja": "前に済ませることが済んでいるか、確かめてください。",
+    "ja": "{前|まえ}に{済|す}ませることが{済|す}んでいるか、{確|たし}かめてください。",
     "ja_easy": "{先|さき}のことが{終|お}わっているか、{確|たし}かめてください。",
     "en": "Please check that the earlier step is done."
   },
   "src.title": {
-    "ja": "理由と出典",
+    "ja": "{理由|りゆう}と{出典|しゅってん}",
     "ja_easy": "なぜ・どこに{書|か}いてある",
     "en": "Why and sources"
   },
   "src.source": {
-    "ja": "出典",
+    "ja": "{出典|しゅってん}",
     "ja_easy": "どこに{書|か}いてあるか",
     "en": "Source"
   },
   "src.checked": {
-    "ja": "確認日",
+    "ja": "{確認|かくにん}{日|び}",
     "ja_easy": "{確|たし}かめた{日|ひ}",
     "en": "Checked on"
   },
   "src.status": {
-    "ja": "確認状態",
+    "ja": "{確認|かくにん}{状態|じょうたい}",
     "ja_easy": "{確|たし}かめたか",
     "en": "Check status"
   },
   "src.status.verified": {
-    "ja": "確認済み（原文で確かめた）",
+    "ja": "{確認|かくにん}{済|ず}み（{原文|げんぶん}で{確|たし}かめた）",
     "ja_easy": "{確|たし}かめました",
     "en": "Checked against the official source"
   },
   "src.status.needs_check": {
-    "ja": "要確認（まだ原文で確かめていない）",
+    "ja": "{要|よう}{確認|かくにん}（まだ{原文|げんぶん}で{確|たし}かめていない）",
     "ja_easy": "まだ{確|たし}かめていません",
     "en": "To be checked (not yet checked against the official source)"
   },
   "src.status.outdated": {
-    "ja": "情報が古い可能性があります（公式のページで確かめてください）",
+    "ja": "{情報|じょうほう}が{古|ふる}い{可能|かのう}{性|せい}があります（{公式|こうしき}のページで{確|たし}かめてください）",
     "ja_easy": "{古|ふる}いかもしれません",
     "en": "May be out of date (please check the official page)"
   },
   "src.status.draft": {
-    "ja": "下書き",
+    "ja": "{下書|したが}き",
     "ja_easy": "{下書|したが}き",
     "en": "Draft"
   },
   "src.product": {
-    "ja": "このアプリの決まり（公式の基準ではありません）",
+    "ja": "このアプリの{決|き}まり（{公式|こうしき}の{基準|きじゅん}ではありません）",
     "ja_easy": "このアプリのきまり",
     "en": "A rule of this app (not an official standard)"
   },
   "src.open": {
-    "ja": "公式のページを開く",
+    "ja": "{公式|こうしき}のページを{開|ひら}く",
     "ja_easy": "{公式|こうしき}のページを{開|ひら}く",
     "en": "Open the official page"
   },
   "resume.title": {
-    "ja": "前回、途中のことがあります",
+    "ja": "{前回|ぜんかい}、{途中|とちゅう}のことがあります",
     "ja_easy": "{前|まえ}に、{途中|とちゅう}のことがあります",
     "en": "You left something unfinished"
   },
   "resume.sub": {
-    "ja": "前回は、引っ越しのことを答えている途中でした。",
+    "ja": "{前回|ぜんかい}は、{引|ひ}っ{越|こ}しのことを{答|こた}えている{途中|とちゅう}でした。",
     "ja_easy": "{前|まえ}は、{引|ひ}っ{越|こ}しのことを{答|こた}えている{途中|とちゅう}でした。",
     "en": "Last time, you were answering about your move."
   },
   "resume.continue": {
-    "ja": "続きから",
+    "ja": "{続|つづ}きから",
     "ja_easy": "{続|つづ}きから",
     "en": "Continue"
   },
   "resume.menu": {
-    "ja": "入口から始める",
+    "ja": "{入口|いりぐち}から{始|はじ}める",
     "ja_easy": "{入口|いりぐち}から",
     "en": "Start from the menu"
   },
   "promise.today": {
-    "ja": "今日は、行く日に決めた日です",
+    "ja": "{今日|きょう}は、{行|い}く{日|ひ}に{決|き}めた{日|ひ}です",
     "ja_easy": "きょうは、{行|い}く{日|ひ}です",
     "en": "Today is the day you planned"
   },
   "promise.past": {
-    "ja": "行く日が過ぎました。行けましたか？",
+    "ja": "{行|い}く{日|ひ}が{過|す}ぎました。{行|い}けましたか？",
     "ja_easy": "{行|い}く{日|ひ}が{過|す}ぎました。{行|い}けましたか？",
     "en": "Your planned day has passed. Did you go?"
   },
   "promise.went": {
-    "ja": "行けた（済んだ）",
+    "ja": "{行|い}けた（{済|す}んだ）",
     "ja_easy": "{行|い}けました",
     "en": "Yes, done"
   },
   "promise.notYet": {
-    "ja": "まだ（日を決め直す）",
+    "ja": "まだ（{日|ひ}を{決|き}め{直|なお}す）",
     "ja_easy": "まだです",
     "en": "Not yet (choose a new day)"
   },
   "review.title": {
-    "ja": "データの確認（作者用）",
+    "ja": "データの{確認|かくにん}（{作者|さくしゃ}{用|よう}）",
     "ja_easy": "データの{確認|かくにん}",
     "en": "Data review (for the author)"
   },
   "review.sub": {
-    "ja": "カード・ルール・関係・持ち物と、その確認状態の一覧です。直すときは data/ の中のファイルを開きます。",
+    "ja": "カード・ルール・{関係|かんけい}・{持|も}ち{物|もの}と、その{確認|かくにん}{状態|じょうたい}の{一覧|いちらん}です。{直|なお}すときは data/ の{中|なか}のファイルを{開|ひら}きます。",
     "ja_easy": "データの{一覧|いちらん}です。",
     "en": "Cards, rules, relations and belongings with their check status. Edit the files in data/."
   },
   "review.mode": {
-    "ja": "表示の確かめ方",
+    "ja": "{表示|ひょうじ}の{確|たし}かめ{方|かた}",
     "ja_easy": "{見|み}え{方|かた}",
     "en": "How to view"
   },
   "review.public": {
-    "ja": "公開時点のデータのとおり",
+    "ja": "{公開|こうかい}{時点|じてん}のデータのとおり",
     "ja_easy": "いまのデータのとおり",
     "en": "As published"
   },
   "review.verified": {
-    "ja": "確認済みとして見る（作者の確認用）",
+    "ja": "{確認|かくにん}{済|ず}みとして{見|み}る（{作者|さくしゃ}の{確認|かくにん}{用|よう}）",
     "ja_easy": "{確認済|かくにんず}みとして{見|み}る",
     "en": "View as if verified (for the author)"
   },
   "review.banner": {
-    "ja": "確認済みとして見ています（作者の確認用。公開の表示ではありません）",
+    "ja": "{確認|かくにん}{済|ず}みとして{見|み}ています（{作者|さくしゃ}の{確認|かくにん}{用|よう}。{公開|こうかい}の{表示|ひょうじ}ではありません）",
     "ja_easy": "{確認済|かくにんず}みとして{見|み}ています",
     "en": "Viewing as if verified (for the author, not the published view)"
   },
@@ -987,92 +987,92 @@
     "en": "Rules"
   },
   "review.relations": {
-    "ja": "関係",
+    "ja": "{関係|かんけい}",
     "ja_easy": "{関係|かんけい}",
     "en": "Relations"
   },
   "review.objects": {
-    "ja": "持ち物",
+    "ja": "{持|も}ち{物|もの}",
     "ja_easy": "{持|も}ち{物|もの}",
     "en": "Belongings"
   },
   "review.link": {
-    "ja": "データの確認（作者用）",
+    "ja": "データの{確認|かくにん}（{作者|さくしゃ}{用|よう}）",
     "ja_easy": "データの{確認|かくにん}",
     "en": "Data review (for the author)"
   },
   "home.continue": {
-    "ja": "続きを見る（いまの1つ）",
+    "ja": "{続|つづ}きを{見|み}る（いまの1つ）",
     "ja_easy": "{続|つづ}きを{見|み}る",
     "en": "Continue (Now)"
   },
   "card.answered": {
-    "ja": "答えました。",
+    "ja": "{答|こた}えました。",
     "ja_easy": "{答|こた}えました。",
     "en": "Answered."
   },
   "why.maybeDone": {
-    "ja": "在留カードの裏に今の住所があると答えました。済んでいるかもしれません。済んだかどうかは、窓口で確かめてください（要確認）。",
+    "ja": "{在留|ざいりゅう}カードの{裏|うら}に{今|いま}の{住所|じゅうしょ}があると{答|こた}えました。{済|す}んでいるかもしれません。{済|す}んだかどうかは、{窓口|まどぐち}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}があると{答|こた}えました。{終|お}わっているかもしれません。{窓口|まどぐち}で{聞|き}いてください。",
     "en": "You said your current address is on the back of your residence card. This may already be done. Please confirm at the counter (to be checked)."
   },
   "day.sug.today": {
-    "ja": "今日",
+    "ja": "{今日|きょう}",
     "ja_easy": "きょう",
     "en": "Today"
   },
   "day.sug.week": {
-    "ja": "今週のうちに",
+    "ja": "{今週|こんしゅう}のうちに",
     "ja_easy": "{今週|こんしゅう}",
     "en": "This week"
   },
   "day.sug.off": {
-    "ja": "次の休みの日",
+    "ja": "{次|つぎ}の{休|やす}みの{日|ひ}",
     "ja_easy": "{次|つぎ}の{休|やす}みの{日|ひ}",
     "en": "Next day off"
   },
   "day.other": {
-    "ja": "ほかの日を選ぶ",
+    "ja": "ほかの{日|ひ}を{選|えら}ぶ",
     "ja_easy": "ほかの{日|ひ}にする",
     "en": "Choose another day"
   },
   "day.later": {
-    "ja": "あとで決める",
+    "ja": "あとで{決|き}める",
     "ja_easy": "あとで{決|き}める",
     "en": "Decide later"
   },
   "day.choose": {
-    "ja": "いつ行くか決める",
+    "ja": "いつ{行|い}くか{決|き}める",
     "ja_easy": "いつ{行|い}くか{決|き}める",
     "en": "Choose a day to go"
   },
   "day.change": {
-    "ja": "日を変える",
+    "ja": "{日|ひ}を{変|か}える",
     "ja_easy": "{日|ひ}を{変|か}える",
     "en": "Change the day"
   },
   "res.planned.eyebrow": {
-    "ja": "決めました",
+    "ja": "{決|き}めました",
     "ja_easy": "{決|き}めました",
     "en": "Planned"
   },
   "res.planned.title": {
-    "ja": "{date}に決めました",
+    "ja": "{date}に{決|き}めました",
     "ja_easy": "{date}に{決|き}めました",
     "en": "Planned for {date}"
   },
   "res.planned.sub": {
-    "ja": "その日に開くと、この手続きから案内します。",
+    "ja": "その{日|ひ}に{開|ひら}くと、この{手続|てつづ}きから{案内|あんない}します。",
     "ja_easy": "その{日|ひ}に{開|ひら}くと、ここから{案内|あんない}します。",
     "en": "When you open the app on that day, we start with this."
   },
   "res.answer.eyebrow": {
-    "ja": "この答えで変わったこと",
+    "ja": "この{答|こた}えで{変|か}わったこと",
     "ja_easy": "{答|こた}えで{変|か}わったこと",
     "en": "What changed with your answer"
   },
   "res.done.eyebrow": {
-    "ja": "記録しました",
+    "ja": "{記録|きろく}しました",
     "ja_easy": "{記録|きろく}しました",
     "en": "Recorded"
   },
@@ -1082,107 +1082,107 @@
     "en": "Next"
   },
   "nav.backAll": {
-    "ja": "全体にもどる",
+    "ja": "{全体|ぜんたい}にもどる",
     "ja_easy": "{全部|ぜんぶ}にもどる",
     "en": "Back to overview"
   },
   "objects.what": {
-    "ja": "使い道",
+    "ja": "{使|つか}い{道|みち}",
     "ja_easy": "{何|なに}に{使|つか}うか",
     "en": "What it is used for"
   },
   "side.title": {
-    "ja": "全体",
+    "ja": "{全体|ぜんたい}",
     "ja_easy": "{全部|ぜんぶ}",
     "en": "Overview"
   },
   "card.openedFromAll": {
-    "ja": "開いた手続き",
+    "ja": "{開|ひら}いた{手続|てつづ}き",
     "ja_easy": "{開|ひら}いた{手続|てつづ}き",
     "en": "Opened item"
   },
   "card.check": {
-    "ja": "確かめる（1つ答える）",
+    "ja": "{確|たし}かめる（1つ{答|こた}える）",
     "ja_easy": "{確|たし}かめる（１つ{答|こた}える）",
     "en": "Check (answer one question)"
   },
   "card.what": {
-    "ja": "どんな手続き",
+    "ja": "どんな{手続|てつづ}き",
     "ja_easy": "どんな{手続|てつづ}き",
     "en": "What it is"
   },
   "card.backItem": {
-    "ja": "この手続きにもどる",
+    "ja": "この{手続|てつづ}きにもどる",
     "ja_easy": "この{手続|てつづ}きにもどる",
     "en": "Back to this item"
   },
   "place.ward_office": {
-    "ja": "区役所",
+    "ja": "{区役所|くやくしょ}",
     "ja_easy": "{区役所|くやくしょ}",
     "en": "the ward office"
   },
   "place.bank": {
-    "ja": "銀行",
+    "ja": "{銀行|ぎんこう}",
     "ja_easy": "{銀行|ぎんこう}",
     "en": "the bank"
   },
   "place.prev_city": {
-    "ja": "前に住んでいた市の役所",
+    "ja": "{前|まえ}に{住|す}んでいた{市|し}の{役所|やくしょ}",
     "ja_easy": "{前|まえ}の{市|し}の{役所|やくしょ}",
     "en": "your previous city office"
   },
   "day.titlePlace": {
-    "ja": "いつ、{place}に行きますか？",
+    "ja": "いつ、{place}に{行|い}きますか？",
     "ja_easy": "いつ、{place}に{行|い}きますか？",
     "en": "When will you go to {place}?"
   },
   "day.together": {
-    "ja": "同じ日にすること",
+    "ja": "{同|おな}じ{日|ひ}にすること",
     "ja_easy": "{同|おな}じ{日|ひ}にすること",
     "en": "On the same day"
   },
   "day.togetherNote": {
-    "ja": "一緒にしないものは、押すと外せます。",
+    "ja": "{一緒|いっしょ}にしないものは、{押|お}すと{外|はず}せます。",
     "ja_easy": "{押|お}すと{外|はず}せます。",
     "en": "Tap one to leave it out."
   },
   "all.go": {
-    "ja": "1つずつ進める",
+    "ja": "1つずつ{進|すす}める",
     "ja_easy": "1つずつ{進|すす}める",
     "en": "Go one at a time"
   },
   "search.title": {
-    "ja": "手続きを探す",
+    "ja": "{手続|てつづ}きを{探|さが}す",
     "ja_easy": "{手続|てつづ}きを{探|さが}す",
     "en": "Find a procedure"
   },
   "search.label": {
-    "ja": "手続きの名前や、気になる言葉",
+    "ja": "{手続|てつづ}きの{名前|なまえ}や、{気|き}になる{言葉|ことば}",
     "ja_easy": "{手続|てつづ}きの{名前|なまえ}・ことば",
     "en": "Procedure name or a word"
   },
   "search.hint": {
-    "ja": "例：ほけん、nenkin、銀行",
+    "ja": "{例|れい}：ほけん、nenkin、{銀行|ぎんこう}",
     "ja_easy": "れい：ほけん、nenkin、{銀行|ぎんこう}",
     "en": "e.g. insurance, nenkin, bank"
   },
   "search.found": {
-    "ja": "見つかった手続き",
+    "ja": "{見|み}つかった{手続|てつづ}き",
     "ja_easy": "あった{手続|てつづ}き",
     "en": "Procedures found"
   },
   "search.none": {
-    "ja": "見つかりませんでした。ほかの言葉にするか、相談窓口で聞いてください。",
+    "ja": "{見|み}つかりませんでした。ほかの{言葉|ことば}にするか、{相談|そうだん}{窓口|まどぐち}で{聞|き}いてください。",
     "ja_easy": "ありませんでした。ほかのことばで{探|さが}すか、{相談|そうだん}してください。",
     "en": "Nothing found. Try another word, or ask for help."
   },
   "search.all": {
-    "ja": "このアプリで案内している手続き",
+    "ja": "このアプリで{案内|あんない}している{手続|てつづ}き",
     "ja_easy": "このアプリにある{手続|てつづ}き",
     "en": "Procedures this app covers"
   },
   "search.notYours": {
-    "ja": "答えによっては、関係ないこともあります。開くと理由が出ます。",
+    "ja": "{答|こた}えによっては、{関係|かんけい}ないこともあります。{開|ひら}くと{理由|りゆう}が{出|で}ます。",
     "ja_easy": "{関係|かんけい}ないこともあります。{開|ひら}くと{理由|りゆう}が{出|で}ます。",
     "en": "Some may not apply to you. Open one to see why."
   },

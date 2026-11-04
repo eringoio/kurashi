@@ -69,7 +69,8 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await expect(page.locator('.together .k-check')).toHaveCount(3);
   await expect(page.locator('.together')).toContainText('住所の届け');
   await check(page, '日を決める');
-  await tap(page, /^次の休みの日/);
+  // 区役所は今日にする（銀行の日は、住所の届けの日から後だけ選べる）
+  await tap(page, /^今日/);
   await expect(h1(page)).toHaveText(/に決めました$/);
   await tap(page, 'つぎへ');
   // 区役所の3つは同じ日に決まったので、次は銀行

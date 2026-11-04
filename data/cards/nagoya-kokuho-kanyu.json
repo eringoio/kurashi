@@ -24,7 +24,7 @@
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "国民健康保険",
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}",
     "ja_easy": "{国民健康保険|こくみんけんこうほけん}",
     "en": "National Health Insurance"
   },
@@ -33,13 +33,13 @@
     "reading": "こくみんけんこうほけんのかにゅう"
   },
   "summary": {
-    "ja": "ほかの公的な健康保険に入っていない人は、区役所の保険年金課で国民健康保険に入ります。",
+    "ja": "ほかの{公的|こうてき}な{健康|けんこう}{保険|ほけん}に{入|はい}っていない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。",
     "ja_easy": "ほかの{健康保険|けんこうほけん}がない{人|ひと}は、{区役所|くやくしょ}で{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
     "en": "If you have no other public health insurance, join National Health Insurance at the ward office."
   },
   "deadline": {
     "text": {
-      "ja": "期限は窓口で確認（要確認）",
+      "ja": "{期限|きげん}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
       "ja_easy": "いつまでかは、{窓口|まどぐち}で{聞|き}きます",
       "en": "Ask at the counter about the deadline (to be checked)"
     },
@@ -53,7 +53,7 @@
   },
   "where": {
     "text": {
-      "ja": "区役所の保険年金課",
+      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
       "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}",
       "en": "Insurance and Pension Section of the ward office"
     },

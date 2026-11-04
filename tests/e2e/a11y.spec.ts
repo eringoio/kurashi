@@ -18,8 +18,8 @@ const SIZES = [0, 1, 2];
 const WIDTHS = [320, 640, 1280];
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
-// 上の帯の「文字・ことば」。ふりがなの所で名前に空白が入ることがある（「文字 ・ことば」）
-const SETTINGS = /^(文字\s?・ことば|Aa · Language)$/;
+// 上の帯の「設定・Language」。ふりがなの所で名前に空白が入ることがある（「設定 ・Language」）
+const SETTINGS = /^(設定\s?・Language|Settings · 設定)$/;
 
 async function setPrefs(page: Page, level: string, size: number) {
   // 設定のシートから選ぶ（人と同じ操作）
@@ -103,13 +103,13 @@ test('保存の同意・見るだけ・全部消す', async ({ page }) => {
   const kept = await page.evaluate(() => (window as unknown as { __kurashi: { vault: { get: (s: string, k: string) => unknown } } }).__kurashi.vault.get('profile', 'Q-origin'));
   expect(kept).toBe('abroad');
   // 見るだけ：帯が出て、答えは読まない
-  await page.getByRole('button', { name: '文字・ことば', exact: true }).click();
+  await page.getByRole('button', { name: SETTINGS }).click();
   await page.getByRole('button', { name: /見るだけにする/ }).click();
   await expect(page.locator('.viewonly')).toContainText('見るだけ（保存しません）');
   await axe(page, '見るだけ');
   await page.getByRole('button', { name: '見るだけを終わる' }).click();
   // 全部消す
-  await page.getByRole('button', { name: '文字・ことば', exact: true }).click();
+  await page.getByRole('button', { name: SETTINGS }).click();
   await page.getByRole('dialog').getByRole('button', { name: '全部消す' }).click();
   await page.getByRole('dialog').getByRole('button', { name: '全部消す' }).first().click();
   await expect(page.locator('[aria-live="polite"]')).toHaveText('全部消しました。');

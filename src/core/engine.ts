@@ -157,6 +157,14 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       if ((r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite') && r.to === card.id) {
         const s = satisfied(r);
         if (s === 'yes') continue;
+        // 日の順だけを守らせる（v0.4.5）：前の項目がまだ済んでいなくて、この人に関係するとき。区分け・並び順は変えない
+        if (r.type === 'practical_prerequisite' && r.day_order && statusOf(r.day_order) === 'verified') {
+          const fromState = stateOf.get(r.from);
+          if (fromState === 'shown' || fromState === 'check_at_office' || fromState === 'ask') {
+            const fromDay = x.plan[r.from]?.planned_on;
+            dayRule = fromDay ? { kind: 'min', day: fromDay, from: r.from } : { kind: 'need_first', from: r.from };
+          }
+        }
         if (r.type === 'legal_prerequisite' && v) {
           if (s === 'unknown') notes.push({ kind: 'prereq_unknown', relation: r, verified: v });
           else {

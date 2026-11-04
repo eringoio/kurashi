@@ -7,6 +7,7 @@ import { usePrefs } from './storage/prefs';
 import { Consent } from './ui/Consent';
 import { Link, usePath } from './ui/router';
 import { Settings } from './ui/Settings';
+import { GlobeIcon, HelpIcon } from './ui/icons';
 import { Sheet } from './ui/Sheet';
 import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
@@ -87,8 +88,8 @@ export function App() {
           <span className="brand__tag"><One k="app.tag" /></span>
         </Link>
         <div className="bar__btns">
-          <button type="button" className="pill" onClick={() => setSheet('help')}><One k="nav.help" /></button>
-          <button type="button" className="pill" onClick={() => setSheet('settings')}><One k="nav.settings" /></button>
+          <button type="button" className="pill pill--icon" onClick={() => setSheet('help')}><HelpIcon /><One k="nav.help" /></button>
+          <button type="button" className="pill pill--icon" onClick={() => setSheet('settings')}><GlobeIcon /><One k="nav.settings" /></button>
         </div>
       </header>
       {v.mode === 'view_only' && (

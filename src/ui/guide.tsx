@@ -243,7 +243,7 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
         </fieldset>
       )}
       <Notes c={c} where="day" />
-      {min && minFrom?.kind === 'min' && <p className="sub"><One k="day.minNote" /><One t={DATA().cards.find((x) => x.id === minFrom.from)!.title} />（{fmtDay(min, level)}）</p>}
+      {min && minFrom?.kind === 'min' && <p className="sub"><One k="day.minNote" /><One t={DATA().cards.find((x) => x.id === minFrom.from)!.title} />　{fmtDay(min, level)}</p>}
       <div className="list list--days">
         {daySuggestions(today).map((s) => (
           <button key={s.key} type="button" className="k-answer" disabled={blocked(s.day)} onClick={() => pick(s.day)}>

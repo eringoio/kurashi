@@ -20,7 +20,7 @@
     "R-nenkin-coverage-abroad"
   ],
   "title": {
-    "ja": "国民年金",
+    "ja": "{国民|こくみん}{年金|ねんきん}",
     "ja_easy": "{国民年金|こくみんねんきん}",
     "en": "National Pension"
   },
@@ -29,13 +29,13 @@
     "reading": "こくみんねんきんのかにゅう"
   },
   "summary": {
-    "ja": "日本に住む20歳以上60歳未満の人は、国籍や学生かどうかに関係なく、国民年金の対象です。区役所の保険年金課で手続きします。",
+    "ja": "{日本|にほん}に{住|す}む20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}の{人|ひと}は、{国籍|こくせき}や{学生|がくせい}かどうかに{関係|かんけい}なく、{国民|こくみん}{年金|ねんきん}の{対象|たいしょう}です。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{手続|てつづ}きします。",
     "ja_easy": "20{歳|さい}から59{歳|さい}までの{人|ひと}は、{学生|がくせい}でも{外国|がいこく}の{人|ひと}でも、{国民年金|こくみんねんきん}に{入|はい}ります。",
     "en": "Everyone living in Japan aged 20 to 59 is covered by the National Pension, including students and foreign nationals. Register at the ward office."
   },
   "deadline": {
     "text": {
-      "ja": "期限は窓口で確認（要確認）",
+      "ja": "{期限|きげん}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
       "ja_easy": "いつまでかは、{窓口|まどぐち}で{聞|き}きます",
       "en": "Ask at the counter about the deadline (to be checked)"
     },
@@ -49,7 +49,7 @@
   },
   "where": {
     "text": {
-      "ja": "区役所の保険年金課",
+      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
       "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}",
       "en": "Insurance and Pension Section of the ward office"
     },
@@ -70,7 +70,7 @@
   ],
   "reasons": {
     "check_at_office_coverage": {
-      "ja": "あなたの場合の年金の手続きは、このアプリではまだ詳しく案内していません。区役所の保険年金課で確認してください。",
+      "ja": "あなたの{場合|ばあい}の{年金|ねんきん}の{手続|てつづ}きは、このアプリではまだ{詳|くわ}しく{案内|あんない}していません。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{確認|かくにん}してください。",
       "ja_easy": "あなたの{年金|ねんきん}のことは、{区役所|くやくしょ}で{聞|き}いてください。",
       "en": "This app does not cover your pension case in detail yet. Ask the Insurance and Pension Section of the ward office."
     }

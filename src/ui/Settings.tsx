@@ -49,16 +49,14 @@ export function Settings({ onClose, onLive }: { onClose: () => void; onLive: (s:
         </div>
       </fieldset>
 
-      {/* ふつうの日本語には、ふりがながない。やさしい日本語と外国語のときだけ出す */}
-      {level.kind !== 'ja' && (
-        <fieldset>
-          <legend><One k="settings.furigana" /></legend>
-          <div className="chips">
-            <Seg on={p.furigana} onPick={() => p.setFurigana(true)}><One k="settings.on" /></Seg>
-            <Seg on={!p.furigana} onPick={() => p.setFurigana(false)}><One k="settings.off" /></Seg>
-          </div>
-        </fieldset>
-      )}
+      {/* ふりがなは、表示レベルごと（初期は、ふつうの日本語だけオフ） */}
+      <fieldset>
+        <legend><One k="settings.furigana" /></legend>
+        <div className="chips">
+          <Seg on={p.furigana} onPick={() => p.setFurigana(true)}><One k="settings.on" /></Seg>
+          <Seg on={!p.furigana} onPick={() => p.setFurigana(false)}><One k="settings.off" /></Seg>
+        </div>
+      </fieldset>
 
       {voice && (
         <fieldset>

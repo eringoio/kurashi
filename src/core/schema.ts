@@ -119,7 +119,8 @@ export type ObjectDef = z.infer<typeof ObjectDef>;
 const RelBase = { id: z.string(), explain: Text, evidence: Evidence, keep_needs_check: z.boolean().optional() };
 export const Relation = z.discriminatedUnion('type', [
   z.object({ ...RelBase, type: z.literal('legal_prerequisite'), from: z.string(), to: z.string(), satisfied_when_rule_ids: z.array(z.string()).optional() }),
-  z.object({ ...RelBase, type: z.literal('practical_prerequisite'), from: z.string(), to: z.string(), satisfied_when_rule_ids: z.array(z.string()).optional() }),
+  /** day_order：行く日の順を守らせる根拠。関係そのものが未確認でも、これが確認済みなら「前の項目の日より前」を選べなくする（v0.4.5） */
+  z.object({ ...RelBase, type: z.literal('practical_prerequisite'), from: z.string(), to: z.string(), satisfied_when_rule_ids: z.array(z.string()).optional(), day_order: Evidence.optional() }),
   z.object({ ...RelBase, type: z.literal('waits_for'), card_id: z.string(), item_id: z.string(), when_rule_ids: z.array(z.string()).optional() }),
   z.object({ ...RelBase, type: z.literal('same_visit'), card_ids: z.array(z.string()), order: z.array(z.string()), office_scope: z.enum(['same_counter', 'same_building']) }),
 ]);

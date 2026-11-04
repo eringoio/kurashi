@@ -34,10 +34,15 @@ export function PrefsProvider({ vault, children }: { vault: Vault; children: Rea
   const saved = (k: string) => vault.get('settings', k);
   const [level, setLevelId] = useState<string>((saved('level') as string) ?? initialLevel());
   const [size, setSizeS] = useState<Size>((saved('size') as Size) ?? 0);
-  const [furigana, setFuri] = useState<boolean>((saved('furigana') as boolean) ?? true);
+  // ふりがなは表示レベルごとに覚える。初期は、ふつうの日本語だけオフ（作者の指示 2026-11-05）
+  const [furiBy, setFuriBy] = useState<Record<string, boolean>>(() => Object.fromEntries(LEVELS.flatMap((l) => {
+    const v = saved('furigana.' + l.id);
+    return typeof v === 'boolean' ? [[l.id, v]] : [];
+  })));
   const [speechRate, setRate] = useState<SpeechRate>((saved('speechRate') as SpeechRate) ?? 'normal');
 
   const lv = levelById(level);
+  const furigana = furiBy[lv.id] ?? lv.kind !== 'ja';
   useEffect(() => {
     document.documentElement.lang = lv.lang;
     document.documentElement.dir = lv.dir;
@@ -53,7 +58,7 @@ export function PrefsProvider({ vault, children }: { vault: Vault; children: Rea
       vault,
       setLevel: (id) => { setLevelId(id); void vault.put('settings', 'level', id); },
       setSize: (s) => { setSizeS(s); void vault.put('settings', 'size', s); },
-      setFurigana: (on) => { setFuri(on); void vault.put('settings', 'furigana', on); },
+      setFurigana: (on) => { setFuriBy((m) => ({ ...m, [lv.id]: on })); void vault.put('settings', 'furigana.' + lv.id, on); },
       setSpeechRate: (r) => { setRate(r); void vault.put('settings', 'speechRate', r); },
     }),
     // version：保存の状態（モード）が変わったときも描き直す

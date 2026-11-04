@@ -10,7 +10,7 @@
         "R-moveout-done"
       ],
       "explain": {
-        "ja": "前に住んでいた市区町村で転出届を出してから、転入届を出します。",
+        "ja": "{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}してから、{転入|てんにゅう}{届|とどけ}を{出|だ}します。",
         "ja_easy": "{前|まえ}の{市|し}で{転出届|てんしゅつとどけ}を{出|だ}してから、{転入届|てんにゅうとどけ}を{出|だ}します。",
         "en": "Submit the move-out notice in your previous city first, then the moving-in notice in Nagoya."
       },
@@ -31,7 +31,7 @@
         "R-juukyochi-done"
       ],
       "explain": {
-        "ja": "住所の届けのあとで、国民健康保険に入ります。",
+        "ja": "{住所|じゅうしょ}の{届|とど}けのあとで、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。",
         "ja_easy": "{住所|じゅうしょ}の{届|とど}けのあとで、{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
         "en": "Join National Health Insurance after registering your address."
       },
@@ -52,7 +52,7 @@
         "R-juukyochi-done"
       ],
       "explain": {
-        "ja": "多くの銀行で、在留カードに今の住所があることが必要です（銀行によって違います）。",
+        "ja": "{多|おお}くの{銀行|ぎんこう}で、{在留|ざいりゅう}カードに{今|いま}の{住所|じゅうしょ}があることが{必要|ひつよう}です（{銀行|ぎんこう}によって{違|ちが}います）。",
         "ja_easy": "{多|おお}くの{銀行|ぎんこう}で、{在留|ざいりゅう}カードに{今|いま}の{住所|じゅうしょ}が{要|い}ります。",
         "en": "Many banks need your current address on your residence card (it differs by bank)."
       },
@@ -62,6 +62,14 @@
         ],
         "checked_at": "2026-11-04",
         "status": "needs_check"
+      },
+      "day_order": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "verified",
+        "note": "作者の判断（2026-11-05）：在留カードに住所が入る前に口座は作れないので、口座の日を住所の届けの日より前にしない。関係そのもの（銀行の条件）は needs_check のまま"
       }
     },
     {
@@ -73,7 +81,7 @@
         "R-bank-pending"
       ],
       "explain": {
-        "ja": "キャッシュカードが届くのを待っています。届く日数は銀行によって違います（要確認）。",
+        "ja": "キャッシュカードが{届|とど}くのを{待|ま}っています。{届|とど}く{日数|にっすう}は{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
         "ja_easy": "カードが{届|とど}くのを{待|ま}っています。",
         "en": "Waiting for your cash card. Delivery time differs by bank (to be checked)."
       },
@@ -101,7 +109,7 @@
       "office_scope": "same_building",
       "keep_needs_check": true,
       "explain": {
-        "ja": "同じ区役所でできる可能性があります（担当の課が別のことがあります。要確認）。",
+        "ja": "{同|おな}じ{区役所|くやくしょ}でできる{可能|かのう}{性|せい}があります（{担当|たんとう}の{課|か}が{別|べつ}のことがあります。{要|よう}{確認|かくにん}）。",
         "ja_easy": "{同|おな}じ{区役所|くやくしょ}でできるかもしれません。",
         "en": "These may be possible at the same ward office (different sections; to be checked)."
       },
