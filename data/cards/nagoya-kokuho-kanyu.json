@@ -1,0 +1,88 @@
+{
+  "id": "nagoya-kokuho-kanyu",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L3",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": true,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-kokuho-gate",
+      {
+        "any": [
+          "R-kokuho-no-other-insurance",
+          "R-kokuho-working-start",
+          "R-kokuho-domestic-kokuho"
+        ]
+      }
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "国民健康保険",
+    "ja_easy": "{国民健康保険|こくみんけんこうほけん}",
+    "en": "National Health Insurance"
+  },
+  "official_name": {
+    "ja": "国民健康保険の加入",
+    "reading": "こくみんけんこうほけんのかにゅう"
+  },
+  "summary": {
+    "ja": "ほかの公的な健康保険に入っていない人は、区役所の保険年金課で国民健康保険に入ります。",
+    "ja_easy": "ほかの{健康保険|けんこうほけん}がない{人|ひと}は、{区役所|くやくしょ}で{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
+    "en": "If you have no other public health insurance, join National Health Insurance at the ward office."
+  },
+  "deadline": {
+    "text": {
+      "ja": "期限は窓口で確認（要確認）",
+      "ja_easy": "いつまでかは、{窓口|まどぐち}で{聞|き}きます",
+      "en": "Ask at the counter about the deadline (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-kokuho-kanyu-page"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "区役所の保険年金課",
+      "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}",
+      "en": "Insurance and Pension Section of the ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-kokuho-kanyu-page"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "keywords": [
+    "ほけん",
+    "こくほ",
+    "hoken",
+    "kokuho",
+    "health insurance",
+    "insurance",
+    "保険",
+    "健康保険",
+    "病院"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nagoya-kokuho-kanyu-page"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

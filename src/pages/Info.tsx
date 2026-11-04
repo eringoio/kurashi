@@ -1,0 +1,41 @@
+/* 文だけの画面：範囲外・準備中・免責・このアプリについて。仮の文は「仮の文です」の印を付ける（docs/TODO.md で確認） */
+import { Bi } from '../i18n/Ruby';
+import { ui, type UiKey } from '../i18n/text';
+import { art } from '../ui/art';
+import { Link, useFocusTitle } from '../ui/router';
+
+export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: string; link?: { k: UiKey; href: string }; dev?: boolean }> = {
+  'out-of-scope': {
+    title: 'page.outOfScope.title', body: ['page.outOfScope.body'], icon: 'cross',
+    // 公式のリンクは仮（11/6 に確かめる）
+    link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' },
+  },
+  'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body', 'page.comingSoon.events'], icon: 'clock', dev: true },
+  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p2', 'page.disclaimer.p3', 'page.disclaimer.p4'], icon: 'doc' },
+  about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2', 'page.about.p3'], icon: 'bulb' },
+};
+
+export function Info({ id }: { id: string }) {
+  const page = INFO_PAGES[id];
+  useFocusTitle('info:' + id);
+  const draft = [page.title, ...page.body].some((k) => ui(k).status === 'draft');
+  return (
+    <>
+      <div className="art" aria-hidden="true"><img src={art(page.icon)} alt="" /></div>
+      <div className="head">
+        <h1 id="screen-title" tabIndex={-1}><Bi k={page.title} /></h1>
+      </div>
+      {draft && <p className="draftmark"><Bi k="page.draftMark" /></p>}
+      {page.dev && <div className="k-notice"><Bi k="page.devNote" /></div>}
+      <div className="prose">
+        {page.body.map((k) => <p key={k}><Bi k={k} /></p>)}
+      </div>
+      {page.link && (
+        <p><a className="link" href={page.link.href} target="_blank" rel="noopener noreferrer"><Bi k={page.link.k} /></a></p>
+      )}
+      <div className="links">
+        <Link to="/" className="link"><Bi k="nav.home" /></Link>
+      </div>
+    </>
+  );
+}

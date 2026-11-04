@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" stroke-linecap="round" stroke-linejoin="round">
+  <title>kurashi（仮のロゴ）</title>
+  <!-- 仮のロゴ：紙の地に、家と、家へ続く点線の道と、済んだ印。デザインシステムの墨の線＋2色 -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FFFDF8" stroke="#2A2A2E" stroke-width="2.4"/>
+  <path d="M15 30 L32 16 L49 30" fill="none" stroke="#2A2A2E" stroke-width="2.6"/>
+  <path d="M19 27.5 V45 H45 V27.5" fill="#CFE1F7" stroke="#2A2A2E" stroke-width="2.6"/>
+  <path d="M28 45 V36 H36 V45" fill="#FFFFFF" stroke="#2A2A2E" stroke-width="2.4"/>
+  <path d="M8 54 C16 50 22 49 30 49" fill="none" stroke="#2458A6" stroke-width="2.6" stroke-dasharray="1 5"/>
+  <circle cx="48" cy="47" r="8" fill="#B4471A" stroke="#2A2A2E" stroke-width="2.2"/>
+  <path d="M44.2 47.2 L47 50 L52 44.6" fill="none" stroke="#FFFFFF" stroke-width="2.6"/>
+</svg>

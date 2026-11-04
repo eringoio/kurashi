@@ -1,0 +1,79 @@
+{
+  "id": "nagoya-tennyu-todoke",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": true,
+  "requires_moved_in": true,
+  "eligibility": {
+    "all": [
+      "R-origin-other-city",
+      "R-domestic-transfer"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "転入届",
+    "ja_easy": "{転入届|てんにゅうとどけ}",
+    "en": "Moving-in notice"
+  },
+  "official_name": {
+    "ja": "転入届",
+    "reading": "てんにゅうとどけ"
+  },
+  "summary": {
+    "ja": "ほかの市町村から名古屋市に住み始めたら、新しい住所の区役所・支所の市民課で転入届を出します。",
+    "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}します。",
+    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office of your new address."
+  },
+  "deadline": {
+    "text": {
+      "ja": "住み始めてから14日以内（要確認）",
+      "ja_easy": "{住|す}み{始|はじ}めてから14{日|にち}まで（{要確認|ようかくにん}）",
+      "en": "Within 14 days of moving in (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "新しい住所の区役所・支所の市民課",
+      "ja_easy": "{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}",
+      "en": "Citizens Section of the ward office for your new address"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "keywords": [
+    "てんにゅう",
+    "tennyu",
+    "moving in",
+    "address",
+    "住民票",
+    "住所"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

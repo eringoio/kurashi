@@ -1,0 +1,65 @@
+{
+  "id": "nenkin-at-20",
+  "data_version": 1,
+  "illustration": "calendar",
+  "awareness_type": "upcoming",
+  "obligation": "none",
+  "domain": "government",
+  "depth": "L1",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-under-20"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "20歳の年金のお知らせ",
+    "ja_easy": "20{歳|さい}の{年金|ねんきん}のお{知|し}らせ",
+    "en": "Pension notice at 20"
+  },
+  "official_name": {
+    "ja": "国民年金の加入のお知らせ",
+    "reading": "こくみんねんきんのかにゅうのおしらせ"
+  },
+  "summary": {
+    "ja": "これから起こること。20歳になると、国民年金の対象になります。日本年金機構からお知らせが届きます。届かないときは、区役所か年金事務所に聞いてください。",
+    "ja_easy": "20{歳|さい}になると、{年金|ねんきん}のお{知|し}らせが{届|とど}きます。{届|とど}かないときは、{区役所|くやくしょ}に{聞|き}いてください。",
+    "en": "Coming up: at 20 you join the National Pension. A notice will come from the Japan Pension Service. If it does not, ask the ward office or a pension office."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "日本年金機構（お知らせが届く）・区役所の保険年金課",
+      "ja_easy": "{日本年金機構|にほんねんきんきこう}・{区役所|くやくしょ}",
+      "en": "Japan Pension Service (sends the notice) / ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "nenkin-hatachi-page"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "keywords": [
+    "ねんきん",
+    "20さい",
+    "nenkin",
+    "pension",
+    "20",
+    "年金",
+    "はたち"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nenkin-hatachi-page"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

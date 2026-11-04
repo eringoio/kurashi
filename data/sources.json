@@ -1,0 +1,61 @@
+{
+  "$comment": "出典（SPEC 9.2）。URL は調査資料（docs/deep-research/）にあるものだけを使う。題名・更新日は、原文で確かめるまで仮。",
+  "sources": [
+    {
+      "source_id": "kurashi-spec",
+      "url": null,
+      "owner": "kurashi（本書 docs/SPEC.md）",
+      "owner_type": "product",
+      "title": "本アプリの定義（範囲・入口・本人の答え）",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-juukyochi",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00021.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "住居地の届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-juumin-todoke",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007835.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民基本台帳の届出（転入・転居・転出）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-lifescene-tennyu",
+      "url": "https://www.city.nagoya.jp/lifescene/sumai/1034689/1017954.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "転入の際に必要な手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-kokuho-kanyu-page",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011751.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の加入",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-kanyu-page",
+      "url": "https://www.nenkin.go.jp/service/mokutekibetsu/kojin/kanyu/index.html",
+      "owner": "日本年金機構",
+      "owner_type": "public_corp",
+      "title": "国民年金の加入",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-hatachi-page",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/hatachi-tetsuduki.html",
+      "owner": "日本年金機構",
+      "owner_type": "public_corp",
+      "title": "20歳になったときの国民年金の手続き",
+      "language": "ja"
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "$comment": "判定ルール（SPEC 9.4）。status は人が原文と照合するまで needs_check。本アプリの定義（出典 kurashi-spec だけ）は、作者が SPEC との一致を確かめて verified にできる。keep_needs_check：確認済みデータの fixture でも needs_check のまま（SPEC 18）。",
+  "rules": [
+    {
+      "id": "R-scope-nagoya-resident",
+      "kind": "scope",
+      "condition": {
+        "any": [
+          {
+            "fact": "origin",
+            "in": [
+              "other_city",
+              "within_nagoya"
+            ]
+          },
+          {
+            "all": [
+              {
+                "fact": "origin",
+                "eq": "abroad"
+              },
+              {
+                "not": {
+                  "fact": "residence_basis",
+                  "eq": "short_stay"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "このアプリは、名古屋市に住む人の手続きを案内します。",
+        "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。",
+        "en": "This app guides people who live in Nagoya City."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-origin-abroad",
+      "kind": "entry",
+      "condition": {
+        "fact": "origin",
+        "eq": "abroad"
+      },
+      "statement": {
+        "ja": "日本の外から名古屋市に来た人の経路で案内します。",
+        "ja_easy": "{日本|にほん}の{外|そと}から{来|き}た{人|ひと}に{案内|あんない}します。",
+        "en": "Shown for people who came to Nagoya from outside Japan."
+      },
+      "reason_when_false": {
+        "ja": "このアプリでは、日本の外から名古屋市に来た人の経路でだけ、このカードを案内しています。在留カードを持っている人は、国内の引っ越しでも関係することがあります。出入国在留管理庁のページで確認してください。",
+        "ja_easy": "このカードは、{日本|にほん}の{外|そと}から{来|き}た{人|ひと}だけに{出|だ}しています。{在留|ざいりゅう}カードがある{人|ひと}は、{関係|かんけい}することがあります。",
+        "en": "This app shows this card only for people who came from outside Japan. If you have a residence card, it may still apply when you move within Japan. Check the Immigration Services Agency page."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-has-residence-card",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "residence_basis",
+        "in": [
+          "card_has",
+          "card_later"
+        ]
+      },
+      "statement": {
+        "ja": "在留カードを持っている人（あとで届く人を含む）は、住み始めてから14日以内に、住居地を届け出ます。",
+        "ja_easy": "{在留|ざいりゅう}カードがある{人|ひと}は、{住|す}み{始|はじ}めてから14{日|にち}までに、{住所|じゅうしょ}を{届|とど}けます。",
+        "en": "People with a residence card (including those who will receive it later) report their address within 14 days of moving in."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-juukyochi"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-kokuho-gate",
+      "kind": "eligibility",
+      "condition": {
+        "all": [
+          {
+            "any": [
+              {
+                "fact": "insurance",
+                "eq": "none"
+              },
+              {
+                "all": [
+                  {
+                    "fact": "insurance",
+                    "eq": "kokuho"
+                  },
+                  {
+                    "fact": "origin",
+                    "eq": "other_city"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "fact": "age_band",
+                "in": [
+                  "under_20",
+                  "20_59"
+                ]
+              },
+              {
+                "fact": "age_75_plus",
+                "eq": false
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "ほかの公的な健康保険に入っていない、75歳未満の人が対象です。",
+        "ja_easy": "ほかの{健康保険|けんこうほけん}がない、75{歳|さい}より{若|わか}い{人|ひと}が{入|はい}ります。",
+        "en": "For people under 75 who are not in any other public health insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-kokuho-no-other-insurance",
+      "kind": "eligibility",
+      "condition": {
+        "all": [
+          {
+            "fact": "insurance",
+            "eq": "none"
+          },
+          {
+            "not": {
+              "fact": "role",
+              "eq": "working"
+            }
+          }
+        ]
+      },
+      "statement": {
+        "ja": "ほかの公的な医療保険に入っておらず、住民登録をした人は、国民健康保険に入ります。",
+        "ja_easy": "ほかの{健康保険|けんこうほけん}がなくて、{住所|じゅうしょ}を{届|とど}けた{人|ひと}は、{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
+        "en": "People who are registered as residents and have no other public health insurance join National Health Insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-kokuho-working-start",
+      "kind": "eligibility",
+      "keep_needs_check": true,
+      "condition": {
+        "all": [
+          {
+            "fact": "insurance",
+            "eq": "none"
+          },
+          {
+            "fact": "role",
+            "eq": "working"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "働き始める人は、職場の健康保険に入るまでの間、国民健康保険が必要になることがあります。",
+        "ja_easy": "{働|はたら}き{始|はじ}める{人|ひと}は、{会社|かいしゃ}の{保険|ほけん}に{入|はい}るまで、{国民健康保険|こくみんけんこうほけん}が{要|い}ることがあります。",
+        "en": "People starting work may need National Health Insurance until their workplace insurance starts."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-kokuho-domestic-kokuho",
+      "kind": "eligibility",
+      "condition": {
+        "all": [
+          {
+            "fact": "origin",
+            "eq": "other_city"
+          },
+          {
+            "fact": "insurance",
+            "eq": "kokuho"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "ほかの市町村で国民健康保険に入っていた人は、名古屋市で入り直します。",
+        "ja_easy": "ほかの{市|し}で{国民健康保険|こくみんけんこうほけん}だった{人|ひと}は、{名古屋市|なごやし}で{入|はい}り{直|なお}します。",
+        "en": "People who had National Health Insurance in another city join again in Nagoya."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-nenkin-1go",
+      "kind": "eligibility",
+      "condition": {
+        "all": [
+          {
+            "fact": "age_band",
+            "eq": "20_59"
+          },
+          {
+            "fact": "pension_type",
+            "eq": "none"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "日本に住む20歳以上60歳未満の人で、厚生年金に入っておらず、厚生年金に入る配偶者の扶養にも入っていない人は、国民年金の第1号被保険者です。",
+        "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までの{人|ひと}で、{会社|かいしゃ}の{年金|ねんきん}がない{人|ひと}は、{国民年金|こくみんねんきん}に{入|はい}ります。",
+        "en": "People living in Japan aged 20 to 59 who are not in the Employees' Pension and not a dependent spouse of someone in it are Category 1 members of the National Pension."
+      },
+      "evidence": {
+        "source_ids": [
+          "nenkin-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-nenkin-3go",
+      "kind": "eligibility",
+      "condition": {
+        "all": [
+          {
+            "fact": "age_band",
+            "eq": "20_59"
+          },
+          {
+            "fact": "pension_type",
+            "eq": "spouse_dependent"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "厚生年金に入る配偶者の扶養に入っている20歳以上60歳未満の人は、第3号被保険者です。配偶者の勤務先を通して手続きします。",
+        "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}の{人|ひと}の{家族|かぞく}（{扶養|ふよう}）は、その{会社|かいしゃ}で{手続|てつづ}きします。",
+        "en": "Dependent spouses (aged 20 to 59) of people in the Employees' Pension are Category 3 members. The spouse's employer handles it."
+      },
+      "evidence": {
+        "source_ids": [
+          "nenkin-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-nenkin-coverage-abroad",
+      "kind": "coverage",
+      "condition": {
+        "all": [
+          {
+            "fact": "origin",
+            "eq": "abroad"
+          },
+          {
+            "fact": "pension_type",
+            "eq": "none"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "このアプリでは、日本の外から来て第1号に入る人の手続きを案内しています。",
+        "ja_easy": "このアプリは、{日本|にほん}の{外|そと}から{来|き}た{人|ひと}の{年金|ねんきん}を{案内|あんない}します。",
+        "en": "This app explains the procedure for people from abroad joining as Category 1."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-no-own-bank-account",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "has_own_bank_account",
+        "in": [
+          false,
+          "pending"
+        ]
+      },
+      "statement": {
+        "ja": "日本の銀行に自分の口座がない人に、口座を作る案内を出します。法律のきまりではありません。",
+        "ja_easy": "{自分|じぶん}の{口座|こうざ}がない{人|ひと}に{出|だ}します。{法律|ほうりつ}のきまりではありません。",
+        "en": "Shown to people with no bank account of their own in Japan. This is not a legal rule."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-bank-pending",
+      "kind": "relation",
+      "condition": {
+        "fact": "has_own_bank_account",
+        "eq": "pending"
+      },
+      "statement": {
+        "ja": "口座を申し込んで、キャッシュカードが届くのを待っています。",
+        "ja_easy": "{申|もう}し{込|こ}んで、カードを{待|ま}っています。",
+        "en": "You applied and are waiting for your cash card."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-juukyochi-done",
+      "kind": "relation",
+      "condition": {
+        "fact": "zairyu_back_address",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "在留カードの裏に今の住所が書いてあれば、住居地の届出は済んでいます。",
+        "ja_easy": "{在留|ざいりゅう}カードの{裏|うら}に{今|いま}の{住所|じゅうしょ}があれば、{届|とど}けは{終|お}わっています。",
+        "en": "If your current address is on the back of your residence card, the address registration is done."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-juukyochi"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-moved-in",
+      "kind": "timing",
+      "condition": {
+        "fact": "moved_in",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "住み始めてから届け出ます。住む前は受け付けられません。",
+        "ja_easy": "{住|す}み{始|はじ}めてから{出|だ}します。{住|す}む{前|まえ}は{出|だ}せません。",
+        "en": "Register after you move in. It cannot be done before."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-origin-other-city",
+      "kind": "entry",
+      "condition": {
+        "fact": "origin",
+        "eq": "other_city"
+      },
+      "statement": {
+        "ja": "日本の別の市町村から名古屋市に引っ越す人の経路で案内します。",
+        "ja_easy": "ほかの{市|し}から{来|き}た{人|ひと}に{案内|あんない}します。",
+        "en": "Shown for people moving to Nagoya from another city in Japan."
+      },
+      "reason_when_false": {
+        "ja": "このカードは、日本の別の市町村から名古屋市に引っ越す人の経路で案内しています。",
+        "ja_easy": "このカードは、ほかの{市|し}から{来|き}た{人|ひと}に{出|だ}しています。",
+        "en": "This card is shown for people moving to Nagoya from another city in Japan."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-domestic-transfer",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "origin",
+        "eq": "other_city"
+      },
+      "statement": {
+        "ja": "ほかの市町村から名古屋市に引っ越した人は、住み始めてから14日以内に、新しい住所の区役所・支所で転入届を出します。",
+        "ja_easy": "ほかの{市|し}から{来|き}た{人|ひと}は、{住|す}んでから14{日|にち}までに、{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}します。",
+        "en": "People who move to Nagoya from another city submit a moving-in notice at the new ward office within 14 days of moving in."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-moveout-not-yet",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "moveout",
+        "eq": "not_yet"
+      },
+      "statement": {
+        "ja": "前の市町村で転出届を出していない人は、先に前の市町村で転出届を出します。",
+        "ja_easy": "{前|まえ}の{市|し}で{転出届|てんしゅつとどけ}を{出|だ}していない{人|ひと}は、{先|さき}に{出|だ}します。",
+        "en": "If you have not submitted a move-out notice in your previous city, do that first."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-moveout-done",
+      "kind": "relation",
+      "condition": {
+        "fact": "moveout",
+        "in": [
+          "paper",
+          "card"
+        ]
+      },
+      "statement": {
+        "ja": "前の市町村で転出届を出しました（紙の転出証明書、またはマイナンバーカード）。",
+        "ja_easy": "{前|まえ}の{市|し}で{転出届|てんしゅつとどけ}を{出|だ}しました。",
+        "en": "You submitted a move-out notice in your previous city."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "R-under-20",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "age_band",
+        "eq": "under_20"
+      },
+      "statement": {
+        "ja": "20歳になると、国民年金の対象になります。本人の手続きは要らず、日本年金機構からお知らせが届きます。",
+        "ja_easy": "20{歳|さい}になると、{国民年金|こくみんねんきん}に{入|はい}ります。お{知|し}らせが{届|とど}きます。",
+        "en": "At 20 you join the National Pension. You do not need to apply; the Japan Pension Service sends you a notice."
+      },
+      "evidence": {
+        "source_ids": [
+          "nenkin-hatachi-page",
+          "nenkin-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "kokumin-nenkin-kanyu",
+  "data_version": 1,
+  "illustration": "doc",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L3",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "any": [
+      "R-nenkin-1go",
+      "R-nenkin-3go"
+    ]
+  },
+  "coverage_rule_ids": [
+    "R-nenkin-coverage-abroad"
+  ],
+  "title": {
+    "ja": "国民年金",
+    "ja_easy": "{国民年金|こくみんねんきん}",
+    "en": "National Pension"
+  },
+  "official_name": {
+    "ja": "国民年金の加入",
+    "reading": "こくみんねんきんのかにゅう"
+  },
+  "summary": {
+    "ja": "日本に住む20歳以上60歳未満の人は、国籍や学生かどうかに関係なく、国民年金の対象です。区役所の保険年金課で手続きします。",
+    "ja_easy": "20{歳|さい}から59{歳|さい}までの{人|ひと}は、{学生|がくせい}でも{外国|がいこく}の{人|ひと}でも、{国民年金|こくみんねんきん}に{入|はい}ります。",
+    "en": "Everyone living in Japan aged 20 to 59 is covered by the National Pension, including students and foreign nationals. Register at the ward office."
+  },
+  "deadline": {
+    "text": {
+      "ja": "期限は窓口で確認（要確認）",
+      "ja_easy": "いつまでかは、{窓口|まどぐち}で{聞|き}きます",
+      "en": "Ask at the counter about the deadline (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nenkin-kanyu-page"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "区役所の保険年金課",
+      "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}",
+      "en": "Insurance and Pension Section of the ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "nenkin-kanyu-page"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "keywords": [
+    "ねんきん",
+    "nenkin",
+    "pension",
+    "年金"
+  ],
+  "reasons": {
+    "check_at_office_coverage": {
+      "ja": "あなたの場合の年金の手続きは、このアプリではまだ詳しく案内していません。区役所の保険年金課で確認してください。",
+      "ja_easy": "あなたの{年金|ねんきん}のことは、{区役所|くやくしょ}で{聞|き}いてください。",
+      "en": "This app does not cover your pension case in detail yet. Ask the Insurance and Pension Section of the ward office."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "nenkin-kanyu-page"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

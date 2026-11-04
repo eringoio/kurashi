@@ -1,0 +1,53 @@
+/* kurashi — 部品のスタイル（r7 の components.css から写した。アクセシビリティの見直しは app.css の「見直し」と design/A11Y_REVIEW.md） */
+.k-root { font-family: var(--font-round); color: var(--ink); background: var(--paper); }
+.k-root rt { font-size: .5em; font-weight: 500; }
+.k-root button { font: inherit; cursor: pointer; }
+.k-root :where(button) { color: inherit; }
+.k-root button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* BilingualText */
+.k-bi { display: flex; flex-direction: column; gap: 2px; }
+.k-bi__main { margin: 0; line-height: 1.7; }
+.k-bi__ja { margin: 0; font-size: 14px; line-height: 1.9; color: var(--ink-muted); }
+
+/* AnswerButton */
+.k-answer { box-sizing: border-box; width: 100%; min-height: var(--target-answer); border-radius: var(--radius-lg); border: 2.5px solid var(--ink); background: var(--white); color: var(--ink); font-size: 18px; font-weight: 700; text-align: left; padding: 6px 16px; display: flex; align-items: center; gap: 12px; }
+.k-answer--primary { border: none; background: var(--blue); color: var(--white); }
+.k-answer svg { flex: none; }
+
+/* ObjectTile */
+.k-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.k-tile { min-height: var(--target-tile); border-radius: var(--radius-lg); border: 2px solid var(--ink); background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 6px; text-align: center; }
+.k-tile[aria-pressed="true"] { border: 3px solid var(--blue); background: var(--blue-tint); }
+.k-tile__label { font-size: 18px; font-weight: 700; line-height: 1.7; }
+.k-tile__purpose { font-size: 12px; line-height: 1.5; color: var(--ink-subtle); }
+.k-tile__mark { font-size: 12px; font-weight: 700; color: var(--blue); min-height: 16px; }
+
+/* StateLabel */
+.k-state { display: inline-flex; align-items: center; gap: 4px; padding: 0 8px; border-radius: var(--radius-pill); background: var(--white); border: 1.5px solid currentColor; font-size: 12px; font-weight: 700; line-height: 1.8; }
+.k-state--now, .k-state--wait { color: var(--blue); }
+.k-state--check, .k-state--done { color: var(--orange); }
+.k-state--ask, .k-state--later, .k-state--out { color: var(--ink-subtle); border-style: dashed; }
+
+/* Notice */
+.k-notice { padding: 8px 12px; border-left: 4px solid var(--orange); background: var(--orange-tint); color: var(--orange-ink); font-size: 14px; line-height: 1.8; }
+.k-notice p { margin: 0; }
+
+/* Checklist */
+.k-check { box-sizing: border-box; width: 100%; min-height: 64px; border-radius: 16px; border: 2px solid var(--ink); background: var(--white); display: flex; align-items: center; gap: 12px; padding: 6px 14px; text-align: left; }
+.k-check__box { width: 28px; height: 28px; flex: none; box-sizing: border-box; border: 2.5px solid var(--ink); border-radius: var(--radius-box); background: var(--white); color: var(--white); font-size: 18px; line-height: 22px; text-align: center; font-weight: 700; }
+.k-check[aria-pressed="true"] .k-check__box { background: var(--blue); }
+
+/* CounterPhrase */
+.k-counter { padding: var(--space-4); border: 3px solid var(--ink); border-radius: var(--radius-lg); background: var(--white); display: flex; flex-direction: column; gap: 8px; }
+.k-counter__ja { margin: 0; font-size: 28px; font-weight: 700; line-height: 1.9; }
+.k-counter__mean { margin: 0; font-size: 16px; color: var(--ink-muted); border-top: 1.5px dashed var(--line-dash); padding-top: 6px; }
+.k-heard { display: flex; align-items: center; gap: 10px; background: var(--cream); border-radius: var(--radius-sm); padding: 4px 4px 4px 12px; }
+.k-heard__ja { font-size: 18px; font-weight: 700; line-height: 1.9; }
+.k-heard__mean { flex: 1; font-size: 13px; }
+.k-star { min-width: var(--target-min); min-height: var(--target-min); border: none; background: none; color: var(--blue); font-size: 20px; font-weight: 700; }
+
+/* ViewSwitcher */
+.k-views { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; background: var(--sand-soft); border-radius: var(--radius-md); padding: 4px; }
+.k-views button { min-height: 48px; border: none; border-radius: 10px; background: transparent; color: var(--ink-subtle); font-size: 14px; font-weight: 700; }
+.k-views button[aria-current="page"] { background: var(--white); color: var(--ink); }

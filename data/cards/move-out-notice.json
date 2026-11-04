@@ -1,0 +1,65 @@
+{
+  "id": "move-out-notice",
+  "data_version": 1,
+  "illustration": "box",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L1",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": true,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-origin-other-city",
+      "R-moveout-not-yet"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "転出届（前の市）",
+    "ja_easy": "{転出届|てんしゅつとどけ}（{前|まえ}の{市|し}）",
+    "en": "Move-out notice (previous city)"
+  },
+  "official_name": {
+    "ja": "転出届",
+    "reading": "てんしゅつとどけ"
+  },
+  "summary": {
+    "ja": "前に住んでいた市区町村で出します。引っ越す前でも出せます。マイナンバーカードがあれば、オンラインで出せることがあります（要確認）。",
+    "ja_easy": "{前|まえ}の{市|し}の{役所|やくしょ}で{出|だ}します。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。",
+    "en": "Submit it at your previous city office. You can do it before moving. With a My Number Card you may be able to do it online (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "前に住んでいた市区町村の役所",
+      "ja_easy": "{前|まえ}の{市|し}の{役所|やくしょ}",
+      "en": "The office of your previous city"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "place": "prev_city",
+  "keywords": [
+    "てんしゅつ",
+    "tenshutsu",
+    "moving out",
+    "move-out",
+    "引っ越し"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

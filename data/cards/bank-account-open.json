@@ -1,0 +1,78 @@
+{
+  "id": "bank-account-open",
+  "data_version": 1,
+  "illustration": "bank",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L3",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-no-own-bank-account"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "銀行の口座",
+    "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}",
+    "en": "Bank account"
+  },
+  "official_name": {
+    "ja": "口座開設",
+    "reading": "こうざかいせつ"
+  },
+  "summary": {
+    "ja": "法律のきまりではありません。日本で暮らすには、ほとんどの人に必要です。条件は銀行ごとに違います。",
+    "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。",
+    "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "銀行（条件は銀行ごとに違います。要確認）",
+      "ja_easy": "{銀行|ぎんこう}",
+      "en": "A bank (conditions differ by bank; to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "place": "bank",
+  "keywords": [
+    "ぎんこう",
+    "こうざ",
+    "ginko",
+    "koza",
+    "bank",
+    "account",
+    "cash card",
+    "キャッシュカード"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "自分の口座があると答えたので、口座を作る案内は出しません。住所の変更は銀行で確かめてください。",
+      "ja_easy": "{自分|じぶん}の{口座|こうざ}があるので、{出|だ}しません。{住所|じゅうしょ}が{変|か}わったら、{銀行|ぎんこう}に{聞|き}いてください。",
+      "en": "You said you have your own account, so we do not show how to open one. Ask your bank about changing your address."
+    },
+    "check_at_office": {
+      "ja": "口座があるか、通帳や銀行のアプリで確かめてください。",
+      "ja_easy": "{口座|こうざ}があるか、{通帳|つうちょう}や{銀行|ぎんこう}のアプリで{見|み}てください。",
+      "en": "Check your passbook or bank app to see if you have an account."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  }
+}

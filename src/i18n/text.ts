@@ -1,0 +1,55 @@
+/* 多言語の文と表示レベル（SPEC 9.2・15.1）。
+   言語は data/ui/languages.json だけで決まる。ここに言語名を書かない。 */
+import languages from '../../data/ui/languages.json';
+import strings from '../../data/ui/strings.json';
+
+export type LevelKind = 'ja' | 'ja_easy' | 'foreign';
+export interface Level { id: string; kind: LevelKind; lang: string; dir: 'ltr' | 'rtl'; label: string; labelRuby?: string; speechLang: string }
+/** 言語ごとの文。キーは表示レベルの id（ja・ja_easy・en …）。ふりがなは {漢字|よみ} */
+export type LocalizedText = { ja: string; ja_easy?: string; status?: 'draft' | 'verified' } & Record<string, string | undefined>;
+
+export const LEVELS = languages.levels as Level[];
+export const levelById = (id: string): Level => LEVELS.find((l) => l.id === id) ?? LEVELS[0];
+
+const UI = strings as unknown as Record<string, LocalizedText>;
+export type UiKey = Exclude<keyof typeof strings, '$comment'>;
+export const ui = (k: UiKey): LocalizedText => UI[k];
+
+/** 表示する形：主の1行と、外国語のときの2段目（ふりがな付きの日本語） */
+export interface Shown { main: string; mainLang: string; sub: string | null; fallback: boolean; draft: boolean }
+
+export function show(t: LocalizedText, level: Level): Shown {
+  const easy = t.ja_easy ?? t.ja;
+  const draft = t.status === 'draft';
+  if (level.kind === 'ja') return { main: t.ja, mainLang: 'ja', sub: null, fallback: false, draft };
+  if (level.kind === 'ja_easy') return { main: easy, mainLang: 'ja', sub: null, fallback: false, draft };
+  const own = t[level.id];
+  // その言語の文がないときは、日本語（やさしい）だけを出し、lang="ja" にする（SPEC 15.1・15.2）
+  if (!own) return { main: easy, mainLang: 'ja', sub: null, fallback: true, draft };
+  return { main: own, mainLang: level.lang, sub: easy, fallback: false, draft };
+}
+
+/** 1行だけの文（aria-label・狭いところ）。ふりがなは外す */
+export function line(t: LocalizedText, level: Level): string {
+  const s = show(t, level);
+  return plain(s.main);
+}
+
+const RUBY = /\{([^|{}]+)\|([^{}]+)\}/g;
+export type Seg = { t: string; r?: string };
+/** {漢字|よみ} を区切る */
+export function segs(s: string): Seg[] {
+  const out: Seg[] = [];
+  let last = 0;
+  for (const m of s.matchAll(RUBY)) {
+    if (m.index! > last) out.push({ t: s.slice(last, m.index) });
+    out.push({ t: m[1], r: m[2] });
+    last = m.index! + m[0].length;
+  }
+  if (last < s.length) out.push({ t: s.slice(last) });
+  return out;
+}
+/** ふりがなを外した文（漢字のまま） */
+export const plain = (s: string) => s.replace(RUBY, '$1');
+/** 読み上げ用の文（漢字を読みに置き換える。読み間違いを防ぐ。SPEC 6A.12） */
+export const reading = (s: string) => s.replace(RUBY, '$2');

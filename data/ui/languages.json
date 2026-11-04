@@ -1,0 +1,8 @@
+{
+  "$comment": "表示レベルの一覧。言語を足すときは、ここに1行足し、data/ui/*.json とガイドのデータに同じキーの文を足す。外国語（kind: foreign）は、その言語の1行＋ふりがな付きの日本語（ja_easy）の2段で出す（SPEC 9.2・15.1）。",
+  "levels": [
+    { "id": "ja", "kind": "ja", "lang": "ja", "dir": "ltr", "label": "日本語", "speechLang": "ja-JP" },
+    { "id": "ja_easy", "kind": "ja_easy", "lang": "ja", "dir": "ltr", "label": "やさしい日本語", "labelRuby": "やさしい{日本語|にほんご}", "speechLang": "ja-JP" },
+    { "id": "en", "kind": "foreign", "lang": "en", "dir": "ltr", "label": "English", "speechLang": "en-US" }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "$comment": "持ち物（SPEC 9.10）。並びはこのファイルの順。物と事実の対応は本アプリの定義（出典は本書）。持っていないときの事実は書かない（v0.4.2）。",
+  "objects": [
+    {
+      "id": "zairyu-card",
+      "illustration": "card",
+      "show_for": [
+        "abroad"
+      ],
+      "title": {
+        "ja": "在留カード",
+        "ja_easy": "{在留|ざいりゅう}カード",
+        "en": "Residence card"
+      },
+      "purpose": {
+        "ja": "裏の住所で、届けが済んだか確かめます",
+        "ja_easy": "{裏|うら}の{住所|じゅうしょ}を{見|み}ます",
+        "en": "We check the address on the back"
+      },
+      "yields_when_held": [
+        {
+          "fact": "residence_basis",
+          "value": "card_has"
+        }
+      ],
+      "check_question": "Q-zairyu-back-address",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "passport",
+      "illustration": "passport",
+      "show_for": [
+        "abroad"
+      ],
+      "title": {
+        "ja": "パスポート",
+        "ja_easy": "パスポート",
+        "en": "Passport"
+      },
+      "purpose": {
+        "ja": "区役所に行く日の持ち物に入れます",
+        "ja_easy": "{区役所|くやくしょ}に{持|も}っていきます",
+        "en": "Added to what to bring to the ward office"
+      },
+      "yields_when_held": [],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "mynumber-card",
+      "illustration": "mycard",
+      "show_for": [
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "マイナンバーカード",
+        "ja_easy": "マイナンバーカード",
+        "en": "My Number Card"
+      },
+      "purpose": {
+        "ja": "あれば、転入届のときに住所を書き換える案内を出します",
+        "ja_easy": "あれば、{住所|じゅうしょ}を{変|か}える{案内|あんない}を{出|だ}します",
+        "en": "If yes, we show how to update its address"
+      },
+      "yields_when_held": [
+        {
+          "fact": "has_mynumber_card",
+          "value": true
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "moveout-certificate",
+      "illustration": "doc",
+      "show_for": [
+        "other_city"
+      ],
+      "title": {
+        "ja": "前の市でもらった転出証明書",
+        "ja_easy": "{前|まえ}の{市|し}でもらった{転出証明書|てんしゅつしょうめいしょ}",
+        "en": "Move-out certificate from my previous city"
+      },
+      "purpose": {
+        "ja": "あれば、前の市の手続きは済んでいます",
+        "ja_easy": "あれば、{前|まえ}の{市|し}の{手続|てつづ}きは{終|お}わっています",
+        "en": "If yes, the procedure in your previous city is done"
+      },
+      "yields_when_held": [
+        {
+          "fact": "moveout",
+          "value": "paper"
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "health-insurance-card",
+      "illustration": "hcard",
+      "show_for": [
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "健康保険の資格確認書・保険証",
+        "ja_easy": "{健康保険|けんこうほけん}の{証明|しょうめい}（{保険証|ほけんしょう}）",
+        "en": "Health insurance certificate or card"
+      },
+      "purpose": {
+        "ja": "区役所に行く日の持ち物に入れます。どの保険かは、あとで聞きます",
+        "ja_easy": "{区役所|くやくしょ}に{持|も}っていきます",
+        "en": "Added to what to bring. We ask which insurance later"
+      },
+      "yields_when_held": [],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "bank-cash-card",
+      "illustration": "cashcard",
+      "show_for": [
+        "abroad",
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "日本の銀行の、自分のキャッシュカード",
+        "ja_easy": "{日本|にほん}の{銀行|ぎんこう}の、{自分|じぶん}のカード",
+        "en": "My own Japanese bank cash card"
+      },
+      "purpose": {
+        "ja": "ないときは、口座があるかを1つ聞きます",
+        "ja_easy": "ないときは、{口座|こうざ}のことを{聞|き}きます",
+        "en": "If not, we ask one question about your account"
+      },
+      "yields_when_held": [
+        {
+          "fact": "has_own_bank_account",
+          "value": true
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "room-key",
+      "illustration": "key",
+      "show_for": [
+        "abroad",
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "自分で借りた部屋の鍵",
+        "ja_easy": "{自分|じぶん}で{借|か}りた{部屋|へや}の{鍵|かぎ}",
+        "en": "Key to a room I rent myself"
+      },
+      "purpose": {
+        "ja": "あれば、電気・水道の案内を出します",
+        "ja_easy": "あれば、{電気|でんき}・{水道|すいどう}のことを{出|だ}します",
+        "en": "If yes, we show power and water setup"
+      },
+      "yields_when_held": [
+        {
+          "fact": "housing",
+          "value": "rented"
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "student-id",
+      "illustration": "student",
+      "show_for": [
+        "abroad",
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "学生証",
+        "ja_easy": "{学生証|がくせいしょう}",
+        "en": "Student ID"
+      },
+      "purpose": {
+        "ja": "持ち物の一覧に入れます（まだなくても、学生ではないとはしません）",
+        "ja_easy": "{持|も}ち{物|もの}に{入|い}れます",
+        "en": "Added to your list of things to bring (not having one does not mean you are not a student)"
+      },
+      "yields_when_held": [],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "$comment": "カードの間の関係（SPEC 9.6）。1か所だけに書く。verified の関係だけが、順番・待ち・日を選べるかを変える。needs_check は注記だけ。",
+  "relations": [
+    {
+      "id": "rel-moveout-before-tennyu",
+      "type": "legal_prerequisite",
+      "from": "move-out-notice",
+      "to": "nagoya-tennyu-todoke",
+      "satisfied_when_rule_ids": [
+        "R-moveout-done"
+      ],
+      "explain": {
+        "ja": "前に住んでいた市区町村で転出届を出してから、転入届を出します。",
+        "ja_easy": "{前|まえ}の{市|し}で{転出届|てんしゅつとどけ}を{出|だ}してから、{転入届|てんにゅうとどけ}を{出|だ}します。",
+        "en": "Submit the move-out notice in your previous city first, then the moving-in notice in Nagoya."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-juukyochi-before-kokuho",
+      "type": "legal_prerequisite",
+      "from": "nagoya-tennyu-juukyochi",
+      "to": "nagoya-kokuho-kanyu",
+      "satisfied_when_rule_ids": [
+        "R-juukyochi-done"
+      ],
+      "explain": {
+        "ja": "住所の届けのあとで、国民健康保険に入ります。",
+        "ja_easy": "{住所|じゅうしょ}の{届|とど}けのあとで、{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
+        "en": "Join National Health Insurance after registering your address."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-juukyochi-before-bank",
+      "type": "practical_prerequisite",
+      "from": "nagoya-tennyu-juukyochi",
+      "to": "bank-account-open",
+      "satisfied_when_rule_ids": [
+        "R-juukyochi-done"
+      ],
+      "explain": {
+        "ja": "多くの銀行で、在留カードに今の住所があることが必要です（銀行によって違います）。",
+        "ja_easy": "{多|おお}くの{銀行|ぎんこう}で、{在留|ざいりゅう}カードに{今|いま}の{住所|じゅうしょ}が{要|い}ります。",
+        "en": "Many banks need your current address on your residence card (it differs by bank)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-bank-waits-card",
+      "type": "waits_for",
+      "card_id": "bank-account-open",
+      "item_id": "bank-cash-card",
+      "when_rule_ids": [
+        "R-bank-pending"
+      ],
+      "explain": {
+        "ja": "キャッシュカードが届くのを待っています。届く日数は銀行によって違います（要確認）。",
+        "ja_easy": "カードが{届|とど}くのを{待|ま}っています。",
+        "en": "Waiting for your cash card. Delivery time differs by bank (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "rel-ward-same-visit",
+      "type": "same_visit",
+      "card_ids": [
+        "nagoya-tennyu-juukyochi",
+        "nagoya-kokuho-kanyu",
+        "kokumin-nenkin-kanyu"
+      ],
+      "order": [
+        "nagoya-tennyu-juukyochi",
+        "nagoya-kokuho-kanyu",
+        "kokumin-nenkin-kanyu"
+      ],
+      "office_scope": "same_building",
+      "keep_needs_check": true,
+      "explain": {
+        "ja": "同じ区役所でできる可能性があります（担当の課が別のことがあります。要確認）。",
+        "ja_easy": "{同|おな}じ{区役所|くやくしょ}でできるかもしれません。",
+        "en": "These may be possible at the same ward office (different sections; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-lifescene-tennyu"
+        ],
+        "checked_at": "2026-11-02",
+        "status": "needs_check"
+      }
+    }
+  ]
+}

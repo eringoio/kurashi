@@ -1,0 +1,625 @@
+{
+  "$comment": "質問バンク（SPEC 8.2）。並びは質問バンクの順（最初の質問はこの順で聞く）。文と選択肢を直すときは、このファイルだけを開く。",
+  "questions": [
+    {
+      "id": "Q-origin",
+      "fact": "origin",
+      "stage": "upfront",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "どこから引っ越しましたか？",
+        "ja_easy": "どこから{引|ひ}っ{越|こ}しましたか？",
+        "en": "Where did you move from?"
+      },
+      "why_asked": {
+        "ja": "届け出る手続きが変わります。",
+        "ja_easy": "{出|だ}す{書類|しょるい}が{変|か}わります。",
+        "en": "The procedures change."
+      },
+      "options": [
+        {
+          "value": "abroad",
+          "icon": "plane",
+          "label": {
+            "ja": "日本の外から",
+            "ja_easy": "{日本|にほん}の{外|そと}から",
+            "en": "From outside Japan"
+          }
+        },
+        {
+          "value": "other_city",
+          "icon": "box",
+          "label": {
+            "ja": "ほかの市・町・村から",
+            "ja_easy": "ほかの{市|し}・{町|まち}・{村|むら}から",
+            "en": "From another city, town or village"
+          }
+        },
+        {
+          "value": "within_nagoya",
+          "icon": "homemove",
+          "label": {
+            "ja": "名古屋市の中で",
+            "ja_easy": "{名古屋市|なごやし}の{中|なか}で",
+            "en": "Within Nagoya"
+          }
+        },
+        {
+          "value": "out_of_area",
+          "small": true,
+          "label": {
+            "ja": "そのほか（名古屋市の外へ・名古屋市以外で）",
+            "ja_easy": "そのほか（{名古屋市|なごやし}の{外|そと}へ）",
+            "en": "Other (moving out of Nagoya, or elsewhere)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-residence-basis",
+      "fact": "residence_basis",
+      "stage": "upfront",
+      "ask_when": {
+        "fact": "origin",
+        "eq": "abroad"
+      },
+      "text": {
+        "ja": "日本での住民登録について、あてはまるものは？",
+        "ja_easy": "あなたは、どれですか？",
+        "en": "Which of these is true for you?"
+      },
+      "why_asked": {
+        "ja": "在留カードがない人は、届け出る手続きが違います。",
+        "ja_easy": "{在留|ざいりゅう}カードがない{人|ひと}は、{手続|てつづ}きが{違|ちが}います。",
+        "en": "The procedure is different if you have no residence card."
+      },
+      "options": [
+        {
+          "value": "card_later",
+          "label": {
+            "ja": "在留カードがあとで届く（空港でもらえなかった）",
+            "ja_easy": "{在留|ざいりゅう}カードは、あとで{届|とど}く",
+            "en": "My residence card will come later (not given at the airport)"
+          }
+        },
+        {
+          "value": "japanese",
+          "label": {
+            "ja": "日本国籍（帰国した）",
+            "ja_easy": "{日本|にほん}の{国籍|こくせき}（{帰|かえ}ってきた）",
+            "en": "Japanese national (returned to Japan)"
+          }
+        },
+        {
+          "value": "other_resident",
+          "label": {
+            "ja": "在留カード以外の証明書で住民登録をする（特別永住者など）",
+            "ja_easy": "ほかの{証明書|しょうめいしょ}で{住所|じゅうしょ}を{届|とど}ける（{特別永住者|とくべつえいじゅうしゃ}など）",
+            "en": "I register with another certificate (e.g. special permanent resident)"
+          }
+        },
+        {
+          "value": "short_stay",
+          "label": {
+            "ja": "住むためではない、短い滞在（旅行・訪問など）",
+            "ja_easy": "{住|す}まない。{短|みじか}い{旅行|りょこう}など",
+            "en": "A short stay, not to live here (travel, visit)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-role",
+      "fact": "role",
+      "stage": "upfront",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "今のおもな立場は？（学校と仕事の両方なら、おもなほう）",
+        "ja_easy": "あなたは、いま{何|なに}をしていますか？",
+        "en": "What do you mainly do now? (If both school and work, the main one)"
+      },
+      "why_asked": {
+        "ja": "健康保険のカードが変わります。",
+        "ja_easy": "{健康保険|けんこうほけん}のことが{変|か}わります。",
+        "en": "This changes the health insurance guidance."
+      },
+      "options": [
+        {
+          "value": "student",
+          "icon": "student",
+          "label": {
+            "ja": "学生",
+            "ja_easy": "{学生|がくせい}",
+            "en": "Student"
+          }
+        },
+        {
+          "value": "working",
+          "icon": "work",
+          "label": {
+            "ja": "働いている・働き始める",
+            "ja_easy": "{働|はたら}いている・{働|はたら}き{始|はじ}める",
+            "en": "Working / starting work"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "ja": "どちらでもない",
+            "ja_easy": "どちらでもない",
+            "en": "Neither"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない・答えたくない",
+            "ja_easy": "わからない・{答|こた}えたくない",
+            "en": "Not sure / prefer not to say"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-age-band",
+      "fact": "age_band",
+      "stage": "upfront",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "年齢は？",
+        "ja_easy": "{何歳|なんさい}ですか？",
+        "en": "How old are you?"
+      },
+      "why_asked": {
+        "ja": "年齢によって、年金と健康保険のカードが変わります。",
+        "ja_easy": "{年|とし}で、{年金|ねんきん}と{保険|ほけん}が{変|か}わります。",
+        "en": "Pension and health insurance depend on your age."
+      },
+      "options": [
+        {
+          "value": "under_20",
+          "label": {
+            "ja": "20歳未満",
+            "ja_easy": "20{歳|さい}より{下|した}",
+            "en": "Under 20"
+          }
+        },
+        {
+          "value": "20_59",
+          "label": {
+            "ja": "20歳から59歳まで",
+            "ja_easy": "20{歳|さい}から59{歳|さい}まで",
+            "en": "20 to 59"
+          }
+        },
+        {
+          "value": "60_plus",
+          "label": {
+            "ja": "60歳以上",
+            "ja_easy": "60{歳|さい}より{上|うえ}",
+            "en": "60 or older"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "答えたくない",
+            "ja_easy": "{答|こた}えたくない",
+            "en": "Prefer not to say"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-insurance",
+      "fact": "insurance",
+      "stage": "in_card",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "健康保険は、どれに入っていますか？",
+        "ja_easy": "{健康保険|けんこうほけん}は、どれに{入|はい}っていますか？",
+        "en": "Which health insurance are you in?"
+      },
+      "why_asked": {
+        "ja": "入っている保険で、国民健康保険が必要かが変わります。",
+        "ja_easy": "{入|はい}っている{保険|ほけん}で、{変|か}わります。",
+        "en": "Whether you need National Health Insurance depends on this."
+      },
+      "options": [
+        {
+          "value": "none",
+          "label": {
+            "ja": "まだどれにも入っていない",
+            "ja_easy": "まだ{入|はい}っていない",
+            "en": "None yet"
+          }
+        },
+        {
+          "value": "employer_self",
+          "label": {
+            "ja": "自分の職場の健康保険",
+            "ja_easy": "{自分|じぶん}の{会社|かいしゃ}の{保険|ほけん}",
+            "en": "My own workplace insurance"
+          }
+        },
+        {
+          "value": "employer_family",
+          "label": {
+            "ja": "家族の職場の健康保険（家族の扶養）",
+            "ja_easy": "{家族|かぞく}の{会社|かいしゃ}の{保険|ほけん}",
+            "en": "A family member's workplace insurance (as a dependent)"
+          }
+        },
+        {
+          "value": "kokuho",
+          "label": {
+            "ja": "国民健康保険",
+            "ja_easy": "{国民健康保険|こくみんけんこうほけん}",
+            "en": "National Health Insurance"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-age-75",
+      "fact": "age_75_plus",
+      "stage": "in_card",
+      "ask_when": {
+        "fact": "age_band",
+        "eq": "60_plus"
+      },
+      "text": {
+        "ja": "75歳以上ですか？",
+        "ja_easy": "75{歳|さい}より{上|うえ}ですか？",
+        "en": "Are you 75 or older?"
+      },
+      "why_asked": {
+        "ja": "75歳以上の人は、別の制度です。",
+        "ja_easy": "75{歳|さい}より{上|うえ}の{人|ひと}は、{別|べつ}の{保険|ほけん}です。",
+        "en": "People aged 75 or older are in a different system."
+      },
+      "options": [
+        {
+          "value": true,
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": false,
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "答えたくない",
+            "ja_easy": "{答|こた}えたくない",
+            "en": "Prefer not to say"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-pension-type",
+      "fact": "pension_type",
+      "stage": "in_card",
+      "ask_when": {
+        "fact": "age_band",
+        "eq": "20_59"
+      },
+      "text": {
+        "ja": "年金について、あてはまるものは？",
+        "ja_easy": "{年金|ねんきん}は、どれですか？",
+        "en": "Which is true about your pension?"
+      },
+      "why_asked": {
+        "ja": "入っている年金で、国民年金の手続きが変わります。",
+        "ja_easy": "{年金|ねんきん}で、{手続|てつづ}きが{変|か}わります。",
+        "en": "The National Pension procedure depends on this."
+      },
+      "options": [
+        {
+          "value": "none",
+          "label": {
+            "ja": "どちらでもない（厚生年金でも、配偶者の扶養でもない）",
+            "ja_easy": "どちらでもない",
+            "en": "Neither (not in the Employees' Pension, not a dependent spouse)"
+          }
+        },
+        {
+          "value": "kosei",
+          "label": {
+            "ja": "職場の厚生年金に入っている",
+            "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}（{厚生年金|こうせいねんきん}）に{入|はい}っている",
+            "en": "I am in my workplace's Employees' Pension"
+          }
+        },
+        {
+          "value": "spouse_dependent",
+          "label": {
+            "ja": "厚生年金に入っている配偶者の扶養に入っている",
+            "ja_easy": "{夫|おっと}か{妻|つま}の{扶養|ふよう}に{入|はい}っている",
+            "en": "I am a dependent spouse of someone in the Employees' Pension"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-mynumber-card",
+      "fact": "has_mynumber_card",
+      "stage": "in_card",
+      "ask_when": {
+        "fact": "origin",
+        "eq": "other_city"
+      },
+      "text": {
+        "ja": "マイナンバーカードを持っていますか？",
+        "ja_easy": "マイナンバーカードがありますか？",
+        "en": "Do you have a My Number Card?"
+      },
+      "why_asked": {
+        "ja": "転入届のやり方と、カードの住所の書き換えが変わります。",
+        "ja_easy": "{手続|てつづ}きのやり{方|かた}が{変|か}わります。",
+        "en": "This changes how you submit the moving-in notice and update the card."
+      },
+      "options": [
+        {
+          "value": true,
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": false,
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-moveout",
+      "fact": "moveout",
+      "stage": "in_card",
+      "ask_when": {
+        "fact": "origin",
+        "eq": "other_city"
+      },
+      "text": {
+        "ja": "前に住んでいた市区町村で、転出届を出しましたか？",
+        "ja_easy": "{前|まえ}の{市|し}で、{転出届|てんしゅつとどけ}を{出|だ}しましたか？",
+        "en": "Did you submit a move-out notice in your previous city?"
+      },
+      "why_asked": {
+        "ja": "転出届のあとで、名古屋市で転入届を出します。",
+        "ja_easy": "{転出届|てんしゅつとどけ}のあとで、{転入届|てんにゅうとどけ}を{出|だ}します。",
+        "en": "You submit the moving-in notice in Nagoya after the move-out notice."
+      },
+      "options": [
+        {
+          "value": "paper",
+          "label": {
+            "ja": "紙の転出証明書をもらった",
+            "ja_easy": "{紙|かみ}の{転出証明書|てんしゅつしょうめいしょ}をもらった",
+            "en": "Yes, I got a paper move-out certificate"
+          }
+        },
+        {
+          "value": "card",
+          "label": {
+            "ja": "マイナンバーカードを使って出した",
+            "ja_easy": "マイナンバーカードで{出|だ}した",
+            "en": "Yes, online with my My Number Card"
+          }
+        },
+        {
+          "value": "not_yet",
+          "label": {
+            "ja": "まだ",
+            "ja_easy": "まだです",
+            "en": "Not yet"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-moved-in",
+      "fact": "moved_in",
+      "stage": "in_card",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "新しい住所に、もう住み始めましたか？",
+        "ja_easy": "{新|あたら}しい{家|いえ}に、もう{住|す}んでいますか？",
+        "en": "Have you started living at your new address?"
+      },
+      "why_asked": {
+        "ja": "住所の届けは、住み始めてから出します。",
+        "ja_easy": "{住所|じゅうしょ}の{届|とど}けは、{住|す}んでから{出|だ}します。",
+        "en": "You register your address after you move in."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "not_yet",
+          "label": {
+            "ja": "まだ（これから）",
+            "ja_easy": "まだです",
+            "en": "Not yet"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-bank-account",
+      "fact": "has_own_bank_account",
+      "stage": "in_card",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "日本の銀行に、自分の口座はありますか？",
+        "ja_easy": "{日本|にほん}の{銀行|ぎんこう}に、{自分|じぶん}の{口座|こうざ}がありますか？",
+        "en": "Do you have your own bank account in Japan?"
+      },
+      "why_asked": {
+        "ja": "キャッシュカードがなくても、口座はあることがあります（カードがまだ届いていないなど）。",
+        "ja_easy": "カードがなくても、{口座|こうざ}があることがあります。",
+        "en": "You may have an account even without a cash card (for example, the card has not arrived yet)."
+      },
+      "options": [
+        {
+          "value": true,
+          "label": {
+            "ja": "ある",
+            "ja_easy": "あります",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "pending",
+          "label": {
+            "ja": "申し込んで、カードが届くのを待っている",
+            "ja_easy": "{申|もう}し{込|こ}んで、カードを{待|ま}っている",
+            "en": "I applied and am waiting for the card"
+          }
+        },
+        {
+          "value": false,
+          "label": {
+            "ja": "ない",
+            "ja_easy": "ありません",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-zairyu-back-address",
+      "fact": "zairyu_back_address",
+      "stage": "object_check",
+      "ask_when": {
+        "fact": "residence_basis",
+        "eq": "card_has"
+      },
+      "text": {
+        "ja": "在留カードの裏に、今の住所が書いてありますか？",
+        "ja_easy": "{在留|ざいりゅう}カードの{裏|うら}に、{今|いま}の{住所|じゅうしょ}がありますか？",
+        "en": "Is your current address written on the back of your residence card?"
+      },
+      "why_asked": {
+        "ja": "カードの裏の「住居地」の欄を見てください。",
+        "ja_easy": "カードの{裏|うら}を{見|み}てください。",
+        "en": "Look at the address field on the back of the card."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "書いてある",
+            "ja_easy": "あります",
+            "en": "Yes, it is"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "書いていない",
+            "ja_easy": "ありません",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    }
+  ]
+}

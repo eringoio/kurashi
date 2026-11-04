@@ -1,0 +1,84 @@
+{
+  "id": "nagoya-tennyu-juukyochi",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L3",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": true,
+  "requires_moved_in": true,
+  "eligibility": {
+    "all": [
+      "R-origin-abroad",
+      "R-has-residence-card"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "住所の届け",
+    "ja_easy": "{住所|じゅうしょ}の{届|とど}け",
+    "en": "Address registration"
+  },
+  "official_name": {
+    "ja": "転入届（住居地の届出）",
+    "reading": "てんにゅうとどけ（じゅうきょちのとどけで）"
+  },
+  "summary": {
+    "ja": "日本の外から来て名古屋市に住み始めたら、区役所・支所の市民課で転入届を出します。在留カードを持っていき、裏に住所を書いてもらいます。",
+    "ja_easy": "{日本|にほん}の{外|そと}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}します。{在留|ざいりゅう}カードを{持|も}っていきます。",
+    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office. Bring your residence card; your address is written on the back."
+  },
+  "deadline": {
+    "text": {
+      "ja": "住み始めてから14日以内（要確認）",
+      "ja_easy": "{住|す}み{始|はじ}めてから14{日|にち}まで（{要確認|ようかくにん}）",
+      "en": "Within 14 days of moving in (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-juukyochi",
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "住む区の区役所・支所の市民課",
+      "ja_easy": "{住|す}む{区|く}の{区役所|くやくしょ}",
+      "en": "Citizens Section of your ward office or branch"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-02",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "keywords": [
+    "じゅうしょ",
+    "てんにゅう",
+    "jusho",
+    "tennyu",
+    "address",
+    "residence card",
+    "在留カード",
+    "住民登録",
+    "住民票"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "isa-juukyochi",
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-02",
+    "status": "needs_check"
+  }
+}

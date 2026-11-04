@@ -1,0 +1,34 @@
+{
+  "name": "kurashi",
+  "private": true,
+  "version": "0.0.1",
+  "description": "kurashi（暫定）— 名古屋市で暮らす人が、生活の出来事から知らなかった手続きに気づくための Web アプリ",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "test": "vitest run",
+    "test:a11y": "playwright test",
+    "check": "tsc --noEmit && vitest run && playwright test",
+    "icons": "node scripts/make-icons.js"
+  },
+  "dependencies": {
+    "@fontsource/zen-maru-gothic": "^5.3.1",
+    "idb": "^8.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.48.2",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "fake-indexeddb": "^6.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}

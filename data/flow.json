@@ -1,0 +1,16 @@
+{
+  "$comment": "並びを変えるときは、このファイルを直す。card_order：判定の並び順（SPEC 10.3）で決まらないときの最後の順（card_id の辞書順の代わり）。built_origins：画面の経路ができている道のり。",
+  "card_order": [
+    "move-out-notice",
+    "nagoya-tennyu-todoke",
+    "nagoya-tennyu-juukyochi",
+    "nagoya-kokuho-kanyu",
+    "kokumin-nenkin-kanyu",
+    "nenkin-at-20",
+    "bank-account-open"
+  ],
+  "built_origins": [
+    "abroad",
+    "other_city"
+  ]
+}
