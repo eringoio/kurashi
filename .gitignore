@@ -23,6 +23,7 @@ desktop.ini
 # デモ動画の書き出し・字体（どちらも作り直せる）
 demo-video/**/out/
 demo-video/**/src/fonts/*.ttf
+demo-video/use-cases/kit/fonts/
 
 # 自動の検査の結果（作り直せる）
 test-results/
