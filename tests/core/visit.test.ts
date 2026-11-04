@@ -56,3 +56,9 @@ describe('銀行の日は、住所の届けの日より前にできない（day_
     expect(bank({ 'nagoya-tennyu-juukyochi': { card_id: 'nagoya-tennyu-juukyochi', status: 'done' } })).toEqual({ kind: 'free' });
   });
 });
+
+describe('20歳になると届く年金のお知らせ（R-under-20 は確認済み。作者 11/5）', () => {
+  it('20歳以上の人には出さない', () => {
+    expect(out().cards.find((x) => x.card.id === 'nenkin-at-20')!.state).toBe('excluded');
+  });
+});

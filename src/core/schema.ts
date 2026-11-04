@@ -10,6 +10,9 @@ export const Evidence = z.object({
   status: Status,
   note: z.string().optional(),
   review_after_days: z.number().nullable().optional(),
+  /** 確かめた人（author など）と、原文の短い引用（docs/DATA_UPDATE.md） */
+  verified_by: z.string().optional(),
+  quote: z.string().optional(),
 });
 export type Evidence = z.infer<typeof Evidence>;
 

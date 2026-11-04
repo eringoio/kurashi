@@ -20,11 +20,11 @@ describe('B1（公開時点のデータ）', () => {
     expect(s['nagoya-kokuho-kanyu'][0]).toBe('check_at_office');
     expect(s['kokumin-nenkin-kanyu'][0]).toBe('check_at_office');
   });
-  it('転入届・転出届・20歳の予告は、公式のルールが未確認なので「窓口で確認」', () => {
+  it('転入届・転出届は、公式のルールが未確認なので「窓口で確認」。20歳の予告は確認済み（作者 11/5）なので、20歳未満には出る', () => {
     const s = st(o);
     expect(s['nagoya-tennyu-todoke']).toEqual(['check_at_office', 'check']);
     expect(s['move-out-notice'][0]).toBe('check_at_office');
-    expect(s['nenkin-at-20'][0]).toBe('check_at_office');
+    expect(s['nenkin-at-20']).toEqual(['shown', 'later']);
     expect(s['bank-account-open']).toEqual(['shown', 'today']);
   });
   it('最初の質問は4問以内（origin・role・age_band）', () => {

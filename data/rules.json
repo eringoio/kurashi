@@ -504,8 +504,9 @@
           "nenkin-hatachi-page",
           "nenkin-kanyu-page"
         ],
-        "checked_at": "2026-11-02",
-        "status": "needs_check"
+        "checked_at": "2026-11-05",
+        "status": "verified",
+        "verified_by": "author"
       }
     }
   ]
