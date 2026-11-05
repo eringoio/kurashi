@@ -376,9 +376,9 @@
     "status": "draft"
   },
   "page.comingSoon.events": {
-    "ja": "{準備|じゅんび}{中|ちゅう}の{出来事|できごと}：{働|はたら}き{始|はじ}めた・{仕事|しごと}が{変|か}わった／{学校|がっこう}に{入|はい}った・{卒業|そつぎょう}した／{結婚|けっこん}した・パートナーと{暮|く}らし{始|はじ}めた／{体調|たいちょう}が{悪|わる}い・{病院|びょういん}に{行|い}きたい／{子|こ}どもが{生|う}まれた／{事業|じぎょう}を{始|はじ}めた／{何|なに}かをなくした",
-    "ja_easy": "じゅんびしていること：{働|はたら}く／{学校|がっこう}／{結婚|けっこん}／{病院|びょういん}／{子|こ}ども／{仕事|しごと}を{始|はじ}める／なくしもの",
-    "en": "Coming later: starting or changing a job / starting or finishing school / marriage or living with a partner / feeling sick or seeing a doctor / having a baby / starting a business / losing something",
+    "ja": "{準備|じゅんび}{中|ちゅう}の{出来事|できごと}：{働|はたら}き{始|はじ}めた・{仕事|しごと}が{変|か}わった／{学校|がっこう}に{入|はい}った・{卒業|そつぎょう}した／{結婚|けっこん}した・パートナーと{暮|く}らし{始|はじ}めた／{子|こ}どもが{生|う}まれた／{事業|じぎょう}を{始|はじ}めた／{何|なに}かをなくした",
+    "ja_easy": "じゅんびしていること：{働|はたら}く／{学校|がっこう}／{結婚|けっこん}／{子|こ}ども／{仕事|しごと}を{始|はじ}める／なくしもの",
+    "en": "Coming later: starting or changing a job / starting or finishing school / marriage or living with a partner / having a baby / starting a business / losing something",
     "status": "draft"
   },
   "page.disclaimer.title": {
@@ -2450,5 +2450,115 @@
     "ja": "カレンダーを{見|み}る",
     "ja_easy": "カレンダー",
     "en": "See the calendar"
+  },
+  "clinic.home": {
+    "ja": "{体調|たいちょう}が{悪|わる}い・{病院|びょういん}に{行|い}きたい",
+    "ja_easy": "{体|からだ}の{調子|ちょうし}が{悪|わる}い・{病院|びょういん}",
+    "en": "I feel sick / I want to see a doctor"
+  },
+  "clinic.step": {
+    "ja": "{step} / 3",
+    "ja_easy": "{step} / 3",
+    "en": "{step} / 3"
+  },
+  "clinic.bandLabel": {
+    "ja": "{緊急|きんきゅう}の{連絡先|れんらくさき}",
+    "ja_easy": "{急|いそ}ぐときの{電話|でんわ}",
+    "en": "Emergency numbers"
+  },
+  "clinic.h1": {
+    "ja": "どこが{困|こま}っていますか？",
+    "ja_easy": "どこが{困|こま}っていますか？",
+    "en": "Where is the problem?"
+  },
+  "clinic.qlbl": {
+    "ja": "{言葉|ことば}で{探|さが}す",
+    "ja_easy": "ことばでさがす",
+    "en": "Type a word"
+  },
+  "clinic.qph": {
+    "ja": "{例|れい}：は、{歯|は}、め、tooth",
+    "ja_easy": "れい：は、{歯|は}、め、tooth",
+    "en": "e.g. tooth, eye, 歯"
+  },
+  "clinic.none": {
+    "ja": "{見|み}つかりません。{絵|え}から{選|えら}んでください。",
+    "ja_easy": "{見|み}つかりません。{絵|え}からえらんでください。",
+    "en": "No match. Please choose from the picture."
+  },
+  "clinic.body": {
+    "ja": "からだの{絵|え}から{選|えら}ぶ",
+    "ja_easy": "からだの{絵|え}をおす",
+    "en": "Or choose on the body"
+  },
+  "clinic.notbody": {
+    "ja": "{絵|え}にないもの",
+    "ja_easy": "{絵|え}にないもの",
+    "en": "Not on the picture"
+  },
+  "clinic.picked": {
+    "ja": "{選|えら}んだもの",
+    "ja_easy": "えらんだもの",
+    "en": "You chose"
+  },
+  "clinic.change": {
+    "ja": "{変|か}える",
+    "ja_easy": "かえる",
+    "en": "Change"
+  },
+  "clinic.h2": {
+    "ja": "まず、ここへ{行|い}ってみましょう",
+    "ja_easy": "まず、ここへ{行|い}ってみましょう",
+    "en": "Try here first"
+  },
+  "clinic.first": {
+    "ja": "まず",
+    "ja_easy": "まず",
+    "en": "First"
+  },
+  "clinic.others": {
+    "ja": "ほかに、こんな{科|か}もあります",
+    "ja_easy": "ほかに、こんな{科|か}もあります",
+    "en": "Other departments that may fit"
+  },
+  "clinic.h3": {
+    "ja": "{行|い}く{前|まえ}に",
+    "ja_easy": "{行|い}く{前|まえ}に",
+    "en": "Before you go"
+  },
+  "clinic.findH": {
+    "ja": "{病院|びょういん}を{探|さが}す",
+    "ja_easy": "{病院|びょういん}をさがす",
+    "en": "Find a clinic"
+  },
+  "clinic.bringH": {
+    "ja": "{持|も}っていくもの",
+    "ja_easy": "{持|も}っていくもの",
+    "en": "What to bring"
+  },
+  "clinic.noins": {
+    "ja": "{保険|ほけん}にまだ{入|はい}っていない{人|ひと}は：{国民|こくみん}{健康|けんこう}{保険|ほけん}",
+    "ja_easy": "{保険|ほけん}にまだ{入|はい}っていない？ → {国民健康保険|こくみんけんこうほけん}",
+    "en": "No health insurance yet? → National Health Insurance"
+  },
+  "clinic.sayH": {
+    "ja": "{受付|うけつけ}で{見|み}せる{言葉|ことば}",
+    "ja_easy": "{受付|うけつけ}で{見|み}せることば",
+    "en": "Show at reception"
+  },
+  "clinic.newTab": {
+    "ja": "（{新|あたら}しいタブで{開|ひら}きます）",
+    "ja_easy": "（{新|あたら}しいタブ）",
+    "en": "(opens in a new tab)"
+  },
+  "clinic.check": {
+    "ja": "{内容|ないよう}は{確認|かくにん}{中|ちゅう}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "まだ{確|たし}かめています。",
+    "en": "This guide is still being checked (to be checked)."
+  },
+  "clinic.review": {
+    "ja": "{病院|びょういん}の{案内|あんない}",
+    "ja_easy": "{病院|びょういん}の{案内|あんない}",
+    "en": "Clinic guide"
   }
 }

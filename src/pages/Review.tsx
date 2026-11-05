@@ -3,6 +3,7 @@
 import { DATA } from '../core/data';
 import { authorQueue, collectEvidence, type EvidenceAt } from '../core/quotes';
 import { AI_CHECK_COUNTS, FIELD_KINDS } from '../core/trust';
+import { CLINIC, departmentsFor } from '../core/clinic';
 import type { Evidence, Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
 import { type UiKey } from '../i18n/text';
@@ -52,6 +53,7 @@ export function Review() {
         </div>
       </fieldset>}
       <AuthorQueue />
+      <ClinicReview />
       <section className="group"><h2><Bi k="review.cards" />（{d.cards.length}）</h2>
         <ul className="list review" role="list">
           {d.flow.card_order.map((id) => d.cards.find((c) => c.id === id)!).map((c) => (
@@ -95,6 +97,23 @@ function AuthorQueue() {
           ))}
         </tbody>
       </table>
+    </section>
+  );
+}
+
+/** 病院の案内（6A.13）：場所ごとの診療科の順番と確認状態（作者が確かめる） */
+function ClinicReview() {
+  const d = CLINIC();
+  return (
+    <section className="group">
+      <h2><Bi k="clinic.review" />（{d.parts.length}）</h2>
+      <ul className="list review" role="list">
+        {d.parts.map((p) => (
+          <Item key={p.id} id={p.id} title={p.name} e={p.evidence}>
+            <span className="sub">{departmentsFor(d, p).map((x, i) => (i + 1) + '. ' + x.name.ja.replace(/\{([^|]+)\|[^}]+\}/g, '$1')).join('　')}{p.note ? '・' + p.note : ''}</span>
+          </Item>
+        ))}
+      </ul>
     </section>
   );
 }

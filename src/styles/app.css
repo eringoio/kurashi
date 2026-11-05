@@ -372,3 +372,28 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .cal__mark { font-size: 11px; min-height: 1em; }
 .cal__legend { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: var(--fs-small); }
 .ics { display: flex; flex-direction: column; gap: 6px; }
+
+/* 病院の案内（6A.13）：からだの絵と名前のボタン、帯、診療科 */
+.clinic__band ul { margin: 0; }
+.bodymap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 6px; align-items: center; }
+.bodymap__svg { width: 100%; height: auto; max-height: 300px; }
+.bodymap__labels { display: flex; flex-direction: column; gap: 6px; }
+.zone { cursor: pointer; }
+.zone__halo { fill: transparent; stroke: none; }
+.zone--sel .zone__fill { fill: var(--blue-tint, #DCE9F7); stroke: var(--blue); stroke-width: 3.5; }
+.zone--sel .zone__halo { fill: none; stroke: var(--blue); stroke-width: 3; }
+.chip--part { min-height: var(--target-min); }
+.clinic__first { border: 3px solid var(--blue); border-radius: var(--radius-lg); padding: var(--space-3, 12px); background: var(--white); }
+.clinic__tag { display: inline-block; background: var(--blue); color: var(--white); border-radius: var(--radius-pill); padding: 0 10px; }
+.clinic__dept { margin: 0; font-size: var(--fs-answer, 1.15em); font-weight: 700; }
+.clinic__others { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.clinic__others li { display: flex; gap: 10px; align-items: flex-start; }
+.clinic__others li > span:last-child { display: flex; flex-direction: column; }
+.clinic__n { flex: none; width: 1.8em; height: 1.8em; border-radius: 50%; border: 2px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+.clinic__kinds { margin: 0; display: grid; gap: 6px; }
+.clinic__kinds dd { margin: 0; }
+.clinic__bring { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.clinic__link { flex-direction: column; align-items: flex-start; }
+@media (max-width: 380px) { .bodymap { grid-template-columns: 1fr; } .bodymap__svg { max-height: 220px; } .bodymap__labels { flex-direction: row; flex-wrap: wrap; } }
+.clinic__em { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.clinic__num { font-size: 1.25em; }

@@ -248,6 +248,86 @@
       "owner_type": "government",
       "title": "記載事項の変更手続き（運転免許）",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-7119",
+      "url": "https://www.city.nagoya.jp/bousai/shoubou/1012724/1013205/1034493/1013206.html",
+      "owner": "名古屋市消防局",
+      "owner_type": "government",
+      "title": "救急安心センターなごや #7119",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-8000",
+      "url": "https://www.pref.aichi.jp/soshiki/imu/0000047678.html",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "愛知県 小児救急電話相談 #8000",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-tokubetsu-ryokin",
+      "url": "https://www.mhlw.go.jp/stf/newpage_26666.html",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "紹介状を持たずに特定の病院を受診する場合等の特別の料金の見直し",
+      "language": "ja"
+    },
+    {
+      "source_id": "gov-online-shokai",
+      "url": "https://www.gov-online.go.jp/article/201603/entry-8034.html",
+      "owner": "政府広報オンライン",
+      "owner_type": "government",
+      "title": "紹介状なしで大病院を受診すると特別の料金がかかります",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-shokai-juten",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000123022_00003.html",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "紹介受診重点医療機関",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-navii",
+      "url": "https://www.iryou.teikyouseido.mhlw.go.jp/",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "医療情報ネット（ナビイ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-qq-guide",
+      "url": "https://www.qq.pref.aichi.jp/",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "あいち救急医療ガイド",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-kyujitsu-kyubyo-easy",
+      "url": "https://www.city.nagoya.jp/kurashi/easyjapanese/1017897/1017898.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "休日急病診療所（やさしい日本語）",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-iryou-tsuyaku",
+      "url": "https://www.aichi-iryou-tsuyaku-system.com/patient/",
+      "owner": "あいち医療通訳システム（愛知県などが運営）",
+      "owner_type": "public_corp",
+      "title": "あいち医療通訳システム（患者・利用者向け）",
+      "language": "ja"
+    },
+    {
+      "source_id": "jnto-mi-guide",
+      "url": "https://www.jnto.go.jp/emergency/jpn/mi_guide.html",
+      "owner": "日本政府観光局（JNTO）",
+      "owner_type": "public_corp",
+      "title": "医療機関ご利用ガイド",
+      "language": "ja"
     }
   ]
 }

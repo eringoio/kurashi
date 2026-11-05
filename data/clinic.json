@@ -1,0 +1,1407 @@
+{
+  "$comment": "病院の案内（SPEC 6A.13）。困っているところ → 行ってみる診療科の順番。診断しない。すべて needs_check。",
+  "parts": [
+    {
+      "id": "head",
+      "name": {
+        "ja": "{頭|あたま}",
+        "ja_easy": "{頭|あたま}",
+        "en": "Head"
+      },
+      "body_zone": "head",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "頭",
+          "頭痛"
+        ],
+        "kana": [
+          "あたま",
+          "ずつう"
+        ],
+        "en": [
+          "head",
+          "headache"
+        ],
+        "romaji": [
+          "atama"
+        ]
+      },
+      "departments": [
+        "naika",
+        "noushinkei"
+      ],
+      "say": {
+        "ja": "{頭|あたま}が{痛|いた}いです。",
+        "ja_easy": "{頭|あたま}が{痛|いた}いです。",
+        "en": "I have a headache."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "eye",
+      "name": {
+        "ja": "{目|め}",
+        "ja_easy": "{目|め}",
+        "en": "Eyes"
+      },
+      "body_zone": "eye",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "目",
+          "眼"
+        ],
+        "kana": [
+          "め"
+        ],
+        "en": [
+          "eye",
+          "eyes"
+        ],
+        "romaji": [
+          "me"
+        ]
+      },
+      "departments": [
+        "ganka"
+      ],
+      "say": {
+        "ja": "{目|め}が{痛|いた}いです。",
+        "ja_easy": "{目|め}が{痛|いた}いです。",
+        "en": "My eye hurts."
+      },
+      "note": "出典を探す（JNTO の指さしシートの表にない）",
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "ent",
+      "name": {
+        "ja": "{耳|みみ}・{鼻|はな}・のど",
+        "ja_easy": "{耳|みみ}・{鼻|はな}・のど",
+        "en": "Ear, nose, throat"
+      },
+      "body_zone": "ent",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "耳",
+          "鼻",
+          "鼻水",
+          "喉"
+        ],
+        "kana": [
+          "みみ",
+          "はな",
+          "はなみず",
+          "のど"
+        ],
+        "en": [
+          "ear",
+          "nose",
+          "throat"
+        ],
+        "romaji": [
+          "mimi",
+          "hana",
+          "nodo"
+        ]
+      },
+      "departments": [
+        "jibika",
+        "naika"
+      ],
+      "say": {
+        "ja": "のどが{痛|いた}いです。",
+        "ja_easy": "のどが{痛|いた}いです。",
+        "en": "My throat hurts."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "mouth",
+      "name": {
+        "ja": "{歯|は}・{口|くち}",
+        "ja_easy": "{歯|は}・{口|くち}",
+        "en": "Teeth, mouth"
+      },
+      "body_zone": "mouth",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "歯",
+          "虫歯",
+          "歯痛",
+          "口"
+        ],
+        "kana": [
+          "は",
+          "むしば",
+          "くち"
+        ],
+        "en": [
+          "tooth",
+          "teeth",
+          "toothache",
+          "mouth",
+          "dentist"
+        ],
+        "romaji": [
+          "ha",
+          "kuchi"
+        ]
+      },
+      "departments": [
+        "shika",
+        "koku"
+      ],
+      "say": {
+        "ja": "{歯|は}が{痛|いた}いです。",
+        "ja_easy": "{歯|は}が{痛|いた}いです。",
+        "en": "I have a toothache."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "chest",
+      "name": {
+        "ja": "{胸|むね}",
+        "ja_easy": "{胸|むね}",
+        "en": "Chest"
+      },
+      "body_zone": "chest",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "胸",
+          "心臓",
+          "息"
+        ],
+        "kana": [
+          "むね",
+          "しんぞう",
+          "いき"
+        ],
+        "en": [
+          "chest",
+          "heart",
+          "breath"
+        ],
+        "romaji": [
+          "mune"
+        ]
+      },
+      "departments": [
+        "naika",
+        "junkanki",
+        "kokyuki"
+      ],
+      "say": {
+        "ja": "{胸|むね}が{痛|いた}いです。",
+        "ja_easy": "{胸|むね}が{痛|いた}いです。",
+        "en": "My chest hurts."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "belly",
+      "name": {
+        "ja": "お{腹|なか}",
+        "ja_easy": "おなか",
+        "en": "Stomach"
+      },
+      "body_zone": "belly",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "お腹",
+          "腹",
+          "胃",
+          "下痢"
+        ],
+        "kana": [
+          "おなか",
+          "はら",
+          "げり"
+        ],
+        "en": [
+          "stomach",
+          "belly",
+          "diarrhea"
+        ],
+        "romaji": [
+          "onaka"
+        ]
+      },
+      "departments": [
+        "naika",
+        "shokaki",
+        "fujinka"
+      ],
+      "say": {
+        "ja": "お{腹|なか}が{痛|いた}いです。",
+        "ja_easy": "おなかが{痛|いた}いです。",
+        "en": "I have a stomachache."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "limbs",
+      "name": {
+        "ja": "{手|て}・{足|あし}・けが",
+        "ja_easy": "{手|て}・{足|あし}・けが",
+        "en": "Arms, legs, injury"
+      },
+      "body_zone": "limbs",
+      "group": "body",
+      "words": {
+        "kanji": [
+          "手",
+          "足",
+          "腕",
+          "腰",
+          "怪我",
+          "骨",
+          "骨折"
+        ],
+        "kana": [
+          "て",
+          "あし",
+          "うで",
+          "こし",
+          "けが",
+          "ほね",
+          "こっせつ"
+        ],
+        "en": [
+          "arm",
+          "leg",
+          "hand",
+          "foot",
+          "back",
+          "injury",
+          "bone"
+        ],
+        "romaji": [
+          "te",
+          "ashi"
+        ]
+      },
+      "departments": [
+        "seikei",
+        "geka"
+      ],
+      "say": {
+        "ja": "けがをしました。",
+        "ja_easy": "けがをしました。",
+        "en": "I got injured."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "fever",
+      "name": {
+        "ja": "{熱|ねつ}・{風邪|かぜ}",
+        "ja_easy": "{熱|ねつ}・かぜ",
+        "en": "Fever, cold"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "熱",
+          "風邪",
+          "咳"
+        ],
+        "kana": [
+          "ねつ",
+          "かぜ",
+          "せき",
+          "インフルエンザ"
+        ],
+        "en": [
+          "fever",
+          "cold",
+          "cough",
+          "flu"
+        ],
+        "romaji": [
+          "netsu",
+          "kaze"
+        ]
+      },
+      "departments": [
+        "naika",
+        "jibika"
+      ],
+      "say": {
+        "ja": "{熱|ねつ}があります。",
+        "ja_easy": "{熱|ねつ}があります。",
+        "en": "I have a fever."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "skin",
+      "name": {
+        "ja": "{皮膚|ひふ}",
+        "ja_easy": "{皮|ひ}ふ",
+        "en": "Skin"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "皮膚",
+          "皮ふ",
+          "湿疹"
+        ],
+        "kana": [
+          "ひふ",
+          "かゆい",
+          "しっしん",
+          "やけど"
+        ],
+        "en": [
+          "skin",
+          "rash",
+          "itch",
+          "itchy",
+          "burn"
+        ],
+        "romaji": [
+          "hifu"
+        ]
+      },
+      "departments": [
+        "hifuka",
+        "keisei"
+      ],
+      "say": {
+        "ja": "{皮膚|ひふ}がかゆいです。",
+        "ja_easy": "{皮|ひ}ふがかゆいです。",
+        "en": "My skin is itchy."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "urine",
+      "name": {
+        "ja": "{尿|にょう}（おしっこ）",
+        "ja_easy": "おしっこ",
+        "en": "Urine"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "尿"
+        ],
+        "kana": [
+          "おしっこ",
+          "にょう",
+          "トイレ"
+        ],
+        "en": [
+          "urine",
+          "pee",
+          "toilet"
+        ],
+        "romaji": []
+      },
+      "departments": [
+        "hinyoki",
+        "naika"
+      ],
+      "say": {
+        "ja": "{排尿|はいにょう}のとき{痛|いた}いです。",
+        "ja_easy": "おしっこのとき{痛|いた}いです。",
+        "en": "It hurts when I urinate."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "mind",
+      "name": {
+        "ja": "{心|こころ}",
+        "ja_easy": "こころ",
+        "en": "Mind, stress"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "心",
+          "気持ち",
+          "眠れない"
+        ],
+        "kana": [
+          "こころ",
+          "きもち",
+          "ねむれない",
+          "ストレス"
+        ],
+        "en": [
+          "mind",
+          "stress",
+          "sleep",
+          "mental"
+        ],
+        "romaji": [
+          "kokoro"
+        ]
+      },
+      "departments": [
+        "shinryo",
+        "seishin"
+      ],
+      "say": {
+        "ja": "{心|こころ}の{相談|そうだん}がしたいです。",
+        "ja_easy": "こころの{相談|そうだん}をしたいです。",
+        "en": "I want to talk about my mental health."
+      },
+      "note": "出典を探す（JNTO の指さしシートの表にない）",
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "child",
+      "name": {
+        "ja": "{子|こ}ども",
+        "ja_easy": "こども",
+        "en": "Child"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "子ども",
+          "子供",
+          "赤ちゃん"
+        ],
+        "kana": [
+          "こども",
+          "あかちゃん"
+        ],
+        "en": [
+          "child",
+          "baby",
+          "kid"
+        ],
+        "romaji": [
+          "kodomo"
+        ]
+      },
+      "departments": [
+        "shoni"
+      ],
+      "say": {
+        "ja": "{子|こ}どもを{診|み}てください。",
+        "ja_easy": "{子|こ}どもを{見|み}てください。",
+        "en": "Please see my child."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "preg",
+      "name": {
+        "ja": "{妊娠|にんしん}",
+        "ja_easy": "にんしん",
+        "en": "Pregnancy"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [
+          "妊娠"
+        ],
+        "kana": [
+          "にんしん"
+        ],
+        "en": [
+          "pregnant",
+          "pregnancy"
+        ],
+        "romaji": [
+          "ninshin"
+        ]
+      },
+      "departments": [
+        "sanfujin"
+      ],
+      "say": {
+        "ja": "{妊娠|にんしん}しています。",
+        "ja_easy": "にんしんしています。",
+        "en": "I am pregnant."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "unknown",
+      "name": {
+        "ja": "{分|わ}からない",
+        "ja_easy": "わからない",
+        "en": "Not sure"
+      },
+      "body_zone": null,
+      "group": "extra",
+      "words": {
+        "kanji": [],
+        "kana": [
+          "わからない"
+        ],
+        "en": [
+          "unknown",
+          "not sure",
+          "sick"
+        ],
+        "romaji": [
+          "wakaranai"
+        ]
+      },
+      "departments": [
+        "naika",
+        "sogo"
+      ],
+      "say": {
+        "ja": "{体|からだ}の{調子|ちょうし}が{悪|わる}いです。",
+        "ja_easy": "{体|からだ}の{調子|ちょうし}が{悪|わる}いです。",
+        "en": "I feel sick."
+      },
+      "note": null,
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "departments": [
+    {
+      "id": "naika",
+      "name": {
+        "ja": "{内科|ないか}",
+        "ja_easy": "{内科|ないか}",
+        "en": "Internal medicine"
+      },
+      "covers": {
+        "ja": "{熱|ねつ}・{風邪|かぜ}・お{腹|なか}の{不調|ふちょう}など、{広|ひろ}く{診|み}る{科|か}",
+        "ja_easy": "{熱|ねつ}・かぜ・おなかなど、{広|ひろ}く{見|み}ます",
+        "en": "General illness: fever, cold, stomach and more"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "ganka",
+      "name": {
+        "ja": "{眼科|がんか}",
+        "ja_easy": "{眼科|がんか}",
+        "en": "Eye doctor (ophthalmology)"
+      },
+      "covers": {
+        "ja": "{目|め}を{診|み}る{科|か}",
+        "ja_easy": "{目|め}を{見|み}ます",
+        "en": "Eyes"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "jibika",
+      "name": {
+        "ja": "{耳鼻咽喉科|じびいんこうか}",
+        "ja_easy": "{耳鼻咽喉科|じびいんこうか}",
+        "en": "Ear, nose and throat (ENT)"
+      },
+      "covers": {
+        "ja": "{耳|みみ}・{鼻|はな}・のどを{診|み}る{科|か}",
+        "ja_easy": "{耳|みみ}・{鼻|はな}・のどを{見|み}ます",
+        "en": "Ears, nose and throat"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "shika",
+      "name": {
+        "ja": "{歯科|しか}",
+        "ja_easy": "{歯科|しか}",
+        "en": "Dentist"
+      },
+      "covers": {
+        "ja": "{歯|は}を{診|み}る{科|か}",
+        "ja_easy": "{歯|は}を{見|み}ます",
+        "en": "Teeth"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "koku",
+      "name": {
+        "ja": "{歯科口腔外科|しかこうくうげか}",
+        "ja_easy": "{歯科口腔外科|しかこうくうげか}",
+        "en": "Oral surgery"
+      },
+      "covers": {
+        "ja": "{口|くち}の{中|なか}やあごを{診|み}る{科|か}",
+        "ja_easy": "{口|くち}の{中|なか}やあごを{見|み}ます",
+        "en": "Mouth and jaw"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "noushinkei",
+      "name": {
+        "ja": "{脳神経外科|のうしんけいげか}",
+        "ja_easy": "{脳神経外科|のうしんけいげか}",
+        "en": "Neurosurgery"
+      },
+      "covers": {
+        "ja": "{頭|あたま}（{脳|のう}）を{診|み}る{科|か}",
+        "ja_easy": "{頭|あたま}（{脳|のう}）を{見|み}ます",
+        "en": "Head and brain"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "junkanki",
+      "name": {
+        "ja": "{循環器内科|じゅんかんきないか}",
+        "ja_easy": "{循環器内科|じゅんかんきないか}",
+        "en": "Cardiology"
+      },
+      "covers": {
+        "ja": "{心臓|しんぞう}を{診|み}る{科|か}",
+        "ja_easy": "{心臓|しんぞう}を{見|み}ます",
+        "en": "Heart"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "kokyuki",
+      "name": {
+        "ja": "{呼吸器内科|こきゅうきないか}",
+        "ja_easy": "{呼吸器内科|こきゅうきないか}",
+        "en": "Respiratory medicine"
+      },
+      "covers": {
+        "ja": "{肺|はい}や{呼吸|こきゅう}を{診|み}る{科|か}",
+        "ja_easy": "{肺|はい}・{息|いき}を{見|み}ます",
+        "en": "Lungs and breathing"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "shokaki",
+      "name": {
+        "ja": "{消化器内科|しょうかきないか}",
+        "ja_easy": "{消化器内科|しょうかきないか}",
+        "en": "Gastroenterology"
+      },
+      "covers": {
+        "ja": "{胃|い}・{腸|ちょう}を{診|み}る{科|か}",
+        "ja_easy": "{胃|い}・{腸|ちょう}を{見|み}ます",
+        "en": "Stomach and intestines"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "fujinka",
+      "name": {
+        "ja": "{婦人科|ふじんか}",
+        "ja_easy": "{婦人科|ふじんか}",
+        "en": "Gynecology"
+      },
+      "covers": {
+        "ja": "{女性|じょせい}の{体|からだ}を{診|み}る{科|か}",
+        "ja_easy": "{女性|じょせい}のからだを{見|み}ます",
+        "en": "Women's health"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "seikei",
+      "name": {
+        "ja": "{整形外科|せいけいげか}",
+        "ja_easy": "{整形外科|せいけいげか}",
+        "en": "Orthopedics"
+      },
+      "covers": {
+        "ja": "{骨|ほね}・{関節|かんせつ}・けがを{診|み}る{科|か}",
+        "ja_easy": "{骨|ほね}・{関節|かんせつ}・けがを{見|み}ます",
+        "en": "Bones, joints, injuries"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "geka",
+      "name": {
+        "ja": "{外科|げか}",
+        "ja_easy": "{外科|げか}",
+        "en": "Surgery"
+      },
+      "covers": {
+        "ja": "{切|き}りきずなどのけがを{診|み}る{科|か}",
+        "ja_easy": "{切|き}ったけがなどを{見|み}ます",
+        "en": "Cuts and wounds"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "hifuka",
+      "name": {
+        "ja": "{皮膚科|ひふか}",
+        "ja_easy": "{皮膚科|ひふか}",
+        "en": "Dermatology"
+      },
+      "covers": {
+        "ja": "{皮膚|ひふ}を{診|み}る{科|か}",
+        "ja_easy": "{皮|ひ}ふを{見|み}ます",
+        "en": "Skin"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "keisei",
+      "name": {
+        "ja": "{形成外科|けいせいげか}",
+        "ja_easy": "{形成外科|けいせいげか}",
+        "en": "Plastic surgery"
+      },
+      "covers": {
+        "ja": "やけどやきずあとを{診|み}る{科|か}",
+        "ja_easy": "やけど・きずあとを{見|み}ます",
+        "en": "Burns and scars"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "hinyoki",
+      "name": {
+        "ja": "{泌尿器科|ひにょうきか}",
+        "ja_easy": "{泌尿器科|ひにょうきか}",
+        "en": "Urology"
+      },
+      "covers": {
+        "ja": "{尿|にょう}の{通|とお}り{道|みち}を{診|み}る{科|か}",
+        "ja_easy": "おしっこの{道|みち}を{見|み}ます",
+        "en": "Urinary tract"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "shinryo",
+      "name": {
+        "ja": "{心療内科|しんりょうないか}",
+        "ja_easy": "{心療内科|しんりょうないか}",
+        "en": "Psychosomatic medicine"
+      },
+      "covers": {
+        "ja": "{心|こころ}と{体|からだ}の{両方|りょうほう}を{診|み}る{科|か}",
+        "ja_easy": "こころとからだを{見|み}ます",
+        "en": "Mind and body"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "seishin",
+      "name": {
+        "ja": "{精神科|せいしんか}",
+        "ja_easy": "{精神科|せいしんか}",
+        "en": "Psychiatry"
+      },
+      "covers": {
+        "ja": "{心|こころ}を{診|み}る{科|か}",
+        "ja_easy": "こころを{見|み}ます",
+        "en": "Mental health"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "shoni",
+      "name": {
+        "ja": "{小児科|しょうにか}",
+        "ja_easy": "{小児科|しょうにか}",
+        "en": "Pediatrics"
+      },
+      "covers": {
+        "ja": "{子|こ}どもを{診|み}る{科|か}",
+        "ja_easy": "こどもを{見|み}ます",
+        "en": "Children"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "sanfujin",
+      "name": {
+        "ja": "{産婦人科|さんふじんか}",
+        "ja_easy": "{産婦人科|さんふじんか}",
+        "en": "Obstetrics and gynecology"
+      },
+      "covers": {
+        "ja": "{妊娠|にんしん}や{女性|じょせい}の{体|からだ}を{診|み}る{科|か}",
+        "ja_easy": "にんしん・{女性|じょせい}のからだを{見|み}ます",
+        "en": "Pregnancy and women's health"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "sogo",
+      "name": {
+        "ja": "{総合診療科|そうごうしんりょうか}",
+        "ja_easy": "{総合診療科|そうごうしんりょうか}",
+        "en": "General medicine"
+      },
+      "covers": {
+        "ja": "どこが{悪|わる}いか{分|わ}からないときに{診|み}る{科|か}",
+        "ja_easy": "どこが{悪|わる}いかわからないときに{見|み}ます",
+        "en": "When you are not sure what is wrong"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "emergency": [
+    {
+      "id": "119",
+      "number": "119",
+      "always": true,
+      "label": {
+        "ja": "{救急車|きゅうきゅうしゃ}",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}",
+        "en": "Ambulance"
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-7119"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "7119",
+      "number": "#7119",
+      "always": true,
+      "label": {
+        "ja": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら（24{時間|じかん}・21の{言語|げんご}）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら（24{時間|じかん}・21のことば）",
+        "en": "Not sure if you need an ambulance? Call for advice (24 hours, 21 languages)"
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-7119"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "8000",
+      "number": "#8000",
+      "always": false,
+      "parts": [
+        "child"
+      ],
+      "label": {
+        "ja": "{子|こ}どもの{具合|ぐあい}の{相談|そうだん}",
+        "ja_easy": "こどものことの{相談|そうだん}",
+        "en": "Advice about a child"
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-8000"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "advice": {
+    "head": {
+      "ja": "まず{近|ちか}くのクリニックへ",
+      "ja_easy": "まず{近|ちか}くのクリニックへ",
+      "en": "Go to a nearby clinic first"
+    },
+    "small": {
+      "title": {
+        "ja": "{小|ちい}さな{病院|びょういん}",
+        "ja_easy": "{小|ちい}さい{病院|びょういん}",
+        "en": "Small clinic"
+      },
+      "desc": {
+        "ja": "クリニック・{診療所|しんりょうじょ}・{医院|いいん}。まずここへ。",
+        "ja_easy": "クリニック・{診療所|しんりょうじょ}・{医院|いいん}。まずここへ。",
+        "en": "クリニック・診療所・医院. Go here first."
+      }
+    },
+    "big": {
+      "title": {
+        "ja": "{大|おお}きな{病院|びょういん}",
+        "ja_easy": "{大|おお}きい{病院|びょういん}",
+        "en": "Large hospital"
+      },
+      "desc": {
+        "ja": "{紹介状|しょうかいじょう}がないと、ほかに{料金|りょうきん}がかかることがあります。",
+        "ja_easy": "{紹介状|しょうかいじょう}がないと、ほかにお{金|かね}がかかることがあります。",
+        "en": "Without a referral letter, you may pay an extra fee."
+      }
+    },
+    "text": [
+      {
+        "ja": "{紹介状|しょうかいじょう}なしで{大|おお}きな{病院|びょういん}を{初|はじ}めて{受診|じゅしん}すると、7,000{円|えん}以上の{特別|とくべつ}の{料金|りょうきん}がかかることがあります（{歯科|しか}は5,000{円|えん}以上）。ふだんの{医療費|いりょうひ}に{加|くわ}えて{支払|しはら}います。",
+        "ja_easy": "{紹介状|しょうかいじょう}なしで{大|おお}きい{病院|びょういん}に{初|はじ}めて{行|い}くと、7,000{円|えん}か、それより{多|おお}くかかることがあります（{歯|は}は5,000{円|えん}か、それより{多|おお}く）。いつものお{金|かね}のほかにはらいます。",
+        "en": "At a large hospital without a referral letter, the first visit can cost 7,000 yen or more extra (dentistry: 5,000 yen or more). You pay this on top of the usual fee."
+      },
+      {
+        "ja": "{紹介状|しょうかいじょう}は、クリニックの{医師|いし}が{書|か}く{手紙|てがみ}です。{持|も}って{行|い}くと、この{料金|りょうきん}はかかりません。",
+        "ja_easy": "{紹介状|しょうかいじょう}は、クリニックの{医者|いしゃ}が{書|か}く{手紙|てがみ}です。{持|も}って{行|い}くと、このお{金|かね}はかかりません。",
+        "en": "A referral letter (紹介状) is written by a clinic doctor. With it, you do not pay this fee."
+      },
+      {
+        "ja": "{金額|きんがく}は{病院|びょういん}ごとに{違|ちが}います（{要確認|ようかくにん}）。{救急|きゅうきゅう}のときなどはかかりません。",
+        "ja_easy": "お{金|かね}は{病院|びょういん}でちがいます（{要確認|ようかくにん}）。{救急|きゅうきゅう}のときなどはかかりません。",
+        "en": "The fee is different at each hospital (to be checked). It does not apply in emergencies."
+      }
+    ],
+    "youdecide": {
+      "ja": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
+      "ja_easy": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
+      "en": "You decide where to go. The clinic may send you to another department."
+    },
+    "evidence": {
+      "source_ids": [
+        "mhlw-tokubetsu-ryokin",
+        "gov-online-shokai",
+        "mhlw-shokai-juten"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check"
+    }
+  },
+  "links": [
+    {
+      "id": "navii",
+      "url": "https://www.iryou.teikyouseido.mhlw.go.jp/",
+      "title": {
+        "ja": "{近|ちか}くの{DEPT}を{探|さが}す",
+        "ja_easy": "{近|ちか}くの{DEPT}を{探|さが}す",
+        "en": "Find a {DEPT} near you"
+      },
+      "desc": {
+        "ja": "{診療科|しんりょうか}と{外国語|がいこくご}で{探|さが}せます",
+        "ja_easy": "{診療科|しんりょうか}と{外国語|がいこくご}で{探|さが}せます",
+        "en": "Search by department and language"
+      },
+      "evidence": {
+        "source_ids": [
+          "mhlw-navii"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "aichi-qq",
+      "url": "https://www.qq.pref.aichi.jp/",
+      "title": {
+        "ja": "{今日|きょう}・{夜|よる}・{休|やす}みの{日|ひ}",
+        "ja_easy": "{今日|きょう}・{夜|よる}・{休|やす}みの{日|ひ}",
+        "en": "Today, at night, on holidays"
+      },
+      "desc": {
+        "ja": "いま{診|み}てもらえる{病院|びょういん}",
+        "ja_easy": "いま{見|み}てもらえる{病院|びょういん}",
+        "en": "Clinics open now"
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-qq-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "nagoya-holiday",
+      "url": "https://www.city.nagoya.jp/kurashi/easyjapanese/1017897/1017898.html",
+      "title": {
+        "ja": "{休|やす}みの{日|ひ}の{病院|びょういん}（{歯科|しか}も）",
+        "ja_easy": "{休|やす}みの{日|ひ}の{病院|びょういん}（{歯科|しか}も）",
+        "en": "Holiday clinics (also dentists)"
+      },
+      "desc": {
+        "ja": "{区|く}の{休日急病診療所|きゅうじつきゅうびょうしんりょうじょ}など",
+        "ja_easy": "{区|く}の{休日急病診療所|きゅうじつきゅうびょうしんりょうじょ}など",
+        "en": "Ward holiday clinics and more"
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kyujitsu-kyubyo-easy"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "tsuyaku",
+      "url": "https://www.aichi-iryou-tsuyaku-system.com/patient/",
+      "title": {
+        "ja": "{外国語|がいこくご}で{診|み}てもらう",
+        "ja_easy": "{外国語|がいこくご}で{見|み}てもらう",
+        "en": "See a doctor in your language"
+      },
+      "desc": {
+        "ja": "{通訳|つうやく}と、{外国語|がいこくご}で{診|み}てもらえる{病院|びょういん}",
+        "ja_easy": "{通訳|つうやく}と、{外国語|がいこくご}で{見|み}てもらえる{病院|びょういん}",
+        "en": "Interpreters and clinics with other languages"
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-iryou-tsuyaku"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "jnto-sheet",
+      "url": "https://www.jnto.go.jp/emergency/jpn/mi_guide.html",
+      "title": {
+        "ja": "{症状|しょうじょう}を{指|ゆび}でさして{伝|つた}える{紙|かみ}（JNTO）",
+        "ja_easy": "{症状|しょうじょう}を{指|ゆび}でさして{伝|つた}える{紙|かみ}（JNTO）",
+        "en": "Point-and-show symptom sheet (JNTO)"
+      },
+      "desc": {
+        "ja": "{症状|しょうじょう}と{診療科|しんりょうか}の{日英|にちえい}の{表|ひょう}",
+        "ja_easy": "{症状|しょうじょう}と{診療科|しんりょうか}の{日本語|にほんご}と{英語|えいご}の{表|ひょう}",
+        "en": "Symptoms and departments in Japanese and English"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "callNote": {
+    "text": {
+      "ja": "{行|い}く{前|まえ}に{電話|でんわ}で{聞|き}きます：{予約|よやく}・{言葉|ことば}",
+      "ja_easy": "{行|い}く{前|まえ}に{電話|でんわ}で{聞|き}きます：{予約|よやく}・ことば",
+      "en": "Call before you go: ask about appointments and language"
+    },
+    "evidence": {
+      "source_ids": [
+        "mhlw-navii"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check"
+    }
+  },
+  "bring": [
+    {
+      "id": "insurance",
+      "illustration": "mycard",
+      "title": {
+        "ja": "マイナ{保険証|ほけんしょう}または{資格確認書|しかくかくにんしょ}",
+        "ja_easy": "マイナ{保険証|ほけんしょう}または{資格確認書|しかくかくにんしょ}",
+        "en": "My Number health card or eligibility certificate"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "money",
+      "illustration": "coins",
+      "title": {
+        "ja": "お{金|かね}（{現金|げんきん}）",
+        "ja_easy": "お{金|かね}（{現金|げんきん}）",
+        "en": "Money (cash)"
+      },
+      "desc": {
+        "ja": "カードが{使|つか}えない{場合|ばあい}があります",
+        "ja_easy": "カードが{使|つか}えないことがあります",
+        "en": "Cards may not work"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "notebook",
+      "illustration": "doc",
+      "title": {
+        "ja": "お{薬手帳|くすりてちょう}（あれば）",
+        "ja_easy": "お{薬手帳|くすりてちょう}（あれば）",
+        "en": "Medicine notebook (if you have one)"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "medicine",
+      "illustration": "medicine",
+      "title": {
+        "ja": "{飲|の}んでいる{薬|くすり}",
+        "ja_easy": "{飲|の}んでいる{薬|くすり}",
+        "en": "Medicine you take"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "phrases": [
+    {
+      "id": "first",
+      "say": {
+        "ja": "{初|はじ}めてです。",
+        "ja_easy": "{初|はじ}めてです。",
+        "en": "This is my first visit."
+      }
+    },
+    {
+      "id": "english",
+      "say": {
+        "ja": "{英語|えいご}を{話|はな}せる{人|ひと}はいますか。",
+        "ja_easy": "{英語|えいご}が{話|はな}せる{人|ひと}はいますか。",
+        "en": "Is there someone who speaks English?"
+      }
+    },
+    {
+      "id": "reservation",
+      "say": {
+        "ja": "{予約|よやく}は{必要|ひつよう}ですか。",
+        "ja_easy": "{予約|よやく}は{必要|ひつよう}ですか。",
+        "en": "Do I need an appointment?"
+      }
+    }
+  ]
+}

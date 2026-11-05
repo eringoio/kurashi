@@ -11,6 +11,7 @@ type Item = { key: string; title: ReactNode; icon: string; to: string };
 const FIXED: Record<string, Item> = {
   gomi: { key: 'gomi', title: <Bi k="home.gomi" />, icon: 'bin', to: '/gomi' },
   letter: { key: 'letter', title: <Bi k="home.letter" />, icon: 'letter', to: '/letter' },
+  clinic: { key: 'clinic', title: <Bi k="clinic.home" />, icon: 'clinic', to: '/clinic' },
   search: { key: 'search', title: <Bi k="home.search" />, icon: 'search', to: '/search' },
 };
 /** 引っ越し（E-move）は今までどおり /move。ほかの built のイベントは共通の /e/{id} */
@@ -20,7 +21,7 @@ function menuItems(): Item[] {
     ? { key: e.id, title: <Bi k="home.move" />, icon: 'box', to: '/move' }
     : { key: e.id, title: <Bi t={e.title} />, icon: e.illustration, to: '/e/' + e.id }));
   // 固定の項目は、同じ group の出来事が入口のメニューにあるときは出さない（出来事のほうを使う）
-  const fixed = [FIXED.gomi, FIXED.letter, FIXED.search].filter((f) => !events.some((e) => e.group === f.key));
+  const fixed = [FIXED.gomi, FIXED.clinic, FIXED.letter, FIXED.search].filter((f) => !events.some((e) => e.group === f.key));
   return [...list, ...fixed];
 }
 const LINKS = [
