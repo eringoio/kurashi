@@ -4,7 +4,8 @@ import { defineConfig } from '@playwright/test';
 // main：本番と同じデータ（5179）／drafts：下書きを読み込む dev:drafts 相当のサーバー（5180。tests/e2e/drafts/ だけ）
 export default defineConfig({
   testDir: 'tests/e2e',
-  timeout: 60_000,
+  // a11y.spec.ts は1つのテストで 3つの幅×3つの文字の大きさを axe で見る。大きい画面（/review など）は60秒を超える
+  timeout: 180_000,
   fullyParallel: true,
   reporter: [['list']],
   use: { channel: 'msedge', locale: 'ja-JP' },
