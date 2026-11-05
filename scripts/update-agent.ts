@@ -10,11 +10,13 @@ import { join } from 'node:path';
 import { z } from 'zod';
 import { loadData } from '../src/core/data';
 import { collectEvidence } from '../src/core/quotes';
+import { fallbackParams } from '../worker/readDocument';
 import { acceptAi, compareIndex, judgeByQuotes, prBody, SourceIndex, Verdict } from '../src/core/update';
 
 const arg = (k: string) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : undefined; };
 const root = arg('--root') ?? 'sources';
-const MODEL = process.env.UPDATE_MODEL || 'claude-sonnet-5-5';
+// アプリの中（データの更新）は安いモデル。設定で変えられる
+const MODEL = process.env.UPDATE_MODEL || 'claude-haiku-5-5';
 
 const read = (f: string) => SourceIndex.parse(existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : {});
 const prev = read(join(root, 'index.prev.json'));
@@ -42,7 +44,7 @@ if (key) {
     if (v.verdict !== 'unclear' || !b) { out.push(v); continue; }
     const res = await client.beta.messages.create({
       model: MODEL, max_tokens: 2048,
-      betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default',
+      ...fallbackParams(MODEL),
       output_config: { effort: 'medium', format: { type: 'json_schema', schema } },
       messages: [{ role: 'user', content: [
         { type: 'text', text: `名古屋市の生活の手続きのガイドのデータの、根拠「${v.where}」を確かめます。` },

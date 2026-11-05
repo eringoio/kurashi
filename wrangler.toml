@@ -8,8 +8,8 @@ compatibility_date = "2026-11-01"
 workers_dev = true
 
 [vars]
-# 写真を読むモデル（SPEC 6A.9）。Haiku は使わない
-READ_MODEL = "claude-sonnet-5-5"
+# 写真を読むモデル（SPEC 6A.9）。アプリの中は安いモデル（作者の指示）
+READ_MODEL = "claude-haiku-5-5"
 
 [assets]
 directory = "./dist"

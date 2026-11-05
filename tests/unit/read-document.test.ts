@@ -42,6 +42,14 @@ describe('候補の検査', () => {
   });
 });
 
+describe('断られたときの読み直し', () => {
+  it('Haiku には付けない（Haiku 5.5 には無い）。ほかのモデルには付ける', async () => {
+    const { fallbackParams } = await import('../../worker/readDocument');
+    expect(fallbackParams('claude-haiku-5-5')).toEqual({});
+    expect(fallbackParams('claude-sonnet-5-5')).toEqual({ betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' });
+  });
+});
+
 describe('Worker', () => {
   it('同意の印が無ければ送らない（読み取りを呼ばない）', async () => {
     const read = vi.fn<Reader>();
@@ -65,11 +73,11 @@ describe('Worker', () => {
     expect(await r.json()).toEqual({ sample: true, candidates: SAMPLE_RESULT.candidates });
     expect(read).not.toHaveBeenCalled();
   });
-  it('キーがあれば読み、モデルは設定で変えられる（既定 claude-sonnet-5-5）。一覧の外は捨てる', async () => {
+  it('キーがあれば読み、モデルは設定で変えられる（既定 claude-haiku-5-5）。一覧の外は捨てる', async () => {
     const read = vi.fn<Reader>(async () => ({ candidates: [{ id: 'nenkin-oshirase', confidence: 0.8 }, { id: 'x', confidence: 0.9 }] }));
     const r = await handleReadDocument(req(ok), { ANTHROPIC_API_KEY: KEY }, read);
     expect(await r.json()).toEqual({ sample: false, candidates: [{ id: 'nenkin-oshirase', confidence: 0.8 }] });
-    expect(read.mock.calls[0][1]).toBe('claude-sonnet-5-5');
+    expect(read.mock.calls[0][1]).toBe('claude-haiku-5-5');
     await handleReadDocument(req(ok), { ANTHROPIC_API_KEY: KEY, READ_MODEL: 'claude-opus-5-5' }, read);
     expect(read.mock.calls[1][1]).toBe('claude-opus-5-5');
   });

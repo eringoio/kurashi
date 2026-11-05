@@ -9,11 +9,15 @@ import { plain } from '../src/i18n/text';
 
 export interface Env {
   ANTHROPIC_API_KEY?: string;
-  /** 読むモデル（既定 claude-sonnet-5-5。設定で変えられる） */
+  /** 読むモデル（既定 claude-haiku-5-5。アプリの中は安いモデル。設定で変えられる） */
   READ_MODEL?: string;
 }
 
-export const DEFAULT_MODEL = 'claude-sonnet-5-5';
+export const DEFAULT_MODEL = 'claude-haiku-5-5';
+
+/** 断られたときに別のモデルで読み直す設定（server-side fallback）。Haiku 5.5 には無いので、ほかのモデルのときだけ付ける */
+export const fallbackParams = (model: string) =>
+  model.startsWith('claude-haiku') ? {} : { betas: ['server-side-fallback-2026-07-01'] as Anthropic.Beta.AnthropicBeta[], fallbacks: 'default' as const };
 /** base64 の長さの上限（端末で長辺 1600px の JPEG にしてから送る。おおよそ 1.5MB） */
 export const MAX_BASE64 = 2_000_000;
 const TYPES = ['image/jpeg', 'image/png', 'image/webp'] as const;
@@ -60,9 +64,7 @@ export const readWithClaude: Reader = async (key, model, media, data) => {
   const res = await client.beta.messages.create({
     model,
     max_tokens: 1024,
-    // 断られたときは、決まった別のモデルで読み直す（server-side fallback）
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
+    ...fallbackParams(model),
     output_config: { effort: 'low', format: { type: 'json_schema', schema } },
     messages: [{
       role: 'user',
