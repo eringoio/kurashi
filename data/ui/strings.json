@@ -2135,5 +2135,145 @@
     "ja": "ほかの{関係|かんけい}",
     "ja_easy": "ほかの{関係|かんけい}",
     "en": "Other relations"
+  },
+  "letter.title": {
+    "ja": "{届|とど}いた{書類|しょるい}の{種類|しゅるい}と、{見|み}る{所|ところ}を{調|しら}べます",
+    "ja_easy": "{届|とど}いた{書類|しょるい}を{調|しら}べます",
+    "en": "Find out what a letter is and where to look"
+  },
+  "letter.intro": {
+    "ja": "{書類|しょるい}の{上|うえ}の{部分|ぶぶん}を{撮|と}ってください。{写真|しゃしん}は、{送|おく}る{前|まえ}に{毎回|まいかい}{聞|き}きます。{保存|ほぞん}しません。",
+    "ja_easy": "{書類|しょるい}の{上|うえ}のほうを{撮|と}ってください。{送|おく}る{前|まえ}に{聞|き}きます。{残|のこ}しません。",
+    "en": "Take a photo of the top part of the letter. We ask every time before sending. Nothing is saved."
+  },
+  "letter.take": {
+    "ja": "{写真|しゃしん}を{撮|と}る",
+    "ja_easy": "{写真|しゃしん}を{撮|と}る",
+    "en": "Take a photo"
+  },
+  "letter.pick": {
+    "ja": "{一覧|いちらん}から{選|えら}ぶ（{写真|しゃしん}を{使|つか}わない）",
+    "ja_easy": "{一覧|いちらん}から{選|えら}ぶ",
+    "en": "Choose from a list (no photo)"
+  },
+  "letter.sample": {
+    "ja": "{見本|みほん}の{書類|しょるい}で{試|ため}す",
+    "ja_easy": "{見本|みほん}で{試|ため}す",
+    "en": "Try with a sample letter"
+  },
+  "letter.check": {
+    "ja": "この{写真|しゃしん}を{送|おく}りますか？",
+    "ja_easy": "この{写真|しゃしん}を{送|おく}りますか？",
+    "en": "Send this photo?"
+  },
+  "letter.photoAlt": {
+    "ja": "{撮|と}った{書類|しょるい}の{写真|しゃしん}",
+    "ja_easy": "{撮|と}った{写真|しゃしん}",
+    "en": "Photo of the letter"
+  },
+  "letter.sampleMark": {
+    "ja": "{見本|みほん}（{架空|かくう}の{書類|しょるい}）",
+    "ja_easy": "{見本|みほん}",
+    "en": "Sample (fictional letter)"
+  },
+  "letter.consent": {
+    "ja": "この{写真|しゃしん}を、{読|よ}むために Claude（AI）に{送|おく}ります。{保存|ほぞん}しません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
+    "ja_easy": "この{写真|しゃしん}を AI に{送|おく}ります。{残|のこ}しません。{名前|なまえ}や{住所|じゅうしょ}は{隠|かく}してください。",
+    "en": "This photo will be sent to Claude (AI) to read it. It is not saved. Take it so that names, addresses and numbers do not show, or cover them."
+  },
+  "letter.send": {
+    "ja": "{送|おく}る（{同意|どうい}する）",
+    "ja_easy": "{送|おく}る",
+    "en": "Send (I agree)"
+  },
+  "letter.sending": {
+    "ja": "{読|よ}んでいます",
+    "ja_easy": "{読|よ}んでいます",
+    "en": "Reading"
+  },
+  "letter.retake": {
+    "ja": "{撮|と}り{直|なお}す",
+    "ja_easy": "{撮|と}り{直|なお}す",
+    "en": "Retake"
+  },
+  "letter.noSend": {
+    "ja": "{送|おく}らない（{一覧|いちらん}から{選|えら}ぶ）",
+    "ja_easy": "{送|おく}らない",
+    "en": "Don't send (choose from a list)"
+  },
+  "letter.maybe": {
+    "ja": "たぶん「{doc}」です",
+    "ja_easy": "たぶん「{doc}」です",
+    "en": "Maybe this is: {doc}"
+  },
+  "letter.confirmQ": {
+    "ja": "{書類|しょるい}の{上|うえ}のほうに、この{言葉|ことば}がありますか？",
+    "ja_easy": "{書類|しょるい}に、この{言葉|ことば}がありますか？",
+    "en": "Is this word near the top of the letter?"
+  },
+  "letter.yes": {
+    "ja": "はい",
+    "ja_easy": "はい",
+    "en": "Yes"
+  },
+  "letter.no": {
+    "ja": "いいえ（{選|えら}び{直|なお}す）",
+    "ja_easy": "いいえ",
+    "en": "No (choose again)"
+  },
+  "letter.dontKnow": {
+    "ja": "わからない",
+    "ja_easy": "わかりません",
+    "en": "I don't know"
+  },
+  "letter.pickTitle": {
+    "ja": "どの{書類|しょるい}ですか？",
+    "ja_easy": "どの{書類|しょるい}ですか？",
+    "en": "Which letter is it?"
+  },
+  "letter.failed": {
+    "ja": "{読|よ}み{取|と}れませんでした",
+    "ja_easy": "{読|よ}めませんでした",
+    "en": "We could not read it"
+  },
+  "letter.failedSub": {
+    "ja": "もう{一度|いちど}{撮|と}るか、{一覧|いちらん}から{選|えら}んでください。",
+    "ja_easy": "もう{一度|いちど}{撮|と}るか、{選|えら}んでください。",
+    "en": "Take the photo again, or choose from the list."
+  },
+  "letter.unknownTitle": {
+    "ja": "わからないときは",
+    "ja_easy": "わからないときは",
+    "en": "If you are not sure"
+  },
+  "letter.unknownSub": {
+    "ja": "{書類|しょるい}に{書|か}いてある{問|と}い{合|あ}わせ{先|さき}か、{区役所|くやくしょ}で{聞|き}いてください。{書類|しょるい}を{持|も}っていくと{話|はなし}が{早|はや}いです。",
+    "ja_easy": "{書類|しょるい}に{書|か}いてある{電話|でんわ}か、{区役所|くやくしょ}で{聞|き}いてください。",
+    "en": "Ask the contact printed on the letter, or at the ward office. Bring the letter with you."
+  },
+  "letter.again": {
+    "ja": "はじめから",
+    "ja_easy": "はじめから",
+    "en": "Start over"
+  },
+  "letter.resultEyebrow": {
+    "ja": "この{書類|しょるい}について",
+    "ja_easy": "この{書類|しょるい}",
+    "en": "About this letter"
+  },
+  "letter.notRead": {
+    "ja": "{期限|きげん}・{金額|きんがく}・{番号|ばんごう}は、このアプリでは{読|よ}みません。{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
+    "ja_easy": "いつまで・いくらかは、{書類|しょるい}を{見|み}てください。",
+    "en": "This app does not read deadlines, amounts or numbers. Check what is printed on the letter."
+  },
+  "letter.related": {
+    "ja": "{関係|かんけい}する{手続|てつづ}き",
+    "ja_easy": "{関係|かんけい}する{手続|てつづ}き",
+    "en": "Related procedures"
+  },
+  "letter.checkStatus": {
+    "ja": "{書類|しょるい}の{説明|せつめい}は{確認|かくにん}{中|ちゅう}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{説明|せつめい}は、まだ{確|たし}かめています。",
+    "en": "The explanation is still being checked (to be checked)."
   }
 }

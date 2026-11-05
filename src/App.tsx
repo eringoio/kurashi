@@ -27,6 +27,7 @@ import { parseScenePath } from './core/scene';
 import { ScenePage } from './pages/Scene';
 import { QrMaker } from './pages/QrMaker';
 import { Here } from './pages/Here';
+import { Letter } from './pages/Letter';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
@@ -67,6 +68,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/review') return <Review />;
   if (path === '/qr') return <QrMaker />;
   if (path === '/here') return <Here />;
+  if (path === '/letter') return <Letter />;
   if (path === '/search') return <Search />;
   if (path === '/gomi') return <Gomi />;
   if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;

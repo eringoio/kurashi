@@ -352,3 +352,7 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .pt-tag--ai { border-style: dashed; }
 .review__table { border-collapse: collapse; width: 100%; font-size: var(--fs-small); }
 .review__table th, .review__table td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line-dim); overflow-wrap: anywhere; }
+
+/* 届いた書類を撮る（6A.9） */
+.letter__photo { display: block; width: 100%; max-width: 480px; height: auto; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); }
+.letter__word { text-align: center; }

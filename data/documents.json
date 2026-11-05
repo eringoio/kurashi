@@ -1,0 +1,29 @@
+{
+  "$comment": "知っている書類（SPEC 9.12・6A.9）。写真から返させるのは、この一覧の id と確からしさだけ。期限・金額・名前・番号は返させない・出さない。look_for は書類の見出しにある言葉（本人が書類で確かめる）。内容はすべて needs_check。",
+  "documents": [
+    {
+      "id": "kokuho-shikaku",
+      "title": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}", "ja_easy": "{国民健康保険|こくみんけんこうほけん}の{資格確認書|しかくかくにんしょ}", "en": "National Health Insurance eligibility certificate" },
+      "look_for": "{資格|しかく}{確認|かくにん}{書|しょ}",
+      "summary": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていることを{示|しめ}す{書類|しょるい}です。{病院|びょういん}で{見|み}せます。{大切|たいせつ}に{持|も}っていてください。", "ja_easy": "{国民健康保険|こくみんけんこうほけん}に{入|はい}っているという{書類|しょるい}です。{病院|びょういん}で{見|み}せます。", "en": "This shows you are in National Health Insurance. Show it at hospitals. Keep it safe." },
+      "card_ids": ["nagoya-kokuho-kanyu"],
+      "evidence": { "source_ids": ["nagoya-kokuho-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+    },
+    {
+      "id": "kokuho-nofu",
+      "title": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}の{納付|のうふ}{書|しょ}", "ja_easy": "{国民健康保険|こくみんけんこうほけん}のお{金|かね}を{払|はら}う{紙|かみ}", "en": "National Health Insurance premium payment slip" },
+      "look_for": "{納付|のうふ}{書|しょ}",
+      "summary": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}を{払|はら}うための{書類|しょるい}です。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。", "ja_easy": "{保険|ほけん}のお{金|かね}を{払|はら}う{紙|かみ}です。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。", "en": "This is for paying your National Health Insurance premium. Check the due date and amount printed on the slip." },
+      "card_ids": ["nagoya-kokuho-kanyu"],
+      "evidence": { "source_ids": ["nagoya-kokuho-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+    },
+    {
+      "id": "nenkin-oshirase",
+      "title": { "ja": "{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}のお{知|し}らせ", "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせ", "en": "National Pension enrollment notice" },
+      "look_for": "{国民|こくみん}{年金|ねんきん}",
+      "summary": { "ja": "{国民|こくみん}{年金|ねんきん}に{入|はい}ったこと、または{入|はい}る{手続|てつづ}きについてのお{知|し}らせです。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。", "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせです。{日本年金機構|にほんねんきんきこう}から{届|とど}きます。", "en": "A notice about joining National Pension. It comes from the Japan Pension Service." },
+      "card_ids": ["nenkin-at-20", "kokumin-nenkin-kanyu"],
+      "evidence": { "source_ids": ["nenkin-hatachi-page", "nenkin-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+    }
+  ]
+}

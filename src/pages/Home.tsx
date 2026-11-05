@@ -10,7 +10,7 @@ type Item = { key: string; title: ReactNode; icon: string; to: string };
 /** 固定の項目（ごみ・書類・探す）。引っ越しなどの生活イベントは data/events.json の menu 順から作る */
 const FIXED: Record<string, Item> = {
   gomi: { key: 'gomi', title: <Bi k="home.gomi" />, icon: 'bin', to: '/gomi' },
-  letter: { key: 'letter', title: <Bi k="home.letter" />, icon: 'letter', to: '/info/coming-soon' },
+  letter: { key: 'letter', title: <Bi k="home.letter" />, icon: 'letter', to: '/letter' },
   search: { key: 'search', title: <Bi k="home.search" />, icon: 'search', to: '/search' },
 };
 /** 引っ越し（E-move）は今までどおり /move。ほかの built のイベントは共通の /e/{id} */

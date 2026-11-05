@@ -13,5 +13,5 @@
     "skipLibCheck": true,
     "types": ["vite/client"]
   },
-  "include": ["src", "data", "tests", "vite.config.ts", "playwright.config.ts"]
+  "include": ["src", "data", "tests", "worker", "vite.config.ts", "playwright.config.ts"]
 }
