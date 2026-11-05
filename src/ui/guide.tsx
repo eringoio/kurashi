@@ -12,6 +12,9 @@ import { art, artDim } from './art';
 import { Link } from './router';
 import { Sheet } from './Sheet';
 import { Speak } from './Speak';
+import { CalendarGrid } from './CalendarGrid';
+import { dayInfo } from '../core/calendar';
+import { HOLIDAYS, HOURS } from '../core/calendarData';
 
 /** 一覧での状態（SPEC 15.2：色＋形＋文字。形は印の文字と枠の線） */
 export type StateKey = 'today' | 'check' | 'ask' | 'wait' | 'later' | 'done' | 'excluded' | 'out';
@@ -217,7 +220,6 @@ export function dayTitle(c: CardView): LocalizedText {
     同じ所でする項目（group）は、一度に聞く。一緒にしない項目は外せる */
 export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void }) {
   const { level } = usePrefs();
-  const [other, setOther] = useState(false);
   const [off, setOff] = useState<Set<string>>(new Set());
   const c = group[0];
   const sel = group.filter((x) => !off.has(x.card.id));
@@ -234,7 +236,8 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
   }
   const min = earliestDay(sel);
   const minFrom = sel.find((x) => x.dayRule.kind === 'min' && x.dayRule.day === min)?.dayRule;
-  const blocked = (d: string) => !!min && d < min;
+  const hours = c.card.place ? HOURS()[c.card.place] : undefined;
+  const hol = HOLIDAYS();
   const pick = (d: string) => onPick(d, sel.map((x) => x.card.id));
   return (
     <>
@@ -267,15 +270,21 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
       <Notes c={c} where="day" />
       {min && minFrom?.kind === 'min' && <p className="sub"><One k="day.minNote" /><One t={DATA().cards.find((x) => x.id === minFrom.from)!.title} />　{fmtDay(min, level)}</p>}
       <div className="list list--days">
-        {daySuggestions(today).map((s) => (
-          <button key={s.key} type="button" className="k-answer" disabled={blocked(s.day)} onClick={() => pick(s.day)}>
-            <img src={art('calendar')} alt="" />
-            <span className="bi"><span className="bi__main"><One k={('day.sug.' + s.key) as UiKey} />　{fmtDay(s.day, level)}</span></span>
-          </button>
-        ))}
+        {daySuggestions(today).map((s) => {
+          // 休みの日（開いている時間のデータ）・前の手続きより前の日は押せない。理由を文字で出す
+          const info = dayInfo({ day: s.day, today, min, hours, holidays: hol });
+          const why = info.tags.find((t) => t === 'closed' || t === 'blocked');
+          return (
+            <button key={s.key} type="button" className="k-answer" disabled={!info.selectable} onClick={() => pick(s.day)}>
+              <img src={art('calendar')} alt="" />
+              <span className="bi"><span className="bi__main"><One k={('day.sug.' + s.key) as UiKey} />　{fmtDay(s.day, level)}{why && <>　<One k={('cal.tag.' + why) as UiKey} /></>}</span></span>
+            </button>
+          );
+        })}
       </div>
-      <button type="button" className="link" aria-expanded={other} onClick={() => setOther(!other)}><Bi k="day.other" /></button>
-      {other && <DayGrid current={c.plan?.planned_on} blocked={blocked} today={today} onPick={pick} />}
+      {hours?.open && <p className="sub"><One t={fill(fill(ui('cal.hours'), 'open', () => hours.open!), 'close', () => hours.close ?? '')} /></p>}
+      {hours?.note && <p className="sub"><Bi t={hours.note} /></p>}
+      <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
       <button type="button" className="link" onClick={onLater}><Bi k="day.later" /></button>
     </>
   );
@@ -337,30 +346,6 @@ export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow:
       <button type="button" className="k-answer k-answer--primary" onClick={onNext}><Bi k="nav.next" /></button>
       {children}
     </>
-  );
-}
-
-const nextDays = (today: string, n: number) => Array.from({ length: n }, (_, i) => new Date(Date.parse(today + 'T00:00:00Z') + i * 86_400_000).toISOString().slice(0, 10));
-
-/** ほかの日を選ぶ：14日分。選べない日も並べ、理由を文字で示す */
-function DayGrid({ current, blocked, today, onPick }: { current?: string; blocked: (d: string) => boolean; today: string; onPick: (d: string) => void }) {
-  const { level } = usePrefs();
-  return (
-    <fieldset className="days">
-      <legend className="sr-only"><One k="day.other" /></legend>
-      <div className="days__grid">
-        {nextDays(today, 14).map((day, i) => {
-          const no = blocked(day);
-          return (
-            <button key={day} type="button" className="seg day" aria-pressed={current === day} disabled={no} onClick={() => onPick(day)}>
-              <span>{fmtDay(day, level)}</span>
-              {i === 0 && <span className="day__tag"><One k="day.today" /></span>}
-              {no && <span className="day__tag"><One k="day.blocked" /></span>}
-            </button>
-          );
-        })}
-      </div>
-    </fieldset>
   );
 }
 

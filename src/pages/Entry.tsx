@@ -10,6 +10,7 @@ import { visitPath, visitsToday } from '../core/accompany';
 import { DATA } from '../core/data';
 import { ui } from '../i18n/text';
 import { withPlace } from './Visit';
+import { AddToCalendar } from '../ui/AddToCalendar';
 
 export function ResumePage() {
   const { vault } = usePrefs();
@@ -65,6 +66,7 @@ function TodayVisits({ views }: { views: ReturnType<typeof useGuide>['out']['car
           <h2 id={'today-' + v.place} className="label"><Bi t={ui(('place.' + v.place) as Parameters<typeof ui>[0]) ?? { ja: v.place }} /></h2>
           <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
           <Link to={visitPath(v.place, 'before')} className="k-answer k-answer--primary"><Bi t={withPlace(ui('visit.start'), v.place)} /></Link>
+          <AddToCalendar day={g.today} place={v.place} cardIds={v.cards.map((c) => c.card.id)} />
         </section>
       ))}
       {rest.length > 0 && <ul className="list" role="list">{rest.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>}

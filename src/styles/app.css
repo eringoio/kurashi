@@ -358,3 +358,17 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .letter__word { text-align: center; }
 /* 情報が古い可能性（12.3 の A2）：縦の線を太くし、文字でも伝える */
 .k-notice--warn { border-left-width: 6px; }
+
+/* 日を選ぶカレンダー（作者の指示 11/5）。幅 320px でも7列が入るように、ますは縮む */
+.cal { display: flex; flex-direction: column; gap: 6px; }
+.cal__table { width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed; }
+.cal__table th { font-size: var(--fs-small); font-weight: 700; text-align: center; padding: 2px 0; }
+.cal__table td { padding: 0; text-align: center; }
+.cal__day { box-sizing: border-box; width: 100%; min-height: 44px; padding: 2px 0; border: 1.5px solid var(--ink); border-radius: var(--radius-box); background: var(--white); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: var(--fs-small); font-weight: 700; line-height: 1.2; }
+.cal__day:disabled { border-style: dashed; border-color: var(--line-dim); color: var(--ink-subtle); background: transparent; }
+.cal__day[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--white); }
+.cal__day--today { border-width: 3px; }
+.cal__day--late { border-color: var(--orange); }
+.cal__mark { font-size: 11px; min-height: 1em; }
+.cal__legend { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: var(--fs-small); }
+.ics { display: flex; flex-direction: column; gap: 6px; }

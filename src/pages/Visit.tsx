@@ -15,6 +15,7 @@ import { art } from '../ui/art';
 import { CardRow, DayChoice, dayTitle, fill, fillDate, ResultView } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Speak } from '../ui/Speak';
+import { AddToCalendar } from '../ui/AddToCalendar';
 
 /** 行く所の名前（strings.json の place.<id>）を文の {place} に入れる */
 export function withPlace(t: LocalizedText, place: string): Text {
@@ -202,7 +203,7 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
       );
     }
     if (res.kind === 'planned') {
-      return <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), res.day)} />} sub={<Bi k="res.planned.sub" />} onNext={() => navigate('/now')} />;
+      return <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), res.day)} />} sub={<Bi k="res.planned.sub" />} onNext={() => navigate('/now')}><AddToCalendar day={res.day} place={place} cardIds={res.ids} /></ResultView>;
     }
     // 行けなかった：日を決め直す（6A.5）
     const first = views[0];

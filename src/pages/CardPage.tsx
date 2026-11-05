@@ -14,6 +14,7 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { DayChoice, dayTitle, fillDate, FocusCard, fmtDay, Notes, QuestionBlock, ResultView, SectionWhy, SourcesSheet, StateLabel, stateKey, whyText } from '../ui/guide';
 import { visitGroup } from '../core/visit';
+import { AddToCalendar } from '../ui/AddToCalendar';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
 import { LifeGuide, MethodChooser, UrgentAction } from '../ui/patterns';
@@ -92,6 +93,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   if (mode.kind === 'planned') {
     return (
       <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), mode.day)} />} sub={<><PlannedList ids={mode.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next}>
+        <AddToCalendar day={mode.day} place={c.card.place} cardIds={mode.ids} />
         <button type="button" className="link" onClick={() => setMode({ kind: 'pick' })}><Bi k="day.change" /></button>
       </ResultView>
     );

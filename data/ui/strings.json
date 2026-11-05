@@ -2285,5 +2285,170 @@
     "ja": "{公式|こうしき}のページを{開|ひら}く（{新|あたら}しいタブ）",
     "ja_easy": "{公式|こうしき}のページ",
     "en": "Open the official page (new tab)"
+  },
+  "cal.wd.0": {
+    "ja": "{日|にち}",
+    "ja_easy": "{日|にち}",
+    "en": "Su"
+  },
+  "cal.wdLong.0": {
+    "ja": "{日曜日|にちようび}",
+    "ja_easy": "{日曜日|にちようび}",
+    "en": "Sunday"
+  },
+  "cal.wd.1": {
+    "ja": "{月|げつ}",
+    "ja_easy": "{月|げつ}",
+    "en": "Mo"
+  },
+  "cal.wdLong.1": {
+    "ja": "{月曜日|げつようび}",
+    "ja_easy": "{月曜日|げつようび}",
+    "en": "Monday"
+  },
+  "cal.wd.2": {
+    "ja": "{火|か}",
+    "ja_easy": "{火|か}",
+    "en": "Tu"
+  },
+  "cal.wdLong.2": {
+    "ja": "{火曜日|かようび}",
+    "ja_easy": "{火曜日|かようび}",
+    "en": "Tuesday"
+  },
+  "cal.wd.3": {
+    "ja": "{水|すい}",
+    "ja_easy": "{水|すい}",
+    "en": "We"
+  },
+  "cal.wdLong.3": {
+    "ja": "{水曜日|すいようび}",
+    "ja_easy": "{水曜日|すいようび}",
+    "en": "Wednesday"
+  },
+  "cal.wd.4": {
+    "ja": "{木|もく}",
+    "ja_easy": "{木|もく}",
+    "en": "Th"
+  },
+  "cal.wdLong.4": {
+    "ja": "{木曜日|もくようび}",
+    "ja_easy": "{木曜日|もくようび}",
+    "en": "Thursday"
+  },
+  "cal.wd.5": {
+    "ja": "{金|きん}",
+    "ja_easy": "{金|きん}",
+    "en": "Fr"
+  },
+  "cal.wdLong.5": {
+    "ja": "{金曜日|きんようび}",
+    "ja_easy": "{金曜日|きんようび}",
+    "en": "Friday"
+  },
+  "cal.wd.6": {
+    "ja": "{土|ど}",
+    "ja_easy": "{土|ど}",
+    "en": "Sa"
+  },
+  "cal.wdLong.6": {
+    "ja": "{土曜日|どようび}",
+    "ja_easy": "{土曜日|どようび}",
+    "en": "Saturday"
+  },
+  "cal.title": {
+    "ja": "カレンダーから{選|えら}ぶ",
+    "ja_easy": "カレンダーから{選|えら}ぶ",
+    "en": "Choose from the calendar"
+  },
+  "cal.legend": {
+    "ja": "{印|しるし}の{意味|いみ}",
+    "ja_easy": "{印|しるし}の{意味|いみ}",
+    "en": "What the marks mean"
+  },
+  "cal.tag.closed": {
+    "ja": "{休|やす}み（{開|あ}いていない{日|ひ}）",
+    "ja_easy": "{休|やす}み",
+    "en": "Closed"
+  },
+  "cal.tag.holiday": {
+    "ja": "{祝日|しゅくじつ}",
+    "ja_easy": "{祝日|しゅくじつ}",
+    "en": "Public holiday"
+  },
+  "cal.tag.past_deadline": {
+    "ja": "{期限|きげん}を{過|す}ぎています（{要|よう}{確認|かくにん}）",
+    "ja_easy": "いつまでを{過|す}ぎています",
+    "en": "Past the deadline (to be checked)"
+  },
+  "cal.tag.blocked": {
+    "ja": "{前|まえ}の{手続|てつづ}きの{日|ひ}より{前|まえ}",
+    "ja_easy": "{前|まえ}の{手続|てつづ}きより{前|まえ}",
+    "en": "Before the earlier step"
+  },
+  "cal.tag.unknown_hours": {
+    "ja": "{開|あ}いている{日|ひ}は{窓口|まどぐち}で{確認|かくにん}",
+    "ja_easy": "{開|あ}いている{日|ひ}は{聞|き}いてください",
+    "en": "Ask whether it is open"
+  },
+  "cal.tag.today": {
+    "ja": "{今日|きょう}",
+    "ja_easy": "きょう",
+    "en": "Today"
+  },
+  "cal.hours": {
+    "ja": "{開|あ}いている{時間|じかん}：{open}〜{close}（{要|よう}{確認|かくにん}）",
+    "ja_easy": "{開|あ}いている{時間|じかん}：{open}〜{close}",
+    "en": "Open {open}–{close} (to be checked)"
+  },
+  "cal.ics": {
+    "ja": "{端末|たんまつ}のカレンダーに{入|い}れる",
+    "ja_easy": "カレンダーに{入|い}れる",
+    "en": "Add to my calendar"
+  },
+  "cal.icsNote": {
+    "ja": "{日|ひ}・{行|い}く{所|ところ}・{持|も}ち{物|もの}を{入|い}れた{予定|よてい}のファイル（.ics）を、この{端末|たんまつ}で{作|つく}ります。どこにも{送|おく}りません。",
+    "ja_easy": "{予定|よてい}のファイルを{作|つく}ります。どこにも{送|おく}りません。",
+    "en": "Makes a calendar file (.ics) with the day, place and things to bring, on this device. Nothing is sent."
+  },
+  "cal.icsWhere": {
+    "ja": "{行|い}く{区役所|くやくしょ}（{住所|じゅうしょ}を{予定|よてい}に{入|い}れる。{選|えら}ばなくてもよい）",
+    "ja_easy": "{行|い}く{区役所|くやくしょ}（{選|えら}ばなくてもよい）",
+    "en": "Which ward office (adds its address; optional)"
+  },
+  "cal.icsNone": {
+    "ja": "{選|えら}ばない",
+    "ja_easy": "{選|えら}ばない",
+    "en": "Don't add"
+  },
+  "cal.icsBring": {
+    "ja": "{持|も}ち{物|もの}",
+    "ja_easy": "{持|も}ち{物|もの}",
+    "en": "Bring"
+  },
+  "cal.icsOther": {
+    "ja": "ほかの{持|も}ち{物|もの}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
+    "ja_easy": "ほかの{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}く",
+    "en": "Ask at the counter about other things to bring (to be checked)"
+  },
+  "cal.page": {
+    "ja": "カレンダー",
+    "ja_easy": "カレンダー",
+    "en": "Calendar"
+  },
+  "cal.pageSub": {
+    "ja": "{行|い}く{日|ひ}を{決|き}めた{手続|てつづ}きです。",
+    "ja_easy": "{行|い}く{日|ひ}を{決|き}めた{手続|てつづ}き",
+    "en": "Procedures with a day you chose."
+  },
+  "cal.empty": {
+    "ja": "まだ{行|い}く{日|ひ}を{決|き}めた{手続|てつづ}きはありません。",
+    "ja_easy": "まだありません。",
+    "en": "No days chosen yet."
+  },
+  "cal.open": {
+    "ja": "カレンダーを{見|み}る",
+    "ja_easy": "カレンダー",
+    "en": "See the calendar"
   }
 }

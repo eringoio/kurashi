@@ -224,6 +224,30 @@
       "owner_type": "government",
       "title": "天白区公式ウェブサイト（天白区役所の所在地）",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-ward-hours-faq",
+      "url": "https://www.city.nagoya.jp/minato/kurashi/1023679/1023693/1023695.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "平日・休日の窓口の時間が知りたい。（港区よくあるご質問）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-sunday-counter",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007851/1034702/1007858.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "区役所・支所の日曜窓口",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-police-menkyo-kihen",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kihen/kihen.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "記載事項の変更手続き（運転免許）",
+      "language": "ja"
     }
   ]
 }
