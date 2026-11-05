@@ -19,7 +19,9 @@
     "shots:report": "node scripts/shots/report.mjs",
     "shots:approve": "node scripts/shots/approve.mjs",
     "shots:affected": "node scripts/shots/affected.mjs",
-    "check:quotes": "vite-node scripts/check-quotes.ts"
+    "check:quotes": "vite-node scripts/check-quotes.ts",
+    "data:fetch": "vite-node scripts/fetch-sources.ts --",
+    "data:agent": "vite-node scripts/update-agent.ts --"
   },
   "dependencies": {
     "@fontsource/zen-maru-gothic": "^5.3.1",

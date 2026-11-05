@@ -1,0 +1,39 @@
+# 待ち — GitHub のリモートと、シークレット ANTHROPIC_API_KEY が必要（作者が用意する）。
+name: data-update
+on:
+  schedule:
+    - cron: '0 18 * * 0' # 日曜 18:00 UTC = 月曜 03:00 JST
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      # sources/index.json（前回のハッシュ）はリポジトリにあるので、checkout で戻る
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run data:fetch
+      - run: npm run data:agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - run: node scripts/gomi/import-opendata.mjs
+      - id: meta
+        run: |
+          f=$(ls sources/report/*.md | sort | tail -n 1)
+          echo "report=$f" >> "$GITHUB_OUTPUT"
+          echo "date=$(basename "$f" .md)" >> "$GITHUB_OUTPUT"
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data-update/${{ github.run_id }}
+          title: データの更新の確認（${{ steps.meta.outputs.date }}）
+          commit-message: データの更新の確認（${{ steps.meta.outputs.date }}）
+          body-path: ${{ steps.meta.outputs.report }}
+          add-paths: |
+            sources/index.json
+            drafts/gomi/opendata.json

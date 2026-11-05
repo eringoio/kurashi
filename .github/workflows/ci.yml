@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: node scripts/furigana.cjs --check
+      - run: npx vitest run
+      - run: npm run check:quotes
+      - run: npm run build
+      # Playwright（npm run test:a11y）は、いまは入れない。ローカルの Windows の Edge を使う設定のため。

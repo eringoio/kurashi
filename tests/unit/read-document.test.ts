@@ -70,8 +70,8 @@ describe('Worker', () => {
     const r = await handleReadDocument(req(ok), { ANTHROPIC_API_KEY: KEY }, read);
     expect(await r.json()).toEqual({ sample: false, candidates: [{ id: 'nenkin-oshirase', confidence: 0.8 }] });
     expect(read.mock.calls[0][1]).toBe('claude-sonnet-5-5');
-    await handleReadDocument(req(ok), { ANTHROPIC_API_KEY: KEY, READ_MODEL: 'claude-haiku-5-5' }, read);
-    expect(read.mock.calls[1][1]).toBe('claude-haiku-5-5');
+    await handleReadDocument(req(ok), { ANTHROPIC_API_KEY: KEY, READ_MODEL: 'claude-opus-5-5' }, read);
+    expect(read.mock.calls[1][1]).toBe('claude-opus-5-5');
   });
   it('失敗しても、キー・画像・結果をログに出さない', async () => {
     const logs: string[] = [];

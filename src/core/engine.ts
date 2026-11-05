@@ -54,6 +54,8 @@ export interface CardView {
   plan: PlanRecord | null;
   /** 確かめの質問の順（obligation → flow.json）。前提の段は入れない（v0.4.8：前提はすることの順だけを変え、質問の順は変えない） */
   questionRank: number;
+  /** 確認の期限を過ぎた根拠がある（12.3 の outdated。本アプリの定義は対象外）。「情報が古い可能性があります」を出す */
+  outdated: boolean;
   /** 手続きの方法（card.methods）を、使える条件（when）で評価したもの。F の方法は入れない。U は「窓口で確認」 */
   methods: { method: NonNullable<Card['methods']>[number]; v: TV }[];
 }
@@ -248,7 +250,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
 
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
     const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
-    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0 };
+    const outdated = [card.evidence, card.where.evidence, card.deadline?.evidence, ...reasonRules.map((r) => r.evidence)].some((e) => e && statusOf(e, false, 'card_text') === 'outdated');
+    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated };
   });
 
   // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。

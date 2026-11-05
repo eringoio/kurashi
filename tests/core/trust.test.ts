@@ -92,3 +92,14 @@ describe('AI照合済みにできる条件', () => {
     expect(items.filter((x) => x.e.status === 'ai_checked')).toEqual([]);
   });
 });
+
+describe('確認の期限を過ぎた根拠（12.3 の A2）', () => {
+  it('確認済みでも 90 日を過ぎれば outdated の印。本アプリの定義は対象外', () => {
+    const raw = structuredClone(baseRaw());
+    const card = (raw.cards as { id: string; evidence: Evidence }[]).find((c) => c.id === 'nagoya-kokuho-kanyu')!;
+    card.evidence = { ...card.evidence, status: 'verified', checked_at: '2026-01-01', verified_by: 'author', quote: 'x' };
+    const out = runWith(raw);
+    expect(out.cards.find((c) => c.card.id === 'nagoya-kokuho-kanyu')!.outdated).toBe(true);
+    expect(out.cards.filter((c) => c.outdated).map((c) => c.card.id)).toEqual(['nagoya-kokuho-kanyu']);
+  });
+});

@@ -14,6 +14,8 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { DayChoice, dayTitle, fillDate, FocusCard, fmtDay, Notes, QuestionBlock, ResultView, SectionWhy, SourcesSheet, StateLabel, stateKey, whyText } from '../ui/guide';
 import { visitGroup } from '../core/visit';
+import { DATA } from '../core/data';
+import type { CardView } from '../core/engine';
 import { LifeGuide, MethodChooser, UrgentAction } from '../ui/patterns';
 import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
 import { PlannedList } from './Plan';
@@ -115,6 +117,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       <FocusCard c={c} title />
       {!isGuide && <p className="sub"><Bi t={whyText(c)} /></p>}
       <SectionWhy c={c} />
+      {c.outdated && <Outdated c={c} />}
       {urgent && c.plan?.status !== 'done' && c.questions.length === 0 && <UrgentAction a={urgent} />}
       {isGuide && <LifeGuide g={toGuide(c.card, g.mode)} />}
       <Notes c={c} where="page" />
@@ -158,5 +161,16 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       </div>
       {sheetEl}
     </>
+  );
+}
+
+/** 確認の期限を過ぎた（12.3 の A2）：色＋縦の線＋文字の注記と、公式のページへのリンク */
+function Outdated({ c }: { c: CardView }) {
+  const src = c.card.evidence.source_ids.map((id) => DATA().sources.find((s) => s.source_id === id)).find((s) => s?.url);
+  return (
+    <div className="k-notice k-notice--warn" role="note">
+      <Bi k="card.outdated" />
+      {src?.url && <a className="link" href={src.url} target="_blank" rel="noopener noreferrer"><Bi k="card.outdatedLink" /></a>}
+    </div>
   );
 }

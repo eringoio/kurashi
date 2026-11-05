@@ -2275,5 +2275,15 @@
     "ja": "{書類|しょるい}の{説明|せつめい}は{確認|かくにん}{中|ちゅう}です（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{説明|せつめい}は、まだ{確|たし}かめています。",
     "en": "The explanation is still being checked (to be checked)."
+  },
+  "card.outdated": {
+    "ja": "この{情報|じょうほう}は、{確認|かくにん}してから{時間|じかん}がたっています。{古|ふる}い{可能性|かのうせい}があります。{公式|こうしき}のページで{確|たし}かめてください。",
+    "ja_easy": "この{情報|じょうほう}は{古|ふる}いかもしれません。{公式|こうしき}のページで{確|たし}かめてください。",
+    "en": "This information was checked a while ago and may be out of date. Please check the official page."
+  },
+  "card.outdatedLink": {
+    "ja": "{公式|こうしき}のページを{開|ひら}く（{新|あたら}しいタブ）",
+    "ja_easy": "{公式|こうしき}のページ",
+    "en": "Open the official page (new tab)"
   }
 }

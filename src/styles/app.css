@@ -356,3 +356,5 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 /* 届いた書類を撮る（6A.9） */
 .letter__photo { display: block; width: 100%; max-width: 480px; height: auto; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); }
 .letter__word { text-align: center; }
+/* 情報が古い可能性（12.3 の A2）：縦の線を太くし、文字でも伝える */
+.k-notice--warn { border-left-width: 6px; }
