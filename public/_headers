@@ -1,0 +1,6 @@
+# 静的なファイルの応答に付ける印（Cloudflare Workers の静的配信）
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(self), geolocation=(self), microphone=()

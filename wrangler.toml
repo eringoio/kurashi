@@ -1,0 +1,26 @@
+# kurashi の公開（Cloudflare Workers。SPEC 16章・13.3）。作者の手順は README.md の「公開」。
+# 静的なファイル（npm run build の dist/）と、/api/*（worker/index.ts）を1つの Worker で配る。
+# 保存の仕組み（D1・KV・R2）は使わない。ログ・監視は切る（13.3）。
+name = "kurashi"
+main = "worker/index.ts"
+compatibility_date = "2026-11-01"
+# 本番のキーは Worker のシークレット（npx wrangler secret put ANTHROPIC_API_KEY）。ここには書かない
+workers_dev = true
+
+[vars]
+# 写真を読むモデル（SPEC 6A.9）。Haiku は使わない
+READ_MODEL = "claude-sonnet-5-5"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+# 画面の URL（/move・/c/… など）は index.html を返す
+not_found_handling = "single-page-application"
+# /api/* だけ Worker のコードを先に通す
+run_worker_first = ["/api/*"]
+
+[observability]
+enabled = false
+
+# 公開の URL（作者が Cloudflare で eringo.io を持っているとき）。待ち：作者の確認のあとで外す
+# routes = [{ pattern = "kurashi.eringo.io", custom_domain = true }]
