@@ -1,6 +1,8 @@
 /* データの確認（作者用。D2・D3）：カード・ルール・関係・持ち物と、その確認状態を並べる。
    「確認済みとして見る」に切り替えると、確認済みデータの fixture（SPEC 18）と同じ扱いで画面を確かめられる。 */
 import { DATA } from '../core/data';
+import { authorQueue, collectEvidence, type EvidenceAt } from '../core/quotes';
+import { AI_CHECK_COUNTS, FIELD_KINDS } from '../core/trust';
 import type { Evidence, Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
 import { type UiKey } from '../i18n/text';
@@ -49,6 +51,7 @@ export function Review() {
           <button type="button" className="seg" aria-pressed={mode === 'verified'} onClick={() => void v.put('settings', 'review_mode', 'verified')}><One k="review.verified" /></button>
         </div>
       </fieldset>}
+      <AuthorQueue />
       <section className="group"><h2><Bi k="review.cards" />（{d.cards.length}）</h2>
         <ul className="list review" role="list">
           {d.flow.card_order.map((id) => d.cards.find((c) => c.id === id)!).map((c) => (
@@ -67,5 +70,31 @@ export function Review() {
       </section>
       <div className="links"><Link to="/qr" className="link"><Bi k="qr.title" /></Link><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
+  );
+}
+
+/** 作者が確認する一覧（v0.4.9 の4）と、AI 照合を確認済みと同じに扱う欄の表 */
+function AuthorQueue() {
+  const q = authorQueue(collectEvidence(DATA()));
+  const list = (xs: EvidenceAt[]) => xs.length === 0
+    ? <p className="sub"><One k="review.none" /></p>
+    : <ul className="list review" role="list">{xs.map((x) => <Item key={x.where} id={x.where + '（' + x.kind + '）'} e={x.e} />)}</ul>;
+  return (
+    <section className="group">
+      <h2><Bi k="review.queue" /></h2>
+      <p className="sub"><Bi k="review.queueSub" /></p>
+      <h3 className="label"><One k="review.staysU" /></h3>
+      {list(q.stays_u)}
+      <h3 className="label"><One k="review.disagree" /></h3>
+      {list(q.disagree)}
+      <table className="review__table">
+        <caption className="label"><One k="review.table" /></caption>
+        <tbody>
+          {FIELD_KINDS.map((k) => (
+            <tr key={k}><th scope="row"><One k={('review.kind.' + k) as UiKey} /></th><td><span aria-hidden="true">{AI_CHECK_COUNTS[k] ? '✓ ' : '！ '}</span><One k={AI_CHECK_COUNTS[k] ? 'review.counts' : 'review.staysUShort'} /></td></tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 }

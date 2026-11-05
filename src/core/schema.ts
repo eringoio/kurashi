@@ -1,7 +1,8 @@
 /* ガイドのデータの型（SPEC 9章）。Zod で読み込むときに確かめる。ここにない項目は、使うときに足す。 */
 import { z } from 'zod';
 
-export const Status = z.enum(['draft', 'needs_check', 'verified', 'outdated']);
+/** ai_checked：公式のページと AI で照合した（作者の確認前。v0.4.9）。どの欄で verified と同じに扱うかは src/core/trust.ts */
+export const Status = z.enum(['draft', 'needs_check', 'ai_checked', 'verified', 'outdated']);
 export type Status = z.infer<typeof Status>;
 
 export const Evidence = z.object({
@@ -13,6 +14,13 @@ export const Evidence = z.object({
   /** 確かめた人（author など）と、原文の短い引用（docs/DATA_UPDATE.md） */
   verified_by: z.string().optional(),
   quote: z.string().optional(),
+  /** AI 照合の記録（v0.4.9）：引用を見つけた本文の取得日・ハッシュ、独立の照合の結果と、その記録の場所 */
+  ai_check: z.object({
+    fetched_at: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    sha256: z.string().regex(/^[0-9a-f]{64}$/),
+    verdict: z.enum(['agree', 'disagree']),
+    ref: z.string(),
+  }).optional(),
 });
 export type Evidence = z.infer<typeof Evidence>;
 

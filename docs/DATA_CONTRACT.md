@@ -101,3 +101,17 @@
 4. 9.6：関係 `parallel`・`related`（注記だけ）。
 5. 9.9：保存に `occurrences`（出来事ごと）。
 6. 18章：本番では確認済み見本モードを使えない。
+
+## 9. v1.2（2026-11-05。SPEC v0.4.9 の AI照合済み）
+
+SPEC v0.4.9 の決定の範囲だけを足す。今のデータはそのまま読める。
+
+| 項目 | 形 | 意味 |
+|---|---|---|
+| 確認状態 | `Evidence.status` に `ai_checked` | 公式のページと AI で照合した（作者の確認前）。`verified` にできるのは作者だけ（今までどおり） |
+| 照合の記録 | `Evidence.ai_check?: { fetched_at, sha256, verdict: "agree"\|"disagree", ref }` | 引用を見つけた本文の取得日とハッシュ、独立の照合の結果、その記録の場所 |
+| 本文 | `sources/snapshots/<source_id>/<fetched_at>.txt` | 取得した本文。`sha256` はこのファイルのハッシュ |
+
+- **扱いの表**は `src/core/trust.ts` の `AI_CHECK_COUNTS` 1か所だけ。`ai_checked` を `verified` と同じに扱うのは、行く所（`where`）・方法（`methods`）・連絡先・リンク・持ち物の名前・手続きの名前と説明。**義務・期限（`deadline`）・費用・対象者（`rules` の全部）・前提の関係（`legal_prerequisite`・`practical_prerequisite`・`day_order`）・ほかの関係は U のまま**。
+- **検査**：読み込み（`checkRefs`）で、`ai_checked` に `quote` と `ai_check` が無ければ止める。`npm run check:quotes`（`scripts/check-quotes.ts`）で、引用が本文にそのままあるか（空白の違いだけをそろえる）、ハッシュが合うか、`verdict` が `agree` かを確かめる。項目 6（データの更新）の CI でも同じものを使う。
+- **画面**：`ai_checked` の項目には「AI で照合（作者の確認前）」の印（点線の枠と文字。色だけにしない）。`/review` に「作者が確認する一覧」（U のまま残った項目・照合が食い違った項目）と、上の表を出す。

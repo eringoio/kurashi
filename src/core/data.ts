@@ -108,12 +108,14 @@ export function checkRefs(d: GuideData): string[] {
   // イベントを選ぶと決まる事実も、聞かなくてよい事実として数える
   d.events.forEach((e) => e.facts.forEach((f) => objFacts.add(f.fact)));
   const productIds = new Set(d.sources.filter((s) => s.owner_type === 'product').map((s) => s.source_id));
-  const ev = (where: string, e: { source_ids: string[]; status: string; checked_at?: string; verified_by?: string; quote?: string }) => {
+  const ev = (where: string, e: { source_ids: string[]; status: string; checked_at?: string; verified_by?: string; quote?: string; ai_check?: unknown }) => {
     if (e.status !== 'draft' && e.source_ids.length === 0) err.push(`${where}：出典がない`);
     e.source_ids.forEach((s) => { if (!src.has(s)) err.push(`${where}：出典 ${s} がない`); });
     // 確認済みの根拠：本アプリの定義（product の出典だけ）以外は、確かめた人と原文の引用が要る（DATA_CONTRACT 5章）
     // 引用が無いものは warnings() で出す（作者の指示で確認済みにし、引用はあとで付けるもの：R-under-20）
     if (e.status === 'verified' && !e.source_ids.every((s) => productIds.has(s)) && !e.verified_by) err.push(`${where}：verified なのに verified_by がない`);
+    // AI 照合済み（v0.4.9）：引用と照合の記録が要る。本文との突き合わせは scripts/check-quotes.ts
+    if (e.status === 'ai_checked' && (!e.quote || !e.ai_check)) err.push(`${where}：ai_checked なのに quote か ai_check がない`);
   };
   const text3 = (where: string, t: Record<string, string>) => LEVELS.forEach((l) => { if (!t[l]) err.push(`${where}：${l} の文がない`); });
   for (const r of d.rules.values()) {

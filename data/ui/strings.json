@@ -2025,5 +2025,115 @@
     "ja": "（{新|あたら}しいタブで{開|ひら}きます）",
     "ja_easy": "（{新|あたら}しいタブ）",
     "en": "(opens in a new tab)"
+  },
+  "src.status.ai_checked": {
+    "ja": "{公式|こうしき}のページと AI で{照合|しょうごう}しました（{作者|さくしゃ}の{確認|かくにん}{前|まえ}）",
+    "ja_easy": "{公式|こうしき}のページと AI で{確|たし}かめました（まだ{人|ひと}は{見|み}ていません）",
+    "en": "Checked against the official page by AI (not yet checked by the author)"
+  },
+  "pat.aiChecked": {
+    "ja": "AI で{照合|しょうごう}（{作者|さくしゃ}の{確認|かくにん}{前|まえ}）",
+    "ja_easy": "AI で{確|たし}かめた",
+    "en": "AI-checked (author not yet)"
+  },
+  "review.queue": {
+    "ja": "{作者|さくしゃ}が{確認|かくにん}する{一覧|いちらん}",
+    "ja_easy": "{作者|さくしゃ}が{見|み}る{一覧|いちらん}",
+    "en": "For the author to check"
+  },
+  "review.queueSub": {
+    "ja": "AI で{照合|しょうごう}しても、{義務|ぎむ}・{期限|きげん}・{費用|ひよう}・{対象|たいしょう}{者|しゃ}・{前提|ぜんてい}の{関係|かんけい}は「{窓口|まどぐち}で{確認|かくにん}」のままです。{作者|さくしゃ}が{確認済|かくにんず}みにするまで{変|か}わりません。",
+    "ja_easy": "AI で{確|たし}かめても、{大事|だいじ}なことは{作者|さくしゃ}が{見|み}るまで「{窓口|まどぐち}で{確認|かくにん}」です。",
+    "en": "Even when AI-checked, obligations, deadlines, fees, eligibility and prerequisites stay \"check at the counter\" until the author verifies them."
+  },
+  "review.staysU": {
+    "ja": "AI で{照合|しょうごう}したが、{窓口|まどぐち}で{確認|かくにん}のままの{項目|こうもく}",
+    "ja_easy": "AI で{確|たし}かめたが、まだ{窓口|まどぐち}で{確認|かくにん}の{項目|こうもく}",
+    "en": "AI-checked but still \"check at the counter\""
+  },
+  "review.disagree": {
+    "ja": "{照合|しょうごう}が{食|く}い{違|ちが}った{項目|こうもく}",
+    "ja_easy": "{結果|けっか}がちがった{項目|こうもく}",
+    "en": "Items where the checks disagreed"
+  },
+  "review.none": {
+    "ja": "ありません",
+    "ja_easy": "ありません",
+    "en": "None"
+  },
+  "review.table": {
+    "ja": "AI {照合|しょうごう}を{確認済|かくにんず}みと{同|おな}じに{扱|あつか}う{欄|らん}",
+    "ja_easy": "AI で{確|たし}かめたら{使|つか}える{欄|らん}",
+    "en": "Fields where AI checks count as verified"
+  },
+  "review.counts": {
+    "ja": "{確認済|かくにんず}みと{同|おな}じ",
+    "ja_easy": "{使|つか}える",
+    "en": "Counts as verified"
+  },
+  "review.staysUShort": {
+    "ja": "{窓口|まどぐち}で{確認|かくにん}のまま",
+    "ja_easy": "まだ{使|つか}えない",
+    "en": "Stays \"check at the counter\""
+  },
+  "review.kind.place": {
+    "ja": "{行|い}く{所|ところ}",
+    "ja_easy": "{行|い}く{所|ところ}",
+    "en": "Where to go"
+  },
+  "review.kind.method": {
+    "ja": "{方法|ほうほう}",
+    "ja_easy": "{方法|ほうほう}",
+    "en": "Methods"
+  },
+  "review.kind.contact": {
+    "ja": "{連絡先|れんらくさき}",
+    "ja_easy": "{連絡先|れんらくさき}",
+    "en": "Contacts"
+  },
+  "review.kind.link": {
+    "ja": "リンク",
+    "ja_easy": "リンク",
+    "en": "Links"
+  },
+  "review.kind.object_name": {
+    "ja": "{持|も}ち{物|もの}の{名前|なまえ}",
+    "ja_easy": "{持|も}ち{物|もの}",
+    "en": "Item names"
+  },
+  "review.kind.card_text": {
+    "ja": "{手続|てつづ}きの{名前|なまえ}と{説明|せつめい}",
+    "ja_easy": "{手続|てつづ}きの{名前|なまえ}",
+    "en": "Procedure names and descriptions"
+  },
+  "review.kind.obligation": {
+    "ja": "{義務|ぎむ}",
+    "ja_easy": "{義務|ぎむ}",
+    "en": "Obligations"
+  },
+  "review.kind.deadline": {
+    "ja": "{期限|きげん}",
+    "ja_easy": "いつまで",
+    "en": "Deadlines"
+  },
+  "review.kind.fee": {
+    "ja": "{費用|ひよう}",
+    "ja_easy": "お{金|かね}",
+    "en": "Fees"
+  },
+  "review.kind.rule": {
+    "ja": "{対象|たいしょう}{者|しゃ}（{制度|せいど}のルール）",
+    "ja_easy": "だれが{対象|たいしょう}か",
+    "en": "Eligibility (rules)"
+  },
+  "review.kind.prerequisite": {
+    "ja": "{前提|ぜんてい}の{関係|かんけい}（{順番|じゅんばん}）",
+    "ja_easy": "{順番|じゅんばん}",
+    "en": "Prerequisites (order)"
+  },
+  "review.kind.relation": {
+    "ja": "ほかの{関係|かんけい}",
+    "ja_easy": "ほかの{関係|かんけい}",
+    "en": "Other relations"
   }
 }

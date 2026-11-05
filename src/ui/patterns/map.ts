@@ -3,12 +3,14 @@
    根拠（evidence）の status が verified でなければ「要確認」の印（mode が verified の見本表示のときは出さない）。 */
 import type { CardView } from '../../core/engine';
 import type { Card, Evidence, Question } from '../../core/schema';
+import { effectiveStatus, isAiChecked, type FieldKind } from '../../core/trust';
 import type { BelongingVM, ContactVM, HoldStatus, LifeGuideVM, MethodKind, MethodVM, PickOptionVM, T, UrgentActionVM } from './types';
 
 type Mode = 'public' | 'verified';
 type CardContact = NonNullable<Card['urgent']>['contacts'][number];
 
-export const unverified = (e: Evidence, mode: Mode): boolean => mode !== 'verified' && e.status !== 'verified';
+/** 要確認の印を出すか。ai_checked は、表（core/trust.ts）で許した欄だけ確認済みと同じ */
+export const unverified = (e: Evidence, mode: Mode, kind: FieldKind = 'method'): boolean => mode !== 'verified' && effectiveStatus(e, kind) !== 'verified';
 
 export function toContact(c: CardContact): ContactVM {
   return { kind: c.type === 'phone' ? 'phone' : 'web', label: c.label as T, value: c.value };
@@ -31,12 +33,13 @@ export function toMethods(view: Pick<CardView, 'methods'>, mode: Mode): MethodVM
     label: m.text as T,
     needs: [],
     unverified: unverified(m.evidence, mode) || v === 'U',
+    aiChecked: isAiChecked(m.evidence),
   }));
 }
 
 /** 代わりの書類の案内（カード単位）。文だけを返す */
-export const toAlternatives = (card: Card, mode: Mode): { text: T; unverified: boolean }[] =>
-  (card.alternatives ?? []).map((a) => ({ text: a.text as T, unverified: unverified(a.evidence, mode) }));
+export const toAlternatives = (card: Card, mode: Mode): { text: T; unverified: boolean; aiChecked: boolean }[] =>
+  (card.alternatives ?? []).map((a) => ({ text: a.text as T, unverified: unverified(a.evidence, mode, 'object_name'), aiChecked: isAiChecked(a.evidence) }));
 
 /** 持ち物の状態の名前の読み替え（契約 → 部品） */
 const HOLD: Record<string, HoldStatus> = { held: 'have', lost: 'lost', stopped: 'stopped', reissue_waiting: 'reissue_wait', unknown: 'unknown' };

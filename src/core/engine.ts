@@ -2,7 +2,8 @@
    同じ入力からは必ず同じ結果になる。答えが変わったら、毎回すべてを計算し直す（前回の結果を使わない）。 */
 import type { GuideData } from './data';
 import { combineAll, combineAny, evalCond, factsIn, type Eval, type Facts, type TV } from './logic';
-import type { Card, EventDef, Evidence, Question, Relation, Rule, RuleExpr, Value } from './schema';
+import type { Card, EventDef, Evidence, Question, Relation, Rule, RuleExpr, Status, Value } from './schema';
+import { effectiveStatus, type FieldKind } from './trust';
 import type { PlanRecord } from './entry';
 
 export type DisplayState = 'shown' | 'check_at_office' | 'ask' | 'excluded' | 'out_of_scope';
@@ -73,8 +74,9 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const mode = x.mode ?? 'public';
   const productOnly = (e: Evidence) => e.source_ids.length > 0 && e.source_ids.every((s) => data.sources.find((d) => d.source_id === s)?.owner_type === 'product');
   /** 実際に使う確認状態（outdated は今日で判定。9.2） */
-  const statusOf = (e: Evidence, keep?: boolean) => {
-    let s = e.status;
+  const statusOf = (e: Evidence, keep?: boolean, kind: FieldKind = 'rule') => {
+    // ai_checked は、表（trust.ts）で許した欄だけ verified と同じ。判定に使う欄（ルール・関係）は U のまま
+    let s: Status = effectiveStatus(e, kind);
     if (mode === 'verified' && s === 'needs_check' && !keep) s = 'verified';
     if (s === 'verified' && !productOnly(e)) {
       const days = e.review_after_days === undefined ? 90 : e.review_after_days;
@@ -115,7 +117,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const scope = scopeEval.v;
 
   // 関係の確認状態
-  const relVerified = (r: Relation) => statusOf(r.evidence, r.keep_needs_check) === 'verified';
+  const relVerified = (r: Relation) => statusOf(r.evidence, r.keep_needs_check, r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite' ? 'prerequisite' : 'relation') === 'verified';
   const ruleT = (id: string) => conf.get(id)!.v;
 
   // 4. 表示状態
@@ -174,7 +176,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
         const s = satisfied(r);
         if (s === 'yes') continue;
         // 日の順だけを守らせる（v0.4.5）：前の項目がまだ済んでいなくて、この人に関係するとき。区分け・並び順は変えない
-        if (r.type === 'practical_prerequisite' && r.day_order && statusOf(r.day_order) === 'verified') {
+        if (r.type === 'practical_prerequisite' && r.day_order && statusOf(r.day_order, false, 'prerequisite') === 'verified') {
           const fromState = stateOf.get(r.from);
           if (fromState === 'shown' || fromState === 'check_at_office' || fromState === 'ask') {
             const fromDay = x.plan[r.from]?.planned_on;

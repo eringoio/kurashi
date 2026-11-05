@@ -53,6 +53,8 @@ export interface MethodVM {
   needs: T[];
   /** 未確認なら true（「要確認」を出す） */
   unverified?: boolean;
+  /** 公式のページと AI で照合した（作者の確認前。v0.4.9） */
+  aiChecked?: boolean;
 }
 
 /** 手続き同士の関係 */
