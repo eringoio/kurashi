@@ -1,8 +1,9 @@
 # 待ち — GitHub のリモートと、シークレット ANTHROPIC_API_KEY が必要（作者が用意する）。
 name: data-update
+# 作者の指示（2026-11-05）：作者が動かすと決めるまで、週1回の実行を止め、手で動かすときだけにする。動かすときは schedule の行を戻す
 on:
-  schedule:
-    - cron: '0 18 * * 0' # 日曜 18:00 UTC = 月曜 03:00 JST
+  # schedule:
+  #   - cron: '0 18 * * 0' # 日曜 18:00 UTC = 月曜 03:00 JST
   workflow_dispatch:
 permissions:
   contents: write

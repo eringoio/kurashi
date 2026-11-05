@@ -1,7 +1,7 @@
+# 作者の指示（2026-11-05）：作者が動かすと決めるまで、手で動かすときだけ（push・PR では動かない）。動かすときは、下の on: を push: と pull_request: にもどす
 name: CI
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 jobs:
   check:
     runs-on: ubuntu-latest
