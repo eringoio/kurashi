@@ -37,6 +37,6 @@ flow({
 
   await page.goto('/clinic');
   await page.getByRole('button', { name: /^子ども/ }).click();
-  await snap({ name: 'こども 帯に #8000', input: 'こども（絵にないもの）', expected: '帯の項目が 2 つから 3 つになる（こどもの電話 #8000 が加わる）。※いまは電話番号の数字が帯に出ていない（要修正）', why: '#8000 はこどものときだけ' },
+  await snap({ name: 'こども 帯に #8000', input: 'こども（絵にないもの）', expected: '帯の項目が 2 つから 3 つになる（こどもの電話 #8000 が加わる）', why: '#8000 はこどものときだけ' },
     async () => { await expect(band.locator('li')).toHaveCount(3); });
 });
