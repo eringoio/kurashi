@@ -1,14 +1,55 @@
 {
   "$comment": "データの更新で取得してよい公式のドメイン（docs/DATA_UPDATE.md 2章）。ここにないドメインは自動で取得しない。足すときは作者が PR で足す。サブドメインも含む。",
   "domains": [
-    { "domain": "city.nagoya.jp", "owner": "名古屋市", "owner_type": "government" },
-    { "domain": "pref.aichi.jp", "owner": "愛知県", "owner_type": "government" },
-    { "domain": "nenkin.go.jp", "owner": "日本年金機構", "owner_type": "public_corp" },
-    { "domain": "moj.go.jp", "owner": "出入国在留管理庁（法務省）", "owner_type": "government" },
-    { "domain": "mhlw.go.jp", "owner": "厚生労働省", "owner_type": "government" },
-    { "domain": "soumu.go.jp", "owner": "総務省", "owner_type": "government" },
-    { "domain": "digital.go.jp", "owner": "デジタル庁", "owner_type": "government" },
-    { "domain": "laws.e-gov.go.jp", "owner": "e-Gov 法令検索", "owner_type": "government" },
-    { "domain": "nic-nagoya.or.jp", "owner": "名古屋国際センター", "owner_type": "public_corp" }
+    {
+      "domain": "city.nagoya.jp",
+      "owner": "名古屋市",
+      "owner_type": "government"
+    },
+    {
+      "domain": "pref.aichi.jp",
+      "owner": "愛知県",
+      "owner_type": "government"
+    },
+    {
+      "domain": "npa.go.jp",
+      "owner": "警察庁",
+      "owner_type": "government"
+    },
+    {
+      "domain": "nenkin.go.jp",
+      "owner": "日本年金機構",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "moj.go.jp",
+      "owner": "出入国在留管理庁（法務省）",
+      "owner_type": "government"
+    },
+    {
+      "domain": "mhlw.go.jp",
+      "owner": "厚生労働省",
+      "owner_type": "government"
+    },
+    {
+      "domain": "soumu.go.jp",
+      "owner": "総務省",
+      "owner_type": "government"
+    },
+    {
+      "domain": "digital.go.jp",
+      "owner": "デジタル庁",
+      "owner_type": "government"
+    },
+    {
+      "domain": "laws.e-gov.go.jp",
+      "owner": "e-Gov 法令検索",
+      "owner_type": "government"
+    },
+    {
+      "domain": "nic-nagoya.or.jp",
+      "owner": "名古屋国際センター",
+      "owner_type": "public_corp"
+    }
   ]
 }

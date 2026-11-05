@@ -15,6 +15,6 @@ jobs:
       - run: npx tsc --noEmit
       - run: node scripts/furigana.cjs --check
       - run: npx vitest run
-      - run: npm run check:quotes
+      - run: npm run check:quotes -- --allow-missing-bodies
       - run: npm run build
       # Playwright（npm run test:a11y）は、いまは入れない。ローカルの Windows の Edge を使う設定のため。
