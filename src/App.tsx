@@ -2,6 +2,8 @@
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { DRAFTS_LOADED } from './core/data';
 import { chooseEntry, type Resume } from './core/entry';
+import { openEventPlans, type Occurrence } from './core/occurrence';
+import type { Vault } from './storage/vault';
 import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
 import { usePrefs } from './storage/prefs';
@@ -35,11 +37,12 @@ import { ClinicPage } from './pages/Clinic';
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
 
 /** 入口の出し分けの入力（6A.1）。保存した進捗から作る */
-function entryOf(g: Guide, resume: Resume | null, hasProgress: boolean) {
+function entryOf(g: Guide, resume: Resume | null, hasProgress: boolean, v: Pick<Vault, 'entries'>) {
   const open = g.out.cards.filter((c) => c.section && c.section !== 'later');
   return chooseEntry({
     today: g.today, url: null, resume, hasProgress,
-    plan: Object.values(g.plan),
+    // 生活イベント（/e/...）で決めた行く日も入れる（引っ越しの plan と同じに扱う）
+    plan: [...Object.values(g.plan), ...openEventPlans(v.entries('occurrences').map(([, o]) => o as Occurrence)).map((x) => x.plan)],
     waiting: g.out.cards.some((c) => c.section === 'wait'),
     allDone: open.length > 0 && open.every((c) => c.section === 'done'),
   });
@@ -78,7 +81,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/gomi') return <Gomi />;
   if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;
   if (path === '/today' || path === '/past') {
-    const e = entryOf(g, null, true);
+    const e = entryOf(g, null, true, v);
     const ids = e.kind === 'promise_today' || e.kind === 'promise_past' ? e.card_ids : [];
     return <PromisePage past={path === '/past'} cardIds={ids} />;
   }
@@ -104,7 +107,7 @@ export function App() {
     if (routed.current) return;
     routed.current = true;
     if (location.pathname !== '/') return;
-    const e = entryOf(g, v.get<Resume>('resume', 'value') ?? null, v.hasProgress());
+    const e = entryOf(g, v.get<Resume>('resume', 'value') ?? null, v.hasProgress(), v);
     const to = e.kind === 'resume' ? e.resume.step : ENTRY_PATH[e.kind];
     if (to) { history.replaceState(null, '', to); dispatchEvent(new PopStateEvent('popstate')); }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

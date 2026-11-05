@@ -10,7 +10,8 @@ export default defineConfig({
   use: { channel: 'msedge', locale: 'ja-JP' },
   projects: [
     { name: 'main', testIgnore: /drafts[\/]/, use: { baseURL: 'http://localhost:5179' } },
-    { name: 'drafts', testMatch: /drafts[\/].*.spec.ts/, use: { baseURL: 'http://localhost:5180' } },
+    // 下書きのカードは調査で長くなった（3つの幅×5つの画面を axe で見る）。1つのテストに3分まで
+    { name: 'drafts', testMatch: /drafts[\/].*.spec.ts/, timeout: 180_000, use: { baseURL: 'http://localhost:5180' } },
   ],
   webServer: [
     { command: 'npx vite --port 5179 --strictPort', url: 'http://localhost:5179', reuseExistingServer: true, timeout: 60_000 },

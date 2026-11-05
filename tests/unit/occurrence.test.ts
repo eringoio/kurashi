@@ -3,7 +3,8 @@ import 'fake-indexeddb/auto';
 import { IDBFactory } from 'fake-indexeddb';
 import { describe, expect, it } from 'vitest';
 import { loadData } from '../../src/core/data';
-import { answerTarget, answersFor, currentOf, legacyOccurrence, listOccurrences, newOccurrence, type Occurrence } from '../../src/core/occurrence';
+import { answerTarget, answersFor, currentOf, legacyOccurrence, listOccurrences, newOccurrence, openEventPlans, LEGACY_ID, type Occurrence } from '../../src/core/occurrence';
+import type { PlanRecord } from '../../src/core/entry';
 import { Vault } from '../../src/storage/vault';
 
 const Q = loadData().questions;
@@ -72,5 +73,18 @@ describe('保存（SCHEMA_VERSION 2）', () => {
     await u.put('occurrences', 'occ-a-1', { id: 'occ-a-1' });
     const u2 = await Vault.open({ indexedDB: fresh });
     expect(u2.get('occurrences', 'occ-a-1')).toBeUndefined();
+  });
+});
+
+describe('openEventPlans（イベントで決めた日を入口の出し分けに使う）', () => {
+  const occ = (id: string, event_id: string, plan: Record<string, PlanRecord>, closed_on?: string): Occurrence => ({ id, event_id, started_on: '2026-11-01', answers: {}, plan, ...(closed_on ? { closed_on } : {}) });
+  const p = (card_id: string, planned_on?: string): PlanRecord => ({ card_id, status: 'todo', ...(planned_on ? { planned_on } : {}) });
+  it('閉じていない出来事の plan だけ。occ-legacy（引っ越しの plan そのもの）は入れない', () => {
+    const got = openEventPlans([
+      occ('occ-lost-wallet', 'E-lost-wallet', { a: p('a', '2026-11-04'), b: p('b') }),
+      occ('occ-lost-wallet-2', 'E-lost-wallet', { c: p('c', '2026-11-04') }, '2026-11-03'),
+      occ(LEGACY_ID, 'E-move', { d: p('d', '2026-11-04') }),
+    ]);
+    expect(got.map((x) => x.event_id + '/' + x.plan.card_id)).toEqual(['E-lost-wallet/a', 'E-lost-wallet/b']);
   });
 });

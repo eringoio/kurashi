@@ -55,3 +55,11 @@ export function answersFor(occ: Occurrence | null, profile: Record<string, Value
 
 /** 答えを書く先：person は profile、event は出来事 */
 export const answerTarget = (questions: Question[], qid: string): 'profile' | 'occurrence' => (scopeOf(questions, qid) === 'person' ? 'profile' : 'occurrence');
+
+/** 生活イベント（/e/...）で決めた行く日も、入口の出し分け（約束した日。6A.1）に使う。
+    閉じていない出来事の plan だけ。occ-legacy は引っ越しの plan そのもの（useGuide が読む）なので入れない */
+export function openEventPlans(stored: Occurrence[]): { event_id: string; plan: PlanRecord }[] {
+  return stored
+    .filter((o) => o.id !== LEGACY_ID && !o.closed_on)
+    .flatMap((o) => Object.values(o.plan).map((plan) => ({ event_id: o.event_id, plan })));
+}

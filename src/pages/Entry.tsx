@@ -11,6 +11,10 @@ import { DATA } from '../core/data';
 import { ui } from '../i18n/text';
 import { withPlace } from './Visit';
 import { AddToCalendar } from '../ui/AddToCalendar';
+import { useEvent } from '../guide/useEvent';
+import { eventStore } from '../guide/eventStore';
+import { todayJst } from '../core/date';
+import { openEventPlans, type Occurrence } from '../core/occurrence';
 
 export function ResumePage() {
   const { vault } = usePrefs();
@@ -33,17 +37,28 @@ export function ResumePage() {
 /** 約束した日が今日、または過ぎた（済んだと記録していない） */
 export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[] }) {
   const g = useGuide();
+  const { vault } = usePrefs();
   useFocusTitle('promise');
   const views = g.out.cards.filter((c) => cardIds.includes(c.card.id));
+  // 生活イベント（/e/...）で決めた日の項目は、イベントごとにまとめる（引っ越しの項目と重ねない）
+  const mainIds = new Set(views.map((c) => c.card.id));
+  const byEvent = new Map<string, string[]>();
+  for (const x of openEventPlans(vault.entries('occurrences').map(([, o]) => o as Occurrence))) {
+    if (!cardIds.includes(x.plan.card_id) || mainIds.has(x.plan.card_id)) continue;
+    byEvent.set(x.event_id, [...(byEvent.get(x.event_id) ?? []), x.plan.card_id]);
+  }
+  const events = [...byEvent.entries()];
+  const markDone = (ids: string[]) => { const id = events.find(([, xs]) => xs === ids)![0]; return eventStore(vault, id, { questions: DATA().questions, cards: DATA().cards, today: todayJst }).setPlans(ids, { status: 'done' }); };
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('calendar')} alt="" className="art--big" /></div>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k={past ? 'promise.past' : 'promise.today'} /></h1></div>
-      {past ? <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} />)}</ul> : <TodayVisits views={views} />}
+      {past ? <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} />)}</ul> : views.length > 0 && <TodayVisits views={views} />}
+      {events.map(([id, ids]) => <EventPromise key={id} eventId={id} ids={ids} />)}
       {past && (
         <div className="list">
-          <button type="button" className="k-answer k-answer--primary" onClick={async () => { for (const id of cardIds) await g.setPlan(id, { status: 'done' }); navigate('/now'); }}><Bi k="promise.went" /></button>
-          <Link to={'/c/' + cardIds[0]} className="k-answer"><Bi k="promise.notYet" /></Link>
+          <button type="button" className="k-answer k-answer--primary" onClick={async () => { for (const c of views) await g.setPlan(c.card.id, { status: 'done' }); for (const [, ids] of events) await markDone(ids); navigate(events.length && !views.length ? '/e/' + events[0][0] : '/now'); }}><Bi k="promise.went" /></button>
+          <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0]?.[0] + '/c/' + events[0]?.[1][0]} className="k-answer"><Bi k="promise.notYet" /></Link>
         </div>
       )}
       <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
@@ -51,6 +66,21 @@ export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[
   );
 }
 
+
+/** 生活イベント（/e/...）で決めた日の項目。そのイベントの画面で開く（付き添いはイベントの「いま」から） */
+function EventPromise({ eventId, ids }: { eventId: string; ids: string[] }) {
+  const eg = useEvent(eventId);
+  if (!eg) return null;
+  const views = eg.out.cards.filter((c) => ids.includes(c.card.id));
+  if (!views.length) return null;
+  return (
+    <section className="visitgroup" aria-labelledby={'today-' + eventId}>
+      <h2 id={'today-' + eventId} className="label"><Bi t={eg.event.title} /></h2>
+      <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} base={'/e/' + eventId + '/c/'} />)}</ul>
+      <Link to={'/e/' + eventId} className="k-answer"><Bi k="nav.next" /></Link>
+    </section>
+  );
+}
 
 /** 今日の行く所ごとに、付き添いを始める（6A.6）。行く所の無い項目は、そのまま並べる */
 function TodayVisits({ views }: { views: ReturnType<typeof useGuide>['out']['cards'] }) {
