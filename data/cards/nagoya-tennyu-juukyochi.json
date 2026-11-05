@@ -27,22 +27,22 @@
     "reading": "てんにゅうとどけ（じゅうきょちのとどけで）"
   },
   "summary": {
-    "ja": "{日本|にほん}の{外|そと}から{来|き}て{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カードを{持|も}っていき、{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
-    "ja_easy": "{日本|にほん}の{外|そと}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}します。{在留|ざいりゅう}カードを{持|も}っていきます。",
-    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office. Bring your residence card; your address is written on the back."
+    "ja": "{日本|にほん}の{外|そと}から{来|き}て{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カードを{見|み}せて{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{住居|じゅうきょ}{地|ち}の{届出|とどけで}をしたとみなされます（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}はかかりません。{窓口|まどぐち}で{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
+    "ja_easy": "{日本|にほん}の{外|そと}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カードを{見|み}せて{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{住所|じゅうしょ}のとどけも{済|す}むようです（{要|よう}{確認|かくにん}）。お{金|かね}はかかりません。{窓口|まどぐち}で、{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
+    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office. Show your residence card; filing the notice is treated as your residence-address notification (to be checked). No fee. At the counter, your address is written on the back of your residence card."
   },
   "deadline": {
     "text": {
-      "ja": "{住|す}み{始|はじ}めてから14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{住|す}み{始|はじ}めてから14{日|にち}まで（{要確認|ようかくにん}）",
-      "en": "Within 14 days of moving in (to be checked)"
+      "ja": "{住居|じゅうきょ}{地|ち}を{定|さだ}めた{日|ひ}から14{日|にち}{以内|いない}（{名古屋|なごや}{市|し}の{案内|あんない}では「{異動|いどう}した{日|ひ}から{数|かぞ}えて14{日|にち}{以内|いない}」）。{日|にち}の{数|かぞ}え{方|かた}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{住|す}むところが{決|き}まった{日|ひ}から14{日|にち}いない（{市|し}の{案内|あんない}では「うつった{日|ひ}から{数|かぞ}えて14{日|にち}いない」）。{日|にち}の{数|かぞ}え{方|かた}は{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+      "en": "Within 14 days of the day you set your place of residence (the city says \"within 14 days from the day you moved\"). How to count the days: ask at the counter (to be checked)."
     },
     "evidence": {
       "source_ids": [
-        "isa-juukyochi",
-        "nagoya-juumin-todoke"
+        "nagoya-juumin-todoke",
+        "isa-juukyochi"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
@@ -75,10 +75,105 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "isa-juukyochi",
-      "nagoya-juumin-todoke"
+      "nagoya-juumin-todoke",
+      "isa-juukyochi"
     ],
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-05",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
+        "ja_easy": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
+        "en": "Accepted at the counter only."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{転入|てんにゅう}する{全員|ぜんいん}の{旅券|りょけん}と、{入国|にゅうこく}{日|び}がわかるもの（{旅券|りょけん}でわかれば、{航空|こうくう}{券|けん}の{半|はん}{券|けん}は{要|い}りません）。",
+        "ja_easy": "{持|も}ち{物|もの}：{引|ひ}っ{越|こ}す{人|ひと}みんなのパスポートと、{日本|にほん}に{入|はい}った{日|ひ}がわかるもの（パスポートでわかれば、{航空|こうくう}{券|けん}の{半|はん}{券|けん}は{要|い}りません）。",
+        "en": "Bring: the passport of everyone moving in, and something that shows the date of entry (not needed if the passport shows it)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{転入|てんにゅう}する{全員|ぜんいん}の{在留|ざいりゅう}カード（または{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}）。{在留|ざいりゅう}カードがまだ{手元|てもと}にない{人|ひと}は、{後日|ごじつ}{在留|ざいりゅう}カードを{交付|こうふ}すると{書|か}かれた{旅券|りょけん}を{見|み}せます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{持|も}ち{物|もの}：{引|ひ}っ{越|こ}す{人|ひと}みんなの{在留|ざいりゅう}カード。{在留|ざいりゅう}カードがまだ{手元|てもと}にない{人|ひと}は、あとで{在留|ざいりゅう}カードをもらうと{書|か}いてあるパスポートを{見|み}せます（{要|よう}{確認|かくにん}）。",
+        "en": "Bring: the residence card (or special permanent resident certificate) of everyone moving in. If you do not have the card yet, show a passport stamped to say it will be issued later (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke",
+          "isa-juukyochi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{新|あたら}しい{世帯|せたい}の{世帯|せたい}{主|ぬし}が{外国|がいこく}{人|じん}{住民|じゅうみん}のときは、{世帯|せたい}{主|ぬし}との{続柄|つづきがら}を{証|しょう}する{文書|ぶんしょ}の{原本|げんぽん}が{要|い}ります（{外国|がいこく}{語|ご}の{文書|ぶんしょ}には、{翻訳|ほんやく}した{人|ひと}がわかる{訳文|やくぶん}をつけます）。",
+        "ja_easy": "{新|あたら}しい{世帯|せたい}の{世帯|せたい}{主|ぬし}が{外国|がいこく}{人|じん}のときは、{世帯|せたい}{主|ぬし}との{関係|かんけい}を{証明|しょうめい}する{書類|しょるい}の{原本|げんぽん}が{要|い}ります（{外国|がいこく}{語|ご}の{書類|しょるい}には、{日本語|にほんご}の{訳|やく}をつけます）。",
+        "en": "If the head of the new household is a foreign resident, bring the original document that proves your relationship to the head (with a translation if it is in a foreign language)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを{国外|こくがい}{転出|てんしゅつ}のときに{返|かえ}した{人|ひと}、または{継続|けいぞく}{利用|りよう}の{手続|てつづ}きをした{人|ひと}は、そのカードも{持|も}って{行|い}きます。",
+        "ja_easy": "マイナンバーカードを、{日本|にほん}を{出|で}るときに{返|かえ}した{人|ひと}、または{続|つづ}けて{使|つか}う{手続|てつづ}きをした{人|ひと}は、カードも{持|も}って{行|い}きます。",
+        "en": "If you handed in your My Number Card when you left Japan, or filed to keep using it, bring it too."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke",
+          "B-nagoya-mynumber-faq-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}をするのは{本人|ほんにん}です。16{歳|さい}{未満|みまん}の{人|ひと}は、16{歳|さい}{以上|いじょう}の{同居|どうきょ}の{親族|しんぞく}が{出|だ}せます。",
+        "ja_easy": "{届|とど}けを{出|だ}すのは{本人|ほんにん}です。16{歳|さい}より{小|ちい}さい{人|ひと}は、16{歳|さい}{以上|いじょう}の{一緒|いっしょ}に{住|す}む{親|しん}せきが{出|だ}せます。",
+        "en": "The person moving files. For a child under 16, a relative aged 16 or over who lives with them can file."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-54",
+          "isa-juukyochi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }

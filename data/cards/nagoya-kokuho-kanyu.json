@@ -33,35 +33,36 @@
     "reading": "こくみんけんこうほけんのかにゅう"
   },
   "summary": {
-    "ja": "ほかの{公的|こうてき}な{健康|けんこう}{保険|ほけん}に{入|はい}っていない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。",
-    "ja_easy": "ほかの{健康保険|けんこうほけん}がない{人|ひと}は、{区役所|くやくしょ}で{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
-    "en": "If you have no other public health insurance, join National Health Insurance at the ward office."
+    "ja": "{日本|にほん}に{住所|じゅうしょ}がある{人|ひと}は、どれかの{公的|こうてき}{医療|いりょう}{保険|ほけん}に{入|はい}ります。{職場|しょくば}の{健康|けんこう}{保険|ほけん}などに{入|はい}っていない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{住民|じゅうみん}{登録|とうろく}のある{外国|がいこく}{人|じん}（3か{月|げつ}を{超|こ}える{在留|ざいりゅう}）も{対象|たいしょう}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}に{住|す}んでいる{人|ひと}は、{健康|けんこう}{保険|ほけん}に{入|はい}ります。{会社|かいしゃ}の{保険|ほけん}がない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。3か{月|げつ}より{長|なが}く{日本|にほん}にいる{外国|がいこく}{人|じん}も{入|はい}ります（{要|よう}{確認|かくにん}）。",
+    "en": "Everyone with an address in Japan must be in a public health insurance. If you are not covered by an employer's insurance, join National Health Insurance at the insurance and pension section of your ward office. Foreign residents registered for more than 3 months are included (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{期限|きげん}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "いつまでかは、{窓口|まどぐち}で{聞|き}きます",
-      "en": "Ask at the counter about the deadline (to be checked)"
+      "ja": "{加入|かにゅう}の{届出|とどけで}は、{原則|げんそく}として{事実|じじつ}（{転入|てんにゅう}・{退職|たいしょく}など）があった{日|ひ}から14{日|にち}{以内|いない}。{遅|おく}れると、{届出|とどけで}の{日|ひ}からしか{保険|ほけん}が{使|つか}えず、{前日|ぜんじつ}までの{医療|いりょう}{費|ひ}は{全額|ぜんがく}{自己|じこ}{負担|ふたん}になります（{窓口|まどぐち}で{確認|かくにん}／{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}いないに{届|とど}けます。{遅|おく}れると、{病院|びょういん}のお{金|かね}を{全部|ぜんぶ}{自分|じぶん}で{払|はら}うことがあります（{要|よう}{確認|かくにん}）",
+      "en": "Report within 14 days of the event (as a rule). If you are late, insurance applies only from the report date, and earlier medical costs are fully out of pocket (to be checked)."
     },
     "evidence": {
       "source_ids": [
-        "nagoya-kokuho-kanyu-page"
+        "nagoya-kokuho-kanyu-page",
+        "B-nagoya-kokuho-hitsuyo-pub"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
   "where": {
     "text": {
-      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
-      "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}",
-      "en": "Insurance and Pension Section of the ward office"
+      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
+      "en": "Insurance and Pension Section of the ward office (Ward Welfare Section at a branch office)"
     },
     "evidence": {
       "source_ids": [
-        "nagoya-kokuho-kanyu-page"
+        "B-nagoya-kokuho-hitsuyo-pub"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
@@ -80,9 +81,132 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "nagoya-kokuho-kanyu-page"
+      "nagoya-kokuho-kanyu-page",
+      "B-nagoya-kokuho-hitsuyo-pub"
     ],
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-05",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}をやめた{人|ひと}の{持|も}ち{物|もの}：{資格|しかく}{喪失|そうしつ}{証明|しょうめい}{書|しょ}・{退職|たいしょく}{証明|しょうめい}{書|しょ}・{離職|りしょく}{票|ひょう}のどれか1つ。{口座|こうざ}{振替|ふりかえ}の{手続|てつづ}きに{使|つか}うので、キャッシュカードがあれば{持|も}って{行|い}きます。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}をやめた{人|ひと}の{持|も}ち{物|もの}：{資格|しかく}{喪失|そうしつ}{証明|しょうめい}{書|しょ}・{退職|たいしょく}{証明|しょうめい}{書|しょ}・{離職|りしょく}{票|ひょう}のどれか1つ。キャッシュカードがあれば{持|も}って{行|い}きます。",
+        "en": "If you left a workplace health insurance, bring one of: loss-of-eligibility certificate, retirement certificate, or separation notice. Bring a cash card if you have one (used for automatic payment)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{市外|しがい}から{転入|てんにゅう}した{人|ひと}の{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}。キャッシュカードがあれば{持|も}って{行|い}きます。",
+        "ja_easy": "ほかの{市|し}から{来|き}た{人|ひと}の{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}。キャッシュカードがあれば{持|も}って{行|い}きます。",
+        "en": "If you moved in from another municipality, bring the move-out certificate. Bring a cash card if you have one."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住民|じゅうみん}{票|ひょう}の{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{加入|かにゅう}{者|しゃ}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{持|も}って{行|い}きます。{在留|ざいりゅう}カードが{使|つか}えるかは、{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{人|ひと}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{持|も}って{行|い}きます。{在留|ざいりゅう}カードが{使|つか}えるかは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If no one else in your household is on National Health Insurance, also bring photo ID (driver's licence, passport, My Number Card, etc.). Whether a residence card is accepted: ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}をやめたあとの{加入|かにゅう}の{届出|とどけで}は、スマートフォンなどからもできます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}をやめたあとの{届|とど}けは、スマートフォンなどからもできます（{要|よう}{確認|かくにん}）。",
+        "en": "After leaving a workplace insurance, you can also file from a smartphone or similar (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住民|じゅうみん}{登録|とうろく}のない{短期|たんき}の{人|ひと}でも、{在留|ざいりゅう}{資格|しかく}が「{興行|こうぎょう}」「{技能|ぎのう}{実習|じっしゅう}」「{家族|かぞく}{滞在|たいざい}」「{公用|こうよう}」「{特定|とくてい}{活動|かつどう}」で、3か{月|げつ}を{超|こ}えて{滞在|たいざい}すると{認|みと}められれば{加入|かにゅう}します。3か{月|げつ}を{超|こ}えて{滞在|たいざい}することがわかる{書類|しょるい}を{持|も}って{行|い}きます。「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{指定|してい}{書|しょ}も{持|も}って{行|い}きます。{医療|いりょう}を{受|う}ける{活動|かつどう}・その{付|つ}き{添|そ}い・{観光|かんこう}などの{特定|とくてい}{活動|かつどう}は{加入|かにゅう}できません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{住民|じゅうみん}{登録|とうろく}がない{短|みじか}い{滞在|たいざい}の{人|ひと}でも、{在留|ざいりゅう}{資格|しかく}によっては、3か{月|げつ}より{長|なが}くいると{認|みと}められれば{入|はい}ります。3か{月|げつ}より{長|なが}くいることがわかる{書類|しょるい}を{持|も}って{行|い}きます。「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{指定|してい}{書|しょ}も{持|も}って{行|い}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Even without resident registration, people with the status Entertainer, Technical Intern, Dependent, Official or Designated Activities can join if they are recognised as staying more than 3 months. Bring documents showing this; Designated Activities holders also bring the designation document. Designated activities for medical treatment, accompanying a patient or tourism cannot join (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{結婚|けっこん}して{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被|ひ}{扶養|ふよう}{者|しゃ}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}をします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{結婚|けっこん}して、{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}に{家族|かぞく}として{入|はい}ったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けが{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "If you marry and become a dependant on your employer's health insurance, you must file to leave National Health Insurance (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被|ひ}{扶養|ふよう}{者|しゃ}でなくなったときは、14{日|にち}{以内|いない}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}をします。{離婚|りこん}の{場合|ばあい}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}の{家族|かぞく}でなくなったら、14{日|にち}いないに{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けをします。{離婚|りこん}のときは{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If you stop being a dependant on someone's workplace insurance, file for National Health Insurance within 14 days. For divorce, ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{氏名|しめい}が{変|か}わったとき、{世帯|せたい}{主|ぬし}が{変|か}わったとき、{世帯|せたい}が{分|わ}かれたときや{一緒|いっしょ}になったときも、14{日|にち}{以内|いない}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}が{要|い}ります。{結婚|けっこん}・{離婚|りこん}が{当|あ}てはまるかは{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{名前|なまえ}や{世帯|せたい}{主|ぬし}が{変|か}わったとき、{世帯|せたい}が{分|わ}かれたり{一緒|いっしょ}になったりしたときも、14{日|にち}いないに{届|とど}けます。{結婚|けっこん}・{離婚|りこん}のときは{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Changes of name, head of household, or splitting/merging households must also be reported within 14 days. For marriage or divorce, ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }

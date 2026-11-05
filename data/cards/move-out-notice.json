@@ -27,9 +27,9 @@
     "reading": "てんしゅつとどけ"
   },
   "summary": {
-    "ja": "{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}で{出|だ}します。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。マイナンバーカードがあれば、オンラインで{出|だ}せることがあります（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{前|まえ}の{市|し}の{役所|やくしょ}で{出|だ}します。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。",
-    "en": "Submit it at your previous city office. You can do it before moving. With a My Number Card you may be able to do it online (to be checked)."
+    "ja": "{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}で{出|だ}します。{出|だ}し{方|かた}（{窓口|まどぐち}・{郵送|ゆうそう}・オンライン）と{受付|うけつけ}の{時期|じき}は{市区|しく}{町村|ちょうそん}ごとに{違|ちが}うので、その{市区|しく}{町村|ちょうそん}の{案内|あんない}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。マイナンバーカードがあれば、オンラインで{出|だ}せる{市区|しく}{町村|ちょうそん}があります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{前|まえ}に{住|す}んでいた{市|し}の{役所|やくしょ}で{出|だ}します。{出|だ}し{方|かた}や{受付|うけつけ}の{時期|じき}は{市|し}ごとに{違|ちが}うので、その{市|し}の{案内|あんない}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。",
+    "en": "Submit it at the office of your previous municipality. How to submit (counter, mail, online) and when it is accepted differ by municipality, so check that municipality's guidance (to be checked). You can do it before moving. Some municipalities accept it online with a My Number Card (to be checked)."
   },
   "deadline": null,
   "where": {
@@ -57,9 +57,74 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "nagoya-juumin-todoke"
+      "nagoya-juumin-todoke",
+      "A-nagoya-tennyu-tokurei-pub",
+      "A-nagoya-faq-40-pub"
     ],
     "checked_at": "2026-11-02",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{通常|つうじょう}の{転出|てんしゅつ}{届|とどけ}では、{転出|てんしゅつ}{証明|しょうめい}{書|しょ}が{出|で}ます。{転出|てんしゅつ}{証明|しょうめい}{書|しょ}は、{新|あたら}しい{市区|しく}{町村|ちょうそん}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{必|かなら}ず{要|い}ります。なくさないように{持|も}っておきます（{名古屋|なごや}{市|し}の{転入|てんにゅう}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ふつうの{転出|てんしゅつ}{届|とどけ}では、「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」が{出|で}ます。{新|あたら}しい{市|し}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに、{必|かなら}ず{要|い}ります。なくさないようにします（{名古屋|なごや}{市|し}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "en": "A normal move-out notice gives you a move-out certificate. You always need it when you file the moving-in notice in your new municipality. Keep it safe (from Nagoya's moving-in guidance; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-faq-40-pub",
+          "nagoya-lifescene-tennyu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "マイナンバーカードを{使|つか}った{転出|てんしゅつ}{届|とどけ}では、{転出|てんしゅつ}{証明|しょうめい}{書|しょ}は{出|で}ません。{引|ひ}っ{越|こ}し{先|さき}でカードを{見|み}せて、{転入|てんにゅう}{届|とどけ}を{出|だ}します（{名古屋|なごや}{市|し}の{転入|てんにゅう}の{案内|あんない}。ほかの{市区|しく}{町村|ちょうそん}は、その{市区|しく}{町村|ちょうそん}の{案内|あんない}で{確認|かくにん}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードを{使|つか}った{転出|てんしゅつ}{届|とどけ}では、{転出|てんしゅつ}{証明|しょうめい}{書|しょ}は{出|で}ません。{引|ひ}っ{越|こ}し{先|さき}でカードを{見|み}せて、{転入|てんにゅう}{届|とどけ}を{出|だ}します（{名古屋|なごや}{市|し}の{案内|あんない}。ほかの{市|し}は、その{市|し}で{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "A move-out notice filed with a My Number Card does not give you a certificate. Show the card at your new address when you file the moving-in notice (from Nagoya's guidance; for other municipalities, check theirs; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-tennyu-tokurei-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "カードを{使|つか}った{転出|てんしゅつ}{届|とどけ}は、{引|ひ}っ{越|こ}し{先|さき}に{転入|てんにゅう}した{日|ひ}から14{日|にち}を{過|す}ぎたあと、または{転出|てんしゅつ}{予定|よてい}{日|び}から30{日|にち}を{過|す}ぎたあとに{転入|てんにゅう}{届|とどけ}を{出|だ}すと{使|つか}えません（{名古屋|なごや}{市|し}の{転入|てんにゅう}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "カードを{使|つか}った{転出|てんしゅつ}{届|とどけ}は、{転入|てんにゅう}から14{日|にち}をすぎたあと、または{転出|てんしゅつ}する{予定|よてい}の{日|ひ}から30{日|にち}をすぎたあとに{転入|てんにゅう}{届|とどけ}を{出|だ}すと{使|つか}えません（{名古屋|なごや}{市|し}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "en": "A move-out notice filed with a card cannot be used if you file the moving-in notice more than 14 days after moving in, or more than 30 days after the planned move-out date (from Nagoya's guidance; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-tennyu-tokurei-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日曜|にちよう}{窓口|まどぐち}の{日|ひ}は、{前|まえ}の{市区|しく}{町村|ちょうそん}が{閉|し}まっていて、{転入|てんにゅう}{届|とどけ}が{完了|かんりょう}しないことがあります（{名古屋|なごや}{市|し}の{転入|てんにゅう}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{日曜|にちよう}{窓口|まどぐち}の{日|ひ}は、{前|まえ}の{市|し}の{役所|やくしょ}が{閉|し}まっていて、{転入|てんにゅう}{届|とどけ}が{終|お}わらないことがあります（{名古屋|なごや}{市|し}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "en": "On days when only the Sunday counter is open, your previous municipality may be closed, and the moving-in notice may not be completed (from Nagoya's guidance; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-tennyu-tokurei-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }

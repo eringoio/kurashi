@@ -24,22 +24,23 @@
     },
     {
       "id": "rel-juukyochi-before-kokuho",
-      "type": "legal_prerequisite",
+      "type": "practical_prerequisite",
       "from": "nagoya-tennyu-juukyochi",
       "to": "nagoya-kokuho-kanyu",
       "satisfied_when_rule_ids": [
         "R-juukyochi-done"
       ],
       "explain": {
-        "ja": "{住所|じゅうしょ}の{届|とど}けのあとで、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。",
-        "ja_easy": "{住所|じゅうしょ}の{届|とど}けのあとで、{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
-        "en": "Join National Health Insurance after registering your address."
+        "ja": "{多|おお}くの{場合|ばあい}は、{住所|じゅうしょ}の{届|とど}け（{住民|じゅうみん}{登録|とうろく}）のあとで、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{外国|がいこく}{人|じん}の{国民|こくみん}{健康|けんこう}{保険|ほけん}は、{住民|じゅうみん}{登録|とうろく}があることが{条件|じょうけん}のひとつだからです。{住民|じゅうみん}{登録|とうろく}がなくても{入|はい}れる{在留|ざいりゅう}{資格|しかく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "たいていは、{住所|じゅうしょ}の{届|とど}け（{住民|じゅうみん}{登録|とうろく}）のあとで、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{住民|じゅうみん}{登録|とうろく}がなくても{入|はい}れる{在留|ざいりゅう}{資格|しかく}があります（{要|よう}{確認|かくにん}）。",
+        "en": "In most cases you register your address (resident registration) first, then join National Health Insurance. Resident registration is one of the conditions for foreign residents. Some residence statuses can join without it (to be checked)."
       },
       "evidence": {
         "source_ids": [
-          "nagoya-kokuho-kanyu-page"
+          "nagoya-kokuho-kanyu-page",
+          "B-nagoya-kokuho-hitsuyo-pub"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-05",
         "status": "needs_check"
       }
     },

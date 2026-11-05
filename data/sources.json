@@ -328,6 +328,118 @@
       "owner_type": "public_corp",
       "title": "医療機関ご利用ガイド",
       "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-39",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=39",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市外から市内に転入（引越し）をしてくるときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-mynumber-faq-pub",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007876.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカード（個人番号カード）に関するよくあるご質問",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-tennyu-tokurei-pub",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007836.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカードを利用した転出・転入届（転入届の特例）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-6-pub",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=6",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民票に関する変更の届出期間（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-54",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=54",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "外国人が住所変更するときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-faq-40-pub",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=40",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市外へ転出（引越し）をするときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-hitsuyo-pub",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011752.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の手続きに必要なもの",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-kanyu",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/20140710-04.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金に加入するための手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-tekiyojogai",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/tekiyojogai.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金第1号・第3号被保険者の「適用除外」",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-gakusei",
+      "url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150514.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金保険料の学生納付特例制度",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mufg-kouza-shorui",
+      "url": "https://www.bk.mufg.jp/kouza/order/shorui.html",
+      "owner": "三菱UFJ銀行",
+      "owner_type": "private",
+      "title": "口座開設時の本人確認書類",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-yucho-gaikokujin-pub",
+      "url": "https://www.jp-bank.japanpost.jp/kaisetu/kat_gaikokujin.html",
+      "owner": "ゆうちょ銀行",
+      "owner_type": "private",
+      "title": "口座を開設される外国人のお客さまへ",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-zenginkyo-gaikokujin-pub",
+      "url": "https://www.zenginkyo.or.jp/article/tag-f/14746/",
+      "owner": "全国銀行協会（一般社団法人）",
+      "owner_type": "public_corp",
+      "title": "外国人材の受入れ企業等ご関係者の皆様へ",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-fsa-livinginjapan-pub",
+      "url": "https://www.fsa.go.jp/user/livinginjapan.html",
+      "owner": "金融庁",
+      "owner_type": "government",
+      "title": "外国人の受入れ・共生に関する金融関連施策について",
+      "language": "ja"
     }
   ]
 }

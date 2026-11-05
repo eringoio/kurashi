@@ -26,9 +26,9 @@
     "reading": "こくみんねんきんのかにゅうのおしらせ"
   },
   "summary": {
-    "ja": "これから{起|お}こること。20{歳|さい}になると、{国民|こくみん}{年金|ねんきん}の{対象|たいしょう}になります。{日本|にほん}{年金|ねんきん}{機構|きこう}からお{知|し}らせが{届|とど}きます。{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}に{聞|き}いてください。",
-    "ja_easy": "20{歳|さい}になると、{年金|ねんきん}のお{知|し}らせが{届|とど}きます。{届|とど}かないときは、{区役所|くやくしょ}に{聞|き}いてください。",
-    "en": "Coming up: at 20 you join the National Pension. A notice will come from the Japan Pension Service. If it does not, ask the ward office or a pension office."
+    "ja": "これから{起|お}こること。20{歳|さい}になると、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{日本|にほん}{年金|ねんきん}{機構|きこう}から「{国民|こくみん}{年金|ねんきん}{加入|かにゅう}のお{知|し}らせ」が{届|とど}きます。20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても{届|とど}かないときは、{区役所|くやくしょ}か{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{加入|かにゅう}の{手続|てつづ}きをします。{学生|がくせい}は、{申請|しんせい}すると{保険|ほけん}{料|りょう}の{納付|のうふ}が{猶予|ゆうよ}される「{学生|がくせい}{納付|のうふ}{特例|とくれい}」があります。",
+    "ja_easy": "20{歳|さい}になると、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。お{知|し}らせが{届|とど}きます。{約|やく}2{週間|しゅうかん}たっても{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{手続|てつづ}きします。{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」を{申請|しんせい}できます。",
+    "en": "Coming up: at 20 you join the National Pension and the Japan Pension Service sends a notice. If it has not arrived about 2 weeks after your 20th birthday, you must apply at your ward office or a pension office. Students can apply for the Student Payment Deferment."
   },
   "deadline": null,
   "where": {
@@ -59,7 +59,39 @@
     "source_ids": [
       "nenkin-hatachi-page"
     ],
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-05",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても「{国民|こくみん}{年金|ねんきん}{加入|かにゅう}のお{知|し}らせ」が{届|とど}かないときは、{区役所|くやくしょ}か{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{加入|かにゅう}の{手続|てつづ}きをします。{外国|がいこく}から{来|き}た20{歳|さい}の{人|ひと}にもお{知|し}らせが{届|とど}くかは、{本文|ほんぶん}にありません。{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても、お{知|し}らせが{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{手続|てつづ}きします。{外国|がいこく}から{来|き}た{人|ひと}にもお{知|し}らせが{届|とど}くかは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If the notice has not arrived about 2 weeks after you turn 20, apply at your ward office or a nearby pension office. Whether people who came from abroad also receive the notice is not stated: ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nenkin-hatachi-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{学生|がくせい}は、{国民|こくみん}{年金|ねんきん}の{保険|ほけん}{料|りょう}の{免除|めんじょ}・{納付|のうふ}{猶予|ゆうよ}ではなく、「{学生|がくせい}{納付|のうふ}{特例|とくれい}」を{申請|しんせい}します。くわしくは{国民|こくみん}{年金|ねんきん}のカードにあります。",
+        "ja_easy": "{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」を{申請|しんせい}します。くわしくは{国民|こくみん}{年金|ねんきん}のカードにあります。",
+        "en": "Students apply for the Student Payment Deferment instead of the usual exemption or deferral. Details are on the National Pension card."
+      },
+      "evidence": {
+        "source_ids": [
+          "nenkin-hatachi-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }

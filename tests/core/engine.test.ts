@@ -58,7 +58,7 @@ describe('A1（公開時点のデータ：公式のルールは needs_check）',
   it('未確認の制度上の前提は、日を選ぶのを止めない（注記だけ）', () => {
     const k = o.cards.find((c) => c.card.id === 'nagoya-kokuho-kanyu')!;
     expect(k.dayRule).toEqual({ kind: 'free' });
-    expect(k.notes.map((n) => n.kind)).toContain('legal_prereq');
+    expect(k.notes.map((n) => n.kind)).toContain('practical_prereq');
   });
 });
 
@@ -72,13 +72,12 @@ describe('A1（確認済みデータの fixture）', () => {
       'bank-account-open': { state: 'shown', section: 'today' },
     });
   });
-  it('裏に住所がないときは、国保の日は住所の届けの日より前を選べない', () => {
+  it('裏に住所がないときは、国保は「住所の届けのあとが多い」という注記だけ。日は止めない（条件付きの実務上の前提）', () => {
     const o2 = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-zairyu-back-address': 'no' } }));
     const k = o2.cards.find((c) => c.card.id === 'nagoya-kokuho-kanyu')!;
-    expect(k.section).toBe('later');
-    expect(k.dayRule).toEqual({ kind: 'need_first', from: 'nagoya-tennyu-juukyochi' });
-    const o3 = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-zairyu-back-address': 'no' }, plan: { 'nagoya-tennyu-juukyochi': { card_id: 'nagoya-tennyu-juukyochi', status: 'todo', planned_on: '2026-11-07' } } }));
-    expect(o3.cards.find((c) => c.card.id === 'nagoya-kokuho-kanyu')!.dayRule).toEqual({ kind: 'min', day: '2026-11-07', from: 'nagoya-tennyu-juukyochi' });
+    expect(k.section).toBe('today');
+    expect(k.dayRule).toEqual({ kind: 'free' });
+    expect(k.notes.map((n) => n.kind)).toContain('practical_prereq');
   });
   it('「わからない」は check_at_office（断定しない）', () => {
     const o2 = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-insurance': 'unknown' } }));

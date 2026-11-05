@@ -26,22 +26,22 @@
     "reading": "こうざかいせつ"
   },
   "summary": {
-    "ja": "{法律|ほうりつ}のきまりではありません。{日本|にほん}で{暮|く}らすには、ほとんどの{人|ひと}に{必要|ひつよう}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。",
-    "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。",
-    "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank."
+    "ja": "{法律|ほうりつ}のきまりではありません。{日本|にほん}で{暮|く}らすには、ほとんどの{人|ひと}に{必要|ひつよう}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{口座|こうざ}や{通帳|つうちょう}・キャッシュカードを{他|た}の{人|ひと}に{売|う}ったり、{渡|わた}したりしてはいけません。{犯罪|はんざい}です。",
+    "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。{口座|こうざ}や{通帳|つうちょう}・カードを{売|う}ったり{人|ひと}にあげたりしてはいけません。{犯罪|はんざい}です。",
+    "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank. Do not sell or give your account, passbook or cash card to anyone. It is a crime."
   },
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{銀行|ぎんこう}（{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
-      "ja_easy": "{銀行|ぎんこう}",
-      "en": "A bank (conditions differ by bank; to be checked)"
+      "ja": "{銀行|ぎんこう}の{店舗|てんぽ}（{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}では、{日本|にほん}{国籍|こくせき}でない{人|ひと}はアプリで{口座|こうざ}を{開|ひら}けず、{店舗|てんぽ}で{申|もう}し{込|こ}みます。",
+      "ja_easy": "{銀行|ぎんこう}の{店|みせ}。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}は、{外国|がいこく}の{国籍|こくせき}の{人|ひと}は{店|みせ}で{申|もう}し{込|こ}みます。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+      "en": "A bank branch. Conditions differ by bank. Example: at MUFG Bank, people without Japanese nationality apply at a branch, not in the app. Check with your own bank (to be checked)."
     },
     "evidence": {
       "source_ids": [
-        "kurashi-spec"
+        "B-mufg-kouza-shorui"
       ],
-      "checked_at": "2026-11-04",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
@@ -70,9 +70,167 @@
   },
   "evidence": {
     "source_ids": [
-      "kurashi-spec"
+      "kurashi-spec",
+      "B-mufg-kouza-shorui",
+      "B-yucho-gaikokujin-pub"
     ],
-    "checked_at": "2026-11-04",
+    "checked_at": "2026-11-05",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードを{持|も}って{行|い}きます。{銀行|ぎんこう}が、{在留|ざいりゅう}{期間|きかん}や{在留|ざいりゅう}{資格|しかく}などを{確認|かくにん}します。パスポートも{求|もと}められることがあるので、いっしょに{持|も}って{行|い}きます。",
+        "ja_easy": "{在留|ざいりゅう}カードを{持|も}って{行|い}きます。{銀行|ぎんこう}が、{在留|ざいりゅう}{期間|きかん}などを{見|み}ます。パスポートも{求|もと}められることがあるので、いっしょに{持|も}って{行|い}きます。",
+        "en": "Bring your residence card; the bank checks your period of stay and status. You may also be asked for your passport, so bring it too."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-kouza-shorui",
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードに{顔|かお}{写真|しゃしん}がないときは、{住民|じゅうみん}{票|ひょう}の{写|うつ}しなどを{足|た}して{示|しめ}します。2026{年|ねん}6{月|つき}14{日|にち}{以降|いこう}に{発行|はっこう}された{在留|ざいりゅう}カードの{人|ひと}は、パスポートや{住民|じゅうみん}{票|ひょう}などを{追加|ついか}で{求|もと}められることがあります（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{在留|ざいりゅう}カードに{顔|かお}{写真|しゃしん}がないときは、{住民|じゅうみん}{票|ひょう}の{写|うつ}しなども{示|しめ}します。2026{年|ねん}6{月|つき}14{日|にち}より{後|あと}にできた{在留|ざいりゅう}カードの{人|ひと}は、パスポートや{住民|じゅうみん}{票|ひょう}も{求|もと}められることがあります（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "If your residence card has no photo, also show a copy of your resident record (juminhyo) or similar. If your card was issued on or after 14 June 2026, you may be asked for your passport and resident record too (example: MUFG Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub",
+          "B-mufg-kouza-shorui"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{現住所|げんじゅうしょ}が{書|か}いてある{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{原本|げんぽん}（{有効|ゆうこう}{期限|きげん}{内|ない}、または{発行|はっこう}から6か{月|げつ}{以内|いない}）が{要|い}る{銀行|ぎんこう}があります。マイナンバーの{通知|つうち}カードと、{携帯|けいたい}{電話|でんわ}の{領収|りょうしゅう}{書|しょ}は、{本人|ほんにん}{確認|かくにん}{書類|しょるい}になりません（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{今|いま}の{住所|じゅうしょ}が{書|か}いてある{本人|ほんにん}{確認|かくにん}の{書類|しょるい}（{原本|げんぽん}）が{要|い}る{銀行|ぎんこう}があります。マイナンバーの{通知|つうち}カードと{携帯|けいたい}{電話|でんわ}の{領収|りょうしゅう}{書|しょ}は、{本人|ほんにん}{確認|かくにん}の{書類|しょるい}になりません（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Some banks need an original ID document showing your current address (valid, or issued within 6 months). The My Number notification card and mobile phone receipts are not accepted (example: MUFG Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-kouza-shorui"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住所|じゅうしょ}の{順番|じゅんばん}：{先|さき}に{転入|てんにゅう}{届|とどけ}（{住所|じゅうしょ}の{届|とど}け）を{出|だ}します。そのあとで、{住民|じゅうみん}{票|ひょう}の{写|うつ}しや、{住所|じゅうしょ}が{書|か}かれた{在留|ざいりゅう}カードなど、{現住所|げんじゅうしょ}がわかる{書類|しょるい}を{用意|ようい}します。{取|と}り{扱|あつか}いは{銀行|ぎんこう}ごとに{違|ちが}います（ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{先|さき}に{転入|てんにゅう}{届|とどけ}（{住所|じゅうしょ}の{届|とど}け）を{出|だ}します。そのあとで、{住民|じゅうみん}{票|ひょう}や{住所|じゅうしょ}が{書|か}いてある{在留|ざいりゅう}カードなど、{今|いま}の{住所|じゅうしょ}がわかる{書類|しょるい}を{用意|ようい}します。{銀行|ぎんこう}によって{違|ちが}います（ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Register your address first (moving-in notice). Then prepare a document showing your current address, such as a resident record or a residence card with the address. Handling differs by bank (check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-kouza-shorui",
+          "isa-juukyochi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{留学|りゅうがく}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、{学生|がくせい}{証|しょう}も{持|も}って{行|い}きます。{学校|がっこう}に{在籍|ざいせき}の{確認|かくにん}の{連絡|れんらく}をすることがあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{留学生|りゅうがくせい}は{学生|がくせい}{証|しょう}も{持|も}って{行|い}きます。{学校|がっこう}に{聞|き}くことがあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Students: also bring your student ID. The bank may contact your school (example: Japan Post Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}が{申込|もうしこみ}{日|び}から3か{月|げつ}{以内|いない}の{人|ひと}は、{口座|こうざ}を{開|ひら}けない{銀行|ぎんこう}があります。{更新|こうしん}したあとの{在留|ざいりゅう}カードで{申|もう}し{込|こ}みます。{入国|にゅうこく}{時|じ}の{在留|ざいりゅう}{期間|きかん}が3か{月|げつ}{以下|いか}で{在留|ざいりゅう}カードがない{人|ひと}も{開|ひら}けません（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{在留|ざいりゅう}{期間|きかん}があと3か{月|げつ}で{終|お}わる{人|ひと}は、{口座|こうざ}を{開|ひら}けない{銀行|ぎんこう}があります。{更新|こうしん}してから{行|い}きます（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Some banks cannot open an account if your period of stay ends within 3 months of the application. Apply with your renewed residence card. People who entered with a stay of 3 months or less and have no residence card also cannot open one (example: Japan Post Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}{国内|こくない}に{勤務|きんむ}する（アルバイト・パートを{除|のぞ}く）か、{入国|にゅうこく}{後|ご}6か{月|げつ}{以上|いじょう}たつ{場合|ばあい}を{除|のぞ}き、{法令|ほうれい}{上|じょう}は「{非|ひ}{居住|きょじゅう}{者|しゃ}」になります。{非|ひ}{居住|きょじゅう}{者|しゃ}は、{一部|いちぶ}の{商品|しょうひん}に{申|もう}し{込|こ}めないなど、{取引|とりひき}に{制約|せいやく}があります（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}でない{人|ひと}は、{日本|にほん}で{働|はたら}く（アルバイトを{除|のぞ}く）か、{日本|にほん}に{来|き}て6か{月|げつ}{以上|いじょう}たつ{場合|ばあい}を{除|のぞ}き、「{非|ひ}{居住|きょじゅう}{者|しゃ}」になります。{一部|いちぶ}の{商品|しょうひん}に{申|もう}し{込|こ}めないことがあります（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "If you do not have Japanese nationality, you are legally a \"non-resident\" unless you work in Japan (not counting part-time jobs) or have been in Japan for 6 months or more. Non-residents cannot apply for some products (example: MUFG Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-kouza-shorui"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{確認|かくにん}に{時間|じかん}がかかり、{当日|とうじつ}に{口座|こうざ}を{開|ひら}けず、{通帳|つうちょう}を{後日|ごじつ}{自宅|じたく}へ{郵送|ゆうそう}することがあります。{場合|ばあい}によっては、{口座|こうざ}を{開|ひら}けないこともあります。{日本語|にほんご}がわからないときは、わかる{人|ひと}の{同伴|どうはん}をお{願|ねが}いされることがあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{確認|かくにん}に{時間|じかん}がかかって、その{日|ひ}に{口座|こうざ}を{開|ひら}けず、{通帳|つうちょう}があとで{家|いえ}に{届|とど}くことがあります。{口座|こうざ}を{開|ひら}けないこともあります。{日本語|にほんご}がわからないときは、わかる{人|ひと}といっしょに{来|く}るように{言|い}われることがあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Checks can take time, so the account may not open the same day and the passbook may be mailed to your home later. In some cases the bank may decline. If you do not understand Japanese, you may be asked to bring someone who does (example: Japan Post Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{申込|もうしこみ}{書|しょ}は、インターネットで{多言|たげん}{語|ご}で{事前|じぜん}に{作|つく}れます。スマートフォンのアプリで{申|もう}し{込|こ}める{銀行|ぎんこう}もあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{申込|もうしこみ}{書|しょ}は、インターネットで、いろいろな{言語|げんご}で{先|さき}に{作|つく}れます。アプリで{申|もう}し{込|こ}める{銀行|ぎんこう}もあります（{例|れい}：ゆうちょ{銀行|ぎんこう}。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "You can fill in the application form in advance online, in several languages. Some banks also accept applications in a smartphone app (example: Japan Post Bank; check with your own bank; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{全国|ぜんこく}{銀行|ぎんこう}{協会|きょうかい}が、{口座|こうざ}{開設|かいせつ}に{必要|ひつよう}な{書類|しょるい}などを{説明|せつめい}したチラシを14{言語|げんご}で{作|つく}っています。{金融|きんゆう}{庁|ちょう}も、{外国|がいこく}{人|じん}{向|む}けの「{日本|にほん}でくらすための{銀行|ぎんこう}{口座|こうざ}や{送金|そうきん}のつかい{方|かた}」を{公表|こうひょう}しています。",
+        "ja_easy": "{全国|ぜんこく}{銀行|ぎんこう}{協会|きょうかい}が、{口座|こうざ}を{開|ひら}くための{書類|しょるい}を{説明|せつめい}したチラシを、14の{言語|げんご}で{作|つく}っています。{金融|きんゆう}{庁|ちょう}も、{外国|がいこく}の{人|ひと}{向|む}けの{案内|あんない}を{出|だ}しています。",
+        "en": "The Japanese Bankers Association has leaflets in 14 languages explaining the documents needed to open an account. The Financial Services Agency also publishes a guide for foreign residents on using bank accounts and sending money."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-zenginkyo-gaikokujin-pub",
+          "B-fsa-livinginjapan-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }

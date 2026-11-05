@@ -27,35 +27,36 @@
     "reading": "てんにゅうとどけ"
   },
   "summary": {
-    "ja": "ほかの{市町村|しちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。",
-    "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}します。",
-    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office of your new address."
+    "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}して{受|う}け{取|と}った{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{持|も}って{行|い}きます（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます）。",
+    "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市|し}で「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらって{持|も}って{行|い}きます。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。",
+    "en": "After you start living in Nagoya, submit a moving-in notice at the Citizens Section of the ward office for your new address. Bring the move-out certificate from your previous municipality (if you filed the move-out with a My Number Card, show the card instead)."
   },
   "deadline": {
     "text": {
-      "ja": "{住|す}み{始|はじ}めてから14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{住|す}み{始|はじ}めてから14{日|にち}まで（{要確認|ようかくにん}）",
-      "en": "Within 14 days of moving in (to be checked)"
+      "ja": "{住|す}み{始|はじ}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）。{住|す}み{始|はじ}める{前|まえ}には{出|だ}せません。",
+      "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}の{次|つぎ}の{日|ひ}から{数|かぞ}えて、14{日|にち}いない（{要|よう}{確認|かくにん}）。{住|す}む{前|まえ}には{出|だ}せません。",
+      "en": "Within 14 days; the day after you start living there is day 1 (to be checked). You cannot file before you start living there."
     },
     "evidence": {
       "source_ids": [
-        "nagoya-juumin-todoke"
+        "B-nagoya-faq-39",
+        "nagoya-lifescene-tennyu"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
   "where": {
     "text": {
-      "ja": "{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}",
+      "ja": "{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
       "ja_easy": "{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}",
-      "en": "Citizens Section of the ward office for your new address"
+      "en": "Citizens Section of the ward office for your new address (Ward Residents Section at a branch office)"
     },
     "evidence": {
       "source_ids": [
-        "nagoya-juumin-todoke"
+        "nagoya-lifescene-tennyu"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-05",
       "status": "needs_check"
     }
   },
@@ -71,9 +72,135 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
+      "nagoya-lifescene-tennyu",
+      "B-nagoya-faq-39",
       "nagoya-juumin-todoke"
     ],
-    "checked_at": "2026-11-02",
+    "checked_at": "2026-11-05",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
+        "ja_easy": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
+        "en": "Accepted at the counter only."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{窓口|まどぐち}に{来|く}る{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{在留|ざいりゅう}カードなど）。{外国|がいこく}{籍|せき}の{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
+        "ja_easy": "{持|も}ち{物|もの}：{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{在留|ざいりゅう}カードなど）。{外国|がいこく}の{国籍|こくせき}の{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードも{持|も}って{行|い}きます。",
+        "en": "Bring: ID for the person at the counter (My Number Card, driver's licence, residence card, etc.). If you are a foreign national, also bring the residence card (or special permanent resident certificate) of everyone moving."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をしていない{人|ひと}）。カードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}や{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、その{証|あかし}も{持|も}って{行|い}きます。",
+        "ja_easy": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}の{証|あかし}を{持|も}っている{人|ひと}は、それも{持|も}って{行|い}きます。",
+        "en": "Bring: the move-out certificate (unless you filed the move-out with a My Number Card; then show the card). If you are on National Health Insurance or long-term care insurance, bring that card too."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39",
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のカードと{暗証|あんしょう}{番号|ばんごう}が{要|い}ります。{名古屋|なごや}{市|し}の{外|そと}から{転入|てんにゅう}して14{日|にち}を{過|す}ぎてもカードの{手続|てつづ}きをしないと、カードは{失効|しっこう}します（{失効|しっこう}{後|ご}の{再|さい}{発行|はっこう}は1,000{円|えん}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}みんなのカードと{暗証|あんしょう}{番号|ばんごう}を{持|も}って{行|い}きます。{市|し}の{外|そと}から{来|き}たときは、14{日|にち}をすぎるとカードが{使|つか}えなくなります（{要|よう}{確認|かくにん}）。",
+        "en": "If you have a My Number Card, bring the cards of everyone moving and know the PIN. If you move in from outside Nagoya and do not complete the card procedure within 14 days, the card becomes invalid (reissue 1,000 yen; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-faq-pub",
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}ができる{人|ひと}は、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{住所|じゅうしょ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理人|だいりにん}が{出|だ}すときは{委任|いにん}{状|じょう}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{届|とど}けを{出|だ}せるのは、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{住所|じゅうしょ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理|だいり}の{人|ひと}は{委任|いにん}{状|じょう}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "The person moving, or a member of the same household at the new address, can file. An agent needs a letter of proxy (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}と{同時|どうじ}に、{住民|じゅうみん}{票|ひょう}の{写|うつ}しを{申請|しんせい}できます。{銀行|ぎんこう}などで{必要|ひつよう}なときは、いっしょに{申請|しんせい}します。",
+        "ja_easy": "{届|とど}けを{出|だ}すときに、{住民|じゅうみん}{票|ひょう}も{申|もう}し{込|こ}めます。{必要|ひつよう}なときは、いっしょに{申|もう}し{込|こ}みます。",
+        "en": "You can request a copy of your resident record (juminhyo) at the same time. Request it then if you need it, for example for a bank."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを{使|つか}った{転出|てんしゅつ}{届|とどけ}は、{転入|てんにゅう}した{日|ひ}から14{日|にち}を{過|す}ぎたあと、または{転出|てんしゅつ}{予定|よてい}{日|び}から30{日|にち}を{過|す}ぎたあとに{転入|てんにゅう}{届|とどけ}を{出|だ}すと{使|つか}えません。このときは{転出|てんしゅつ}{証明|しょうめい}{書|しょ}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードを{使|つか}った{転出|てんしゅつ}{届|とどけ}は、{転入|てんにゅう}から14{日|にち}をすぎたあと、または{転出|てんしゅつ}する{予定|よてい}の{日|ひ}から30{日|にち}をすぎたあとに{転入|てんにゅう}{届|とどけ}を{出|だ}すと{使|つか}えません。そのときは{転出|てんしゅつ}{証明|しょうめい}{書|しょ}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "A move-out notice filed with a My Number Card cannot be used if you file the moving-in notice more than 14 days after moving in, or more than 30 days after the planned move-out date. A move-out certificate is then needed (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-tennyu-tokurei-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "14{日|にち}を{過|す}ぎても、{届出|とどけで}はできます。すみやかに{手続|てつづ}きします。",
+        "ja_easy": "14{日|にち}をすぎても、{届|とど}けは{出|だ}せます。{早|はや}く{出|だ}します。",
+        "en": "You can still file after 14 days. File as soon as possible."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-6-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ]
 }
