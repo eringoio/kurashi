@@ -10,7 +10,13 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-leave",
+  "eligibility": {
+    "all": [
+      "R-job-goal-leave",
+      "R-job-not-pt-only",
+      "R-job-can-work"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{失業|しつぎょう}{給付|きゅうふ}（{雇用|こよう}{保険|ほけん}）",

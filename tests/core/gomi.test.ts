@@ -169,10 +169,11 @@ describe('オープンデータ（BODIK、CC BY 4.0）の取り込み', () => {
     expect(opendata.source.sha256).toMatch(/^[0-9a-f]{64}$/);
     expect(d.items.sources.find((s) => s.source_id === 'bodik-sagyo-01')?.license).toBeTruthy();
   });
-  it('粗大ごみ・30cm の記述の行は区分を出さない（2026年10月の改定の前のデータ）', () => {
-    const raw = opendata.items as { review?: unknown; category?: string; evidence: { quote: string } }[];
-    expect(raw.some((x) => x.category === 'sodai')).toBe(false);
-    expect(raw.filter((x) => /30s*(センチ|cm)/.test(x.evidence.quote)).every((x) => x.review)).toBe(true);
+  it('区分は、いまの市の表（2026年10月）の行から。市の表に無い行だけ区分を出さない', () => {
+    const raw = opendata.items as { review?: unknown; category?: string; evidence: { source_ids: string[] } }[];
+    expect(raw.filter((x) => !x.review).every((x) => x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
+    expect(raw.filter((x) => x.review).every((x) => !x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
+    expect(opendata.counts.review).toBe(11);
     const r = od.find((x) => x.review)!;
     expect(judgeItem(d.items, r).kind).toBe('review');
   });

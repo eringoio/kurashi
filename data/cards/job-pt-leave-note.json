@@ -1,0 +1,71 @@
+{
+  "data_version": 1,
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {
+    "excluded": {
+      "ja": "{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}の{人|ひと}のアルバイト{向|む}けの{案内|あんない}です。",
+      "ja_easy": "{留学|りゅうがく}・{家族滞在|かぞくたいざい}の{人|ひと}のための{案内|あんない}です。",
+      "en": "This is for students and dependents with part-time jobs."
+    }
+  },
+  "deadline": null,
+  "id": "job-pt-leave-note",
+  "illustration": "doc",
+  "eligibility": {
+    "all": [
+      "R-job-goal-leave",
+      "R-job-needs-permit"
+    ]
+  },
+  "title": {
+    "ja": "アルバイトを{辞|や}めるとき",
+    "ja_easy": "アルバイトをやめるとき",
+    "en": "When you quit a part-time job"
+  },
+  "official_name": {
+    "ja": "アルバイトの退職",
+    "reading": "あるばいとのたいしょく"
+  },
+  "summary": {
+    "ja": "アルバイトを{辞|や}めるときに、{区役所|くやくしょ}や{入管|にゅうかん}への{届|とど}けは{要|い}りません。{最後|さいご}の{給料|きゅうりょう}が{払|はら}われないときは、{相談|そうだん}{窓口|まどぐち}に{相談|そうだん}できます。",
+    "ja_easy": "アルバイトをやめるとき、{区役所|くやくしょ}や{入管|にゅうかん}に{届|とど}けはいりません。",
+    "en": "You do not need to notify the ward office or immigration when you quit a part-time job. If your last pay is not paid, you can ask a consultation counter."
+  },
+  "lead": {
+    "ja": "{役所|やくしょ}や{入管|にゅうかん}への{届|とど}けは{要|い}りません。",
+    "ja_easy": "{届|とど}けはいりません。",
+    "en": "No notice to offices is needed."
+  },
+  "where": {
+    "text": {
+      "ja": "（{届|とど}けは{要|い}りません）",
+      "ja_easy": "（{届|とど}けはいりません）",
+      "en": "(No notice needed)"
+    },
+    "evidence": {
+      "source_ids": [
+        "author-2026-11-07"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "author-2026-11-07"
+    ],
+    "checked_at": "2026-11-07",
+    "status": "verified",
+    "verified_by": "author 2026-11-07（author-2026-11-07）"
+  }
+}

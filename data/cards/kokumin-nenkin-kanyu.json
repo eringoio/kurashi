@@ -54,16 +54,18 @@
   },
   "where": {
     "text": {
-      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}（{国民|こくみん}{年金|ねんきん}の{窓口|まどぐち}。{課|か}{名|めい}は{保険|ほけん}{年金|ねんきん}{課|か}。{要|よう}{確認|かくにん}）",
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）",
       "ja_easy": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
-      "en": "Ward office (National Pension counter; the section is probably the Insurance and Pension Section; to be checked)"
+      "en": "Insurance and Pension Section of your ward office (Ward Welfare Section at a branch office)"
     },
     "evidence": {
       "source_ids": [
-        "B-nenkin-kanyu"
+        "B-nenkin-kanyu",
+        "B-nagoya-nenkin-1011839"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check"
+      "checked_at": "2026-11-07",
+      "status": "needs_check",
+      "quote": "お住まいの区の区役所保険年金課または支所区民福祉課で加入手続きをしてください"
     }
   },
   "place": "ward_office",
@@ -84,9 +86,10 @@
     "source_ids": [
       "B-nenkin-kanyu",
       "B-nenkin-gakusei",
-      "B-nenkin-tekiyojogai"
+      "B-nenkin-tekiyojogai",
+      "B-nagoya-nenkin-1011839"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   },
   "methods": [
@@ -123,13 +126,14 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は「{免除|めんじょ}・{納付|のうふ}{猶予|ゆうよ}」の{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。くわしくは{窓口|まどぐち}で（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{学生|がくせい}や、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は、{保険|ほけん}{料|りょう}を{今|いま}{払|はら}わなくてよい{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-        "en": "Students can use the Student Payment Deferment; people with low income can apply for exemption or deferment. Bring: something showing your basic pension number, your student ID, and your residence card. Ask at the counter for details (to be checked)."
+        "ja": "{保険|ほけん}{料|りょう}の{免除|めんじょ}にはいくつか{種類|しゅるい}があります。どれが{使|つか}えるかは{窓口|まどぐち}で{確|たし}かめてください。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{在留|ざいりゅう}カード。{学生|がくせい}は{学生|がくせい}{証|しょう}も。",
+        "ja_easy": "{保険|ほけん}{料|りょう}を{払|はら}わなくてよくなる{制度|せいど}は、いくつかあります。どれが{使|つか}えるかは、{窓口|まどぐち}で{聞|き}いてください。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{在留|ざいりゅう}カード。{学生|がくせい}は{学生証|がくせいしょう}も。",
+        "en": "There are several kinds of exemption from the premium. Ask at the counter which one you can use. Bring: something showing your basic pension number and your residence card (students also bring a student ID)."
       },
       "evidence": {
         "source_ids": [
-          "B-nenkin-gakusei"
+          "B-nenkin-gakusei",
+          "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check"

@@ -166,17 +166,19 @@
       "from": "nagoya-tennyu-todoke",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
+        "ja": "{区役所|くやくしょ}の{届|とど}けの{前|まえ}でも{後|あと}でも{出|だ}せます。{郵便|ゆうびん}{局|きょく}は{新|あたら}しい{住所|じゅうしょ}を{契約|けいやく}{書|しょ}などで{確|たし}かめます。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{前|まえ}でも{後|あと}でもいいです。{登録|とうろく}まで3〜7{日|にち}ぐらいかかります。",
+        "en": "You can file it before or after the ward office notice. The post office checks your new address with a contract or similar. Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "jp-post-tenkyo"
+          "jp-post-tenkyo",
+          "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "転居届を提出されてから登録までに3～7営業日"
+        "status": "verified",
+        "quote": "転居届を提出されてから登録までに3～7営業日",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {
@@ -185,17 +187,19 @@
       "from": "move-within-tennyu",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
+        "ja": "{区役所|くやくしょ}の{届|とど}けの{前|まえ}でも{後|あと}でも{出|だ}せます。{郵便|ゆうびん}{局|きょく}は{新|あたら}しい{住所|じゅうしょ}を{契約|けいやく}{書|しょ}などで{確|たし}かめます。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{前|まえ}でも{後|あと}でもいいです。{登録|とうろく}まで3〜7{日|にち}ぐらいかかります。",
+        "en": "You can file it before or after the ward office notice. The post office checks your new address with a contract or similar. Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "jp-post-tenkyo"
+          "jp-post-tenkyo",
+          "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "転居届を提出されてから登録までに3～7営業日"
+        "status": "verified",
+        "quote": "転居届を提出されてから登録までに3～7営業日",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {
@@ -204,17 +208,19 @@
       "from": "move-within-tenkyo",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
-        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
+        "ja": "{区役所|くやくしょ}の{届|とど}けの{前|まえ}でも{後|あと}でも{出|だ}せます。{郵便|ゆうびん}{局|きょく}は{新|あたら}しい{住所|じゅうしょ}を{契約|けいやく}{書|しょ}などで{確|たし}かめます。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{前|まえ}でも{後|あと}でもいいです。{登録|とうろく}まで3〜7{日|にち}ぐらいかかります。",
+        "en": "You can file it before or after the ward office notice. The post office checks your new address with a contract or similar. Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "jp-post-tenkyo"
+          "jp-post-tenkyo",
+          "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "転居届を提出されてから登録までに3～7営業日"
+        "status": "verified",
+        "quote": "転居届を提出されてから登録までに3～7営業日",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {
@@ -529,6 +535,60 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "ごみの発生した区の環境事業所でお手続きしていただいた後に、ご自分で処理施設へ搬入していただくことも可能です。"
+      }
+    },
+    {
+      "id": "rel-job-shushoku-before-hoken",
+      "type": "practical_prerequisite",
+      "from": "job-shushoku",
+      "to": "job-employ-hoken",
+      "explain": {
+        "ja": "{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}の{人|ひと}が{就職|しゅうしょく}するときは、{先|さき}に{在留|ざいりゅう}{資格|しかく}を{変|か}えます。",
+        "ja_easy": "{先|さき}に{在留資格|ざいりゅうしかく}を{変|か}えます。",
+        "en": "Students and dependents change their status of residence first."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "rel-job-shushoku-before-juminzei",
+      "type": "practical_prerequisite",
+      "from": "job-shushoku",
+      "to": "job-employ-juminzei",
+      "explain": {
+        "ja": "{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}の{人|ひと}が{就職|しゅうしょく}するときは、{先|さき}に{在留|ざいりゅう}{資格|しかく}を{変|か}えます。",
+        "ja_easy": "{先|さき}に{在留資格|ざいりゅうしかく}を{変|か}えます。",
+        "en": "Students and dependents change their status of residence first."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified"
+      }
+    },
+    {
+      "id": "rel-job-shushoku-before-kokuho-stop",
+      "type": "practical_prerequisite",
+      "from": "job-shushoku",
+      "to": "job-employ-kokuho-stop",
+      "explain": {
+        "ja": "{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}の{人|ひと}が{就職|しゅうしょく}するときは、{先|さき}に{在留|ざいりゅう}{資格|しかく}を{変|か}えます。",
+        "ja_easy": "{先|さき}に{在留資格|ざいりゅうしかく}を{変|か}えます。",
+        "en": "Students and dependents change their status of residence first."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified"
       }
     }
   ]

@@ -121,16 +121,18 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{住民|じゅうみん}{票|ひょう}の{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{加入|かにゅう}{者|しゃ}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{持|も}って{行|い}きます。{在留|ざいりゅう}カードが{使|つか}えるかは、{要|よう}{確認|かくにん}。",
-        "ja_easy": "{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{人|ひと}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{持|も}って{行|い}きます。{在留|ざいりゅう}カードが{使|つか}えるかは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
-        "en": "If no one else in your household is on National Health Insurance, also bring photo ID (driver's licence, passport, My Number Card, etc.). Whether a residence card is accepted: ask at the counter (to be checked)."
+        "ja": "{外国|がいこく}{人|じん}は{在留|ざいりゅう}カード（または{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}）も{持|も}って{行|い}きます。{住民|じゅうみん}{票|ひょう}の{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{加入|かにゅう}{者|しゃ}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{要|い}ります。",
+        "ja_easy": "{外国人|がいこくじん}は{在留|ざいりゅう}カード（{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}）も{持|も}って{行|い}きます。{同|おな}じ{世帯|せたい}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{人|ひと}がいないときは、{顔|かお}{写真|しゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）も{持|も}って{行|い}きます。",
+        "en": "Foreign nationals also bring their residence card (or special permanent resident certificate). If no one else in your household is on National Health Insurance, photo ID (driver's licence, passport, My Number Card, etc.) is also needed."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-kokuho-hitsuyo-pub"
+          "B-nagoya-kokuho-hitsuyo-pub",
+          "B-nagoya-faq-2172"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "在留カードまたは特別永住者証明書"
       }
     },
     {

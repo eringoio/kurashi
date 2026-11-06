@@ -24,7 +24,8 @@
           "headache"
         ],
         "romaji": [
-          "atama"
+          "atama",
+          "zutsu"
         ]
       },
       "departments": [
@@ -117,7 +118,8 @@
         "romaji": [
           "mimi",
           "hana",
-          "nodo"
+          "nodo",
+          "hanamizu"
         ]
       },
       "departments": [
@@ -325,7 +327,9 @@
         ],
         "romaji": [
           "te",
-          "ashi"
+          "ashi",
+          "kega",
+          "hone"
         ]
       },
       "departments": [
@@ -469,7 +473,10 @@
           "pee",
           "toilet"
         ],
-        "romaji": []
+        "romaji": [
+          "nyo",
+          "oshikko"
+        ]
       },
       "departments": [
         "hinyoki",
@@ -1123,7 +1130,7 @@
         "source_ids": [
           "aichi-8000"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       },
       "short": {
@@ -1132,9 +1139,9 @@
         "en": "Advice about a sick child"
       },
       "label": {
-        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}（{時間|じかん}は{要|よう}{確認|かくにん}）",
-        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{要|よう}{確認|かくにん}）",
-        "en": "Advice about a sick child (hours to be checked)"
+        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}（{平日|へいじつ}19{時|じ}〜{翌朝|よくあさ}8{時|じ}。{土日祝|どにちしゅく}・{年末年始|ねんまつねんし}は8{時|じ}〜{翌朝|よくあさ}8{時|じ}。#8000が{使|つか}えない{電話|でんわ}は 052-962-9900）",
+        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{平日|へいじつ}は{夜|よる}19{時|じ}から{朝|あさ}8{時|じ}。{休|やす}みの{日|ひ}は8{時|じ}から{次|つぎ}の{日|ひ}の8{時|じ}。#8000が{使|つか}えない{電話|でんわ}は 052-962-9900）",
+        "en": "Advice about a sick child (weekdays 19:00 to 8:00 next morning; weekends, holidays and year-end/New Year 8:00 to 8:00 next morning. If #8000 does not work from your phone: 052-962-9900)"
       }
     }
   ],
@@ -1199,7 +1206,7 @@
         "source_ids": [
           "aichi-qq-guide"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -1233,15 +1240,15 @@
         "en": "See a doctor in your language"
       },
       "desc": {
-        "ja": "{通訳|つうやく}と、{外国語|がいこくご}で{診|み}てもらえる{病院|びょういん}",
-        "ja_easy": "{通訳|つうやく}と、{外国語|がいこくご}で{見|み}てもらえる{病院|びょういん}",
-        "en": "Interpreters and clinics with other languages"
+        "ja": "{通訳|つうやく}を{使|つか}える{病院|びょういん}の{一覧|いちらん}。{通訳|つうやく}は{病院|びょういん}が{頼|たの}みます",
+        "ja_easy": "{通訳|つうやく}を{使|つか}える{病院|びょういん}の{一覧|いちらん}。{通訳|つうやく}は{病院|びょういん}が{頼|たの}みます",
+        "en": "List of hospitals that can use an interpreter. The hospital arranges the interpreter"
       },
       "evidence": {
         "source_ids": [
           "aichi-iryou-tsuyaku"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },

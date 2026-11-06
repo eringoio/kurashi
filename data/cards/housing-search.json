@@ -119,23 +119,17 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{自治体|じちたい}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」でも、{住|す}まいの{相談|そうだん}ができます。{窓口|まどぐち}の{名前|なまえ}は、{市|し}や{協会|きょうかい}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{市|し}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」でも、{家|いえ}のことを{相談|そうだん}できます。{窓口|まどぐち}は、{市|し}や{協会|きょうかい}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
-        "en": "Local governments and international exchange associations offer foreigner consultation that also covers housing. Ask the city or association for the counter (to be checked)."
+        "ja": "{英語|えいご}などで{対応|たいおう}する{不動産|ふどうさん}{会社|かいしゃ}も{多|おお}いので、インターネットで{探|さが}せます。",
+        "ja_easy": "{英語|えいご}などで{話|はな}せる{不動産|ふどうさん}の{会社|かいしゃ}も{多|おお}いです。インターネットで{探|さが}せます。",
+        "en": "Many real estate agents work in English and other languages. You can find them on the internet."
       },
       "evidence": {
         "source_ids": [
-          "B-mlit-guidebook-en"
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "Consultation regarding housing is provided, so be sure to ask them.",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
-          "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-sodan/c6"
-        }
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {

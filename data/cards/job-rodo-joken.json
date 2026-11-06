@@ -31,7 +31,8 @@
   "eligibility": {
     "all": [
       "R-job-scope",
-      "R-job-goal-pt"
+      "R-job-goal-pt",
+      "R-job-can-work"
     ]
   },
   "title": {
@@ -139,17 +140,17 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{会社|かいしゃ}は{契約|けいやく}のとき{賃金|ちんぎん}・{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせます。{一定|いってい}の{場合|ばあい}は FAX や SNS などでも{可|か}です（2019{年|ねん}4{月|がつ}1{日|にち}から。{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{契約|けいやく}のとき、{給料|きゅうりょう}や{時間|じかん}を{紙|かみ}で{知|し}らせます。{決|き}まった{場合|ばあい}は FAX や SNS でも{知|し}らせます（{要確認|ようかくにん}）。",
-        "en": "At contract signing the employer notifies you of wages, hours and other conditions in writing. In certain cases fax or SNS is allowed (from April 1, 2019; to be checked)."
+        "ja": "{会社|かいしゃ}は{契約|けいやく}のとき、{賃金|ちんぎん}・{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせます。{条件|じょうけん}を{書|か}いたものをもらいます。",
+        "ja_easy": "{契約|けいやく}のとき、{給料|きゅうりょう}や{時間|じかん}を{紙|かみ}で{知|し}らせます。{書|か}いた{紙|かみ}をもらいます。",
+        "en": "At contract signing the employer notifies you of wages, hours and other conditions in writing. Get the conditions in writing."
       },
       "evidence": {
         "source_ids": [
           "B-mhlw-keiyaku-meiji"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "従来から労働基準法施行規則において、労働契約締結時に労働条件を書面で通知しなければならないと定められていましたが、今回の改正により、一定の場合にはFAXやSNS等による通知が可能となりました（平成31年4月1日から施行）。"
+        "quote": "労働契約締結時に労働条件を書面で通知しなければならないと定められていました"
       }
     },
     {

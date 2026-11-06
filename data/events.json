@@ -136,6 +136,7 @@
       "questions": [
         "Q-nationality",
         "Q-zairyu-status",
+        "Q-work-limit",
         "Q-job-goal",
         "Q-job-permit"
       ],
@@ -155,7 +156,10 @@
         "job-leave-shitsugyo",
         "job-leave-juminzei",
         "job-leave-nyukan",
-        "job-phrases"
+        "job-phrases",
+        "job-no-work-note",
+        "job-designation-note",
+        "job-pt-leave-note"
       ],
       "scope_rule": "R-job-scope",
       "evidence": {

@@ -285,14 +285,14 @@
         "within_nagoya"
       ],
       "title": {
-        "ja": "{年金|ねんきん}{手帳|てちょう}など",
-        "ja_easy": "{年金|ねんきん}{手帳|てちょう}など",
-        "en": "Pension book etc."
+        "ja": "{基礎|きそ}{年金|ねんきん}{番号|ばんごう}{通知|つうち}{書|しょ}（{年金|ねんきん}{手帳|てちょう}）",
+        "ja_easy": "{基礎|きそ}{年金|ねんきん}{番号|ばんごう}{通知|つうち}{書|しょ}（{年金|ねんきん}{手帳|てちょう}）",
+        "en": "Basic Pension Number Notice (pension book)"
       },
       "purpose": {
-        "ja": "{持|も}ち{物|もの}の{一覧|いちらん}に{入|い}れます（{年金|ねんきん}{手帳|てちょう}・{基礎|きそ}{年金|ねんきん}{番号|ばんごう}{通知|つうち}{書|しょ}など。はじめて{入|はい}る{人|ひと}は{無|な}くてよい。{要|よう}{確認|かくにん}）",
-        "ja_easy": "{持|も}ち{物|もの}に{入|い}れます（はじめての{人|ひと}は{無|な}くてよい。{要|よう}{確認|かくにん}）",
-        "en": "Added to your list (pension book or Basic Pension Number Notice; not needed if you are joining for the first time; to be checked)"
+        "ja": "{持|も}ち{物|もの}の{一覧|いちらん}に{入|い}れます（はじめて{入|はい}る{人|ひと}と、マイナンバーカードがある{人|ひと}は{要|い}りません。{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}に{入|い}れます（はじめての{人|ひと}と、マイナンバーカードがある{人|ひと}は{要|い}りません。{要|よう}{確認|かくにん}）",
+        "en": "Added to your list (not needed if you are joining for the first time or have a My Number Card; to be checked)"
       },
       "yields_when_held": [],
       "bring_to": [
@@ -301,10 +301,12 @@
       "evidence": {
         "source_ids": [
           "kurashi-spec",
-          "B-nenkin-kanyu"
+          "B-nenkin-kanyu",
+          "B-nagoya-nenkin-1011839"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
+        "status": "needs_check",
+        "quote": "基礎年金番号通知書"
       },
       "bring_for": [
         "kokumin-nenkin-kanyu"

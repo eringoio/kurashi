@@ -112,11 +112,11 @@
     {
       "id": "nenkin-oshirase",
       "title": {
-        "ja": "{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}のお{知|し}らせ",
+        "ja": "国民年金加入のお知らせ",
         "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせ",
         "en": "National Pension enrollment notice"
       },
-      "look_for": "{国民|こくみん}{年金|ねんきん}",
+      "look_for": "国民年金加入のお知らせ",
       "summary": {
         "ja": "{国民|こくみん}{年金|ねんきん}に{入|はい}ったこと、または{入|はい}る{手続|てつづ}きについてのお{知|し}らせです。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。",
         "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせです。{日本年金機構|にほんねんきんきこう}から{届|とど}きます。",
@@ -131,8 +131,9 @@
           "nenkin-hatachi-page",
           "nenkin-kanyu-page"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "国民年金加入のお知らせ"
       },
       "issued_by_card": [
         "nenkin-at-20"
@@ -188,9 +189,10 @@
         "source_ids": [
           "B-nagoya-faq-54"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "転出証明書の交付を受けた後、新たにお住まいになる市区町村にて転入の届出を行っていただく必要があります。"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "転出証明書の交付を受けた後、新たにお住まいになる市区町村にて転入の届出を行っていただく必要があります。",
+        "verified_by": "author 2026-11-07（FAQ id=54 の本文を確認）"
       },
       "sample": "/samples/tenshutsu-shomeisho-sample.svg",
       "key_words": [
@@ -345,9 +347,10 @@
         "source_ids": [
           "B-nagoya-faq-39"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "義務教育のお子さんがいる場合は、転入学通知書をお渡ししますので"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "義務教育のお子さんがいる場合は、転入学通知書をお渡ししますので",
+        "verified_by": "author 2026-11-07（FAQ id=39 の本文を確認）"
       },
       "sample": "/samples/tennyugaku-tsuchisho-sample.svg",
       "key_words": [

@@ -146,7 +146,7 @@
         "clinic"
       ],
       "ja": "どこに{行|い}けばいいですか",
-      "easy": "どこへ{行|い}きますか",
+      "easy": "どこへ{行|い}けばいいですか",
       "en": "Where should I go?",
       "status": "verified"
     },
@@ -331,7 +331,7 @@
         "calendar"
       ],
       "ja": "{期限|きげん}",
-      "easy": "この{日|ひ}までに",
+      "easy": "{決|き}まった{日|ひ}までに、しなければならない。その{日|ひ}のこと",
       "en": "Deadline / due date",
       "status": "verified"
     },
@@ -344,7 +344,7 @@
       ],
       "ja": "マイナンバーカード",
       "easy": "マイナンバーカード",
-      "en": "My Number card (individual number card)",
+      "en": "My Number Card",
       "status": "verified"
     },
     {
@@ -356,7 +356,7 @@
         "clinic"
       ],
       "ja": "{国民健康保険|こくみんけんこうほけん}",
-      "easy": "{市|し}の{健康|けんこう}{保険|ほけん}（{国保|こくほ}）",
+      "easy": "{市|し}や{区|く}の{健康保険|けんこうほけん}（{会社|かいしゃ}の{保険|ほけん}に{入|はい}っていない{人|ひと}）",
       "en": "National Health Insurance",
       "status": "verified"
     },
@@ -382,7 +382,7 @@
       ],
       "ja": "{引|ひ}っ{越|こ}しの{手続|てつづ}きをしたいです",
       "easy": "{引|ひ}っ{越|こ}しの{手続|てつづ}きをしたいです",
-      "en": "I want to do the moving procedure",
+      "en": "I'd like to do the paperwork for my move.",
       "status": "verified"
     },
     {
@@ -469,7 +469,7 @@
         "ward_office"
       ],
       "ja": "{担当|たんとう}の{窓口|まどぐち}が{違|ちが}います",
-      "easy": "ここではありません",
+      "easy": "この{窓口|まどぐち}ではありません",
       "en": "This is not the right counter",
       "status": "verified"
     },
@@ -1280,8 +1280,8 @@
         "clinic"
       ],
       "ja": "きりきり{痛|いた}みます",
-      "easy": "{刺|さ}すように{痛|いた}いです",
-      "en": "Sharp, stabbing pain",
+      "easy": "おなかなどが しめつけられるように {痛|いた}いです",
+      "en": "A sharp, twisting (gripping) pain",
       "status": "verified"
     },
     {
@@ -1334,9 +1334,9 @@
       "scene": [
         "clinic"
       ],
-      "ja": "{保険証|ほけんしょう}をお{願|ねが}いします",
-      "easy": "{保険|ほけん}のカード（マイナ{保険証|ほけんしょう}など）を{見|み}せてください",
-      "en": "Your health insurance card (e.g. My Number insurance card), please",
+      "ja": "マイナ{保険証|ほけんしょう}か{資格|しかく}{確認書|かくにんしょ}をお{願|ねが}いします",
+      "easy": "マイナ{保険証|ほけんしょう}か{資格確認書|しかくかくにんしょ}を{見|み}せてください",
+      "en": "Your My Number Card (as health insurance card) or Qualification Certificate, please",
       "status": "verified"
     },
     {
@@ -1514,7 +1514,7 @@
       "scene": [
         "bank"
       ],
-      "ja": "{口座|こうざ}を{作|つく}りたいです",
+      "ja": "{口座|こうざ}を{開設|かいせつ}したいです",
       "easy": "{口座|こうざ}を{作|つく}りたいです",
       "en": "I want to open an account",
       "status": "verified"
@@ -1560,7 +1560,7 @@
         "bank"
       ],
       "ja": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
-      "easy": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
+      "easy": "{日本|にほん}に{来|き}てから、6か{月|げつ}{以上|いじょう}ですか",
       "en": "Have you been in Japan for 6 months?",
       "status": "verified"
     },
@@ -1661,7 +1661,7 @@
       ],
       "ja": "{資格外|しかくがい}{活動|かつどう}{許可|きょか}",
       "easy": "アルバイトをしてよいという{許可|きょか}",
-      "en": "Permission to work outside your status (part-time work)",
+      "en": "Permission to engage in activity other than that permitted by the status of residence previously granted (part-time work permit)",
       "status": "verified"
     },
     {
@@ -1739,7 +1739,7 @@
       ],
       "ja": "{源泉徴収票|げんせんちょうしゅうひょう}",
       "easy": "1{年|ねん}の{給料|きゅうりょう}と{税金|ぜいきん}の{紙|かみ}",
-      "en": "Tax withholding slip",
+      "en": "Withholding tax slip (certificate of income and tax withheld)",
       "status": "verified"
     },
     {
@@ -1749,7 +1749,7 @@
         "job"
       ],
       "ja": "アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました",
-      "easy": "アルバイトの{募集|ぼしゅう}を{見|み}ました",
+      "easy": "アルバイトの{募集|ぼしゅう}を{見|み}て、でんわしました",
       "en": "I saw your part-time job ad and am calling",
       "status": "verified"
     },
@@ -2026,8 +2026,8 @@
         "immigration"
       ],
       "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理局|かんりきょく}（{入管|にゅうかん}）",
-      "easy": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理局|かんりきょく}（{入管|にゅうかん}）",
-      "en": "Immigration Services Bureau",
+      "easy": "{出入国在留管理局|しゅつにゅうこくざいりゅうかんりきょく}（{入管|にゅうかん}）は、{外国人|がいこくじん}の{在留|ざいりゅう}を{扱|あつか}う{国|くに}の{役所|やくしょ}",
+      "en": "Regional Immigration Services Bureau (part of the Immigration Services Agency)",
       "status": "verified"
     },
     {
@@ -2083,7 +2083,7 @@
       ],
       "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}をしたいです",
       "easy": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}をしたいです",
-      "en": "I want to renew my period of stay",
+      "en": "I'd like to apply to extend my period of stay.",
       "status": "verified"
     },
     {

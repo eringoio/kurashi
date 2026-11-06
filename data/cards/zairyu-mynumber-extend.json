@@ -42,10 +42,12 @@
     },
     "evidence": {
       "source_ids": [
-        "author-2026-11-05"
+        "author-2026-11-05",
+        "IA-moj-mynumber-tokurei"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check"
+      "checked_at": "2026-11-07",
+      "status": "needs_check",
+      "quote": "手続をせずに有効期限（在留期間満了日）が過ぎてしまうと、これらの利用ができないこととなります。"
     }
   },
   "id": "zairyu-mynumber-extend",
@@ -79,9 +81,10 @@
     },
     "evidence": {
       "source_ids": [
-        "author-2026-11-05"
+        "author-2026-11-05",
+        "IA-moj-mynumber-tokurei"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-07",
       "status": "needs_check"
     }
   },
@@ -95,33 +98,35 @@
       },
       "evidence": {
         "source_ids": [
-          "author-2026-11-05"
+          "author-2026-11-05",
+          "IA-moj-mynumber-tokurei"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "手続をせずに有効期限（在留期間満了日）が過ぎてしまうと、これらの利用ができないこととなります。"
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}して{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}で{手続|てつづ}きをします。{持|も}ち{物|もの}と{手続|てつづ}きの{内容|ないよう}は{要|よう}{確認|かくにん}です。",
-        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}へ{行|い}きます。{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
-        "en": "After you receive the new residence card, go to the counter before the expiry date. Ask at the counter what to bring and what the procedure involves (to be checked)."
+        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}して{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}で{手続|てつづ}きをします。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカードを{持|も}って{行|い}きます。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}へ{行|い}きます。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカードを{持|も}って{行|い}きます。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "After you receive the new residence card, go to the counter before the expiry date, with the new residence card and your My Number Card. What Nagoya ward offices ask you to bring is to be checked."
       },
       "evidence": {
         "source_ids": [
           "author-2026-11-05"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-        "en": "If your card expires before the renewal result comes out, go to the ward office before it expires and extend it for the special period (to be checked)."
+        "ja": "{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします。{持|も}ち{物|もの}は、マイナンバーカードと、「{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}{中|ちゅう}」のスタンプがある{在留|ざいりゅう}カード（オンラインで{申請|しんせい}したときは{受付|うけつけ}のメール）です。{特例|とくれい}{期間|きかん}の{延長|えんちょう}は1{回|かい}だけです。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします。{持|も}ち{物|もの}：マイナンバーカードと、「{申請中|しんせいちゅう}」のスタンプがある{在留|ざいりゅう}カード（オンラインで{申|もう}し{込|こ}んだ{人|ひと}は{受付|うけつけ}のメール）。{延長|えんちょう}は1{回|かい}だけです。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "If your card expires before the renewal result comes out, go to the ward office before it expires and extend it for the special period. Bring your My Number Card and your residence card with the \"renewal application pending\" stamp (for an online application, the acknowledgement email). The special period can be extended only once. What Nagoya ward offices ask you to bring is to be checked."
       },
       "evidence": {
         "source_ids": [
@@ -138,6 +143,7 @@
       "IA-moj-mynumber-tokurei"
     ],
     "checked_at": "2026-11-07",
-    "status": "needs_check"
+    "status": "needs_check",
+    "quote": "手続をせずに有効期限（在留期間満了日）が過ぎてしまうと、これらの利用ができないこととなります。"
   }
 }

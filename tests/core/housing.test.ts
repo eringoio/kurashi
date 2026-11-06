@@ -16,9 +16,10 @@ const card = (id: string) => data.cards.find((c) => c.id === id)!;
 const IDS = ['housing-search', 'housing-contract-check', 'housing-initial-costs', 'housing-guarantor', 'housing-move-in', 'housing-move-out', 'housing-public'];
 
 describe('住まい探し（下書き）', () => {
-  it('型と参照の検査を通る。確認済み（verified）にしていない', () => {
+  it('型と参照の検査を通る。確認済み（verified）は作者の答え（2026-11-07）だけ', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(JSON.stringify(json)).not.toContain('"verified"');
+    const all = JSON.stringify(json);
+    expect((all.match(/"status":"verified"/g) ?? []).length).toBe((all.match(/"verified_by":"author 2026-11-07/g) ?? []).length);
     expect(json.cards.every((c) => c.evidence.status === 'needs_check')).toBe(true);
   });
   it('入口のメニュー（menu 8・group housing・built）と7枚', () => {

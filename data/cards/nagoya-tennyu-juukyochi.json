@@ -162,17 +162,19 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{届出|とどけで}をするのは{本人|ほんにん}です。16{歳|さい}{未満|みまん}の{人|ひと}は、16{歳|さい}{以上|いじょう}の{同居|どうきょ}の{親族|しんぞく}が{出|だ}せます。",
-        "ja_easy": "{届|とど}けを{出|だ}すのは{本人|ほんにん}です。16{歳|さい}より{小|ちい}さい{人|ひと}は、16{歳|さい}{以上|いじょう}の{一緒|いっしょ}に{住|す}む{親|しん}せきが{出|だ}せます。",
-        "en": "The person moving files. For a child under 16, a relative aged 16 or over who lives with them can file."
+        "ja": "{届出|とどけで}ができるのは、{本人|ほんにん}か、{同|おな}じ{家|いえ}に{住|す}む{親族|しんぞく}です。16{歳|さい}{未満|みまん}の{人|ひと}は、16{歳|さい}{以上|いじょう}で{同|おな}じ{家|いえ}に{住|す}む{親族|しんぞく}が{出|だ}します。",
+        "ja_easy": "{届|とど}けを{出|だ}せるのは、{本人|ほんにん}か、{一緒|いっしょ}に{住|す}む{親|しん}せきです。16{歳|さい}より{小|ちい}さい{人|ひと}は、16{歳|さい}{以上|いじょう}の{一緒|いっしょ}に{住|す}む{親|しん}せきが{出|だ}します。",
+        "en": "The person moving, or a relative who lives with them, can file. For a child under 16, a relative aged 16 or over who lives with them files."
       },
       "evidence": {
         "source_ids": [
           "B-nagoya-faq-54",
           "isa-juukyochi"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "本人（16歳未満の場合は16歳以上の同居の親族）又は同居の親族",
+        "verified_by": "author 2026-11-07（FAQ id=54 の本文を確認）"
       }
     }
   ]

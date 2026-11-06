@@ -28,7 +28,8 @@
   "eligibility": {
     "all": [
       "R-job-scope",
-      "R-job-goal-pt"
+      "R-job-goal-pt",
+      "R-job-can-work"
     ]
   },
   "title": {

@@ -1,0 +1,66 @@
+{
+  "data_version": 1,
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {
+    "excluded": {
+      "ja": "{在留|ざいりゅう}カードに「{指定|してい}{書|しょ}により…のみ{可|か}」とある{人|ひと}{向|む}けの{案内|あんない}です。",
+      "ja_easy": "カードに「{指定書|していしょ}」と{書|か}いてある{人|ひと}のための{案内|あんない}です。",
+      "en": "This is for people whose card says only work in their designation."
+    }
+  },
+  "deadline": null,
+  "id": "job-designation-note",
+  "illustration": "doc",
+  "eligibility": "R-job-designation",
+  "title": {
+    "ja": "{指定|してい}{書|しょ}に{書|か}いてある{仕事|しごと}だけ",
+    "ja_easy": "{指定書|していしょ}の{仕事|しごと}だけ",
+    "en": "Only the work in your designation"
+  },
+  "official_name": {
+    "ja": "指定書",
+    "reading": "していしょ"
+  },
+  "summary": {
+    "ja": "{在留|ざいりゅう}カードに「{指定|してい}{書|しょ}により{指定|してい}された{就労|しゅうろう}{活動|かつどう}のみ{可|か}」とある{人|ひと}は、{指定|してい}{書|しょ}に{書|か}いてある{仕事|しごと}だけができます。{旅券|りょけん}に{付|つ}いている{指定|してい}{書|しょ}を{確|たし}かめてください。",
+    "ja_easy": "カードに「{指定書|していしょ}により{指定|してい}された{就労活動|しゅうろうかつどう}のみ{可|か}」とある{人|ひと}は、{指定書|していしょ}の{仕事|しごと}だけできます。{指定書|していしょ}を{見|み}てください。",
+    "en": "If your card says only work in your designation is allowed, you can do only the work written in your designation document. Check the designation attached to your passport."
+  },
+  "lead": {
+    "ja": "{指定|してい}{書|しょ}を{確|たし}かめてください。",
+    "ja_easy": "{指定書|していしょ}を{見|み}てください。",
+    "en": "Check your designation document."
+  },
+  "where": {
+    "text": {
+      "ja": "{旅券|りょけん}に{付|つ}いている{指定|してい}{書|しょ}",
+      "ja_easy": "パスポートの{指定書|していしょ}",
+      "en": "The designation document in your passport"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-card-point"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "isa-card-point"
+    ],
+    "checked_at": "2026-11-07",
+    "status": "needs_check",
+    "quote": "「指定書により指定された就労活動のみ可」"
+  }
+}

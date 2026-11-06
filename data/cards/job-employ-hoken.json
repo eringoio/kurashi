@@ -10,7 +10,12 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-employ",
+  "eligibility": {
+    "all": [
+      "R-job-goal-employ",
+      "R-job-can-work"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}・{雇用|こよう}{保険|ほけん}",

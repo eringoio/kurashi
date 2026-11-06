@@ -71,30 +71,33 @@
     {
       "type": "counter",
       "text": {
-        "ja": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても「{国民|こくみん}{年金|ねんきん}{加入|かにゅう}のお{知|し}らせ」が{届|とど}かないときは、{区役所|くやくしょ}か{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{加入|かにゅう}の{手続|てつづ}きをします。{外国|がいこく}から{来|き}た20{歳|さい}の{人|ひと}にもお{知|し}らせが{届|とど}くかは、{本文|ほんぶん}にありません。{要|よう}{確認|かくにん}。",
-        "ja_easy": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても、お{知|し}らせが{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{手続|てつづ}きします。{外国|がいこく}から{来|き}た{人|ひと}にもお{知|し}らせが{届|とど}くかは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
-        "en": "If the notice has not arrived about 2 weeks after you turn 20, apply at your ward office or a nearby pension office. Whether people who came from abroad also receive the notice is not stated: ask at the counter (to be checked)."
+        "ja": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても「{国民|こくみん}{年金|ねんきん}{加入|かにゅう}のお{知|し}らせ」が{届|とど}かないときは、{区役所|くやくしょ}か{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{加入|かにゅう}の{手続|てつづ}きをします。{外国|がいこく}から{来|き}た{人|ひと}にも、20{歳|さい}になるとお{知|し}らせが{届|とど}きます。20{歳|さい}{以上|いじょう}で{来|き}た{人|ひと}は、{住所|じゅうしょ}の{届|とど}けのときに{区役所|くやくしょ}で{国民|こくみん}{年金|ねんきん}にも{入|はい}ります。",
+        "ja_easy": "20{歳|さい}になって{約|やく}2{週間|しゅうかん}たっても、お{知|し}らせが{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{手続|てつづ}きします。{外国|がいこく}から{来|き}た{人|ひと}にも、20{歳|さい}になるとお{知|し}らせが{届|とど}きます。20{歳|さい}{以上|いじょう}で{来|き}た{人|ひと}は、{住所|じゅうしょ}の{届|とど}けのときに{区役所|くやくしょ}で{国民|こくみん}{年金|ねんきん}にも{入|はい}ります。",
+        "en": "If the notice has not arrived about 2 weeks after you turn 20, apply at your ward office or a nearby pension office. People who came from abroad also receive the notice when they turn 20. If you came to Japan at 20 or older, you join National Pension at the ward office when you register your address."
       },
       "evidence": {
         "source_ids": [
-          "nenkin-hatachi-page"
+          "nenkin-hatachi-page",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は「{免除|めんじょ}・{納付|のうふ}{猶予|ゆうよ}」の{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。くわしくは{窓口|まどぐち}で（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{学生|がくせい}や、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は、{保険|ほけん}{料|りょう}を{今|いま}{払|はら}わなくてよい{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-        "en": "Students can use the Student Payment Deferment; people with low income can apply for exemption or deferment. Bring: something showing your basic pension number, your student ID, and your residence card. Ask at the counter for details (to be checked)."
+        "ja": "{保険|ほけん}{料|りょう}の{免除|めんじょ}にはいくつか{種類|しゅるい}があります。どれが{使|つか}えるかは{窓口|まどぐち}で{確|たし}かめてください。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{在留|ざいりゅう}カード。{学生|がくせい}は{学生|がくせい}{証|しょう}も。",
+        "ja_easy": "{保険|ほけん}{料|りょう}を{払|はら}わなくてよくなる{制度|せいど}は、いくつかあります。どれが{使|つか}えるかは、{窓口|まどぐち}で{聞|き}いてください。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{在留|ざいりゅう}カード。{学生|がくせい}は{学生証|がくせいしょう}も。",
+        "en": "There are several kinds of exemption from the premium. Ask at the counter which one you can use. Bring: something showing your basic pension number and your residence card (students also bring a student ID)."
       },
       "evidence": {
         "source_ids": [
-          "nenkin-hatachi-page"
+          "nenkin-hatachi-page",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     }

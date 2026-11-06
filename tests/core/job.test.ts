@@ -26,11 +26,11 @@ const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-ching
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('仕事・アルバイト（公開）', () => {
-  it('型と参照の検査を通る。16枚。verified は無い。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。19枚。verified は作者の答え・決定だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(ev.card_ids.length).toBe(16);
+    expect(ev.card_ids.length).toBe(19);
     const s = JSON.stringify(json);
-    expect(s).not.toContain('"verified"');
+    for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.every((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
     expect(s).not.toMatch(/https?:\/\/[^"]*\?/);
   });
@@ -146,5 +146,55 @@ describe('就職・退職（下書き）', () => {
     const c = data.cards.find((x) => x.id === 'job-phrases')!;
     expect(c.evidence.note).toContain('author_stated');
     expect(st(g('employ', 'student'), 'job-phrases')).toBe('excluded');
+  });
+});
+
+// SPEC 6A.16（v0.5.16。作者の決定 11/7）：在留資格の区分で出し分ける
+describe('在留資格の区分（6A.16）', () => {
+  const g = (goal: string, status: string, extra: Record<string, string> = {}) => run(data, { answers: { 'Q-job-goal': goal, ...statusAnswers(status), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
+  const st = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!.state;
+  it('文化活動・研修（働けない）：入管で相談の1枚だけ。アルバイト・就職・辞めるのカードは出さない', () => {
+    for (const s of ['cultural', 'trainee']) {
+      for (const goal of ['part_time', 'employ', 'leave']) {
+        const o = g(goal, s);
+        expect(st(o, 'job-no-work-note'), s + goal).not.toBe('excluded');
+        for (const id of ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-trouble', 'job-shakai-hoken', 'job-phrases', 'job-employ-hoken', 'job-employ-juminzei', 'job-employ-kokuho-stop', 'job-leave-shitsugyo', 'job-leave-kokuho', 'job-leave-juminzei', 'zairyu-shikakugai']) expect(st(o, id), s + goal + id).toBe('excluded');
+      }
+    }
+  });
+  it('特定活動・そのほか：在留カードの「就労制限の有無」を聞く。ほかの在留資格では聞かない', () => {
+    expect(g('part_time', 'designated').upfront.map((q) => q.id)).toContain('Q-work-limit');
+    expect(g('part_time', 'other').upfront.map((q) => q.id)).toContain('Q-work-limit');
+    for (const s of ['student', 'work', 'permanent', 'cultural']) expect(g('part_time', s).upfront.map((q) => q.id)).not.toContain('Q-work-limit');
+  });
+  it('指定書による：指定書を確かめる1枚と、ふつうのカード', () => {
+    const o = g('part_time', 'designated', { 'Q-work-limit': 'designation' });
+    expect(st(o, 'job-designation-note')).not.toBe('excluded');
+    expect(st(o, 'job-saitei-chingin')).not.toBe('excluded');
+    expect(st(g('part_time', 'designated', { 'Q-work-limit': 'none' }), 'job-designation-note')).toBe('excluded');
+  });
+  it('「就労不可」：留学生と同じ（資格外活動許可を聞く）。「在留資格に基づく…のみ可」：入管の届けを出す', () => {
+    const o = g('part_time', 'other', { 'Q-work-limit': 'not_allowed' });
+    expect(o.upfront.map((q) => q.id)).toContain('Q-job-permit');
+    expect(st(o, 'zairyu-shikakugai')).not.toBe('excluded');
+    expect(st(g('employ', 'designated', { 'Q-work-limit': 'status_only' }), 'job-employ-nyukan')).not.toBe('excluded');
+  });
+  it('留学・家族滞在の就職：在留資格の変更を先に（保険・住民税より前）', () => {
+    for (const s of ['student', 'family']) {
+      const o = g('employ', s);
+      expect(st(o, 'job-shushoku'), s).not.toBe('excluded');
+      const order = o.cards.map((c) => c.card.id);
+      for (const id of ['job-employ-hoken', 'job-employ-juminzei', 'job-employ-kokuho-stop']) expect(order.indexOf('job-shushoku'), s + id).toBeLessThan(order.indexOf(id));
+    }
+    expect(st(g('employ', 'work'), 'job-shushoku')).toBe('excluded');
+  });
+  it('留学・家族滞在が辞める：失業手当・住民税・国保は出さない。「届けは要りません」の1枚', () => {
+    for (const s of ['student', 'family']) {
+      const o = g('leave', s);
+      for (const id of ['job-leave-shitsugyo', 'job-leave-juminzei', 'job-leave-kokuho', 'job-leave-nyukan']) expect(st(o, id), s + id).toBe('excluded');
+      expect(st(o, 'job-pt-leave-note'), s).not.toBe('excluded');
+    }
+    expect(st(g('leave', 'work'), 'job-pt-leave-note')).toBe('excluded');
+    expect(st(g('leave', 'permanent'), 'job-leave-shitsugyo')).not.toBe('excluded');
   });
 });

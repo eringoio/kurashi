@@ -191,15 +191,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}などを、{先着順|せんちゃくじゅん}で{受|う}け{付|つ}けます。{単身|たんしん}の{資格|しかく}を{満|み}たす{人|ひと}も{対象|たいしょう}です。",
-        "ja_easy": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}などを、{先|さき}に{来|き}た{人|ひと}から{受|う}け{付|つ}けます。",
-        "en": "First-come recruitment: homes that received no applications in the general round are accepted on a first-come basis."
+        "ja": "{先着|せんちゃく}{順|じゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}などを{受|う}け{付|つ}けます。{受付|うけつけ}の{初日|しょにち}は{抽|ちゅう}せん、2{日|にち}{目|め}からは{先着|せんちゃく}{順|じゅん}です。{単身|たんしん}の{資格|しかく}を{満|み}たす{人|ひと}も{対象|たいしょう}です。",
+        "ja_easy": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}です。{初日|しょにち}はくじ、2{日目|かめ}から{先|さき}に{来|き}た{人|ひと}からです。",
+        "en": "First-come recruitment: homes that received no applications in the general round. The first day is by lottery; from the second day it is first-come. People who meet the single-applicant requirement can also apply."
       },
       "evidence": {
         "source_ids": [
           "B-nagoya-shiei-sakichaku"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "一般募集において申込みの無かった住宅などを対象に、先着順で受付します。（申込受付初日を除く）"
       }
@@ -261,7 +261,8 @@
       },
       "evidence": {
         "source_ids": [
-          "B-ur-top"
+          "B-ur-top",
+          "aichi-kousha-prefectural"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",
@@ -342,12 +343,12 @@
     },
     {
       "label": {
-        "ja": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}",
-        "ja_easy": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}",
-        "en": "Aichi prefectural housing"
+        "ja": "{愛知|あいち}{県|けん}の{県営|けんえい}{住宅|じゅうたく}（{愛知|あいち}{県|けん}{住宅供給公社|じゅうたくきょうきゅうこうしゃ}）",
+        "ja_easy": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}（{愛知県|あいちけん}{住宅|じゅうたく}{供給|きょうきゅう}{公社|こうしゃ}）",
+        "en": "Aichi prefectural housing (Aichi Prefectural Housing Supply Corporation)"
       },
-      "url": "https://www.pref.aichi.jp/life/1/5/18/",
-      "source_id": "IA-aichi-kenei-juutaku"
+      "url": "https://www.aichi-kousha.or.jp/prefectural/",
+      "source_id": "aichi-kousha-prefectural"
     },
     {
       "label": {

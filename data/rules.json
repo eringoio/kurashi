@@ -192,15 +192,16 @@
         ]
       },
       "statement": {
-        "ja": "{働|はたら}き{始|はじ}める{人|ひと}は、{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}るまでの{間|あいだ}、{国民|こくみん}{健康|けんこう}{保険|ほけん}が{必要|ひつよう}になることがあります。",
-        "ja_easy": "{働|はたら}き{始|はじ}める{人|ひと}は、{会社|かいしゃ}の{保険|ほけん}に{入|はい}るまで、{国民健康保険|こくみんけんこうほけん}が{要|い}ることがあります。",
-        "en": "People starting work may need National Health Insurance until their workplace insurance starts."
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}るかは{仕事|しごと}によります。{入|はい}るときは{会社|かいしゃ}から{案内|あんない}があり、{保険|ほけん}の{証|あかし}も{会社|かいしゃ}から{受|う}け{取|と}ります。{入|はい}らないときは{国民|こくみん}{健康|けんこう}{保険|ほけん}です。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}るかは、{仕事|しごと}で{違|ちが}います。{入|はい}るときは{会社|かいしゃ}が{教|おし}えてくれます。",
+        "en": "Whether you join workplace health insurance depends on the job. If you do, your employer tells you and gives you the insurance document. If not, you join National Health Insurance."
       },
       "evidence": {
         "source_ids": [
-          "nagoya-kokuho-kanyu-page"
+          "nagoya-kokuho-kanyu-page",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -700,24 +701,51 @@
             "eq": "foreign"
           },
           {
-            "fact": "zairyu_status",
-            "in": [
-              "student",
-              "family"
+            "any": [
+              {
+                "fact": "zairyu_status",
+                "in": [
+                  "student",
+                  "family"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "not": {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family",
+                        "work",
+                        "spouse",
+                        "permanent",
+                        "long_term",
+                        "cultural",
+                        "trainee"
+                      ]
+                    }
+                  },
+                  {
+                    "fact": "work_limit",
+                    "eq": "not_allowed"
+                  }
+                ]
+              }
             ]
           }
         ]
       },
       "statement": {
-        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族|かぞく}{滞在|たいざい}」",
-        "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族滞在|かぞくたいざい}」",
-        "en": "Your status is Student or Dependent"
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族|かぞく}{滞在|たいざい}」、または{在留|ざいりゅう}カードに「{就労|しゅうろう}{不可|ふか}」",
+        "ja_easy": "{在留資格|ざいりゅうしかく}が「{留学|りゅうがく}」か「{家族滞在|かぞくたいざい}」、またはカードに「{就労不可|しゅうろうふか}」",
+        "en": "Your status is Student or Dependent, or your card says 就労不可"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -839,21 +867,219 @@
             "eq": "foreign"
           },
           {
-            "fact": "zairyu_status",
-            "eq": "work"
+            "any": [
+              {
+                "fact": "zairyu_status",
+                "eq": "work"
+              },
+              {
+                "all": [
+                  {
+                    "not": {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family",
+                        "work",
+                        "spouse",
+                        "permanent",
+                        "long_term",
+                        "cultural",
+                        "trainee"
+                      ]
+                    }
+                  },
+                  {
+                    "fact": "work_limit",
+                    "eq": "status_only"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       "statement": {
-        "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
-        "ja_easy": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
-        "en": "A work status of residence"
+        "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}（{在留|ざいりゅう}カードに「{在留|ざいりゅう}{資格|しかく}に{基|もと}づく{就労|しゅうろう}{活動|かつどう}のみ{可|か}」）",
+        "ja_easy": "{仕事|しごと}の{在留資格|ざいりゅうしかく}",
+        "en": "A work status of residence (card says only work of your status)"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-not-pt-only",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "all": [
+            {
+              "fact": "nationality",
+              "eq": "foreign"
+            },
+            {
+              "any": [
+                {
+                  "fact": "zairyu_status",
+                  "in": [
+                    "student",
+                    "family"
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "not": {
+                        "fact": "zairyu_status",
+                        "in": [
+                          "student",
+                          "family",
+                          "work",
+                          "spouse",
+                          "permanent",
+                          "long_term",
+                          "cultural",
+                          "trainee"
+                        ]
+                      }
+                    },
+                    {
+                      "fact": "work_limit",
+                      "eq": "not_allowed"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "statement": {
+        "ja": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」「{就労|しゅうろう}{不可|ふか}」ではない",
+        "ja_easy": "アルバイトだけの{人|ひと}ではない",
+        "en": "Not limited to part-time work with a permit"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-designation",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "all": [
+              {
+                "not": {
+                  "fact": "zairyu_status",
+                  "in": [
+                    "student",
+                    "family",
+                    "work",
+                    "spouse",
+                    "permanent",
+                    "long_term",
+                    "cultural",
+                    "trainee"
+                  ]
+                }
+              },
+              {
+                "fact": "work_limit",
+                "eq": "designation"
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}カードに「{指定|してい}{書|しょ}により{指定|してい}された{就労|しゅうろう}{活動|かつどう}のみ{可|か}」",
+        "ja_easy": "カードに「{指定書|していしょ}により{指定|してい}された{就労活動|しゅうろうかつどう}のみ{可|か}」",
+        "en": "Your card says only work in your designation"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-can-work",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "all": [
+            {
+              "fact": "nationality",
+              "eq": "foreign"
+            },
+            {
+              "fact": "zairyu_status",
+              "in": [
+                "cultural",
+                "trainee"
+              ]
+            }
+          ]
+        }
+      },
+      "statement": {
+        "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」ではない",
+        "ja_easy": "{働|はたら}ける{人|ひと}",
+        "en": "Not Cultural Activities or Trainee"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-no-work",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "cultural",
+              "trainee"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{文化|ぶんか}{活動|かつどう}」か「{研修|けんしゅう}」",
+        "ja_easy": "{在留資格|ざいりゅうしかく}が「{文化活動|ぶんかかつどう}」か「{研修|けんしゅう}」",
+        "en": "Your status is Cultural Activities or Trainee"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -892,7 +1118,11 @@
               "family",
               "work",
               "spouse",
-              "long_term"
+              "long_term",
+              "designated",
+              "cultural",
+              "trainee",
+              "other"
             ]
           }
         ]

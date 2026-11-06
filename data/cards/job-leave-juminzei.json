@@ -10,7 +10,13 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-leave",
+  "eligibility": {
+    "all": [
+      "R-job-goal-leave",
+      "R-job-not-pt-only",
+      "R-job-can-work"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{住民|じゅうみん}{税|ぜい}は{自分|じぶん}で{払|はら}う",

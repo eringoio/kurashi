@@ -170,9 +170,9 @@
         "en": "Batteries (keep separate)"
       },
       "how": {
-        "ja": "端子にセロハンテープなどを貼って絶縁し、電池類として出します。ほかのごみ袋に混ぜません。",
-        "ja_easy": "{電池|でんち}の{端|はし}にテープを{貼|は}ります。ほかのごみに{混|ま}ぜません。",
-        "en": "Cover the terminals with tape. Put out as batteries, not mixed with other garbage."
+        "ja": "端子にセロハンテープなどを貼って絶縁し、電池類として出します。無色透明の袋に入れて、プラスチック資源の袋とは別にして出します。ほかのごみ袋に混ぜません。",
+        "ja_easy": "{電池|でんち}の{端|はし}にテープを{貼|は}ります。{無色|むしょく}{透明|とうめい}の{袋|ふくろ}に{入|い}れて、プラスチック{資源|しげん}とは{別|べつ}に{出|だ}します。ほかのごみに{混|ま}ぜません。",
+        "en": "Cover the terminals with tape. Put out as batteries in a clear, colorless bag, separate from the plastic resource bag, not mixed with other garbage."
       },
       "links": [
         {

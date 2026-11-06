@@ -20,7 +20,7 @@
   "coverage_rule_ids": [],
   "title": {
     "ja": "{居住者|きょじゅうしゃ}への{変更|へんこう}（{来日|らいにち}6か{月|げつ}）",
-    "ja_easy": "6か{月|げつ}たったら{銀行|ぎんこう}に{知|し}らせる",
+    "ja_easy": "6か{月|げつ}たったら{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}える",
     "en": "Change to \"resident\" at your bank (6 months after arrival)"
   },
   "official_name": {
@@ -28,29 +28,29 @@
     "reading": "きょじゅうしゃ・ひきょじゅうしゃのくぶんのへんこう"
   },
   "summary": {
-    "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}で{勤|つと}めている（アルバイト・パートを{除|のぞ}く）か、{入国|にゅうこく}から6か{月|げつ}たつまで、{法令|ほうれい}では「{非|ひ}{居住者|きょじゅうしゃ}」です。{非|ひ}{居住者|きょじゅうしゃ}は、{一部|いちぶ}の{取引|とりひき}ができないことがあります。6か{月|げつ}たったら、{銀行|ぎんこう}に{届|とど}けて「{居住者|きょじゅうしゃ}」に{変|か}えます（{方法|ほうほう}は{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{日本|にほん}に{来|き}て6か{月|げつ}たつまでは、{銀行|ぎんこう}では「{非|ひ}{居住者|きょじゅうしゃ}」です。6か{月|げつ}たったら{銀行|ぎんこう}に{知|し}らせます（{要|よう}{確認|かくにん}）。",
-    "en": "If you are not a Japanese national, you are legally a \"non-resident\" until 6 months after entry, unless you work in Japan (part-time jobs excluded). Non-residents may not be able to use some services. After 6 months, tell your bank to change you to \"resident\" (the method differs by bank; to be checked)."
+    "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{入国|にゅうこく}から6か{月|げつ}たつまで、{法令|ほうれい}では「{非|ひ}{居住|きょじゅう}{者|しゃ}」です。{銀行|ぎんこう}に{届|とど}けるのは{義務|ぎむ}ではありませんが、した{方|ほう}がよいです。{非|ひ}{居住|きょじゅう}{者|しゃ}のままだと、{送金|そうきん}・{家賃|やちん}・{給料|きゅうりょう}のときに{高|たか}い{手数料|てすうりょう}がかかることがあります。",
+    "ja_easy": "{日本|にほん}に{来|き}て6か{月|げつ}たつまでは、{銀行|ぎんこう}では「{非|ひ}{居住者|きょじゅうしゃ}」です。{銀行|ぎんこう}に{知|し}らせるのは{義務|ぎむ}ではありません。でも、{知|し}らせたほうがいいです。そのままだと、{送金|そうきん}や{家賃|やちん}、{給料|きゅうりょう}のときに{手数料|てすうりょう}が{高|たか}くなることがあります。",
+    "en": "If you are not a Japanese national, you are legally a \"non-resident\" until 6 months after entry. Telling your bank is not required, but it is better to do it. If you stay a non-resident, you may pay high fees for money transfers, rent and salary."
   },
   "lead": {
-    "ja": "{入国|にゅうこく}から6か{月|げつ}たったら、{銀行|ぎんこう}に{届|とど}けて「{居住|きょじゅう}{者|しゃ}」に{変|か}えます。",
-    "ja_easy": "日本に来て6か月たったら、銀行に知らせます。",
-    "en": "Six months after you arrive, tell your bank to change you to a \"resident\"."
+    "ja": "{入国|にゅうこく}から6か{月|げつ}たったら、{銀行|ぎんこう}の{窓口|まどぐち}で「{居住|きょじゅう}{者|しゃ}」に{変|か}えましょう。",
+    "ja_easy": "日本に来て6か月たったら、銀行の窓口で「居住者」に変えます。",
+    "en": "Six months after you arrive, change to \"resident\" at your bank's counter."
   },
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{口座|こうざ}のある{銀行|ぎんこう}（{窓口|まどぐち}・アプリ・{電話|でんわ}。{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
-      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}（{要|よう}{確認|かくにん}）",
-      "en": "Your bank (counter, app or phone; differs by bank; to be checked)"
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます）",
+      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます）",
+      "en": "Your bank's counter (bring your residence card and passbook)"
     },
     "evidence": {
       "source_ids": [
-        "B-mufg-jusho",
-        "B-yucho-henko"
+        "author-2026-11-07"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check"
+      "checked_at": "2026-11-07",
+      "status": "verified",
+      "verified_by": "author 2026-11-07（author-2026-11-07）"
     }
   },
   "place": "bank",
@@ -63,10 +63,61 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "B-mufg-kouza-shorui"
+      "B-mufg-kouza-shorui",
+      "author-2026-11-07"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check",
     "quote": "日本国籍をお持ちでないお客さまは、法令により、日本国内に勤務（アルバイト・パートを除く）もしくは入国後6ヶ月以上経過の場合を除き、非居住者となります。"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{居住|きょじゅう}{者|しゃ}になったら、{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}えます。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます。",
+        "ja_easy": "{居住者|きょじゅうしゃ}になったら、{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}えます。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます。",
+        "en": "When you become a resident, change it at your bank's counter. Bring your residence card and passbook."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-07"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "6か{月|げつ}の{前|まえ}でも、{家賃|やちん}を{払|はら}うときや{給料|きゅうりょう}を{受|う}け{取|と}るときは、{手数料|てすうりょう}がかからないように{銀行|ぎんこう}の{窓口|まどぐち}で{確|たし}かめます。",
+        "ja_easy": "6か{月|げつ}{前|まえ}でも、{家賃|やちん}を{払|はら}うときや{給料|きゅうりょう}をもらうときは、{手数料|てすうりょう}がかからないか{銀行|ぎんこう}の{窓口|まどぐち}で{聞|き}きます。",
+        "en": "Even before 6 months, when you pay rent or receive salary, ask at the bank counter how to avoid fees."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-07"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{変|か}えないと、{口座|こうざ}は{非|ひ}{居住|きょじゅう}{者|しゃ}のままです。{送金|そうきん}を{受|う}けるとき・{送|おく}るときの{手数料|てすうりょう}が{高|たか}く、{手続|てつづ}きも{簡単|かんたん}ではありません。{電気|でんき}・{家賃|やちん}の{支払|しはら}いや{給料|きゅうりょう}の{受|う}け{取|と}りにも、{高|たか}い{手数料|てすうりょう}がかかることがあります。",
+        "ja_easy": "{変|か}えないと、{口座|こうざ}は「{非|ひ}{居住者|きょじゅうしゃ}」のままです。{送金|そうきん}の{手数料|てすうりょう}が{高|たか}く、{手続|てつづ}きも{大変|たいへん}です。{電気|でんき}や{家賃|やちん}の{支払|しはら}い、{給料|きゅうりょう}をもらうときも、{手数料|てすうりょう}が{高|たか}くなることがあります。",
+        "en": "If you do not change it, the account stays non-resident. Fees for receiving and sending money are high, and the procedure is not simple. Paying electricity or rent and receiving salary may also cost high fees."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-07"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
+      }
+    }
+  ]
 }

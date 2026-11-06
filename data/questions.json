@@ -258,9 +258,9 @@
           "value": "work",
           "icon": "status-work",
           "label": {
-            "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
-            "ja_easy": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}（{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}など）",
-            "en": "A work status (e.g. Engineer/Specialist in Humanities/International Services)"
+            "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}、{特定|とくてい}{技能|ぎのう}、{技能|ぎのう}{実習|じっしゅう}などの{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
+            "ja_easy": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}（{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}、{特定技能|とくていぎのう}、{技能実習|ぎのうじっしゅう}など）",
+            "en": "A work status (Engineer/Specialist in Humanities/International Services, Specified Skilled Worker, Technical Intern Training, etc.)"
           }
         },
         {
@@ -291,11 +291,47 @@
           "icon": "status-longterm"
         },
         {
+          "value": "designated",
+          "label": {
+            "ja": "{特定|とくてい}{活動|かつどう}",
+            "ja_easy": "{特定活動|とくていかつどう}",
+            "en": "Designated Activities (特定活動)"
+          },
+          "icon": "status-other"
+        },
+        {
+          "value": "cultural",
+          "label": {
+            "ja": "{文化|ぶんか}{活動|かつどう}",
+            "ja_easy": "{文化活動|ぶんかかつどう}",
+            "en": "Cultural Activities (文化活動)"
+          },
+          "icon": "status-other"
+        },
+        {
+          "value": "trainee",
+          "label": {
+            "ja": "{研修|けんしゅう}",
+            "ja_easy": "{研修|けんしゅう}",
+            "en": "Trainee (研修)"
+          },
+          "icon": "status-other"
+        },
+        {
+          "value": "other",
+          "label": {
+            "ja": "そのほかの{在留|ざいりゅう}{資格|しかく}",
+            "ja_easy": "ほかの{在留資格|ざいりゅうしかく}",
+            "en": "Another status"
+          },
+          "icon": "status-other"
+        },
+        {
           "value": "unknown",
           "label": {
-            "ja": "そのほか・わからない",
-            "ja_easy": "そのほか・わかりません",
-            "en": "Other / not sure"
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
           },
           "icon": "status-other"
         }
@@ -959,6 +995,88 @@
       ]
     },
     {
+      "id": "Q-work-limit",
+      "fact": "work_limit",
+      "stage": "upfront",
+      "scope": "person",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "not": {
+              "fact": "zairyu_status",
+              "in": [
+                "student",
+                "family",
+                "work",
+                "spouse",
+                "permanent",
+                "long_term",
+                "cultural",
+                "trainee"
+              ]
+            }
+          }
+        ]
+      },
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの「{就労|しゅうろう}{制限|せいげん}の{有無|うむ}」の{欄|らん}には、{何|なん}と{書|か}いてありますか？",
+        "ja_easy": "{在留|ざいりゅう}カードの「{就労制限|しゅうろうせいげん}の{有無|うむ}」に{何|なに}が{書|か}いてありますか？",
+        "en": "What does the \"work restrictions\" (就労制限の有無) field on your residence card say?"
+      },
+      "why_asked": {
+        "ja": "{働|はたら}けるかどうかと、{働|はたら}ける{仕事|しごと}の{範囲|はんい}は、この{欄|らん}に{書|か}いてあるためです。カードの{表|おもて}にあります。",
+        "ja_easy": "{働|はたら}けるかどうかが、ここに{書|か}いてあるからです。カードの{表|おもて}を{見|み}てください。",
+        "en": "This field shows whether you can work and what work you can do. It is on the front of the card."
+      },
+      "options": [
+        {
+          "value": "not_allowed",
+          "label": {
+            "ja": "{就労|しゅうろう}{不可|ふか}",
+            "ja_easy": "{就労不可|しゅうろうふか}（{働|はたら}けない）",
+            "en": "就労不可 (no work permitted)"
+          }
+        },
+        {
+          "value": "status_only",
+          "label": {
+            "ja": "{在留|ざいりゅう}{資格|しかく}に{基|もと}づく{就労|しゅうろう}{活動|かつどう}のみ{可|か}",
+            "ja_easy": "{在留資格|ざいりゅうしかく}に{基|もと}づく{就労活動|しゅうろうかつどう}のみ{可|か}",
+            "en": "在留資格に基づく就労活動のみ可 (only work of your status)"
+          }
+        },
+        {
+          "value": "designation",
+          "label": {
+            "ja": "{指定|してい}{書|しょ}により{指定|してい}された{就労|しゅうろう}{活動|かつどう}のみ{可|か}",
+            "ja_easy": "{指定書|していしょ}により{指定|してい}された{就労活動|しゅうろうかつどう}のみ{可|か}",
+            "en": "指定書により指定された就労活動のみ可 (only work in your designation)"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ja": "{就労|しゅうろう}{制限|せいげん}なし",
+            "ja_easy": "{就労制限|しゅうろうせいげん}なし（{制限|せいげん}はない）",
+            "en": "就労制限なし (no restrictions)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          },
+          "small": true
+        }
+      ]
+    },
+    {
       "id": "Q-job-permit",
       "fact": "job_permit",
       "stage": "upfront",
@@ -970,10 +1088,37 @@
             "eq": "foreign"
           },
           {
-            "fact": "zairyu_status",
-            "in": [
-              "student",
-              "family"
+            "any": [
+              {
+                "fact": "zairyu_status",
+                "in": [
+                  "student",
+                  "family"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "not": {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family",
+                        "work",
+                        "spouse",
+                        "permanent",
+                        "long_term",
+                        "cultural",
+                        "trainee"
+                      ]
+                    }
+                  },
+                  {
+                    "fact": "work_limit",
+                    "eq": "not_allowed"
+                  }
+                ]
+              }
             ]
           }
         ]
@@ -1033,7 +1178,11 @@
               "family",
               "work",
               "spouse",
-              "long_term"
+              "long_term",
+              "designated",
+              "cultural",
+              "trainee",
+              "other"
             ]
           }
         ]

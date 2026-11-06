@@ -1,0 +1,79 @@
+{
+  "data_version": 1,
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {
+    "excluded": {
+      "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」の{人|ひと}{向|む}けの{案内|あんない}です。",
+      "ja_easy": "「{文化活動|ぶんかかつどう}」「{研修|けんしゅう}」の{人|ひと}のための{案内|あんない}です。",
+      "en": "This is for people with Cultural Activities or Trainee status."
+    }
+  },
+  "deadline": null,
+  "id": "job-no-work-note",
+  "illustration": "ask",
+  "place": "immigration",
+  "eligibility": "R-job-no-work",
+  "title": {
+    "ja": "{働|はたら}く{前|まえ}に{入管|にゅうかん}で{相談|そうだん}",
+    "ja_easy": "{働|はたら}く{前|まえ}に{入管|にゅうかん}で{聞|き}く",
+    "en": "Ask immigration before you work"
+  },
+  "official_name": {
+    "ja": "資格外活動許可",
+    "reading": "しかくがいかつどうきょか"
+  },
+  "summary": {
+    "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」は、{働|はたら}くことが{認|みと}められていない{在留|ざいりゅう}{資格|しかく}です。{働|はたら}きたいときは、{先|さき}に{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}で{相談|そうだん}してください。",
+    "ja_easy": "「{文化活動|ぶんかかつどう}」「{研修|けんしゅう}」の{人|ひと}は、そのままでは{働|はたら}けません。{働|はたら}きたいときは、{先|さき}に{入管|にゅうかん}で{聞|き}きます。",
+    "en": "Cultural Activities and Trainee are statuses that do not allow work. If you want to work, first ask the Nagoya Regional Immigration Services Bureau."
+  },
+  "lead": {
+    "ja": "{働|はたら}く{前|まえ}に、{入管|にゅうかん}で{相談|そうだん}します。",
+    "ja_easy": "{働|はたら}く{前|まえ}に、{入管|にゅうかん}で{聞|き}きます。",
+    "en": "Ask immigration before you work."
+  },
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}（{名古屋出入国在留管理局|なごやしゅつにゅうこくざいりゅうかんりきょく}）",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-status-list"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
+    }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}{一覧|いちらん}{表|ひょう}（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}）",
+        "ja_easy": "{在留資格|ざいりゅうしかく}の{一覧|いちらん}",
+        "en": "List of statuses of residence (Immigration Services Agency)"
+      },
+      "url": "https://www.moj.go.jp/isa/applications/status/qaq5.html",
+      "source_id": "isa-status-list"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "isa-status-list",
+      "isa-shikakugai-guide"
+    ],
+    "checked_at": "2026-11-07",
+    "status": "needs_check",
+    "quote": "三の表（非就労資格）"
+  }
+}

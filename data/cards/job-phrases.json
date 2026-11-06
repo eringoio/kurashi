@@ -10,7 +10,12 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-pt",
+  "eligibility": {
+    "all": [
+      "R-job-goal-pt",
+      "R-job-can-work"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{応募|おうぼ}でよく{使|つか}う{言葉|ことば}",
@@ -22,9 +27,9 @@
     "reading": "あるばいとのおうぼ"
   },
   "summary": {
-    "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}をお{願|ねが}いできますか。」{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。よく{聞|き}く{言葉|ことば}：シフト（{働|はたら}く{日|ひ}と{時間|じかん}の{表|ひょう}）・{時給|じきゅう}・{交通費|こうつうひ}・まかない（{店|みせ}の{食事|しょくじ}）・{研修|けんしゅう}。{履歴書|りれきしょ}の{写真|しゃしん}は3か{月|げつ}{以内|いない}のもの。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます（{作者|さくしゃ}の{経験|けいけん}。{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{電話|でんわ}で「アルバイトの{募集|ぼしゅう}を{見|み}ました。{面接|めんせつ}をお{願|ねが}いできますか」と{言|い}います。シフト・{時給|じきゅう}・{交通費|こうつうひ}・まかない、の{言葉|ことば}をよく{聞|き}きます（{要|よう}{確認|かくにん}）。",
-    "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. Could I have an interview?\" Students can say first: \"I have permission to work part-time, up to 28 hours a week.\" Common words: shift, hourly wage, transport allowance, makanai (staff meal), training. Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV (author's experience; to be checked)."
+    "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}を{受|う}けたいのですが、{担当|たんとう}の{方|かた}はいらっしゃいますか。」{留学生|りゅうがくせい}は「{留学生|りゅうがくせい}です。{資格|しかく}{外|がい}{活動|かつどう}の{許可|きょか}を{持|も}っています。{週|しゅう}28{時間|じかん}{以内|いない}で{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。よく{聞|き}く{言葉|ことば}：シフト（{働|はたら}く{日|ひ}と{時間|じかん}の{表|ひょう}）・{時給|じきゅう}・{交通費|こうつうひ}・まかない（{店|みせ}の{食事|しょくじ}）・{研修|けんしゅう}。{履歴書|りれきしょ}の{写真|しゃしん}は3か{月|げつ}{以内|いない}のもの。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{電話|でんわ}で「アルバイトの{募集|ぼしゅう}を{見|み}て、{電話|でんわ}しました。〔{名前|なまえ}〕です。{面接|めんせつ}を{受|う}けたいです」と{言|い}います。シフト・{時給|じきゅう}・{交通費|こうつうひ}・まかない、の{言葉|ことば}をよく{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. I would like to have an interview. Is the person in charge available?\" Students can say first: \"I am an international student. I have permission to work part-time, within 28 hours a week.\" Common words: shift, hourly wage, transport allowance, makanai (staff meal), training. Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV (to be checked)."
   },
   "lead": {
     "ja": "よく{聞|き}く{言葉|ことば}：シフト（{働|はたら}く{日|ひ}と{時間|じかん}の{表|ひょう}）・{時給|じきゅう}・{交通費|こうつうひ}・まかない（{店|みせ}の{食事|しょくじ}）・{研修|けんしゅう}。",
@@ -61,9 +66,9 @@
     {
       "type": "phone",
       "text": {
-        "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}をお{願|ねが}いできますか。」",
-        "ja_easy": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}ました。{面接|めんせつ}をお{願|ねが}いできますか。」",
-        "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. Could I have an interview?\""
+        "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}を{受|う}けたいのですが、{担当|たんとう}の{方|かた}はいらっしゃいますか。」",
+        "ja_easy": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、{電話|でんわ}しました。〔{名前|なまえ}〕です。{面接|めんせつ}を{受|う}けたいです。」",
+        "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. I would like to have an interview. Is the person in charge available?\""
       },
       "evidence": {
         "source_ids": [
@@ -76,16 +81,18 @@
     {
       "type": "phone",
       "text": {
-        "ja": "{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。",
-        "ja_easy": "{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}います。",
-        "en": "Students can say first: \"I have permission to work part-time, up to 28 hours a week.\""
+        "ja": "{留学生|りゅうがくせい}は「{留学生|りゅうがくせい}です。{資格|しかく}{外|がい}{活動|かつどう}の{許可|きょか}を{持|も}っています。{週|しゅう}28{時間|じかん}{以内|いない}で{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。",
+        "ja_easy": "{留学生|りゅうがくせい}は「{留学生|りゅうがくせい}です。{資格|しかく}{外|がい}{活動|かつどう}の{許可|きょか}があります。{週|しゅう}28{時間|じかん}{以内|いない}で{働|はたら}けます」と{先|さき}に{言|い}います。",
+        "en": "Students can say first: \"I am an international student. I have permission to work part-time, within 28 hours a week.\""
       },
       "evidence": {
         "source_ids": [
+          "B-moj-shikakugai",
           "kurashi-spec"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
+        "status": "needs_check",
+        "quote": "原則１週に２８時間以内であること"
       }
     },
     {

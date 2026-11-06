@@ -92,17 +92,17 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{在留|ざいりゅう}カードを{見|み}せて、{申請書|しんせいしょ}を{出|だ}します。{旅券|りょけん}（または{在留|ざいりゅう}{資格|しかく}{証明|しょうめい}{書|しょ}）も{見|み}せます（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{在留|ざいりゅう}カードとパスポートを{持|も}って{行|い}きます（{要確認|ようかくにん}）。",
-        "en": "Show your residence card and submit the application form. Also show your passport (or certificate of status of residence) (to be checked)."
+        "ja": "{在留|ざいりゅう}カードを{見|み}せて、{申請|しんせい}{書|しょ}を{出|だ}します。{旅券|りょけん}（パスポート）も{持|も}って{行|い}きます。",
+        "ja_easy": "{在留|ざいりゅう}カードとパスポートを{持|も}って{行|い}きます。",
+        "en": "Show your residence card and submit the application form. Also bring your passport."
       },
       "evidence": {
         "source_ids": [
-          "B-moj-shikakugai-shinsei"
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "在留カードを提示"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07）"
       }
     },
     {

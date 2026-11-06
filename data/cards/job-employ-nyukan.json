@@ -27,21 +27,21 @@
     "reading": "しょぞく（けいやく）きかんにかんするとどけで"
   },
   "summary": {
-    "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{人|ひと}は、{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}したら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます。オンラインでもでき、{資料|しりょう}は{要|い}りません。{入社|にゅうしゃ}する{前|まえ}には{出|だ}せません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{新|あたら}しい{会社|かいしゃ}に{入|はい}ったら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
-    "en": "If your status is Engineer/Specialist in Humanities/International Services or similar, notify immigration within 14 days of signing with a new employer. It can be done online with no documents. It cannot be filed before you join (to be checked)."
+    "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{人|ひと}は、{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}に、{入管|にゅうかん}に{届|とど}けます。オンラインでもでき、{資料|しりょう}は{要|い}りません。{契約|けいやく}した{日|ひ}が{来|く}る{前|まえ}には{出|だ}せません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
+    "en": "If your status is Engineer/Specialist in Humanities/International Services or similar, notify immigration within 14 days of signing with a new employer. It can be done online with no documents. It cannot be filed before the contract date (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{新|あたら}しい{会社|かいしゃ}に{入|はい}った{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "en": "Within 14 days of joining (to be checked)"
+      "ja": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of signing with the new employer (to be checked)"
     },
     "evidence": {
       "source_ids": [
         "D-isa-shozoku-qa"
       ],
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-07",
       "status": "needs_check",
       "quote": "「会社を辞めた」、「新しい会社に入社した」等の届出事由の発生日から１４日以内に提出してください。"
     }
@@ -66,15 +66,15 @@
     {
       "type": "online",
       "text": {
-        "ja": "{実際|じっさい}に{転職|てんしょく}してから{出|だ}します。{出|だ}さないと{罰則|ばっそく}があります（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{入社|にゅうしゃ}してから{出|だ}します。",
-        "en": "File it after you actually change jobs. There are penalties for not filing (to be checked)."
+        "ja": "{契約|けいやく}を{結|むす}んだ{日|ひ}が{来|き}てから{出|だ}します。{出|だ}さないと{罰則|ばっそく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{契約|けいやく}した{日|ひ}が{来|き}てから{出|だ}します。",
+        "en": "File it once the contract date has come. There are penalties for not filing (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "D-isa-shozoku-qa"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "未来日を届出事由発生日とする届出はできません。実際に転職等の事実が発生してから届出をお願いします。"
       }

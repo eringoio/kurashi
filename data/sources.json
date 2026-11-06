@@ -1000,6 +1000,94 @@
       "owner_type": "government",
       "title": "県営住宅（愛知県。ページの題名は要確認）",
       "language": "ja"
+    },
+    {
+      "source_id": "author-2026-11-07",
+      "url": null,
+      "owner": "作者（kurashi）",
+      "owner_type": "private",
+      "title": "作者の知見（2026-11-07。docs/REVIEW_CHECK.md の作者の回答）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-2172",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=2172",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の加入の手続き（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-nenkin-1011839",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011824/1011836/1011839.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民年金の加入の届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "gomi-sodai-1046469",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1046468/1046469.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "粗大ごみの申し込み",
+      "language": "ja"
+    },
+    {
+      "source_id": "gomi-sodai-1046635",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1046468/1046635.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "粗大ごみ受付センター",
+      "language": "ja"
+    },
+    {
+      "source_id": "gomi-app-1012188",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1012187/1012188.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "ごみ分別アプリ「さんあ～る」",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-kousha-prefectural",
+      "url": "https://www.aichi-kousha.or.jp/prefectural/",
+      "owner": "愛知県住宅供給公社",
+      "owner_type": "public_corp",
+      "title": "県営住宅（愛知県住宅供給公社）",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-police-menkyo-nichiyo",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/shikenjou/nichiyoubi.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "日曜日における更新手続き等",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-status-list",
+      "url": "https://www.moj.go.jp/isa/applications/status/qaq5.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格一覧表",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-shikakugai-guide",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00045.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "資格外活動許可について",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-card-point",
+      "url": "https://www.moj.go.jp/isa/applications/faq/newimmiact_4_point.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "「在留カード」はどういうカード？（就労制限の有無）",
+      "language": "ja"
     }
   ]
 }

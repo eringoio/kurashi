@@ -22,9 +22,9 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "{留学|りゅうがく}の{人|ひと}{向|む}けの{案内|あんない}です。",
-      "ja_easy": "{留学|りゅうがく}の{人|ひと}のための{案内|あんない}です。",
-      "en": "This guide is for people with Student status."
+      "ja": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」などの{人|ひと}{向|む}けの{案内|あんない}です。",
+      "ja_easy": "「{留学|りゅうがく}」「{家族滞在|かぞくたいざい}」などの{人|ひと}のための{案内|あんない}です。",
+      "en": "This guide is for people with Student, Dependent or similar status."
     },
     "check_at_office": {
       "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
@@ -52,14 +52,14 @@
   "place": "immigration",
   "eligibility": {
     "all": [
-      "R-job-student",
+      "R-job-needs-permit",
       "R-job-goal-employ"
     ]
   },
   "title": {
-    "ja": "{卒業|そつぎょう}{後|ご}に{就職|しゅうしょく}するとき（{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}）",
-    "ja_easy": "{卒業|そつぎょう}して{働|はたら}くとき（{在留|ざいりゅう}{資格|しかく}を{変|か}える）",
-    "en": "Working after graduation (changing your status of residence)"
+    "ja": "{就職|しゅうしょく}するとき（{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}）",
+    "ja_easy": "{会社|かいしゃ}で{働|はたら}くとき（{在留|ざいりゅう}{資格|しかく}を{変|か}える）",
+    "en": "Getting a full-time job (changing your status of residence)"
   },
   "official_name": {
     "ja": "在留資格変更許可申請",
@@ -67,7 +67,7 @@
   },
   "summary": {
     "ja": "{留学|りゅうがく}から{就職|しゅうしょく}など、{別|べつ}の{在留|ざいりゅう}{資格|しかく}に{当|あ}たる{活動|かつどう}をするときは、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}ではなく「{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}」を{申請|しんせい}します。{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は1か{月|げつ}から2か{月|げつ}です。{必要|ひつよう}な{書類|しょるい}は{変|か}えたい{在留|ざいりゅう}{資格|しかく}ごとに{違|ちが}い、このアプリでは{確|たし}かめていません。{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{卒業|そつぎょう}して{会社|かいしゃ}で{働|はたら}くときは、{在留|ざいりゅう}{資格|しかく}を{変|か}える{申請|しんせい}をします。1か{月|げつ}から2か{月|げつ}かかります。{書類|しょるい}は{入管|にゅうかん}で{確認|かくにん}します（{要確認|ようかくにん}）。",
+    "ja_easy": "{会社|かいしゃ}で{働|はたら}くときは、{在留|ざいりゅう}{資格|しかく}を{変|か}える{申請|しんせい}をします。1か{月|げつ}から2か{月|げつ}かかります。{書類|しょるい}は{入管|にゅうかん}で{確認|かくにん}します（{要確認|ようかくにん}）。",
     "en": "When you start activity that falls under another status, such as working after studying, apply for a \"change of status of residence\" instead of an extension of the period of stay. The standard processing time is 1 to 2 months. Required documents differ by the status you want and have not been checked in this app. Check with immigration (to be checked)."
   },
   "where": {

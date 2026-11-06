@@ -33,17 +33,19 @@
   },
   "deadline": {
     "text": {
-      "ja": "{住|す}み{始|はじ}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）。{住|す}み{始|はじ}める{前|まえ}には{出|だ}せません。",
-      "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}の{次|つぎ}の{日|ひ}から{数|かぞ}えて、14{日|にち}いない（{要|よう}{確認|かくにん}）。{住|す}む{前|まえ}には{出|だ}せません。",
-      "en": "Within 14 days; the day after you start living there is day 1 (to be checked). You cannot file before you start living there."
+      "ja": "{住|す}み{始|はじ}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}。{住|す}み{始|はじ}める{前|まえ}には{出|だ}せません。",
+      "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}の{次|つぎ}の{日|ひ}から{数|かぞ}えて、14{日|にち}いない。{住|す}む{前|まえ}には{出|だ}せません。",
+      "en": "Within 14 days; the day after you start living there is day 1. You cannot file before you start living there."
     },
     "evidence": {
       "source_ids": [
         "B-nagoya-faq-39",
         "nagoya-lifescene-tennyu"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check"
+      "checked_at": "2026-11-07",
+      "status": "verified",
+      "quote": "転入した日から14日以内（住み始めた日の翌日を１日目とします。）",
+      "verified_by": "author 2026-11-07（FAQ id=39 の本文を確認）"
     }
   },
   "where": {
@@ -114,17 +116,18 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をしていない{人|ひと}）。カードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}や{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、その{証|あかし}も{持|も}って{行|い}きます。",
-        "ja_easy": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}の{証|あかし}を{持|も}っている{人|ひと}は、それも{持|も}って{行|い}きます。",
-        "en": "Bring: the move-out certificate (unless you filed the move-out with a My Number Card; then show the card). If you are on National Health Insurance or long-term care insurance, bring that card too."
+        "ja": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をしていない{人|ひと}）。カードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}や{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}{資格|しかく}{確認|かくにん}{書|しょ}・{介護|かいご}{保険|ほけん}{被|ひ}{保険|ほけん}{者|しゃ}{証|しょう}も{持|も}って{行|い}きます。",
+        "ja_easy": "{持|も}ち{物|もの}：{転出|てんしゅつ}{証明|しょうめい}{書|しょ}。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。{国民|こくみん}{健康|けんこう}{保険|ほけん}や{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、その{資格|しかく}{確認|かくにん}{書|しょ}（{保険|ほけん}の{証|あかし}）も{持|も}って{行|い}きます。",
+        "en": "Bring: the move-out certificate (unless you filed the move-out with a My Number Card; then show the card). If you are on National Health Insurance or long-term care insurance, bring the eligibility certificate (shikaku kakuninsho) or insured person's card too."
       },
       "evidence": {
         "source_ids": [
           "B-nagoya-faq-39",
           "nagoya-juumin-todoke"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ)"
       }
     },
     {
