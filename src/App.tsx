@@ -14,6 +14,7 @@ import { line, ui } from './i18n/text';
 import { GlobeIcon, HelpIcon, ShareIcon } from './ui/icons';
 import { HelpSheet } from './ui/HelpSheet';
 import { ShareSheet } from './ui/ShareSheet';
+import { ReportButton } from './ui/ReportSheet';
 import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
@@ -143,6 +144,8 @@ export function App() {
           {g.mode === 'verified' && <div className="k-notice" role="note"><Bi k="review.banner" /></div>}
           <Consent onLive={onLive} />
           <Route path={path} onLive={onLive} />
+          {/* 報告ボタン（A-9）：手続き・できごとのページの下 */}
+          {/^\/(c|e)\//.test(path) && <ReportButton key={path} path={path} />}
         </main>
         {side && <SidePanel current={path} />}
       </div>

@@ -1,6 +1,6 @@
 # kurashi の公開（Cloudflare Workers。SPEC 16章・13.3）。作者の手順は README.md の「公開」。
 # 静的なファイル（npm run build の dist/）と、/api/*（worker/index.ts）を1つの Worker で配る。
-# 保存の仕組み（D1・KV・R2）は使わない。ログ・監視は切る（13.3）。
+# 保存の仕組みは、報告ボタン（A-9）の KV「REPORTS」だけ（報告の文・場所・表示レベル・日時だけ。名前・連絡先・IP は入れない）。ログ・監視は切る（13.3）。
 name = "kurashi"
 main = "worker/index.ts"
 compatibility_date = "2026-11-01"
@@ -24,3 +24,9 @@ enabled = false
 
 # 公開の URL（作者が Cloudflare で eringo.io を持っているとき）。待ち：作者の確認のあとで外す
 # routes = [{ pattern = "kurashi.eringo.io", custom_domain = true }]
+
+# 報告ボタン（A-9。作者の指示 2026-11-06）。待ち：作者が KV を作る（npx wrangler kv namespace create REPORTS）→ 出た id を下に書いて # を外す。
+# 一覧を見るトークンは npx wrangler secret put REPORTS_TOKEN（ここには書かない）。KV が無いあいだは、Worker のメモリの中だけ（消える）。
+# [[kv_namespaces]]
+# binding = "REPORTS"
+# id = "<作者が作った KV の id>"

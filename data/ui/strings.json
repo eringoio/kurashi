@@ -2714,5 +2714,80 @@
     "ja": "もう{months}か{月|げつ}たっています。{早|はや}めに{手続|てつづ}きをしてください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "もう{months}か{月|げつ}たちました。{早|はや}めに{手続|てつづ}きをしてください。",
     "en": "{months} months have already passed. Please do it soon (to be checked)."
+  },
+  "report.open": {
+    "ja": "{案内|あんない}とちがうところを{知|し}らせる",
+    "ja_easy": "{案内|あんない}とちがうところを{知|し}らせる",
+    "en": "Tell us if something here is different"
+  },
+  "report.title": {
+    "ja": "{案内|あんない}とちがうところ",
+    "ja_easy": "{案内|あんない}とちがうところ",
+    "en": "Something is different"
+  },
+  "report.note": {
+    "ja": "{窓口|まどぐち}で{言|い}われたことと{違|ちが}った{所|ところ}などを{書|か}いてください。{名前|なまえ}・{連絡先|れんらくさき}は{書|か}かないでください。{送|おく}るのは、この{画面|がめん}の{場所|ばしょ}・{書|か}いた{文|ぶん}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}だけです。{返事|へんじ}はしません。",
+    "ja_easy": "{違|ちが}ったことを{書|か}いてください。{名前|なまえ}や{電話|でんわ}{番号|ばんごう}は{書|か}かないでください。{返事|へんじ}はしません。",
+    "en": "Write what was different (for example, what the counter told you). Do not write your name or contact details. We send only this page, your text, the display language and the time. We will not reply."
+  },
+  "report.label": {
+    "ja": "{違|ちが}ったところ",
+    "ja_easy": "{違|ちが}ったところ",
+    "en": "What was different"
+  },
+  "report.send": {
+    "ja": "{送|おく}る",
+    "ja_easy": "{送|おく}る",
+    "en": "Send"
+  },
+  "report.sending": {
+    "ja": "{送|おく}っています",
+    "ja_easy": "{送|おく}っています",
+    "en": "Sending"
+  },
+  "report.thanks": {
+    "ja": "ありがとうございます。{作者|さくしゃ}が{確|たし}かめて、{案内|あんない}を{直|なお}します。",
+    "ja_easy": "ありがとうございます。",
+    "en": "Thank you. The author will check it and fix the guide."
+  },
+  "report.error": {
+    "ja": "{送|おく}れませんでした。{時間|じかん}をおいて、もう{一度|いちど}{送|おく}ってください。",
+    "ja_easy": "{送|おく}れませんでした。あとでもう{一度|いちど}{送|おく}ってください。",
+    "en": "Could not send. Please try again later."
+  },
+  "report.busy": {
+    "ja": "{続|つづ}けて{送|おく}られています。1{分|ぷん}たってから{送|おく}ってください。",
+    "ja_easy": "1{分|ぷん}たってから{送|おく}ってください。",
+    "en": "Too many reports in a row. Please wait a minute."
+  },
+  "review.reports": {
+    "ja": "{報告|ほうこく}",
+    "ja_easy": "{報告|ほうこく}",
+    "en": "Reports"
+  },
+  "review.reportsNote": {
+    "ja": "{利用|りよう}{者|しゃ}からの「{案内|あんない}とちがうところ」。トークンは{保存|ほぞん}しません。",
+    "ja_easy": "{使|つか}う{人|ひと}からの{知|し}らせ",
+    "en": "Reports from users. The token is not saved."
+  },
+  "review.reportsToken": {
+    "ja": "トークン",
+    "ja_easy": "トークン",
+    "en": "Token"
+  },
+  "review.reportsLoad": {
+    "ja": "{読|よ}む",
+    "ja_easy": "{読|よ}む",
+    "en": "Load"
+  },
+  "review.reportsError": {
+    "ja": "{読|よ}めませんでした",
+    "ja_easy": "{読|よ}めませんでした",
+    "en": "Could not load"
+  },
+  "review.reportsNone": {
+    "ja": "まだありません",
+    "ja_easy": "まだありません",
+    "en": "None yet"
   }
 }

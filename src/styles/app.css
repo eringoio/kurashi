@@ -436,3 +436,8 @@ fieldset legend svg { vertical-align: -0.2em; }
   .pill__text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
   .bar__btns .pill--icon { padding-inline: 10px; min-width: var(--target-min); justify-content: center; }
 }
+/* 報告（A-9） */
+.report__open { margin-top: 12px; }
+.report__text { min-height: 7em; resize: vertical; }
+.report__item { border-bottom: 1.5px dashed var(--line-dash); padding: 6px 0; }
+.report__item p { margin: 4px 0 0; white-space: pre-wrap; }
