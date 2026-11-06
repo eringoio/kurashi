@@ -13,6 +13,7 @@
   "eligibility": {
     "all": [
       "R-bank-has-account",
+      "R-foreign-national",
       "R-bank-arrival-6m"
     ]
   },

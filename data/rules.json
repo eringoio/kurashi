@@ -650,6 +650,26 @@
         "checked_at": "2026-11-06",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-foreign-national",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "nationality",
+        "eq": "foreign"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{以外|いがい}の{国籍|こくせき}です。",
+        "ja_easy": "{日本|にほん}ではない{国籍|こくせき}です。",
+        "en": "You have a nationality other than Japanese."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified"
+      }
     }
   ]
 }

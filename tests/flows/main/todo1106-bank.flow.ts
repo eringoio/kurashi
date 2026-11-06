@@ -16,7 +16,10 @@ flow({
   await snap({ name: '口座があるか', input: '銀行の口座', expected: '「日本の銀行に、自分の口座はありますか？」（一度だけ聞いて残す）', why: 'C：ある人とない人で出す手続きが違う' },
     async () => { await expect(h1).toHaveText('日本の銀行に、自分の口座はありますか？'); });
   await tap(/^ある$/);
-  await snap({ name: '来日の時期', input: 'ある', expected: '「日本に住み始めて、どのくらいですか？」', why: '来日6か月の前後の人だけに「居住者への変更」を出す' },
+  await snap({ name: '国籍', input: 'ある', expected: '「国籍は？」と、絵付きの2つ（日本国籍・日本以外の国籍）。一度だけ聞く', why: 'B-4（11/7）：日本国籍の人には「居住者への変更」を出さない' },
+    async () => { await expect(page.locator('h1')).toHaveText('国籍は？'); });
+  await tap(/^日本以外の国籍/);
+  await snap({ name: '来日の時期', input: '日本以外の国籍', expected: '「日本に住み始めて、どのくらいですか？」', why: '来日6か月の前後の人だけに「居住者への変更」を出す' },
     async () => { await expect(h1).toHaveText('日本に住み始めて、どのくらいですか？'); });
   await tap(/^6か月ぐらい/);
   await page.getByRole('link', { name: '全体' }).first().click();

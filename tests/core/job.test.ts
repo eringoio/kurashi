@@ -8,13 +8,15 @@ import { collectEvidence } from '../../src/core/quotes';
 import { AI_CHECK_COUNTS } from '../../src/core/trust';
 import json from '../../drafts/data/E-job.bundle.json';
 
+/** B-4：国籍 → 在留資格の2段。'japanese' は国籍だけ答える */
+const statusAnswers = (s?: string): Record<string, string> => (!s ? {} : s === 'japanese' ? { 'Q-nationality': 'japanese' } : { 'Q-nationality': 'foreign', 'Q-zairyu-status': s });
 const data = loadData(withBundles(baseRaw(), [json as Bundle]));
 const ev = data.events.find((e) => e.id === 'E-job')!;
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 // D-1（11/6）：最初に「何をしますか」（アルバイト・就職・退職）。今までの期待は「アルバイト」の答えで確かめる
 const go = (status: string | undefined, extra: Record<string, string> = {}, over: Partial<EngineInput> = {}) =>
-  run(data, { answers: { 'Q-job-goal': 'part_time', ...(status ? { 'Q-zairyu-status': status } : {}), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
+  run(data, { answers: { 'Q-job-goal': 'part_time', ...statusAnswers(status), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
 const PT = new Set(['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble', 'zairyu-shikakugai', 'job-phrases']);
 const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state && PT.has(c.card.id)).map((c) => c.card.id).sort();
@@ -39,8 +41,8 @@ describe('アルバイトを始める（下書き）', () => {
     for (const x of items.filter((y) => ['deadline', 'fee', 'rule', 'relation', 'prerequisite', 'card_text'].includes(y.kind))) expect(x.e.status).not.toBe('ai_checked');
   });
   it('最初に、在留資格を聞く', () => {
-    expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-zairyu-status']);
-    expect(run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront.map((q) => q.id)).toEqual(['Q-zairyu-status', 'Q-job-goal']);
+    expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-nationality']);
+    expect(run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront.map((q) => q.id)).toEqual(['Q-nationality', 'Q-job-goal']);
   });
   it('留学：資格外活動許可は shown。ほかのカードも出る。許可をもう受けたかを聞く', () => {
     const o = go('student');
@@ -123,7 +125,7 @@ describe('アルバイトを始める（下書き）', () => {
 
 // D-1（作者 11/6。docs/JOB_PLAN.md）：就職・退職。入管の届けは仕事の在留資格の人だけ
 describe('就職・退職（下書き）', () => {
-  const g = (goal: string, status: string) => run(data, { answers: { 'Q-job-goal': goal, 'Q-zairyu-status': status }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
+  const g = (goal: string, status: string) => run(data, { answers: { 'Q-job-goal': goal, ...statusAnswers(status) }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
   const st = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!.state;
   it('就職：保険・国保をやめる・住民税。入管の届けは仕事の在留資格だけ。アルバイトのカードは対象外', () => {
     const w = g('employ', 'work');

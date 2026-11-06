@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto';
 import { IDBFactory } from 'fake-indexeddb';
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Vault, type VaultEnv } from '../../src/storage/vault';
+import { migrateProfile, Vault, type VaultEnv } from '../../src/storage/vault';
 
 let env: VaultEnv;
 let asked = 0;
@@ -89,5 +89,24 @@ describe('保存（SPEC 9.9）', () => {
     expect(v.mode).toBe('unavailable');
     await v.put('profile', 'Q-origin', 'abroad');
     expect(v.get('profile', 'Q-origin')).toBe('abroad');
+  });
+});
+
+describe('古い保存の読み替え（B-4：国籍 → 在留資格）', () => {
+  it('日本国籍の答えは国籍へ。ほかの在留資格は国籍を foreign に', () => {
+    expect(migrateProfile(new Map([['Q-zairyu-status', 'japanese']]))).toEqual([['Q-nationality', 'japanese'], ['Q-zairyu-status', undefined]]);
+    expect(migrateProfile(new Map([['Q-zairyu-status', 'student']]))).toEqual([['Q-nationality', 'foreign']]);
+    expect(migrateProfile(new Map([['Q-zairyu-status', 'student'], ['Q-nationality', 'foreign']]))).toEqual([]);
+    expect(migrateProfile(new Map())).toEqual([]);
+  });
+  it('開いたときに読み替えて保存する', async () => {
+    const v = await reopen();
+    await v.put('profile', 'Q-zairyu-status', 'japanese');
+    await v.keep();
+    const w = await reopen();
+    expect(w.get('profile', 'Q-nationality')).toBe('japanese');
+    expect(w.get('profile', 'Q-zairyu-status')).toBeUndefined();
+    const x = await reopen();
+    expect(x.get('profile', 'Q-zairyu-status')).toBeUndefined();
   });
 });

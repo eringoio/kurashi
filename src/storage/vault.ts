@@ -179,12 +179,31 @@ export class Vault {
         cur = await cur.continue();
       }
     }
+    // B-4（2026-11-07）：在留資格の前に国籍を聞くようにした。古い保存の答えを読み替える
+    for (const [k, val] of migrateProfile(this.mem.get('profile')!)) {
+      if (val === undefined) { this.mem.get('profile')!.delete(k); await this.db!.delete('profile', k); }
+      else { this.mem.get('profile')!.set(k, val); await this.db!.put('profile', val, k); }
+    }
   }
   private async clearDb() {
     const tx = this.db!.transaction([...STORES], 'readwrite');
     await Promise.all(STORES.map((s) => tx.objectStore(s).clear()));
     await tx.done;
   }
+}
+
+/** 古い保存の答えの読み替え（B-4）。Q-zairyu-status = japanese → Q-nationality = japanese（在留資格の答えは消す）。
+    ほかの在留資格の答えがあり、国籍が無いときは Q-nationality = foreign。返すのは変える分だけ（undefined は消す） */
+export function migrateProfile(profile: Map<string, unknown>): [string, unknown][] {
+  const out: [string, unknown][] = [];
+  const z = profile.get('Q-zairyu-status');
+  if (z === undefined || profile.has('Q-nationality')) {
+    if (z === 'japanese') out.push(['Q-zairyu-status', undefined]);
+    return out;
+  }
+  if (z === 'japanese') out.push(['Q-nationality', 'japanese'], ['Q-zairyu-status', undefined]);
+  else out.push(['Q-nationality', 'foreign']);
+  return out;
 }
 
 function defaultEnv(): VaultEnv {

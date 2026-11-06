@@ -52,3 +52,12 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `gomi-hakka.svg` | Garbage | 発火性危険物 | Fire-risk items (spray cans, batteries) | ごみの画面の区分 |
 | `gomi-kaden.svg` | Garbage | 家電4品目 | Four home appliances | ごみの画面の区分 |
 | `gomi-not.svg` | Garbage | 市が集めない物 | Items the city does not collect | ごみの画面の区分 |
+| `status-japan.svg` · `status-japan-dim.svg` | Status | 日本国籍（戸籍の紙） | Japanese nationality (family register) | 在留資格の質問（B-4） |
+| `status-foreign.svg` · `status-foreign-dim.svg` | Status | 日本以外の国籍（在留カード＋地球） | Non-Japanese nationality | 在留資格の質問（B-4） |
+| `status-student.svg` · `status-student-dim.svg` | Status | 在留資格：留学 | Status: Student | 在留資格の質問（B-4） |
+| `status-family.svg` · `status-family-dim.svg` | Status | 在留資格：家族滞在 | Status: Dependent | 在留資格の質問（B-4） |
+| `status-work.svg` · `status-work-dim.svg` | Status | 在留資格：就労 | Status: Work | 在留資格の質問（B-4） |
+| `status-spouse.svg` · `status-spouse-dim.svg` | Status | 在留資格：配偶者等 | Status: Spouse etc. | 在留資格の質問（B-4） |
+| `status-permanent.svg` · `status-permanent-dim.svg` | Status | 在留資格：永住者・特別永住者 | Status: Permanent resident | 在留資格の質問（B-4） |
+| `status-longterm.svg` · `status-longterm-dim.svg` | Status | 在留資格：定住者 | Status: Long-term resident | 在留資格の質問（B-4） |
+| `status-other.svg` · `status-other-dim.svg` | Status | 在留資格：そのほか | Status: Other | 在留資格の質問（B-4） |

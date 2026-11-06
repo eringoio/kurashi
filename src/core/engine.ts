@@ -284,7 +284,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   // イベントが入口で聞くと決めた質問（events.json の questions）は、その順に先に聞く（判定の原因でなくても。例：もう警察に届けたか）。
   // カードの中の質問（in_card）でも、イベントが入口で聞くと決めたなら聞く（11/6：銀行の Q-bank-has。引っ越しの最初の質問には出さないため）
   const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && q.stage !== 'object_check' && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T');
-  const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))];
+  // 同じ fact を聞く質問は1つだけ（B-4：共通の Q-nationality と、できごとの国籍の質問が並ばないように。先に出た方を残す）
+  const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))].filter((q, i, all) => all.findIndex((y) => y.fact === q.fact) === i);
 
   const sameVisit = data.relations.filter((r): r is Extract<Relation, { type: 'same_visit' }> => r.type === 'same_visit' && relVerified(r));
   return { facts, scope, upfront, cards, sameVisit };

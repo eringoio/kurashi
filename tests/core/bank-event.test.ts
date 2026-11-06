@@ -16,7 +16,7 @@ describe('銀行の口座（公開）', () => {
   it('参照の検査を通る。入口のメニュー 7。最初に口座があるかを聞く', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.menu).toBe(7);
-    expect(go({}).upfront.map((q) => q.id)).toEqual(['Q-bank-has']);
+    expect(go({}).upfront.map((q) => q.id)).toEqual(['Q-bank-has', 'Q-nationality']);
   });
   it('ない：口座を作るだけ。あるときの手続きは対象外', () => {
     const o = go({ 'Q-bank-has': false });
@@ -28,13 +28,17 @@ describe('銀行の口座（公開）', () => {
     const o = go({ 'Q-bank-has': true });
     expect(st(o, 'bank-account-open')).toBe('excluded');
     for (const id of HAS) expect(st(o, id), id).not.toBe('excluded');
-    expect(o.upfront.map((q) => q.id)).toEqual(['Q-arrival']);
+    // B-4：口座がある → 国籍 → （日本以外なら）来日の時期
+    expect(o.upfront.map((q) => q.id)).toEqual(['Q-nationality']);
+    expect(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign' }).upfront.map((q) => q.id)).toEqual(['Q-arrival']);
+    expect(go({ 'Q-bank-has': true, 'Q-nationality': 'japanese' }).upfront).toEqual([]);
+    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'japanese' }), 'bank-resident-change')).toBe('excluded');
     expect(data.flow.card_order.indexOf('bank-account-open-another')).toBeGreaterThan(data.flow.card_order.indexOf('bank-card-reissue'));
   });
   it('居住者への変更：来日6か月の前後の人だけ。日本国籍・前から日本にいる人には出さない', () => {
-    expect(st(go({ 'Q-bank-has': true, 'Q-arrival': 'about6' }), 'bank-resident-change')).not.toBe('excluded');
-    expect(st(go({ 'Q-bank-has': true, 'Q-arrival': 'lt6' }), 'bank-resident-change')).not.toBe('excluded');
-    expect(st(go({ 'Q-bank-has': true, 'Q-arrival': 'long' }), 'bank-resident-change')).toBe('excluded');
+    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'about6' }), 'bank-resident-change')).not.toBe('excluded');
+    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'lt6' }), 'bank-resident-change')).not.toBe('excluded');
+    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'long' }), 'bank-resident-change')).toBe('excluded');
   });
   it('6か月後の日（月末はその月の最後の日）', () => {
     expect(addMonths('2026-05-10', 6)).toBe('2026-11-10');
