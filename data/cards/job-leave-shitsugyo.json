@@ -52,7 +52,7 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{離職|りしょく}{票|ひょう}は、{前|まえ}の{会社|かいしゃ}に{離職|りしょく}{証明|しょうめい}{書|しょ}を{頼|たの}んで、それをハローワークに{出|だ}してもらうものです。",
+        "ja": "{離職|りしょく}{票|ひょう}は{前|まえ}の{会社|かいしゃ}に{離職|りしょく}{証明|しょうめい}{書|しょ}を{頼|たの}んで、それをハローワークに{出|だ}してもらうものです。",
         "ja_easy": "{前|まえ}の{会社|かいしゃ}に{書類|しょるい}を{頼|たの}みます。",
         "en": "The separation notice is issued after you ask your former employer for a separation certificate and it is sent to Hello Work."
       },

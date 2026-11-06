@@ -94,7 +94,7 @@ test('区役所へ行く日が今日なら、区役所の QR に「窓口で見�
   await expect(h1(page)).toHaveText('区役所で行う手続き');
   await page.getByRole('link', { name: '窓口で見せる画面を開く' }).click();
   await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/);
-  await expect(h1(page)).toHaveText('この画面を、窓口の人に見せましょう');
+  await expect(h1(page)).toHaveText('この画面を窓口の人に見せましょう');
 });
 
 test('英語の表示でも、区役所の QR は検査に通る', async ({ page }) => {

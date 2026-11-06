@@ -48,8 +48,8 @@ flow({
 
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
   await page.getByRole('link', { name: 'いま', exact: true }).click();
-  await snap({ name: 'いまの1つ（健康保険）', input: '保存に同意（残す）→ いま', expected: '「健康保険は、どれに入っていますか？」', why: '国保は在留カード＋学生で入る必要がある可能性。確かめの質問を順に聞く' },
-    async () => { await expect(h1).toHaveText('健康保険は、どれに入っていますか？'); });
+  await snap({ name: 'いまの1つ（健康保険）', input: '保存に同意（残す）→ いま', expected: '「健康保険はどれに入っていますか？」', why: '国保は在留カード＋学生で入る必要がある可能性。確かめの質問を順に聞く' },
+    async () => { await expect(h1).toHaveText('健康保険はどれに入っていますか？'); });
 
   const answerThenNext = async (name: string | RegExp) => { await tap(name); await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと'); await tap('つぎへ'); };
   await tap('まだどれにも入っていない');

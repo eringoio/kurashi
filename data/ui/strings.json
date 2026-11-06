@@ -36,7 +36,7 @@
     "en": "Close"
   },
   "home.title": {
-    "ja": "{今日|きょう}は、{何|なに}をしますか？",
+    "ja": "{今日|きょう}は{何|なに}をしますか？",
     "ja_easy": "きょうは、{何|なに}をしますか？",
     "en": "What would you like to do today?"
   },
@@ -86,7 +86,7 @@
     "en": "End view only"
   },
   "consent.q": {
-    "ja": "このガイドを、この{端末|たんまつ}に{残|のこ}しますか？",
+    "ja": "このガイドをこの{端末|たんまつ}に{残|のこ}しますか？",
     "ja_easy": "このガイドを、このスマホに{残|のこ}しますか？",
     "en": "Keep this guide on this device?"
   },
@@ -116,7 +116,7 @@
     "en": "Keep nothing at all (we will ask again next time)"
   },
   "consent.detail": {
-    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけに{残|のこ}します。{外|そと}には{送|おく}りません。ブラウザによっては、{消|き}えることがあります。{学校|がっこう}や{家族|かぞく}と{同|おな}じ{端末|たんまつ}を{使|つか}うときは、「{残|のこ}さない」か「{見|み}るだけ」を{選|えら}んでください。",
+    "ja": "{答|こた}えはこの{端末|たんまつ}の{中|なか}だけに{残|のこ}します。{外|そと}には{送|おく}りません。ブラウザによっては、{消|き}えることがあります。{学校|がっこう}や{家族|かぞく}と{同|おな}じ{端末|たんまつ}を{使|つか}うときは、「{残|のこ}さない」か「{見|み}るだけ」を{選|えら}んでください。",
     "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけに{残|のこ}します。{外|そと}に{送|おく}りません。{消|き}えることがあります。ほかの{人|ひと}と{同|おな}じスマホを{使|つか}うときは、「{残|のこ}さない」を{選|えら}んでください。",
     "en": "Your answers stay only on this device. They are never sent. Some browsers may erase them. If you share this device with others, choose “Don't keep” or “View only”."
   },
@@ -131,7 +131,7 @@
     "en": "Not kept. It will be gone when you close the app. You can change this in Settings."
   },
   "storage.unavailable": {
-    "ja": "この{画面|がめん}では、この{端末|たんまつ}に{残|のこ}せません（プライベートブラウズなど）。{閉|と}じると{消|き}えます。",
+    "ja": "この{画面|がめん}ではこの{端末|たんまつ}に{残|のこ}せません（プライベートブラウズなど）。{閉|と}じると{消|き}えます。",
     "ja_easy": "ここでは{残|のこ}せません。{閉|と}じると{消|き}えます。",
     "en": "This browser window cannot keep data (for example, private browsing). It will be gone when you close it."
   },
@@ -351,7 +351,7 @@
     "en": "This app does not cover this yet"
   },
   "page.outOfScope.body": {
-    "ja": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "ja": "このアプリは{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
     "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{名古屋市|なごやし}の{公式|こうしき}サイトで{確|たし}かめてください。",
     "en": "This app guides people who live in Nagoya City through their procedures. For your case, please check the official website of the City of Nagoya."
   },
@@ -366,7 +366,7 @@
     "en": "Coming soon"
   },
   "page.comingSoon.body": {
-    "ja": "この{案内|あんない}は、まだ{作|つく}っていません。{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "ja": "この{案内|あんない}はまだ{作|つく}っていません。{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
     "ja_easy": "この{案内|あんない}は、まだ{作|つく}っていません。{名古屋市|なごやし}の{公式|こうしき}サイトで{確|たし}かめてください。",
     "en": "This guide is not ready yet. Please check the official website of the City of Nagoya."
   },
@@ -386,7 +386,7 @@
     "en": "Information is as of the date it was checked. Rules and deadlines can change."
   },
   "page.disclaimer.p3": {
-    "ja": "このアプリは、{手続|てつづ}きの{手順|てじゅん}と{窓口|まどぐち}を{案内|あんない}するものです。{法律|ほうりつ}の{助言|じょげん}ではなく、あなたの{場合|ばあい}にどうなるかの{判断|はんだん}はしません。{判断|はんだん}は、{手続|てつづ}きの{窓口|まどぐち}・{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}・{専門|せんもん}{家|か}が{行|おこな}います。",
+    "ja": "このアプリは{手続|てつづ}きの{手順|てじゅん}と{窓口|まどぐち}を{案内|あんない}するものです。{法律|ほうりつ}の{助言|じょげん}ではなく、あなたの{場合|ばあい}にどうなるかの{判断|はんだん}はしません。{判断|はんだん}は、{手続|てつづ}きの{窓口|まどぐち}・{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}・{専門|せんもん}{家|か}が{行|おこな}います。",
     "ja_easy": "このアプリは、{手続|てつづ}きの{順番|じゅんばん}と{行|い}く{所|ところ}を{案内|あんない}します。{法律|ほうりつ}の{相談|そうだん}ではありません。あなたの{場合|ばあい}にどうなるかは、{窓口|まどぐち}・{入管|にゅうかん}・{専門|せんもん}の{人|ひと}が{決|き}めます。",
     "en": "This app shows the steps and the offices for procedures. It is not legal advice and does not decide what happens in your case. The office in charge, the Nagoya Regional Immigration Services Bureau or a professional decides."
   },
@@ -406,7 +406,7 @@
     "en": "An app that helps people living in Nagoya notice procedures they did not know about, starting from events in their life: Kurashi."
   },
   "page.about.p2": {
-    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}は{押|お}したときだけ、{位置|いち}は「{使|つか}う」と{答|こた}えたときだけ{使|つか}い、どちらも{保存|ほぞん}も{送信|そうしん}もしません。",
+    "ja": "{答|こた}えはこの{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}は{押|お}したときだけ、{位置|いち}は「{使|つか}う」と{答|こた}えたときだけ{使|つか}い、どちらも{保存|ほぞん}も{送信|そうしん}もしません。",
     "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけです。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。{写真|しゃしん}と{場所|ばしょ}は{残|のこ}しません。{場所|ばしょ}は「{使|つか}う」と{答|こた}えたときだけ{使|つか}います。",
     "en": "Answers stay on this device. No account. We never ask your name, address or numbers. Photos are used only when you tap, and location only if you chose \"Use\"; neither is saved or sent."
   },
@@ -416,7 +416,7 @@
     "en": "We aim for WCAG 2.2 AA. Checked so far: keyboard, axe, 320px width, 200% zoom and grayscale (iPhone VoiceOver: in progress)."
   },
   "page.devNote": {
-    "ja": "この{画面|がめん}は、{実装|じっそう}の{途中|とちゅう}です。",
+    "ja": "この{画面|がめん}は{実装|じっそう}の{途中|とちゅう}です。",
     "ja_easy": "この{画面|がめん}は、まだ{作|つく}っています。",
     "en": "This screen is still being built."
   },
@@ -591,7 +591,7 @@
     "en": "Nothing to do until your planned day"
   },
   "now.idle.title": {
-    "ja": "いまは、することはありません",
+    "ja": "いまはすることはありません",
     "ja_easy": "いまは、することはありません",
     "en": "Nothing to do right now"
   },
@@ -831,7 +831,7 @@
     "en": "You said you are not sure, so please ask at the counter. It may apply to you (to be checked)."
   },
   "why.unverified": {
-    "ja": "あなたに{関係|かんけい}する{可能|かのう}{性|せい}があります。この{情報|じょうほう}は、まだ{公式|こうしき}の{原文|げんぶん}で{確|たし}かめていません。{窓口|まどぐち}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja": "あなたに{関係|かんけい}する{可能|かのう}{性|せい}があります。この{情報|じょうほう}はまだ{公式|こうしき}の{原文|げんぶん}で{確|たし}かめていません。{窓口|まどぐち}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "あなたに{関係|かんけい}するかもしれません。まだ{確|たし}かめていません。{窓口|まどぐち}で{聞|き}いてください。",
     "en": "This may apply to you. We have not yet checked this against the official source. Please ask at the counter (to be checked)."
   },
@@ -851,7 +851,7 @@
     "en": "Your answers do not match the conditions for this card. If you need it for another reason: to be checked."
   },
   "why.out": {
-    "ja": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{公式|こうしき}の{情報|じょうほう}で{確認|かくにん}してください。",
+    "ja": "このアプリは{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{公式|こうしき}の{情報|じょうほう}で{確認|かくにん}してください。",
     "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。{公式|こうしき}のページで{確|たし}かめてください。",
     "en": "This app guides people living in Nagoya. Please check the official information for your case."
   },
@@ -951,7 +951,7 @@
     "en": "You left something unfinished"
   },
   "resume.sub": {
-    "ja": "{前回|ぜんかい}は、{引|ひ}っ{越|こ}しのことを{答|こた}えている{途中|とちゅう}でした。",
+    "ja": "{前回|ぜんかい}は{引|ひ}っ{越|こ}しのことを{答|こた}えている{途中|とちゅう}でした。",
     "ja_easy": "{前|まえ}は、{引|ひ}っ{越|こ}しのことを{答|こた}えている{途中|とちゅう}でした。",
     "en": "Last time, you were answering about your move."
   },
@@ -1271,7 +1271,7 @@
     "en": "Nothing selected yet"
   },
   "pat.pick.merge": {
-    "ja": "{同|おな}じ{手続|てつづ}きは、1つにまとめて{案内|あんない}します。",
+    "ja": "{同|おな}じ{手続|てつづ}きは1つにまとめて{案内|あんない}します。",
     "ja_easy": "{同|おな}じ{手続|てつづ}きは、1つにまとめて{案内|あんない}します。",
     "en": "Steps that are the same will be shown once."
   },
@@ -1471,7 +1471,7 @@
     "en": "Choose everything that applies"
   },
   "ev.notFound": {
-    "ja": "この{出来事|できごと}は、まだありません",
+    "ja": "この{出来事|できごと}はまだありません",
     "ja_easy": "この{出来事|できごと}は、まだありません",
     "en": "This event is not available"
   },
@@ -1521,7 +1521,7 @@
     "en": "e.g. umbrella, battery"
   },
   "gomi.search.none": {
-    "ja": "この{品物|しなもの}は、まだこのアプリのデータにありません。{市|し}の{分別|ふんべつ}の{検索|けんさく}で{確|たし}かめてください。",
+    "ja": "この{品物|しなもの}はまだこのアプリのデータにありません。{市|し}の{分別|ふんべつ}の{検索|けんさく}で{確|たし}かめてください。",
     "ja_easy": "この{品物|しなもの}は、まだありません。{市|し}のページで{調|しら}べてください。",
     "en": "This item is not in our data yet. Please use the city's search."
   },
@@ -1596,7 +1596,7 @@
     "en": "You started a move, so we no longer use the area you chose before. Choose your new area."
   },
   "gomi.area.wardOnly": {
-    "ja": "{収集|しゅうしゅう}{日|び}は、{区|く}だけでは{決|き}まりません。{町名|ちょうめい}・{丁目|ちょうめ}で{違|ちが}います。",
+    "ja": "{収集|しゅうしゅう}{日|び}は{区|く}だけでは{決|き}まりません。{町名|ちょうめい}・{丁目|ちょうめ}で{違|ちが}います。",
     "ja_easy": "{区|く}だけでは、{日|ひ}は{決|き}まりません。",
     "en": "The ward alone does not decide the collection day. It differs by town."
   },
@@ -1721,7 +1721,7 @@
     "en": "I'm at {place}"
   },
   "visit.counter.title": {
-    "ja": "この{画面|がめん}を、{窓口|まどぐち}の{人|ひと}に{見|み}せましょう",
+    "ja": "この{画面|がめん}を{窓口|まどぐち}の{人|ひと}に{見|み}せましょう",
     "ja_easy": "この{画面|がめん}を、{窓口|まどぐち}の{人|ひと}に{見|み}せましょう",
     "en": "Show this screen to the staff"
   },
@@ -1906,7 +1906,7 @@
     "en": "From where you are now"
   },
   "here.privacy": {
-    "ja": "{位置|いち}は、この{端末|たんまつ}の{中|なか}で{区役所|くやくしょ}の{場所|ばしょ}と{比|くら}べるだけです。{送|おく}らず、{残|のこ}しません。",
+    "ja": "{位置|いち}はこの{端末|たんまつ}の{中|なか}で{区役所|くやくしょ}の{場所|ばしょ}と{比|くら}べるだけです。{送|おく}らず、{残|のこ}しません。",
     "ja_easy": "{位置|いち}は、どこにも{送|おく}りません。{残|のこ}しません。",
     "en": "Your location is only compared with ward office locations on this device. It is not sent or saved."
   },
@@ -2121,7 +2121,7 @@
     "en": "When you don't understand a letter"
   },
   "letter.intro": {
-    "ja": "{書類|しょるい}の{上|うえ}の{部分|ぶぶん}を{撮|と}ってください。{写真|しゃしん}は、{送|おく}る{前|まえ}に{毎回|まいかい}{聞|き}きます。{保存|ほぞん}しません。",
+    "ja": "{書類|しょるい}の{上|うえ}の{部分|ぶぶん}を{撮|と}ってください。{写真|しゃしん}は{送|おく}る{前|まえ}に{毎回|まいかい}{聞|き}きます。{保存|ほぞん}しません。",
     "ja_easy": "{書類|しょるい}の{上|うえ}のほうを{撮|と}ってください。{送|おく}る{前|まえ}に{聞|き}きます。{残|のこ}しません。",
     "en": "Take a photo of the top part of the letter. We ask every time before sending. Nothing is saved."
   },
@@ -2151,7 +2151,7 @@
     "en": "Sample (fictional letter)"
   },
   "letter.consent": {
-    "ja": "この{写真|しゃしん}を、{読|よ}むために Claude（AI）に{送|おく}ります。{保存|ほぞん}しません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
+    "ja": "この{写真|しゃしん}を{読|よ}むために Claude（AI）に{送|おく}ります。{保存|ほぞん}しません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
     "ja_easy": "この{写真|しゃしん}を AI に{送|おく}ります。{残|のこ}しません。{名前|なまえ}や{住所|じゅうしょ}は{隠|かく}してください。",
     "en": "This photo will be sent to Claude (AI) to read it. It is not saved. Take it so that names, addresses and numbers do not show, or cover them."
   },
@@ -2706,7 +2706,7 @@
     "en": "Something is different"
   },
   "report.note": {
-    "ja": "{窓口|まどぐち}で{言|い}われたことと{違|ちが}った{所|ところ}などを{書|か}いてください。{名前|なまえ}・{連絡先|れんらくさき}は{書|か}かないでください。{送|おく}るのは、この{画面|がめん}の{場所|ばしょ}・{書|か}いた{文|ぶん}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}だけです。{返事|へんじ}はしません。",
+    "ja": "{窓口|まどぐち}で{言|い}われたことと{違|ちが}った{所|ところ}などを{書|か}いてください。{名前|なまえ}・{連絡先|れんらくさき}は{書|か}かないでください。{送|おく}るのはこの{画面|がめん}の{場所|ばしょ}・{書|か}いた{文|ぶん}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}だけです。{返事|へんじ}はしません。",
     "ja_easy": "{違|ちが}ったことを{書|か}いてください。{名前|なまえ}や{電話|でんわ}{番号|ばんごう}は{書|か}かないでください。{返事|へんじ}はしません。",
     "en": "Write what was different (for example, what the counter told you). Do not write your name or contact details. We send only this page, your text, the display language and the time. We will not reply."
   },

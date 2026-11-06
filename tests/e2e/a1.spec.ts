@@ -52,7 +52,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
 
   // いまの1つ：確かめの質問を順に（国保・年金・口座・住み始めたか）。答えるたびに「この答えで変わったこと」→ つぎへ（試作 D）
   await page.getByRole('link', { name: 'いま', exact: true }).click();
-  await expect(h1(page)).toHaveText('健康保険は、どれに入っていますか？');
+  await expect(h1(page)).toHaveText('健康保険はどれに入っていますか？');
   await check(page, 'いまの1つ');
   const answerThenNext = async (name: string | RegExp) => {
     await tap(page, name);

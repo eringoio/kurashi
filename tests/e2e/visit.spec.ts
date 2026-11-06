@@ -87,7 +87,7 @@ test('付き添い：行く前 → 窓口で → 終わったら → 全部で�
   await tap(page, '区役所に着いた');
   await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/);
   cleanUrl(page, '窓口で');
-  await expect(h1(page)).toHaveText('この画面を、窓口の人に見せましょう');
+  await expect(h1(page)).toHaveText('この画面を窓口の人に見せましょう');
   await expect(page.locator('section.k-counter')).toHaveCount(3);
   await expect(page.locator('main')).toContainText('転入届（住居地の届出）の手続きをしたいです。');
   await check(page, '窓口で');
@@ -173,7 +173,7 @@ test('付き添い：窓口の段階で開き直すと、同じ段階から', as
   await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/);
   await page.goto('/');
   await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/);
-  await expect(h1(page)).toHaveText('この画面を、窓口の人に見せましょう');
+  await expect(h1(page)).toHaveText('この画面を窓口の人に見せましょう');
 });
 
 test('付き添い：English では、日本語の文（lang=ja）と英語の意味が並ぶ', async ({ page }) => {
