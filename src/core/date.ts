@@ -24,3 +24,12 @@ export function daySuggestions(today: Ymd): { key: 'today' | 'week' | 'off'; day
   if (!out.some((x) => x.day === off)) out.push({ key: 'off', day: off });
   return out;
 }
+
+/** n か月後（月末は、その月の最後の日にそろえる。例：1/31 の1か月後は 2/28） */
+export function addMonths(ymd: Ymd, n: number): Ymd {
+  const [y, m, d] = ymd.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1 + n, 1));
+  const last = new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth() + 1, 0)).getUTCDate();
+  t.setUTCDate(Math.min(d, last));
+  return t.toISOString().slice(0, 10);
+}

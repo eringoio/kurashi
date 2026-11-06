@@ -14,6 +14,18 @@
       }
     },
     {
+      "id": "bank",
+      "title": {
+        "ja": "{銀行|ぎんこう}の{口座|こうざ}の{手続|てつづ}き",
+        "ja_easy": "{銀行|ぎんこう}の{手続|てつづ}き",
+        "en": "Bank account procedures"
+      },
+      "shows": {
+        "type": "start",
+        "path": "/e/E-bank"
+      }
+    },
+    {
       "id": "move",
       "title": {
         "ja": "{引|ひ}っ{越|こ}し・{住|す}む{場所|ばしょ}のこと",

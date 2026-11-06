@@ -568,6 +568,88 @@
         "checked_at": "2026-11-04",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-bank-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "bank"
+      },
+      "statement": {
+        "ja": "{銀行|ぎんこう}の{口座|こうざ}の{案内|あんない}を{見|み}たい",
+        "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}の{案内|あんない}を{見|み}たい",
+        "en": "You want guidance on bank accounts"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-bank-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "{銀行|ぎんこう}は{民間|みんかん}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。",
+        "ja_easy": "{銀行|ぎんこう}は{民間|みんかん}の{会社|かいしゃ}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。",
+        "en": "Banks are private companies. Conditions differ by bank."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-bank-has-account",
+      "kind": "selection",
+      "condition": {
+        "fact": "has_own_bank_account",
+        "eq": true
+      },
+      "statement": {
+        "ja": "{日本|にほん}の{銀行|ぎんこう}に{自分|じぶん}の{口座|こうざ}がある",
+        "ja_easy": "{日本|にほん}の{銀行|ぎんこう}に{自分|じぶん}の{口座|こうざ}がある",
+        "en": "You have your own bank account in Japan"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-bank-arrival-6m",
+      "kind": "selection",
+      "condition": {
+        "fact": "arrival_band",
+        "in": [
+          "lt6",
+          "about6"
+        ]
+      },
+      "statement": {
+        "ja": "{来日|らいにち}から6か{月|げつ}の{前後|ぜんご}と{答|こた}えた",
+        "ja_easy": "{来日|らいにち}から6か{月|げつ}ぐらい",
+        "en": "Said it is around 6 months since arriving"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
     }
   ]
 }

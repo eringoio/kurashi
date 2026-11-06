@@ -1,0 +1,139 @@
+{
+  "id": "bank-info-change",
+  "data_version": 1,
+  "illustration": "bank",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bank-has-account",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{銀行|ぎんこう}の{登録|とうろく}を{変|か}える（{住所|じゅうしょ}・{名前|なまえ}・{在留|ざいりゅう}カード）",
+    "ja_easy": "{銀行|ぎんこう}の{住所|じゅうしょ}・{名前|なまえ}を{変|か}える",
+    "en": "Update your bank details (address, name, residence card)"
+  },
+  "official_name": {
+    "ja": "住所・氏名・在留カードの変更の届出",
+    "reading": "じゅうしょ・しめい・ざいりゅうカードのへんこうのとどけで"
+  },
+  "summary": {
+    "ja": "{引|ひ}っ{越|こ}しや{氏名|しめい}の{変更|へんこう}、{在留|ざいりゅう}カードの{更新|こうしん}のあとは、{銀行|ぎんこう}に{知|し}らせます（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。ゆうちょ{銀行|ぎんこう}では、{住所|じゅうしょ}・{氏名|しめい}の{変更|へんこう}は{総合|そうごう}{口座|こうざ}だけでなく、{定額|ていがく}{定期|ていき}{貯金|ちょきん}・{投資|とうし}{信託|しんたく}・{国債|こくさい}の{口座|こうざ}にも{必要|ひつよう}です。{在留|ざいりゅう}カードを{更新|こうしん}したときは、{更新後|こうしんご}の{在留|ざいりゅう}カードで{在留|ざいりゅう}{期間|きかん}などの{情報|じょうほう}も{更新|こうしん}します。{手続|てつづ}きをしないと、{取引|とりひき}が{制限|せいげん}されることがあります。{投資|とうし}{信託|しんたく}・{国債|こくさい}の{口座|こうざ}で{変更|へんこう}しないと、「{特定|とくてい}{口座|こうざ}{年間|ねんかん}{取引|とりひき}{報告書|ほうこくしょ}」などが{届|とど}かなくなることがあります。{三菱|みつびし}UFJ{銀行|ぎんこう}では、{投資|とうし}{信託|しんたく}・{債券|さいけん}・{財形|ざいけい}{預金|よきん}の{取引|とりひき}があると、アプリでは{住所|じゅうしょ}を{変更|へんこう}できません（{要|よう}{確認|かくにん}）。{氏名|しめい}の{変更|へんこう}と{海外|かいがい}の{住所|じゅうしょ}への{変更|へんこう}は、{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。{代理人|だいりにん}に{頼|たの}むときは、{委任状|いにんじょう}を{求|もと}められることがあります。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{引|ひ}っ{越|こ}したとき、{名前|なまえ}が{変|か}わったとき、{在留|ざいりゅう}カードを{新|あたら}しくしたときは、{銀行|ぎんこう}に{知|し}らせます（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。{知|し}らせないと、{取引|とりひき}が{制限|せいげん}されることがあります。{銀行|ぎんこう}のアプリか{窓口|まどぐち}でします。{新|あたら}しい{在留|ざいりゅう}カードを{持|も}って{行|い}きます。{名前|なまえ}の{変更|へんこう}は、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "After you move, change your name or renew your residence card, tell your bank (examples: MUFG Bank and Japan Post Bank). At Japan Post Bank, a change of address or name is needed for every account, not only the general account but also fixed-amount time deposits, investment trust and government bond accounts. When you renew your residence card, also update information such as your period of stay with the renewed card. If you do not, transactions may be restricted. If you do not change the details on investment trust and bond accounts, documents such as the annual transaction report may not reach you. At MUFG Bank, you cannot change your address in the app if you hold investment trusts, bonds or employee savings (to be checked). For a change of name or an address abroad, confirm at the counter (to be checked). When you ask an agent to do it, a power of attorney may be required. Conditions differ by bank. Check with your own bank (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{銀行|ぎんこう}のアプリか{窓口|まどぐち}（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{銀行|ぎんこう}のアプリか{窓口|まどぐち}（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）",
+      "en": "The bank app or counter (examples: MUFG Bank and Japan Post Bank). Check with your own bank (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-yucho-gaikokujin-pub",
+        "B-mufg-jusho"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。"
+    }
+  },
+  "place": "bank",
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{三菱|みつびし}UFJ{銀行|ぎんこう}（{例|れい}）では、「かんたん{手続|てつづ}アプリ」は、インターネットバンキングの{契約|けいやく}がなくても{使|つか}えます。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{三菱|みつびし}UFJ{銀行|ぎんこう}（{例|れい}）の「かんたん{手続|てつづ}アプリ」は、インターネットバンキングの{契約|けいやく}がなくても{使|つか}えます。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "At MUFG Bank (example), the \"Kantan Tetsuzuki\" app can be used even without an internet banking contract. Check with your own bank (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-jusho"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "インターネットバンキングのご契約がなくても 、「かんたん手続アプリ」でお手続きできます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "28aa193c2d74b000f9df845b98a8259f09a6ce5038df2aaa94421ba609e21d41",
+          "verdict": "agree",
+          "ref": "research/audits/bank.json#P-bank-joho-henko-mufg/c2"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "ゆうちょ{銀行|ぎんこう}（{例|れい}）では、{更新後|こうしんご}の{在留|ざいりゅう}カードを{用意|ようい}して、アプリか{窓口|まどぐち}で{在留|ざいりゅう}{期間|きかん}などの{情報|じょうほう}の{更新|こうしん}や{住所|じゅうしょ}の{変更|へんこう}をします。アプリでの{住所|じゅうしょ}の{変更|へんこう}は{総合|そうごう}{口座|こうざ}だけです。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ゆうちょ{銀行|ぎんこう}（{例|れい}）では、{新|あたら}しい{在留|ざいりゅう}カードを{持|も}って、アプリか{窓口|まどぐち}で{変更|へんこう}します。アプリでの{住所|じゅうしょ}の{変更|へんこう}は{総合|そうごう}{口座|こうざ}だけです。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "At Japan Post Bank (example), prepare the renewed residence card and update your details or change your address in the app or at the counter. The app can change an address for general accounts only. Check with your own bank (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub",
+          "B-yucho-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ゆうちょ{銀行|ぎんこう}（{例|れい}）のアプリでの{氏名|しめい}の{変更|へんこう}は、{日本国籍|にほんこくせき}の{人|ひと}に{限|かぎ}ります。{外国籍|がいこくせき}の{人|ひと}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ゆうちょ{銀行|ぎんこう}（{例|れい}）のアプリで{名前|なまえ}を{変|か}えられるのは、{日本|にほん}の{国籍|こくせき}の{人|ひと}です。{外国|がいこく}の{国籍|こくせき}の{人|ひと}は{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "At Japan Post Bank (example), changing a name in the app is limited to people with Japanese nationality. Foreign nationals: confirm at the counter (to be checked). Check with your own bank (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "※日本国籍の方に限ります。"
+      }
+    }
+  ],
+  "keywords": [
+    "じゅうしょへんこう",
+    "住所変更",
+    "氏名変更",
+    "ざいりゅうカード",
+    "ぎんこう",
+    "銀行",
+    "bank",
+    "change address",
+    "residence card renewal",
+    "name change"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{自分|じぶん}の{口座|こうざ}がないと{答|こた}えたので、この{案内|あんない}は{出|だ}しません。",
+      "ja_easy": "{自分|じぶん}の{口座|こうざ}がないので、{出|だ}しません。",
+      "en": "You said you have no account of your own, so we do not show this."
+    },
+    "check_at_office": {
+      "ja": "{口座|こうざ}があるか、{通帳|つうちょう}や{銀行|ぎんこう}のアプリで{確|たし}かめてください。",
+      "ja_easy": "{口座|こうざ}があるか、{通帳|つうちょう}や{銀行|ぎんこう}のアプリで{見|み}てください。",
+      "en": "Check your passbook or bank app to see if you have an account."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-yucho-henko",
+      "B-yucho-gaikokujin-pub",
+      "B-mufg-jusho"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "変更のお手続きは、総合口座のほか、（自動積立）定額定期貯金・投資信託口座・国債口座等、すべての口座に対して必要です。"
+  }
+}

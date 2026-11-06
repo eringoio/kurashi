@@ -116,6 +116,8 @@ export const Card = z.object({
   alternatives: z.array(Fact).optional(),
   /** 探すときの言葉（よみ・ローマ字・英語など）。画面には出さない */
   keywords: z.array(z.string()).default([]),
+  /** 何か月後の予定（カレンダーに追加）。from の日（arrival＝日本に住み始めた日）から months か月後（作者 11/6 C。例：銀行の居住者への変更） */
+  reminder: z.object({ months: z.number().int().min(1).max(24), from: z.enum(['arrival']) }).optional(),
   reasons: z.object({ excluded: Text.optional(), check_at_office: Text.optional(), check_at_office_coverage: Text.optional() }),
   evidence: Evidence,
 });

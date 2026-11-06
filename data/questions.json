@@ -762,6 +762,106 @@
           }
         }
       ]
+    },
+    {
+      "id": "Q-bank-has",
+      "fact": "has_own_bank_account",
+      "stage": "in_card",
+      "scope": "person",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{日本|にほん}の{銀行|ぎんこう}に、{自分|じぶん}の{口座|こうざ}はありますか？",
+        "ja_easy": "{自分|じぶん}の{銀行|ぎんこう}の{口座|こうざ}はありますか？",
+        "en": "Do you have your own bank account in Japan?"
+      },
+      "why_asked": {
+        "ja": "ある{人|ひと}とない{人|ひと}で、{出|だ}す{手続|てつづ}きが{違|ちが}うためです。{一度|いちど}だけ{聞|き}きます。",
+        "ja_easy": "ある{人|ひと}とない{人|ひと}で、{手続|てつづ}きが{違|ちが}うからです。",
+        "en": "The procedures differ depending on whether you have one. We ask only once."
+      },
+      "options": [
+        {
+          "value": true,
+          "icon": "cashcard",
+          "label": {
+            "ja": "ある",
+            "ja_easy": "ある",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": false,
+          "label": {
+            "ja": "ない",
+            "ja_easy": "ない",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-arrival",
+      "fact": "arrival_band",
+      "stage": "upfront",
+      "scope": "person",
+      "ask_when": {
+        "fact": "has_own_bank_account",
+        "eq": true
+      },
+      "text": {
+        "ja": "{日本|にほん}に{住|す}み{始|はじ}めて、どのくらいですか？",
+        "ja_easy": "{日本|にほん}に{来|き}て、どのくらいですか？",
+        "en": "How long have you lived in Japan?"
+      },
+      "why_asked": {
+        "ja": "{来日|らいにち}から6か{月|げつ}の{前後|ぜんご}の{人|ひと}に、{銀行|ぎんこう}の「{居住者|きょじゅうしゃ}」への{変更|へんこう}を{出|だ}すためです。",
+        "ja_easy": "6か{月|げつ}ぐらいの{人|ひと}に、{銀行|ぎんこう}の{手続|てつづ}きを{出|だ}すためです。",
+        "en": "To show the bank \"resident\" change to people around 6 months after arriving."
+      },
+      "options": [
+        {
+          "value": "lt6",
+          "label": {
+            "ja": "6か{月|げつ}たっていない",
+            "ja_easy": "6か{月|げつ}より{前|まえ}",
+            "en": "Less than 6 months"
+          }
+        },
+        {
+          "value": "about6",
+          "label": {
+            "ja": "6か{月|げつ}ぐらい（5〜7か{月|げつ}）",
+            "ja_easy": "6か{月|げつ}ぐらい",
+            "en": "About 6 months (5–7)"
+          }
+        },
+        {
+          "value": "long",
+          "label": {
+            "ja": "それより{前|まえ}から（{日本|にほん}{国籍|こくせき}・ずっと{日本|にほん}も）",
+            "ja_easy": "もっと{前|まえ}から",
+            "en": "Longer (including Japanese nationals)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
     }
   ]
 }

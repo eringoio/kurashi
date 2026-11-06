@@ -121,6 +121,82 @@
         "checked_at": "2026-11-02",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "rel-bank-tennyu-infochange",
+      "type": "related",
+      "from": "nagoya-tennyu-todoke",
+      "to": "bank-info-change",
+      "explain": {
+        "ja": "{住所|じゅうしょ}の{届|とど}けを{出|だ}したら、{銀行|ぎんこう}にも{住所|じゅうしょ}の{変更|へんこう}を{知|し}らせます。",
+        "ja_easy": "{区役所|くやくしょ}に{届|とど}けたら、{銀行|ぎんこう}にも{引|ひ}っ{越|こ}しを{知|し}らせます。",
+        "en": "After you report your new address, also tell your bank."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。"
+      }
+    },
+    {
+      "id": "rel-bank-open-infochange",
+      "type": "related",
+      "from": "bank-account-open",
+      "to": "bank-info-change",
+      "explain": {
+        "ja": "{口座|こうざ}を{作|つく}ったあとで、{引|ひ}っ{越|こ}しや{在留|ざいりゅう}カードの{更新|こうしん}をしたら、{銀行|ぎんこう}に{知|し}らせます。",
+        "ja_easy": "{口座|こうざ}を{作|つく}ったあとで、{引|ひ}っ{越|こ}したり{在留|ざいりゅう}カードが{新|あたら}しくなったりしたら、{銀行|ぎんこう}に{知|し}らせます。",
+        "en": "After you open an account, tell your bank if you move or renew your residence card."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "お手続きいただけない場合、一時的にお取引を制限する場合がございます。"
+      }
+    },
+    {
+      "id": "rel-bank-open-nosale",
+      "type": "related",
+      "from": "bank-account-open",
+      "to": "bank-account-no-sale",
+      "explain": {
+        "ja": "{口座|こうざ}を{作|つく}るときに、{口座|こうざ}を{売|う}ったり{渡|わた}したりしてはいけないことも{知|し}っておきます。",
+        "ja_easy": "{口座|こうざ}を{作|つく}るとき、{口座|こうざ}を{売|う}ってはいけないことも{知|し}っておきます。",
+        "en": "When you open an account, also know that you must never sell or hand it over."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "第三者に利用させることを目的とした口座(通帳・キャッシュカード)の譲渡や売買は犯罪です。絶対に行わないでください。"
+      }
+    },
+    {
+      "id": "rel-bank-close-nosale",
+      "type": "related",
+      "from": "bank-account-close",
+      "to": "bank-account-no-sale",
+      "explain": {
+        "ja": "{帰国|きこく}するときは、{口座|こうざ}を{売|う}らずに{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します。",
+        "ja_easy": "{国|くに}に{帰|かえ}るときは、{口座|こうざ}を{売|う}らずに{銀行|ぎんこう}で{解約|かいやく}します。",
+        "en": "When you leave Japan, close the account at the bank instead of selling it."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-zenginkyo-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "昨今、来日外国人が帰国する際に犯罪グループに売却した個人名義口座が特殊詐欺の振込先に悪用される事例が発生しております。"
+      }
     }
   ]
 }

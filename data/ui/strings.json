@@ -2694,5 +2694,25 @@
     "ja": "{未確認|みかくにん}（{今日|きょう}の{予定|よてい}に{残|のこ}る）",
     "ja_easy": "まだ（{今日|きょう}の{予定|よてい}に{残|のこ}る）",
     "en": "Not confirmed (stays in today's plan)"
+  },
+  "rem.title": {
+    "ja": "{予定|よてい}を{忘|わす}れないように",
+    "ja_easy": "{忘|わす}れないように",
+    "en": "So you do not forget"
+  },
+  "rem.from.arrival": {
+    "ja": "{日本|にほん}に{住|す}み{始|はじ}めた{日|ひ}",
+    "ja_easy": "{日本|にほん}に{来|き}た{日|ひ}",
+    "en": "The day you started living in Japan"
+  },
+  "rem.day": {
+    "ja": "{date}ごろです（{住|す}み{始|はじ}めた{日|ひ}から{months}か{月|げつ}）。",
+    "ja_easy": "{date}ごろです（{months}か{月|げつ}{後|ご}）。",
+    "en": "Around {date} ({months} months after you started living here)."
+  },
+  "rem.past": {
+    "ja": "もう{months}か{月|げつ}たっています。{早|はや}めに{手続|てつづ}きをしてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "もう{months}か{月|げつ}たちました。{早|はや}めに{手続|てつづ}きをしてください。",
+    "en": "{months} months have already passed. Please do it soon (to be checked)."
   }
 }

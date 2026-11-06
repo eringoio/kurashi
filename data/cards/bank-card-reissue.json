@@ -1,0 +1,58 @@
+{
+  "id": "bank-card-reissue",
+  "data_version": 1,
+  "illustration": "cashcard",
+  "awareness_type": "life_essential",
+  "obligation": "optional",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bank-has-account",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{新|あたら}しいカード（{再|さい}{発行|はっこう}）を{頼|たの}む",
+    "ja_easy": "{新|あたら}しいカードを{頼|たの}む",
+    "en": "Ask for a new card (reissue)"
+  },
+  "official_name": {
+    "ja": "キャッシュカードの再発行",
+    "reading": "きゃっしゅかーどのさいはっこう"
+  },
+  "summary": {
+    "ja": "カードの{再|さい}{発行|はっこう}は、{銀行|ぎんこう}の{窓口|まどぐち}かアプリで{申|もう}し{込|こ}みます。{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{在留|ざいりゅう}カードなど）が{要|い}ります（{例|れい}：ゆうちょ{銀行|ぎんこう}はゆうちょ{手続|てつづ}きアプリでもできます。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しいカードは、{銀行|ぎんこう}の{窓口|まどぐち}かアプリで{頼|たの}みます。{在留|ざいりゅう}カードなどが{要|い}ります（{要|よう}{確認|かくにん}）。",
+    "en": "Apply for a new card at the bank counter or in the app. You need an ID such as your residence card (e.g. Japan Post Bank also accepts this in its app; to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}（{窓口|まどぐち}・アプリ・{電話|でんわ}。{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}（{要|よう}{確認|かくにん}）",
+      "en": "Your bank (counter, app or phone; differs by bank; to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mufg-jusho",
+        "B-yucho-henko"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "place": "bank",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-yucho-funshitsu",
+      "B-mufg-card-loss"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "マイナンバーカード・運転免許証・在留カード・ゆうちょ認証アプリのいずれかをご用意のうえ、アプリの画面に従ってお手続きください。"
+  }
+}

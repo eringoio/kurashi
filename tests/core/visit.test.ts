@@ -38,7 +38,7 @@ describe('手続きを探す', () => {
   it('よみ・ローマ字・英語で見つかる', () => {
     expect(find('ほけん')).toContain('nagoya-kokuho-kanyu');
     expect(find('nenkin')).toEqual(expect.arrayContaining(['kokumin-nenkin-kanyu', 'nenkin-at-20']));
-    expect(find('Bank')).toEqual(['bank-account-open']);
+    expect(find('Bank')).toContain('bank-account-open'); // 11/6：銀行のできごとを公開したので、銀行のカードがほかにも見つかる
   });
   it('空の言葉では何も出さない', () => {
     expect(find('  ')).toEqual([]);

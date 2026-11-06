@@ -1,0 +1,122 @@
+{
+  "id": "bank-account-no-sale",
+  "data_version": 1,
+  "illustration": "bank",
+  "awareness_type": "life_essential",
+  "obligation": "legal",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bank-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{口座|こうざ}を{売|う}らない・{渡|わた}さない",
+    "ja_easy": "{口座|こうざ}を{売|う}らない",
+    "en": "Never sell or hand over your account"
+  },
+  "official_name": {
+    "ja": "口座の売買の禁止",
+    "reading": "こうざのばいばいのきんし"
+  },
+  "summary": {
+    "ja": "{口座|こうざ}や{通帳|つうちょう}・キャッシュカードを、{他|ほか}の{人|ひと}に{売|う}ったり{渡|わた}したりしてはいけません。{犯罪|はんざい}です。{帰国|きこく}する{外国人|がいこくじん}が{犯罪|はんざい}グループに{売|う}った{個人|こじん}{名義|めいぎ}の{口座|こうざ}が、{特殊|とくしゅ}{詐欺|さぎ}の{振込|ふりこみ}{先|さき}に{悪用|あくよう}される{事例|じれい}があります（{全国|ぜんこく}{銀行|ぎんこう}{協会|きょうかい}）。{令和|れいわ}8{年|ねん}（2026{年|ねん}）の{犯罪|はんざい}{収益|しゅうえき}{移転|いてん}{防止法|ぼうしほう}の{改正|かいせい}で、{預貯金|よちょきん}{通帳|つうちょう}の{不正|ふせい}な{譲渡|じょうと}などに{対|たい}する{罰則|ばっそく}が{引|ひ}き{上|あ}げられます。{施行|しこう}は{令和|れいわ}8{年|ねん}7{月|がつ}10{日|か}からです。{罰則|ばっそく}の{中身|なかみ}は{警察庁|けいさつちょう}の{公式|こうしき}ページで{確認|かくにん}（{要|よう}{確認|かくにん}）。{金融庁|きんゆうちょう}は、{外国人|がいこくじん}{名義|めいぎ}の{口座|こうざ}について、{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}{済|ず}みか{申請中|しんせいちゅう}であることを{金融|きんゆう}{機関|きかん}に{届|とど}け{出|で}る{必要|ひつよう}などをまとめたリーフレットを{公表|こうひょう}しています（{細|こま}かい{内容|ないよう}は{出典|しゅってん}で{確認|かくにん}（{要|よう}{確認|かくにん}））。{使|つか}わなくなった{口座|こうざ}は、{売|う}らずに{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{口座|こうざ}や{通帳|つうちょう}・キャッシュカードを、{人|ひと}に{売|う}ったり、あげたりしてはいけません。{犯罪|はんざい}です。{国|くに}に{帰|かえ}る{外国人|がいこくじん}が{売|う}った{口座|こうざ}が、{詐欺|さぎ}に{使|つか}われることがあります。2026{年|ねん}7{月|がつ}10{日|か}から、{通帳|つうちょう}を{不正|ふせい}にゆずったときの{罰|ばつ}が{重|おも}くなる{法律|ほうりつ}の{変更|へんこう}が{始|はじ}まります（{内容|ないよう}は{公式|こうしき}ページで{確認|かくにん}。{要|よう}{確認|かくにん}）。{使|つか}わなくなった{口座|こうざ}は、{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}）。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "Never sell or give your account, passbook or cash card to anyone. It is a crime. Accounts in the names of foreign residents sold to criminal groups when they return home have been misused as destinations for special fraud (Japanese Bankers Association). A 2026 amendment to the Act on Prevention of Transfer of Criminal Proceeds raises penalties for the unlawful transfer of deposit passbooks and similar acts, effective 10 July 2026. Check the National Police Agency page for the details of the penalties (to be checked). The Financial Services Agency publishes a leaflet explaining, among other things, that accounts held by foreign residents require notifying the financial institution that the period of stay has been renewed or that a renewal is pending (check the source for details; to be checked). Close accounts you no longer use at a bank counter instead of selling them (examples: MUFG Bank and Japan Post Bank). Conditions differ by bank. Check with your own bank (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{使|つか}わなくなった{口座|こうざ}は、{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します（{売|う}らない・{渡|わた}さない）",
+      "ja_easy": "{使|つか}わなくなった{口座|こうざ}は、{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します（{売|う}らない・{人|ひと}にあげない）",
+      "en": "Close accounts you no longer use at a bank counter (do not sell or hand them over)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-zenginkyo-gaikokujin-pub"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "外国籍の方が在留期間の満了などの理由で帰国し、預貯金口座を利用しなくなるときは、金融機関の窓口に行き、預貯金口座を解約するようご案内ください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "7ff1afe55ad88737bf9b7fd53ebced007b5c383234c67cc69f0af6fe62f0f20c",
+        "verdict": "agree",
+        "ref": "research/audits/bank.json#P-bank-kaiyaku-yucho/c9"
+      }
+    }
+  },
+  "place": "bank",
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国籍|がいこくせき}の{人|ひと}が{帰国|きこく}して{口座|こうざ}を{使|つか}わなくなるときは、{金融|きんゆう}{機関|きかん}の{窓口|まどぐち}で{口座|こうざ}を{解約|かいやく}します。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{帰国|きこく}して{口座|こうざ}を{使|つか}わなくなるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "When you return home and no longer use an account, close it at a financial institution counter. Check with your own bank (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-zenginkyo-gaikokujin-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国籍の方が在留期間の満了などの理由で帰国し、預貯金口座を利用しなくなるときは、金融機関の窓口に行き、預貯金口座を解約するようご案内ください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "7ff1afe55ad88737bf9b7fd53ebced007b5c383234c67cc69f0af6fe62f0f20c",
+          "verdict": "agree",
+          "ref": "research/audits/bank.json#P-bank-kaiyaku-yucho/c9"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{金融庁|きんゆうちょう}のページに、{外国人|がいこくじん}{名義|めいぎ}の{口座|こうざ}についてまとめたリーフレットがあります。",
+        "ja_easy": "{金融庁|きんゆうちょう}のページに、{外国人|がいこくじん}の{口座|こうざ}についてのリーフレットがあります。",
+        "en": "The Financial Services Agency page has a leaflet on accounts held by foreign residents."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-fsa-livinginjapan-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国人名義の預貯金口座について、在留期間を更新済み又は申請中である旨を金融機関に届け出る必要性等をまとめたリーフレットを作成（７言語対応）しましたので、以下よりご参照ください。（令和７年４月公表）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0c144c74a558fd9bf3c70a2a2a14f730f82f46b03a7dc441089f4e00e80c03df",
+          "verdict": "agree",
+          "ref": "research/audits/bank.json#P-bank-kouza-baibai/c6"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "こうざばいばい",
+    "口座売買",
+    "口座を売る",
+    "うらない",
+    "sell account",
+    "bank account sale",
+    "crime",
+    "fraud",
+    "特殊詐欺",
+    "とくしゅさぎ"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-yucho-gaikokujin-pub",
+      "B-zenginkyo-gaikokujin-pub",
+      "B-npa-kyoshuho-kaisei"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "第三者に利用させることを目的とした口座(通帳・キャッシュカード)の譲渡や売買は犯罪です。絶対に行わないでください。"
+  }
+}

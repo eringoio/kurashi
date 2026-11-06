@@ -240,7 +240,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       elig.unanswered.forEach((f) => want.add(f));
       if (card.requires_moved_in) want.add('moved_in');
     }
-    const questions = data.questions.filter((q) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T');
+    // 同じ事実を聞く質問は、質問バンクの最初の1つだけ（11/6：Q-bank-account と Q-bank-has）
+    const questions = data.questions.filter((q, i, all) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T' && all.findIndex((y) => y.stage === 'in_card' && y.fact === q.fact) === i);
 
     // 理由（10.5）：判定に使った答えの事実と、適用条件のルール
     const ids = exprIds(card.eligibility).concat(card.coverage_rule_ids);
@@ -280,8 +281,9 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   }
   const askNow = (q: Question) => q.stage === 'upfront' && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T';
   const fromBank = data.questions.filter((q) => askNow(q) && pending.has(q.fact));
-  // イベントが入口で聞くと決めた質問（events.json の questions）は、その順に先に聞く（判定の原因でなくても。例：もう警察に届けたか）
-  const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && askNow(q));
+  // イベントが入口で聞くと決めた質問（events.json の questions）は、その順に先に聞く（判定の原因でなくても。例：もう警察に届けたか）。
+  // カードの中の質問（in_card）でも、イベントが入口で聞くと決めたなら聞く（11/6：銀行の Q-bank-has。引っ越しの最初の質問には出さないため）
+  const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && q.stage !== 'object_check' && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T');
   const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))];
 
   const sameVisit = data.relations.filter((r): r is Extract<Relation, { type: 'same_visit' }> => r.type === 'same_visit' && relVerified(r));

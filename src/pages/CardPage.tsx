@@ -15,6 +15,7 @@ import { art } from '../ui/art';
 import { DayChoice, dayTitle, fillDate, FocusCard, fmtDay, Notes, QuestionBlock, ResultView, SectionWhy, SourcesSheet, StateLabel, stateKey, whyText } from '../ui/guide';
 import { visitGroup } from '../core/visit';
 import { AddToCalendar } from '../ui/AddToCalendar';
+import { Reminder } from '../ui/Reminder';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
 import { LifeGuide, MethodChooser, UrgentAction } from '../ui/patterns';
@@ -122,6 +123,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       {c.outdated && <Outdated c={c} />}
       {urgent && c.plan?.status !== 'done' && c.questions.length === 0 && <UrgentAction a={urgent} />}
       {isGuide && <LifeGuide g={toGuide(c.card, g.mode)} />}
+      {c.card.reminder && c.state !== 'excluded' && c.questions.length === 0 && <Reminder card={c.card} />}
       <Notes c={c} where="page" />
       {alts.length > 0 && (
         <div className="k-notice" role="note">

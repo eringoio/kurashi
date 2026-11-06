@@ -74,6 +74,46 @@
           "en": "Check garbage from your move (what kind of garbage is this?)"
         }
       }
+    },
+    {
+      "id": "E-bank",
+      "group": "bank",
+      "title": {
+        "ja": "{銀行|ぎんこう}の{口座|こうざ}",
+        "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}",
+        "en": "Bank account"
+      },
+      "illustration": "bank",
+      "status": "built",
+      "menu": 7,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "bank"
+        }
+      ],
+      "questions": [
+        "Q-bank-has",
+        "Q-arrival"
+      ],
+      "card_ids": [
+        "bank-account-open",
+        "bank-info-change",
+        "bank-account-close",
+        "bank-card-stop",
+        "bank-card-reissue",
+        "bank-resident-change",
+        "bank-account-no-sale",
+        "bank-account-open-another"
+      ],
+      "scope_rule": "R-bank-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
     }
   ]
 }

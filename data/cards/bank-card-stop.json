@@ -1,0 +1,58 @@
+{
+  "id": "bank-card-stop",
+  "data_version": 1,
+  "illustration": "cashcard",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bank-has-account",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "キャッシュカード・{通帳|つうちょう}を{止|と}める",
+    "ja_easy": "カードを{止|と}める",
+    "en": "Stop your cash card or passbook"
+  },
+  "official_name": {
+    "ja": "キャッシュカードの利用停止",
+    "reading": "きゃっしゅかーどのりようていし"
+  },
+  "summary": {
+    "ja": "キャッシュカードや{通帳|つうちょう}をなくした・{盗|ぬす}まれたときは、すぐに{銀行|ぎんこう}の{電話|でんわ}かアプリで{止|と}めます。{多|おお}くの{銀行|ぎんこう}は24{時間|じかん}{受|う}け{付|つ}けます（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}・ゆうちょ{銀行|ぎんこう}。{番号|ばんごう}は{銀行|ぎんこう}ごと。{要|よう}{確認|かくにん}）。{止|と}めたあとで、{再|さい}{発行|はっこう}を{申|もう}し{込|こ}みます。",
+    "ja_easy": "カードや{通帳|つうちょう}をなくしたら、すぐ{銀行|ぎんこう}に{電話|でんわ}して{止|と}めます。24{時間|じかん}できる{銀行|ぎんこう}が{多|おお}いです（{要|よう}{確認|かくにん}）。",
+    "en": "If you lose your cash card or passbook, or it is stolen, stop it at once by your bank's phone line or app. Many banks accept this 24 hours a day (e.g. MUFG Bank, Japan Post Bank; numbers differ by bank; to be checked). After stopping it, apply for a new one."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}・アプリ（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{銀行|ぎんこう}の{電話|でんわ}（{要|よう}{確認|かくにん}）",
+      "en": "Your bank's lost-card line or app (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mufg-card-loss"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "24時間365日（*1）、キャッシュカードの即時利用停止ができます"
+    }
+  },
+  "place": "bank",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mufg-card-loss",
+      "B-yucho-funshitsu"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "キャッシュカードを紛失した場合は、スマートフォンアプリまたは電話ですぐに利用停止登録を行ってください。"
+  }
+}

@@ -8,7 +8,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 
-export const PAGES = ['/', '/info/out-of-scope', '/info/coming-soon', '/info/disclaimer', '/info/about', '/move', '/move/from', '/move/objects', '/move/basis', '/move/check', '/now', '/all', '/c/nagoya-tennyu-juukyochi', '/c/bank-account-open', '/review', '/search', '/gomi', '/visit/ward_office', '/today', '/s/ward-office', '/qr', '/here', '/letter', '/calendar', '/clinic', '/e/E-move-within'];
+export const PAGES = ['/', '/info/out-of-scope', '/info/coming-soon', '/info/disclaimer', '/info/about', '/move', '/move/from', '/move/objects', '/move/basis', '/move/check', '/now', '/all', '/c/nagoya-tennyu-juukyochi', '/c/bank-account-open', '/review', '/search', '/gomi', '/visit/ward_office', '/today', '/s/ward-office', '/qr', '/here', '/letter', '/calendar', '/clinic', '/e/E-move-within', '/e/E-bank', '/c/bank-resident-change'];
 const LEVELS = [
   { id: 'ja', lang: 'ja' },
   { id: 'ja_easy', lang: 'ja' },

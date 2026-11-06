@@ -1,0 +1,57 @@
+{
+  "id": "bank-account-open-another",
+  "data_version": 1,
+  "illustration": "bank",
+  "awareness_type": "life_essential",
+  "obligation": "optional",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bank-has-account",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{別|べつ}の{口座|こうざ}を{作|つく}る",
+    "ja_easy": "{別|べつ}の{口座|こうざ}を{作|つく}る",
+    "en": "Open another account"
+  },
+  "official_name": {
+    "ja": "口座開設",
+    "reading": "こうざかいせつ"
+  },
+  "summary": {
+    "ja": "もう1つ{口座|こうざ}を{作|つく}るときも、{手続|てつづ}きは「{口座|こうざ}を{作|つく}る」と{同|おな}じです。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "もう1つ{作|つく}るときも、{手続|てつづ}きは{同|おな}じです（{要|よう}{確認|かくにん}）。",
+    "en": "Opening another account works the same way as opening your first one. Conditions differ by bank (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{銀行|ぎんこう}の{店舗|てんぽ}（{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。ご{自分|じぶん}の{銀行|ぎんこう}に{確認|かくにん}（{要|よう}{確認|かくにん}））。{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}では、{日本|にほん}{国籍|こくせき}でない{人|ひと}はアプリで{口座|こうざ}を{開|ひら}けず、{店舗|てんぽ}で{申|もう}し{込|こ}みます。",
+      "ja_easy": "{銀行|ぎんこう}の{店|みせ}。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}は、{外国|がいこく}の{国籍|こくせき}の{人|ひと}は{店|みせ}で{申|もう}し{込|こ}みます。ご{自分|じぶん}の{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+      "en": "A bank branch. Conditions differ by bank. Example: at MUFG Bank, people without Japanese nationality apply at a branch, not in the app. Check with your own bank (to be checked)."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mufg-kouza-shorui"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check"
+    }
+  },
+  "place": "bank",
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec",
+      "B-mufg-kouza-shorui",
+      "B-yucho-gaikokujin-pub"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check"
+  }
+}

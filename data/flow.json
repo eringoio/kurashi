@@ -9,7 +9,14 @@
     "nenkin-at-20",
     "bank-account-open",
     "move-within-tenkyo",
-    "move-within-tennyu"
+    "move-within-tennyu",
+    "bank-info-change",
+    "bank-account-close",
+    "bank-card-stop",
+    "bank-card-reissue",
+    "bank-resident-change",
+    "bank-account-no-sale",
+    "bank-account-open-another"
   ],
   "built_origins": [
     "abroad",

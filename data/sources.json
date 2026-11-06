@@ -488,6 +488,62 @@
       "owner_type": "government",
       "title": "転居の際に必要な手続き",
       "language": "ja"
+    },
+    {
+      "source_id": "B-mufg-jusho",
+      "url": "https://www.bk.mufg.jp/tsukau/tetsuduki/jusho/index.html",
+      "owner": "三菱UFJ銀行",
+      "owner_type": "private",
+      "title": "住所・電話番号変更",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-npa-kyoshuho-kaisei",
+      "url": "https://www.npa.go.jp/bureau/sosikihanzai/hansyu/houritukaisei.html",
+      "owner": "警察庁",
+      "owner_type": "government",
+      "title": "令和８年犯罪収益移転防止法の改正について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-yucho-faq-10026",
+      "url": "https://faq.jp-bank.japanpost.jp/faq_detail.html?id=10026",
+      "owner": "ゆうちょ銀行",
+      "owner_type": "private",
+      "title": "通常貯金の口座を解約する場合、必要な持ち物は何ですか。",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-yucho-faq-819",
+      "url": "https://faq.jp-bank.japanpost.jp/faq_detail.html?id=819",
+      "owner": "ゆうちょ銀行",
+      "owner_type": "private",
+      "title": "海外に長期赴任予定ですが、ゆうちょ銀行の口座はそのまま保有してもよいですか。",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-yucho-henko",
+      "url": "https://www.jp-bank.japanpost.jp/tetuzuki/henko/tzk_hnk_henko.html",
+      "owner": "ゆうちょ銀行",
+      "owner_type": "private",
+      "title": "住所・氏名・印章の変更",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mufg-card-loss",
+      "url": "https://www.bk.mufg.jp/tsukau/tetsuduki/card/loss/index.html",
+      "owner": "株式会社三菱UFJ銀行",
+      "owner_type": "private",
+      "title": "キャッシュカードの紛失・盗難",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-yucho-funshitsu",
+      "url": "https://www.jp-bank.japanpost.jp/tetuzuki/funsitu/tzk_fst_index.html",
+      "owner": "株式会社ゆうちょ銀行",
+      "owner_type": "private",
+      "title": "紛失・盗難",
+      "language": "ja"
     }
   ]
 }

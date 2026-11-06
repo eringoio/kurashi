@@ -1,0 +1,66 @@
+{
+  "id": "bank-resident-change",
+  "data_version": 1,
+  "illustration": "calendar",
+  "awareness_type": "life_essential",
+  "obligation": "check",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-bank-has-account",
+      "R-bank-arrival-6m"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{居住者|きょじゅうしゃ}への{変更|へんこう}（{来日|らいにち}6か{月|げつ}）",
+    "ja_easy": "6か{月|げつ}たったら{銀行|ぎんこう}に{知|し}らせる",
+    "en": "Change to \"resident\" at your bank (6 months after arrival)"
+  },
+  "official_name": {
+    "ja": "居住者・非居住者の区分の変更",
+    "reading": "きょじゅうしゃ・ひきょじゅうしゃのくぶんのへんこう"
+  },
+  "summary": {
+    "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}で{勤|つと}めている（アルバイト・パートを{除|のぞ}く）か、{入国|にゅうこく}から6か{月|げつ}たつまで、{法令|ほうれい}では「{非|ひ}{居住者|きょじゅうしゃ}」です。{非|ひ}{居住者|きょじゅうしゃ}は、{一部|いちぶ}の{取引|とりひき}ができないことがあります。6か{月|げつ}たったら、{銀行|ぎんこう}に{届|とど}けて「{居住者|きょじゅうしゃ}」に{変|か}えます（{方法|ほうほう}は{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}に{来|き}て6か{月|げつ}たつまでは、{銀行|ぎんこう}では「{非|ひ}{居住者|きょじゅうしゃ}」です。6か{月|げつ}たったら{銀行|ぎんこう}に{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "en": "If you are not a Japanese national, you are legally a \"non-resident\" until 6 months after entry, unless you work in Japan (part-time jobs excluded). Non-residents may not be able to use some services. After 6 months, tell your bank to change you to \"resident\" (the method differs by bank; to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}（{窓口|まどぐち}・アプリ・{電話|でんわ}。{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}（{要|よう}{確認|かくにん}）",
+      "en": "Your bank (counter, app or phone; differs by bank; to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mufg-jusho",
+        "B-yucho-henko"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "place": "bank",
+  "kind": "procedure",
+  "reminder": {
+    "months": 6,
+    "from": "arrival"
+  },
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mufg-kouza-shorui"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "日本国籍をお持ちでないお客さまは、法令により、日本国内に勤務（アルバイト・パートを除く）もしくは入国後6ヶ月以上経過の場合を除き、非居住者となります。"
+  }
+}
