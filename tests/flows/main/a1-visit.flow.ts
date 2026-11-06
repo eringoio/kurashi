@@ -43,7 +43,7 @@ flow({
 
   await tap('区役所に着いた');
   await snap({ name: '窓口で', input: '区役所に着いた', expected: '「この画面を窓口の人に見せましょう」。手続きごとに「転入届（住居地の届出）の手続きをしたいです。」などの日本語の文', why: '窓口で言うことは、カードの正式名と決まった文から作る（AI で作らない）' },
-    async () => { await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/); await expect(h1).toHaveText('この画面を窓口の人に見せましょう'); await expect(page.locator('section.k-counter')).toHaveCount(3); await expect(page.locator('main')).toContainText('転入届（住居地の届出）の手続きをしたいです。'); });
+    async () => { await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/); await expect(h1).toHaveText('この画面を窓口の人に見せましょう'); await expect(page.locator('section.k-counter')).toHaveCount(3); await expect(page.locator('main')).toContainText(/転入届.*住居地.*届出.*手続.*したいです/); });
 
   await tap('終わった');
   await snap({ name: '終わったら', input: '終わった', expected: '「どうでしたか？」。一番上に「全部できた」。手続きごとに できた／できなかった。下に「行けなかった」', why: 'B-7（作者 11/6）：手続きごとの2択。選んでいない手続きは未確認' },

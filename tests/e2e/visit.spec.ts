@@ -87,7 +87,7 @@ test('付き添い：行く前 → 窓口で → 終わったら → 全部で�
   cleanUrl(page, '窓口で');
   await expect(h1(page)).toHaveText('この画面を窓口の人に見せましょう');
   await expect(page.locator('section.k-counter')).toHaveCount(3);
-  await expect(page.locator('main')).toContainText('転入届（住居地の届出）の手続きをしたいです。');
+  await expect(page.locator('main')).toContainText(/転入届.*住居地.*届出.*手続.*したいです/);
   await check(page, '窓口で');
 
   await tap(page, '終わった');

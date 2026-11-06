@@ -64,10 +64,10 @@ test('AT-clinic-01〜03：ホームから、tooth で探して 歯・口 → 歯
   const link = page.getByRole('link', { name: /^近くの歯科を探す/ });
   await expect(link).toHaveAttribute('href', 'https://www.iryou.teikyouseido.mhlw.go.jp/');
   expect(await link.getAttribute('href')).not.toContain('?');
-  await expect(page.locator('.k-counter', { hasText: '歯が痛いです' }).first()).toBeVisible();
+  await expect(page.locator('li.word', { hasText: /歯.*痛/ }).first()).toBeVisible();
   await check(page, '2 1画面');
   const hasVoice = await page.evaluate(() => 'speechSynthesis' in window && speechSynthesis.getVoices().some((v) => v.lang.startsWith('ja')));
-  if (hasVoice) await expect(page.locator('.k-counter').first().locator('button.speak')).toBeVisible();
+  if (hasVoice) await expect(page.locator('li.word').first().locator('button.speak')).toBeVisible();
 });
 
 test('AT-clinic-01：知らない言葉では何も出ない', async ({ page }) => {
@@ -160,7 +160,7 @@ for (const [idx, id] of [[1, 'やさしい日本語'], [2, 'English']] as const)
     await page.locator('.chips').first().getByRole('button').first().click();
     await expect(page).toHaveURL(/\/clinic\/departments$/);
     await check(page, id + ' 2');
-    await expect(page.locator('.k-counter', { hasText: /歯.*痛/ }).first()).toBeVisible();
+    await expect(page.locator('li.word', { hasText: /歯.*痛/ }).first()).toBeVisible();
     await page.getByRole('button', { name: /ぐとき|Emergency/ }).click();
     await expect(band(page)).toBeVisible();
   });

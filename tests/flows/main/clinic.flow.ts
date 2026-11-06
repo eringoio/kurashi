@@ -32,7 +32,7 @@ flow({
     async () => {
       await expect(h1).toHaveText('行く前に');
       await expect(page.getByRole('link', { name: /^近くの歯科を探す/ })).toHaveAttribute('href', 'https://www.iryou.teikyouseido.mhlw.go.jp/');
-      await expect(page.locator('.k-counter', { hasText: '歯が痛いです' }).first()).toBeVisible();
+      await expect(page.locator('li.word', { hasText: /歯.*痛/ }).first()).toBeVisible();
     });
 
   await page.goto('/clinic');

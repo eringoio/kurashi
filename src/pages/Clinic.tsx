@@ -5,7 +5,7 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { CLINIC, departmentsFor, emergencyFor, searchParts, type ClinicDepartment, type ClinicPart } from '../core/clinic';
 import { PhoneIcon } from '../ui/icons';
-import { Bi, One, Ruby } from '../i18n/Ruby';
+import { Bi, One } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
@@ -13,9 +13,8 @@ import { BodyMap, PartButton } from '../ui/BodyMap';
 import { fill } from '../ui/guide';
 import type { Text } from '../core/schema';
 import { Link, navigate, useFocusTitle } from '../ui/router';
-import { Speak } from '../ui/Speak';
-import { useSeen } from '../ui/Words';
-import { deptWordId } from '../core/words';
+import { useSeen, WordList } from '../ui/Words';
+import { clinicPhraseWord, deptWordId } from '../core/words';
 import '../styles/clinic.css';
 
 /** 診療科の案内を出すか（03_MEDICAL 6章：大会ルールの確認が来るまで、止められるようにする）。VITE_CLINIC_DEPARTMENTS=off で止める。
@@ -120,13 +119,17 @@ function Where() {
 /** 1つの画面（作者 11/7 K-32）：どの病院 → 病院を探す → 持ち物 → 受付の言葉。区切りは見出しと線。
     診断しない・診療科の順位を付けない（03_MEDICAL 2章A）。part が null のときは「診療科の案内を止めた」形 */
 function Guide({ part }: { part: ClinicPart | null }) {
-  const { level } = usePrefs();
   const d = CLINIC();
   const depts = part ? departmentsFor(d, part) : [];
   const dept = depts[0] ?? null;
   const [urgent, setUrgent] = useState(false);
-  const phrases = [...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases];
-  useSeen(depts.map((x) => deptWordId(x.id)));
+  // 使う順（作者 11/7）：受付（初診・予約・保険・日本語・英語）→ 診察（選んだ場所の文・ここが痛い・いつから）。表に無い文は最後
+  const RECEPTION = ['first', 'noreserve', 'hoken', 'nihongo', 'english'], EXAM = ['here', 'itsukara'];
+  const rest = d.phrases.map((p) => p.id).filter((id) => !RECEPTION.includes(id) && !EXAM.includes(id));
+  const has = (id: string) => d.phrases.some((p) => p.id === id);
+  const phrases = [...RECEPTION.filter(has).map(clinicPhraseWord), ...(part ? ['clinic-say:' + part.id] : []), ...EXAM.filter(has).map(clinicPhraseWord), ...rest.map(clinicPhraseWord)];
+  // 保存しない（どの科を見たかを残さない。AT-clinic-05）
+  useSeen(depts.map((x) => deptWordId(x.id)), false);
   useFocusTitle('clinic:2');
   return (
     <>
@@ -174,17 +177,8 @@ function Guide({ part }: { part: ClinicPart | null }) {
       </section>
       <section className="clinic__sec" aria-labelledby="clinic-say">
         <h2 id="clinic-say"><One phrase k="clinic.sayH" /></h2>
-        {phrases.map((p) => {
-          const mean = level.kind === 'ja' ? null : line(p.say, level);
-          return (
-            <div key={p.id} className="k-counter">
-              <p className="k-counter__ja" lang="ja"><Ruby s={p.say.ja} /></p>
-              {mean && <p className="k-counter__mean" lang={level.kind === 'ja_easy' ? 'ja' : level.lang}>{mean}</p>}
-              {/* 読み上げの名前に文を入れる（6つのボタンを区別できるように。K-52） */}
-              <Speak ja={p.say.ja} name={p.say.ja} />
-            </div>
-          );
-        })}
+        {/* ことばと同じ行（作者 11/7：どの表示レベルでも、ふりがな付きのやさしい日本語と英語）。読み上げの名前は文（K-52） */}
+        <WordList ids={phrases} keep={false} />
       </section>
       <p className="sub"><Bi k="clinic.check" /></p>
     </>

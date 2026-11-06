@@ -81,7 +81,8 @@ export class Vault {
   }
   /** 進捗があるか（保存の同意を聞く時点。SPEC 9.9） */
   hasProgress(): boolean {
-    return (['profile', 'plan', 'objects', 'phrases', 'items', 'occurrences'] as StoreName[]).some((s) => this.mem.get(s)!.size > 0);
+    // ことば（phrases）は画面を開くだけで残るので、進捗に数えない（入口を開いただけで同意を聞かない）。同意のあとは他と一緒に残る
+    return (['profile', 'plan', 'objects', 'items', 'occurrences'] as StoreName[]).some((s) => this.mem.get(s)!.size > 0);
   }
   shouldAskConsent(): boolean {
     return this.mode === 'undecided' && !this.askedThisSession && this.hasProgress();
@@ -90,6 +91,17 @@ export class Vault {
   async put(store: StoreName, key: string, value: unknown) {
     this.mem.get(store)!.set(key, value);
     if (this.mode === 'kept' && this.db) await this.db.put(store, value, key);
+    this.emit();
+  }
+  /** まとめて書く（1つのトランザクション、描き直しは1回） */
+  async putMany(store: StoreName, entries: [string, unknown][]) {
+    if (!entries.length) return;
+    for (const [k, val] of entries) this.mem.get(store)!.set(k, val);
+    if (this.mode === 'kept' && this.db) {
+      const tx = this.db.transaction(store, 'readwrite');
+      for (const [k, val] of entries) void tx.store.put(val, k);
+      await tx.done;
+    }
     this.emit();
   }
   async del(store: StoreName, key: string) {

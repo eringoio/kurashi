@@ -140,7 +140,8 @@ export function App() {
   const g = useGuide();
   const [sheet, setSheet] = useState<null | 'settings' | 'help' | 'share'>(null);
   // 画面の大事な言葉を「ことば」に残す（道から決める。core/words.ts の pageWordIds）
-  useSeen(pageWordIds(path));
+  // 病院の画面は保存しない（AT-clinic-05）。/words の「この画面のことば」には出る
+  useSeen(pageWordIds(path), !path.startsWith('/clinic'));
   const [live, setLive] = useState('');
   const close = useCallback(() => setSheet(null), []);
   // 同じ文を続けて知らせるときも読まれるように、いったん空にする

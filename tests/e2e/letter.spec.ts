@@ -41,7 +41,7 @@ test('写真読み取りが off（既定）：一覧が直接出て、選ぶと�
   await tap(page, /国民年金の加入のお知らせ/);
   await expect(h1(page)).toHaveText('国民年金の加入のお知らせ');
   await expect(page.locator('img.letter__photo')).toHaveAttribute('src', '/samples/nenkin-oshirase-sample.svg');
-  await expect(page.locator('dl.letter__words')).toContainText(/基礎.*年金.*番号/);
+  await expect(page.locator('section[aria-labelledby="letter-words"] ul.words')).toContainText(/基礎.*年金.*番号/);
   await expect(page.getByRole('heading', { name: '大事な言葉' })).toBeVisible();
   await expect(page.getByRole('note')).toContainText('期限・金額・番号');
   await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0);

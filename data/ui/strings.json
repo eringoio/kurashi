@@ -3290,9 +3290,79 @@
     "ja_easy": "この{画面|がめん}のことば",
     "en": "Words on this page"
   },
-  "words.others": {
-    "ja": "ほかのことば（{新|あたら}しい{順|じゅん}）",
-    "ja_easy": "ほかのことば",
-    "en": "Other words (newest first)"
+  "words.seenH": {
+    "ja": "{出会|であ}ったことば（{新|あたら}しい{順|じゅん}）",
+    "ja_easy": "{見|み}たことば（{新|あたら}しい{順|じゅん}）",
+    "en": "Words you met (newest first)"
+  },
+  "words.restH": {
+    "ja": "まだ{出会|であ}っていないことば",
+    "ja_easy": "まだ{見|み}ていないことば",
+    "en": "Words you have not met yet"
+  },
+  "words.topic.basic": {
+    "ja": "どこでも{使|つか}う",
+    "ja_easy": "どこでも{使|つか}う",
+    "en": "Everyday"
+  },
+  "words.topic.ward_office": {
+    "ja": "{区役所|くやくしょ}・{引|ひ}っ{越|こ}し",
+    "ja_easy": "{区役所|くやくしょ}・{引|ひ}っ{越|こ}し",
+    "en": "Ward office and moving"
+  },
+  "words.topic.calendar": {
+    "ja": "{曜日|ようび}・{日|ひ}",
+    "ja_easy": "{曜日|ようび}・{日|ひ}",
+    "en": "Days and dates"
+  },
+  "words.topic.gomi": {
+    "ja": "ごみ",
+    "ja_easy": "ごみ",
+    "en": "Garbage"
+  },
+  "words.topic.clinic": {
+    "ja": "{病院|びょういん}",
+    "ja_easy": "{病院|びょういん}",
+    "en": "Hospital and clinic"
+  },
+  "words.topic.bank": {
+    "ja": "{銀行|ぎんこう}",
+    "ja_easy": "{銀行|ぎんこう}",
+    "en": "Bank"
+  },
+  "words.topic.job": {
+    "ja": "{仕事|しごと}",
+    "ja_easy": "{仕事|しごと}",
+    "en": "Work"
+  },
+  "words.topic.housing": {
+    "ja": "{住|す}まい",
+    "ja_easy": "{住|す}まい",
+    "en": "Housing"
+  },
+  "words.topic.immigration": {
+    "ja": "{在留|ざいりゅう}カード・{入管|にゅうかん}",
+    "ja_easy": "{在留|ざいりゅう}カード・{入管|にゅうかん}",
+    "en": "Residence card and immigration"
+  },
+  "words.topic.letter": {
+    "ja": "{届|とど}いた{書類|しょるい}",
+    "ja_easy": "{届|とど}いた{書類|しょるい}",
+    "en": "Letters"
+  },
+  "words.topic.other": {
+    "ja": "そのほか",
+    "ja_easy": "そのほか",
+    "en": "Other"
+  },
+  "words.place": {
+    "ja": "{場所|ばしょ}",
+    "ja_easy": "{場所|ばしょ}",
+    "en": "Place"
+  },
+  "words.place.all": {
+    "ja": "すべての{場所|ばしょ}",
+    "ja_easy": "ぜんぶの{場所|ばしょ}",
+    "en": "All places"
   }
 }

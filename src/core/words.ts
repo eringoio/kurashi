@@ -11,6 +11,10 @@ import wordsJson from '../../data/words.json';
 export type WordKind = 'heard' | 'say' | 'word' | 'official' | 'doc';
 export const WORD_KINDS: WordKind[] = ['word', 'say', 'heard', 'official', 'doc'];
 
+/** 分野（一覧の見出し）。この順に並べる。分野の中は WORD_KINDS の順 */
+export const WORD_TOPICS = ['basic', 'ward_office', 'calendar', 'gomi', 'clinic', 'bank', 'job', 'housing', 'immigration', 'letter', 'other'] as const;
+export type WordTopic = (typeof WORD_TOPICS)[number];
+
 const Word = z.object({ id: z.string().regex(/^(heard|say|word)-[a-z0-9-]+$/), kind: z.enum(['heard', 'say', 'word']), scene: z.array(z.string()), ja: z.string(), easy: z.string(), en: z.string(), status: z.enum(['needs_check', 'verified']) });
 
 export interface WordView {
@@ -22,6 +26,8 @@ export interface WordView {
   meaning: Text;
   /** その言葉を出す画面の場面（pageScenes）。カード・書類の言葉は空（画面が id で残す） */
   scene: string[];
+  /** 分野（一覧の見出し） */
+  topic: WordTopic;
 }
 
 /** 残す記録（phrases ストア。key は word_id） */
@@ -34,40 +40,58 @@ const CLINIC_SAME: Record<string, string> = { nihongo: 'say-nihongo', english: '
 /** 病院の受付の言葉の id → 言葉の id */
 export const clinicPhraseWord = (id: string) => CLINIC_SAME[id] ?? 'clinic-phrase:' + id;
 
+/** できごとの group → 分野 */
+const GROUP_TOPIC: Record<string, WordTopic> = { move: 'ward_office', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi' };
+/** 場面 → 分野（言葉の表の scene の1つめ） */
+const sceneTopic = (sc: string | undefined): WordTopic => (sc === 'move' ? 'ward_office' : (WORD_TOPICS as readonly string[]).includes(sc ?? '') ? (sc as WordTopic) : 'other');
+
 let cached: WordView[] | null = null;
 let kwIds: Map<string, string[]> | null = null;
 export function allWords(): WordView[] {
   if (cached) return cached;
-  const data: WordView[] = z.object({ words: z.array(Word) }).parse(wordsJson).words.map((w) => ({ id: w.id, kind: w.kind, ja: w.ja, meaning: { ja: w.easy, ja_easy: w.easy, en: w.en }, scene: w.scene }));
-  // 病院（data/clinic.json）：体の場所・その場所の言う文・受付の言葉・診療科（診療科は画面が出した科だけを残す）
+  // rank：同じ分野・同じ種類の中の順（小さいほど先）。言葉の表の順はそのまま
+  type Row = WordView & { rank: number };
+  const data: Row[] = z.object({ words: z.array(Word) }).parse(wordsJson).words.map((w) => ({ id: w.id, kind: w.kind, ja: w.ja, meaning: { ja: w.easy, ja_easy: w.easy, en: w.en }, scene: w.scene, topic: sceneTopic(w.scene[0]), rank: 1 }));
+  // 病院（data/clinic.json）：体の場所・その場所の言う文・受付の言葉・診療科（診療科は画面が出した科だけを残す）。
+  // 病院の中の順：単語は 病院の言葉 → 体の場所、言う文は 受付で言う文 → 症状 → 体の場所の文
   const c = CLINIC();
-  const clinic: WordView[] = [
-    ...c.parts.filter((p) => p.id !== 'unknown').flatMap((p) => [
-      { id: 'clinic-part:' + p.id, kind: 'word' as const, ja: p.name.ja, meaning: p.name, scene: ['clinic'] },
-      { id: 'clinic-say:' + p.id, kind: 'say' as const, ja: p.say.ja, meaning: p.say, scene: ['clinic'] },
-    ]),
-    ...c.phrases.filter((p) => !CLINIC_SAME[p.id]).map((p) => ({ id: clinicPhraseWord(p.id), kind: (p.id === 'itsukara' ? 'heard' : 'say') as WordKind, ja: p.say.ja, meaning: p.say, scene: ['clinic'] })),
-    ...c.departments.map((d) => ({ id: deptWordId(d.id), kind: 'official' as const, ja: d.name.ja, meaning: { ja: d.covers.ja, ja_easy: d.covers.ja_easy, en: d.name.en + ' — ' + d.covers.en }, scene: [] })),
+  const clinic: Row[] = [
+    ...c.phrases.filter((p) => !CLINIC_SAME[p.id]).map((p) => ({ id: clinicPhraseWord(p.id), kind: (p.id === 'itsukara' ? 'heard' : 'say') as WordKind, ja: p.say.ja, meaning: p.say, scene: ['clinic'], topic: 'clinic' as const, rank: 0 })),
+    ...c.parts.filter((p) => p.id !== 'unknown').map((p) => ({ id: 'clinic-part:' + p.id, kind: 'word' as const, ja: p.name.ja, meaning: p.name, scene: ['clinic'], topic: 'clinic' as const, rank: 2 })),
+    ...c.parts.filter((p) => p.id !== 'unknown').map((p) => ({ id: 'clinic-say:' + p.id, kind: 'say' as const, ja: p.say.ja, meaning: p.say, scene: ['clinic'], topic: 'clinic' as const, rank: 2 })),
+    ...c.departments.map((d) => ({ id: deptWordId(d.id), kind: 'official' as const, ja: d.name.ja, meaning: { ja: d.covers.ja, ja_easy: d.covers.ja_easy, en: d.name.en + ' — ' + d.covers.en }, scene: [], topic: 'clinic' as const, rank: 1 })),
   ];
-  // 手続きの正式名：公開のカード全部（カードの画面が card:{id} で残す）
-  const official = DATA().cards.map((c) => ({ id: 'card:' + c.id, kind: 'official' as const, ja: `{${c.official_name.ja}|${c.official_name.reading}}`, meaning: c.title, scene: [] }));
+  // 手続きの正式名：公開のカード全部（カードの画面が card:{id} で残す）。分野は、銀行で行うものは銀行、ほかは最初のできごと
+  const { cards, events } = DATA();
+  const official: Row[] = cards.map((card) => {
+    const group = events.find((e) => e.card_ids.includes(card.id))?.group ?? '';
+    const topic: WordTopic = card.place === 'bank' ? 'bank' : card.place === 'immigration' ? 'immigration' : GROUP_TOPIC[group] ?? 'other';
+    return { id: 'card:' + card.id, kind: 'official' as const, ja: `{${card.official_name.ja}|${card.official_name.reading}}`, meaning: card.title, scene: [], topic, rank: 1 };
+  });
   // 書類：名前と、書類の大事な言葉（同じ言葉は1つ。書類の画面が残す）
-  const docs: WordView[] = [];
+  const docs: Row[] = [];
   const byWord = new Map<string, string>();
   kwIds = new Map();
   for (const d of DOCUMENTS()) {
-    docs.push({ id: 'doc:' + d.id, kind: 'doc', ja: d.look_for, meaning: d.title, scene: [] });
+    docs.push({ id: 'doc:' + d.id, kind: 'doc', ja: d.look_for, meaning: d.title, scene: [], topic: 'letter', rank: 1 });
     const ids: string[] = [];
     d.key_words.forEach((k, i) => {
       let id = byWord.get(k.word);
-      if (!id) { id = 'doc-word:' + d.id + ':' + i; byWord.set(k.word, id); docs.push({ id, kind: 'doc', ja: k.word, meaning: k.meaning, scene: [] }); }
+      if (!id) { id = 'doc-word:' + d.id + ':' + i; byWord.set(k.word, id); docs.push({ id, kind: 'doc', ja: k.word, meaning: k.meaning, scene: [], topic: 'letter', rank: 1 }); }
       ids.push(id);
     });
     kwIds.set(d.id, ids);
   }
-  cached = [...data, ...clinic, ...official, ...docs];
+  const rows = [...data, ...clinic, ...official, ...docs];
+  const at = new Map(rows.map((r, i) => [r.id, i]));
+  const order = (r: Row) => [WORD_TOPICS.indexOf(r.topic), WORD_KINDS.indexOf(r.kind), r.rank, at.get(r.id)!];
+  rows.sort((x, y) => { const p = order(x), q = order(y); for (let i = 0; i < 4; i++) if (p[i] !== q[i]) return p[i] - q[i]; return 0; });
+  cached = rows.map(({ rank: _r, ...w }) => w);
   return cached;
 }
+
+/** 1つの言葉（無ければ undefined） */
+export const wordById = (id: string): WordView | undefined => allWords().find((w) => w.id === id);
 
 /** 病院の画面で残す診療科の言葉（画面に出した科だけ） */
 export const deptWordId = (id: string) => 'clinic-dept:' + id;
@@ -105,6 +129,9 @@ export function pageScenes(path: string): string[] {
   return one[path] ? [one[path]] : [];
 }
 
+/** 画面の分野（その画面の場所の言葉を先に並べるため） */
+export const pageTopics = (path: string): WordTopic[] => pageScenes(path).map(sceneTopic);
+
 /** 画面の大事な言葉（場面の言葉）。その場面がいちばん目の言葉を先に（どこでも使う言葉は後に）。ほかは言葉の表の順 */
 export function pageWordIds(path: string): string[] {
   const sc = pageScenes(path);
@@ -122,7 +149,7 @@ export function logSeen(prev: WordLog | undefined, id: string, today: string, at
 export type WordMode = 'all' | 'seen' | 'star';
 const recency = (a: WordLog, b: WordLog) => b.last_seen.localeCompare(a.last_seen) || (b.at ?? 0) - (a.at ?? 0) || b.count - a.count;
 
-export type WordFilter = { mode?: WordMode; starred?: boolean; kind?: WordKind; today?: string; q?: string };
+export type WordFilter = { mode?: WordMode; starred?: boolean; kind?: WordKind; topic?: WordTopic; today?: string; q?: string };
 const norm = (s: string) => s.replace(/\{([^|}]+)\|([^}]+)\}/g, '$1$2').toLowerCase().replace(/[\s　]/g, '');
 
 /** 一覧。mode: seen（既定。記録のある言葉）・star（★だけ）・all（全部。見たものを新しい順に先に、残りは元の順）。
@@ -134,7 +161,7 @@ export function listWords(words: WordView[], logs: Record<string, WordLog>, f: W
   const rows = words
     .filter((w) => mode === 'all' || logs[w.id])
     .map((w) => ({ w, log: logs[w.id] ?? unseen(w) }))
-    .filter(({ w, log }) => (mode !== 'star' || log.starred) && (!f.kind || w.kind === f.kind) && (!f.today || log.last_seen === f.today)
+    .filter(({ w, log }) => (mode !== 'star' || log.starred) && (!f.kind || w.kind === f.kind) && (!f.topic || w.topic === f.topic) && (!f.today || log.last_seen === f.today)
       && (!q || norm(w.ja).includes(q) || Object.values(w.meaning).some((m) => typeof m === 'string' && norm(m).includes(q))));
   return [...rows.filter((r) => r.log.count > 0).sort((a, b) => recency(a.log, b.log)), ...rows.filter((r) => r.log.count === 0)];
 }

@@ -16,5 +16,5 @@ flow({
 
   await tap(/国民年金の加入のお知らせ/);
   await snap({ name: '結果', input: '国民年金の加入のお知らせ', expected: '書類の名前の見出し、架空の見本の画像、大事な言葉（基礎年金番号など）、期限・金額・番号は読まない注意、関係する手続き', why: '一覧から選んだ書類を、見本と言葉で説明する。期限・金額は出さない' },
-    async () => { await expect(h1).toHaveText('国民年金の加入のお知らせ'); await expect(page.locator('img.letter__photo')).toBeVisible(); await expect(page.locator('dl.letter__words')).toContainText(/基礎.*年金.*番号/); await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0); });
+    async () => { await expect(h1).toHaveText('国民年金の加入のお知らせ'); await expect(page.locator('img.letter__photo')).toBeVisible(); await expect(page.locator('section[aria-labelledby="letter-words"] ul.words')).toContainText(/基礎.*年金.*番号/); await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0); });
 });

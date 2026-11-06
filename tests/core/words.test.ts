@@ -1,7 +1,7 @@
 /* 語学学習の最初の版（作者が OK 2026-11-06。STATUS 10b） */
 import { describe, expect, it } from 'vitest';
 import { DATA } from '../../src/core/data';
-import { allWords, docWordIds, heardFirst, listWords, logSeen, pageScenes, pageWordIds, recentWords, type WordLog } from '../../src/core/words';
+import { allWords, docWordIds, WORD_KINDS, WORD_TOPICS, heardFirst, listWords, logSeen, pageScenes, pageWordIds, recentWords, type WordLog } from '../../src/core/words';
 
 const W = allWords();
 describe('ことば', () => {
@@ -72,5 +72,16 @@ describe('ことば', () => {
     for (const e of DATA().events.filter((x) => x.status === 'built')) expect(pageWordIds('/e/' + e.id).length, e.id).toBeGreaterThan(5);
     const scenes = new Set(['/', '/move', '/e/E-bank', '/e/E-job', '/e/E-stay-renew', '/e/E-house-search', '/gomi', '/clinic', '/letter', '/calendar', '/visit/ward_office'].flatMap(pageScenes));
     for (const w of W) for (const sc of w.scene) expect(scenes.has(sc), w.id + ' ' + sc).toBe(true);
+  });
+  it('並び：分野の順、分野の中は 単語 → 言う文 → 聞こえる言葉 → 手続きの名前。曜日は月から日', () => {
+    const key = (w: (typeof W)[number]) => WORD_TOPICS.indexOf(w.topic) * 10 + WORD_KINDS.indexOf(w.kind);
+    for (let i = 1; i < W.length; i++) expect(key(W[i]) >= key(W[i - 1]), W[i].id).toBe(true);
+    expect(W.every((w) => w.topic !== 'other')).toBe(true);
+    const days = W.filter((w) => /^word-(getsu|ka|sui|moku|kin|do|nichi)you$/.test(w.id)).map((w) => w.id);
+    expect(days).toEqual(['word-getsuyou', 'word-kayou', 'word-suiyou', 'word-mokuyou', 'word-kinyou', 'word-doyou', 'word-nichiyou']);
+    expect(W.find((w) => w.id === 'card:bank-account-open')?.topic).toBe('bank');
+    const gomi = listWords(W, {}, { mode: 'all', topic: 'gomi' });
+    expect(gomi.length).toBeGreaterThan(10);
+    expect(gomi.every((r) => r.w.topic === 'gomi')).toBe(true);
   });
 });

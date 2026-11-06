@@ -9,7 +9,7 @@ import type { Card, Text } from '../core/schema';
 import { visitGroup } from '../core/visit';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { line, show, ui, type LocalizedText, type UiKey } from '../i18n/text';
+import { line, ui, type LocalizedText, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { CardRow, DayChoice, dayTitle, fill, fillDate, ResultView } from '../ui/guide';
@@ -110,7 +110,6 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
 }
 
 function Counter({ v }: { v: Visit }) {
-  const { level } = usePrefs();
   return (
     <>
       <div className="head">
@@ -119,13 +118,14 @@ function Counter({ v }: { v: Visit }) {
       </div>
       {v.cards.map((c, i) => {
         const ph = counterPhrase(c.card);
-        const mean = level.kind === 'ja' ? null : show(ph as LocalizedText, level);
+        // 作者 11/7：どの表示レベルでも、ふりがな付きの日本語と英語（ことばと同じ）
+        const mean = (ph as LocalizedText).en;
         return (
           <section key={c.card.id} className="k-counter" aria-labelledby={'say-' + i}>
             <h2 id={'say-' + i} className="label"><One phrase k="visit.counter.say" /></h2>
-            <p className="k-counter__ja" lang="ja"><Ruby s={ph.ja} /></p>
+            <p className="k-counter__ja" lang="ja"><Ruby s={ph.ja} furigana /></p>
             <p className="k-counter__name" lang="ja"><span className="sr-only"><One k="visit.counter.official" />：</span><Ruby s={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} /></p>
-            {mean && !mean.fallback && <p className="k-counter__mean" lang={mean.mainLang}><Ruby s={mean.main} /></p>}
+            {mean && <p className="k-counter__mean" lang="en">{mean}</p>}
             <Speak ja={ph.ja} />
           </section>
         );

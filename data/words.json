@@ -9,249 +9,6 @@
   },
   "words": [
     {
-      "id": "heard-bangofuda",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{番号|ばんごう}{札|ふだ}をお{取|と}りください",
-      "easy": "{番号|ばんごう}の{紙|かみ}を{取|と}ってください",
-      "en": "Please take a number ticket",
-      "status": "verified"
-    },
-    {
-      "id": "heard-yobidashi",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{番号|ばんごう}でお{呼|よ}びします",
-      "easy": "{番号|ばんごう}で{呼|よ}びます",
-      "en": "We will call your number",
-      "status": "verified"
-    },
-    {
-      "id": "heard-shosho",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{少々|しょうしょう}お{待|ま}ちください",
-      "easy": "ちょっと{待|ま}ってください",
-      "en": "Please wait a moment",
-      "status": "verified"
-    },
-    {
-      "id": "heard-kinyu",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "こちらにご{記入|きにゅう}ください",
-      "easy": "ここに{書|か}いてください",
-      "en": "Please fill this in",
-      "status": "verified"
-    },
-    {
-      "id": "heard-honnin",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}をお{願|ねが}いします",
-      "easy": "あなただとわかる{物|もの}を{見|み}せてください",
-      "en": "Your ID, please",
-      "status": "verified"
-    },
-    {
-      "id": "heard-zairyu",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{在留|ざいりゅう}カードをお{願|ねが}いします",
-      "easy": "{在留|ざいりゅう}カードを{見|み}せてください",
-      "en": "Your residence card, please",
-      "status": "verified"
-    },
-    {
-      "id": "heard-ansho",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{暗証|あんしょう}{番号|ばんごう}を{入力|にゅうりょく}してください",
-      "easy": "{暗証|あんしょう}{番号|ばんごう}を{押|お}してください",
-      "en": "Please enter your PIN",
-      "status": "verified"
-    },
-    {
-      "id": "heard-chigau",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{担当|たんとう}の{窓口|まどぐち}が{違|ちが}います",
-      "easy": "ここではありません",
-      "en": "This is not the right counter",
-      "status": "verified"
-    },
-    {
-      "id": "heard-achira",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "あちらの{窓口|まどぐち}へどうぞ",
-      "easy": "あそこの{窓口|まどぐち}に{行|い}ってください",
-      "en": "Please go to that counter",
-      "status": "verified"
-    },
-    {
-      "id": "heard-hikae",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{控|ひか}えをお{渡|わた}しします",
-      "easy": "この{紙|かみ}を{持|も}っていてください",
-      "en": "Here is your copy",
-      "status": "verified"
-    },
-    {
-      "id": "heard-yuso",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{後日|ごじつ}、{郵送|ゆうそう}します",
-      "easy": "あとで{家|いえ}に{送|おく}ります",
-      "en": "We will mail it to you later",
-      "status": "verified"
-    },
-    {
-      "id": "heard-tesuryo",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{手数料|てすうりょう}がかかります",
-      "easy": "お{金|かね}がかかります",
-      "en": "There is a fee",
-      "status": "verified"
-    },
-    {
-      "id": "heard-inkan",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{印鑑|いんかん}はお{持|も}ちですか",
-      "easy": "はんこはありますか",
-      "en": "Do you have a personal seal (inkan)?",
-      "status": "verified"
-    },
-    {
-      "id": "heard-tsugi",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{次|つぎ}の{方|かた}どうぞ",
-      "easy": "{次|つぎ}の{人|ひと}、どうぞ",
-      "en": "Next, please",
-      "status": "verified"
-    },
-    {
-      "id": "heard-shorui",
-      "kind": "heard",
-      "scene": [
-        "ward_office"
-      ],
-      "ja": "{書類|しょるい}が{足|た}りません",
-      "easy": "{書類|しょるい}がたりません",
-      "en": "Some documents are missing",
-      "status": "verified"
-    },
-    {
-      "id": "say-nihongo",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "{日本語|にほんご}があまり{話|はな}せません",
-      "easy": "{日本語|にほんご}が{少|すこ}ししか{話|はな}せません",
-      "en": "I don't speak much Japanese",
-      "status": "verified"
-    },
-    {
-      "id": "say-yukkuri",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "もう{一度|いちど}、ゆっくり{言|い}ってください",
-      "easy": "もう{一回|いっかい}、ゆっくり{言|い}ってください",
-      "en": "Please say it again, slowly",
-      "status": "verified"
-    },
-    {
-      "id": "say-kaite",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "{書|か}いてもらえますか",
-      "easy": "{紙|かみ}に{書|か}いてください",
-      "en": "Could you write it down?",
-      "status": "verified"
-    },
-    {
-      "id": "say-doko",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "どこに{行|い}けばいいですか",
-      "easy": "どこへ{行|い}きますか",
-      "en": "Where should I go?",
-      "status": "verified"
-    },
-    {
-      "id": "say-eigo",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "{英語|えいご}の{資料|しりょう}はありますか",
-      "easy": "{英語|えいご}の{紙|かみ}はありますか",
-      "en": "Do you have this in English?",
-      "status": "verified"
-    },
-    {
-      "id": "say-wakarimashita",
-      "kind": "say",
-      "scene": [
-        "ward_office",
-        "bank",
-        "clinic"
-      ],
-      "ja": "わかりました",
-      "easy": "わかりました",
-      "en": "I understand",
-      "status": "verified"
-    },
-    {
       "id": "say-sumimasen",
       "kind": "say",
       "scene": [
@@ -267,17 +24,45 @@
       "status": "verified"
     },
     {
-      "id": "say-imi",
+      "id": "say-nihongo",
       "kind": "say",
       "scene": [
         "basic",
-        "letter",
         "ward_office",
-        "bank"
+        "bank",
+        "clinic"
       ],
-      "ja": "これはどういう{意味|いみ}ですか",
-      "easy": "これは{何|なん}の{意味|いみ}ですか",
-      "en": "What does this mean?",
+      "ja": "{日本語|にほんご}があまり{話|はな}せません",
+      "easy": "{日本語|にほんご}が{少|すこ}ししか{話|はな}せません",
+      "en": "I don't speak much Japanese",
+      "status": "verified"
+    },
+    {
+      "id": "say-yukkuri",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "もう{一度|いちど}、ゆっくり{言|い}ってください",
+      "easy": "もう{一回|いっかい}、ゆっくり{言|い}ってください",
+      "en": "Please say it again, slowly",
+      "status": "verified"
+    },
+    {
+      "id": "say-kaite",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{書|か}いてもらえますか",
+      "easy": "{紙|かみ}に{書|か}いてください",
+      "en": "Could you write it down?",
       "status": "verified"
     },
     {
@@ -296,6 +81,48 @@
       "status": "verified"
     },
     {
+      "id": "say-wakarimashita",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "わかりました",
+      "easy": "わかりました",
+      "en": "I understand",
+      "status": "verified"
+    },
+    {
+      "id": "say-imi",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "letter",
+        "ward_office",
+        "bank"
+      ],
+      "ja": "これはどういう{意味|いみ}ですか",
+      "easy": "これは{何|なん}の{意味|いみ}ですか",
+      "en": "What does this mean?",
+      "status": "verified"
+    },
+    {
+      "id": "say-eigo",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{英語|えいご}の{資料|しりょう}はありますか",
+      "easy": "{英語|えいご}の{紙|かみ}はありますか",
+      "en": "Do you have this in English?",
+      "status": "verified"
+    },
+    {
       "id": "say-tsuyaku",
       "kind": "say",
       "scene": [
@@ -307,6 +134,20 @@
       "ja": "{通訳|つうやく}をお{願|ねが}いできますか",
       "easy": "{通訳|つうやく}の{人|ひと}はいますか",
       "en": "Can I have an interpreter?",
+      "status": "verified"
+    },
+    {
+      "id": "say-doko",
+      "kind": "say",
+      "scene": [
+        "basic",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "どこに{行|い}けばいいですか",
+      "easy": "どこへ{行|い}きますか",
+      "en": "Where should I go?",
       "status": "verified"
     },
     {
@@ -545,151 +386,660 @@
       "status": "verified"
     },
     {
-      "id": "word-kouza",
-      "kind": "word",
+      "id": "heard-bangofuda",
+      "kind": "heard",
       "scene": [
-        "bank"
-      ],
-      "ja": "{口座|こうざ}",
-      "easy": "{口座|こうざ}",
-      "en": "Bank account",
-      "status": "verified"
-    },
-    {
-      "id": "word-tsuchou",
-      "kind": "word",
-      "scene": [
-        "bank"
-      ],
-      "ja": "{通帳|つうちょう}",
-      "easy": "お{金|かね}の{記録|きろく}の{本|ほん}",
-      "en": "Bankbook (passbook)",
-      "status": "verified"
-    },
-    {
-      "id": "word-cashcard",
-      "kind": "word",
-      "scene": [
-        "bank"
-      ],
-      "ja": "キャッシュカード",
-      "easy": "キャッシュカード",
-      "en": "Cash card (ATM card)",
-      "status": "verified"
-    },
-    {
-      "id": "word-anshou",
-      "kind": "word",
-      "scene": [
-        "bank"
-      ],
-      "ja": "{暗証|あんしょう}{番号|ばんごう}",
-      "easy": "ひみつの{番号|ばんごう}",
-      "en": "PIN",
-      "status": "verified"
-    },
-    {
-      "id": "word-furikomi",
-      "kind": "word",
-      "scene": [
-        "bank",
-        "job",
-        "housing"
-      ],
-      "ja": "{振込|ふりこみ}",
-      "easy": "{口座|こうざ}にお{金|かね}を{送|おく}ること",
-      "en": "Bank transfer",
-      "status": "verified"
-    },
-    {
-      "id": "word-hikiotoshi",
-      "kind": "word",
-      "scene": [
-        "bank",
-        "housing",
-        "letter"
-      ],
-      "ja": "{口座|こうざ}{振替|ふりかえ}（{引|ひ}き{落|お}とし）",
-      "easy": "{口座|こうざ}から{自動|じどう}で{払|はら}うこと",
-      "en": "Automatic payment from your account",
-      "status": "verified"
-    },
-    {
-      "id": "word-zandaka",
-      "kind": "word",
-      "scene": [
-        "bank"
-      ],
-      "ja": "{残高|ざんだか}",
-      "easy": "{口座|こうざ}にあるお{金|かね}",
-      "en": "Balance",
-      "status": "verified"
-    },
-    {
-      "id": "say-kouza-say",
-      "kind": "say",
-      "scene": [
-        "bank"
-      ],
-      "ja": "{口座|こうざ}を{作|つく}りたいです",
-      "easy": "{口座|こうざ}を{作|つく}りたいです",
-      "en": "I want to open an account",
-      "status": "verified"
-    },
-    {
-      "id": "say-jusho-kawatta",
-      "kind": "say",
-      "scene": [
-        "bank",
         "ward_office"
       ],
-      "ja": "{住所|じゅうしょ}が{変|か}わりました",
-      "easy": "{住所|じゅうしょ}が{変|か}わりました",
-      "en": "My address has changed",
+      "ja": "{番号|ばんごう}{札|ふだ}をお{取|と}りください",
+      "easy": "{番号|ばんごう}の{紙|かみ}を{取|と}ってください",
+      "en": "Please take a number ticket",
       "status": "verified"
     },
     {
-      "id": "say-card-nakushita",
+      "id": "heard-yobidashi",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{番号|ばんごう}でお{呼|よ}びします",
+      "easy": "{番号|ばんごう}で{呼|よ}びます",
+      "en": "We will call your number",
+      "status": "verified"
+    },
+    {
+      "id": "heard-shosho",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{少々|しょうしょう}お{待|ま}ちください",
+      "easy": "ちょっと{待|ま}ってください",
+      "en": "Please wait a moment",
+      "status": "verified"
+    },
+    {
+      "id": "heard-kinyu",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "こちらにご{記入|きにゅう}ください",
+      "easy": "ここに{書|か}いてください",
+      "en": "Please fill this in",
+      "status": "verified"
+    },
+    {
+      "id": "heard-honnin",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}をお{願|ねが}いします",
+      "easy": "あなただとわかる{物|もの}を{見|み}せてください",
+      "en": "Your ID, please",
+      "status": "verified"
+    },
+    {
+      "id": "heard-zairyu",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{在留|ざいりゅう}カードをお{願|ねが}いします",
+      "easy": "{在留|ざいりゅう}カードを{見|み}せてください",
+      "en": "Your residence card, please",
+      "status": "verified"
+    },
+    {
+      "id": "heard-ansho",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{暗証|あんしょう}{番号|ばんごう}を{入力|にゅうりょく}してください",
+      "easy": "{暗証|あんしょう}{番号|ばんごう}を{押|お}してください",
+      "en": "Please enter your PIN",
+      "status": "verified"
+    },
+    {
+      "id": "heard-chigau",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{担当|たんとう}の{窓口|まどぐち}が{違|ちが}います",
+      "easy": "ここではありません",
+      "en": "This is not the right counter",
+      "status": "verified"
+    },
+    {
+      "id": "heard-achira",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "あちらの{窓口|まどぐち}へどうぞ",
+      "easy": "あそこの{窓口|まどぐち}に{行|い}ってください",
+      "en": "Please go to that counter",
+      "status": "verified"
+    },
+    {
+      "id": "heard-hikae",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{控|ひか}えをお{渡|わた}しします",
+      "easy": "この{紙|かみ}を{持|も}っていてください",
+      "en": "Here is your copy",
+      "status": "verified"
+    },
+    {
+      "id": "heard-yuso",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{後日|ごじつ}、{郵送|ゆうそう}します",
+      "easy": "あとで{家|いえ}に{送|おく}ります",
+      "en": "We will mail it to you later",
+      "status": "verified"
+    },
+    {
+      "id": "heard-tesuryo",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{手数料|てすうりょう}がかかります",
+      "easy": "お{金|かね}がかかります",
+      "en": "There is a fee",
+      "status": "verified"
+    },
+    {
+      "id": "heard-inkan",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{印鑑|いんかん}はお{持|も}ちですか",
+      "easy": "はんこはありますか",
+      "en": "Do you have a personal seal (inkan)?",
+      "status": "verified"
+    },
+    {
+      "id": "heard-tsugi",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{次|つぎ}の{方|かた}どうぞ",
+      "easy": "{次|つぎ}の{人|ひと}、どうぞ",
+      "en": "Next, please",
+      "status": "verified"
+    },
+    {
+      "id": "heard-shorui",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{書類|しょるい}が{足|た}りません",
+      "easy": "{書類|しょるい}がたりません",
+      "en": "Some documents are missing",
+      "status": "verified"
+    },
+    {
+      "id": "word-kyou",
+      "kind": "word",
+      "scene": [
+        "calendar"
+      ],
+      "ja": "{今日|きょう}",
+      "easy": "{今日|きょう}",
+      "en": "Today",
+      "status": "verified"
+    },
+    {
+      "id": "word-ashita",
+      "kind": "word",
+      "scene": [
+        "calendar"
+      ],
+      "ja": "{明日|あした}",
+      "easy": "{明日|あした}",
+      "en": "Tomorrow",
+      "status": "verified"
+    },
+    {
+      "id": "word-raishu",
+      "kind": "word",
+      "scene": [
+        "calendar"
+      ],
+      "ja": "{来週|らいしゅう}",
+      "easy": "{来週|らいしゅう}",
+      "en": "Next week",
+      "status": "verified"
+    },
+    {
+      "id": "word-getsuyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{月曜日|げつようび}",
+      "easy": "{月曜日|げつようび}",
+      "en": "Monday",
+      "status": "verified"
+    },
+    {
+      "id": "word-kayou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{火曜日|かようび}",
+      "easy": "{火曜日|かようび}",
+      "en": "Tuesday",
+      "status": "verified"
+    },
+    {
+      "id": "word-suiyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{水曜日|すいようび}",
+      "easy": "{水曜日|すいようび}",
+      "en": "Wednesday",
+      "status": "verified"
+    },
+    {
+      "id": "word-mokuyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{木曜日|もくようび}",
+      "easy": "{木曜日|もくようび}",
+      "en": "Thursday",
+      "status": "verified"
+    },
+    {
+      "id": "word-kinyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{金曜日|きんようび}",
+      "easy": "{金曜日|きんようび}",
+      "en": "Friday",
+      "status": "verified"
+    },
+    {
+      "id": "word-doyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{土曜日|どようび}",
+      "easy": "{土曜日|どようび}",
+      "en": "Saturday",
+      "status": "verified"
+    },
+    {
+      "id": "word-nichiyou",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{日曜日|にちようび}",
+      "easy": "{日曜日|にちようび}",
+      "en": "Sunday",
+      "status": "verified"
+    },
+    {
+      "id": "word-maishu",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{毎週|まいしゅう}",
+      "easy": "{毎週|まいしゅう}",
+      "en": "Every week",
+      "status": "verified"
+    },
+    {
+      "id": "word-dai13",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi"
+      ],
+      "ja": "{第|だい}1・{第|だい}3",
+      "easy": "その{月|つき}の1{回目|かいめ}と3{回目|かいめ}",
+      "en": "1st and 3rd (of the month)",
+      "status": "verified"
+    },
+    {
+      "id": "word-heijitsu",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "ward_office",
+        "bank"
+      ],
+      "ja": "{平日|へいじつ}",
+      "easy": "{月曜日|げつようび}から{金曜日|きんようび}",
+      "en": "Weekdays (Mon–Fri)",
+      "status": "verified"
+    },
+    {
+      "id": "word-shukujitsu",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "gomi",
+        "ward_office"
+      ],
+      "ja": "{祝日|しゅくじつ}",
+      "easy": "{国|くに}の{休|やす}みの{日|ひ}",
+      "en": "National holiday",
+      "status": "verified"
+    },
+    {
+      "id": "word-uketsuke-jikan",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{受付|うけつけ}{時間|じかん}",
+      "easy": "{受付|うけつけ}{時間|じかん}",
+      "en": "Reception hours",
+      "status": "verified"
+    },
+    {
+      "id": "word-kyushinbi",
+      "kind": "word",
+      "scene": [
+        "calendar",
+        "clinic"
+      ],
+      "ja": "{休診日|きゅうしんび}",
+      "easy": "{病院|びょういん}が{休|やす}みの{日|ひ}",
+      "en": "Day the clinic is closed",
+      "status": "verified"
+    },
+    {
+      "id": "word-kanen",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{可燃|かねん}ごみ",
+      "easy": "{燃|も}えるごみ",
+      "en": "Burnable waste",
+      "status": "verified"
+    },
+    {
+      "id": "word-funen",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{不燃|ふねん}ごみ",
+      "easy": "{燃|も}えないごみ",
+      "en": "Non-burnable waste",
+      "status": "verified"
+    },
+    {
+      "id": "word-shigen",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{資源|しげん}",
+      "easy": "もう{一度|いちど}{使|つか}える{物|もの}",
+      "en": "Recyclables",
+      "status": "verified"
+    },
+    {
+      "id": "word-plastic",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "プラスチック{資源|しげん}",
+      "easy": "プラスチック{資源|しげん}",
+      "en": "Plastic recyclables",
+      "status": "verified"
+    },
+    {
+      "id": "word-kamiseiyouki",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{紙製|かみせい}{容器|ようき}{包装|ほうそう}",
+      "easy": "{紙|かみ}の{箱|はこ}や{袋|ふくろ}",
+      "en": "Paper packaging",
+      "status": "verified"
+    },
+    {
+      "id": "word-akikan",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{空|あ}き{缶|かん}・{空|あ}きびん",
+      "easy": "{空|あ}き{缶|かん}・{空|あ}きびん",
+      "en": "Empty cans and bottles",
+      "status": "verified"
+    },
+    {
+      "id": "word-petbottle",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "ペットボトル",
+      "easy": "ペットボトル",
+      "en": "PET bottles",
+      "status": "verified"
+    },
+    {
+      "id": "word-sodai",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{粗大|そだい}ごみ",
+      "easy": "{大|おお}きなごみ",
+      "en": "Bulky waste",
+      "status": "verified"
+    },
+    {
+      "id": "word-bunbetsu",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{分別|ぶんべつ}",
+      "easy": "ごみを{分|わ}けること",
+      "en": "Sorting waste",
+      "status": "verified"
+    },
+    {
+      "id": "word-shushubi",
+      "kind": "word",
+      "scene": [
+        "gomi",
+        "calendar"
+      ],
+      "ja": "{収集日|しゅうしゅうび}",
+      "easy": "ごみを{集|あつ}める{日|ひ}",
+      "en": "Collection day",
+      "status": "verified"
+    },
+    {
+      "id": "word-shusekibasho",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "ごみ{集積|しゅうせき}{場所|ばしょ}",
+      "easy": "ごみを{出|だ}す{場所|ばしょ}",
+      "en": "Garbage collection point",
+      "status": "verified"
+    },
+    {
+      "id": "word-shiteibukuro",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{指定袋|していぶくろ}",
+      "easy": "{市|し}が{決|き}めたごみの{袋|ふくろ}",
+      "en": "Designated garbage bag",
+      "status": "verified"
+    },
+    {
+      "id": "word-nofuken",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{手数料|てすうりょう}{納付券|のうふけん}",
+      "easy": "{粗大|そだい}ごみに{貼|は}る{券|けん}",
+      "en": "Fee ticket (for bulky waste)",
+      "status": "verified"
+    },
+    {
+      "id": "word-chuiseal",
+      "kind": "word",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "{注意|ちゅうい}シール（{赤|あか}）",
+      "easy": "{赤|あか}いシール（ごみが{集|あつ}められなかった{理由|りゆう}が{書|か}いてある）",
+      "en": "Red warning sticker (your waste was not collected; the reason is written on it)",
+      "status": "verified"
+    },
+    {
+      "id": "say-nanyoubi",
       "kind": "say",
       "scene": [
-        "bank"
+        "gomi"
       ],
-      "ja": "カードをなくしました",
-      "easy": "カードをなくしました",
-      "en": "I lost my card",
+      "ja": "{可燃|かねん}ごみは{何曜日|なんようび}ですか",
+      "easy": "{燃|も}えるごみは{何曜日|なんようび}ですか",
+      "en": "Which day is burnable waste?",
       "status": "verified"
     },
     {
-      "id": "heard-youken",
-      "kind": "heard",
+      "id": "say-dokoni",
+      "kind": "say",
       "scene": [
-        "bank"
+        "gomi"
       ],
-      "ja": "{本日|ほんじつ}はどのようなご{用件|ようけん}ですか",
-      "easy": "{今日|きょう}は{何|なん}の{用事|ようじ}ですか",
-      "en": "How can I help you today?",
+      "ja": "これは{何|なに}ごみですか",
+      "easy": "これは{何|なに}ごみですか",
+      "en": "What kind of waste is this?",
       "status": "verified"
     },
     {
-      "id": "heard-rokkagetsu",
+      "id": "heard-asa8ji",
       "kind": "heard",
       "scene": [
-        "bank"
+        "gomi"
       ],
-      "ja": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
-      "easy": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
-      "en": "Have you been in Japan for 6 months?",
+      "ja": "{収集日|しゅうしゅうび}の{朝|あさ}8{時|じ}までに{出|だ}してください",
+      "easy": "{集|あつ}める{日|ひ}の{朝|あさ}8{時|じ}までに{出|だ}してください（{中区|なかく}は7{時|じ}まで）",
+      "en": "Put it out by 8 a.m. on collection day (Naka Ward: 7 a.m.)",
       "status": "verified"
     },
     {
-      "id": "heard-inkan-bank",
+      "id": "heard-araute",
       "kind": "heard",
       "scene": [
-        "bank"
+        "gomi"
       ],
-      "ja": "お{届|とど}け{印|いん}をお{持|も}ちですか",
-      "easy": "{口座|こうざ}の{印鑑|いんかん}はありますか",
-      "en": "Do you have the seal registered for the account?",
+      "ja": "{中|なか}を{洗|あら}ってから{出|だ}してください",
+      "easy": "{中|なか}を{洗|あら}ってから{出|だ}してください",
+      "en": "Rinse it before putting it out",
+      "status": "verified"
+    },
+    {
+      "id": "heard-dasenai",
+      "kind": "heard",
+      "scene": [
+        "gomi"
+      ],
+      "ja": "この{日|ひ}は{出|だ}せません",
+      "easy": "この{日|ひ}は{出|だ}せません",
+      "en": "You cannot put it out on this day",
+      "status": "verified"
+    },
+    {
+      "id": "word-byouin",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{病院|びょういん}・クリニック",
+      "easy": "{病院|びょういん}・クリニック",
+      "en": "Hospital / clinic",
+      "status": "verified"
+    },
+    {
+      "id": "word-uketsuke",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{受付|うけつけ}",
+      "easy": "{受付|うけつけ}",
+      "en": "Reception",
+      "status": "verified"
+    },
+    {
+      "id": "word-shoshin",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{初診|しょしん}",
+      "easy": "はじめて{行|い}くこと",
+      "en": "First visit",
+      "status": "verified"
+    },
+    {
+      "id": "word-yoyaku",
+      "kind": "word",
+      "scene": [
+        "clinic",
+        "calendar"
+      ],
+      "ja": "{予約|よやく}",
+      "easy": "{予約|よやく}",
+      "en": "Appointment / reservation",
+      "status": "verified"
+    },
+    {
+      "id": "word-kusuri",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{薬|くすり}",
+      "easy": "{薬|くすり}",
+      "en": "Medicine",
+      "status": "verified"
+    },
+    {
+      "id": "word-yakkyoku",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{薬局|やっきょく}",
+      "easy": "{薬|くすり}をもらう{店|みせ}",
+      "en": "Pharmacy",
+      "status": "verified"
+    },
+    {
+      "id": "word-kyukyusha",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{救急車|きゅうきゅうしゃ}（119）",
+      "easy": "{救急車|きゅうきゅうしゃ}（119）",
+      "en": "Ambulance (call 119)",
+      "status": "verified"
+    },
+    {
+      "id": "word-shinsatsuken",
+      "kind": "word",
+      "scene": [
+        "clinic"
+      ],
+      "ja": "{診察券|しんさつけん}",
+      "easy": "{病院|びょういん}のカード",
+      "en": "Patient registration card",
       "status": "verified"
     },
     {
@@ -1078,495 +1428,151 @@
       "status": "verified"
     },
     {
-      "id": "word-byouin",
+      "id": "word-kouza",
       "kind": "word",
       "scene": [
-        "clinic"
-      ],
-      "ja": "{病院|びょういん}・クリニック",
-      "easy": "{病院|びょういん}・クリニック",
-      "en": "Hospital / clinic",
-      "status": "verified"
-    },
-    {
-      "id": "word-uketsuke",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{受付|うけつけ}",
-      "easy": "{受付|うけつけ}",
-      "en": "Reception",
-      "status": "verified"
-    },
-    {
-      "id": "word-shoshin",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{初診|しょしん}",
-      "easy": "はじめて{行|い}くこと",
-      "en": "First visit",
-      "status": "verified"
-    },
-    {
-      "id": "word-yoyaku",
-      "kind": "word",
-      "scene": [
-        "clinic",
-        "calendar"
-      ],
-      "ja": "{予約|よやく}",
-      "easy": "{予約|よやく}",
-      "en": "Appointment / reservation",
-      "status": "verified"
-    },
-    {
-      "id": "word-kusuri",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{薬|くすり}",
-      "easy": "{薬|くすり}",
-      "en": "Medicine",
-      "status": "verified"
-    },
-    {
-      "id": "word-yakkyoku",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{薬局|やっきょく}",
-      "easy": "{薬|くすり}をもらう{店|みせ}",
-      "en": "Pharmacy",
-      "status": "verified"
-    },
-    {
-      "id": "word-kyukyusha",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{救急車|きゅうきゅうしゃ}（119）",
-      "easy": "{救急車|きゅうきゅうしゃ}（119）",
-      "en": "Ambulance (call 119)",
-      "status": "verified"
-    },
-    {
-      "id": "word-shinsatsuken",
-      "kind": "word",
-      "scene": [
-        "clinic"
-      ],
-      "ja": "{診察券|しんさつけん}",
-      "easy": "{病院|びょういん}のカード",
-      "en": "Patient registration card",
-      "status": "verified"
-    },
-    {
-      "id": "word-kanen",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{可燃|かねん}ごみ",
-      "easy": "{燃|も}えるごみ",
-      "en": "Burnable waste",
-      "status": "verified"
-    },
-    {
-      "id": "word-funen",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{不燃|ふねん}ごみ",
-      "easy": "{燃|も}えないごみ",
-      "en": "Non-burnable waste",
-      "status": "verified"
-    },
-    {
-      "id": "word-shigen",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{資源|しげん}",
-      "easy": "もう{一度|いちど}{使|つか}える{物|もの}",
-      "en": "Recyclables",
-      "status": "verified"
-    },
-    {
-      "id": "word-plastic",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "プラスチック{資源|しげん}",
-      "easy": "プラスチック{資源|しげん}",
-      "en": "Plastic recyclables",
-      "status": "verified"
-    },
-    {
-      "id": "word-kamiseiyouki",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{紙製|かみせい}{容器|ようき}{包装|ほうそう}",
-      "easy": "{紙|かみ}の{箱|はこ}や{袋|ふくろ}",
-      "en": "Paper packaging",
-      "status": "verified"
-    },
-    {
-      "id": "word-akikan",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{空|あ}き{缶|かん}・{空|あ}きびん",
-      "easy": "{空|あ}き{缶|かん}・{空|あ}きびん",
-      "en": "Empty cans and bottles",
-      "status": "verified"
-    },
-    {
-      "id": "word-petbottle",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "ペットボトル",
-      "easy": "ペットボトル",
-      "en": "PET bottles",
-      "status": "verified"
-    },
-    {
-      "id": "word-sodai",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{粗大|そだい}ごみ",
-      "easy": "{大|おお}きなごみ",
-      "en": "Bulky waste",
-      "status": "verified"
-    },
-    {
-      "id": "word-bunbetsu",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{分別|ぶんべつ}",
-      "easy": "ごみを{分|わ}けること",
-      "en": "Sorting waste",
-      "status": "verified"
-    },
-    {
-      "id": "word-shushubi",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{収集日|しゅうしゅうび}",
-      "easy": "ごみを{集|あつ}める{日|ひ}",
-      "en": "Collection day",
-      "status": "verified"
-    },
-    {
-      "id": "word-shusekibasho",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "ごみ{集積|しゅうせき}{場所|ばしょ}",
-      "easy": "ごみを{出|だ}す{場所|ばしょ}",
-      "en": "Garbage collection point",
-      "status": "verified"
-    },
-    {
-      "id": "word-shiteibukuro",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{指定袋|していぶくろ}",
-      "easy": "{市|し}が{決|き}めたごみの{袋|ふくろ}",
-      "en": "Designated garbage bag",
-      "status": "verified"
-    },
-    {
-      "id": "word-nofuken",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{手数料|てすうりょう}{納付券|のうふけん}",
-      "easy": "{粗大|そだい}ごみに{貼|は}る{券|けん}",
-      "en": "Fee ticket (for bulky waste)",
-      "status": "verified"
-    },
-    {
-      "id": "heard-asa8ji",
-      "kind": "heard",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{収集日|しゅうしゅうび}の{朝|あさ}8{時|じ}までに{出|だ}してください",
-      "easy": "{集|あつ}める{日|ひ}の{朝|あさ}8{時|じ}までに{出|だ}してください（{中区|なかく}は7{時|じ}まで）",
-      "en": "Put it out by 8 a.m. on collection day (Naka Ward: 7 a.m.)",
-      "status": "verified"
-    },
-    {
-      "id": "heard-araute",
-      "kind": "heard",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{中|なか}を{洗|あら}ってから{出|だ}してください",
-      "easy": "{中|なか}を{洗|あら}ってから{出|だ}してください",
-      "en": "Rinse it before putting it out",
-      "status": "verified"
-    },
-    {
-      "id": "heard-dasenai",
-      "kind": "heard",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "この{日|ひ}は{出|だ}せません",
-      "easy": "この{日|ひ}は{出|だ}せません",
-      "en": "You cannot put it out on this day",
-      "status": "verified"
-    },
-    {
-      "id": "word-chuiseal",
-      "kind": "word",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{注意|ちゅうい}シール（{赤|あか}）",
-      "easy": "{赤|あか}いシール（ごみが{集|あつ}められなかった{理由|りゆう}が{書|か}いてある）",
-      "en": "Red warning sticker (your waste was not collected; the reason is written on it)",
-      "status": "verified"
-    },
-    {
-      "id": "say-nanyoubi",
-      "kind": "say",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "{可燃|かねん}ごみは{何曜日|なんようび}ですか",
-      "easy": "{燃|も}えるごみは{何曜日|なんようび}ですか",
-      "en": "Which day is burnable waste?",
-      "status": "verified"
-    },
-    {
-      "id": "say-dokoni",
-      "kind": "say",
-      "scene": [
-        "gomi"
-      ],
-      "ja": "これは{何|なに}ごみですか",
-      "easy": "これは{何|なに}ごみですか",
-      "en": "What kind of waste is this?",
-      "status": "verified"
-    },
-    {
-      "id": "word-getsuyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{月曜日|げつようび}",
-      "easy": "{月曜日|げつようび}",
-      "en": "Monday",
-      "status": "verified"
-    },
-    {
-      "id": "word-kayou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{火曜日|かようび}",
-      "easy": "{火曜日|かようび}",
-      "en": "Tuesday",
-      "status": "verified"
-    },
-    {
-      "id": "word-suiyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{水曜日|すいようび}",
-      "easy": "{水曜日|すいようび}",
-      "en": "Wednesday",
-      "status": "verified"
-    },
-    {
-      "id": "word-mokuyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{木曜日|もくようび}",
-      "easy": "{木曜日|もくようび}",
-      "en": "Thursday",
-      "status": "verified"
-    },
-    {
-      "id": "word-kinyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{金曜日|きんようび}",
-      "easy": "{金曜日|きんようび}",
-      "en": "Friday",
-      "status": "verified"
-    },
-    {
-      "id": "word-doyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{土曜日|どようび}",
-      "easy": "{土曜日|どようび}",
-      "en": "Saturday",
-      "status": "verified"
-    },
-    {
-      "id": "word-nichiyou",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{日曜日|にちようび}",
-      "easy": "{日曜日|にちようび}",
-      "en": "Sunday",
-      "status": "verified"
-    },
-    {
-      "id": "word-maishu",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{毎週|まいしゅう}",
-      "easy": "{毎週|まいしゅう}",
-      "en": "Every week",
-      "status": "verified"
-    },
-    {
-      "id": "word-dai13",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar"
-      ],
-      "ja": "{第|だい}1・{第|だい}3",
-      "easy": "その{月|つき}の1{回目|かいめ}と3{回目|かいめ}",
-      "en": "1st and 3rd (of the month)",
-      "status": "verified"
-    },
-    {
-      "id": "word-shukujitsu",
-      "kind": "word",
-      "scene": [
-        "gomi",
-        "calendar",
-        "ward_office"
-      ],
-      "ja": "{祝日|しゅくじつ}",
-      "easy": "{国|くに}の{休|やす}みの{日|ひ}",
-      "en": "National holiday",
-      "status": "verified"
-    },
-    {
-      "id": "word-heijitsu",
-      "kind": "word",
-      "scene": [
-        "calendar",
-        "ward_office",
         "bank"
       ],
-      "ja": "{平日|へいじつ}",
-      "easy": "{月曜日|げつようび}から{金曜日|きんようび}",
-      "en": "Weekdays (Mon–Fri)",
+      "ja": "{口座|こうざ}",
+      "easy": "{口座|こうざ}",
+      "en": "Bank account",
       "status": "verified"
     },
     {
-      "id": "word-kyou",
+      "id": "word-tsuchou",
       "kind": "word",
       "scene": [
-        "calendar"
+        "bank"
       ],
-      "ja": "{今日|きょう}",
-      "easy": "{今日|きょう}",
-      "en": "Today",
+      "ja": "{通帳|つうちょう}",
+      "easy": "お{金|かね}の{記録|きろく}の{本|ほん}",
+      "en": "Bankbook (passbook)",
       "status": "verified"
     },
     {
-      "id": "word-ashita",
+      "id": "word-cashcard",
       "kind": "word",
       "scene": [
-        "calendar"
+        "bank"
       ],
-      "ja": "{明日|あした}",
-      "easy": "{明日|あした}",
-      "en": "Tomorrow",
+      "ja": "キャッシュカード",
+      "easy": "キャッシュカード",
+      "en": "Cash card (ATM card)",
       "status": "verified"
     },
     {
-      "id": "word-raishu",
+      "id": "word-anshou",
       "kind": "word",
       "scene": [
-        "calendar"
+        "bank"
       ],
-      "ja": "{来週|らいしゅう}",
-      "easy": "{来週|らいしゅう}",
-      "en": "Next week",
+      "ja": "{暗証|あんしょう}{番号|ばんごう}",
+      "easy": "ひみつの{番号|ばんごう}",
+      "en": "PIN",
       "status": "verified"
     },
     {
-      "id": "word-uketsuke-jikan",
+      "id": "word-furikomi",
       "kind": "word",
       "scene": [
-        "calendar",
-        "ward_office",
         "bank",
-        "clinic"
+        "job",
+        "housing"
       ],
-      "ja": "{受付|うけつけ}{時間|じかん}",
-      "easy": "{受付|うけつけ}{時間|じかん}",
-      "en": "Reception hours",
+      "ja": "{振込|ふりこみ}",
+      "easy": "{口座|こうざ}にお{金|かね}を{送|おく}ること",
+      "en": "Bank transfer",
       "status": "verified"
     },
     {
-      "id": "word-kyushinbi",
+      "id": "word-hikiotoshi",
       "kind": "word",
       "scene": [
-        "calendar",
-        "clinic"
+        "bank",
+        "housing",
+        "letter"
       ],
-      "ja": "{休診日|きゅうしんび}",
-      "easy": "{病院|びょういん}が{休|やす}みの{日|ひ}",
-      "en": "Day the clinic is closed",
+      "ja": "{口座|こうざ}{振替|ふりかえ}（{引|ひ}き{落|お}とし）",
+      "easy": "{口座|こうざ}から{自動|じどう}で{払|はら}うこと",
+      "en": "Automatic payment from your account",
+      "status": "verified"
+    },
+    {
+      "id": "word-zandaka",
+      "kind": "word",
+      "scene": [
+        "bank"
+      ],
+      "ja": "{残高|ざんだか}",
+      "easy": "{口座|こうざ}にあるお{金|かね}",
+      "en": "Balance",
+      "status": "verified"
+    },
+    {
+      "id": "say-kouza-say",
+      "kind": "say",
+      "scene": [
+        "bank"
+      ],
+      "ja": "{口座|こうざ}を{作|つく}りたいです",
+      "easy": "{口座|こうざ}を{作|つく}りたいです",
+      "en": "I want to open an account",
+      "status": "verified"
+    },
+    {
+      "id": "say-jusho-kawatta",
+      "kind": "say",
+      "scene": [
+        "bank",
+        "ward_office"
+      ],
+      "ja": "{住所|じゅうしょ}が{変|か}わりました",
+      "easy": "{住所|じゅうしょ}が{変|か}わりました",
+      "en": "My address has changed",
+      "status": "verified"
+    },
+    {
+      "id": "say-card-nakushita",
+      "kind": "say",
+      "scene": [
+        "bank"
+      ],
+      "ja": "カードをなくしました",
+      "easy": "カードをなくしました",
+      "en": "I lost my card",
+      "status": "verified"
+    },
+    {
+      "id": "heard-youken",
+      "kind": "heard",
+      "scene": [
+        "bank"
+      ],
+      "ja": "{本日|ほんじつ}はどのようなご{用件|ようけん}ですか",
+      "easy": "{今日|きょう}は{何|なん}の{用事|ようじ}ですか",
+      "en": "How can I help you today?",
+      "status": "verified"
+    },
+    {
+      "id": "heard-rokkagetsu",
+      "kind": "heard",
+      "scene": [
+        "bank"
+      ],
+      "ja": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
+      "easy": "{日本|にほん}に{来|き}て6か{月|げつ}たっていますか",
+      "en": "Have you been in Japan for 6 months?",
+      "status": "verified"
+    },
+    {
+      "id": "heard-inkan-bank",
+      "kind": "heard",
+      "scene": [
+        "bank"
+      ],
+      "ja": "お{届|とど}け{印|いん}をお{持|も}ちですか",
+      "easy": "{口座|こうざ}の{印鑑|いんかん}はありますか",
+      "en": "Do you have the seal registered for the account?",
       "status": "verified"
     },
     {
@@ -2070,17 +2076,6 @@
       "status": "verified"
     },
     {
-      "id": "heard-hagaki",
-      "kind": "heard",
-      "scene": [
-        "immigration"
-      ],
-      "ja": "{結果|けっか}ははがきでお{知|し}らせします",
-      "easy": "{結果|けっか}ははがきで{来|き}ます",
-      "en": "We will send the result by postcard",
-      "status": "verified"
-    },
-    {
       "id": "say-koushin-say",
       "kind": "say",
       "scene": [
@@ -2089,6 +2084,17 @@
       "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}をしたいです",
       "easy": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}をしたいです",
       "en": "I want to renew my period of stay",
+      "status": "verified"
+    },
+    {
+      "id": "heard-hagaki",
+      "kind": "heard",
+      "scene": [
+        "immigration"
+      ],
+      "ja": "{結果|けっか}ははがきでお{知|し}らせします",
+      "easy": "{結果|けっか}ははがきで{来|き}ます",
+      "en": "We will send the result by postcard",
       "status": "verified"
     },
     {
