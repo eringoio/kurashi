@@ -1,0 +1,157 @@
+{
+  "data_version": 1,
+  "awareness_type": "option",
+  "obligation": "optional",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [
+    "解雇",
+    "かいこ",
+    "クビ",
+    "労働トラブル",
+    "相談ダイヤル",
+    "外国語",
+    "dismissal",
+    "fired",
+    "labor trouble",
+    "hotline",
+    "unpaid wages"
+  ],
+  "reasons": {},
+  "deadline": null,
+  "id": "job-trouble",
+  "illustration": "ask",
+  "eligibility": {
+    "all": [
+      "R-job-scope",
+      "R-job-goal-pt"
+    ]
+  },
+  "title": {
+    "ja": "{困|こま}ったとき（{解雇|かいこ}・{労働|ろうどう}トラブルの{相談|そうだん}）",
+    "ja_easy": "{困|こま}ったとき（やめさせられた・{給料|きゅうりょう}のこと）の{相談|そうだん}",
+    "en": "When there is trouble (dismissal, work problems): where to ask"
+  },
+  "official_name": {
+    "ja": "外国人労働者向け相談ダイヤル",
+    "reading": "がいこくじんろうどうしゃむけそうだんだいやる"
+  },
+  "summary": {
+    "ja": "{労働|ろうどう}{条件|じょうけん}について{外国語|がいこくご}で{電話|でんわ}{相談|そうだん}できる{窓口|まどぐち}があります。{個別|こべつ}のできごとが{不当|ふとう}な{解雇|かいこ}かどうかは、このアプリでは{判断|はんだん}しません。{要|よう}{確認|かくにん}です。{解雇|かいこ}は、{客観的|きゃっかんてき}に{合理的|ごうりてき}な{理由|りゆう}がなく{社会|しゃかい}{通念|つうねん}{上|うえ}{相当|そうとう}でないときは{無効|むこう}になります。やむを{得|え}ず{解雇|かいこ}するときも、{会社|かいしゃ}は30{日|にち}{前|まえ}に{予告|よこく}するか、30{日分|にちぶん}{以上|いじょう}の{平均|へいきん}{賃金|ちんぎん}（{解雇|かいこ}{予告|よこく}{手当|てあて}）を{払|はら}います。{例外|れいがい}があります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{仕事|しごと}のことで{困|こま}ったら、{外国語|がいこくご}で{電話|でんわ}{相談|そうだん}できる{窓口|まどぐち}があります。やめさせられたことが{正|ただ}しいかどうかは、このアプリではわかりません。{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+    "en": "There are phone counters where you can ask about working conditions in a foreign language. This app does not judge whether a specific case is an unfair dismissal. Ask at the counter (to be checked). A dismissal without an objectively reasonable cause that is not socially appropriate is invalid. Even when dismissal is unavoidable, the employer gives 30 days notice or pays at least 30 days of average wages (with exceptions) (to be checked)."
+  },
+  "where": {
+    "text": {
+      "ja": "{外国人|がいこくじん}{労働者|ろうどうしゃ}{向|む}け{相談|そうだん}ダイヤル（{外国語|がいこくご}の{電話|でんわ}{相談|そうだん}。{外国人|がいこくじん}{労働者|ろうどうしゃ}{相談|そうだん}コーナーにつながります）",
+      "ja_easy": "{外国人|がいこくじん}の{労働者|ろうどうしゃ}のための{相談|そうだん}ダイヤル（{電話|でんわ}）",
+      "en": "The Foreign Workers Consultation Dial (phone consultation in foreign languages; connects to the Foreign Workers Consultation Corner)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-check-roudou-foreigner"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "労働条件等について、外国語で電話相談いただける窓口はこちらです(外国人労働者相談コーナーにつながります)。",
+      "ai_check": {
+        "fetched_at": "2026-11-05",
+        "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
+        "verdict": "agree",
+        "ref": "research/audits/job.json#P-job-trouble/c4"
+      }
+    }
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{外国人|がいこくじん}{労働者|ろうどうしゃ}{向|む}け{相談|そうだん}ダイヤルは、{労働|ろうどう}{条件|じょうけん}などを{外国語|がいこくご}で{電話|でんわ}{相談|そうだん}できる{窓口|まどぐち}です（2026{年|ねん}10{月|がつ}の{案内|あんない}）。{電話番号|でんわばんごう}は{公式|こうしき}ページで{確認|かくにん}します。",
+        "ja_easy": "{外国語|がいこくご}で{電話|でんわ}{相談|そうだん}できます（2026{年|ねん}10{月|がつ}の{案内|あんない}）。{電話番号|でんわばんごう}は{公式|こうしき}ページで{確認|かくにん}します。",
+        "en": "The Foreign Workers Consultation Dial takes phone consultations on working conditions in foreign languages (as of October 2026). Check the number on the official page."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-check-roudou-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "労働条件等について、外国語で電話相談いただける窓口はこちらです(外国人労働者相談コーナーにつながります)。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-trouble/c4"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{労働|ろうどう}{条件|じょうけん}{相談|そうだん}ほっとラインは、{労働局|ろうどうきょく}・{労働|ろうどう}{基準|きじゅん}{監督署|かんとくしょ}が{閉|し}まっているときと{土日|どにち}・{祝日|しゅくじつ}の{相談|そうだん}に{対応|たいおう}します。{平日|へいじつ}は{午後|ごご}5{時|じ}から10{時|じ}、{土日|どにち}・{祝日|しゅくじつ}は{午前|ごぜん}9{時|じ}から{午後|ごご}9{時|じ}です。{無料|むりょう}で{外国語|がいこくご}で{相談|そうだん}できます。",
+        "ja_easy": "{夜|よる}や{土日|どにち}は「{労働|ろうどう}{条件|じょうけん}{相談|そうだん}ほっとライン」が{使|つか}えます。{平日|へいじつ}は{午後|ごご}5{時|じ}から10{時|じ}、{土日|どにち}・{祝日|しゅくじつ}は{午前|ごぜん}9{時|じ}から{午後|ごご}9{時|じ}です。",
+        "en": "The Working Conditions Hotline covers times when labour offices are closed, and weekends and holidays: weekdays 5:00 to 10:00 pm; weekends and holidays 9:00 am to 9:00 pm. It is free and offers foreign-language consultation."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-check-roudou-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "開設時間： 平日（月〜金）午後5時〜午後10時 土日・祝日 午前9時〜午後9時",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-trouble/c8"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "ダイヤルの{通話|つうわ}{料|りょう}：{固定|こてい}{電話|でんわ}から180{秒|びょう}ごとに9.35{円|えん}、{携帯|けいたい}{電話|でんわ}から30{秒|びょう}ごとに22{円|えん}（{税込|ぜいこみ}。2026{年|ねん}10{月|がつ}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{電話代|でんわだい}：{家|いえ}の{電話|でんわ}は180{秒|びょう}ごとに9.35{円|えん}、{携帯|けいたい}は30{秒|びょう}ごとに22{円|えん}（{要確認|ようかくにん}）。",
+        "en": "Call charges for the dial: 9.35 yen per 180 seconds from a landline, 22 yen per 30 seconds from a mobile phone (tax included; as of October 2026; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-check-roudou-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "「外国人労働者向け相談ダイヤル」での相談は、固定電話からは180秒ごとに9.35円（税込）、携帯電話からは30秒ごとに22円（税込）の料金が発生します。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "ダイヤルの{開設|かいせつ}{時間|じかん}は{午前|ごぜん}10{時|じ}から{午後|ごご}3{時|じ}（{正午|しょうご}から{午後|ごご}1{時|じ}を{除|のぞ}く）です。{曜日|ようび}は{言語|げんご}ごとに{違|ちが}い、{臨時|りんじ}に{変|か}わることがあります。{行|い}く{前|まえ}に{公式|こうしき}ページで{曜日|ようび}と{時間|じかん}を{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ダイヤルは{午前|ごぜん}10{時|じ}から{午後|ごご}3{時|じ}（{正午|しょうご}から{午後|ごご}1{時|じ}は{休|やす}み）。{曜日|ようび}は{言語|げんご}で{違|ちが}います。{公式|こうしき}ページで{確認|かくにん}します（{要確認|ようかくにん}）。",
+        "en": "The dial is open 10:00 am to 3:00 pm (excluding noon to 1:00 pm). The days differ by language and may change temporarily. Check the days and hours on the official page before you call (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-check-roudou-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "開設時間： 午前10時〜午後3時 (正午〜午後1時は除く)"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-mhlw-keiyaku-index"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "解雇は、客観的に合理的な理由を欠き、社会通念上相当であると認められない場合、 権利を濫用したものとして無効 となります。"
+  }
+}

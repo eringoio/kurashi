@@ -911,6 +911,109 @@
           }
         }
       ]
+    },
+    {
+      "id": "Q-job-goal",
+      "fact": "job_goal",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{何|なに}をしますか？",
+        "ja_easy": "{何|なに}をしますか？",
+        "en": "What are you doing?"
+      },
+      "why_asked": {
+        "ja": "アルバイト・{就職|しゅうしょく}・{退職|たいしょく}で、{要|い}る{手続|てつづ}きが{違|ちが}うためです。",
+        "ja_easy": "することで、{手続|てつづ}きが{違|ちが}うからです。",
+        "en": "The procedures differ for a part-time job, starting a job, and leaving a job."
+      },
+      "options": [
+        {
+          "value": "part_time",
+          "icon": "work",
+          "label": {
+            "ja": "アルバイトを{始|はじ}めたい",
+            "ja_easy": "アルバイトをしたい",
+            "en": "Start a part-time job"
+          }
+        },
+        {
+          "value": "employ",
+          "label": {
+            "ja": "{会社|かいしゃ}に{就職|しゅうしょく}する・した",
+            "ja_easy": "{会社|かいしゃ}で{働|はたら}き{始|はじ}める",
+            "en": "Start (or started) a full-time job"
+          }
+        },
+        {
+          "value": "leave",
+          "label": {
+            "ja": "{仕事|しごと}を{辞|や}める・{辞|や}めた",
+            "ja_easy": "{仕事|しごと}を{辞|や}める",
+            "en": "Leave (or left) a job"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-job-permit",
+      "fact": "job_permit",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "student",
+              "family"
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」をもう{受|う}けていますか？",
+        "ja_easy": "「{資格外活動許可|しかくがいかつどうきょか}」をもうもらいましたか？",
+        "en": "Do you already have \"permission to engage in an activity other than that permitted\"?"
+      },
+      "why_asked": {
+        "ja": "{受|う}けている{人|ひと}は、{許可|きょか}の{手続|てつづ}きを{省|はぶ}けるためです。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれています。",
+        "ja_easy": "もらっている{人|ひと}は、この{手続|てつづ}きはいらないからです。{在留|ざいりゅう}カードの{裏|うら}を{見|み}てください。",
+        "en": "If you already have it, you can skip that step. When granted, it is written on the back of your residence card."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい（{在留|ざいりゅう}カードの{裏|うら}に{書|か}いてある）",
+            "ja_easy": "はい（{在留|ざいりゅう}カードの{裏|うら}に{書|か}いてある）",
+            "en": "Yes (it is written on the back of my card)"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ・まだ",
+            "ja_easy": "いいえ・まだ",
+            "en": "No, not yet"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
     }
   ]
 }

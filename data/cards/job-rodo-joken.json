@@ -1,0 +1,181 @@
+{
+  "data_version": 1,
+  "awareness_type": "life_essential",
+  "obligation": "check",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [
+    "労働条件",
+    "ろうどうじょうけん",
+    "契約",
+    "給料",
+    "相談",
+    "working conditions",
+    "contract",
+    "labor consultation",
+    "foreign workers consultation",
+    "ベトナム語",
+    "ポルトガル語",
+    "英語"
+  ],
+  "reasons": {},
+  "deadline": null,
+  "id": "job-rodo-joken",
+  "illustration": "doc",
+  "eligibility": {
+    "all": [
+      "R-job-scope",
+      "R-job-goal-pt"
+    ]
+  },
+  "title": {
+    "ja": "{契約|けいやく}のとき{労働|ろうどう}{条件|じょうけん}を{確|たし}かめる・{外国語|がいこくご}で{相談|そうだん}する",
+    "ja_easy": "はたらく{条件|じょうけん}の{紙|かみ}を{確|たし}かめる・{外国語|がいこくご}で{相談|そうだん}する",
+    "en": "Check your working conditions and ask in your language"
+  },
+  "official_name": {
+    "ja": "労働条件の明示と外国人労働者相談コーナー",
+    "reading": "ろうどうじょうけんのめいじとがいこくじんろうどうしゃそうだんこーなー"
+  },
+  "summary": {
+    "ja": "{契約|けいやく}を{結|むす}ぶとき、{会社|かいしゃ}は{賃金|ちんぎん}や{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせることになっています（{要|よう}{確認|かくにん}）。{知|し}らされた{条件|じょうけん}が{事実|じじつ}と{違|ちが}うときは、すぐに{契約|けいやく}をやめることができます（{労働|ろうどう}{基準|きじゅん}{法|ほう}{第|だい}15{条|じょう}{第|だい}2{項|こう}）。{外国語|がいこくご}で{相談|そうだん}できる{窓口|まどぐち}があります。{曜日|ようび}と{時間|じかん}が{変|か}わることがあるので、{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+    "ja_easy": "{契約|けいやく}のとき、{会社|かいしゃ}は{給料|きゅうりょう}や{働|はたら}く{時間|じかん}を{紙|かみ}で{知|し}らせます（{要確認|ようかくにん}）。{紙|かみ}と{違|ちが}うときは、すぐにやめることができます。{外国語|がいこくご}で{相談|そうだん}できる{所|ところ}があります。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+    "en": "When you sign a contract, the employer is to give you your wages, working hours and other conditions in writing (to be checked). If the conditions given differ from the facts, you can end the contract immediately (Labor Standards Act, Art. 15, para. 2). There are places where you can consult in a foreign language. Days and hours can change, so check the day and time before you go."
+  },
+  "where": {
+    "text": {
+      "ja": "{愛知|あいち}{労働局|ろうどうきょく} {外国人|がいこくじん}{労働者|ろうどうしゃ}{相談|そうだん}コーナー（{名古屋|なごや}{市|し}{中区|なかく}{三|さん}の{丸|まる}2-5-1 {名古屋|なごや}{合同|ごうどう}{庁舎|ちょうしゃ}{第|だい}2{号館|ごうかん} 2{階|かい}）",
+      "ja_easy": "{愛知|あいち}{労働局|ろうどうきょく}（{名古屋市|なごやし}{中区|なかく}{三|さん}の{丸|まる}）",
+      "en": "Aichi Labour Bureau, Foreign Workers Consultation Corner (Nagoya Joint Government Building No. 2, 2F, Sannomaru, Naka Ward)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-aichi-roudou-gaikokujin"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "(1) 愛知労働局 労働基準部 監督課 〒460-8507 名古屋市中区三の丸2-5-1 名古屋合同庁舎第2号館 2階",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
+        "verdict": "agree",
+        "ref": "research/audits/job.json#P-job-rodo-joken/c3"
+      }
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{愛知|あいち}{労働局|ろうどうきょく}：{英語|えいご}は{火曜日|かようび}と{木曜日|もくようび}、ポルトガル{語|ご}は{火曜日|かようび}から{金曜日|きんようび}。{午前|ごぜん}9{時|じ}30{分|ふん}から{正午|しょうご}、{午後|ごご}1{時|じ}から4{時|じ}。{日時|にちじ}が{変|か}わることがあるので、{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+        "ja_easy": "{愛知|あいち}{労働局|ろうどうきょく}：{英語|えいご}は{火|か}・{木|もく}、ポルトガル{語|ご}は{火|か}から{金|きん}。{午前|ごぜん}9{時|じ}30{分|ふん}から{正午|しょうご}、{午後|ごご}1{時|じ}から4{時|じ}。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+        "en": "Aichi Labour Bureau: English on Tuesdays and Thursdays; Portuguese Tuesday to Friday. 9:30 to noon and 1:00 to 4:00 pm. Days and hours can change, so check the day and time before you go."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-roudou-gaikokujin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "英語-火曜日、木曜日 ポルトガル語-火曜日、水曜日、木曜日、金曜日 午前9時30分～正午、午後1時～午後4時00分",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-rodo-joken/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{名古屋西|なごやにし}{労働|ろうどう}{基準|きじゅん}{監督署|かんとくしょ}（{名古屋市|なごやし}{中村区|なかむらく}{二|ふた}ツ{橋町|ばしちょう}3-37）：ベトナム{語|ご}は{木曜日|もくようび}。{午前|ごぜん}9{時|じ}30{分|ふん}から{正午|しょうご}、{午後|ごご}1{時|じ}から4{時|じ}。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+        "ja_easy": "{名古屋西|なごやにし}{労働|ろうどう}{基準|きじゅん}{監督署|かんとくしょ}（{中村区|なかむらく}）：ベトナム{語|ご}は{木曜日|もくようび}。{午前|ごぜん}9{時|じ}30{分|ふん}から{正午|しょうご}、{午後|ごご}1{時|じ}から4{時|じ}。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+        "en": "Nagoya-nishi Labour Standards Inspection Office (Futatsubashi-cho 3-37, Nakamura Ward): Vietnamese on Thursdays. 9:30 to noon and 1:00 to 4:00 pm. Check the day and time before you go."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-roudou-gaikokujin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "ベトナム語-木曜日 午前9時30分～正午、午後1時～午後4時00分",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-rodo-joken/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{社会|しゃかい}{保険|ほけん}は{年金|ねんきん}{事務所|じむしょ}、{税金|ぜいきん}は{税務署|ぜいむしょ}、{在留|ざいりゅう}{資格|しかく}は{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}に{相談|そうだん}します。",
+        "ja_easy": "{社会|しゃかい}{保険|ほけん}は{年金|ねんきん}{事務所|じむしょ}、{税金|ぜいきん}は{税務署|ぜいむしょ}、{在留|ざいりゅう}{資格|しかく}は{入管|にゅうかん}に{聞|き}きます。",
+        "en": "Ask the pension office about social insurance, the tax office about taxes, and the immigration bureau about your status of residence."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-roudou-gaikokujin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "社会保険については年金事務所へ、 税金については税務署へ、 在留資格については出入国在留管理局へ相談してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-rodo-joken/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{会社|かいしゃ}は、{契約|けいやく}のとき{賃金|ちんぎん}・{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせます。{一定|いってい}の{場合|ばあい}は FAX や SNS などでも{可|か}です（2019{年|ねん}4{月|がつ}1{日|にち}から。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{契約|けいやく}のとき、{給料|きゅうりょう}や{時間|じかん}を{紙|かみ}で{知|し}らせます。{決|き}まった{場合|ばあい}は FAX や SNS でも{知|し}らせます（{要確認|ようかくにん}）。",
+        "en": "At contract signing the employer notifies you of wages, hours and other conditions in writing. In certain cases fax or SNS is allowed (from April 1, 2019; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mhlw-keiyaku-meiji"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "従来から労働基準法施行規則において、労働契約締結時に労働条件を書面で通知しなければならないと定められていましたが、今回の改正により、一定の場合にはFAXやSNS等による通知が可能となりました（平成31年4月1日から施行）。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{知|し}らされた{労働|ろうどう}{条件|じょうけん}が{事実|じじつ}と{違|ちが}うときは、すぐに{労働|ろうどう}{契約|けいやく}を{解除|かいじょ}できます（{労働|ろうどう}{基準|きじゅん}{法|ほう}{第|だい}15{条|じょう}{第|だい}2{項|こう}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{知|し}らされた{条件|じょうけん}が{本当|ほんとう}と{違|ちが}うときは、すぐにやめられます（{要確認|ようかくにん}）。",
+        "en": "If the stated conditions differ from the facts, you can cancel the labour contract immediately (Labor Standards Act, Art. 15, para. 2; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mhlw-keiyaku-index"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "なお、明示された労働条件が事実と異なっていた場合には、労働者は、労働基準法第15条第２項の規定により、即時に労働契約を解除"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-aichi-roudou-gaikokujin",
+      "B-mhlw-keiyaku-meiji"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "外国語による労働条件（賃金、解雇、年次有給休暇など）に関する相談を受付けています。"
+  }
+}

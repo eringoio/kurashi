@@ -670,6 +670,192 @@
         "checked_at": "2026-11-07",
         "status": "verified"
       }
+    },
+    {
+      "id": "R-job-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-needs-permit",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "student",
+              "family"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族|かぞく}{滞在|たいざい}」",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族滞在|かぞくたいざい}」",
+        "en": "Your status is Student or Dependent"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-student",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "eq": "student"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」",
+        "en": "Your status is Student"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-permit-yes",
+      "kind": "selection",
+      "condition": {
+        "fact": "job_permit",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{資格外|しかくがい}{活動|かつどう}{許可|きょか}をもう{受|う}けている",
+        "ja_easy": "{資格外活動許可|しかくがいかつどうきょか}をもうもらった",
+        "en": "You already have the permission to engage in other activities"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-goal-pt",
+      "kind": "selection",
+      "condition": {
+        "fact": "job_goal",
+        "eq": "part_time"
+      },
+      "statement": {
+        "ja": "アルバイトを{始|はじ}める",
+        "ja_easy": "アルバイトを{始|はじ}める",
+        "en": "Starting a part-time job"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-goal-employ",
+      "kind": "selection",
+      "condition": {
+        "fact": "job_goal",
+        "eq": "employ"
+      },
+      "statement": {
+        "ja": "{就職|しゅうしょく}する",
+        "ja_easy": "{就職|しゅうしょく}する",
+        "en": "Starting a job"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-goal-leave",
+      "kind": "selection",
+      "condition": {
+        "fact": "job_goal",
+        "eq": "leave"
+      },
+      "statement": {
+        "ja": "{仕事|しごと}を{辞|や}める",
+        "ja_easy": "{仕事|しごと}を{辞|や}める",
+        "en": "Leaving a job"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-work-status",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "eq": "work"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
+        "ja_easy": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
+        "en": "A work status of residence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
     }
   ]
 }

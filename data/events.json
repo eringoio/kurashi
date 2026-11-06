@@ -116,6 +116,56 @@
         "checked_at": "2026-11-04",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "E-job",
+      "group": "job",
+      "title": {
+        "ja": "{仕事|しごと}・アルバイト",
+        "ja_easy": "{仕事|しごと}・アルバイト",
+        "en": "Work and part-time jobs"
+      },
+      "illustration": "work",
+      "status": "built",
+      "menu": 6,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "job_start"
+        }
+      ],
+      "questions": [
+        "Q-nationality",
+        "Q-zairyu-status",
+        "Q-job-goal",
+        "Q-job-permit"
+      ],
+      "card_ids": [
+        "zairyu-shikakugai",
+        "job-saitei-chingin",
+        "job-rodo-joken",
+        "job-kyujin",
+        "job-trouble",
+        "job-shakai-hoken",
+        "job-shushoku",
+        "job-employ-hoken",
+        "job-employ-kokuho-stop",
+        "job-employ-juminzei",
+        "job-employ-nyukan",
+        "job-leave-kokuho",
+        "job-leave-shitsugyo",
+        "job-leave-juminzei",
+        "job-leave-nyukan",
+        "job-phrases"
+      ],
+      "scope_rule": "R-job-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
     }
   ]
 }

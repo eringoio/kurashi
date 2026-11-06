@@ -1,0 +1,95 @@
+{
+  "id": "job-leave-shitsugyo",
+  "data_version": 1,
+  "illustration": "doc",
+  "awareness_type": "applies",
+  "obligation": "optional",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-leave",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{失業|しつぎょう}{給付|きゅうふ}（{雇用|こよう}{保険|ほけん}）",
+    "ja_easy": "{仕事|しごと}を{探|さが}す{間|あいだ}のお{金|かね}",
+    "en": "Unemployment benefits (employment insurance)"
+  },
+  "official_name": {
+    "ja": "雇用保険の基本手当",
+    "reading": "こようほけんのきほんてあて"
+  },
+  "summary": {
+    "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{前|まえ}の{会社|かいしゃ}から{離職|りしょく}{票|ひょう}をもらい、{住所|じゅうしょ}の{近|ちか}くのハローワークで{求職|きゅうしょく}の{申|もう}し{込|こ}みをすると、{基本|きほん}{手当|てあて}を{受|う}けられることがあります。{辞|や}める{前|まえ}の2{年|ねん}で12か{月|げつ}{以上|いじょう}{入|はい}っていたことなどが{条件|じょうけん}です。{遅|おく}れると{全部|ぜんぶ}は{受|う}けられないことがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{前|まえ}の{会社|かいしゃ}の{書類|しょるい}を{持|も}って、ハローワークへ{行|い}きます。{早|はや}めに{行|い}きます（{要|よう}{確認|かくにん}）。",
+    "en": "If you had employment insurance, get the separation notice from your former employer and apply for work at the Hello Work office for your address; you may receive the basic allowance. One condition is 12 months of coverage in the 2 years before leaving. Applying late can cost you days (to be checked)."
+  },
+  "lead": {
+    "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、ハローワークで{手続|てつづ}きすると{基本|きほん}{手当|てあて}を{受|う}けられることがあります。",
+    "ja_easy": "仕事をやめたら、ハローワークでお金をもらえることがあります。",
+    "en": "If you were in employment insurance, you may get benefits through Hello Work."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}を{管轄|かんかつ}するハローワーク",
+      "ja_easy": "ハローワーク",
+      "en": "The Hello Work office for your address"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-hellowork-kihonteate"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "住所地を管轄するハローワークで「求職申込み」をしたのち、「離職票」を提出します。"
+    }
+  },
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離職|りしょく}{票|ひょう}は、{前|まえ}の{会社|かいしゃ}に{離職|りしょく}{証明|しょうめい}{書|しょ}を{頼|たの}んで、それをハローワークに{出|だ}してもらうものです。",
+        "ja_easy": "{前|まえ}の{会社|かいしゃ}に{書類|しょるい}を{頼|たの}みます。",
+        "en": "The separation notice is issued after you ask your former employer for a separation certificate and it is sent to Hello Work."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-hellowork-qa05"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "前に勤めていた会社に対して「離職証明書」の交付を請求し、その離職証明書を公共職業安定所に提出"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{最初|さいしょ}の7{日|にち}は{待期|たいき}で、{手当|てあて}はありません。{自分|じぶん}の{都合|つごう}で{辞|や}めたときは、さらに{原則|げんそく}1か{月|げつ}{待|ま}ちます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{少|すこ}し{待|ま}ちます。",
+        "en": "There is a 7-day waiting period with no allowance. If you left for your own reasons, there is normally another 1 month (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-hellowork-qa05"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "離職日が令和７年４月１日以降である場合は原則１か月"
+      }
+    }
+  ],
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-hellowork-qa05"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "離職の日以前2年間に、「被保険者期間」が通算して12か月以上あること"
+  }
+}

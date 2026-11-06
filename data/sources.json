@@ -584,6 +584,166 @@
       "owner_type": "government",
       "title": "Japan Visitor Hotline / Guide for using medical institutions",
       "language": "en"
+    },
+    {
+      "source_id": "B-moj-shikakugai",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/shikakugai_00001.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "資格外活動の許可（入管法第19条）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-shikakugai-shinsei",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/16-8.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "資格外活動許可申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-shikakugai-ryugaku",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "「留学」の在留資格に係る資格外活動許可について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-shikaku-henko",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/16-2.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格変更許可申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jsite-aichi-foreigner",
+      "url": "https://jsite.mhlw.go.jp/aichi-foreigner/home.html",
+      "owner": "厚生労働省 愛知労働局 ハローワーク",
+      "owner_type": "government",
+      "title": "名古屋外国人雇用サービスセンター",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jsite-aichi-saichin",
+      "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/jirei_toukei/chingin_kanairoudou/saiteichingin_toukei/saiteichingin.html",
+      "owner": "愛知労働局",
+      "owner_type": "government",
+      "title": "最低賃金・家内労働関係（愛知県の最低賃金）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-aichi-roudou-gaikokujin",
+      "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/roudoukyoku/gosoudan_naiyou_madoguchi/soudan03/gaikokujinannai_00003.html",
+      "owner": "愛知労働局",
+      "owner_type": "government",
+      "title": "外国人労働者相談コーナーのご案内",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-check-roudou-foreigner",
+      "url": "https://www.check-roudou.mhlw.go.jp/soudan/foreigner.html",
+      "owner": "厚生労働省（確かめよう労働条件）",
+      "owner_type": "government",
+      "title": "外国人労働者向け相談機関（2026年10月現在）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mhlw-keiyaku-index",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "労働契約（契約の締結、労働条件の変更、解雇等）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mhlw-keiyaku-meiji",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/meiji/index.html",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "労働条件の明示 ～労働基準法施行規則が改正されました～",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-tanjikan",
+      "url": "https://www.nenkin.go.jp/service/kounen/tekiyo/jigyosho/tanjikan.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "短時間労働者に対する健康保険・厚生年金保険の適用の拡大",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-isa-katsudo-kikan",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00014.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "所属（活動）機関に関する届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-isa-keiyaku-kikan",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00015.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "所属（契約）機関に関する届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-isa-shozoku-qa",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/shozokunikansuru_00001.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "所属機関に関する届出について",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-nenkin-kounen-tekiyo",
+      "url": "https://www.nenkin.go.jp/service/kounen/tekiyo/jigyosho/20150518.html",
+      "owner": "日本年金機構",
+      "owner_type": "public_corp",
+      "title": "適用事業所と被保険者",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-hellowork-qa05",
+      "url": "https://www.hellowork.mhlw.go.jp/help/question05.html",
+      "owner": "厚生労働省（ハローワーク）",
+      "owner_type": "government",
+      "title": "雇用保険について",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-hellowork-kihonteate",
+      "url": "https://www.hellowork.mhlw.go.jp/insurance/insurance_guide.html",
+      "owner": "厚生労働省（ハローワーク）",
+      "owner_type": "government",
+      "title": "基本手当について",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-nagoya-juminzei-taishoku",
+      "url": "https://www.city.nagoya.jp/kurashi/zeikin/1035069/1012012/1012022/1033973/1012024.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "退職した場合の市民税・県民税",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-isa-torikeshi",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/torikeshi_00002.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格の取消し",
+      "language": "ja"
+    },
+    {
+      "source_id": "D-isa-shikakugai-taisho",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00045.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "資格外活動許可",
+      "language": "ja"
     }
   ]
 }

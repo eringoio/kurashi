@@ -1,0 +1,60 @@
+{
+  "id": "job-phrases",
+  "data_version": 1,
+  "illustration": "ask",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-pt",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{応募|おうぼ}でよく{使|つか}う{言葉|ことば}",
+    "ja_easy": "{応募|おうぼ}のことば",
+    "en": "Words and phrases for applying"
+  },
+  "official_name": {
+    "ja": "アルバイトの応募",
+    "reading": "あるばいとのおうぼ"
+  },
+  "summary": {
+    "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}をお{願|ねが}いできますか。」{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。よく{聞|き}く{言葉|ことば}：シフト（{働|はたら}く{日|ひ}と{時間|じかん}の{表|ひょう}）・{時給|じきゅう}・{交通費|こうつうひ}・まかない（{店|みせ}の{食事|しょくじ}）・{研修|けんしゅう}。{履歴書|りれきしょ}の{写真|しゃしん}は3か{月|げつ}{以内|いない}のもの。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます（{作者|さくしゃ}の{経験|けいけん}。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{電話|でんわ}で「アルバイトの{募集|ぼしゅう}を{見|み}ました。{面接|めんせつ}をお{願|ねが}いできますか」と{言|い}います。シフト・{時給|じきゅう}・{交通費|こうつうひ}・まかない、の{言葉|ことば}をよく{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. Could I have an interview?\" Students can say first: \"I have permission to work part-time, up to 28 hours a week.\" Common words: shift, hourly wage, transport allowance, makanai (staff meal), training. Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV (author's experience; to be checked)."
+  },
+  "lead": {
+    "ja": "アルバイトの{電話|でんわ}や{面接|めんせつ}で{使|つか}う{言葉|ことば}です。",
+    "ja_easy": "仕事の電話で使う言葉です。",
+    "en": "Phrases for job calls and interviews."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{履歴書|りれきしょ}の{添削|てんさく}・{面接|めんせつ}の{練習|れんしゅう}）",
+      "ja_easy": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター",
+      "en": "Nagoya Employment Service Center for Foreigners (CV check, interview practice)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-jsite-aichi-foreigner"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "応募書類（履歴書等）の添削"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check"
+  }
+}

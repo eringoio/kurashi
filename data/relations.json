@@ -275,6 +275,112 @@
         "status": "verified",
         "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
       }
+    },
+    {
+      "id": "rel-job-permit-before-kyujin",
+      "type": "legal_prerequisite",
+      "from": "zairyu-shikakugai",
+      "to": "job-kyujin",
+      "satisfied_when_rule_ids": [
+        "R-job-permit-yes"
+      ],
+      "explain": {
+        "ja": "{働|はたら}く{前|まえ}に{許可|きょか}が{要|い}ります。{仕事|しごと}を{探|さが}すときは、{先|さき}に{許可|きょか}を{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{働|はたら}く{前|まえ}に{許可|きょか}がいります。{先|さき}に{許可|きょか}を{確認|かくにん}します（{要確認|ようかくにん}）。",
+        "en": "Permission is needed before you work, so check your permission before you look for a job (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
+      }
+    },
+    {
+      "id": "rel-job-permit-before-rodo-joken",
+      "type": "legal_prerequisite",
+      "from": "zairyu-shikakugai",
+      "to": "job-rodo-joken",
+      "satisfied_when_rule_ids": [
+        "R-job-permit-yes"
+      ],
+      "explain": {
+        "ja": "{契約|けいやく}して{働|はたら}き{始|はじ}める{前|まえ}に、{許可|きょか}を{受|う}けておきます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{契約|けいやく}して{働|はたら}く{前|まえ}に、{許可|きょか}をもらいます（{要確認|ようかくにん}）。",
+        "en": "Get the permission before you sign a contract and start work (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
+      }
+    },
+    {
+      "id": "rel-job-permit-before-chingin",
+      "type": "legal_prerequisite",
+      "from": "zairyu-shikakugai",
+      "to": "job-saitei-chingin",
+      "satisfied_when_rule_ids": [
+        "R-job-permit-yes"
+      ],
+      "explain": {
+        "ja": "{時給|じきゅう}を{決|き}めて{働|はたら}き{始|はじ}める{前|まえ}に、{許可|きょか}を{受|う}けておきます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{時給|じきゅう}を{決|き}めて{働|はたら}く{前|まえ}に、{許可|きょか}をもらいます（{要確認|ようかくにん}）。",
+        "en": "Get the permission before you agree an hourly wage and start work (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
+      }
+    },
+    {
+      "id": "rel-job-chingin-rodo-joken",
+      "type": "parallel",
+      "card_ids": [
+        "job-saitei-chingin",
+        "job-rodo-joken"
+      ],
+      "explain": {
+        "ja": "{契約|けいやく}のとき、{時給|じきゅう}（{最低|さいてい}{賃金|ちんぎん}）と{労働|ろうどう}{条件|じょうけん}の{書面|しょめん}を、いっしょに{確|たし}かめます。",
+        "ja_easy": "{契約|けいやく}のとき、{時給|じきゅう}と{条件|じょうけん}の{紙|かみ}をいっしょに{確|たし}かめます。",
+        "en": "At signing, check the hourly wage (minimum wage) and the written conditions together."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mhlw-keiyaku-meiji"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "従来から労働基準法施行規則において、労働契約締結時に労働条件を書面で通知しなければならないと定められていましたが、今回の改正により、一定の場合にはFAXやSNS等による通知が可能となりました（平成31年4月1日から施行）。"
+      }
+    },
+    {
+      "id": "rel-job-rodo-joken-trouble",
+      "type": "related",
+      "from": "job-rodo-joken",
+      "to": "job-trouble",
+      "explain": {
+        "ja": "{条件|じょうけん}が{違|ちが}う、{急|きゅう}にやめさせられる、などで{困|こま}ったときは、{相談|そうだん}のカードを{見|み}ます。",
+        "ja_easy": "{困|こま}ったときは、{相談|そうだん}のカードを{見|み}ます。",
+        "en": "If conditions differ or you are suddenly dismissed, see the consultation card."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mhlw-keiyaku-index"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "なお、明示された労働条件が事実と異なっていた場合には、労働者は、労働基準法第15条第２項の規定により、即時に労働契約を解除"
+      }
     }
   ]
 }

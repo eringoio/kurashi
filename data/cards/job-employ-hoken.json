@@ -1,0 +1,74 @@
+{
+  "id": "job-employ-hoken",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-employ",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}・{雇用|こよう}{保険|ほけん}",
+    "ja_easy": "{会社|かいしゃ}の{保険|ほけん}と{年金|ねんきん}",
+    "en": "Workplace health insurance, pension and employment insurance"
+  },
+  "official_name": {
+    "ja": "社会保険・雇用保険の加入",
+    "reading": "しゃかいほけん・こようほけんのかにゅう"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}で{働|はたら}くと、{国籍|こくせき}にかかわらず、{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}に{入|はい}ります。31{日|にち}{以上|いじょう}{働|はたら}く{見込|みこ}みで、{週|しゅう}20{時間|じかん}{以上|いじょう}なら{雇用|こよう}{保険|ほけん}にも{入|はい}ります。{手続|てつづ}きは{会社|かいしゃ}がします（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{会社|かいしゃ}で{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}と{年金|ねんきん}に{入|はい}ります。{会社|かいしゃ}が{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "en": "When you work for a company, you join its health insurance and employees' pension, regardless of nationality. If you are expected to work 31 days or more and 20 hours or more a week, you also join employment insurance. The company does the paperwork (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{勤|つと}め{先|さき}の{会社|かいしゃ}（{手続|てつづ}きは{会社|かいしゃ}）",
+      "ja_easy": "{会社|かいしゃ}",
+      "en": "Your employer (the company files it)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-nenkin-kounen-tekiyo"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。"
+    }
+  },
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "パート・アルバイトでも、{働|はたら}く{時間|じかん}と{日数|にっすう}が{正社員|せいしゃいん}の4{分|ぶん}の3{以上|いじょう}なら{厚生|こうせい}{年金|ねんきん}に{入|はい}ります。",
+        "ja_easy": "{時間|じかん}が{長|なが}いアルバイトも{入|はい}ります。",
+        "en": "Part-time workers also join if their hours and days are at least 3/4 of a full-time worker's."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-nenkin-kounen-tekiyo"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "1週間の所定労働時間および1カ月の所定労働日数が、同じ事業所で同様の業務に従事している通常の労働者の4分の3以上である方は被保険者となります。"
+      }
+    }
+  ],
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-nenkin-kounen-tekiyo"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。"
+  }
+}

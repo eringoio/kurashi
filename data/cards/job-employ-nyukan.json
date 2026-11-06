@@ -1,0 +1,93 @@
+{
+  "id": "job-employ-nyukan",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-employ",
+      "R-job-work-status"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{入管|にゅうかん}に{所属|しょぞく}{機関|きかん}を{届|とど}ける（{転職|てんしょく}したとき）",
+    "ja_easy": "{入管|にゅうかん}に{会社|かいしゃ}を{届|とど}ける",
+    "en": "Tell immigration about your employer (when you change jobs)"
+  },
+  "official_name": {
+    "ja": "所属（契約）機関に関する届出",
+    "reading": "しょぞく（けいやく）きかんにかんするとどけで"
+  },
+  "summary": {
+    "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{人|ひと}は、{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}したら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます。オンラインでもでき、{資料|しりょう}は{要|い}りません。{入社|にゅうしゃ}する{前|まえ}には{出|だ}せません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しい{会社|かいしゃ}に{入|はい}ったら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
+    "en": "If your status is Engineer/Specialist in Humanities/International Services or similar, notify immigration within 14 days of signing with a new employer. It can be done online with no documents. It cannot be filed before you join (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{新|あたら}しい{会社|かいしゃ}に{入|はい}った{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of joining (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-isa-shozoku-qa"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "「会社を辞めた」、「新しい会社に入社した」等の届出事由の発生日から１４日以内に提出してください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}（{電子|でんし}{届出|とどけで}・{窓口|まどぐち}・{郵送|ゆうそう}）",
+      "ja_easy": "{入管|にゅうかん}（オンラインでも）",
+      "en": "Immigration Services Agency (online, counter or mail)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-isa-katsudo-kikan"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "届出事項を証する資料の提出は必要ありません。"
+    }
+  },
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{実際|じっさい}に{転職|てんしょく}してから{出|だ}します。{出|だ}さないと{罰則|ばっそく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{入社|にゅうしゃ}してから{出|だ}します。",
+        "en": "File it after you actually change jobs. There are penalties for not filing (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-shozoku-qa"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "未来日を届出事由発生日とする届出はできません。実際に転職等の事実が発生してから届出をお願いします。"
+      }
+    }
+  ],
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-isa-keiyaku-kikan"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "契約機関との契約の終了若しくは新たな契約の締結があった高度専門職１号イ又はロ、高度専門職２号（イ又はロ）、研究、技術・人文知識・国際業務"
+  }
+}

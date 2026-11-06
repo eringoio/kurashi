@@ -1,0 +1,68 @@
+{
+  "id": "job-employ-kokuho-stop",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-employ",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる",
+    "ja_easy": "{国保|こくほ}をやめる",
+    "en": "Leave National Health Insurance"
+  },
+  "official_name": {
+    "ja": "国民健康保険の資格喪失届",
+    "reading": "こくみんけんこうほけんのしかくそうしつとどけ"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}に{入|はい}ったら、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けを、14{日|にち}{以内|いない}に{区役所|くやくしょ}に{出|だ}します。{自動|じどう}ではやめになりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}ったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}をやめます（{要|よう}{確認|かくにん}）。",
+    "en": "After you join your company's health insurance, file a notice to leave National Health Insurance at the ward office within 14 days. It does not end automatically (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}った{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}（{保険|ほけん}{年金|ねんきん}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office (insurance and pension section)"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check"
+  }
+}

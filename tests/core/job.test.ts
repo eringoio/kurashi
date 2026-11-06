@@ -1,17 +1,18 @@
-/* アルバイトを始める（下書き drafts/data/E-job.bundle.json）。留学・家族滞在は、働く前に資格外活動許可。永住者・定住者などは対象外。
+/* 仕事・アルバイト（公開のデータ。11/7 C-1 で drafts/data/E-job.bundle.json から data/ へ移した）。留学・家族滞在は、働く前に資格外活動許可。永住者・定住者などは対象外。
 // B-13（11/6）：在留資格は共通の質問 Q-zairyu-status。旧 Q-job-status の free→permanent、other→work
    最低賃金は日付つきの事実（2026年10月1日から愛知県 1,195円）。すべて needs_check（行く所・方法の一部だけ ai_checked）。 */
 import { describe, expect, it } from 'vitest';
-import { baseRaw, checkRefs, loadData, withBundles, type Bundle } from '../../src/core/data';
+import { checkRefs, loadData } from '../../src/core/data';
 import { run, type EngineInput } from '../../src/core/engine';
 import { collectEvidence } from '../../src/core/quotes';
 import { AI_CHECK_COUNTS } from '../../src/core/trust';
-import json from '../../drafts/data/E-job.bundle.json';
 
 /** B-4：国籍 → 在留資格の2段。'japanese' は国籍だけ答える */
 const statusAnswers = (s?: string): Record<string, string> => (!s ? {} : s === 'japanese' ? { 'Q-nationality': 'japanese' } : { 'Q-nationality': 'foreign', 'Q-zairyu-status': s });
-const data = loadData(withBundles(baseRaw(), [json as Bundle]));
+const data = loadData();
 const ev = data.events.find((e) => e.id === 'E-job')!;
+/** このできごとの分（元のまとまりと同じ範囲） */
+const json = { events: [ev], cards: data.cards.filter((c) => ev.card_ids.includes(c.id)), rules: [...data.rules.values()].filter((r) => r.id.startsWith('R-job')), relations: data.relations.filter((r) => r.id.startsWith('rel-job')) };
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 // D-1（11/6）：最初に「何をしますか」（アルバイト・就職・退職）。今までの期待は「アルバイト」の答えで確かめる
@@ -24,7 +25,7 @@ const ALL = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-chingin'
 const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble'];
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
-describe('アルバイトを始める（下書き）', () => {
+describe('仕事・アルバイト（公開）', () => {
   it('型と参照の検査を通る。16枚。verified は無い。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.card_ids.length).toBe(16);

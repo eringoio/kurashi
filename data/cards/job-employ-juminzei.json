@@ -1,0 +1,56 @@
+{
+  "id": "job-employ-juminzei",
+  "data_version": 1,
+  "illustration": "coins",
+  "awareness_type": "applies",
+  "obligation": "none",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-employ",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{住民|じゅうみん}{税|ぜい}は{給料|きゅうりょう}から",
+    "ja_easy": "{税金|ぜいきん}は{給料|きゅうりょう}から",
+    "en": "Resident tax comes out of your salary"
+  },
+  "official_name": {
+    "ja": "市民税・県民税の特別徴収",
+    "reading": "しみんぜい・けんみんぜいのとくべつちょうしゅう"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}で{働|はたら}く{人|ひと}の{市民|しみん}{税|ぜい}・{県民|けんみん}{税|ぜい}は、{毎月|まいつき}の{給料|きゅうりょう}から{引|ひ}かれます（{特別|とくべつ}{徴収|ちょうしゅう}）。{自分|じぶん}でする{手続|てつづ}きはありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{税金|ぜいきん}は{給料|きゅうりょう}から{引|ひ}かれます（{要|よう}{確認|かくにん}）。",
+    "en": "If you work for a company, city and prefectural resident tax is taken from your salary every month (special collection). There is nothing for you to file (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{勤|つと}め{先|さき}の{会社|かいしゃ}",
+      "ja_easy": "{会社|かいしゃ}",
+      "en": "Your employer"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-nagoya-juminzei-taishoku"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "毎月の給与等の支払の際に差し引いて納付（特別徴収）していただきます。"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-nagoya-juminzei-taishoku"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "毎月の給与等の支払の際に差し引いて納付（特別徴収）していただきます。"
+  }
+}

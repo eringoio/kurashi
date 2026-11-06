@@ -1,0 +1,205 @@
+{
+  "data_version": 1,
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "keywords": [
+    "資格外活動",
+    "しかくがいかつどう",
+    "アルバイト",
+    "バイト",
+    "part-time job",
+    "work permission",
+    "shikakugai",
+    "28時間",
+    "28 hours",
+    "留学",
+    "家族滞在"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}・{日本人|にほんじん}の{配偶者|はいぐうしゃ}{等|とう}・{永住者|えいじゅうしゃ}の{配偶者|はいぐうしゃ}{等|とう}は、{働|はたら}くことに{制限|せいげん}がありません。この{許可|きょか}は{要|い}りません。{定住者|ていじゅうしゃ}も{同|おな}じです（{要|よう}{確認|かくにん}）。ほかの{在留|ざいりゅう}{資格|しかく}は{働|はたら}ける{範囲|はんい}が{違|ちが}うので、{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{永住者|えいじゅうしゃ}・{特別永住者|とくべつえいじゅうしゃ}・{日本人|にほんじん}の{配偶者|はいぐうしゃ}{等|とう}・{永住者|えいじゅうしゃ}の{配偶者|はいぐうしゃ}{等|とう}の{人|ひと}は、この{許可|きょか}は{要|い}りません。{定住者|ていじゅうしゃ}も{同|おな}じです（{要|よう}{確認|かくにん}）。ほかの{在留|ざいりゅう}{資格|しかく}は、{入管|にゅうかん}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+      "en": "Permanent Residents, Special Permanent Residents, Spouses or Children of Japanese Nationals, and Spouses or Children of Permanent Residents have no work restriction, so they do not need this permission. The same applies to Long-Term Residents (to be checked). Other statuses allow different kinds of work; check with Immigration (to be checked)."
+    },
+    "check_at_office": {
+      "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{許可|きょか}が{要|い}るか{言|い}い{切|き}れません。{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」の{欄|らん}を{見|み}るか、{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」を{見|み}てください。わからないときは{入管|にゅうかん}で{聞|き}きます（{要確認|ようかくにん}）。",
+      "en": "We cannot tell whether you need this permission because your status is unknown. Check the \"status of residence\" on your residence card, or ask immigration (to be checked)."
+    }
+  },
+  "deadline": {
+    "text": {
+      "ja": "{働|はたら}き{始|はじ}める{前|まえ}（{収入|しゅうにゅう}を{得|え}る{活動|かつどう}をしようとするとき）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{働|はたら}き{始|はじ}める{前|まえ}（{要確認|ようかくにん}）",
+      "en": "Before you start work (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-shikakugai-shinsei"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "申請期間 現に有している在留資格に属さない収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとするとき。"
+    }
+  },
+  "id": "zairyu-shikakugai",
+  "illustration": "card",
+  "eligibility": {
+    "all": [
+      "R-job-needs-permit",
+      "R-job-goal-pt"
+    ]
+  },
+  "place": "immigration",
+  "title": {
+    "ja": "アルバイトの{前|まえ}に（{資格外|しかくがい}{活動|かつどう}{許可|きょか}）",
+    "ja_easy": "はたらく{前|まえ}に（{資格外|しかくがい}{活動|かつどう}{許可|きょか}）",
+    "en": "Before you take a part-time job (permission to engage in other activities)"
+  },
+  "official_name": {
+    "ja": "資格外活動許可",
+    "reading": "しかくがいかつどうきょか"
+  },
+  "summary": {
+    "ja": "{留学|りゅうがく}や{家族|かぞく}{滞在|たいざい}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}が{働|はたら}くときは、{働|はたら}き{始|はじ}める{前|まえ}に「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」を{受|う}けます（{要|よう}{確認|かくにん}）。{包括|ほうかつ}{許可|きょか}は、{原則|げんそく}として1{週|しゅう}に28{時間|じかん}{以内|いない}で、{風俗|ふうぞく}{営業|えいぎょう}などが{行|おこな}われている{場所|ばしょ}では{働|はたら}けません（{要|よう}{確認|かくにん}）。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{留学|りゅうがく}や{家族滞在|かぞくたいざい}の{人|ひと}は、アルバイトを{始|はじ}める{前|まえ}に「{資格外活動許可|しかくがいかつどうきょか}」をもらいます（{要確認|ようかくにん}）。1{週間|しゅうかん}に28{時間|じかん}まで（{要確認|ようかくにん}）。{許可|きょか}をもらうと、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。お{金|かね}はかかりません（{要確認|ようかくにん}）。",
+    "en": "If your status is Student or Dependent, get \"permission to engage in an activity other than that permitted by the status of residence\" before you start work (to be checked). The general permission is, in principle, up to 28 hours a week, and not at places running adult-entertainment businesses (to be checked). The permission is written on the back of your residence card. No fee (to be checked)."
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{入管|にゅうかん}）",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "The regional immigration office for your address"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-shikakugai-shinsei"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "提出先 住居地を管轄する地方出入国在留管理官署"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードを{見|み}せて、{申請書|しんせいしょ}を{出|だ}します。{旅券|りょけん}（または{在留|ざいりゅう}{資格|しかく}{証明|しょうめい}{書|しょ}）も{見|み}せます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードとパスポートを{持|も}って{行|い}きます（{要確認|ようかくにん}）。",
+        "en": "Show your residence card and submit the application form. Also show your passport (or certificate of status of residence) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai-shinsei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "在留カードを提示"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{留学|りゅうがく}の{人|ひと}の{包括|ほうかつ}{許可|きょか}は、1{週|しゅう}に28{時間|じかん}{以内|いない}（{学校|がっこう}の{長期|ちょうき}{休業|きゅうぎょう}の{期間|きかん}は1{日|にち}8{時間|じかん}{以内|いない}）の{仕事|しごと}が{対象|たいしょう}です。{風俗|ふうぞく}{営業|えいぎょう}などの{場所|ばしょ}での{活動|かつどう}は{許可|きょか}されません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{留学|りゅうがく}の{人|ひと}は、1{週間|しゅうかん}に28{時間|じかん}まで。{学校|がっこう}の{長|なが}い{休|やす}みは1{日|にち}8{時間|じかん}まで。{風俗|ふうぞく}の{店|みせ}などでは{働|はたら}けません（{要確認|ようかくにん}）。",
+        "en": "For Student status, the general permission covers work of up to 28 hours a week (up to 8 hours a day during long school holidays). Activity at places running adult-entertainment businesses is not permitted (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai-ryugaku"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "１週について２８時間以内（教育機関の長期休業期間にあっては、１日について８時間以内）の収入を伴う事業を運営する活動（注）又は報酬を受ける活動を行う場合は、資格外活動の包括許可が必要となります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申請|しんせい}の{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "お{金|かね}はかかりません（{要確認|ようかくにん}）。",
+        "en": "There is no application fee (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai-shinsei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "手数料 手数料はかかりません"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は2{週間|しゅうかん}から2か{月|げつ}です。{働|はたら}き{始|はじ}める{日|ひ}の{前|まえ}に{余裕|よゆう}をもって{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{許可|きょか}が{出|で}るまで、2{週間|しゅうかん}から2か{月|げつ}かかります。はやめに{行|い}きます（{要確認|ようかくにん}）。",
+        "en": "The standard processing time is 2 weeks to 2 months. Apply well before your first work day (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai-shinsei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "標準処理期間 ２週間～２か月"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードの{裏面|うらめん}に{許可|きょか}の{内容|ないよう}が{記載|きさい}され、カードの IC チップにも{書|か}き{込|こ}まれます。",
+        "ja_easy": "{許可|きょか}をもらうと、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。",
+        "en": "Once permitted, the outline of the permission is written on the back of your residence card and on its IC chip."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "在留カードの裏面には、資格外活動許可を受けている場合に、その許可の要旨が記載され、在留カードに内蔵するICチップにも書き込まれます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "f654d31c87ce4467afee7b17eade59ff1c4721dd33d4b0b93196497e4b3a7679",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-shikakugai/c15"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{留学|りゅうがく}の{人|ひと}が、{通|かよ}っている{大学|だいがく}（{高専|こうせん}は{第|だい}4・5{学年|がくねん}と{専攻科|せんこうか}）との{契約|けいやく}で{報酬|ほうしゅう}を{受|う}けて{教育|きょういく}・{研究|けんきゅう}を{助|たす}ける{活動|かつどう}は、この{許可|きょか}が{要|い}りません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{通|かよ}っている{大学|だいがく}の{教育|きょういく}や{研究|けんきゅう}を{助|たす}ける{仕事|しごと}は、{許可|きょか}がいらないことがあります（{要確認|ようかくにん}）。",
+        "en": "For Student status, paid work assisting teaching or research under a contract with your own university (for colleges of technology, only years 4-5 and advanced courses) does not need this permission (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "「留学」の在留資格をもって在留する外国人が、在籍する大学又は高等専門学校（第４学年、第５学年及び専攻科に限る。）との契約に基づいて報酬を受けて行う教育又は研究を補助する活動については、資格外活動の許可を受けることを要しない"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-moj-shikakugai",
+      "B-moj-shikakugai-shinsei",
+      "B-moj-shikakugai-ryugaku"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "data_version": 1,
+  "awareness_type": "option",
+  "obligation": "optional",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [
+    "求人",
+    "きゅうじん",
+    "ハローワーク",
+    "仕事探し",
+    "アルバイト探し",
+    "job search",
+    "hello work",
+    "employment service center",
+    "foreigners"
+  ],
+  "reasons": {},
+  "deadline": null,
+  "id": "job-kyujin",
+  "illustration": "search",
+  "eligibility": {
+    "all": [
+      "R-job-scope",
+      "R-job-goal-pt"
+    ]
+  },
+  "title": {
+    "ja": "{仕事|しごと}を{探|さが}す（{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター）",
+    "ja_easy": "{仕事|しごと}を{探|さが}す（{外国人|がいこくじん}のための{窓口|まどぐち}）",
+    "en": "Looking for a job (Nagoya Employment Service Center for Foreigners)"
+  },
+  "official_name": {
+    "ja": "名古屋外国人雇用サービスセンター",
+    "reading": "なごやがいこくじんこようさーびすせんたー"
+  },
+  "summary": {
+    "ja": "{仕事|しごと}の{相談|そうだん}や{紹介|しょうかい}を{受|う}けるには、{求職|きゅうしょく}{登録|とうろく}をします。{在留|ざいりゅう}カードと{旅券|りょけん}を{持|も}って、{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターか、{近|ちか}くのハローワークへ{行|い}きます。{通訳|つうやく}は10{言語|げんご}です。{通訳|つうやく}の{人|ひと}がいない{日|ひ}があるので、{事前|じぜん}に{問|と}い{合|あ}わせます。アルバイトも{紹介|しょうかい}してもらえるかは{要|よう}{確認|かくにん}です。{働|はたら}く{前|まえ}に「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」の{確認|かくにん}が{先|さき}です。",
+    "ja_easy": "{仕事|しごと}を{探|さが}すときは、{先|さき}に「{求職登録|きゅうしょくとうろく}」をします。{在留|ざいりゅう}カードとパスポートを{持|も}って、{外国人|がいこくじん}のための{窓口|まどぐち}かハローワークへ{行|い}きます。{通訳|つうやく}は10{言語|げんご}です。{行|い}く{前|まえ}に{問|と}い{合|あ}わせます。アルバイトの{紹介|しょうかい}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+    "en": "To get job counselling or referrals, register as a job seeker. Take your residence card and passport to the Nagoya Employment Service Center for Foreigners or a nearby Hello Work. Interpreters cover 10 languages, but not every day, so ask in advance. Ask at the counter whether part-time jobs are also introduced (to be checked). Check your \"permission to engage in other activities\" first."
+  },
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{名古屋市|なごやし}{中区|なかく}{錦|にしき}2-14-25 ヤマイチビル8{階|かい}）",
+      "ja_easy": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{中区|なかく}{錦|にしき}）",
+      "en": "Nagoya Employment Service Center for Foreigners (Yamaichi Building 8F, Nishiki 2-14-25, Naka Ward)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-jsite-aichi-foreigner"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "所在地 〒460-8640 名古屋市中区錦二丁目14番25号 ヤマイチビル8階",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+        "verdict": "agree",
+        "ref": "research/audits/job.json#P-job-kyujin/c6"
+      }
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{求職|きゅうしょく}{登録|とうろく}は、{在留|ざいりゅう}カードと{旅券|りょけん}を{持|も}って、センターか{近|ちか}くのハローワークで{申|もう}し{込|こ}みます。",
+        "ja_easy": "{求職|きゅうしょく}{登録|とうろく}は、{在留|ざいりゅう}カードとパスポートを{持|も}って、センターかハローワークで{申|もう}し{込|こ}みます。",
+        "en": "Register as a job seeker at the center or a nearby Hello Work, with your residence card and passport."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "在留カード・旅券を持って、当センターまたはお近くのハローワークでお申し込みください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyujin/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{求人|きゅうじん}は、ハローワークインターネットサービス（{日本語|にほんご}のみ）か、センターの{窓口|まどぐち}で{探|さが}します。",
+        "ja_easy": "{求人|きゅうじん}は、ハローワークのインターネット（{日本語|にほんご}だけ）か、センターの{窓口|まどぐち}で{探|さが}します。",
+        "en": "Search job listings on the Hello Work Internet Service (Japanese only) or at the center counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "ハローワークインターネットサービス（日本語のみ対応）での求人検索または当センター窓口をご利用ください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyujin/c3"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{通訳|つうやく}は、{英語|えいご}・{中国語|ちゅうごくご}・ポルトガル{語|ご}・スペイン{語|ご}・ベトナム{語|ご}・ウクライナ{語|ご}・ネパール{語|ご}・タイ{語|ご}・インドネシア{語|ご}・ミャンマー{語|ご}です。{通訳|つうやく}の{人|ひと}がいない{日|ひ}があるので、{通訳|つうやく}が{必要|ひつよう}な{人|ひと}は{事前|じぜん}に{問|と}い{合|あ}わせます。",
+        "ja_easy": "{通訳|つうやく}は10{言語|げんご}です（{英語|えいご}・{中国語|ちゅうごくご}・ポルトガル{語|ご}・スペイン{語|ご}・ベトナム{語|ご}・ウクライナ{語|ご}・ネパール{語|ご}・タイ{語|ご}・インドネシア{語|ご}・ミャンマー{語|ご}）。{通訳|つうやく}の{人|ひと}がいない{日|ひ}があるので、{行|い}く{前|まえ}に{問|と}い{合|あ}わせます。",
+        "en": "Interpreters: English, Chinese, Portuguese, Spanish, Vietnamese, Ukrainian, Nepali, Thai, Indonesian and Burmese. An interpreter may be absent on some days, so ask in advance if you need one."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "通訳 英語、中国語、ポルトガル語、スペイン語、ベトナム語、ウクライナ語、ネパール語、タイ語、インドネシア語、ミャンマー語",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyujin/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{開庁|かいちょう}{時間|じかん}は{平日|へいじつ}の{午前|ごぜん}8{時|じ}30{分|ふん}から{午後|ごご}5{時|じ}15{分|ふん}です。{土曜日|どようび}・{日曜日|にちようび}・{祝日|しゅくじつ}と、12{月|がつ}29{日|にち}から1{月|がつ}3{日|にち}は{閉庁|へいちょう}です。",
+        "ja_easy": "{開|あ}いているのは、{平日|へいじつ}の{午前|ごぜん}8{時|じ}30{分|ふん}から{午後|ごご}5{時|じ}15{分|ふん}です。{土|ど}・{日|にち}・{祝日|しゅくじつ}と、12{月|がつ}29{日|にち}から1{月|がつ}3{日|にち}は{休|やす}みです。",
+        "en": "Open on weekdays, 8:30 am to 5:15 pm. Closed on Saturdays, Sundays, public holidays, and from December 29 to January 3."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "開庁時間 平日 8時30分～17時15分 （土曜、日曜、祝日、12月29日から1月3日は閉庁）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyujin/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "センターでは、{職業|しょくぎょう}{相談|そうだん}と{職業|しょくぎょう}{紹介|しょうかい}のほか、{履歴書|りれきしょ}・{職務|しょくむ}{経歴書|けいれきしょ}の{書|か}き{方|かた}の{助言|じょげん}と{面接|めんせつ}の{練習|れんしゅう}も{行|おこな}っています。",
+        "ja_easy": "センターでは、{仕事|しごと}の{相談|そうだん}と{紹介|しょうかい}、{履歴書|りれきしょ}の{書|か}き{方|かた}、{面接|めんせつ}の{練習|れんしゅう}もできます。",
+        "en": "The center offers job counselling and referrals, advice on writing a CV, and interview practice."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "当センターでは、職業相談・職業紹介の他に、履歴書や職務経歴書作成のアドバイスや面接の練習も行っています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyushoku-sodan/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{内職|ないしょく}・{在宅|ざいたく}ワークは、ハローワークでは{扱|あつか}っていません。あいち{総合|そうごう}{労働|ろうどう}{支援|しえん}フロアに{問|と}い{合|あ}わせます。",
+        "ja_easy": "{内職|ないしょく}や{家|いえ}でする{仕事|しごと}は、ハローワークにはありません。あいち{総合|そうごう}{労働|ろうどう}{支援|しえん}フロアに{聞|き}きます。",
+        "en": "Piecework and work-from-home jobs are not handled at Hello Work. Ask the Aichi General Labour Support Floor."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "なお、内職在宅ワークについてはあいち総合労働支援フロアへお問い合わせください。（ハローワークでは取り扱っていません。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
+          "verdict": "agree",
+          "ref": "research/audits/job.json#P-job-kyujin/c5"
+        }
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-jsite-aichi-foreigner"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "ハローワークで職業相談や求人に応募する際は、求職登録が必要です。"
+  }
+}

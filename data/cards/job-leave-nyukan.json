@@ -1,0 +1,93 @@
+{
+  "id": "job-leave-nyukan",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-leave",
+      "R-job-work-status"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{入管|にゅうかん}に{届|とど}ける（{辞|や}めたとき）・3か{月|げつ}の{注意|ちゅうい}",
+    "ja_easy": "{入管|にゅうかん}に{届|とど}ける",
+    "en": "Tell immigration you left your job (and the 3-month rule)"
+  },
+  "official_name": {
+    "ja": "所属（契約）機関に関する届出",
+    "reading": "しょぞく（けいやく）きかんにかんするとどけで"
+  },
+  "summary": {
+    "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、{会社|かいしゃ}との{契約|けいやく}が{終|お}わったら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます。その{在留|ざいりゅう}{資格|しかく}の{活動|かつどう}を3か{月|げつ}{以上|いじょう}していないと、{正当|せいとう}な{理由|りゆう}がなければ{在留|ざいりゅう}{資格|しかく}の{取消|とりけ}しの{対象|たいしょう}になることがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます。3か{月|げつ}{以上|いじょう}{仕事|しごと}をしないと、{困|こま}ることがあります（{要|よう}{確認|かくにん}）。",
+    "en": "If you have a work status, notify immigration within 14 days of your contract ending. If you do not carry out the activity of your status for 3 months or more without a good reason, your status may become subject to cancellation (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{契約|けいやく}が{終|お}わった{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the contract ending (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-isa-shozoku-qa"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "「会社を辞めた」、「新しい会社に入社した」等の届出事由の発生日から１４日以内に提出してください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}（{電子|でんし}{届出|とどけで}・{窓口|まどぐち}・{郵送|ゆうそう}）",
+      "ja_easy": "{入管|にゅうかん}（オンラインでも）",
+      "en": "Immigration Services Agency (online, counter or mail)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-isa-katsudo-kikan"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "届出事項を証する資料の提出は必要ありません。"
+    }
+  },
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "3か{月|げつ}の{注意|ちゅうい}：{正当|せいとう}な{理由|りゆう}があるかは、{入管|にゅうかん}で{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{入管|にゅうかん}で{相談|そうだん}します。",
+        "en": "Whether you have a good reason: ask immigration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-torikeshi"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "当該在留資格に係る活動を継続して３か月以上行っていない場合（ただし、当該活動を行わないで在留していることにつき正当な理由がある場合を除きます。）"
+      }
+    }
+  ],
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-isa-keiyaku-kikan"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "契約機関との契約の終了若しくは新たな契約の締結があった高度専門職１号イ又はロ、高度専門職２号（イ又はロ）、研究、技術・人文知識・国際業務"
+  }
+}

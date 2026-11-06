@@ -1,0 +1,56 @@
+{
+  "id": "job-leave-juminzei",
+  "data_version": 1,
+  "illustration": "coins",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-leave",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{住民|じゅうみん}{税|ぜい}は{自分|じぶん}で{払|はら}う",
+    "ja_easy": "{税金|ぜいきん}は{自分|じぶん}で{払|はら}う",
+    "en": "Pay resident tax yourself"
+  },
+  "official_name": {
+    "ja": "市民税・県民税の普通徴収",
+    "reading": "しみんぜい・けんみんぜいのふつうちょうしゅう"
+  },
+  "summary": {
+    "ja": "{辞|や}めて{給料|きゅうりょう}から{引|ひ}けなくなった{市民|しみん}{税|ぜい}・{県民|けんみん}{税|ぜい}は、{市|し}から{届|とど}く{納税|のうぜい}{通知|つうち}{書|しょ}か{納付|のうふ}{書|しょ}で、{自分|じぶん}で{払|はら}います。{辞|や}めた{月|つき}によって、{最後|さいご}の{給料|きゅうりょう}からまとめて{引|ひ}かれることもあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{辞|や}めたら、{税金|ぜいきん}は{届|とど}く{紙|かみ}で{自分|じぶん}で{払|はら}います（{要|よう}{確認|かくにん}）。",
+    "en": "Resident tax that can no longer be taken from your salary is paid by you with the tax notice or payment slip the city sends. Depending on the month you leave, it may be taken in one sum from your last pay (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{市税|しぜい}{事務所|じむしょ}から{届|とど}く{紙|かみ}",
+      "ja_easy": "{届|とど}く{紙|かみ}",
+      "en": "The notice from the Nagoya city tax office"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-nagoya-juminzei-taishoku"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-nagoya-juminzei-taishoku"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。"
+  }
+}

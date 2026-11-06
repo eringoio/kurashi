@@ -1,0 +1,68 @@
+{
+  "id": "job-leave-kokuho",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-leave",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}に{入|はい}る",
+    "ja_easy": "{国保|こくほ}と{年金|ねんきん}に{入|はい}る",
+    "en": "Join National Health Insurance and the National Pension"
+  },
+  "official_name": {
+    "ja": "国民健康保険の加入・国民年金の種別変更",
+    "reading": "こくみんけんこうほけんのかにゅう・こくみんねんきんのしゅべつへんこう"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}を{辞|や}めて{会社|かいしゃ}の{保険|ほけん}が{終|お}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}り、{国民|こくみん}{年金|ねんきん}の{届|とど}けをします（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}と{年金|ねんきん}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "en": "After you leave a job and your workplace insurance ends, join National Health Insurance and file the National Pension notice at the ward office within 14 days (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{辞|や}めた{日|ひ}の{次|つぎ}の{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the day after you leave (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}（{保険|ほけん}{年金|ねんきん}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office (insurance and pension section)"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check"
+  }
+}

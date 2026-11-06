@@ -1,0 +1,84 @@
+{
+  "data_version": 1,
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [
+    "社会保険",
+    "しゃかいほけん",
+    "厚生年金",
+    "健康保険",
+    "扶養",
+    "週20時間",
+    "雇用保険",
+    "social insurance",
+    "employees pension",
+    "20 hours",
+    "student"
+  ],
+  "reasons": {},
+  "deadline": null,
+  "id": "job-shakai-hoken",
+  "illustration": "hcard",
+  "eligibility": {
+    "all": [
+      "R-job-scope",
+      "R-job-goal-pt"
+    ]
+  },
+  "title": {
+    "ja": "アルバイトと{社会|しゃかい}{保険|ほけん}（{健康|けんこう}{保険|ほけん}・{年金|ねんきん}）",
+    "ja_easy": "アルバイトと{保険|ほけん}・{年金|ねんきん}",
+    "en": "Part-time work and social insurance (health insurance and pension)"
+  },
+  "official_name": {
+    "ja": "短時間労働者の社会保険の適用",
+    "reading": "たんじかんろうどうしゃのしゃかいほけんのてきよう"
+  },
+  "summary": {
+    "ja": "{勤|つと}め{先|さき}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}に{入|はい}るのは、{特定|とくてい}{適用|てきよう}{事業所|じぎょうしょ}などで{働|はたら}き、{週|しゅう}の{決|き}まった{労働|ろうどう}{時間|じかん}が20{時間|じかん}{以上|いじょう}で、{学生|がくせい}ではない{短時間|たんじかん}{労働者|ろうどうしゃ}です。{学生|がくせい}は{対象|たいしょう}ではありません（{要|よう}{確認|かくにん}）。2か{月|げつ}{以内|いない}の{期間|きかん}を{決|き}めて{使|つか}われる{人|ひと}などは{除|のぞ}かれます（{要|よう}{確認|かくにん}）。{特定|とくてい}{適用|てきよう}{事業所|じぎょうしょ}は、いまの{規則|きそく}では{被保険者|ひほけんしゃ}が51{人|にん}{以上|いじょう}の{企業|きぎょう}などです。2027{年|ねん}10{月|がつ}から、36{人|にん}{以上|いじょう}の{企業|きぎょう}にも{広|ひろ}がります（{将来|しょうらい}の{規則|きそく}）。{雇用|こよう}{保険|ほけん}は{原則|げんそく}として{強制|きょうせい}ですが、{週|しゅう}20{時間|じかん}や{学生|がくせい}の{扱|あつか}いは、このアプリでは{言|い}い{切|き}れません。{要|よう}{確認|かくにん}です。{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}のカードも{同|おな}じ{日|ひ}に{読|よ}みます。",
+    "ja_easy": "{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}に{入|はい}れるかは、{会社|かいしゃ}の{大|おお}きさと{働|はたら}く{時間|じかん}（{週|しゅう}20{時間|じかん}{以上|いじょう}）で{決|き}まります。{学生|がくせい}は{入|はい}れません（{要確認|ようかくにん}）。2027{年|ねん}10{月|がつ}から、{対象|たいしょう}の{会社|かいしゃ}が{増|ふ}えます。{雇用|こよう}{保険|ほけん}は{要|よう}{確認|かくにん}です。",
+    "en": "You join your workplace health insurance and employees' pension if you work at a designated employer, scheduled hours are 20 or more a week, and you are not a student (to be checked). Students are not covered (to be checked). People hired for 2 months or less are excluded (to be checked). Under the current rule, a designated employer has 51 or more insured people; from October 2027 this extends to employers with 36 or more (future rule). Employment insurance is in principle compulsory, but this app cannot say how the 20-hour rule or students are treated; check at the counter (to be checked). Read the National Health Insurance and National Pension cards on the same day."
+  },
+  "lead": {
+    "ja": "{学生|がくせい}ではない{人|ひと}が{週|しゅう}20{時間|じかん}{以上|いじょう}{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}・{年金|ねんきん}に{入|はい}ることがあります。",
+    "ja_easy": "学生でない人がたくさん働くと、会社の保険に入ることがあります。",
+    "en": "Non-students who work 20 or more hours a week may join workplace insurance and pension."
+  },
+  "where": {
+    "text": {
+      "ja": "{社会|しゃかい}{保険|ほけん}は{年金|ねんきん}{事務所|じむしょ}、{税金|ぜいきん}は{税務署|ぜいむしょ}に{相談|そうだん}します",
+      "ja_easy": "{社会|しゃかい}{保険|ほけん}は{年金|ねんきん}{事務所|じむしょ}、{税金|ぜいきん}は{税務署|ぜいむしょ}",
+      "en": "Ask the pension office about social insurance and the tax office about taxes"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-aichi-roudou-gaikokujin"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "社会保険については年金事務所へ、 税金については税務署へ、 在留資格については出入国在留管理局へ相談してください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
+        "verdict": "agree",
+        "ref": "research/audits/job.json#P-job-rodo-joken/c7"
+      }
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nenkin-tanjikan"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "上記の「特定適用事業所」「任意特定適用事業所」または「国・地方公共団体に属する事業所」に勤務する方で、1週間の所定労働時間または1月の所定労働日数が通常の労働者の4分の3未満である方のうち、週の所定労働時間が20時間以上かつ、学生ではない場合は短時間労働者として健康保険・厚生年金保険の加入対象となります。"
+  }
+}
