@@ -48,3 +48,6 @@ sources/report/
 
 # 名古屋市の収集日の表・分別検索の表の写し（許諾が出るまで公開しない。作者の決定 2026-11-06 F）
 data/private/
+
+# 確認用の Artifact（マインドマップ）の画像と HTML。npm run shots と node scripts/shots/mindmap.mjs で作り直せる
+screenshots/mindmap/
