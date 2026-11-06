@@ -86,11 +86,31 @@ export function nextStage(s: VisitStage): VisitStage | null {
     全部できた：done／別の書類・ここではない：日を消し、理由を残して「確かめる」へ／行けなかった：日を消す（日を決め直す。6A.5） */
 export function outcomePatch(o: VisitOutcome, place: string, today: string): Partial<PlanRecord> {
   switch (o) {
-    case 'all_done': return { status: 'done', visit_told: undefined, visit_told_on: undefined, place_done: place };
+    case 'all_done': return { status: 'done', visit_told: undefined, visit_told_on: undefined, visit_result: { place, result: 'done', on: today } };
     case 'need_document':
-    case 'wrong_place': return { status: 'todo', planned_on: undefined, visit_told: o, visit_told_on: today };
+    case 'wrong_place': return { status: 'todo', planned_on: undefined, visit_told: o, visit_told_on: today, visit_result: { place, result: 'not_done', reason: o, on: today } };
     case 'not_went': return { status: 'todo', planned_on: undefined };
   }
+}
+
+/** 手続きごとの「終わったら」（作者 11/6 B-7）。ok＝できた、not_done（理由は任意）。選んでいない手続きは入れない（未確認：日はそのまま、次に開くと「今日の予定」に残る）。
+    できなかった・理由なし：日を消す（日を決め直す）。理由あり：確かめることへ（visit_told） */
+export type CardResult = { ok: true } | { ok: false; reason?: VisitTold };
+export function resultPatch(r: CardResult, place: string, today: string): Partial<PlanRecord> {
+  if (r.ok) return outcomePatch('all_done', place, today);
+  if (r.reason) return outcomePatch(r.reason, place, today);
+  return { status: 'todo', planned_on: undefined, visit_told: undefined, visit_told_on: undefined, visit_result: { place, result: 'not_done', on: today } };
+}
+
+/** 持ち物を手続きごとに（作者 11/6 B-6）。同じ物は、その日の最初の手続きにだけ出す。どの手続きにも結びつかない物は rest */
+export function bringByCard(v: Pick<Visit, 'cards' | 'bring'>): { groups: { card: CardView; items: BringItem[] }[]; rest: BringItem[] } {
+  const used = new Set<string>();
+  const groups = v.cards.map((c) => {
+    const items = v.bring.filter((b) => !used.has(b.object.id) && (b.object.bring_for ?? []).includes(c.card.id));
+    items.forEach((b) => used.add(b.object.id));
+    return { card: c, items };
+  });
+  return { groups, rest: v.bring.filter((b) => !used.has(b.object.id)) };
 }
 
 /** 終わり方のあとに出すもの：結果（done）／確かめるの一覧（check）／日を決め直す（replan） */

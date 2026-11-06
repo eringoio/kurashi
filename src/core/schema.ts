@@ -147,6 +147,8 @@ export const ObjectDef = z.object({
   check_question: z.string().optional(),
   /** 付き添いの「行く前」で、持ち物のチェックに出す行く所（カードの place。本アプリの定義。6A.6）。ほかに要る物は窓口で確認 */
   bring_to: z.array(z.string().regex(/^[a-z_]+$/)).optional(),
+  /** どの手続きで使うか（カードの id。本アプリの定義。作者 11/6 B-6）。「行く前」の持ち物を手続きごとに分けて出す */
+  bring_for: z.array(z.string()).optional(),
   evidence: Evidence,
 });
 export type ObjectDef = z.infer<typeof ObjectDef>;

@@ -426,3 +426,13 @@ fieldset legend svg { vertical-align: -0.2em; }
 .share__url { overflow-wrap: anywhere; font-size: var(--fs-small, 15px); }
 .share__qr { max-width: 240px; margin: 8px auto 0; }
 .share__qr svg { width: 100%; height: auto; display: block; }
+/* 終わったら（B-7）・持ち物を手続きごとに（B-6） */
+.visitrow { display: flex; flex-direction: column; gap: 6px; }
+.visitrow__name { display: flex; align-items: center; gap: 8px; font-weight: 700; }
+.visitrow__name img { width: 32px; height: 32px; }
+.bringgroup { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
+/* 上の帯（A-5。作者 11/6：おすすめで進める）：幅 480px 未満は、相談・設定もアイコンだけ。名前は読み上げに残す */
+@media (max-width: 479.98px) {
+  .pill__text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .bar__btns .pill--icon { padding-inline: 10px; min-width: var(--target-min); justify-content: center; }
+}

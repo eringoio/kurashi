@@ -2644,5 +2644,55 @@
     "ja": "コピーしました",
     "ja_easy": "コピーしました",
     "en": "Copied"
+  },
+  "visit.row.done": {
+    "ja": "できた",
+    "ja_easy": "できた",
+    "en": "Done"
+  },
+  "visit.row.notDone": {
+    "ja": "できなかった",
+    "ja_easy": "できなかった",
+    "en": "Not done"
+  },
+  "visit.row.reason": {
+    "ja": "{理由|りゆう}（{選|えら}ばなくてもよい）",
+    "ja_easy": "{理由|りゆう}（{選|えら}ばなくてもいい）",
+    "en": "Reason (optional)"
+  },
+  "visit.after.unconfirmed": {
+    "ja": "{選|えら}んでいない{手続|てつづ}きは「{未確認|みかくにん}」です。{次|つぎ}に{開|ひら}いたとき、{今日|きょう}の{予定|よてい}に{残|のこ}ります。",
+    "ja_easy": "{選|えら}んでいない{手続|てつづ}きは、{次|つぎ}に{開|ひら}いたときも{残|のこ}ります。",
+    "en": "Procedures you do not choose stay \"not confirmed\" and remain in today's plan next time."
+  },
+  "visit.after.save": {
+    "ja": "{記録|きろく}する",
+    "ja_easy": "{記録|きろく}する",
+    "en": "Save"
+  },
+  "visit.bring.common": {
+    "ja": "そのほか",
+    "ja_easy": "そのほか",
+    "en": "Other"
+  },
+  "visit.res.mixed": {
+    "ja": "{記録|きろく}しました",
+    "ja_easy": "{記録|きろく}しました",
+    "en": "Saved"
+  },
+  "visit.res.sumDone": {
+    "ja": "できた",
+    "ja_easy": "できた",
+    "en": "Done"
+  },
+  "visit.res.sumNotDone": {
+    "ja": "できなかった（{確|たし}かめるか、{日|ひ}を{決|き}め{直|なお}す）",
+    "ja_easy": "できなかった",
+    "en": "Not done (check, or choose a new day)"
+  },
+  "visit.res.sumOpen": {
+    "ja": "{未確認|みかくにん}（{今日|きょう}の{予定|よてい}に{残|のこ}る）",
+    "ja_easy": "まだ（{今日|きょう}の{予定|よてい}に{残|のこ}る）",
+    "en": "Not confirmed (stays in today's plan)"
   }
 }

@@ -125,8 +125,9 @@ export function App() {
         <div className="bar__btns">
           {/* 共有はアイコンだけ（作者 11/6 A-5）。読み上げの名前は「共有」 */}
           <button type="button" className="pill pill--icon pill--only" aria-label={line(ui('share.title'), level)} onClick={() => setSheet('share')}><ShareIcon /></button>
-          <button type="button" className="pill pill--icon" onClick={() => setSheet('help')}><HelpIcon /><One k="nav.help" /></button>
-          <button type="button" className="pill pill--icon" onClick={() => setSheet('settings')}><GlobeIcon /><One k="nav.settings" /></button>
+          {/* 幅 480px 未満では、相談・設定もアイコンだけ（名前は見えない文で残す。作者 11/6：おすすめで進める） */}
+          <button type="button" className="pill pill--icon" onClick={() => setSheet('help')}><HelpIcon /><span className="pill__text"><One k="nav.help" /></span></button>
+          <button type="button" className="pill pill--icon" onClick={() => setSheet('settings')}><GlobeIcon /><span className="pill__text"><One k="nav.settings" /></span></button>
         </div>
       </header>
       {DRAFTS_LOADED && <div className="draftband" role="note"><Bi k="draft.banner" /></div>}

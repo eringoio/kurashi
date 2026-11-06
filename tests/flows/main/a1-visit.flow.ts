@@ -47,8 +47,8 @@ flow({
     async () => { await expect(page).toHaveURL(/\/visit\/ward_office\/counter$/); await expect(h1).toHaveText('この画面を、窓口の人に見せましょう'); await expect(page.locator('section.k-counter')).toHaveCount(3); await expect(page.locator('main')).toContainText('転入届（住居地の届出）の手続きをしたいです。'); });
 
   await tap('終わった');
-  await snap({ name: '終わったら', input: '終わった', expected: '「どうでしたか？」。全部できた／別の書類が要ると言われた／ここではないと言われた／行けなかった の4つ', why: '結果で、各手続きの状態を決める（outcomePatch）' },
-    async () => { await expect(page).toHaveURL(/\/visit\/ward_office\/after$/); await expect(h1).toHaveText('どうでしたか？'); await expect(page.locator('.k-answer')).toHaveCount(4); });
+  await snap({ name: '終わったら', input: '終わった', expected: '「どうでしたか？」。一番上に「全部できた」。手続きごとに できた／できなかった。下に「行けなかった」', why: 'B-7（作者 11/6）：手続きごとの2択。選んでいない手続きは未確認' },
+    async () => { await expect(page).toHaveURL(/\/visit\/ward_office\/after$/); await expect(h1).toHaveText('どうでしたか？'); await expect(page.getByRole('button', { name: '全部できた' })).toBeVisible(); await expect(page.getByRole('button', { name: 'できた', exact: true })).toHaveCount(3); });
 
   await tap('全部できた');
   await snap({ name: '結果', input: '全部できた', expected: '「記録しました」「区役所の手続きが、できました」と「つぎへ」', why: '操作のあとは結果と「つぎへ」。3つが済みになる' },

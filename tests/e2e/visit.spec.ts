@@ -96,9 +96,11 @@ test('付き添い：行く前 → 窓口で → 終わったら → 全部で�
   await expect(page).toHaveURL(/\/visit\/ward_office\/after$/);
   cleanUrl(page, '終わったら');
   await expect(h1(page)).toHaveText('どうでしたか？');
+  // B-7（作者 11/6）：一番上に「全部できた」。手続きごとに できた／できなかった。行けなかったは下のリンク
   await expect(page.getByRole('button', { name: '全部できた' })).toBeVisible();
-  await expect(page.getByRole('button', { name: '別の書類が要ると言われた' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'ここではないと言われた' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'できた', exact: true })).toHaveCount(3);
+  await expect(page.getByRole('button', { name: 'できなかった', exact: true })).toHaveCount(3);
+  await expect(page.getByRole('button', { name: '記録する' })).toBeDisabled();
   await expect(page.getByRole('button', { name: '行けなかった' })).toBeVisible();
   await check(page, '終わったら');
 
@@ -111,47 +113,42 @@ test('付き添い：行く前 → 窓口で → 終わったら → 全部で�
   await expect(page).toHaveURL(/\/now$/);
 });
 
-test('付き添い：別の書類が要ると言われた → 国保だけ「確かめること」へ', async ({ page }) => {
+// B-7（作者 11/6）：手続きごとの2択。できなかったの理由は任意。選んでいない手続きは未確認（今日の予定に残る）
+const row = (page: Page, name: RegExp) => page.getByRole('group', { name });
+
+test('付き添い：国保だけ「できなかった（別の書類が要る）」、住所の届けは「できた」、年金は選ばない → 未確認は今日の予定に残る', async ({ page }) => {
   await startVisit(page);
   await toAfter(page);
-  await tap(page, '別の書類が要ると言われた');
-  await expect(h1(page)).toHaveText('どの手続きで言われましたか？');
-  const sel = page.locator('.k-check');
-  const n = await sel.count();
-  expect(n).toBeGreaterThanOrEqual(2);
-  for (let i = 0; i < n; i++) await expect(sel.nth(i)).toHaveAttribute('aria-pressed', 'true');
-  await check(page, 'どの手続き');
-  // 国民健康保険だけ残す
-  for (let i = 0; i < n; i++) {
-    const t = (await sel.nth(i).innerText()).trim();
-    if (!t.includes('国民健康保険')) await sel.nth(i).click();
-  }
-  await expect(page.locator('.k-check[aria-pressed="true"]')).toHaveCount(1);
-  await expect(page.locator('.k-check[aria-pressed="true"]')).toContainText('国民健康保険');
+  await row(page, /国民健康保険/).getByRole('button', { name: 'できなかった', exact: true }).click();
+  await row(page, /国民健康保険/).getByRole('button', { name: '別の書類が要ると言われた' }).click();
+  await row(page, /住所の届け/).getByRole('button', { name: 'できた', exact: true }).click();
+  await check(page, '手続きごとに選んだ');
   await tap(page, '記録する');
-  await expect(h1(page)).toHaveText('「確かめること」に移しました');
-  await expect(page.locator('main')).toContainText('別の書類が要ると言われました');
+  await expect(h1(page)).toHaveText('記録しました');
   await expect(page.locator('main')).toContainText('国民健康保険');
-  cleanUrl(page, '結果（別の書類）');
-  await check(page, '結果（別の書類）');
+  await expect(page.locator('main')).toContainText('未確認');
+  cleanUrl(page, '結果（手続きごと）');
+  await check(page, '結果（手続きごと）');
   await tap(page, 'つぎへ');
   await expect(page).toHaveURL(/\/now$/);
-
-  // 選ばなかった項目は済んだ。国保は「確かめること」に戻っている
-  await page.goto('/c/nagoya-tennyu-juukyochi');
-  await expect(page.locator('.planned')).toHaveCount(0);
+  // できた：住所の届けは日が残らない。国保は「確かめること」。年金（未確認）は今日の予定に残る
   await page.goto('/all');
   await expect(page.locator('main')).toContainText('国民健康保険');
+  await page.goto('/today');
+  await expect(page.locator('main')).toContainText('国民年金');
+  await expect(page.locator('main')).not.toContainText('住所の届け');
 });
 
-test('付き添い：ここではないと言われた → 全部選んで記録する', async ({ page }) => {
+test('付き添い：全部「できなかった（ここではない）」→ 記録する', async ({ page }) => {
   await startVisit(page);
   await toAfter(page);
-  await tap(page, 'ここではないと言われた');
-  await expect(h1(page)).toHaveText('どの手続きで言われましたか？');
-  await check(page, 'どの手続き（ここではない）');
+  for (const name of [/住所の届け/, /国民健康保険/, /国民年金/]) {
+    await row(page, name).getByRole('button', { name: 'できなかった', exact: true }).click();
+    await row(page, name).getByRole('button', { name: 'ここではないと言われた' }).click();
+  }
+  await check(page, 'ここではない');
   await tap(page, '記録する');
-  await expect(h1(page)).toHaveText('「確かめること」に移しました');
+  await expect(h1(page)).toHaveText('記録しました');
   cleanUrl(page, '結果（ここではない）');
   await check(page, '結果（ここではない）');
 });

@@ -7,8 +7,8 @@ export interface Resume { step: string; card_id?: string; started_on: Ymd }
 /** plan の1件（9.9） */
 export interface PlanRecord {
   card_id: string; status: 'todo' | 'preparing' | 'submitted' | 'waiting' | 'done' | 'dismissed'; planned_on?: Ymd;
-  /** 済ませた場所（行く所の種類。スタンプ帳に使う。9.9） */
-  place_done?: string;
+  /** 付き添いの「終わったら」の結果（作者 11/6 B-7。9.9）。できた／できなかった（理由は任意）。選んでいない手続きは持たない（未確認） */
+  visit_result?: { place: string; result: 'done' | 'not_done'; reason?: 'need_document' | 'wrong_place'; on: Ymd };
   /** 付き添いの「終わったら」で、窓口で言われたこと（別の書類が要る／ここではない）。「確かめる」に移す（6A.6） */
   visit_told?: 'need_document' | 'wrong_place';
   visit_told_on?: Ymd;

@@ -33,7 +33,13 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "nagoya-tennyu-juukyochi",
+        "nagoya-tennyu-todoke",
+        "move-within-tennyu",
+        "move-within-tenkyo"
+      ]
     },
     {
       "id": "passport",
@@ -61,7 +67,10 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "nagoya-tennyu-juukyochi"
+      ]
     },
     {
       "id": "mynumber-card",
@@ -95,7 +104,12 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "nagoya-tennyu-todoke",
+        "move-within-tennyu",
+        "move-within-tenkyo"
+      ]
     },
     {
       "id": "moveout-certificate",
@@ -128,7 +142,10 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "nagoya-tennyu-todoke"
+      ]
     },
     {
       "id": "health-insurance-card",
@@ -157,7 +174,10 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "nagoya-kokuho-kanyu"
+      ]
     },
     {
       "id": "bank-cash-card",
@@ -251,7 +271,10 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
-      }
+      },
+      "bring_for": [
+        "kokumin-nenkin-kanyu"
+      ]
     }
   ]
 }

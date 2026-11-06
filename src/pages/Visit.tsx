@@ -2,7 +2,7 @@
    判定は src/core/accompany.ts。ここは出すだけ。窓口で言うことは、カードの正式名と strings.json の決まった文から作る（AI で作らない）。
    段階は resume に残す（同意のあと。開き直すと同じ段階から）。URL には行く所の種類と段階だけ（13.4）。 */
 import { useEffect, useState } from 'react';
-import { afterOutcome, outcomePatch, visitPath, visitsToday, VISIT_OUTCOMES, type Visit, type VisitOutcome, type VisitStage } from '../core/accompany';
+import { afterOutcome, bringByCard, outcomePatch, resultPatch, type CardResult, visitPath, visitsToday, type Visit, type VisitOutcome, type VisitStage } from '../core/accompany';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
 import type { Card, Text } from '../core/schema';
@@ -29,13 +29,19 @@ export function counterPhrase(card: Card): Text {
   return fill(ui('visit.counter.phrase'), 'name', (_lv, id) => (id === 'ja' ? `{${o.ja}|${o.reading}}` : card.title[id] ?? card.title.ja_easy ?? card.title.ja));
 }
 
-type Result = { kind: 'done' | 'check' | 'replan'; ids: string[]; told?: VisitOutcome } | { kind: 'planned'; day: string; ids: string[] };
+type Result = { kind: 'done' | 'check' | 'replan'; ids: string[]; told?: VisitOutcome } | { kind: 'planned'; day: string; ids: string[] }
+  | { kind: 'mixed'; done: string[]; notDone: string[]; open: string[] };
 
 function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
   const { level } = usePrefs();
   const [packed, setPacked] = useState<Set<string>>(new Set());
   const held = v.bring.filter((b) => b.held);
   const missing = v.bring.filter((b) => !b.held);
+  const byCard = bringByCard({ cards: v.cards, bring: held });
+  const groups = [
+    ...byCard.groups.map((g) => ({ key: g.card.card.id, title: <One t={g.card.card.title} />, items: g.items })),
+    { key: 'rest', title: <One k="visit.bring.common" />, items: byCard.rest },
+  ];
   return (
     <>
       <div className="art" aria-hidden="true">{v.cards.slice(0, 3).map((c) => <img key={c.card.id} src={art(c.card.illustration)} alt="" />)}<img src={art('box')} alt="" /></div>
@@ -53,8 +59,12 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
       <section aria-labelledby="visit-bring">
         <h2 id="visit-bring" className="label"><One k="visit.bring.label" /></h2>
         {held.length === 0 && <p className="sub"><Bi k="visit.bring.none" /></p>}
-        <div className="list">
-          {held.map((b) => {
+        {/* 手続きごとに分けて出す。同じ物は最初の手続きだけ（作者 11/6 B-6） */}
+        {groups.map((g) => g.items.length > 0 && (
+          <div key={g.key} className="bringgroup">
+            <h3 className="label">{g.title}</h3>
+            <div className="list">
+          {g.items.map((b) => {
             const on = packed.has(b.object.id);
             return (
               <button key={b.object.id} type="button" className="k-check" aria-pressed={on}
@@ -68,7 +78,9 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
               </button>
             );
           })}
-        </div>
+            </div>
+          </div>
+        ))}
         {missing.length > 0 && (
           <div className="k-notice" role="note">
             <p className="label"><One k="visit.bring.missing" /></p>
@@ -118,54 +130,46 @@ function Counter({ v }: { v: Visit }) {
   );
 }
 
-function After({ v, onDone }: { v: Visit; onDone: (o: VisitOutcome, ids: string[]) => void }) {
-  const [which, setWhich] = useState<VisitOutcome | null>(null);
-  const [sel, setSel] = useState<Set<string>>(() => new Set(v.cards.map((c) => c.card.id)));
-  useFocusTitle('after:' + (which ?? ''));
-  if (which) {
-    return (
-      <>
-        <div className="head">
-          <p className="eyebrow"><One k={('visit.out.' + which) as UiKey} /></p>
-          <h1 id="screen-title" tabIndex={-1}><Bi k="visit.which.title" /></h1>
-        </div>
-        <div className="list">
-          {v.cards.map((c) => {
-            const on = sel.has(c.card.id);
-            return (
-              <button key={c.card.id} type="button" className="k-check" aria-pressed={on}
-                onClick={() => setSel((s) => { const n = new Set(s); if (on) n.delete(c.card.id); else n.add(c.card.id); return n; })}>
-                <span className="k-check__box" aria-hidden="true">{on ? '✓' : ''}</span>
-                <img src={art(c.card.illustration)} alt="" />
-                <Bi t={c.card.title} />
-              </button>
-            );
-          })}
-        </div>
-        <p className="sub"><Bi k="visit.which.note" /></p>
-        <button type="button" className="k-answer k-answer--primary" disabled={sel.size === 0} onClick={() => onDone(which, [...sel])}><Bi k="visit.which.save" /></button>
-      </>
-    );
-  }
+/** 終わったら（作者 11/6 B-7）：一番上に「全部できた」。手続きごとに できた／できなかった。できなかったの理由は任意。
+    選んでいない手続きは未確認（日はそのまま。次に開くと「今日の予定」に残る）。行けなかったは日を決め直す */
+function After({ v, onAllDone, onSave, onNotWent }: { v: Visit; onAllDone: () => void; onSave: (r: Record<string, CardResult>) => void; onNotWent: () => void }) {
+  const { level } = usePrefs();
+  const [r, setR] = useState<Record<string, CardResult>>({});
+  useFocusTitle('after');
+  const pick = (id: string, x: CardResult | null) => setR((m) => { const n = { ...m }; if (x) n[id] = x; else delete n[id]; return n; });
   return (
     <>
       <div className="head">
         <p className="eyebrow"><One k="visit.stage.after" /></p>
         <h1 id="screen-title" tabIndex={-1}><Bi k="visit.after.title" /></h1>
       </div>
+      <button type="button" className="k-answer k-answer--primary" onClick={onAllDone}><Bi k="visit.out.all_done" /></button>
       <div className="list">
-        {VISIT_OUTCOMES.map((o) => (
-          <button key={o} type="button" className={'k-answer' + (o === 'all_done' ? ' k-answer--primary' : '')}
-            onClick={() => {
-              const all = v.cards.map((c) => c.card.id);
-              // 別の書類・ここではない：項目が2つ以上なら、どれで言われたかを聞く
-              if ((o === 'need_document' || o === 'wrong_place') && all.length > 1) setWhich(o);
-              else onDone(o, all);
-            }}>
-            <Bi k={('visit.out.' + o) as UiKey} />
-          </button>
-        ))}
+        {v.cards.map((c) => {
+          const cur = r[c.card.id];
+          const reason = cur && !cur.ok ? cur.reason : undefined;
+          return (
+            <fieldset key={c.card.id} className="pt-fieldset visitrow">
+              <legend className="visitrow__name"><img src={art(c.card.illustration)} alt="" /><Bi t={c.card.title} /></legend>
+              <div className="chips">
+                <button type="button" className="seg" aria-pressed={cur?.ok === true} onClick={() => pick(c.card.id, cur?.ok === true ? null : { ok: true })}><span aria-hidden="true">✓ </span><One k="visit.row.done" /></button>
+                <button type="button" className="seg" aria-pressed={cur?.ok === false} onClick={() => pick(c.card.id, cur?.ok === false ? null : { ok: false })}><span aria-hidden="true">× </span><One k="visit.row.notDone" /></button>
+              </div>
+              {cur && !cur.ok && (
+                <div className="chips" role="group" aria-label={line(ui('visit.row.reason'), level)}>
+                  <span className="sub"><One k="visit.row.reason" /></span>
+                  {(['need_document', 'wrong_place'] as const).map((x) => (
+                    <button key={x} type="button" className="seg" aria-pressed={reason === x} onClick={() => pick(c.card.id, { ok: false, reason: reason === x ? undefined : x })}><One k={('visit.out.' + x) as UiKey} /></button>
+                  ))}
+                </div>
+              )}
+            </fieldset>
+          );
+        })}
       </div>
+      <p className="sub"><Bi k="visit.after.unconfirmed" /></p>
+      <button type="button" className="k-answer" disabled={Object.keys(r).length === 0} onClick={() => onSave(r)}><Bi k="visit.after.save" /></button>
+      <button type="button" className="link" onClick={onNotWent}><Bi k="visit.out.not_went" /></button>
     </>
   );
 }
@@ -181,15 +185,28 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
   useEffect(() => { if (v && !res) void g.setResume(visitPath(place, stage)); }, [place, stage, !!v, !!res]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const finish = async (o: VisitOutcome, ids: string[]) => {
-    const rest = (v?.cards ?? []).map((c) => c.card.id).filter((id) => !ids.includes(id));
     await g.setPlans(ids, outcomePatch(o, place, g.today));
-    // どれで言われたかを選んだとき、選ばなかった項目は済んだ
-    if (rest.length) await g.setPlans(rest, outcomePatch('all_done', place, g.today));
     await g.setResume(null);
     setRes({ kind: afterOutcome(o), ids, told: o });
     onLive(line(ui('visit.res.eyebrow'), level));
   };
+  // 手続きごとの結果（B-7）。選んでいない手続きは変えない（未確認）
+  const save = async (r: Record<string, CardResult>) => {
+    for (const [id, x] of Object.entries(r)) await g.setPlans([id], resultPatch(x, place, g.today));
+    const all = (v?.cards ?? []).map((c) => c.card.id);
+    await g.setResume(null);
+    setRes({ kind: 'mixed', done: all.filter((id) => r[id]?.ok === true), notDone: all.filter((id) => r[id]?.ok === false), open: all.filter((id) => !r[id]) });
+    onLive(line(ui('visit.res.eyebrow'), level));
+  };
 
+  if (res && res.kind === 'mixed') {
+    const list = (ids: string[], k: UiKey) => ids.length > 0 && (
+      <section className="visitgroup"><h2 className="label"><One k={k} /></h2><ul className="list" role="list">{g.out.cards.filter((c) => ids.includes(c.card.id)).map((c) => <CardRow key={c.card.id} c={c} />)}</ul></section>
+    );
+    return (
+      <ResultView eyebrow="visit.res.eyebrow" title={<Bi k="visit.res.mixed" />} sub={<>{list(res.done, 'visit.res.sumDone')}{list(res.notDone, 'visit.res.sumNotDone')}{list(res.open, 'visit.res.sumOpen')}</>} onNext={() => navigate('/now')} />
+    );
+  }
   if (res) {
     const views = g.out.cards.filter((c) => res.ids.includes(c.card.id));
     if (res.kind === 'done') {
@@ -224,7 +241,7 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
     <>
       {stage === 'before' && <Before v={v} onLive={onLive} />}
       {stage === 'counter' && <Counter v={v} />}
-      {stage === 'after' && <After v={v} onDone={finish} />}
+      {stage === 'after' && <After v={v} onAllDone={() => void finish('all_done', v.cards.map((c) => c.card.id))} onSave={(r) => void save(r)} onNotWent={() => void finish('not_went', v.cards.map((c) => c.card.id))} />}
       <div className="links"><Link to="/today" className="link"><Bi k="visit.back" /></Link></div>
     </>
   );

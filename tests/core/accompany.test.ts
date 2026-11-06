@@ -1,6 +1,6 @@
 /* 付き添い（6A.6）：行く前 → 窓口で → 終わったら。区役所の3つ（A1：住居地の届出・国保・国民年金）で、4つの終わり方 */
 import { describe, expect, it } from 'vitest';
-import { afterOutcome, bringList, nextStage, outcomePatch, parseVisitPath, visitPath, visitsToday, VISIT_OUTCOMES } from '../../src/core/accompany';
+import { afterOutcome, bringByCard, bringList, nextStage, outcomePatch, resultPatch, parseVisitPath, visitPath, visitsToday, VISIT_OUTCOMES } from '../../src/core/accompany';
 import { loadData } from '../../src/core/data';
 import { run } from '../../src/core/engine';
 import type { PlanRecord } from '../../src/core/entry';
@@ -80,7 +80,7 @@ describe('終わったら：4つの終わり方', () => {
     const o = out(p);
     for (const id of WARD) {
       expect(o.cards.find((c) => c.card.id === id)!.section).toBe('done');
-      expect(p[id].place_done).toBe('ward_office');
+      expect(p[id].visit_result).toEqual({ place: 'ward_office', result: 'done', on: TODAY }); // B-7（11/6）：place_done → visit_result
     }
     expect(visits(p)).toEqual([]);
     expect(afterOutcome('all_done')).toBe('done');
@@ -122,5 +122,38 @@ describe('終わったら：4つの終わり方', () => {
   });
   it('どの終わり方も、ほかの項目の plan を変えない', () => {
     for (const o of VISIT_OUTCOMES) expect(Object.keys(outcomePatch(o, 'ward_office', TODAY))).not.toContain('card_id');
+  });
+});
+
+// B-7（作者 11/6）：手続きごとに できた／できなかった。選んでいない手続きは未確認（日はそのまま）
+describe('終わったら：手続きごとの2択', () => {
+  const base = planned(TODAY);
+  it('できた・できなかった（理由あり）・できなかった（理由なし）・未確認を分ける', () => {
+    let p = apply(base, ['nagoya-tennyu-juukyochi'], resultPatch({ ok: true }, 'ward_office', TODAY));
+    p = apply(p, ['nagoya-kokuho-kanyu'], resultPatch({ ok: false, reason: 'need_document' }, 'ward_office', TODAY));
+    const o = out(p);
+    const sec = (id: string) => o.cards.find((c) => c.card.id === id)!;
+    expect(sec('nagoya-tennyu-juukyochi').section).toBe('done');
+    expect(sec('nagoya-kokuho-kanyu').section).toBe('check');
+    expect(p['nagoya-kokuho-kanyu'].visit_result).toEqual({ place: 'ward_office', result: 'not_done', reason: 'need_document', on: TODAY });
+    // 未確認：年金は何も変えない。今日の予定に残る
+    expect(p['kokumin-nenkin-kanyu'].planned_on).toBe(TODAY);
+    expect(visits(p).flatMap((v) => ids(v.cards))).toEqual(['kokumin-nenkin-kanyu']);
+    const q = resultPatch({ ok: false }, 'ward_office', TODAY);
+    expect(q.planned_on).toBeUndefined();
+    expect(q.visit_result).toEqual({ place: 'ward_office', result: 'not_done', on: TODAY });
+  });
+});
+
+// B-6（作者 11/6）：持ち物を手続きごとに。同じ物は1回だけ
+describe('持ち物を手続きごとに', () => {
+  it('在留カードは住所の届けに、保険のカードは国保に。同じ物は最初の手続きだけ', () => {
+    const v = visits(planned(TODAY))[0];
+    const b = bringByCard(v);
+    const of = (id: string) => b.groups.find((g) => g.card.card.id === id)!.items.map((x) => x.object.id);
+    expect(of('nagoya-tennyu-juukyochi')).toEqual(expect.arrayContaining(['zairyu-card', 'passport']));
+    expect(of('kokumin-nenkin-kanyu')).toContain('student-id');
+    const all = b.groups.flatMap((g) => g.items.map((x) => x.object.id)).concat(b.rest.map((x) => x.object.id));
+    expect(new Set(all).size).toBe(all.length);
   });
 });
