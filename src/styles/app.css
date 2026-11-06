@@ -518,3 +518,11 @@ fieldset legend svg { vertical-align: -0.2em; }
 /* 病院：診療科は順位なしの一覧（10c） */
 .clinic__depts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .clinic__depts li { display: flex; flex-direction: column; padding: 10px 12px; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); }
+/* 改行（11/7 6章）：題は balance、本文は pretty、禁則は strict。数と単位は途中で切らない（.nb）。
+   .phrase は BudouX の文節の切れ目（<wbr>）だけで改行する。入らないときは overflow-wrap で切る（横スクロールを出さない） */
+body { line-break: strict; }
+h1, h2, h3, .k-title, .pill, .k-answer, .focus__name, .row__name { text-wrap: balance; }
+p, li, dd, .sub { text-wrap: pretty; }
+.nb { white-space: nowrap; }
+.phrase { word-break: keep-all; overflow-wrap: anywhere; }
+.phrase ruby, .phrase rt { word-break: normal; }

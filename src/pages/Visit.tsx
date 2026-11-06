@@ -50,17 +50,17 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
       <div className="art" aria-hidden="true">{v.cards.slice(0, 3).map((c) => <img key={c.card.id} src={art(c.card.illustration)} alt="" />)}<img src={art('box')} alt="" /></div>
       <div className="head">
         <p className="eyebrow"><One k="visit.stage.before" />　<One t={ui(('place.' + v.place) as UiKey) ?? { ja: v.place }} /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi k="visit.before.title" /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.before.title" /></h1>
       </div>
       <section aria-labelledby="visit-items">
-        <h2 id="visit-items" className="label"><One k="visit.items" /></h2>
+        <h2 id="visit-items" className="label"><One phrase k="visit.items" /></h2>
         {v.ordered
           ? <ol className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ol>
           : <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>}
         <p className="sub"><Bi k={v.ordered ? 'visit.ordered' : 'visit.unordered'} /></p>
       </section>
       <section aria-labelledby="visit-bring">
-        <h2 id="visit-bring" className="label"><One k="visit.bring.label" /></h2>
+        <h2 id="visit-bring" className="label"><One phrase k="visit.bring.label" /></h2>
         {held.length === 0 && <p className="sub"><Bi k="visit.bring.none" /></p>}
         {/* 手続きごとに分けて出す。同じ物は最初の手続きだけ（作者 11/6 B-6） */}
         {groups.map((g) => g.items.length > 0 && (
@@ -113,14 +113,14 @@ function Counter({ v }: { v: Visit }) {
     <>
       <div className="head">
         <p className="eyebrow"><One k="visit.stage.counter" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi k="visit.counter.title" /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.counter.title" /></h1>
       </div>
       {v.cards.map((c, i) => {
         const ph = counterPhrase(c.card);
         const mean = level.kind === 'ja' ? null : show(ph as LocalizedText, level);
         return (
           <section key={c.card.id} className="k-counter" aria-labelledby={'say-' + i}>
-            <h2 id={'say-' + i} className="label"><One k="visit.counter.say" /></h2>
+            <h2 id={'say-' + i} className="label"><One phrase k="visit.counter.say" /></h2>
             <p className="k-counter__ja" lang="ja"><Ruby s={ph.ja} /></p>
             <p className="k-counter__name" lang="ja"><span className="sr-only"><One k="visit.counter.official" />：</span><Ruby s={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} /></p>
             {mean && !mean.fallback && <p className="k-counter__mean" lang={mean.mainLang}><Ruby s={mean.main} /></p>}
@@ -131,7 +131,7 @@ function Counter({ v }: { v: Visit }) {
       {/* 聞こえてくるかもしれない言葉（★を先に。語学学習 10b） */}
       <HeardWords place={v.place} />
       <SeenNames ids={v.cards.map((c) => 'card:' + c.card.id)} />
-      <button type="button" className="k-answer k-answer--primary" onClick={() => navigate(visitPath(v.place, 'after'))}><Bi k="visit.counter.finished" /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={() => navigate(visitPath(v.place, 'after'))}><Bi phrase k="visit.counter.finished" /></button>
     </>
   );
 }
@@ -147,9 +147,9 @@ function After({ v, onAllDone, onSave, onNotWent }: { v: Visit; onAllDone: () =>
     <>
       <div className="head">
         <p className="eyebrow"><One k="visit.stage.after" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi k="visit.after.title" /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.after.title" /></h1>
       </div>
-      <button type="button" className="k-answer k-answer--primary" onClick={onAllDone}><Bi k="visit.out.all_done" /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={onAllDone}><Bi phrase k="visit.out.all_done" /></button>
       <div className="list">
         {v.cards.map((c) => {
           const cur = r[c.card.id];
@@ -173,7 +173,7 @@ function After({ v, onAllDone, onSave, onNotWent }: { v: Visit; onAllDone: () =>
           );
         })}
       </div>
-      <button type="button" className="k-answer" disabled={Object.keys(r).length === 0} onClick={() => onSave(r)}><Bi k="visit.after.save" /></button>
+      <button type="button" className="k-answer" disabled={Object.keys(r).length === 0} onClick={() => onSave(r)}><Bi phrase k="visit.after.save" /></button>
       <button type="button" className="link" onClick={onNotWent}><Bi k="visit.out.not_went" /></button>
     </>
   );
@@ -206,7 +206,7 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
 
   if (res && res.kind === 'mixed') {
     const list = (ids: string[], k: UiKey) => ids.length > 0 && (
-      <section className="visitgroup"><h2 className="label"><One k={k} /></h2><ul className="list" role="list">{g.out.cards.filter((c) => ids.includes(c.card.id)).map((c) => <CardRow key={c.card.id} c={c} />)}</ul></section>
+      <section className="visitgroup"><h2 className="label"><One phrase k={k} /></h2><ul className="list" role="list">{g.out.cards.filter((c) => ids.includes(c.card.id)).map((c) => <CardRow key={c.card.id} c={c} />)}</ul></section>
     );
     return (
       <ResultView eyebrow="visit.res.eyebrow" title={<Bi k="visit.res.mixed" />} sub={<>{list(res.done, 'visit.res.sumDone')}{list(res.notDone, 'visit.res.sumNotDone')}{list(res.open, 'visit.res.sumOpen')}</>} onNext={() => navigate('/now')} />
@@ -237,7 +237,7 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
   if (!v) {
     return (
       <>
-        <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="visit.none" /></h1></div>
+        <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.none" /></h1></div>
         <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
       </>
     );
@@ -258,7 +258,7 @@ function Replan({ first, cards, today, onPick }: { first: CardView; cards: CardV
     <>
       <div className="head">
         <p className="eyebrow"><One k="visit.replan.eyebrow" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi t={dayTitle(first)} /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase t={dayTitle(first)} /></h1>
       </div>
       <DayChoice group={group} today={today} onPick={onPick} onLater={() => navigate('/all')} />
     </>

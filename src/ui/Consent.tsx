@@ -14,8 +14,8 @@ export function Consent({ onLive }: { onLive: (s: string) => void }) {
       <p className="consent__q" id="consent-q"><Bi k="consent.q" /></p>
       <p className="consent__note"><Bi k="consent.note" /></p>
       <div className="pair">
-        <button type="button" className="k-answer k-answer--primary" onClick={async () => { await v.keep(); onLive(L('consent.keptNote')); }}><Bi k="consent.keep" /></button>
-        <button type="button" className="k-answer" onClick={async () => { await v.dontKeep(); onLive(L('consent.noNote')); }}><Bi k="consent.no" /></button>
+        <button type="button" className="k-answer k-answer--primary" onClick={async () => { await v.keep(); onLive(L('consent.keptNote')); }}><Bi phrase k="consent.keep" /></button>
+        <button type="button" className="k-answer" onClick={async () => { await v.dontKeep(); onLive(L('consent.noNote')); }}><Bi phrase k="consent.no" /></button>
       </div>
       <button type="button" className="link" aria-expanded={more} onClick={() => setMore(!more)}><Bi k="consent.more" /></button>
       {more && (

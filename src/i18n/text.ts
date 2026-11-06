@@ -51,5 +51,21 @@ export function segs(s: string): Seg[] {
 }
 /** ふりがなを外した文（漢字のまま） */
 export const plain = (s: string) => s.replace(RUBY, '$1');
+
+/** 数と単位（「4〜7か月分」「14日以内」「052-951-7119」「#7119」「2,850円」）。表示の段階で <span class="nb"> に包み、途中で改行しない（11/7 6章） */
+const NB = /#?\d[\d,.]*(?:[-〜~～][\d,.]+)*(?:か月分|か月|ヶ月|日以内|日間|週間|時間|キログラム|リットル|万円|円|日|年|月|歳|分|kg|㎡|帖|畳|%)?/g;
+export type NbPart = { t: string; nb: boolean };
+export function nbParts(s: string): NbPart[] {
+  const out: NbPart[] = [];
+  let last = 0;
+  for (const m of s.matchAll(NB)) {
+    if (m[0].length < 2) continue;
+    if (m.index! > last) out.push({ t: s.slice(last, m.index), nb: false });
+    out.push({ t: m[0], nb: true });
+    last = m.index! + m[0].length;
+  }
+  if (last < s.length) out.push({ t: s.slice(last), nb: false });
+  return out;
+}
 /** 読み上げ用の文（漢字を読みに置き換える。読み間違いを防ぐ。SPEC 6A.12） */
 export const reading = (s: string) => s.replace(RUBY, '$2');

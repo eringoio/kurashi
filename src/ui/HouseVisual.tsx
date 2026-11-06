@@ -48,7 +48,7 @@ export function FloorPlan() {
   const rooms = [...ROOMS[sel]].sort((a, b) => a.n - b.n);
   return (
     <section className="group house-visual" aria-labelledby="house-plan">
-      <h2 id="house-plan"><Bi k="house.plan.title" /></h2>
+      <h2 id="house-plan"><Bi phrase k="house.plan.title" /></h2>
       <div className="house-plans" role="group" aria-label={line(ui('house.plan.pick'), level)}>
         {PLANS.map((p) => (
           <button key={p.id} type="button" className="k-answer house-plans__btn" aria-pressed={p.id === sel} onClick={() => setSel(p.id)} lang="en">{p.name}</button>
@@ -85,7 +85,7 @@ export function CostChart() {
   const max = Math.max(...COSTS.map((c) => c.months));
   return (
     <section className="group house-visual" aria-labelledby="house-cost">
-      <h2 id="house-cost"><Bi k="house.cost.title" /></h2>
+      <h2 id="house-cost"><Bi phrase k="house.cost.title" /></h2>
       <p className="sub"><Bi k="house.cost.sub" /></p>
       <ul className="house-costs" role="list">
         {COSTS.map((c) => (

@@ -50,7 +50,7 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
 
   return (
     <>
-      <button type="button" className="k-answer ics__open" onClick={() => setOpen(true)}><CalendarIcon /><Bi k="cal.ics" /></button>
+      <button type="button" className="k-answer ics__open" onClick={() => setOpen(true)}><CalendarIcon /><Bi phrase k="cal.ics" /></button>
       {open && (
         <Sheet title={<One k="cal.ics" />} onClose={() => setOpen(false)}>
           <div className="ics">
@@ -68,7 +68,7 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
             {place === 'ward_office' && location === 'on' && (
               <button type="button" className="link" onClick={async () => { const r = await getPosition(); if (typeof r !== 'string') setOffice(nearest(PLACES().filter((p) => p.kind === 'ward_office'), r)?.id ?? ''); }}><One k="cal.icsHere" /></button>
             )}
-            <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`}><CalendarIcon /><Bi k="cal.icsMake" /></a>
+            <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`}><CalendarIcon /><Bi phrase k="cal.icsMake" /></a>
           </div>
         </Sheet>
       )}

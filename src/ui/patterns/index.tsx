@@ -59,7 +59,7 @@ export function UrgentAction({ a }: { a: UrgentActionVM }) {
   return (
     <section className="pt-urgent" aria-labelledby={id}>
       <p className="pt-badge pt-badge--urgent"><span aria-hidden="true">!</span> <One k="pat.urgent.badge" /></p>
-      <h2 id={id}><Bi t={a.title} /></h2>
+      <h2 id={id}><Bi phrase t={a.title} /></h2>
       <p className="sub"><Bi t={a.why} /></p>
       <Contacts list={a.contacts} />
       {a.note && <div className="k-notice" role="note"><Bi t={a.note} /></div>}
@@ -201,7 +201,7 @@ export function WaitingProgress({ w }: { w: WaitingVM }) {
   return (
     <section className="pt-wait" aria-labelledby={id}>
       <p className="pt-badge pt-badge--wait"><span aria-hidden="true">…</span> <One k="pat.wait.notDone" /></p>
-      <h2 id={id}><Bi t={w.title} /></h2>
+      <h2 id={id}><Bi phrase t={w.title} /></h2>
       <ol className="pt-stages">
         {w.stages.map((s) => (
           <li key={s.id} className={'pt-stage pt-stage--' + s.state} aria-current={s.state === 'current' ? 'step' : undefined}>
@@ -227,7 +227,7 @@ export function LifeGuide({ g }: { g: LifeGuideVM }) {
   return (
     <section className={'pt-guide pt-guide--' + g.kind} aria-labelledby={id}>
       {/* 見出しは印だけ（カードの名前は上の絵のカードにある。10d） */}
-      <h2 id={id} className="pt-badge"><span aria-hidden="true">{GUIDE_MARK[g.kind]}</span> <One k={('pat.guide.' + g.kind) as UiKey} /><span className="sr-only">：<One t={g.title} /></span></h2>
+      <h2 id={id} className="pt-badge"><span aria-hidden="true">{GUIDE_MARK[g.kind]}</span> <One phrase k={('pat.guide.' + g.kind) as UiKey} /><span className="sr-only">：<One phrase t={g.title} /></span></h2>
       <ul className="pt-points">{g.points.map((p, i) => <li key={i}><Bi t={p} /></li>)}</ul>
       {g.prep && (
         <div className="pt-needs">
@@ -246,7 +246,7 @@ export function UnknownNotice({ u }: { u: UnknownVM }) {
   const id = useId();
   return (
     <section className="pt-unknown" aria-labelledby={id}>
-      <h2 id={id}><span aria-hidden="true">？</span> <Bi k="pat.unknown.title" /></h2>
+      <h2 id={id}><span aria-hidden="true">？</span> <Bi phrase k="pat.unknown.title" /></h2>
       <p className="label"><One k="pat.unknown.reason" /></p>
       <p><Bi t={u.reason} /></p>
       {u.where && (<><p className="label"><One k="pat.unknown.where" /></p><p><Bi t={u.where} /></p></>)}

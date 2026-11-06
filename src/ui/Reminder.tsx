@@ -19,7 +19,7 @@ export function Reminder({ card }: { card: Card }) {
   const day = /^\d{4}-\d{2}-\d{2}$/.test(from) ? addMonths(from, r.months) : null;
   return (
     <section className="k-notice reminder" aria-labelledby={'rem-' + card.id}>
-      <h2 id={'rem-' + card.id} className="label"><One k="rem.title" /></h2>
+      <h2 id={'rem-' + card.id} className="label"><One phrase k="rem.title" /></h2>
       <label className="qrfield">
         <span className="label"><One k="rem.from.arrival" /></span>
         <input className="field" type="date" value={from} max={g.today} onChange={(e) => { setFrom(e.target.value); if (e.target.value) void vault.put('dates', 'arrived_on', e.target.value); }} />

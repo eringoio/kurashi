@@ -33,7 +33,7 @@ export function Search() {
   const chips = line(ui('search.chips'), level).split(/、|,\s*/).filter(Boolean);
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="search.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="search.title" /></h1></div>
       <div className="search">
         <label htmlFor={id} className="label"><Bi k="search.label" /></label>
         <input id={id} type="search" value={q} onChange={(e) => setQ(e.target.value)} autoComplete="off" enterKeyHint="search" aria-describedby={id + '-hint'} />
@@ -47,7 +47,7 @@ export function Search() {
         {q.trim() ? (
           found.length ? (
             <>
-              <h2><Bi k="search.found" />（{found.length}）</h2>
+              <h2><Bi phrase k="search.found" />（{found.length}）</h2>
               <ul className="list" role="list">{found.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
               <p className="sub"><Bi k="search.notYours" /></p>
             </>

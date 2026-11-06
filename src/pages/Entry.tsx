@@ -23,11 +23,11 @@ export function ResumePage() {
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('box')} alt="" className="art--big" /></div>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="resume.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="resume.title" /></h1></div>
       <p className="sub"><Bi k="resume.sub" /></p>
       <div className="list">
-        <button type="button" className="k-answer k-answer--primary" onClick={() => navigate(r?.step ?? '/move')}><Bi k="resume.continue" /></button>
-        <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate('/'); }}><Bi k="resume.menu" /></button>
+        <button type="button" className="k-answer k-answer--primary" onClick={() => navigate(r?.step ?? '/move')}><Bi phrase k="resume.continue" /></button>
+        <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate('/'); }}><Bi phrase k="resume.menu" /></button>
       </div>
     </>
   );
@@ -51,13 +51,13 @@ export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('calendar')} alt="" className="art--big" /></div>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k={past ? 'promise.past' : 'promise.today'} /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k={past ? 'promise.past' : 'promise.today'} /></h1></div>
       {past ? <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} />)}</ul> : views.length > 0 && <TodayVisits views={views} />}
       {events.map(([id, ids]) => <EventPromise key={id} eventId={id} ids={ids} />)}
       {past && (
         <div className="list">
-          <button type="button" className="k-answer k-answer--primary" onClick={async () => { for (const c of views) await g.setPlan(c.card.id, { status: 'done' }); for (const [, ids] of events) await markDone(ids); navigate(events.length && !views.length ? '/e/' + events[0][0] : '/now'); }}><Bi k="promise.went" /></button>
-          <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0]?.[0] + '/c/' + events[0]?.[1][0]} className="k-answer"><Bi k="promise.notYet" /></Link>
+          <button type="button" className="k-answer k-answer--primary" onClick={async () => { for (const c of views) await g.setPlan(c.card.id, { status: 'done' }); for (const [, ids] of events) await markDone(ids); navigate(events.length && !views.length ? '/e/' + events[0][0] : '/now'); }}><Bi phrase k="promise.went" /></button>
+          <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0]?.[0] + '/c/' + events[0]?.[1][0]} className="k-answer"><Bi phrase k="promise.notYet" /></Link>
         </div>
       )}
       <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
@@ -74,9 +74,9 @@ function EventPromise({ eventId, ids }: { eventId: string; ids: string[] }) {
   if (!views.length) return null;
   return (
     <section className="visitgroup" aria-labelledby={'today-' + eventId}>
-      <h2 id={'today-' + eventId} className="label"><Bi t={eg.event.title} /></h2>
+      <h2 id={'today-' + eventId} className="label"><Bi phrase t={eg.event.title} /></h2>
       <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} base={'/e/' + eventId + '/c/'} />)}</ul>
-      <Link to={'/e/' + eventId} className="k-answer"><Bi k="nav.next" /></Link>
+      <Link to={'/e/' + eventId} className="k-answer"><Bi phrase k="nav.next" /></Link>
     </section>
   );
 }
@@ -92,9 +92,9 @@ function TodayVisits({ views }: { views: ReturnType<typeof useGuide>['out']['car
     <>
       {visits.map((v) => (
         <section key={v.place} className="visitgroup" aria-labelledby={'today-' + v.place}>
-          <h2 id={'today-' + v.place} className="label"><Bi t={ui(('place.' + v.place) as Parameters<typeof ui>[0]) ?? { ja: v.place }} /></h2>
+          <h2 id={'today-' + v.place} className="label"><Bi phrase t={ui(('place.' + v.place) as Parameters<typeof ui>[0]) ?? { ja: v.place }} /></h2>
           <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
-          <Link to={visitPath(v.place, 'before')} className="k-answer k-answer--primary"><Bi t={withPlace(ui('visit.start'), v.place)} /></Link>
+          <Link to={visitPath(v.place, 'before')} className="k-answer k-answer--primary"><Bi phrase t={withPlace(ui('visit.start'), v.place)} /></Link>
         </section>
       ))}
       {rest.length > 0 && <ul className="list" role="list">{rest.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>}

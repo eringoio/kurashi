@@ -23,13 +23,13 @@ export function CardList({ place, stage = 'counter' }: { place: string; stage?: 
   const today = visitsToday(g.out, DATA().objects, g.objects, origin, g.today).find((v) => v.place === place);
   return (
     <>
-      {today && <Link to={visitPath(place, stage)} className="k-answer k-answer--primary"><img src={art('hall')} alt="" /><Bi k={stage === 'counter' ? 'scene.toCounter' : 'here.toBefore'} /></Link>}
+      {today && <Link to={visitPath(place, stage)} className="k-answer k-answer--primary"><img src={art('hall')} alt="" /><Bi phrase k={stage === 'counter' ? 'scene.toCounter' : 'here.toBefore'} /></Link>}
       <section aria-labelledby="scene-cards">
-        <h2 id="scene-cards" className="label"><One k="scene.cards" /></h2>
+        <h2 id="scene-cards" className="label"><One phrase k="scene.cards" /></h2>
         <ul className="list" role="list">{cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
         <p className="sub"><Bi k="scene.cardsNote" /></p>
       </section>
-      <Link to="/move" className="k-answer"><img src={art('box')} alt="" /><Bi k="scene.toMove" /></Link>
+      <Link to="/move" className="k-answer"><img src={art('box')} alt="" /><Bi phrase k="scene.toMove" /></Link>
     </>
   );
 }
@@ -48,7 +48,7 @@ export function ScenePage({ id }: { id: string }) {
   if (!s) {
     return (
       <>
-        <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="scene.notFound" /></h1></div>
+        <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="scene.notFound" /></h1></div>
         <div className="links"><Link to="/" className="link"><Bi k="scene.menu" /></Link></div>
       </>
     );
@@ -59,7 +59,7 @@ export function ScenePage({ id }: { id: string }) {
       <div className="art" aria-hidden="true"><img src={art('hall')} alt="" className="art--big" /></div>
       <div className="head">
         <p className="eyebrow"><One k="scene.eyebrow" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi t={s.title} /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase t={s.title} /></h1>
       </div>
       <CardList place={s.shows.place} />
       <div className="links"><Link to="/" className="link"><Bi k="scene.menu" /></Link></div>

@@ -42,7 +42,7 @@ export function Now() {
         <AddToCalendar day={result.day} place={g.out.cards.find((x) => x.card.id === result.ids[0])?.card.place} cardIds={result.ids} />
       </ResultView>
     ) : (
-      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
+      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -77,7 +77,7 @@ export function Now() {
           <p className="eyebrow"><One k="now.eyebrow.plan" /></p>
           <Title><Bi t={dayTitle(c)} /></Title>
         </div>
-        {group.length === 1 && <p className="sub"><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
+        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
           onLater={() => navigate('/all')} />
@@ -94,8 +94,8 @@ export function Now() {
           <Title><Bi k="now.wait.title" /></Title>
         </div>
         <div className="pair">
-          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); setResult({ kind: 'done', cardId: c.card.id }); }}><Bi k="now.wait.yes" /></button>
-          <Link to={'/c/' + c.card.id} className="k-answer"><Bi k="now.wait.no" /></Link>
+          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); setResult({ kind: 'done', cardId: c.card.id }); }}><Bi phrase k="now.wait.yes" /></button>
+          <Link to={'/c/' + c.card.id} className="k-answer"><Bi phrase k="now.wait.no" /></Link>
         </div>
       </>
     );
@@ -139,7 +139,7 @@ export function All() {
       <section className="group" key={key}>
         {open ? (
           <>
-            <h2><Bi k={key} />（{list.length}）</h2>
+            <h2><Bi phrase k={key} />（{list.length}）</h2>
             <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined} />)}</ul>
           </>
         ) : (
@@ -154,7 +154,7 @@ export function All() {
   return (
     <>
       <Tabs current="all" />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="all.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
       <WorldMap cards={cards} />
       <p className="sub"><Bi k="all.sub" /></p>
       {SECTION_ORDER.flatMap((s) => [
@@ -163,7 +163,7 @@ export function All() {
       ])}
       {group('sec.excluded', by((c) => c.state === 'excluded'), false)}
       {group('sec.out', by((c) => c.state === 'out_of_scope'), false)}
-      <Link to="/now" className="k-answer k-answer--primary"><Bi k="all.go" /></Link>
+      <Link to="/now" className="k-answer k-answer--primary"><Bi phrase k="all.go" /></Link>
     </>
   );
 }

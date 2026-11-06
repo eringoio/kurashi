@@ -51,7 +51,7 @@ export function Here() {
         <button type="button" className="k-answer k-answer--primary" onClick={locate} disabled={st.k === 'asking'} aria-busy={st.k === 'asking'}>
           <img src={art('pin')} alt="" /><Bi k={st.k === 'asking' ? 'here.asking' : 'here.use'} />
         </button>
-        <button type="button" className="k-answer" onClick={() => setSt({ k: 'list', why: 'choose' })}><img src={art('hall')} alt="" /><Bi k="here.choose" /></button>
+        <button type="button" className="k-answer" onClick={() => setSt({ k: 'list', why: 'choose' })}><img src={art('hall')} alt="" /><Bi phrase k="here.choose" /></button>
       </>
     );
   } else if (st.k === 'near') {
@@ -61,8 +61,8 @@ export function Here() {
         <div className="art" aria-hidden="true"><img src={art('hall')} alt="" className="art--big" /></div>
         <div className="head"><Title><Bi t={withName('here.near', p)} /></Title></div>
         <div className="list">
-          <button type="button" className="k-answer k-answer--primary" onClick={() => setSt({ k: 'place', place: p })}><Bi k="here.yes" /></button>
-          <button type="button" className="k-answer" onClick={() => navigate('/')}><Bi k="here.passing" /></button>
+          <button type="button" className="k-answer k-answer--primary" onClick={() => setSt({ k: 'place', place: p })}><Bi phrase k="here.yes" /></button>
+          <button type="button" className="k-answer" onClick={() => navigate('/')}><Bi phrase k="here.passing" /></button>
         </div>
       </>
     );
@@ -73,7 +73,7 @@ export function Here() {
         {st.why !== 'choose' && <p className="sub" role="status"><Bi k={('here.why.' + st.why) as UiKey} /></p>}
         <ul className="list" role="list">
           {PLACES().map((p) => (
-            <li key={p.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'place', place: p })}><Bi t={p.name} /></button></li>
+            <li key={p.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'place', place: p })}><Bi phrase t={p.name} /></button></li>
           ))}
         </ul>
       </>
@@ -106,7 +106,7 @@ function PlaceInfo({ p }: { p: Place }) {
   const m = mapLinks(p);
   return (
     <section className="placeinfo" aria-labelledby="place-address">
-      <h2 id="place-address" className="label"><One k="here.address" /></h2>
+      <h2 id="place-address" className="label"><One phrase k="here.address" /></h2>
       <p lang="ja" className="placeinfo__addr">{p.address}</p>
       <div className="links">
         <a className="link" href={m.apple} target="_blank" rel="noopener noreferrer"><Bi k="here.mapApple" /><span className="sr-only"><One k="here.newTab" /></span></a>

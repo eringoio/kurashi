@@ -42,9 +42,9 @@ export function Move({ step }: { step: string }) {
         <div className="art" aria-hidden="true"><img src={art('homemove')} alt="" /><img src={art('homecheck')} alt="" /></div>
         <Head eyebrow={<One k="move.step" />}><Bi k="move.changed" /></Head>
         <div className="list">
-          <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi k="move.yes" /></button>
-          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(noChangeEvents().length ? '/move/nochange' : '/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi k="move.no" /></button>
-          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(hasEntryExtras() ? '/move/unsure' : '/info/coming-soon'); }}><img src={art('ask')} alt="" /><Bi k="move.unknown" /></button>
+          <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi phrase k="move.yes" /></button>
+          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(noChangeEvents().length ? '/move/nochange' : '/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi phrase k="move.no" /></button>
+          <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(hasEntryExtras() ? '/move/unsure' : '/info/coming-soon'); }}><img src={art('ask')} alt="" /><Bi phrase k="move.unknown" /></button>
         </div>
         <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
       </>
@@ -162,7 +162,7 @@ function Objects() {
   return (
     <>
       <div className="head">
-        <h1 id="screen-title" tabIndex={-1}><Bi k="objects.title" /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase k="objects.title" /></h1>
       </div>
       <p className="sub"><Bi k="objects.note" /></p>
       <ul className="k-tiles" role="list">
@@ -182,7 +182,7 @@ function Objects() {
           </li>
         ))}
       </ul>
-      <button type="button" className="k-answer k-answer--primary" onClick={() => void next()}><Bi k="objects.next" /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={() => void next()}><Bi phrase k="objects.next" /></button>
     </>
   );
 }
@@ -197,7 +197,7 @@ function NoChange() {
       <ul className="list" role="list">
         {noChangeEvents().map((e) => (
           <li key={e.id}>
-            <Link to={'/e/' + e.id} className="k-answer"><img src={art(e.illustration)} alt="" /><Bi t={e.title} /></Link>
+            <Link to={'/e/' + e.id} className="k-answer"><img src={art(e.illustration)} alt="" /><Bi phrase t={e.title} /></Link>
           </li>
         ))}
       </ul>
@@ -219,8 +219,8 @@ function Unsure() {
         <p><Bi k="move.unsure.p3" /></p>
       </div>
       <div className="list">
-        <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi k="move.unsure.differ" /></button>
-        <button type="button" className="k-answer" onClick={() => navigate(extra ? '/move/nochange' : '/info/coming-soon')}><img src={art('homecheck')} alt="" /><Bi k="move.unsure.same" /></button>
+        <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi phrase k="move.unsure.differ" /></button>
+        <button type="button" className="k-answer" onClick={() => navigate(extra ? '/move/nochange' : '/info/coming-soon')}><img src={art('homecheck')} alt="" /><Bi phrase k="move.unsure.same" /></button>
       </div>
       <p><a className="link" href="https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007835.html" target="_blank" rel="noopener noreferrer"><Bi k="move.unsure.link" /></a></p>
       <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>

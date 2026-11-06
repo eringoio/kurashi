@@ -43,7 +43,7 @@ export function Review() {
   const expr = (e: unknown): string => (typeof e === 'string' ? e : 'all' in (e as object) ? 'all(' + (e as { all: unknown[] }).all.map(expr).join(', ') + ')' : 'any(' + (e as { any: unknown[] }).any.map(expr).join(', ') + ')');
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="review.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="review.title" /></h1></div>
       <p className="sub"><Bi k="review.sub" /></p>
       {/* 報告の一覧（A-9）。作者のトークンで読む */}
       <ReviewReports />
@@ -57,20 +57,20 @@ export function Review() {
       </fieldset>}
       <AuthorQueue />
       <ClinicReview />
-      <section className="group"><h2><Bi k="review.cards" />（{d.cards.length}）</h2>
+      <section className="group"><h2><Bi phrase k="review.cards" />（{d.cards.length}）</h2>
         <ul className="list review" role="list">
           {d.flow.card_order.map((id) => d.cards.find((c) => c.id === id)!).map((c) => (
             <Item key={c.id} id={c.id} title={c.title} e={c.evidence}><code className="review__expr">{expr(c.eligibility)}{c.coverage_rule_ids.length ? ' ／ coverage: ' + c.coverage_rule_ids.join(', ') : ''}</code></Item>
           ))}
         </ul>
       </section>
-      <section className="group"><h2><Bi k="review.rules" />（{d.rules.size}）</h2>
+      <section className="group"><h2><Bi phrase k="review.rules" />（{d.rules.size}）</h2>
         <ul className="list review" role="list">{[...d.rules.values()].map((r) => <Item key={r.id} id={r.id + '（' + r.kind + '）'} title={r.statement} e={r.evidence} />)}</ul>
       </section>
-      <section className="group"><h2><Bi k="review.relations" />（{d.relations.length}）</h2>
+      <section className="group"><h2><Bi phrase k="review.relations" />（{d.relations.length}）</h2>
         <ul className="list review" role="list">{d.relations.map((r) => <Item key={r.id} id={r.id + '（' + r.type + '）'} title={r.explain} e={r.evidence} />)}</ul>
       </section>
-      <section className="group"><h2><Bi k="review.objects" />（{d.objects.length}）</h2>
+      <section className="group"><h2><Bi phrase k="review.objects" />（{d.objects.length}）</h2>
         <ul className="list review" role="list">{d.objects.map((o) => <Item key={o.id} id={o.id} title={o.title} e={o.evidence}><span className="sub"><One t={o.purpose} /></span></Item>)}</ul>
       </section>
       <div className="links"><Link to="/qr" className="link"><Bi k="qr.title" /></Link><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
@@ -86,7 +86,7 @@ function AuthorQueue() {
     : <ul className="list review" role="list">{xs.map((x) => <Item key={x.where} id={x.where + '（' + x.kind + '）'} e={x.e} />)}</ul>;
   return (
     <section className="group">
-      <h2><Bi k="review.queue" /></h2>
+      <h2><Bi phrase k="review.queue" /></h2>
       <p className="sub"><Bi k="review.queueSub" /></p>
       <h3 className="label"><One k="review.staysU" /></h3>
       {list(q.stays_u)}
@@ -109,7 +109,7 @@ function ClinicReview() {
   const d = CLINIC();
   return (
     <section className="group">
-      <h2><Bi k="clinic.review" />（{d.parts.length}）</h2>
+      <h2><Bi phrase k="clinic.review" />（{d.parts.length}）</h2>
       <ul className="list review" role="list">
         {d.parts.map((p) => (
           <Item key={p.id} id={p.id} title={p.name} e={p.evidence}>

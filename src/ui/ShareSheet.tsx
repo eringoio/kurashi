@@ -22,7 +22,7 @@ export function ShareSheet({ path, onClose, onLive }: { path: string; onClose: (
     <Sheet title={<One k="share.title" />} onClose={onClose}>
       <p className="sub"><Bi k="share.note" /></p>
       <p className="share__url" lang="en">{url}</p>
-      <button type="button" className="k-answer k-answer--primary" onClick={() => void copy()}><Bi k={copied ? 'share.copied' : 'share.copy'} /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={() => void copy()}><Bi phrase k={copied ? 'share.copied' : 'share.copy'} /></button>
       <QrCode url={url} label={line(ui('qr.imgLabel'), level) + '：' + url} className="share__qr" />
     </Sheet>
   );

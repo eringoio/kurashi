@@ -48,7 +48,7 @@ function MultiQuestion({ q, onAnswer }: { q: Question; onAnswer: (v: string[]) =
   return (
     <>
       <MultiPick legend={ui('ev.pick.legend')} options={toPickOptions(q)} selected={sel} onChange={setSel} />
-      <button type="button" className="k-answer k-answer--primary" disabled={sel.length === 0} onClick={() => onAnswer(sel)}><Bi k="nav.next" /></button>
+      <button type="button" className="k-answer k-answer--primary" disabled={sel.length === 0} onClick={() => onAnswer(sel)}><Bi phrase k="nav.next" /></button>
       <WhyAsked t={q.why_asked} />
     </>
   );
@@ -64,7 +64,7 @@ function Missing() {
   useFocusTitle('ev-missing');
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="ev.notFound" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="ev.notFound" /></h1></div>
       <Link to="/" className="link"><Bi k="nav.home" /></Link>
     </>
   );
@@ -89,7 +89,7 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         <AddToCalendar day={result.day} place={g.out.cards.find((x) => x.card.id === result.ids[0])?.card.place} cardIds={result.ids} />
       </ResultView>
     ) : (
-      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
+      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -134,7 +134,7 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
           <p className="eyebrow"><One k="now.eyebrow.plan" /></p>
           <Title><Bi t={dayTitle(c)} /></Title>
         </div>
-        {group.length === 1 && <p className="sub"><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
+        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
           onLater={() => navigate(base + '/all')} />
@@ -149,8 +149,8 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         <FocusCard c={c} />
         <div className="head"><Title><Bi k="now.wait.title" /></Title></div>
         <div className="pair">
-          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); setResult({ kind: 'done', cardId: c.card.id }); }}><Bi k="now.wait.yes" /></button>
-          <Link to={cp + c.card.id} className="k-answer"><Bi k="now.wait.no" /></Link>
+          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); setResult({ kind: 'done', cardId: c.card.id }); }}><Bi phrase k="now.wait.yes" /></button>
+          <Link to={cp + c.card.id} className="k-answer"><Bi phrase k="now.wait.no" /></Link>
         </div>
       </>
     );
@@ -195,7 +195,7 @@ function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
       <section className="group" key={key}>
         {open ? (
           <>
-            <h2><Bi k={key} />（{list.length}）</h2>
+            <h2><Bi phrase k={key} />（{list.length}）</h2>
             <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} base={base + '/c/'} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined} />)}</ul>
           </>
         ) : (
@@ -209,8 +209,8 @@ function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   return (
     <>
       <EvTabs base={base} current="all" />
-      <div className="head"><p className="eyebrow"><One t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi k="all.title" /></h1></div>
-      {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi t={g.event.tool.label} /></Link>}
+      <div className="head"><p className="eyebrow"><One phrase t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
+      {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi phrase t={g.event.tool.label} /></Link>}
       <p className="sub"><Bi k="all.sub" /></p>
       {SECTION_ORDER.flatMap((s) => [
         group(SEC_KEY[s], by((c) => c.section === s && c.state !== 'ask'), s !== 'later'),
@@ -218,7 +218,7 @@ function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
       ])}
       {group('sec.excluded', by((c) => c.state === 'excluded'), false)}
       {group('sec.out', by((c) => c.state === 'out_of_scope'), false)}
-      <Link to={base} className="k-answer k-answer--primary"><Bi k="all.go" /></Link>
+      <Link to={base} className="k-answer k-answer--primary"><Bi phrase k="all.go" /></Link>
       <StartNew g={g} onLive={onLive} />
     </>
   );

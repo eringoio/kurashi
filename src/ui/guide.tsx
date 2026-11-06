@@ -88,7 +88,7 @@ export function WhyAsked({ t }: { t: Text }) {
 export function QuestionBlock({ q, onPick }: { q: Question; onPick: (v: Value) => void }) {
   return (
     <section className="qblock" aria-labelledby={'q-' + q.id}>
-      <h2 id={'q-' + q.id} className="qblock__title"><Bi t={q.text} /></h2>
+      <h2 id={'q-' + q.id} className="qblock__title"><Bi phrase t={q.text} /></h2>
       <Answers q={q} onPick={onPick} />
       <WhyAsked t={q.why_asked} />
     </section>
@@ -103,7 +103,7 @@ export function CardRow({ c, extra, current, base = '/c/' }: { c: CardView; extr
     <li>
       <Link to={base + c.card.id} className={'row row--' + CLS[k]} aria-current={current ? 'page' : undefined}>
         <img src={artDim(c.card.illustration, dim)} alt="" />
-        <span className="row__name"><Bi t={c.card.title} /></span>
+        <span className="row__name"><Bi phrase t={c.card.title} /></span>
         <span className="row__side">
           <StateLabel k={k} ob={c.card.obligation} />
           {extra && <span className="row__extra">{extra}</span>}
@@ -171,7 +171,7 @@ export function Reason({ c, objects, facts }: { c: CardView; objects: Record<str
           {answers.map((a, i) => <span key={i} className="chip chip--static"><One t={a} /></span>)}
         </p>
       )}
-      <p><Bi t={whyText(c)} /></p>
+      <p><Bi phrase t={whyText(c)} /></p>
       {c.state === 'excluded' && !c.card.reasons.excluded && f?.kind !== 'entry' && f?.reason_when_false && <p className="sub"><Bi t={f.reason_when_false} /></p>}
       <SectionWhy c={c} />
       {c.state === 'shown' && c.reasonRules.slice(1).map((r) => <p key={r.id} className="sub"><Bi t={r.statement} /></p>)}
@@ -287,7 +287,7 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
                 <>
                   <span className="k-check__box" aria-hidden="true">{ids.has(x.card.id) ? '✓' : ''}</span>
                   <img src={art(x.card.illustration)} alt="" />
-                  <Bi t={x.card.title} />
+                  <Bi phrase t={x.card.title} />
                 </>
               );
               // 最初の1つ（いま開いている項目）は、いつも入る。外せるのは、ほかの項目だけ
@@ -339,7 +339,7 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
         {(k === 'wait' || k === 'later') && <img className="focus__badge" src={art('clock')} alt="" />}
       </span>
       {/* 開いた項目では、名前がその画面の見出し（h1） */}
-      {title ? <h1 id="screen-title" tabIndex={-1} className="focus__name"><Bi t={c.card.title} /></h1> : <span className="focus__name"><Bi t={c.card.title} /></span>}
+      {title ? <h1 id="screen-title" tabIndex={-1} className="focus__name"><Bi phrase t={c.card.title} /></h1> : <span className="focus__name"><Bi phrase t={c.card.title} /></span>}
       <StateLabel k={k} ob={c.card.obligation} />
       {/* 義務（しないといけないか）の印。開いた項目でだけ、要確認でないとき（A-8） */}
       {title && k !== 'check' && k !== 'ask' && <TrustMark e={worstEvidence(c.reasonRules.map((r) => r.evidence))} />}
@@ -381,7 +381,7 @@ export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow:
         <h1 id="screen-title" tabIndex={-1}>{title}</h1>
       </div>
       {sub && <div className="sub">{sub}</div>}
-      <button type="button" className="k-answer k-answer--primary" onClick={onNext}><Bi k="nav.next" /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={onNext}><Bi phrase k="nav.next" /></button>
       {children}
     </>
   );

@@ -69,12 +69,12 @@ function GomiTool() {
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('bin')} alt="" /></div>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="gomi.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="gomi.title" /></h1></div>
       <p className="draftmark"><Bi k="gomi.draft" /></p>
 
       {/* 1. 住所（区＋町名）。作者の決定 11/6 F：住所と捨てたい物が分かれば、いつ・どのごみ・どう出すが1つの画面で分かる */}
       <section className="group" aria-labelledby={id + '-a'}>
-        <h2 id={id + '-a'}><Bi k="gomi.area.title" /></h2>
+        <h2 id={id + '-a'}><Bi phrase k="gomi.area.title" /></h2>
         <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => void setPlace(x)} area={pa} />
         {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
         {!SCHEDULE_ON && saved && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
@@ -92,7 +92,7 @@ function GomiTool() {
           {q.trim() && !sel && (found.length ? (
             <ul className="list" role="list">
               {found.slice(0, 8).map((it) => (
-                <li key={it.id}><button type="button" className="k-answer" onClick={() => pick(it)}><Bi t={it.label} /></button></li>
+                <li key={it.id}><button type="button" className="k-answer" onClick={() => pick(it)}><Bi phrase t={it.label} /></button></li>
               ))}
             </ul>
           ) : (
@@ -106,12 +106,12 @@ function GomiTool() {
 
       {sel && res && (
         <section className="group" aria-labelledby={id + '-r'}>
-          <h2 id={id + '-r'}><Bi t={sel.label} /></h2>
+          <h2 id={id + '-r'}><Bi phrase t={sel.label} /></h2>
           {res.kind === 'ask' && sel.ask && (
             <fieldset className="pt-fieldset">
               <legend><Bi t={sel.ask.text} /></legend>
               <div className="answers">
-                {sel.ask.choices.map((c) => <button key={c.value} type="button" className="k-answer" onClick={() => setChoice(c.value)}><Bi t={c.label} /></button>)}
+                {sel.ask.choices.map((c) => <button key={c.value} type="button" className="k-answer" onClick={() => setChoice(c.value)}><Bi phrase t={c.label} /></button>)}
               </div>
             </fieldset>
           )}
@@ -161,7 +161,7 @@ function GomiTool() {
 
       {/* 4. 必要なときだけ：粗大ごみ・自己搬入（利用予定日で選ぶ） */}
       <section className="group" aria-labelledby={id + '-m'}>
-        <h2 id={id + '-m'}><Bi k="gomi.more.title" /></h2>
+        <h2 id={id + '-m'}><Bi phrase k="gomi.more.title" /></h2>
         {/* お知らせ（期間の中だけ。B-7c：10月の粗大ごみの変更は 2027-03-31 まで） */}
         {activeNotices(d.delivery.notices, today).map((n, i) => <p key={i} className="k-notice" role="note"><Bi t={n.text} /></p>)}
         <ul className="list" role="list">

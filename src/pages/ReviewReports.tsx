@@ -16,13 +16,13 @@ export function ReviewReports() {
   };
   return (
     <section className="group" aria-labelledby="review-reports">
-      <h2 id="review-reports"><One k="review.reports" /></h2>
+      <h2 id="review-reports"><One phrase k="review.reports" /></h2>
       <p className="sub"><Bi k="review.reportsNote" /></p>
       <label className="qrfield">
         <span className="label"><One k="review.reportsToken" /></span>
         <input className="field" type="password" autoComplete="off" value={token} onChange={(e) => setToken(e.target.value)} />
       </label>
-      <button type="button" className="k-answer" disabled={!token} onClick={() => void load()}><Bi k="review.reportsLoad" /></button>
+      <button type="button" className="k-answer" disabled={!token} onClick={() => void load()}><Bi phrase k="review.reportsLoad" /></button>
       {err && <p role="alert"><One k="review.reportsError" />（{err}）</p>}
       {list && (list.length === 0 ? <p><One k="review.reportsNone" /></p> : (
         <ul className="list" role="list">

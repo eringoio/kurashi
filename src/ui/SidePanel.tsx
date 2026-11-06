@@ -27,7 +27,7 @@ export function SidePanel({ current }: { current: string }) {
   const cards = g.out.cards.filter((c) => c.state !== 'out_of_scope' && c.state !== 'excluded').sort((a, b) => rank(a) - rank(b));
   return (
     <aside className="side" aria-labelledby="side-title">
-      <h2 id="side-title"><Bi k="side.title" /></h2>
+      <h2 id="side-title"><Bi phrase k="side.title" /></h2>
       <ul className="list" role="list">
         {cards.map((c) => (
           <CardRow key={c.card.id} c={c} current={current === '/c/' + c.card.id} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined} />

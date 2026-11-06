@@ -57,7 +57,7 @@ export function HeardWords({ place }: { place: string }) {
   if (!list.length) return null;
   return (
     <section aria-labelledby="heard-title">
-      <h2 id="heard-title" className="label"><One k="words.heard" /></h2>
+      <h2 id="heard-title" className="label"><One phrase k="words.heard" /></h2>
       <ul className="words" role="list">{list.map((w) => <WordRow key={w.id} w={w} starred={!!logs[w.id]?.starred} onStar={() => star(w.id)} />)}</ul>
     </section>
   );
@@ -79,7 +79,7 @@ export function WordsPage() {
   const starter = Object.keys(logs).length === 0 ? words.filter((w) => w.kind === 'say') : [];
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="words.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="words.title" /></h1></div>
       <p className="sub"><Bi k="words.sub" /></p>
       <div className="words-filter" role="group" aria-label={line(ui('words.filter'), level)}>
         <button type="button" className="seg" aria-pressed={starred} onClick={() => setStarred((x) => !x)}><One k="words.onlyStar" /></button>
@@ -97,7 +97,7 @@ export function WordsPage() {
       )}
       {starter.length > 0 && (
         <section aria-labelledby="words-start">
-          <h2 id="words-start" className="label"><One k="words.start" /></h2>
+          <h2 id="words-start" className="label"><One phrase k="words.start" /></h2>
           <ul className="words" role="list">{starter.map((w) => <WordRow key={w.id} w={w} starred={false} onStar={() => star(w.id)} />)}</ul>
         </section>
       )}

@@ -13,7 +13,7 @@ const COLORS = ['paper', 'sand', 'white', 'ink', 'ink-subtle', 'line-dim', 'blue
 const STATES: StateKey[] = ['today', 'check', 'ask', 'wait', 'later', 'done', 'excluded'];
 
 const Case = ({ title, children }: { title: T; children: ReactNode }) => (
-  <section className="pt-case"><h2><Bi t={title} /></h2>{children}</section>
+  <section className="pt-case"><h2><Bi phrase t={title} /></h2>{children}</section>
 );
 
 export default function DevPatterns() {
@@ -26,7 +26,7 @@ export default function DevPatterns() {
   const [found, setFound] = useState(false);
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi t={F.pageText.title} /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase t={F.pageText.title} /></h1></div>
       <p className="pt-sample"><Bi t={F.pageText.intro} /></p>
 
       {/* 基本の部品（作者 11/6 H-4：いまの実装をデザインシステムにする。色の名前は tokens.css の変数） */}
@@ -37,8 +37,8 @@ export default function DevPatterns() {
         </ul>
         <h3><Bi t={F.pageText.buttons} /></h3>
         <div className="list">
-          <button type="button" className="k-answer"><Bi t={F.pageText.answer} /></button>
-          <button type="button" className="k-answer k-answer--primary"><Bi t={F.pageText.primary} /></button>
+          <button type="button" className="k-answer"><Bi phrase t={F.pageText.answer} /></button>
+          <button type="button" className="k-answer k-answer--primary"><Bi phrase t={F.pageText.primary} /></button>
         </div>
         <div className="chips">
           <button type="button" className="seg" aria-pressed="true"><Bi t={F.pageText.seg} /></button>
@@ -63,7 +63,7 @@ export default function DevPatterns() {
         {found ? (
           <ResultView eyebrow="res.answer.eyebrow" title={<Bi t={F.pageText.found} />} sub={<Bi t={F.pageText.foundSub} />} onNext={() => setFound(false)} />
         ) : (
-          <button type="button" className="k-answer" onClick={() => setFound(true)}><Bi t={F.pageText.found} /></button>
+          <button type="button" className="k-answer" onClick={() => setFound(true)}><Bi phrase t={F.pageText.found} /></button>
         )}
       </Case>
 

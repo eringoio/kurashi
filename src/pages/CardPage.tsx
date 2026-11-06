@@ -53,7 +53,7 @@ export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: st
 function NotFound() {
   return (
     <>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="card.notFound" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="card.notFound" /></h1></div>
       <Link to="/" className="link"><Bi k="nav.home" /></Link>
     </>
   );
@@ -77,12 +77,12 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const alts = toAlternatives(c.card, g.mode);
   const more = <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>;
   const sheetEl = sheet && <SourcesSheet c={c} objects={g.objects} facts={g.out.facts} onClose={() => setSheet(false)} />;
-  const titleWithState = <><Bi t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>;
+  const titleWithState = <><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>;
 
   if (mode.kind === 'answered' || mode.kind === 'done') {
     return (
       <>
-        <ResultView eyebrow={mode.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={titleWithState} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
+        <ResultView eyebrow={mode.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={titleWithState} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
           <div className="links">
             <button type="button" className="link" onClick={() => setMode({ kind: 'main' })}><Bi k="card.backItem" /></button>
             {more}
@@ -105,7 +105,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       <>
         <div className="head">
           <p className="eyebrow"><One t={c.card.title} /></p>
-          <h1 id="screen-title" tabIndex={-1}><Bi t={dayTitle(c)} /></h1>
+          <h1 id="screen-title" tabIndex={-1}><Bi phrase t={dayTitle(c)} /></h1>
         </div>
         {/* 日を変えるときは、この項目だけ。初めて決めるときは、同じ所の項目も一緒に聞く */}
         <DayChoice group={c.plan?.planned_on ? [c] : visitGroup(g.out.cards, c)} today={g.today}
@@ -119,7 +119,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   return (
     <>
       <FocusCard c={c} title />
-      {!isGuide && <p className="sub"><Bi t={whyText(c)} /></p>}
+      {!isGuide && <p className="sub"><Bi phrase t={whyText(c)} /></p>}
       <SectionWhy c={c} />
       {c.outdated && <Outdated c={c} />}
       {/* お知らせ（期間の中だけ。B-7c） */}
@@ -144,12 +144,12 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       ) : (
         <div className="list">
           {canPlan && !c.plan?.planned_on && (
-            <button type="button" className="k-answer k-answer--primary" onClick={() => setMode({ kind: 'pick' })}><img src={art('calendar')} alt="" /><Bi k="day.choose" /></button>
+            <button type="button" className="k-answer k-answer--primary" onClick={() => setMode({ kind: 'pick' })}><img src={art('calendar')} alt="" /><Bi phrase k="day.choose" /></button>
           )}
           {canPlan && c.plan?.planned_on && (
             <>
               <p className="planned"><One k="card.planned" />：<strong>{fmtDay(c.plan.planned_on, level)}</strong></p>
-              <button type="button" className="k-answer" onClick={() => setMode({ kind: 'pick' })}><Bi k="day.change" /></button>
+              <button type="button" className="k-answer" onClick={() => setMode({ kind: 'pick' })}><Bi phrase k="day.change" /></button>
             </>
           )}
           {!isGuide && !urgent && (c.state === 'shown' || c.state === 'check_at_office') && c.plan?.status !== 'done' && c.sectionWhy !== 'answer' && (
@@ -158,7 +158,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
             </button>
           )}
           {!isGuide && c.plan?.status === 'done' && (
-            <button type="button" className="k-answer" onClick={() => { void g.setPlan(c.card.id, { status: 'todo' }); onLive(L('card.recordedUndone')); }}><Bi k="card.undone" /></button>
+            <button type="button" className="k-answer" onClick={() => { void g.setPlan(c.card.id, { status: 'todo' }); onLive(L('card.recordedUndone')); }}><Bi phrase k="card.undone" /></button>
           )}
         </div>
       )}

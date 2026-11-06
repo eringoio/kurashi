@@ -89,8 +89,8 @@ export function Letter() {
   );
   const alt = (
     <div className="list">
-      <button type="button" className="k-answer" onClick={() => setSt({ k: 'pick' })}><Bi k="letter.pick" /></button>
-      <button type="button" className="k-answer" onClick={() => void trySample()}><Bi k="letter.sample" /></button>
+      <button type="button" className="k-answer" onClick={() => setSt({ k: 'pick' })}><Bi phrase k="letter.pick" /></button>
+      <button type="button" className="k-answer" onClick={() => void trySample()}><Bi phrase k="letter.sample" /></button>
     </div>
   );
 
@@ -114,9 +114,9 @@ export function Letter() {
         {st.photo.sample && <p className="draftmark"><Bi k="letter.sampleMark" /></p>}
         <div className="k-notice" role="note"><Bi k="letter.consent" /></div>
         <div className="list">
-          <button type="button" className="k-answer k-answer--primary" disabled={busy} aria-busy={busy} onClick={() => void send(st.photo)}><Bi k={busy ? 'letter.sending' : 'letter.send'} /></button>
-          <button type="button" className="k-answer" disabled={busy} onClick={() => file.current?.click()}><Bi k="letter.retake" /></button>
-          <button type="button" className="k-answer" disabled={busy} onClick={() => setSt({ k: 'pick' })}><Bi k="letter.noSend" /></button>
+          <button type="button" className="k-answer k-answer--primary" disabled={busy} aria-busy={busy} onClick={() => void send(st.photo)}><Bi phrase k={busy ? 'letter.sending' : 'letter.send'} /></button>
+          <button type="button" className="k-answer" disabled={busy} onClick={() => file.current?.click()}><Bi phrase k="letter.retake" /></button>
+          <button type="button" className="k-answer" disabled={busy} onClick={() => setSt({ k: 'pick' })}><Bi phrase k="letter.noSend" /></button>
         </div>
         <input ref={file} type="file" accept="image/*" capture="environment" className="sr-only" tabIndex={-1} aria-hidden="true" onChange={(e) => void onFile(e.target.files?.[0])} />
         {busy && <p className="sr-only" role="status"><One k="letter.sending" /></p>}
@@ -133,9 +133,9 @@ export function Letter() {
         </div>
         <p className="k-counter__ja letter__word" lang="ja"><Ruby s={d.look_for} /></p>
         <div className="list">
-          <button type="button" className="k-answer k-answer--primary" onClick={() => setSt({ k: 'result', doc: d, sample: st.sample })}><Bi k="letter.yes" /></button>
-          <button type="button" className="k-answer" onClick={() => setSt(st.i + 1 < st.ids.length ? { ...st, i: st.i + 1 } : { k: 'pick' })}><Bi k="letter.no" /></button>
-          <button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi k="letter.dontKnow" /></button>
+          <button type="button" className="k-answer k-answer--primary" onClick={() => setSt({ k: 'result', doc: d, sample: st.sample })}><Bi phrase k="letter.yes" /></button>
+          <button type="button" className="k-answer" onClick={() => setSt(st.i + 1 < st.ids.length ? { ...st, i: st.i + 1 } : { k: 'pick' })}><Bi phrase k="letter.no" /></button>
+          <button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button>
         </div>
       </>
     );
@@ -144,8 +144,8 @@ export function Letter() {
       <>
         <div className="head"><Title><Bi k="letter.pickTitle" /></Title></div>
         <ul className="list" role="list">
-          {DOCUMENTS().map((d) => <li key={d.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'result', doc: d, sample: false })}><img src={art('doc')} alt="" /><Bi t={d.title} /></button></li>)}
-          <li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi k="letter.dontKnow" /></button></li>
+          {DOCUMENTS().map((d) => <li key={d.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'result', doc: d, sample: false })}><img src={art('doc')} alt="" /><Bi phrase t={d.title} /></button></li>)}
+          <li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>
         </ul>
       </>
     );
@@ -187,14 +187,14 @@ function Result({ doc, sample }: { doc: KnownDocument; sample: boolean }) {
     <>
       <div className="head">
         <p className="eyebrow"><One k="letter.resultEyebrow" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi t={doc.title} /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase t={doc.title} /></h1>
       </div>
       {sample && <p className="draftmark"><Bi k="letter.sampleMark" /></p>}
       <p><Bi t={doc.summary} /></p>
       <div className="k-notice" role="note"><Bi k="letter.notRead" /></div>
       {cards.length > 0 && (
         <section aria-labelledby="letter-cards">
-          <h2 id="letter-cards" className="label"><One k="letter.related" /></h2>
+          <h2 id="letter-cards" className="label"><One phrase k="letter.related" /></h2>
           <ul className="list" role="list">{cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
         </section>
       )}

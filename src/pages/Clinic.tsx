@@ -100,7 +100,7 @@ function Where() {
     <>
       <Step n={1} />
       <Band part={part} />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="clinic.h1" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h1" /></h1></div>
       <label className="qrfield">
         <span className="label"><One k="clinic.qlbl" /></span>
         <input className="field" type="search" value={q} autoComplete="off" placeholder={line(ui('clinic.qph'), level)} onChange={(e) => setQ(e.target.value)} />
@@ -113,7 +113,7 @@ function Where() {
       <p className="label"><One k="clinic.notbody" /></p>
       <div className="chips">{d.parts.filter((p) => p.group === 'extra').map((p) => <PartButton key={p.id} p={p} sel={sel} onPick={setPicked} small />)}</div>
       {part && <p className="sub" role="status"><One k="clinic.picked" />：<Bi t={part.name} /></p>}
-      <button type="button" className="k-answer k-answer--primary" disabled={!part} onClick={() => navigate('/clinic/departments')}><Bi k="nav.next" /></button>
+      <button type="button" className="k-answer k-answer--primary" disabled={!part} onClick={() => navigate('/clinic/departments')}><Bi phrase k="nav.next" /></button>
     </>
   );
 }
@@ -129,11 +129,11 @@ function Departments({ part }: { part: ClinicPart }) {
       <Step n={2} />
       <Band part={part} />
       <p className="sub"><One k="clinic.picked" />：<Bi t={part.name} />　<Link to="/clinic" className="link"><Bi k="clinic.change" /></Link></p>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="clinic.h2" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h2" /></h1></div>
       <p className="sub"><Bi k="clinic.notDx" /></p>
       {/* 病院が見つかる公式のページを最初に（A-5c） */}
       <section aria-labelledby="clinic-official">
-        <h2 id="clinic-official" className="label"><One k="clinic.officialH" /></h2>
+        <h2 id="clinic-official" className="label"><One phrase k="clinic.officialH" /></h2>
         <LinkList ids={d.advice.links} dept={first} />
       </section>
       {/* 順位を付けない（「まず」「1・2」は判断に読める。03_MEDICAL 2章A） */}
@@ -144,7 +144,7 @@ function Departments({ part }: { part: ClinicPart }) {
       <p className="sub"><Bi t={d.advice.youdecide} /></p>
       <p><button type="button" className="link" onClick={() => setFee(true)}><One k="clinic.feeTitle" /></button></p>
       {fee && <Sheet title={<One k="clinic.feeTitle" />} onClose={() => setFee(false)}><p><Bi t={d.advice.fee_note} /></p></Sheet>}
-      <button type="button" className="k-answer k-answer--primary" onClick={() => navigate('/clinic/before')}><Bi k="nav.next" /></button>
+      <button type="button" className="k-answer k-answer--primary" onClick={() => navigate('/clinic/before')}><Bi phrase k="nav.next" /></button>
     </>
   );
 }
@@ -158,14 +158,14 @@ function Before({ part }: { part: ClinicPart | null }) {
     <>
       {part && <Step n={3} />}
       <Band part={part} />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k={part ? 'clinic.h3' : 'clinic.only.h1'} /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k={part ? 'clinic.h3' : 'clinic.only.h1'} /></h1></div>
       <section aria-labelledby="clinic-find">
-        <h2 id="clinic-find" className="label"><One k="clinic.findH" /></h2>
+        <h2 id="clinic-find" className="label"><One phrase k="clinic.findH" /></h2>
         <LinkList ids={d.links.filter((l) => l.id !== 'fdma-guide').map((l) => l.id)} dept={dept} />
         <p className="sub"><Bi t={d.callNote.text} /></p>
       </section>
       <section aria-labelledby="clinic-bring">
-        <h2 id="clinic-bring" className="label"><One k="clinic.bringH" /></h2>
+        <h2 id="clinic-bring" className="label"><One phrase k="clinic.bringH" /></h2>
         <p className="sub"><Bi k="clinic.bringNote" /></p>
         <ul className="clinic__bring" role="list">
           {d.bring.map((b) => (
@@ -178,7 +178,7 @@ function Before({ part }: { part: ClinicPart | null }) {
         <Link to="/c/nagoya-kokuho-kanyu" className="link"><Bi k="clinic.noins" /></Link>
       </section>
       <section aria-labelledby="clinic-say">
-        <h2 id="clinic-say" className="label"><One k="clinic.sayH" /></h2>
+        <h2 id="clinic-say" className="label"><One phrase k="clinic.sayH" /></h2>
         {[...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases].map((p) => {
           const mean = level.kind === 'ja' ? null : line(p.say, level);
           return (

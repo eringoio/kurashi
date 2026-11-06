@@ -73,7 +73,7 @@ export function GomiWeek({ area, categories, today }: { area: ReturnType<typeof 
   const on = (cat: string, day: string) => { const n = nextCollection(area.schedules, area.status, cat, day, { allowUnapproved: true, horizonDays: 0 }); return n.kind === 'date' && n.date === day; };
   return (
     <section className="group" aria-labelledby="gomi-week">
-      <h2 id="gomi-week"><Bi k="gomi.week.title" /></h2>
+      <h2 id="gomi-week"><Bi phrase k="gomi.week.title" /></h2>
       <ul className="gomi-week" role="list">
         {days.map((d) => {
           const cats = regular.filter((c) => on(c.id, d));

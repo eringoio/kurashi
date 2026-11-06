@@ -38,7 +38,7 @@ export function LocationAsk() {
   if (p.location !== null || (mode !== 'kept' && mode !== 'not_kept')) return null;
   return (
     <section className="k-notice locask" aria-labelledby="locask-title">
-      <h2 id="locask-title" className="label"><Bi k="loc.ask" /></h2>
+      <h2 id="locask-title" className="label"><Bi phrase k="loc.ask" /></h2>
       <p className="sub"><Bi k="here.privacy" /></p>
       <div className="chips">
         <button type="button" className="seg" onClick={() => p.setLocation('on')}><img src={art('pin')} alt="" className="seg__art" /><One k="loc.yes" /></button>

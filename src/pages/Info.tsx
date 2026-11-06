@@ -26,7 +26,7 @@ export function Info({ id, reason }: { id: string; reason?: Text }) {
     <>
       <div className="art" aria-hidden="true">{page.icon === 'logo' ? <img src="/icons/kurashi-logo.svg" alt="" className="art__logo" /> : <img src={art(page.icon)} alt="" />}</div>
       <div className="head">
-        <h1 id="screen-title" tabIndex={-1}><Bi k={page.title} /></h1>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase k={page.title} /></h1>
       </div>
       {draft && <p className="draftmark"><Bi k="page.draftMark" /></p>}
       {page.dev && <div className="k-notice"><Bi k="page.devNote" /></div>}

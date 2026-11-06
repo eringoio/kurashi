@@ -31,7 +31,7 @@ export function CalendarPage() {
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('calendar')} alt="" className="art--big" /></div>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="cal.page" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="cal.page" /></h1></div>
       {list.length === 0 ? <p className="sub"><Bi k="cal.empty" /></p> : <p className="sub"><Bi k="cal.pageSub" /></p>}
       {list.map((v) => (
         <section key={v.day + (v.place ?? '')} className="group visitgroup" aria-labelledby={'cal-' + v.day + (v.place ?? '')}>
