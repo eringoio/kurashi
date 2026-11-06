@@ -101,11 +101,19 @@ export function QuestionBlock({ q, onPick }: { q: Question; onPick: (v: Value) =
 }
 
 /** 一覧の行。どの項目もここから開ける（6A.4） */
-export function CardRow({ c, extra, current, base = '/c/' }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string }) {
+export function CardRow({ c, extra, current, base = '/c/', check }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string; check?: { done: boolean; onToggle: () => void } }) {
   const k = stateKey(c);
   const dim = k === 'ask' || k === 'excluded' || k === 'out' || k === 'later';
+  const { level } = usePrefs();
   return (
-    <li>
+    <li className={check ? 'row-check' : undefined}>
+      {/* すぐにやることの一覧（K-15）：「済んだ」の印。押すと済んだ⇔まだ */}
+      {check && (
+        <button type="button" className="row-check__box" aria-pressed={check.done} onClick={check.onToggle}
+          aria-label={line(ui('check.done'), level) + '：' + line(c.card.title, level)}>
+          <span aria-hidden="true">{check.done ? '✓' : ''}</span>
+        </button>
+      )}
       <Link to={base + c.card.id} className={'row row--' + CLS[k]} aria-current={current ? 'page' : undefined}>
         <img src={artDim(c.card.illustration, dim)} alt="" />
         <span className="row__name"><Bi phrase t={c.card.title} /></span>

@@ -3174,5 +3174,10 @@
     "ja": "{書類|しょるい}の{上|うえ}にある{名前|なまえ}で{選|えら}びます。",
     "ja_easy": "{書類|しょるい}の{上|うえ}の{名前|なまえ}で{選|えら}びます。",
     "en": "Choose by the name at the top of the letter."
+  },
+  "check.done": {
+    "ja": "{済|す}んだ",
+    "ja_easy": "できた",
+    "en": "Done"
   }
 }

@@ -203,6 +203,8 @@ export const EventDef = z.object({
   scope_rule: z.string().optional(),
   /** このイベントで使う道具の画面（例：ごみの品目検索 /gomi）。一覧の上に入口を出す。契約 v1 への追加の案（作者の承認待ち。research/integration/claude_priority_review/implementation.md） */
   tool: z.object({ path: z.string().regex(/^\/[a-z-]+$/), label: Text }).optional(),
+  /** すぐにやることの一覧（作者 11/7 K-15：財布の紛失）。最初の質問のあとは全体を出し、手続きごとに「済んだ」の印を付けられる */
+  checklist: z.boolean().optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;

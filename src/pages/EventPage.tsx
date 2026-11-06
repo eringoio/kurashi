@@ -196,7 +196,8 @@ function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         {open ? (
           <>
             <h2><Bi phrase k={key} />（{list.length}）</h2>
-            <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} base={base + '/c/'} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined} />)}</ul>
+            <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} base={base + '/c/'} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined}
+              check={g.event.checklist && c.state !== 'ask' ? { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } : undefined} />)}</ul>
           </>
         ) : (
           <details>

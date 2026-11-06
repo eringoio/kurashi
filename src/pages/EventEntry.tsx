@@ -22,5 +22,7 @@ export function EventEntry({ eventId, view, onLive }: { eventId: string; view: '
     );
   }
   const onlyGuides = !!g && view === 'now' && nowStep(g.out, g.today).kind === 'idle' && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office');
-  return <EventPage eventId={eventId} view={onlyGuides ? 'all' : view} onLive={onLive} />;
+  // すぐにやることの一覧（K-15）：最初の質問が済んだら、全体（チェックの一覧）を出す
+  const checklist = !!g && view === 'now' && !!g.event.checklist && g.out.upfront.length === 0;
+  return <EventPage eventId={eventId} view={onlyGuides || checklist ? 'all' : view} onLive={onLive} />;
 }

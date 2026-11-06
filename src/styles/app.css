@@ -540,3 +540,12 @@ p, li, dd, .sub { text-wrap: pretty; }
 .letter__words dt { font-weight: 700; }
 .letter__words dd { margin: 0; }
 @media (max-width: 380px) { .letter__words div { grid-template-columns: 1fr; } }
+/* すぐにやることの一覧（K-15）：左に「済んだ」の四角 */
+.row-check { display: flex; align-items: stretch; gap: 8px; }
+.row-check > a { flex: 1 1 auto; min-width: 0; }
+.row-check__box { flex: none; width: var(--target-min); min-height: var(--target-min); border: 2.5px solid var(--ink); border-radius: var(--radius-md); background: var(--white); font-size: 22px; font-weight: 700; color: var(--white); }
+.row-check__box[aria-pressed="true"] { background: var(--green, #2F7D4F); border-color: var(--green, #2F7D4F); }
+/* 320px・文字が大きいとき、四角と行が横にはみ出さないように（K-15） */
+.row-check { gap: 6px; }
+.row-check .row { padding-inline: 8px; flex-wrap: wrap; }
+.row-check .row__name { flex: 1 1 8em; min-width: 0; overflow-wrap: anywhere; }
