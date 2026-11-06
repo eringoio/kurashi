@@ -5,8 +5,12 @@ import { Bi } from '../i18n/Ruby';
 import { BelongingStatus, LifeGuide, MethodChooser, MultiPick, StepRelations, UnknownNotice, UrgentAction, WaitingProgress } from '../ui/patterns';
 import * as F from '../ui/patterns/fixtures';
 import type { HoldStatus, T } from '../ui/patterns/types';
-import { ResultView } from '../ui/guide';
+import { ResultView, StateLabel, TrustMark, type StateKey } from '../ui/guide';
+import { One } from '../i18n/Ruby';
 import { useFocusTitle } from '../ui/router';
+
+const COLORS = ['paper', 'sand', 'white', 'ink', 'ink-subtle', 'line-dim', 'blue', 'blue-tint', 'orange', 'orange-tint', 'red', 'art-pink', 'art-mint', 'art-sky', 'art-butter'];
+const STATES: StateKey[] = ['today', 'check', 'ask', 'wait', 'later', 'done', 'excluded'];
 
 const Case = ({ title, children }: { title: T; children: ReactNode }) => (
   <section className="pt-case"><h2><Bi t={title} /></h2>{children}</section>
@@ -24,6 +28,28 @@ export default function DevPatterns() {
     <>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi t={F.pageText.title} /></h1></div>
       <p className="pt-sample"><Bi t={F.pageText.intro} /></p>
+
+      {/* 基本の部品（作者 11/6 H-4：いまの実装をデザインシステムにする。色の名前は tokens.css の変数） */}
+      <Case title={F.pageText.basics}>
+        <h3><Bi t={F.pageText.colors} /></h3>
+        <ul className="dp-swatches">
+          {COLORS.map((c) => <li key={c}><span className="dp-swatch" style={{ background: 'var(--' + c + ')' }} /><code>--{c}</code></li>)}
+        </ul>
+        <h3><Bi t={F.pageText.buttons} /></h3>
+        <div className="list">
+          <button type="button" className="k-answer"><Bi t={F.pageText.answer} /></button>
+          <button type="button" className="k-answer k-answer--primary"><Bi t={F.pageText.primary} /></button>
+        </div>
+        <div className="chips">
+          <button type="button" className="seg" aria-pressed="true"><Bi t={F.pageText.seg} /></button>
+          <button type="button" className="seg" aria-pressed="false"><Bi t={F.pageText.seg} /></button>
+        </div>
+        <h3><Bi t={F.pageText.states} /></h3>
+        <div className="chips">{STATES.map((k) => <StateLabel key={k} k={k} ob="legal" />)}</div>
+        <h3><Bi t={F.pageText.marks} /></h3>
+        <p><TrustMark e={{ status: 'ai_checked' }} /> <One k="pat.aiChecked" />　<TrustMark e={{ status: 'verified' }} /> <One k="trust.human" />　<One k="src.status.needs_check" /></p>
+        <div className="k-notice" role="note"><Bi t={F.pageText.notice} /></div>
+      </Case>
 
       <Case title={F.pageText.wallet}>
         <UrgentAction a={F.walletUrgent} />

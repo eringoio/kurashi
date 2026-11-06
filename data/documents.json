@@ -3,27 +3,198 @@
   "documents": [
     {
       "id": "kokuho-shikaku",
-      "title": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}", "ja_easy": "{国民健康保険|こくみんけんこうほけん}の{資格確認書|しかくかくにんしょ}", "en": "National Health Insurance eligibility certificate" },
+      "title": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}",
+        "ja_easy": "{国民健康保険|こくみんけんこうほけん}の{資格確認書|しかくかくにんしょ}",
+        "en": "National Health Insurance eligibility certificate"
+      },
       "look_for": "{資格|しかく}{確認|かくにん}{書|しょ}",
-      "summary": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていることを{示|しめ}す{書類|しょるい}です。{病院|びょういん}で{見|み}せます。{大切|たいせつ}に{持|も}っていてください。", "ja_easy": "{国民健康保険|こくみんけんこうほけん}に{入|はい}っているという{書類|しょるい}です。{病院|びょういん}で{見|み}せます。", "en": "This shows you are in National Health Insurance. Show it at hospitals. Keep it safe." },
-      "card_ids": ["nagoya-kokuho-kanyu"],
-      "evidence": { "source_ids": ["nagoya-kokuho-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+      "summary": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていることを{示|しめ}す{書類|しょるい}です。{病院|びょういん}で{見|み}せます。{大切|たいせつ}に{持|も}っていてください。",
+        "ja_easy": "{国民健康保険|こくみんけんこうほけん}に{入|はい}っているという{書類|しょるい}です。{病院|びょういん}で{見|み}せます。",
+        "en": "This shows you are in National Health Insurance. Show it at hospitals. Keep it safe."
+      },
+      "card_ids": [
+        "nagoya-kokuho-kanyu"
+      ],
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      },
+      "issued_by_card": [
+        "nagoya-kokuho-kanyu"
+      ]
     },
     {
       "id": "kokuho-nofu",
-      "title": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}の{納付|のうふ}{書|しょ}", "ja_easy": "{国民健康保険|こくみんけんこうほけん}のお{金|かね}を{払|はら}う{紙|かみ}", "en": "National Health Insurance premium payment slip" },
+      "title": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}の{納付|のうふ}{書|しょ}",
+        "ja_easy": "{国民健康保険|こくみんけんこうほけん}のお{金|かね}を{払|はら}う{紙|かみ}",
+        "en": "National Health Insurance premium payment slip"
+      },
       "look_for": "{納付|のうふ}{書|しょ}",
-      "summary": { "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}を{払|はら}うための{書類|しょるい}です。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。", "ja_easy": "{保険|ほけん}のお{金|かね}を{払|はら}う{紙|かみ}です。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。", "en": "This is for paying your National Health Insurance premium. Check the due date and amount printed on the slip." },
-      "card_ids": ["nagoya-kokuho-kanyu"],
-      "evidence": { "source_ids": ["nagoya-kokuho-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+      "summary": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}を{払|はら}うための{書類|しょるい}です。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
+        "ja_easy": "{保険|ほけん}のお{金|かね}を{払|はら}う{紙|かみ}です。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
+        "en": "This is for paying your National Health Insurance premium. Check the due date and amount printed on the slip."
+      },
+      "card_ids": [
+        "nagoya-kokuho-kanyu"
+      ],
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      },
+      "issued_by_card": [
+        "nagoya-kokuho-kanyu"
+      ]
     },
     {
       "id": "nenkin-oshirase",
-      "title": { "ja": "{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}のお{知|し}らせ", "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせ", "en": "National Pension enrollment notice" },
+      "title": {
+        "ja": "{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}のお{知|し}らせ",
+        "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせ",
+        "en": "National Pension enrollment notice"
+      },
       "look_for": "{国民|こくみん}{年金|ねんきん}",
-      "summary": { "ja": "{国民|こくみん}{年金|ねんきん}に{入|はい}ったこと、または{入|はい}る{手続|てつづ}きについてのお{知|し}らせです。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。", "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせです。{日本年金機構|にほんねんきんきこう}から{届|とど}きます。", "en": "A notice about joining National Pension. It comes from the Japan Pension Service." },
-      "card_ids": ["nenkin-at-20", "kokumin-nenkin-kanyu"],
-      "evidence": { "source_ids": ["nenkin-hatachi-page", "nenkin-kanyu-page"], "checked_at": "2026-11-05", "status": "needs_check" }
+      "summary": {
+        "ja": "{国民|こくみん}{年金|ねんきん}に{入|はい}ったこと、または{入|はい}る{手続|てつづ}きについてのお{知|し}らせです。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。",
+        "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせです。{日本年金機構|にほんねんきんきこう}から{届|とど}きます。",
+        "en": "A notice about joining National Pension. It comes from the Japan Pension Service."
+      },
+      "card_ids": [
+        "nenkin-at-20",
+        "kokumin-nenkin-kanyu"
+      ],
+      "evidence": {
+        "source_ids": [
+          "nenkin-hatachi-page",
+          "nenkin-kanyu-page"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      },
+      "issued_by_card": [
+        "nenkin-at-20"
+      ]
+    },
+    {
+      "id": "tenshutsu-shomeisho",
+      "title": {
+        "ja": "{転出|てんしゅつ}{証明|しょうめい}{書|しょ}",
+        "ja_easy": "{転出|てんしゅつ}{証明|しょうめい}{書|しょ}",
+        "en": "Moving-out certificate"
+      },
+      "look_for": "{転出|てんしゅつ}{証明|しょうめい}{書|しょ}",
+      "summary": {
+        "ja": "{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}すともらう{書類|しょるい}です。{新|あたら}しい{市区|しく}{町村|ちょうそん}の{転入|てんにゅう}{届|とどけ}で{出|だ}します（マイナンバーカードで{届|とど}けた{人|ひと}には{出|で}ないことがあります。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{前|まえ}の{市|し}でもらう{書類|しょるい}です。{新|あたら}しい{市|し}の{区役所|くやくしょ}で{出|だ}します。",
+        "en": "You get this when you file the moving-out notice at your previous municipality. Submit it with your moving-in notice (it may not be issued if you used your My Number Card; to be checked)."
+      },
+      "card_ids": [
+        "nagoya-tennyu-todoke"
+      ],
+      "issued_by_card": [
+        "move-out-notice"
+      ],
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-54"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "転出証明書の交付を受けた後、新たにお住まいになる市区町村にて転入の届出を行っていただく必要があります。"
+      }
+    },
+    {
+      "id": "kokuho-shikaku-joho",
+      "title": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+        "ja_easy": "{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+        "en": "National Health Insurance eligibility information notice"
+      },
+      "look_for": "{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+      "summary": {
+        "ja": "マイナ{保険証|ほけんしょう}を{持|も}っている{人|ひと}に{届|とど}く、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{情報|じょうほう}の{紙|かみ}です。{大切|たいせつ}に{持|も}っていてください。",
+        "ja_easy": "マイナ{保険証|ほけんしょう}がある{人|ひと}に{届|とど}く、{保険|ほけん}の{紙|かみ}です。",
+        "en": "Sent to people with a My Number health insurance card. It shows your National Health Insurance information. Keep it safe."
+      },
+      "card_ids": [
+        "nagoya-kokuho-kanyu"
+      ],
+      "issued_by_card": [
+        "nagoya-kokuho-kanyu"
+      ],
+      "evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "マイナ保険証をお持ちの人には「資格情報のお知らせ」をお送りします。"
+      }
+    },
+    {
+      "id": "kojin-bango-tsuchisho",
+      "title": {
+        "ja": "{個人|こじん}{番号|ばんごう}{通知|つうち}{書|しょ}（マイナンバーの{通知|つうち}）",
+        "ja_easy": "マイナンバーのお{知|し}らせ",
+        "en": "Individual Number notice (My Number)"
+      },
+      "look_for": "{個人|こじん}{番号|ばんごう}{通知|つうち}{書|しょ}",
+      "summary": {
+        "ja": "{初|はじ}めて{住民|じゅうみん}{登録|とうろく}をして、マイナンバーが{付|つ}いた{人|ひと}に{届|とど}く{書類|しょるい}です。マイナンバーが{書|か}いてあります。{大切|たいせつ}に{持|も}っていてください（{本人|ほんにん}{確認|かくにん}{書類|しょるい}には{使|つか}えません。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーが{書|か}いてある{書類|しょるい}です。{大切|たいせつ}に{持|も}っていてください。",
+        "en": "Sent to people who get a My Number for the first time after registering as a resident. It shows your number. Keep it safe (it is not an ID document; to be checked)."
+      },
+      "card_ids": [
+        "nagoya-tennyu-juukyochi"
+      ],
+      "issued_by_card": [
+        "nagoya-tennyu-juukyochi"
+      ],
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kojinbango-tsuchisho"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "個人番号通知書は、新たにマイナンバー（個人番号）が付番された方にマイナンバーを通知するもので"
+      }
+    },
+    {
+      "id": "tennyugaku-tsuchisho",
+      "title": {
+        "ja": "{転入学|てんにゅうがく}{通知|つうち}{書|しょ}",
+        "ja_easy": "{学校|がっこう}の{通知|つうち}{書|しょ}",
+        "en": "School transfer notice"
+      },
+      "look_for": "{転入学|てんにゅうがく}{通知|つうち}{書|しょ}",
+      "summary": {
+        "ja": "{義務|ぎむ}{教育|きょういく}の{子|こ}どもがいる{人|ひと}が、{転入|てんにゅう}{届|とどけ}のときにもらう{書類|しょるい}です。{新|あたら}しい{学校|がっこう}に{出|だ}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{子|こ}どもの{学校|がっこう}に{出|だ}す{書類|しょるい}です（{要|よう}{確認|かくにん}）。",
+        "en": "Given at the moving-in notice to families with children in compulsory education. Take it to the new school (to be checked)."
+      },
+      "card_ids": [
+        "nagoya-tennyu-todoke"
+      ],
+      "issued_by_card": [
+        "nagoya-tennyu-todoke"
+      ],
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "義務教育のお子さんがいる場合は、転入学通知書をお渡ししますので"
+      }
     }
   ]
 }

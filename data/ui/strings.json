@@ -2789,5 +2789,10 @@
     "ja": "まだありません",
     "ja_easy": "まだありません",
     "en": "None yet"
+  },
+  "card.issued": {
+    "ja": "この{手続|てつづ}きでもらう{書類|しょるい}",
+    "ja_easy": "もらう{書類|しょるい}",
+    "en": "Documents you receive"
   }
 }

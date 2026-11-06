@@ -11,6 +11,8 @@ export const KnownDocument = z.object({
   look_for: z.string(),
   summary: Text,
   card_ids: z.array(z.string()),
+  /** この書類を出す（もらえる）手続きのカード（作者 11/6 B-12）。カードのページに「この手続きでもらう書類」として出す */
+  issued_by_card: z.array(z.string()).optional(),
   evidence: Evidence,
 });
 export type KnownDocument = z.infer<typeof KnownDocument>;

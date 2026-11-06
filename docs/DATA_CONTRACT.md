@@ -125,3 +125,4 @@ SPEC v0.4.9 の決定の範囲だけを足す。今のデータはそのまま�
 - **出典の ID**：同じ URL の出典を2つの ID で持たない。公開に移すときは、前からある ID に寄せ、`sources/snapshots/` もその ID で持つ。
 - **カードの `reminder`**（v1.3 に追記。SPEC v0.5.7）：`{ months: 1〜24, from: 'arrival' }`。カードのページで、住み始めた日から months か月後の日をカレンダーに追加する。
 - **できごとの `questions`**：カードの中の質問（`in_card`）も書いてよい。入口で聞く。
+- **書類の `issued_by_card`**（v1.3 に追記。B-12）：`data/documents.json` の書類を出す（もらえる）手続きのカード。カードの「くわしく」のシートに「この手続きでもらう書類」として出す。下書きの分は `research/integration/issued_documents.json`。

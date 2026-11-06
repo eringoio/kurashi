@@ -1,6 +1,7 @@
 /* ガイドの部品：状態のラベル、答えのボタン、一覧の行、日を選ぶ、理由、出典のシート */
 import { useState, type ReactNode } from 'react';
 import { DATA } from '../core/data';
+import { DOCUMENTS } from '../core/documents';
 import type { CardView, Note, Section } from '../core/engine';
 import type { Evidence, Question, Text, Value } from '../core/schema';
 import { trustMark } from '../core/trust';
@@ -397,6 +398,12 @@ export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; obje
       <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>
       {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></span><Bi t={c.card.deadline.text} /></div>}
       <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>
+      {/* この手続きでもらう書類（B-12）。data/documents.json の issued_by_card */}
+      {DOCUMENTS().some((x) => (x.issued_by_card ?? []).includes(c.card.id)) && (
+        <div className="sheet__row"><span className="sheet__k"><One k="card.issued" /></span>
+          <span>{DOCUMENTS().filter((x) => (x.issued_by_card ?? []).includes(c.card.id)).map((x, i) => <span key={x.id}>{i > 0 && '・'}<Bi t={x.title} /></span>)}</span>
+        </div>
+      )}
       <div className="sheet__row">
         <span className="sheet__k"><One k="card.official" /></span>
         <span lang="ja"><Ruby s={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} /></span>

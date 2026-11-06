@@ -552,6 +552,14 @@
       "owner_type": "public_corp",
       "title": "転居・転送サービス",
       "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kojinbango-tsuchisho",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1034697/1007881.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "個人番号通知書",
+      "language": "ja"
     }
   ]
 }

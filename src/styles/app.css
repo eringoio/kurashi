@@ -441,3 +441,10 @@ fieldset legend svg { vertical-align: -0.2em; }
 .report__text { min-height: 7em; resize: vertical; }
 .report__item { border-bottom: 1.5px dashed var(--line-dash); padding: 6px 0; }
 .report__item p { margin: 4px 0 0; white-space: pre-wrap; }
+/* /dev/patterns の基本の部品（H-4） */
+.dp-swatches { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.dp-swatches li { display: flex; align-items: center; gap: 8px; font-size: var(--fs-small); }
+.dp-swatch { width: 28px; height: 28px; border-radius: var(--radius-box); border: 1.5px solid var(--line-dim); flex: none; }
+.dp-swatches { grid-template-columns: repeat(auto-fill, minmax(min(100%, 120px), 1fr)); }
+.dp-swatches li { min-width: 0; }
+.dp-swatches code { overflow-wrap: anywhere; min-width: 0; }
