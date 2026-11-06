@@ -390,7 +390,7 @@ export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow:
 /** 理由・出典・確認日・確認状態（5.3：触れば必ず見られる） */
 export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; objects: Record<string, boolean>; facts: Map<string, Value>; onClose: () => void }) {
   const d = DATA();
-  const ev = [c.card.evidence, c.card.deadline?.evidence, c.card.where.evidence].filter(Boolean);
+  const ev = [c.card.evidence, c.card.deadline?.evidence, c.card.fee?.evidence, c.card.where.evidence].filter(Boolean);
   const srcIds = [...new Set(ev.flatMap((e) => e!.source_ids).concat(c.reasonRules.flatMap((r) => r.evidence.source_ids)))];
   return (
     <Sheet title={<One t={c.card.title} />} onClose={onClose}>
@@ -398,6 +398,7 @@ export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; obje
       <Notes c={c} where="all" />
       <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>
       {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></span><Bi t={c.card.deadline.text} /></div>}
+      {c.card.fee && <div className="sheet__row"><span className="sheet__k"><One k="card.fee" /> <TrustMark e={c.card.fee.evidence} /></span><Bi t={c.card.fee.text} /></div>}
       <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>
       {/* この手続きでもらう書類（B-12）。data/documents.json の issued_by_card */}
       {DOCUMENTS().some((x) => (x.issued_by_card ?? []).includes(c.card.id)) && (

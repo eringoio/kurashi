@@ -108,6 +108,8 @@ export const Card = z.object({
   /** 短い一文（10d。作者 11/6「文字が多い」）。開いた項目・カードに出す。無ければ summary の最初の一文。summary の全文はシート */
   lead: Text.optional(),
   deadline: Fact.nullable(),
+  /** 費用（手数料など。11/7 B-7b）。ai_checked なら値を言い切る（trust.ts の fee） */
+  fee: Fact.optional(),
   where: Fact,
   /** 行く所（区役所・銀行・警察など）。同じ所の項目は、行く日を一度に聞く（6A.5）。同じ窓口で済むという意味ではない。
       表示名は strings.json の place.<id>（DATA_CONTRACT 1章） */

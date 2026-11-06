@@ -13,6 +13,7 @@ export function collectEvidence(d: GuideData): EvidenceAt[] {
   for (const c of d.cards) {
     add(c.id, 'card_text', c.evidence);
     add(c.id + '.deadline', 'deadline', c.deadline?.evidence);
+    add(c.id + '.fee', 'fee', c.fee?.evidence);
     add(c.id + '.where', 'place', c.where.evidence);
     (c.methods ?? []).forEach((m, i) => add(`${c.id}.methods[${i}]`, 'method', m.evidence));
     (c.alternatives ?? []).forEach((a, i) => add(`${c.id}.alternatives[${i}]`, 'object_name', a.evidence));

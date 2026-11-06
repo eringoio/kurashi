@@ -39,7 +39,7 @@ describe('ごみの基本案内（下書き）', () => {
     const c = card('gomi-mochikomi');
     expect(plain(c.deadline!.text.ja)).toContain('令和9年（2027年）1月11日');
     expect(plain(c.deadline!.text.ja)).toContain('原則');
-    expect(plain(c.summary.ja)).toContain('10キログラムまでごとに270円');
+    expect(plain(c.fee!.text.ja)).toContain('10キログラムまでごとに270円'); expect(c.fee!.evidence.status).toBe('ai_checked'); // B-7b：費用の欄へ移した
   });
   it('収集日は、区・町名で公式の案内へ。多言語のアプリの独立カードは無い（/gomi と収集日のカードに統合）', () => {
     expect(plain(card('gomi-shushubi').summary.ja)).toContain('地域');

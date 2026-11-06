@@ -135,6 +135,7 @@ export function checkRefs(d: GuideData): string[] {
   for (const c of d.cards) {
     ev(c.id, c.evidence);
     if (c.deadline) ev(c.id + '.deadline', c.deadline.evidence);
+    if (c.fee) ev(c.id + '.fee', c.fee.evidence);
     ev(c.id + '.where', c.where.evidence);
     const ids = ruleIds(c.eligibility).concat(c.coverage_rule_ids);
     ids.forEach((id) => { if (id === '!nest') err.push(`${c.id}：入れ子が2段以上`); else if (!d.rules.has(id)) err.push(`${c.id}：ルール ${id} がない`); });
@@ -177,7 +178,7 @@ export function warnings(d: GuideData): string[] {
     if (e.status === 'verified' && !e.source_ids.every((s) => product.has(s)) && !e.quote) out.push(`${where}：確認済みだが原文の引用（quote）がない`);
   };
   for (const r of d.rules.values()) chk(r.id, r.evidence);
-  for (const c of d.cards) { chk(c.id, c.evidence); if (c.deadline) chk(c.id + '.deadline', c.deadline.evidence); chk(c.id + '.where', c.where.evidence); }
+  for (const c of d.cards) { chk(c.id, c.evidence); if (c.deadline) chk(c.id + '.deadline', c.deadline.evidence); if (c.fee) chk(c.id + '.fee', c.fee.evidence); chk(c.id + '.where', c.where.evidence); }
   for (const r of d.relations) chk(r.id, r.evidence);
   return out;
 }
