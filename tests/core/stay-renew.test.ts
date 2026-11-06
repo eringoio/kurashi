@@ -86,7 +86,7 @@ describe('在留期間を更新する（下書き）', () => {
     expect(plain(c.summary.ja)).toContain('要確認');
     for (const e of [c.evidence, c.deadline!.evidence, c.where.evidence, c.methods![0].evidence]) {
       expect(e.status).toBe('needs_check');
-      expect(e.source_ids).toEqual(['author-2026-11-05']);
+      expect(e.source_ids).toContain('author-2026-11-05');
     }
     expect(c.evidence.note).toContain('作者の知見（2026-11-05）。2026-11-06 に作者が確認'); // B-5（11/6）
   });

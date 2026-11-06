@@ -44,8 +44,10 @@ describe('ごみの基本案内（下書き）', () => {
   });
   it('自己搬入の予約は、日付と「原則」つき。金額は原文どおり', () => {
     const c = card('gomi-mochikomi');
-    expect(plain(c.deadline!.text.ja)).toContain('令和9年（2027年）1月11日');
-    expect(plain(c.deadline!.text.ja)).toContain('原則');
+    expect(c.deadline).toBeNull(); // K-23：日を聞かない。時期ごとの方法は summary と delivery に
+    expect(plain(c.summary.ja)).toContain('令和9年（2027年）1月11日');
+    expect(plain(c.summary.ja)).toContain('原則');
+    expect(c.links?.[0]?.url).toContain('https://www.city.nagoya.jp/');
     expect(plain(c.fee!.text.ja)).toContain('10キログラムまでごとに270円'); expect(c.fee!.evidence.status).toBe('ai_checked'); // B-7b：費用の欄へ移した
   });
   it('収集日は、区・町名で公式の案内へ。多言語のアプリの独立カードは無い（/gomi と収集日のカードに統合）', () => {

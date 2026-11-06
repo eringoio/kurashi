@@ -8,7 +8,8 @@ import { CardRow } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { visitPath, visitsToday } from '../core/accompany';
 import { DATA } from '../core/data';
-import { ui } from '../i18n/text';
+import { ui, type UiKey } from '../i18n/text';
+import { agendaToday } from '../core/now';
 import { withPlace } from './Visit';
 import { useEvent } from '../guide/useEvent';
 import { eventStore } from '../guide/eventStore';
@@ -38,7 +39,8 @@ export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[
   const g = useGuide();
   const { vault } = usePrefs();
   useFocusTitle('promise');
-  const views = g.out.cards.filter((c) => cardIds.includes(c.card.id));
+  // 今日の予定は「いま」の today と同じ項目（agendaToday。K-35）。過ぎた日は入口の出し分けの card_ids
+  const views = past ? g.out.cards.filter((c) => cardIds.includes(c.card.id)) : agendaToday(g.out, g.today);
   // 生活イベント（/e/...）で決めた日の項目は、イベントごとにまとめる（引っ越しの項目と重ねない）
   const mainIds = new Set(views.map((c) => c.card.id));
   const byEvent = new Map<string, string[]>();
@@ -57,7 +59,8 @@ export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[
       {past && (
         <div className="list">
           <button type="button" className="k-answer k-answer--primary" onClick={async () => { for (const c of views) await g.setPlan(c.card.id, { status: 'done' }); for (const [, ids] of events) await markDone(ids); navigate(events.length && !views.length ? '/e/' + events[0][0] : '/now'); }}><Bi phrase k="promise.went" /></button>
-          <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0]?.[0] + '/c/' + events[0]?.[1][0]} className="k-answer"><Bi phrase k="promise.notYet" /></Link>
+          {/* 開く先があるときだけ（無いと /e/undefined/... になる。U12） */}
+          {(views.length > 0 || events.length > 0) && <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0][0] + '/c/' + events[0][1][0]} className="k-answer"><Bi phrase k="promise.notYet" /></Link>}
         </div>
       )}
       <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
@@ -76,7 +79,7 @@ function EventPromise({ eventId, ids }: { eventId: string; ids: string[] }) {
     <section className="visitgroup" aria-labelledby={'today-' + eventId}>
       <h2 id={'today-' + eventId} className="label"><Bi phrase t={eg.event.title} /></h2>
       <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} base={'/e/' + eventId + '/c/'} />)}</ul>
-      <Link to={'/e/' + eventId} className="k-answer"><Bi phrase k="nav.next" /></Link>
+      <Link to={'/e/' + eventId} className="k-answer k-answer--primary"><Bi phrase k="nav.next" /></Link>
     </section>
   );
 }
@@ -92,7 +95,7 @@ function TodayVisits({ views }: { views: ReturnType<typeof useGuide>['out']['car
     <>
       {visits.map((v) => (
         <section key={v.place} className="visitgroup" aria-labelledby={'today-' + v.place}>
-          <h2 id={'today-' + v.place} className="label"><Bi phrase t={ui(('place.' + v.place) as Parameters<typeof ui>[0]) ?? { ja: v.place }} /></h2>
+          <h2 id={'today-' + v.place} className="label"><Bi phrase t={ui(('placeTitle.' + v.place) as UiKey) ?? ui(('place.' + v.place) as UiKey) ?? { ja: v.place }} /></h2>
           <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
           <Link to={visitPath(v.place, 'before')} className="k-answer k-answer--primary"><Bi phrase t={withPlace(ui('visit.start'), v.place)} /></Link>
         </section>

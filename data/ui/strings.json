@@ -415,6 +415,11 @@
     "ja_easy": "{誰|だれ}でも{使|つか}えるように{作|つく}っています。",
     "en": "We aim for WCAG 2.2 AA. Checked so far: keyboard, axe, 320px width, 200% zoom and grayscale (iPhone VoiceOver: in progress)."
   },
+  "info.a11yMore": {
+    "ja": "{使|つか}いやすさについて",
+    "ja_easy": "{使|つか}いやすさについて",
+    "en": "Accessibility"
+  },
   "page.devNote": {
     "ja": "この{画面|がめん}は{実装|じっそう}の{途中|とちゅう}です。",
     "ja_easy": "この{画面|がめん}は、まだ{作|つく}っています。",
@@ -600,11 +605,6 @@
     "ja_easy": "{全部|ぜんぶ}から、どれでも{見|み}られます。",
     "en": "You can open any item from the overview."
   },
-  "now.seeAll": {
-    "ja": "{全体|ぜんたい}を{見|み}る",
-    "ja_easy": "{全部|ぜんぶ}を{見|み}る",
-    "en": "See the overview"
-  },
   "now.back": {
     "ja": "いまの1つにもどる",
     "ja_easy": "いまの１つにもどる",
@@ -614,11 +614,6 @@
     "ja": "これからのこと",
     "ja_easy": "これからすること",
     "en": "What comes next"
-  },
-  "all.sub": {
-    "ja": "どれからでも{開|ひら}けます。いまの1つは、おすすめの{順番|じゅんばん}です。",
-    "ja_easy": "どれからでも{見|み}られます。",
-    "en": "Open any item in any order. “Now” is only a suggestion."
   },
   "sec.today": {
     "ja": "いま（{今週|こんしゅう}）",
@@ -814,11 +809,6 @@
     "ja": "{先|さき}に、{次|つぎ}の{項目|こうもく}の{日|ひ}を{決|き}めてください：",
     "ja_easy": "{先|さき}に、この{日|ひ}を{決|き}めてください：",
     "en": "First choose a day for: "
-  },
-  "day.minNote": {
-    "ja": "{次|つぎ}の{項目|こうもく}の{日|ひ}より{前|まえ}は{選|えら}べません：",
-    "ja_easy": "この{日|ひ}より{前|まえ}は{選|えら}べません：",
-    "en": "You cannot choose a day before: "
   },
   "why.ask": {
     "ja": "{次|つぎ}の{答|こた}えによって、このカードが{関係|かんけい}するかが{変|か}わります。",
@@ -1120,20 +1110,10 @@
     "ja_easy": "つぎへ",
     "en": "Next"
   },
-  "nav.backAll": {
-    "ja": "{全体|ぜんたい}にもどる",
-    "ja_easy": "{全部|ぜんぶ}にもどる",
-    "en": "Back to overview"
-  },
   "objects.what": {
     "ja": "{使|つか}い{道|みち}",
     "ja_easy": "{何|なに}に{使|つか}うか",
     "en": "What it is used for"
-  },
-  "side.title": {
-    "ja": "{全体|ぜんたい}",
-    "ja_easy": "{全部|ぜんぶ}",
-    "en": "Overview"
   },
   "card.openedFromAll": {
     "ja": "{開|ひら}いた{手続|てつづ}き",
@@ -1199,11 +1179,6 @@
     "ja": "{手続|てつづ}きの{名前|なまえ}や、{気|き}になる{言葉|ことば}",
     "ja_easy": "{手続|てつづ}きの{名前|なまえ}・ことば",
     "en": "Procedure name or a word"
-  },
-  "search.hint": {
-    "ja": "{例|れい}：ほけん、nenkin、{銀行|ぎんこう}",
-    "ja_easy": "れい：ほけん、nenkin、{銀行|ぎんこう}",
-    "en": "e.g. insurance, nenkin, bank"
   },
   "search.found": {
     "ja": "{見|み}つかった{手続|てつづ}き",
@@ -1420,11 +1395,6 @@
     "ja_easy": "{準備|じゅんび}する",
     "en": "Prepare"
   },
-  "pat.guide.noDate": {
-    "ja": "{日|ひ}にちは{決|き}めなくて{大丈夫|だいじょうぶ}です。",
-    "ja_easy": "{日|ひ}にちは{決|き}めなくて{大丈夫|だいじょうぶ}です。",
-    "en": "You do not need to choose a date."
-  },
   "pat.guide.prep": {
     "ja": "{準備|じゅんび}するもの",
     "ja_easy": "{準備|じゅんび}するもの",
@@ -1525,11 +1495,6 @@
     "ja_easy": "この{品物|しなもの}は、まだありません。{市|し}のページで{調|しら}べてください。",
     "en": "This item is not in our data yet. Please use the city's search."
   },
-  "gomi.external": {
-    "ja": "（{外部|がいぶ}サイト）",
-    "ja_easy": "（ほかのサイト）",
-    "en": "(external site)"
-  },
   "gomi.result.unknown": {
     "ja": "このアプリでは{区分|くぶん}を{決|き}められません。{市|し}の{分別|ふんべつ}の{検索|けんさく}か、{環境|かんきょう}{事業|じぎょう}{所|しょ}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
     "ja_easy": "ここでは{決|き}められません。{市|し}のページで{調|しら}べてください。",
@@ -1585,11 +1550,6 @@
     "ja_easy": "{区|く}",
     "en": "Ward"
   },
-  "gomi.area.choose": {
-    "ja": "{区|く}を{選|えら}ぶ",
-    "ja_easy": "{区|く}を{選|えら}ぶ",
-    "en": "Choose a ward"
-  },
   "gomi.area.recheck": {
     "ja": "{引|ひ}っ{越|こ}しを{始|はじ}めたので、{前|まえ}に{選|えら}んだ{地域|ちいき}は{使|つか}いません。{新|あたら}しい{地域|ちいき}を{選|えら}んでください。",
     "ja_easy": "{引|ひ}っ{越|こ}しをしたので、もう{一度|いちど}{選|えら}んでください。",
@@ -1605,20 +1565,10 @@
     "ja_easy": "{必要|ひつよう}なときだけ",
     "en": "Only when you need it"
   },
-  "gomi.more.sodai": {
-    "ja": "{粗大|そだい}ごみを{出|だ}す",
-    "ja_easy": "{大|おお}きなごみを{出|だ}す",
-    "en": "Put out bulky waste"
-  },
   "gomi.more.mochikomi": {
     "ja": "{自分|じぶん}で{処理|しょり}{施設|しせつ}に{持|も}ち{込|こ}む（{自己|じこ}{搬入|はんにゅう}）",
     "ja_easy": "{自分|じぶん}で{持|も}っていく",
     "en": "Take it to a facility yourself"
-  },
-  "gomi.delivery.day": {
-    "ja": "{持|も}ち{込|こ}む{日|ひ}",
-    "ja_easy": "{持|も}っていく{日|ひ}",
-    "en": "The day you take it"
   },
   "why.visitNeedDocument": {
     "ja": "{窓口|まどぐち}で、{別|べつ}の{書類|しょるい}が{要|い}ると{言|い}われました。{何|なに}が{要|い}るかを{確|たし}かめてから、{行|い}く{日|ひ}を{決|き}め{直|なお}します。",
@@ -1634,11 +1584,6 @@
     "ja": "{place}へ{行|い}く{準備|じゅんび}をする",
     "ja_easy": "{place}へ{行|い}く{準備|じゅんび}をする",
     "en": "Get ready to go to {place}"
-  },
-  "visit.stage.before": {
-    "ja": "{行|い}く{前|まえ}",
-    "ja_easy": "{行|い}く{前|まえ}",
-    "en": "Before you go"
   },
   "visit.stage.counter": {
     "ja": "{窓口|まどぐち}で",
@@ -1659,11 +1604,6 @@
     "ja": "{持|も}ち{物|もの}を{確|たし}かめましょう",
     "ja_easy": "{持|も}ち{物|もの}を{確|たし}かめましょう",
     "en": "Check what to bring"
-  },
-  "visit.items": {
-    "ja": "{今日|きょう}{行|おこな}う{手続|てつづ}き",
-    "ja_easy": "きょうする{手続|てつづ}き",
-    "en": "What you will do today"
   },
   "visit.ordered": {
     "ja": "この{順|じゅん}で{手続|てつづ}きをします。",
@@ -1984,6 +1924,11 @@
     "ja": "{区役所|くやくしょ}の{住所|じゅうしょ}：{名古屋|なごや}{市|し}の{公式|こうしき}ページ。{位置|いち}：{国土|こくど}{地理|ちり}{院|いん}の{住所|じゅうしょ}{検索|けんさく}から{作成|さくせい}（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{住所|じゅうしょ}は{名古屋|なごや}{市|し}のページ、{位置|いち}は{国土|こくど}{地理|ちり}{院|いん}から{作|つく}りました。",
     "en": "Addresses: City of Nagoya official page. Locations: made from the GSI (Geospatial Information Authority of Japan) address search (to be checked)."
+  },
+  "here.sourceMore": {
+    "ja": "{出典|しゅってん}",
+    "ja_easy": "{出典|しゅってん}",
+    "en": "Sources"
   },
   "here.address": {
     "ja": "{住所|じゅうしょ}",
@@ -2430,11 +2375,6 @@
     "ja_easy": "{体|からだ}の{調子|ちょうし}が{悪|わる}い・{病院|びょういん}",
     "en": "I feel sick / I want to see a doctor"
   },
-  "clinic.step": {
-    "ja": "{step} / 3",
-    "ja_easy": "{step} / 3",
-    "en": "{step} / 3"
-  },
   "clinic.bandLabel": {
     "ja": "{緊急|きんきゅう}の{連絡先|れんらくさき}",
     "ja_easy": "{急|いそ}ぐときの{電話|でんわ}",
@@ -2484,11 +2424,6 @@
     "ja": "この{部分|ぶぶん}を{一般的|いっぱんてき}に{診|み}る{診療科|しんりょうか}",
     "ja_easy": "ここを{診|み}る{科|か}",
     "en": "Departments that usually look at this part"
-  },
-  "clinic.h3": {
-    "ja": "{行|い}く{前|まえ}に",
-    "ja_easy": "{行|い}く{前|まえ}に",
-    "en": "Before you go"
   },
   "clinic.findH": {
     "ja": "{病院|びょういん}を{探|さが}す",
@@ -2549,11 +2484,6 @@
     "ja": "{電話|でんわ}",
     "ja_easy": "{電話|でんわ}",
     "en": "Call"
-  },
-  "clinic.officialH": {
-    "ja": "{病院|びょういん}を{探|さが}す{公式|こうしき}のページ",
-    "ja_easy": "{病院|びょういん}をさがす{公式|こうしき}のページ",
-    "en": "Official pages to find a hospital"
   },
   "trust.human": {
     "ja": "{確認済|かくにんず}み",
@@ -2696,9 +2626,9 @@
     "en": "{months} months have already passed. Please do it soon (to be checked)."
   },
   "report.open": {
-    "ja": "{案内|あんない}とちがうところを{知|し}らせる",
-    "ja_easy": "{案内|あんない}とちがうところを{知|し}らせる",
-    "en": "Tell us if something here is different"
+    "ja": "まちがいを{知|し}らせる",
+    "ja_easy": "ちがうところを{知|し}らせる",
+    "en": "Report a mistake"
   },
   "report.title": {
     "ja": "{案内|あんない}とちがうところ",
@@ -2945,11 +2875,6 @@
     "ja_easy": "{絞|しぼ}り{込|こ}み",
     "en": "Filter"
   },
-  "words.onlyStar": {
-    "ja": "★だけ",
-    "ja_easy": "★だけ",
-    "en": "Starred"
-  },
   "words.today": {
     "ja": "{今日|きょう}",
     "ja_easy": "きょう",
@@ -2994,11 +2919,6 @@
     "ja": "まだありません。",
     "ja_easy": "まだありません。",
     "en": "Nothing yet."
-  },
-  "words.start": {
-    "ja": "まず、{言|い}えると{便利|べんり}な{文|ぶん}",
-    "ja_easy": "まず、{言|い}えると{便利|べんり}な{文|ぶん}",
-    "en": "Useful sentences to start with"
   },
   "words.heard": {
     "ja": "{聞|き}こえてくるかもしれない{言葉|ことば}",
@@ -3179,5 +3099,200 @@
     "ja": "{済|す}んだ",
     "ja_easy": "できた",
     "en": "Done"
+  },
+  "nav.words": {
+    "ja": "ことば",
+    "ja_easy": "ことば",
+    "en": "Words"
+  },
+  "nav.backPrev": {
+    "ja": "もどる",
+    "ja_easy": "もどる",
+    "en": "Back"
+  },
+  "nav.nowShort": {
+    "ja": "{今|いま}の{手続|てつづ}き",
+    "ja_easy": "{今|いま}の{手続|てつづ}き",
+    "en": "Current step"
+  },
+  "nav.list": {
+    "ja": "{一覧|いちらん}",
+    "ja_easy": "{一覧|いちらん}",
+    "en": "All items"
+  },
+  "res.changed.line": {
+    "ja": "{card}：{state}になりました",
+    "ja_easy": "{card}：{state}になりました",
+    "en": "{card}: now {state}"
+  },
+  "res.changed.undo": {
+    "ja": "{答|こた}えを{変|か}える",
+    "ja_easy": "{答|こた}えを{変|か}える",
+    "en": "Change answer"
+  },
+  "res.planned.line": {
+    "ja": "{date}に{決|き}めました",
+    "ja_easy": "{date}に{決|き}めました",
+    "en": "Set for {date}"
+  },
+  "now.today.title": {
+    "ja": "{今日|きょう}は{行|い}く{日|ひ}です",
+    "ja_easy": "{今日|きょう}は{行|い}く{日|ひ}です",
+    "en": "Today is the day"
+  },
+  "now.today.go": {
+    "ja": "{今日|きょう}の{予定|よてい}を{見|み}る",
+    "ja_easy": "{今日|きょう}の{予定|よてい}を{見|み}る",
+    "en": "See today's plan"
+  },
+  "all.empty": {
+    "ja": "このできごとで、いまする{手続|てつづ}きはありません",
+    "ja_easy": "いま、することはありません",
+    "en": "Nothing to do for this event right now"
+  },
+  "all.more": {
+    "ja": "ほかに{n}{件|けん}",
+    "ja_easy": "あと{n}{件|けん}",
+    "en": "{n} more"
+  },
+  "card.officialOpen": {
+    "ja": "{公式|こうしき}ページを{開|ひら}く",
+    "ja_easy": "{公式|こうしき}のページを{開|ひら}く",
+    "en": "Open the official page"
+  },
+  "card.call": {
+    "ja": "{電話|でんわ}する",
+    "ja_easy": "{電話|でんわ}する",
+    "en": "Call"
+  },
+  "card.sourceLine": {
+    "ja": "{出典|しゅってん}：{source}（{date}{確認|かくにん}）",
+    "ja_easy": "{出典|しゅってん}：{source}（{date}）",
+    "en": "Source: {source} (checked {date})"
+  },
+  "ev.startNewShort": {
+    "ja": "{最初|さいしょ}から",
+    "ja_easy": "{最初|さいしょ}から",
+    "en": "Start over"
+  },
+  "day.blockedWhy": {
+    "ja": "この{日|ひ}は{選|えら}べません：{card}（{date}）より{前|まえ}です",
+    "ja_easy": "この{日|ひ}は{選|えら}べません：{card}（{date}）より{前|まえ}です",
+    "en": "Not available: before {card} ({date})"
+  },
+  "clinic.whereH": {
+    "ja": "どの{病院|びょういん}に{行|い}くか",
+    "ja_easy": "どの{病院|びょういん}に{行|い}くか",
+    "en": "Which clinic"
+  },
+  "clinic.urgentShort": {
+    "ja": "{急|いそ}ぐとき（119・#7119）",
+    "ja_easy": "{急|いそ}ぐとき",
+    "en": "Emergency numbers"
+  },
+  "words.mode.all": {
+    "ja": "すべて",
+    "ja_easy": "ぜんぶ",
+    "en": "All"
+  },
+  "words.mode.seen": {
+    "ja": "{出会|であ}った",
+    "ja_easy": "{見|み}た",
+    "en": "Seen"
+  },
+  "words.mode.star": {
+    "ja": "★",
+    "ja_easy": "★",
+    "en": "★"
+  },
+  "words.recent": {
+    "ja": "さいきん{見|み}たもの",
+    "ja_easy": "さいきん{見|み}たもの",
+    "en": "Recently seen"
+  },
+  "words.noMatch": {
+    "ja": "{見|み}つかりません",
+    "ja_easy": "ありません",
+    "en": "No match"
+  },
+  "gomi.license": {
+    "ja": "{名古屋市|なごやし}のオープンデータ（CC BY 4.0）を{加工|かこう}して{作成|さくせい}",
+    "ja_easy": "{名古屋市|なごやし}のデータ（CC BY 4.0）から{作|つく}りました",
+    "en": "Made from Nagoya City open data (CC BY 4.0)"
+  },
+  "gomi.sodaiHint": {
+    "ja": "{粗大|そだい}ごみの{出|だ}し{方|かた}を{見|み}る",
+    "ja_easy": "{大|おお}きなごみの{出|だ}し{方|かた}",
+    "en": "How to put out bulky waste"
+  },
+  "placeTitle.ward_office": {
+    "ja": "{区役所|くやくしょ}",
+    "ja_easy": "{区役所|くやくしょ}",
+    "en": "Ward office"
+  },
+  "placeTitle.bank": {
+    "ja": "{銀行|ぎんこう}",
+    "ja_easy": "{銀行|ぎんこう}",
+    "en": "Bank"
+  },
+  "placeTitle.prev_city": {
+    "ja": "{前|まえ}に{住|す}んでいた{市|し}の{役所|やくしょ}",
+    "ja_easy": "{前|まえ}の{市|し}の{役所|やくしょ}",
+    "en": "Previous city office"
+  },
+  "placeTitle.police": {
+    "ja": "{警察|けいさつ}",
+    "ja_easy": "{警察|けいさつ}",
+    "en": "Police"
+  },
+  "placeTitle.police_station": {
+    "ja": "{警察署|けいさつしょ}",
+    "ja_easy": "{警察署|けいさつしょ}",
+    "en": "Police station"
+  },
+  "placeTitle.immigration": {
+    "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+    "ja_easy": "{入管|にゅうかん}（{出入国在留管理局|しゅつにゅうこくざいりゅうかんりきょく}）",
+    "en": "Immigration office"
+  },
+  "placeTitle.license_center": {
+    "ja": "{運転|うんてん}{免許|めんきょ}の{窓口|まどぐち}",
+    "ja_easy": "{運転|うんてん}{免許|めんきょ}の{窓口|まどぐち}",
+    "en": "Driver licence office"
+  },
+  "placeTitle.pref_passport": {
+    "ja": "パスポートの{窓口|まどぐち}",
+    "ja_easy": "パスポートの{窓口|まどぐち}",
+    "en": "Passport office"
+  },
+  "placeTitle.embassy": {
+    "ja": "{大使館|たいしかん}",
+    "ja_easy": "{大使館|たいしかん}",
+    "en": "Embassy"
+  },
+  "placeTitle.post_office": {
+    "ja": "{郵便局|ゆうびんきょく}",
+    "ja_easy": "{郵便局|ゆうびんきょく}",
+    "en": "Post office"
+  },
+  "placeTitle.pension_office": {
+    "ja": "{年金事務所|ねんきんじむしょ}",
+    "ja_easy": "{年金事務所|ねんきんじむしょ}",
+    "en": "Pension office"
+  },
+  "visit.stage.beforeAt": {
+    "ja": "{行|い}く{前|まえ}：{place}",
+    "ja_easy": "{行|い}く{前|まえ}：{place}",
+    "en": "Before you go: {place}"
+  },
+  "cal.tag.planned": {
+    "ja": "{行|い}く{日|ひ}",
+    "ja_easy": "{行|い}く{日|ひ}",
+    "en": "Planned"
+  },
+  "side.rest": {
+    "ja": "このあと",
+    "ja_easy": "このあと",
+    "en": "Coming up"
   }
 }

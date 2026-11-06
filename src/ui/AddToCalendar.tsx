@@ -1,6 +1,6 @@
 /* カレンダーに追加（.ics。作者の指示 2026-11-05・11-06 A-1・A-2。SPEC 6.6）。
    1つのボタン（カレンダーの絵＋「カレンダーに追加」）。押すとシートが開き、区役所の選択と1行の説明、ファイルを作るボタンがある。
-   日を決めた直後の結果の画面にだけ出す。行く日が今日なら出さない（A-1）。
+   日を決めた直後の1行（small：小さなリンクの形。SPEC 6A.5 v0.5.14）と、付き添いの結果の画面に出す。行く日が今日なら出さない（A-1）。
    日・行く所・手続き・持ち物を入れた予定のファイルを、この端末の中で作る（送らない）。区役所の住所は、選んだときだけ入れる（選んだ区は残さない）。 */
 import { useState } from 'react';
 import { bringList } from '../core/accompany';
@@ -17,7 +17,7 @@ import { hoursLine } from './guide';
 import { Sheet } from './Sheet';
 import { getPosition } from './Location';
 
-export function AddToCalendar({ day, place, cardIds }: { day: string; place?: string; cardIds: string[] }) {
+export function AddToCalendar({ day, place, cardIds, small }: { day: string; place?: string; cardIds: string[]; small?: boolean }) {
   const g = useGuide();
   const { level, location } = usePrefs();
   const [open, setOpen] = useState(false);
@@ -50,7 +50,9 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
 
   return (
     <>
-      <button type="button" className="k-answer ics__open" onClick={() => setOpen(true)}><CalendarIcon /><Bi phrase k="cal.ics" /></button>
+      {small
+        ? <button type="button" className="link ics__open ics__open--small" onClick={() => setOpen(true)}><CalendarIcon /><Bi k="cal.ics" /></button>
+        : <button type="button" className="k-answer ics__open" onClick={() => setOpen(true)}><CalendarIcon /><Bi phrase k="cal.ics" /></button>}
       {open && (
         <Sheet title={<One k="cal.ics" />} onClose={() => setOpen(false)}>
           <div className="ics">

@@ -1,0 +1,8 @@
+/* 病院（WP-C）：1画面の区切りと、選んだもののチップ、急ぐときのボタン */
+.clinic__sec { display: flex; flex-direction: column; gap: 10px; margin-top: var(--space-4, 16px); padding-top: var(--space-4, 16px); border-top: 2px solid var(--line-dim); }
+.clinic__sec > h2 { margin: 0; font-size: var(--fs-h2, 1.25em); }
+.clinic__picked { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; font-weight: 700; }
+.clinic__x { display: inline-flex; align-items: center; min-height: var(--target-min); padding: 0 4px; font-weight: 400; }
+.clinic__urgent { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.clinic__urgent > div { align-self: stretch; }
+.clinic__links li { flex-direction: row; }

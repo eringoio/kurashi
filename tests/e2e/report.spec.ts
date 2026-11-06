@@ -11,7 +11,7 @@ async function check(page: Page, what: string) {
 test('報告：手続きのページの下から送る → ありがとう → /review で作者が読む（名前・連絡先は聞かない）', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/c/nagoya-tennyu-juukyochi');
-  await page.getByRole('button', { name: '案内とちがうところを知らせる' }).click();
+  await page.getByRole('button', { name: 'まちがいを知らせる' }).click();
   const d = page.getByRole('dialog');
   await expect(d.getByRole('button', { name: '送る' })).toBeDisabled();
   await expect(d.getByRole('textbox')).toHaveCount(1); // 名前・連絡先の欄は無い
@@ -31,7 +31,7 @@ test('報告：手続きのページの下から送る → ありがとう → /
 
 test('報告：入口・設定などのページにはボタンを出さない。トークンが違えば読めない', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('button', { name: '案内とちがうところを知らせる' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'まちがいを知らせる' })).toHaveCount(0);
   await page.goto('/review');
   await page.getByLabel('トークン').fill('wrong');
   await page.getByRole('button', { name: '読む' }).click();

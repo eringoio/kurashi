@@ -22,13 +22,12 @@ flow({
   await tap('20歳から59歳まで');
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
   await page.getByRole('link', { name: 'いま', exact: true }).click();
-  const answerThenNext = async (name: string | RegExp) => { await tap(name); await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと'); await tap('つぎへ'); };
+  const answerThenNext = async (name: string | RegExp) => { await tap(name); await expect(page.locator('.k-change__line')).toHaveText(/になりました$/); };
   await answerThenNext('まだどれにも入っていない');
   await answerThenNext(/^どちらでもない（厚生年金/);
   await answerThenNext(/^ない$/);
   await answerThenNext(/^はい$/);
   await tap(/^今日/);
-  await tap('つぎへ');
 
   await page.goto('/');
   await snap({ name: '今日は行く日', input: '開き直す（区役所を今日に決めた）', expected: '「今日の予定」。区役所の見出しの下に3つの手続きと「区役所へ行く準備をする」', why: '今日が決めた日なら「今日は行く日」（6A.1）。行く所ごとにまとめて付き添いを始める（6A.6）' },

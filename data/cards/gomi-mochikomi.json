@@ -31,21 +31,7 @@
     "ja_easy": "2027年1月11日から、持って行くときは予約が要ります。",
     "en": "From January 11, 2027, taking garbage to a facility needs a reservation."
   },
-  "deadline": {
-    "text": {
-      "ja": "{令|りょう}{和|わ}9{年|ねん}（2027{年|ねん}）1{月|つき}11{日|にち}から、{当日|とうじつ}の{受付|うけつけ}ではなく{事前|じぜん}{予約|よやく}になります（{原則|げんそく}）",
-      "ja_easy": "2027{年|ねん}1{月|つき}11{日|にち}から、よやくが{要|い}ります",
-      "en": "From 11 January 2027, advance booking replaces same-day registration (as a rule)"
-    },
-    "evidence": {
-      "source_ids": [
-        "B-nagoya-gomi-jikoban"
-      ],
-      "checked_at": "2026-11-04",
-      "status": "needs_check",
-      "quote": "令和9年1月11日（月曜日・祝）から自己搬入が当日受付から事前予約になります。"
-    }
-  },
+  "deadline": null,
   "where": {
     "text": {
       "ja": "ごみが{出|で}た{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}（{令和|れいわ}9{年|ねん}{1月8日|いちがつようか}まで）／{自己|じこ}{搬入|はんにゅう}のインターネット{予約|よやく}",
@@ -284,5 +270,16 @@
         "ref": "research/logs/gomi_fee_2026-11-07.md"
       }
     }
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{自己|じこ}{搬入|はんにゅう}の{予約|よやく}（{名古屋市|なごやし}の{公式|こうしき}ページ）",
+        "ja_easy": "{自分|じぶん}で{運|はこ}ぶとき（{公式|こうしき}ページ）",
+        "en": "Nagoya City: self-delivery reservations (official page)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1048812.html",
+      "source_id": "B-nagoya-gomi-jikoban-henko"
+    }
+  ]
 }

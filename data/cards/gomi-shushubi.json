@@ -107,5 +107,16 @@
         "quote": "お住まいの地域を設定することで、収集日をカレンダー形式で確認できます。"
       }
     }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{名古屋市|なごやし}のごみ{収集|しゅうしゅう}{日|び}の{検索|けんさく}（{公式|こうしき}ページ）",
+        "ja_easy": "ごみを{集|あつ}める{日|ひ}を{調|しら}べる（{公式|こうしき}ページ）",
+        "en": "Nagoya City: find your collection day (official page)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html",
+      "source_id": "B-nagoya-gomi-shushubi"
+    }
   ]
 }

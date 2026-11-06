@@ -95,7 +95,11 @@ export function Here() {
   return (
     <>
       {body}
-      <p className="sub"><Bi k="here.credit" /></p>
+      {/* 住所と位置の出典は、開いたときだけ（K-52：住む人の画面に出典の文を並べない） */}
+      <details className="group__more">
+        <summary><Bi k="here.sourceMore" /></summary>
+        <p className="sub"><Bi k="here.credit" /></p>
+      </details>
       <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
@@ -109,8 +113,8 @@ function PlaceInfo({ p }: { p: Place }) {
       <h2 id="place-address" className="label"><One phrase k="here.address" /></h2>
       <p lang="ja" className="placeinfo__addr">{p.address}</p>
       <div className="links">
-        <a className="link" href={m.apple} target="_blank" rel="noopener noreferrer"><Bi k="here.mapApple" /><span className="sr-only"><One k="here.newTab" /></span></a>
-        <a className="link" href={m.google} target="_blank" rel="noopener noreferrer"><Bi k="here.mapGoogle" /><span className="sr-only"><One k="here.newTab" /></span></a>
+        <a className="link" href={m.apple} target="_blank" rel="noopener noreferrer"><Bi k="here.mapApple" /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a>
+        <a className="link" href={m.google} target="_blank" rel="noopener noreferrer"><Bi k="here.mapGoogle" /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a>
       </div>
     </section>
   );

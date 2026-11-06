@@ -64,30 +64,24 @@ const LINKS = [
   { k: 'home.disclaimer', to: '/info/disclaimer' },
 ] as const;
 
-export function Home({ hasProgress }: { hasProgress: boolean }) {
+export function Home({ hasProgress, continueTo = '/now' }: { hasProgress: boolean; continueTo?: string }) {
   useFocusTitle('home');
   return (
     <>
-      <div className="art" aria-hidden="true">
-        <img src={art('house')} alt="" />
-        <img src={art('you')} alt="" />
-        <img src={art('bin')} alt="" />
-        <img src={art('letter')} alt="" />
-      </div>
       <div className="head">
         <h1 id="screen-title" tabIndex={-1}><Bi phrase k="home.title" /></h1>
       </div>
       {/* 位置（A-6）：使うかを一度だけ聞く。使うなら近くの区役所の帯 */}
       <LocationAsk />
       <NearBand />
-      {hasProgress && <Link to="/now" className="k-answer k-answer--primary"><img src={art('calendar')} alt="" /><Bi phrase k="home.continue" /></Link>}
+      {hasProgress && <Link to={continueTo} className="k-answer k-answer--primary"><img src={art('calendar')} alt="" /><span className="k-answer__text"><Bi phrase k="home.continue" /></span></Link>}
       <nav aria-labelledby="screen-title">
-        <ul className="list" role="list">
+        <ul className="tiles" role="list">
           {menuItems().map((m) => (
             <li key={m.key}>
-              <Link to={m.to} className="k-answer">
+              <Link to={m.to} className="tile">
                 <img src={art(m.icon)} alt="" />
-                {m.title}
+                <span className="tile__text">{m.title}</span>
               </Link>
             </li>
           ))}
@@ -97,7 +91,7 @@ export function Home({ hasProgress }: { hasProgress: boolean }) {
         {LINKS.map((l) => (
           <Link key={l.k} to={l.to} className="link"><Bi k={l.k} /></Link>
         ))}
-        <Link to="/review" className="link"><Bi k="review.link" /></Link>
+        {import.meta.env.DEV && <Link to="/review" className="link"><Bi k="review.link" /></Link>}
       </div>
     </>
   );

@@ -1,0 +1,46 @@
+/* 開いた項目・変わったことの1行・方法の一覧（WP-B）。色は tokens.css の変数だけ */
+
+/* 変わったことの1行（SPEC 6A.5 v0.5.14）。中身が無いときは場所を取らない（読み上げの場所は残す） */
+.k-change { display: flex; flex-direction: column; gap: 0; }
+.k-change__line { margin: 0; }
+.k-change--on { padding: 6px 12px; border-left: 4px solid var(--blue); background: var(--white); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.k-change--on .k-change__line { font-weight: 700; color: var(--ink); line-height: 1.7; }
+.k-change__acts { align-items: center; }
+.ics__open--small { gap: 6px; }
+.ics__open--small svg { width: 22px; height: 22px; flex: none; }
+
+/* 日を選ぶ：押せない日の理由（押したときだけ） */
+.k-blocked:empty { display: block; margin: 0; min-height: 0; }
+
+/* 公式ページのボタン */
+.k-official { justify-content: space-between; }
+.k-official .clinic__extmark { flex: none; font-size: 1.2em; }
+.k-actions { display: flex; flex-direction: column; }
+
+/* 手続きの方法：押さない一覧。種類ごとに印と名前、要確認は種類ごとに1つ */
+.pt-methods { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.pt-methods h2.label { margin: 0; }
+.pt-methods__group { border-top: 1.5px solid var(--line-dim); padding-top: 6px; min-width: 0; }
+.pt-methods__kind { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; margin: 0; color: var(--ink); }
+.pt-methods__kind .pt-method__icon { display: inline-flex; color: var(--blue); }
+.pt-methods__list { margin: 4px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 4px; line-height: 1.7; overflow-wrap: anywhere; min-width: 0; }
+.pt-methods__list .pt-hint { display: block; }
+.pt-methods__more summary { min-height: var(--target-min); display: flex; align-items: center; color: var(--blue); font-weight: 700; cursor: pointer; }
+.k-source { margin: 0; font-size: var(--fs-small, 14px); overflow-wrap: anywhere; }
+
+/* 見出しの箱（K-44d）：絵を小さく、左に絵・右に名前と状態。高さを約半分に */
+div.focus { display: grid; grid-template-columns: auto 1fr; justify-items: start; align-items: center; column-gap: 14px; row-gap: 4px; padding: 10px 14px; text-align: left; box-shadow: 6px 6px 0 -2.5px var(--sand-soft), 6px 6px 0 0 var(--ink); }
+div.focus .focus__art { grid-row: 1 / span 3; grid-column: 1; }
+div.focus .focus__art img { width: 56px; height: 56px; }
+div.focus .focus__art .focus__over { position: absolute; inset: 0; }
+div.focus .focus__art .focus__badge { right: -10px; top: -8px; width: 28px; height: 28px; }
+div.focus > :not(.focus__art) { grid-column: 2; min-width: 0; }
+
+/* 住まい探しの図（K-44a・b） */
+.house-visual .house-costs li { grid-template-columns: 1fr auto; row-gap: 4px; }
+.house-visual .house-costs__bar { grid-column: 1 / -1; grid-row: 2; }
+.house-visual .house-costs__n { white-space: nowrap; }
+.house-visual .house-terms li { grid-template-columns: 36px 1fr; row-gap: 2px; }
+.house-visual .house-terms img { grid-row: 1 / span 2; }
+.house-visual .house-terms__word, .house-visual .house-terms__desc { grid-column: 2; }
+.house-visual .house-num--out { border-style: dashed; }

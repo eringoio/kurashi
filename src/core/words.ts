@@ -23,7 +23,9 @@ export interface WordView {
 }
 
 /** 残す記録（phrases ストア。key は word_id） */
-export interface WordLog { word_id: string; first_seen: string; last_seen: string; count: number; starred: boolean }
+export interface WordLog { word_id: string; first_seen: string; last_seen: string; count: number; starred: boolean;
+  /** 最後に見た時刻（ミリ秒）。同じ日の中で見た順に並べる。古い記録にはない */
+  at?: number }
 
 let cached: WordView[] | null = null;
 export function allWords(): WordView[] {
@@ -37,22 +39,34 @@ export function allWords(): WordView[] {
 }
 
 /** 記録を足す（新しい順に並べるため last_seen を今日に。count を1つ増やす。★はそのまま） */
-export function logSeen(prev: WordLog | undefined, id: string, today: string): WordLog {
-  return prev ? { ...prev, last_seen: today, count: prev.count + 1 } : { word_id: id, first_seen: today, last_seen: today, count: 1, starred: false };
+export function logSeen(prev: WordLog | undefined, id: string, today: string, at?: number): WordLog {
+  const t = at === undefined ? {} : { at };
+  return prev ? { ...prev, ...t, last_seen: today, count: prev.count + 1 } : { word_id: id, first_seen: today, last_seen: today, count: 1, starred: false, ...t };
 }
 
-export type WordFilter = { starred?: boolean; kind?: WordKind; today?: string; q?: string };
+export type WordMode = 'all' | 'seen' | 'star';
+const recency = (a: WordLog, b: WordLog) => b.last_seen.localeCompare(a.last_seen) || (b.at ?? 0) - (a.at ?? 0) || b.count - a.count;
+
+export type WordFilter = { mode?: WordMode; starred?: boolean; kind?: WordKind; today?: string; q?: string };
 const norm = (s: string) => s.replace(/\{([^|}]+)\|([^}]+)\}/g, '$1$2').toLowerCase().replace(/[\s　]/g, '');
 
-/** 一覧：記録のある言葉を新しい順（同じ日なら回数の多い順）。絞り込み */
+/** 一覧。mode: seen（既定。記録のある言葉）・star（★だけ）・all（全部。見たものを新しい順に先に、残りは元の順）。
+    どのモードでも、種類・今日・言葉の絞り込みは同じ */
 export function listWords(words: WordView[], logs: Record<string, WordLog>, f: WordFilter): { w: WordView; log: WordLog }[] {
   const q = f.q ? norm(f.q) : '';
-  return words
-    .filter((w) => logs[w.id])
-    .map((w) => ({ w, log: logs[w.id] }))
-    .filter(({ w, log }) => (!f.starred || log.starred) && (!f.kind || w.kind === f.kind) && (!f.today || log.last_seen === f.today)
-      && (!q || norm(w.ja).includes(q) || Object.values(w.meaning).some((m) => typeof m === 'string' && norm(m).includes(q))))
-    .sort((a, b) => b.log.last_seen.localeCompare(a.log.last_seen) || b.log.count - a.log.count);
+  const mode: WordMode = f.mode ?? (f.starred ? 'star' : 'seen');
+  const unseen = (w: WordView): WordLog => ({ word_id: w.id, first_seen: '', last_seen: '', count: 0, starred: false });
+  const rows = words
+    .filter((w) => mode === 'all' || logs[w.id])
+    .map((w) => ({ w, log: logs[w.id] ?? unseen(w) }))
+    .filter(({ w, log }) => (mode !== 'star' || log.starred) && (!f.kind || w.kind === f.kind) && (!f.today || log.last_seen === f.today)
+      && (!q || norm(w.ja).includes(q) || Object.values(w.meaning).some((m) => typeof m === 'string' && norm(m).includes(q))));
+  return [...rows.filter((r) => r.log.count > 0).sort((a, b) => recency(a.log, b.log)), ...rows.filter((r) => r.log.count === 0)];
+}
+
+/** さいきん見たもの：最後に見た順に上から n 件（既定10） */
+export function recentWords(words: WordView[], logs: Record<string, WordLog>, n = 10): { w: WordView; log: WordLog }[] {
+  return listWords(words, logs, { mode: 'seen' }).slice(0, n);
 }
 
 /** 窓口で先に出す、聞こえてくる言葉（★を先に。3つ） */

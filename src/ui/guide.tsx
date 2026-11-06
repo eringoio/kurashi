@@ -1,13 +1,13 @@
 /* ガイドの部品：状態のラベル、答えのボタン、一覧の行、日を選ぶ、理由、出典のシート */
-import { useState, type ReactNode } from 'react';
+import { useLayoutEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { DATA } from '../core/data';
 import { briefText, cardLead } from '../core/brief';
 import { DOCUMENTS } from '../core/documents';
-import type { CardView, Note, Section } from '../core/engine';
+import type { CardView, EngineOutput, Note, Section } from '../core/engine';
 import type { Evidence, Question, Text, Value } from '../core/schema';
 import { trustMark } from '../core/trust';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { LEVELS, line, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
+import { LEVELS, line, plain, show, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
 import { daySuggestions } from '../core/date';
 import { earliestDay } from '../core/visit';
 import { usePrefs } from '../storage/prefs';
@@ -16,6 +16,7 @@ import { Link } from './router';
 import { Sheet } from './Sheet';
 import { Speak } from './Speak';
 import { CalendarGrid } from './CalendarGrid';
+import { AddToCalendar } from './AddToCalendar';
 import { dayInfo } from '../core/calendar';
 import { HOLIDAYS, HOURS, type PlaceHours } from '../core/calendarData';
 
@@ -34,8 +35,11 @@ export const todayWord = (ob: CardView['card']['obligation']): UiKey =>
     または開発のときだけ sessionStorage の kurashi:kakunin_alt=on（見本のフロー用。本番のビルドでは読まない）。決まったら片方を消す */
 export const KAKUNIN_ALT = import.meta.env.VITE_KAKUNIN_ALT === 'on'
   || (import.meta.env.DEV && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('kurashi:kakunin_alt') === 'on');
+/** 状態の言葉のキー（印の文字と一緒に出す。変わったことの1行にも使う） */
+export const stateWord = (k: StateKey, ob?: CardView['card']['obligation']): UiKey =>
+  (k === 'today' && ob ? todayWord(ob) : k === 'check' && KAKUNIN_ALT ? 'st.check_alt' : 'st.' + k) as UiKey;
 export function StateLabel({ k, ob }: { k: StateKey; ob?: CardView['card']['obligation'] }) {
-  const key = (k === 'today' && ob ? todayWord(ob) : k === 'check' && KAKUNIN_ALT ? 'st.check_alt' : 'st.' + k) as UiKey;
+  const key = stateWord(k, ob);
   return (
     <span className={'k-state k-state--' + CLS[k]}>
       <span aria-hidden="true">{MARK[k]}</span>
@@ -83,7 +87,7 @@ export function WhyAsked({ t }: { t: Text }) {
   const [why, setWhy] = useState(false);
   return (
     <>
-      <button type="button" className="link" aria-expanded={why} onClick={() => setWhy(!why)}><One k="move.why" /></button>
+      <button type="button" className="link link--why" aria-expanded={why} onClick={() => setWhy(!why)}><One k="move.why" /></button>
       {why && <p className="sub"><Bi t={t} /></p>}
     </>
   );
@@ -101,7 +105,9 @@ export function QuestionBlock({ q, onPick }: { q: Question; onPick: (v: Value) =
 }
 
 /** 一覧の行。どの項目もここから開ける（6A.4） */
-export function CardRow({ c, extra, current, base = '/c/', check }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string; check?: { done: boolean; onToggle: () => void } }) {
+/** compact：見出しが状態を示す一覧では、絵と状態の札を出さない（日付は残す。K-43）。状態の言葉は読み上げ用に残す */
+/** note：名前の下に出す短い文（関係なかったものの理由など。K-28） */
+export function CardRow({ c, extra, current, base = '/c/', check, compact, note }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string; check?: { done: boolean; onToggle: () => void }; compact?: boolean; note?: ReactNode }) {
   const k = stateKey(c);
   const dim = k === 'ask' || k === 'excluded' || k === 'out' || k === 'later';
   const { level } = usePrefs();
@@ -114,13 +120,21 @@ export function CardRow({ c, extra, current, base = '/c/', check }: { c: CardVie
           <span aria-hidden="true">{check.done ? '✓' : ''}</span>
         </button>
       )}
-      <Link to={base + c.card.id} className={'row row--' + CLS[k]} aria-current={current ? 'page' : undefined}>
-        <img src={artDim(c.card.illustration, dim)} alt="" />
+      <Link to={base + c.card.id} className={'row row--' + CLS[k] + (compact ? ' row--compact' : '')} aria-current={current ? 'page' : undefined}>
+        {!compact && <img src={artDim(c.card.illustration, dim)} alt="" />}
         <span className="row__name"><Bi phrase t={c.card.title} /></span>
-        <span className="row__side">
-          <StateLabel k={k} ob={c.card.obligation} />
-          {extra && <span className="row__extra">{extra}</span>}
-        </span>
+        {compact ? (
+          <>
+            <span className="sr-only">（<One k={stateWord(k, c.card.obligation)} />）</span>
+            {extra && <span className="row__extra">{extra}</span>}
+            {note && <span className="row__note">{note}</span>}
+          </>
+        ) : (
+          <span className="row__side">
+            <StateLabel k={k} ob={c.card.obligation} />
+            {extra && <span className="row__extra">{extra}</span>}
+          </span>
+        )}
       </Link>
     </li>
   );
@@ -202,9 +216,12 @@ export function Notes({ c, where }: { c: CardView; where: 'page' | 'day' | 'all'
   // 同じ文の注記は1回だけ（同時に進められる関係が2つあると、同じ文が2回出ていた。AI レビューの指摘）
   const seen = new Set<string>();
   const list = c.notes.filter((n) => NOTE_WHERE[n.kind].includes(where)).filter((n) => {
+    // 文の頭（20文字）が同じ注記も1回だけ（種類の違う関係が同じ説明を持つことがある。U14）
     const key = n.kind === 'maybe_done' ? n.kind : n.kind + JSON.stringify(n.relation.explain);
-    if (seen.has(key)) return false;
+    const head = n.kind === 'maybe_done' ? '' : 'head:' + String(n.relation.explain.ja ?? '').slice(0, 20);
+    if (seen.has(key) || (head && seen.has(head))) return false;
     seen.add(key);
+    if (head) seen.add(head);
     return true;
   });
   if (!list.length) return null;
@@ -271,6 +288,8 @@ export function dayTitle(c: CardView): LocalizedText {
 export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void }) {
   const { level } = usePrefs();
   const [off, setOff] = useState<Set<string>>(new Set());
+  const [showCal, setShowCal] = useState(false);
+  const [blockedPressed, setBlockedPressed] = useState(false);
   const c = group[0];
   const sel = group.filter((x) => !off.has(x.card.id));
   const ids = new Set(sel.map((x) => x.card.id));
@@ -318,26 +337,37 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
         </fieldset>
       )}
       <Notes c={c} where="day" />
-      {min && minFrom?.kind === 'min' && <p className="sub"><One k="day.minNote" /><One t={DATA().cards.find((x) => x.id === minFrom.from)!.title} />　{fmtDay(min, level)}</p>}
       <div className="list list--days">
         {daySuggestions(today).map((s) => {
-          // 休みの日（開いている時間のデータ）・前の手続きより前の日は押せない。理由を文字で出す
+          // 休みの日（開いている時間のデータ）は押せない。前の手続きより前の日は、押すと理由を出す（K-42）
           const info = dayInfo({ day: s.day, today, min, hours, holidays: hol });
           const why = info.tags.find((t) => t === 'closed' || t === 'blocked');
+          const blocked = !info.selectable && why === 'blocked';
           return (
-            <button key={s.key} type="button" className="k-answer" disabled={!info.selectable} onClick={() => pick(s.day)}>
+            <button key={s.key} type="button" className="k-answer" disabled={!info.selectable && !blocked} aria-disabled={blocked || undefined}
+              onClick={() => (blocked ? setBlockedPressed(true) : pick(s.day))}>
               <img src={art('calendar')} alt="" />
               <span className="bi"><span className="bi__main"><One k={('day.sug.' + s.key) as UiKey} />　{fmtDay(s.day, level)}{why && <>　<One k={('cal.tag.' + why) as UiKey} /></>}</span></span>
             </button>
           );
         })}
       </div>
+      <p role="status" className="sub k-blocked">
+        {blockedPressed && min && minFrom?.kind === 'min' && (
+          <One t={fill(fill(ui('day.blockedWhy'), 'card', (_lv, id) => pickText(DATA().cards.find((x) => x.id === minFrom.from)!.title, id)), 'date', (lv) => fmtDay(min, lv))} />
+        )}
+      </p>
       {hours?.open && <HoursLine h={hours} />}
-      <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
+      {/* ほかの日は、押したときだけカレンダーを開く（K-42：日を選ぶ画面を1画面に収める） */}
+      <button type="button" className="link" aria-expanded={showCal} onClick={() => setShowCal(!showCal)}><Bi k="day.other" /></button>
+      {showCal && <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />}
       <button type="button" className="link" onClick={onLater}><Bi k="day.later" /></button>
     </>
   );
 }
+
+/** 文の中の、その言語の文（無ければやさしい日本語、ふつうの日本語） */
+const pickText = (t: Text | LocalizedText, id: string): string => String((t as Record<string, unknown>)[id] ?? t.ja_easy ?? t.ja);
 
 /** いま見ている1つ（試作 D の重ねたカード）：絵・名前・状態 */
 export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
@@ -360,28 +390,167 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
   );
 }
 
-/** 全体の絵（試作 D の「ここまでで、わかったこと」）：真ん中にあなた、まわりに項目と状態。
-    同じことは下の一覧にあるので、読み上げでは読ませない（二度聞かせない） */
-export function WorldMap({ cards }: { cards: CardView[] }) {
-  const list = cards.filter((c) => c.state !== 'excluded' && c.state !== 'out_of_scope').slice(0, 8);
+/** 全体の絵（試作 D の「ここまでで、わかったこと」。作者 11/7 K-43：スマホでも残す）：真ん中にあなた、まわりの輪に項目。
+    輪の項目は押して開ける（道案内）。状態は下の一覧が受け持つ。どの項目も輪の箱の中に置く（角度で置き、半径は箱の半分から項目の半分を引く）。
+    狭い輪（400px 未満）は6つの場所、広い輪は8つまで。それより多いときは最後に「ほかに◯件」（一覧へ移る） */
+export function WorldMap({ cards, base = '/c/', listId }: { cards: CardView[]; base?: string; listId?: string }) {
+  // 輪の箱は項目が無いと出ない。箱ができたときに見張りを付けるため、ref ではなく state で持つ
+  const [el, setEl] = useState<HTMLDivElement | null>(null);
+  const [wide, setWide] = useState(true);
+  useLayoutEffect(() => {
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(() => setWide(el.clientWidth >= 400));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [el]);
+  const all = cards.filter((c) => c.state !== 'excluded' && c.state !== 'out_of_scope');
+  if (!all.length) return null;
+  // 広い輪：8つまで、多いときは9つ目に「ほかに」。狭い輪：6つの場所（多いときは5つと「ほかに」）
+  const list = wide ? all.slice(0, 8) : all.slice(0, all.length > 6 ? 5 : 6);
+  const rest = all.length - list.length;
+  const n = list.length + (rest > 0 ? 1 : 0);
+  // 角度で置く。上から時計回り。left/top は輪の箱に対する割合（箱は正方形）
+  const at = (i: number): CSSProperties => {
+    const a = (2 * Math.PI * i) / Math.max(n, 1);
+    const sx = Math.sin(a).toFixed(4), cy = (-Math.cos(a)).toFixed(4);
+    return { left: `calc(50% + ${sx} * (50% - var(--world-half)))`, top: `calc(50% + ${cy} * (50% - var(--world-half)))` };
+  };
+  const toList = () => {
+    const el = listId ? document.getElementById(listId) : null;
+    el?.scrollIntoView({ block: 'start' });
+    el?.focus({ preventScroll: true });
+  };
   return (
-    <div className="world" aria-hidden="true">
-      <img className="world__you" src={art('you')} alt="" />
-      {list.map((c, i) => {
-        const k = stateKey(c);
-        const dim = k === 'check' || k === 'later';
-        return (
-          <span key={c.card.id} className={'world__item world__item--' + i + ' world__item--' + CLS[k]}>
-            <span className="world__pic">
-              <img src={(k === 'ask' ? art('ask') : artDim(c.card.illustration, dim))} alt="" />
-              {k === 'done' && <img className="world__badge" src={art('badge')} alt="" />}
-              {k === 'wait' && <img className="world__badge" src={art('clock')} alt="" />}
-            </span>
-            <span className="world__label"><span aria-hidden="true">{MARK[k]}</span> <One t={c.card.title} /></span>
-          </span>
-        );
-      })}
+    <div className="world world--ring" ref={setEl}>
+      <img className="world__you" src={art('you')} alt="" aria-hidden="true" />
+      <ul className="world__ring" role="list">
+        {list.map((c, i) => {
+          const k = stateKey(c);
+          const dim = k === 'check' || k === 'later';
+          return (
+            <li key={c.card.id} className={'world__item world__item--' + CLS[k]} style={at(i)}>
+              <Link to={base + c.card.id} className="world__link">
+                <span className="world__pic">
+                  <img src={(k === 'ask' ? art('ask') : artDim(c.card.illustration, dim))} alt="" />
+                  {k === 'done' && <img className="world__badge" src={art('badge')} alt="" />}
+                  {k === 'wait' && <img className="world__badge" src={art('clock')} alt="" />}
+                </span>
+                <span className="world__label"><span aria-hidden="true">{MARK[k]}</span> <One t={c.card.title} /></span>
+                <span className="sr-only">（<One k={stateWord(k, c.card.obligation)} />）</span>
+              </Link>
+            </li>
+          );
+        })}
+        {rest > 0 && (
+          <li className="world__item world__item--more" style={at(list.length)}>
+            <button type="button" className="world__link" onClick={toList}>
+              <span className="world__more" aria-hidden="true">+{rest}</span>
+              <span className="world__label"><One t={fill(ui('all.more'), 'n', () => String(rest))} /></span>
+            </button>
+          </li>
+        )}
+      </ul>
     </div>
+  );
+}
+
+/** 公式のページ：カードの links の最初、無ければ根拠（カード・期限・窓口・方法）の出典のうち、国・自治体・公的な法人で URL のあるもの */
+export function officialLink(c: CardView): { url: string; label?: Text; owner?: string } | null {
+  const l = c.card.links?.[0];
+  if (l) return { url: l.url, label: l.label };
+  const ev = [c.card.evidence, c.card.deadline?.evidence, c.card.where.evidence, ...(c.card.methods ?? []).map((m) => m.evidence)].filter(Boolean);
+  for (const id of ev.flatMap((e) => e!.source_ids)) {
+    const s = DATA().sources.find((x) => x.source_id === id);
+    if (s?.url && (s.owner_type === 'government' || s.owner_type === 'public_corp')) return { url: s.url, owner: s.owner };
+  }
+  return null;
+}
+
+/** 確認した日（日付だけ。曜日なし） */
+const fmtDate = (ymd: string, lv: Level) =>
+  new Intl.DateTimeFormat(lv.kind === 'foreign' ? lv.lang : 'ja', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(ymd + 'T00:00:00Z'));
+
+/** 出典の1行：「出典：持ち主「題」（確認日）」。カードの根拠の最初の出典 */
+export function SourceLine({ c }: { c: CardView }) {
+  const { level } = usePrefs();
+  const s = c.card.evidence.source_ids.map((id) => DATA().sources.find((x) => x.source_id === id)).find((x) => !!x);
+  if (!s) return null;
+  const name = s.owner + '「' + s.title + '」';
+  const t = fill(ui('card.sourceLine'), 'date', (lv) => fmtDate(c.card.evidence.checked_at, lv));
+  // 外国語の文の中の日本語の名前は lang="ja" で包む（読み上げの言語。15.2）
+  const sh = level.kind === 'foreign' ? show(t, level) : null;
+  if (sh && sh.mainLang !== 'ja') {
+    const [a, b = ''] = plain(sh.main).split('{source}');
+    return <p className="sub k-source"><span lang={sh.mainLang}>{a}<span lang="ja">{name}</span>{b}</span></p>;
+  }
+  return <p className="sub k-source"><One t={fill(t, 'source', () => name)} /></p>;
+}
+
+/** 答えた・日を決めたあとの1行（SPEC 6A.5 v0.5.14）：結果の画面を出さず、次の1つの上に出す */
+export type Last =
+  | { kind: 'answered'; cardId: string; q: Question }
+  | { kind: 'planned'; cardId: string; day: string; ids: string[] };
+export type Redo = { kind: 'q'; cardId: string; q: Question } | { kind: 'day'; cardId: string };
+
+export function changedText(c: CardView): Text {
+  const k = stateKey(c);
+  return fill(fill(ui('res.changed.line'), 'card', (_lv, id) => pickText(c.card.title, id)), 'state', (_lv, id) => pickText(ui(stateWord(k, c.card.obligation)), id));
+}
+
+/** 変わったことの1行。読み上げは role=status で知らせる（いつも置いておき、中身だけ変える） */
+export function ChangeLine({ last, cards, onUndo, onChangeDay }: { last: Last | null; cards: CardView[]; onUndo?: (q: Question) => void; onChangeDay?: (cardId: string) => void }) {
+  const c = last ? cards.find((x) => x.card.id === last.cardId) : undefined;
+  const show = !!(last && c);
+  return (
+    <div className={'k-change' + (show ? ' k-change--on' : '')}>
+      <p role="status" className="k-change__line">
+        {show && last!.kind === 'answered' && <><span aria-hidden="true">✓ </span><Bi phrase t={changedText(c!)} /></>}
+        {show && last!.kind === 'planned' && <><span aria-hidden="true">✓ </span><Bi t={fillDate(ui('res.planned.line'), last!.day)} /></>}
+      </p>
+      {show && (
+        <div className="links k-change__acts">
+          {last!.kind === 'answered' && onUndo && <button type="button" className="link" onClick={() => onUndo(last!.q)}><Bi k="res.changed.undo" /></button>}
+          {last!.kind === 'planned' && <AddToCalendar small day={last!.day} place={c!.card.place} cardIds={last!.ids} />}
+          {last!.kind === 'planned' && onChangeDay && <button type="button" className="link" onClick={() => onChangeDay(last!.cardId)}><Bi k="day.change" /></button>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** いまの1つ（Now・EventNow）で使う：答える・日を決める・聞き直す。結果の画面は出さない */
+export function useChange(g: { out: EngineOutput; answer(qid: string, v: Value): Promise<void>; setPlans(ids: string[], p: { planned_on: string }): Promise<void> }) {
+  const [last, setLast] = useState<Last | null>(null);
+  const [redo, setRedo] = useState<Redo | null>(null);
+  const answer = async (cardId: string, q: Question, v: Value) => { await g.answer(q.id, v); setRedo(null); setLast({ kind: 'answered', cardId, q }); };
+  const plan = async (cardId: string, d: string, ids: string[]) => { await g.setPlans(ids, { planned_on: d }); setRedo(null); setLast({ kind: 'planned', cardId, day: d, ids }); };
+  const line = redo ? null : <ChangeLine last={last} cards={g.out.cards} onUndo={(q) => last && setRedo({ kind: 'q', cardId: last.cardId, q })} onChangeDay={(id) => setRedo({ kind: 'day', cardId: id })} />;
+  return { last, redo, setRedo, setLast, answer, plan, line };
+}
+
+/** 聞き直す（答えを変える）・日を変える の画面。見出しは h1 */
+export function RedoStep({ redo, cards, today, onAnswer, onPlan, onCancel }: { redo: Redo; cards: CardView[]; today: string; onAnswer: (cardId: string, q: Question, v: Value) => void; onPlan: (cardId: string, d: string, ids: string[]) => void; onCancel: () => void }) {
+  const c = cards.find((x) => x.card.id === redo.cardId);
+  if (!c) return null;
+  if (redo.kind === 'q') {
+    return (
+      <>
+        <FocusCard c={c} />
+        <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi t={redo.q.text} /></h1></div>
+        <Answers q={redo.q} onPick={(v) => onAnswer(c.card.id, redo.q, v)} />
+        <WhyAsked t={redo.q.why_asked} />
+        <button type="button" className="link" onClick={onCancel}><Bi k="nav.backPrev" /></button>
+      </>
+    );
+  }
+  return (
+    <>
+      <div className="head">
+        <p className="eyebrow"><One t={c.card.title} /></p>
+        <h1 id="screen-title" tabIndex={-1}><Bi phrase t={dayTitle(c)} /></h1>
+      </div>
+      <DayChoice group={[c]} today={today} onPick={(d, ids) => onPlan(c.card.id, d, ids)} onLater={onCancel} />
+    </>
   );
 }
 
@@ -401,18 +570,28 @@ export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow:
 }
 
 /** 理由・出典・確認日・確認状態（5.3：触れば必ず見られる） */
-export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; objects: Record<string, boolean>; facts: Map<string, Value>; onClose: () => void }) {
+export function SourcesSheet({ c, objects, facts, onClose, shown = {} }: { c: CardView; objects: Record<string, boolean>; facts: Map<string, Value>; onClose: () => void; shown?: { what?: boolean; where?: boolean } }) {
   const d = DATA();
-  const ev = [c.card.evidence, c.card.deadline?.evidence, c.card.fee?.evidence, c.card.where.evidence].filter(Boolean);
-  const srcIds = [...new Set(ev.flatMap((e) => e!.source_ids).concat(c.reasonRules.flatMap((r) => r.evidence.source_ids)))];
+  // 出典は、どの欄の根拠かを添えて並べる（方法・代わりの書類の出典も入れる。U06）
+  const fields: [UiKey, (Pick<Evidence, 'source_ids'> | undefined)[]][] = [
+    ['card.rule', [c.card.evidence, ...c.reasonRules.map((r) => r.evidence)]],
+    ['card.deadline', [c.card.deadline?.evidence]],
+    ['card.fee', [c.card.fee?.evidence]],
+    ['card.where', [c.card.where.evidence]],
+    ['pat.method.label', (c.card.methods ?? []).map((m) => m.evidence)],
+    ['ev.alt', (c.card.alternatives ?? []).map((a) => a.evidence)],
+  ];
+  const byId = new Map<string, UiKey[]>();
+  for (const [k, es] of fields) for (const e of es) for (const id of e?.source_ids ?? []) { const l = byId.get(id) ?? []; if (!l.includes(k)) l.push(k); byId.set(id, l); }
+  const srcIds = [...byId.keys()];
   return (
     <Sheet title={<One t={c.card.title} />} onClose={onClose}>
       <Reason c={c} objects={objects} facts={facts} />
       <Notes c={c} where="all" />
-      <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>
+      {!shown.what && <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>}
       {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></span><Bi t={c.card.deadline.text} /></div>}
       {c.card.fee && <div className="sheet__row"><span className="sheet__k"><One k="card.fee" /> <TrustMark e={c.card.fee.evidence} /></span><Bi t={c.card.fee.text} /></div>}
-      <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>
+      {!shown.where && <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>}
       {/* この手続きでもらう書類（B-12）。data/documents.json の issued_by_card */}
       {DOCUMENTS().some((x) => (x.issued_by_card ?? []).includes(c.card.id)) && (
         <div className="sheet__row"><span className="sheet__k"><One k="card.issued" /></span>
@@ -440,10 +619,10 @@ export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; obje
         const s = d.sources.find((x) => x.source_id === id)!;
         return (
           <div className="sheet__row" key={id}>
-            <span className="sheet__k"><One k="src.source" /></span>
+            <span className="sheet__k"><One k="src.source" />（{byId.get(id)!.map((k, i) => <span key={k}>{i > 0 && '・'}<One k={k} /></span>)}）</span>
             <span lang="ja">{s.owner}「{s.title}」</span>
             {s.owner_type === 'product' && <span className="sheet__sub"><One k="src.product" /></span>}
-            {s.url && <a className="link" href={s.url} target="_blank" rel="noopener noreferrer"><One k="src.open" /></a>}
+            {s.url && <a className="link" href={s.url} target="_blank" rel="noopener noreferrer"><One k="src.open" /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="clinic.newTab" /></span></a>}
           </div>
         );
       })}

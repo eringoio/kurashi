@@ -27,21 +27,21 @@
     "reading": "てんきょ・てんそうさーびす"
   },
   "summary": {
-    "ja": "{郵便局|ゆうびんきょく}に{転居|てんきょ}{届|とどけ}を{出|だ}すと、{前|まえ}の{住所|じゅうしょ}あての{郵便|ゆうびん}を、1{年間|ねんかん}、{新|あたら}しい{住所|じゅうしょ}へ{無料|むりょう}で{送|おく}ってくれます。{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに{出|だ}します。{郵便局|ゆうびんきょく}の{窓口|まどぐち}・ポスト・e{転居|てんきょ}（ウェブ・アプリ）で{出|だ}せます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{郵便局|ゆうびんきょく}に{届|とど}けを{出|だ}すと、{前|まえ}の{住所|じゅうしょ}の{郵便|ゆうびん}が1{年|ねん}、{新|あたら}しい{住所|じゅうしょ}に{届|とど}きます。お{金|かね}はかかりません。{区役所|くやくしょ}の{届|とど}けのあとに{出|だ}します（{要|よう}{確認|かくにん}）。",
-    "en": "If you file a moving notice with Japan Post, mail sent to your old address is forwarded to your new address free for one year. File it after your moving-in notice at the ward office. You can file it at a post office counter, by post box, or with e-tenkyo (web or app) (to be checked)."
+    "ja": "{郵便局|ゆうびんきょく}に{転居|てんきょ}{届|とどけ}を{出|だ}すと、{前|まえ}の{住所|じゅうしょ}あての{郵便|ゆうびん}を、1{年間|ねんかん}、{新|あたら}しい{住所|じゅうしょ}へ{無料|むりょう}で{送|おく}ってくれます。{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません。{郵便局|ゆうびんきょく}の{窓口|まどぐち}・ポスト・e{転居|てんきょ}（ウェブ・アプリ）で{出|だ}せます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{郵便局|ゆうびんきょく}に{届|とど}けを{出|だ}すと、{前|まえ}の{住所|じゅうしょ}の{郵便|ゆうびん}が1{年|ねん}、{新|あたら}しい{住所|じゅうしょ}に{届|とど}きます。お{金|かね}はかかりません。{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}でもかまいません（{要|よう}{確認|かくにん}）。",
+    "en": "If you file a moving notice with Japan Post, mail sent to your old address is forwarded to your new address free for one year. File it around the same time as the ward-office notice; you may file first. You can file it at a post office counter, by post box, or with e-tenkyo (web or app) (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{転入|てんにゅう}{届|とどけ}のあと、できるだけ{早|はや}く（1{年間|ねんかん}{転送|てんそう}。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}。{要|よう}{確認|かくにん}）",
-      "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあと、すぐ（{要|よう}{確認|かくにん}）",
-      "en": "As soon as possible after your moving-in notice (forwarding lasts 1 year; registration takes 3–7 business days; to be checked)"
+      "ja": "{引|ひ}っ{越|こ}す{前|まえ}か、{引|ひ}っ{越|こ}したらすぐ（{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}。{転送|てんそう}は{届|とど}け{出|で}た{日|ひ}から1{年|ねん}。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{引|ひ}っ{越|こ}す{前|まえ}か、{引|ひ}っ{越|こ}したらすぐ（{要|よう}{確認|かくにん}）",
+      "en": "Before you move, or right after you move (registration takes 3–7 business days; forwarding lasts 1 year from the filing date; to be checked)"
     },
     "evidence": {
       "source_ids": [
         "jp-post-tenkyo"
       ],
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-07",
       "status": "needs_check",
       "quote": "転居届を提出されてから登録までに3～7営業日"
     }
@@ -94,22 +94,6 @@
         "status": "needs_check",
         "quote": "e転居（Webサイト、郵便局アプリ）でのお申し込みには、本人確認済みのゆうIDでのログインを行う必要があります。"
       }
-    },
-    {
-      "type": "mail",
-      "text": {
-        "ja": "{転送|てんそう}は{届|とど}け{出|で}た{日|ひ}から1{年間|ねんかん}です（{始|はじ}めたい{日|ひ}からではありません）。",
-        "ja_easy": "1{年|ねん}たつと{終|お}わります。",
-        "en": "Forwarding lasts one year from the day you file (not from the start date you choose)."
-      },
-      "evidence": {
-        "source_ids": [
-          "jp-post-tenkyo"
-        ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "届出日から1年間です（転送開始希望日からではありません）。"
-      }
     }
   ],
   "keywords": [
@@ -127,8 +111,19 @@
     "source_ids": [
       "jp-post-tenkyo"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check",
     "quote": "お引越しの際、お近くの郵便局窓口、ポスト投函、e転居（Webサイト、郵便局アプリ）から転居届を提出いただくことで、1年間、旧住所あての郵便物等を新住所に無料で転送します。"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{日本郵便|にほんゆうびん}の{転居|てんきょ}・{転送|てんそう}サービス",
+        "ja_easy": "{日本郵便|にほんゆうびん}の{転送|てんそう}のページ",
+        "en": "Japan Post: forwarding service"
+      },
+      "url": "https://www.post.japanpost.jp/service/receive/relocation/",
+      "source_id": "jp-post-tenkyo"
+    }
+  ]
 }

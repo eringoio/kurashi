@@ -231,13 +231,10 @@ h1.focus__name { font-size: var(--fs-title); }
 .focus__name .bi__ja { font-size: max(.7em, 15px); color: var(--ink-muted); }
 
 /* 全体の絵：真ん中にあなた、まわりに項目。点線の輪でつなぐ（「つないだ形」）。
-   3×3 の格子に置くので、文字を大きくしても、英語が長くても重ならない */
-.world { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto; gap: 6px 4px; align-items: center; justify-items: center; padding: 6px 0; }
+   置き方（輪の上に角度で置く）は world.css */
+.world { position: relative; }
 .world::before { content: ""; position: absolute; inset: 14% 10%; border: 2px dashed var(--line-dim); border-radius: 50%; pointer-events: none; }
-.world__you { grid-area: 2 / 2; width: 104px; height: 104px; position: relative; }
 .world__item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; max-width: 100%; text-align: center; }
-.world__item--0 { grid-area: 1 / 2; } .world__item--1 { grid-area: 2 / 1; } .world__item--2 { grid-area: 2 / 3; } .world__item--3 { grid-area: 3 / 2; }
-.world__item--4 { grid-area: 1 / 1; } .world__item--5 { grid-area: 1 / 3; } .world__item--6 { grid-area: 3 / 1; } .world__item--7 { grid-area: 3 / 3; }
 .world__pic { position: relative; display: inline-flex; }
 .world__pic img { width: 48px; height: 48px; }
 .world__pic .world__badge { position: absolute; right: -16px; top: -6px; width: 28px; height: 28px; }
@@ -268,7 +265,6 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .field { width: 100%; min-height: 52px; border: 2.5px solid var(--ink); border-radius: var(--radius-md); padding: 0 14px; font: inherit; font-size: var(--fs-answer); background: var(--white); color: var(--ink); }
 .chip { min-height: var(--target-min); padding: 0 14px; border-radius: var(--radius-pill); border: 1.5px solid var(--blue); background: var(--white); color: var(--blue); font-size: max(var(--fs-small), 15px); font-weight: 700; }
 .list.list--days { display: flex; }
-.world { width: 100%; max-width: 520px; align-self: center; }
 .pill--icon { display: inline-flex; align-items: center; gap: 6px; } .pill--icon svg { flex: none; }
 
 /* ===== 手続きの共通部品（src/ui/patterns）。色は tokens.css の変数だけ。状態は 印の文字＋文字＋枠の形 で示す ===== */
@@ -549,3 +545,101 @@ p, li, dd, .sub { text-wrap: pretty; }
 .row-check { gap: 6px; }
 .row-check .row { padding-inline: 8px; flex-wrap: wrap; }
 .row-check .row__name { flex: 1 1 8em; min-width: 0; overflow-wrap: anywhere; }
+
+/* —— WP-E（11/7 夜の改善）—— */
+/* K-48：読み込み・画面の切り替えで見出しにフォーカスを移したときは輪を出さない。Tab / Shift+Tab で来たときは出る（useFocusTitle が印を付け、キー操作で外す） */
+h1[data-autofocus]:focus-visible { outline: none; }
+
+/* 内容が長い・URL が入るときも横にはみ出さない（U17 / IA11） */
+.pt-method, .pt-guide, .k-check, .prose, .k-notice, .sub, .row__name, .k-answer, .tile { min-width: 0; overflow-wrap: anywhere; }
+.k-answer > :not(img):not(svg) { flex: 1 1 auto; min-width: 0; }
+
+/* 押せないボタン：点線にしない。色は主ボタンのまま薄くする（無効の状態は文字の薄さと not-allowed で示す） */
+.k-answer--primary:disabled { border-style: solid; border: none; background: var(--blue); color: var(--white); opacity: .55; }
+
+/* 入口のタイル（K-29 / K-46 / K-52）：同じ大きさ。絵は 56px の枠、題は中央 */
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 10px; }
+.tiles > li { display: flex; min-width: 0; }
+.tile { box-sizing: border-box; width: 100%; min-height: 128px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border: 2.5px solid var(--ink); border-radius: var(--radius-lg); background: var(--white); color: var(--ink); text-decoration: none; text-align: center; font-size: var(--fs-answer); font-weight: 700; line-height: 1.5; }
+.tile img { width: 56px; height: 56px; flex: none; }
+.tile__text { display: flex; justify-content: center; min-width: 0; }
+.tile__text .bi { align-items: center; }
+@media (max-width: 639.98px) { .tiles > li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (min-width: 640px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 640px) { :root[data-size="2"] .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* 下の道案内（PageNav）：印つきの3つのボタンを1列に。せまいときは折り返す */
+.pagenav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pagenav > .report__open { display: contents; }
+.pagenav__btn, .pagenav .report__open .link { box-sizing: border-box; min-height: var(--target-min); display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border: 1.5px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); color: var(--ink); font-size: max(var(--fs-small), 15px); font-weight: 700; text-decoration: none; line-height: 1.5; text-align: left; }
+.pagenav__btn svg, .pagenav .report__open .link::before { flex: none; }
+.pagenav .report__open .link { margin: 0; color: var(--ink-muted); border-color: var(--line-dim); font-weight: 500; }
+.pagenav .report__open .link::before { content: ""; width: 20px; height: 20px; background: currentColor; -webkit-mask: var(--flag) center / contain no-repeat; mask: var(--flag) center / contain no-repeat; }
+.pagenav { --flag: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 21V4'/><path d='M6 4h11l-2 4 2 4H6'/></svg>"); }
+.pagenav__btn:hover, .pagenav .report__open .link:hover { background: var(--sand-soft); color: var(--ink); }
+.pagenav__btn .bi__ja, .pagenav .bi__ja { font-size: max(.8em, 13px); }
+@media (max-width: 479.98px) { .pagenav > * { flex: 1 1 auto; } .pagenav .report__open .link { width: 100%; justify-content: center; } }
+
+/* 広い画面で右の列が出ているとき、本文のいま／全体の切り替えと「全体を見る」は出さない（A が付ける） */
+@media (min-width: 1024px) { .k-views--wide-hide, .wide-hide { display: none; } }
+
+/* 一覧の行：英語の題が長いときは、右の印を下に回す（K-51）。せまい幅では必ず下 */
+.row { flex-wrap: wrap; }
+.row__name { flex: 1 1 9em; }
+@media (max-width: 399.98px) { .row__side { flex: 1 0 100%; flex-direction: row; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 4px 10px; } }
+
+/* タブレット（640〜1023px）：本文の列は 640px まで。上の帯も同じ幅・同じ余白にそろえる（K-52） */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .shell > .col, #root > .col { width: 100%; max-width: 640px; margin-inline: auto; }
+  .bar, .viewonly, .draftband { width: 100%; max-width: 640px; margin-inline: auto; }
+  .bar { padding-left: 32px; padding-right: 32px; }
+}
+
+/* たたんだ見出し（あとで・関係なかったもの・範囲外。K-28）：押せることが見えるように、枠と開閉の印を付ける */
+.group__more > summary { min-height: var(--target-min); display: flex; align-items: center; gap: 4px; cursor: pointer; font-weight: 700; list-style: none; padding: 4px 12px; border: 2px solid var(--line-dim); border-radius: var(--radius-md); background: var(--white); }
+.group__more > summary::-webkit-details-marker { display: none; }
+.group__more > summary::after { content: ""; flex: none; width: 10px; height: 10px; margin-left: auto; margin-right: 4px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); }
+.group__more[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.group__more > summary:hover { background: var(--sand-soft); }
+/* 行の名前の下の短い文（関係なかった理由） */
+.row__note { flex: 1 0 100%; font-size: var(--fs-small); font-weight: 400; color: var(--ink-subtle); overflow-wrap: anywhere; }
+
+/* —— WP-Y（11/7 夜 3 波）：答えのボタンを 1 つの部品に・同意は細い帯・上の帯と本文の幅 —— */
+/* K-46：「そのほか」も同じ太さ。絵がある答えとない答えがまざるときは、絵の分の場所をあけて文字をそろえる */
+.k-answer--small { border-width: 2.5px; min-height: var(--target-answer); }
+.list:has(> .k-answer img) > .k-answer:not(:has(img))::before,
+ul.list:has(> li > .k-answer img) > li > .k-answer:not(:has(img))::before { content: ""; width: 44px; height: 44px; flex: none; }
+/* 2 列のとき、数が奇数なら最後の 1 つは全幅 */
+.list:has(> .k-answer) > .k-answer:last-child:nth-child(odd),
+ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: none; }
+.list > .k-answer, .list > li > .k-answer { max-width: none; }
+.list > li > .k-answer { height: 100%; }
+/* 押せるものは実線（点線は「まだ決めていない」だけ）。チェックの行・使い道の ？ */
+.k-check[aria-pressed="false"] { border-style: solid; border-color: var(--ink-subtle); }
+.k-tile__what { border-style: solid; }
+/* 「なぜ聞くの？」は答えのすぐ下に小さく */
+.link--why { align-self: flex-start; margin-top: -6px; font-size: var(--fs-small); }
+
+/* K-47：「残しますか」は本文の列のいちばん下の細い帯（順番は CSS の order で下へ。App.tsx で Route の後ろに移せば、読む順も同じになる） */
+.consent { order: 90; margin-top: 6px; padding: 8px 12px; border-width: 1.5px; border-radius: var(--radius-md); flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.consent__q { margin: 0; flex: 1 1 14em; font-size: var(--fs-body); line-height: 1.6; }
+.consent__note { margin: 0; flex: 1 1 100%; order: 3; }
+.consent .pair { flex: 0 1 auto; flex-wrap: wrap; gap: 6px; }
+.consent .pair .k-answer { flex: 0 1 auto; min-height: var(--target-min); padding: 2px 14px; font-size: var(--fs-body); border-width: 2px; }
+.consent > .link { order: 4; }
+
+/* K-52：上の帯・本文・右の列を同じ幅の入れ物にそろえる。右の列が無いときは本文を真ん中に、あるときは 2 つを組にして真ん中に */
+@media (min-width: 1024px) {
+  #root { max-width: 1120px; }
+  .bar, .viewonly, .draftband { width: 100%; max-width: 640px; margin-inline: auto; }
+  .bar { padding-left: 32px; padding-right: 32px; }
+  #root:has(.shell--two) .bar, #root:has(.shell--two) .viewonly, #root:has(.shell--two) .draftband { max-width: 1028px; padding-right: 24px; }
+  .shell > .col { margin-inline: auto; }
+  .shell--two > .col { margin-inline: 0; }
+  .shell--two { max-width: 1028px; width: 100%; margin-inline: auto; padding-right: 24px; }
+}
+/* 文字が「とても大きい」で 640px 前後のとき、上の帯のボタンは折り返してはみ出さない */
+:root[data-size="2"] .bar, :root[data-size="2"] .bar__btns { flex-wrap: wrap; }
+:root[data-size="2"] .bar__btns { justify-content: flex-end; }
+@media (min-width: 640px) { .bar, .bar__btns { flex-wrap: wrap; } .bar__btns { justify-content: flex-end; } }

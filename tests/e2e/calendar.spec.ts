@@ -11,6 +11,10 @@ async function check(page: Page, what: string) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth), what + ' 横スクロール').toBeLessThanOrEqual(320);
   expect(new URL(page.url()).search).toBe('');
 }
+async function check1280(page: Page, what: string) {
+  const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+  expect(r.violations.map((v) => v.id + ' ' + v.nodes.map((n) => n.target.join(' ')).join(',')), what).toEqual([]);
+}
 const h1 = (page: Page) => page.locator('h1');
 const tap = (page: Page, name: string | RegExp) => page.getByRole('button', { name }).first().click();
 
@@ -28,15 +32,23 @@ async function toWardDay(page: Page) {
   await tap(page, '20歳から59歳まで');
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
   await page.getByRole('link', { name: 'いま', exact: true }).click();
-  for (const name of ['まだどれにも入っていない', /^どちらでもない（厚生年金/, /^ない$/, /^はい$/]) {
-    await tap(page, name);
-    await tap(page, 'つぎへ');
-  }
+  // 答えたあとは結果の画面を出さず、次の1つへ（SPEC 6A.5 v0.5.14）
+  for (const name of ['まだどれにも入っていない', /^どちらでもない（厚生年金/, /^ない$/, /^はい$/]) await tap(page, name);
   await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
 }
+/** カレンダーは「ほかの日を選ぶ」を押したときだけ開く（K-42） */
+async function openCal(page: Page) {
+  const b = page.getByRole('button', { name: 'ほかの日を選ぶ' });
+  await expect(b).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.locator('.cal__table')).toHaveCount(0);
+  await b.click();
+  await expect(b).toHaveAttribute('aria-expanded', 'true');
+}
+const decided = (page: Page) => page.locator('.k-change__line');
 
 test('日を選ぶカレンダー：区役所の休み（土日・祝日）は押せず、理由を文字で示す。開いている時間も出す', async ({ page }) => {
   await toWardDay(page);
+  await openCal(page);
   const cal = page.locator('.cal__table');
   await expect(cal.getByRole('columnheader')).toHaveCount(7);
   await expect(cal.getByRole('button', { name: /11月7日（土）、休み/ })).toBeDisabled();
@@ -51,13 +63,15 @@ test('日を選ぶカレンダー：区役所の休み（土日・祝日）は�
   await expect(page.getByRole('button', { name: /^次の休みの日/ })).toBeDisabled();
   await check(page, '日を選ぶ（カレンダー）');
   await cal.getByRole('button', { name: /^11月6日（金）$/ }).click();
-  await expect(h1(page)).toHaveText(/11月6日.*に決めました$/);
+  await expect(decided(page)).toHaveText(/11月6日.*に決めました$/);
+  await expect(h1(page)).toHaveText('いつ、銀行に行きますか？');
 });
 
 test('日を決めたら、端末のカレンダーに入れる .ics を作れる（住所は選んだときだけ）', async ({ page }) => {
   await toWardDay(page);
+  await openCal(page);
   await page.locator('.cal__table').getByRole('button', { name: /^11月6日（金）$/ }).click();
-  // 1つのボタン → シートの中に区役所の選択とファイルを作るボタン（A-2）
+  // 決めた日の1行に小さな「カレンダーに追加」→ シートの中に区役所の選択とファイルを作るボタン（A-2）
   await page.getByRole('button', { name: 'カレンダーに追加' }).click();
   const link = page.getByRole('dialog').getByRole('link', { name: '予定のファイルを作る' });
   await expect(link).toHaveAttribute('download', 'kurashi-2026-11-06.ics');
@@ -84,16 +98,40 @@ test('日を決めたら、端末のカレンダーに入れる .ics を作れ�
 
 test('行く日が今日なら、カレンダーに追加は出さない（A-1）', async ({ page }) => {
   await toWardDay(page);
+  await openCal(page);
   await page.locator('.cal__table').getByRole('button', { name: /^11月4日（水）/ }).click();
-  await expect(h1(page)).toHaveText(/11月4日.*に決めました$/);
+  await expect(decided(page)).toHaveText(/11月4日.*に決めました$/);
   await expect(page.getByRole('button', { name: 'カレンダーに追加' })).toHaveCount(0);
 });
 
 test('カレンダーの画面：決めた日と行く所ごとに並ぶ', async ({ page }) => {
   await toWardDay(page);
+  await openCal(page);
   await page.locator('.cal__table').getByRole('button', { name: /^11月6日（金）$/ }).click();
+  // 次の手続きの日を選ぶカレンダーにも、決めた日に ● と「行く日」が付く（K-34）
+  // 開いたままのことも、閉じているときもある
+  if (!(await page.locator('.cal__table').count())) await page.getByRole('button', { name: 'ほかの日を選ぶ' }).click();
+  await expect(page.locator('.cal__table .cal__day--planned')).toContainText('11月6日（金）、行く日');
+  await expect(page.locator('.cal__table .cal__day--planned')).toContainText('●');
   await page.goto('/calendar');
   await expect(h1(page)).toHaveText('カレンダー');
   await expect(page.getByRole('heading', { level: 2, name: /11月6日.*区役所/ })).toBeVisible();
+  // 見るだけのカレンダー：決めた日に ●、読み上げに「行く日」、凡例。押せない
+  const day = page.locator('.cal__day--planned');
+  await expect(day).toHaveCount(1);
+  await expect(day).toContainText('●');
+  await expect(day).toContainText('11月6日（金）、行く日');
+  await expect(page.locator('.cal__legend')).toContainText('行く日');
+  await expect(page.locator('.cal__table button')).toHaveCount(0);
   await check(page, 'カレンダーの画面');
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await check1280(page, 'カレンダーの画面 1280');
+});
+
+test('カレンダーの画面：予定が無いときは短い文と「いまの1つにもどる」', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto('/calendar');
+  await expect(page.locator('.cal__day--planned')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'いまの1つにもどる' })).toBeVisible();
+  await check(page, 'カレンダーの画面（空）');
 });

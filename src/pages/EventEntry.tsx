@@ -1,6 +1,8 @@
 /* 生活イベントの入口（/e/{id}）の前に置く薄い包み。イベントの名前では分岐しない。
    1. 範囲のルールが「範囲外」のとき（例：他の市町村の中だけの引っ越し）は、範囲外の案内を出す。やり直しもできる。
-   2. 聞く質問がなく、いまやることも無い（日を聞かない案内だけ）のときは、最初から一覧（全体）を出す。 */
+   2. 入口の質問がなく、いまやることも無く、道具の画面（tool）があるときは、道具の画面へ置きかえる（K-18：/e/E-gomi → /gomi）。
+   3. 聞く質問がなく、いまやることも無い（日を聞かない案内だけ）のときは、最初から一覧（全体）を出す。タブと「始める」は出さない（U04）。 */
+import { useEffect } from 'react';
 import { DATA } from '../core/data';
 import { nowStep } from '../core/now';
 import { useEvent } from '../guide/useEvent';
@@ -11,6 +13,11 @@ import { Info } from './Info';
 
 export function EventEntry({ eventId, view, onLive }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void }) {
   const g = useEvent(eventId);
+  const idle = !!g && nowStep(g.out, g.today).kind === 'idle';
+  const tool = g && g.out.scope !== 'F' && idle && g.event.questions.length === 0 ? g.event.tool?.path : undefined;
+  // 履歴を増やさずに置きかえる（もどるで /e/... に来て、また飛ばされることがないように）
+  useEffect(() => { if (tool) { history.replaceState(null, '', tool); dispatchEvent(new PopStateEvent('popstate')); } }, [tool]);
+  if (tool) return null;
   if (g && g.out.scope === 'F') {
     return (
       <>
@@ -21,8 +28,9 @@ export function EventEntry({ eventId, view, onLive }: { eventId: string; view: '
       </>
     );
   }
-  const onlyGuides = !!g && view === 'now' && nowStep(g.out, g.today).kind === 'idle' && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office');
+  // 案内だけのできごと（いまやることが無く、見せる項目がある）：いま／全体が同じになるので、一覧だけ
+  const onlyGuides = !!g && idle && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office');
   // すぐにやることの一覧（K-15）：最初の質問が済んだら、全体（チェックの一覧）を出す
   const checklist = !!g && view === 'now' && !!g.event.checklist && g.out.upfront.length === 0;
-  return <EventPage eventId={eventId} view={onlyGuides || checklist ? 'all' : view} onLive={onLive} />;
+  return <EventPage eventId={eventId} view={onlyGuides || checklist ? 'all' : view} onlyGuides={onlyGuides} onLive={onLive} />;
 }

@@ -1167,7 +1167,7 @@
       "title": {
         "ja": "{近|ちか}くの{DEPT}を{探|さが}す",
         "ja_easy": "{近|ちか}くの{DEPT}を{探|さが}す",
-        "en": "Find a {DEPT} near you"
+        "en": "Find {DEPT} clinics near you"
       },
       "desc": {
         "ja": "{診療科|しんりょうか}と{外国語|がいこくご}で{探|さが}せます",

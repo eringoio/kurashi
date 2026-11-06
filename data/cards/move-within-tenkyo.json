@@ -68,105 +68,35 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
-        "ja_easy": "まどぐちでだけ{出|だ}せます。",
-        "en": "Accepted at the counter only."
+        "ja": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。{届|とど}けられるのは、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{住所|じゅうしょ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理人|だいりにん}は{委任|いにん}{状|じょう}が{要|い}ります。",
+        "ja_easy": "まどぐちでだけ{出|だ}せます。{出|だ}せる{人|ひと}は、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{家|いえ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理|だいり}の{人|ひと}は、{委任|いにん}{状|じょう}が{要|い}ります。",
+        "en": "Accepted at the counter only. The person moving, or a member of the same household at the new address, can file. A proxy needs a power-of-attorney letter."
       },
       "evidence": {
         "source_ids": [
-          "nagoya-juumin-todoke"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "転居届（同一区内での異動）は、窓口でのみ受け付けております。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c12"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{届|とど}けられるのは、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{住所|じゅうしょ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理人|だいりにん}は{委任|いにん}{状|じょう}が{要|い}ります。",
-        "ja_easy": "{出|だ}せる{人|ひと}は、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{家|いえ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理|だいり}の{人|ひと}は、{委任|いにん}{状|じょう}が{要|い}ります。",
-        "en": "The person moving, or a member of the same household at the new address, can file. A proxy needs a power-of-attorney letter."
-      },
-      "evidence": {
-        "source_ids": [
+          "nagoya-juumin-todoke",
           "B-nagoya-faq-45"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "引越しをする本人 引越しをする人と同じ世帯の人（新しい住所で同じ世帯の人に限ります。） ※代理人による届出も可能ですが、その場合、委任状が必要です。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c4"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{窓口|まどぐち}に{行|い}く{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{籍|せき}の{人|ひと}は{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
-        "ja_easy": "{本人|ほんにん}だとわかる{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{人|じん}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
-        "en": "Bring ID for the person at the counter (My Number Card, driver's licence, residence card, etc.). Foreign nationals also bring the residence card or special permanent resident certificate of each person moving."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nagoya-faq-45"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "〇窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等） 〇引越しをする人の在留カードまたは特別永住者証明書（外国籍の方のみ）",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c5"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}{資格|しかく}{確認|かくにん}{書|しょ}・{介護|かいご}{保険|ほけん}{被|ひ}{保険|ほけん}{者|しゃ}{証|しょう}も{持|も}って{行|い}きます。",
-        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{保険|ほけん}の{証|あかし}も{持|も}って{行|い}きます。",
-        "en": "If you are in National Health Insurance or Long-term Care Insurance, also bring your insurance certificate."
-      },
-      "evidence": {
-        "source_ids": [
-          "nagoya-juumin-todoke"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ) （注）引っ越しをする世帯全員",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c8"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}す{世帯|せたい}{全員|ぜんいん}のカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}があります（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "マイナンバーカードがある{人|ひと}は、{引|ひ}っ{越|こ}す{家族|かぞく}みんなのカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
-        "en": "If you have a My Number Card, bring the cards of everyone in the household who is moving. You will enter the PIN (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "nagoya-juumin-todoke"
-        ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "（注）引っ越しをする世帯全員のマイナンバーカードをお持ちください。"
+        "quote": "転居届（同一区内での異動）は、窓口でのみ受け付けております。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}に{行|い}く{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{籍|せき}の{人|ひと}は{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}{資格|しかく}{確認|かくにん}{書|しょ}・{介護|かいご}{保険|ほけん}{被|ひ}{保険|ほけん}{者|しゃ}{証|しょう}も{持|も}って{行|い}きます。マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}す{世帯|せたい}{全員|ぜんいん}のカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{本人|ほんにん}だとわかる{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{人|じん}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{保険|ほけん}の{証|あかし}も{持|も}って{行|い}きます。マイナンバーカードがある{人|ひと}は、{引|ひ}っ{越|こ}す{家族|かぞく}みんなのカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
+        "en": "Bring ID for the person at the counter (My Number Card, driver's licence, residence card, etc.). Foreign nationals also bring the residence card or special permanent resident certificate of each person moving. If you are in National Health Insurance or Long-term Care Insurance, also bring your insurance certificate. If you have a My Number Card, bring the cards of everyone in the household who is moving. You will enter the PIN (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45",
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "〇窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等） 〇引越しをする人の在留カードまたは特別永住者証明書（外国籍の方のみ）"
       }
     },
     {
@@ -194,45 +124,18 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。",
-        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。",
-        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed."
+        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。{期限|きげん}を{過|す}ぎても{届出|とどけで}はできます。すみやかに{手続|てつづ}きをします。",
+        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。{期限|きげん}をすぎても{出|だ}せます。{早|はや}く{出|だ}します。",
+        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed. You can still file after the deadline. Do it promptly."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-faq-45"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "印鑑登録の住所は、この届で自動変更されるので、改めて手続する必要はありません。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c10"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{期限|きげん}を{過|す}ぎても{届出|とどけで}はできます。すみやかに{手続|てつづ}きをします。",
-        "ja_easy": "{期限|きげん}をすぎても{出|だ}せます。{早|はや}く{出|だ}します。",
-        "en": "You can still file after the deadline. Do it promptly."
-      },
-      "evidence": {
-        "source_ids": [
+          "B-nagoya-faq-45",
           "B-nagoya-faq-6-pub"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "期限が過ぎてしまっても、届出はできますので、すみやかに手続を行ってください。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "2ec8db420847a921ff8a68359583cde8271a71a8ba3ed88e3f78ddcdd6bb6639",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-before-after/c8"
-        }
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "印鑑登録の住所は、この届で自動変更されるので、改めて手続する必要はありません。"
       }
     }
   ],

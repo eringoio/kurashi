@@ -1,29 +1,31 @@
 /* 生活イベントの共通の画面（/e/{event_id}・/e/{event_id}/all）。イベントの名前で分岐するコードは書かない。
    入口の質問（multi なら複数選択）→ いまの1つ（nowStep）→ 一覧。開いた項目は EventCardPage（CardPage.tsx）。
-   「すぐ行う行動」は、ほかの質問より先に出る（nowStep の urgent）。 */
+   「すぐ行う行動」は、ほかの質問より先に出る（nowStep の urgent）。
+   答えた・日を決めたあとは、次の1つの上に1行（6A.5 v0.5.14）。結果の画面は「済んだ」のときだけ。 */
 import { useState, type ReactNode } from 'react';
-import type { CardView, Section } from '../core/engine';
 import { nowStep } from '../core/now';
 import type { Question } from '../core/schema';
 import { visitGroup } from '../core/visit';
+import { visitPath } from '../core/accompany';
 import { useEvent, type EventGuide } from '../guide/useEvent';
 import { Bi, One } from '../i18n/Ruby';
-import { line, ui, type UiKey } from '../i18n/text';
+import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { Answers, CardRow, DayChoice, dayTitle, fillDate, FocusCard, fmtDay, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, WhyAsked, whyText } from '../ui/guide';
+import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, WorldMap } from '../ui/guide';
 import { MultiPick, UrgentAction } from '../ui/patterns';
 import { toPickOptions, toUrgent } from '../ui/patterns/map';
-import { Link, navigate, useFocusTitle } from '../ui/router';
-import { PlannedList } from './Plan';
-import { AddToCalendar } from '../ui/AddToCalendar';
+import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
+import { PageNav } from '../ui/PageNav';
+import { useSide } from '../ui/SidePanel';
+import { AllEmpty, AllGroups, hasOpen, TodayStep, todayViews } from './Plan';
 
-type Result = { kind: 'answered'; cardId: string } | { kind: 'planned'; cardId: string; day: string; ids: string[] } | { kind: 'done'; cardId: string };
-
-function EvTabs({ base, current }: { base: string; current: 'now' | 'all' }) {
+function EvTabs({ base, current, wideHide }: { base: string; current: 'now' | 'all'; wideHide?: boolean }) {
   const { level } = usePrefs();
+  // 広い画面でタブを隠すのは、右の列が出ているときだけ（K-36）
+  const side = useSide(usePath());
   return (
-    <nav className="k-views k-views--two" aria-label={line(ui('tab.nav'), level)}>
+    <nav className={'k-views k-views--two' + (wideHide && side ? ' k-views--wide-hide' : '')} aria-label={line(ui('tab.nav'), level)}>
       <Link to={base} aria-current={current === 'now' ? 'page' : undefined}><Bi k="tab.now" /></Link>
       <Link to={base + '/all'} aria-current={current === 'all' ? 'page' : undefined}><Bi k="tab.all" /></Link>
     </nav>
@@ -37,7 +39,7 @@ function StartNew({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   if (!has) return null;
   return (
     <div className="links">
-      <button type="button" className="link" onClick={async () => { await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNew" /></button>
+      <button type="button" className="link" onClick={async () => { await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNewShort" /></button>
     </div>
   );
 }
@@ -54,10 +56,13 @@ function MultiQuestion({ q, onAnswer }: { q: Question; onAnswer: (v: string[]) =
   );
 }
 
-export function EventPage({ eventId, view, onLive }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void }) {
+/** onlyGuides：日を決める手続きが無く、案内だけの出来事（いま と 全体 が同じになる）。WP-A の EventEntry が渡す。
+    渡されないときは、ここで同じ形で決める（いまの1つが無く、関係する項目がある） */
+export function EventPage({ eventId, view, onLive, onlyGuides }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void; onlyGuides?: boolean }) {
   const g = useEvent(eventId);
   if (!g) return <Missing />;
-  return view === 'all' ? <EventAll g={g} onLive={onLive} /> : <EventNow g={g} onLive={onLive} />;
+  const guides = onlyGuides ?? (nowStep(g.out, g.today).kind === 'idle' && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office'));
+  return view === 'all' ? <EventAll g={g} onLive={onLive} onlyGuides={guides} /> : <EventNow g={g} onLive={onLive} />;
 }
 
 function Missing() {
@@ -74,25 +79,24 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   const { level } = usePrefs();
   const base = '/e/' + g.event.id;
   const cp = base + '/c/';
-  const [result, setResult] = useState<Result | null>(null);
+  const ch = useChange(g);
+  const [done, setDone] = useState<string | null>(null);
   const step = nowStep(g.out, g.today);
-  useFocusTitle('ev:' + g.occ?.id + ':' + (result ? result.kind + result.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
+  useFocusTitle('ev:' + g.occ?.id + ':' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
   const Title = ({ children }: { children: ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
   const eyebrow = <p className="eyebrow"><One t={g.event.title} /></p>;
-  const next = () => setResult(null);
+  const today = todayViews(step);
   let body: ReactNode;
 
-  if (result) {
-    const c = g.out.cards.find((x) => x.card.id === result.cardId)!;
-    body = result.kind === 'planned' ? (
-      <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next}>
-        <AddToCalendar day={result.day} place={g.out.cards.find((x) => x.card.id === result.ids[0])?.card.place} cardIds={result.ids} />
-      </ResultView>
-    ) : (
-      <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
+  if (done) {
+    const c = g.out.cards.find((x) => x.card.id === done)!;
+    body = (
+      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)}>
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
+  } else if (ch.redo) {
+    body = <RedoStep redo={ch.redo} cards={g.out.cards} today={g.today} onAnswer={(id, q, v) => void ch.answer(id, q, v)} onPlan={(id, d, ids) => void ch.plan(id, d, ids)} onCancel={() => ch.setRedo(null)} />;
   } else if (step.kind === 'urgent') {
     const c = step.view;
     const a = toUrgent(c.card, () => { void g.setPlan(c.card.id, { status: 'done' }); onLive(line(ui('card.recordedDone'), level)); })!;
@@ -104,13 +108,14 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
       </>
     );
   } else if (step.kind === 'upfront') {
+    const pick = (v: Parameters<typeof g.answer>[1]) => { ch.setLast(null); void g.answer(step.q.id, v); };
     body = (
       <>
         {eyebrow}
         <div className="head"><Title><Bi t={step.q.text} /></Title></div>
         {step.q.multi
-          ? <MultiQuestion key={step.q.id} q={step.q} onAnswer={(v) => void g.answer(step.q.id, v)} />
-          : <><Answers q={step.q} onPick={(v) => void g.answer(step.q.id, v)} /><WhyAsked t={step.q.why_asked} /></>}
+          ? <MultiQuestion key={step.q.id} q={step.q} onAnswer={pick} />
+          : <><Answers q={step.q} onPick={pick} /><WhyAsked t={step.q.why_asked} /></>}
       </>
     );
   } else if (step.kind === 'card_q') {
@@ -120,7 +125,7 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         <p className="eyebrow"><One k="now.eyebrow.q" /></p>
         <FocusCard c={c} />
         <div className="head"><Title><Bi t={step.q.text} /></Title></div>
-        <Answers q={step.q} onPick={async (v) => { await g.answer(step.q.id, v); setResult({ kind: 'answered', cardId: c.card.id }); }} />
+        <Answers q={step.q} onPick={(v) => void ch.answer(c.card.id, step.q, v)} />
         <WhyAsked t={step.q.why_asked} />
       </>
     );
@@ -136,9 +141,8 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         </div>
         {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
         <DayChoice group={group} today={g.today}
-          onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); setResult({ kind: 'planned', cardId: c.card.id, day: d, ids }); }}
+          onPick={(d, ids) => void ch.plan(c.card.id, d, ids)}
           onLater={() => navigate(base + '/all')} />
-        <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </>
     );
   } else if (step.kind === 'wait') {
@@ -149,11 +153,15 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         <FocusCard c={c} />
         <div className="head"><Title><Bi k="now.wait.title" /></Title></div>
         <div className="pair">
-          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); setResult({ kind: 'done', cardId: c.card.id }); }}><Bi phrase k="now.wait.yes" /></button>
+          <button type="button" className="k-answer k-answer--primary" onClick={async () => { await g.setPlan(c.card.id, { status: 'done' }); ch.setLast(null); setDone(c.card.id); }}><Bi phrase k="now.wait.yes" /></button>
           <Link to={cp + c.card.id} className="k-answer"><Bi phrase k="now.wait.no" /></Link>
         </div>
       </>
     );
+  } else if (today) {
+    // 今日が行く日：行く所があれば付き添いの「行く前」、無ければ今日の予定
+    const place = today.find((c) => c.card.place)?.card.place;
+    body = <TodayStep views={today} base={cp} go={place ? visitPath(place, 'before') : '/today'} />;
   } else if (step.kind === 'until') {
     body = (
       <>
@@ -175,51 +183,32 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   }
   return (
     <>
-      <EvTabs base={base} current="now" />
+      <EvTabs base={base} current="now" wideHide />
+      {!done && ch.line}
       {body}
-      <div className="links"><Link to={base + '/all'} className="link"><Bi k="now.seeAll" /></Link></div>
+      <PageNav now={base} all={base + '/all'} report={base} />
       <StartNew g={g} onLive={onLive} />
     </>
   );
 }
 
-const SEC_KEY: Record<Section, UiKey> = { today: 'sec.today', check: 'sec.check', wait: 'sec.wait', later: 'sec.later', done: 'sec.done' };
-
-function EventAll({ g, onLive }: { g: EventGuide; onLive: (s: string) => void }) {
-  const { level } = usePrefs();
+function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string) => void; onlyGuides?: boolean }) {
   const base = '/e/' + g.event.id;
   useFocusTitle('ev-all:' + g.event.id);
-  const by = (f: (c: CardView) => boolean) => g.out.cards.filter(f);
-  const group = (key: UiKey, list: CardView[], open = true) =>
-    list.length === 0 ? null : (
-      <section className="group" key={key}>
-        {open ? (
-          <>
-            <h2><Bi phrase k={key} />（{list.length}）</h2>
-            <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} base={base + '/c/'} extra={c.plan?.planned_on ? fmtDay(c.plan.planned_on, level) : undefined}
-              check={g.event.checklist && c.state !== 'ask' ? { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } : undefined} />)}</ul>
-          </>
-        ) : (
-          <details>
-            <summary><Bi k={key} />（{list.length}）</summary>
-            <ul className="list" role="list">{list.map((c) => <CardRow key={c.card.id} c={c} base={base + '/c/'} />)}</ul>
-          </details>
-        )}
-      </section>
-    );
+  const cards = g.out.cards;
+  const idle = nowStep(g.out, g.today).kind === 'idle';
   return (
     <>
-      <EvTabs base={base} current="all" />
+      {/* 案内だけの出来事は、いま と 全体 が同じなのでタブを出さない（U04・IA04） */}
+      {!onlyGuides && <EvTabs base={base} current="all" />}
       <div className="head"><p className="eyebrow"><One phrase t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
       {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi phrase t={g.event.tool.label} /></Link>}
-      <p className="sub"><Bi k="all.sub" /></p>
-      {SECTION_ORDER.flatMap((s) => [
-        group(SEC_KEY[s], by((c) => c.section === s && c.state !== 'ask'), s !== 'later'),
-        s === 'check' ? group('sec.ask', by((c) => c.state === 'ask')) : null,
-      ])}
-      {group('sec.excluded', by((c) => c.state === 'excluded'), false)}
-      {group('sec.out', by((c) => c.state === 'out_of_scope'), false)}
-      <Link to={base} className="k-answer k-answer--primary"><Bi phrase k="all.go" /></Link>
+      <WorldMap cards={cards} base={base + '/c/'} listId="all-list" />
+      {!hasOpen(cards) && <AllEmpty />}
+      <AllGroups cards={cards} base={base + '/c/'}
+        extraRow={(c) => (g.event.checklist && c.state !== 'ask' ? { check: { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } } : {})} />
+      {!idle && !onlyGuides && <Link to={base} className="k-answer"><Bi phrase k="all.go" /></Link>}
+      <PageNav now={base} all={base + '/all'} report={base + '/all'} />
       <StartNew g={g} onLive={onLive} />
     </>
   );

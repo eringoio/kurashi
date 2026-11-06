@@ -51,11 +51,10 @@ flow({
   await snap({ name: 'いまの1つ（健康保険）', input: '保存に同意（残す）→ いま', expected: '「健康保険はどれに入っていますか？」', why: '国保は在留カード＋学生で入る必要がある可能性。確かめの質問を順に聞く' },
     async () => { await expect(h1).toHaveText('健康保険はどれに入っていますか？'); });
 
-  const answerThenNext = async (name: string | RegExp) => { await tap(name); await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと'); await tap('つぎへ'); };
+  const answerThenNext = async (name: string | RegExp) => { await tap(name); await expect(page.locator('.k-change__line')).toHaveText(/になりました$/); };
   await tap('まだどれにも入っていない');
-  await snap({ name: '答えで変わったこと', input: 'まだどれにも入っていない', expected: '「この答えで変わったこと」と結果。「つぎへ」がある', why: '操作のあとは結果と「つぎへ」（試作 D）' },
-    async () => { await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと'); });
-  await tap('つぎへ');
+  await snap({ name: '答えで変わったこと', input: 'まだどれにも入っていない', expected: '次の1つの上に「〇〇になりました」の1行と「答えを変える」。結果の画面と「つぎへ」は出ない', why: '答えたあとは1行だけ（SPEC 6A.5 v0.5.14）' },
+    async () => { await expect(page.locator('.k-change__line')).toHaveText(/になりました$/); await expect(page.getByRole('button', { name: '答えを変える' })).toBeVisible(); });
   await answerThenNext(/^どちらでもない（厚生年金/);
   await answerThenNext(/^ない$/);
   await snap({ name: '住み始めたか', input: '年金・口座の答え', expected: '「新しい住所に、もう住み始めましたか？」', why: '年金→口座→住み始めた、の順（質問の並び）' },
@@ -66,16 +65,15 @@ flow({
     async () => { await expect(h1).toHaveText('いつ、区役所に行きますか？'); await expect(page.locator('.together .k-check')).toHaveCount(3); await expect(page.locator('.together')).toContainText('住所の届け'); });
 
   await tap(/^今日/);
-  await snap({ name: '今日に決めた', input: '今日', expected: '「〇〇に決めました」', why: '選んだあとは結果を見せてから次へ' },
-    async () => { await expect(h1).toHaveText(/に決めました$/); });
-  await tap('つぎへ');
-  await snap({ name: '次は銀行', input: 'つぎへ', expected: '区役所の3つは同じ日に決まったので、次は「いつ、銀行に行きますか？」', why: '区役所の3つの日が一度で決まった。銀行は住所の届けの日より後のみ選べる' },
-    async () => { await expect(h1).toHaveText('いつ、銀行に行きますか？'); });
+  await snap({ name: '今日に決めた', input: '今日', expected: '「〇〇に決めました」', why: '選んだあとは次の1つの上に1行だけ' },
+    async () => { await expect(page.locator('.k-change__line')).toHaveText(/に決めました$/); });
+  await snap({ name: '今日は行く日', input: '今日', expected: '区役所の3つを今日に決めたので、「今日は行く日です」', why: '今日の予定を「日を決める」の後ろに隠さない（K-35）。銀行の日は全体から決められる' },
+    async () => { await expect(h1).toHaveText('今日は行く日です'); });
 
   // 保存に同意したので、再読み込みしても同じ
   await page.reload();
-  await snap({ name: '再読み込みのあと', input: '再読み込み', expected: '再読み込みの前と同じ「いつ、銀行に行きますか？」。区役所の日は聞き直さない', why: '同意（残す）のあとは IndexedDB に残る。続きが同じ（SPEC 9.9・6A.1）' },
-    async () => { await expect(h1).toHaveText('いつ、銀行に行きますか？'); });
+  await snap({ name: '再読み込みのあと', input: '再読み込み', expected: '再読み込みの前と同じ「今日は行く日です」。区役所の日は聞き直さない', why: '同意（残す）のあとは IndexedDB に残る。続きが同じ（SPEC 9.9・6A.1）' },
+    async () => { await expect(h1).toHaveText('今日は行く日です'); });
   // 開き直し（トップ）でも、保存した進捗から続きの画面へ
   await page.goto('/');
   await snap({ name: 'トップから開き直す', input: 'トップを開く', expected: '入口のメニューに戻らず、保存した進捗から続きの画面へ。区役所の日を今日にしたので「今日は、行く日に決めた日です」', why: '6A.1 の出し分け：今日が決めた日なら「今日は行く日」（保存があれば続きから）' },

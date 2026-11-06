@@ -110,9 +110,10 @@ describe('仕事・アルバイト（公開）', () => {
     expect(c.where.evidence.status).toBe('ai_checked');
     expect(plain(c.where.text.ja)).toContain('愛知労働局');
   });
-  it('社会保険：学生は対象ではない（要確認）。将来の規則（2027年10月）といまの規則（51人）を分ける', () => {
+  it('社会保険：学生は原則として対象外、例外あり（要確認）。将来の規則（2027年10月）といまの規則（51人）を分ける', () => {
     const t = plain(view(go('student'), 'job-shakai-hoken').card.summary.ja);
-    expect(t).toContain('学生は対象ではありません（要確認）');
+    expect(t).toContain('学生は原則として対象外です');
+    expect(t).toContain('例外があります');
     expect(t).toContain('51人');
     expect(t).toContain('2027年10月から');
     expect(t).toContain('将来の規則');

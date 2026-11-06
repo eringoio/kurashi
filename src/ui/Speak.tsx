@@ -23,7 +23,8 @@ export function useJaVoice(): SpeechSynthesisVoice | null {
 }
 
 /** ja：読む日本語（{漢字|よみ} を含んでよい。読みのほうを読む） */
-export function Speak({ ja }: { ja: string }) {
+/** name：読み上げボタンの名前に入れる語（例：行に出ている言葉）。ないときは ja。止めるときは「止める：…」 */
+export function Speak({ ja, name: subject }: { ja: string; name?: string }) {
   const { level, speechRate } = usePrefs();
   const voice = useJaVoice();
   const [on, setOn] = useState(false);
@@ -41,8 +42,11 @@ export function Speak({ ja }: { ja: string }) {
     setOn(true);
   };
   const name = line(ui(on ? 'speak.stop' : 'speak.label'), level);
+  const text = plain(subject ?? ja);
+  // 見えている名前（読む・止める）を先に入れる（2.5.3 ラベルと名前の一致）。そのあとに文（同じ名前のボタンを区別する。K-52）
+  const label = name + '：' + text;
   return (
-    <button type="button" className="speak" aria-pressed={on} aria-label={name + '：' + plain(ja)} onClick={toggle}>
+    <button type="button" className="speak" aria-pressed={on} aria-label={label} onClick={toggle}>
       <span aria-hidden="true">{on ? '■' : '🔊'}</span>
       <span aria-hidden="true">{name}</span>
     </button>

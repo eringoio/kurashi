@@ -1,0 +1,9 @@
+/* ことば：ヘッダーのボタンと戻るボタン（WP-W） */
+.words-btn { min-height: var(--target-min); min-width: var(--target-min); padding: 0 14px; border: 2px solid var(--blue); border-radius: var(--radius-pill); background: var(--white); color: var(--blue-deep); font-size: max(var(--fs-small), 15px); font-weight: 700; }
+.words-btn[aria-current="page"] { background: var(--blue-tint); }
+.words-back { display: inline-flex; align-items: center; }
+/* 長い言葉（ふりがな付き）が幅 320px でも折り返すように */
+.word { grid-template-columns: minmax(0, 1fr); }
+.word__ja, .word__mean { min-width: 0; overflow-wrap: anywhere; }
+.word__ja ruby { display: inline-flex; flex-direction: column-reverse; max-width: 100%; vertical-align: bottom; }
+.word__ja rt { display: block; white-space: normal; overflow-wrap: anywhere; text-align: start; }

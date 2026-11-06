@@ -19,7 +19,7 @@ flow({
   await page.getByRole('link', { name: 'いま', exact: true }).click();
   await expect(page.locator('h1')).toHaveText('前に住んでいた市区町村で、転出届を出しましたか？');
   await tap(/^わからない$/);
-  await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと');
+  await expect(page.locator('.k-change__line')).toHaveText(/になりました$/);
 
   const PAT: [string, string, string, string][] = [
     ['ルールが未確認', '/c/nagoya-tennyu-todoke', 'まだ公式の原文で確かめていません', '(1) ルールが公式の原文で未確認'],

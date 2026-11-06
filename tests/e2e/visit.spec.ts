@@ -37,8 +37,7 @@ async function planWardToday(page: Page) {
   await page.getByRole('link', { name: 'いま', exact: true }).click();
   const answerThenNext = async (name: string | RegExp) => {
     await tap(page, name);
-    await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと');
-    await tap(page, 'つぎへ');
+    await expect(page.locator('.k-change__line')).toHaveText(/になりました$/);
   };
   await answerThenNext('まだどれにも入っていない');
   await answerThenNext(/^どちらでもない（厚生年金/);
@@ -46,9 +45,8 @@ async function planWardToday(page: Page) {
   await answerThenNext(/^はい$/);
   await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
   await tap(page, /^今日/);
-  await expect(h1(page)).toHaveText(/に決めました$/);
-  await tap(page, 'つぎへ');
-  await expect(h1(page)).toHaveText('いつ、銀行に行きますか？');
+  await expect(page.locator('.k-change__line')).toHaveText(/に決めました$/);
+  await expect(h1(page)).toHaveText('今日は行く日です'); // 今日に決めたので、今日の予定を先に出す（K-35）
 }
 
 /** 今日 → 区役所の付き添いを始める（行く前） */

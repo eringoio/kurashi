@@ -25,3 +25,16 @@ export const PinIcon = () => (
 export const ShareIcon = () => (
   <svg {...P}><path d="M12 3v12" /><path d="M7.5 7.5 12 3l4.5 4.5" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" /></svg>
 );
+
+/** 左向きの矢印（いまの手続きにもどる） */
+export const BackIcon = () => (
+  <svg {...P}><path d="M19 12H5" /><path d="M11 6l-6 6 6 6" /></svg>
+);
+/** 一覧（3本の線） */
+export const ListIcon = () => (
+  <svg {...P}><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
+);
+/** 旗（まちがいを知らせる） */
+export const FlagIcon = () => (
+  <svg {...P}><path d="M6 21V4" /><path d="M6 4h11l-2 4 2 4H6" /></svg>
+);

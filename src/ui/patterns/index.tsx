@@ -3,13 +3,15 @@
    開いた項目は短く、くわしくはシート、操作のあとは結果と「つぎへ」（試作 D の形）。 */
 import { useId, type ReactNode } from 'react';
 import { Bi, One } from '../../i18n/Ruby';
-import type { UiKey } from '../../i18n/text';
+import { ui, type UiKey } from '../../i18n/text';
 import { art } from '../art';
 import type {
   BelongingVM, ContactVM, HoldStatus, LifeGuideVM, MethodKind, MethodVM, PickOptionVM, RelationKind, StepVM,
   T, UnknownVM, UrgentActionVM, WaitingVM,
 } from './types';
 
+/** 「ほかに{n}件」 */
+const moreText = (n: number): T => Object.fromEntries(Object.entries(ui('all.more')).filter(([, v]) => typeof v === 'string').map(([k, v]) => [k, (v as string).replace('{n}', String(n))])) as T;
 const safeUrl = (u: string) => u.startsWith('https://');
 /** tel: の番号。数字と + と # だけ残す（# は %23 に） */
 const tel = (n: string) => n.replace(/[^0-9+#]/g, '').replace(/#/g, '%23');
@@ -159,6 +161,38 @@ export function MethodChooser({ methods, value, onChange }: { methods: MethodVM[
   );
 }
 
+const METHOD_ORDER: MethodKind[] = ['window', 'online', 'mail', 'phone'];
+
+/** 4b. 手続きの方法の一覧（開いた項目。押すボタンにしない。U01・IA01）：種類ごとにまとめ、印と文で並べる。
+    要確認は、種類ごとに1つだけ。1つの種類に3つ以上あるときは、2つを出して残りは開いて見る（all.more） */
+export function MethodList({ methods }: { methods: MethodVM[] }) {
+  const id = useId();
+  const groups = METHOD_ORDER.map((k) => ({ k, list: methods.filter((m) => m.kind === k) })).filter((g) => g.list.length);
+  if (!groups.length) return null;
+  const item = (m: MethodVM) => <li key={m.id}>{m.label ? <Bi t={m.label} /> : <One k={('pat.method.' + m.kind) as UiKey} />}{m.when && <span className="pt-hint"><One t={m.when} /></span>}</li>;
+  return (
+    <section className="pt-methods" aria-labelledby={id}>
+      <h2 id={id} className="label"><One k="pat.method.label" /></h2>
+      {groups.map(({ k, list }) => (
+        <div key={k} className="pt-methods__group">
+          <p className="pt-methods__kind">
+            <span className="pt-method__icon" aria-hidden="true">{METHOD_ICON[k]}</span>
+            <strong><One k={('pat.method.' + k) as UiKey} /></strong>
+            {list.some((m) => m.unverified) && <span className="pt-tag"><One k="pat.confirm" /></span>}
+          </p>
+          <ul className="pt-methods__list">{list.slice(0, 2).map(item)}</ul>
+          {list.length > 2 && (
+            <details className="pt-methods__more">
+              <summary><One t={moreText(list.length - 2)} /></summary>
+              <ul className="pt-methods__list">{list.slice(2).map(item)}</ul>
+            </details>
+          )}
+        </div>
+      ))}
+    </section>
+  );
+}
+
 const REL: { kind: RelationKind; mark: string }[] = [
   { kind: 'required_first', mark: '①' }, { kind: 'recommended', mark: '→' }, { kind: 'parallel', mark: '＝' },
 ];
@@ -236,7 +270,7 @@ export function LifeGuide({ g }: { g: LifeGuideVM }) {
         </div>
       )}
       {g.contacts && <Contacts list={g.contacts} />}
-      <p className="sub pt-small"><Bi k="pat.guide.noDate" /></p>
+      {/* 「日にちは決めなくて大丈夫」は出さない（K-44：日を聞く画面が無いので要らない） */}
     </section>
   );
 }

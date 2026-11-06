@@ -185,5 +185,16 @@
         "ref": "research/logs/gomi_fee_2026-11-07.md"
       }
     }
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{粗大|そだい}ごみの{出|だ}し{方|かた}（{名古屋市|なごやし}の{公式|こうしき}ページ）",
+        "ja_easy": "{大|おお}きなごみの{出|だ}し{方|かた}（{公式|こうしき}ページ）",
+        "en": "Nagoya City: how to put out bulky waste (official page)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1033988.html",
+      "source_id": "B-nagoya-gomi-sodai-detail"
+    }
+  ]
 }

@@ -58,3 +58,21 @@ describe('約束の日の候補（6A.5）', () => {
     expect(daySuggestions('2026-11-07')).toEqual([{ key: 'today', day: '2026-11-07' }, { key: 'off', day: '2026-11-08' }]);
   });
 });
+
+describe('続きの行き先（K-39）', async () => {
+  const { continuePath } = await import('../../src/core/entry');
+  const occ = (id: string, event_id: string, started_on: string, closed_on?: string) => ({ id, event_id, started_on, closed_on, answers: {}, plan: {} });
+  const legacy = occ('occ-legacy', 'E-move', '2026-11-03');
+  it('引っ越しだけなら /now', () => {
+    expect(continuePath([], legacy)).toBe('/now');
+    expect(continuePath([], null)).toBe('/now');
+  });
+  it('銀行のできごとがいちばん新しいなら /e/E-bank', () => {
+    expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-05')], legacy)).toBe('/e/E-bank');
+    expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-03')], legacy)).toBe('/e/E-bank');
+  });
+  it('引っ越しのほうが新しい、または銀行が閉じていれば /now', () => {
+    expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-01')], legacy)).toBe('/now');
+    expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-05', '2026-11-06')], legacy)).toBe('/now');
+  });
+});

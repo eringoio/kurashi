@@ -61,6 +61,22 @@ export function monthGrid(today: Ymd, weeks = 5): (Ymd | null)[][] {
   }));
 }
 
+/** 行く日を決めた日ごとの件数（今日から後、済んでいない・やめていないもの） */
+export function plannedMarks(plans: { planned_on?: Ymd; status: string }[], today: Ymd): Record<Ymd, number> {
+  const m: Record<Ymd, number> = {};
+  for (const p of plans) {
+    if (!p.planned_on || p.planned_on < today || p.status === 'done' || p.status === 'dismissed') continue;
+    m[p.planned_on] = (m[p.planned_on] ?? 0) + 1;
+  }
+  return m;
+}
+
+/** 同じ手続きを同じ日に2回数えない（引っ越しの plan と生活イベントの plan が重なるとき） */
+export function uniquePlans<T extends { card_id: string; planned_on?: Ymd }>(plans: T[]): T[] {
+  const seen = new Set<string>();
+  return plans.filter((p) => { const k = p.card_id + '|' + (p.planned_on ?? ''); if (seen.has(k)) return false; seen.add(k); return true; });
+}
+
 /* ───── .ics（RFC 5545） ───── */
 export interface IcsEvent { uid: string; day: Ymd; summary: string; location?: string; description?: string }
 

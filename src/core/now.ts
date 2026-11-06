@@ -8,6 +8,7 @@ export type NowStep =
   | { kind: 'card_q'; view: CardView; q: Question }
   | { kind: 'plan'; view: CardView }
   | { kind: 'wait'; view: CardView }
+  | { kind: 'today'; views: CardView[] }
   | { kind: 'until'; views: CardView[] }
   | { kind: 'idle' };
 
@@ -23,12 +24,21 @@ export function nowStep(o: EngineOutput, today: string): NowStep {
   for (const c of byQ) if (c.state === 'ask' && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
   // 2. いま・確かめる項目の中の質問（住み始めたか、など）
   for (const c of byQ) if ((c.section === 'today' || c.section === 'check' || c.section === 'later') && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
-  // 3. 日が決まっていない、いま・確かめる項目
+  // 3. 今日が行く日（K-35）：今日の予定（/today と同じ項目）。「日を決める」より先に出す（今日の予定を隠さない）
+  const due = agendaToday(o, today);
+  if (due.length) return { kind: 'today', views: due };
+  // 4. 日が決まっていない、いま・確かめる項目
   for (const c of open) if ((c.section === 'today' || c.section === 'check') && !c.plan?.planned_on && c.dayRule.kind !== 'no_day') return { kind: 'plan', view: c };
-  // 4. 届くのを待っている
+  // 5. 届くのを待っている
   for (const c of open) if (c.section === 'wait') return { kind: 'wait', view: c };
-  // 5. 約束した日を待つ
-  const until = open.filter((c) => c.plan?.planned_on && c.plan.planned_on >= today);
+  // 6. 約束した日を待つ（今日より後の日だけ。今日の日は 3 で出す）
+  const until = open.filter((c) => c.plan?.planned_on && c.plan.planned_on > today);
   if (until.length) return { kind: 'until', views: until };
   return { kind: 'idle' };
+}
+
+/** 今日が行く日の項目（済んだ・やめた・対象外を除く）。「いま」の today と、今日の予定（/today）で同じものを使う（K-35） */
+export function agendaToday(o: EngineOutput, today: string): CardView[] {
+  return o.cards.filter((c) => c.plan?.planned_on === today && c.plan.status !== 'done' && c.plan.status !== 'dismissed'
+    && c.section !== null && c.section !== 'done' && c.state !== 'excluded' && c.state !== 'out_of_scope');
 }

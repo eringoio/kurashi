@@ -41,6 +41,6 @@ flow({
     async () => { await expect(h1).toHaveText('前に住んでいた市区町村で、転出届を出しましたか？'); });
 
   await tap('マイナンバーカードを使って出した');
-  await snap({ name: '答えで変わったこと', input: 'マイナンバーカードを使って出した', expected: '「この答えで変わったこと」と結果', why: '転出届は済み（カード）。この答えを手続きの表示に反映する' },
-    async () => { await expect(page.locator('.eyebrow')).toHaveText('この答えで変わったこと'); });
+  await snap({ name: '答えで変わったこと', input: 'マイナンバーカードを使って出した', expected: '次の1つの上に「〇〇になりました」の1行', why: '転出届は済み（カード）。この答えを手続きの表示に反映する' },
+    async () => { await expect(page.locator('.k-change__line')).toHaveText(/になりました$/); });
 });

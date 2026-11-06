@@ -1,7 +1,7 @@
 /* 収集日の写し（作者の決定 2026-11-06 F）。data/private/ は Git に入らないので、見本の小さな表で確かめる */
 import { describe, expect, it } from 'vitest';
 import { nextCollection } from '../../src/core/gomi';
-import { privateSchedule, rowsOf, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
+import { areaIdToSave, areaRow, banchiOf, privateSchedule, rowsOf, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
 
 const P: PrivateSchedule = {
   source: { url: 'https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html', title: 'ごみ収集日検索', fetched_at: '2026-11-06', valid_from: null },
@@ -17,6 +17,24 @@ describe('収集日の写し', () => {
     expect(townsOf(P, 'naka')).toEqual(['栄四丁目', '金山五丁目'].sort((a, b) => a.localeCompare(b, 'ja')));
     expect(rowsOf(P, 'naka', '栄四丁目')).toHaveLength(1);
     expect(rowsOf(P, 'naka', '金山五丁目')).toHaveLength(2); // このときだけ番地を聞く
+  });
+  it('K-21：町名（と番地）で1行に決まるとき、その area_id を保存できる', () => {
+    expect(areaRow(P, 'naka', '栄四丁目')?.id).toBe('naka-1');
+    expect(areaRow(P, 'naka', '金山五丁目')).toBeNull();
+    expect(areaRow(P, 'naka', '金山五丁目', 'naka-2')?.id).toBe('naka-2');
+    expect(areaRow(null, 'naka', '栄四丁目')).toBeNull();
+  });
+  it('K-21：保存 → 読み込み直し → 行が残る（画面が戻る前に null で上書きしない）', () => {
+    // 保存：番地で分かれる町で番地を選ぶ → その行の id を保存する
+    const picked = areaRow(P, 'naka', '金山五丁目', banchiOf('naka-3', null))!.id;
+    expect(areaIdToSave(null, picked)).toBe('naka-3');
+    const saved = { ward_id: 'naka', town: '金山五丁目', area_id: 'naka-3' };
+    // 読み込み直し：画面の番地はまだ選んでいない（null）。保存した area_id から同じ行に戻る
+    const row = areaRow(P, saved.ward_id, saved.town, banchiOf(null, saved.area_id));
+    expect(row?.id).toBe('naka-3');
+    expect(areaIdToSave(saved.area_id, row?.id ?? null)).toBeUndefined(); // 書き直さない
+    // 行がまだ決まらないときも、保存を消さない
+    expect(areaIdToSave(saved.area_id, null)).toBeUndefined();
   });
   it('次の収集日（施行日が無ければ取得日から。年末年始より後は出さない）', () => {
     const s = toSchedules(P);

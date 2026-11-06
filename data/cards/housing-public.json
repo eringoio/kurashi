@@ -239,15 +239,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{問|と}い{合|あ}わせと{募集|ぼしゅう}の{案内|あんない}は、{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（https://www.jkk-nagoya.or.jp/）から{見|み}られます。{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
-        "ja_easy": "{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（https://www.jkk-nagoya.or.jp/）に、{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
-        "en": "Inquiries and recruitment guides: the Nagoya City Housing Supply Corporation top page (https://www.jkk-nagoya.or.jp/) has pages on city housing eligibility and recruitment methods."
+        "ja": "{問|と}い{合|あ}わせと{募集|ぼしゅう}の{案内|あんない}は、{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（{下|した}のリンク）から{見|み}られます。{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
+        "ja_easy": "{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（{下|した}のリンク）に、{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
+        "en": "Inquiries and recruitment guides: the Nagoya City Housing Supply Corporation top page (link below) has pages on city housing eligibility and recruitment methods."
       },
       "evidence": {
         "source_ids": [
           "B-jkk-top"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "市営住宅の申込資格・募集方法等"
       }
@@ -255,15 +255,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{例|れい}：{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}（https://www.pref.aichi.jp/life/1/5/18/）、UR{賃貸住宅|ちんたいじゅうたく}（https://www.ur-net.go.jp/）。{資格|しかく}や{申|もう}し{込|こ}みは{市営|しえい}{住宅|じゅうたく}と{違|ちが}います（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{例|れい}：{県営|けんえい}{住宅|じゅうたく}（https://www.pref.aichi.jp/life/1/5/18/）、UR{賃貸住宅|ちんたいじゅうたく}（https://www.ur-net.go.jp/）。{市営|しえい}{住宅|じゅうたく}とは{決|き}まりが{違|ちが}います（{要|よう}{確認|かくにん}）。",
-        "en": "For example: Aichi prefectural housing (https://www.pref.aichi.jp/life/1/5/18/) and UR rental housing (https://www.ur-net.go.jp/). Their requirements and applications differ from city housing (to be checked)."
+        "ja": "{例|れい}：{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}、UR{賃貸住宅|ちんたいじゅうたく}（{下|した}のリンク）。{資格|しかく}や{申|もう}し{込|こ}みは{市営|しえい}{住宅|じゅうたく}と{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{例|れい}：{県営|けんえい}{住宅|じゅうたく}、UR{賃貸住宅|ちんたいじゅうたく}（{下|した}のリンク）。{市営|しえい}{住宅|じゅうたく}とは{決|き}まりが{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "For example: Aichi prefectural housing and UR rental housing (links below). Their requirements and applications differ from city housing (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "B-ur-top"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "全国約70万戸の豊富な物件からライフスタイルにあった住まい選び"
       }
@@ -329,5 +329,34 @@
     "checked_at": "2026-11-06",
     "status": "needs_check",
     "quote": "市営住宅の入居要件につきましては、住宅に困窮した世帯を募集の対象としており、外国人入居希望者も対象としております。"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}",
+        "ja_easy": "{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}",
+        "en": "Nagoya City Housing Supply Corporation"
+      },
+      "url": "https://www.jkk-nagoya.or.jp/",
+      "source_id": "B-jkk-top"
+    },
+    {
+      "label": {
+        "ja": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}",
+        "ja_easy": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}",
+        "en": "Aichi prefectural housing"
+      },
+      "url": "https://www.pref.aichi.jp/life/1/5/18/",
+      "source_id": "IA-aichi-kenei-juutaku"
+    },
+    {
+      "label": {
+        "ja": "UR{賃貸住宅|ちんたいじゅうたく}",
+        "ja_easy": "UR{賃貸住宅|ちんたいじゅうたく}",
+        "en": "UR rental housing"
+      },
+      "url": "https://www.ur-net.go.jp/",
+      "source_id": "B-ur-top"
+    }
+  ]
 }

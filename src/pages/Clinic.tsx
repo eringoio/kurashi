@@ -1,5 +1,5 @@
-/* 病院の案内（SPEC 6A.13。作者の指示 2026-11-05）。/clinic → /clinic/departments → /clinic/before。
-   1 どこが困っている？（言葉・からだの絵）→ 2 まず、ここへ（診療科の順番）→ 3 行く前に（探すページ・持ち物・受付の言葉）。
+/* 病院の案内（SPEC 6A.13。作者の指示 2026-11-05）。/clinic → /clinic/departments（1画面。/clinic/before は departments へ移す）。
+   1 どこが困っている？（言葉・からだの絵。押したらすぐ次へ）→ 2 どの病院・探す公式のページ・持ち物・受付の言葉（見出しで区切る）。
    診断しない・緊急かどうかを判断しない。119・#7119 の帯はいつも同じに出す（こどものときだけ #8000 も）。
    選んだ場所はメモリの中だけ（このモジュールの値）。IndexedDB にも URL にも入れない（9.9・13.4）。 */
 import { useEffect, useState, useSyncExternalStore } from 'react';
@@ -11,8 +11,11 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { BodyMap, PartButton } from '../ui/BodyMap';
 import { fill } from '../ui/guide';
+import type { Text } from '../core/schema';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Speak } from '../ui/Speak';
+import { useSeen } from '../ui/Words';
+import '../styles/clinic.css';
 
 /** 診療科の案内を出すか（03_MEDICAL 6章：大会ルールの確認が来るまで、止められるようにする）。VITE_CLINIC_DEPARTMENTS=off で止める。
     止めたときは、緊急の連絡先・公式の探すページ・持ち物・受付の言葉だけの1画面になる */
@@ -48,12 +51,19 @@ function Band({ part }: { part: ClinicPart | null }) {
         {/* 救急車の呼び方（消防庁の多言語のガイド）。どの場所を選んでも見られる（03_MEDICAL 2章B） */}
         {guide && (
           <a className="link" href={guide.url} target="_blank" rel="noopener noreferrer">
-            <One t={guide.title} /><span className="sr-only"><One k="clinic.newTab" /></span>
+            <One t={guide.title} /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="clinic.newTab" /></span>
           </a>
         )}
       </div>
     </aside>
   );
+}
+
+/** 英語は「Find {DEPT} clinics near you」。診療科が無いときは「Find clinics near you」。英語の科の名前は小文字にする */
+function deptTitle(t: Text, dept: ClinicDepartment | null) {
+  const out = fill(t, 'DEPT', (_lv, id) => (dept ? dept.name[id] ?? dept.name.ja : ui('clinic.anyDept')[id] ?? ui('clinic.anyDept').ja) as string);
+  if (typeof out.en === 'string') out.en = dept ? out.en.replace(dept.name.en ?? '', (dept.name.en ?? '').toLowerCase()) : out.en.replace('clinic clinics', 'clinics');
+  return out;
 }
 
 /** 公式のページへのリンク（新しいタブ）。{DEPT} は、まず行く診療科の名前 */
@@ -65,7 +75,7 @@ function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment | null 
       {links.map((l) => (
         <li key={l.id}>
           <a className="link clinic__ext" href={l.url} target="_blank" rel="noopener noreferrer">
-            <Bi t={fill(l.title, 'DEPT', (_lv, id) => (dept ? dept.name[id] ?? dept.name.ja : ui('clinic.anyDept')[id] ?? ui('clinic.anyDept').ja) as string)} />
+            <Bi t={deptTitle(l.title, dept)} />
             <span aria-hidden="true" className="clinic__extmark">↗</span>
             <span className="sr-only"><One k="clinic.newTab" /></span>
           </a>
@@ -76,10 +86,6 @@ function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment | null 
   );
 }
 
-function Step({ n }: { n: number }) {
-  return <p className="eyebrow"><One t={fill(ui('clinic.step'), 'step', () => String(n))} /></p>;
-}
-
 function Where() {
   const { level } = usePrefs();
   const sel = usePicked();
@@ -88,9 +94,10 @@ function Where() {
   const part = d.parts.find((p) => p.id === sel) ?? null;
   const hits = searchParts(d, q);
   useFocusTitle('clinic:1');
+  // 押したらすぐ次の画面へ（作者 11/7 K-30。「つぎへ」は無い）
+  const pick = (id: string) => { setPicked(id); navigate('/clinic/departments'); };
   return (
     <>
-      <Step n={1} />
       <Band part={part} />
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h1" /></h1><p className="sub"><Bi phrase k="clinic.lead" /></p></div>
       <label className="qrfield">
@@ -98,62 +105,63 @@ function Where() {
         <input className="field" type="search" value={q} autoComplete="off" placeholder={line(ui('clinic.qph'), level)} onChange={(e) => setQ(e.target.value)} />
       </label>
       <div className="chips" aria-live="polite">
-        {q.trim() && (hits.length ? hits.map((p) => <PartButton key={p.id} p={p} sel={sel} onPick={setPicked} />) : <p className="sub"><Bi k="clinic.none" /></p>)}
+        {q.trim() && (hits.length ? hits.map((p) => <PartButton key={p.id} p={p} sel={sel} onPick={pick} />) : <p className="sub"><Bi k="clinic.none" /></p>)}
       </div>
       <p className="label"><One k="clinic.body" /></p>
-      <BodyMap parts={d.parts} sel={sel} onPick={setPicked} />
+      <BodyMap parts={d.parts} sel={sel} onPick={pick} />
       <p className="label"><One k="clinic.notbody" /></p>
-      <div className="chips">{d.parts.filter((p) => p.group === 'extra').map((p) => <PartButton key={p.id} p={p} sel={sel} onPick={setPicked} small />)}</div>
-      {part && <p className="sub" role="status"><One k="clinic.picked" />：<Bi t={part.name} /></p>}
-      <button type="button" className="k-answer k-answer--primary" disabled={!part} onClick={() => navigate('/clinic/departments')}><Bi phrase k="nav.next" /></button>
+      <div className="chips">{d.parts.filter((p) => p.group === 'extra').map((p) => <PartButton key={p.id} p={p} sel={sel} onPick={pick} small />)}</div>
     </>
   );
 }
 
-function Departments({ part }: { part: ClinicPart }) {
+/** 受付の言葉のうち、言葉の表（data/words.json）にある言葉。見たら記録する（同意の前はメモリの中だけ） */
+const WORD_ID: Record<string, string> = { nihongo: 'say-nihongo' };
+function SeenPhrases({ ids }: { ids: string[] }) { useSeen(ids); return null; }
+
+/** 1つの画面（作者 11/7 K-32）：どの病院 → 病院を探す → 持ち物 → 受付の言葉。区切りは見出しと線。
+    診断しない・診療科の順位を付けない（03_MEDICAL 2章A）。part が null のときは「診療科の案内を止めた」形 */
+function Guide({ part }: { part: ClinicPart | null }) {
+  const { level } = usePrefs();
   const d = CLINIC();
-  const depts = departmentsFor(d, part);
-  const first = depts[0];
+  const depts = part ? departmentsFor(d, part) : [];
+  const dept = depts[0] ?? null;
+  const [urgent, setUrgent] = useState(false);
+  const phrases = [...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases];
   useFocusTitle('clinic:2');
   return (
     <>
-      <Step n={2} />
-      <Band part={part} />
-      <p className="sub"><One k="clinic.picked" />：<Bi t={part.name} />　<Link to="/clinic" className="link"><Bi k="clinic.change" /></Link></p>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h2" /></h1></div>
-      <p className="sub"><Bi k="clinic.notDx" /></p>
-      {/* 順位を付けない（「まず」「1・2」は判断に読める。03_MEDICAL 2章A） */}
-      <ul className="clinic__depts" role="list">
-        {depts.map((x) => <li key={x.id}><span className="clinic__dept"><Bi t={x.name} /></span><span className="sub"><Bi t={x.covers} /></span></li>)}
-      </ul>
-      {part.id !== 'child' && d.advice.child && <p className="sub"><Bi t={d.advice.child} /></p>}
-      {/* 病院を探す公式のページ（リンク。作者 11/7 K-3・K-4：料金の案内はしない） */}
-      <section aria-labelledby="clinic-official">
-        <h2 id="clinic-official" className="label"><One phrase k="clinic.officialH" /></h2>
-        <LinkList ids={d.advice.links} dept={first} />
-      </section>
-      <button type="button" className="k-answer k-answer--primary" onClick={() => navigate('/clinic/before')}><Bi phrase k="nav.next" /></button>
-    </>
-  );
-}
-
-function Before({ part }: { part: ClinicPart | null }) {
-  const { level } = usePrefs();
-  const d = CLINIC();
-  const dept = part ? departmentsFor(d, part)[0] : null;
-  useFocusTitle('clinic:3');
-  return (
-    <>
-      {part && <Step n={3} />}
-      <Band part={part} />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k={part ? 'clinic.h3' : 'clinic.only.h1'} /></h1></div>
-      <section aria-labelledby="clinic-find">
-        <h2 id="clinic-find" className="label"><One phrase k="clinic.findH" /></h2>
-        <LinkList ids={d.links.filter((l) => l.id !== 'fdma-guide').map((l) => l.id)} dept={dept} />
+      {/* 急ぐときの帯：1つめの画面で全部、ここでは小さなボタンで開く（K-49）。
+          診療科の案内を止めた形（part が null）は、この画面が最初の画面なので、帯を開いたまま出す（開け閉めのボタンなし） */}
+      {part ? (
+        <div className="clinic__urgent">
+          <button type="button" className="seg" aria-expanded={urgent} aria-controls="clinic-urgent" onClick={() => setUrgent(!urgent)}>
+            <One phrase k="clinic.urgentShort" />
+          </button>
+          <div id="clinic-urgent" hidden={!urgent}><Band part={part} /></div>
+        </div>
+      ) : <Band part={null} />}
+      {part && <p className="chip chip--static clinic__picked"><span className="sr-only"><One k="clinic.picked" />：</span><Bi t={part.name} /><Link to="/clinic" className="link clinic__x"><span aria-hidden="true">✕ </span><Bi k="clinic.change" /></Link></p>}
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k={part ? 'clinic.h2' : 'clinic.only.h1'} /></h1></div>
+      {part && (
+        <section className="clinic__sec" aria-labelledby="clinic-where">
+          <h2 id="clinic-where"><One phrase k="clinic.whereH" /></h2>
+          <p className="sub"><Bi k="clinic.notDx" /></p>
+          {/* 順位を付けない（「まず」「1・2」は判断に読める） */}
+          <ul className="clinic__depts" role="list">
+            {depts.map((x) => <li key={x.id}><span className="clinic__dept"><Bi t={x.name} /></span><span className="sub"><Bi t={x.covers} /></span></li>)}
+          </ul>
+          {part.id !== 'child' && d.advice.child && <p className="sub"><Bi t={d.advice.child} /></p>}
+        </section>
+      )}
+      <section className="clinic__sec" aria-labelledby="clinic-find">
+        <h2 id="clinic-find"><One phrase k="clinic.findH" /></h2>
+        {/* 公式のページは、1行ずつの外部リンク（K-49） */}
+        <LinkList ids={[...(part ? d.advice.links : []), ...d.links.map((l) => l.id).filter((id) => id !== 'fdma-guide' && !(part && d.advice.links.includes(id)))]} dept={dept} />
         <p className="sub"><Bi t={d.callNote.text} /></p>
       </section>
-      <section aria-labelledby="clinic-bring">
-        <h2 id="clinic-bring" className="label"><One phrase k="clinic.bringH" /></h2>
+      <section className="clinic__sec" aria-labelledby="clinic-bring">
+        <h2 id="clinic-bring"><One phrase k="clinic.bringH" /></h2>
         <p className="sub"><Bi k="clinic.bringNote" /></p>
         <ul className="clinic__bring" role="list">
           {d.bring.map((b) => (
@@ -165,15 +173,17 @@ function Before({ part }: { part: ClinicPart | null }) {
         </ul>
         <Link to="/c/nagoya-kokuho-kanyu" className="link"><Bi k="clinic.noins" /></Link>
       </section>
-      <section aria-labelledby="clinic-say">
-        <h2 id="clinic-say" className="label"><One phrase k="clinic.sayH" /></h2>
-        {[...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases].map((p) => {
+      <section className="clinic__sec" aria-labelledby="clinic-say">
+        <h2 id="clinic-say"><One phrase k="clinic.sayH" /></h2>
+        <SeenPhrases ids={d.phrases.map((p) => WORD_ID[p.id]).filter(Boolean)} />
+        {phrases.map((p) => {
           const mean = level.kind === 'ja' ? null : line(p.say, level);
           return (
             <div key={p.id} className="k-counter">
               <p className="k-counter__ja" lang="ja"><Ruby s={p.say.ja} /></p>
               {mean && <p className="k-counter__mean" lang={level.kind === 'ja_easy' ? 'ja' : level.lang}>{mean}</p>}
-              <Speak ja={p.say.ja} />
+              {/* 読み上げの名前に文を入れる（6つのボタンを区別できるように。K-52） */}
+              <Speak ja={p.say.ja} name={p.say.ja} />
             </div>
           );
         })}
@@ -186,13 +196,18 @@ function Before({ part }: { part: ClinicPart | null }) {
 export function ClinicPage({ step }: { step: '' | 'departments' | 'before' }) {
   const sel = usePicked();
   const part = CLINIC().parts.find((p) => p.id === sel) ?? null;
-  // 選んでいないまま 2・3 を開いたら、1 にもどす
-  useEffect(() => { if (CLINIC_DEPARTMENTS_ON && step && !part) { history.replaceState(null, '', '/clinic'); dispatchEvent(new PopStateEvent('popstate')); } }, [step, part]);
+  const back = (to: string) => { history.replaceState(null, '', to); dispatchEvent(new PopStateEvent('popstate')); };
+  // 選んでいないまま 2 を開いたら 1 にもどす。古い /clinic/before は /clinic/departments へ（1画面にまとめた）
+  useEffect(() => {
+    if (!CLINIC_DEPARTMENTS_ON || !step) return;
+    if (!part) back('/clinic');
+    else if (step === 'before') back('/clinic/departments');
+  }, [step, part]);
   let body: React.ReactNode;
-  if (!CLINIC_DEPARTMENTS_ON) body = <Before part={null} />;
+  if (!CLINIC_DEPARTMENTS_ON) body = <Guide part={null} />;
   else if (!step) body = <Where />;
-  else if (!part) body = null;
-  else body = step === 'departments' ? <Departments part={part} /> : <Before part={part} />;
+  else if (!part || step === 'before') body = null;
+  else body = <Guide part={part} />;
   return (
     <>
       {body}

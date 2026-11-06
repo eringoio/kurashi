@@ -58,13 +58,13 @@ export function FloorPlan() {
       <div className="house-plan">
         <img className="house-plan__img" src={art(sel)} alt={plan.name + '：' + line(ui('house.plan.alt'), level)} />
         <ol className="house-legend">
-          {rooms.map((r) => <li key={r.n}><span className="house-num" aria-hidden="true">{r.n}</span><Bi k={ROOM_KEY[r.room]} /></li>)}
+          {rooms.map((r) => <li key={r.n}><span className={'house-num' + (r.room === 'balcony' ? ' house-num--out' : '')} aria-hidden="true">{r.n}</span><Bi k={ROOM_KEY[r.room]} /></li>)}
         </ol>
       </div>
       <Terms rows={[
-        { icon: 'house', word: 'house.term.jo', desc: 'house.term.jo.d' },
-        { icon: 'house', word: 'house.term.area', desc: 'house.term.area.d' },
-        { icon: 'homecheck', word: 'house.term.age', desc: 'house.term.age.d' },
+        { icon: 'plan-1r', word: 'house.term.jo', desc: 'house.term.jo.d' },
+        { icon: 'plan-1k', word: 'house.term.area', desc: 'house.term.area.d' },
+        { icon: 'calendar', word: 'house.term.age', desc: 'house.term.age.d' },
       ]} />
     </section>
   );
@@ -73,15 +73,14 @@ export function FloorPlan() {
 /** 費用：家賃1か月を基準にした例（か月分）。目安・要確認 */
 const COSTS: { k: UiKey; months: number; note?: UiKey }[] = [
   { k: 'house.cost.rent', months: 1 },
-  { k: 'house.cost.shikikin', months: 2, note: 'house.cost.back' },
-  { k: 'house.cost.reikin', months: 1, note: 'house.cost.noBack' },
-  { k: 'house.cost.chukai', months: 1, note: 'house.cost.max' },
+  { k: 'house.cost.shikikin', months: 2 },
+  { k: 'house.cost.reikin', months: 1 },
+  { k: 'house.cost.chukai', months: 1 },
   { k: 'house.cost.hosho', months: 0.5, note: 'house.cost.varies' },
   { k: 'house.cost.hoken', months: 0.3, note: 'house.cost.varies' },
 ];
 
 export function CostChart() {
-  const total = COSTS.reduce((a, c) => a + c.months, 0);
   const max = Math.max(...COSTS.map((c) => c.months));
   return (
     <section className="group house-visual" aria-labelledby="house-cost">
@@ -96,16 +95,15 @@ export function CostChart() {
           </li>
         ))}
       </ul>
-      <p className="house-costs__total"><One k="house.cost.total" />：{Math.round(total * 10) / 10}<One k="house.cost.unit" /></p>
       {/* 保証人（B-8c）：連帯保証人か保証会社のどちらか */}
       <p className="sub"><Bi k="house.cost.guarantor" /></p>
       <p className="sub"><Bi k="house.cost.note" /></p>
       <h3 className="label"><One k="house.terms.title" /></h3>
       <Terms rows={[
         { icon: 'coins', word: 'house.cost.shikikin', desc: 'house.term.shikikin' },
-        { icon: 'coins', word: 'house.cost.reikin', desc: 'house.term.reikin' },
+        { icon: 'key', word: 'house.cost.reikin', desc: 'house.term.reikin' },
         { icon: 'doc', word: 'house.cost.chukai', desc: 'house.term.chukai' },
-        { icon: 'doc', word: 'house.term.hoshogaisha', desc: 'house.term.hoshogaisha.d' },
+        { icon: 'hall', word: 'house.term.hoshogaisha', desc: 'house.term.hoshogaisha.d' },
         { icon: 'you', word: 'house.term.rentai', desc: 'house.term.rentai.d' },
       ]} />
     </section>

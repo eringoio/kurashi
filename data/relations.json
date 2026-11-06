@@ -162,80 +162,59 @@
     },
     {
       "id": "rel-tennyu-before-mail",
-      "type": "practical_prerequisite",
+      "type": "related",
       "from": "nagoya-tennyu-todoke",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
-        "en": "File mail forwarding after your moving-in notice at the ward office."
+        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "kurashi-spec"
+          "jp-post-tenkyo"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
-      },
-      "day_order": {
-        "source_ids": [
-          "kurashi-spec"
-        ],
-        "checked_at": "2026-11-07",
-        "status": "verified",
-        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+        "status": "needs_check",
+        "quote": "転居届を提出されてから登録までに3～7営業日"
       }
     },
     {
       "id": "rel-mw-tennyu-before-mail",
-      "type": "practical_prerequisite",
+      "type": "related",
       "from": "move-within-tennyu",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
-        "en": "File mail forwarding after your moving-in notice at the ward office."
+        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "kurashi-spec"
+          "jp-post-tenkyo"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
-      },
-      "day_order": {
-        "source_ids": [
-          "kurashi-spec"
-        ],
-        "checked_at": "2026-11-07",
-        "status": "verified",
-        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+        "status": "needs_check",
+        "quote": "転居届を提出されてから登録までに3～7営業日"
       }
     },
     {
       "id": "rel-mw-tenkyo-before-mail",
-      "type": "practical_prerequisite",
+      "type": "related",
       "from": "move-within-tenkyo",
       "to": "mail-forward",
       "explain": {
-        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
-        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
-        "en": "File mail forwarding after your moving-in notice at the ward office."
+        "ja": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じ{時期|じき}に{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けと{同|おな}じころに{出|だ}します。{先|さき}に{出|だ}してもかまいません（{要|よう}{確認|かくにん}）。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかります。",
+        "en": "File it around the same time as the ward-office notice. You may file it first (to be checked). Registration takes 3–7 business days."
       },
       "evidence": {
         "source_ids": [
-          "kurashi-spec"
+          "jp-post-tenkyo"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
-      },
-      "day_order": {
-        "source_ids": [
-          "kurashi-spec"
-        ],
-        "checked_at": "2026-11-07",
-        "status": "verified",
-        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+        "status": "needs_check",
+        "quote": "転居届を提出されてから登録までに3～7営業日"
       }
     },
     {
@@ -350,15 +329,16 @@
       "from": "zairyu-koshin",
       "to": "zairyu-mynumber-extend",
       "explain": {
-        "ja": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。そのあと、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、カードの{有効|ゆうこう}{期限|きげん}を{延|の}ばします（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。そのあと、マイナンバーカードの{期限|きげん}が{切|き}れる{前|まえ}に{延|の}ばします（{要確認|ようかくにん}）。",
-        "en": "Renew your period of stay first. Then extend the My Number Card expiry date before it expires (to be checked)."
+        "ja": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします。{結果|けっか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、カードの{有効|ゆうこう}{期限|きげん}を{延|の}ばします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします。{新|あたら}しいカードをもらったら、{期限|きげん}を{延|の}ばします（{要|よう}{確認|かくにん}）。",
+        "en": "Renew your period of stay first. If your My Number Card expires before the result comes out, go to the ward office before it expires to extend it for the special period. After you receive the new residence card, extend the card expiry date (to be checked)."
       },
       "evidence": {
         "source_ids": [
+          "IA-moj-mynumber-tokurei",
           "author-2026-11-05"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },

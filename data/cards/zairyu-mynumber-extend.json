@@ -67,9 +67,9 @@
     "reading": "まいなんばーかーどのゆうこうきげんのえんちょう"
   },
   "summary": {
-    "ja": "{更新|こうしん}の{許可|きょか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、{区役所|くやくしょ}で{期限|きげん}を{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、マイナンバーカードの{期限|きげん}も{区役所|くやくしょ}で{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。",
-    "en": "After you receive your new residence card, extend your My Number Card at the ward office before it expires. It does not change automatically (to be checked)."
+    "ja": "{更新|こうしん}の{許可|きょか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、{区役所|くやくしょ}で{期限|きげん}を{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、マイナンバーカードの{期限|きげん}も{区役所|くやくしょ}で{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "en": "After you receive your new residence card, extend your My Number Card at the ward office before it expires. It does not change automatically (to be checked). If the card expires before the renewal result comes out, go to the ward office before it expires to extend it for the special period (to be checked)."
   },
   "where": {
     "text": {
@@ -115,13 +115,29 @@
         "checked_at": "2026-11-05",
         "status": "needs_check"
       }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+        "en": "If your card expires before the renewal result comes out, go to the ward office before it expires and extend it for the special period (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "IA-moj-mynumber-tokurei"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
     }
   ],
   "evidence": {
     "source_ids": [
-      "author-2026-11-05"
+      "author-2026-11-05",
+      "IA-moj-mynumber-tokurei"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   }
 }

@@ -1,10 +1,10 @@
-/* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地は保存しない）。
+/* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地の文字は保存しない。保存するのは表の行の area_id だけ）。
    収集日は VITE_GOMI_SCHEDULE=on で、data/private/gomi-schedule.json があるときだけ出す（許諾の返事まで既定は off）。 */
 import { useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
-import { privateSchedule, rowsOf, SCHEDULE_ON, toSchedules, townsOf } from '../core/gomiSchedule';
+import { areaRow, banchiOf, privateSchedule, romajiOf, rowsOf, SCHEDULE_ON, toSchedules, townsOf } from '../core/gomiSchedule';
 import { Bi, One } from '../i18n/Ruby';
-import { line, ui } from '../i18n/text';
+import { line } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from './art';
 import { fmtDay } from './guide';
@@ -16,14 +16,15 @@ const ICON: Record<string, string> = {
 };
 export const gomiIcon = (category: string) => art(ICON[category] ?? 'bin');
 
-export interface Place { ward_id: string; town?: string; set_on: string }
+export interface Place { ward_id: string; town?: string; area_id?: string | null; set_on: string }
 
-/** 町名・番地から、収集日の表の地域（メモリの中だけ）。番地で分かれていて選んでいなければ null */
+/** 町名・番地から、収集日の表の地域。番地で分かれていて選んでいなければ null。画面でまだ選んでいなければ、保存した area_id から戻す（K-21） */
 export function useArea(saved: Place | null) {
   const p = SCHEDULE_ON ? privateSchedule() : null;
-  const [banchi, setBanchi] = useState<string>('');
+  const [picked, setBanchi] = useState<string | null>(null);
+  const banchi = banchiOf(picked, saved?.area_id);
   const rows = p && saved?.town ? rowsOf(p, saved.ward_id, saved.town) : [];
-  const row = rows.length === 1 ? rows[0] : rows.find((r) => r.id === banchi) ?? null;
+  const row = areaRow(p, saved?.ward_id, saved?.town, banchi);
   const schedules: Schedule[] = p ? toSchedules(p) : [];
   const status: AreaStatus = !saved ? { kind: 'unset' } : !p ? { kind: 'ward_only' } : row ? { kind: 'ready', area_id: row.id } : { kind: 'ward_only' };
   return { p, rows, row, banchi, setBanchi, schedules, status };
@@ -34,27 +35,31 @@ export function GomiAreaFields({ wards, saved, onSet, area }: {
 }) {
   const { level } = usePrefs();
   const towns = area.p && saved ? townsOf(area.p, saved.ward_id) : [];
+  // K-19：外国語のときだけ、ローマ字（日本語）を添える。私的な写しがあるときだけ
+  const rom = (t: string) => (level.kind === 'foreign' && area.p && saved ? romajiOf(area.p, saved.ward_id, t) : undefined);
+  const savedRom = saved?.town ? rom(saved.town) : undefined;
   return (
     <div className="gomi-area">
       <label className="qrfield">
         <span className="label"><One k="gomi.area.ward" /></span>
         <select className="field" value={saved?.ward_id ?? ''} onChange={(e) => onSet(e.target.value ? { ward_id: e.target.value, set_on: new Date().toISOString().slice(0, 10) } : null)}>
-          <option value="">{line(ui('gomi.area.choose'), level)}</option>
+          <option value="">—</option>
           {wards.map((w) => <option key={w.id} value={w.id}>{line(w.label, level)}</option>)}
         </select>
       </label>
       {area.p && saved && (
         <label className="qrfield">
           <span className="label"><One k="gomi.area.town" /></span>
-          <input className="field" list="gomi-towns" value={saved.town ?? ''} onChange={(e) => onSet({ ...saved, town: e.target.value || undefined })} autoComplete="off" />
-          <datalist id="gomi-towns">{towns.map((t) => <option key={t} value={t} />)}</datalist>
+          <input className="field" list="gomi-towns" value={saved.town ?? ''} onChange={(e) => onSet({ ...saved, town: e.target.value || undefined, area_id: null })} autoComplete="off" />
+          <datalist id="gomi-towns">{towns.map((t) => { const r = rom(t); return <option key={t} value={t} label={r ? `${r}（${t}）` : undefined} />; })}</datalist>
+          {savedRom && <span className="sub" lang="en">{savedRom}（{saved!.town}）</span>}
         </label>
       )}
       {area.rows.length > 1 && (
         <label className="qrfield">
           <span className="label"><One k="gomi.area.banchi" /></span>
-          <select className="field" value={area.banchi} onChange={(e) => area.setBanchi(e.target.value)}>
-            <option value="">{line(ui('gomi.area.choose'), level)}</option>
+          <select className="field" value={area.banchi} onChange={(e) => { area.setBanchi(e.target.value); onSet({ ...saved!, area_id: e.target.value || null }); }}>
+            <option value="">—</option>
             {area.rows.map((r) => <option key={r.id} value={r.id}>{r.banchi ?? ''}</option>)}
           </select>
           <span className="sub"><One k="gomi.area.banchiNote" /></span>

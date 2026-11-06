@@ -1,0 +1,9 @@
+/* 行く日を決めた日の印（カレンダー）。色だけにせず ● と文字でも示す。見るだけの日は押せない */
+.cal__day--static { cursor: default; }
+.cal__day--planned { border-width: 3px; border-color: var(--blue); }
+.cal__day--planned .cal__mark { font-size: 14px; color: var(--blue); }
+.cal__day--planned[aria-pressed="true"] .cal__mark { color: var(--white); }
+.cal__plan { font-size: 14px; line-height: 1; }
+.cal__legend .cal__plan { color: var(--blue); }
+.visitgroup .group__empty { margin: 0; }
+.cal--readonly { margin-bottom: 12px; }

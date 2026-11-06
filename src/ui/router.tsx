@@ -31,6 +31,12 @@ export function Link({ to, onClick, ...rest }: AnchorHTMLAttributes<HTMLAnchorEl
 export function useFocusTitle(key: string) {
   useEffect(() => {
     const h = document.getElementById('screen-title');
-    if (h) { h.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+    if (!h) return;
+    // 読み込み・画面の切り替えで移したときは輪を出さない。キー操作が始まったら出す（K-48）
+    h.dataset.autofocus = '1';
+    h.focus({ preventScroll: true }); window.scrollTo(0, 0);
+    const off = () => { delete h.dataset.autofocus; window.removeEventListener('keydown', off, true); };
+    window.addEventListener('keydown', off, true);
+    return () => window.removeEventListener('keydown', off, true);
   }, [key]);
 }

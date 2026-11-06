@@ -22,9 +22,9 @@
     "reading": "こくみんけんこうほけんのかにゅう・こくみんねんきんのしゅべつへんこう"
   },
   "summary": {
-    "ja": "{会社|かいしゃ}を{辞|や}めて{会社|かいしゃ}の{保険|ほけん}が{終|お}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}り、{国民|こくみん}{年金|ねんきん}の{届|とど}けをします（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}と{年金|ねんきん}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-    "en": "After you leave a job and your workplace insurance ends, join National Health Insurance and file the National Pension notice at the ward office within 14 days (to be checked)."
+    "ja": "{会社|かいしゃ}を{辞|や}めて{会社|かいしゃ}の{保険|ほけん}が{終|お}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}り、{国民|こくみん}{年金|ねんきん}の{届|とど}けをします（{要|よう}{確認|かくにん}）。すぐ{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}と{年金|ねんきん}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}にすぐ{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "After you leave a job and your workplace insurance ends, join National Health Insurance and file the National Pension notice at the ward office within 14 days (to be checked). People who join a new employer's insurance right away, or become a dependant of a family member, follow a different procedure. Check at the counter (to be checked)."
   },
   "deadline": {
     "text": {
@@ -62,7 +62,7 @@
     "source_ids": [
       "kurashi-spec"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   }
 }

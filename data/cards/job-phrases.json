@@ -27,9 +27,9 @@
     "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. Could I have an interview?\" Students can say first: \"I have permission to work part-time, up to 28 hours a week.\" Common words: shift, hourly wage, transport allowance, makanai (staff meal), training. Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV (author's experience; to be checked)."
   },
   "lead": {
-    "ja": "アルバイトの{電話|でんわ}や{面接|めんせつ}で{使|つか}う{言葉|ことば}です。",
-    "ja_easy": "仕事の電話で使う言葉です。",
-    "en": "Phrases for job calls and interviews."
+    "ja": "よく{聞|き}く{言葉|ことば}：シフト（{働|はたら}く{日|ひ}と{時間|じかん}の{表|ひょう}）・{時給|じきゅう}・{交通費|こうつうひ}・まかない（{店|みせ}の{食事|しょくじ}）・{研修|けんしゅう}。",
+    "ja_easy": "よく{聞|き}く{言葉|ことば}：シフト・{時給|じきゅう}・{交通費|こうつうひ}・まかない・{研修|けんしゅう}。",
+    "en": "Words you will hear: shift (a table of work days and hours), hourly wage, transport allowance, makanai (staff meal), training."
   },
   "deadline": null,
   "where": {
@@ -54,7 +54,56 @@
     "source_ids": [
       "kurashi-spec"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}て、お{電話|でんわ}しました。〔{名前|なまえ}〕と{申|もう}します。{面接|めんせつ}をお{願|ねが}いできますか。」",
+        "ja_easy": "{電話|でんわ}で：「アルバイトの{募集|ぼしゅう}を{見|み}ました。{面接|めんせつ}をお{願|ねが}いできますか。」",
+        "en": "On the phone: \"I saw your part-time job ad and am calling. My name is ___. Could I have an interview?\""
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}うと{話|はなし}が{早|はや}いです。",
+        "ja_easy": "{留学生|りゅうがくせい}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}があります。{週|しゅう}28{時間|じかん}まで{働|はたら}けます」と{先|さき}に{言|い}います。",
+        "en": "Students can say first: \"I have permission to work part-time, up to 28 hours a week.\""
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{履歴書|りれきしょ}の{写真|しゃしん}は3か{月|げつ}{以内|いない}のもの。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます。",
+        "ja_easy": "{履歴書|りれきしょ}の{写真|しゃしん}は、3か{月|げつ}{以内|いない}のものです。{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターで{見|み}てもらえます。",
+        "en": "Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner",
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "応募書類（履歴書等）の添削"
+      }
+    }
+  ]
 }

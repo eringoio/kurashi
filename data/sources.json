@@ -976,6 +976,30 @@
       "owner_type": "government",
       "title": "ごみ収集日検索",
       "language": "ja"
+    },
+    {
+      "source_id": "IA-nenkin-tanjikan-shutoku",
+      "url": "https://www.nenkin.go.jp/section/faq/kounen/tekiyoukakudai/tanjikan/shutokuyouken.html",
+      "owner": "日本年金機構",
+      "owner_type": "public_corp",
+      "title": "短時間労働者の資格取得の要件（日本年金機構のよくある質問）",
+      "language": "ja"
+    },
+    {
+      "source_id": "IA-moj-mynumber-tokurei",
+      "url": "https://www.moj.go.jp/isa/10_00270.html",
+      "owner": "出入国在留管理庁（法務省）",
+      "owner_type": "government",
+      "title": "マイナンバーカードの有効期限と在留期間の更新中の特例期間（出入国在留管理庁。ページの題名は要確認）",
+      "language": "ja"
+    },
+    {
+      "source_id": "IA-aichi-kenei-juutaku",
+      "url": "https://www.pref.aichi.jp/life/1/5/18/",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "県営住宅（愛知県。ページの題名は要確認）",
+      "language": "ja"
     }
   ]
 }

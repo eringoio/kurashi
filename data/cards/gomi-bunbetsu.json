@@ -158,5 +158,16 @@
     "checked_at": "2026-11-05",
     "status": "needs_check",
     "quote": "ごみ・資源分別検索 キーワードや50音別、分別区分から検索できます"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{名古屋市|なごやし}のごみ・{資源|しげん}の{分別|ぶんべつ}（{公式|こうしき}ページ）",
+        "ja_easy": "{名古屋市|なごやし}のごみの{分|わ}け{方|かた}（{公式|こうしき}ページ）",
+        "en": "Nagoya City: how to sort garbage (official page)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/index.html",
+      "source_id": "B-nagoya-gomi-index"
+    }
+  ]
 }

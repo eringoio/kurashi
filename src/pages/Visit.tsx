@@ -14,11 +14,18 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { CardRow, DayChoice, dayTitle, fill, fillDate, ResultView } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
+import { cardHome } from '../guide/catalogue';
 import { Speak } from '../ui/Speak';
 import { AddToCalendar } from '../ui/AddToCalendar';
 import { HeardWords, useSeen } from '../ui/Words';
 /** 窓口で見せた手続きの正式名を「ことば」に残す（10b） */
 function SeenNames({ ids }: { ids: string[] }) { useSeen(ids); return null; }
+
+/** 見出し・段階の名前に使う、行く所の名前（大文字で始まる英語。placeTitle.<id>、無ければ place.<id>。K-51） */
+export function placeTitle(place: string): LocalizedText | undefined {
+  return (ui(('placeTitle.' + place) as UiKey) ?? ui(('place.' + place) as UiKey)) as LocalizedText | undefined;
+}
+const pickPlace = (t: LocalizedText | undefined, id: string, place: string): string => (t ? String(t[id] ?? t.ja_easy ?? t.ja) : place);
 
 /** 行く所の名前（strings.json の place.<id>）を文の {place} に入れる */
 export function withPlace(t: LocalizedText, place: string): Text {
@@ -41,32 +48,27 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
   const held = v.bring.filter((b) => b.held);
   const missing = v.bring.filter((b) => !b.held);
   const byCard = bringByCard({ cards: v.cards, bring: held });
+  // 手続きごとに、名前（開ける）とその持ち物。手続きの一覧を別に出さない（K-45）。どの手続きも見出しは出す
   const groups = [
-    ...byCard.groups.map((g) => ({ key: g.card.card.id, title: <One t={g.card.card.title} />, items: g.items })),
-    { key: 'rest', title: <One k="visit.bring.common" />, items: byCard.rest },
+    ...byCard.groups.map((g) => ({ key: g.card.card.id, title: <Link to={cardHome(g.card.card.id) ?? '/c/' + g.card.card.id} className="link"><One t={g.card.card.title} /></Link>, items: g.items, always: true })),
+    { key: 'rest', title: <One k="visit.bring.common" />, items: byCard.rest, always: false },
   ];
   return (
     <>
       <div className="art" aria-hidden="true">{v.cards.slice(0, 3).map((c) => <img key={c.card.id} src={art(c.card.illustration)} alt="" />)}<img src={art('box')} alt="" /></div>
       <div className="head">
-        <p className="eyebrow"><One k="visit.stage.before" />　<One t={ui(('place.' + v.place) as UiKey) ?? { ja: v.place }} /></p>
+        <p className="eyebrow"><One t={fill(ui('visit.stage.beforeAt'), 'place', (_lv, id) => pickPlace(placeTitle(v.place), id, v.place))} /></p>
         <h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.before.title" /></h1>
       </div>
-      <section aria-labelledby="visit-items">
-        <h2 id="visit-items" className="label"><One phrase k="visit.items" /></h2>
-        {v.ordered
-          ? <ol className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ol>
-          : <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>}
-        <p className="sub"><Bi k={v.ordered ? 'visit.ordered' : 'visit.unordered'} /></p>
-      </section>
       <section aria-labelledby="visit-bring">
         <h2 id="visit-bring" className="label"><One phrase k="visit.bring.label" /></h2>
+        <p className="sub"><Bi k={v.ordered ? 'visit.ordered' : 'visit.unordered'} /></p>
         {held.length === 0 && <p className="sub"><Bi k="visit.bring.none" /></p>}
         {/* 手続きごとに分けて出す。同じ物は最初の手続きだけ（作者 11/6 B-6） */}
-        {groups.map((g) => g.items.length > 0 && (
+        {groups.map((g) => (g.always || g.items.length > 0) && (
           <div key={g.key} className="bringgroup">
             <h3 className="label">{g.title}</h3>
-            <div className="list">
+            {g.items.length > 0 && <div className="list">
           {g.items.map((b) => {
             const on = packed.has(b.object.id);
             return (
@@ -81,7 +83,7 @@ function Before({ v, onLive }: { v: Visit; onLive: (s: string) => void }) {
               </button>
             );
           })}
-            </div>
+            </div>}
           </div>
         ))}
         {missing.length > 0 && (
