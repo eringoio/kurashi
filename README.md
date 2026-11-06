@@ -16,6 +16,8 @@ npm run test:a11y    # 画面の検査（Playwright＋axe。Windows の Edge を
 npm run build        # 型の検査とビルド（dist/）
 ```
 
+ごみの収集日は、`.env.development` に `VITE_GOMI_SCHEDULE=on` と書き、`data/private/gomi-schedule.json`（名古屋市の表の写し。Git に入れない）があるときだけ出ます。どちらも無ければ off で動きます。
+
 答え・持ち物・約束した日は、この端末の中（IndexedDB）にだけ残ります。アカウントはありません。
 
 ## 公開（Cloudflare Workers）
