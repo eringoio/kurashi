@@ -85,6 +85,11 @@
       "domain": "gov-online.go.jp",
       "owner": "政府広報オンライン",
       "owner_type": "government"
+    },
+    {
+      "domain": "post.japanpost.jp",
+      "owner": "日本郵便株式会社",
+      "owner_type": "public_corp"
     }
   ]
 }

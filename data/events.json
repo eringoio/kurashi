@@ -25,7 +25,8 @@
         "nagoya-kokuho-kanyu",
         "kokumin-nenkin-kanyu",
         "nenkin-at-20",
-        "bank-account-open"
+        "bank-account-open",
+        "mail-forward"
       ],
       "scope_rule": "R-scope-nagoya-resident",
       "evidence": {
@@ -57,7 +58,8 @@
       ],
       "card_ids": [
         "move-within-tenkyo",
-        "move-within-tennyu"
+        "move-within-tennyu",
+        "mail-forward"
       ],
       "evidence": {
         "source_ids": [

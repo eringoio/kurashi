@@ -544,6 +544,14 @@
       "owner_type": "private",
       "title": "紛失・盗難",
       "language": "ja"
+    },
+    {
+      "source_id": "jp-post-tenkyo",
+      "url": "https://www.post.japanpost.jp/service/receive/relocation/",
+      "owner": "日本郵便株式会社",
+      "owner_type": "public_corp",
+      "title": "転居・転送サービス",
+      "language": "ja"
     }
   ]
 }
