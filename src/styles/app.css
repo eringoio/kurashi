@@ -448,3 +448,17 @@ fieldset legend svg { vertical-align: -0.2em; }
 .dp-swatches { grid-template-columns: repeat(auto-fill, minmax(min(100%, 120px), 1fr)); }
 .dp-swatches li { min-width: 0; }
 .dp-swatches code { overflow-wrap: anywhere; min-width: 0; }
+/* ごみの1つの画面（F） */
+.gomi-area { display: flex; flex-direction: column; gap: 8px; }
+.gomi-result { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gomi-result__art { width: 56px; height: 56px; }
+.gomi-week { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.gomi-week li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 4px 0; border-bottom: 1.5px dashed var(--line-dash); }
+.gomi-week__none .gomi-week__day { color: var(--ink-subtle); }
+.gomi-week__day { min-width: 7.5em; font-weight: 700; }
+.gomi-week__cats { display: flex; gap: 8px; flex-wrap: wrap; }
+.gomi-week__cat { display: inline-flex; align-items: center; gap: 4px; }
+.gomi-week__cat img { width: 28px; height: 28px; }
+.gomi-kind { display: flex; gap: 10px; align-items: flex-start; }
+.gomi-kind img { width: 44px; height: 44px; flex: none; }
+.gomi-kind > span { display: flex; flex-direction: column; }

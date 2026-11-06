@@ -4,7 +4,7 @@
 // - 市の分別検索のページ（1035233。CC の表示が無い）とは、同じ名前の行の「区分が同じか」だけを比べる。ページの文は保存しない。
 // - 区分が違う・名前が無い・30cm の記述・粗大ごみの行は review（要確認）にして、区分を出さない。
 // - よみは kuromoji で付ける（探すため。画面には出さない）。
-// 出力：drafts/gomi/opendata.json（下書き。npm run dev:drafts のときだけ読む）
+// 出力：data/gomi/opendata.json（公開。CC BY 4.0。出典つき。作者の決定 11/6 F）
 import { createHash } from 'node:crypto';
 import { writeFileSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -97,5 +97,5 @@ const out = {
   counts: { items: items.length, shown: items.filter((i) => !i.review).length, review: items.filter((i) => i.review).length },
   items,
 };
-writeFileSync('drafts/gomi/opendata.json', JSON.stringify(out, null, 2) + '\n');
+writeFileSync('data/gomi/opendata.json', JSON.stringify(out, null, 2) + '\n');
 console.log(out.source.rows, 'rows →', out.counts, 'web rows', web.size, 'web updated', webUpdated);

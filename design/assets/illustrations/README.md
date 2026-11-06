@@ -40,3 +40,15 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `cross.svg` | States | 関係なし（×） | Not for you | 状態の形（絵に重ねる） |
 | `check-ai.svg` | Marks | AIチェック | AI check | 期限・費用・義務の欄の印（v0.5.2） |
 | `check-human.svg` | Marks | 確認済み | Checked by the author | 期限・費用・義務の欄の印（v0.5.2） |
+| `gomi-kanen.svg` | Garbage | 可燃ごみ | Burnable waste | ごみの画面の区分 |
+| `gomi-funen.svg` | Garbage | 不燃ごみ | Non-burnable waste | ごみの画面の区分 |
+| `gomi-plastic.svg` | Garbage | プラスチック資源 | Plastic resources | ごみの画面の区分 |
+| `gomi-kamipack.svg` | Garbage | 紙パック・紙製容器包装 | Paper cartons and paper packaging | ごみの画面の区分 |
+| `gomi-petbottle.svg` | Garbage | ペットボトル | PET bottle | ごみの画面の区分 |
+| `gomi-bin.svg` | Garbage | びん | Glass bottle | ごみの画面の区分 |
+| `gomi-kan.svg` | Garbage | 缶 | Can | ごみの画面の区分 |
+| `gomi-kami.svg` | Garbage | 古紙 | Used paper | ごみの画面の区分 |
+| `gomi-bulky.svg` | Garbage | 粗大ごみ | Bulky waste | ごみの画面の区分 |
+| `gomi-hakka.svg` | Garbage | 発火性危険物 | Fire-risk items (spray cans, batteries) | ごみの画面の区分 |
+| `gomi-kaden.svg` | Garbage | 家電4品目 | Four home appliances | ごみの画面の区分 |
+| `gomi-not.svg` | Garbage | 市が集めない物 | Items the city does not collect | ごみの画面の区分 |

@@ -2794,5 +2794,35 @@
     "ja": "この{手続|てつづ}きでもらう{書類|しょるい}",
     "ja_easy": "もらう{書類|しょるい}",
     "en": "Documents you receive"
+  },
+  "gomi.area.town": {
+    "ja": "{町名|ちょうめい}（{丁目|ちょうめ}まで）",
+    "ja_easy": "{町|まち}の{名前|なまえ}",
+    "en": "Town name (up to chome)"
+  },
+  "gomi.area.banchi": {
+    "ja": "{番地|ばんち}（この{町|まち}は{番地|ばんち}で{曜日|ようび}が{分|わ}かれます）",
+    "ja_easy": "{番地|ばんち}",
+    "en": "Block number (this town is split by block)"
+  },
+  "gomi.area.banchiNote": {
+    "ja": "{番地|ばんち}は{残|のこ}しません。",
+    "ja_easy": "{番地|ばんち}は{残|のこ}しません。",
+    "en": "The block number is not saved."
+  },
+  "gomi.week.title": {
+    "ja": "{収集|しゅうしゅう}{日|び}（2{週間|しゅうかん}）",
+    "ja_easy": "{集|あつ}める{日|ひ}（2{週間|しゅうかん}）",
+    "en": "Collection days (2 weeks)"
+  },
+  "gomi.week.note": {
+    "ja": "{市|し}の{表|ひょう}の{写|うつ}しから{出|だ}しています（{要|よう}{確認|かくにん}）。{年末|ねんまつ}{年始|ねんし}は{別|べつ}の{日|ひ}になることがあります。",
+    "ja_easy": "{市|し}の{表|ひょう}から{出|だ}しています（{要|よう}{確認|かくにん}）。",
+    "en": "From a copy of the city table (to be checked). Days around New Year may differ."
+  },
+  "gomi.kinds.title": {
+    "ja": "ごみの{種類|しゅるい}と{出|だ}し{方|かた}",
+    "ja_easy": "ごみの{種類|しゅるい}",
+    "en": "Types of garbage and how to put them out"
   }
 }

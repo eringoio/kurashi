@@ -7,7 +7,7 @@ import { parseGomi } from '../../src/core/gomiData';
 import items from '../../drafts/gomi/items.json';
 import areas from '../../drafts/gomi/areas.json';
 import delivery from '../../drafts/gomi/delivery.json';
-import opendata from '../../drafts/gomi/opendata.json';
+import opendata from '../../data/gomi/opendata.json';
 
 const d = parseGomi({ items, areas, delivery, opendata });
 const curatedOnly = parseGomi({ items, areas, delivery });

@@ -45,3 +45,6 @@ sources/index.prev.json
 sources/last-run.json
 sources/report/
 .tmp-data-update/
+
+# 名古屋市の収集日の表・分別検索の表の写し（許諾が出るまで公開しない。作者の決定 2026-11-06 F）
+data/private/

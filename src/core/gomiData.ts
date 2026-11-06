@@ -7,6 +7,8 @@ import { GomiItem, GomiItems, normWord, type DeliveryRegime, type Schedule } fro
 const files: Record<string, unknown> = import.meta.env.MODE === 'drafts'
   ? import.meta.glob('../../drafts/gomi/*.json', { eager: true, import: 'default' })
   : {};
+/** 分別早見表（名古屋市のオープンデータ。CC BY 4.0）は公開の data/gomi/ に置く（作者の決定 11/6 F） */
+import opendataJson from '../../data/gomi/opendata.json';
 
 const Link = z.object({ label: Text, url: z.string().url(), evidence: Evidence });
 export const GomiAreas = z.object({
@@ -70,6 +72,6 @@ let cached: GomiBundle | null | undefined;
 export function gomiData(): GomiBundle | null {
   if (cached !== undefined) return cached;
   const get = (n: string) => files[`../../drafts/gomi/${n}.json`];
-  cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery'), opendata: get('opendata') }) : null;
+  cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery'), opendata: opendataJson }) : null;
   return cached;
 }

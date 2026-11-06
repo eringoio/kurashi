@@ -11,12 +11,13 @@ import { todayJst } from '../core/date';
 import type { Occurrence } from '../core/occurrence';
 import type { Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
-import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 import { fmtDay } from '../ui/guide';
 import { Info } from './Info';
+import { GomiAreaFields, GomiWeek, gomiIcon, useArea, type Place } from '../ui/GomiArea';
+import { SCHEDULE_ON } from '../core/gomiSchedule';
 
 const AREA_KEY = 'gomi_area';
 
@@ -49,13 +50,17 @@ function GomiTool() {
   const res = sel ? judgeItem(d.items, sel, choice) : null;
 
   // 地域：区だけ。引っ越しの出来事を地域より後に始めていたら、選び直してもらう
-  const saved = v.get<AreaChoice>('settings', AREA_KEY) ?? null;
+  const saved = v.get<AreaChoice & { town?: string }>('settings', AREA_KEY) ?? null;
+  const place: Place | null = saved ? { ward_id: saved.ward_id, town: saved.town, set_on: saved.set_on } : null;
+  const pa = useArea(place);
+  const setPlace = (x: Place | null) => (x ? v.put('settings', AREA_KEY, { ward_id: x.ward_id, area_id: null, town: x.town, set_on: x.set_on }) : v.del('settings', AREA_KEY));
   const moveGroups = new Set(DATA().events.filter((e) => e.group === 'move').map((e) => e.id));
   const movedOn = v.entries('occurrences').map(([, o]) => o as Occurrence).filter((o) => moveGroups.has(o.event_id)).map((o) => o.started_on);
   const area = areaStatus(saved, { movedOn, areasWithData: d.schedules.map((s) => s.area_id) });
-  const setWard = (ward: string) => (ward ? v.put('settings', AREA_KEY, { ward_id: ward, area_id: null, set_on: today } satisfies AreaChoice) : v.del('settings', AREA_KEY));
-  const wardLabel = saved && area.kind !== 'needs_recheck' ? d.areas.wards.find((w) => w.id === saved.ward_id)?.label : undefined;
-  const next = res?.kind === 'result' && res.category.route === 'regular' ? nextCollection(d.schedules, area, res.category.id, today) : null;
+  // 収集日：私的な写し（on のとき）があればそれで、無ければ今までどおり（日付を出さない）
+  const next = res?.kind === 'result' && res.category.route === 'regular'
+    ? (pa.p ? nextCollection(pa.schedules, area.kind === 'needs_recheck' ? area : pa.status, res.category.id, today, { allowUnapproved: true }) : nextCollection(d.schedules, area, res.category.id, today))
+    : null;
 
   const regime = /^\d{4}-\d{2}-\d{2}$/.test(useDay) ? deliveryRegime(d.delivery.regimes, useDay) : null;
   const pick = (it: GomiItem) => { setSel(it); setChoice(undefined); };
@@ -66,7 +71,15 @@ function GomiTool() {
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="gomi.title" /></h1></div>
       <p className="draftmark"><Bi k="gomi.draft" /></p>
 
-      {/* 1. これ、何ごみ？ */}
+      {/* 1. 住所（区＋町名）。作者の決定 11/6 F：住所と捨てたい物が分かれば、いつ・どのごみ・どう出すが1つの画面で分かる */}
+      <section className="group" aria-labelledby={id + '-a'}>
+        <h2 id={id + '-a'}><Bi k="gomi.area.title" /></h2>
+        <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => void setPlace(x)} area={pa} />
+        {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
+        {!SCHEDULE_ON && saved && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
+      </section>
+
+      {/* 2. これ、何ごみ？ */}
       <section className="group" aria-labelledby={id + '-s'}>
         <div className="search">
           <label id={id + '-s'} htmlFor={id} className="label"><Bi k="gomi.search.label" /></label>
@@ -116,7 +129,7 @@ function GomiTool() {
           {res.kind === 'result' && (
             <>
               {/* 結論：区分。公開前のデータなので「下書き・要確認」を文字で付ける（色だけにしない） */}
-              <p className="focus__name"><Bi t={res.category.label} /> <span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span></p>
+              <p className="focus__name gomi-result"><img src={gomiIcon(res.category.id)} alt="" className="gomi-result__art" /><Bi t={res.category.label} /> <span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span></p>
               <p><Bi t={res.category.how} /></p>
               {sel.note && <p className="sub"><Bi t={sel.note} /></p>}
               {next && (
@@ -142,21 +155,10 @@ function GomiTool() {
         </section>
       )}
 
-      {/* 2. ごみを出す地域 */}
-      <section className="group" aria-labelledby={id + '-a'}>
-        <h2 id={id + '-a'}><Bi k="gomi.area.title" /></h2>
-        <label htmlFor={id + '-w'} className="label"><Bi k="gomi.area.ward" /></label>
-        <select className="field" id={id + '-w'} value={area.kind === 'needs_recheck' ? '' : saved?.ward_id ?? ''} onChange={(e) => setWard(e.target.value)}>
-          <option value="">{line(ui('gomi.area.choose'), level)}</option>
-          {d.areas.wards.map((w) => <option key={w.id} value={w.id}>{line(w.label, level)}</option>)}
-        </select>
-        {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
-        {wardLabel && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
-        <p className="sub"><Bi t={d.areas.coverage} /></p>
-        <div className="links">{d.areas.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}</div>
-      </section>
+      {/* 3. 収集日のカレンダー（on のときだけ） */}
+      <GomiWeek area={pa} categories={d.items.categories} today={today} />
 
-      {/* 3. 必要なときだけ：粗大ごみ・自己搬入（利用予定日で選ぶ） */}
+      {/* 4. 必要なときだけ：粗大ごみ・自己搬入（利用予定日で選ぶ） */}
       <section className="group" aria-labelledby={id + '-m'}>
         <h2 id={id + '-m'}><Bi k="gomi.more.title" /></h2>
         <ul className="list" role="list">
@@ -172,6 +174,18 @@ function GomiTool() {
           </div>
         )}
       </section>
+
+      {/* 5. ごみの種類（「分け方を知る」をこの画面に。作者 11/6 F） */}
+      <details className="group gomi-kinds">
+        <summary><Bi k="gomi.kinds.title" /></summary>
+        <ul className="list" role="list">
+          {d.items.categories.map((c) => (
+            <li key={c.id} className="gomi-kind"><img src={gomiIcon(c.id)} alt="" /><span><strong><Bi t={c.label} /></strong><span className="sub"><Bi t={c.how} /></span></span></li>
+          ))}
+        </ul>
+      </details>
+      {!pa.p && <p className="sub"><Bi t={d.areas.coverage} /></p>}
+      <div className="links">{d.areas.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}</div>
 
       {/* ライセンスの表示（CC BY など。出典に license があるものだけ） */}
       {d.items.sources.filter((s) => s.license).map((s) => (
