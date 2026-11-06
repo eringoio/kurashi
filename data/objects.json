@@ -275,6 +275,40 @@
       "bring_for": [
         "kokumin-nenkin-kanyu"
       ]
+    },
+    {
+      "id": "pension-number",
+      "illustration": "doc",
+      "show_for": [
+        "abroad",
+        "other_city",
+        "within_nagoya"
+      ],
+      "title": {
+        "ja": "{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}",
+        "ja_easy": "{年金|ねんきん}の{番号|ばんごう}がわかる{物|もの}",
+        "en": "Something showing your basic pension number"
+      },
+      "purpose": {
+        "ja": "{持|も}ち{物|もの}の{一覧|いちらん}に{入|い}れます（{年金|ねんきん}{手帳|てちょう}・{基礎|きそ}{年金|ねんきん}{番号|ばんごう}{通知|つうち}{書|しょ}など。はじめて{入|はい}る{人|ひと}は{無|な}くてよい。{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}に{入|い}れます（はじめての{人|ひと}は{無|な}くてよい。{要|よう}{確認|かくにん}）",
+        "en": "Added to your list (pension book or Basic Pension Number Notice; not needed if you are joining for the first time; to be checked)"
+      },
+      "yields_when_held": [],
+      "bring_to": [
+        "ward_office"
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec",
+          "B-nenkin-kanyu"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      },
+      "bring_for": [
+        "kokumin-nenkin-kanyu"
+      ]
     }
   ]
 }

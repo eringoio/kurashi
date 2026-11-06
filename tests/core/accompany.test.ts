@@ -53,7 +53,7 @@ describe('行く前：今日の行く所ごとのまとまり', () => {
   });
   it('持っていない物は「持っていない」に分ける', () => {
     const b = bringList(data.objects, 'ward_office', { passport: true }, 'abroad');
-    expect(b.filter((x) => !x.held).map((x) => x.object.id)).toEqual(['zairyu-card', 'student-id']);
+    expect(b.filter((x) => !x.held).map((x) => x.object.id)).toEqual(['zairyu-card', 'student-id', 'pension-number']);
   });
 });
 

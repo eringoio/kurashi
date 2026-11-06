@@ -11,8 +11,8 @@ flow({
   const tap = (name: string | RegExp) => page.getByRole('button', { name }).first().click();
 
   await page.goto('/letter');
-  await snap({ name: '入口', input: '/letter を開く', expected: '「届いた書類の種類と、見る所を調べます」。「写真を撮る」と、一覧から選ぶ・見本で試すの2つ', why: '写真を使わなくても進める（6A.9）' },
-    async () => { await expect(h1).toHaveText('届いた書類の種類と、見る所を調べます'); await expect(page.locator('label', { hasText: '写真を撮る' })).toBeVisible(); });
+  await snap({ name: '入口', input: '/letter を開く', expected: '「届いた書類がわからないとき」。「写真を撮る」と、一覧から選ぶ・見本で試すの2つ', why: '写真を使わなくても進める（6A.9）' },
+    async () => { await expect(h1).toHaveText('届いた書類がわからないとき'); await expect(page.locator('label', { hasText: '写真を撮る' })).toBeVisible(); });
 
   await tap('見本の書類で試す');
   await snap({ name: '写真の確かめ', input: '見本の書類で試す', expected: '「この写真を送りますか？」。見本の印と、送る前の同意の説明。まだ送っていない', why: '送る前に毎回、本人が確かめて同意する（13.1）' },

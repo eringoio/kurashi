@@ -29,9 +29,9 @@
     "reading": "こくみんねんきんのかにゅう"
   },
   "summary": {
-    "ja": "{日本|にほん}に{住|す}む20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{会社|かいしゃ}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{国籍|こくせき}や{学生|がくせい}かどうかに{関係|かんけい}なく、{国民|こくみん}{年金|ねんきん}に{入|はい}ります（{在留|ざいりゅう}{資格|しかく}「{特定|とくてい}{活動|かつどう}」の{医療|いりょう}{滞在|たいざい}・{観光|かんこう}などの{長期|ちょうき}{滞在|たいざい}の{人|ひと}は{入|はい}れません。{要|よう}{確認|かくにん}）。{住|す}んでいる{区|く}の{区役所|くやくしょ}の{窓口|まどぐち}（{保険|ほけん}{年金|ねんきん}{課|か}。{要|よう}{確認|かくにん}）で{手続|てつづ}きします。{学生|がくせい}は、{申請|しんせい}すると{保険|ほけん}{料|りょう}の{納付|のうふ}が{猶予|ゆうよ}される「{学生|がくせい}{納付|のうふ}{特例|とくれい}」があります。",
-    "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までで、{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{学生|がくせい}でも{外国|がいこく}の{人|ひと}でも、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{区役所|くやくしょ}で{手続|てつづ}きします。{学生|がくせい}は、{申請|しんせい}すると{保険|ほけん}{料|りょう}をまだ{払|はら}わなくてよくなる「{学生|がくせい}{納付|のうふ}{特例|とくれい}」があります（{要|よう}{確認|かくにん}）。",
-    "en": "If you live in Japan, are aged 20 to 59 and are not in an employer's pension (Kosei Nenkin), you join the National Pension, whether or not you are a student or a foreign national. (Some people on \"Designated Activities\" for medical stay or long tourist stay cannot join; to be checked.) Register at the ward office. Students can apply for the Student Payment Deferment, which postpones the premium while you study."
+    "ja": "{日本|にほん}に{住|す}む20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{会社|かいしゃ}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{国籍|こくせき}や{学生|がくせい}かどうかに{関係|かんけい}なく、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{区役所|くやくしょ}で{手続|てつづ}きします。{学生|がくせい}・{収入|しゅうにゅう}が{少|すく}ない{人|ひと}には、{保険|ほけん}{料|りょう}の{免除|めんじょ}・{猶予|ゆうよ}の{制度|せいど}があります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までで、{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{学生|がくせい}でも{外国|がいこく}の{人|ひと}でも、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{区役所|くやくしょ}で{手続|てつづ}きします。{学生|がくせい}や{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は、{払|はら}わなくてよい{制度|せいど}があります（{要|よう}{確認|かくにん}）。",
+    "en": "If you live in Japan, are aged 20 to 59 and are not in an employer's pension (Kosei Nenkin), you join the National Pension, whether or not you are a student or a foreign national. Register at the ward office. Students and people with low income can apply to defer or be exempted from the premium (to be checked)."
   },
   "lead": {
     "ja": "20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{会社|かいしゃ}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。",
@@ -123,75 +123,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{学生|がくせい}{納付|のうふ}{特例|とくれい}：{学生|がくせい}は、{申請|しんせい}すると{在学|ざいがく}{中|ちゅう}の{保険|ほけん}{料|りょう}の{納付|のうふ}が{猶予|ゆうよ}されます。{対象|たいしょう}は、{前年|ぜんねん}の{所得|しょとく}が{基準|きじゅん}{以下|いか}の{学生|がくせい}です。{家族|かぞく}の{所得|しょとく}は{問|と}われません（{所得|しょとく}の{基準|きじゅん}は{日本|にほん}{年金|ねんきん}{機構|きこう}の{案内|あんない}で{確認|かくにん}）。",
-        "ja_easy": "{学生|がくせい}{納付|のうふ}{特例|とくれい}：{学生|がくせい}は、{申請|しんせい}すると、{学校|がっこう}にいる{間|ま}の{保険|ほけん}{料|りょう}をまだ{払|はら}わなくてよくなります。{前|まえ}の{年|とし}の{収入|しゅうにゅう}が{基準|きじゅん}より{少|すく}ない{学生|がくせい}が{対象|たいしょう}です。{家族|かぞく}の{収入|しゅうにゅう}は{関係|かんけい}ありません（{要|よう}{確認|かくにん}）。",
-        "en": "Student Payment Deferment: students can apply to postpone the premium while studying. It is for students whose income last year was at or below a limit; family income does not count (check the limit with the Japan Pension Service)."
+        "ja": "{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は「{免除|めんじょ}・{納付|のうふ}{猶予|ゆうよ}」の{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。くわしくは{窓口|まどぐち}で（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{学生|がくせい}や、{収入|しゅうにゅう}が{少|すく}ない{人|ひと}は、{保険|ほけん}{料|りょう}を{今|いま}{払|はら}わなくてよい{制度|せいど}があります。{持|も}ち{物|もの}：{基礎|きそ}{年金|ねんきん}{番号|ばんごう}がわかる{物|もの}・{学生証|がくせいしょう}・{在留|ざいりゅう}カード。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+        "en": "Students can use the Student Payment Deferment; people with low income can apply for exemption or deferment. Bring: something showing your basic pension number, your student ID, and your residence card. Ask at the counter for details (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "B-nenkin-gakusei"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{学生|がくせい}{納付|のうふ}{特例|とくれい}の{対象|たいしょう}の{学校|がっこう}は、{大学|だいがく}・{短期大学|たんきだいがく}・{専修|せんしゅう}{学校|がっこう}・{各種|かくしゅ}{学校|がっこう}などです。{各種|かくしゅ}{学校|がっこう}は{修業|しゅうぎょう}{年限|ねんげん}1{年|ねん}{以上|いじょう}の{課程|かてい}だけ、{私立|しりつ}の{各種|かくしゅ}{学校|がっこう}は{都道府県|とどうふけん}{知事|ちじ}の{認可|にんか}を{受|う}けた{学校|がっこう}だけです。{日本語|にほんご}{学校|がっこう}などが{対象|たいしょう}かは、{学校|がっこう}か{要|よう}{確認|かくにん}。",
-        "ja_easy": "{学生|がくせい}{納付|のうふ}{特例|とくれい}の{対象|たいしょう}は、{大学|だいがく}・{短期大学|たんきだいがく}・{専修|せんしゅう}{学校|がっこう}・{各種|かくしゅ}{学校|がっこう}などです。{日本語|にほんご}{学校|がっこう}などが{対象|たいしょう}かは、{学校|がっこう}か{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
-        "en": "Eligible schools include universities, junior colleges, specialised training colleges and miscellaneous-type schools. For miscellaneous-type schools, only courses of one year or longer count, and private ones must be approved by the prefectural governor. Whether your school (for example a Japanese-language school) qualifies: ask your school or the counter (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nenkin-gakusei"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{学生|がくせい}{納付|のうふ}{特例|とくれい}の{申請|しんせい}{先|さき}：{住民|じゅうみん}{登録|とうろく}をしている{区役所|くやくしょ}の{国民|こくみん}{年金|ねんきん}の{窓口|まどぐち}、{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}、または{学校|がっこう}（{学校|がっこう}が{代行|だいこう}している{場合|ばあい}だけ）。{郵送|ゆうそう}でもできます。{学生|がくせい}であることがわかる{在学|ざいがく}{証明|しょうめい}{書|しょ}（{原本|げんぽん}）か{学生|がくせい}{証|しょう}の{写|うつ}しが{要|い}ります（{区役所|くやくしょ}の{窓口|まどぐち}で{直接|ちょくせつ}{見|み}せるときは{添付|てんぷ}{不要|ふよう}）。マイナンバーカードがないときは、マイナンバーがわかる{書類|しょるい}と{身元|みもと}{確認|かくにん}の{書類|しょるい}も{要|い}ります。",
-        "ja_easy": "{学生|がくせい}{納付|のうふ}{特例|とくれい}の{申|もう}し{込|こ}み{先|さき}：{区役所|くやくしょ}の{国民|こくみん}{年金|ねんきん}の{窓口|まどぐち}、{年金|ねんきん}{事務所|じむしょ}、または{学校|がっこう}。{郵送|ゆうそう}でもできます。{在学|ざいがく}{証明|しょうめい}{書|しょ}か{学生|がくせい}{証|しょう}のコピーが{要|い}ります。マイナンバーカードがないときは、マイナンバーがわかる{書類|しょるい}と{在留|ざいりゅう}カードなども{要|い}ります（{要|よう}{確認|かくにん}）。",
-        "en": "Where to apply for the Student Payment Deferment: the National Pension counter of your ward office, a pension office, or your school (only if the school handles it). Mail is also possible. Bring a certificate of enrolment (original) or a copy of your student ID (not needed if you show it in person at the ward office). Without a My Number Card, also bring a document showing your My Number and ID (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nenkin-gakusei"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{学生|がくせい}{納付|のうふ}{特例|とくれい}は、{原則|げんそく}として4{月|つき}から{翌年|よくねん}3{月|つき}までの{分|ぶん}ごとに{審査|しんさ}されます。{納付|のうふ}{期限|きげん}から2{年|ねん}を{過|す}ぎていない{期間|きかん}は、さかのぼって{申請|しんせい}できます。{申請|しんせい}が{遅|おく}れると、{申請|しんせい}{日|び}{前|まえ}の{事故|じこ}や{病気|びょうき}による{障害|しょうがい}について、{障害|しょうがい}{基礎|きそ}{年金|ねんきん}を{受|う}け{取|と}れない{場合|ばあい}があります。",
-        "ja_easy": "{学生|がくせい}{納付|のうふ}{特例|とくれい}は、4{月|つき}から{次|つぎ}の{年|とし}の3{月|つき}までの{分|ぶん}ごとに{申|もう}し{込|こ}みます。2{年|ねん}{前|まえ}までの{分|ぶん}は、さかのぼって{申|もう}し{込|こ}めます。{申|もう}し{込|こ}みが{遅|おく}れると、けがや{病気|びょうき}のとき、{障害|しょうがい}{基礎|きそ}{年金|ねんきん}がもらえないことがあります。",
-        "en": "The Student Payment Deferment is reviewed for April to March periods. You can apply back for periods whose payment deadline passed less than 2 years ago. If you apply late, you may not receive the Disability Basic Pension for an accident or illness before the application date."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nenkin-gakusei"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{承認|しょうにん}を{受|う}けた{期間|きかん}は、{老齢|ろうれい}{基礎|きそ}{年金|ねんきん}を{受|う}け{取|と}るために{必要|ひつよう}な{期間|きかん}（10{年|ねん}{以上|いじょう}）には{入|はい}りますが、{年金|ねんきん}{額|がく}の{計算|けいさん}には{入|はい}りません。10{年|ねん}{以内|いない}なら、{保険|ほけん}{料|りょう}をあとから{納|おさ}められます（{追納|ついのう}）。{退学|たいがく}などで{学生|がくせい}でなくなったときは、{届出|とどけで}が{要|い}ります。",
-        "ja_easy": "{承認|しょうにん}を{受|う}けた{期間|きかん}は、{年金|ねんきん}をもらうための{期間|きかん}（10{年|ねん}{以上|いじょう}）には{入|はい}りますが、{年金|ねんきん}の{金額|きんがく}には{入|はい}りません。10{年|ねん}{以内|いない}なら、あとから{保険|ほけん}{料|りょう}を{払|はら}えます（{追納|ついのう}）。{学校|がっこう}をやめたときは、{届|とど}けが{要|い}ります。",
-        "en": "An approved period counts toward the qualifying period for the Old-Age Basic Pension (10 years) but not toward the amount. You can pay the premium later within 10 years (tsuino). If you stop being a student, for example by leaving school, you must notify."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nenkin-gakusei"
-        ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     }

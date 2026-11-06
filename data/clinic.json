@@ -1073,11 +1073,6 @@
       "id": "119",
       "number": "119",
       "always": true,
-      "label": {
-        "ja": "{救急車|きゅうきゅうしゃ}・{火事|かじ}。{外国語|がいこくご}でも{話|はな}せます（{通訳|つうやく}・24{時間|じかん}）",
-        "ja_easy": "{救急車|きゅうきゅうしゃ}。{外国語|がいこくご}で{話|はな}せます",
-        "en": "Ambulance / fire. You can speak a foreign language (interpreter, 24 hours)"
-      },
       "evidence": {
         "source_ids": [
           "nagoya-119-tagengo"
@@ -1085,17 +1080,22 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "名古屋市防災指令センター、119番通報者、通訳事業者の三者が同時通話し必要事項を聴取"
+      },
+      "short": {
+        "ja": "{救急車|きゅうきゅうしゃ}・{火事|かじ}",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}・{火事|かじ}",
+        "en": "Ambulance / fire"
+      },
+      "label": {
+        "ja": "{救急車|きゅうきゅうしゃ}・{火事|かじ}。{外国語|がいこくご}でも{話|はな}せます（{通訳|つうやく}・24{時間|じかん}）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}。{外国語|がいこくご}で{話|はな}せます",
+        "en": "Ambulance / fire. You can speak a foreign language (interpreter, 24 hours)"
       }
     },
     {
       "id": "7119",
       "number": "#7119",
       "always": true,
-      "label": {
-        "ja": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったときの{相談|そうだん}（24{時間|じかん}・21の{言語|げんご}。つながらないときは 052-951-7119）",
-        "ja_easy": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら（24{時間|じかん}）",
-        "en": "Not sure if you need an ambulance? Advice 24 hours, 21 languages (if it does not connect: 052-951-7119)"
-      },
       "evidence": {
         "source_ids": [
           "nagoya-7119"
@@ -1103,60 +1103,61 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "#7119をダイヤルすることで、24時間365日体制で看護師等からアドバイスを受けることができる電話相談窓口です。／繋がらない場合は、052－951－7119へお電話ください。"
+      },
+      "short": {
+        "ja": "{救急|きゅうきゅう}の{相談|そうだん}",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら",
+        "en": "Not sure if you need an ambulance"
+      },
+      "label": {
+        "ja": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったときの{相談|そうだん}（24{時間|じかん}・21の{言語|げんご}。つながらないときは 052-951-7119）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら（24{時間|じかん}）",
+        "en": "Not sure if you need an ambulance? Advice 24 hours, 21 languages (if it does not connect: 052-951-7119)"
       }
     },
     {
       "id": "8000",
       "number": "#8000",
       "always": true,
-      "label": {
-        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}（{時間|じかん}は{要|よう}{確認|かくにん}）",
-        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{要|よう}{確認|かくにん}）",
-        "en": "Advice about a sick child (hours to be checked)"
-      },
       "evidence": {
         "source_ids": [
           "aichi-8000"
         ],
         "checked_at": "2026-11-06",
         "status": "needs_check"
+      },
+      "short": {
+        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}",
+        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}",
+        "en": "Advice about a sick child"
+      },
+      "label": {
+        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}（{時間|じかん}は{要|よう}{確認|かくにん}）",
+        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{要|よう}{確認|かくにん}）",
+        "en": "Advice about a sick child (hours to be checked)"
       }
     }
   ],
   "advice": {
-    "head": {
-      "ja": "まず{近|ちか}くのクリニックへ",
-      "ja_easy": "まず{近|ちか}くのクリニックへ",
-      "en": "Go to a nearby clinic first"
-    },
-    "small": {
-      "title": {
-        "ja": "{小|ちい}さな{病院|びょういん}",
-        "ja_easy": "{小|ちい}さい{病院|びょういん}",
-        "en": "Small clinic"
-      },
-      "desc": {
-        "ja": "クリニック・{診療所|しんりょうじょ}・{医院|いいん}。まずここへ。",
-        "ja_easy": "クリニック・{診療所|しんりょうじょ}・{医院|いいん}。まずここへ。",
-        "en": "クリニック・診療所・医院. Go here first."
-      }
-    },
-    "big": {
-      "title": {
-        "ja": "{大|おお}きな{病院|びょういん}",
-        "ja_easy": "{大|おお}きい{病院|びょういん}",
-        "en": "Large hospital"
-      },
-      "desc": {
-        "ja": "{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。ただし{大学|だいがく}{病院|びょういん}など{一部|いちぶ}の{大|おお}きな{病院|びょういん}では、{初診|しょしん}に{別|べつ}の{料金|りょうきん}がかかります（7,000{円|えん}{以上|いじょう}、{歯科|しか}は5,000{円|えん}{以上|いじょう}。{救急|きゅうきゅう}のときは{除|のぞ}く。{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{紹介状|しょうかいじょう}がなくても{行|い}けます。でも、{大|おお}きい{病院|びょういん}では、ほかにお{金|かね}がかかります（{要|よう}{確認|かくにん}）。",
-        "en": "You can be seen without a referral letter. But some large hospitals, such as university hospitals, charge an extra fee at the first visit (7,000 yen or more; dental 5,000 yen or more; not for emergencies; to be checked)."
-      }
+    "links": [
+      "aichi-qq",
+      "navii",
+      "tsuyaku"
+    ],
+    "fee_note": {
+      "ja": "{大学|だいがく}{病院|びょういん}など{一部|いちぶ}の{大|おお}きな{病院|びょういん}では、{紹介状|しょうかいじょう}がないと、{初診|しょしん}に{別|べつ}の{料金|りょうきん}がかかります（7,000{円|えん}{以上|いじょう}、{歯科|しか}は5,000{円|えん}{以上|いじょう}。{救急|きゅうきゅう}のときは{除|のぞ}く。{要|よう}{確認|かくにん}）。{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。",
+      "ja_easy": "{大|おお}きい{病院|びょういん}では、{紹介状|しょうかいじょう}がないと、ほかにお{金|かね}がかかります（{要|よう}{確認|かくにん}）。{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。",
+      "en": "Some large hospitals, such as university hospitals, charge an extra fee at the first visit without a referral letter (7,000 yen or more; dental 5,000 yen or more; not for emergencies; to be checked). You can still be seen without a referral letter."
     },
     "youdecide": {
       "ja": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
       "ja_easy": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
       "en": "You decide where to go. The clinic may send you to another department."
+    },
+    "child": {
+      "ja": "{子|こ}どもは、{多|おお}くの{場合|ばあい}、まず{小児科|しょうにか}で{相談|そうだん}できます。",
+      "ja_easy": "{子|こ}どもは、まず{小児科|しょうにか}で{相談|そうだん}できます。",
+      "en": "For children, you can usually start at a pediatrics clinic (shonika)."
     },
     "evidence": {
       "source_ids": [
@@ -1167,16 +1168,6 @@
       "checked_at": "2026-11-06",
       "status": "needs_check",
       "quote": "紹介状のありなしにかかわらず、受診は可能ですが、紹介状がなく来院された場合は、一部負担金（３割負担等）とは別の「特別の料金」が原則必要となります。"
-    },
-    "links": [
-      "aichi-qq",
-      "navii",
-      "tsuyaku"
-    ],
-    "child": {
-      "ja": "{子|こ}どもは、{多|おお}くの{場合|ばあい}、まず{小児科|しょうにか}で{相談|そうだん}できます。",
-      "ja_easy": "{子|こ}どもは、まず{小児科|しょうにか}で{相談|そうだん}できます。",
-      "en": "For children, you can usually start at a pediatrics clinic (shonika)."
     }
   },
   "links": [

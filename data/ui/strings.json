@@ -51,9 +51,9 @@
     "en": "How to put out garbage"
   },
   "home.letter": {
-    "ja": "{届|とど}いた{書類|しょるい}を{撮|と}る",
-    "ja_easy": "{届|とど}いた{書類|しょるい}を{撮|と}る",
-    "en": "Photograph a letter I got"
+    "ja": "{届|とど}いた{書類|しょるい}がわからない",
+    "ja_easy": "{届|とど}いた{書類|しょるい}がわかりません",
+    "en": "I don't understand a letter I got"
   },
   "home.search": {
     "ja": "ほかの{手続|てつづ}きを{探|さが}す",
@@ -2121,9 +2121,9 @@
     "en": "Other relations"
   },
   "letter.title": {
-    "ja": "{届|とど}いた{書類|しょるい}の{種類|しゅるい}と、{見|み}る{所|ところ}を{調|しら}べます",
-    "ja_easy": "{届|とど}いた{書類|しょるい}を{調|しら}べます",
-    "en": "Find out what a letter is and where to look"
+    "ja": "{届|とど}いた{書類|しょるい}がわからないとき",
+    "ja_easy": "{届|とど}いた{書類|しょるい}がわからないとき",
+    "en": "When you don't understand a letter"
   },
   "letter.intro": {
     "ja": "{書類|しょるい}の{上|うえ}の{部分|ぶぶん}を{撮|と}ってください。{写真|しゃしん}は、{送|おく}る{前|まえ}に{毎回|まいかい}{聞|き}きます。{保存|ほぞん}しません。",
@@ -3041,9 +3041,9 @@
     "en": "Star"
   },
   "clinic.notDx": {
-    "ja": "{診断|しんだん}ではありません。{部分|ぶぶん}ごとに{決|き}めた{一覧|いちらん}です。",
-    "ja_easy": "{病気|びょうき}を{当|あ}てるものではありません。",
-    "en": "This is not a diagnosis. It is a fixed list for each body part."
+    "ja": "{診断|しんだん}ではありません。{病院|びょういん}の{種類|しゅるい}を{説明|せつめい}する{情報|じょうほう}です。",
+    "ja_easy": "{病気|びょうき}を{当|あ}てるものではありません。{病院|びょういん}の{種類|しゅるい}の{説明|せつめい}です。",
+    "en": "This is not a diagnosis. It explains types of hospitals and clinics."
   },
   "clinic.bringNote": {
     "ja": "{要|い}るものは{病院|びょういん}によって{違|ちが}います。",
@@ -3059,5 +3059,15 @@
     "ja": "{病院|びょういん}",
     "ja_easy": "{病院|びょういん}",
     "en": "clinic"
+  },
+  "clinic.feeTitle": {
+    "ja": "{大|おお}きな{病院|びょういん}の{初診|しょしん}の{料金|りょうきん}",
+    "ja_easy": "{大|おお}きい{病院|びょういん}のお{金|かね}",
+    "en": "Fee at large hospitals"
+  },
+  "clinic.bandMore": {
+    "ja": "{番号|ばんごう}のくわしく",
+    "ja_easy": "{番号|ばんごう}のくわしく",
+    "en": "About these numbers"
   }
 }

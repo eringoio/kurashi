@@ -21,7 +21,7 @@ const Part = z.object({
   evidence: Evidence,
 });
 const Department = z.object({ id: z.string().regex(/^[a-z]+$/), name: Text, covers: Text, evidence: Evidence });
-const Emergency = z.object({ id: z.string(), number: z.string(), always: z.boolean(), parts: z.array(z.string()).optional(), label: Text, evidence: Evidence });
+const Emergency = z.object({ id: z.string(), number: z.string(), always: z.boolean(), parts: z.array(z.string()).optional(), /** 帯に出す短い名前（A-5a） */ short: Text, label: Text, evidence: Evidence });
 const Link = z.object({ id: z.string(), url: z.string().url(), title: Text, desc: Text.optional(), evidence: Evidence });
 const Bring = z.object({ id: z.string(), illustration: z.string(), title: Text, desc: Text.optional(), evidence: Evidence });
 const Phrase = z.object({ id: z.string(), say: Text });
@@ -31,11 +31,10 @@ export const ClinicData = z.object({
   departments: z.array(Department),
   emergency: z.array(Emergency),
   advice: z.object({
-    head: Text,
-    small: z.object({ title: Text, desc: Text }),
-    big: z.object({ title: Text, desc: Text }),
-    /** 大きな病院のかわりに出す公式のリンク（links の id。A-7） */
+    /** 段階2の最初に出す公式の探すページ（links の id。A-5c） */
     links: z.array(z.string()),
+    /** 大きな病院の初診の特別の料金。くわしく のシートだけ（A-5c） */
+    fee_note: Text,
     youdecide: Text,
     /** 子どもは多くの場合まず小児科（医師のアドバイザー 11/6） */
     child: Text.optional(),

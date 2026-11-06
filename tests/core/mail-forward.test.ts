@@ -17,6 +17,13 @@ describe('郵便の転送', () => {
   it('市内の引っ越し：出る', () => {
     expect(state('E-move-within', { 'Q-ward-move': 'other_ward' })).not.toBe('excluded');
   });
+  it('B-6：転入届のあと。転入届の日が未定なら先に決める（need_first）、決まればその日以降', () => {
+    const run1 = (plan: Record<string, unknown>) => run(data, { answers: { 'Q-origin': 'other_city' } as never, objects: {}, plan: plan as never, createdOn: TODAY, today: TODAY, mode: 'public', event: ev('E-move') }).cards.find((c) => c.card.id === 'mail-forward')!;
+    expect(data.cards.find((x) => x.id === 'mail-forward')!.first_week).toBe(false);
+    expect(run1({}).dayRule).toEqual({ kind: 'need_first', from: 'nagoya-tennyu-todoke' });
+    expect(run1({ 'nagoya-tennyu-todoke': { status: 'todo', planned_on: '2026-11-10' } }).dayRule).toEqual({ kind: 'min', day: '2026-11-10', from: 'nagoya-tennyu-todoke' });
+    expect(run1({ 'nagoya-tennyu-todoke': { status: 'done' } }).dayRule).toEqual({ kind: 'free' });
+  });
   it('出典の引用がある（日本郵便。2026-11-06 に取得）', () => {
     const c = data.cards.find((x) => x.id === 'mail-forward')!;
     expect(c.evidence.quote).toContain('1年間、旧住所あての郵便物等を新住所に無料で転送します');

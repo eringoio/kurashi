@@ -173,7 +173,6 @@ function After({ v, onAllDone, onSave, onNotWent }: { v: Visit; onAllDone: () =>
           );
         })}
       </div>
-      <p className="sub"><Bi k="visit.after.unconfirmed" /></p>
       <button type="button" className="k-answer" disabled={Object.keys(r).length === 0} onClick={() => onSave(r)}><Bi k="visit.after.save" /></button>
       <button type="button" className="link" onClick={onNotWent}><Bi k="visit.out.not_went" /></button>
     </>

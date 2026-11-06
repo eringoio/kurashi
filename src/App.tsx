@@ -121,8 +121,10 @@ export function App() {
     <div className="k-root" style={{ display: 'contents' }}>
       <a className="skip" href="#main"><One k="app.skip" /></a>
       <header className="bar">
+        {/* ロゴは帯だけ（A-4）：480px〜 ロゴ、〜479px マーク（280px 未満は文字だけ）。見えない方は display:none なので、読み上げの名前は「Kurashi」1つ */}
         <Link to="/" className="brand">
-          <img src="/icons/kurashi-logo.svg" alt="Kurashi" className="brand__logo" />
+          <img src="/icons/kurashi-logo.svg" alt="Kurashi" className="brand__logo brand__logo--full" />
+          <img src="/icons/kurashi-mark.svg" alt="Kurashi" className="brand__logo brand__logo--mark" />
           <span className="brand__tag"><One k="app.tag" /></span>
         </Link>
         <div className="bar__btns">

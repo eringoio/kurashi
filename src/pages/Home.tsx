@@ -37,9 +37,6 @@ export function Home({ hasProgress }: { hasProgress: boolean }) {
   return (
     <>
       <div className="art" aria-hidden="true">
-        <img src="/icons/kurashi-logo.svg" alt="" className="art__logo" />
-      </div>
-      <div className="art" aria-hidden="true">
         <img src={art('house')} alt="" />
         <img src={art('you')} alt="" />
         <img src={art('bin')} alt="" />

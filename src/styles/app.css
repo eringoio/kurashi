@@ -25,11 +25,11 @@ rt { font-size: max(.5em, 9px); font-weight: 500; }
 .skip:focus { top: 8px; }
 
 /* 上の帯 */
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding: 8px max(12px, env(safe-area-inset-right, 0px)) 4px max(16px, env(safe-area-inset-left, 0px)); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: nowrap; padding: 8px max(12px, env(safe-area-inset-right, 0px)) 4px max(16px, env(safe-area-inset-left, 0px)); }
 .brand { font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; gap: 8px; min-height: var(--target-min); color: var(--ink); text-decoration: none; letter-spacing: .02em; }
 .brand img { width: 32px; height: 32px; }
 .brand__tag { font-size: var(--fs-small); font-weight: 500; color: var(--ink-subtle); border: 1.5px solid var(--line-dim); border-radius: var(--radius-pill); padding: 0 8px; line-height: 1.6; }
-.bar__btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.bar__btns { display: flex; gap: 6px; flex-wrap: nowrap; flex-shrink: 0; }
 .pill { min-height: var(--target-min); padding: 0 14px; border: 1.5px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); font-size: var(--fs-small); }
 
 /* 見るだけの帯（色だけで示さない：文字と点線の枠） */
@@ -402,14 +402,33 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .cal__day--red[aria-pressed="true"] { color: var(--white); }
 .ics__open { margin-top: 4px; }
 /* 病院の電話（A-7）：押せる電話のボタン */
-.clinic__band .plainlist { display: flex; flex-direction: column; gap: 6px; padding: 0; list-style: none; }
-.clinic__tel { min-height: var(--target-min); font-size: var(--fs-small, 15px); padding: 6px 12px; }
-.clinic__tel .clinic__em { align-items: baseline; }
+/* 病院の電話の帯（A-5a）：白い背景・--line の枠。1行に1つの番号（44px） */
+.clinic__band { background: var(--white); border: 1.5px solid var(--line-dim); border-radius: var(--radius-md); padding: 4px 10px; }
+.clinic__tels { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.clinic__tel { display: flex; align-items: center; gap: 8px; min-height: var(--target-min); color: var(--ink); text-decoration: none; font-size: var(--fs-small, 15px); }
+.clinic__tel svg { flex: none; width: 20px; height: 20px; }
+.clinic__tel .clinic__num { font-size: 1.15em; min-width: 3.6em; }
+.clinic__short { min-width: 0; }
+.clinic__morerow { display: flex; flex-wrap: wrap; gap: 0 16px; align-items: center; }
+.clinic__morerow > * { min-height: var(--target-min); display: inline-flex; align-items: center; }
 /* AI チェック・確認済みの印（A-8）。文字の大きさに合わせる */
 .trust { width: 1.2em; height: 1.2em; vertical-align: -0.2em; margin-inline: 2px; }
 /* ロゴ（Kurashi。A-11）：上の帯と入口・免責 */
 .brand img.brand__logo { width: auto; height: 34px; }
 .art img.art__logo { width: auto; height: 64px; }
+.brand__logo--mark { display: none; }
+/* 帯は1段（A-4）：幅で ロゴ → マーク → 無し。「試作」の札は 640px 未満で消す（480px では相談・設定の文字と並ぶと入らない） */
+.brand__tag { white-space: nowrap; }
+@media (max-width: 639.98px) { .brand__tag { display: none; } }
+@media (max-width: 479.98px) {
+  .brand__logo--full { display: none; }
+  .brand__logo--mark { display: block; }
+  .brand img.brand__logo--mark { width: 32px; height: 32px; }
+}
+/* 320px でもマークとボタン3つは1段に入る（約 220px）。ロゴ無しは 280px 未満だけ（入口へのリンクを残すため） */
+@media (max-width: 279.98px) {
+  .brand { display: none; }
+}
 /* 相談窓口のシート（I-4） */
 .help { gap: 14px; }
 .help__item { display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; border-bottom: 1.5px dashed var(--line-dash); }
@@ -480,7 +499,8 @@ fieldset legend svg { vertical-align: -0.2em; }
 .words { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .word { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 8px 10px; border: 1.5px solid var(--line-dim); border-radius: var(--radius-md); background: var(--white); }
 .word__ja { font-size: var(--fs-answer); font-weight: 700; }
-.word__mean { color: var(--ink-muted); }
+.word__mean { color: var(--ink-muted); display: flex; flex-direction: column; }
+.word__mean2 { font-size: var(--fs-small); }
 .word__btns { display: flex; justify-content: flex-end; gap: 6px; align-items: center; }
 .word__star { min-width: var(--target-min); font-size: 1.2em; }
 .words-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }

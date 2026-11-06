@@ -197,6 +197,84 @@
         "status": "needs_check",
         "quote": "昨今、来日外国人が帰国する際に犯罪グループに売却した個人名義口座が特殊詐欺の振込先に悪用される事例が発生しております。"
       }
+    },
+    {
+      "id": "rel-tennyu-before-mail",
+      "type": "practical_prerequisite",
+      "from": "nagoya-tennyu-todoke",
+      "to": "mail-forward",
+      "explain": {
+        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
+        "en": "File mail forwarding after your moving-in notice at the ward office."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      },
+      "day_order": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+      }
+    },
+    {
+      "id": "rel-mw-tennyu-before-mail",
+      "type": "practical_prerequisite",
+      "from": "move-within-tennyu",
+      "to": "mail-forward",
+      "explain": {
+        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
+        "en": "File mail forwarding after your moving-in notice at the ward office."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      },
+      "day_order": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+      }
+    },
+    {
+      "id": "rel-mw-tenkyo-before-mail",
+      "type": "practical_prerequisite",
+      "from": "move-within-tenkyo",
+      "to": "mail-forward",
+      "explain": {
+        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに、{郵便|ゆうびん}の{転送|てんそう}を{出|だ}します。",
+        "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあとに、{郵便|ゆうびん}の{届|とど}けを{出|だ}します。",
+        "en": "File mail forwarding after your moving-in notice at the ward office."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      },
+      "day_order": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "note": "作者の指示（2026-11-06 夜、B-6）：転入届が済んだあとに郵便の転送を出す（その前はできない）。転入届の済みを答えから決めるルールは無いので satisfied_when_rule_ids は無し（手続きを「済」にしたとき満たす）"
+      }
     }
   ]
 }

@@ -21,7 +21,7 @@ function trackApi(page: Page) {
 async function toPreview(page: Page) {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/letter');
-  await expect(h1(page)).toHaveText('届いた書類の種類と、見る所を調べます');
+  await expect(h1(page)).toHaveText('届いた書類がわからないとき');
   await tap(page, '見本の書類で試す');
   await expect(h1(page)).toHaveText('この写真を送りますか？');
 }

@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { allWords, heardFirst, listWords, logSeen, WORD_KINDS, type WordKind, type WordLog, type WordView } from '../core/words';
 import { todayJst } from '../core/date';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { line, show, ui, type LocalizedText, type UiKey } from '../i18n/text';
+import { line, ui, type LocalizedText, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { useFocusTitle } from './router';
 import { Speak } from './Speak';
@@ -27,11 +27,18 @@ export function useSeen(ids: string[]) {
 
 export function WordRow({ w, starred, onStar }: { w: WordView; starred: boolean; onStar: () => void }) {
   const { level } = usePrefs();
-  const mean = show(w.meaning as LocalizedText, level);
+  // 意味は「やさしい日本語＋English」の2段（B-9）。English のときは English が先
+  const m = w.meaning as LocalizedText;
+  const easy = m.ja_easy ?? m.ja;
+  const pair: [string, string][] = level.kind === 'foreign'
+    ? [[m[level.id] ?? easy, m[level.id] ? level.lang : 'ja'], [m[level.id] ? easy : '', 'ja']]
+    : [[easy, 'ja'], [m.en ?? '', 'en']];
   return (
     <li className="word">
       <span className="word__ja" lang="ja"><Ruby s={w.ja} /></span>
-      <span className="word__mean" lang={mean.mainLang}><Ruby s={mean.main} /></span>
+      <span className="word__mean">
+        {pair.filter(([s]) => s).map(([s, lang], i) => <span key={i} className={i ? 'word__mean2' : undefined} lang={lang}><Ruby s={s} /></span>)}
+      </span>
       <span className="word__btns">
         <Speak ja={w.ja} />
         <button type="button" className="seg word__star" aria-pressed={starred} aria-label={line(ui('words.star'), level) + '：' + w.ja.replace(/\{([^|}]+)\|[^}]+\}/g, '$1')} onClick={onStar}>

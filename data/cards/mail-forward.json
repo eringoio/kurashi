@@ -6,7 +6,7 @@
   "obligation": "practical",
   "domain": "life",
   "depth": "L2",
-  "first_week": true,
+  "first_week": false,
   "scope": "nagoya_resident",
   "per_move": true,
   "requires_moved_in": false,
@@ -27,15 +27,15 @@
     "reading": "てんきょ・てんそうさーびす"
   },
   "summary": {
-    "ja": "{郵便局|ゆうびんきょく}に{転居|てんきょ}{届|とどけ}を{出|だ}すと、{前|まえ}の{住所|じゅうしょ}あての{郵便|ゆうびん}を、1{年間|ねんかん}、{新|あたら}しい{住所|じゅうしょ}へ{無料|むりょう}で{送|おく}ってくれます。{郵便局|ゆうびんきょく}の{窓口|まどぐち}・ポスト・e{転居|てんきょ}（ウェブ・アプリ）で{出|だ}せます。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}かかるので、{前|まえ}の{住所|じゅうしょ}を{出|で}る{前|まえ}に{出|だ}します（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{郵便局|ゆうびんきょく}に{届|とど}けを{出|だ}すと、{前|まえ}の{住所|じゅうしょ}の{郵便|ゆうびん}が1{年|ねん}、{新|あたら}しい{住所|じゅうしょ}に{届|とど}きます。お{金|かね}はかかりません。{引|ひ}っ{越|こ}す{前|まえ}に{出|だ}します（{要|よう}{確認|かくにん}）。",
-    "en": "If you file a moving notice with Japan Post, mail sent to your old address is forwarded to your new address free for one year. File it at a post office counter, by post box, or with e-tenkyo (web or app). Registration takes 3–7 business days, so file it before you leave your old address (to be checked)."
+    "ja": "{郵便局|ゆうびんきょく}に{転居|てんきょ}{届|とどけ}を{出|だ}すと、{前|まえ}の{住所|じゅうしょ}あての{郵便|ゆうびん}を、1{年間|ねんかん}、{新|あたら}しい{住所|じゅうしょ}へ{無料|むりょう}で{送|おく}ってくれます。{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}したあとに{出|だ}します。{郵便局|ゆうびんきょく}の{窓口|まどぐち}・ポスト・e{転居|てんきょ}（ウェブ・アプリ）で{出|だ}せます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{郵便局|ゆうびんきょく}に{届|とど}けを{出|だ}すと、{前|まえ}の{住所|じゅうしょ}の{郵便|ゆうびん}が1{年|ねん}、{新|あたら}しい{住所|じゅうしょ}に{届|とど}きます。お{金|かね}はかかりません。{区役所|くやくしょ}の{届|とど}けのあとに{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "en": "If you file a moving notice with Japan Post, mail sent to your old address is forwarded to your new address free for one year. File it after your moving-in notice at the ward office. You can file it at a post office counter, by post box, or with e-tenkyo (web or app) (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{前|まえ}の{住所|じゅうしょ}を{出|で}る{前|まえ}（{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}。{要|よう}{確認|かくにん}）",
-      "ja_easy": "{引|ひ}っ{越|こ}す{前|まえ}（{要|よう}{確認|かくにん}）",
-      "en": "Before you leave your old address (registration takes 3–7 business days; to be checked)"
+      "ja": "{転入|てんにゅう}{届|とどけ}のあと、できるだけ{早|はや}く（1{年間|ねんかん}{転送|てんそう}。{登録|とうろく}まで3〜7{営業|えいぎょう}{日|び}。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{区役所|くやくしょ}の{届|とど}けのあと、すぐ（{要|よう}{確認|かくにん}）",
+      "en": "As soon as possible after your moving-in notice (forwarding lasts 1 year; registration takes 3–7 business days; to be checked)"
     },
     "evidence": {
       "source_ids": [

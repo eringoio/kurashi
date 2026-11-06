@@ -13,9 +13,9 @@
   "eligibility": "R-bank-has-account",
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{銀行|ぎんこう}の{登録|とうろく}を{変|か}える（{住所|じゅうしょ}・{名前|なまえ}・{在留|ざいりゅう}カード）",
-    "ja_easy": "{銀行|ぎんこう}の{住所|じゅうしょ}・{名前|なまえ}を{変|か}える",
-    "en": "Update your bank details (address, name, residence card)"
+    "ja": "{登録|とうろく}{情報|じょうほう}を{変|か}える（{住所|じゅうしょ}・{名前|なまえ}・{在留|ざいりゅう}カード）",
+    "ja_easy": "{登録|とうろく}している{住所|じゅうしょ}・{名前|なまえ}を{変|か}える",
+    "en": "Update your registered details (address, name, residence card)"
   },
   "official_name": {
     "ja": "住所・氏名・在留カードの変更の届出",
