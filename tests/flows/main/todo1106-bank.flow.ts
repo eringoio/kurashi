@@ -24,6 +24,8 @@ flow({
     async () => { await expect(page.locator('main')).toContainText('別の口座を作る'); await expect(page.locator('main')).toContainText('あとで'); });
   // 答えを残してから（同意の前はメモリだけ）、「あとで」の中のページを直接開く
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
+  await expect(page.getByRole('region', { name: /残しますか/ })).toHaveCount(0); // 保存が始まってから開き直す（ときどき落ちたため）
+  await page.waitForTimeout(300);
   await page.goto('/e/E-bank/c/bank-resident-change');
   await page.getByLabel('日本に住み始めた日').fill('2026-06-01');
   await snap({ name: '居住者への変更', input: '住み始めた日 2026-06-01', expected: '「12月1日ごろです（住み始めた日から6か月）」と「カレンダーに追加」', why: '6か月後のリマインダーを .ics で（AddToCalendar と同じ仕組み）' },

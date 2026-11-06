@@ -12,18 +12,20 @@ const data = loadData(withBundles(baseRaw(), [json as Bundle]));
 const ev = data.events.find((e) => e.id === 'E-job')!;
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
+// D-1（11/6）：最初に「何をしますか」（アルバイト・就職・退職）。今までの期待は「アルバイト」の答えで確かめる
 const go = (status: string | undefined, extra: Record<string, string> = {}, over: Partial<EngineInput> = {}) =>
-  run(data, { answers: { ...(status ? { 'Q-zairyu-status': status } : {}), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
+  run(data, { answers: { 'Q-job-goal': 'part_time', ...(status ? { 'Q-zairyu-status': status } : {}), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
-const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state).map((c) => c.card.id).sort();
-const ALL = ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-shushoku', 'job-trouble', 'zairyu-shikakugai'];
-const COMMON = ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble'];
+const PT = new Set(['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble', 'zairyu-shikakugai', 'job-phrases']);
+const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state && PT.has(c.card.id)).map((c) => c.card.id).sort();
+const ALL = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble', 'zairyu-shikakugai'];
+const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble'];
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('アルバイトを始める（下書き）', () => {
-  it('型と参照の検査を通る。7枚。verified は無い。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。16枚。verified は無い。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(ev.card_ids.slice().sort()).toEqual(ALL);
+    expect(ev.card_ids.length).toBe(16);
     const s = JSON.stringify(json);
     expect(s).not.toContain('"verified"');
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
@@ -38,6 +40,7 @@ describe('アルバイトを始める（下書き）', () => {
   });
   it('最初に、在留資格を聞く', () => {
     expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-zairyu-status']);
+    expect(run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront.map((q) => q.id)).toEqual(['Q-zairyu-status', 'Q-job-goal']);
   });
   it('留学：資格外活動許可は shown。ほかのカードも出る。許可をもう受けたかを聞く', () => {
     const o = go('student');
@@ -48,11 +51,11 @@ describe('アルバイトを始める（下書き）', () => {
   it('家族滞在：資格外活動許可は出る。卒業後の在留資格の変更（留学の人向け）は出ない', () => {
     const o = go('family');
     expect(ids(o, 'shown')).toEqual(['zairyu-shikakugai', ...COMMON].sort());
-    expect(ids(o, 'excluded')).toEqual(['job-shushoku']);
+    expect(ids(o, 'excluded')).toEqual([]);
   });
   it('永住者・定住者など（働くことに制限がない）：資格外活動許可は対象外。最低賃金などは出る。許可は聞かない', () => {
     const o = go('permanent');
-    expect(ids(o, 'excluded')).toEqual(['job-shushoku', 'zairyu-shikakugai']);
+    expect(ids(o, 'excluded')).toEqual(['zairyu-shikakugai']);
     expect(ids(o, 'shown')).toEqual(COMMON);
     expect(o.upfront).toEqual([]);
   });
@@ -115,5 +118,29 @@ describe('アルバイトを始める（下書き）', () => {
     const o = go('student');
     for (const id of ['job-saitei-chingin', 'job-rodo-joken', 'job-kyujin', 'job-trouble', 'job-shakai-hoken']) expect(view(o, id).dayRule.kind).toBe('no_day');
     expect(view(o, 'zairyu-shikakugai').dayRule.kind).not.toBe('no_day');
+  });
+});
+
+// D-1（作者 11/6。docs/JOB_PLAN.md）：就職・退職。入管の届けは仕事の在留資格の人だけ
+describe('就職・退職（下書き）', () => {
+  const g = (goal: string, status: string) => run(data, { answers: { 'Q-job-goal': goal, 'Q-zairyu-status': status }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
+  const st = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!.state;
+  it('就職：保険・国保をやめる・住民税。入管の届けは仕事の在留資格だけ。アルバイトのカードは対象外', () => {
+    const w = g('employ', 'work');
+    for (const id of ['job-employ-hoken', 'job-employ-kokuho-stop', 'job-employ-juminzei', 'job-employ-nyukan']) expect(st(w, id), id).not.toBe('excluded');
+    expect(st(w, 'job-kyujin')).toBe('excluded');
+    expect(st(g('employ', 'permanent'), 'job-employ-nyukan')).toBe('excluded');
+    expect(st(g('employ', 'student'), 'job-shushoku')).not.toBe('excluded');
+  });
+  it('退職：国保と年金・失業給付・住民税。入管の届け（3か月の注意）は仕事の在留資格だけ', () => {
+    const w = g('leave', 'work');
+    for (const id of ['job-leave-kokuho', 'job-leave-shitsugyo', 'job-leave-juminzei', 'job-leave-nyukan']) expect(st(w, id), id).not.toBe('excluded');
+    expect(st(g('leave', 'japanese'), 'job-leave-nyukan')).toBe('excluded');
+    expect(plain(data.cards.find((c) => c.id === 'job-leave-nyukan')!.summary.ja)).toContain('3か月');
+  });
+  it('応募の言葉は作者の経験（author_stated）。アルバイトのときだけ', () => {
+    const c = data.cards.find((x) => x.id === 'job-phrases')!;
+    expect(c.evidence.note).toContain('author_stated');
+    expect(st(g('employ', 'student'), 'job-phrases')).toBe('excluded');
   });
 });
