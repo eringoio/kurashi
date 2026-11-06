@@ -485,3 +485,6 @@ fieldset legend svg { vertical-align: -0.2em; }
 .word__star { min-width: var(--target-min); font-size: 1.2em; }
 .words-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
 .words-filter .field { flex: 1 1 140px; min-width: 0; }
+/* 病院：診療科は順位なしの一覧（10c） */
+.clinic__depts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.clinic__depts li { display: flex; flex-direction: column; padding: 10px 12px; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); }

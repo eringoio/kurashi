@@ -14,6 +14,10 @@ import { fill } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Speak } from '../ui/Speak';
 
+/** 診療科の案内を出すか（03_MEDICAL 6章：大会ルールの確認が来るまで、止められるようにする）。VITE_CLINIC_DEPARTMENTS=off で止める。
+    止めたときは、緊急の連絡先・公式の探すページ・持ち物・受付の言葉だけの1画面になる */
+export const CLINIC_DEPARTMENTS_ON = import.meta.env.VITE_CLINIC_DEPARTMENTS !== 'off';
+
 /* ───── 選んだ場所（メモリの中だけ） ───── */
 let picked: string | null = null;
 const subs = new Set<() => void>();
@@ -21,6 +25,7 @@ const setPicked = (id: string | null) => { picked = id; subs.forEach((f) => f())
 const usePicked = () => useSyncExternalStore((f) => { subs.add(f); return () => subs.delete(f); }, () => picked);
 
 function Band({ part }: { part: ClinicPart | null }) {
+  const guide = CLINIC().links.find((l) => l.id === 'fdma-guide');
   const { level } = usePrefs();
   return (
     <aside className="k-notice clinic__band" aria-label={line(ui('clinic.bandLabel'), level)}>
@@ -36,19 +41,25 @@ function Band({ part }: { part: ClinicPart | null }) {
           </li>
         ))}
       </ul>
+      {/* 救急車の呼び方（消防庁の多言語のガイド）。どの場所を選んでも先に見られる（03_MEDICAL 2章B） */}
+      {guide && (
+        <a className="link" href={guide.url} target="_blank" rel="noopener noreferrer">
+          <One t={guide.title} /><span className="sr-only"><One k="clinic.newTab" /></span>
+        </a>
+      )}
     </aside>
   );
 }
 
 /** 公式のページへのリンク（新しいタブ）。{DEPT} は、まず行く診療科の名前 */
-function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment }) {
+function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment | null }) {
   const links = ids.map((id) => CLINIC().links.find((l) => l.id === id)!).filter(Boolean);
   return (
     <ul className="list" role="list">
       {links.map((l) => (
         <li key={l.id}>
           <a className="k-answer clinic__link" href={l.url} target="_blank" rel="noopener noreferrer">
-            <Bi t={fill(l.title, 'DEPT', (_lv, id) => dept.name[id] ?? dept.name.ja)} />
+            <Bi t={fill(l.title, 'DEPT', (_lv, id) => (dept ? dept.name[id] ?? dept.name.ja : ui('clinic.anyDept')[id] ?? ui('clinic.anyDept').ja) as string)} />
             {l.desc && <span className="sub"><One t={l.desc} /></span>}
             <span className="sr-only"><One k="clinic.newTab" /></span>
           </a>
@@ -94,7 +105,8 @@ function Where() {
 
 function Departments({ part }: { part: ClinicPart }) {
   const d = CLINIC();
-  const [first, ...rest] = departmentsFor(d, part);
+  const depts = departmentsFor(d, part);
+  const first = depts[0];
   useFocusTitle('clinic:2');
   return (
     <>
@@ -102,19 +114,12 @@ function Departments({ part }: { part: ClinicPart }) {
       <Band part={part} />
       <p className="sub"><One k="clinic.picked" />：<Bi t={part.name} />　<Link to="/clinic" className="link"><Bi k="clinic.change" /></Link></p>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="clinic.h2" /></h1></div>
-      <section className="clinic__first" aria-labelledby="clinic-first">
-        <p className="label"><span className="clinic__tag">1 <One k="clinic.first" /></span></p>
-        <h2 id="clinic-first" className="clinic__dept"><Bi t={first.name} /></h2>
-        <p className="sub"><Bi t={first.covers} /></p>
-      </section>
-      {rest.length > 0 && (
-        <section aria-labelledby="clinic-others">
-          <h2 id="clinic-others" className="label"><One k="clinic.others" /></h2>
-          <ol className="clinic__others" start={2}>
-            {rest.map((x, i) => <li key={x.id}><span className="clinic__n" aria-hidden="true">{i + 2}</span><span><span className="clinic__dept"><Bi t={x.name} /></span><span className="sub"><Bi t={x.covers} /></span></span></li>)}
-          </ol>
-        </section>
-      )}
+      <p className="sub"><Bi k="clinic.notDx" /></p>
+      {/* 順位を付けない（「まず」「1・2」は判断に読める。03_MEDICAL 2章A） */}
+      <ul className="clinic__depts" role="list">
+        {depts.map((x) => <li key={x.id}><span className="clinic__dept"><Bi t={x.name} /></span><span className="sub"><Bi t={x.covers} /></span></li>)}
+      </ul>
+      {part.id !== 'child' && d.advice.child && <p className="sub"><Bi t={d.advice.child} /></p>}
       <p className="sub"><Bi t={d.advice.youdecide} /></p>
       <section className="k-notice clinic__advice" aria-labelledby="clinic-adv">
         <h2 id="clinic-adv" className="label"><Bi t={d.advice.head} /></h2>
@@ -132,23 +137,24 @@ function Departments({ part }: { part: ClinicPart }) {
   );
 }
 
-function Before({ part }: { part: ClinicPart }) {
+function Before({ part }: { part: ClinicPart | null }) {
   const { level } = usePrefs();
   const d = CLINIC();
-  const dept = departmentsFor(d, part)[0];
+  const dept = part ? departmentsFor(d, part)[0] : null;
   useFocusTitle('clinic:3');
   return (
     <>
-      <Step n={3} />
+      {part && <Step n={3} />}
       <Band part={part} />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="clinic.h3" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k={part ? 'clinic.h3' : 'clinic.only.h1'} /></h1></div>
       <section aria-labelledby="clinic-find">
         <h2 id="clinic-find" className="label"><One k="clinic.findH" /></h2>
-        <LinkList ids={d.links.map((l) => l.id)} dept={dept} />
+        <LinkList ids={d.links.filter((l) => l.id !== 'fdma-guide').map((l) => l.id)} dept={dept} />
         <p className="sub"><Bi t={d.callNote.text} /></p>
       </section>
       <section aria-labelledby="clinic-bring">
         <h2 id="clinic-bring" className="label"><One k="clinic.bringH" /></h2>
+        <p className="sub"><Bi k="clinic.bringNote" /></p>
         <ul className="clinic__bring" role="list">
           {d.bring.map((b) => (
             <li key={b.id} className="k-check k-check--fixed">
@@ -161,7 +167,7 @@ function Before({ part }: { part: ClinicPart }) {
       </section>
       <section aria-labelledby="clinic-say">
         <h2 id="clinic-say" className="label"><One k="clinic.sayH" /></h2>
-        {[{ id: part.id, say: part.say }, ...d.phrases].map((p) => {
+        {[...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases].map((p) => {
           const mean = level.kind === 'ja' ? null : line(p.say, level);
           return (
             <div key={p.id} className="k-counter">
@@ -181,9 +187,10 @@ export function ClinicPage({ step }: { step: '' | 'departments' | 'before' }) {
   const sel = usePicked();
   const part = CLINIC().parts.find((p) => p.id === sel) ?? null;
   // 選んでいないまま 2・3 を開いたら、1 にもどす
-  useEffect(() => { if (step && !part) { history.replaceState(null, '', '/clinic'); dispatchEvent(new PopStateEvent('popstate')); } }, [step, part]);
+  useEffect(() => { if (CLINIC_DEPARTMENTS_ON && step && !part) { history.replaceState(null, '', '/clinic'); dispatchEvent(new PopStateEvent('popstate')); } }, [step, part]);
   let body: React.ReactNode;
-  if (!step) body = <Where />;
+  if (!CLINIC_DEPARTMENTS_ON) body = <Before part={null} />;
+  else if (!step) body = <Where />;
   else if (!part) body = null;
   else body = step === 'departments' ? <Departments part={part} /> : <Before part={part} />;
   return (

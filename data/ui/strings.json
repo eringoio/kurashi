@@ -2491,19 +2491,9 @@
     "en": "Change"
   },
   "clinic.h2": {
-    "ja": "まず、ここへ{行|い}ってみましょう",
-    "ja_easy": "まず、ここへ{行|い}ってみましょう",
-    "en": "Try here first"
-  },
-  "clinic.first": {
-    "ja": "まず",
-    "ja_easy": "まず",
-    "en": "First"
-  },
-  "clinic.others": {
-    "ja": "ほかに、こんな{科|か}もあります",
-    "ja_easy": "ほかに、こんな{科|か}もあります",
-    "en": "Other departments that may fit"
+    "ja": "この{部分|ぶぶん}を{一般的|いっぱんてき}に{診|み}る{診療科|しんりょうか}",
+    "ja_easy": "ここを{診|み}る{科|か}",
+    "en": "Departments that usually look at this part"
   },
   "clinic.h3": {
     "ja": "{行|い}く{前|まえ}に",
@@ -2516,9 +2506,9 @@
     "en": "Find a clinic"
   },
   "clinic.bringH": {
-    "ja": "{持|も}っていくもの",
-    "ja_easy": "{持|も}っていくもの",
-    "en": "What to bring"
+    "ja": "あると{役立|やくだ}つもの",
+    "ja_easy": "あると{便利|べんり}なもの",
+    "en": "Useful to bring"
   },
   "clinic.noins": {
     "ja": "{保険|ほけん}にまだ{入|はい}っていない{人|ひと}は：{国民|こくみん}{健康|けんこう}{保険|ほけん}",
@@ -2526,9 +2516,9 @@
     "en": "No health insurance yet? → National Health Insurance"
   },
   "clinic.sayH": {
-    "ja": "{受付|うけつけ}で{見|み}せる{言葉|ことば}",
-    "ja_easy": "{受付|うけつけ}で{見|み}せることば",
-    "en": "Show at reception"
+    "ja": "{受付|うけつけ}・{診察|しんさつ}で{使|つか}える{言葉|ことば}",
+    "ja_easy": "{病院|びょういん}で{使|つか}う{言葉|ことば}",
+    "en": "Words for reception and the doctor"
   },
   "clinic.newTab": {
     "ja": "（{新|あたら}しいタブで{開|ひら}きます）",
@@ -3049,5 +3039,25 @@
     "ja": "{大事|だいじ}にする",
     "ja_easy": "{大事|だいじ}にする",
     "en": "Star"
+  },
+  "clinic.notDx": {
+    "ja": "{診断|しんだん}ではありません。{部分|ぶぶん}ごとに{決|き}めた{一覧|いちらん}です。",
+    "ja_easy": "{病気|びょうき}を{当|あ}てるものではありません。",
+    "en": "This is not a diagnosis. It is a fixed list for each body part."
+  },
+  "clinic.bringNote": {
+    "ja": "{要|い}るものは{病院|びょういん}によって{違|ちが}います。",
+    "ja_easy": "{病院|びょういん}で{違|ちが}います。",
+    "en": "What you need differs by clinic."
+  },
+  "clinic.only.h1": {
+    "ja": "{病院|びょういん}に{行|い}く{前|まえ}に",
+    "ja_easy": "{病院|びょういん}に{行|い}く{前|まえ}に",
+    "en": "Before you go to a clinic"
+  },
+  "clinic.anyDept": {
+    "ja": "{病院|びょういん}",
+    "ja_easy": "{病院|びょういん}",
+    "en": "clinic"
   }
 }

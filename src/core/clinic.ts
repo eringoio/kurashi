@@ -37,6 +37,8 @@ export const ClinicData = z.object({
     /** 大きな病院のかわりに出す公式のリンク（links の id。A-7） */
     links: z.array(z.string()),
     youdecide: Text,
+    /** 子どもは多くの場合まず小児科（医師のアドバイザー 11/6） */
+    child: Text.optional(),
     evidence: Evidence,
   }),
   /** 行く前に電話で聞くこと */

@@ -53,9 +53,10 @@ test('AT-clinic-01〜03：ホームから、tooth で探して 歯・口 → 歯
   await check(page, '1 選んだ');
   await tap(page, 'つぎへ');
   await expect(page).toHaveURL(/\/clinic\/departments$/);
-  await expect(h1(page)).toHaveText('まず、ここへ行ってみましょう');
-  await expect(page.locator('.clinic__first')).toContainText('1 まず');
-  await expect(page.locator('.clinic__first h2')).toContainText('歯科');
+  await expect(h1(page)).toHaveText('この部分を一般的に診る診療科');
+  await expect(page.locator('main')).toContainText('診断ではありません');
+  await expect(page.locator('main')).not.toContainText('まず、ここへ');
+  await expect(page.locator('.clinic__depts li').first()).toContainText('歯科');
   await expect(page.locator('main')).toContainText('どこに行くかは、あなたが決めます');
   await check(page, '2 診療科');
   await tap(page, 'つぎへ');
@@ -84,25 +85,28 @@ test('絵の横の目ボタンで選ぶと、眼科が最初', async ({ page }) 
   await eye.click();
   await expect(eye).toHaveAttribute('aria-pressed', 'true');
   await tap(page, 'つぎへ');
-  await expect(page.locator('.clinic__first h2')).toContainText('眼科');
+  await expect(page.locator('.clinic__depts li').first()).toContainText('眼科');
 });
 
-test('AT-clinic-04：119・#7119 の帯は3段ともある。#8000 はこどもだけ', async ({ page }) => {
+test('AT-clinic-04：119・#7119・#8000 と救急車の呼び方は、3段ともいつも出る', async ({ page }) => {
   await start(page);
   await page.goto('/clinic');
   await expect(band(page)).toContainText('119');
   await expect(band(page)).toContainText('#7119');
   await page.getByLabel('言葉で探す').fill('tooth');
   await page.locator('.chips').first().getByRole('button', { name: /歯・口/ }).click();
-  await expect(band(page)).not.toContainText('#8000');
+  await expect(band(page)).toContainText('#8000');
+  await expect(band(page).getByRole('link', { name: /救急車の呼び方/ })).toHaveAttribute('href', 'https://www.fdma.go.jp/publication/portal/post1.html');
   await tap(page, 'つぎへ');
   await expect(band(page)).toContainText('119');
   await expect(band(page)).toContainText('#7119');
-  await expect(band(page)).not.toContainText('#8000');
+  await expect(band(page)).toContainText('#8000');
+  await expect(band(page).getByRole('link', { name: /救急車の呼び方/ })).toHaveAttribute('href', 'https://www.fdma.go.jp/publication/portal/post1.html');
   await tap(page, 'つぎへ');
   await expect(band(page)).toContainText('119');
   await expect(band(page)).toContainText('#7119');
-  await expect(band(page)).not.toContainText('#8000');
+  await expect(band(page)).toContainText('#8000');
+  await expect(band(page).getByRole('link', { name: /救急車の呼び方/ })).toHaveAttribute('href', 'https://www.fdma.go.jp/publication/portal/post1.html');
   // こども
   await page.goto('/clinic');
   await page.getByRole('button', { name: /^子ども/ }).click();

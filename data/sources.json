@@ -560,6 +560,30 @@
       "owner_type": "government",
       "title": "個人番号通知書",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-119-tagengo",
+      "url": "https://www.city.nagoya.jp/shobo/page/0000105290.html",
+      "owner": "名古屋市消防局",
+      "owner_type": "government",
+      "title": "119番通報受付時等に係る多言語通訳体制",
+      "language": "ja"
+    },
+    {
+      "source_id": "fdma-ambulance-guide",
+      "url": "https://www.fdma.go.jp/publication/portal/post1.html",
+      "owner": "総務省消防庁",
+      "owner_type": "government",
+      "title": "訪日外国人のための救急車利用ガイド",
+      "language": "ja"
+    },
+    {
+      "source_id": "jnto-hotline",
+      "url": "https://www.jnto.go.jp/emergency/eng/mi_guide.html",
+      "owner": "日本政府観光局（JNTO）",
+      "owner_type": "government",
+      "title": "Japan Visitor Hotline / Guide for using medical institutions",
+      "language": "en"
     }
   ]
 }

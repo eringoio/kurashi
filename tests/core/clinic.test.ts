@@ -6,6 +6,7 @@ import sourcesJson from '../../data/sources.json';
 const d = CLINIC();
 const src = new Set((sourcesJson as { sources: { source_id: string }[] }).sources.map((s) => s.source_id));
 const part = (id: string) => d.parts.find((p) => p.id === id)!;
+const firstDept = (id: string) => departmentsFor(d, part(id))[0].id;
 const ids = (q: string) => searchParts(d, q).map((p) => p.id);
 
 describe('データ', () => {
@@ -48,17 +49,29 @@ describe('言葉で探す', () => {
 
 describe('診療科の順番と緊急の連絡先', () => {
   it('各場所の1つめの科', () => {
-    const first = (id: string) => departmentsFor(d, part(id))[0].id;
+    const first = firstDept;
     expect(first('eye')).toBe('ganka');
     expect(first('mouth')).toBe('shika');
     expect(first('limbs')).toBe('seikei');
     expect(first('child')).toBe('shoni');
     expect(first('preg')).toBe('sanfujin');
   });
-  it('119・#7119 はいつも。#8000 はこどものときだけ（判断はしない）', () => {
+  it('119・#7119・#8000 はいつも同じに出す（判断はしない。10c：どの場所でも先に確かめられる）', () => {
     const nums = (id: string | null) => emergencyFor(d, id ? part(id) : null).map((e) => e.number);
-    expect(nums(null)).toEqual(['119', '#7119']);
-    expect(nums('mouth')).toEqual(['119', '#7119']);
+    expect(nums(null)).toEqual(['119', '#7119', '#8000']);
+    expect(nums('mouth')).toEqual(['119', '#7119', '#8000']);
     expect(nums('child')).toEqual(['119', '#7119', '#8000']);
+  });
+  it('10c（医師のアドバイザー）：骨・関節は整形外科、子どもは小児科、病名・確率の言葉を使わない', () => {
+    const first = firstDept;
+    expect(first('limbs')).toBe('seikei');
+    expect(d.departments.find((x) => x.id === 'seikei')!.covers.ja).toContain('ねんざ');
+    expect(first('child')).toBe('shoni');
+    const all = JSON.stringify({ parts: d.parts.map((p) => [p.name, p.say]), deps: d.departments.map((x) => x.covers), advice: d.advice, phrases: d.phrases });
+    for (const w of ['かもしれません', '可能性', '最も適した', '病気です', '診断します']) expect(all, w).not.toContain(w);
+    // 紹介状が無くても受診できる、と書く
+    expect(d.advice.big.desc.ja.replace(/\{([^|}]+)\|[^}]+\}/g, '$1')).toContain('紹介状がなくても診てもらえます');
+    // 公式のリンクだけ（https・クエリ文字列なし）
+    for (const l of d.links) expect(l.url).toMatch(/^https:\/\/[^?]+$/);
   });
 });

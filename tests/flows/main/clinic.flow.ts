@@ -1,4 +1,4 @@
-/* 病院の案内（SPEC 6A.13）：どこが困っている → 診療科 → 行く前に。こどもは #8000 も出る */
+/* 病院の案内（SPEC 6A.13）：どこが困っている → この部分を一般的に診る診療科 → 行く前に。緊急の帯（119・#7119・#8000・救急車の呼び方）はいつも */
 import { expect, flow } from '../lib';
 
 flow({
@@ -20,12 +20,12 @@ flow({
     async () => { await expect(page.locator('.chips').first().getByRole('button', { name: /歯・口/ })).toBeVisible(); });
 
   await page.locator('.chips').first().getByRole('button', { name: /歯・口/ }).click();
-  await snap({ name: '1 歯・口を選ぶ', input: '歯・口', expected: '「歯・口」が選ばれ、「つぎへ」が押せる。#8000 は出ない', why: 'こどもを選んだときだけ #8000' },
-    async () => { await expect(page.getByRole('button', { name: 'つぎへ' })).toBeEnabled(); await expect(band).not.toContainText('#8000'); });
+  await snap({ name: '1 歯・口を選ぶ', input: '歯・口', expected: '「歯・口」が選ばれ、「つぎへ」が押せる。帯に 119・#7119・#8000 と救急車の呼び方', why: '緊急の連絡先は、診療科より先に、どの場所でも同じに出す（03_MEDICAL 2章B）' },
+    async () => { await expect(page.getByRole('button', { name: 'つぎへ' })).toBeEnabled(); await expect(band).toContainText('#8000'); });
 
   await tap('つぎへ');
-  await snap({ name: '2 まず、ここへ', input: 'つぎへ', expected: '「まず、ここへ行ってみましょう」。1つめは歯科。「どこに行くかは、あなたが決めます」', why: '診断せず、見る所の順番だけ示す' },
-    async () => { await expect(h1).toHaveText('まず、ここへ行ってみましょう'); await expect(page.locator('.clinic__first h2')).toContainText('歯科'); });
+  await snap({ name: '2 一般的に診る診療科', input: 'つぎへ', expected: '「この部分を一般的に診る診療科」。「診断ではありません」。歯科・歯科口腔外科を順位なしで。子どもは小児科の一文。紹介状が無くても診てもらえる', why: '順位・確率に読める言い方をしない（医師のアドバイザー 11/6）' },
+    async () => { await expect(h1).toHaveText('この部分を一般的に診る診療科'); await expect(page.locator('.clinic__depts li').first()).toContainText('歯科'); });
 
   await tap('つぎへ');
   await snap({ name: '3 行く前に', input: 'つぎへ', expected: '「行く前に」。「近くの歯科を探す」の公式ページへのリンク、持ち物、受付で見せる言葉「歯が痛いです。」', why: '探すのは公式の検索ページ。URL にクエリを付けない' },
@@ -37,6 +37,6 @@ flow({
 
   await page.goto('/clinic');
   await page.getByRole('button', { name: /^子ども/ }).click();
-  await snap({ name: 'こども 帯に #8000', input: 'こども（絵にないもの）', expected: '帯の項目が 2 つから 3 つになる（こどもの電話 #8000 が加わる）', why: '#8000 はこどものときだけ' },
+  await snap({ name: 'こども 帯に #8000', input: 'こども（絵にないもの）', expected: '帯は同じ3つ（119・#7119・#8000）', why: '場所によって緊急の連絡先を変えない' },
     async () => { await expect(band.locator('li')).toHaveCount(3); });
 });

@@ -875,9 +875,9 @@
         "en": "Orthopedics"
       },
       "covers": {
-        "ja": "{骨|ほね}・{関節|かんせつ}・けがを{診|み}る{科|か}",
-        "ja_easy": "{骨|ほね}・{関節|かんせつ}・けがを{見|み}ます",
-        "en": "Bones, joints, injuries"
+        "ja": "{骨|ほね}・{関節|かんせつ}・ねんざ・けがを{診|み}る{科|か}",
+        "ja_easy": "{骨|ほね}・ねんざ・けがを{診|み}る{科|か}",
+        "en": "Bones, joints, sprains and injuries"
       },
       "evidence": {
         "source_ids": [
@@ -1055,9 +1055,9 @@
         "en": "General medicine"
       },
       "covers": {
-        "ja": "どこが{悪|わる}いか{分|わ}からないときに{診|み}る{科|か}",
-        "ja_easy": "どこが{悪|わる}いかわからないときに{見|み}ます",
-        "en": "When you are not sure what is wrong"
+        "ja": "{体|からだ}{全体|ぜんたい}を{広|ひろ}く{診|み}る{科|か}（ない{病院|びょういん}も{多|おお}い）",
+        "ja_easy": "{体|からだ}{全体|ぜんたい}を{診|み}る{科|か}",
+        "en": "Looks at the whole body (many hospitals do not have one)"
       },
       "evidence": {
         "source_ids": [
@@ -1074,16 +1074,17 @@
       "number": "119",
       "always": true,
       "label": {
-        "ja": "{救急車|きゅうきゅうしゃ}",
-        "ja_easy": "{救急車|きゅうきゅうしゃ}",
-        "en": "Ambulance"
+        "ja": "{救急車|きゅうきゅうしゃ}・{火事|かじ}。{外国語|がいこくご}でも{話|はな}せます（{通訳|つうやく}・24{時間|じかん}）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}。{外国語|がいこくご}で{話|はな}せます",
+        "en": "Ambulance / fire. You can speak a foreign language (interpreter, 24 hours)"
       },
       "evidence": {
         "source_ids": [
-          "nagoya-7119"
+          "nagoya-119-tagengo"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "名古屋市防災指令センター、119番通報者、通訳事業者の三者が同時通話し必要事項を聴取"
       }
     },
     {
@@ -1091,35 +1092,33 @@
       "number": "#7119",
       "always": true,
       "label": {
-        "ja": "{救急|きゅうきゅう}{相談|そうだん}（{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったとき。24{時間|じかん}・21の{言語|げんご}）",
-        "ja_easy": "{救急|きゅうきゅう}の{相談|そうだん}（{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったとき。24{時間|じかん}・21のことば）",
-        "en": "Emergency advice (not sure if you need an ambulance; 24 hours, 21 languages)"
+        "ja": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったときの{相談|そうだん}（24{時間|じかん}・21の{言語|げんご}。つながらないときは 052-951-7119）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったら（24{時間|じかん}）",
+        "en": "Not sure if you need an ambulance? Advice 24 hours, 21 languages (if it does not connect: 052-951-7119)"
       },
       "evidence": {
         "source_ids": [
           "nagoya-7119"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "#7119をダイヤルすることで、24時間365日体制で看護師等からアドバイスを受けることができる電話相談窓口です。／繋がらない場合は、052－951－7119へお電話ください。"
       }
     },
     {
       "id": "8000",
       "number": "#8000",
-      "always": false,
-      "parts": [
-        "child"
-      ],
+      "always": true,
       "label": {
-        "ja": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{夜|よる}・{休|やす}みの{日|ひ}）",
-        "ja_easy": "こどもの{病気|びょうき}の{相談|そうだん}（{夜|よる}・{休|やす}みの{日|ひ}）",
-        "en": "Advice about a sick child (nights and holidays)"
+        "ja": "{子|こ}どもの{急|きゅう}な{病気|びょうき}の{相談|そうだん}（{時間|じかん}は{要|よう}{確認|かくにん}）",
+        "ja_easy": "{子|こ}どもの{病気|びょうき}の{相談|そうだん}（{要|よう}{確認|かくにん}）",
+        "en": "Advice about a sick child (hours to be checked)"
       },
       "evidence": {
         "source_ids": [
           "aichi-8000"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-06",
         "status": "needs_check"
       }
     }
@@ -1149,9 +1148,9 @@
         "en": "Large hospital"
       },
       "desc": {
-        "ja": "{紹介状|しょうかいじょう}がないと、{別|べつ}の{料金|りょうきん}がかかることがあります（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{紹介状|しょうかいじょう}がないと、ほかにお{金|かね}がかかることがあります（{要|よう}{確認|かくにん}）。",
-        "en": "Without a referral letter, you may pay an extra fee (to be checked)."
+        "ja": "{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。ただし{大学|だいがく}{病院|びょういん}など{一部|いちぶ}の{大|おお}きな{病院|びょういん}では、{初診|しょしん}に{別|べつ}の{料金|りょうきん}がかかります（7,000{円|えん}{以上|いじょう}、{歯科|しか}は5,000{円|えん}{以上|いじょう}。{救急|きゅうきゅう}のときは{除|のぞ}く。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{紹介状|しょうかいじょう}がなくても{行|い}けます。でも、{大|おお}きい{病院|びょういん}では、ほかにお{金|かね}がかかります（{要|よう}{確認|かくにん}）。",
+        "en": "You can be seen without a referral letter. But some large hospitals, such as university hospitals, charge an extra fee at the first visit (7,000 yen or more; dental 5,000 yen or more; not for emergencies; to be checked)."
       }
     },
     "youdecide": {
@@ -1165,14 +1164,20 @@
         "gov-online-shokai",
         "mhlw-shokai-juten"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check"
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "紹介状のありなしにかかわらず、受診は可能ですが、紹介状がなく来院された場合は、一部負担金（３割負担等）とは別の「特別の料金」が原則必要となります。"
     },
     "links": [
       "aichi-qq",
       "navii",
       "tsuyaku"
-    ]
+    ],
+    "child": {
+      "ja": "{子|こ}どもは、{多|おお}くの{場合|ばあい}、まず{小児科|しょうにか}で{相談|そうだん}できます。",
+      "ja_easy": "{子|こ}どもは、まず{小児科|しょうにか}で{相談|そうだん}できます。",
+      "en": "For children, you can usually start at a pediatrics clinic (shonika)."
+    }
   },
   "links": [
     {
@@ -1279,6 +1284,50 @@
         "checked_at": "2026-11-05",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "fdma-guide",
+      "url": "https://www.fdma.go.jp/publication/portal/post1.html",
+      "title": {
+        "ja": "{救急車|きゅうきゅうしゃ}の{呼|よ}び{方|かた}（16の{言語|げんご}・{消防庁|しょうぼうちょう}）",
+        "ja_easy": "{救急車|きゅうきゅうしゃ}の{呼|よ}び{方|かた}",
+        "en": "How to call an ambulance (16 languages, FDMA)"
+      },
+      "desc": {
+        "ja": "{訪日|ほうにち}{外国人|がいこくじん}のための{救急車|きゅうきゅうしゃ}{利用|りよう}ガイド",
+        "ja_easy": "{外国|がいこく}の{人|ひと}のためのガイド",
+        "en": "Ambulance guide for foreign visitors"
+      },
+      "evidence": {
+        "source_ids": [
+          "fdma-ambulance-guide"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "訪日外国人のための救急車利用ガイド"
+      }
+    },
+    {
+      "id": "jnto-hotline",
+      "url": "https://www.jnto.go.jp/emergency/eng/mi_guide.html",
+      "title": {
+        "ja": "{旅行|りょこう}で{来|き}た{人|ひと}の24{時間|じかん}の{電話|でんわ}（JNTO）",
+        "ja_easy": "{旅行|りょこう}の{人|ひと}の{電話|でんわ}（JNTO）",
+        "en": "Japan Visitor Hotline (JNTO, for visitors)"
+      },
+      "desc": {
+        "ja": "050-3816-2787。{英語|えいご}・{中国語|ちゅうごくご}・{韓国語|かんこくご}",
+        "ja_easy": "050-3816-2787",
+        "en": "050-3816-2787. English, Chinese, Korean"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-hotline"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "Tel: 050-3816-2787 (24 hours a day, 365 days a year) ... English, Chinese, Korean"
+      }
     }
   ],
   "callNote": {
@@ -1309,6 +1358,27 @@
           "jnto-mi-guide"
         ],
         "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "id",
+      "illustration": "card",
+      "title": {
+        "ja": "{在留|ざいりゅう}カードなど{本人|ほんにん}{確認|かくにん}の{書類|しょるい}",
+        "ja_easy": "{在留|ざいりゅう}カード",
+        "en": "Residence card or other ID"
+      },
+      "desc": {
+        "ja": "{求|もと}められたとき",
+        "ja_easy": "{見|み}せてと{言|い}われたとき",
+        "en": "If asked"
+      },
+      "evidence": {
+        "source_ids": [
+          "jnto-mi-guide"
+        ],
+        "checked_at": "2026-11-06",
         "status": "needs_check"
       }
     },
@@ -1364,31 +1434,79 @@
         "checked_at": "2026-11-05",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "referral",
+      "illustration": "letter",
+      "title": {
+        "ja": "{紹介状|しょうかいじょう}（ある{人|ひと}）",
+        "ja_easy": "{紹介状|しょうかいじょう}（ある{人|ひと}）",
+        "en": "Referral letter (if you have one)"
+      },
+      "evidence": {
+        "source_ids": [
+          "mhlw-tokubetsu-ryokin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
     }
   ],
   "phrases": [
     {
       "id": "first",
       "say": {
-        "ja": "{初|はじ}めてです。",
-        "ja_easy": "{初|はじ}めてです。",
+        "ja": "{初診|しょしん}です。",
+        "ja_easy": "はじめて{来|き}ました。",
         "en": "This is my first visit."
+      }
+    },
+    {
+      "id": "noreserve",
+      "say": {
+        "ja": "{予約|よやく}していません。",
+        "ja_easy": "{予約|よやく}していません。",
+        "en": "I don't have an appointment."
+      }
+    },
+    {
+      "id": "nihongo",
+      "say": {
+        "ja": "{日本語|にほんご}があまり{話|はな}せません。",
+        "ja_easy": "{日本語|にほんご}が{少|すこ}ししか{話|はな}せません。",
+        "en": "I don't speak much Japanese."
+      }
+    },
+    {
+      "id": "here",
+      "say": {
+        "ja": "ここが{痛|いた}いです。",
+        "ja_easy": "ここが{痛|いた}いです。",
+        "en": "It hurts here."
+      }
+    },
+    {
+      "id": "hoken",
+      "say": {
+        "ja": "{保険|ほけん}は{使|つか}えますか。",
+        "ja_easy": "{保険|ほけん}は{使|つか}えますか。",
+        "en": "Can I use my health insurance?"
       }
     },
     {
       "id": "english",
       "say": {
         "ja": "{英語|えいご}を{話|はな}せる{人|ひと}はいますか。",
-        "ja_easy": "{英語|えいご}が{話|はな}せる{人|ひと}はいますか。",
+        "ja_easy": "{英語|えいご}を{話|はな}せる{人|ひと}はいますか。",
         "en": "Is there someone who speaks English?"
       }
     },
     {
-      "id": "reservation",
+      "id": "itsukara",
       "say": {
-        "ja": "{予約|よやく}は{必要|ひつよう}ですか。",
-        "ja_easy": "{予約|よやく}は{必要|ひつよう}ですか。",
-        "en": "Do I need an appointment?"
+        "ja": "いつからですか？",
+        "ja_easy": "いつからですか？",
+        "en": "Since when? (staff may ask you this)"
       }
     }
   ]
