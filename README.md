@@ -5,6 +5,7 @@
 - 仕様：`docs/SPEC.md`
 - 引き継ぎ：`docs/HANDOFF.md`
 - 作者が確かめること：`docs/AUTHOR_CHECK.md`
+- 文書の一覧（正本・補助・履歴）：`docs/README.md`。テストの回し方：`docs/TESTS.md`
 
 ## 手元で動かす
 
