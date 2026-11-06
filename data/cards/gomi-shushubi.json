@@ -1,0 +1,111 @@
+{
+  "id": "gomi-shushubi",
+  "data_version": 1,
+  "illustration": "calendar",
+  "awareness_type": "life_essential",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-gomi-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{収集|しゅうしゅう}{日|び}を{調|しら}べる（{住|す}んでいる{区|く}・{町名|ちょうめい}で）",
+    "ja_easy": "{収集|しゅうしゅう}{日|び}をしらべる",
+    "en": "Find your collection day (by ward and area)"
+  },
+  "official_name": {
+    "ja": "収集日",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{収集|しゅうしゅう}{日|び}は、{住|す}んでいる{地域|ちいき}（{区|く}・{町名|ちょうめい}）で{決|き}まります。{名古屋|なごや}{市|し}の「ごみ{収集|しゅうしゅう}{日|び}{検索|けんさく}」で、{区|く}や{町名|ちょうめい}を{選|えら}んで{調|しら}べます。{市|し}の{分別|ふんべつ}アプリ「さんあ～る」で{住|す}んでいる{地域|ちいき}を{設定|せってい}すると、{収集|しゅうしゅう}{日|び}をカレンダーで{見|み}られ、アラームで{知|し}らせる{機能|きのう}もあります（{要|よう}{確認|かくにん}）。{粗大|そだい}ごみは{月|つき}に1{回|かい}で、{地域|ちいき}ごとに{収集|しゅうしゅう}{日|び}が{決|き}まっています。",
+    "ja_easy": "{収集|しゅうしゅう}の{日|ひ}は、{住|す}んでいる{場所|ばしょ}で{決|き}まっています。{名古屋市|なごやし}の「ごみ{収集日検索|しゅうしゅうびけんさく}」で、{区|く}と{町|まち}の{名前|なまえ}を{選|えら}んでしらべます。アプリ「さんあ～る」でも、カレンダーで{見|み}られます（{要|よう}{確認|かくにん}）。",
+    "en": "Collection days depend on where you live (ward and town area). Use the City of Nagoya \"garbage collection day search\" and choose your ward and town. In the city's sorting app \"San-A-ru\" you can set your area to see a calendar, with an alarm function (to be checked). Bulky waste is collected once a month, on a day set for each area."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の「ごみ{収集|しゅうしゅう}{日|び}{検索|けんさく}」",
+      "ja_easy": "{名古屋市|なごやし}の「ごみ{収集日検索|しゅうしゅうびけんさく}」",
+      "en": "City of Nagoya \"garbage collection day search\""
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-guide-tagengo"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "収集日は、ごみ収集日検索でご確認ください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "9787b76ef10170c6f0ea63e291db1ab0416a70900684e10743c26db15ea4a19a",
+        "verdict": "agree",
+        "ref": "research/audits/gomi.json#P-gomi-shushubi/c2"
+      }
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "収集日",
+    "ごみの日",
+    "カレンダー",
+    "collection day",
+    "garbage day",
+    "calendar"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-gomi-shushubi",
+      "B-nagoya-gomi-app",
+      "B-nagoya-gomi-guide-tagengo"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "区・町名などを選択するとごみ収集日が表示されます。"
+  },
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{名古屋|なごや}{市|し}の「ごみ{収集|しゅうしゅう}{日|び}{検索|けんさく}」で{調|しら}べます。",
+        "ja_easy": "{名古屋市|なごやし}の「ごみ{収集日検索|しゅうしゅうびけんさく}」でしらべます。",
+        "en": "Check with the City of Nagoya \"garbage collection day search\"."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-guide-tagengo"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "収集日は、ごみ収集日検索でご確認ください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9787b76ef10170c6f0ea63e291db1ab0416a70900684e10743c26db15ea4a19a",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-shushubi/c2"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{分別|ふんべつ}アプリ「さんあ～る」で{住|す}んでいる{地域|ちいき}を{設定|せってい}すると、{収集|しゅうしゅう}{日|び}をカレンダーで{見|み}られます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "アプリ「さんあ～る」で{住|す}んでいる{場所|ばしょ}を{決|き}めると、カレンダーで{見|み}られます（{要|よう}{確認|かくにん}）。",
+        "en": "In the sorting app \"San-A-ru\", set your area to see the collection days on a calendar (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-app"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "お住まいの地域を設定することで、収集日をカレンダー形式で確認できます。"
+      }
+    }
+  ]
+}

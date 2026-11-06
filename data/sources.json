@@ -744,6 +744,238 @@
       "owner_type": "government",
       "title": "資格外活動許可",
       "language": "ja"
+    },
+    {
+      "source_id": "B-moj-koshin",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/16-3.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留期間更新許可申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "author-2026-11-05",
+      "url": null,
+      "owner": "作者（kurashi）",
+      "owner_type": "private",
+      "title": "作者の知見（2026-11-05）。公式の本文で確認待ち",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-aichi-tabunka-sumai",
+      "url": "https://www.pref.aichi.jp/syakaikatsudo/tabunka/information/sumai/",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "外国人の皆さまの役に立つ情報（住まい）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mlit-genjo-guideline",
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000020.html",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "「原状回復をめぐるトラブルとガイドライン」について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mlit-guidebook-en",
+      "url": "https://www.mlit.go.jp/common/001317844.pdf",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "Guidebook for Finding a Room (部屋探しのガイドブック 英語版 PDF)",
+      "language": "en"
+    },
+    {
+      "source_id": "B-mlit-heya-sagashi",
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000017.html",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "外国人向けの賃貸住宅入居に関する資料",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mlit-hosho-ichiran",
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_fr7_000031.html",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "外国人の言語対応サポートを行っている登録家賃債務保証業者一覧",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mlit-hosho-seido",
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_fr7_000024.html",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "家賃債務保証業者登録制度",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-about",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1034005.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-gaikokujin",
+      "url": "https://voices.city.nagoya.jp/faq/detail.aspx?id=43669",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の外国人入居者について（令和5年5月）（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-shikaku",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014588.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の申込資格",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-top",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/index.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-ippan",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014589/1034006.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の一般募集案内",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-sakichaku",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014593.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の先着順募集",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-teiki",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014594.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の定期入居募集",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-fukushi",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014595/1034007.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の福祉向募集案内",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jkk-top",
+      "url": "https://www.jkk-nagoya.or.jp/",
+      "owner": "名古屋市住宅供給公社",
+      "owner_type": "public_corp",
+      "title": "名古屋市住宅供給公社",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-ur-top",
+      "url": "https://www.ur-net.go.jp/",
+      "owner": "UR都市機構",
+      "owner_type": "public_corp",
+      "title": "UR都市機構",
+      "language": "ja"
+    },
+    {
+      "source_id": "estat-jutaku-r5-130-2",
+      "url": "https://www.e-stat.go.jp/stat-search/database?statdisp_id=0004021532",
+      "owner": "総務省統計局（e-Stat）",
+      "owner_type": "government",
+      "title": "令和5年住宅・土地統計調査 130-2 住宅の建て方、延べ面積別住宅の１か月当たり家賃（民営借家（専用住宅））－全国、都道府県、市区",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-index",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/index.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "家庭ごみ・資源の分け方・出し方",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-sodai-henko",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1050522.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "令和8年10月から、粗大ごみの対象が変わりました",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-kaden",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035059/1012216/1012224.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "家電リサイクル法対象機器",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-jikoban",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1033991.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "ご自分で処理施設に搬入する場合（自己搬入）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-jikoban-henko",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1048812.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "令和9年1月から自己搬入の受付方法が変わります",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-app",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1012187/1012188.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "資源・ごみ分別アプリ",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-guide-tagengo",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1012187/1042497.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "なごやのごみ減量・資源化ガイド",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-sodai-detail",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1033988.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "粗大ごみの分け方・出し方について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-sodai-net",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1046468/1046469.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "粗大ごみをインターネットで申し込む場合",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-gomi-shushubi",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "ごみ収集日検索",
+      "language": "ja"
     }
   ]
 }

@@ -1,0 +1,116 @@
+{
+  "id": "housing-guarantor",
+  "data_version": 1,
+  "illustration": "letter",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{保証人|ほしょうにん}と{保証|ほしょう}{会社|がいしゃ}",
+    "ja_easy": "{保証人|ほしょうにん}か{保証|ほしょう}{会社|がいしゃ}",
+    "en": "Guarantor or guarantee company"
+  },
+  "official_name": {
+    "ja": "保証人・家賃債務保証会社",
+    "reading": "ほしょうにん・やちんさいむほしょうがいしゃ"
+  },
+  "summary": {
+    "ja": "{部屋|へや}を{申|もう}し{込|こ}むとき、{保証人|ほしょうにん}か{家賃|やちん}{債務|さいむ}{保証|ほしょう}{会社|がいしゃ}の{利用|りよう}が{求|もと}められることが{多|おお}いです（{要|よう}{確認|かくにん}）。{保証人|ほしょうにん}は、{借主|かりぬし}が{払|はら}わない{家賃|やちん}などを{代|か}わりに{払|はら}う{人|ひと}です。{保証人|ほしょうにん}を{使|つか}うときは、{保証人|ほしょうにん}の{収入|しゅうにゅう}を{証明|しょうめい}するものと{印鑑|いんかん}{登録|とうろく}{証明書|しょうめいしょ}が{書類|しょるい}に{加|くわ}わります。{保証|ほしょう}{会社|がいしゃ}を{使|つか}うときは、{保証料|ほしょうりょう}がかかります。{保証料|ほしょうりょう}は{目安|めやす}です。{会社|がいしゃ}によってちがいます（{要|よう}{確認|かくにん}）。{国土交通省|こくどこうつうしょう}の{冊子|さっし}には、2{年|ねん}の{保証|ほしょう}で{家賃|やちん}1か{月|げつ}{分|ぶん}の35〜50%のことが{多|おお}いという{説明|せつめい}と、{家賃|やちん}の{半月|はんつき}{分|ぶん}ほどが{多|おお}いという{説明|せつめい}があります。{契約|けいやく}の{前|まえ}に、{会社|がいしゃ}に{聞|き}きます。{保証|ほしょう}{会社|がいしゃ}は{保険|ほけん}ではありません。{会社|がいしゃ}が{立|た}て{替|か}えた{家賃|やちん}は、あとで{借主|かりぬし}に{請求|せいきゅう}されます。{保証|ほしょう}{委託|いたく}{契約|けいやく}は、{条項|じょうこう}をよく{確認|かくにん}します。{国土交通省|こくどこうつうしょう}に、{外国人|がいこくじん}{向|む}けの{言語|げんご}{対応|たいおう}をしている{登録|とうろく}{保証|ほしょう}{会社|がいしゃ}の{一覧|いちらん}があります。{登録|とうろく}は{任意|にんい}です。{市営|しえい}{住宅|じゅうたく}は、{保証人|ほしょうにん}ではなく{緊急|きんきゅう}{連絡先|れんらくさき}1{名|めい}の{届|とど}け{出|で}です（{要|よう}{確認|かくにん}）。{契約書|けいやくしょ}と{不動産|ふどうさん}{会社|がいしゃ}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{部屋|へや}を{申|もう}し{込|こ}むとき、「{保証人|ほしょうにん}」か「{保証|ほしょう}{会社|がいしゃ}」が{必要|ひつよう}なことが{多|おお}いです（{要|よう}{確認|かくにん}）。{保証人|ほしょうにん}は、{家賃|やちん}を{払|はら}えないとき、かわりに{払|はら}う{人|ひと}です。{保証|ほしょう}{会社|がいしゃ}を{使|つか}うと、{保証料|ほしょうりょう}がかかります。{目安|めやす}です。{会社|がいしゃ}によってちがいます（{要|よう}{確認|かくにん}）。{家賃|やちん}の{半月|はんつき}{分|ぶん}ぐらいという{説明|せつめい}も、{家賃|やちん}1か{月|げつ}{分|ぶん}の35〜50%という{説明|せつめい}もあります。{契約|けいやく}の{前|まえ}に、{会社|がいしゃ}に{聞|き}いてください。{保証|ほしょう}{会社|がいしゃ}は{保険|ほけん}ではありません。{会社|がいしゃ}が{払|はら}った{家賃|やちん}は、あとで{自分|じぶん}が{払|はら}います。{国土交通省|こくどこうつうしょう}のページに、{外国人|がいこくじん}の{言葉|ことば}に{合|あ}わせてくれる{保証|ほしょう}{会社|がいしゃ}の{一覧|いちらん}があります。{契約書|けいやくしょ}を{見|み}て、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "When you apply for a room, a guarantor or a rental guarantee company is often required (to be checked). A guarantor pays unpaid rent and similar costs in place of the tenant. If you use a guarantor, the guarantor's proof of income and seal registration certificate are added to the application documents. If you use a guarantee company, a guarantee fee applies. The fee is a rough guide and differs by company (to be checked): the ministry guidebook says it is often 35% to 50% of one month's rent for a 2-year guarantee, and elsewhere says often about half a month's rent. Ask the company before you sign. A guarantee company is not insurance: rent it pays for you is billed to you later. Read the clauses of the guarantee contract carefully. The ministry publishes a list of registered guarantee companies that support foreign residents in their own languages. Registration is voluntary. For city housing in Nagoya, one emergency contact is required instead of a guarantor (to be checked). Check the lease and ask the real estate agent (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{国土交通省|こくどこうつうしょう}のページ「{外国人|がいこくじん}の{言語|げんご}{対応|たいおう}サポートを{行|おこな}っている{登録|とうろく}{家賃|やちん}{債務|さいむ}{保証|ほしょう}{業者|ぎょうしゃ}{一覧|いちらん}」",
+      "ja_easy": "{国土交通省|こくどこうつうしょう}のページ「{外国人|がいこくじん}の{言語|げんご}{対応|たいおう}サポートを{行|おこな}っている{登録|とうろく}{保証|ほしょう}{会社|がいしゃ}の{一覧|いちらん}」",
+      "en": "Ministry page: list of registered rental guarantee companies that support foreign residents' languages"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-hosho-seido",
+        "B-mlit-heya-sagashi"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "外国人の言語対応サポートを行っている登録家賃債務保証業者一覧",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "6293a68a368a463b7b177f3452e85cd80d861b885b73ce3343d45d7cc0a1140f",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-hosho/c9"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{国土交通省|こくどこうつうしょう}の{一覧|いちらん}で、{外国人|がいこくじん}{向|む}けの{多言語|たげんご}{対応|たいおう}ができる{登録|とうろく}{保証|ほしょう}{会社|がいしゃ}を{探|さが}せます。",
+        "ja_easy": "{国土交通省|こくどこうつうしょう}の{一覧|いちらん}で、{外国人|がいこくじん}の{言葉|ことば}に{合|あ}わせてくれる{保証|ほしょう}{会社|がいしゃ}を{探|さが}せます。",
+        "en": "Use the ministry list to find registered guarantee companies that can respond in several languages for foreign residents."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-heya-sagashi",
+          "B-mlit-hosho-seido"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "登録を受けた家賃債務保証業者のうち、外国人向けの多言語対応が可能な事業者一覧はこちら",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "2aa082af392beb54190af99618fe8e7f94ccc08c74dd005087a1d5ad0f267d3b",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-hosho/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{保証料|ほしょうりょう}の{金額|きんがく}は、{契約|けいやく}の{前|まえ}に{不動産|ふどうさん}{会社|がいしゃ}か{保証|ほしょう}{会社|がいしゃ}に{聞|き}きます（{会社|がいしゃ}によってちがいます。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{保証料|ほしょうりょう}の{金額|きんがく}は、{契約|けいやく}の{前|まえ}に{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Ask the agent or the guarantee company for the guarantee fee before you sign (it differs by company; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "you must pay a set guarantee fee (this is often 35% to 50% of one month's rent paid in advance as the guarantee fee for 2 years)."
+      }
+    }
+  ],
+  "keywords": [
+    "ほしょうにん",
+    "保証人",
+    "ほしょうがいしゃ",
+    "保証会社",
+    "保証料",
+    "guarantor",
+    "guarantee company",
+    "guarantee fee",
+    "rental guarantee"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en",
+      "B-nagoya-shiei-shikaku",
+      "B-mlit-hosho-ichiran"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "A guarantor or use of a rental guarantee company is often required when making an application."
+  }
+}

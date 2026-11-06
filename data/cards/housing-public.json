@@ -1,0 +1,333 @@
+{
+  "id": "housing-public",
+  "data_version": 1,
+  "illustration": "hall",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}",
+    "ja_easy": "{市|し}・{県|けん}の{住宅|じゅうたく}",
+    "en": "City, prefectural and UR housing"
+  },
+  "official_name": {
+    "ja": "名古屋市の市営住宅（県営住宅・UR賃貸住宅は例）",
+    "reading": "なごやしのしえいじゅうたく"
+  },
+  "summary": {
+    "ja": "{名古屋市|なごやし}の{市営|しえい}{住宅|じゅうたく}は、{世帯|せたい}の{所得|しょとく}が{月|つき}158,000{円|えん}{以下|いか}などの{資格|しかく}を{満|み}たす{人|ひと}が{申|もう}し{込|こ}めます。{名古屋市|なごやし}に{住所|じゅうしょ}か{勤務地|きんむち}があること、{同居|どうきょ}する{親族|しんぞく}がいること、{自分|じぶん}の{住宅|じゅうたく}を{持|も}っていないことも{要|い}ります。{外国人|がいこくじん}も{対象|たいしょう}です。{単身|たんしん}で{申|もう}し{込|こ}めるのは、60{歳|さい}{以上|いじょう}、{障害者|しょうがいしゃ}{手帳|てちょう}をもつ{人|ひと}、{生活|せいかつ}{保護|ほご}を{受|う}けている{人|ひと}、DV{被害者|ひがいしゃ}などに{限|かぎ}られます（{一部|いちぶ}の{募集|ぼしゅう}は{例外|れいがい}）。{単身|たんしん}の{留学生|りゅうがくせい}は、ふつう{申|もう}し{込|こ}めません（{要|よう}{確認|かくにん}）。{募集|ぼしゅう}は、{一般|いっぱん}・{先着順|せんちゃくじゅん}・{定期|ていき}{入居|にゅうきょ}・{福祉向|ふくしむ}けの4つです。{資格|しかく}があるかは、{申|もう}し{込|こ}みのあとに{書類|しょるい}を{出|だ}して{決|き}まります。{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{名古屋市|なごやし}の{市営|しえい}{住宅|じゅうたく}は、{決|き}まりを{満|み}たす{人|ひと}が{申|もう}し{込|こ}めます。{世帯|せたい}の{所得|しょとく}が{月|つき}158,000{円|えん}{以下|いか}、{名古屋市|なごやし}に{住|す}んでいるか{働|はたら}いている、{同居|どうきょ}する{親族|しんぞく}がいる、{自分|じぶん}の{家|いえ}がない、などです。{外国人|がいこくじん}も{申|もう}し{込|こ}めます。でも、ひとりで{申|もう}し{込|こ}めるのは、60{歳|さい}{以上|いじょう}の{人|ひと}や{障害者|しょうがいしゃ}{手帳|てちょう}をもつ{人|ひと}などだけです。ひとりの{留学生|りゅうがくせい}は、ふつう{申|もう}し{込|こ}めません（{要|よう}{確認|かくにん}）。{募集|ぼしゅう}は4つあります。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "Nagoya city housing is open to people who meet the requirements, such as a household income of 158,000 yen a month or less. You must live or work in Nagoya, have a relative living with you, and own no home. Foreign residents are eligible. A single person can apply only in limited cases, such as being 60 or older, holding a disability certificate, receiving public assistance or being a DV victim (some recruitments are exceptions). Single students usually cannot apply (to be checked). There are four kinds of recruitment: general, first-come, fixed-term and welfare. Eligibility is decided after you submit all documents. Confirm at the counter (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋市|なごやし}{住宅|じゅうたく}{供給|きょうきゅう}{公社|こうしゃ}。{案内書|あんないしょ}は{区役所|くやくしょ}・{支所|ししょ}でも{配|くば}っています",
+      "ja_easy": "{名古屋市|なごやし}{住宅|じゅうたく}{供給|きょうきゅう}{公社|こうしゃ}。{案内書|あんないしょ}は{区役所|くやくしょ}でももらえます",
+      "en": "Nagoya City Housing Supply Corporation. Recruitment guides are also handed out at ward and branch offices"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-shiei-teiki"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "パンフレットは、各区役所・支所・名古屋市住宅供給公社（土曜日・日曜日・年末年始・国民の祝日を除く）及び住まいの窓口"
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{世帯|せたい}の{所得|しょとく}は、{入居者|にゅうきょしゃ}{全員|ぜんいん}の{合計|ごうけい}が{月額|げつがく}158,000{円|えん}{以下|いか}です（{原則|げんそく}）。{退職|たいしょく}{予定|よてい}では{申|もう}し{込|こ}めません。",
+        "ja_easy": "{世帯|せたい}の{所得|しょとく}は、{入居者|にゅうきょしゃ}みんなの{合計|ごうけい}が{月|つき}158,000{円|えん}{以下|いか}です。",
+        "en": "Total income of all residents must be 158,000 yen a month or less (in principle). You cannot apply if you plan to quit your job."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "原則として、入居者全員の所得の合計が月額158,000円以下の世帯に限り申込むことができます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申込者|もうしこみしゃ}{本人|ほんにん}の{住所|じゅうしょ}か{勤務地|きんむち}が、{名古屋市内|なごやしない}にあることが{要|い}ります。{住民票|じゅうみんひょう}で{住所|じゅうしょ}を{確認|かくにん}できないと、{申|もう}し{込|こ}めない{場合|ばあい}があります。",
+        "ja_easy": "{申|もう}し{込|こ}む{人|ひと}が、{名古屋市|なごやし}に{住|す}んでいるか、{名古屋市|なごやし}で{働|はたら}いていることが{要|い}ります。",
+        "en": "The applicant's home or workplace must be in Nagoya. You may be refused if your residence cannot be confirmed from the resident record."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "申込者本人の住所地又は勤務地が名古屋市内にあること"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{同居|どうきょ}する{親族|しんぞく}（{同居|どうきょ}{予定|よてい}を{含|ふく}む）が{要|い}ります。{原則|げんそく}は{夫婦|ふうふ}か{親子|おやこ}の{世帯|せたい}です。{婚約者|こんやくしゃ}・{内縁|ないえん}の{人|ひと}・ファミリーシップの{宣誓者|せんせいしゃ}も{申|もう}し{込|こ}めます（{条件|じょうけん}があります）。",
+        "ja_easy": "いっしょに{住|す}む{家族|かぞく}が{要|い}ります。{夫婦|ふうふ}か{親子|おやこ}が{基本|きほん}です。{婚約者|こんやくしゃ}や、ファミリーシップを{宣誓|せんせい}した{人|ひと}も{申|もう}し{込|こ}めます（{条件|じょうけん}があります）。",
+        "en": "You need a relative who lives with you (or will). In principle this means a couple or parent and child. Fiances, de facto partners and people who took the familyship pledge can also apply (with conditions)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "原則、夫婦又は親子（里子を含む）の世帯であること。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{入居予定者|にゅうきょよていしゃ}の{中|なか}に{自分|じぶん}{名義|めいぎ}の{住宅|じゅうたく}を{持|も}つ{人|ひと}がいると、{申|もう}し{込|こ}めません（{入居|にゅうきょ}までに{売却|ばいきゃく}などで{持|も}たなくなる{場合|ばあい}を{除|のぞ}く）。",
+        "ja_easy": "{住|す}む{人|ひと}の{中|なか}に、{自分|じぶん}の{家|いえ}を{持|も}っている{人|ひと}がいると、{申|もう}し{込|こ}めません。",
+        "en": "You cannot apply if anyone who will live there owns a home in their own name (unless they will no longer own it by move-in)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "入居予定者の中に自分名義の住宅をお持ちの方がいる場合、申込みできません（入居までに売却等で自家所有者でなくなる場合を除く）。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{単身|たんしん}（{戸籍上|こせきじょう}の{配偶者|はいぐうしゃ}がいない{人|ひと}）は、60{歳|さい}{以上|いじょう}、{障害者|しょうがいしゃ}{手帳|てちょう}をもつ{人|ひと}、{生活|せいかつ}{保護|ほご}を{受|う}けている{人|ひと}、DV{被害者|ひがいしゃ}などに{当|あ}たる{人|ひと}だけです。{外国人|がいこくじん}や{学生|がくせい}に{関|かん}する{特別|とくべつ}な{書|か}き{方|かた}はこのページには{見|み}つかりません。{単身|たんしん}の{学生|がくせい}は、ふつう{申|もう}し{込|こ}めません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ひとりで{申|もう}し{込|こ}めるのは、60{歳|さい}{以上|いじょう}の{人|ひと}、{障害者|しょうがいしゃ}{手帳|てちょう}をもつ{人|ひと}、{生活|せいかつ}{保護|ほご}を{受|う}けている{人|ひと}、DVを{受|う}けた{人|ひと}などだけです。ひとりの{学生|がくせい}は、ふつう{申|もう}し{込|こ}めません（{要|よう}{確認|かくにん}）。",
+        "en": "A single person (no spouse on the family register) can apply only if they are 60 or older, hold a disability certificate, receive public assistance, are a DV victim, etc. The page has no special rule for foreign residents or students. Single students usually cannot apply (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "戸籍上の配偶者がない単身の方は、上記（1）,（3）から（7）を満たし、下記（8）に該当する必要があります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}と{定期|ていき}{入居|にゅうきょ}{募集|ぼしゅう}の{一部|いちぶ}の{住宅|じゅうたく}は、{単身|たんしん}の{資格|しかく}が{無|な}くても{単身|たんしん}で{申|もう}し{込|こ}めることがあります。",
+        "ja_easy": "{先着順|せんちゃくじゅん}と{定期|ていき}{入居|にゅうきょ}の{募集|ぼしゅう}では、ひとりで{申|もう}し{込|こ}める{住宅|じゅうたく}があります。",
+        "en": "Some homes in the first-come and fixed-term recruitments accept single applicants even without the single-applicant qualification."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "(注)一部住宅において、上記資格の無い方でも単身でお申し込み頂ける場合があります。（先着順募集・定期入居募集）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国人|がいこくじん}も{対象|たいしょう}です。{住宅|じゅうたく}に{困|こま}っている{世帯|せたい}が{対象|たいしょう}で、{国籍|こくせき}は{条件|じょうけん}ではありません（{名古屋市|なごやし}のFAQ）。",
+        "ja_easy": "{外国人|がいこくじん}も{申|もう}し{込|こ}めます。{住|す}む{家|いえ}に{困|こま}っている{世帯|せたい}が{対象|たいしょう}です。",
+        "en": "Foreign residents are eligible. The program is for households in housing need (city FAQ)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-gaikokujin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "市営住宅の入居要件につきましては、住宅に困窮した世帯を募集の対象としており、外国人入居希望者も対象としております。"
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{一般|いっぱん}{募集|ぼしゅう}：{年|ねん}4{回|かい}の{抽選|ちゅうせん}です。{申込書|もうしこみしょ}を{郵送|ゆうそう}するか、{電子|でんし}{申請|しんせい}で{申|もう}し{込|こ}みます。{窓口|まどぐち}では{受|う}け{付|つ}けていません。",
+        "ja_easy": "{一般|いっぱん}{募集|ぼしゅう}：{年|ねん}4回、くじで{決|き}めます。{申込書|もうしこみしょ}を{郵便|ゆうびん}で{送|おく}るか、インターネットで{申|もう}し{込|こ}みます。{窓口|まどぐち}では{受|う}け{付|つ}けません。",
+        "en": "General recruitment: a lottery four times a year. Apply by post or e-application. Not accepted at the counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-ippan"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "窓口での申込受付は行っておりません。"
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{次|つぎ}の{一般|いっぱん}{募集|ぼしゅう}（{令和|れいわ}8{年度|ねんど}{第|だい}3{回|かい}）の{申込|もうしこみ}{期間|きかん}は、11{月|がつ}21{日|にち}から11{月|がつ}30{日|にち}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{次|つぎ}の{一般|いっぱん}{募集|ぼしゅう}は、11{月|がつ}21{日|にち}から11{月|がつ}30{日|にち}に{申|もう}し{込|こ}みます（{要|よう}{確認|かくにん}）。",
+        "en": "The next general recruitment (FY2026, 3rd round) takes applications from 21 to 30 November (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-ippan"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "第3回　令和8年11月21日（土曜日）から11月30日（月曜日）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}などを、{先着順|せんちゃくじゅん}で{受|う}け{付|つ}けます。{単身|たんしん}の{資格|しかく}を{満|み}たす{人|ひと}も{対象|たいしょう}です。",
+        "ja_easy": "{先着順|せんちゃくじゅん}{募集|ぼしゅう}：{一般|いっぱん}{募集|ぼしゅう}で{申込|もうしこみ}がなかった{住宅|じゅうたく}などを、{先|さき}に{来|き}た{人|ひと}から{受|う}け{付|つ}けます。",
+        "en": "First-come recruitment: homes that received no applications in the general round are accepted on a first-come basis."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-sakichaku"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "一般募集において申込みの無かった住宅などを対象に、先着順で受付します。（申込受付初日を除く）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{定期|ていき}{入居|にゅうきょ}{募集|ぼしゅう}：{申込者|もうしこみしゃ}{本人|ほんにん}が45{歳|さい}{未満|みまん}の{世帯|せたい}が{対象|たいしょう}で、{単身|たんしん}も{申|もう}し{込|こ}めます。{住宅|じゅうたく}ごとに{退去|たいきょ}の{期限|きげん}が{決|き}まっています。",
+        "ja_easy": "{定期|ていき}{入居|にゅうきょ}{募集|ぼしゅう}：{申|もう}し{込|こ}む{人|ひと}が45{歳|さい}{未満|みまん}の{世帯|せたい}です。ひとりでも{申|もう}し{込|こ}めます。{住|す}める{期間|きかん}が{決|き}まっています。",
+        "en": "Fixed-term recruitment: for households whose applicant is under 45; single people can apply. Each home has a set move-out date."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-teiki"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "申込者本人の年齢が45歳未満の世帯（単身世帯可）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{福祉向|ふくしむ}け{募集|ぼしゅう}：ひとり{親|おや}・{高齢者|こうれいしゃ}・{障害者|しょうがいしゃ}の{世帯|せたい}が{対象|たいしょう}です。{令和|れいわ}8{年|ねん}6{月|がつ}から、{高齢者|こうれいしゃ}・{障害者|しょうがいしゃ}{世帯|せたい}の「{単身|たんしん}のみ」の{区分|くぶん}は{無|な}くなりました。",
+        "ja_easy": "{福祉向|ふくしむ}け{募集|ぼしゅう}：ひとり{親|おや}・{高齢者|こうれいしゃ}・{障害者|しょうがいしゃ}の{世帯|せたい}が{対象|たいしょう}です。",
+        "en": "Welfare recruitment: for single-parent, elderly and disabled households. From June 2026 the single-person-only category for elderly and disabled households was abolished."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-fukushi"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "高齢者世帯の高齢者一般住宅・高齢者専用住宅、障害者世帯の一般住宅の「単身のみ」を廃止。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{問|と}い{合|あ}わせと{募集|ぼしゅう}の{案内|あんない}は、{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（https://www.jkk-nagoya.or.jp/）から{見|み}られます。{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
+        "ja_easy": "{名古屋市住宅供給公社|なごやしじゅうたくきょうきゅうこうしゃ}のトップページ（https://www.jkk-nagoya.or.jp/）に、{市営|しえい}{住宅|じゅうたく}の{申込資格|もうしこみしかく}・{募集方法|ぼしゅうほうほう}のページがあります。",
+        "en": "Inquiries and recruitment guides: the Nagoya City Housing Supply Corporation top page (https://www.jkk-nagoya.or.jp/) has pages on city housing eligibility and recruitment methods."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jkk-top"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "市営住宅の申込資格・募集方法等"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{例|れい}：{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}（https://www.pref.aichi.jp/life/1/5/18/）、UR{賃貸住宅|ちんたいじゅうたく}（https://www.ur-net.go.jp/）。{資格|しかく}や{申|もう}し{込|こ}みは{市営|しえい}{住宅|じゅうたく}と{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{例|れい}：{県営|けんえい}{住宅|じゅうたく}（https://www.pref.aichi.jp/life/1/5/18/）、UR{賃貸住宅|ちんたいじゅうたく}（https://www.ur-net.go.jp/）。{市営|しえい}{住宅|じゅうたく}とは{決|き}まりが{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "For example: Aichi prefectural housing (https://www.pref.aichi.jp/life/1/5/18/) and UR rental housing (https://www.ur-net.go.jp/). Their requirements and applications differ from city housing (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-ur-top"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "全国約70万戸の豊富な物件からライフスタイルにあった住まい選び"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{愛知県営|あいちけんえい}{住宅|じゅうたく}には、{外国人|がいこくじん}サポートデスクがあります。ポルトガル{語|ご}・スペイン{語|ご}・{英語|えいご}・ネパール{語|ご}・{中国語|ちゅうごくご}・タガログ{語|ご}・ベトナム{語|ご}に{対応|たいおう}しています（{言語|げんご}によって{対応|たいおう}{日|び}が{違|ちが}います）。",
+        "ja_easy": "{愛知県|あいちけん}の{県営|けんえい}{住宅|じゅうたく}には、{外国人|がいこくじん}の{相談|そうだん}デスクがあります。7つの{言葉|ことば}に{対応|たいおう}しています。{言葉|ことば}によって{日|ひ}が{違|ちが}います。",
+        "en": "Aichi prefectural housing has a foreign resident support desk in 7 languages: Portuguese, Spanish, English, Nepali, Chinese, Tagalog and Vietnamese (the days differ by language)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-tabunka-sumai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "言語：ポルトガル語、スペイン語、英語、ネパール語、中国語、タガログ語、ベトナム語 ※言語によって対応日が違います。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "851cfc279609dd0041f1167c272715960fbdd3baeef41bb87b6b580e23c22372",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-shiei/c15"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "しえいじゅうたく",
+    "市営住宅",
+    "県営住宅",
+    "UR",
+    "public housing",
+    "city housing",
+    "single",
+    "student",
+    "たんしん",
+    "しえい",
+    "公営住宅",
+    "名古屋市住宅供給公社",
+    "公社",
+    "先着順",
+    "定期入居",
+    "福祉向",
+    "県営",
+    "lottery",
+    "fixed-term"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-shiei-gaikokujin",
+      "B-nagoya-shiei-shikaku",
+      "B-aichi-tabunka-sumai",
+      "B-nagoya-shiei-ippan",
+      "B-nagoya-shiei-sakichaku",
+      "B-nagoya-shiei-teiki",
+      "B-nagoya-shiei-fukushi",
+      "B-jkk-top",
+      "B-ur-top",
+      "B-nagoya-shiei-top"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "市営住宅の入居要件につきましては、住宅に困窮した世帯を募集の対象としており、外国人入居希望者も対象としております。"
+  }
+}

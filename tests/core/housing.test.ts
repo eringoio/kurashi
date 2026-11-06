@@ -1,13 +1,14 @@
-/* 住まい探し（下書き drafts/data/E-house-search.bundle.json）。民間の契約。日を聞かない案内（kind: guide）7枚。
+/* 住まい探し（11/7 C-7 で公開のデータへ移した）。民間の契約。日を聞かない案内（kind: guide）7枚。
    制度の正しさや作者の承認の代わりにはならない。 */
 import { describe, expect, it } from 'vitest';
-import { baseRaw, checkRefs, loadData, withBundles, type Bundle } from '../../src/core/data';
+import { baseRaw, checkRefs, loadData } from '../../src/core/data';
 import { run } from '../../src/core/engine';
 import { nowStep } from '../../src/core/now';
-import json from '../../drafts/data/E-house-search.bundle.json';
 
-const data = loadData(withBundles(baseRaw(), [json as Bundle]));
+const data = loadData();
 const ev = data.events.find((e) => e.id === 'E-house-search')!;
+/** このできごとの分（元のまとまりと同じ範囲。11/7 C-7） */
+const json = { events: [ev], cards: data.cards.filter((c) => ev.card_ids.includes(c.id)), rules: [...data.rules.values()].filter((r) => r.id.startsWith('R-house')), relations: data.relations.filter((r) => r.id.startsWith('rel-house')) };
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 const out = (event = ev) => run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event });
@@ -18,7 +19,7 @@ describe('住まい探し（下書き）', () => {
   it('型と参照の検査を通る。確認済み（verified）にしていない', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(JSON.stringify(json)).not.toContain('"verified"');
-    expect((json as Bundle).cards!.every((c) => (c as { evidence: { status: string } }).evidence.status === 'needs_check')).toBe(true);
+    expect(json.cards.every((c) => c.evidence.status === 'needs_check')).toBe(true);
   });
   it('入口のメニュー（menu 8・group housing・built）と7枚', () => {
     expect(ev).toMatchObject({ menu: 8, group: 'housing', status: 'built' });
@@ -75,7 +76,7 @@ describe('住まい探し（下書き）', () => {
     const r = data.relations.find((x) => x.id === 'rel-house-movein-tennyu')!;
     expect(r).toMatchObject({ type: 'related', from: 'housing-move-in', to: 'nagoya-tennyu-todoke' });
     expect(r.evidence.status).toBe('needs_check');
-    expect(JSON.stringify(baseRaw().relations)).not.toContain('rel-house-');
+    expect(JSON.stringify(baseRaw().relations)).toContain('rel-house-'); // 11/7 C-7：公開へ移した
     const note = out().cards.find((c) => c.card.id === 'housing-move-in')!.notes.map((n) => n.kind);
     expect(note).toContain('related');
   });

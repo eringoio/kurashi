@@ -33,7 +33,20 @@
     "job-leave-shitsugyo",
     "job-leave-juminzei",
     "job-leave-nyukan",
-    "job-phrases"
+    "job-phrases",
+    "zairyu-koshin",
+    "zairyu-mynumber-extend",
+    "housing-search",
+    "housing-contract-check",
+    "housing-initial-costs",
+    "housing-guarantor",
+    "housing-move-in",
+    "housing-move-out",
+    "housing-public",
+    "gomi-bunbetsu",
+    "gomi-shushubi",
+    "gomi-sodai",
+    "gomi-mochikomi"
   ],
   "built_origins": [
     "abroad",

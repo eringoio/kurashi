@@ -1,0 +1,1315 @@
+{
+  "$comment": "下書き。名古屋市の分別検索の表（2026-10-14 更新）と粗大ごみのページを 2026-11-04 に Claude が読んだ引用から作った。すべて needs_check。作者の確認の前は公開しない。古い BODIK CSV（2025-06-05、30cm の基準）は使っていない。品目は22だけ（全市の表 1227 行は取り込んでいない）。",
+  "as_of": "2026-11-04",
+  "sources": [
+    {
+      "source_id": "gomi-search-1035233",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+      "title": "名古屋市「ごみ・資源分別検索」の表",
+      "page_updated_at": "2026-10-14"
+    },
+    {
+      "source_id": "gomi-sodai-1050522",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1050522.html",
+      "title": "名古屋市「令和8年10月から、粗大ごみの対象が変わりました」",
+      "page_updated_at": "2026-10-14"
+    },
+    {
+      "source_id": "gomi-sodai-1033988",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1033988.html",
+      "title": "名古屋市「粗大ごみ」",
+      "page_updated_at": "2026-10-26"
+    },
+    {
+      "source_id": "gomi-kaden-1012224",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035059/1012216/1012224.html",
+      "title": "名古屋市「家電リサイクル法対象機器」",
+      "page_updated_at": "2025-10-17"
+    },
+    {
+      "source_id": "gomi-days-1037098",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html",
+      "title": "名古屋市「ごみ収集日」",
+      "page_updated_at": "2026-11-02"
+    },
+    {
+      "source_id": "gomi-jiko-1048812",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1048812.html",
+      "title": "名古屋市「令和9年1月11日から自己搬入が事前予約になります」",
+      "page_updated_at": "2026-11-02"
+    },
+    {
+      "source_id": "gomi-jiko-1033991",
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1033991.html",
+      "title": "名古屋市「自己搬入」",
+      "page_updated_at": "2026-11-01"
+    }
+  ],
+  "categories": [
+    {
+      "id": "kanen",
+      "route": "regular",
+      "label": {
+        "ja": "可燃ごみ",
+        "ja_easy": "{燃|も}えるごみ（{可燃|かねん}ごみ）",
+        "en": "Burnable waste (可燃ごみ)"
+      },
+      "how": {
+        "ja": "可燃ごみの指定袋に入れて、収集日に出します。",
+        "ja_easy": "{燃|も}えるごみの{袋|ふくろ}に{入|い}れて、{決|き}まった{日|ひ}に{出|だ}します。",
+        "en": "Put it in the designated burnable-waste bag on collection day."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "可燃ごみ"
+      }
+    },
+    {
+      "id": "funen",
+      "route": "regular",
+      "label": {
+        "ja": "不燃ごみ",
+        "ja_easy": "{燃|も}えないごみ（{不燃|ふねん}ごみ）",
+        "en": "Non-burnable waste (不燃ごみ)"
+      },
+      "how": {
+        "ja": "不燃ごみの指定袋に入れて、収集日に出します。",
+        "ja_easy": "{燃|も}えないごみの{袋|ふくろ}に{入|い}れて、{決|き}まった{日|ひ}に{出|だ}します。",
+        "en": "Put it in the designated non-burnable-waste bag on collection day."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "不燃ごみ"
+      }
+    },
+    {
+      "id": "plastic",
+      "route": "regular",
+      "label": {
+        "ja": "プラスチック資源",
+        "ja_easy": "プラスチック{資源|しげん}",
+        "en": "Plastic resources (プラスチック資源)"
+      },
+      "how": {
+        "ja": "プラスチック資源の指定袋に入れて、収集日に出します。",
+        "ja_easy": "プラスチックの{袋|ふくろ}に{入|い}れて、{決|き}まった{日|ひ}に{出|だ}します。",
+        "en": "Put it in the designated plastic-resources bag on collection day."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "プラスチック資源"
+      }
+    },
+    {
+      "id": "kan",
+      "route": "regular",
+      "label": {
+        "ja": "空き缶",
+        "ja_easy": "{空|あ}き{缶|かん}",
+        "en": "Empty cans (空き缶)"
+      },
+      "how": {
+        "ja": "飲料・食品用の缶は空き缶に出します。それ以外は不燃ごみです。",
+        "ja_easy": "{飲|の}み{物|もの}・{食|た}べ{物|もの}の{缶|かん}だけです。",
+        "en": "Only drink and food cans. Other cans are non-burnable waste."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "飲料・食品用以外は不燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "bin",
+      "route": "regular",
+      "label": {
+        "ja": "空きびん",
+        "ja_easy": "{空|あ}きびん",
+        "en": "Empty bottles (空きびん)"
+      },
+      "how": {
+        "ja": "飲料・食品・化粧品用のびんは空きびんに出します。割れたびんは紙で包み「キケン」と書いて不燃ごみです。",
+        "ja_easy": "{飲|の}み{物|もの}などのびんだけです。{割|わ}れたびんは{燃|も}えないごみです。",
+        "en": "Drink, food and cosmetic bottles only. Broken bottles: wrap, write \"キケン\", non-burnable."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "割れたびんは、丈夫な紙などで包み「キケン」と表示してから、不燃ごみへ出してください。"
+      }
+    },
+    {
+      "id": "denchi",
+      "route": "hazard",
+      "label": {
+        "ja": "電池類（危険。ほかのごみと分ける）",
+        "ja_easy": "{電池|でんち}（ほかのごみと{分|わ}ける）",
+        "en": "Batteries (keep separate)"
+      },
+      "how": {
+        "ja": "端子にセロハンテープなどを貼って絶縁し、電池類として出します。ほかのごみ袋に混ぜません。",
+        "ja_easy": "{電池|でんち}の{端|はし}にテープを{貼|は}ります。ほかのごみに{混|ま}ぜません。",
+        "en": "Cover the terminals with tape. Put out as batteries, not mixed with other garbage."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "名古屋市の分別の検索",
+            "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+            "en": "City of Nagoya sorting search"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-search-1035233"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "端子部分にセロハンテープなどを貼って絶縁して出してください。"
+      }
+    },
+    {
+      "id": "hakka",
+      "route": "hazard",
+      "label": {
+        "ja": "発火性危険物（危険。ほかのごみと分ける）",
+        "ja_easy": "{火|ひ}が{出|で}る{危|あぶ}ない{物|もの}",
+        "en": "Flammable hazardous items"
+      },
+      "how": {
+        "ja": "中身を完全に使い切って出します。穴あけは不要です。使い切れないときは環境事業所に持ち込みます。",
+        "ja_easy": "{中|なか}を{全部|ぜんぶ}{使|つか}ってから{出|だ}します。{穴|あな}は{開|あ}けません。",
+        "en": "Use up the contents completely. Do not puncture. If you cannot use it up, take it to the environment office."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "名古屋市の分別の検索",
+            "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+            "en": "City of Nagoya sorting search"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-search-1035233"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "穴あけ不要です。中身を完全に使い切ってください。中身が使い切れない場合は、環境事業所へお持ち込みください。"
+      }
+    },
+    {
+      "id": "juden",
+      "route": "special",
+      "label": {
+        "ja": "充電式家電",
+        "ja_easy": "{充電|じゅうでん}する{家電|かでん}",
+        "en": "Rechargeable appliances"
+      },
+      "how": {
+        "ja": "環境事業所に持ち込みます。持ち込めないときは粗大ごみ。小さい物（縦15×横40×奥行25cm以下）は小型家電回収ボックスにも出せます。",
+        "ja_easy": "{環境|かんきょう}{事業所|じぎょうしょ}に{持|も}っていきます。",
+        "en": "Take it to the environment office. If you cannot, bulky waste. Small ones can go in the small-appliance box."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "名古屋市の分別の検索",
+            "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+            "en": "City of Nagoya sorting search"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-search-1035233"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "環境事業所まで持ち込めない場合は、粗大ごみに出してください。"
+      }
+    },
+    {
+      "id": "keikou",
+      "route": "special",
+      "label": {
+        "ja": "蛍光管・水銀体温計など",
+        "ja_easy": "{蛍光灯|けいこうとう}など",
+        "en": "Fluorescent tubes, mercury thermometers"
+      },
+      "how": {
+        "ja": "環境事業所か、回収協力店舗に持ち込みます。白熱電球・LEDは不燃ごみです。",
+        "ja_easy": "{環境|かんきょう}{事業所|じぎょうしょ}かお{店|みせ}に{持|も}っていきます。",
+        "en": "Take them to the environment office or a cooperating store. Incandescent and LED bulbs are non-burnable."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "名古屋市の分別の検索",
+            "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+            "en": "City of Nagoya sorting search"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-search-1035233"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "各区の環境事業所または家電販売店・ホームセンターなどの蛍光管回収協力店舗にお持ち込みください。"
+      }
+    },
+    {
+      "id": "kaden4",
+      "route": "not_collected",
+      "label": {
+        "ja": "家電リサイクル（市では収集しません）",
+        "ja_easy": "{市|し}は{集|あつ}めません（{家電|かでん}リサイクル）",
+        "en": "Home appliance recycling (the city does not collect)"
+      },
+      "how": {
+        "ja": "エアコン・テレビ・冷蔵庫と冷凍庫・洗濯機と衣類乾燥機は、市では収集しません。粗大ごみにも出せません。買った店などに引き取りを頼みます（方法は市のページで確認）。",
+        "ja_easy": "この4つは、{市|し}は{集|あつ}めません。お{店|みせ}などに{頼|たの}みます。",
+        "en": "The city does not collect air conditioners, TVs, refrigerators/freezers, washing machines/dryers. Ask the shop, etc."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "家電リサイクルの出し方（名古屋市）",
+            "ja_easy": "{家電|かでん}リサイクル（{名古屋|なごや}{市|し}）",
+            "en": "Home appliance recycling (City of Nagoya)"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035059/1012216/1012224.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-kaden-1012224"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "（注）市では収集しません。"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-kaden-1012224"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "（注）市では収集しません。"
+      }
+    },
+    {
+      "id": "pc",
+      "route": "not_collected",
+      "label": {
+        "ja": "パソコン（メーカーの回収）",
+        "ja_easy": "パソコン（メーカーが{集|あつ}める）",
+        "en": "Computers (maker collection)"
+      },
+      "how": {
+        "ja": "各パソコンメーカーの回収に出します。縦15×横40×奥行25cm以下なら小型家電回収ボックスにも出せます。",
+        "ja_easy": "パソコンの{会社|かいしゃ}に{出|だ}します。",
+        "en": "Use the manufacturer's collection. Small ones can go in the small-appliance box."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "名古屋市の分別の検索",
+            "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+            "en": "City of Nagoya sorting search"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-search-1035233"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "各パソコンメーカーの回収にお出しください。"
+      }
+    },
+    {
+      "id": "sodai",
+      "route": "bulky",
+      "label": {
+        "ja": "粗大ごみ（事前申込制）",
+        "ja_easy": "{大|おお}きなごみ（{先|さき}に{申|もう}し{込|こ}む）",
+        "en": "Bulky waste (apply in advance)"
+      },
+      "how": {
+        "ja": "収集は月1回で、地域ごとに日が決まっています。収集日の7日前までにインターネットか電話で申し込み、手数料を払って、当日の朝8時までに出します。",
+        "ja_easy": "{先|さき}に{申|もう}し{込|こ}みます。{集|あつ}める{日|ひ}の7{日|か}{前|まえ}までです。",
+        "en": "Collected once a month by area. Apply online or by phone at least 7 days before the collection day, pay the fee, and put it out by 8 a.m."
+      },
+      "links": [
+        {
+          "label": {
+            "ja": "粗大ごみの申込み（名古屋市）",
+            "ja_easy": "{大|おお}きなごみの{申|もう}し{込|こ}み",
+            "en": "Apply for bulky waste (City of Nagoya)"
+          },
+          "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1033988.html",
+          "evidence": {
+            "source_ids": [
+              "gomi-sodai-1033988"
+            ],
+            "checked_at": "2026-11-04",
+            "status": "needs_check",
+            "quote": "インターネット新規受付の締切りは、収集日の7日前（前の週の同一曜日）です。"
+          }
+        }
+      ],
+      "evidence": {
+        "source_ids": [
+          "gomi-sodai-1033988"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "粗大ごみの収集は月に1回で地域ごとに収集日が決まっています。"
+      }
+    },
+    {
+      "id": "kogata",
+      "route": "special",
+      "label": {
+        "ja": "小型家電",
+        "ja_easy": "{小|ちい}さい{家電|かでん}",
+        "en": "Small home appliances"
+      },
+      "how": {
+        "ja": "小型家電は回収ボックスなどで回収しています。出し方は市の小型家電のページで確かめます。取り外せる電池は外します。",
+        "ja_easy": "{小|ちい}さい{家電|かでん}は、{市|し}のページで{出|だ}し{方|かた}を{見|み}ます。",
+        "en": "Small appliances are collected in boxes, etc. Check the city page. Remove batteries you can take out."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。"
+      }
+    },
+    {
+      "id": "kami",
+      "route": "regular",
+      "label": {
+        "ja": "紙製容器包装・雑がみ",
+        "ja_easy": "{紙|かみ}（{雑|ざつ}がみ）",
+        "en": "Paper packaging, mixed paper"
+      },
+      "how": {
+        "ja": "紙製容器包装・雑がみとして、決まった日に出します。",
+        "ja_easy": "{紙|かみ}の{日|ひ}に{出|だ}します。",
+        "en": "Put out on the paper packaging / mixed paper day."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "紙製容器包装・雑がみ"
+      }
+    },
+    {
+      "id": "kamipack",
+      "route": "regular",
+      "label": {
+        "ja": "紙パック",
+        "ja_easy": "{紙|かみ}パック",
+        "en": "Paper cartons"
+      },
+      "how": {
+        "ja": "紙パックとして出します。出す場所は市のページで確かめます。",
+        "ja_easy": "{市|し}のページで{確|たし}かめます。",
+        "en": "Put out as paper cartons. Check the city page for where."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "紙パック"
+      }
+    },
+    {
+      "id": "petbottle",
+      "route": "regular",
+      "label": {
+        "ja": "ペットボトル",
+        "ja_easy": "ペットボトル",
+        "en": "PET bottles"
+      },
+      "how": {
+        "ja": "ペットボトルとして出します。出し方は市のページで確かめます。",
+        "ja_easy": "ペットボトルの{日|ひ}に{出|だ}します。",
+        "en": "Put out as PET bottles. Check the city page."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "ペットボトル"
+      }
+    },
+    {
+      "id": "shokuyouyu",
+      "route": "special",
+      "label": {
+        "ja": "食用油",
+        "ja_easy": "{料理|りょうり}の{油|あぶら}",
+        "en": "Cooking oil"
+      },
+      "how": {
+        "ja": "回収店舗に持ち込みます。持ち込めないときは、布や紙にしみこませるか固めて、紙に包んで可燃ごみに出します。",
+        "ja_easy": "お{店|みせ}に{持|も}っていきます。できないときは{固|かた}めて{燃|も}えるごみです。",
+        "en": "Take it to a collection store. If you cannot, soak it into paper or solidify it, wrap it, and put it out as burnable."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "回収店舗まで持ち込めない場合は、布や紙に染み込ませるか、固化剤で固め、紙に包んで可燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "sonota",
+      "route": "special",
+      "label": {
+        "ja": "その他（品目ごとに違う）",
+        "ja_easy": "そのほか",
+        "en": "Other (depends on the item)"
+      },
+      "how": {
+        "ja": "出し方は品目ごとに違います。下の備考と、市の分別検索で確かめます。",
+        "ja_easy": "{品物|しなもの}ごとに{違|ちが}います。",
+        "en": "It depends on the item. Check the note and the city search."
+      },
+      "links": [],
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "その他"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "chawan",
+      "label": {
+        "ja": "茶わん",
+        "ja_easy": "{茶|ちゃ}わん",
+        "en": "Rice bowl"
+      },
+      "aliases": [
+        "ちゃわん",
+        "chawan",
+        "bowl",
+        "rice bowl"
+      ],
+      "ask": {
+        "text": {
+          "ja": "何でできていますか？",
+          "ja_easy": "{何|なに}でできていますか？",
+          "en": "What is it made of?"
+        },
+        "choices": [
+          {
+            "value": "ceramic",
+            "label": {
+              "ja": "陶器",
+              "ja_easy": "{焼|や}き{物|もの}（{陶器|とうき}）",
+              "en": "Ceramic"
+            },
+            "category": "funen"
+          },
+          {
+            "value": "plastic",
+            "label": {
+              "ja": "プラスチック",
+              "ja_easy": "プラスチック",
+              "en": "Plastic"
+            },
+            "category": "plastic"
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "茶わん（陶器） | 不燃ごみ／茶わん（プラスチック製） | プラスチック資源"
+      }
+    },
+    {
+      "id": "kasa",
+      "label": {
+        "ja": "かさ（傘）",
+        "ja_easy": "かさ",
+        "en": "Umbrella"
+      },
+      "aliases": [
+        "かさ",
+        "傘",
+        "kasa",
+        "umbrella"
+      ],
+      "category": "funen",
+      "note": {
+        "ja": "45リットルの袋に入らなくても粗大ごみではなく、不燃ごみです（例外の品）。袋の口をヒモなどでしばって出します。",
+        "ja_easy": "{袋|ふくろ}に{入|はい}らなくても、{燃|も}えないごみです。",
+        "en": "Even if it does not fit in the 45-liter bag, it is non-burnable waste, not bulky waste (an exception)."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "かさ | 不燃ごみ | ごみ袋の口をヒモなどでしばって出してください。容量が45リットルの指定袋に入らない場合も不燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "manaita",
+      "label": {
+        "ja": "まな板",
+        "ja_easy": "まな{板|いた}",
+        "en": "Cutting board"
+      },
+      "aliases": [
+        "まないた",
+        "manaita",
+        "cutting board"
+      ],
+      "ask": {
+        "text": {
+          "ja": "何でできていますか？（プラスチックは厚さも）",
+          "ja_easy": "{何|なに}でできていますか？",
+          "en": "What is it made of?"
+        },
+        "choices": [
+          {
+            "value": "wood",
+            "label": {
+              "ja": "木",
+              "ja_easy": "{木|き}",
+              "en": "Wood"
+            },
+            "category": "kanen"
+          },
+          {
+            "value": "plastic_thin",
+            "label": {
+              "ja": "プラスチック（厚さ5ミリ未満）",
+              "ja_easy": "プラスチック（うすい。5ミリより{下|した}）",
+              "en": "Plastic, thinner than 5 mm"
+            },
+            "category": "plastic"
+          },
+          {
+            "value": "plastic_thick",
+            "label": {
+              "ja": "プラスチック（厚さ5ミリ以上）",
+              "ja_easy": "プラスチック（5ミリ{以上|いじょう}）",
+              "en": "Plastic, 5 mm or thicker"
+            },
+            "category": "kanen"
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "まな板（プラスチック製） | プラスチック資源 | 厚さが５ミリメートル以上のものは可燃ごみへ"
+      }
+    },
+    {
+      "id": "mobile_battery",
+      "label": {
+        "ja": "モバイルバッテリー",
+        "ja_easy": "モバイルバッテリー",
+        "en": "Power bank"
+      },
+      "aliases": [
+        "もばいるばってりー",
+        "mobile battery",
+        "power bank",
+        "バッテリー"
+      ],
+      "category": "denchi",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "モバイルバッテリー | 電池類 | 端子部分にセロハンテープなどを貼って絶縁して出してください。"
+      }
+    },
+    {
+      "id": "kandenchi",
+      "label": {
+        "ja": "乾電池",
+        "ja_easy": "{乾電池|かんでんち}",
+        "en": "Dry-cell battery"
+      },
+      "aliases": [
+        "かんでんち",
+        "でんち",
+        "電池",
+        "battery",
+        "batteries"
+      ],
+      "category": "denchi",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "乾電池 | 電池類 | プラス極とマイナス極を、セロハンテープなどで絶縁して出してください。"
+      }
+    },
+    {
+      "id": "spray",
+      "label": {
+        "ja": "スプレー缶",
+        "ja_easy": "スプレー{缶|かん}",
+        "en": "Spray can"
+      },
+      "aliases": [
+        "すぷれー",
+        "spray",
+        "aerosol",
+        "カセットボンベ"
+      ],
+      "category": "hakka",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "スプレー缶 | 発火性危険物 | 穴あけ不要です。中身を完全に使い切ってください。"
+      }
+    },
+    {
+      "id": "lighter",
+      "label": {
+        "ja": "ライター（使い捨て）",
+        "ja_easy": "ライター",
+        "en": "Disposable lighter"
+      },
+      "aliases": [
+        "らいたー",
+        "lighter"
+      ],
+      "category": "hakka",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "ライター（使い捨て） | 発火性危険物 | 完全に使い切ってください。"
+      }
+    },
+    {
+      "id": "reizouko",
+      "label": {
+        "ja": "冷蔵庫・冷凍庫",
+        "ja_easy": "{冷蔵庫|れいぞうこ}",
+        "en": "Refrigerator / freezer"
+      },
+      "aliases": [
+        "れいぞうこ",
+        "れいとうこ",
+        "fridge",
+        "refrigerator",
+        "freezer"
+      ],
+      "category": "kaden4",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "冷蔵庫（冷凍庫） | その他 | くわしくは、家電リサイクル法対象機器の処理方法のページをご覧ください。"
+      }
+    },
+    {
+      "id": "tv",
+      "label": {
+        "ja": "テレビ",
+        "ja_easy": "テレビ",
+        "en": "Television"
+      },
+      "aliases": [
+        "てれび",
+        "tv",
+        "television"
+      ],
+      "category": "kaden4",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "テレビ | その他 | くわしくは、家電リサイクル法対象機器の処理方法のページをご覧ください。"
+      }
+    },
+    {
+      "id": "sentakuki",
+      "label": {
+        "ja": "洗濯機・衣類乾燥機",
+        "ja_easy": "{洗濯機|せんたくき}",
+        "en": "Washing machine / dryer"
+      },
+      "aliases": [
+        "せんたくき",
+        "washing machine",
+        "dryer",
+        "washer"
+      ],
+      "category": "kaden4",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "洗濯機・衣類乾燥機 | その他 | くわしくは、家電リサイクル法対象機器の処理方法のページをご覧ください。"
+      }
+    },
+    {
+      "id": "aircon",
+      "label": {
+        "ja": "エアコン",
+        "ja_easy": "エアコン",
+        "en": "Air conditioner"
+      },
+      "aliases": [
+        "えあこん",
+        "air conditioner",
+        "aircon"
+      ],
+      "category": "kaden4",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "エアコン | その他 | くわしくは、家電リサイクル法対象機器の処理方法のページをご覧ください。"
+      }
+    },
+    {
+      "id": "pc",
+      "label": {
+        "ja": "パソコン",
+        "ja_easy": "パソコン",
+        "en": "Computer"
+      },
+      "aliases": [
+        "ぱそこん",
+        "pc",
+        "computer",
+        "laptop",
+        "ノートパソコン"
+      ],
+      "category": "pc",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "パソコン（デスクトップ本体、ディスプレイ、ノートパソコン、ディスプレイ一体型パソコン） | その他 | 各パソコンメーカーの回収にお出しください。"
+      }
+    },
+    {
+      "id": "soujiki",
+      "label": {
+        "ja": "掃除機",
+        "ja_easy": "{掃除機|そうじき}",
+        "en": "Vacuum cleaner"
+      },
+      "aliases": [
+        "そうじき",
+        "vacuum",
+        "vacuum cleaner"
+      ],
+      "ask": {
+        "text": {
+          "ja": "充電式ですか？（充電式でないときは、45リットルの袋に入るかも）",
+          "ja_easy": "{充電|じゅうでん}するものですか？",
+          "en": "Is it rechargeable?"
+        },
+        "choices": [
+          {
+            "value": "rechargeable",
+            "label": {
+              "ja": "充電式",
+              "ja_easy": "{充電|じゅうでん}する",
+              "en": "Rechargeable"
+            },
+            "category": "juden"
+          },
+          {
+            "value": "corded_fits",
+            "label": {
+              "ja": "充電式でない・45リットルの袋に入る",
+              "ja_easy": "{充電|じゅうでん}しない・{袋|ふくろ}に{入|はい}る",
+              "en": "Not rechargeable, fits the 45 L bag"
+            },
+            "category": "funen"
+          },
+          {
+            "value": "corded_big",
+            "label": {
+              "ja": "充電式でない・袋に入らない",
+              "ja_easy": "{充電|じゅうでん}しない・{袋|ふくろ}に{入|はい}らない",
+              "en": "Not rechargeable, does not fit"
+            },
+            "category": "sodai"
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "掃除機（充電式） | 充電式家電／掃除機（充電式ではないもの） | 粗大ごみ【事前申込制】 | 容量が45リットルの指定袋に入るものは、不燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "denshi_range",
+      "label": {
+        "ja": "電子レンジ",
+        "ja_easy": "{電子|でんし}レンジ",
+        "en": "Microwave oven"
+      },
+      "aliases": [
+        "でんしれんじ",
+        "microwave"
+      ],
+      "ask": {
+        "text": {
+          "ja": "容量45リットルの指定袋に入り、袋の口をしっかり結べますか？",
+          "ja_easy": "45リットルの{袋|ふくろ}に{入|はい}り、{口|くち}を{結|むす}べますか？",
+          "en": "Does it fit in a 45-liter designated bag with the top tied?"
+        },
+        "choices": [
+          {
+            "value": "fits",
+            "label": {
+              "ja": "入って、結べる",
+              "ja_easy": "{入|はい}る",
+              "en": "Yes, it fits"
+            },
+            "category": "funen"
+          },
+          {
+            "value": "no",
+            "label": {
+              "ja": "入らない・結べない",
+              "ja_easy": "{入|はい}らない",
+              "en": "No"
+            },
+            "category": "sodai"
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "電子レンジ | 粗大ごみ【事前申込制】 | 容量が45リットルの指定袋に入らないものは、粗大ごみに出してください。容量が45リットルの指定袋に入るものは、不燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "futon",
+      "label": {
+        "ja": "ふとん",
+        "ja_easy": "ふとん",
+        "en": "Futon / bedding"
+      },
+      "aliases": [
+        "ふとん",
+        "布団",
+        "futon",
+        "bedding"
+      ],
+      "ask": {
+        "text": {
+          "ja": "容量45リットルの指定袋に入り、袋の口をしっかり結べますか？",
+          "ja_easy": "45リットルの{袋|ふくろ}に{入|はい}り、{口|くち}を{結|むす}べますか？",
+          "en": "Does it fit in a 45-liter designated bag with the top tied?"
+        },
+        "choices": [
+          {
+            "value": "no",
+            "label": {
+              "ja": "入らない・結べない",
+              "ja_easy": "{入|はい}らない",
+              "en": "No"
+            },
+            "category": "sodai"
+          },
+          {
+            "value": "fits",
+            "label": {
+              "ja": "入って、結べる",
+              "ja_easy": "{入|はい}る",
+              "en": "Yes, it fits"
+            }
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "note": {
+        "ja": "袋に入るときの区分は、市の表に書かれていません（要確認）。",
+        "ja_easy": "{袋|ふくろ}に{入|はい}るときは、{市|し}のページで{確|たし}かめます。",
+        "en": "The city table does not say what to do when it fits in the bag (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "ふとん | 粗大ごみ【事前申込制】 | 容量が45リットルの指定袋に入らないものは、粗大ごみに出してください。"
+      }
+    },
+    {
+      "id": "jitensha",
+      "label": {
+        "ja": "自転車",
+        "ja_easy": "{自転車|じてんしゃ}",
+        "en": "Bicycle"
+      },
+      "aliases": [
+        "じてんしゃ",
+        "bicycle",
+        "bike"
+      ],
+      "category": "sodai",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "自転車 | 粗大ごみ【事前申込制】"
+      }
+    },
+    {
+      "id": "houchou",
+      "label": {
+        "ja": "包丁",
+        "ja_easy": "{包丁|ほうちょう}",
+        "en": "Kitchen knife"
+      },
+      "aliases": [
+        "ほうちょう",
+        "knife"
+      ],
+      "category": "funen",
+      "note": {
+        "ja": "丈夫な紙などに包み、「キケン」と書いて出します。",
+        "ja_easy": "{紙|かみ}で{包|つつ}み、「キケン」と{書|か}きます。",
+        "en": "Wrap it in strong paper and write \"キケン\" (danger)."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "包丁 | 不燃ごみ | 丈夫な紙等に包み、「キケン」と表示してください。"
+      }
+    },
+    {
+      "id": "namagomi",
+      "label": {
+        "ja": "生ごみ",
+        "ja_easy": "{生|なま}ごみ",
+        "en": "Food waste"
+      },
+      "aliases": [
+        "なまごみ",
+        "food waste",
+        "kitchen waste"
+      ],
+      "category": "kanen",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "生ごみ | 可燃ごみ"
+      }
+    },
+    {
+      "id": "akikan",
+      "label": {
+        "ja": "空き缶（飲料・食品用）",
+        "ja_easy": "{空|あ}き{缶|かん}",
+        "en": "Empty can (drink, food)"
+      },
+      "aliases": [
+        "あきかん",
+        "かん",
+        "can",
+        "cans"
+      ],
+      "category": "kan",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "空き缶（飲料・食品用） | 空き缶 | 飲料・食品用以外は不燃ごみに出してください。"
+      }
+    },
+    {
+      "id": "akibin",
+      "label": {
+        "ja": "びん（飲料・食品・化粧品用）",
+        "ja_easy": "びん",
+        "en": "Glass bottle"
+      },
+      "aliases": [
+        "びん",
+        "bottle",
+        "glass bottle"
+      ],
+      "category": "bin",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "びん（飲料・食品・化粧品用） | 空きびん"
+      }
+    },
+    {
+      "id": "keikoukan",
+      "label": {
+        "ja": "蛍光管",
+        "ja_easy": "{蛍光灯|けいこうとう}",
+        "en": "Fluorescent tube"
+      },
+      "aliases": [
+        "けいこうかん",
+        "けいこうとう",
+        "fluorescent"
+      ],
+      "category": "keikou",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "蛍光管（直管型・環型・電球型） | 蛍光管・水銀体温計・水銀温度計・水銀血圧計"
+      }
+    },
+    {
+      "id": "polytank",
+      "label": {
+        "ja": "ポリタンク",
+        "ja_easy": "ポリタンク",
+        "en": "Plastic tank"
+      },
+      "aliases": [
+        "ぽりたんく",
+        "polytank",
+        "jerry can"
+      ],
+      "ask": {
+        "text": {
+          "ja": "容量45リットルの指定袋に入り、袋の口をしっかり結べますか？",
+          "ja_easy": "45リットルの{袋|ふくろ}に{入|はい}り、{口|くち}を{結|むす}べますか？",
+          "en": "Does it fit in a 45-liter designated bag with the top tied?"
+        },
+        "choices": [
+          {
+            "value": "fits",
+            "label": {
+              "ja": "入って、結べる",
+              "ja_easy": "{入|はい}る",
+              "en": "Yes, it fits"
+            },
+            "category": "kanen"
+          },
+          {
+            "value": "no",
+            "label": {
+              "ja": "入らない・結べない",
+              "ja_easy": "{入|はい}らない",
+              "en": "No"
+            },
+            "category": "sodai"
+          },
+          {
+            "value": "unknown",
+            "label": {
+              "ja": "わからない",
+              "ja_easy": "わからない",
+              "en": "Not sure"
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-sodai-1050522"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "ポリタンクについては…容量45リットルの指定袋に入る場合は可燃ごみ、入らない場合は粗大ごみに出してください。"
+      }
+    }
+  ]
+}

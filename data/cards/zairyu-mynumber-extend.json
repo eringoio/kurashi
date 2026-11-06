@@ -1,0 +1,127 @@
+{
+  "data_version": 1,
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "keywords": [
+    "マイナンバーカード",
+    "有効期限",
+    "延長",
+    "在留カード",
+    "更新",
+    "my number card",
+    "expiry",
+    "extend",
+    "residence card",
+    "renew"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}の{人|ひと}や、マイナンバーカードを{持|も}っていない{人|ひと}は、この{案内|あんない}の{対象|たいしょう}ではありません（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{永住者|えいじゅうしゃ}・{特別永住者|とくべつえいじゅうしゃ}の{人|ひと}や、マイナンバーカードがない{人|ひと}は、この{案内|あんない}はいりません（{要確認|ようかくにん}）。",
+      "en": "Permanent Residents, Special Permanent Residents, and people without a My Number Card are not covered by this guide (to be checked)."
+    },
+    "check_at_office": {
+      "ja": "{在留|ざいりゅう}{資格|しかく}かカードの{有無|うむ}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{要|よう}{確認|かくにん}です。",
+      "ja_easy": "{要|よう}{確認|かくにん}です。",
+      "en": "We cannot tell because your status or whether you have the card is unknown. Check at the counter (to be checked)."
+    }
+  },
+  "deadline": {
+    "text": {
+      "ja": "マイナンバーカードの{有効|ゆうこう}{期限|きげん}（{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}）が{切|き}れる{前|まえ}に（{要|よう}{確認|かくにん}）",
+      "ja_easy": "マイナンバーカードの{期限|きげん}が{切|き}れる{前|まえ}に（{要確認|ようかくにん}）",
+      "en": "Before your My Number Card expiry date (the last day of the period of stay) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "author-2026-11-05"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check"
+    }
+  },
+  "id": "zairyu-mynumber-extend",
+  "illustration": "mycard",
+  "eligibility": {
+    "all": [
+      "R-sr-limited",
+      "R-sr-has-mynumber"
+    ]
+  },
+  "place": "ward_office",
+  "title": {
+    "ja": "マイナンバーカードの{有効|ゆうこう}{期限|きげん}も{延|の}ばす",
+    "ja_easy": "マイナンバーカードの{期限|きげん}も{延|の}ばす",
+    "en": "Also extend the expiry date of your My Number Card"
+  },
+  "official_name": {
+    "ja": "マイナンバーカードの有効期限の延長（在留期間の更新後）",
+    "reading": "まいなんばーかーどのゆうこうきげんのえんちょう"
+  },
+  "summary": {
+    "ja": "{更新|こうしん}の{許可|きょか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、{区役所|くやくしょ}で{期限|きげん}を{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、マイナンバーカードの{期限|きげん}も{区役所|くやくしょ}で{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。",
+    "en": "After you receive your new residence card, extend your My Number Card at the ward office before it expires. It does not change automatically (to be checked)."
+  },
+  "where": {
+    "text": {
+      "ja": "お{住|す}まいの{市区町村|しくちょうそん}の{窓口|まどぐち}（{名古屋市|なごやし}は{区役所|くやくしょ}・{支所|ししょ}。{窓口|まどぐち}で{確認|かくにん}・{要|よう}{確認|かくにん}）",
+      "ja_easy": "{住|す}んでいる{市|し}の{窓口|まどぐち}（{名古屋市|なごやし}は{区役所|くやくしょ}）（{要確認|ようかくにん}）",
+      "en": "The counter of your municipality (in Nagoya, the ward office or branch office; to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "author-2026-11-05"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}{以外|いがい}の{外国籍|がいこくせき}の{人|ひと}のカードの{有効|ゆうこう}{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}と{同|おな}じです。{切|き}れると{失効|しっこう}し、{新|あたら}しく{作|つく}るのに{手数料|てすうりょう}がかかります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "カードの{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{終|お}わりの{日|ひ}と{同|おな}じです（{要|よう}{確認|かくにん}）。",
+        "en": "For foreign nationals other than permanent and special permanent residents, the card expires on the same day as the period of stay. If it expires, it becomes invalid and a new one costs a fee (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-05"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}して{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}で{手続|てつづ}きをします。{持|も}ち{物|もの}と{手続|てつづ}きの{内容|ないよう}は{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}へ{行|い}きます。{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "After you receive the new residence card, go to the counter before the expiry date. Ask at the counter what to bring and what the procedure involves (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-05"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "author-2026-11-05"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "$comment": "下書き。自己搬入の受付方法を、持ち込む予定の日で選ぶ（INT-008）。期間は市のページに書かれた日だけ。2027-01-09・10 はどの期間にも書かれていない（土・日。いまは土日の搬入はできない）。",
+  "as_of": "2026-11-04",
+  "regimes": [
+    {
+      "id": "walk_in",
+      "from": null,
+      "to": "2027-01-08",
+      "label": {
+        "ja": "環境事業所での当日受付ができます（2027年1月8日まで）。月〜金（祝日も可、年末年始を除く）。土・日は搬入できません。10kgまでごとに270円、現金だけ。",
+        "ja_easy": "その{日|ひ}に{環境|かんきょう}{事業所|じぎょうしょ}で{受付|うけつけ}できます（2027{年|ねん}1{月|がつ}8{日|か}まで）。{土|ど}・{日|にち}はできません。",
+        "en": "Same-day reception at the environment office (until January 8, 2027). Mon–Fri (holidays OK, not New Year period). Not Sat/Sun. 270 yen per 10 kg, cash only."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-jiko-1033991"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "自己搬入の方法（環境事業所当日受付）（令和9年1月8日（金曜日）まで）"
+      }
+    },
+    {
+      "id": "parallel",
+      "from": "2026-12-14",
+      "to": "2027-01-08",
+      "label": {
+        "ja": "この期間は、インターネットの事前予約もできます（併用期間：2026年12月14日〜2027年1月8日）。予約ページは12月7日から公開の予定です。",
+        "ja_easy": "この{期間|きかん}は、インターネットで{予約|よやく}もできます。",
+        "en": "In this period you can also book online (Dec 14, 2026 – Jan 8, 2027). The booking page is planned to open on Dec 7."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-jiko-1048812"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "12月14日（月曜日）から1月8日（金曜日）（併用期間） 環境事業所での当日受付及びインターネットからの事前予約のどちらも受付可能。"
+      }
+    },
+    {
+      "id": "booking_only",
+      "from": "2027-01-11",
+      "to": null,
+      "label": {
+        "ja": "インターネットの事前予約だけです（2027年1月11日から）。午前の搬入は前日23時59分まで、午後は当日11時59分までに申し込みます。",
+        "ja_easy": "インターネットで{先|さき}に{予約|よやく}します（2027{年|ねん}1{月|がつ}11{日|にち}から）。",
+        "en": "Online booking only (from Jan 11, 2027). Book by 23:59 the day before for morning, by 11:59 the same day for afternoon."
+      },
+      "evidence": {
+        "source_ids": [
+          "gomi-jiko-1048812"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "1月11日（月曜日・祝日）から インターネットからの事前予約のみ受付可能。"
+      }
+    }
+  ],
+  "not_stated": {
+    "ja": "この日の受付は、市のページに書かれていません。持ち込む前に市のページか環境事業所で確かめてください（要確認）。",
+    "ja_easy": "この{日|ひ}のことは、{市|し}のページに{書|か}かれていません。{確|たし}かめてください。",
+    "en": "The city page does not say whether this day is open. Check before you go (to be checked)."
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "自己搬入の受付方法の変更（名古屋市）",
+        "ja_easy": "{自分|じぶん}で{持|も}っていくとき（{名古屋|なごや}{市|し}）",
+        "en": "Self-delivery changes (City of Nagoya)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1048812.html",
+      "evidence": {
+        "source_ids": [
+          "gomi-jiko-1048812"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "令和9年1月11日（月曜日・祝）から自己搬入が当日受付から事前予約になります"
+      }
+    }
+  ],
+  "notices": [
+    {
+      "text": {
+        "ja": "{令和|れいわ}8{年|ねん}（2026{年|ねん}）10{月|がつ}から、{粗大|そだい}ごみの{対象|たいしょう}が{変|か}わりました",
+        "ja_easy": "2026{年|ねん}10{月|がつ}から、{粗大|そだい}ごみのきまりが{変|か}わりました",
+        "en": "The definition of bulky waste changed in October 2026"
+      },
+      "show_until": "2027-03-31",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-henko"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "令和8年10月から、家庭から出る粗大ごみの対象をより分かりやすくするため、「容量45リットルの指定袋に入らないもの」に変更しました。"
+      }
+    }
+  ]
+}

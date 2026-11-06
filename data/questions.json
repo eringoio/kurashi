@@ -1014,6 +1014,66 @@
           }
         }
       ]
+    },
+    {
+      "id": "Q-sr-mynumber",
+      "fact": "sr_has_mynumber",
+      "stage": "upfront",
+      "scope": "person",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "student",
+              "family",
+              "work",
+              "spouse",
+              "long_term"
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "マイナンバーカードを{持|も}っていますか？",
+        "ja_easy": "マイナンバーカードがありますか？",
+        "en": "Do you have a My Number Card?"
+      },
+      "why_asked": {
+        "ja": "{持|も}っている{人|ひと}は、{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}したあとに、カードの{有効|ゆうこう}{期限|きげん}も{延|の}ばす{必要|ひつよう}があるためです。",
+        "ja_easy": "カードがある{人|ひと}は、{更新|こうしん}のあとにカードの{期限|きげん}も{延|の}ばします。",
+        "en": "If you have the card, you also need to extend its expiry date after renewing your period of stay."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
     }
   ]
 }

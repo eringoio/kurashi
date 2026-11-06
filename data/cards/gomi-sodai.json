@@ -1,0 +1,189 @@
+{
+  "id": "gomi-sodai",
+  "data_version": 1,
+  "illustration": "bin",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-gomi-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{粗大|そだい}ごみを{出|だ}す",
+    "ja_easy": "{大|おお}きなごみを{出|だ}す",
+    "en": "Put out bulky waste"
+  },
+  "official_name": {
+    "ja": "粗大ごみ",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{令和|れいわ}8{年|ねん}（2026{年|ねん}）{10月|じゅうがつ}から、{粗大|そだい}ごみは「{容量|ようりょう}45リットルの{指定|してい}{袋|ぶくろ}に{入|はい}らないもの」になりました。{9月|くがつ}までは「30センチメートル{角|かく}を{超|こ}えるもの」でした。{袋|ふくろ}に{入|はい}るものは、{可燃|かねん}ごみ・{不燃|ふねん}ごみ・プラスチック{資源|しげん}で{出|だ}します。{袋|ふくろ}の{口|くち}がしっかり{結|むす}べないときは、{粗大|そだい}ごみです。{傘|かさ}・フライパンなど、{袋|ふくろ}に{入|はい}らなくても{粗大|そだい}ごみにならないものもあります（{要|よう}{確認|かくにん}）。{粗大|そだい}ごみは{事前|じぜん}{申込制|もうしこみせい}です。インターネットか、{粗大|そだい}ごみ{受付|うけつけ}センターへの{電話|でんわ}で{申|もう}し{込|こ}みます。{収集|しゅうしゅう}は{月|つき}に1{回|かい}で、{地域|ちいき}ごとに{日|ひ}が{決|き}まっています。{受付|うけつけ}{番号|ばんごう}を{書|か}いた{用紙|ようし}（{氏名|しめい}は{不可|ふか}）か{手数料|てすうりょう}{納付券|のうふけん}を{貼|は}り、{収集|しゅうしゅう}{日|び}の{朝|あさ}8{時|じ}までに{出|だ}します。{申|もう}し{込|こ}みの{締切|しめきり}は、{公式|こうしき}ページで{確認|かくにん}してください（{要|よう}{確認|かくにん}）。エアコン・テレビ・{冷蔵庫|れいぞうこ}・{洗濯機|せんたくき}・{衣類乾燥機|いるいかんそうき}・{家庭用|かていよう}パソコンは、{市|し}では{収集|しゅうしゅう}しません。{市|し}の{許可|きょか}がない{回収|かいしゅう}{業者|ぎょうしゃ}は{使|つか}わないでください。",
+    "ja_easy": "2026{年|ねん}{10月|じゅうがつ}から、{大|おお}きなごみのきまりが{変|か}わりました。45リットルの{指定|してい}の{袋|ふくろ}に{入|はい}らない{物|もの}です。{受付|うけつけ}センターに、インターネットか{電話|でんわ}で{申|もう}し{込|こ}みます（{先|さき}に{申|もう}し{込|こ}みが{要|い}ります）。{番号|ばんごう}を{書|か}いた{紙|かみ}をはって、{収集|しゅうしゅう}の{日|ひ}の{朝|あさ}8{時|じ}までに{出|だ}します。{申|もう}し{込|こ}みの{期限|きげん}は、{公式|こうしき}ページで{見|み}てください（{要|よう}{確認|かくにん}）。",
+    "en": "From October 2026, bulky waste is anything that does not fit in the 45-litre designated bag (until September 2026 it was anything over 30 cm square). Items that fit in the bag go out as burnable, non-burnable or plastic resource waste. If the bag cannot be tied shut firmly, it counts as bulky waste. Some items, such as umbrellas and frying pans, are not bulky waste even if they do not fit (to be checked). Bulky waste must be booked in advance, online or by phone to the Bulky Waste Reception Center. It is collected once a month on a day set for each area. Attach the paper with your reception number (not your name) or a fee payment sticker, and put the item out by 8:00 a.m. on collection day. Check the application deadline on the official page (to be checked). Air conditioners, TVs, refrigerators, washing machines, dryers and home PCs are not collected by the city. Do not use collectors without a city permit."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{粗大|そだい}ごみ{受付|うけつけ}センター（インターネットまたは{電話|でんわ}）",
+      "ja_easy": "{粗大|そだい}ごみ{受付|うけつけ}センター（インターネットか{電話|でんわ}）",
+      "en": "Bulky Waste Reception Center (online or by phone; see the official page)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-sodai-detail"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "事前申込制となっており、インターネットで申し込む方法と粗大ごみ受付センターへ電話で申し込む方法があります。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
+        "verdict": "agree",
+        "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネットで{申|もう}し{込|こ}みます（{事前|じぜん}{申込制|もうしこみせい}です）。",
+        "ja_easy": "インターネットで{申|もう}し{込|こ}みます。{先|さき}に{申|もう}し{込|こ}みが{要|い}ります。",
+        "en": "Apply online. Advance booking is required."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-detail"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "事前申込制となっており、インターネットで申し込む方法と粗大ごみ受付センターへ電話で申し込む方法があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{粗大|そだい}ごみ{受付|うけつけ}センターに{電話|でんわ}で{申|もう}し{込|こ}みます。{番号|ばんごう}は{公式|こうしき}ページで{確認|かくにん}してください。",
+        "ja_easy": "{粗大|そだい}ごみ{受付|うけつけ}センターに{電話|でんわ}で{申|もう}し{込|こ}みます。{番号|ばんごう}は{公式|こうしき}ページで{見|み}てください。",
+        "en": "Apply by phone to the Bulky Waste Reception Center. Check the number on the official page."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-detail"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "事前申込制となっており、インターネットで申し込む方法と粗大ごみ受付センターへ電話で申し込む方法があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ごみが{出|で}た{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}で{手続|てつづ}きをして、{自分|じぶん}で{処理|しょり}{施設|しせつ}に{運|はこ}ぶ{方法|ほうほう}もあります（{自己|じこ}{搬入|はんにゅう}。{予約|よやく}の{方法|ほうほう}に{変|か}わります）。",
+        "ja_easy": "ごみが{出|で}た{区|く}の{環境事業所|かんきょうじぎょうしょ}で{手続|てつづ}きをして、{自分|じぶん}で{運|はこ}ぶ{方法|ほうほう}もあります。",
+        "en": "You can also register at the ward environmental office and take the item to a facility yourself (self-delivery; this is changing to online booking)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-detail"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "ごみの発生した区の環境事業所でお手続きしていただいた後に、ご自分で処理施設へ搬入していただくことも可能です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ほかに、{市|し}の{許可|きょか}を{受|う}けた{業者|ぎょうしゃ}に{有料|ゆうりょう}で{頼|たの}む{方法|ほうほう}もあります。{料金|りょうきん}は{業者|ぎょうしゃ}に{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ほかに、{市|し}の{許可|きょか}がある{業者|ぎょうしゃ}に、お{金|かね}をはらって{頼|たの}む{方法|ほうほう}もあります（{要|よう}{確認|かくにん}）。",
+        "en": "You can also pay a city-licensed collector (check the price with the collector; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-detail"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "名古屋市から一般廃棄物の収集運搬許可を受けた業者に有料で依頼することもできます。"
+      }
+    }
+  ],
+  "keywords": [
+    "粗大ごみ",
+    "大型ごみ",
+    "家具",
+    "bulky waste",
+    "furniture",
+    "large trash"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-gomi-sodai-henko",
+      "B-nagoya-gomi-sodai-net",
+      "B-nagoya-gomi-sodai-detail",
+      "B-nagoya-gomi-kaden"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "令和8年9月までは「30センチメートル角を超えるもの」が粗大ごみの対象でした。"
+  },
+  "notices": [
+    {
+      "text": {
+        "ja": "{令和|れいわ}8{年|ねん}（2026{年|ねん}）10{月|がつ}から、{粗大|そだい}ごみの{対象|たいしょう}が{変|か}わりました",
+        "ja_easy": "2026{年|ねん}10{月|がつ}から、{粗大|そだい}ごみのきまりが{変|か}わりました",
+        "en": "The definition of bulky waste changed in October 2026"
+      },
+      "show_until": "2027-03-31",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-henko"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "令和8年10月から、家庭から出る粗大ごみの対象をより分かりやすくするため、「容量45リットルの指定袋に入らないもの」に変更しました。"
+      }
+    }
+  ],
+  "fee": {
+    "text": {
+      "ja": "{品目|ひんもく}の{大|おお}きさや{種類|しゅるい}で、250{円|えん}・500{円|えん}・1,000{円|えん}・1,500{円|えん}・2,000{円|えん}・2,500{円|えん}のどれかです。",
+      "ja_easy": "{大|おお}きさや{種類|しゅるい}で、250{円|えん}から2,500{円|えん}です。",
+      "en": "250, 500, 1,000, 1,500, 2,000 or 2,500 yen, depending on the size and kind of item."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-sodai-detail"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "ai_checked",
+      "quote": "粗大ごみの手数料は大きさや種類によって250円、500円、1000円、1500円、2000円、2500円に分かれています。",
+      "ai_check": {
+        "fetched_at": "2026-11-07",
+        "sha256": "386663f864a31f7cccf46cd500ecd8092eca357e0770b0367363ee2b8e3a96a6",
+        "verdict": "agree",
+        "ref": "research/logs/gomi_fee_2026-11-07.md"
+      }
+    }
+  }
+}

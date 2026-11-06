@@ -1,0 +1,197 @@
+{
+  "$comment": "下書き。区の一覧だけ。収集日の表（市のページ 1037098 の町名表 3231 行）は取り込んでいない。適用の期間（施行日）も確認できていないので、どの地域も日付を出さない。",
+  "as_of": "2026-11-04",
+  "wards": [
+    {
+      "id": "chikusa",
+      "label": {
+        "ja": "{千種区|ちくさく}",
+        "ja_easy": "{千種区|ちくさく}",
+        "en": "Chikusa Ward"
+      }
+    },
+    {
+      "id": "higashi",
+      "label": {
+        "ja": "{東区|ひがしく}",
+        "ja_easy": "{東区|ひがしく}",
+        "en": "Higashi Ward"
+      }
+    },
+    {
+      "id": "kita",
+      "label": {
+        "ja": "{北区|きたく}",
+        "ja_easy": "{北区|きたく}",
+        "en": "Kita Ward"
+      }
+    },
+    {
+      "id": "nishi",
+      "label": {
+        "ja": "{西区|にしく}",
+        "ja_easy": "{西区|にしく}",
+        "en": "Nishi Ward"
+      }
+    },
+    {
+      "id": "nakamura",
+      "label": {
+        "ja": "{中村区|なかむらく}",
+        "ja_easy": "{中村区|なかむらく}",
+        "en": "Nakamura Ward"
+      }
+    },
+    {
+      "id": "naka",
+      "label": {
+        "ja": "{中区|なかく}",
+        "ja_easy": "{中区|なかく}",
+        "en": "Naka Ward"
+      }
+    },
+    {
+      "id": "showa",
+      "label": {
+        "ja": "{昭和区|しょうわく}",
+        "ja_easy": "{昭和区|しょうわく}",
+        "en": "Showa Ward"
+      }
+    },
+    {
+      "id": "mizuho",
+      "label": {
+        "ja": "{瑞穂区|みずほく}",
+        "ja_easy": "{瑞穂区|みずほく}",
+        "en": "Mizuho Ward"
+      }
+    },
+    {
+      "id": "atsuta",
+      "label": {
+        "ja": "{熱田区|あつたく}",
+        "ja_easy": "{熱田区|あつたく}",
+        "en": "Atsuta Ward"
+      }
+    },
+    {
+      "id": "nakagawa",
+      "label": {
+        "ja": "{中川区|なかがわく}",
+        "ja_easy": "{中川区|なかがわく}",
+        "en": "Nakagawa Ward"
+      }
+    },
+    {
+      "id": "minato",
+      "label": {
+        "ja": "{港区|みなとく}",
+        "ja_easy": "{港区|みなとく}",
+        "en": "Minato Ward"
+      }
+    },
+    {
+      "id": "minami",
+      "label": {
+        "ja": "{南区|みなみく}",
+        "ja_easy": "{南区|みなみく}",
+        "en": "Minami Ward"
+      }
+    },
+    {
+      "id": "moriyama",
+      "label": {
+        "ja": "{守山区|もりやまく}",
+        "ja_easy": "{守山区|もりやまく}",
+        "en": "Moriyama Ward"
+      }
+    },
+    {
+      "id": "midori",
+      "label": {
+        "ja": "{緑区|みどりく}",
+        "ja_easy": "{緑区|みどりく}",
+        "en": "Midori Ward"
+      }
+    },
+    {
+      "id": "meito",
+      "label": {
+        "ja": "{名東区|めいとうく}",
+        "ja_easy": "{名東区|めいとうく}",
+        "en": "Meito Ward"
+      }
+    },
+    {
+      "id": "tempaku",
+      "label": {
+        "ja": "{天白区|てんぱくく}",
+        "ja_easy": "{天白区|てんぱくく}",
+        "en": "Tempaku Ward"
+      }
+    }
+  ],
+  "schedules": [],
+  "coverage": {
+    "ja": "このアプリには、まだ地域ごとの収集日がありません。市の「ごみ収集日」で、区と町名を選んで確かめてください。",
+    "ja_easy": "まだ{日|ひ}はありません。{市|し}のページで{区|く}と{町|まち}を{選|えら}んでください。",
+    "en": "We do not have collection days by area yet. Please choose your ward and town on the city page."
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "ごみ収集日（名古屋市）",
+        "ja_easy": "ごみを{集|あつ}める{日|ひ}（{名古屋|なごや}{市|し}）",
+        "en": "Collection days (City of Nagoya)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html",
+      "evidence": {
+        "source_ids": [
+          "gomi-days-1037098"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "区・町名などを選択するとごみ収集日が表示されます。"
+      }
+    },
+    {
+      "label": {
+        "ja": "名古屋市の分別の検索",
+        "ja_easy": "{名古屋|なごや}{市|し}の{分|わ}け{方|かた}の{検索|けんさく}",
+        "en": "City of Nagoya sorting search"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035233.html",
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "ごみ・資源の名称 | 分別区分 | 備考"
+      }
+    }
+  ],
+  "business": {
+    "text": {
+      "ja": "この案内は家庭のごみです。仕事（事業）で出たごみには、市の「事業系ごみ」の案内があります。そちらで確かめてください（要確認）。",
+      "ja_easy": "{仕事|しごと}で{出|で}たごみは、{別|べつ}の{案内|あんない}を{見|み}てください。",
+      "en": "This guide is for household garbage. For garbage from business activities, see the city's business waste guide (to be checked)."
+    },
+    "link": {
+      "label": {
+        "ja": "事業系ごみ（名古屋市）",
+        "ja_easy": "{仕事|しごと}のごみ（{名古屋|なごや}{市|し}）",
+        "en": "Business waste (City of Nagoya)"
+      },
+      "url": "https://www.city.nagoya.jp/jigyou/gomi/1025999/index.html",
+      "evidence": {
+        "source_ids": [
+          "gomi-jigyou-1025999"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "事業系ごみの出し方・産業廃棄物等についてご案内しています。"
+      }
+    }
+  }
+}

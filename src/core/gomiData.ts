@@ -1,12 +1,10 @@
-/* ごみの下書きのデータ（drafts/gomi/*.json）を読む。下書きなので、開発の `npm run dev:drafts` のときだけ読む（SPEC 18.9）。
-   本番ビルドでは読まないので、ごみの画面は「準備中」になる。 */
+/* ごみの道具のデータ（data/gomi/*.json）を読む。11/7 C-7 で下書き（drafts/gomi）から公開へ移した。すべて needs_check／ai_checked のまま。
+   収集日の表の写しは data/private/（Git に入れない。src/core/gomiSchedule.ts）。 */
 import { z } from 'zod';
 import { Evidence, Notice, Text } from './schema';
 import { GomiItem, GomiItems, normWord, type DeliveryRegime, type Schedule } from './gomi';
 
-const files: Record<string, unknown> = import.meta.env.MODE === 'drafts'
-  ? import.meta.glob('../../drafts/gomi/*.json', { eager: true, import: 'default' })
-  : {};
+const files: Record<string, unknown> = import.meta.glob(['../../data/gomi/items.json', '../../data/gomi/areas.json', '../../data/gomi/delivery.json'], { eager: true, import: 'default' });
 /** 分別早見表（名古屋市のオープンデータ。CC BY 4.0）は公開の data/gomi/ に置く（作者の決定 11/6 F） */
 import opendataJson from '../../data/gomi/opendata.json';
 
@@ -70,10 +68,10 @@ export function parseGomi(raw: { items: unknown; areas: unknown; delivery: unkno
 }
 
 let cached: GomiBundle | null | undefined;
-/** 下書きが無ければ null（本番） */
+/** データが無ければ null */
 export function gomiData(): GomiBundle | null {
   if (cached !== undefined) return cached;
-  const get = (n: string) => files[`../../drafts/gomi/${n}.json`];
+  const get = (n: string) => files[`../../data/gomi/${n}.json`];
   cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery'), opendata: opendataJson }) : null;
   return cached;
 }

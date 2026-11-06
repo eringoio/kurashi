@@ -166,6 +166,118 @@
         "checked_at": "2026-11-05",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "E-stay-renew",
+      "group": "zairyu",
+      "title": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}する",
+        "ja_easy": "{在留|ざいりゅう}{期間|きかん}を{延|の}ばす（{更新|こうしん}）",
+        "en": "I am renewing my period of stay"
+      },
+      "illustration": "passport",
+      "status": "built",
+      "menu": 5,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "stay_renew"
+        }
+      ],
+      "questions": [
+        "Q-nationality",
+        "Q-zairyu-status",
+        "Q-sr-mynumber"
+      ],
+      "card_ids": [
+        "zairyu-koshin",
+        "zairyu-mynumber-extend"
+      ],
+      "scope_rule": "R-sr-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-house-search",
+      "group": "housing",
+      "title": {
+        "ja": "{住|す}まいを{探|さが}す",
+        "ja_easy": "{住|す}む{部屋|へや}を{探|さが}す",
+        "en": "Looking for a place to live"
+      },
+      "illustration": "house",
+      "status": "built",
+      "menu": 8,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "house_search"
+        }
+      ],
+      "questions": [],
+      "card_ids": [
+        "housing-search",
+        "housing-contract-check",
+        "housing-initial-costs",
+        "housing-guarantor",
+        "housing-move-in",
+        "housing-move-out",
+        "housing-public"
+      ],
+      "scope_rule": "R-house-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-gomi",
+      "group": "gomi",
+      "title": {
+        "ja": "ごみの{出|だ}し{方|かた}",
+        "ja_easy": "ごみの{出|だ}し{方|かた}",
+        "en": "How to put out garbage"
+      },
+      "illustration": "bin",
+      "status": "built",
+      "menu": 2,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "gomi"
+        }
+      ],
+      "questions": [],
+      "card_ids": [
+        "gomi-bunbetsu",
+        "gomi-shushubi",
+        "gomi-sodai",
+        "gomi-mochikomi"
+      ],
+      "scope_rule": "R-gomi-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "tool": {
+        "path": "/gomi",
+        "label": {
+          "ja": "これ、{何|なに}ごみ？（{品物|しなもの}の{名前|なまえ}で{探|さが}す）",
+          "ja_easy": "これ、{何|なに}ごみ？（{名前|なまえ}で{探|さが}す）",
+          "en": "What kind of garbage is this? (search by item name)"
+        }
+      }
     }
   ]
 }

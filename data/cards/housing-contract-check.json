@@ -1,0 +1,129 @@
+{
+  "id": "housing-contract-check",
+  "data_version": 1,
+  "illustration": "doc",
+  "awareness_type": "life_essential",
+  "obligation": "check",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{契約|けいやく}の{前|まえ}に{確|たし}かめること",
+    "ja_easy": "{契約|けいやく}の{前|まえ}に{見|み}る",
+    "en": "Check before you sign the lease"
+  },
+  "official_name": {
+    "ja": "契約前の確認（重要事項説明）",
+    "reading": "けいやくまえのかくにん"
+  },
+  "summary": {
+    "ja": "{署名|しょめい}する{前|まえ}に、{契約書|けいやくしょ}を{読|よ}んで{説明|せつめい}を{聞|き}き、{内容|ないよう}を{理解|りかい}します。{署名|しょめい}は、{条件|じょうけん}を{守|まも}る{約束|やくそく}になります。{不動産|ふどうさん}{会社|がいしゃ}が{仲介|ちゅうかい}するときは、{契約|けいやく}の{前|まえ}に「{重要|じゅうよう}{事項|じこう}の{説明|せつめい}」があります（{要|よう}{確認|かくにん}）。{次|つぎ}のことを{確|たし}かめます。{普通|ふつう}{借家|しゃくや}{契約|けいやく}か{定期|ていき}{借家|しゃくや}{契約|けいやく}か（{要|よう}{確認|かくにん}）。{敷金|しききん}・{礼金|れいきん}などの{額|がく}と、{返|かえ}らない{敷引|しきびき}があるときはその{額|がく}。{更新料|こうしんりょう}の{有無|うむ}と{額|がく}。{退去|たいきょ}するときの{原状|げんじょう}{回復|かいふく}の{費用|ひよう}。{契約|けいやく}の{期間|きかん}は、ふつう2{年|ねん}です。{一緒|いっしょ}に{住|す}む{人|ひと}がいるときは、{契約|けいやく}のときに{貸主|かしぬし}に{伝|つた}えます。{伝|つた}えずに{住|す}まわせると、{退去|たいきょ}を{求|もと}められることがあります（{要|よう}{確認|かくにん}）。わからないことは、その{場|ば}で{質問|しつもん}します。{日本語|にほんご}があまりわからないときは、わかる{人|ひと}と{一緒|いっしょ}に{行|い}きます。{契約書|けいやくしょ}と{不動産|ふどうさん}{会社|がいしゃ}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{名前|なまえ}を{書|か}く{前|まえ}に、{契約書|けいやくしょ}を{読|よ}んで、{説明|せつめい}を{聞|き}いて、わかってから{書|か}きます。{書|か}くと、{決|き}まりを{守|まも}る{約束|やくそく}になります。{不動産|ふどうさん}の{会社|かいしゃ}が{間|あいだ}に{入|はい}るときは、{契約|けいやく}の{前|まえ}に{大事|だいじ}な{説明|せつめい}があります（{要|よう}{確認|かくにん}）。{次|つぎ}のことを{聞|き}きます。{敷金|しききん}・{礼金|れいきん}などの{金額|きんがく}。{更新料|こうしんりょう}があるか、いくらか。{出|で}るときに{部屋|へや}を{直|なお}すお{金|かね}。{契約|けいやく}の{期間|きかん}は、ふつう2{年|ねん}です。いっしょに{住|す}む{人|ひと}がいるときは、{部屋|へや}を{貸|か}す{人|ひと}に{言|い}います。{言|い}わないと、{出|で}ていくように{言|い}われることがあります（{要|よう}{確認|かくにん}）。わからないことは、{聞|き}きます。{日本語|にほんご}があまりわからないときは、わかる{人|ひと}といっしょに{行|い}きます。{契約書|けいやくしょ}を{見|み}て、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "Before you sign, read the lease, listen to the explanation and make sure you understand it. Signing is a promise to follow the terms. When a real estate agent brokers the lease, you receive an explanation of important points before signing (to be checked). Check: whether it is a regular lease or a fixed-term lease (to be checked); the security deposit, key money and any non-refundable \"shikibiki\" amount; whether there is a renewal fee and how much; the cost of restoring the room when you leave. The lease period is normally 2 years. Tell the landlord about anyone who will live with you; if you do not, you could be asked to leave (to be checked). Ask when you do not understand something. If you do not speak Japanese well, bring someone who does. Check the lease and ask the real estate agent (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{不動産|ふどうさん}{会社|がいしゃ}（{契約|けいやく}の{前|まえ}に、{説明|せつめい}を{受|う}ける{所|ところ}）",
+      "ja_easy": "{不動産|ふどうさん}の{会社|かいしゃ}（{契約|けいやく}の{前|まえ}に、{説明|せつめい}を{聞|き}く{所|ところ}）",
+      "en": "The real estate agent (where you receive the explanation before signing)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "Before signing the rental agreement, have the real estate agent explain the important points to you regarding the rental agreement and the housing."
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{契約書|けいやくしょ}と{説明|せつめい}で、わからないことは、その{場|ば}で{質問|しつもん}します。",
+        "ja_easy": "{契約書|けいやくしょ}と{説明|せつめい}で、わからないことは、その{場|ば}で{聞|き}きます。",
+        "en": "Ask questions on the spot about anything you do not understand in the lease or the explanation."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "so listen carefully and ask questions when you do not understand something.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-keiyaku-kakunin/c3"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本語|にほんご}があまりわからないときは、{日本語|にほんご}がわかる{人|ひと}と{一緒|いっしょ}に{不動産|ふどうさん}{会社|がいしゃ}へ{行|い}きます。",
+        "ja_easy": "{日本語|にほんご}があまりわからないときは、わかる{人|ひと}と{一緒|いっしょ}に{不動産|ふどうさん}の{会社|かいしゃ}へ{行|い}きます。",
+        "en": "If you do not speak Japanese well, bring someone who does when you visit the real estate agent."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "If you do not speak Japanese well, bring someone who does speak Japanese well with you when you visit a real estate agent.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-keiyaku-kakunin/c12"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{契約|けいやく}のときに{役立|やくだ}つチェックシートや、{入居|にゅうきょ}{申込書|もうしこみしょ}・{重要|じゅうよう}{事項|じこう}{説明書|せつめいしょ}の{見本|みほん}が、14{か国語|かこくご}で{国土交通省|こくどこうつうしょう}のページにあります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{契約|けいやく}のときに{使|つか}うチェックシートや{見本|みほん}が、{国土交通省|こくどこうつうしょう}のページにあります（{要|よう}{確認|かくにん}）。",
+        "en": "The ministry page offers check sheets and sample application and explanation forms in 14 languages (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-heya-sagashi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "契約時に役立つ各種チェックシートや、「入居申込書」、「重要事項説明書」"
+      }
+    }
+  ],
+  "keywords": [
+    "けいやく",
+    "契約",
+    "重要事項説明",
+    "じゅうようじこうせつめい",
+    "更新料",
+    "こうしんりょう",
+    "lease",
+    "contract",
+    "renewal fee",
+    "cohabitant"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "Before signing the rental agreement, have the real estate agent explain the important points to you regarding the rental agreement and the housing."
+  }
+}

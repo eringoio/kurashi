@@ -4,7 +4,7 @@
 import { z } from 'zod';
 import { Evidence, Text } from './schema';
 
-/* ───── データの型（drafts/gomi/*.json。公開前はすべて needs_check） ───── */
+/* ───── データの型（data/gomi/*.json。公開前はすべて needs_check） ───── */
 
 /** 出し方の経路。危険物・専用の回収・事業ごみは、袋の大きさより先に決める（INT-001・03 の4章） */
 export const Route = z.enum(['regular', 'bulky', 'hazard', 'special', 'business', 'not_collected', 'unknown']);

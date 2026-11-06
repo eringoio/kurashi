@@ -1,0 +1,197 @@
+{
+  "data_version": 1,
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "keywords": [
+    "在留期間",
+    "ざいりゅうきかん",
+    "更新",
+    "こうしん",
+    "ビザ更新",
+    "visa renewal",
+    "extend stay",
+    "renew residence",
+    "留学",
+    "家族滞在"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は、{在留|ざいりゅう}{期間|きかん}が{決|き}まっている{人|ひと}{向|む}けです。{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}の{人|ひと}は、{入管|にゅうかん}や{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "この{案内|あんない}は、{在留|ざいりゅう}{期間|きかん}が{決|き}まっている{人|ひと}のためのものです。{永住者|えいじゅうしゃ}・{特別永住者|とくべつえいじゅうしゃ}は、{入管|にゅうかん}や{区役所|くやくしょ}で{聞|き}きます（{要確認|ようかくにん}）。",
+      "en": "This guide is for people whose period of stay is fixed. Permanent Residents and Special Permanent Residents should check with immigration or the ward office (to be checked)."
+    },
+    "check_at_office": {
+      "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{在留|ざいりゅう}カードの{在留|ざいりゅう}{期間|きかん}の{欄|らん}を{見|み}るか、{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{在留|ざいりゅう}カードの「{在留|ざいりゅう}{期間|きかん}」を{見|み}てください。わからないときは{入管|にゅうかん}で{聞|き}きます（{要確認|ようかくにん}）。",
+      "en": "We cannot tell, because your status is unknown. Check the period of stay on your residence card, or ask immigration (to be checked)."
+    }
+  },
+  "deadline": {
+    "text": {
+      "ja": "{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}する{日|ひ}まで。6か{月|げつ}{以上|いじょう}の{在留|ざいりゅう}{期間|きかん}がある{人|ひと}は、{満了|まんりょう}の3か{月|げつ}{前|まえ}から{申請|しんせい}できます（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{日|ひ}まで。{期間|きかん}が6か{月|げつ}{以上|いじょう}の{人|ひと}は、3か{月|げつ}{前|まえ}から{出|だ}せます（{要確認|ようかくにん}）",
+      "en": "Until the day your period of stay ends. If your period is 6 months or longer, you can apply from 3 months before it ends (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-koshin"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "申請期間 在留期間の満了する日以前（６か月以上の在留期間を有する者にあっては在留期間の満了する３か月前から。）"
+    }
+  },
+  "id": "zairyu-koshin",
+  "illustration": "passport",
+  "eligibility": "R-sr-limited",
+  "place": "immigration",
+  "title": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}する",
+    "ja_easy": "{在留|ざいりゅう}{期間|きかん}を{延|の}ばす（{更新|こうしん}）",
+    "en": "Extend your period of stay (renewal)"
+  },
+  "official_name": {
+    "ja": "在留期間更新許可申請",
+    "reading": "ざいりゅうきかんこうしんきょかしんせい"
+  },
+  "summary": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に、{更新|こうしん}の{許可|きょか}を{申請|しんせい}します。{書類|しょるい}（{在学|ざいがく}{証明|しょうめい}{書|しょ}・{成績|せいせき}{証明|しょうめい}{書|しょ}など）をそろえるのに{時間|じかん}がかかるので、{満了|まんりょう}の3か{月|げつ}{前|まえ}になったら{準備|じゅんび}を{始|はじ}めます。{審査|しんさ}は2{週間|しゅうかん}から1か{月|げつ}ほどです（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に{申請|しんせい}します。{書類|しょるい}に{時間|じかん}がかかるので、3か{月|げつ}{前|まえ}に{準備|じゅんび}を{始|はじ}めます。2{週間|しゅうかん}から1か{月|げつ}かかります（{要|よう}{確認|かくにん}）。",
+    "en": "Apply for an extension before your period of stay ends. Collecting documents (certificate of enrolment, transcript, etc.) takes time, so start preparing 3 months before the expiry date. Processing takes about 2 weeks to 1 month (to be checked)."
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{入管|にゅうかん}）。オンライン{申請|しんせい}もできます",
+      "ja_easy": "{入管|にゅうかん}（オンラインもできます）",
+      "en": "The regional immigration office for your address (online application is also possible)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-koshin"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "提出先 住居地を管轄する地方出入国在留管理官署"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}（{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}など）の{活動|かつどう}を{変|か}えるときは、{更新|こうしん}ではなく{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}の{申請|しんせい}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}を{変|か}えるときは、{別|べつ}の{申請|しんせい}です（{要|よう}{確認|かくにん}）。",
+        "en": "If you will do a different activity, apply for a change of status, not an extension (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "手続対象者 現に有する在留資格の活動を継続しようとする外国人"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}は、オンラインでも{申請|しんせい}できます。{詳|くわ}しくは{入管|にゅうかん}の「{在留|ざいりゅう}{申請|しんせい}のオンライン{手続|てつづ}き」のページで{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "オンラインでも{申請|しんせい}できます。{入管|にゅうかん}のページで{確認|かくにん}します（{要確認|ようかくにん}）。",
+        "en": "You can also apply online. Check the immigration agency's online procedures page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "在留期間更新許可申請は、オンラインで申請できます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申請書|しんせいしょ}と{資料|しりょう}は、{日本|にほん}での{活動|かつどう}（{在留|ざいりゅう}{資格|しかく}。{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}・{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}など）に{応|おう}じたものを{出|だ}します。",
+        "ja_easy": "{書類|しょるい}は、{在留|ざいりゅう}{資格|しかく}（{留学|りゅうがく}・{家族滞在|かぞくたいざい}など）で{違|ちが}います。{入管|にゅうかん}のページで{自分|じぶん}の{在留|ざいりゅう}{資格|しかく}を{選|えら}んで{確|たし}かめます。",
+        "en": "The application form and documents depend on your activity in Japan (status: Student, Dependent, Engineer/Specialist in Humanities/International Services, etc.)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "日本での活動内容（在留資格）に応じた申請書・資料を提出いただきます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "a12af40432b6452cad5410221f1709273ab07a3c25758b173dedc05b49438592",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-koshin/c11"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}で{申請|しんせい}するときの{手数料|てすうりょう}は、{許可|きょか}される{在留|ざいりゅう}{期間|きかん}で{違|ちが}い、{収入|しゅうにゅう}{印紙|いんし}で{納|おさ}めます。3か{月|げつ}{以下|いか}10,000{円|えん}、3か{月|げつ}{超|こ}6か{月|げつ}{以下|いか}18,000{円|えん}、6か{月|げつ}{超|こ}1{年|ねん}{未満|みまん}25,000{円|えん}、1{年|ねん}33,000{円|えん}、1{年|ねん}{超|こ}3{年|ねん}{未満|みまん}48,000{円|えん}、3{年|ねん}{以上|いじょう}5{年|ねん}{未満|みまん}64,000{円|えん}、5{年|ねん}{以上|いじょう}75,000{円|えん}です。2026{年|ねん}9{月|がつ}30{日|にち}までに{受付|うけつけ}した{申請|しんせい}は、{改定|かいてい}{前|まえ}の6,000{円|えん}です。{減額|げんがく}や{免除|めんじょ}があることがあります。オンライン{申請|しんせい}の{額|がく}は{別|べつ}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{窓口|まどぐち}で{出|だ}すときのお{金|かね}は、{許可|きょか}される{期間|きかん}で{違|ちが}います（10,000{円|えん}から75,000{円|えん}）。{収入印紙|しゅうにゅういんし}で{払|はら}います。2026{年|ねん}9{月|がつ}30{日|にち}までに{出|だ}した{人|ひと}は6,000{円|えん}です（{要確認|ようかくにん}）。",
+        "en": "Counter fee depends on the permitted period and is paid with a revenue stamp: 10,000 yen (3 months or less), 18,000 (over 3 up to 6 months), 25,000 (over 6 months up to under 1 year), 33,000 (1 year), 48,000 (over 1 year up to under 3 years), 64,000 (3 years up to under 5), 75,000 (5 years or more). Applications received by September 30, 2026 pay the old 6,000 yen. Reductions or exemptions may apply. The online fee differs (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "許可期間 手数料 ３月以下 １０，０００円 ３月超６月以下 １８，０００円 ６月超１年未満 ２５，０００円 １年 ３３，０００円 １年超３年未満 ４８，０００円 ３年以上５年未満 ６４，０００円 ５年以上 ７５，０００円"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "3か{月|げつ}{以上|いじょう}{前|まえ}でも、{海外|かいがい}への{留学|りゅうがく}・{出産|しゅっさん}・{入院|にゅういん}など、{本当|ほんとう}にやむを{得|え}ない{特別|とくべつ}な{事情|じじょう}があるときは、{申請|しんせい}を{受|う}け{付|つ}けることがあります。{事前|じぜん}に{入管|にゅうかん}に{問|と}い{合|あ}わせます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "とくべつな{理由|りゆう}があるときは、3か{月|げつ}より{前|まえ}でも{出|だ}せることがあります。{先|さき}に{入管|にゅうかん}に{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "Even more than 3 months before, an application may be accepted when there is a truly unavoidable special reason, such as study abroad, childbirth or hospitalisation. Ask immigration in advance (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "ただし、真にやむを得ない特別な事情が認められる場合は、３か月以上前から申請を受け付けることもありますので、事前に必要な資料（注）を添えて、申請される地方出入国在留管理官署へお問い合わせください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "18{歳|さい}{以上|いじょう}の{人|ひと}は、{取次者|とりつぎしゃ}による{場合|ばあい}を{除|のぞ}き、{自分|じぶん}で{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "18{歳|さい}{以上|いじょう}の{人|ひと}は、{自分|じぶん}で{出|だ}します（{要確認|ようかくにん}）。",
+        "en": "If you are 18 or older, you apply yourself, except through an authorised agent (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "１８歳以上の方は、取次者による場合を除き、御自身で申請を行ってください。"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-moj-koshin"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "手続対象者 現に有する在留資格の活動を継続しようとする外国人"
+  }
+}

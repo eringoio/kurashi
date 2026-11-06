@@ -1,0 +1,288 @@
+{
+  "id": "gomi-mochikomi",
+  "data_version": 1,
+  "illustration": "bin",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-gomi-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "ごみを{自分|じぶん}で{処理|しょり}{施設|しせつ}に{運|はこ}ぶ（{予約|よやく}が{必要|ひつよう}になります）",
+    "ja_easy": "ごみを{自分|じぶん}で{運|はこ}ぶ（よやくが{要|い}るようになります）",
+    "en": "Take garbage to a facility yourself (reservations are required from 2027)"
+  },
+  "official_name": {
+    "ja": "自己搬入",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{車|くるま}で{処理|しょり}{施設|しせつ}に{運|はこ}ぶときは、{令和|れいわ}9{年|ねん}（2027{年|ねん}）{1月11日|いちがつじゅういちにち}から、インターネットで{施設|しせつ}と{日時|にちじ}を{事前|じぜん}に{予約|よやく}する{方法|ほうほう}に{変|か}わります（{原則|げんそく}）。{1月8日|いちがつようか}までは、ごみが{出|で}た{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}で{受付|うけつけ}をして、その{日|ひ}のうちに{運|はこ}びます。{12月14日|じゅうにがつじゅうよっか}から{1月8日|いちがつようか}は、どちらも{使|つか}える{期間|きかん}です。ネット{予約|よやく}のページは{12月7日|じゅうにがつなのか}から{順|じゅん}に{始|はじ}まる{予定|よてい}です（{要|よう}{確認|かくにん}）。{大江|おおえ}{破砕|はさい}{工場|こうじょう}と{猪子石|いのこいし}{工場|こうじょう}は、{1月8日|いちがつようか}で{自己|じこ}{搬入|はんにゅう}の{受|う}け{入|い}れをやめます（{要|よう}{確認|かくにん}）。{予約|よやく}の{枠|わく}には{限|かぎ}りがあります。{徒歩|とほ}や{自転車|じてんしゃ}では{運|はこ}べません。{家電|かでん}4{品目|ひんもく}（エアコン・テレビ・{冷蔵庫|れいぞうこ}・{洗濯機|せんたくき}）とパソコンは{運|はこ}べません。",
+    "ja_easy": "{車|くるま}で{処理|しょり}{施設|しせつ}に{運|はこ}ぶとき、2027{年|ねん}{1月11日|いちがつじゅういちにち}から、インターネットで{先|さき}によやくします。{1月8日|いちがつようか}までは、{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}に{行|い}きます（{要|よう}{確認|かくにん}）。{歩|ある}きや{自転車|じてんしゃ}では{運|はこ}べません。エアコン・テレビ・{冷蔵庫|れいぞうこ}・{洗濯機|せんたくき}・パソコンは{運|はこ}べません。",
+    "en": "If you take garbage to a facility by car, from 11 January 2027 you will generally need to reserve a facility and time online in advance. Until 8 January 2027, register at the environmental office of the ward where the garbage was produced and deliver it the same day. Between 14 December and 8 January both methods can be used, and online booking is planned to open from 7 December (to be checked). The Oe crushing plant and Inokoishi plant stop accepting self-delivery after 8 January (to be checked). Reservation slots are limited. You cannot bring garbage on foot or by bicycle. The four home appliance types (air conditioner, TV, refrigerator, washing machine) and PCs cannot be brought."
+  },
+  "lead": {
+    "ja": "2027{年|ねん}1{月|つき}11{日|にち}から、{施設|しせつ}への{持|も}ち{込|こ}みは{予約|よやく}が{要|い}ります。",
+    "ja_easy": "2027年1月11日から、持って行くときは予約が要ります。",
+    "en": "From January 11, 2027, taking garbage to a facility needs a reservation."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{令|りょう}{和|わ}9{年|ねん}（2027{年|ねん}）1{月|つき}11{日|にち}から、{当日|とうじつ}の{受付|うけつけ}ではなく{事前|じぜん}{予約|よやく}になります（{原則|げんそく}）",
+      "ja_easy": "2027{年|ねん}1{月|つき}11{日|にち}から、よやくが{要|い}ります",
+      "en": "From 11 January 2027, advance booking replaces same-day registration (as a rule)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-jikoban"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check",
+      "quote": "令和9年1月11日（月曜日・祝）から自己搬入が当日受付から事前予約になります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "ごみが{出|で}た{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}（{令和|れいわ}9{年|ねん}{1月8日|いちがつようか}まで）／{自己|じこ}{搬入|はんにゅう}のインターネット{予約|よやく}",
+      "ja_easy": "{区|く}の{環境事業所|かんきょうじぎょうしょ}／インターネットのよやく",
+      "en": "The ward environmental office (until 8 Jan 2027) / online booking"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-jikoban"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check",
+      "quote": "搬入の前に必ずごみが発生する区の環境事業所で受付をしてください。"
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネットで{予約|よやく}します。{申|もう}し{込|こ}みの{締切|しめきり}は、{午前|ごぜん}の{搬入|はんにゅう}は{前日|ぜんじつ}の23{時|じ}59{分|ふん}まで、{午後|ごご}の{搬入|はんにゅう}は{当日|とうじつ}の{午前|ごぜん}11{時|じ}59{分|ふん}までです。{予約|よやく}のページは{12月7日|じゅうにがつなのか}から{順|じゅん}に{始|はじ}まる{予定|よてい}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "インターネットでよやくします。",
+        "en": "Book online. The deadline is 23:59 the day before for morning slots, and 11:59 on the day for afternoon slots. The booking page is planned to open in stages from 7 December (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "インターネット予約の申し込みの締切は、午前の搬入は前日（23時59分）まで、午後の搬入は搬入日当日の午前中（11時59分）までになります。"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネットの{予約|よやく}の{枠|わく}には{限|かぎ}りがあり、{希望|きぼう}の{日時|にちじ}に{取|と}れないことがあります。",
+        "ja_easy": "よやくの{枠|わく}は{決|き}まった{数|かず}で、のぞんだ{日|ひ}に{取|と}れないことがあります。",
+        "en": "Online booking slots are limited, so you may not get the date and time you want."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "予約枠には限りがあり、ご希望の日時に予約できない場合があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be9c7264f03cf79925c92d1a66efab1b654e76e8bb2d7ec6502bf0234f494b41",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{令和|れいわ}9{年|ねん}{1月8日|いちがつようか}までは、ごみが{出|で}た{区|く}の{環境|かんきょう}{事業所|じぎょうしょ}の{窓口|まどぐち}で{受付|うけつけ}をします。",
+        "ja_easy": "2027{年|ねん}{1月8日|いちがつようか}までは、{区|く}の{環境事業所|かんきょうじぎょうしょ}で{受付|うけつけ}します。",
+        "en": "Until 8 January 2027, register at the ward environmental office counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "搬入の前に必ずごみが発生する区の環境事業所で受付をしてください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{環境|かんきょう}{事業所|じぎょうしょ}で{受付|うけつけ}をした{日|ひ}の{搬入|はんにゅう}は、{月曜|げつよう}から{金曜|きんよう}です（{祝日|しゅくじつ}も{可|か}。{年末|ねんまつ}{年始|ねんし}は{除|のぞ}く）。{土曜|どよう}と{日曜|にちよう}は{搬入|はんにゅう}できません。",
+        "ja_easy": "{搬入|はんにゅう}は{月曜|げつよう}から{金曜|きんよう}です。{土曜|どよう}と{日曜|にちよう}はできません。",
+        "en": "For same-day registration at the environmental office, delivery is Monday to Friday (public holidays included, except the year-end and New Year period). Saturdays and Sundays are not available."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "月曜日から金曜日であれば祝日でも搬入できます（年末年始は除く）。土曜日、日曜日は搬入ができません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "「{可燃|かねん}ごみ」と「{不燃|ふねん}・{粗大|そだい}ごみ」は{分|わ}けて{運|はこ}びます。この2{種類|しゅるい}を{同時|どうじ}には{運|はこ}べません。",
+        "ja_easy": "{燃|も}えるごみと、{燃|も}えないごみ・{大|おお}きなごみは、{分|わ}けて{運|はこ}びます。いっしょには{運|はこ}べません。",
+        "en": "Separate \"burnable\" from \"non-burnable and bulky\" waste. You cannot bring both types at the same time."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "「可燃ごみ」と「不燃・粗大ごみ」に分別してください。この2種類を同時に運ぶことはできません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c11"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{徒歩|とほ}や{自転車|じてんしゃ}では{運|はこ}べません。",
+        "ja_easy": "{歩|ある}きや{自転車|じてんしゃ}では{運|はこ}べません。",
+        "en": "You cannot bring garbage on foot or by bicycle."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "徒歩や自転車での搬入はできません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "エアコン・テレビ・{冷蔵庫|れいぞうこ}・{洗濯機|せんたくき}の{家電|かでん}4{品目|ひんもく}とパソコンは、{搬入|はんにゅう}できません。",
+        "ja_easy": "エアコン・テレビ・{冷蔵庫|れいぞうこ}・{洗濯機|せんたくき}・パソコンは、{運|はこ}べません。",
+        "en": "Air conditioners, TVs, refrigerators, washing machines and PCs cannot be brought."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "家電4品目（エアコン、テレビ、冷蔵庫、洗濯機）、パソコン",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c13"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}の{支払|しはら}いに、クレジットカード・{電子|でんし}マネーなどは{使|つか}えません。",
+        "ja_easy": "お{金|かね}をはらうとき、クレジットカードや{電子|でんし}マネーは{使|つか}えません。",
+        "en": "You cannot pay the fee by credit card or electronic money."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "クレジットカード、電子マネー等は利用いただけません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
+          "verdict": "agree",
+          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c15"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{袋|ふくろ}を{使|つか}うときは、{透明|とうめい}か{中身|なかみ}の{見|み}える{半透明|はんとうめい}の{袋|ふくろ}にします（{指定袋|していぶくろ}でなくてもかまいません）。",
+        "ja_easy": "{袋|ふくろ}を{使|つか}うときは、{中身|なかみ}が{見|み}える{袋|ふくろ}にします。",
+        "en": "If you use bags, use clear or semi-transparent bags where the contents can be seen (designated bags are not required)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-jikoban"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "袋を使用する場合は、透明または中身の見える半透明の袋をお使いください。（指定袋でなくても可）"
+      }
+    }
+  ],
+  "keywords": [
+    "自己搬入",
+    "持ち込み",
+    "処理施設",
+    "予約",
+    "bring garbage",
+    "self-delivery",
+    "reservation"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-gomi-jikoban",
+      "B-nagoya-gomi-jikoban-henko",
+      "B-nagoya-gomi-sodai-henko"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "徒歩や自転車での搬入はできません。"
+  },
+  "fee": {
+    "text": {
+      "ja": "10キログラムまでごとに270{円|えん}。{現金|げんきん}だけです。",
+      "ja_easy": "10キロごとに270{円|えん}。{現金|げんきん}で{払|はら}います。",
+      "en": "270 yen per 10 kg. Cash only."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-gomi-jikoban-henko"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "ai_checked",
+      "quote": "ごみ10キログラムまでごとに270円の処理手数料を現金にてお支払いいただきます。",
+      "ai_check": {
+        "fetched_at": "2026-11-07",
+        "sha256": "c9f2bfb3a1447bd5b14573b540ca912938145d636a9a090f911e6dafc3cfae24",
+        "verdict": "agree",
+        "ref": "research/logs/gomi_fee_2026-11-07.md"
+      }
+    }
+  }
+}

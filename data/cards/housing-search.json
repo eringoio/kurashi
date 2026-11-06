@@ -1,0 +1,188 @@
+{
+  "id": "housing-search",
+  "data_version": 1,
+  "illustration": "search",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{部屋|へや}の{探|さが}し{方|かた}",
+    "ja_easy": "{部屋|へや}を{探|さが}す",
+    "en": "Finding a place to rent"
+  },
+  "official_name": {
+    "ja": "部屋探し",
+    "reading": "へやさがし"
+  },
+  "summary": {
+    "ja": "{部屋|へや}の{貸|か}し{借|か}りは{民間|みんかん}の{契約|けいやく}で、{条件|じょうけん}は{物件|ぶっけん}と{会社|がいしゃ}ごとに{違|ちが}います。インターネットで{探|さが}すか、{不動産|ふどうさん}{会社|がいしゃ}に{希望|きぼう}の{条件|じょうけん}を{伝|つた}えて{紹介|しょうかい}してもらいます。{部屋|へや}を{見|み}るのは{無料|むりょう}で、{見|み}たあとに{申|もう}し{込|こ}まなくてもかまいません。{不動産|ふどうさん}{会社|がいしゃ}には、{在留|ざいりゅう}カードかパスポートを{持|も}って{行|い}きます。{多|おお}くの{不動産|ふどうさん}{会社|がいしゃ}は{日本語|にほんご}だけの{対応|たいおう}なので、{日本語|にほんご}がわかる{人|ひと}と{一緒|いっしょ}に{行|い}くことがすすめられています。{申|もう}し{込|こ}みから{入居|にゅうきょ}まで、ふつう1〜2{週間|しゅうかん}かかります。{契約書|けいやくしょ}と{不動産|ふどうさん}{会社|がいしゃ}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{部屋|へや}を{借|か}りるのは、{会社|かいしゃ}や{部屋|へや}を{貸|か}す{人|ひと}との{契約|けいやく}です。{条件|じょうけん}は{部屋|へや}ごとに{違|ちが}います。インターネットで{探|さが}します。{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}いてもかまいません。{部屋|へや}を{見|み}るのは{無料|むりょう}です。{見|み}てから{決|き}めてよいです。{会社|かいしゃ}には、{在留|ざいりゅう}カードかパスポートを{持|も}って{行|い}きます。{日本語|にほんご}だけの{会社|かいしゃ}が{多|おお}いです。{日本語|にほんご}がわかる{人|ひと}と{行|い}くとよいです。{申|もう}し{込|こ}んでから{入|はい}るまで、1〜2{週間|しゅうかん}ぐらいかかります。{契約書|けいやくしょ}を{見|み}て、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "Renting a room is a private contract, and conditions differ by property and company. Search online, or tell a real estate agent what you want and ask for introductions. Viewing a room is free, and you do not have to apply after viewing. Bring your residence card or passport to the agent. Many agents only handle Japanese, so going with someone who understands Japanese is recommended. From application to move-in usually takes 1 to 2 weeks. Check the lease and ask the real estate agent (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "「セーフティネット{住宅|じゅうたく}{情報|じょうほう}{提供|ていきょう}システム」のサイト（{外国人|がいこくじん}の{入居|にゅうきょ}を{受|う}け{入|い}れる{賃貸|ちんたい}{住宅|じゅうたく}を、{日本語|にほんご}で{検索|けんさく}できます）",
+      "ja_easy": "「セーフティネット{住宅|じゅうたく}」のサイト（{外国人|がいこくじん}が{入|はい}れる{家|いえ}を、{日本語|にほんご}で{探|さが}せます）",
+      "en": "The \"Safety Net Housing\" website (search in Japanese for rental housing that accepts foreign residents)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-aichi-tabunka-sumai"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "外国人の入居を受け入れる賃貸住宅を、日本語で検索できるウェブサイトです。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "851cfc279609dd0041f1167c272715960fbdd3baeef41bb87b6b580e23c22372",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-sagashikata/c2"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネットで{探|さが}します。{不動産|ふどうさん}{情報|じょうほう}サイトか「セーフティネット{住宅|じゅうたく}」のサイトで、{賃貸|ちんたい}{住宅|じゅうたく}を{探|さが}せます。",
+        "ja_easy": "インターネットで{探|さが}します。{不動産|ふどうさん}のサイトか「セーフティネット{住宅|じゅうたく}」のサイトを{使|つか}います。",
+        "en": "Search online. Use a real estate information site or the Safety Net Housing website to look for rental housing."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "Look for housing on the Internet. Specifically, look for rental housing on real estate information sites or the Safety Net Housing website.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-sagashikata/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{留学生|りゅうがくせい}は、{学校|がっこう}の{学生|がくせい}を{担当|たんとう}する{窓口|まどぐち}に、{学生|がくせい}{向|む}けの{住宅|じゅうたく}{情報|じょうほう}があるか{聞|き}きます。",
+        "ja_easy": "{留学生|りゅうがくせい}は、{学校|がっこう}の{学生|がくせい}の{窓口|まどぐち}に、{学生|がくせい}の{家|いえ}の{情報|じょうほう}があるか{聞|き}きます。",
+        "en": "Students: ask your school's student office whether it has housing information for students."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "If you are a foreign student, ask at the section in charge of students at your school if the school has student housing information.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-sagashikata/c4"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{日本|にほん}{賃貸|ちんたい}{住宅|じゅうたく}{管理|かんり}{協会|きょうかい}が、{外国語|がいこくご}が{話|はな}せる{不動産|ふどうさん}{店|てん}の{情報|じょうほう}を{多言語|たげんご}で{紹介|しょうかい}しています。",
+        "ja_easy": "{日本|にほん}{賃貸|ちんたい}{住宅|じゅうたく}{管理|かんり}{協会|きょうかい}が、{外国語|がいこくご}が{話|はな}せる{不動産|ふどうさん}の{店|みせ}を、いろいろな{言葉|ことば}で{紹介|しょうかい}しています。",
+        "en": "The Japan Property Management Association lists real estate shops that speak foreign languages, in several languages."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-heya-sagashi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国語が話せる不動産店の情報を多言語で紹介しています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "2aa082af392beb54190af99618fe8e7f94ccc08c74dd005087a1d5ad0f267d3b",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-sagashikata/c13"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{自治体|じちたい}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」でも、{住|す}まいの{相談|そうだん}ができます。{窓口|まどぐち}の{名前|なまえ}は、{市|し}や{協会|きょうかい}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{市|し}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」でも、{家|いえ}のことを{相談|そうだん}できます。{窓口|まどぐち}は、{市|し}や{協会|きょうかい}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Local governments and international exchange associations offer foreigner consultation that also covers housing. Ask the city or association for the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "Consultation regarding housing is provided, so be sure to ask them.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-sodan/c6"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{国土交通省|こくどこうつうしょう}の「{部屋探|へやさが}しのガイドブック」に、{部屋|へや}の{探|さが}し{方|かた}や{賃貸借|ちんたいしゃく}{契約|けいやく}の{手続|てつづ}きが{載|の}っています。",
+        "ja_easy": "{国土交通省|こくどこうつうしょう}の「{部屋探|へやさが}しのガイドブック」に、{部屋|へや}の{探|さが}し{方|かた}と{契約|けいやく}の{方法|ほうほう}が{書|か}いてあります。",
+        "en": "The Ministry of Land, Infrastructure, Transport and Tourism \"Guidebook for Finding a Room\" explains how to search for a room and the lease procedure."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-heya-sagashi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "「部屋探しのガイドブック」には日本での部屋の探し方や賃貸借契約の手続きに関する役立つ情報を掲載しています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "2aa082af392beb54190af99618fe8e7f94ccc08c74dd005087a1d5ad0f267d3b",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-sodan/c1"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "へやさがし",
+    "部屋探し",
+    "賃貸",
+    "ちんたい",
+    "不動産",
+    "ふどうさん",
+    "apartment",
+    "rent",
+    "housing",
+    "room",
+    "fudosan",
+    "safety net housing"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "go to local real estate agents and tell them the requirements for the housing you are seeking and have them introduce housing to you."
+  },
+  "visual": "floorplan"
+}

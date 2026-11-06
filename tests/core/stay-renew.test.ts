@@ -1,17 +1,18 @@
-/* 在留期間を更新する（下書き drafts/data/E-stay-renew.bundle.json）。在留期間が決まっている人に、更新と、マイナンバーカードの有効期限を延ばす案内を出す。
+/* 在留期間を更新する（11/7 C-7 で公開のデータへ移した）。在留期間が決まっている人に、更新と、マイナンバーカードの有効期限を延ばす案内を出す。
 // B-13（11/6）：在留資格は共通の質問 Q-zairyu-status。旧 Q-sr-status の limited→student（期間が決まっている在留資格）、special_permanent→japanese の代わりに確かめる
    マイナンバーカードのカードは作者の知見（2026-11-05。公式の本文で確認待ち）なので、needs_check。 */
 import { describe, expect, it } from 'vitest';
-import { baseRaw, checkRefs, loadData, withBundles, type Bundle } from '../../src/core/data';
+import { checkRefs, loadData } from '../../src/core/data';
 import { run, type EngineInput } from '../../src/core/engine';
 import { collectEvidence } from '../../src/core/quotes';
 import { AI_CHECK_COUNTS } from '../../src/core/trust';
-import json from '../../drafts/data/E-stay-renew.bundle.json';
 
 /** B-4：国籍 → 在留資格の2段。'japanese' は国籍だけ答える */
 const statusAnswers = (s?: string): Record<string, string> => (!s ? {} : s === 'japanese' ? { 'Q-nationality': 'japanese' } : { 'Q-nationality': 'foreign', 'Q-zairyu-status': s });
-const data = loadData(withBundles(baseRaw(), [json as Bundle]));
+const data = loadData();
 const ev = data.events.find((e) => e.id === 'E-stay-renew')!;
+/** このできごとの分（元のまとまりと同じ範囲。11/7 C-7） */
+const json = { events: [ev], cards: data.cards.filter((c) => ev.card_ids.includes(c.id)), rules: [...data.rules.values()].filter((r) => r.id.startsWith('R-sr')), relations: data.relations.filter((r) => r.id.startsWith('rel-sr')) };
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 const go = (status: string | undefined, card?: string, over: Partial<EngineInput> = {}) =>

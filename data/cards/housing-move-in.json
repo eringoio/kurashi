@@ -1,0 +1,211 @@
+{
+  "id": "housing-move-in",
+  "data_version": 1,
+  "illustration": "key",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{入居|にゅうきょ}のとき",
+    "ja_easy": "{部屋|へや}に{入|はい}るとき",
+    "en": "When you move in"
+  },
+  "official_name": {
+    "ja": "入居前後の手続き",
+    "reading": "にゅうきょぜんごのてつづき"
+  },
+  "summary": {
+    "ja": "{鍵|かぎ}は、{契約書|けいやくしょ}に{署名|しょめい}して{契約|けいやく}のときの{費用|ひよう}を{払|はら}ったあとに{渡|わた}されます。{鍵|かぎ}を{受|う}け{取|と}るとき、できれば{不動産|ふどうさん}{会社|がいしゃ}と{一緒|いっしょ}に{部屋|へや}の{状態|じょうたい}を{確認|かくにん}します。{傷|きず}や{汚|よご}れの{場所|ばしょ}を{図|ず}に{書|か}き、{日付|ひづけ}のある{写真|しゃしん}を{付|つ}けておくと、あとのトラブルを{防|ふせ}げます。{電気|でんき}・ガス・{水道|すいどう}・インターネットの{手続|てつづ}きが{要|い}ります。ガスの{開栓|かいせん}には{本人|ほんにん}の{立会|たちあ}いが{必要|ひつよう}です。{連絡先|れんらくさき}は{不動産|ふどうさん}{会社|がいしゃ}に{聞|き}きます。ごみの{出|だ}し{方|かた}は{地域|ちいき}で{違|ちが}います。{入居|にゅうきょ}したら、{日|ひ}・{時間|じかん}・{場所|ばしょ}・{分|わ}け{方|かた}を{聞|き}きます。{決|き}められた{時間|じかん}に{出|だ}さないと、{分|わ}けていても{収集|しゅうしゅう}されません。{集合|しゅうごう}{住宅|じゅうたく}では、{夜遅|よるおそ}く・{朝早|あさはや}くの{音|おと}に{気|き}をつけ、{廊下|ろうか}や{階段|かいだん}に{物|もの}を{置|お}きません。{借|か}りたときの{状態|じょうたい}に{戻|もど}す{義務|ぎむ}があります（{要|よう}{確認|かくにん}）。{住|す}み{始|はじ}めたら、{住所|じゅうしょ}の{届|とど}けも{必要|ひつよう}です。{契約書|けいやくしょ}と{不動産|ふどうさん}{会社|がいしゃ}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{鍵|かぎ}は、{契約|けいやく}してお{金|かね}を{払|はら}ったあとに{渡|わた}されます。{鍵|かぎ}をもらうとき、できれば{不動産|ふどうさん}の{会社|かいしゃ}の{人|ひと}と{一緒|いっしょ}に{部屋|へや}を{見|み}ます。{傷|きず}や{汚|よご}れを{図|ず}に{書|か}いて、{日付|ひづけ}のある{写真|しゃしん}をとっておきます。{電気|でんき}・ガス・{水|みず}・インターネットの{手続|てつづ}きをします。ガスは、{自分|じぶん}がその{場|ば}にいる{必要|ひつよう}があります。{連絡先|れんらくさき}は、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。ごみの{出|だ}し{方|かた}は、{地域|ちいき}で{違|ちが}います。{入|はい}ったら、{近|ちか}くの{人|ひと}などに{聞|き}きます。{夜|よる}おそくと{朝|あさ}はやくは、{静|しず}かにします。{廊下|ろうか}や{階段|かいだん}に{物|もの}を{置|お}きません。{出|で}るときは、{借|か}りたときの{状態|じょうたい}に{戻|もど}します（{要|よう}{確認|かくにん}）。{住|す}み{始|はじ}めたら、{区役所|くやくしょ}にも{届|とど}けます。{契約書|けいやくしょ}を{見|み}て、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "You receive the key after you sign the lease and pay the costs due at signing. When you receive the key, check the condition of the room, if possible together with the real estate agent. Draw the damaged or dirty places on a simple floor plan and attach dated photographs to avoid trouble later. You need to set up electricity, gas, water and internet. For gas, you must be present when it is turned on. Ask the agent whom to contact. Garbage rules differ by area: when you move in, ask about the day, time, place and how to separate. Garbage not set out at the appointed time is not collected, even if separated correctly. In apartment buildings, be careful about noise late at night and early in the morning, and do not leave things in corridors and stairs. Tenants are obliged to restore the room to its original condition (to be checked). After you start living there, you also have to report your new address. Check the lease and ask the real estate agent (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{不動産|ふどうさん}{会社|がいしゃ}（{電気|でんき}・ガス・{水道|すいどう}などの{連絡先|れんらくさき}を{聞|き}きます）",
+      "ja_easy": "{不動産|ふどうさん}の{会社|かいしゃ}（{電気|でんき}・ガス・{水|みず}の{連絡先|れんらくさき}を{聞|き}きます）",
+      "en": "The real estate agent (ask whom to contact for electricity, gas and water)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "Ask the real estate agent whom to contact for each of the above services.",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{鍵|かぎ}を{受|う}け{取|と}るとき、できれば{不動産|ふどうさん}{会社|がいしゃ}と{一緒|いっしょ}に{部屋|へや}の{状態|じょうたい}を{確認|かくにん}します。{傷|きず}や{汚|よご}れの{場所|ばしょ}を{簡単|かんたん}な{間取|まど}り{図|ず}に{書|か}き、{日付|ひづけ}のある{写真|しゃしん}を{付|つ}けます。",
+        "ja_easy": "{鍵|かぎ}をもらうとき、できれば{不動産|ふどうさん}の{会社|かいしゃ}の{人|ひと}と{一緒|いっしょ}に{部屋|へや}を{見|み}ます。{傷|きず}や{汚|よご}れを{図|ず}に{書|か}いて、{日付|ひづけ}のある{写真|しゃしん}をつけます。",
+        "en": "When you receive the key, check the room, if possible with the real estate agent. Mark damaged or dirty areas on a simple floor plan and attach dated photographs."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "Drawing a simple floor layout and marking the damaged or dirty areas and attaching dated photographs are useful in avoiding trouble in the future.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c2"
+        }
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{電気|でんき}：ブレーカーについているはがきに、{氏名|しめい}・{住所|じゅうしょ}・{使用|しよう}{開始日|かいしび}を{書|か}いて{郵送|ゆうそう}します（{一般的|いっぱんてき}な{説明|せつめい}。{名古屋|なごや}の{電力|でんりょく}{会社|がいしゃ}の{手続|てつづ}きは{不動産|ふどうさん}{会社|がいしゃ}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{電気|でんき}：ブレーカーについているはがきに、{名前|なまえ}・{住所|じゅうしょ}・{使|つか}い{始|はじ}める{日|ひ}を{書|か}いて、ポストに{入|い}れます（{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Electricity: write your name, address and start date on the postcard attached to the breaker and mail it (general guidance; ask the agent about the Nagoya power company; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "To apply for electricity, write your name, address, and usage start date on the postcard attached to the breaker and mail it in.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c3"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "ガス：{入居日|にゅうきょび}の{前|まえ}にガス{会社|がいしゃ}へ{連絡|れんらく}して、{開栓|かいせん}を{頼|たの}みます。{開栓|かいせん}には{本人|ほんにん}の{立会|たちあ}いが{必要|ひつよう}です。",
+        "ja_easy": "ガス：{入|はい}る{日|ひ}の{前|まえ}にガス{会社|がいしゃ}へ{連絡|れんらく}して、ガスを{使|つか}えるようにしてもらいます。その{日|ひ}は、{自分|じぶん}がその{場|ば}にいます。",
+        "en": "Gas: contact the gas company before the move-in date and ask to have the gas turned on. You must be present when it is turned on."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "For gas, contact a gas company ahead of time and request that the gas be turned on before the move-in date. You must be present when the gas is turned on.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c4"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{水道|すいどう}：{市区町村|しくちょうそん}の{水道|すいどう}の{担当|たんとう}へ{連絡|れんらく}して、{開始|かいし}の{手続|てつづ}きをします（{一般的|いっぱんてき}な{説明|せつめい}）。",
+        "ja_easy": "{水|みず}：{市|し}の{水道|すいどう}の{担当|たんとう}へ{連絡|れんらく}して、{使|つか}い{始|はじ}める{手続|てつづ}きをします。",
+        "en": "Water: contact the section in charge of waterworks at your local government office and follow the procedure to start the water (general guidance)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "For water, contact the section in charge of waterworks at your local government office and follow the procedure for having the water turned on.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c5"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネット：プロバイダーに{連絡|れんらく}して、{始|はじ}めます。",
+        "ja_easy": "インターネット：プロバイダーに{連絡|れんらく}して、{始|はじ}めます。",
+        "en": "Internet: contact an internet service provider to start service."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "For the Internet, contact an Internet service provider to begin Internet service.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ごみの{出|だ}し{方|かた}は、{入居|にゅうきょ}したら{不動産|ふどうさん}{会社|がいしゃ}・{近所|きんじょ}の{人|ひと}・{市区町村|しくちょうそん}に、{日|ひ}・{時間|じかん}・{場所|ばしょ}・{分|わ}け{方|かた}を{聞|き}きます。",
+        "ja_easy": "ごみの{出|だ}し{方|かた}は、{入|はい}ったら{不動産|ふどうさん}の{会社|かいしゃ}・{近|ちか}くの{人|ひと}・{市|し}の{役所|やくしょ}に、{日|ひ}・{時間|じかん}・{場所|ばしょ}・{分|わ}け{方|かた}を{聞|き}きます。",
+        "en": "For garbage, when you move in ask the real estate agent, the neighbors or the local government about the day, time, place and how to separate."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "when you move in ask the real estate agent, the neighbors, or the local government office about the set day and time.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c8"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "にゅうきょ",
+    "入居",
+    "かぎ",
+    "鍵",
+    "電気",
+    "ガス",
+    "水道",
+    "move in",
+    "key",
+    "utilities",
+    "electricity",
+    "gas",
+    "water",
+    "internet"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "In Japan, tenants are obligated to restore rental housing to its original conditions."
+  }
+}

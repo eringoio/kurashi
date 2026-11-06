@@ -1,12 +1,12 @@
-/* ごみの判定の部品（src/core/gomi.ts）と下書きのデータ（drafts/gomi/）。
+/* ごみの判定の部品（src/core/gomi.ts）と下書きのデータ（data/gomi/）。
    受入テスト（docs/prompts/kurashi_waste_handoff/04 の4章）と統合の指摘 INT-001・INT-008 のうち、データと関数で確かめられるもの。
    合格しても、制度の正しさや作者の承認の代わりにはならない。 */
 import { describe, expect, it } from 'vitest';
 import { areaStatus, bulkyApplyBy, bulkyBeforeMoveOut, deliveryRegime, judgeItem, nextCollection, nthOfMonth, searchItems, type Schedule } from '../../src/core/gomi';
 import { parseGomi } from '../../src/core/gomiData';
-import items from '../../drafts/gomi/items.json';
-import areas from '../../drafts/gomi/areas.json';
-import delivery from '../../drafts/gomi/delivery.json';
+import items from '../../data/gomi/items.json';
+import areas from '../../data/gomi/areas.json';
+import delivery from '../../data/gomi/delivery.json';
 import opendata from '../../data/gomi/opendata.json';
 
 const d = parseGomi({ items, areas, delivery, opendata });
@@ -184,7 +184,7 @@ describe('自己搬入（WASTE_004・INT-008）：持ち込む予定の日で選
 describe('自己搬入・粗大ごみのお知らせ（11/7 B-7c）', () => {
   it('delivery.json のお知らせは 2027-03-31 まで', async () => {
     const { activeNotices } = await import('../../src/core/notice');
-    const d = (await import('../../drafts/gomi/delivery.json')).default as { notices?: { show_until?: string }[] };
+    const d = (await import('../../data/gomi/delivery.json')).default as { notices?: { show_until?: string }[] };
     expect(activeNotices(d.notices, '2027-03-31')).toHaveLength(1);
     expect(activeNotices(d.notices, '2027-04-01')).toHaveLength(0);
   });

@@ -1,12 +1,13 @@
-/* ごみの基本案内（下書き drafts/data/E-gomi.bundle.json）。日を聞かない案内（kind: guide）だけ。 */
+/* ごみの基本案内（11/7 C-7 で公開のデータへ移した）。日を聞かない案内（kind: guide）だけ。 */
 import { describe, expect, it } from 'vitest';
-import { baseRaw, checkRefs, loadData, withBundles, type Bundle } from '../../src/core/data';
+import { checkRefs, loadData } from '../../src/core/data';
 import { run } from '../../src/core/engine';
 import { nowStep } from '../../src/core/now';
-import json from '../../drafts/data/E-gomi.bundle.json';
 
-const data = loadData(withBundles(baseRaw(), [json as Bundle]));
+const data = loadData();
 const ev = data.events.find((e) => e.id === 'E-gomi')!;
+/** このできごとの分（元のまとまりと同じ範囲。11/7 C-7） */
+const json = { events: [ev], cards: data.cards.filter((c) => ev.card_ids.includes(c.id)), rules: [...data.rules.values()].filter((r) => r.id.startsWith('R-gomi')), relations: data.relations.filter((r) => r.id.startsWith('rel-gomi')) };
 const TODAY = '2026-11-04';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf("|")));
 const o = run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });

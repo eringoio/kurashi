@@ -856,6 +856,157 @@
         "checked_at": "2026-11-06",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-sr-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-sr-limited",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "student",
+              "family",
+              "work",
+              "spouse",
+              "long_term"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}が{決|き}まっている",
+        "ja_easy": "{在留|ざいりゅう}{期間|きかん}が{決|き}まっている",
+        "en": "Your period of stay is fixed"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-sr-has-mynumber",
+      "kind": "selection",
+      "condition": {
+        "fact": "sr_has_mynumber",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "マイナンバーカードを{持|も}っている",
+        "ja_easy": "マイナンバーカードがある",
+        "en": "You have a My Number Card"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-house-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "house_search"
+      },
+      "statement": {
+        "ja": "{住|す}まいを{探|さが}す{案内|あんない}を{見|み}たい",
+        "ja_easy": "{住|す}む{部屋|へや}を{探|さが}す{案内|あんない}を{見|み}たい",
+        "en": "You want guidance on finding a place to live"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-house-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "{部屋|へや}の{貸|か}し{借|か}りは{民間|みんかん}の{契約|けいやく}です。{条件|じょうけん}は{物件|ぶっけん}と{会社|がいしゃ}ごとに{違|ちが}います。",
+        "ja_easy": "{部屋|へや}を{借|か}りるのは、{会社|かいしゃ}などとの{契約|けいやく}です。{条件|じょうけん}は{部屋|へや}ごとに{違|ちが}います。",
+        "en": "Renting a room is a private contract. Conditions differ by property and company."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-gomi-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "gomi"
+      },
+      "statement": {
+        "ja": "ごみの{出|だ}し{方|かた}を{知|し}りたい",
+        "ja_easy": "ごみの{出|だ}し{方|かた}を{知|し}りたい",
+        "en": "You want to know how to put out garbage"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-gomi-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}の{家庭|かてい}ごみの{案内|あんない}です。",
+        "ja_easy": "{名古屋|なごや}{市|し}の{家|いえ}のごみの{案内|あんない}です。",
+        "en": "This is guidance for household garbage in Nagoya City."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
     }
   ]
 }

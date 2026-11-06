@@ -381,6 +381,213 @@
         "status": "needs_check",
         "quote": "なお、明示された労働条件が事実と異なっていた場合には、労働者は、労働基準法第15条第２項の規定により、即時に労働契約を解除"
       }
+    },
+    {
+      "id": "rel-sr-koshin-before-mynumber",
+      "type": "practical_prerequisite",
+      "from": "zairyu-koshin",
+      "to": "zairyu-mynumber-extend",
+      "explain": {
+        "ja": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。そのあと、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、カードの{有効|ゆうこう}{期限|きげん}を{延|の}ばします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{先|さき}に{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}します。そのあと、マイナンバーカードの{期限|きげん}が{切|き}れる{前|まえ}に{延|の}ばします（{要確認|ようかくにん}）。",
+        "en": "Renew your period of stay first. Then extend the My Number Card expiry date before it expires (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-05"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-house-search-contract",
+      "type": "related",
+      "from": "housing-search",
+      "to": "housing-contract-check",
+      "explain": {
+        "ja": "{部屋|へや}が{決|き}まりそうになったら、{契約|けいやく}の{前|まえ}に{確|たし}かめることを{見|み}ます。",
+        "ja_easy": "{部屋|へや}が{決|き}まりそうになったら、{契約|けいやく}の{前|まえ}に{見|み}ることを{読|よ}みます。",
+        "en": "When you are close to choosing a room, read what to check before you sign."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "Before signing the rental agreement, have the real estate agent explain the important points to you regarding the rental agreement and the housing."
+      }
+    },
+    {
+      "id": "rel-house-contract-costs",
+      "type": "related",
+      "from": "housing-contract-check",
+      "to": "housing-initial-costs",
+      "explain": {
+        "ja": "{契約|けいやく}の{前|まえ}に、{費用|ひよう}の{金額|きんがく}を{聞|き}きます。",
+        "ja_easy": "{契約|けいやく}の{前|まえ}に、お{金|かね}の{金額|きんがく}を{聞|き}きます。",
+        "en": "Ask for the amounts of the costs before you sign."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "Ask about the amount of the security deposit, key money, etc., required at contract signing"
+      }
+    },
+    {
+      "id": "rel-house-contract-guarantor",
+      "type": "related",
+      "from": "housing-contract-check",
+      "to": "housing-guarantor",
+      "explain": {
+        "ja": "{保証人|ほしょうにん}か{保証|ほしょう}{会社|がいしゃ}が{必要|ひつよう}かも、{申|もう}し{込|こ}みのときに{聞|き}きます。",
+        "ja_easy": "{保証人|ほしょうにん}か{保証|ほしょう}{会社|がいしゃ}が{必要|ひつよう}か、{申|もう}し{込|こ}みのときに{聞|き}きます。",
+        "en": "Ask when you apply whether a guarantor or guarantee company is needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "A guarantor or use of a rental guarantee company is often required when making an application."
+      }
+    },
+    {
+      "id": "rel-house-costs-guarantor",
+      "type": "related",
+      "from": "housing-initial-costs",
+      "to": "housing-guarantor",
+      "explain": {
+        "ja": "{保証|ほしょう}{会社|がいしゃ}を{使|つか}うと、{保証料|ほしょうりょう}もかかります。",
+        "ja_easy": "{保証|ほしょう}{会社|がいしゃ}を{使|つか}うと、{保証料|ほしょうりょう}もかかります。",
+        "en": "If you use a guarantee company, a guarantee fee also applies."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "you must pay a set guarantee fee (this is often 35% to 50% of one month's rent paid in advance as the guarantee fee for 2 years)."
+      }
+    },
+    {
+      "id": "rel-house-contract-movein",
+      "type": "related",
+      "from": "housing-contract-check",
+      "to": "housing-move-in",
+      "explain": {
+        "ja": "{契約|けいやく}して{費用|ひよう}を{払|はら}うと、{鍵|かぎ}を{受|う}け{取|と}って{入居|にゅうきょ}します。",
+        "ja_easy": "{契約|けいやく}してお{金|かね}を{払|はら}うと、{鍵|かぎ}をもらって{部屋|へや}に{入|はい}ります。",
+        "en": "After you sign and pay, you receive the key and move in."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "You will be given the key to the housing after the rental agreement is signed and you have paid the amount due at signing."
+      }
+    },
+    {
+      "id": "rel-house-movein-tennyu",
+      "type": "related",
+      "from": "housing-move-in",
+      "to": "nagoya-tennyu-todoke",
+      "explain": {
+        "ja": "{部屋|へや}を{借|か}りて{住|す}み{始|はじ}めたら、{住所|じゅうしょ}の{届|とど}けも{必要|ひつよう}です。",
+        "ja_easy": "{部屋|へや}を{借|か}りて{住|す}み{始|はじ}めたら、{区役所|くやくしょ}にも{届|とど}けます。",
+        "en": "After you rent a room and start living there, you also have to report your new address."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-house-movein-moveout",
+      "type": "related",
+      "from": "housing-move-in",
+      "to": "housing-move-out",
+      "explain": {
+        "ja": "{入居|にゅうきょ}のときに{撮|と}った{写真|しゃしん}は、{出|で}るときの{確認|かくにん}に{役立|やくだ}ちます。",
+        "ja_easy": "{入|はい}るときにとった{写真|しゃしん}は、{出|で}るときに{役|やく}に{立|た}ちます。",
+        "en": "Photographs taken at move-in help when you check the room at move-out."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "Drawing a simple floor layout and marking the damaged or dirty areas and attaching dated photographs are useful in avoiding trouble in the future."
+      }
+    },
+    {
+      "id": "rel-house-search-public",
+      "type": "related",
+      "from": "housing-search",
+      "to": "housing-public",
+      "explain": {
+        "ja": "{市営|しえい}・{県営|けんえい}などの{住宅|じゅうたく}には、{入居|にゅうきょ}の{資格|しかく}があります。",
+        "ja_easy": "{市|し}・{県|けん}の{住宅|じゅうたく}には、{入|はい}れる{人|ひと}の{決|き}まりがあります。",
+        "en": "City and prefectural housing has resident requirements."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-tabunka-sumai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "それぞれ決められた入居者資格を満たしている人しか入居できません。"
+      }
+    },
+    {
+      "id": "rel-gomi-bunbetsu-shushubi",
+      "type": "related",
+      "from": "gomi-bunbetsu",
+      "to": "gomi-shushubi",
+      "explain": {
+        "ja": "{分|わ}け{方|かた}がわかったら、{収集|しゅうしゅう}{日|び}も{調|しら}べます。",
+        "ja_easy": "{分|わ}け{方|かた}がわかったら、{収集|しゅうしゅう}の{日|ひ}も{調|しら}べます。",
+        "en": "Once you know how to separate, check your collection day too."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-app"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "収集日カレンダー お住まいの地域を設定することで、収集日をカレンダー形式で確認できます。"
+      }
+    },
+    {
+      "id": "rel-gomi-sodai-mochikomi",
+      "type": "related",
+      "from": "gomi-sodai",
+      "to": "gomi-mochikomi",
+      "explain": {
+        "ja": "{大|おお}きなごみは、{自分|じぶん}で{処理|しょり}{施設|しせつ}に{運|はこ}ぶ{方法|ほうほう}もあります。",
+        "ja_easy": "{大|おお}きなごみは、{自分|じぶん}で{運|はこ}ぶ{方法|ほうほう}もあります。",
+        "en": "For large items, you can also take them to a facility yourself."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-gomi-sodai-detail"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "ごみの発生した区の環境事業所でお手続きしていただいた後に、ご自分で処理施設へ搬入していただくことも可能です。"
+      }
     }
   ]
 }

@@ -1,0 +1,155 @@
+{
+  "id": "housing-move-out",
+  "data_version": 1,
+  "illustration": "homemove",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-house-event",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{部屋|へや}を{出|で}るとき",
+    "ja_easy": "{部屋|へや}を{出|で}るとき",
+    "en": "Moving out of a rental"
+  },
+  "official_name": {
+    "ja": "退去と原状回復",
+    "reading": "たいきょとげんじょうかいふく"
+  },
+  "summary": {
+    "ja": "{契約|けいやく}を{途中|とちゅう}で{終|お}えるときは、{契約書|けいやくしょ}に{決|き}められた{期間|きかん}の{中|なか}で、{貸主|かしぬし}か{不動産|ふどうさん}{会社|がいしゃ}に{書面|しょめん}で{知|し}らせます（ふつう1〜2か{月|げつ}{前|まえ}。{契約書|けいやくしょ}で{確認|かくにん}（{要|よう}{確認|かくにん}））。{借主|かりぬし}が、わざと・{不注意|ふちゅうい}などで{部屋|へや}を{傷|きず}つけたり{汚|よご}したりしたときは、{元|もと}の{状態|じょうたい}に{戻|もど}す{費用|ひよう}を{借主|かりぬし}が{払|はら}います。{年数|ねんすう}がたって{自然|しぜん}に{傷|いた}んだ{分|ぶん}や、ふつうの{使|つか}い{方|かた}で{傷|いた}んだ{分|ぶん}の{修繕費|しゅうぜんひ}は、{家賃|やちん}に{含|ふく}まれるという{国|くに}のガイドラインがあります。{建物|たてもの}や{設備|せつび}の{年数|ねんすう}が{多|おお}いほど、{借主|かりぬし}の{負担|ふたん}の{割合|わりあい}は{少|すく}なくなります。{入居|にゅうきょ}のときと{退去|たいきょ}のときに、{傷|きず}などの{状況|じょうきょう}をよく{確認|かくにん}しておきます。{敷金|しききん}の{残|のこ}りは、{費用|ひよう}を{精算|せいさん}したあとで{返|かえ}ります。{契約書|けいやくしょ}の{文|ぶん}があいまいなときは、{国土交通省|こくどこうつうしょう}のガイドラインを{参考|さんこう}に{貸主|かしぬし}と{話|はな}し{合|あ}います（{要|よう}{確認|かくにん}）。トラブルのときは、{自治体|じちたい}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」に{相談|そうだん}できます。{市営|しえい}{住宅|じゅうたく}に{住|す}んでいる{人|ひと}の{退去届|たいきょとどけ}は、{最寄|もよ}りの{名古屋市|なごやし}{住宅|じゅうたく}{供給|きょうきゅう}{公社|こうしゃ}の{事務所|じむしょ}です（{要|よう}{確認|かくにん}）。{契約書|けいやくしょ}と{不動産|ふどうさん}{会社|がいしゃ}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{契約|けいやく}の{途中|とちゅう}で{出|で}るときは、{契約書|けいやくしょ}に{書|か}いてある{期間|きかん}の{中|なか}で、{部屋|へや}を{貸|か}す{人|ひと}か{不動産|ふどうさん}の{会社|かいしゃ}に、{紙|かみ}で{知|し}らせます。ふつう1〜2か{月|げつ}{前|まえ}です（{要|よう}{確認|かくにん}）。わざと、または{不注意|ふちゅうい}で{傷|きず}や{汚|よご}れをつけたときは、{直|なお}すお{金|かね}を{自分|じぶん}が{払|はら}います。{時間|じかん}がたって{自然|しぜん}に{傷|いた}んだところは、{家賃|やちん}に{入|はい}っていると{国|くに}のガイドラインにあります。{入|はい}るときと{出|で}るときに、{部屋|へや}の{傷|きず}をよく{見|み}ておきます。{敷金|しききん}の{残|のこ}りは、{計算|けいさん}したあとで{返|かえ}ります。{困|こま}ったときは、{市|し}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」に{聞|き}きます。{契約書|けいやくしょ}を{見|み}て、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "To end the lease midway, notify the landlord or the real estate agent in writing within the period set in the lease (usually 1 to 2 months in advance; check the lease; to be checked). If you damage or dirty the room willfully or carelessly, you pay the cost of restoring it. The national guideline says that repair costs for wear that comes with time and normal use are included in the rent, and that the tenant's share becomes smaller the longer the building and equipment have been in use. Check the condition of the room carefully at move-in and move-out. The remaining security deposit is returned after the costs are settled. If the lease is unclear, talk with the landlord using the ministry guideline as a reference (to be checked). For trouble, you can consult the foreigner consultation of the local government or the international exchange association. City housing tenants submit the move-out notice to the Nagoya City Housing Supply Corporation office (to be checked). Check the lease and ask the real estate agent (to be checked)."
+  },
+  "lead": {
+    "ja": "{契約|けいやく}を{終|お}えるときは、{決|き}められた{期間|きかん}の{前|まえ}に{書面|しょめん}で{知|し}らせます。",
+    "ja_easy": "部屋を出るときは、早めに紙で知らせます。",
+    "en": "To end the lease, give written notice within the period in your contract."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{契約書|けいやくしょ}に{決|き}められた{期間|きかん}の{中|なか}で、ふつう1〜2か{月|げつ}{前|まえ}に{書面|しょめん}で{知|し}らせます（{契約書|けいやくしょ}で{確認|かくにん}（{要|よう}{確認|かくにん}））",
+      "ja_easy": "{契約書|けいやくしょ}の{期間|きかん}の{中|なか}で、ふつう1〜2か{月|げつ}{前|まえ}に{紙|かみ}で{知|し}らせます（{契約書|けいやくしょ}を{見|み}ます。{要|よう}{確認|かくにん}）",
+      "en": "Within the period set in the lease, usually 1 to 2 months in advance, in writing (check the lease; to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance)."
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{貸主|かしぬし}か{不動産|ふどうさん}{会社|がいしゃ}（{書面|しょめん}で{知|し}らせます）",
+      "ja_easy": "{部屋|へや}を{貸|か}す{人|ひと}か{不動産|ふどうさん}の{会社|かいしゃ}（{紙|かみ}で{知|し}らせます）",
+      "en": "The landlord or the real estate agent (notify in writing)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance)."
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{入居|にゅうきょ}のときと{退去|たいきょ}のときに、{傷|きず}などの{部屋|へや}の{状況|じょうきょう}をよく{確認|かくにん}しておきます。",
+        "ja_easy": "{入|はい}るときと{出|で}るときに、{傷|きず}など{部屋|へや}のようすをよく{確認|かくにん}しておきます。",
+        "en": "Check the condition of the room, such as damage, carefully at move-in and move-out."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-genjo-guideline"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "入退去時における損耗等の有無など物件の状況をよく確認しておくこと",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d0fa336d323c5091b21897c520f7ad6e0caa5926bc04d72f3cb9189062be29bb",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-taikyo/c9"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{原状|げんじょう}{回復|かいふく}のポイントをまとめた、{外国|がいこく}の{方|かた}{向|む}けの{多言語|たげんご}リーフレットが{国土交通省|こくどこうつうしょう}にあります。",
+        "ja_easy": "{国土交通省|こくどこうつうしょう}に、{外国人|がいこくじん}のための{部屋|へや}を{戻|もど}すときのリーフレットがあります。いろいろな{言葉|ことば}があります。",
+        "en": "The ministry has a multilingual leaflet for foreign residents summarizing the key points of restoring a room to its original condition."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-genjo-guideline"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国の方向けに原状回復のポイントをまとめた多言語のリーフレットを作成しております",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d0fa336d323c5091b21897c520f7ad6e0caa5926bc04d72f3cb9189062be29bb",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-taikyo/c13"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{自治体|じちたい}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」で、{住|す}まいのトラブルを{相談|そうだん}できます。",
+        "ja_easy": "{市|し}や{国際|こくさい}{交流|こうりゅう}{協会|きょうかい}の「{外国人|がいこくじん}{相談|そうだん}」で、{家|いえ}のトラブルを{相談|そうだん}できます。",
+        "en": "You can consult housing trouble at the foreigner consultation of the local government or the international exchange association."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "Consultation regarding housing is provided, so be sure to ask them.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-trouble/c4"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "たいきょ",
+    "退去",
+    "原状回復",
+    "げんじょうかいふく",
+    "敷金",
+    "move out",
+    "restoration",
+    "deposit return",
+    "trouble"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en",
+      "B-mlit-genjo-guideline",
+      "B-nagoya-shiei-about"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance)."
+  }
+}
