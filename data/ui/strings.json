@@ -3159,5 +3159,10 @@
     "ja": "{建|た}ててからの{年数|ねんすう}。",
     "ja_easy": "{建|た}ててからの{年|とし}の{数|かず}です。",
     "en": "Years since the building was built."
+  },
+  "review.reportsSteps": {
+    "ja": "{手続|てつづ}きと{段階|だんかい}",
+    "ja_easy": "{手続|てつづ}きと{段階|だんかい}",
+    "en": "Procedures and stage"
   }
 }

@@ -1,7 +1,9 @@
 /* 報告ボタン（作者の指示 2026-11-06 A-9）。「案内とちがうところを知らせる」。
    POST /api/report：本文は { path, scene, text, level, at } だけ。名前・連絡先は受け取らない。1件 2,000字まで。1 IP 1分に3件まで（IP は数えるだけで残さない）。
    GET /api/reports：作者だけ（Authorization: Bearer <REPORTS_TOKEN>。トークンは Worker のシークレット）。
-   保存は KV の REPORTS（wrangler.toml の binding）。KV が無いとき（手元・作成前）は、この Worker のメモリの中だけ（消える）。ログに中身を書かない。 */
+   保存は KV の REPORTS（wrangler.toml の binding）。KV が無いとき（手元・作成前）は、この Worker のメモリの中だけ（消える）。ログに中身を書かない。
+   11/7 B-5：任意の steps（手続きの id・状態・段階だけ。最大50件）も受け取る。 */
+import { MAX_STEPS, STEP_ID, type ReportStep } from '../src/core/reportSteps';
 
 export interface KvLike {
   put(key: string, value: string): Promise<void>;
@@ -10,7 +12,7 @@ export interface KvLike {
 }
 export interface Env { REPORTS?: KvLike; REPORTS_TOKEN?: string }
 
-export interface Report { id: string; path: string; scene: string | null; text: string; level: string; at: string; received_at: string }
+export interface Report { id: string; path: string; scene: string | null; text: string; level: string; at: string; received_at: string; steps?: ReportStep[] }
 
 export const MAX_TEXT = 2000;
 export const PER_MINUTE = 3;
@@ -50,7 +52,21 @@ export function parseReport(x: unknown): Omit<Report, 'id' | 'received_at'> | st
   if (!/^[a-z_-]{1,16}$/i.test(level)) return 'level';
   const at = typeof o.at === 'string' ? o.at : '';
   if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(at)) return 'at';
-  return { path, scene, text, level, at };
+  // 手続きと段階（B-5）：無くてよい。あれば最大50件、id の形・状態・段階だけを残す（ほかの項目は捨てる）
+  let steps: ReportStep[] | undefined;
+  if (o.steps !== undefined && o.steps !== null) {
+    if (!Array.isArray(o.steps) || o.steps.length > MAX_STEPS) return 'steps';
+    steps = [];
+    for (const s of o.steps as unknown[]) {
+      if (!s || typeof s !== 'object') return 'steps';
+      const { card_id, status, stage } = s as Record<string, unknown>;
+      if (typeof card_id !== 'string' || !STEP_ID.test(card_id)) return 'steps';
+      if (status !== 'todo' && status !== 'done' && status !== 'not_done') return 'steps';
+      if (stage !== 'now' && stage !== 'visit' && stage !== 'after' && stage !== 'card') return 'steps';
+      steps.push({ card_id, status, stage });
+    }
+  }
+  return steps ? { path, scene, text, level, at, steps } : { path, scene, text, level, at };
 }
 
 export async function handleReport(req: Request, env: Env, now = Date.now()): Promise<Response> {

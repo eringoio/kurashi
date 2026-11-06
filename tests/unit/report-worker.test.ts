@@ -39,3 +39,33 @@ describe('一覧（GET /api/reports）', () => {
     expect((await handleReports(get('x'), {})).status).toBe(503);
   });
 });
+
+describe('報告の手続きと段階（11/7 B-5）', () => {
+  it('steps は id・状態・段階だけを残す。形が違えば 400 の理由 steps。最大50件', async () => {
+    const steps = [{ card_id: 'nagoya-tennyu-todoke', status: 'done', stage: 'after', planned_on: '2026-11-10', answer: 'x' }, { card_id: 'mail-forward', status: 'todo', stage: 'card' }];
+    expect(parseReport({ ...ok, steps })).toEqual({ ...ok, steps: [{ card_id: 'nagoya-tennyu-todoke', status: 'done', stage: 'after' }, { card_id: 'mail-forward', status: 'todo', stage: 'card' }] });
+    expect(parseReport({ ...ok, steps: [{ card_id: 'a b', status: 'todo', stage: 'now' }] })).toBe('steps');
+    expect(parseReport({ ...ok, steps: [{ card_id: 'a', status: 'maybe', stage: 'now' }] })).toBe('steps');
+    expect(parseReport({ ...ok, steps: Array.from({ length: 51 }, () => ({ card_id: 'a', status: 'todo', stage: 'now' })) })).toBe('steps');
+    expect(parseReport({ ...ok, steps: 'x' })).toBe('steps');
+    expect(parseReport(ok)).toEqual(ok);
+  });
+  it('reportSteps：plan から作る。日付・場所・答えは入れない', async () => {
+    const { reportSteps, openCardOf } = await import('../../src/core/reportSteps');
+    const plan = {
+      a: { card_id: 'a', status: 'done' as const },
+      b: { card_id: 'b', status: 'todo' as const, planned_on: '2026-11-10' },
+      c: { card_id: 'c', status: 'todo' as const, visit_result: { place: 'ward_office', result: 'not_done' as const, on: '2026-11-07' } },
+      d: { card_id: 'd', status: 'dismissed' as const },
+      e: { card_id: 'e', status: 'todo' as const },
+    };
+    const s = reportSteps(plan, openCardOf('/e/E-move/c/e'));
+    expect(s).toEqual([
+      { card_id: 'a', status: 'done', stage: 'now' },
+      { card_id: 'b', status: 'todo', stage: 'visit' },
+      { card_id: 'c', status: 'not_done', stage: 'after' },
+      { card_id: 'e', status: 'todo', stage: 'card' },
+    ]);
+    expect(JSON.stringify(s)).not.toMatch(/2026|ward_office/);
+  });
+});

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Bi, One } from '../i18n/Ruby';
 
-type R = { id: string; path: string; scene: string | null; text: string; level: string; at: string; received_at: string };
+type R = { id: string; path: string; scene: string | null; text: string; level: string; at: string; received_at: string; steps?: { card_id: string; status: string; stage: string }[] };
 
 export function ReviewReports() {
   const [token, setToken] = useState('');
@@ -30,6 +30,8 @@ export function ReviewReports() {
             <li key={x.id} className="report__item">
               <span className="sub" lang="en">{x.received_at}・{x.path}{x.scene ? '・' + x.scene : ''}・{x.level}</span>
               <p>{x.text}</p>
+              {/* 手続きと段階（B-5） */}
+              {x.steps && x.steps.length > 0 && <p className="sub" lang="en"><One k="review.reportsSteps" />：{x.steps.map((s) => s.card_id + '（' + s.status + '・' + s.stage + '）').join('、')}</p>}
             </li>
           ))}
         </ul>
