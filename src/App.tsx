@@ -15,7 +15,8 @@ import { line, ui } from './i18n/text';
 import { GlobeIcon, HelpIcon, ShareIcon } from './ui/icons';
 import { HelpSheet } from './ui/HelpSheet';
 import { ShareSheet } from './ui/ShareSheet';
-import { WordsButton, WordsPage } from './ui/Words';
+import { useSeen, WordsButton, WordsPage } from './ui/Words';
+import { pageWordIds } from './core/words';
 import { GroupPage, Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
@@ -138,6 +139,8 @@ export function App() {
   const path = usePath();
   const g = useGuide();
   const [sheet, setSheet] = useState<null | 'settings' | 'help' | 'share'>(null);
+  // 画面の大事な言葉を「ことば」に残す（道から決める。core/words.ts の pageWordIds）
+  useSeen(pageWordIds(path));
   const [live, setLive] = useState('');
   const close = useCallback(() => setSheet(null), []);
   // 同じ文を続けて知らせるときも読まれるように、いったん空にする

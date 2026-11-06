@@ -1,11 +1,12 @@
 /* 語学学習の最初の版（作者が OK 2026-11-06。STATUS 10b） */
 import { describe, expect, it } from 'vitest';
-import { allWords, heardFirst, listWords, logSeen, recentWords, type WordLog } from '../../src/core/words';
+import { DATA } from '../../src/core/data';
+import { allWords, docWordIds, heardFirst, listWords, logSeen, pageScenes, pageWordIds, recentWords, type WordLog } from '../../src/core/words';
 
 const W = allWords();
 describe('ことば', () => {
   it('聞こえる言葉・言う文・手続きの名前・書類の言葉がある', () => {
-    for (const k of ['heard', 'say', 'official', 'doc']) expect(W.some((w) => w.kind === k), k).toBe(true);
+    for (const k of ['heard', 'say', 'word', 'official', 'doc']) expect(W.some((w) => w.kind === k), k).toBe(true);
     expect(W.find((w) => w.id === 'card:nagoya-tennyu-juukyochi')).toBeTruthy();
   });
   it('記録：初めては1回、別の日は回数が増える。★は残る', () => {
@@ -53,5 +54,23 @@ describe('ことば', () => {
     const h = heardFirst(W, logs, 'ward_office');
     expect(h).toHaveLength(3);
     expect(h[0].id).toBe('heard-tsugi');
+  });
+  it('画面の言葉：ごみは種類と曜日、病院は症状と体の場所、書類は大事な言葉。id は重ならない', () => {
+    const ids = new Set(W.map((w) => w.id));
+    expect(ids.size).toBe(W.length);
+    const gomi = pageWordIds('/gomi');
+    for (const id of ['word-kanen', 'word-funen', 'word-getsuyou', 'word-nichiyou', 'word-shushubi']) expect(gomi).toContain(id);
+    expect(pageWordIds('/e/E-gomi')).toEqual(gomi);
+    const clinic = pageWordIds('/clinic/departments');
+    for (const id of ['say-netsu', 'say-seki', 'clinic-part:head', 'clinic-say:head', 'heard-monshin']) expect(clinic).toContain(id);
+    const doc = docWordIds('kokuho-shikaku');
+    expect(doc.length).toBeGreaterThan(1);
+    expect(doc.every((id) => ids.has(id))).toBe(true);
+    expect(pageWordIds('/words')).toEqual([]);
+  });
+  it('公開のできごとの画面には、どれも大事な言葉がある。言葉の場面は、どこかの画面で出る', () => {
+    for (const e of DATA().events.filter((x) => x.status === 'built')) expect(pageWordIds('/e/' + e.id).length, e.id).toBeGreaterThan(5);
+    const scenes = new Set(['/', '/move', '/e/E-bank', '/e/E-job', '/e/E-stay-renew', '/e/E-house-search', '/gomi', '/clinic', '/letter', '/calendar', '/visit/ward_office'].flatMap(pageScenes));
+    for (const w of W) for (const sc of w.scene) expect(scenes.has(sc), w.id + ' ' + sc).toBe(true);
   });
 });

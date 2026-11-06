@@ -15,6 +15,7 @@ import type { Text } from '../core/schema';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Speak } from '../ui/Speak';
 import { useSeen } from '../ui/Words';
+import { deptWordId } from '../core/words';
 import '../styles/clinic.css';
 
 /** 診療科の案内を出すか（03_MEDICAL 6章：大会ルールの確認が来るまで、止められるようにする）。VITE_CLINIC_DEPARTMENTS=off で止める。
@@ -115,9 +116,6 @@ function Where() {
   );
 }
 
-/** 受付の言葉のうち、言葉の表（data/words.json）にある言葉。見たら記録する（同意の前はメモリの中だけ） */
-const WORD_ID: Record<string, string> = { nihongo: 'say-nihongo' };
-function SeenPhrases({ ids }: { ids: string[] }) { useSeen(ids); return null; }
 
 /** 1つの画面（作者 11/7 K-32）：どの病院 → 病院を探す → 持ち物 → 受付の言葉。区切りは見出しと線。
     診断しない・診療科の順位を付けない（03_MEDICAL 2章A）。part が null のときは「診療科の案内を止めた」形 */
@@ -128,6 +126,7 @@ function Guide({ part }: { part: ClinicPart | null }) {
   const dept = depts[0] ?? null;
   const [urgent, setUrgent] = useState(false);
   const phrases = [...(part ? [{ id: part.id, say: part.say }] : []), ...d.phrases];
+  useSeen(depts.map((x) => deptWordId(x.id)));
   useFocusTitle('clinic:2');
   return (
     <>
@@ -175,7 +174,6 @@ function Guide({ part }: { part: ClinicPart | null }) {
       </section>
       <section className="clinic__sec" aria-labelledby="clinic-say">
         <h2 id="clinic-say"><One phrase k="clinic.sayH" /></h2>
-        <SeenPhrases ids={d.phrases.map((p) => WORD_ID[p.id]).filter(Boolean)} />
         {phrases.map((p) => {
           const mean = level.kind === 'ja' ? null : line(p.say, level);
           return (

@@ -1,6 +1,6 @@
 /* ことばの部品（語学学習の最初の版。作者が OK 2026-11-06）：記録のフック、1つの言葉の行（日本語・意味・読み上げ・★）、/words の画面 */
 import { useEffect, useMemo, useState } from 'react';
-import { allWords, heardFirst, listWords, logSeen, recentWords, WORD_KINDS, type WordKind, type WordLog, type WordMode, type WordView } from '../core/words';
+import { allWords, heardFirst, listWords, logSeen, WORD_KINDS, type WordKind, type WordLog, type WordMode, type WordView } from '../core/words';
 import { todayJst } from '../core/date';
 import { Bi, One, Ruby } from '../i18n/Ruby';
 import { line, ui, type LocalizedText, type UiKey } from '../i18n/text';
@@ -18,12 +18,21 @@ export function useWordLog() {
   return { logs, seen, star };
 }
 
-/** 画面に出た言葉を残す（一度だけ） */
+/** いまの画面に出た言葉（/words の「この画面のことば」に使う）。メモリの中だけ（URL・保存先には書かない） */
+let onPage: { path: string; ids: string[] } = { path: '', ids: [] };
+function addOnPage(ids: string[]) {
+  const path = location.pathname;
+  if (path === '/words') return;
+  if (onPage.path !== path) onPage = { path, ids: [] };
+  for (const id of ids) if (!onPage.ids.includes(id)) onPage.ids.push(id);
+}
+
+/** 画面に出た言葉を残す（一度だけ）。その画面の言葉としても覚える */
 export function useSeen(ids: string[]) {
   const { seen } = useWordLog();
   const key = ids.join(',');
   // 1拍おくらせる：子の effect は親より先に走るので、そのままだと「どこまで進んだか」（resume）の保存より先に書き込みが並ぶ
-  useEffect(() => { if (!ids.length) return; const t = setTimeout(() => seen(ids), 0); return () => clearTimeout(t); }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (!ids.length) return; const t = setTimeout(() => { addOnPage(ids); seen(ids); }, 0); return () => clearTimeout(t); }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export function WordRow({ w, starred, onStar }: { w: WordView; starred: boolean; onStar: () => void }) {
@@ -61,11 +70,11 @@ export function HeardWords({ place }: { place: string }) {
   );
 }
 
-const KIND_KEY: Record<WordKind, UiKey> = { heard: 'words.kind.heard', say: 'words.kind.say', official: 'words.kind.official', doc: 'words.kind.doc' };
+const KIND_KEY: Record<WordKind, UiKey> = { word: 'words.kind.word', heard: 'words.kind.heard', say: 'words.kind.say', official: 'words.kind.official', doc: 'words.kind.doc' };
 const MODES: { m: WordMode; k: UiKey }[] = [{ m: 'all', k: 'words.mode.all' }, { m: 'seen', k: 'words.mode.seen' }, { m: 'star', k: 'words.mode.star' }];
 
 /** どの画面からでも /words に行き、すぐ戻るための記憶。メモリの中だけ（URL・保存先には書かない） */
-let prev: { path: string; y: number } | null = null;
+let prev: { path: string; y: number; ids: string[] } | null = null;
 
 /** ヘッダーのボタン：見えるラベル付き、44px 以上。押した画面と位置を覚える */
 export function WordsButton() {
@@ -73,7 +82,7 @@ export function WordsButton() {
   const here = path === '/words';
   const go = () => {
     if (here) return;
-    prev = { path: location.pathname, y: window.scrollY };
+    prev = { path: location.pathname, y: window.scrollY, ids: onPage.path === location.pathname ? [...onPage.ids] : [] };
     navigate('/words');
   };
   return (
@@ -98,17 +107,18 @@ export function WordsPage() {
   useFocusTitle('words');
   const { level } = usePrefs();
   const { logs, star } = useWordLog();
+  // 作者 11/7：はじめは全部を、新しい順に（見た言葉を新しい順に先に、まだ見ていない言葉はそのあと）
   const [mode, setMode] = useState<WordMode>('all');
   const [kind, setKind] = useState<WordKind | ''>('');
-  const [todayOnly, setTodayOnly] = useState(false);
   const [q, setQ] = useState('');
+  // 開いた画面の言葉（ヘッダーのボタンで来たときだけ）。画面に出た順
+  const [pageIds] = useState(() => prev?.ids ?? []);
   const words = allWords();
-  const filtered = !!(kind || todayOnly || q.trim());
-  const list = useMemo(() => listWords(words, logs, { mode, kind: kind || undefined, today: todayOnly ? todayJst() : undefined, q }), [words, logs, mode, kind, todayOnly, q]);
-  // 「さいきん見たもの」：すべてのモードで同じ絞り込みのとき（絞り込みなし）だけ、上に10件
-  const recent = useMemo(() => (mode === 'all' && !filtered ? recentWords(words, logs) : []), [words, logs, mode, filtered]);
-  const recentIds = new Set(recent.map((r) => r.w.id));
-  const rest = recent.length ? list.filter(({ w }) => !recentIds.has(w.id)) : list;
+  const filtered = !!(kind || q.trim());
+  const list = useMemo(() => listWords(words, logs, { mode, kind: kind || undefined, q }), [words, logs, mode, kind, q]);
+  const onThis = new Set(pageIds);
+  const page = pageIds.map((id) => list.find((r) => r.w.id === id)).filter((r): r is { w: WordView; log: WordLog } => !!r);
+  const rest = page.length ? list.filter(({ w }) => !onThis.has(w.id)) : list;
   const row = ({ w, log }: { w: WordView; log: WordLog }) => <WordRow key={w.id} w={w} starred={log.starred} onStar={() => star(w.id)} />;
   return (
     <>
@@ -119,22 +129,24 @@ export function WordsPage() {
         {MODES.map(({ m, k }) => (
           <button key={m} type="button" className="seg" aria-pressed={mode === m} onClick={() => setMode(m)}><One k={k} /></button>
         ))}
-        <button type="button" className="seg" aria-pressed={todayOnly} onClick={() => setTodayOnly((x) => !x)}><One k="words.today" /></button>
         <select className="field" value={kind} onChange={(e) => setKind(e.target.value as WordKind | '')} aria-label={line(ui('words.kind'), level)}>
           <option value="">{line(ui('words.kind.all'), level)}</option>
           {WORD_KINDS.map((k) => <option key={k} value={k}>{line(ui(KIND_KEY[k]), level)}</option>)}
         </select>
         <input className="field" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={line(ui('words.search'), level)} aria-label={line(ui('words.search'), level)} />
       </div>
-      {recent.length > 0 && (
-        <section aria-labelledby="words-recent">
-          <h2 id="words-recent" className="label"><One phrase k="words.recent" /></h2>
-          <ul className="words" role="list">{recent.map(row)}</ul>
+      {page.length > 0 && (
+        <section aria-labelledby="words-page">
+          <h2 id="words-page" className="label"><One phrase k="words.onPage" /></h2>
+          <ul className="words" role="list">{page.map(row)}</ul>
         </section>
       )}
       {rest.length > 0 ? (
-        <ul className="words" role="list">{rest.map(row)}</ul>
-      ) : recent.length === 0 && (
+        <section aria-labelledby={page.length ? 'words-rest' : undefined}>
+          {page.length > 0 && <h2 id="words-rest" className="label"><One phrase k="words.others" /></h2>}
+          <ul className="words" role="list">{rest.map(row)}</ul>
+        </section>
+      ) : page.length === 0 && (
         <p className="sub"><Bi k={filtered ? 'words.noMatch' : 'words.empty'} /></p>
       )}
     </>

@@ -14,8 +14,9 @@ import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 import { useSeen } from '../ui/Words';
+import { docWordIds } from '../core/words';
 /** 結果の書類の名前を「ことば」に残す（10b） */
-function SeenDoc({ id }: { id: string }) { useSeen([id]); return null; }
+function SeenDoc({ id }: { id: string }) { useSeen(docWordIds(id)); return null; }
 
 const LONG = 1600;
 /** 写真の読み取り（Claude）。キーを入れて公開するときに on にする */
@@ -151,7 +152,7 @@ export function Letter() {
       </>
     );
   } else if (st.k === 'result') {
-    body = <><Result doc={st.doc} sample={st.sample} /><SeenDoc id={'doc:' + st.doc.id} /></>;
+    body = <><Result doc={st.doc} sample={st.sample} /><SeenDoc id={st.doc.id} /></>;
   } else if (st.k === 'failed') {
     body = (
       <>

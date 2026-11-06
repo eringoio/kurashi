@@ -71,8 +71,8 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const [last, setLast] = useState<Last | null>(null);
   useFocusTitle('card:' + id + ':' + mode.kind);
   const c = g.out.cards.find((x) => x.card.id === id);
-  // 手続きの正式名を「ことば」に残す（行く所があるカードだけ。words.ts の card:{id}）
-  useSeen(c?.card.place ? ['card:' + id] : []);
+  // 手続きの正式名を「ことば」に残す（words.ts の card:{id}）
+  useSeen(c ? ['card:' + id] : []);
   if (!c) return <NotFound />;
   const L = (k: UiKey) => line(ui(k), level);
   const k = stateKey(c);

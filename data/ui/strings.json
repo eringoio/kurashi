@@ -2855,11 +2855,6 @@
     "ja_easy": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}ぐらい。{契約|けいやく}の{前|まえ}に{聞|き}きます。",
     "en": "Total: about 4–7 months of rent. Ask for the amounts before signing (to be checked)."
   },
-  "words.link": {
-    "ja": "ことば（{出会|であ}った{日本語|にほんご}）",
-    "ja_easy": "ことば",
-    "en": "Words (Japanese you met)"
-  },
   "words.title": {
     "ja": "ことば",
     "ja_easy": "ことば",
@@ -2874,11 +2869,6 @@
     "ja": "{絞|しぼ}り{込|こ}み",
     "ja_easy": "{絞|しぼ}り{込|こ}み",
     "en": "Filter"
-  },
-  "words.today": {
-    "ja": "{今日|きょう}",
-    "ja_easy": "きょう",
-    "en": "Today"
   },
   "words.kind": {
     "ja": "{種類|しゅるい}",
@@ -3205,11 +3195,6 @@
     "ja_easy": "★",
     "en": "★"
   },
-  "words.recent": {
-    "ja": "さいきん{見|み}たもの",
-    "ja_easy": "さいきん{見|み}たもの",
-    "en": "Recently seen"
-  },
   "words.noMatch": {
     "ja": "{見|み}つかりません",
     "ja_easy": "ありません",
@@ -3294,5 +3279,20 @@
     "ja": "このあと",
     "ja_easy": "このあと",
     "en": "Coming up"
+  },
+  "words.kind.word": {
+    "ja": "{大事|だいじ}な{単語|たんご}",
+    "ja_easy": "{大事|だいじ}な{言葉|ことば}",
+    "en": "Key words"
+  },
+  "words.onPage": {
+    "ja": "この{画面|がめん}のことば",
+    "ja_easy": "この{画面|がめん}のことば",
+    "en": "Words on this page"
+  },
+  "words.others": {
+    "ja": "ほかのことば（{新|あたら}しい{順|じゅん}）",
+    "ja_easy": "ほかのことば",
+    "en": "Other words (newest first)"
   }
 }
