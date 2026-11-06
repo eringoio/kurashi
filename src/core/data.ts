@@ -187,6 +187,8 @@ export interface Bundle {
   cards?: unknown[];
   rules?: unknown[]; questions?: unknown[]; objects?: unknown[]; relations?: unknown[]; sources?: unknown[]; events?: unknown[];
   card_order?: string[];
+  /** 本体のできごとに、下書きのカードを足す（下書きのときだけ。2026-11-06：市内の引っ越しの2枚を公開にし、残りの4枚を下書きに残すため） */
+  event_cards?: { event_id: string; card_ids: string[] }[];
 }
 /** 本体のデータに、まとまりを足す（上書きはしない。同じIDは loadData の重複検査で止まる）。イベントごとのコードは要らない */
 export function withBundles(base: RawData, bundles: Bundle[]): RawData {
@@ -194,7 +196,7 @@ export function withBundles(base: RawData, bundles: Bundle[]): RawData {
     ...base,
     sources: { sources: [...base.sources.sources] }, rules: { rules: [...base.rules.rules] }, questions: { questions: [...base.questions.questions] },
     objects: { objects: [...base.objects.objects] }, relations: { relations: [...base.relations.relations] },
-    events: { events: [...(base.events?.events ?? [])] }, cards: [...base.cards],
+    events: { events: (base.events?.events ?? []).map((e) => ({ ...(e as object) })) }, cards: [...base.cards],
     flow: { ...(base.flow as object), card_order: [...(base.flow as { card_order: string[] }).card_order] },
   };
   for (const b of bundles) {
@@ -202,6 +204,12 @@ export function withBundles(base: RawData, bundles: Bundle[]): RawData {
     out.objects.objects.push(...(b.objects ?? [])); out.relations.relations.push(...(b.relations ?? [])); out.events!.events.push(...(b.events ?? []));
     out.cards.push(...(b.cards ?? []));
     (out.flow as { card_order: string[] }).card_order.push(...(b.card_order ?? []));
+  }
+  // できごとにカードを足すのは、全部のまとまりを足したあと（足すカードは、どのまとまりにあってもよい）
+  for (const b of bundles) for (const x of b.event_cards ?? []) {
+    const e = out.events!.events.find((y) => (y as { id: string }).id === x.event_id) as { card_ids: string[] } | undefined;
+    if (!e) throw new Error(`event_cards：できごと ${x.event_id} がない`);
+    e.card_ids = [...e.card_ids, ...x.card_ids.filter((id) => !e.card_ids.includes(id))];
   }
   return out;
 }

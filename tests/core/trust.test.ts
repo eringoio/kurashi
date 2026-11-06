@@ -17,12 +17,14 @@ const ai = (quote: string, verdict: 'agree' | 'disagree' = 'agree'): Evidence =>
 const TODAY = '2026-11-05';
 const A1 = { 'Q-origin': 'abroad', 'Q-role': 'student', 'Q-age-band': '20_59', 'Q-zairyu-back-address': 'no', 'Q-moved-in': 'yes', 'Q-insurance': 'none', 'Q-pension-type': 'none', 'Q-bank-account': false };
 const OBJ = { 'zairyu-card': true, passport: true };
-const runWith = (raw: RawData) => run(loadData(raw), { answers: A1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY });
+// アプリと同じく、引っ越し（E-move）のカードだけで判定する（11/6）
+const moveOf = (d: ReturnType<typeof loadData>) => { const e = d.events.find((x) => x.id === 'E-move')!; return { ...e, questions: [], facts: [] }; };
+const runWith = (raw: RawData) => { const d = loadData(raw); return run(d, { answers: A1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY, event: moveOf(d) }); };
 
 /** data の全ルールの根拠を ai_checked にした写し */
 function allRulesAi(): RawData {
   const raw = structuredClone(baseRaw());
-  for (const r of raw.rules.rules as { evidence: Evidence }[]) if (r.evidence.status === 'needs_check') r.evidence = ai('窓口は区役所の市民課です。');
+  for (const r of raw.rules.rules as { evidence: Evidence; kind?: string }[]) if (r.evidence.status === 'needs_check' && r.kind !== 'selection') r.evidence = ai('窓口は区役所の市民課です。');
   for (const r of raw.relations.relations as { evidence: Evidence }[]) if (r.evidence.status === 'needs_check') r.evidence = ai('窓口は区役所の市民課です。');
   return raw;
 }
@@ -45,7 +47,7 @@ describe('欄ごとの扱い（1か所の表）', () => {
 
 describe('ルールエンジン', () => {
   it('ルール・関係を ai_checked にしても、判定は変わらない（窓口で確認のまま）', () => {
-    const before = run(loadData(), { answers: A1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY });
+    const before = run(loadData(), { answers: A1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY, event: moveOf(loadData()) });
     const after = runWith(allRulesAi());
     expect(after.cards.map((c) => [c.card.id, c.state, c.section])).toEqual(before.cards.map((c) => [c.card.id, c.state, c.section]));
     expect(after.cards.filter((c) => c.state === 'check_at_office').length).toBeGreaterThan(0);
@@ -88,10 +90,14 @@ describe('AI照合済みにできる条件', () => {
     (raw.rules.rules[0] as { evidence: Evidence }).evidence = { source_ids: ['nagoya-juumin-todoke'], checked_at: '2026-11-05', status: 'ai_checked' };
     expect(() => loadData(raw)).toThrow(/ai_checked/);
   });
-  it('いまの data には ai_checked が無く、根拠を全部集められる', () => {
+  // 11/6：市内の引っ越しの2枚を公開にしたので、data にも ai_checked がある。どれも引用と照合の記録を持つ（本文との一致は npm run check:quotes）
+  it('data の根拠を全部集められる。ai_checked には引用と「同じ結論」の照合がある', () => {
     const items = collectEvidence(loadData());
     expect(items.length).toBeGreaterThan(40);
-    expect(items.filter((x) => x.e.status === 'ai_checked')).toEqual([]);
+    for (const x of items.filter((y) => y.e.status === 'ai_checked')) {
+      expect(x.e.quote, x.where).toBeTruthy();
+      expect(x.e.ai_check?.verdict, x.where).toBe('agree');
+    }
   });
 });
 

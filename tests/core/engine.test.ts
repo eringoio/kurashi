@@ -8,7 +8,9 @@ const data = loadData();
 const TODAY = '2026-11-05';
 const A1 = { 'Q-origin': 'abroad', 'Q-role': 'student', 'Q-age-band': '20_59', 'Q-zairyu-back-address': 'yes', 'Q-moved-in': 'yes', 'Q-insurance': 'none', 'Q-pension-type': 'none', 'Q-bank-account': false };
 const A1_OBJ = { 'zairyu-card': true, passport: true, 'room-key': true, 'student-id': true };
-const input = (over: Partial<EngineInput> = {}): EngineInput => ({ answers: A1, objects: A1_OBJ, plan: {}, createdOn: TODAY, today: TODAY, ...over });
+// アプリと同じく、引っ越し（E-move）のカードだけで判定する（11/6：市内の引っ越しの2枚を公開にしたため）
+const MOVE = (() => { const e = data.events.find((x) => x.id === 'E-move')!; return { ...e, questions: [], facts: [] }; })();
+const input = (over: Partial<EngineInput> = {}): EngineInput => ({ answers: A1, objects: A1_OBJ, plan: {}, createdOn: TODAY, today: TODAY, event: MOVE, ...over });
 const byId = (o: ReturnType<typeof run>) => Object.fromEntries(o.cards.map((c) => [c.card.id, { state: c.state, section: c.section }]));
 
 describe('データ', () => {

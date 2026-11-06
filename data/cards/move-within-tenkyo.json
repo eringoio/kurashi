@@ -1,0 +1,268 @@
+{
+  "id": "move-within-tenkyo",
+  "data_version": 1,
+  "illustration": "homemove",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mw-same",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{転居|てんきょ}{届|とどけ}を{出|だ}す（{同|おな}じ{区|く}の{中|なか}で{引|ひ}っ{越|こ}したとき）",
+    "ja_easy": "{転居|てんきょ}{届|とどけ}（{同|おな}じ{区|く}で{引|ひ}っ{越|こ}したとき）",
+    "en": "Report your new address (same ward)"
+  },
+  "official_name": {
+    "ja": "転居届",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{同|おな}じ{区|く}の{中|なか}で{引|ひ}っ{越|こ}したときは、{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}を{置|お}く{区|く}は{支所|ししょ}でも{可|か}）の{窓口|まどぐち}に{転居|てんきょ}{届|とどけ}を{出|だ}します。{本人|ほんにん}{確認|かくにん}の{書類|しょるい}を{持|も}って{行|い}きます。{外国|がいこく}{籍|せき}の{人|ひと}は、{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
+    "ja_easy": "{同|おな}じ{区|く}の{中|なか}で{引|ひ}っ{越|こ}したら、{区役所|くやくしょ}のまどぐちに「{転居|てんきょ}{届|とどけ}」を{出|だ}します。{本人|ほんにん}だとわかる{書類|しょるい}を{持|も}って{行|い}きます。{外国|がいこく}{人|じん}は、{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
+    "en": "If you moved within the same ward, file a change-of-address notice (tenkyo-todoke) at the counter of your ward office (a branch office in wards that have one). Bring an ID. If you are a foreign national, also bring your residence card or special permanent resident certificate."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{住|す}み{始|はじ}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）。{住|す}み{始|はじ}める{前|まえ}には{届|とど}けられません。",
+      "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}の{次|つぎ}の{日|ひ}から{数|かぞ}えて、14{日|にち}いない（{要|よう}{確認|かくにん}）。{住|す}む{前|まえ}には{出|だ}せません。",
+      "en": "Within 14 days; the day after you start living there is day 1 (to be checked). You cannot file before you start living there."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-45"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "転居した日から14日以内（お住まいになった日の翌日が１日目となります。）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}を{置|お}く{区|く}は{支所|ししょ}の{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{住|す}んでいる{区|く}の{区役所|くやくしょ}",
+      "en": "Citizens Section of your ward office (the branch office in wards that have one)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-lifescene-tenkyo"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "お住まいの区の区役所市民課・支所区民生活課にて、転居届を出してください",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "6f1e74996c4bb71732529f4faa2c5e7eefc54fc5fb4e6ae2d933f215468a8bd0",
+        "verdict": "agree",
+        "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c1"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}でだけ{受|う}け{付|つ}けます。",
+        "ja_easy": "まどぐちでだけ{出|だ}せます。",
+        "en": "Accepted at the counter only."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "転居届（同一区内での異動）は、窓口でのみ受け付けております。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とど}けられるのは、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{住所|じゅうしょ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理人|だいりにん}は{委任|いにん}{状|じょう}が{要|い}ります。",
+        "ja_easy": "{出|だ}せる{人|ひと}は、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{新|あたら}しい{家|いえ}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理|だいり}の{人|ひと}は、{委任|いにん}{状|じょう}が{要|い}ります。",
+        "en": "The person moving, or a member of the same household at the new address, can file. A proxy needs a power-of-attorney letter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "引越しをする本人 引越しをする人と同じ世帯の人（新しい住所で同じ世帯の人に限ります。） ※代理人による届出も可能ですが、その場合、委任状が必要です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}に{行|い}く{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{籍|せき}の{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
+        "ja_easy": "{本人|ほんにん}だとわかる{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{外国|がいこく}{人|じん}は、{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードか{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}も{持|も}って{行|い}きます。",
+        "en": "Bring ID for the person at the counter (My Number Card, driver's licence, residence card, etc.). Foreign nationals also bring the residence card or special permanent resident certificate of each person moving."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "〇窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等） 〇引越しをする人の在留カードまたは特別永住者証明書（外国籍の方のみ）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}{資格|しかく}{確認|かくにん}{書|しょ}・{介護|かいご}{保険|ほけん}{被|ひ}{保険|ほけん}{者|しゃ}{証|しょう}も{持|も}って{行|い}きます。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}か{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{保険|ほけん}の{証|あかし}も{持|も}って{行|い}きます。",
+        "en": "If you are in National Health Insurance or Long-term Care Insurance, also bring your insurance certificate."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ) （注）引っ越しをする世帯全員",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}す{世帯|せたい}{全員|ぜんいん}のカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードがある{人|ひと}は、{引|ひ}っ{越|こ}す{家族|かぞく}みんなのカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
+        "en": "If you have a My Number Card, bring the cards of everyone in the household who is moving. You will enter the PIN (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "（注）引っ越しをする世帯全員のマイナンバーカードをお持ちください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{同|おな}じ{建物|たてもの}の{中|なか}（マンションなど）で{移|うつ}ったときも、{届出|とどけで}が{要|い}ります。ただし、{住民|じゅうみん}{票|ひょう}の{住所|じゅうしょ}にマンション{名|めい}や{部屋|へや}{番号|ばんごう}がないときは、{要|い}りません。",
+        "ja_easy": "{同|おな}じ{建物|たてもの}の{中|なか}（マンションなど）で{移|うつ}ったときも、{届出|とどけで}が{要|い}ります。{住民|じゅうみん}{票|ひょう}の{住所|じゅうしょ}にマンション{名|めい}や{部屋|へや}{番号|ばんごう}がないときは、{要|い}りません。",
+        "en": "You also need to file if you moved within the same building (e.g. an apartment block). It is not needed if the address on your resident record has no building name or room number."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "同一建物内（マンション等）で転居した場合にも届出が必要になります。ただし、住民票の住所欄にマンション名や部屋番号まで記載されていない場合は届出は不要です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。",
+        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。",
+        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "印鑑登録の住所は、この届で自動変更されるので、改めて手続する必要はありません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{期限|きげん}を{過|す}ぎても{届出|とどけで}はできます。すみやかに{手続|てつづ}きをします。",
+        "ja_easy": "{期限|きげん}をすぎても{出|だ}せます。{早|はや}く{出|だ}します。",
+        "en": "You can still file after the deadline. Do it promptly."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-6-pub"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "期限が過ぎてしまっても、届出はできますので、すみやかに手続を行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "2ec8db420847a921ff8a68359583cde8271a71a8ba3ed88e3f78ddcdd6bb6639",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-before-after/c8"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "転居届",
+    "てんきょ",
+    "住所変更",
+    "同じ区",
+    "change of address",
+    "moving within ward",
+    "tenkyo"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{別|べつ}の{区|く}へ{引|ひ}っ{越|こ}したときは、{転居|てんきょ}{届|とどけ}ではなく{転入|てんにゅう}{届|とどけ}です。",
+      "ja_easy": "ちがう{区|く}へ{引|ひ}っ{越|こ}したときは、{転入|てんにゅう}{届|とどけ}です。",
+      "en": "If you moved to a different ward, you file a move-in report instead."
+    },
+    "check_at_office": {
+      "ja": "{同|おな}じ{区|く}の{中|なか}か、{別|べつ}の{区|く}かで、{出|だ}す{届|とど}けが{変|か}わります。{前|まえ}の{住所|じゅうしょ}と{新|あたら}しい{住所|じゅうしょ}の「〇〇{区|く}」を{見比|みくら}べてください。{同|おな}じなら{転居|てんきょ}{届|とどけ}、{違|ちが}えば{転入|てんにゅう}{届|とどけ}です。わからないときは、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{前|まえ}の{住所|じゅうしょ}と{新|あたら}しい{住所|じゅうしょ}の「〇〇{区|く}」を{見|み}てください。{同|おな}じなら{転居届|てんきょとどけ}、ちがえば{転入届|てんにゅうとどけ}です。わからないときは、{区役所|くやくしょ}で{聞|き}いてください。",
+      "en": "Which notice you submit depends on whether you stayed in the same ward. Compare the ward name (\"…-ku\") in your old and new addresses. Same ward: change-of-address notice (tenkyo). Different ward: moving-in notice (tennyu). If unsure, ask at the ward office for your new address (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "異動した日から数えて14日以内"
+  }
+}

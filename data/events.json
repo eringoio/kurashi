@@ -12,7 +12,12 @@
       "illustration": "box",
       "status": "built",
       "menu": 1,
-      "questions": ["Q-origin", "Q-residence-basis", "Q-role", "Q-age-band"],
+      "questions": [
+        "Q-origin",
+        "Q-residence-basis",
+        "Q-role",
+        "Q-age-band"
+      ],
       "card_ids": [
         "move-out-notice",
         "nagoya-tennyu-todoke",
@@ -24,9 +29,50 @@
       ],
       "scope_rule": "R-scope-nagoya-resident",
       "evidence": {
-        "source_ids": ["kurashi-spec"],
+        "source_ids": [
+          "kurashi-spec"
+        ],
         "checked_at": "2026-11-04",
         "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-move-within",
+      "group": "move",
+      "title": {
+        "ja": "{名古屋|なごや}{市|し}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "ja_easy": "{名古屋|なごや}{市|し}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "en": "I moved within Nagoya"
+      },
+      "illustration": "homemove",
+      "status": "built",
+      "facts": [
+        {
+          "fact": "origin",
+          "value": "within_nagoya"
+        }
+      ],
+      "questions": [
+        "Q-ward-move"
+      ],
+      "card_ids": [
+        "move-within-tenkyo",
+        "move-within-tennyu"
+      ],
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "tool": {
+        "path": "/gomi",
+        "label": {
+          "ja": "{引|ひ}っ{越|こ}しで{出|で}るごみを{調|しら}べる（これ、{何|なに}ごみ？）",
+          "ja_easy": "{引|ひ}っ{越|こ}しのごみを{調|しら}べる",
+          "en": "Check garbage from your move (what kind of garbage is this?)"
+        }
       }
     }
   ]

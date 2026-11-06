@@ -466,11 +466,27 @@
       "language": "en"
     },
     {
-      "source_id": "B-nagoya-mynumber-faq",
-      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007876.html",
+      "source_id": "B-nagoya-faq-41",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=41",
       "owner": "名古屋市",
       "owner_type": "government",
-      "title": "マイナンバーカード（個人番号カード）に関するよくあるご質問",
+      "title": "市内の他区へ転入（引越し）するときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-45",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=45",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "同じ区内で転居（引越し）するときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-lifescene-tenkyo",
+      "url": "https://www.city.nagoya.jp/lifescene/sumai/1034691/1017947.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "転居の際に必要な手続き",
       "language": "ja"
     }
   ]

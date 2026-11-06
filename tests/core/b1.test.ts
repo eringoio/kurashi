@@ -8,7 +8,9 @@ const TODAY = '2026-11-05';
 // 18.0 の B1：最初の答え origin=other_city、age_band=under_20、role=student。カードの中：moveout=card、has_mynumber_card=true、insurance=employer_family、housing=rented、moved_in=yes
 const B1 = { 'Q-origin': 'other_city', 'Q-role': 'student', 'Q-age-band': 'under_20', 'Q-moveout': 'card', 'Q-insurance': 'employer_family', 'Q-moved-in': 'yes', 'Q-bank-account': false };
 const OBJ = { 'mynumber-card': true, 'room-key': true };
-const input = (over: Partial<EngineInput> = {}): EngineInput => ({ answers: B1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY, ...over });
+// アプリと同じく、引っ越し（E-move）のカードだけで判定する（11/6：市内の引っ越しの2枚を公開にしたため）
+const MOVE = (() => { const e = data.events.find((x) => x.id === 'E-move')!; return { ...e, questions: [], facts: [] }; })();
+const input = (over: Partial<EngineInput> = {}): EngineInput => ({ answers: B1, objects: OBJ, plan: {}, createdOn: TODAY, today: TODAY, event: MOVE, ...over });
 const st = (o: ReturnType<typeof run>) => Object.fromEntries(o.cards.map((c) => [c.card.id, [c.state, c.section]]));
 
 describe('B1（公開時点のデータ）', () => {

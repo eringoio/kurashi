@@ -508,6 +508,66 @@
         "status": "verified",
         "verified_by": "author"
       }
+    },
+    {
+      "id": "R-mw-same",
+      "kind": "selection",
+      "condition": {
+        "fact": "ward_move",
+        "eq": "same_ward"
+      },
+      "statement": {
+        "ja": "{同|おな}じ{区|く}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "ja_easy": "{同|おな}じ{区|く}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "en": "You moved within the same ward"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mw-other",
+      "kind": "selection",
+      "condition": {
+        "fact": "ward_move",
+        "eq": "other_ward"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}の{中|なか}の、{別|べつ}の{区|く}へ{引|ひ}っ{越|こ}した",
+        "ja_easy": "{名古屋|なごや}{市|し}の、ちがう{区|く}へ{引|ひ}っ{越|こ}した",
+        "en": "You moved to a different ward in Nagoya"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mw-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "origin",
+        "eq": "within_nagoya"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "ja_easy": "{名古屋|なごや}{市|し}の{中|なか}で{引|ひ}っ{越|こ}した",
+        "en": "You moved within Nagoya"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
     }
   ]
 }

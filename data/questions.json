@@ -714,6 +714,54 @@
           }
         }
       ]
+    },
+    {
+      "id": "Q-ward-move",
+      "fact": "ward_move",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{引|ひ}っ{越|こ}した{先|さき}は、{前|まえ}の{住所|じゅうしょ}と{同|おな}じ{区|く}の{中|なか}ですか？",
+        "ja_easy": "{引|ひ}っ{越|こ}した{先|さき}は、{前|まえ}の{家|いえ}と{同|おな}じ{区|く}ですか？",
+        "en": "Is your new home in the same ward as before?"
+      },
+      "why_asked": {
+        "ja": "{同|おな}じ{区|く}の{中|なか}は{転居|てんきょ}{届|とどけ}、{別|べつ}の{区|く}は{転入|てんにゅう}{届|とどけ}と、{出|だ}す{届|とど}けが{変|か}わるためです。",
+        "ja_easy": "{同|おな}じ{区|く}か、ちがう{区|く}かで、{出|だ}す{紙|かみ}が{変|か}わるからです。",
+        "en": "The form is different: a change-of-address report within a ward, a move-in report to another ward."
+      },
+      "options": [
+        {
+          "value": "same_ward",
+          "icon": "homemove",
+          "label": {
+            "ja": "{同|おな}じ{区|く}の{中|なか}",
+            "ja_easy": "{同|おな}じ{区|く}",
+            "en": "Same ward"
+          }
+        },
+        {
+          "value": "other_ward",
+          "icon": "box",
+          "label": {
+            "ja": "{名古屋|なごや}{市|し}の{中|なか}の、{別|べつ}の{区|く}",
+            "ja_easy": "{名古屋|なごや}{市|し}の、ちがう{区|く}",
+            "en": "A different ward in Nagoya"
+          }
+        },
+        {
+          "value": "unknown",
+          "icon": "ask",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
     }
   ]
 }
