@@ -2135,11 +2135,6 @@
     "ja_easy": "{一覧|いちらん}から{選|えら}ぶ",
     "en": "Choose from a list (no photo)"
   },
-  "letter.sample": {
-    "ja": "{見本|みほん}の{書類|しょるい}で{試|ため}す",
-    "ja_easy": "{見本|みほん}で{試|ため}す",
-    "en": "Try with a sample letter"
-  },
   "letter.check": {
     "ja": "この{写真|しゃしん}を{送|おく}りますか？",
     "ja_easy": "この{写真|しゃしん}を{送|おく}りますか？",
@@ -2208,7 +2203,7 @@
   "letter.pickTitle": {
     "ja": "どの{書類|しょるい}ですか？",
     "ja_easy": "どの{書類|しょるい}ですか？",
-    "en": "Which letter is it?"
+    "en": "Which document is it?"
   },
   "letter.failed": {
     "ja": "{読|よ}み{取|と}れませんでした",
@@ -3159,5 +3154,25 @@
     "ja": "{病院|びょういん}の{種類|しゅるい}とアドバイスが{出|で}ます。",
     "ja_easy": "{行|い}く{病院|びょういん}の{種類|しゅるい}がわかります。",
     "en": "You will see which kind of clinic to visit, with advice."
+  },
+  "letter.sampleAlt": {
+    "ja": "{書類|しょるい}の{見本|みほん}（{架空|かくう}の{書類|しょるい}）",
+    "ja_easy": "{書類|しょるい}の{見本|みほん}",
+    "en": "Sample of the document (fictional)"
+  },
+  "letter.keyWords": {
+    "ja": "{大事|だいじ}な{言葉|ことば}",
+    "ja_easy": "{大事|だいじ}なことば",
+    "en": "Key words"
+  },
+  "home.group.family": {
+    "ja": "{結婚|けっこん}について",
+    "ja_easy": "{結婚|けっこん}のこと",
+    "en": "Marriage and divorce"
+  },
+  "letter.pickHint": {
+    "ja": "{書類|しょるい}の{上|うえ}にある{名前|なまえ}で{選|えら}びます。",
+    "ja_easy": "{書類|しょるい}の{上|うえ}の{名前|なまえ}で{選|えら}びます。",
+    "en": "Choose by the name at the top of the letter."
   }
 }

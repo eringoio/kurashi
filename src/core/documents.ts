@@ -13,6 +13,10 @@ export const KnownDocument = z.object({
   card_ids: z.array(z.string()),
   /** この書類を出す（もらえる）手続きのカード（作者 11/6 B-12）。カードのページに「この手続きでもらう書類」として出す */
   issued_by_card: z.array(z.string()).optional(),
+  /** 見本の画像（public/samples。架空の書類。作者 11/7 K-11） */
+  sample: z.string().regex(/^\/samples\/[a-z0-9-]+\.svg$/).optional(),
+  /** 書類にある大事な言葉と、その意味（作者 11/7 K-11） */
+  key_words: z.array(z.object({ word: z.string(), meaning: Text })).default([]),
   evidence: Evidence,
 });
 export type KnownDocument = z.infer<typeof KnownDocument>;

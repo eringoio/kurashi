@@ -16,7 +16,7 @@ import { HelpSheet } from './ui/HelpSheet';
 import { ShareSheet } from './ui/ShareSheet';
 import { ReportButton } from './ui/ReportSheet';
 import { WordsPage } from './ui/Words';
-import { Home } from './pages/Home';
+import { GroupPage, Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
 import { All, Now } from './pages/Plan';
@@ -63,6 +63,8 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (move) return <Move step={move[1] ?? ''} />;
   const evCard = /^\/e\/(E-[a-z0-9-]+)\/c\/([a-z0-9-]+)$/.exec(path);
   if (evCard) return <EventCardPage key={evCard[1] + evCard[2]} eventId={evCard[1]} id={evCard[2]} onLive={onLive} />;
+  const grp = /^\/g\/([a-z0-9-]+)$/.exec(path);
+  if (grp) return <GroupPage key={grp[1]} group={grp[1]} />;
   const ev = /^\/e\/(E-[a-z0-9-]+)(\/all)?$/.exec(path);
   if (ev) return <EventEntry key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] ? 'all' : 'now'} onLive={onLive} />;
   const card = /^\/c\/([a-z0-9-]+)$/.exec(path);

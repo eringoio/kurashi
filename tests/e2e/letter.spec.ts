@@ -18,23 +18,48 @@ function trackApi(page: Page) {
   page.on('request', (r) => { if (r.url().includes('/api/read-document')) calls.push(r.method()); });
   return calls;
 }
+const readOn = (page: Page) => page.addInitScript(() => sessionStorage.setItem('kurashi:letter_read', 'on'));
+const file = (page: Page) => page.locator('input[type=file]').first().setInputFiles({ name: 'letter.png', mimeType: 'image/png', buffer: PNG });
 async function toPreview(page: Page) {
+  await readOn(page);
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/letter');
   await expect(h1(page)).toHaveText('届いた書類がわからないとき');
-  await tap(page, '見本の書類で試す');
+  await file(page);
   await expect(h1(page)).toHaveText('この写真を送りますか？');
 }
 
-test('見本の画像：撮る → 確かめる → 送る → 確認 → 結果', async ({ page }) => {
+test('写真読み取りが off（既定）：一覧が直接出て、選ぶと見本と大事な言葉が出る', async ({ page }) => {
   const calls = trackApi(page);
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto('/letter');
+  await expect(h1(page)).toHaveText('届いた書類がわからないとき');
+  await expect(page.locator('input[type=file]')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /見本の書類で試す|一覧から選ぶ|写真を撮る/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /国民年金の加入のお知らせ/ })).toBeVisible();
+  await check(page, '入口（一覧）');
+  await tap(page, /国民年金の加入のお知らせ/);
+  await expect(h1(page)).toHaveText('国民年金の加入のお知らせ');
+  await expect(page.locator('img.letter__photo')).toHaveAttribute('src', '/samples/nenkin-oshirase-sample.svg');
+  await expect(page.locator('dl.letter__words')).toContainText(/基礎.*年金.*番号/);
+  await expect(page.getByRole('heading', { name: '大事な言葉' })).toBeVisible();
+  await expect(page.getByRole('note')).toContainText('期限・金額・番号');
+  await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0);
+  await check(page, '結果（年金）');
+  expect(calls, '通信なし').toEqual([]);
+});
+
+test('写真読み取りが on：撮る → 確かめる → 送る → 確認 → 結果', async ({ page }) => {
+  const calls = trackApi(page);
+  await readOn(page);
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/letter');
   await check(page, '入口');
   await expect(page.locator('label', { hasText: '写真を撮る' })).toBeVisible();
-  await tap(page, '見本の書類で試す');
+  await expect(page.getByRole('button', { name: /見本の書類で試す/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /一覧から選ぶ/ })).toBeVisible();
+  await file(page);
   await expect(h1(page)).toHaveText('この写真を送りますか？');
-  await expect(page.locator('.draftmark')).toBeVisible();
   expect(calls, '確かめる画面では送らない').toEqual([]);
   await check(page, '写真の確かめ');
   await tap(page, /^送る（同意する）/);
@@ -44,16 +69,16 @@ test('見本の画像：撮る → 確かめる → 送る → 確認 → 結果
   await check(page, '確認');
   await tap(page, 'はい');
   await expect(h1(page)).toHaveText('国民健康保険の資格確認書');
-  await expect(page.locator('.draftmark')).toBeVisible();
   await expect(page.locator('section[aria-labelledby="letter-cards"]')).toContainText('国民健康保険');
   await expect(page.getByRole('note')).toContainText('期限・金額・番号');
   await check(page, '結果');
 });
 
 test('実際のファイル入力：選んだ画像が確かめの画面に出て、送ると確認へ', async ({ page }) => {
+  await readOn(page);
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/letter');
-  await page.locator('input[type=file]').setInputFiles({ name: 'letter.png', mimeType: 'image/png', buffer: PNG });
+  await file(page);
   await expect(h1(page)).toHaveText('この写真を送りますか？');
   await expect(page.locator('img.letter__photo')).toBeVisible();
   // 実際の写真には「見本」の印が付かない
@@ -68,7 +93,7 @@ test('同意しない：送らないを選ぶと、通信せず一覧へ', async
   await toPreview(page);
   expect(calls).toEqual([]);
   await tap(page, /^送らない/);
-  await expect(h1(page)).toHaveText('どの書類ですか？');
+  await expect(h1(page)).toContainText('どの書類ですか？');
   await check(page, '一覧');
   await page.waitForTimeout(300);
   expect(calls, '/api/read-document への通信なし').toEqual([]);
@@ -79,7 +104,7 @@ test('いいえ → 一覧 → 国民年金の加入のお知らせ → 関係�
   await tap(page, /^送る（同意する）/);
   await expect(h1(page)).toHaveText('書類の上のほうに、この言葉がありますか？');
   await tap(page, /^いいえ/);
-  await expect(h1(page)).toHaveText('どの書類ですか？');
+  await expect(h1(page)).toContainText('どの書類ですか？');
   await tap(page, /国民年金の加入のお知らせ/);
   await expect(h1(page)).toHaveText('国民年金の加入のお知らせ');
   await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0);
@@ -128,6 +153,7 @@ test('何も残らない：IndexedDB と localStorage に写真も書類 id も�
 });
 
 test('English：入口と確認が通る', async ({ page }) => {
+  await readOn(page);
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/letter');
   await page.getByRole('button', { name: /^(設定\s?・Language|Settings · 設定)$/ }).click();
@@ -137,7 +163,8 @@ test('English：入口と確認が通る', async ({ page }) => {
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await check(page, 'English 入口');
-  await page.getByRole('button', { name: /Try with a sample letter/ }).click();
+  await expect(page.getByRole('button', { name: /Try with a sample letter/ })).toHaveCount(0);
+  await file(page);
   await expect(page.locator('img.letter__photo')).toBeVisible();
   await page.getByRole('button', { name: /Send \(I agree\)/ }).first().click();
   await expect(page.getByRole('button', { name: /Yes/ }).first()).toBeVisible();

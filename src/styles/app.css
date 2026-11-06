@@ -534,3 +534,9 @@ p, li, dd, .sub { text-wrap: pretty; }
 /* 持ち物のカード（作者 11/7 K-6）：全部同じ大きさに。行の高さをそろえ、カードは行いっぱい */
 .k-tiles { grid-auto-rows: 1fr; }
 .k-tile-wrap .k-tile { flex: 1 1 auto; height: 100%; }
+/* 届いた書類の大事な言葉（K-11） */
+.letter__words { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.letter__words div { display: grid; grid-template-columns: minmax(6em, 10em) 1fr; gap: 8px; padding-bottom: 6px; border-bottom: 1.5px dashed var(--line-dash); }
+.letter__words dt { font-weight: 700; }
+.letter__words dd { margin: 0; }
+@media (max-width: 380px) { .letter__words div { grid-template-columns: 1fr; } }

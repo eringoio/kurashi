@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="Zen Maru Gothic, Hiragino Sans, Meiryo, sans-serif">
+  <!-- 架空の見本（実在の名前・番号を含まない）。kurashi の「届いた書類がわからない」の見本 -->
+  <rect width="1200" height="800" fill="#fbfaf6"/>
+  <rect x="40" y="40" width="1120" height="720" fill="#ffffff" stroke="#2e8b57" stroke-width="6" rx="16"/>
+  <text x="600" y="150" text-anchor="middle" font-size="64" font-weight="700" fill="#1f2a44">国民健康保険料 納付書</text>
+  <text x="600" y="215" text-anchor="middle" font-size="34" fill="#c0392b" font-weight="700">（見本・架空の書類です）</text>
+  <g font-size="36" fill="#333">
+    <text x="120" y="320">納期限</text><line x1="320" y1="325" x2="1060" y2="325" stroke="#999" stroke-width="3"/>
+    <text x="120" y="420">納付額</text><line x1="320" y1="425" x2="1060" y2="425" stroke="#999" stroke-width="3"/>
+    <text x="120" y="520">期別</text><line x1="320" y1="525" x2="1060" y2="525" stroke="#999" stroke-width="3"/>
+    <text x="120" y="620">払える所（例：コンビニ・銀行）</text><line x1="690" y1="625" x2="1060" y2="625" stroke="#999" stroke-width="3"/>
+  </g>
+  <text x="600" y="715" text-anchor="middle" font-size="30" fill="#555">名前・住所・番号は入っていません（見本）</text>
+</svg>

@@ -26,6 +26,33 @@
       },
       "issued_by_card": [
         "nagoya-kokuho-kanyu"
+      ],
+      "sample": "/samples/kokuho-shikaku-sample.svg",
+      "key_words": [
+        {
+          "word": "{資格|しかく}{確認|かくにん}{書|しょ}",
+          "meaning": {
+            "ja": "{保険|ほけん}に{入|はい}っていることを{示|しめ}す{紙|かみ}",
+            "ja_easy": "{保険|ほけん}に{入|はい}っているという{紙|かみ}",
+            "en": "Paper that shows you are insured"
+          }
+        },
+        {
+          "word": "{記号|きごう}・{番号|ばんごう}",
+          "meaning": {
+            "ja": "あなたの{保険|ほけん}の{番号|ばんごう}",
+            "ja_easy": "{保険|ほけん}の{番号|ばんごう}",
+            "en": "Your insurance number"
+          }
+        },
+        {
+          "word": "{有効|ゆうこう}{期限|きげん}",
+          "meaning": {
+            "ja": "この{日|ひ}まで{使|つか}えます",
+            "ja_easy": "この{日|ひ}まで{使|つか}えます",
+            "en": "Valid until this date"
+          }
+        }
       ]
     },
     {
@@ -53,6 +80,33 @@
       },
       "issued_by_card": [
         "nagoya-kokuho-kanyu"
+      ],
+      "sample": "/samples/kokuho-nofu-sample.svg",
+      "key_words": [
+        {
+          "word": "{納付|のうふ}{書|しょ}",
+          "meaning": {
+            "ja": "お{金|かね}を{払|はら}うための{紙|かみ}",
+            "ja_easy": "お{金|かね}を{払|はら}う{紙|かみ}",
+            "en": "Payment slip"
+          }
+        },
+        {
+          "word": "{納期|のうき}{限|げん}",
+          "meaning": {
+            "ja": "この{日|ひ}までに{払|はら}います",
+            "ja_easy": "この{日|ひ}までに{払|はら}います",
+            "en": "Pay by this date"
+          }
+        },
+        {
+          "word": "{納付|のうふ}{額|がく}",
+          "meaning": {
+            "ja": "{払|はら}う{金額|きんがく}",
+            "ja_easy": "{払|はら}うお{金|かね}",
+            "en": "Amount to pay"
+          }
+        }
       ]
     },
     {
@@ -82,6 +136,33 @@
       },
       "issued_by_card": [
         "nenkin-at-20"
+      ],
+      "sample": "/samples/nenkin-oshirase-sample.svg",
+      "key_words": [
+        {
+          "word": "{基礎|きそ}{年金|ねんきん}{番号|ばんごう}",
+          "meaning": {
+            "ja": "あなたの{年金|ねんきん}の{番号|ばんごう}",
+            "ja_easy": "{年金|ねんきん}の{番号|ばんごう}",
+            "en": "Your basic pension number"
+          }
+        },
+        {
+          "word": "{保険料|ほけんりょう}",
+          "meaning": {
+            "ja": "{毎月|まいつき}{払|はら}うお{金|かね}",
+            "ja_easy": "{毎月|まいつき}{払|はら}うお{金|かね}",
+            "en": "Monthly premium"
+          }
+        },
+        {
+          "word": "{学生|がくせい}{納付|のうふ}{特例|とくれい}",
+          "meaning": {
+            "ja": "{学生|がくせい}は{払|はら}うのを{待|ま}ってもらえる{制度|せいど}（{要|よう}{確認|かくにん}）",
+            "ja_easy": "{学生|がくせい}は あとで{払|はら}える（{要|よう}{確認|かくにん}）",
+            "en": "Students can postpone payment (to be checked)"
+          }
+        }
       ]
     },
     {
@@ -110,7 +191,34 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "転出証明書の交付を受けた後、新たにお住まいになる市区町村にて転入の届出を行っていただく必要があります。"
-      }
+      },
+      "sample": "/samples/tenshutsu-shomeisho-sample.svg",
+      "key_words": [
+        {
+          "word": "{転出|てんしゅつ}",
+          "meaning": {
+            "ja": "{前|まえ}の{市|し}から{出|で}ること",
+            "ja_easy": "{前|まえ}の{市|し}を{出|で}ること",
+            "en": "Moving out of your previous city"
+          }
+        },
+        {
+          "word": "{転入|てんにゅう}{届|とどけ}",
+          "meaning": {
+            "ja": "{新|あたら}しい{市|し}に{出|だ}す{届|とど}け。この{紙|かみ}を{持|も}っていきます",
+            "ja_easy": "{新|あたら}しい{市|し}の{届|とど}け",
+            "en": "Moving-in notice at the new city; bring this paper"
+          }
+        },
+        {
+          "word": "{世帯|せたい}{主|ぬし}",
+          "meaning": {
+            "ja": "{家族|かぞく}の{代表|だいひょう}の{人|ひと}",
+            "ja_easy": "{家族|かぞく}の{代表|だいひょう}",
+            "en": "Head of household"
+          }
+        }
+      ]
     },
     {
       "id": "kokuho-shikaku-joho",
@@ -138,7 +246,34 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "マイナ保険証をお持ちの人には「資格情報のお知らせ」をお送りします。"
-      }
+      },
+      "sample": "/samples/kokuho-shikaku-joho-sample.svg",
+      "key_words": [
+        {
+          "word": "{資格|しかく}{情報|じょうほう}",
+          "meaning": {
+            "ja": "{保険|ほけん}の{内容|ないよう}",
+            "ja_easy": "{保険|ほけん}のこと",
+            "en": "Your insurance details"
+          }
+        },
+        {
+          "word": "マイナ{保険証|ほけんしょう}",
+          "meaning": {
+            "ja": "{保険証|ほけんしょう}として{使|つか}うマイナンバーカード",
+            "ja_easy": "{保険証|ほけんしょう}になるマイナンバーカード",
+            "en": "My Number Card used as a health insurance card"
+          }
+        },
+        {
+          "word": "{資格|しかく}{取得|しゅとく}{日|び}",
+          "meaning": {
+            "ja": "{保険|ほけん}に{入|はい}った{日|ひ}",
+            "ja_easy": "{保険|ほけん}に{入|はい}った{日|ひ}",
+            "en": "Date you joined"
+          }
+        }
+      ]
     },
     {
       "id": "kojin-bango-tsuchisho",
@@ -166,7 +301,26 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "個人番号通知書は、新たにマイナンバー（個人番号）が付番された方にマイナンバーを通知するもので"
-      }
+      },
+      "sample": "/samples/kojin-bango-tsuchisho-sample.svg",
+      "key_words": [
+        {
+          "word": "{個人|こじん}{番号|ばんごう}",
+          "meaning": {
+            "ja": "マイナンバー（12けたの{番号|ばんごう}）",
+            "ja_easy": "マイナンバー",
+            "en": "My Number (12 digits)"
+          }
+        },
+        {
+          "word": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}",
+          "meaning": {
+            "ja": "あなたが{本人|ほんにん}だと{示|しめ}す{書類|しょるい}。この{紙|かみ}は{使|つか}えません（{要|よう}{確認|かくにん}）",
+            "ja_easy": "この{紙|かみ}は{身分証|みぶんしょう}になりません（{要|よう}{確認|かくにん}）",
+            "en": "Photo ID — this paper cannot be used as one (to be checked)"
+          }
+        }
+      ]
     },
     {
       "id": "tennyugaku-tsuchisho",
@@ -194,7 +348,26 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "義務教育のお子さんがいる場合は、転入学通知書をお渡ししますので"
-      }
+      },
+      "sample": "/samples/tennyugaku-tsuchisho-sample.svg",
+      "key_words": [
+        {
+          "word": "{転入学|てんにゅうがく}",
+          "meaning": {
+            "ja": "{新|あたら}しい{学校|がっこう}に{入|はい}ること",
+            "ja_easy": "{新|あたら}しい{学校|がっこう}に{入|はい}る",
+            "en": "Moving to a new school"
+          }
+        },
+        {
+          "word": "{学年|がくねん}",
+          "meaning": {
+            "ja": "{何|なん}{年生|ねんせい}か",
+            "ja_easy": "{何|なん}{年生|ねんせい}",
+            "en": "School year"
+          }
+        }
+      ]
     }
   ]
 }

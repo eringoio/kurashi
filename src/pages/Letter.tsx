@@ -1,7 +1,9 @@
 /* 届いた書類を撮る（SPEC 6A.9・13.1〜13.3。v0.4.6 の案 B）。
    撮る → 写真を確かめる＋同意（撮るたび）→ 送る → 候補を本人が確かめる → 結果（説明と関係する手続き）。
    写真と結果はこの画面のメモリの中だけ（IndexedDB に書かない。画面を離れたら消える）。同意も保存しない。
-   読めない・同意しない・キーが無いときも止まらない：一覧から選ぶ・見本の画像で試す。 */
+   読めない・同意しない・キーが無いときも止まらない：一覧から選ぶ。
+   作者 11/7 K-11：写真の読み取りは VITE_LETTER_READ=on（API キーを入れたあと）のときだけ出す。off のときは一覧から選ぶだけ。
+   「見本で試す」はやめ、一覧で選ぶ → 見本の画像（架空）と説明・大事な言葉。 */
 import { useEffect, useRef, useState } from 'react';
 import { cleanCandidates, DOCUMENTS, type KnownDocument } from '../core/documents';
 import { useGuide } from '../guide/useGuide';
@@ -16,7 +18,10 @@ import { useSeen } from '../ui/Words';
 function SeenDoc({ id }: { id: string }) { useSeen([id]); return null; }
 
 const LONG = 1600;
-const SAMPLE = '/samples/kokuho-shikaku-sample.svg';
+/** 写真の読み取り（Claude）。キーを入れて公開するときに on にする */
+export const LETTER_READ_ON = import.meta.env.VITE_LETTER_READ === 'on'
+  // 開発のときだけ、テストのために sessionStorage の kurashi:letter_read=on でも on にする（本番のビルドでは読まない）
+  || (import.meta.env.DEV && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('kurashi:letter_read') === 'on');
 
 type Photo = { url: string; data: string; media: 'image/jpeg'; sample: boolean };
 type St =
@@ -65,10 +70,6 @@ export function Letter() {
     catch { setSt({ k: 'failed' }); }
     if (file.current) file.current.value = '';
   };
-  const trySample = async () => {
-    try { const j = await toJpeg(SAMPLE); setSt({ k: 'preview', photo: { ...j, media: 'image/jpeg', sample: true } }); }
-    catch { setSt({ k: 'failed' }); }
-  };
   const send = async (photo: Photo) => {
     setSt({ k: 'sending', photo });
     try {
@@ -90,8 +91,13 @@ export function Letter() {
   const alt = (
     <div className="list">
       <button type="button" className="k-answer" onClick={() => setSt({ k: 'pick' })}><Bi phrase k="letter.pick" /></button>
-      <button type="button" className="k-answer" onClick={() => void trySample()}><Bi phrase k="letter.sample" /></button>
     </div>
+  );
+  const pickList = (
+    <ul className="list" role="list">
+      {DOCUMENTS().map((d) => <li key={d.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'result', doc: d, sample: false })}><img src={art('doc')} alt="" /><Bi phrase t={d.title} /></button></li>)}
+      <li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>
+    </ul>
   );
 
   let body: React.ReactNode;
@@ -99,10 +105,8 @@ export function Letter() {
     body = (
       <>
         <div className="art" aria-hidden="true"><img src={art('letter')} alt="" className="art--big" /></div>
-        <div className="head"><Title><Bi k="letter.title" /></Title></div>
-        <p className="sub"><Bi k="letter.intro" /></p>
-        {fileInput}
-        {alt}
+        <div className="head"><Title><Bi phrase k="letter.title" /></Title></div>
+        {LETTER_READ_ON ? <><p className="sub"><Bi k="letter.intro" /></p>{fileInput}{alt}</> : <><p className="sub"><Bi k="letter.pickHint" /></p>{pickList}</>}
       </>
     );
   } else if (st.k === 'preview' || st.k === 'sending') {
@@ -143,10 +147,7 @@ export function Letter() {
     body = (
       <>
         <div className="head"><Title><Bi k="letter.pickTitle" /></Title></div>
-        <ul className="list" role="list">
-          {DOCUMENTS().map((d) => <li key={d.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'result', doc: d, sample: false })}><img src={art('doc')} alt="" /><Bi phrase t={d.title} /></button></li>)}
-          <li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>
-        </ul>
+        {pickList}
       </>
     );
   } else if (st.k === 'result') {
@@ -156,7 +157,7 @@ export function Letter() {
       <>
         <div className="head"><Title><Bi k="letter.failed" /></Title></div>
         <p className="sub"><Bi k="letter.failedSub" /></p>
-        {fileInput}
+        {LETTER_READ_ON && fileInput}
         {alt}
       </>
     );
@@ -182,6 +183,7 @@ export function Letter() {
 
 function Result({ doc, sample }: { doc: KnownDocument; sample: boolean }) {
   const g = useGuide();
+  const { level } = usePrefs();
   const cards = g.out.cards.filter((c) => doc.card_ids.includes(c.card.id));
   return (
     <>
@@ -190,7 +192,17 @@ function Result({ doc, sample }: { doc: KnownDocument; sample: boolean }) {
         <h1 id="screen-title" tabIndex={-1}><Bi phrase t={doc.title} /></h1>
       </div>
       {sample && <p className="draftmark"><Bi k="letter.sampleMark" /></p>}
+      {/* 見本の画像（架空の書類。K-11） */}
+      {doc.sample && <img className="letter__photo" src={doc.sample} alt={line(ui('letter.sampleAlt'), level)} />}
       <p><Bi t={doc.summary} /></p>
+      {doc.key_words.length > 0 && (
+        <section aria-labelledby="letter-words">
+          <h2 id="letter-words" className="label"><One phrase k="letter.keyWords" /></h2>
+          <dl className="letter__words">
+            {doc.key_words.map((w) => <div key={w.word}><dt lang="ja"><Ruby s={w.word} furigana /></dt><dd><Bi t={w.meaning} /></dd></div>)}
+          </dl>
+        </section>
+      )}
       <div className="k-notice" role="note"><Bi k="letter.notRead" /></div>
       {cards.length > 0 && (
         <section aria-labelledby="letter-cards">
