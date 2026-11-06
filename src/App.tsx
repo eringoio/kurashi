@@ -117,8 +117,7 @@ export function App() {
       <a className="skip" href="#main"><One k="app.skip" /></a>
       <header className="bar">
         <Link to="/" className="brand">
-          <img src="/icons/logo.svg" alt="" />
-          <span lang="en">kurashi</span>
+          <img src="/icons/kurashi-logo.svg" alt="Kurashi" className="brand__logo" />
           <span className="brand__tag"><One k="app.tag" /></span>
         </Link>
         <div className="bar__btns">

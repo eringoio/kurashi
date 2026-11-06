@@ -1,9 +1,9 @@
 {
   "$comment": "画面の固定文言。キーごとに表示レベルの文を持つ。ふりがなは {漢字|よみ}。外国語の行の下には ja_easy が2段目として出る。status が draft の文は、作者の確認待ち（docs/TODO.md）。",
   "app.name": {
-    "ja": "kurashi",
-    "ja_easy": "kurashi",
-    "en": "kurashi"
+    "ja": "Kurashi",
+    "ja_easy": "Kurashi",
+    "en": "Kurashi"
   },
   "app.tag": {
     "ja": "{試作|しさく}",
@@ -697,9 +697,9 @@
     "en": "Info"
   },
   "st.check": {
-    "ja": "{窓口|まどぐち}で{確認|かくにん}",
-    "ja_easy": "{窓口|まどぐち}で{聞|き}く",
-    "en": "Ask"
+    "ja": "{要|よう}{確認|かくにん}",
+    "ja_easy": "{要|よう}{確認|かくにん}",
+    "en": "To be checked"
   },
   "st.ask": {
     "ja": "まだわからない",
@@ -857,9 +857,9 @@
     "en": "This may apply to you. We have not yet checked this against the official source. Please ask at the counter (to be checked)."
   },
   "why.noQuestion": {
-    "ja": "このアプリでは{確|たし}かめる{質問|しつもん}がありません。{窓口|まどぐち}で{確認|かくにん}してください。",
+    "ja": "このアプリでは{確|たし}かめる{質問|しつもん}がありません。{要|よう}{確認|かくにん}です。",
     "ja_easy": "ここでは{確|たし}かめられません。{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "This app has no question to check this. Please ask at the counter."
+    "en": "This app has no question to check this. To be checked."
   },
   "why.changed": {
     "ja": "{答|こた}えが{変|か}わりました。この{手続|てつづ}きが{必要|ひつよう}か{確|たし}かめてください。",
@@ -867,9 +867,9 @@
     "en": "Your answers changed. Please check whether you still need this."
   },
   "why.excluded": {
-    "ja": "あなたの{答|こた}えは、このカードの{条件|じょうけん}に{当|あ}てはまりませんでした。ほかの{理由|りゆう}で{必要|ひつよう}な{場合|ばあい}は、{窓口|まどぐち}で{確認|かくにん}してください。",
+    "ja": "あなたの{答|こた}えは、このカードの{条件|じょうけん}に{当|あ}てはまりませんでした。ほかの{理由|りゆう}で{必要|ひつよう}な{場合|ばあい}は{要|よう}{確認|かくにん}です。",
     "ja_easy": "あなたの{答|こた}えでは、{関係|かんけい}ありません。ほかの{理由|りゆう}があれば、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Your answers do not match the conditions for this card. If you need it for another reason, ask at the counter."
+    "en": "Your answers do not match the conditions for this card. If you need it for another reason: to be checked."
   },
   "why.out": {
     "ja": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{公式|こうしき}の{情報|じょうほう}で{確認|かくにん}してください。",
@@ -907,9 +907,9 @@
     "en": "From your answer, this is done."
   },
   "note.orderCheck": {
-    "ja": "{順番|じゅんばん}は{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja": "{順番|じゅんばん}は{要|よう}{確認|かくにん}です。",
     "ja_easy": "{順番|じゅんばん}は{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Please confirm the order at the counter (to be checked)."
+    "en": "The order is to be checked."
   },
   "note.prereqUnknown": {
     "ja": "{前|まえ}に{済|す}ませることが{済|す}んでいるか、{確|たし}かめてください。",
@@ -937,14 +937,14 @@
     "en": "Check status"
   },
   "src.status.verified": {
-    "ja": "{確認|かくにん}{済|ず}み（{原文|げんぶん}で{確|たし}かめた）",
-    "ja_easy": "{確|たし}かめました",
-    "en": "Checked against the official source"
+    "ja": "{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめました",
+    "ja_easy": "{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめました",
+    "en": "The author checked it on the official page"
   },
   "src.status.needs_check": {
-    "ja": "{要|よう}{確認|かくにん}（まだ{原文|げんぶん}で{確|たし}かめていない）",
-    "ja_easy": "まだ{確|たし}かめていません",
-    "en": "To be checked (not yet checked against the official source)"
+    "ja": "{要|よう}{確認|かくにん}",
+    "ja_easy": "{要|よう}{確認|かくにん}",
+    "en": "To be checked"
   },
   "src.status.outdated": {
     "ja": "{情報|じょうほう}が{古|ふる}い{可能|かのう}{性|せい}があります（{公式|こうしき}のページで{確|たし}かめてください）",
@@ -987,9 +987,9 @@
     "en": "Start from the menu"
   },
   "promise.today": {
-    "ja": "{今日|きょう}は、{行|い}く{日|ひ}に{決|き}めた{日|ひ}です",
-    "ja_easy": "きょうは、{行|い}く{日|ひ}です",
-    "en": "Today is the day you planned"
+    "ja": "{今日|きょう}の{予定|よてい}",
+    "ja_easy": "きょうの{予定|よてい}",
+    "en": "Today's plan"
   },
   "promise.past": {
     "ja": "{行|い}く{日|ひ}が{過|す}ぎました。{行|い}けましたか？",
@@ -1452,9 +1452,9 @@
     "en": "Things to prepare"
   },
   "pat.unknown.title": {
-    "ja": "{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
-    "ja_easy": "{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
-    "en": "Check at the office (to be confirmed)"
+    "ja": "{要|よう}{確認|かくにん}",
+    "ja_easy": "{要|よう}{確認|かくにん}",
+    "en": "To be checked"
   },
   "pat.unknown.reason": {
     "ja": "わからない{理由|りゆう}",
@@ -1469,7 +1469,7 @@
   "pat.confirm": {
     "ja": "{要|よう}{確認|かくにん}",
     "ja_easy": "{要|よう}{確認|かくにん}",
-    "en": "To be confirmed"
+    "en": "To be checked"
   },
   "ev.alt": {
     "ja": "{身分|みぶん}{証|しょう}の{代|か}わりになる{書類|しょるい}",
@@ -1692,9 +1692,9 @@
     "en": "Do them in this order."
   },
   "visit.unordered": {
-    "ja": "{順番|じゅんばん}と、{同|おな}じ{窓口|まどぐち}でできるかは、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja": "{順番|じゅんばん}と、{同|おな}じ{窓口|まどぐち}でできるかは{要|よう}{確認|かくにん}です。",
     "ja_easy": "{順番|じゅんばん}は、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Ask at the counter about the order and whether one counter can do all of them (to be checked)."
+    "en": "The order, and whether one counter can do all of them, are to be checked."
   },
   "visit.bring.label": {
     "ja": "{持|も}っていく{物|もの}（{入|い}れたら{押|お}す）",
@@ -1702,9 +1702,9 @@
     "en": "What to bring (tap when packed)"
   },
   "visit.bring.none": {
-    "ja": "{持|も}っていく{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja": "{持|も}っていく{物|もの}は{要|よう}{確認|かくにん}です。",
     "ja_easy": "{持|も}っていく{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Ask at the counter what to bring (to be checked)."
+    "en": "What to bring is to be checked."
   },
   "visit.bring.missing": {
     "ja": "{持|も}っていない{物|もの}",
@@ -1712,9 +1712,9 @@
     "en": "Things you don't have"
   },
   "visit.bring.missingNote": {
-    "ja": "{代|か}わりになる{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja": "{代|か}わりになる{物|もの}は{要|よう}{確認|かくにん}です。",
     "ja_easy": "{代|か}わりの{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Ask at the counter what you can bring instead (to be checked)."
+    "en": "What you can bring instead is to be checked."
   },
   "visit.bring.alt": {
     "ja": "{持|も}っていないときは",
@@ -1722,9 +1722,9 @@
     "en": "If you don't have it"
   },
   "visit.bring.other": {
-    "ja": "ほかの{持|も}ち{物|もの}は、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。{開|あ}いている{時間|じかん}は、{公式|こうしき}のページで{確|たし}かめてください。",
+    "ja": "ほかの{持|も}ち{物|もの}は{要|よう}{確認|かくにん}です。{開|あ}いている{時間|じかん}は、{公式|こうしき}のページで{確|たし}かめてください。",
     "ja_easy": "ほかに{要|い}る{物|もの}は、{窓口|まどぐち}で{聞|き}いてください。{開|あ}いている{時間|じかん}は、{公式|こうしき}のページで{見|み}てください。",
-    "en": "Ask at the counter about anything else. Check opening hours on the official page."
+    "en": "Other things to bring are to be checked. Check opening hours on the official page."
   },
   "visit.bring.packed": {
     "ja": "{入|い}れました",
@@ -2027,14 +2027,14 @@
     "en": "(opens in a new tab)"
   },
   "src.status.ai_checked": {
-    "ja": "{公式|こうしき}のページと AI で{照合|しょうごう}しました（{作者|さくしゃ}の{確認|かくにん}{前|まえ}）",
-    "ja_easy": "{公式|こうしき}のページと AI で{確|たし}かめました（まだ{人|ひと}は{見|み}ていません）",
-    "en": "Checked against the official page by AI (not yet checked by the author)"
+    "ja": "{出典|しゅってん}と AI で{照合|しょうごう}しました",
+    "ja_easy": "{出典|しゅってん}と AI で{確|たし}かめました",
+    "en": "Checked against the source by AI"
   },
   "pat.aiChecked": {
-    "ja": "AI で{照合|しょうごう}（{作者|さくしゃ}の{確認|かくにん}{前|まえ}）",
-    "ja_easy": "AI で{確|たし}かめた",
-    "en": "AI-checked (author not yet)"
+    "ja": "AIチェック",
+    "ja_easy": "AIチェック",
+    "en": "AI check"
   },
   "review.queue": {
     "ja": "{作者|さくしゃ}が{確認|かくにん}する{一覧|いちらん}",
@@ -2042,14 +2042,14 @@
     "en": "For the author to check"
   },
   "review.queueSub": {
-    "ja": "AI で{照合|しょうごう}しても、{義務|ぎむ}・{期限|きげん}・{費用|ひよう}・{対象|たいしょう}{者|しゃ}・{前提|ぜんてい}の{関係|かんけい}は「{窓口|まどぐち}で{確認|かくにん}」のままです。{作者|さくしゃ}が{確認済|かくにんず}みにするまで{変|か}わりません。",
-    "ja_easy": "AI で{確|たし}かめても、{大事|だいじ}なことは{作者|さくしゃ}が{見|み}るまで「{窓口|まどぐち}で{確認|かくにん}」です。",
-    "en": "Even when AI-checked, obligations, deadlines, fees, eligibility and prerequisites stay \"check at the counter\" until the author verifies them."
+    "ja": "AI で{照合|しょうごう}しても、{義務|ぎむ}・{対象|たいしょう}{者|しゃ}・{前提|ぜんてい}の{関係|かんけい}は「{要|よう}{確認|かくにん}」のままです。{作者|さくしゃ}が{確認済|かくにんず}みにするまで{変|か}わりません。{期限|きげん}・{費用|ひよう}は AI チェックの{印|しるし}を{付|つ}けて{値|あたい}を{出|だ}します。",
+    "ja_easy": "AI で{確|たし}かめても、{大事|だいじ}なことは{作者|さくしゃ}が{見|み}るまで「{要|よう}{確認|かくにん}」です。",
+    "en": "Even when AI-checked, obligations, eligibility and prerequisites stay \"to be checked\" until the author verifies them. Deadlines and fees are shown with the AI-check mark."
   },
   "review.staysU": {
-    "ja": "AI で{照合|しょうごう}したが、{窓口|まどぐち}で{確認|かくにん}のままの{項目|こうもく}",
-    "ja_easy": "AI で{確|たし}かめたが、まだ{窓口|まどぐち}で{確認|かくにん}の{項目|こうもく}",
-    "en": "AI-checked but still \"check at the counter\""
+    "ja": "AI で{照合|しょうごう}したが、{要|よう}{確認|かくにん}のままの{項目|こうもく}",
+    "ja_easy": "AI で{確|たし}かめたが、まだ{要|よう}{確認|かくにん}の{項目|こうもく}",
+    "en": "AI-checked but still \"to be checked\""
   },
   "review.disagree": {
     "ja": "{照合|しょうごう}が{食|く}い{違|ちが}った{項目|こうもく}",
@@ -2072,9 +2072,9 @@
     "en": "Counts as verified"
   },
   "review.staysUShort": {
-    "ja": "{窓口|まどぐち}で{確認|かくにん}のまま",
+    "ja": "{要|よう}{確認|かくにん}のまま",
     "ja_easy": "まだ{使|つか}えない",
-    "en": "Stays \"check at the counter\""
+    "en": "Stays \"to be checked\""
   },
   "review.kind.place": {
     "ja": "{行|い}く{所|ところ}",
@@ -2397,24 +2397,24 @@
     "en": "Today"
   },
   "cal.hours": {
-    "ja": "{開|あ}いている{時間|じかん}：{open}〜{close}（{要|よう}{確認|かくにん}）",
-    "ja_easy": "{開|あ}いている{時間|じかん}：{open}〜{close}",
-    "en": "Open {open}–{close} (to be checked)"
+    "ja": "{days} {open}〜{close}（{要|よう}{確認|かくにん}）",
+    "ja_easy": "{days} {open}〜{close}（{要|よう}{確認|かくにん}）",
+    "en": "{days} {open}–{close} (to be checked)"
   },
   "cal.ics": {
-    "ja": "{端末|たんまつ}のカレンダーに{入|い}れる",
-    "ja_easy": "カレンダーに{入|い}れる",
-    "en": "Add to my calendar"
+    "ja": "カレンダーに{追加|ついか}",
+    "ja_easy": "カレンダーに{追加|ついか}",
+    "en": "Add to calendar"
   },
   "cal.icsNote": {
-    "ja": "{日|ひ}・{行|い}く{所|ところ}・{持|も}ち{物|もの}を{入|い}れた{予定|よてい}のファイル（.ics）を、この{端末|たんまつ}で{作|つく}ります。どこにも{送|おく}りません。",
+    "ja": "{予定|よてい}のファイル（.ics）をこの{端末|たんまつ}で{作|つく}ります。どこにも{送|おく}りません。",
     "ja_easy": "{予定|よてい}のファイルを{作|つく}ります。どこにも{送|おく}りません。",
-    "en": "Makes a calendar file (.ics) with the day, place and things to bring, on this device. Nothing is sent."
+    "en": "Makes a calendar file (.ics) on this device. Nothing is sent."
   },
   "cal.icsWhere": {
-    "ja": "{行|い}く{区役所|くやくしょ}（{住所|じゅうしょ}を{予定|よてい}に{入|い}れる。{選|えら}ばなくてもよい）",
+    "ja": "{行|い}く{区役所|くやくしょ}（{選|えら}ばなくてもよい）",
     "ja_easy": "{行|い}く{区役所|くやくしょ}（{選|えら}ばなくてもよい）",
-    "en": "Which ward office (adds its address; optional)"
+    "en": "Which ward office (optional)"
   },
   "cal.icsNone": {
     "ja": "{選|えら}ばない",
@@ -2427,9 +2427,9 @@
     "en": "Bring"
   },
   "cal.icsOther": {
-    "ja": "ほかの{持|も}ち{物|もの}は{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
-    "ja_easy": "ほかの{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}く",
-    "en": "Ask at the counter about other things to bring (to be checked)"
+    "ja": "ほかの{持|も}ち{物|もの}は{要|よう}{確認|かくにん}",
+    "ja_easy": "ほかの{持|も}ち{物|もの}は{要|よう}{確認|かくにん}",
+    "en": "Other things to bring: to be checked"
   },
   "cal.page": {
     "ja": "カレンダー",
@@ -2560,5 +2560,45 @@
     "ja": "{病院|びょういん}の{案内|あんない}",
     "ja_easy": "{病院|びょういん}の{案内|あんない}",
     "en": "Clinic guide"
+  },
+  "cal.icsMake": {
+    "ja": "{予定|よてい}のファイルを{作|つく}る",
+    "ja_easy": "{予定|よてい}のファイルを{作|つく}る",
+    "en": "Make the calendar file"
+  },
+  "cal.weekdays": {
+    "ja": "{平日|へいじつ}",
+    "ja_easy": "{平日|へいじつ}",
+    "en": "Weekdays"
+  },
+  "cal.hoursMore": {
+    "ja": "くわしく",
+    "ja_easy": "くわしく",
+    "en": "Details"
+  },
+  "cal.hoursTitle": {
+    "ja": "{開|あ}いている{日|ひ}と{時間|じかん}",
+    "ja_easy": "{開|あ}いている{日|ひ}と{時間|じかん}",
+    "en": "Opening days and hours"
+  },
+  "clinic.call": {
+    "ja": "{電話|でんわ}",
+    "ja_easy": "{電話|でんわ}",
+    "en": "Call"
+  },
+  "clinic.officialH": {
+    "ja": "{病院|びょういん}を{探|さが}す{公式|こうしき}のページ",
+    "ja_easy": "{病院|びょういん}をさがす{公式|こうしき}のページ",
+    "en": "Official pages to find a hospital"
+  },
+  "trust.human": {
+    "ja": "{確認済|かくにんず}み",
+    "ja_easy": "{確認済|かくにんず}み",
+    "en": "Checked"
+  },
+  "trust.label": {
+    "ja": "{確認|かくにん}",
+    "ja_easy": "{確認|かくにん}",
+    "en": "Check"
   }
 }

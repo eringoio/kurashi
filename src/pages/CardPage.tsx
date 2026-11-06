@@ -126,7 +126,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       {alts.length > 0 && (
         <div className="k-notice" role="note">
           <p className="label"><One k="ev.alt" /></p>
-          {alts.map((a, i) => <p key={i}><Bi t={a.text} />{a.unverified && <> <One k="pat.confirm" /></>}{a.aiChecked && <> <span className="pt-tag pt-tag--ai"><One k="pat.aiChecked" /></span></>}</p>)}
+          {alts.map((a, i) => <p key={i}><Bi t={a.text} />{a.unverified && <> <One k="pat.confirm" /></>}</p>)}
         </div>
       )}
       {methods.length > 0 && c.questions.length === 0 && <MethodChooser methods={methods} value={method} onChange={setMethod} />}

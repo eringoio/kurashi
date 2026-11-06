@@ -1,4 +1,4 @@
-/* QR を作る（作者用。SPEC 9.8）：場面か、アプリの中のページを選ぶと、その URL の QR と「kurashi で開く：〇〇」を出す。
+/* QR を作る（作者用。SPEC 9.8）：場面か、アプリの中のページを選ぶと、その URL の QR と「Kurashi で開く：〇〇」を出す。
    スマホのカメラで QR を読むと、その URL でアプリが開く。QR に入れるのはパスだけ（13.4）。
    画像は端末の中で作る（外に送らない）。印刷用の SVG を保存できる。 */
 import QRCode from 'qrcode';
@@ -23,12 +23,12 @@ function titleOf(path: string): Text | null {
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-/** 印刷用の SVG：QR の下に「kurashi で開く：〇〇」と URL */
+/** 印刷用の SVG：QR の下に「Kurashi で開く：〇〇」と URL */
 function labelSvg(qr: string, name: string, url: string): string {
   const inner = qr.replace(/^[\s\S]*?<svg[^>]*viewBox="([^"]+)"[^>]*>/, '<svg x="30" y="20" width="300" height="300" viewBox="$1">');
   return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="360" height="400" viewBox="0 0 360 400" font-family="Zen Maru Gothic, Hiragino Sans, Meiryo, sans-serif">`
     + `<rect width="360" height="400" fill="#fff"/>${inner}`
-    + `<text x="180" y="350" text-anchor="middle" font-size="16" font-weight="700">${esc('kurashi で開く：' + name)}</text>`
+    + `<text x="180" y="350" text-anchor="middle" font-size="16" font-weight="700">${esc('Kurashi で開く：' + name)}</text>`
     + `<text x="180" y="374" text-anchor="middle" font-size="11" fill="#333">${esc(url)}</text></svg>\n`;
 }
 
@@ -70,7 +70,7 @@ export function QrMaker() {
         <figure className="qrcard">
           <div className="qrcard__img" role="img" aria-label={line(ui('qr.imgLabel'), level) + '：' + url} dangerouslySetInnerHTML={{ __html: svg }} />
           <figcaption>
-            <p className="qrcard__name" lang="ja">kurashi で開く：{name}</p>
+            <p className="qrcard__name" lang="ja">Kurashi で開く：{name}</p>
             <p className="qrcard__url" lang="en">{url}</p>
           </figcaption>
         </figure>

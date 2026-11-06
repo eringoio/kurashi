@@ -42,7 +42,11 @@ test('日を選ぶカレンダー：区役所の休み（土日・祝日）は�
   await expect(cal.getByRole('button', { name: /11月7日（土）、休み/ })).toBeDisabled();
   await expect(cal.getByRole('button', { name: /11月23日（月）.*祝日/ })).toBeDisabled();
   await expect(cal.getByRole('button', { name: /^11月6日（金）$/ })).toBeEnabled();
-  await expect(page.locator('main')).toContainText('開いている時間：08:45〜17:15');
+  // 開いている時間は1行（A-4）。年末年始などは「くわしく」のシート
+  await expect(page.locator('main')).toContainText('平日 8:45〜17:15（要確認）');
+  // 日曜・祝日は赤い数字。「祝」の印は出さず、読み上げに祝日の名前を残す（A-3）
+  await expect(cal.getByRole('button', { name: /11月23日（月）.*勤労感謝の日/ })).toHaveClass(/cal__day--red/);
+  await expect(cal.locator('.cal__mark', { hasText: '祝' })).toHaveCount(0);
   // 「次の休みの日」の候補（土曜）は、区役所が休みなので押せない
   await expect(page.getByRole('button', { name: /^次の休みの日/ })).toBeDisabled();
   await check(page, '日を選ぶ（カレンダー）');
@@ -53,7 +57,9 @@ test('日を選ぶカレンダー：区役所の休み（土日・祝日）は�
 test('日を決めたら、端末のカレンダーに入れる .ics を作れる（住所は選んだときだけ）', async ({ page }) => {
   await toWardDay(page);
   await page.locator('.cal__table').getByRole('button', { name: /^11月6日（金）$/ }).click();
-  const link = page.getByRole('link', { name: 'カレンダーに入れる' }).first();
+  // 1つのボタン → シートの中に区役所の選択とファイルを作るボタン（A-2）
+  await page.getByRole('button', { name: 'カレンダーに追加' }).click();
+  const link = page.getByRole('dialog').getByRole('link', { name: '予定のファイルを作る' });
   await expect(link).toHaveAttribute('download', 'kurashi-2026-11-06.ics');
   const before = decodeURIComponent((await link.getAttribute('href'))!);
   expect(before).toContain('DTSTART;VALUE=DATE:20261106');
@@ -74,6 +80,13 @@ test('日を決めたら、端末のカレンダーに入れる .ics を作れ�
     return out.join('\n');
   });
   expect(stored).not.toContain('naka-ward-office');
+});
+
+test('行く日が今日なら、カレンダーに追加は出さない（A-1）', async ({ page }) => {
+  await toWardDay(page);
+  await page.locator('.cal__table').getByRole('button', { name: /^11月4日（水）/ }).click();
+  await expect(h1(page)).toHaveText(/11月4日.*に決めました$/);
+  await expect(page.getByRole('button', { name: 'カレンダーに追加' })).toHaveCount(0);
 });
 
 test('カレンダーの画面：決めた日と行く所ごとに並ぶ', async ({ page }) => {

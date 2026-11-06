@@ -1,4 +1,4 @@
-/* カレンダー（作者の指示 2026-11-05）：行く日を決めた手続きを、日と行く所ごとに並べる。端末のカレンダーに入れられる（.ics）。
+/* カレンダー（作者の指示 2026-11-05）：行く日を決めた手続きを、日と行く所ごとに並べる。カレンダーに追加は、日を決めた直後の画面だけ（11/6 A-1）。
    答え・日付は URL に入れない（13.4）。 */
 import type { CardView } from '../core/engine';
 import { useGuide } from '../guide/useGuide';
@@ -6,7 +6,6 @@ import { Bi, One } from '../i18n/Ruby';
 import { ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { AddToCalendar } from '../ui/AddToCalendar';
 import { CardRow, fmtDay } from '../ui/guide';
 import { Link, useFocusTitle } from '../ui/router';
 
@@ -40,7 +39,6 @@ export function CalendarPage() {
             {fmtDay(v.day, level)}{v.place && <>　<One t={ui(('place.' + v.place) as UiKey) ?? { ja: v.place }} /></>}
           </h2>
           <ul className="list" role="list">{v.cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
-          <AddToCalendar day={v.day} place={v.place} cardIds={v.cards.map((c) => c.card.id)} />
         </section>
       ))}
       <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>

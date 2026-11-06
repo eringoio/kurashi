@@ -3,7 +3,8 @@
    診断しない・緊急かどうかを判断しない。119・#7119 の帯はいつも同じに出す（こどものときだけ #8000 も）。
    選んだ場所はメモリの中だけ（このモジュールの値）。IndexedDB にも URL にも入れない（9.9・13.4）。 */
 import { useEffect, useState, useSyncExternalStore } from 'react';
-import { CLINIC, departmentsFor, emergencyFor, searchParts, type ClinicPart } from '../core/clinic';
+import { CLINIC, departmentsFor, emergencyFor, searchParts, type ClinicDepartment, type ClinicPart } from '../core/clinic';
+import { PhoneIcon } from '../ui/icons';
 import { Bi, One, Ruby } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
@@ -24,9 +25,36 @@ function Band({ part }: { part: ClinicPart | null }) {
   return (
     <aside className="k-notice clinic__band" aria-label={line(ui('clinic.bandLabel'), level)}>
       <ul className="plainlist">
-        {emergencyFor(CLINIC(), part).map((e) => <li key={e.id} className="clinic__em"><strong className="clinic__num" lang="en">{e.number}</strong><Bi t={e.label} /></li>)}
+        {/* 押すと電話をかける（A-7）。# は tel: の中で %23 にする */}
+        {emergencyFor(CLINIC(), part).map((e) => (
+          <li key={e.id}>
+            <a className="k-answer clinic__tel" href={'tel:' + encodeURIComponent(e.number)}>
+              <PhoneIcon />
+              <span className="sr-only"><One k="clinic.call" /></span>
+              <span className="clinic__em"><strong className="clinic__num" lang="en">{e.number}</strong><Bi t={e.label} /></span>
+            </a>
+          </li>
+        ))}
       </ul>
     </aside>
+  );
+}
+
+/** 公式のページへのリンク（新しいタブ）。{DEPT} は、まず行く診療科の名前 */
+function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment }) {
+  const links = ids.map((id) => CLINIC().links.find((l) => l.id === id)!).filter(Boolean);
+  return (
+    <ul className="list" role="list">
+      {links.map((l) => (
+        <li key={l.id}>
+          <a className="k-answer clinic__link" href={l.url} target="_blank" rel="noopener noreferrer">
+            <Bi t={fill(l.title, 'DEPT', (_lv, id) => dept.name[id] ?? dept.name.ja)} />
+            {l.desc && <span className="sub"><One t={l.desc} /></span>}
+            <span className="sr-only"><One k="clinic.newTab" /></span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -94,7 +122,10 @@ function Departments({ part }: { part: ClinicPart }) {
           <div><dt><Bi t={d.advice.small.title} /></dt><dd><Bi t={d.advice.small.desc} /></dd></div>
           <div><dt><Bi t={d.advice.big.title} /></dt><dd><Bi t={d.advice.big.desc} /></dd></div>
         </dl>
-        <ul className="plainlist">{d.advice.text.map((t, i) => <li key={i}><Bi t={t} /></li>)}</ul>
+      </section>
+      <section aria-labelledby="clinic-official">
+        <h2 id="clinic-official" className="label"><One k="clinic.officialH" /></h2>
+        <LinkList ids={d.advice.links} dept={first} />
       </section>
       <button type="button" className="k-answer k-answer--primary" onClick={() => navigate('/clinic/before')}><Bi k="nav.next" /></button>
     </>
@@ -113,17 +144,7 @@ function Before({ part }: { part: ClinicPart }) {
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="clinic.h3" /></h1></div>
       <section aria-labelledby="clinic-find">
         <h2 id="clinic-find" className="label"><One k="clinic.findH" /></h2>
-        <ul className="list" role="list">
-          {d.links.map((l) => (
-            <li key={l.id}>
-              <a className="k-answer clinic__link" href={l.url} target="_blank" rel="noopener noreferrer">
-                <Bi t={fill(l.title, 'DEPT', (_lv, id) => dept.name[id] ?? dept.name.ja)} />
-                {l.desc && <span className="sub"><One t={l.desc} /></span>}
-                <span className="sr-only"><One k="clinic.newTab" /></span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <LinkList ids={d.links.map((l) => l.id)} dept={dept} />
         <p className="sub"><Bi t={d.callNote.text} /></p>
       </section>
       <section aria-labelledby="clinic-bring">

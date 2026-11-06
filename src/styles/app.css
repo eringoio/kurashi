@@ -397,3 +397,16 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 @media (max-width: 380px) { .bodymap { grid-template-columns: 1fr; } .bodymap__svg { max-height: 220px; } .bodymap__labels { flex-direction: row; flex-wrap: wrap; } }
 .clinic__em { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .clinic__num { font-size: 1.25em; }
+/* 日曜・祝日は赤い数字（A-3）。押せない日も赤のまま（--red は白・紙の上で 4.5:1 以上）。選んだ日は白 */
+.cal__red, .cal__day--red, .cal__day--red:disabled { color: var(--red); }
+.cal__day--red[aria-pressed="true"] { color: var(--white); }
+.ics__open { margin-top: 4px; }
+/* 病院の電話（A-7）：押せる電話のボタン */
+.clinic__band .plainlist { display: flex; flex-direction: column; gap: 6px; padding: 0; list-style: none; }
+.clinic__tel { min-height: var(--target-min); font-size: var(--fs-small, 15px); padding: 6px 12px; }
+.clinic__tel .clinic__em { align-items: baseline; }
+/* AI チェック・確認済みの印（A-8）。文字の大きさに合わせる */
+.trust { width: 1.2em; height: 1.2em; vertical-align: -0.2em; margin-inline: 2px; }
+/* ロゴ（Kurashi。A-11）：上の帯と入口・免責 */
+.brand img.brand__logo { width: auto; height: 34px; }
+.art img.art__logo { width: auto; height: 64px; }

@@ -79,5 +79,5 @@ flow({
   // 開き直し（トップ）でも、保存した進捗から続きの画面へ
   await page.goto('/');
   await snap({ name: 'トップから開き直す', input: 'トップを開く', expected: '入口のメニューに戻らず、保存した進捗から続きの画面へ。区役所の日を今日にしたので「今日は、行く日に決めた日です」', why: '6A.1 の出し分け：今日が決めた日なら「今日は行く日」（保存があれば続きから）' },
-    async () => { await expect(page).toHaveURL(/\/today$/); await expect(h1).toHaveText('今日は、行く日に決めた日です'); });
+    async () => { await expect(page).toHaveURL(/\/today$/); await expect(h1).toHaveText('今日の予定'); });
 });

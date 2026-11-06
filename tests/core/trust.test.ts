@@ -28,11 +28,12 @@ function allRulesAi(): RawData {
 }
 
 describe('欄ごとの扱い（1か所の表）', () => {
-  it('方法・行く所・連絡先・リンク・持ち物の名前・説明は verified と同じ', () => {
-    for (const k of ['place', 'method', 'contact', 'link', 'object_name', 'card_text'] as const) expect(effectiveStatus({ status: 'ai_checked' }, k)).toBe('verified');
+  // 期限・費用は AI チェックで値を出す（作者の決定 2026-11-06 A-8）
+  it('方法・行く所・連絡先・リンク・持ち物の名前・説明・期限・費用は verified と同じ', () => {
+    for (const k of ['place', 'method', 'contact', 'link', 'object_name', 'card_text', 'deadline', 'fee'] as const) expect(effectiveStatus({ status: 'ai_checked' }, k)).toBe('verified');
   });
-  it('義務・期限・費用・対象者・前提の関係は U のまま', () => {
-    for (const k of ['obligation', 'deadline', 'fee', 'rule', 'prerequisite', 'relation'] as const) {
+  it('義務・対象者・前提の関係は U のまま', () => {
+    for (const k of ['obligation', 'rule', 'prerequisite', 'relation'] as const) {
       expect(AI_CHECK_COUNTS[k]).toBe(false);
       expect(effectiveStatus({ status: 'ai_checked' }, k)).toBe('needs_check');
     }
@@ -52,7 +53,8 @@ describe('ルールエンジン', () => {
   it('方法の根拠が ai_checked なら「要確認」の印は出ない。needs_check なら出る', () => {
     expect(unverified(ai('x'), 'public', 'method')).toBe(false);
     expect(unverified({ ...ai('x'), status: 'needs_check' }, 'public', 'method')).toBe(true);
-    expect(unverified(ai('x'), 'public', 'deadline')).toBe(true);
+    expect(unverified(ai('x'), 'public', 'deadline')).toBe(false);
+    expect(unverified(ai('x'), 'public', 'obligation')).toBe(true);
   });
 });
 
@@ -77,9 +79,9 @@ describe('AI照合済みにできる条件', () => {
     expect(checkQuotes(items, () => BODY + '変更', sha).join()).toMatch(/ハッシュ/);
     expect(checkQuotes([{ ...items[0], e: ai('ない文') }], () => BODY, sha).join()).toMatch(/本文にない/);
   });
-  it('作者の一覧：ai_checked でも U のままの欄（期限・ルール）だけが出る', () => {
+  it('作者の一覧：ai_checked でも U のままの欄（ルール）だけが出る。期限は出ない（A-8）', () => {
     const q = authorQueue([{ where: 'a', kind: 'deadline', e: ai('x') }, { where: 'b', kind: 'method', e: ai('x') }, { where: 'c', kind: 'rule', e: ai('x') }]);
-    expect(q.stays_u.map((x) => x.where)).toEqual(['a', 'c']);
+    expect(q.stays_u.map((x) => x.where)).toEqual(['c']);
   });
   it('読み込みの検査：ai_checked に引用か照合の記録が無ければ止める', () => {
     const raw = structuredClone(baseRaw());

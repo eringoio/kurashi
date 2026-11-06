@@ -108,18 +108,18 @@ test('英語の表示でも、区役所の QR は検査に通る', async ({ page
   await check(page, '区役所の QR（English）');
 });
 
-test('QR を作る（作者用）：場面を選ぶと QR と「kurashi で開く」。? の入ったパスは作らない', async ({ page }) => {
+test('QR を作る（作者用）：場面を選ぶと QR と「Kurashi で開く」。? の入ったパスは作らない', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/qr');
   await expect(h1(page)).toHaveText('QR を作る（作者用）');
   await page.getByRole('button', { name: '区役所で行う手続き' }).click();
   await expect(page.getByRole('img', { name: 'QR コード：https://kurashi.eringo.io/s/ward-office' })).toBeVisible();
-  await expect(page.locator('.qrcard__name')).toHaveText('kurashi で開く：区役所で行う手続き');
+  await expect(page.locator('.qrcard__name')).toHaveText('Kurashi で開く：区役所で行う手続き');
   await expect(page.getByRole('link', { name: /印刷用の画像を保存する/ })).toHaveAttribute('download', 'ward-office-label.svg');
   await check(page, 'QR を作る');
   const input = page.getByRole('textbox', { name: 'アプリの中のパス' });
   await input.fill('/c/bank-account-open');
-  await expect(page.locator('.qrcard__name')).toHaveText('kurashi で開く：銀行の口座');
+  await expect(page.locator('.qrcard__name')).toHaveText('Kurashi で開く：銀行の口座');
   await input.fill('/move?x=1');
   await expect(page.getByRole('alert')).toBeVisible();
   await expect(page.locator('.qrcard')).toHaveCount(0);

@@ -38,3 +38,5 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `badge.svg` | States | 済みの印 | Done badge | 状態の形（絵の右上に重ねる） |
 | `clock.svg` | States | 待つ・あとで | Waiting / later | 状態の形（絵の右上に重ねる） |
 | `cross.svg` | States | 関係なし（×） | Not for you | 状態の形（絵に重ねる） |
+| `check-ai.svg` | Marks | AIチェック | AI check | 期限・費用・義務の欄の印（v0.5.2） |
+| `check-human.svg` | Marks | 確認済み | Checked by the author | 期限・費用・義務の欄の印（v0.5.2） |

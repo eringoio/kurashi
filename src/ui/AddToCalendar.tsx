@@ -1,4 +1,6 @@
-/* 端末のカレンダーに入れる（.ics。作者の指示 2026-11-05。SPEC 6.6）。
+/* カレンダーに追加（.ics。作者の指示 2026-11-05・11-06 A-1・A-2。SPEC 6.6）。
+   1つのボタン（カレンダーの絵＋「カレンダーに追加」）。押すとシートが開き、区役所の選択と1行の説明、ファイルを作るボタンがある。
+   日を決めた直後の結果の画面にだけ出す。行く日が今日なら出さない（A-1）。
    日・行く所・手続き・持ち物を入れた予定のファイルを、この端末の中で作る（送らない）。区役所の住所は、選んだときだけ入れる（選んだ区は残さない）。 */
 import { useState } from 'react';
 import { bringList } from '../core/accompany';
@@ -10,11 +12,16 @@ import { useGuide } from '../guide/useGuide';
 import { Bi, One } from '../i18n/Ruby';
 import { line, plain, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
+import { CalendarIcon } from './icons';
+import { hoursLine } from './guide';
+import { Sheet } from './Sheet';
 
 export function AddToCalendar({ day, place, cardIds }: { day: string; place?: string; cardIds: string[] }) {
   const g = useGuide();
   const { level } = usePrefs();
+  const [open, setOpen] = useState(false);
   const [office, setOffice] = useState('');
+  if (day <= g.today) return null;
   const L = (t: Parameters<typeof line>[0]) => line(t, level);
   const cards = DATA().cards.filter((c) => cardIds.includes(c.id));
   const placeName = place ? L((ui(('place.' + place) as UiKey) ?? { ja: place })) : '';
@@ -28,8 +35,8 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
       ...cards.map((c) => '・' + L(c.title) + '（' + c.official_name.ja + '）'),
       bring.length ? L(ui('cal.icsBring')) + '：' + bring.map((b) => L(b.object.title)).join('、') : '',
       L(ui('cal.icsOther')),
-      h?.open ? L(ui('cal.hours')).replace('{open}', h.open).replace('{close}', h.close ?? '') : '',
-      'kurashi',
+      h?.open ? L(hoursLine(h)) : '',
+      'Kurashi',
     ].filter(Boolean).join('\n');
     const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
     return buildIcs([{
@@ -39,22 +46,27 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
       description: desc,
     }], stamp);
   };
-  const href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(make());
 
   return (
-    <section className="ics" aria-labelledby={'ics-' + day}>
-      <h2 id={'ics-' + day} className="label"><One k="cal.ics" /></h2>
-      {place === 'ward_office' && (
-        <label className="qrfield">
-          <span className="label"><One k="cal.icsWhere" /></span>
-          <select className="field" value={office} onChange={(e) => setOffice(e.target.value)}>
-            <option value="">{L(ui('cal.icsNone'))}</option>
-            {PLACES().filter((p) => p.kind === 'ward_office').map((p) => <option key={p.id} value={p.id}>{L(p.name)}</option>)}
-          </select>
-        </label>
+    <>
+      <button type="button" className="k-answer ics__open" onClick={() => setOpen(true)}><CalendarIcon /><Bi k="cal.ics" /></button>
+      {open && (
+        <Sheet title={<One k="cal.ics" />} onClose={() => setOpen(false)}>
+          <div className="ics">
+            <p className="sub"><Bi k="cal.icsNote" /></p>
+            {place === 'ward_office' && (
+              <label className="qrfield">
+                <span className="label"><One k="cal.icsWhere" /></span>
+                <select className="field" value={office} onChange={(e) => setOffice(e.target.value)}>
+                  <option value="">{L(ui('cal.icsNone'))}</option>
+                  {PLACES().filter((p) => p.kind === 'ward_office').map((p) => <option key={p.id} value={p.id}>{L(p.name)}</option>)}
+                </select>
+              </label>
+            )}
+            <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`}><CalendarIcon /><Bi k="cal.icsMake" /></a>
+          </div>
+        </Sheet>
       )}
-      <a className="k-answer" href={href} download={`kurashi-${day}.ics`}><Bi k="cal.ics" /></a>
-      <p className="sub"><Bi k="cal.icsNote" /></p>
-    </section>
+    </>
   );
 }

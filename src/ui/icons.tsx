@@ -9,3 +9,11 @@ export const HelpIcon = () => (
 export const GlobeIcon = () => (
   <svg {...P}><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></svg>
 );
+/** カレンダー（カレンダーに追加） */
+export const CalendarIcon = () => (
+  <svg {...P}><rect x="3.5" y="5" width="17" height="15" rx="2" /><path d="M3.5 10h17" /><path d="M8 3v4" /><path d="M16 3v4" /><path d="M12 13v5" /><path d="M9.5 15.5h5" /></svg>
+);
+/** 電話（押すと電話をかける） */
+export const PhoneIcon = () => (
+  <svg {...P}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" /></svg>
+);

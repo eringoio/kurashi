@@ -31,8 +31,8 @@ flow({
   await tap('つぎへ');
 
   await page.goto('/');
-  await snap({ name: '今日は行く日', input: '開き直す（区役所を今日に決めた）', expected: '「今日は、行く日に決めた日です」。区役所の見出しの下に3つの手続きと「区役所へ行く準備をする」', why: '今日が決めた日なら「今日は行く日」（6A.1）。行く所ごとにまとめて付き添いを始める（6A.6）' },
-    async () => { await expect(page).toHaveURL(/\/today$/); await expect(h1).toHaveText('今日は、行く日に決めた日です'); await expect(page.getByRole('link', { name: '区役所へ行く準備をする' })).toBeVisible(); });
+  await snap({ name: '今日は行く日', input: '開き直す（区役所を今日に決めた）', expected: '「今日の予定」。区役所の見出しの下に3つの手続きと「区役所へ行く準備をする」', why: '今日が決めた日なら「今日は行く日」（6A.1）。行く所ごとにまとめて付き添いを始める（6A.6）' },
+    async () => { await expect(page).toHaveURL(/\/today$/); await expect(h1).toHaveText('今日の予定'); await expect(page.getByRole('link', { name: '区役所へ行く準備をする' })).toBeVisible(); });
 
   await page.getByRole('link', { name: '区役所へ行く準備をする' }).click();
   await snap({ name: '行く前', input: '区役所へ行く準備をする', expected: '「持ち物を確かめましょう」。今日の3つの手続きと、持っている物（在留カード・パスポート・学生証）が並ぶ', why: '区役所に持っていく物のうち、持ち物の答えで「持っている」にした物だけ出す（bring_to: ward_office）' },

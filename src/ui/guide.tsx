@@ -2,9 +2,10 @@
 import { useState, type ReactNode } from 'react';
 import { DATA } from '../core/data';
 import type { CardView, Note, Section } from '../core/engine';
-import type { Question, Text, Value } from '../core/schema';
+import type { Evidence, Question, Text, Value } from '../core/schema';
+import { trustMark } from '../core/trust';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { LEVELS, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
+import { LEVELS, line, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
 import { daySuggestions } from '../core/date';
 import { earliestDay } from '../core/visit';
 import { usePrefs } from '../storage/prefs';
@@ -14,7 +15,7 @@ import { Sheet } from './Sheet';
 import { Speak } from './Speak';
 import { CalendarGrid } from './CalendarGrid';
 import { dayInfo } from '../core/calendar';
-import { HOLIDAYS, HOURS } from '../core/calendarData';
+import { HOLIDAYS, HOURS, type PlaceHours } from '../core/calendarData';
 
 /** 一覧での状態（SPEC 15.2：色＋形＋文字。形は印の文字と枠の線） */
 export type StateKey = 'today' | 'check' | 'ask' | 'wait' | 'later' | 'done' | 'excluded' | 'out';
@@ -35,6 +36,19 @@ export function StateLabel({ k, ob }: { k: StateKey; ob?: CardView['card']['obli
     </span>
   );
 }
+
+/** AI チェック・確認済みのアイコン（A-8）。期限・費用・義務の欄だけに付ける。読み上げの名前を付ける。要確認には付けない */
+export function TrustMark({ e }: { e?: Pick<Evidence, 'status'> | null }) {
+  const { level } = usePrefs();
+  const m = trustMark(e);
+  if (!m) return null;
+  const name = line(ui(m === 'ai' ? 'pat.aiChecked' : 'trust.human'), level);
+  return <img className="trust" src={art(m === 'ai' ? 'check-ai' : 'check-human')} alt={name} title={name} />;
+}
+
+/** いくつかの根拠をまとめた印：1つでも要確認なら無し、1つでも AI なら AI、全部確認済みなら人 */
+export const worstEvidence = (es: Pick<Evidence, 'status'>[]): Pick<Evidence, 'status'> | null =>
+  !es.length || es.some((e) => !trustMark(e)) ? null : es.find((e) => e.status === 'ai_checked') ?? es[0];
 
 export function fmtDay(ymd: string, level: Level): string {
   const d = new Date(ymd + 'T00:00:00Z');
@@ -205,6 +219,27 @@ export function fill(t: Text | LocalizedText, name: string, by: (lv: Level, id: 
 /** 日付を入れた文（{date} を、それぞれの言語の書き方の日付に置き換える） */
 export const fillDate = (t: Text | LocalizedText, ymd: string): Text => fill(t, 'date', (lv) => fmtDay(ymd, lv));
 
+/** 開いている時間の1行（A-4）：「平日 8:45〜17:15（要確認）」。平日でない場所は曜日を並べる */
+export function hoursLine(h: PlaceHours): Text {
+  const t = (x?: string) => (x ?? '').replace(/^0/, '');
+  const weekdays = [...h.weekdays].sort().join() === '1,2,3,4,5';
+  const pick = (k: UiKey, id: string) => { const u = ui(k); return u[id] ?? u.ja_easy ?? u.ja; };
+  const days = fill(ui('cal.hours'), 'days', (_lv, id) => (weekdays ? pick('cal.weekdays', id) : h.weekdays.map((d) => pick(('cal.wd.' + d) as UiKey, id)).join('・')));
+  return fill(fill(days, 'open', () => t(h.open)), 'close', () => t(h.close));
+}
+
+/** 開いている時間の1行。年末年始・日曜窓口などはシートへ（A-4） */
+function HoursLine({ h }: { h: PlaceHours }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="sub">
+      <One t={hoursLine(h)} />
+      {h.note && <>　<button type="button" className="link" onClick={() => setOpen(true)}><One k="cal.hoursMore" /></button></>}
+      {open && h.note && <Sheet title={<One k="cal.hoursTitle" />} onClose={() => setOpen(false)}><p><Bi t={h.note} /></p></Sheet>}
+    </div>
+  );
+}
+
 const UI_HAS_PLACE = (place: string): LocalizedText | undefined => (ui(('place.' + place) as UiKey) as LocalizedText | undefined);
 
 /** 日を聞く見出し：行く所があれば「いつ、区役所に行きますか？」 */
@@ -282,8 +317,7 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
           );
         })}
       </div>
-      {hours?.open && <p className="sub"><One t={fill(fill(ui('cal.hours'), 'open', () => hours.open!), 'close', () => hours.close ?? '')} /></p>}
-      {hours?.note && <p className="sub"><Bi t={hours.note} /></p>}
+      {hours?.open && <HoursLine h={hours} />}
       <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
       <button type="button" className="link" onClick={onLater}><Bi k="day.later" /></button>
     </>
@@ -305,6 +339,8 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
       {/* 開いた項目では、名前がその画面の見出し（h1） */}
       {title ? <h1 id="screen-title" tabIndex={-1} className="focus__name"><Bi t={c.card.title} /></h1> : <span className="focus__name"><Bi t={c.card.title} /></span>}
       <StateLabel k={k} ob={c.card.obligation} />
+      {/* 義務（しないといけないか）の印。開いた項目でだけ、要確認でないとき（A-8） */}
+      {title && k !== 'check' && k !== 'ask' && <TrustMark e={worstEvidence(c.reasonRules.map((r) => r.evidence))} />}
     </div>
   );
 }
@@ -359,7 +395,7 @@ export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; obje
       <Reason c={c} objects={objects} facts={facts} />
       <Notes c={c} where="all" />
       <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>
-      {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /></span><Bi t={c.card.deadline.text} /></div>}
+      {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></span><Bi t={c.card.deadline.text} /></div>}
       <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>
       <div className="sheet__row">
         <span className="sheet__k"><One k="card.official" /></span>
@@ -368,14 +404,14 @@ export function SourcesSheet({ c, objects, facts, onClose }: { c: CardView; obje
       </div>
       {c.reasonRules.map((r) => (
         <div className="sheet__row" key={r.id}>
-          <span className="sheet__k"><One k="card.rule" /></span>
+          <span className="sheet__k"><One k="card.rule" /> <TrustMark e={r.evidence} /></span>
           <Bi t={r.statement} />
           <span className="sheet__sub"><One k="src.status" />：<One k={('src.status.' + r.evidence.status) as UiKey} />・<One k="src.checked" />：{r.evidence.checked_at}</span>
         </div>
       ))}
       <div className="sheet__row">
         <span className="sheet__k"><One k="src.status" /></span>
-        <One k={('src.status.' + c.card.evidence.status) as UiKey} />
+        <span><TrustMark e={c.card.evidence} /> <One k={('src.status.' + c.card.evidence.status) as UiKey} /></span>
         <span className="sheet__sub"><One k="src.checked" />：{c.card.evidence.checked_at}</span>
       </div>
       {srcIds.map((id) => {

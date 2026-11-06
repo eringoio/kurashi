@@ -12,7 +12,7 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
     link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' },
   },
   'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body', 'page.comingSoon.events'], icon: 'clock', dev: true },
-  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p2', 'page.disclaimer.p3', 'page.disclaimer.p4'], icon: 'doc' },
+  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p2', 'page.disclaimer.p3', 'page.disclaimer.p4'], icon: 'logo' },
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2', 'page.about.p3'], icon: 'bulb' },
 };
 
@@ -23,7 +23,7 @@ export function Info({ id, reason }: { id: string; reason?: Text }) {
   const draft = [page.title, ...page.body].some((k) => ui(k).status === 'draft');
   return (
     <>
-      <div className="art" aria-hidden="true"><img src={art(page.icon)} alt="" /></div>
+      <div className="art" aria-hidden="true">{page.icon === 'logo' ? <img src="/icons/kurashi-logo.svg" alt="" className="art__logo" /> : <img src={art(page.icon)} alt="" />}</div>
       <div className="head">
         <h1 id="screen-title" tabIndex={-1}><Bi k={page.title} /></h1>
       </div>

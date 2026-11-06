@@ -95,7 +95,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   // 銀行の日を今日にしたので、開き直すと「今日は行く日」（6A.1 の出し分けの5）
   await page.goto('/');
   await expect(page).toHaveURL(/\/today$/);
-  await expect(h1(page)).toHaveText('今日は、行く日に決めた日です');
+  await expect(h1(page)).toHaveText('今日の予定');
   await check(page, '今日は行く日');
   await page.goto('/c/nagoya-tennyu-juukyochi');
   await expect(page.locator('.planned')).toBeVisible();

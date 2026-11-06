@@ -34,7 +34,8 @@ export const ClinicData = z.object({
     head: Text,
     small: z.object({ title: Text, desc: Text }),
     big: z.object({ title: Text, desc: Text }),
-    text: z.array(Text),
+    /** 大きな病院のかわりに出す公式のリンク（links の id。A-7） */
+    links: z.array(z.string()),
     youdecide: Text,
     evidence: Evidence,
   }),
@@ -68,6 +69,7 @@ export function checkClinic(d: ClinicData, sourceIds: Set<string>): string[] {
   d.links.forEach((x) => ev(x.id, x.evidence));
   d.bring.forEach((x) => ev(x.id, x.evidence));
   ev('advice', d.advice.evidence);
+  d.advice.links.forEach((id) => { if (!d.links.some((l) => l.id === id)) err.push(`advice：リンク ${id} が無い`); });
   ev('callNote', d.callNote.evidence);
   return err;
 }

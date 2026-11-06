@@ -1,4 +1,4 @@
-# kurashi
+# Kurashi
 
 名古屋市に住む人（とくに来日した留学生）が、生活の出来事から「知らなかった手続き」に気づけるようにする Web アプリ。Built with Claude: Japan 2026 の提出物。
 

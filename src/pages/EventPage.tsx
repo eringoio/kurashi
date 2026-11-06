@@ -16,6 +16,7 @@ import { MultiPick, UrgentAction } from '../ui/patterns';
 import { toPickOptions, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { PlannedList } from './Plan';
+import { AddToCalendar } from '../ui/AddToCalendar';
 
 type Result = { kind: 'answered'; cardId: string } | { kind: 'planned'; cardId: string; day: string; ids: string[] } | { kind: 'done'; cardId: string };
 
@@ -84,7 +85,9 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   if (result) {
     const c = g.out.cards.find((x) => x.card.id === result.cardId)!;
     body = result.kind === 'planned' ? (
-      <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next} />
+      <ResultView eyebrow="res.planned.eyebrow" title={<Bi t={fillDate(ui('res.planned.title'), result.day)} />} sub={<><PlannedList ids={result.ids} cards={g.out.cards} /><Bi k="res.planned.sub" /></>} onNext={next}>
+        <AddToCalendar day={result.day} place={g.out.cards.find((x) => x.card.id === result.ids[0])?.card.place} cardIds={result.ids} />
+      </ResultView>
     ) : (
       <ResultView eyebrow={result.kind === 'done' ? 'res.done.eyebrow' : 'res.answer.eyebrow'} title={<><Bi t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi t={whyText(c)} /><SectionWhy c={c} /></>} onNext={next}>
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>

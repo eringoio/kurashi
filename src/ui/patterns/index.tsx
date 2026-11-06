@@ -144,7 +144,6 @@ export function MethodChooser({ methods, value, onChange }: { methods: MethodVM[
               <strong>{name(m)}</strong>
               {m.when && <span className="pt-hint"><One t={m.when} /></span>}
               {m.unverified && <span className="pt-tag"><One k="pat.confirm" /></span>}
-              {m.aiChecked && <span className="pt-tag pt-tag--ai"><One k="pat.aiChecked" /></span>}
             </span>
             <span className="pt-method__mark" aria-hidden="true">{m.id === value ? '✓' : ''}</span>
           </button>

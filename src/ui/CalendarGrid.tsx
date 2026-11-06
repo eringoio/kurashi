@@ -6,8 +6,9 @@ import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { fmtDay } from './guide';
 
-const MARK: Partial<Record<DayTag, string>> = { closed: '休', holiday: '祝', past_deadline: '！', blocked: '×', unknown_hours: '？' };
-const ORDER: DayTag[] = ['past_deadline', 'closed', 'holiday', 'blocked', 'unknown_hours'];
+// 祝日は見える印を付けない（作者 11/6 A-3）。日曜・祝日は赤い数字にし、読み上げには祝日の名前を残す
+const MARK: Partial<Record<DayTag, string>> = { closed: '休', past_deadline: '！', blocked: '×', unknown_hours: '？' };
+const ORDER: DayTag[] = ['past_deadline', 'closed', 'blocked', 'unknown_hours'];
 
 export function CalendarGrid({ today, current, min, deadline, hours, holidays, onPick }: {
   today: string; current?: string; min?: string | null; deadline?: string | null; hours?: Hours; holidays: Record<string, string>; onPick: (d: string) => void;
@@ -23,7 +24,7 @@ export function CalendarGrid({ today, current, min, deadline, hours, holidays, o
       <table className="cal__table">
         <caption className="label"><One k="cal.title" /></caption>
         <thead>
-          <tr>{[0, 1, 2, 3, 4, 5, 6].map((i) => <th key={i} scope="col" abbr={line(ui(('cal.wdLong.' + i) as UiKey), level)}><One k={('cal.wd.' + i) as UiKey} /></th>)}</tr>
+          <tr>{[0, 1, 2, 3, 4, 5, 6].map((i) => <th key={i} scope="col" className={i === 0 ? 'cal__red' : undefined} abbr={line(ui(('cal.wdLong.' + i) as UiKey), level)}><One k={('cal.wd.' + i) as UiKey} /></th>)}</tr>
         </thead>
         <tbody>
           {cells.map((w, wi) => (
@@ -31,7 +32,7 @@ export function CalendarGrid({ today, current, min, deadline, hours, holidays, o
               {w.map((x, i) => (
                 <td key={i}>
                   {x && (
-                    <button type="button" className={'cal__day' + (x.tags.includes('past_deadline') ? ' cal__day--late' : '') + (x.tags.includes('today') ? ' cal__day--today' : '')}
+                    <button type="button" className={'cal__day' + (x.tags.includes('past_deadline') ? ' cal__day--late' : '') + (x.tags.includes('today') ? ' cal__day--today' : '') + (i === 0 || x.holiday ? ' cal__day--red' : '')}
                       aria-pressed={current === x.day} disabled={!x.selectable} onClick={() => onPick(x.day)}>
                       {/* 見える数字と読み上げの名前を合わせるため、aria-label ではなく見えない文で日付全体を読ませる（2.5.3） */}
                       <span aria-hidden="true">{Number(x.day.slice(8))}</span>
