@@ -8,6 +8,7 @@ import { DATA } from '../core/data';
 import { areaStatus, deliveryRegime, judgeItem, nextCollection, searchItems, type AreaChoice, type GomiItem } from '../core/gomi';
 import { gomiData } from '../core/gomiData';
 import { todayJst } from '../core/date';
+import { activeNotices } from '../core/notice';
 import type { Occurrence } from '../core/occurrence';
 import type { Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
@@ -161,6 +162,8 @@ function GomiTool() {
       {/* 4. 必要なときだけ：粗大ごみ・自己搬入（利用予定日で選ぶ） */}
       <section className="group" aria-labelledby={id + '-m'}>
         <h2 id={id + '-m'}><Bi k="gomi.more.title" /></h2>
+        {/* お知らせ（期間の中だけ。B-7c：10月の粗大ごみの変更は 2027-03-31 まで） */}
+        {activeNotices(d.delivery.notices, today).map((n, i) => <p key={i} className="k-notice" role="note"><Bi t={n.text} /></p>)}
         <ul className="list" role="list">
           <li><Link className="link" to="/e/E-gomi/c/gomi-sodai"><Bi k="gomi.more.sodai" /></Link></li>
           <li><Link className="link" to="/e/E-gomi/c/gomi-mochikomi"><Bi k="gomi.more.mochikomi" /></Link></li>

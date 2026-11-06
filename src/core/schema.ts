@@ -81,6 +81,10 @@ export const RuleExpr: z.ZodType<RuleExpr> = z.lazy(() =>
 );
 
 const Fact = z.object({ text: Text, evidence: Evidence });
+const IsoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+/** お知らせ（11/7 B-7c）：制度の変更などを、決めた期間だけ出す（src/core/notice.ts）。DATA_CONTRACT v1.4 */
+export const Notice = z.object({ text: Text, show_from: IsoDate.optional(), show_until: IsoDate.optional(), evidence: Evidence.optional() });
+export type Notice = z.infer<typeof Notice>;
 /** 電話・公式リンク。value は電話番号か https の URL */
 const Contact = z.object({ type: z.enum(['phone', 'link']), label: Text, value: z.string(), evidence: Evidence });
 
@@ -123,6 +127,8 @@ export const Card = z.object({
   visual: z.enum(['floorplan', 'costs']).optional(),
   reminder: z.object({ months: z.number().int().min(1).max(24), from: z.enum(['arrival']) }).optional(),
   reasons: z.object({ excluded: Text.optional(), check_at_office: Text.optional(), check_at_office_coverage: Text.optional() }),
+  /** お知らせ（期間つき。B-7c）。いまの日が期間の外なら出さない */
+  notices: z.array(Notice).optional(),
   evidence: Evidence,
 });
 export type Card = z.infer<typeof Card>;

@@ -59,3 +59,18 @@ describe('ごみの基本案内（下書き）', () => {
     expect(JSON.stringify(json)).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
   });
 });
+
+describe('お知らせの表示の期限（11/7 B-7c）', () => {
+  const at = (today: string) => run(data, { answers: {}, objects: {}, plan: {}, createdOn: today, today, mode: 'public', event: ev }).cards.find((c) => c.card.id === 'gomi-sodai')!;
+  it('10月の粗大ごみの変更は 2027-03-31 まで出し、2027-04-01 には消える', () => {
+    expect(at('2026-11-04').notices.map((n) => plain(n.text.ja))).toEqual(['令和8年（2026年）10月から、粗大ごみの対象が変わりました']);
+    expect(at('2027-03-31').notices).toHaveLength(1);
+    expect(at('2027-04-01').notices).toEqual([]);
+  });
+  it('noticeActive：両端を含む。無い側は制限なし', async () => {
+    const { noticeActive } = await import('../../src/core/notice');
+    expect(noticeActive({ show_from: '2026-12-01', show_until: '2026-12-31' }, '2026-12-01')).toBe(true);
+    expect(noticeActive({ show_from: '2026-12-01' }, '2026-11-30')).toBe(false);
+    expect(noticeActive({}, '2099-01-01')).toBe(true);
+  });
+});

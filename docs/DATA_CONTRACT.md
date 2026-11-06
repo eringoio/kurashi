@@ -1,4 +1,4 @@
-# データ契約 v1.3（v1：2026-11-04、統括。v1.3：2026-11-06）
+# データ契約 v1.4（v1：2026-11-04、統括。v1.3：2026-11-06。v1.4：2026-11-07）
 
 `docs/TODAY_EXECUTION_2026-11-04.md` の T3・T6 のための、アプリ用データの共通形式。SPEC 9章・10章を広げる。
 **作者が承認した（2026-11-04）。SPEC v0.4.7 に反映済み。**
@@ -126,3 +126,10 @@ SPEC v0.4.9 の決定の範囲だけを足す。今のデータはそのまま�
 - **カードの `reminder`**（v1.3 に追記。SPEC v0.5.7）：`{ months: 1〜24, from: 'arrival' }`。カードのページで、住み始めた日から months か月後の日をカレンダーに追加する。
 - **できごとの `questions`**：カードの中の質問（`in_card`）も書いてよい。入口で聞く。
 - **書類の `issued_by_card`**（v1.3 に追記。B-12）：`data/documents.json` の書類を出す（もらえる）手続きのカード。カードの「くわしく」のシートに「この手続きでもらう書類」として出す。下書きの分は `research/integration/issued_documents.json`。
+
+## 11. v1.4（2026-11-07。SPEC v0.5.13）
+
+- **お知らせ `Notice`**（B-7c）：`{ text: Text, show_from?: 'YYYY-MM-DD', show_until?: 'YYYY-MM-DD', evidence?: Evidence }`。カードの `notices?: Notice[]`、ごみの `drafts/gomi/delivery.json` の `notices`。日本時間の今日が期間の外なら出さない（両端を含む。`src/core/notice.ts`。エンジンは `CardView.notices` に期間の中の分だけを入れる）。制度が変わったことの知らせは、`deadline` に書かず `notices` に書く（例：粗大ごみの10月の変更は `show_until: 2027-03-31`）。
+- **共通の質問 `Q-nationality`**（B-4）：国籍（`japanese`／`foreign`。`scope: person`）。`Q-zairyu-status` は `nationality = foreign` のときだけ聞く。在留資格で分けるルールは `{all: [{fact: nationality, eq: foreign}, …]}` の形にする（日本国籍なら F）。
+- **下書きを公開へ移す**：`node scripts/bundle-to-data.mjs drafts/data/<名前>.bundle.json`。カードは1枚1ファイル、ほかは各ファイルの最後に足す。同じ出典は中身が同じなら足さない。確認状態は変えない。
+

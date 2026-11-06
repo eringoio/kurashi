@@ -1,7 +1,7 @@
 /* ごみの下書きのデータ（drafts/gomi/*.json）を読む。下書きなので、開発の `npm run dev:drafts` のときだけ読む（SPEC 18.9）。
    本番ビルドでは読まないので、ごみの画面は「準備中」になる。 */
 import { z } from 'zod';
-import { Evidence, Text } from './schema';
+import { Evidence, Notice, Text } from './schema';
 import { GomiItem, GomiItems, normWord, type DeliveryRegime, type Schedule } from './gomi';
 
 const files: Record<string, unknown> = import.meta.env.MODE === 'drafts'
@@ -28,6 +28,8 @@ export const GomiDelivery = z.object({
   regimes: z.array(z.object({ id: z.string(), from: z.string().nullable(), to: z.string().nullable(), label: Text, evidence: Evidence })),
   not_stated: Text,
   links: z.array(Link),
+  /** お知らせ（期間つき。B-7c） */
+  notices: z.array(Notice).optional(),
 });
 
 export interface GomiBundle { items: GomiItems; areas: GomiAreas; delivery: z.infer<typeof GomiDelivery> & { regimes: DeliveryRegime[] }; schedules: Schedule[] }

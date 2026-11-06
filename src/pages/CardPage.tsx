@@ -122,6 +122,8 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       {!isGuide && <p className="sub"><Bi t={whyText(c)} /></p>}
       <SectionWhy c={c} />
       {c.outdated && <Outdated c={c} />}
+      {/* お知らせ（期間の中だけ。B-7c） */}
+      {c.notices.map((n, i) => <p key={i} className="k-notice" role="note"><Bi t={n.text} /></p>)}
       {urgent && c.plan?.status !== 'done' && c.questions.length === 0 && <UrgentAction a={urgent} />}
       {isGuide && <LifeGuide g={toGuide(c.card, g.mode)} />}
       {c.card.visual === 'floorplan' && <FloorPlan />}

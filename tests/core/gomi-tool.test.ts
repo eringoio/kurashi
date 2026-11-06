@@ -180,3 +180,12 @@ describe('自己搬入（WASTE_004・INT-008）：持ち込む予定の日で選
     expect(d.delivery.regimes.every((r) => r.from !== '2026-11-04')).toBe(true);
   });
 });
+
+describe('自己搬入・粗大ごみのお知らせ（11/7 B-7c）', () => {
+  it('delivery.json のお知らせは 2027-03-31 まで', async () => {
+    const { activeNotices } = await import('../../src/core/notice');
+    const d = (await import('../../drafts/gomi/delivery.json')).default as { notices?: { show_until?: string }[] };
+    expect(activeNotices(d.notices, '2027-03-31')).toHaveLength(1);
+    expect(activeNotices(d.notices, '2027-04-01')).toHaveLength(0);
+  });
+});

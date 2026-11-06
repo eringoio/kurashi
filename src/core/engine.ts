@@ -2,7 +2,8 @@
    同じ入力からは必ず同じ結果になる。答えが変わったら、毎回すべてを計算し直す（前回の結果を使わない）。 */
 import type { GuideData } from './data';
 import { combineAll, combineAny, evalCond, factsIn, type Eval, type Facts, type TV } from './logic';
-import type { Card, EventDef, Evidence, Question, Relation, Rule, RuleExpr, Status, Value } from './schema';
+import type { Card, EventDef, Evidence, Notice, Question, Relation, Rule, RuleExpr, Status, Value } from './schema';
+import { activeNotices } from './notice';
 import { effectiveStatus, type FieldKind } from './trust';
 import type { PlanRecord } from './entry';
 
@@ -56,6 +57,8 @@ export interface CardView {
   questionRank: number;
   /** 確認の期限を過ぎた根拠がある（12.3 の outdated。本アプリの定義は対象外）。「情報が古い可能性があります」を出す */
   outdated: boolean;
+  /** いま出すお知らせ（期間の中のものだけ。B-7c） */
+  notices: Notice[];
   /** 手続きの方法（card.methods）を、使える条件（when）で評価したもの。F の方法は入れない。U は「窓口で確認」 */
   methods: { method: NonNullable<Card['methods']>[number]; v: TV }[];
 }
@@ -252,7 +255,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
     const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
     const outdated = [card.evidence, card.where.evidence, card.deadline?.evidence, ...reasonRules.map((r) => r.evidence)].some((e) => e && statusOf(e, false, 'card_text') === 'outdated');
-    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated };
+    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated, notices: activeNotices(card.notices, x.today) };
   });
 
   // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。
