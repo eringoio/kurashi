@@ -3164,5 +3164,10 @@
     "ja": "{手続|てつづ}きと{段階|だんかい}",
     "ja_easy": "{手続|てつづ}きと{段階|だんかい}",
     "en": "Procedures and stage"
+  },
+  "st.check_alt": {
+    "ja": "{窓口|まどぐち}で{確認|かくにん}",
+    "ja_easy": "{窓口|まどぐち}で{聞|き}く",
+    "en": "Ask at the counter"
   }
 }

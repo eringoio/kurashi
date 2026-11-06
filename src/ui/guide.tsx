@@ -30,11 +30,16 @@ const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask'
     legal・local_rule：必要／practical：したほうがよい／check・optional・none：案内 */
 export const todayWord = (ob: CardView['card']['obligation']): UiKey =>
   (ob === 'legal' || ob === 'local_rule' ? 'st.today' : ob === 'practical' ? 'st.todayAdvised' : 'st.todayInfo') as UiKey;
+/** A-6 の見本（作者が決めるまでの一時の形）：おすすめの形（札「窓口で確認」）。VITE_KAKUNIN_ALT=on、
+    または開発のときだけ sessionStorage の kurashi:kakunin_alt=on（見本のフロー用。本番のビルドでは読まない）。決まったら片方を消す */
+export const KAKUNIN_ALT = import.meta.env.VITE_KAKUNIN_ALT === 'on'
+  || (import.meta.env.DEV && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('kurashi:kakunin_alt') === 'on');
 export function StateLabel({ k, ob }: { k: StateKey; ob?: CardView['card']['obligation'] }) {
+  const key = (k === 'today' && ob ? todayWord(ob) : k === 'check' && KAKUNIN_ALT ? 'st.check_alt' : 'st.' + k) as UiKey;
   return (
     <span className={'k-state k-state--' + CLS[k]}>
       <span aria-hidden="true">{MARK[k]}</span>
-      <One k={(k === 'today' && ob ? todayWord(ob) : 'st.' + k) as UiKey} />
+      <One k={key} />
     </span>
   );
 }
