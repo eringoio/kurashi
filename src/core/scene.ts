@@ -56,3 +56,21 @@ export function parseScenePath(path: string): string | null {
 export function rememberScene(list: string[], id: string): string[] {
   return [...list.filter((x) => x !== id), id];
 }
+
+/** 共有する URL のパス（作者 11/6 A-5）。いまの場面の入口にする。答え・日付は入れない（13.4）。
+    手続きのページは親（できごとか、行く所の場面）。決まったページはそのまま。ほかは入口（/） */
+export function sharePath(path: string, cardPlace?: (cardId: string) => string | undefined): string {
+  const ev = /^\/e\/(E-[a-z0-9-]+)(\/|$)/.exec(path);
+  if (ev) return '/e/' + ev[1];
+  const sc = parseScenePath(path);
+  if (sc && sceneById(sc)) return '/s/' + sc;
+  const c = /^\/c\/([a-z0-9-]+)$/.exec(path);
+  if (c) {
+    const place = cardPlace?.(c[1]);
+    const s = place && SCENES().find((x) => x.shows.type === 'card_list' && x.shows.place === place);
+    return s ? '/s/' + s.id : '/move';
+  }
+  if (/^\/(move|gomi|search|clinic|letter)$/.test(path)) return path;
+  if (path.startsWith('/move/') || path === '/now' || path === '/all' || path === '/today') return '/move';
+  return '/';
+}

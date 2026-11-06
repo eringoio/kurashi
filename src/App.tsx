@@ -10,8 +10,10 @@ import { usePrefs } from './storage/prefs';
 import { Consent } from './ui/Consent';
 import { Link, usePath } from './ui/router';
 import { Settings } from './ui/Settings';
-import { GlobeIcon, HelpIcon } from './ui/icons';
+import { line, ui } from './i18n/text';
+import { GlobeIcon, HelpIcon, ShareIcon } from './ui/icons';
 import { HelpSheet } from './ui/HelpSheet';
+import { ShareSheet } from './ui/ShareSheet';
 import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
@@ -89,10 +91,10 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
 }
 
 export function App() {
-  const { vault: v } = usePrefs();
+  const { vault: v, level } = usePrefs();
   const path = usePath();
   const g = useGuide();
-  const [sheet, setSheet] = useState<null | 'settings' | 'help'>(null);
+  const [sheet, setSheet] = useState<null | 'settings' | 'help' | 'share'>(null);
   const [live, setLive] = useState('');
   const close = useCallback(() => setSheet(null), []);
   // 同じ文を続けて知らせるときも読まれるように、いったん空にする
@@ -121,6 +123,8 @@ export function App() {
           <span className="brand__tag"><One k="app.tag" /></span>
         </Link>
         <div className="bar__btns">
+          {/* 共有はアイコンだけ（作者 11/6 A-5）。読み上げの名前は「共有」 */}
+          <button type="button" className="pill pill--icon pill--only" aria-label={line(ui('share.title'), level)} onClick={() => setSheet('share')}><ShareIcon /></button>
           <button type="button" className="pill pill--icon" onClick={() => setSheet('help')}><HelpIcon /><One k="nav.help" /></button>
           <button type="button" className="pill pill--icon" onClick={() => setSheet('settings')}><GlobeIcon /><One k="nav.settings" /></button>
         </div>
@@ -144,6 +148,7 @@ export function App() {
       <div className="sr-only" aria-live="polite" role="status">{live}</div>
       {sheet === 'settings' && <Settings onClose={close} onLive={onLive} />}
       {sheet === 'help' && <HelpSheet onClose={close} />}
+      {sheet === 'share' && <ShareSheet path={path} onClose={close} onLive={onLive} />}
     </div>
   );
 }

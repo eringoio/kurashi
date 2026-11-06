@@ -25,8 +25,8 @@ describe('ごみの基本案内（下書き）', () => {
     expect(o.cards.every((c) => c.dayRule.kind === 'no_day')).toBe(true);
     expect(nowStep(o, TODAY).kind).toBe('idle');
   });
-  it('入口のメニューに出る（menu 3）', () => {
-    expect(ev.menu).toBe(3);
+  it('入口のメニューに出る（menu 2。A-10）', () => {
+    expect(ev.menu).toBe(2);
     expect(ev.group).toBe('gomi');
   });
   it('粗大ごみは、2026年10月の変更を日付つきで書く', () => {

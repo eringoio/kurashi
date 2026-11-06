@@ -17,3 +17,11 @@ export const CalendarIcon = () => (
 export const PhoneIcon = () => (
   <svg {...P}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" /></svg>
 );
+/** 位置（地図のピン） */
+export const PinIcon = () => (
+  <svg {...P}><path d="M12 21s-6.5-6.2-6.5-11.2A6.5 6.5 0 0 1 18.5 9.8C18.5 14.8 12 21 12 21z" /><circle cx="12" cy="9.8" r="2.4" /></svg>
+);
+/** 共有（四角から上へ出る矢印） */
+export const ShareIcon = () => (
+  <svg {...P}><path d="M12 3v12" /><path d="M7.5 7.5 12 3l4.5 4.5" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" /></svg>
+);

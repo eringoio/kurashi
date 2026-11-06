@@ -60,3 +60,10 @@ export function mapLinks(p: Pick<Place, 'address' | 'name'>): { apple: string; g
   const q = encodeURIComponent(p.address);
   return { apple: 'https://maps.apple.com/?q=' + q, google: 'https://www.google.com/maps/search/?api=1&query=' + q };
 }
+
+/** いちばん近い場所（距離の上限なし。手続きの中で「現在地から選ぶ」ときだけ使う。距離は返さない） */
+export function nearest(places: Place[], pos: { lat: number; lng: number }): Place | null {
+  let best: Place | null = null, bestD = Infinity;
+  for (const p of places) { const d = distanceM(pos, p); if (d < bestD) { bestD = d; best = p; } }
+  return best;
+}

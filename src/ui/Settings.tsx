@@ -8,6 +8,7 @@ import { USER_STORES } from '../storage/vault';
 import { Link } from './router';
 import { Sheet } from './Sheet';
 import { useJaVoice } from './Speak';
+import { PinIcon } from './icons';
 
 function Seg({ on, onPick, children, lang }: { on: boolean; onPick: () => void; children: ReactNode; lang?: string }) {
   return (
@@ -55,6 +56,15 @@ export function Settings({ onClose, onLive }: { onClose: () => void; onLive: (s:
         <div className="chips">
           <Seg on={p.furigana} onPick={() => p.setFurigana(true)}><One k="settings.on" /></Seg>
           <Seg on={!p.furigana} onPick={() => p.setFurigana(false)}><One k="settings.off" /></Seg>
+        </div>
+      </fieldset>
+
+      {/* 位置（A-6・A-12）：アイコンと見出しだけ。使う／使わない */}
+      <fieldset>
+        <legend><PinIcon /> <One k="settings.location" /></legend>
+        <div className="chips">
+          <Seg on={p.location === 'on'} onPick={() => p.setLocation('on')}><One k="loc.yes" /></Seg>
+          <Seg on={p.location !== 'on'} onPick={() => p.setLocation('off')}><One k="loc.no" /></Seg>
         </div>
       </fieldset>
 

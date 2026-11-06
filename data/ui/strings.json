@@ -406,9 +406,9 @@
     "en": "An app that helps people living in Nagoya notice procedures they did not know about, starting from events in their life: Kurashi."
   },
   "page.about.p2": {
-    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}と{位置|いち}は、{押|お}したときだけ{使|つか}い、{保存|ほぞん}も{送信|そうしん}もしません。",
-    "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけです。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。{写真|しゃしん}と{場所|ばしょ}は{残|のこ}しません。",
-    "en": "Answers stay on this device. No account. We never ask your name, address or numbers. Photos and location are used only when you tap, and are never saved or sent."
+    "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}は{押|お}したときだけ、{位置|いち}は「{使|つか}う」と{答|こた}えたときだけ{使|つか}い、どちらも{保存|ほぞん}も{送信|そうしん}もしません。",
+    "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけです。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。{写真|しゃしん}と{場所|ばしょ}は{残|のこ}しません。{場所|ばしょ}は「{使|つか}う」と{答|こた}えたときだけ{使|つか}います。",
+    "en": "Answers stay on this device. No account. We never ask your name, address or numbers. Photos are used only when you tap, and location only if you chose \"Use\"; neither is saved or sent."
   },
   "page.about.p3": {
     "ja": "WCAG 2.2 AA を{目標|もくひょう}にしています。{確|たし}かめた{範囲|はんい}は、キーボード、axe、{幅|はば} 320px、200% の{拡大|かくだい}、グレースケールです（iPhone の VoiceOver は{確認|かくにん}{中|ちゅう}）。",
@@ -2594,5 +2594,55 @@
     "ja": "{公式|こうしき}ページ",
     "ja_easy": "{公式|こうしき}ページ",
     "en": "Official page"
+  },
+  "loc.ask": {
+    "ja": "{近|ちか}くの{場所|ばしょ}を{出|だ}すために、{位置|いち}を{使|つか}いますか？",
+    "ja_easy": "{近|ちか}くの{区役所|くやくしょ}を{出|だ}すために、{位置|いち}を{使|つか}いますか？",
+    "en": "Use your location to show nearby places?"
+  },
+  "loc.yes": {
+    "ja": "{使|つか}う",
+    "ja_easy": "{使|つか}う",
+    "en": "Use"
+  },
+  "loc.no": {
+    "ja": "{使|つか}わない",
+    "ja_easy": "{使|つか}わない",
+    "en": "Don't use"
+  },
+  "loc.band": {
+    "ja": "{近|ちか}くの{場所|ばしょ}",
+    "ja_easy": "{近|ちか}くの{場所|ばしょ}",
+    "en": "Nearby place"
+  },
+  "settings.location": {
+    "ja": "{位置|いち}",
+    "ja_easy": "{位置|いち}",
+    "en": "Location"
+  },
+  "cal.icsHere": {
+    "ja": "{現在地|げんざいち}から{選|えら}ぶ",
+    "ja_easy": "いまいる{所|ところ}から{選|えら}ぶ",
+    "en": "Choose from my location"
+  },
+  "share.title": {
+    "ja": "{共有|きょうゆう}",
+    "ja_easy": "{共有|きょうゆう}",
+    "en": "Share"
+  },
+  "share.note": {
+    "ja": "この{画面|がめん}の{入口|いりぐち}の URL です。{答|こた}えや{日付|ひづけ}は{入|はい}りません。",
+    "ja_easy": "この{画面|がめん}の URL です。あなたの{答|こた}えは{入|はい}りません。",
+    "en": "The link to the start of this screen. Your answers and dates are not included."
+  },
+  "share.copy": {
+    "ja": "URL をコピー",
+    "ja_easy": "URL をコピー",
+    "en": "Copy the link"
+  },
+  "share.copied": {
+    "ja": "コピーしました",
+    "ja_easy": "コピーしました",
+    "en": "Copied"
   }
 }

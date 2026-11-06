@@ -7,7 +7,7 @@ import { bringList } from '../core/accompany';
 import { buildIcs } from '../core/calendar';
 import { HOURS } from '../core/calendarData';
 import { DATA } from '../core/data';
-import { PLACES } from '../core/places';
+import { nearest, PLACES } from '../core/places';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One } from '../i18n/Ruby';
 import { line, plain, ui, type UiKey } from '../i18n/text';
@@ -15,10 +15,11 @@ import { usePrefs } from '../storage/prefs';
 import { CalendarIcon } from './icons';
 import { hoursLine } from './guide';
 import { Sheet } from './Sheet';
+import { getPosition } from './Location';
 
 export function AddToCalendar({ day, place, cardIds }: { day: string; place?: string; cardIds: string[] }) {
   const g = useGuide();
-  const { level } = usePrefs();
+  const { level, location } = usePrefs();
   const [open, setOpen] = useState(false);
   const [office, setOffice] = useState('');
   if (day <= g.today) return null;
@@ -62,6 +63,10 @@ export function AddToCalendar({ day, place, cardIds }: { day: string; place?: st
                   {PLACES().filter((p) => p.kind === 'ward_office').map((p) => <option key={p.id} value={p.id}>{L(p.name)}</option>)}
                 </select>
               </label>
+            )}
+            {/* 位置を使う人だけ（A-6）：いちばん近い区役所を選ぶ。位置は残さない */}
+            {place === 'ward_office' && location === 'on' && (
+              <button type="button" className="link" onClick={async () => { const r = await getPosition(); if (typeof r !== 'string') setOffice(nearest(PLACES().filter((p) => p.kind === 'ward_office'), r)?.id ?? ''); }}><One k="cal.icsHere" /></button>
             )}
             <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`}><CalendarIcon /><Bi k="cal.icsMake" /></a>
           </div>

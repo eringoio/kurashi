@@ -416,3 +416,13 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .help__name { margin: 0; font-weight: 700; }
 .help__item .sub { margin: 0; }
 .help__tel { min-height: var(--target-min); flex-wrap: wrap; gap: 4px 10px; padding: 6px 12px; }
+/* 位置（A-6）：入口で一度だけ聞く・近くの区役所の帯 */
+.locask .chips { margin-top: 6px; }
+.seg__art { width: 1.4em; height: 1.4em; vertical-align: -0.35em; margin-right: 4px; }
+.nearband { padding: 6px; }
+fieldset legend svg { vertical-align: -0.2em; }
+/* 共有（A-5）：アイコンだけのボタン・URL・QR */
+.pill--only { padding-inline: 10px; min-width: var(--target-min); justify-content: center; }
+.share__url { overflow-wrap: anywhere; font-size: var(--fs-small, 15px); }
+.share__qr { max-width: 240px; margin: 8px auto 0; }
+.share__qr svg { width: 100%; height: auto; display: block; }

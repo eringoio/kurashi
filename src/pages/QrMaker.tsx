@@ -1,8 +1,9 @@
 /* QR を作る（作者用。SPEC 9.8）：場面か、アプリの中のページを選ぶと、その URL の QR と「Kurashi で開く：〇〇」を出す。
    スマホのカメラで QR を読むと、その URL でアプリが開く。QR に入れるのはパスだけ（13.4）。
    画像は端末の中で作る（外に送らない）。印刷用の SVG を保存できる。 */
-import QRCode from 'qrcode';
-import { useEffect, useState } from 'react';
+
+import { useState } from 'react';
+import { useQrSvg } from '../ui/QrCode';
 import { DATA } from '../core/data';
 import { qrFileName, qrUrl, validQrPath } from '../core/qr';
 import { SCENES } from '../core/scene';
@@ -36,17 +37,11 @@ export function QrMaker() {
   const { level } = usePrefs();
   useFocusTitle('qr');
   const [path, setPath] = useState('/s/' + (SCENES()[0]?.id ?? ''));
-  const [svg, setSvg] = useState('');
   const ok = validQrPath(path);
   const url = ok ? qrUrl(path) : '';
   const t = ok ? titleOf(path) : null;
   const name = t ? plain(t.ja) : path;
-  useEffect(() => {
-    if (!ok) { setSvg(''); return; }
-    let live = true;
-    void QRCode.toString(url, { type: 'svg', errorCorrectionLevel: 'M', margin: 4 }).then((s) => { if (live) setSvg(s); });
-    return () => { live = false; };
-  }, [url, ok]);
+  const svg = useQrSvg(url);
   const label = svg ? labelSvg(svg, name, url) : '';
 
   return (

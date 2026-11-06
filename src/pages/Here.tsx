@@ -1,7 +1,7 @@
 /* いまいる場所から（SPEC 6A.11）。押したときだけ位置の許可を求める。
    位置は端末の中で比べ、送らない・保存しない・URL に入れない（13章）。この画面の中の状態だけに置き、離れたら消える。
    300m 以内で誤差も 300m 以下なら「〇〇の近くにいますか？」。それ以外（遠い・誤差が大きい・断られた）は、区の一覧から選ぶ。 */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { mapLinks, nearby, PLACES, type Place } from '../core/places';
 import { Bi, One } from '../i18n/Ruby';
 import { fill } from '../ui/guide';
@@ -9,6 +9,7 @@ import { ui, type UiKey } from '../i18n/text';
 import { art } from '../ui/art';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { CardList } from './Scene';
+import { clearHerePlace, peekHerePlace } from '../ui/Location';
 
 type St =
   | { k: 'start' }
@@ -20,7 +21,9 @@ type St =
 const withName = (key: UiKey, p: Place) => fill(ui(key), 'place', (_lv, id) => p.name[id] ?? p.name.ja_easy ?? p.name.ja);
 
 export function Here() {
-  const [st, setSt] = useState<St>({ k: 'start' });
+  // 入口の「近くの区役所」の帯から来たときは、その場所から始める（メモリの中で受け取る。A-6）
+  const [st, setSt] = useState<St>(() => { const p = peekHerePlace(); return p ? { k: 'near', place: p } : { k: 'start' }; });
+  useEffect(() => clearHerePlace(), []);
   useFocusTitle('here:' + st.k + ('place' in st ? st.place.id : '') + ('why' in st ? st.why : ''));
   const Title = ({ children }: { children: React.ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
 

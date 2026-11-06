@@ -5,16 +5,20 @@ import type { Vault } from './vault';
 
 export type Size = 0 | 1 | 2;
 export type SpeechRate = 'normal' | 'slow';
+/** 位置を使うか（作者 11/6 A-6）。null＝まだ聞いていない。位置そのものは残さない。この答えだけを settings に残す */
+export type LocationUse = 'on' | 'off' | null;
 interface Prefs {
   level: Level;
   size: Size;
   furigana: boolean;
   speechRate: SpeechRate;
+  location: LocationUse;
   vault: Vault;
   setLevel(id: string): void;
   setSize(s: Size): void;
   setFurigana(on: boolean): void;
   setSpeechRate(r: SpeechRate): void;
+  setLocation(v: 'on' | 'off'): void;
 }
 
 const Ctx = createContext<Prefs | null>(null);
@@ -40,6 +44,7 @@ export function PrefsProvider({ vault, children }: { vault: Vault; children: Rea
     return typeof v === 'boolean' ? [[l.id, v]] : [];
   })));
   const [speechRate, setRate] = useState<SpeechRate>((saved('speechRate') as SpeechRate) ?? 'normal');
+  const [location, setLoc] = useState<LocationUse>((saved('location') as LocationUse) ?? null);
 
   const lv = levelById(level);
   const furigana = furiBy[lv.id] ?? lv.kind !== 'ja';
@@ -55,15 +60,17 @@ export function PrefsProvider({ vault, children }: { vault: Vault; children: Rea
       size,
       furigana,
       speechRate,
+      location,
       vault,
       setLevel: (id) => { setLevelId(id); void vault.put('settings', 'level', id); },
       setSize: (s) => { setSizeS(s); void vault.put('settings', 'size', s); },
       setFurigana: (on) => { setFuriBy((m) => ({ ...m, [lv.id]: on })); void vault.put('settings', 'furigana.' + lv.id, on); },
       setSpeechRate: (r) => { setRate(r); void vault.put('settings', 'speechRate', r); },
+      setLocation: (v) => { setLoc(v); void vault.put('settings', 'location', v); },
     }),
     // version：保存の状態（モード）が変わったときも描き直す
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [lv, size, furigana, speechRate, vault, version],
+    [lv, size, furigana, speechRate, location, vault, version],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
