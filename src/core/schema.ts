@@ -101,6 +101,8 @@ export const Card = z.object({
   title: Text,
   official_name: z.object({ ja: z.string(), reading: z.string() }),
   summary: Text,
+  /** 短い一文（10d。作者 11/6「文字が多い」）。開いた項目・カードに出す。無ければ summary の最初の一文。summary の全文はシート */
+  lead: Text.optional(),
   deadline: Fact.nullable(),
   where: Fact,
   /** 行く所（区役所・銀行・警察など）。同じ所の項目は、行く日を一度に聞く（6A.5）。同じ窓口で済むという意味ではない。

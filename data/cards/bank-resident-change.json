@@ -31,6 +31,11 @@
     "ja_easy": "{日本|にほん}に{来|き}て6か{月|げつ}たつまでは、{銀行|ぎんこう}では「{非|ひ}{居住者|きょじゅうしゃ}」です。6か{月|げつ}たったら{銀行|ぎんこう}に{知|し}らせます（{要|よう}{確認|かくにん}）。",
     "en": "If you are not a Japanese national, you are legally a \"non-resident\" until 6 months after entry, unless you work in Japan (part-time jobs excluded). Non-residents may not be able to use some services. After 6 months, tell your bank to change you to \"resident\" (the method differs by bank; to be checked)."
   },
+  "lead": {
+    "ja": "{入国|にゅうこく}から6か{月|げつ}たったら、{銀行|ぎんこう}に{届|とど}けて「{居住|きょじゅう}{者|しゃ}」に{変|か}えます。",
+    "ja_easy": "日本に来て6か月たったら、銀行に知らせます。",
+    "en": "Six months after you arrive, tell your bank to change you to a \"resident\"."
+  },
   "deadline": null,
   "where": {
     "text": {

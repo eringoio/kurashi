@@ -30,6 +30,11 @@
     "ja_easy": "20{歳|さい}になると、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。お{知|し}らせが{届|とど}きます。{約|やく}2{週間|しゅうかん}たっても{届|とど}かないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{手続|てつづ}きします。{学生|がくせい}は「{学生|がくせい}{納付|のうふ}{特例|とくれい}」を{申請|しんせい}できます。",
     "en": "Coming up: at 20 you join the National Pension and the Japan Pension Service sends a notice. If it has not arrived about 2 weeks after your 20th birthday, you must apply at your ward office or a pension office. Students can apply for the Student Payment Deferment."
   },
+  "lead": {
+    "ja": "20{歳|さい}になると、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。",
+    "ja_easy": "20歳になると、国民年金に入ります。",
+    "en": "At 20, you join the National Pension."
+  },
   "deadline": null,
   "where": {
     "text": {

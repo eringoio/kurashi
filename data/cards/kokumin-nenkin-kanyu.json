@@ -33,6 +33,11 @@
     "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までで、{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{学生|がくせい}でも{外国|がいこく}の{人|ひと}でも、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{区役所|くやくしょ}で{手続|てつづ}きします。{学生|がくせい}は、{申請|しんせい}すると{保険|ほけん}{料|りょう}をまだ{払|はら}わなくてよくなる「{学生|がくせい}{納付|のうふ}{特例|とくれい}」があります（{要|よう}{確認|かくにん}）。",
     "en": "If you live in Japan, are aged 20 to 59 and are not in an employer's pension (Kosei Nenkin), you join the National Pension, whether or not you are a student or a foreign national. (Some people on \"Designated Activities\" for medical stay or long tourist stay cannot join; to be checked.) Register at the ward office. Students can apply for the Student Payment Deferment, which postpones the premium while you study."
   },
+  "lead": {
+    "ja": "20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{会社|かいしゃ}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っていない{人|ひと}は、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。",
+    "ja_easy": "20歳から59歳で、会社の年金に入っていない人は、国民年金に入ります。",
+    "en": "If you are 20 to 59 and not in an employee pension, you join the National Pension."
+  },
   "deadline": {
     "text": {
       "ja": "{退職|たいしょく}して{加入|かにゅう}するときは、{退職|たいしょく}{日|び}の{翌日|よくじつ}から14{日|にち}{以内|いない}。{外国|がいこく}から{来|き}た{人|ひと}や20{歳|さい}になった{人|ひと}の{期限|きげん}と{数|かぞ}え{方|かた}は、{要|よう}{確認|かくにん}",

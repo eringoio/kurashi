@@ -91,9 +91,9 @@
     "en": "Keep this guide on this device?"
   },
   "consent.note": {
-    "ja": "アカウントは{要|い}りません。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。いつでも{全部|ぜんぶ}{消|け}せます。",
-    "ja_easy": "アカウントは{要|い}りません。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。いつでも{全部|ぜんぶ}{消|け}せます。",
-    "en": "No account. We never ask your name or address. You can erase everything any time."
+    "ja": "アカウントも{名前|なまえ}も{要|い}りません。いつでも{消|け}せます。",
+    "ja_easy": "アカウントも{名前|なまえ}も{要|い}りません。いつでも{消|け}せます。",
+    "en": "No account, no name. Erase any time."
   },
   "consent.keep": {
     "ja": "{残|のこ}す",
@@ -2896,9 +2896,9 @@
     "en": "Move-in costs (in months of rent)"
   },
   "house.cost.sub": {
-    "ja": "{例|れい}：{家賃|やちん} 5{万円|まんえん}なら、1か{月|げつ}{分|ぶん}＝5{万円|まんえん}。{数|かず}は{目安|めやす}で、{物件|ぶっけん}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja": "{家賃|やちん} 5{万円|まんえん}なら、1か{月|げつ}{分|ぶん}＝5{万円|まんえん}（{目安|めやす}。{要|よう}{確認|かくにん}）。",
     "ja_easy": "{数|かず}は{例|れい}です（{要|よう}{確認|かくにん}）。",
-    "en": "Example: with a rent of 50,000 yen, 1 month = 50,000 yen. The numbers are rough and differ by property (to be checked)."
+    "en": "With rent of 50,000 yen, 1 month = 50,000 yen (rough guide; to be checked)."
   },
   "house.cost.rent": {
     "ja": "{前家賃|まえやちん}（{次|つぎ}の{月|つき}の{家賃|やちん}）",
@@ -2961,9 +2961,9 @@
     "en": "Example total"
   },
   "house.cost.note": {
-    "ja": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}が{目安|めやす}です（{国土|こくど}{交通|こうつう}{省|しょう}の{手引|てび}き）。{鍵|かぎ}の{交換|こうかん}・24{時間|じかん}サポートなどが{加|くわ}わることもあります。{契約|けいやく}の{前|まえ}に{金額|きんがく}を{聞|き}きます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}ぐらいです。{契約|けいやく}の{前|まえ}に{聞|き}きます。",
-    "en": "In total, usually about 4–7 months of rent (MLIT guide). Key change or 24-hour support may be added. Ask for the amounts before signing (to be checked)."
+    "ja": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}が{目安|めやす}。{契約|けいやく}の{前|まえ}に{金額|きんがく}を{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}ぐらい。{契約|けいやく}の{前|まえ}に{聞|き}きます。",
+    "en": "Total: about 4–7 months of rent. Ask for the amounts before signing (to be checked)."
   },
   "words.link": {
     "ja": "ことば（{出会|であ}った{日本語|にほんご}）",

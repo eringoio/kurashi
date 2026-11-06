@@ -226,8 +226,8 @@ export function LifeGuide({ g }: { g: LifeGuideVM }) {
   const id = useId();
   return (
     <section className={'pt-guide pt-guide--' + g.kind} aria-labelledby={id}>
-      <p className="pt-badge"><span aria-hidden="true">{GUIDE_MARK[g.kind]}</span> <One k={('pat.guide.' + g.kind) as UiKey} /></p>
-      <h2 id={id}><Bi t={g.title} /></h2>
+      {/* 見出しは印だけ（カードの名前は上の絵のカードにある。10d） */}
+      <h2 id={id} className="pt-badge"><span aria-hidden="true">{GUIDE_MARK[g.kind]}</span> <One k={('pat.guide.' + g.kind) as UiKey} /><span className="sr-only">：<One t={g.title} /></span></h2>
       <ul className="pt-points">{g.points.map((p, i) => <li key={i}><Bi t={p} /></li>)}</ul>
       {g.prep && (
         <div className="pt-needs">

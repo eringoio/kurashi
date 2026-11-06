@@ -26,6 +26,11 @@
     "ja_easy": "ちがう{区|く}へ{引|ひ}っ{越|こ}したら、{新|あたら}しい{区|く}の{区役所|くやくしょ}に「{転入|てんにゅう}{届|とどけ}」を{出|だ}します。{前|まえ}の{家|いえ}で「{転出|てんしゅつ}{届|とどけ}」を{出|だ}すひつようはありません。",
     "en": "If you moved to a different ward in Nagoya, file a move-in report (tennyu-todoke) at the ward office of your new address. You do not need a move-out report at your old address."
   },
+  "lead": {
+    "ja": "{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}に{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{住所|じゅうしょ}での{転出|てんしゅつ}{届|とどけ}は{要|い}りません。",
+    "ja_easy": "{新|あたら}しい{区|く}の{区役所|くやくしょ}に「{転入|てんにゅう}{届|とどけ}」を{出|だ}します。{前|まえ}の{家|いえ}で「{転出|てんしゅつ}{届|とどけ}」は{要|い}りません。",
+    "en": "File a move-in report at the ward office of your new address. You do not need a move-out report at your old address."
+  },
   "deadline": {
     "text": {
       "ja": "{引|ひ}っ{越|こ}した{日|ひ}から14{日|にち}{以内|いない}（{住|す}み{始|はじ}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}とします）。{住|す}み{始|はじ}める{前|まえ}には{届|とど}けられません。",

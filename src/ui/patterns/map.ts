@@ -1,6 +1,7 @@
 /* 写す層：エンジン・データ契約の型 → 部品の型（types.ts）。読み替えはここ1か所だけ。
    契約の counter→window、link→web、持ち物 held→have、reissue_waiting→reissue_wait。
    根拠（evidence）の status が verified でなければ「要確認」の印（mode が verified の見本表示のときは出さない）。 */
+import { cardLead } from '../../core/brief';
 import type { CardView } from '../../core/engine';
 import type { Card, Evidence, Question } from '../../core/schema';
 import { effectiveStatus, isAiChecked, type FieldKind } from '../../core/trust';
@@ -49,5 +50,5 @@ export const toBelonging = (b: { id: string; title: T; illustration?: string; st
 /** 日を聞かない案内（kind: guide） */
 export function toGuide(card: Card, mode: Mode): LifeGuideVM {
   void mode;
-  return { kind: 'consult', title: card.title as T, points: [card.summary as T, card.where.text as T] };
+  return { kind: 'consult', title: card.title as T, points: [cardLead(card) as T, card.where.text as T] };
 }

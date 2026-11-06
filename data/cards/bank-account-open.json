@@ -30,6 +30,11 @@
     "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。{口座|こうざ}や{通帳|つうちょう}・カードを{売|う}ったり{人|ひと}にあげたりしてはいけません。{犯罪|はんざい}です。{在留|ざいりゅう}{期間|きかん}が3か{月|げつ}{以下|いか}の{人|ひと}は、どの{銀行|ぎんこう}でも{口座|こうざ}を{作|つく}れません（{要|よう}{確認|かくにん}）。",
     "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank. Do not sell or give your account, passbook or cash card to anyone. It is a crime. If your period of stay is 3 months or less and you have no residence card, you are not registered as a resident, so no bank can open an account for you (to be checked)."
   },
+  "lead": {
+    "ja": "{給料|きゅうりょう}やアルバイト{代|だい}を{受|う}け{取|と}るのに、ほとんどの{人|ひと}が{使|つか}います。",
+    "ja_easy": "給料をもらうのに、ほとんどの人が使います。",
+    "en": "Most people need one, for example to receive wages."
+  },
   "deadline": null,
   "where": {
     "text": {

@@ -1,6 +1,7 @@
 /* ガイドの部品：状態のラベル、答えのボタン、一覧の行、日を選ぶ、理由、出典のシート */
 import { useState, type ReactNode } from 'react';
 import { DATA } from '../core/data';
+import { briefText, cardLead } from '../core/brief';
 import { DOCUMENTS } from '../core/documents';
 import type { CardView, Note, Section } from '../core/engine';
 import type { Evidence, Question, Text, Value } from '../core/schema';
@@ -149,7 +150,7 @@ export function whyText(c: CardView): LocalizedText {
     if (c.cause === 'unknown') return c.card.reasons.check_at_office ?? ui('why.unknown');
     return ui(c.cause === 'no_question' ? 'why.noQuestion' : c.cause === 'answer_changed' ? 'why.changed' : 'why.unverified');
   }
-  return c.reasonRules[0]?.statement ?? c.card.summary;
+  return c.reasonRules[0]?.statement ? briefText(c.reasonRules[0].statement) as LocalizedText : cardLead(c.card) as LocalizedText;
 }
 const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace' } as const;
 export function SectionWhy({ c }: { c: CardView }) {
