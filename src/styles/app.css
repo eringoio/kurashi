@@ -462,3 +462,17 @@ fieldset legend svg { vertical-align: -0.2em; }
 .gomi-kind { display: flex; gap: 10px; align-items: flex-start; }
 .gomi-kind img { width: 44px; height: 44px; flex: none; }
 .gomi-kind > span { display: flex; flex-direction: column; }
+/* 住まい探しの図（E） */
+.house-plan { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
+.house-plan svg { width: min(100%, 220px); height: auto; flex: none; }
+.house-legend { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; flex: 1 1 160px; min-width: 0; }
+.house-legend li { display: flex; gap: 8px; align-items: flex-start; }
+.house-num { flex: none; width: 1.7em; height: 1.7em; border-radius: 50%; border: 2px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; background: var(--white); }
+.house-costs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.house-costs li { display: grid; grid-template-columns: minmax(7em, 11em) 1fr 4.5em; gap: 8px; align-items: center; }
+.house-costs__name { display: flex; flex-direction: column; min-width: 0; }
+.house-costs__bar { display: block; height: 14px; background: var(--sand-soft); border-radius: 4px; }
+.house-costs__bar span { display: block; height: 100%; background: var(--blue); border-radius: 4px; }
+.house-costs__n { text-align: right; font-weight: 700; }
+.house-costs__total { font-weight: 700; }
+@media (max-width: 380px) { .house-costs li { grid-template-columns: 1fr 4.5em; } .house-costs__bar { grid-column: 1 / -1; grid-row: 2; } }

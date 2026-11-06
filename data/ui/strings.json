@@ -2824,5 +2824,145 @@
     "ja": "ごみの{種類|しゅるい}と{出|だ}し{方|かた}",
     "ja_easy": "ごみの{種類|しゅるい}",
     "en": "Types of garbage and how to put them out"
+  },
+  "house.plan.title": {
+    "ja": "{間取|まど}り{図|ず}の{見方|みかた}（1K の{例|れい}）",
+    "ja_easy": "{部屋|へや}の{図|ず}の{見方|みかた}",
+    "en": "How to read a floor plan (1K example)"
+  },
+  "house.plan.alt": {
+    "ja": "1K の{間取|まど}り{図|ず}の{例|れい}。{上|うえ}からバルコニー、{洋室|ようしつ}、キッチンとクローゼット、{玄関|げんかん}とユニットバス。",
+    "ja_easy": "1K の{部屋|へや}の{図|ず}。",
+    "en": "Example 1K floor plan. From the top: balcony, Western-style room, kitchen and closet, entrance and unit bath."
+  },
+  "house.room.genkan": {
+    "ja": "{玄関|げんかん}（{靴|くつ}を{脱|ぬ}ぐ{所|ところ}）",
+    "ja_easy": "{玄関|げんかん}（{靴|くつ}をぬぐ）",
+    "en": "Entrance (take off your shoes)"
+  },
+  "house.room.k": {
+    "ja": "K：キッチン（{台所|だいどころ}）",
+    "ja_easy": "K：キッチン",
+    "en": "K: kitchen"
+  },
+  "house.room.ub": {
+    "ja": "UB：ユニットバス（{風呂|ふろ}・トイレ・{洗面|せんめん}が1つの{部屋|へや}のことが{多|おお}い）",
+    "ja_easy": "UB：お{風呂|ふろ}とトイレ",
+    "en": "UB: unit bath (often bath, toilet and sink in one room)"
+  },
+  "house.room.yoshitsu": {
+    "ja": "{洋室|ようしつ}：フローリングの{部屋|へや}（{例|れい}：6{帖|じょう}）",
+    "ja_easy": "{洋室|ようしつ}：ゆかが{木|き}の{部屋|へや}",
+    "en": "Western-style room with a wooden floor (e.g. 6 jo)"
+  },
+  "house.room.cl": {
+    "ja": "CL：クローゼット（{服|ふく}を{入|い}れる{所|ところ}）",
+    "ja_easy": "CL：{服|ふく}を{入|い}れる{所|ところ}",
+    "en": "CL: closet"
+  },
+  "house.room.balcony": {
+    "ja": "バルコニー（{洗濯物|せんたくもの}を{干|ほ}す{所|ところ}）",
+    "ja_easy": "バルコニー",
+    "en": "Balcony (for drying laundry)"
+  },
+  "house.read.title": {
+    "ja": "{読|よ}み{方|かた}",
+    "ja_easy": "{読|よ}み{方|かた}",
+    "en": "How to read it"
+  },
+  "house.read.types": {
+    "ja": "1R：キッチンと{部屋|へや}が{同|おな}じ{空間|くうかん}。1K：キッチンと{部屋|へや}の{間|あいだ}に{戸|と}がある。1DK・1LDK：{食事|しょくじ}の{場所|ばしょ}（D）や{居間|いま}（L）がある。",
+    "ja_easy": "1R はキッチンと{部屋|へや}がいっしょ。1K は{戸|と}で{分|わ}かれている。",
+    "en": "1R: kitchen and room in one space. 1K: a door between kitchen and room. 1DK / 1LDK: with a dining (D) or living (L) area."
+  },
+  "house.read.jo": {
+    "ja": "{帖|じょう}・{畳|じょう}：{部屋|へや}の{広|ひろ}さ。1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらい（{約|やく}1.6㎡。{要|よう}{確認|かくにん}）。{和室|わしつ}は{畳|たたみ}の{部屋|へや}。",
+    "ja_easy": "1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらいの{広|ひろ}さです。",
+    "en": "Jo: room size. 1 jo is about one tatami mat (about 1.6 m²; to be checked). A washitsu is a tatami room."
+  },
+  "house.read.area": {
+    "ja": "{専有|せんゆう}{面積|めんせき}：{部屋|へや}の{中|なか}の{広|ひろ}さ（㎡）。{一人|ひとり}{暮|ぐ}らしでは 20〜25㎡ ぐらいが{多|おお}い（{例|れい}）。",
+    "ja_easy": "{専有|せんゆう}{面積|めんせき}は{部屋|へや}の{広|ひろ}さです。",
+    "en": "Floor area (専有面積): the size of the flat in m². Many single flats are about 20–25 m² (example)."
+  },
+  "house.read.age": {
+    "ja": "{築年数|ちくねんすう}：{建|た}ててからの{年数|ねんすう}。{階|かい}・{向|む}き（{南向|みなみむ}きは{明|あか}るい）も{見|み}ます。",
+    "ja_easy": "{築年数|ちくねんすう}は{建|た}ててからの{年|とし}の{数|かず}です。",
+    "en": "Building age, floor and the direction the windows face (south-facing is bright)."
+  },
+  "house.cost.title": {
+    "ja": "{借|か}りるときの{費用|ひよう}（{家賃|やちん}の{何|なん}か{月|げつ}{分|ぶん}）",
+    "ja_easy": "{借|か}りるときのお{金|かね}",
+    "en": "Move-in costs (in months of rent)"
+  },
+  "house.cost.sub": {
+    "ja": "{例|れい}：{家賃|やちん} 5{万円|まんえん}なら、1か{月|げつ}{分|ぶん}＝5{万円|まんえん}。{数|かず}は{目安|めやす}で、{物件|ぶっけん}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{数|かず}は{例|れい}です（{要|よう}{確認|かくにん}）。",
+    "en": "Example: with a rent of 50,000 yen, 1 month = 50,000 yen. The numbers are rough and differ by property (to be checked)."
+  },
+  "house.cost.rent": {
+    "ja": "{前家賃|まえやちん}（{次|つぎ}の{月|つき}の{家賃|やちん}）",
+    "ja_easy": "{先|さき}に{払|はら}う{家賃|やちん}",
+    "en": "Rent in advance"
+  },
+  "house.cost.shikikin": {
+    "ja": "{敷金|しききん}",
+    "ja_easy": "{敷金|しききん}",
+    "en": "Deposit (shikikin)"
+  },
+  "house.cost.reikin": {
+    "ja": "{礼金|れいきん}",
+    "ja_easy": "{礼金|れいきん}",
+    "en": "Key money (reikin)"
+  },
+  "house.cost.chukai": {
+    "ja": "{仲介|ちゅうかい}{手数料|てすうりょう}",
+    "ja_easy": "{不動産|ふどうさん}{会社|がいしゃ}に{払|はら}うお{金|かね}",
+    "en": "Agency fee"
+  },
+  "house.cost.hosho": {
+    "ja": "{保証|ほしょう}{料|りょう}（{保証|ほしょう}{会社|がいしゃ}）",
+    "ja_easy": "{保証|ほしょう}{会社|がいしゃ}のお{金|かね}",
+    "en": "Guarantor company fee"
+  },
+  "house.cost.hoken": {
+    "ja": "{損害|そんがい}{保険|ほけん}（{火災|かさい}{保険|ほけん}など）",
+    "ja_easy": "{保険|ほけん}",
+    "en": "Insurance (fire etc.)"
+  },
+  "house.cost.back": {
+    "ja": "{出|で}るときに{戻|もど}ることがある",
+    "ja_easy": "{戻|もど}ることがある",
+    "en": "may come back when you move out"
+  },
+  "house.cost.noBack": {
+    "ja": "{戻|もど}らない",
+    "ja_easy": "{戻|もど}らない",
+    "en": "not returned"
+  },
+  "house.cost.max": {
+    "ja": "1か{月|げつ}{分|ぶん}{以内|いない}",
+    "ja_easy": "1か{月|げつ}{分|ぶん}まで",
+    "en": "up to 1 month"
+  },
+  "house.cost.varies": {
+    "ja": "{会社|かいしゃ}・{物件|ぶっけん}で{違|ちが}う",
+    "ja_easy": "{物件|ぶっけん}で{違|ちが}う",
+    "en": "differs"
+  },
+  "house.cost.unit": {
+    "ja": "か{月|げつ}{分|ぶん}",
+    "ja_easy": "か{月|げつ}",
+    "en": " mo"
+  },
+  "house.cost.total": {
+    "ja": "{合計|ごうけい}の{例|れい}",
+    "ja_easy": "{合計|ごうけい}の{例|れい}",
+    "en": "Example total"
+  },
+  "house.cost.note": {
+    "ja": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}が{目安|めやす}です（{国土|こくど}{交通|こうつう}{省|しょう}の{手引|てび}き）。{鍵|かぎ}の{交換|こうかん}・24{時間|じかん}サポートなどが{加|くわ}わることもあります。{契約|けいやく}の{前|まえ}に{金額|きんがく}を{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}ぐらいです。{契約|けいやく}の{前|まえ}に{聞|き}きます。",
+    "en": "In total, usually about 4–7 months of rent (MLIT guide). Key change or 24-hour support may be added. Ask for the amounts before signing (to be checked)."
   }
 }
