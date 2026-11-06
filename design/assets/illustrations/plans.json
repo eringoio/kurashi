@@ -1,0 +1,152 @@
+{
+  "plan-1r": [
+    {
+      "n": 1,
+      "room": "genkan"
+    },
+    {
+      "n": 2,
+      "room": "k"
+    },
+    {
+      "n": 3,
+      "room": "ub"
+    },
+    {
+      "n": 4,
+      "room": "yoshitsu"
+    },
+    {
+      "n": 5,
+      "room": "cl"
+    },
+    {
+      "n": 6,
+      "room": "balcony"
+    }
+  ],
+  "plan-1k": [
+    {
+      "n": 1,
+      "room": "genkan"
+    },
+    {
+      "n": 2,
+      "room": "k"
+    },
+    {
+      "n": 3,
+      "room": "ub"
+    },
+    {
+      "n": 4,
+      "room": "yoshitsu"
+    },
+    {
+      "n": 5,
+      "room": "cl"
+    },
+    {
+      "n": 6,
+      "room": "balcony"
+    }
+  ],
+  "plan-1dk": [
+    {
+      "n": 1,
+      "room": "genkan"
+    },
+    {
+      "n": 2,
+      "room": "dk"
+    },
+    {
+      "n": 3,
+      "room": "ub"
+    },
+    {
+      "n": 4,
+      "room": "yoshitsu"
+    },
+    {
+      "n": 5,
+      "room": "cl"
+    },
+    {
+      "n": 6,
+      "room": "balcony"
+    }
+  ],
+  "plan-1ldk": [
+    {
+      "n": 1,
+      "room": "genkan"
+    },
+    {
+      "n": 2,
+      "room": "ldk"
+    },
+    {
+      "n": 3,
+      "room": "ub"
+    },
+    {
+      "n": 4,
+      "room": "toilet"
+    },
+    {
+      "n": 5,
+      "room": "yoshitsu"
+    },
+    {
+      "n": 6,
+      "room": "cl"
+    },
+    {
+      "n": 7,
+      "room": "ps"
+    },
+    {
+      "n": 8,
+      "room": "balcony"
+    }
+  ],
+  "plan-2dk": [
+    {
+      "n": 1,
+      "room": "genkan"
+    },
+    {
+      "n": 2,
+      "room": "dk"
+    },
+    {
+      "n": 3,
+      "room": "ub"
+    },
+    {
+      "n": 4,
+      "room": "toilet"
+    },
+    {
+      "n": 5,
+      "room": "washitsu"
+    },
+    {
+      "n": 6,
+      "room": "yoshitsu"
+    },
+    {
+      "n": 7,
+      "room": "cl"
+    },
+    {
+      "n": 8,
+      "room": "ps"
+    },
+    {
+      "n": 9,
+      "room": "balcony"
+    }
+  ]
+}

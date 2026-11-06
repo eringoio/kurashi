@@ -1,45 +1,71 @@
-/* 住まい探しの見て分かる形（作者の指示 2026-11-06 E）。物件サイトのように、間取り図と費用の図。
-   間取り図：1K の例。部屋に番号を付け、下の一覧で番号と言葉（玄関・K・UB・洋室・CL・バルコニー）を対応させる（色だけにしない）。
-   費用の図：家賃1か月を基準にした「か月分」の横の棒（1色）。数は例で、目安（要確認）。 */
+/* 住まい探しの見て分かる形（作者の指示 2026-11-06 E、11/7 B-8a・B-8c）。物件サイトのように、間取り図と費用の図。
+   間取り図：SVG の絵5枚（design/assets/illustrations/plan-*.svg）。部屋の番号と言葉の対応は plans.json（絵と同じ所）。
+   1K を最初に出し、横並びのボタンで切り替える。寸法の文字は入れない。言葉は下の一覧（色だけにしない）。
+   費用の図：家賃1か月を基準にした「か月分」の横の棒（1色）。数は例で、目安（要確認）。
+   用語は「絵｜言葉｜一文」の表（段落にしない）。 */
+import { useState } from 'react';
+import plansJson from '../../design/assets/illustrations/plans.json';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
+import { art } from './art';
 
-const ROOMS: { n: number; k: UiKey; x: number; y: number; w: number; h: number; fill: string }[] = [
-  { n: 6, k: 'house.room.balcony', x: 10, y: 6, w: 180, h: 22, fill: '#ffffff' },
-  { n: 4, k: 'house.room.yoshitsu', x: 10, y: 28, w: 180, h: 120, fill: '#FAD9B0' },
-  { n: 5, k: 'house.room.cl', x: 140, y: 148, w: 50, h: 42, fill: '#E3C08F' },
-  { n: 2, k: 'house.room.k', x: 10, y: 148, w: 130, h: 64, fill: '#BFE0C9' },
-  { n: 3, k: 'house.room.ub', x: 110, y: 212, w: 80, h: 62, fill: '#CFE1F7' },
-  { n: 1, k: 'house.room.genkan', x: 10, y: 212, w: 100, h: 62, fill: '#ffffff' },
-];
+type RoomId = 'genkan' | 'k' | 'dk' | 'ldk' | 'ub' | 'toilet' | 'yoshitsu' | 'washitsu' | 'cl' | 'ps' | 'balcony';
+const ROOM_KEY: Record<RoomId, UiKey> = {
+  genkan: 'house.room.genkan', k: 'house.room.k', dk: 'house.room.dk', ldk: 'house.room.ldk', ub: 'house.room.ub', toilet: 'house.room.toilet',
+  yoshitsu: 'house.room.yoshitsu', washitsu: 'house.room.washitsu', cl: 'house.room.cl', ps: 'house.room.ps', balcony: 'house.room.balcony',
+};
+/** 間取りの名前（1R・1K など）は不動産の記号なので、どの表示レベルでもこのまま */
+const PLANS = [
+  { id: 'plan-1r', name: '1R' },
+  { id: 'plan-1k', name: '1K' },
+  { id: 'plan-1dk', name: '1DK' },
+  { id: 'plan-1ldk', name: '1LDK' },
+  { id: 'plan-2dk', name: '2DK' },
+] as const;
+type PlanId = (typeof PLANS)[number]['id'];
+const ROOMS = plansJson as Record<PlanId, { n: number; room: RoomId }[]>;
+
+/** 絵｜言葉｜一文 の表 */
+function Terms({ rows }: { rows: { icon: string; word: UiKey; desc: UiKey }[] }) {
+  return (
+    <ul className="house-terms" role="list">
+      {rows.map((r) => (
+        <li key={r.word}>
+          <img src={art(r.icon)} alt="" />
+          <span className="house-terms__word"><Bi k={r.word} /></span>
+          <span className="house-terms__desc"><Bi k={r.desc} /></span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export function FloorPlan() {
   const { level } = usePrefs();
-  const sorted = [...ROOMS].sort((a, b) => a.n - b.n);
+  const [sel, setSel] = useState<PlanId>('plan-1k');
+  const plan = PLANS.find((p) => p.id === sel)!;
+  const rooms = [...ROOMS[sel]].sort((a, b) => a.n - b.n);
   return (
     <section className="group house-visual" aria-labelledby="house-plan">
       <h2 id="house-plan"><Bi k="house.plan.title" /></h2>
+      <div className="house-plans" role="group" aria-label={line(ui('house.plan.pick'), level)}>
+        {PLANS.map((p) => (
+          <button key={p.id} type="button" className="k-answer house-plans__btn" aria-pressed={p.id === sel} onClick={() => setSel(p.id)} lang="en">{p.name}</button>
+        ))}
+      </div>
+      <p className="sub"><Bi k="house.read.types" /></p>
       <div className="house-plan">
-        <svg viewBox="0 0 200 284" role="img" aria-label={line(ui('house.plan.alt'), level)}>
-          {ROOMS.map((r) => (
-            <g key={r.n}>
-              <rect x={r.x} y={r.y} width={r.w} height={r.h} fill={r.fill} stroke="#2A2A2E" strokeWidth="2.4" strokeDasharray={r.n === 6 ? '5 4' : undefined} />
-              <circle cx={r.x + 18} cy={r.y + 16} r="11" fill="#ffffff" stroke="#2A2A2E" strokeWidth="2" />
-              <text x={r.x + 18} y={r.y + 21} textAnchor="middle" fontSize="13" fontWeight="700" fill="#22201c" aria-hidden="true">{r.n}</text>
-            </g>
-          ))}
-          {/* 玄関の扉 */}
-          <path d="M40 274 A24 24 0 0 1 64 250" fill="none" stroke="#2A2A2E" strokeWidth="2" />
-        </svg>
+        <img className="house-plan__img" src={art(sel)} alt={plan.name + '：' + line(ui('house.plan.alt'), level)} />
         <ol className="house-legend">
-          {sorted.map((r) => <li key={r.n}><span className="house-num" aria-hidden="true">{r.n}</span><Bi k={r.k} /></li>)}
+          {rooms.map((r) => <li key={r.n}><span className="house-num" aria-hidden="true">{r.n}</span><Bi k={ROOM_KEY[r.room]} /></li>)}
         </ol>
       </div>
-      <h3 className="label"><One k="house.read.title" /></h3>
-      <ul className="plainlist house-read">
-        {(['house.read.types', 'house.read.jo', 'house.read.area', 'house.read.age'] as UiKey[]).map((k) => <li key={k}><Bi k={k} /></li>)}
-      </ul>
+      <Terms rows={[
+        { icon: 'house', word: 'house.term.jo', desc: 'house.term.jo.d' },
+        { icon: 'house', word: 'house.term.area', desc: 'house.term.area.d' },
+        { icon: 'homecheck', word: 'house.term.age', desc: 'house.term.age.d' },
+      ]} />
     </section>
   );
 }
@@ -71,7 +97,17 @@ export function CostChart() {
         ))}
       </ul>
       <p className="house-costs__total"><One k="house.cost.total" />：{Math.round(total * 10) / 10}<One k="house.cost.unit" /></p>
+      {/* 保証人（B-8c）：連帯保証人か保証会社のどちらか */}
+      <p className="sub"><Bi k="house.cost.guarantor" /></p>
       <p className="sub"><Bi k="house.cost.note" /></p>
+      <h3 className="label"><One k="house.terms.title" /></h3>
+      <Terms rows={[
+        { icon: 'coins', word: 'house.cost.shikikin', desc: 'house.term.shikikin' },
+        { icon: 'coins', word: 'house.cost.reikin', desc: 'house.term.reikin' },
+        { icon: 'doc', word: 'house.cost.chukai', desc: 'house.term.chukai' },
+        { icon: 'doc', word: 'house.term.hoshogaisha', desc: 'house.term.hoshogaisha.d' },
+        { icon: 'you', word: 'house.term.rentai', desc: 'house.term.rentai.d' },
+      ]} />
     </section>
   );
 }

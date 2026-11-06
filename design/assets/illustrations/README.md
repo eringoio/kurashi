@@ -61,3 +61,8 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `status-permanent.svg` · `status-permanent-dim.svg` | Status | 在留資格：永住者・特別永住者 | Status: Permanent resident | 在留資格の質問（B-4） |
 | `status-longterm.svg` · `status-longterm-dim.svg` | Status | 在留資格：定住者 | Status: Long-term resident | 在留資格の質問（B-4） |
 | `status-other.svg` · `status-other-dim.svg` | Status | 在留資格：そのほか | Status: Other | 在留資格の質問（B-4） |
+| `plan-1r.svg` | Plans | 間取り図：1R | Floor plan: 1R | 住まい探しの間取り図（B-8a） |
+| `plan-1k.svg` | Plans | 間取り図：1K | Floor plan: 1K | 住まい探しの間取り図（B-8a） |
+| `plan-1dk.svg` | Plans | 間取り図：1DK | Floor plan: 1DK | 住まい探しの間取り図（B-8a） |
+| `plan-1ldk.svg` | Plans | 間取り図：1LDK | Floor plan: 1LDK | 住まい探しの間取り図（B-8a） |
+| `plan-2dk.svg` | Plans | 間取り図：2DK | Floor plan: 2DK | 住まい探しの間取り図（B-8a） |

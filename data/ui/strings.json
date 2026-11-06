@@ -2816,14 +2816,14 @@
     "en": "Types of garbage and how to put them out"
   },
   "house.plan.title": {
-    "ja": "{間取|まど}り{図|ず}の{見方|みかた}（1K の{例|れい}）",
-    "ja_easy": "{部屋|へや}の{図|ず}の{見方|みかた}",
-    "en": "How to read a floor plan (1K example)"
+    "ja": "{間取|まど}り{図|ず}の{見方|みかた}",
+    "ja_easy": "{間取|まど}り{図|ず}の{見方|みかた}",
+    "en": "How to read a floor plan"
   },
   "house.plan.alt": {
-    "ja": "1K の{間取|まど}り{図|ず}の{例|れい}。{上|うえ}からバルコニー、{洋室|ようしつ}、キッチンとクローゼット、{玄関|げんかん}とユニットバス。",
-    "ja_easy": "1K の{部屋|へや}の{図|ず}。",
-    "en": "Example 1K floor plan. From the top: balcony, Western-style room, kitchen and closet, entrance and unit bath."
+    "ja": "{間取|まど}り{図|ず}の{例|れい}。{上|うえ}がバルコニー、{下|した}が{玄関|げんかん}。{部屋|へや}の{番号|ばんごう}は{下|した}の{一覧|いちらん}にあります。",
+    "ja_easy": "{間取|まど}り{図|ず}の{例|れい}です。{番号|ばんごう}は{下|した}にあります。",
+    "en": "Example floor plan. Balcony at the top, entrance at the bottom. The room numbers are listed below."
   },
   "house.room.genkan": {
     "ja": "{玄関|げんかん}（{靴|くつ}を{脱|ぬ}ぐ{所|ところ}）",
@@ -2855,30 +2855,10 @@
     "ja_easy": "バルコニー",
     "en": "Balcony (for drying laundry)"
   },
-  "house.read.title": {
-    "ja": "{読|よ}み{方|かた}",
-    "ja_easy": "{読|よ}み{方|かた}",
-    "en": "How to read it"
-  },
   "house.read.types": {
     "ja": "1R：キッチンと{部屋|へや}が{同|おな}じ{空間|くうかん}。1K：キッチンと{部屋|へや}の{間|あいだ}に{戸|と}がある。1DK・1LDK：{食事|しょくじ}の{場所|ばしょ}（D）や{居間|いま}（L）がある。",
     "ja_easy": "1R はキッチンと{部屋|へや}がいっしょ。1K は{戸|と}で{分|わ}かれている。",
     "en": "1R: kitchen and room in one space. 1K: a door between kitchen and room. 1DK / 1LDK: with a dining (D) or living (L) area."
-  },
-  "house.read.jo": {
-    "ja": "{帖|じょう}・{畳|じょう}：{部屋|へや}の{広|ひろ}さ。1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらい（{約|やく}1.6㎡。{要|よう}{確認|かくにん}）。{和室|わしつ}は{畳|たたみ}の{部屋|へや}。",
-    "ja_easy": "1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらいの{広|ひろ}さです。",
-    "en": "Jo: room size. 1 jo is about one tatami mat (about 1.6 m²; to be checked). A washitsu is a tatami room."
-  },
-  "house.read.area": {
-    "ja": "{専有|せんゆう}{面積|めんせき}：{部屋|へや}の{中|なか}の{広|ひろ}さ（㎡）。{一人|ひとり}{暮|ぐ}らしでは 20〜25㎡ ぐらいが{多|おお}い（{例|れい}）。",
-    "ja_easy": "{専有|せんゆう}{面積|めんせき}は{部屋|へや}の{広|ひろ}さです。",
-    "en": "Floor area (専有面積): the size of the flat in m². Many single flats are about 20–25 m² (example)."
-  },
-  "house.read.age": {
-    "ja": "{築年数|ちくねんすう}：{建|た}ててからの{年数|ねんすう}。{階|かい}・{向|む}き（{南向|みなみむ}きは{明|あか}るい）も{見|み}ます。",
-    "ja_easy": "{築年数|ちくねんすう}は{建|た}ててからの{年|とし}の{数|かず}です。",
-    "en": "Building age, floor and the direction the windows face (south-facing is bright)."
   },
   "house.cost.title": {
     "ja": "{借|か}りるときの{費用|ひよう}（{家賃|やちん}の{何|なん}か{月|げつ}{分|ぶん}）",
@@ -3074,5 +3054,110 @@
     "ja": "{費用|ひよう}",
     "ja_easy": "お{金|かね}",
     "en": "Fee"
+  },
+  "house.plan.pick": {
+    "ja": "{間取|まど}りを{選|えら}ぶ",
+    "ja_easy": "{間取|まど}りを{選|えら}ぶ",
+    "en": "Choose a layout"
+  },
+  "house.room.dk": {
+    "ja": "DK：ダイニング・キッチン（{食事|しょくじ}もできる{台所|だいどころ}）",
+    "ja_easy": "DK：{食事|しょくじ}もできるキッチン",
+    "en": "DK: dining kitchen (kitchen with space to eat)"
+  },
+  "house.room.ldk": {
+    "ja": "LDK：リビング・ダイニング・キッチン（{居間|いま}と{台所|だいどころ}）",
+    "ja_easy": "LDK：{居間|いま}とキッチン",
+    "en": "LDK: living, dining and kitchen in one room"
+  },
+  "house.room.washitsu": {
+    "ja": "{和室|わしつ}：{畳|たたみ}の{部屋|へや}",
+    "ja_easy": "{和室|わしつ}：{畳|たたみ}の{部屋|へや}",
+    "en": "Washitsu: tatami room"
+  },
+  "house.room.toilet": {
+    "ja": "トイレ",
+    "ja_easy": "トイレ",
+    "en": "Toilet"
+  },
+  "house.room.ps": {
+    "ja": "PS：パイプスペース（{水道|すいどう}などの{管|くだ}。{部屋|へや}ではない）",
+    "ja_easy": "PS：{管|くだ}が{通|とお}る{所|ところ}",
+    "en": "PS: pipe space (not a room)"
+  },
+  "house.cost.guarantor": {
+    "ja": "{連帯|れんたい}{保証人|ほしょうにん}または{保証|ほしょう}{会社|がいしゃ}の、どちらかが{要|い}ります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{保証人|ほしょうにん}か{保証|ほしょう}{会社|がいしゃ}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+    "en": "You usually need either a joint guarantor or a guarantor company (to be checked)."
+  },
+  "house.terms.title": {
+    "ja": "ことば",
+    "ja_easy": "ことば",
+    "en": "Words"
+  },
+  "house.term.shikikin": {
+    "ja": "{預|あず}けるお{金|かね}。{出|で}るときに{精算|せいさん}して、{残|のこ}りが{戻|もど}ります。",
+    "ja_easy": "{預|あず}けるお{金|かね}。{少|すこ}し{戻|もど}ることがあります。",
+    "en": "Money you leave with the owner. What is left after cleaning or repairs comes back when you move out."
+  },
+  "house.term.reikin": {
+    "ja": "{貸主|かしぬし}に{払|はら}うお{金|かね}。{戻|もど}りません。",
+    "ja_easy": "{戻|もど}らないお{金|かね}です。",
+    "en": "Money paid to the owner. It does not come back."
+  },
+  "house.term.chukai": {
+    "ja": "{不動産|ふどうさん}{会社|がいしゃ}に{払|はら}うお{金|かね}。{家賃|やちん}1か{月|げつ}{分|ぶん}{以内|いない}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{不動産|ふどうさん}{会社|がいしゃ}に{払|はら}います。",
+    "en": "Fee paid to the real-estate agent: up to one month's rent (to be checked)."
+  },
+  "house.term.hoshogaisha": {
+    "ja": "{保証|ほしょう}{会社|がいしゃ}",
+    "ja_easy": "{保証|ほしょう}{会社|がいしゃ}",
+    "en": "Guarantor company"
+  },
+  "house.term.hoshogaisha.d": {
+    "ja": "{家賃|やちん}を{払|はら}えないとき、{代|か}わりに{払|はら}う{会社|かいしゃ}。{保証|ほしょう}{料|りょう}がかかります。",
+    "ja_easy": "{家賃|やちん}を{代|か}わりに{払|はら}う{会社|かいしゃ}です。お{金|かね}がかかります。",
+    "en": "A company that pays the rent if you cannot. It charges a fee."
+  },
+  "house.term.rentai": {
+    "ja": "{連帯|れんたい}{保証人|ほしょうにん}",
+    "ja_easy": "{連帯|れんたい}{保証人|ほしょうにん}",
+    "en": "Joint guarantor"
+  },
+  "house.term.rentai.d": {
+    "ja": "あなたと{同|おな}じ{責任|せきにん}で、{家賃|やちん}などを{払|はら}う{人|ひと}。",
+    "ja_easy": "あなたと{同|おな}じように{払|はら}う{人|ひと}です。",
+    "en": "A person who is responsible for the rent and other costs in the same way as you."
+  },
+  "house.term.jo": {
+    "ja": "{帖|じょう}・{畳|じょう}",
+    "ja_easy": "{帖|じょう}",
+    "en": "Jo (room size)"
+  },
+  "house.term.jo.d": {
+    "ja": "{部屋|へや}の{広|ひろ}さ。1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらい（{約|やく}1.6㎡。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "1{帖|じょう}は{畳|たたみ}1{枚|まい}ぐらいです。",
+    "en": "Room size. 1 jo is about one tatami mat (about 1.6 m²; to be checked)."
+  },
+  "house.term.area": {
+    "ja": "{専有|せんゆう}{面積|めんせき}",
+    "ja_easy": "{専有|せんゆう}{面積|めんせき}",
+    "en": "Floor area"
+  },
+  "house.term.area.d": {
+    "ja": "{部屋|へや}の{中|なか}の{広|ひろ}さ（㎡）。",
+    "ja_easy": "{部屋|へや}の{広|ひろ}さです。",
+    "en": "The size of the flat in m²."
+  },
+  "house.term.age": {
+    "ja": "{築年数|ちくねんすう}",
+    "ja_easy": "{築年数|ちくねんすう}",
+    "en": "Building age"
+  },
+  "house.term.age.d": {
+    "ja": "{建|た}ててからの{年数|ねんすう}。",
+    "ja_easy": "{建|た}ててからの{年|とし}の{数|かず}です。",
+    "en": "Years since the building was built."
   }
 }

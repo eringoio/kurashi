@@ -483,7 +483,17 @@ fieldset legend svg { vertical-align: -0.2em; }
 .gomi-kind > span { display: flex; flex-direction: column; }
 /* 住まい探しの図（E） */
 .house-plan { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
-.house-plan svg { width: min(100%, 220px); height: auto; flex: none; }
+.house-plan__img { width: min(100%, 260px); height: auto; flex: none; }
+/* 間取りの切り替え（B-8a）：横並び。押したものは aria-pressed */
+.house-plans { display: flex; flex-wrap: wrap; gap: 6px; }
+.house-plans__btn { width: auto; flex: 1 0 4em; min-height: var(--target-min); justify-content: center; padding: 4px 8px; font-size: 16px; }
+.house-plans__btn[aria-pressed="true"] { background: var(--blue); color: var(--white); border-color: var(--blue); }
+/* 用語の表（B-8c）：絵｜言葉｜一文 */
+.house-terms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.house-terms li { display: grid; grid-template-columns: 36px 6.5em 1fr; gap: 8px; align-items: center; padding-bottom: 8px; border-bottom: 1.5px dashed var(--line-dash); }
+.house-terms img { width: 36px; height: 36px; }
+.house-terms__word { font-weight: 700; }
+@media (max-width: 380px) { .house-terms li { grid-template-columns: 36px 1fr; } .house-terms__desc { grid-column: 2; } }
 .house-legend { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; flex: 1 1 160px; min-width: 0; }
 .house-legend li { display: flex; gap: 8px; align-items: flex-start; }
 .house-num { flex: none; width: 1.7em; height: 1.7em; border-radius: 50%; border: 2px solid var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; background: var(--white); }
