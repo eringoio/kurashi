@@ -39,9 +39,9 @@
     "reading": "あいちけんさいていちんぎん"
   },
   "summary": {
-    "ja": "2026{年|ねん}10{月|がつ}1{日|にち}から、{愛知県|あいちけん}の{最低|さいてい}{賃金|ちんぎん}は{時間|じかん}{額|がく}1,195{円|えん}です（{要|よう}{確認|かくにん}）。それより{前|まえ}（2026{年|ねん}9{月|がつ}30{日|にち}まで）は1,140{円|えん}でした。{額|がく}は{変|か}わることがあるので、{時給|じきゅう}を{決|き}めるときは{日付|ひづけ}を{確|たし}かめます。{愛知県内|あいちけんない}の{事業場|じぎょうじょう}で{働|はたら}く{人|ひと}に{適用|てきよう}されます。{業種|ぎょうしゅ}によって{別|べつ}の{額|がく}が{適用|てきよう}されることがあります（{窓口|まどぐち}で{確認|かくにん}・{要|よう}{確認|かくにん}）。",
-    "ja_easy": "2026{年|ねん}10{月|がつ}1{日|にち}から、{愛知県|あいちけん}の{時給|じきゅう}の{最低|さいてい}は1,195{円|えん}です（{要確認|ようかくにん}）。その{前|まえ}（2026{年|ねん}9{月|がつ}30{日|にち}まで）は1,140{円|えん}でした。{仕事|しごと}によって{別|べつ}の{金額|きんがく}のことがあります（{要確認|ようかくにん}）。",
-    "en": "From October 1, 2026, the Aichi Prefecture minimum wage is 1,195 yen per hour (to be checked). Until September 30, 2026 it was 1,140 yen. The amount can change, so check the date when you agree an hourly wage. It applies to workers at workplaces in Aichi. A different amount may apply to some industries (check at the counter; to be checked)."
+    "ja": "{愛知県|あいちけん}の{最低|さいてい}{賃金|ちんぎん}は、1{時間|じかん} 1,195{円|えん}です（2026{年|ねん}10{月|がつ}1{日|ついたち}から。{要|よう}{確認|かくにん}）。{時給|じきゅう}がこれより{低|ひく}いのは{違法|いほう}です。",
+    "ja_easy": "{愛知県|あいちけん}では、1{時間|じかん} 1,195{円|えん}より{低|ひく}い{時給|じきゅう}はだめです（2026{年|ねん}10{月|がつ}から。{要|よう}{確認|かくにん}）。",
+    "en": "The minimum wage in Aichi is 1,195 yen per hour (from 1 October 2026; to be checked). An hourly wage below this is illegal."
   },
   "where": {
     "text": {
@@ -65,5 +65,21 @@
     "checked_at": "2026-11-05",
     "status": "needs_check",
     "quote": "愛知県最低賃金が改正されました。 （効力発生日：令和8年10月1日） 最低賃金名 時間額(円) 適用労働者の範囲 愛知県最低賃金 1,195"
-  }
+  },
+  "lead": {
+    "ja": "{愛知県|あいちけん}の{最低|さいてい}{賃金|ちんぎん}は、1{時間|じかん} 1,195{円|えん}です（2026{年|ねん}10{月|がつ}1{日|ついたち}から。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{愛知県|あいちけん}では、1{時間|じかん} 1,195{円|えん}より{低|ひく}い{時給|じきゅう}はだめです（2026{年|ねん}10{月|がつ}から。{要|よう}{確認|かくにん}）。",
+    "en": "The minimum wage in Aichi is 1,195 yen per hour (from 1 October 2026; to be checked)."
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{愛知県|あいちけん}の{最低|さいてい}{賃金|ちんぎん}（{愛知|あいち}{労働|ろうどう}{局|きょく}）",
+        "ja_easy": "{最低|さいてい}{賃金|ちんぎん}（{愛知|あいち}{労働|ろうどう}{局|きょく}）",
+        "en": "Minimum wage in Aichi (Aichi Labour Bureau)"
+      },
+      "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/jirei_toukei/chingin_kanairoudou/saiteichingin_toukei/saiteichingin.html",
+      "source_id": "B-jsite-aichi-saichin"
+    }
+  ]
 }

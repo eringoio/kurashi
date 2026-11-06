@@ -34,9 +34,9 @@
     ]
   },
   "title": {
-    "ja": "アルバイトと{社会|しゃかい}{保険|ほけん}（{健康|けんこう}{保険|ほけん}・{年金|ねんきん}）",
-    "ja_easy": "アルバイトと{保険|ほけん}・{年金|ねんきん}",
-    "en": "Part-time work and social insurance (health insurance and pension)"
+    "ja": "{会社|かいしゃ}の{保険|ほけん}・{年金|ねんきん}に{入|はい}るか（{週|しゅう}20{時間|じかん}{以上|いじょう}）",
+    "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}るか",
+    "en": "Will you join the company insurance and pension? (20+ hours a week)"
   },
   "official_name": {
     "ja": "短時間労働者の社会保険の適用",
@@ -48,9 +48,9 @@
     "en": "You join your workplace health insurance and employees' pension if you work at a designated employer, scheduled hours are 20 or more a week, and you are not a student (to be checked). Students are not covered (to be checked). People hired for 2 months or less are excluded (to be checked). Under the current rule, a designated employer has 51 or more insured people; from October 2027 this extends to employers with 36 or more (future rule). Employment insurance is in principle compulsory, but this app cannot say how the 20-hour rule or students are treated; check at the counter (to be checked). Read the National Health Insurance and National Pension cards on the same day."
   },
   "lead": {
-    "ja": "{学生|がくせい}ではない{人|ひと}が{週|しゅう}20{時間|じかん}{以上|いじょう}{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}・{年金|ねんきん}に{入|はい}ることがあります。",
-    "ja_easy": "学生でない人がたくさん働くと、会社の保険に入ることがあります。",
-    "en": "Non-students who work 20 or more hours a week may join workplace insurance and pension."
+    "ja": "{学生|がくせい}ではない{人|ひと}が{週|しゅう}20{時間|じかん}{以上|いじょう}{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}・{年金|ねんきん}に{入|はい}ることがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{学生|がくせい}ではない{人|ひと}が{長|なが}く{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}に{入|はい}ることがあります（{要|よう}{確認|かくにん}）。",
+    "en": "If you are not a student and work 20+ hours a week, you may join the company insurance and pension (to be checked)."
   },
   "where": {
     "text": {

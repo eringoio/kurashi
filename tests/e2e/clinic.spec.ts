@@ -42,7 +42,7 @@ test('AT-clinic-01〜03：ホームから、tooth で探して 歯・口 → 歯
   await start(page);
   await page.getByRole('link', { name: /体調が悪い・病院に行きたい/ }).click();
   await expect(page).toHaveURL(/\/clinic$/);
-  await expect(h1(page)).toHaveText('どこが困っていますか？');
+  await expect(h1(page)).toHaveText('困っている所を選んでください');
   await expect(page.getByRole('button', { name: 'つぎへ' })).toBeDisabled();
   await check(page, '1 どこが');
   await page.getByLabel('言葉で探す').fill('tooth');
@@ -57,7 +57,6 @@ test('AT-clinic-01〜03：ホームから、tooth で探して 歯・口 → 歯
   await expect(page.locator('main')).toContainText('診断ではありません');
   await expect(page.locator('main')).not.toContainText('まず、ここへ');
   await expect(page.locator('.clinic__depts li').first()).toContainText('歯科');
-  await expect(page.locator('main')).toContainText('どこに行くかは、あなたが決めます');
   await check(page, '2 診療科');
   await tap(page, 'つぎへ');
   await expect(h1(page)).toHaveText('行く前に');

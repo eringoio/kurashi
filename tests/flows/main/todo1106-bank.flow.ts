@@ -23,7 +23,7 @@ flow({
     async () => { await expect(h1).toHaveText('日本に住み始めて、どのくらいですか？'); });
   await tap(/^6か月ぐらい/);
   await page.getByRole('link', { name: '全体' }).first().click();
-  await snap({ name: '全体', input: '6か月ぐらい → 全体', expected: 'いま：口座を売らない・登録を変える・やめる・別の口座を作る。あとで（3）：カードを止める・新しいカード・居住者への変更。口座を作るは「関係なかったもの」', why: 'C（作者 11/6）' },
+  await snap({ name: '全体', input: '6か月ぐらい → 全体', expected: 'いま：登録を変える・やめる・別の口座を作る。あとで（3）：カードを止める・新しいカード・居住者への変更。口座を作るは「関係なかったもの」', why: 'C（作者 11/6）' },
     async () => { await expect(page.locator('main')).toContainText('別の口座を作る'); await expect(page.locator('main')).toContainText('あとで'); });
   // 答えを残してから（同意の前はメモリだけ）、「あとで」の中のページを直接開く
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();

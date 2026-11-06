@@ -105,7 +105,6 @@
         "bank-card-stop",
         "bank-card-reissue",
         "bank-resident-change",
-        "bank-account-no-sale",
         "bank-account-open-another"
       ],
       "scope_rule": "R-bank-scope",

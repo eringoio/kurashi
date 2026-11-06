@@ -1144,16 +1144,6 @@
       "navii",
       "tsuyaku"
     ],
-    "fee_note": {
-      "ja": "{大学|だいがく}{病院|びょういん}など{一部|いちぶ}の{大|おお}きな{病院|びょういん}では、{紹介状|しょうかいじょう}がないと、{初診|しょしん}に{別|べつ}の{料金|りょうきん}がかかります（7,000{円|えん}{以上|いじょう}、{歯科|しか}は5,000{円|えん}{以上|いじょう}。{救急|きゅうきゅう}のときは{除|のぞ}く。{要|よう}{確認|かくにん}）。{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。",
-      "ja_easy": "{大|おお}きい{病院|びょういん}では、{紹介状|しょうかいじょう}がないと、ほかにお{金|かね}がかかります（{要|よう}{確認|かくにん}）。{紹介状|しょうかいじょう}がなくても{診|み}てもらえます。",
-      "en": "Some large hospitals, such as university hospitals, charge an extra fee at the first visit without a referral letter (7,000 yen or more; dental 5,000 yen or more; not for emergencies; to be checked). You can still be seen without a referral letter."
-    },
-    "youdecide": {
-      "ja": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
-      "ja_easy": "どこに{行|い}くかは、あなたが{決|き}めます。{病院|びょういん}で、ほかの{科|か}をすすめられることもあります。",
-      "en": "You decide where to go. The clinic may send you to another department."
-    },
     "child": {
       "ja": "{子|こ}どもは、{多|おお}くの{場合|ばあい}、まず{小児科|しょうにか}で{相談|そうだん}できます。",
       "ja_easy": "{子|こ}どもは、まず{小児科|しょうにか}で{相談|そうだん}できます。",

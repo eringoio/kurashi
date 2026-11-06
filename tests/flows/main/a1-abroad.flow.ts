@@ -26,7 +26,7 @@ flow({
   await snap({ name: '持ち物', input: '日本の外から', expected: '「持っている物を、全部さわってください」', why: '持ち物の答えが、あとの質問を減らす（SPEC 6A）' },
     async () => { await expect(h1).toHaveText('持っている物を、全部さわってください'); });
 
-  for (const name of [/^在留カード/, /^パスポート/, /^自分で借りた部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
+  for (const name of [/^在留カード/, /^パスポート/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
   await snap({ name: '4つ選んだ', input: '在留カード・パスポート・部屋の鍵・学生証', expected: '4つが選ばれた印', why: 'aria-pressed で選択状態を持つ' },
     async () => { await expect(page.getByRole('button', { name: /^在留カード/ })).toHaveAttribute('aria-pressed', 'true'); });
 

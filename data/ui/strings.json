@@ -456,14 +456,9 @@
     "en": "About your move"
   },
   "move.nochange.title": {
-    "ja": "{住所|じゅうしょ}が{変|か}わっていなくても、{使|つか}える{案内|あんない}があります",
-    "ja_easy": "{住所|じゅうしょ}が{変|か}わっていなくても、{使|つか}えます",
-    "en": "You can use these even if your address has not changed"
-  },
-  "move.nochange.sub": {
-    "ja": "{知|し}りたいことを{選|えら}んでください。",
-    "ja_easy": "{知|し}りたいことを{選|えら}んでください。",
-    "en": "Choose what you want to know about."
+    "ja": "{気|き}になる{手続|てつづ}きを{選|えら}んでください",
+    "ja_easy": "{知|し}りたい{手続|てつづ}きを{選|えら}んでください",
+    "en": "Choose what you want to know about"
   },
   "move.unsure.title": {
     "ja": "{住民|じゅうみん}{票|ひょう}の{住所|じゅうしょ}と、いま{住|す}んでいる{所|ところ}は、{同|おな}じですか？",
@@ -1521,9 +1516,9 @@
     "en": "What kind of garbage is this?"
   },
   "gomi.search.hint": {
-    "ja": "{品物|しなもの}の{名前|なまえ}で{探|さが}します。{例|れい}：かさ、でんち、れいぞうこ",
-    "ja_easy": "{品物|しなもの}の{名前|なまえ}を{書|か}きます。れい：かさ、でんち",
-    "en": "Type the name of the item. e.g. umbrella, battery"
+    "ja": "{例|れい}：かさ、でんち、れいぞうこ",
+    "ja_easy": "れい：かさ、でんち",
+    "en": "e.g. umbrella, battery"
   },
   "gomi.search.none": {
     "ja": "この{品物|しなもの}は、まだこのアプリのデータにありません。{市|し}の{分別|ふんべつ}の{検索|けんさく}で{確|たし}かめてください。",
@@ -1541,9 +1536,9 @@
     "en": "We cannot decide the category here. Please check the city's search or the environment office."
   },
   "gomi.result.unapproved": {
-    "ja": "{下書|したが}き・{要|よう}{確認|かくにん}",
-    "ja_easy": "{下書|したが}き・{要確認|ようかくにん}",
-    "en": "Draft – to be checked"
+    "ja": "{要|よう}{確認|かくにん}",
+    "ja_easy": "{要確認|ようかくにん}",
+    "en": "To be checked"
   },
   "gomi.result.changeAnswer": {
     "ja": "{答|こた}えを{変|か}える",
@@ -1571,9 +1566,9 @@
     "en": "Next collection day:"
   },
   "gomi.next.noArea": {
-    "ja": "{収集|しゅうしゅう}{日|び}は、ごみを{出|だ}す{地域|ちいき}で{決|き}まります。{下|した}で{地域|ちいき}を{選|えら}んでください。",
-    "ja_easy": "{集|あつ}める{日|ひ}は、{場所|ばしょ}で{違|ちが}います。{下|した}で{区|く}を{選|えら}んでください。",
-    "en": "Collection days depend on your area. Choose your area below."
+    "ja": "{上|うえ}で{地域|ちいき}を{選|えら}ぶと、{収集|しゅうしゅう}{日|び}がわかります。",
+    "ja_easy": "{上|うえ}で{地域|ちいき}を{選|えら}んでください。",
+    "en": "Choose your area above to see the collection day."
   },
   "gomi.next.noData": {
     "ja": "この{地域|ちいき}の{収集|しゅうしゅう}{日|び}は、まだこのアプリにありません。{市|し}の{収集|しゅうしゅう}{日|び}の{検索|けんさく}で{確|たし}かめてください。",
@@ -1621,9 +1616,9 @@
     "en": "Take it to a facility yourself"
   },
   "gomi.delivery.day": {
-    "ja": "{持|も}ち{込|こ}む{予定|よてい}の{日|ひ}（{受付|うけつけ}の{方法|ほうほう}は、この{日|ひ}で{変|か}わります）",
+    "ja": "{持|も}ち{込|こ}む{日|ひ}",
     "ja_easy": "{持|も}っていく{日|ひ}",
-    "en": "The day you plan to take it (the booking rules depend on this day)"
+    "en": "The day you take it"
   },
   "why.visitNeedDocument": {
     "ja": "{窓口|まどぐち}で、{別|べつ}の{書類|しょるい}が{要|い}ると{言|い}われました。{何|なに}が{要|い}るかを{確|たし}かめてから、{行|い}く{日|ひ}を{決|き}め{直|なお}します。",
@@ -2451,9 +2446,9 @@
     "en": "Emergency numbers"
   },
   "clinic.h1": {
-    "ja": "どこが{困|こま}っていますか？",
-    "ja_easy": "どこが{困|こま}っていますか？",
-    "en": "Where is the problem?"
+    "ja": "{困|こま}っている{所|ところ}を{選|えら}んでください",
+    "ja_easy": "{困|こま}っている{所|ところ}を{選|えら}んでください",
+    "en": "Choose where the problem is"
   },
   "clinic.qlbl": {
     "ja": "{言葉|ことば}で{探|さが}す",
@@ -3040,16 +3035,6 @@
     "ja_easy": "{病院|びょういん}",
     "en": "clinic"
   },
-  "clinic.feeTitle": {
-    "ja": "{大|おお}きな{病院|びょういん}の{初診|しょしん}の{料金|りょうきん}",
-    "ja_easy": "{大|おお}きい{病院|びょういん}のお{金|かね}",
-    "en": "Fee at large hospitals"
-  },
-  "clinic.bandMore": {
-    "ja": "{番号|ばんごう}のくわしく",
-    "ja_easy": "{番号|ばんごう}のくわしく",
-    "en": "About these numbers"
-  },
   "card.fee": {
     "ja": "{費用|ひよう}",
     "ja_easy": "お{金|かね}",
@@ -3169,5 +3154,10 @@
     "ja": "{窓口|まどぐち}で{確認|かくにん}",
     "ja_easy": "{窓口|まどぐち}で{聞|き}く",
     "en": "Ask at the counter"
+  },
+  "clinic.lead": {
+    "ja": "{病院|びょういん}の{種類|しゅるい}とアドバイスが{出|で}ます。",
+    "ja_easy": "{行|い}く{病院|びょういん}の{種類|しゅるい}がわかります。",
+    "en": "You will see which kind of clinic to visit, with advice."
   }
 }

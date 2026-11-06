@@ -129,6 +129,8 @@ export const Card = z.object({
   visual: z.enum(['floorplan', 'costs']).optional(),
   reminder: z.object({ months: z.number().int().min(1).max(24), from: z.enum(['arrival']) }).optional(),
   reasons: z.object({ excluded: Text.optional(), check_at_office: Text.optional(), check_at_office_coverage: Text.optional() }),
+  /** 公式のページへのリンク（作者 11/7 K-12・K-13：必要な書類や、くわしい額は公式のページへ）。カードのページに出す。source_id は sources.json の出典 */
+  links: z.array(z.object({ label: Text, url: z.string().url(), source_id: z.string() })).optional(),
   /** お知らせ（期間つき。B-7c）。いまの日が期間の外なら出さない */
   notices: z.array(Notice).optional(),
   evidence: Evidence,

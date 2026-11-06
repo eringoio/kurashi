@@ -33,9 +33,6 @@ export const ClinicData = z.object({
   advice: z.object({
     /** 段階2の最初に出す公式の探すページ（links の id。A-5c） */
     links: z.array(z.string()),
-    /** 大きな病院の初診の特別の料金。くわしく のシートだけ（A-5c） */
-    fee_note: Text,
-    youdecide: Text,
     /** 子どもは多くの場合まず小児科（医師のアドバイザー 11/6） */
     child: Text.optional(),
     evidence: Evidence,

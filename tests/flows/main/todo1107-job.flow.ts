@@ -3,7 +3,7 @@ import { expect, flow } from '../lib';
 
 flow({
   id: 'todo1107-job',
-  title: '11/7 C-1：仕事・アルバイト（公開）',
+  title: '11/7 C-1：仕事・アルバイト（公開）と、作者 11/7 の K-12〜K-14',
   touches: ['data/events.json', 'data/questions.json', 'data/cards/zairyu-shikakugai.json', 'scripts/bundle-to-data.mjs'],
   evidence: ['docs/TODO_2026-11-07.md', 'tests/core/job.test.ts'],
 }, async (page, snap) => {
@@ -23,4 +23,13 @@ flow({
   await tap(/^まだ|^いいえ/);
   await page.getByRole('link', { name: '全体' }).first().click();
   await snap({ name: '全体', input: 'まだ → 全体', expected: '資格外活動許可・最低賃金・労働条件・求人・困ったとき・社会保険など。公式のルールは要確認のまま', why: 'C-1：needs_check・ai_checked のまま公開' }, async () => { await expect(page.getByText('資格外活動許可').first()).toBeVisible(); });
+  for (const [name, to, text, why] of [
+    ['最低賃金', '/e/E-job/c/job-saitei-chingin', '1,195円', 'K-13：「1時間 1,195円です」と最小限。くわしくは愛知労働局のリンク（↗）'],
+    ['会社の保険・年金', '/e/E-job/c/job-shakai-hoken', '週20時間', 'K-13：何の案内か分かる題（会社の保険・年金に入るか）'],
+    ['在留期間の更新', '/e/E-stay-renew/c/zairyu-koshin', '必要な書類', 'K-12：入管の「在留期間更新許可申請」のページへのリンク（↗）'],
+    ['口座を作る（注意）', '/e/E-bank/c/bank-account-open', '売ったり渡したり', 'K-14：「口座を売らない」は手続きのカードではなく、口座を作るときの注意'],
+  ] as const) {
+    await page.goto(to);
+    await snap({ name, input: to, expected: '「' + text + '」が見える', why }, async () => { await expect(page.locator('main')).toContainText(text); });
+  }
 });

@@ -28,8 +28,9 @@ function withNb(t: string, key: string): ReactNode[] {
   return nbParts(t).map((p, i) => (p.nb ? <span key={key + '-' + i} className="nb">{p.t}</span> : <Fragment key={key + '-' + i}>{p.t}</Fragment>));
 }
 
-export function Ruby({ s, phrase }: { s: string; phrase?: boolean }) {
-  const { furigana } = usePrefs();
+/** furigana を渡すと、設定にかかわらずふりがなを付ける（ことば。作者 11/7 K-5） */
+export function Ruby({ s, phrase, furigana: force }: { s: string; phrase?: boolean; furigana?: boolean }) {
+  const furigana = usePrefs().furigana || !!force;
   const parts = segs(s);
   const br = phrase ? breaksOf(parts.map((g) => g.t).join('')) : new Set<number>();
   const out: ReactNode[] = [];

@@ -161,44 +161,6 @@
       }
     },
     {
-      "id": "rel-bank-open-nosale",
-      "type": "related",
-      "from": "bank-account-open",
-      "to": "bank-account-no-sale",
-      "explain": {
-        "ja": "{口座|こうざ}を{作|つく}るときに、{口座|こうざ}を{売|う}ったり{渡|わた}したりしてはいけないことも{知|し}っておきます。",
-        "ja_easy": "{口座|こうざ}を{作|つく}るとき、{口座|こうざ}を{売|う}ってはいけないことも{知|し}っておきます。",
-        "en": "When you open an account, also know that you must never sell or hand it over."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-yucho-gaikokujin-pub"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "第三者に利用させることを目的とした口座(通帳・キャッシュカード)の譲渡や売買は犯罪です。絶対に行わないでください。"
-      }
-    },
-    {
-      "id": "rel-bank-close-nosale",
-      "type": "related",
-      "from": "bank-account-close",
-      "to": "bank-account-no-sale",
-      "explain": {
-        "ja": "{帰国|きこく}するときは、{口座|こうざ}を{売|う}らずに{銀行|ぎんこう}の{窓口|まどぐち}で{解約|かいやく}します。",
-        "ja_easy": "{国|くに}に{帰|かえ}るときは、{口座|こうざ}を{売|う}らずに{銀行|ぎんこう}で{解約|かいやく}します。",
-        "en": "When you leave Japan, close the account at the bank instead of selling it."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-zenginkyo-gaikokujin-pub"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "昨今、来日外国人が帰国する際に犯罪グループに売却した個人名義口座が特殊詐欺の振込先に悪用される事例が発生しております。"
-      }
-    },
-    {
       "id": "rel-tennyu-before-mail",
       "type": "practical_prerequisite",
       "from": "nagoya-tennyu-todoke",

@@ -27,7 +27,7 @@ async function planWardToday(page: Page) {
   await page.getByRole('link', { name: '引っ越し・住む場所のこと' }).click();
   await tap(page, 'はい');
   await tap(page, '日本の外から');
-  for (const name of [/^在留カード/, /^パスポート/, /^自分で借りた部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
+  for (const name of [/^在留カード/, /^パスポート/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
   await tap(page, 'つぎへ');
   await tap(page, '書いてある');
   await tap(page, /^学生$/);

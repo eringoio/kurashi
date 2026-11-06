@@ -129,6 +129,14 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       {c.card.visual === 'floorplan' && <FloorPlan />}
       {c.card.visual === 'costs' && <CostChart />}
       {c.card.reminder && c.state !== 'excluded' && c.questions.length === 0 && <Reminder card={c.card} />}
+      {/* 公式のページ（K-12・K-13） */}
+      {c.card.links && c.card.links.length > 0 && (
+        <ul className="clinic__links" role="list">
+          {c.card.links.map((l) => (
+            <li key={l.url}><a className="link clinic__ext" href={l.url} target="_blank" rel="noopener noreferrer"><Bi phrase t={l.label} /><span aria-hidden="true" className="clinic__extmark">↗</span><span className="sr-only"><One k="clinic.newTab" /></span></a></li>
+          ))}
+        </ul>
+      )}
       <Notes c={c} where="page" />
       {alts.length > 0 && (
         <div className="k-notice" role="note">

@@ -19,7 +19,7 @@ flow({
     async () => { await expect(h1).toHaveText('持っている物を、全部さわってください'); });
 
   await page.getByRole('button', { name: /^マイナンバーカード/ }).click();
-  await page.getByRole('button', { name: /^自分で借りた部屋の鍵/ }).click();
+  await page.getByRole('button', { name: /^部屋の鍵/ }).click();
   await snap({ name: '2つ選んだ', input: 'マイナンバーカード・部屋の鍵', expected: '2つが選ばれた印', why: 'マイナンバーカードがあると、転出届をカードで出せる可能性（B1）' },
     async () => { await expect(page.getByRole('button', { name: /^マイナンバーカード/ })).toHaveAttribute('aria-pressed', 'true'); });
 

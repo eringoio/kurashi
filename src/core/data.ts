@@ -137,6 +137,14 @@ export function checkRefs(d: GuideData): string[] {
     if (c.deadline) ev(c.id + '.deadline', c.deadline.evidence);
     if (c.fee) ev(c.id + '.fee', c.fee.evidence);
     ev(c.id + '.where', c.where.evidence);
+    // 公式のページのリンク（K-12）：出典があり、URL がその出典と同じで、クエリ文字列が無い
+    for (const l of c.links ?? []) {
+      const so = d.sources.find((x) => x.source_id === l.source_id);
+      if (!so) err.push(`${c.id}.links：出典 ${l.source_id} がない`);
+      else if (so.url !== l.url) err.push(`${c.id}.links：URL が出典 ${l.source_id} と違う`);
+      if (l.url.includes('?')) err.push(`${c.id}.links：クエリ文字列がある`);
+      text3(c.id + '.links', l.label as Record<string, string>);
+    }
     const ids = ruleIds(c.eligibility).concat(c.coverage_rule_ids);
     ids.forEach((id) => { if (id === '!nest') err.push(`${c.id}：入れ子が2段以上`); else if (!d.rules.has(id)) err.push(`${c.id}：ルール ${id} がない`); });
     if (c.awareness_type === 'must' && !['legal', 'local_rule'].includes(c.obligation)) err.push(`${c.id}：must は legal・local_rule だけ`);

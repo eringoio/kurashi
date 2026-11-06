@@ -1,4 +1,4 @@
-/* 11/7 の小さい直し：A-3（届いた書類がわからない）・A-5（病院の帯・公式ページ・料金はシート）・B-9（ことばの意味は2段） */
+/* 11/7 の小さい直し：A-3（届いた書類がわからない）・病院（A-5、作者 11/7 の K-1〜K-4）・ことば（K-5） */
 import { expect, flow } from '../lib';
 
 flow({
@@ -18,23 +18,15 @@ flow({
   for (const w of [320, 390]) {
     await page.setViewportSize({ width: w, height: 760 });
     await page.goto('/clinic');
-    await snap({ name: '病院 帯 幅' + w, input: '/clinic（幅 ' + w + 'px）', expected: '白い背景・細い枠の帯。電話の絵＋番号＋短い名前が3行（119 救急車・火事／#7119 救急の相談／#8000 子どもの急な病気の相談）。下に「救急車の呼び方」「番号のくわしく」', why: 'A-5a：オレンジの帯をやめ、コンパクトに。横スクロール 0' },
-      async () => { await expect(page.locator('.clinic__tel')).toHaveCount(3); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); });
+    await snap({ name: '病院 帯 幅' + w, input: '/clinic（幅 ' + w + 'px）', expected: '題「困っている所を選んでください」と一文「病院の種類とアドバイスが出ます。」。白い枠の帯の中に、番号＋短い名前の3行と「救急車の呼び方」だけ（「番号のくわしく」は無い）', why: 'A-5a・K-1・K-2（作者 11/7）' },
+      async () => { await expect(page.locator('.clinic__tel')).toHaveCount(3); await expect(page.getByRole('button', { name: '番号のくわしく' })).toHaveCount(0); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true); });
   }
-  await page.getByRole('button', { name: '番号のくわしく' }).click();
-  await snap({ name: '病院 番号のシート', input: '「番号のくわしく」', expected: 'シートに3つの番号の長い説明（通訳・24時間・つながらないときの番号）', why: 'A-5a：長い説明はシートへ' },
-    async () => { await expect(page.getByRole('dialog')).toContainText('052-951-7119'); });
-  await page.getByRole('dialog').getByRole('button', { name: '閉じる' }).click();
-  await page.locator('.chips').getByRole('button', { name: /^子ども/ }).click().catch(async () => { await page.getByRole('button', { name: /^子ども/ }).first().click(); });
+  await page.getByRole('button', { name: /^子ども/ }).first().click();
   await page.getByRole('button', { name: 'つぎへ' }).click();
-  await snap({ name: '病院 2 公式のページが先', input: '子ども → つぎへ', expected: '「診断ではありません。病院の種類を説明する情報です。」。すぐ下に「病院を探す公式のページ」3つ。「まず近くのクリニックへ／小さな病院／大きな病院」は無い。下に「大きな病院の初診の料金」のリンク', why: 'A-5b・A-5c' },
-    async () => { await expect(page.getByText('病院の種類を説明する情報です')).toBeVisible(); await expect(page.getByText('まず近くのクリニックへ')).toHaveCount(0); });
-  await page.getByRole('button', { name: '大きな病院の初診の料金' }).click();
-  await snap({ name: '病院 料金のシート', input: '「大きな病院の初診の料金」', expected: 'シートに特別の料金（7,000円以上・歯科5,000円以上・救急は除く。要確認）', why: 'A-5c：料金はシートだけ' },
-    async () => { await expect(page.getByRole('dialog')).toContainText('7,000'); });
-  await page.getByRole('dialog').getByRole('button', { name: '閉じる' }).click();
+  await snap({ name: '病院 2 診療科と公式のリンク', input: '子ども → つぎへ', expected: '「診断ではありません。…」。診療科のカード。下に「病院を探す公式のページ」はカードではなくリンクの一覧（↗）。大きな病院の料金は無い', why: 'K-3・K-4（作者 11/7：シンプルに）' },
+    async () => { await expect(page.locator('.clinic__ext')).toHaveCount(3); await expect(page.getByText('大きな病院の初診の料金')).toHaveCount(0); });
 
   await page.goto('/words');
-  await snap({ name: 'ことば 2段', input: '/words（ふつうの日本語）', expected: '意味は「やさしい日本語」と「English」の2段', why: 'B-9' },
-    async () => { await expect(page.locator('.word__mean2').first()).toBeVisible(); });
+  await snap({ name: 'ことば', input: '/words（ふつうの日本語）', expected: '言う文は、ふりがな付きのやさしい日本語（例：日本語が少ししか話せません）と、下に英語の意味', why: 'K-5（作者 11/7：英語で表示しているときと同じ形）' },
+    async () => { await expect(page.locator('.word__ja ruby').first()).toBeVisible(); await expect(page.locator('.word__mean[lang="en"]').first()).toBeVisible(); });
 });

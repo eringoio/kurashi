@@ -69,8 +69,8 @@ describe('診療科の順番と緊急の連絡先', () => {
     expect(first('child')).toBe('shoni');
     const all = JSON.stringify({ parts: d.parts.map((p) => [p.name, p.say]), deps: d.departments.map((x) => x.covers), advice: d.advice, phrases: d.phrases });
     for (const w of ['かもしれません', '可能性', '最も適した', '病気です', '診断します']) expect(all, w).not.toContain(w);
-    // 紹介状が無くても受診できる、と書く
-    expect(d.advice.fee_note.ja.replace(/\{([^|}]+)\|[^}]+\}/g, '$1')).toContain('紹介状がなくても診てもらえます');
+    // 大きな病院の料金は案内しない（作者 11/7 K-3）
+    expect('fee_note' in d.advice).toBe(false);
     // 公式のリンクだけ（https・クエリ文字列なし）
     for (const l of d.links) expect(l.url).toMatch(/^https:\/\/[^?]+$/);
   });

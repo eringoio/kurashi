@@ -193,5 +193,16 @@
     "checked_at": "2026-11-05",
     "status": "needs_check",
     "quote": "手続対象者 現に有する在留資格の活動を継続しようとする外国人"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{必要|ひつよう}な{書類|しょるい}（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}）",
+        "ja_easy": "{要|い}る{書類|しょるい}（{入管|にゅうかん}のページ）",
+        "en": "Required documents (Immigration Services Agency)"
+      },
+      "url": "https://www.moj.go.jp/isa/applications/procedures/16-3.html",
+      "source_id": "B-moj-koshin"
+    }
+  ]
 }

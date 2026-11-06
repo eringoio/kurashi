@@ -12,7 +12,6 @@ import { art } from '../ui/art';
 import { BodyMap, PartButton } from '../ui/BodyMap';
 import { fill } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
-import { Sheet } from '../ui/Sheet';
 import { Speak } from '../ui/Speak';
 
 /** 診療科の案内を出すか（03_MEDICAL 6章：大会ルールの確認が来るまで、止められるようにする）。VITE_CLINIC_DEPARTMENTS=off で止める。
@@ -28,10 +27,9 @@ const usePicked = () => useSyncExternalStore((f) => { subs.add(f); return () => 
 function Band({ part }: { part: ClinicPart | null }) {
   const guide = CLINIC().links.find((l) => l.id === 'fdma-guide');
   const { level } = usePrefs();
-  const [open, setOpen] = useState(false);
   const list = emergencyFor(CLINIC(), part);
   return (
-    // 白い背景・細い枠・番号＋短い名前の小さな帯（A-5a）。長い説明は「くわしく」のシート
+    // 白い背景・細い枠・番号＋短い名前の小さな帯（A-5a。作者 11/7 K-1：くわしくは要らない。枠の中だけで収める）
     <aside className="clinic__band" aria-label={line(ui('clinic.bandLabel'), level)}>
       <ul className="clinic__tels" role="list">
         {/* 押すと電話をかける（A-7）。# は tel: の中で %23 にする */}
@@ -53,15 +51,7 @@ function Band({ part }: { part: ClinicPart | null }) {
             <One t={guide.title} /><span className="sr-only"><One k="clinic.newTab" /></span>
           </a>
         )}
-        <button type="button" className="link clinic__more" onClick={() => setOpen(true)}><One k="clinic.bandMore" /></button>
       </div>
-      {open && (
-        <Sheet title={<One k="clinic.bandLabel" />} onClose={() => setOpen(false)}>
-          <dl className="clinic__kinds">
-            {list.map((e) => <div key={e.id}><dt lang="en"><strong>{e.number}</strong></dt><dd><Bi t={e.label} /></dd></div>)}
-          </dl>
-        </Sheet>
-      )}
     </aside>
   );
 }
@@ -70,14 +60,16 @@ function Band({ part }: { part: ClinicPart | null }) {
 function LinkList({ ids, dept }: { ids: string[]; dept: ClinicDepartment | null }) {
   const links = ids.map((id) => CLINIC().links.find((l) => l.id === id)!).filter(Boolean);
   return (
-    <ul className="list" role="list">
+    // 公式のページは、カードではなく外部リンクの一覧（作者 11/7 K-4：診療科のカードと同じ見た目にしない）
+    <ul className="clinic__links" role="list">
       {links.map((l) => (
         <li key={l.id}>
-          <a className="k-answer clinic__link" href={l.url} target="_blank" rel="noopener noreferrer">
+          <a className="link clinic__ext" href={l.url} target="_blank" rel="noopener noreferrer">
             <Bi t={fill(l.title, 'DEPT', (_lv, id) => (dept ? dept.name[id] ?? dept.name.ja : ui('clinic.anyDept')[id] ?? ui('clinic.anyDept').ja) as string)} />
-            {l.desc && <span className="sub"><One t={l.desc} /></span>}
+            <span aria-hidden="true" className="clinic__extmark">↗</span>
             <span className="sr-only"><One k="clinic.newTab" /></span>
           </a>
+          {l.desc && <span className="sub"><One t={l.desc} /></span>}
         </li>
       ))}
     </ul>
@@ -100,7 +92,7 @@ function Where() {
     <>
       <Step n={1} />
       <Band part={part} />
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h1" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h1" /></h1><p className="sub"><Bi phrase k="clinic.lead" /></p></div>
       <label className="qrfield">
         <span className="label"><One k="clinic.qlbl" /></span>
         <input className="field" type="search" value={q} autoComplete="off" placeholder={line(ui('clinic.qph'), level)} onChange={(e) => setQ(e.target.value)} />
@@ -122,7 +114,6 @@ function Departments({ part }: { part: ClinicPart }) {
   const d = CLINIC();
   const depts = departmentsFor(d, part);
   const first = depts[0];
-  const [fee, setFee] = useState(false);
   useFocusTitle('clinic:2');
   return (
     <>
@@ -131,19 +122,16 @@ function Departments({ part }: { part: ClinicPart }) {
       <p className="sub"><One k="clinic.picked" />：<Bi t={part.name} />　<Link to="/clinic" className="link"><Bi k="clinic.change" /></Link></p>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="clinic.h2" /></h1></div>
       <p className="sub"><Bi k="clinic.notDx" /></p>
-      {/* 病院が見つかる公式のページを最初に（A-5c） */}
-      <section aria-labelledby="clinic-official">
-        <h2 id="clinic-official" className="label"><One phrase k="clinic.officialH" /></h2>
-        <LinkList ids={d.advice.links} dept={first} />
-      </section>
       {/* 順位を付けない（「まず」「1・2」は判断に読める。03_MEDICAL 2章A） */}
       <ul className="clinic__depts" role="list">
         {depts.map((x) => <li key={x.id}><span className="clinic__dept"><Bi t={x.name} /></span><span className="sub"><Bi t={x.covers} /></span></li>)}
       </ul>
       {part.id !== 'child' && d.advice.child && <p className="sub"><Bi t={d.advice.child} /></p>}
-      <p className="sub"><Bi t={d.advice.youdecide} /></p>
-      <p><button type="button" className="link" onClick={() => setFee(true)}><One k="clinic.feeTitle" /></button></p>
-      {fee && <Sheet title={<One k="clinic.feeTitle" />} onClose={() => setFee(false)}><p><Bi t={d.advice.fee_note} /></p></Sheet>}
+      {/* 病院を探す公式のページ（リンク。作者 11/7 K-3・K-4：料金の案内はしない） */}
+      <section aria-labelledby="clinic-official">
+        <h2 id="clinic-official" className="label"><One phrase k="clinic.officialH" /></h2>
+        <LinkList ids={d.advice.links} dept={first} />
+      </section>
       <button type="button" className="k-answer k-answer--primary" onClick={() => navigate('/clinic/before')}><Bi phrase k="nav.next" /></button>
     </>
   );

@@ -27,21 +27,18 @@ export function useSeen(ids: string[]) {
 
 export function WordRow({ w, starred, onStar }: { w: WordView; starred: boolean; onStar: () => void }) {
   const { level } = usePrefs();
-  // 意味は「やさしい日本語＋English」の2段（B-9）。English のときは English が先
+  // 作者 11/7 K-5：どの表示レベルでも同じ形。主の文はふりがな付きの日本語、意味は英語（英語で表示しているときと同じ）。
+  // 言う文（say）の主の文は、やさしい日本語（言いやすい）。聞こえてくる言葉・正式名・書類の言葉は、そのままの日本語（聞いて分かるように）
   const m = w.meaning as LocalizedText;
-  const easy = m.ja_easy ?? m.ja;
-  const pair: [string, string][] = level.kind === 'foreign'
-    ? [[m[level.id] ?? easy, m[level.id] ? level.lang : 'ja'], [m[level.id] ? easy : '', 'ja']]
-    : [[easy, 'ja'], [m.en ?? '', 'en']];
+  const main = w.kind === 'say' ? m.ja_easy ?? m.ja : w.ja;
+  const mean = m.en ?? '';
   return (
     <li className="word">
-      <span className="word__ja" lang="ja"><Ruby s={w.ja} /></span>
-      <span className="word__mean">
-        {pair.filter(([s]) => s).map(([s, lang], i) => <span key={i} className={i ? 'word__mean2' : undefined} lang={lang}><Ruby s={s} /></span>)}
-      </span>
+      <span className="word__ja" lang="ja"><Ruby s={main} furigana /></span>
+      {mean && <span className="word__mean" lang="en"><Ruby s={mean} /></span>}
       <span className="word__btns">
-        <Speak ja={w.ja} />
-        <button type="button" className="seg word__star" aria-pressed={starred} aria-label={line(ui('words.star'), level) + '：' + w.ja.replace(/\{([^|}]+)\|[^}]+\}/g, '$1')} onClick={onStar}>
+        <Speak ja={main} />
+        <button type="button" className="seg word__star" aria-pressed={starred} aria-label={line(ui('words.star'), level) + '：' + main.replace(/\{([^|}]+)\|[^}]+\}/g, '$1')} onClick={onStar}>
           <span aria-hidden="true">{starred ? '★' : '☆'}</span>
         </button>
       </span>

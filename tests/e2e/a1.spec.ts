@@ -26,7 +26,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await tap(page, '日本の外から');
 
   await expect(h1(page)).toHaveText('持っている物を、全部さわってください');
-  for (const name of [/^在留カード/, /^パスポート/, /^自分で借りた部屋の鍵/, /^学生証/]) {
+  for (const name of [/^在留カード/, /^パスポート/, /^部屋の鍵/, /^学生証/]) {
     const b = page.getByRole('button', { name });
     await b.click();
     await expect(b).toHaveAttribute('aria-pressed', 'true');
@@ -118,7 +118,7 @@ test('B1：ほかの市から来た人も、同じ画面とデータの追加だ
   await tap(page, 'ほかの市・町・村から');
   await expect(h1(page)).toHaveText('持っている物を、全部さわってください');
   await page.getByRole('button', { name: /^マイナンバーカード/ }).click();
-  await page.getByRole('button', { name: /^自分で借りた部屋の鍵/ }).click();
+  await page.getByRole('button', { name: /^部屋の鍵/ }).click();
   await check(page, '持ち物（B1）');
   await tap(page, 'つぎへ');
   await tap(page, /^学生$/);

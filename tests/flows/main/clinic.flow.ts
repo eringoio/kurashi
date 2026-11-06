@@ -12,8 +12,8 @@ flow({
   const band = page.locator('aside.clinic__band');
 
   await page.goto('/clinic');
-  await snap({ name: '1 どこが（空）', input: '/clinic を開く', expected: '「どこが困っていますか？」。言葉で探す欄、からだの絵と場所のボタン。「つぎへ」は押せない。119・#7119 の帯', why: '場所を選ぶまで進めない（6A.13）' },
-    async () => { await expect(h1).toHaveText('どこが困っていますか？'); await expect(page.getByRole('button', { name: 'つぎへ' })).toBeDisabled(); await expect(band).toBeVisible(); });
+  await snap({ name: '1 どこが（空）', input: '/clinic を開く', expected: '「困っている所を選んでください」と「病院の種類とアドバイスが出ます。」。言葉で探す欄、からだの絵と場所のボタン。「つぎへ」は押せない。119・#7119 の帯', why: '場所を選ぶまで進めない（6A.13）' },
+    async () => { await expect(h1).toHaveText('困っている所を選んでください'); await expect(page.getByRole('button', { name: 'つぎへ' })).toBeDisabled(); await expect(band).toBeVisible(); });
 
   await page.getByLabel('言葉で探す').fill('tooth');
   await snap({ name: '1 tooth と打つ', input: '「tooth」', expected: '候補に「歯・口」のボタンが出る', why: '言葉から場所を探せる' },

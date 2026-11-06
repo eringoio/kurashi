@@ -237,5 +237,24 @@
         "status": "needs_check"
       }
     }
+  ],
+  "notices": [
+    {
+      "text": {
+        "ja": "{口座|こうざ}・{通帳|つうちょう}・キャッシュカードを、{人|ひと}に{売|う}ったり{渡|わた}したりしないでください。{犯罪|はんざい}です。{使|つか}わない{口座|こうざ}は、{銀行|ぎんこう}で{解約|かいやく}します。",
+        "ja_easy": "{口座|こうざ}やカードを{人|ひと}に{売|う}ったり、あげたりしないでください。{犯罪|はんざい}です。",
+        "en": "Never sell or give your account, passbook or cash card to anyone. It is a crime. Close accounts you no longer use at the bank."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-gaikokujin-pub",
+          "B-zenginkyo-gaikokujin-pub",
+          "B-npa-kyoshuho-kaisei"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "第三者に利用させることを目的とした口座(通帳・キャッシュカード)の譲渡や売買は犯罪です。絶対に行わないでください。"
+      }
+    }
   ]
 }

@@ -193,7 +193,6 @@ function NoChange() {
     <>
       <div className="art" aria-hidden="true"><img src={art('homecheck')} alt="" /></div>
       <Head eyebrow={<One k="move.step" />}><Bi phrase k="move.nochange.title" /></Head>
-      <p className="sub"><Bi k="move.nochange.sub" /></p>
       <ul className="list" role="list">
         {noChangeEvents().map((e) => (
           <li key={e.id}>

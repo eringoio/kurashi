@@ -132,11 +132,9 @@ function GomiTool() {
               <p className="focus__name gomi-result"><img src={gomiIcon(res.category.id)} alt="" className="gomi-result__art" /><Bi t={res.category.label} /> <span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span></p>
               <p><Bi t={res.category.how} /></p>
               {sel.note && <p className="sub"><Bi t={sel.note} /></p>}
-              {next && (
-                <p className="k-notice" role="note">
-                  {next.kind === 'date' ? <><Bi k="gomi.next.date" /> {fmtDay(next.date, level)}</> : <Bi k={next.kind === 'area' && area.kind === 'unset' ? 'gomi.next.noArea' : 'gomi.next.noData'} />}
-                </p>
-              )}
+              {/* 収集日（作者 11/7 K-10）：日が分かるときだけ出す。地域を選んでいないときは、上の欄を指す1行だけ。地域を選んだのに日が無いときは出さない（地域の欄の下にもう書いてある） */}
+              {next?.kind === 'date' && <p className="k-notice" role="note"><Bi k="gomi.next.date" /> {fmtDay(next.date, level)}</p>}
+              {next?.kind === 'area' && area.kind === 'unset' && <p className="sub"><Bi k="gomi.next.noArea" /></p>}
               {res.category.links.length > 0 && (
                 <div className="links">{res.category.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}</div>
               )}

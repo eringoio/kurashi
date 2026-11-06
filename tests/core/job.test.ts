@@ -81,13 +81,13 @@ describe('仕事・アルバイト（公開）', () => {
     for (const id of ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin']) expect(order.indexOf('zairyu-shikakugai')).toBeLessThan(order.indexOf(id));
     expect(view(o, 'job-kyujin').notes.some((n) => n.kind === 'legal_prereq')).toBe(true);
   });
-  it('最低賃金：日付つき（2026年10月1日から 愛知県 1,195円。それまでは1,140円）。needs_check', () => {
+  it('最低賃金：日付つき（2026年10月1日から 愛知県 1,195円。作者 11/7 K-13：前の額は書かず最小限、くわしくは労働局のリンク）。needs_check', () => {
     const c = view(go('student'), 'job-saitei-chingin').card;
     const t = plain(c.summary.ja);
     expect(t).toContain('2026年10月1日から');
     expect(t).toContain('愛知県');
     expect(t).toContain('1,195円');
-    expect(t).toContain('1,140円');
+    expect(data.cards.find((c) => c.id === 'job-saitei-chingin')!.links![0].url).toContain('aichi-roudoukyoku');
     expect(t).toContain('要確認');
     expect(c.evidence.status).toBe('needs_check');
     expect(c.evidence.quote).toContain('令和8年10月1日');
