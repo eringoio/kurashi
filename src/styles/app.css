@@ -476,3 +476,12 @@ fieldset legend svg { vertical-align: -0.2em; }
 .house-costs__n { text-align: right; font-weight: 700; }
 .house-costs__total { font-weight: 700; }
 @media (max-width: 380px) { .house-costs li { grid-template-columns: 1fr 4.5em; } .house-costs__bar { grid-column: 1 / -1; grid-row: 2; } }
+/* ことば（10b） */
+.words { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.word { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 8px 10px; border: 1.5px solid var(--line-dim); border-radius: var(--radius-md); background: var(--white); }
+.word__ja { font-size: var(--fs-answer); font-weight: 700; }
+.word__mean { color: var(--ink-muted); }
+.word__btns { display: flex; justify-content: flex-end; gap: 6px; align-items: center; }
+.word__star { min-width: var(--target-min); font-size: 1.2em; }
+.words-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.words-filter .field { flex: 1 1 140px; min-width: 0; }

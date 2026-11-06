@@ -11,6 +11,9 @@ import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
+import { useSeen } from '../ui/Words';
+/** 結果の書類の名前を「ことば」に残す（10b） */
+function SeenDoc({ id }: { id: string }) { useSeen([id]); return null; }
 
 const LONG = 1600;
 const SAMPLE = '/samples/kokuho-shikaku-sample.svg';
@@ -147,7 +150,7 @@ export function Letter() {
       </>
     );
   } else if (st.k === 'result') {
-    body = <Result doc={st.doc} sample={st.sample} />;
+    body = <><Result doc={st.doc} sample={st.sample} /><SeenDoc id={'doc:' + st.doc.id} /></>;
   } else if (st.k === 'failed') {
     body = (
       <>

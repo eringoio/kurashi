@@ -15,6 +15,7 @@ import { GlobeIcon, HelpIcon, ShareIcon } from './ui/icons';
 import { HelpSheet } from './ui/HelpSheet';
 import { ShareSheet } from './ui/ShareSheet';
 import { ReportButton } from './ui/ReportSheet';
+import { WordsPage } from './ui/Words';
 import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
@@ -78,6 +79,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/here') return <Here />;
   if (path === '/letter') return <Letter />;
   if (path === '/calendar') return <CalendarPage />;
+  if (path === '/words') return <WordsPage />;
   const clinic = /^\/clinic(?:\/(departments|before))?$/.exec(path);
   if (clinic) return <ClinicPage step={(clinic[1] ?? '') as '' | 'departments' | 'before'} />;
   if (path === '/search') return <Search />;

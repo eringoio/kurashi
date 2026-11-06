@@ -16,6 +16,9 @@ import { CardRow, DayChoice, dayTitle, fill, fillDate, ResultView } from '../ui/
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Speak } from '../ui/Speak';
 import { AddToCalendar } from '../ui/AddToCalendar';
+import { HeardWords, useSeen } from '../ui/Words';
+/** 窓口で見せた手続きの正式名を「ことば」に残す（10b） */
+function SeenNames({ ids }: { ids: string[] }) { useSeen(ids); return null; }
 
 /** 行く所の名前（strings.json の place.<id>）を文の {place} に入れる */
 export function withPlace(t: LocalizedText, place: string): Text {
@@ -125,6 +128,9 @@ function Counter({ v }: { v: Visit }) {
           </section>
         );
       })}
+      {/* 聞こえてくるかもしれない言葉（★を先に。語学学習 10b） */}
+      <HeardWords place={v.place} />
+      <SeenNames ids={v.cards.map((c) => 'card:' + c.card.id)} />
       <button type="button" className="k-answer k-answer--primary" onClick={() => navigate(visitPath(v.place, 'after'))}><Bi k="visit.counter.finished" /></button>
     </>
   );

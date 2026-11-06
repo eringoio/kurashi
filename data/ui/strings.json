@@ -2964,5 +2964,90 @@
     "ja": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}が{目安|めやす}です（{国土|こくど}{交通|こうつう}{省|しょう}の{手引|てび}き）。{鍵|かぎ}の{交換|こうかん}・24{時間|じかん}サポートなどが{加|くわ}わることもあります。{契約|けいやく}の{前|まえ}に{金額|きんがく}を{聞|き}きます（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{合計|ごうけい}は{家賃|やちん}の4〜7か{月|げつ}{分|ぶん}ぐらいです。{契約|けいやく}の{前|まえ}に{聞|き}きます。",
     "en": "In total, usually about 4–7 months of rent (MLIT guide). Key change or 24-hour support may be added. Ask for the amounts before signing (to be checked)."
+  },
+  "words.link": {
+    "ja": "ことば（{出会|であ}った{日本語|にほんご}）",
+    "ja_easy": "ことば",
+    "en": "Words (Japanese you met)"
+  },
+  "words.title": {
+    "ja": "ことば",
+    "ja_easy": "ことば",
+    "en": "Words"
+  },
+  "words.sub": {
+    "ja": "{窓口|まどぐち}や{書類|しょるい}で{出会|であ}った{言葉|ことば}が、{新|あたら}しい{順|じゅん}に{残|のこ}ります。★で{大事|だいじ}にします。",
+    "ja_easy": "{出会|であ}った{言葉|ことば}が{残|のこ}ります。★を{付|つ}けられます。",
+    "en": "Words you met at counters and on letters are kept, newest first. Star the ones you want to remember."
+  },
+  "words.filter": {
+    "ja": "{絞|しぼ}り{込|こ}み",
+    "ja_easy": "{絞|しぼ}り{込|こ}み",
+    "en": "Filter"
+  },
+  "words.onlyStar": {
+    "ja": "★だけ",
+    "ja_easy": "★だけ",
+    "en": "Starred"
+  },
+  "words.today": {
+    "ja": "{今日|きょう}",
+    "ja_easy": "きょう",
+    "en": "Today"
+  },
+  "words.kind": {
+    "ja": "{種類|しゅるい}",
+    "ja_easy": "{種類|しゅるい}",
+    "en": "Type"
+  },
+  "words.kind.all": {
+    "ja": "{全部|ぜんぶ}の{種類|しゅるい}",
+    "ja_easy": "{全部|ぜんぶ}",
+    "en": "All types"
+  },
+  "words.kind.heard": {
+    "ja": "{聞|き}こえる{言葉|ことば}",
+    "ja_easy": "{聞|き}こえる{言葉|ことば}",
+    "en": "You may hear"
+  },
+  "words.kind.say": {
+    "ja": "{言|い}う{文|ぶん}",
+    "ja_easy": "{言|い}う{文|ぶん}",
+    "en": "You can say"
+  },
+  "words.kind.official": {
+    "ja": "{手続|てつづ}きの{名前|なまえ}",
+    "ja_easy": "{手続|てつづ}きの{名前|なまえ}",
+    "en": "Procedure names"
+  },
+  "words.kind.doc": {
+    "ja": "{書類|しょるい}の{言葉|ことば}",
+    "ja_easy": "{書類|しょるい}の{言葉|ことば}",
+    "en": "Words on letters"
+  },
+  "words.search": {
+    "ja": "{言葉|ことば}で{探|さが}す",
+    "ja_easy": "さがす",
+    "en": "Search"
+  },
+  "words.empty": {
+    "ja": "まだありません。{付|つ}き{添|そ}いの「{窓口|まどぐち}で」や「{届|とど}いた{書類|しょるい}」で{出会|であ}った{言葉|ことば}が、ここに{残|のこ}ります。",
+    "ja_easy": "まだありません。",
+    "en": "Nothing yet. Words you meet at counters or on letters will appear here."
+  },
+  "words.start": {
+    "ja": "まず、{言|い}えると{便利|べんり}な{文|ぶん}",
+    "ja_easy": "まず、{言|い}えると{便利|べんり}な{文|ぶん}",
+    "en": "Useful sentences to start with"
+  },
+  "words.heard": {
+    "ja": "{聞|き}こえてくるかもしれない{言葉|ことば}",
+    "ja_easy": "{聞|き}こえるかもしれない{言葉|ことば}",
+    "en": "You may hear"
+  },
+  "words.star": {
+    "ja": "{大事|だいじ}にする",
+    "ja_easy": "{大事|だいじ}にする",
+    "en": "Star"
   }
 }

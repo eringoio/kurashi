@@ -1,0 +1,255 @@
+{
+  "$comment": "語学学習の最初の版（作者が OK 2026-11-06。STATUS 10b）。heard＝窓口で聞こえてくる言葉、say＝自分が言う文。手続きの正式名（カード）と書類の名前（data/documents.json）は画面で作る。訳は needs_check（作者が確かめてから verified）。",
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check"
+  },
+  "words": [
+    {
+      "id": "heard-bangofuda",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{番号|ばんごう}{札|ふだ}をお{取|と}りください",
+      "easy": "{番号|ばんごう}の{紙|かみ}を{取|と}ってください",
+      "en": "Please take a number ticket",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-yobidashi",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{番号|ばんごう}でお{呼|よ}びします",
+      "easy": "{番号|ばんごう}で{呼|よ}びます",
+      "en": "We will call your number",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-shosho",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{少々|しょうしょう}お{待|ま}ちください",
+      "easy": "ちょっと{待|ま}ってください",
+      "en": "Please wait a moment",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-kinyu",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "こちらにご{記入|きにゅう}ください",
+      "easy": "ここに{書|か}いてください",
+      "en": "Please fill this in",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-honnin",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}をお{願|ねが}いします",
+      "easy": "あなただとわかる{物|もの}を{見|み}せてください",
+      "en": "Your ID, please",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-zairyu",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{在留|ざいりゅう}カードをお{願|ねが}いします",
+      "easy": "{在留|ざいりゅう}カードを{見|み}せてください",
+      "en": "Your residence card, please",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-ansho",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{暗証|あんしょう}{番号|ばんごう}を{入力|にゅうりょく}してください",
+      "easy": "{暗証|あんしょう}{番号|ばんごう}を{押|お}してください",
+      "en": "Please enter your PIN",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-chigau",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{担当|たんとう}の{窓口|まどぐち}が{違|ちが}います",
+      "easy": "ここではありません",
+      "en": "This is not the right counter",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-achira",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "あちらの{窓口|まどぐち}へどうぞ",
+      "easy": "あそこの{窓口|まどぐち}に{行|い}ってください",
+      "en": "Please go to that counter",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-hikae",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{控|ひか}えをお{渡|わた}しします",
+      "easy": "この{紙|かみ}を{持|も}っていてください",
+      "en": "Here is your copy",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-yuso",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{後日|ごじつ}、{郵送|ゆうそう}します",
+      "easy": "あとで{家|いえ}に{送|おく}ります",
+      "en": "We will mail it to you later",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-tesuryo",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{手数料|てすうりょう}がかかります",
+      "easy": "お{金|かね}がかかります",
+      "en": "There is a fee",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-inkan",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{印鑑|いんかん}はお{持|も}ちですか",
+      "easy": "はんこはありますか",
+      "en": "Do you have a personal seal (inkan)?",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-tsugi",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{次|つぎ}の{方|かた}どうぞ",
+      "easy": "{次|つぎ}の{人|ひと}、どうぞ",
+      "en": "Next, please",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-shorui",
+      "kind": "heard",
+      "scene": [
+        "ward_office"
+      ],
+      "ja": "{書類|しょるい}が{足|た}りません",
+      "easy": "{書類|しょるい}がたりません",
+      "en": "Some documents are missing",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-nihongo",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{日本語|にほんご}があまり{話|はな}せません",
+      "easy": "{日本語|にほんご}が{少|すこ}ししか{話|はな}せません",
+      "en": "I don't speak much Japanese",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-yukkuri",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "もう{一度|いちど}、ゆっくり{言|い}ってください",
+      "easy": "もう{一回|いっかい}、ゆっくり{言|い}ってください",
+      "en": "Please say it again, slowly",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-kaite",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{書|か}いてもらえますか",
+      "easy": "{紙|かみ}に{書|か}いてください",
+      "en": "Could you write it down?",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-doko",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "どこに{行|い}けばいいですか",
+      "easy": "どこへ{行|い}きますか",
+      "en": "Where should I go?",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-eigo",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "{英語|えいご}の{資料|しりょう}はありますか",
+      "easy": "{英語|えいご}の{紙|かみ}はありますか",
+      "en": "Do you have this in English?",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-wakarimashita",
+      "kind": "say",
+      "scene": [
+        "ward_office",
+        "bank",
+        "clinic"
+      ],
+      "ja": "わかりました",
+      "easy": "わかりました",
+      "en": "I understand",
+      "status": "needs_check"
+    }
+  ]
+}

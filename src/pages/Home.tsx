@@ -26,6 +26,8 @@ function menuItems(): Item[] {
   return [...list, ...fixed].sort((a, b) => a.menu - b.menu);
 }
 const LINKS = [
+  // 語学学習（10b）：出会った言葉の一覧
+  { k: 'words.link', to: '/words' },
   { k: 'home.about', to: '/info/about' },
   { k: 'home.disclaimer', to: '/info/disclaimer' },
 ] as const;
