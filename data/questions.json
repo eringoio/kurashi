@@ -174,6 +174,93 @@
       ]
     },
     {
+      "id": "Q-zairyu-status",
+      "fact": "zairyu_status",
+      "stage": "upfront",
+      "scope": "person",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}は？",
+        "ja_easy": "あなたの{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」は？",
+        "en": "What is your status of residence?"
+      },
+      "why_asked": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}によって、{要|い}る{手続|てつづ}きが{違|ちが}うためです。{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」の{欄|らん}で{確|たし}かめられます。{答|こた}えは、ほかの{案内|あんない}でも{使|つか}います（{一度|いちど}だけ{聞|き}きます）。",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}で、{要|い}る{手続|てつづ}きが{変|か}わるからです。{在留|ざいりゅう}カードを{見|み}てください。{一度|いちど}だけ{聞|き}きます。",
+        "en": "The procedures you need depend on your status. You can see it in the \"status of residence\" field on your residence card. We ask only once and use the answer in other guides."
+      },
+      "options": [
+        {
+          "value": "student",
+          "icon": "student",
+          "label": {
+            "ja": "{留学|りゅうがく}",
+            "ja_easy": "{留学|りゅうがく}",
+            "en": "Student (留学)"
+          }
+        },
+        {
+          "value": "family",
+          "label": {
+            "ja": "{家族|かぞく}{滞在|たいざい}",
+            "ja_easy": "{家族滞在|かぞくたいざい}",
+            "en": "Dependent (家族滞在)"
+          }
+        },
+        {
+          "value": "work",
+          "icon": "work",
+          "label": {
+            "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}",
+            "ja_easy": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}（{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}など）",
+            "en": "A work status (e.g. Engineer/Specialist in Humanities/International Services)"
+          }
+        },
+        {
+          "value": "spouse",
+          "label": {
+            "ja": "{日本人|にほんじん}の{配偶者|はいぐうしゃ}{等|とう}・{永住者|えいじゅうしゃ}の{配偶者|はいぐうしゃ}{等|とう}",
+            "ja_easy": "{日本人|にほんじん}の{配偶者|はいぐうしゃ}{等|とう}・{永住者|えいじゅうしゃ}の{配偶者|はいぐうしゃ}{等|とう}",
+            "en": "Spouse or Child of Japanese National / of Permanent Resident"
+          }
+        },
+        {
+          "value": "permanent",
+          "label": {
+            "ja": "{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}",
+            "ja_easy": "{永住者|えいじゅうしゃ}・{特別永住者|とくべつえいじゅうしゃ}",
+            "en": "Permanent Resident / Special Permanent Resident"
+          }
+        },
+        {
+          "value": "long_term",
+          "label": {
+            "ja": "{定住者|ていじゅうしゃ}",
+            "ja_easy": "{定住者|ていじゅうしゃ}",
+            "en": "Long-Term Resident (定住者)"
+          }
+        },
+        {
+          "value": "japanese",
+          "label": {
+            "ja": "{日本|にほん}{国籍|こくせき}",
+            "ja_easy": "{日本|にほん}の{国籍|こくせき}",
+            "en": "Japanese nationality"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "そのほか・わからない",
+            "ja_easy": "そのほか・わかりません",
+            "en": "Other / not sure"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-age-band",
       "fact": "age_band",
       "stage": "upfront",

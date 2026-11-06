@@ -1,4 +1,5 @@
 /* アルバイトを始める（下書き drafts/data/E-job.bundle.json）。留学・家族滞在は、働く前に資格外活動許可。永住者・定住者などは対象外。
+// B-13（11/6）：在留資格は共通の質問 Q-zairyu-status。旧 Q-job-status の free→permanent、other→work
    最低賃金は日付つきの事実（2026年10月1日から愛知県 1,195円）。すべて needs_check（行く所・方法の一部だけ ai_checked）。 */
 import { describe, expect, it } from 'vitest';
 import { baseRaw, checkRefs, loadData, withBundles, type Bundle } from '../../src/core/data';
@@ -12,7 +13,7 @@ const ev = data.events.find((e) => e.id === 'E-job')!;
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 const go = (status: string | undefined, extra: Record<string, string> = {}, over: Partial<EngineInput> = {}) =>
-  run(data, { answers: { ...(status ? { 'Q-job-status': status } : {}), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
+  run(data, { answers: { ...(status ? { 'Q-zairyu-status': status } : {}), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
 const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state).map((c) => c.card.id).sort();
 const ALL = ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-shushoku', 'job-trouble', 'zairyu-shikakugai'];
@@ -36,7 +37,7 @@ describe('アルバイトを始める（下書き）', () => {
     for (const x of items.filter((y) => ['deadline', 'fee', 'rule', 'relation', 'prerequisite', 'card_text'].includes(y.kind))) expect(x.e.status).not.toBe('ai_checked');
   });
   it('最初に、在留資格を聞く', () => {
-    expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-job-status']);
+    expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-zairyu-status']);
   });
   it('留学：資格外活動許可は shown。ほかのカードも出る。許可をもう受けたかを聞く', () => {
     const o = go('student');
@@ -50,14 +51,14 @@ describe('アルバイトを始める（下書き）', () => {
     expect(ids(o, 'excluded')).toEqual(['job-shushoku']);
   });
   it('永住者・定住者など（働くことに制限がない）：資格外活動許可は対象外。最低賃金などは出る。許可は聞かない', () => {
-    const o = go('free');
+    const o = go('permanent');
     expect(ids(o, 'excluded')).toEqual(['job-shushoku', 'zairyu-shikakugai']);
     expect(ids(o, 'shown')).toEqual(COMMON);
     expect(o.upfront).toEqual([]);
   });
   it('ほかの在留資格：許可のカードは対象外（理由に「要確認」）。わからない：窓口で確認にする', () => {
-    expect(ids(go('other'), 'excluded')).toContain('zairyu-shikakugai');
-    const c = view(go('other'), 'zairyu-shikakugai').card;
+    expect(ids(go('work'), 'excluded')).toContain('zairyu-shikakugai');
+    const c = view(go('work'), 'zairyu-shikakugai').card;
     expect(plain(c.reasons.excluded!.ja)).toContain('要確認');
     const u = go('unknown');
     expect([view(u, 'zairyu-shikakugai').state, view(u, 'zairyu-shikakugai').cause]).toEqual(['check_at_office', 'unknown']);
