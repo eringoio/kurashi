@@ -85,7 +85,7 @@ describe('在留期間を更新する（下書き）', () => {
       expect(e.status).toBe('needs_check');
       expect(e.source_ids).toEqual(['author-2026-11-05']);
     }
-    expect(c.evidence.note).toContain('作者の知見（2026-11-05）。公式の本文で確認待ち');
+    expect(c.evidence.note).toContain('作者の知見（2026-11-05）。2026-11-06 に作者が確認'); // B-5（11/6）
   });
   it('順番：先に在留期間の更新。カードの延長はその後（関係は注記だけ）', () => {
     const o = go('student', 'yes');

@@ -50,6 +50,41 @@
       "domain": "nic-nagoya.or.jp",
       "owner": "名古屋国際センター",
       "owner_type": "public_corp"
+    },
+    {
+      "domain": "courts.go.jp",
+      "owner": "裁判所",
+      "owner_type": "government"
+    },
+    {
+      "domain": "kyoukaikenpo.or.jp",
+      "owner": "全国健康保険協会（協会けんぽ）",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "kojinbango-card.go.jp",
+      "owner": "地方公共団体情報システム機構（マイナンバーカード総合サイト）",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "j-lis.go.jp",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "aichi-iryou-tsuyaku-system.com",
+      "owner": "あいち医療通訳システム（愛知県ほか）",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "jnto.go.jp",
+      "owner": "日本政府観光局",
+      "owner_type": "public_corp"
+    },
+    {
+      "domain": "gov-online.go.jp",
+      "owner": "政府広報オンライン",
+      "owner_type": "government"
     }
   ]
 }

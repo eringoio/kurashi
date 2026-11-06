@@ -13,12 +13,12 @@ describe('区役所のデータ', () => {
     expect(list.filter((p) => p.kind === 'ward_office')).toHaveLength(16);
     expect(new Set(list.map((p) => p.ward)).size).toBe(16);
   });
-  it('どれにも出典があり、確認待ち（needs_check）', () => {
+  it('どれにも出典があり、作者が確かめた（verified。11/6）', () => {
     const src = new Set(loadData().sources.map((s) => s.source_id));
     for (const p of list) {
       expect(p.evidence.source_ids.length, p.id).toBeGreaterThan(0);
       for (const s of p.evidence.source_ids) expect(src.has(s), p.id + ' ' + s).toBe(true);
-      expect(p.evidence.status).toBe('needs_check');
+      expect(p.evidence.status).toBe('verified'); // 作者が地図で確かめた（2026-11-06。TODO 1章 33・B-14）
     }
   });
   it('区役所どうしは 300m より離れている（近くの判定が2つにならない）', () => {

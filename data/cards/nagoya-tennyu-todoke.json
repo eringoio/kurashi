@@ -27,9 +27,9 @@
     "reading": "てんにゅうとどけ"
   },
   "summary": {
-    "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}して{受|う}け{取|と}った{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{持|も}って{行|い}きます（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます）。",
-    "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市|し}で「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらって{持|も}って{行|い}きます。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。",
-    "en": "After you start living in Nagoya, submit a moving-in notice at the Citizens Section of the ward office for your new address. Bring the move-out certificate from your previous municipality (if you filed the move-out with a My Number Card, show the card instead)."
+    "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}して{受|う}け{取|と}った{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{持|も}って{行|い}きます（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます）。マイナンバーカードを{持|も}っている{人|ひと}は、{転入|てんにゅう}{届|とどけ}のときに、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のカードと{暗証|あんしょう}{番号|ばんごう}が{要|い}ります。{転入|てんにゅう}して14{日|にち}を{過|す}ぎてもカードの{手続|てつづ}きをしないと、カードは{失効|しっこう}します（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市|し}で「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらって{持|も}って{行|い}きます。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。マイナンバーカードがある{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}みんなのカードと{暗証|あんしょう}{番号|ばんごう}を{持|も}っていきます。14{日|にち}をすぎるとカードが{使|つか}えなくなります（{要|よう}{確認|かくにん}）。",
+    "en": "After you start living in Nagoya, submit a moving-in notice at the Citizens Section of the ward office for your new address. Bring the move-out certificate from your previous municipality (if you filed the move-out with a My Number Card, show the card instead). If you have a My Number Card, bring the cards of everyone moving and know their PINs when you file the move-in notice. If you do not complete the card procedure within 14 days of moving in, the card becomes invalid (to be checked)."
   },
   "deadline": {
     "text": {
@@ -74,7 +74,8 @@
     "source_ids": [
       "nagoya-lifescene-tennyu",
       "B-nagoya-faq-39",
-      "nagoya-juumin-todoke"
+      "nagoya-juumin-todoke",
+      "B-nagoya-mynumber-faq"
     ],
     "checked_at": "2026-11-05",
     "status": "needs_check"

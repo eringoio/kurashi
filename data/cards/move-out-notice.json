@@ -27,9 +27,9 @@
     "reading": "てんしゅつとどけ"
   },
   "summary": {
-    "ja": "{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}で{出|だ}します。{出|だ}し{方|かた}（{窓口|まどぐち}・{郵送|ゆうそう}・オンライン）と{受付|うけつけ}の{時期|じき}は{市区|しく}{町村|ちょうそん}ごとに{違|ちが}うので、その{市区|しく}{町村|ちょうそん}の{案内|あんない}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。マイナンバーカードがあれば、オンラインで{出|だ}せる{市区|しく}{町村|ちょうそん}があります（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{前|まえ}に{住|す}んでいた{市|し}の{役所|やくしょ}で{出|だ}します。{出|だ}し{方|かた}や{受付|うけつけ}の{時期|じき}は{市|し}ごとに{違|ちが}うので、その{市|し}の{案内|あんない}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。",
-    "en": "Submit it at the office of your previous municipality. How to submit (counter, mail, online) and when it is accepted differ by municipality, so check that municipality's guidance (to be checked). You can do it before moving. Some municipalities accept it online with a My Number Card (to be checked)."
+    "ja": "{転出|てんしゅつ}{届|とどけ}は、どの{市区|しく}{町村|ちょうそん}でも{同|おな}じ{手続|てつづ}きです（{全国|ぜんこく}{共通|きょうつう}）。{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}で{出|だ}します。{出|だ}し{方|かた}（{窓口|まどぐち}・{郵送|ゆうそう}・オンライン）と{受付|うけつけ}の{時期|じき}は{市区|しく}{町村|ちょうそん}ごとに{違|ちが}うので、その{市区|しく}{町村|ちょうそん}の{案内|あんない}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。マイナンバーカードがあれば、オンラインで{出|だ}せる{市区|しく}{町村|ちょうそん}があります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{転出|てんしゅつ}{届|とどけ}は、ほかの{市|し}でも{同|おな}じです。{前|まえ}に{住|す}んでいた{市|し}の{役所|やくしょ}で{出|だ}します。{出|だ}し{方|かた}や{受付|うけつけ}の{時期|じき}は{市|し}ごとに{違|ちが}うので、その{市|し}の{案内|あんない}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}す{前|まえ}でも{出|だ}せます。",
+    "en": "The moving-out notice is the same procedure in every municipality in Japan. Submit it at the office of your previous municipality. How to submit (counter, mail, online) and when it is accepted differ by municipality, so check that municipality's guidance (to be checked). You can do it before moving. Some municipalities accept it online with a My Number Card (to be checked)."
   },
   "deadline": null,
   "where": {

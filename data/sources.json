@@ -464,6 +464,14 @@
       "owner_type": "private",
       "title": "よりそいホットライン（外国語）",
       "language": "en"
+    },
+    {
+      "source_id": "B-nagoya-mynumber-faq",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007876.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカード（個人番号カード）に関するよくあるご質問",
+      "language": "ja"
     }
   ]
 }

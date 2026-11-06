@@ -19,8 +19,9 @@
           "nagoya-chikusa-temp-building",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -41,8 +42,9 @@
           "nagoya-higashi-ward-office-plan",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -62,8 +64,9 @@
           "nagoya-kita-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -83,8 +86,9 @@
           "nagoya-nishi-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -104,8 +108,9 @@
           "nagoya-nakamura-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -125,8 +130,9 @@
           "nagoya-naka-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -146,8 +152,9 @@
           "nagoya-showa-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -167,8 +174,9 @@
           "nagoya-mizuho-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -188,8 +196,9 @@
           "nagoya-atsuta-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -209,8 +218,9 @@
           "nagoya-nakagawa-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -230,8 +240,9 @@
           "nagoya-minato-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -251,8 +262,9 @@
           "nagoya-minami-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -272,8 +284,9 @@
           "nagoya-moriyama-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -293,8 +306,9 @@
           "nagoya-midori-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -314,8 +328,9 @@
           "nagoya-meito-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     },
     {
@@ -335,8 +350,9 @@
           "nagoya-tempaku-ward-office-access",
           "gsi-address-search"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
       }
     }
   ]

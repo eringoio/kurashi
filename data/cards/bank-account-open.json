@@ -26,9 +26,9 @@
     "reading": "こうざかいせつ"
   },
   "summary": {
-    "ja": "{法律|ほうりつ}のきまりではありません。{日本|にほん}で{暮|く}らすには、ほとんどの{人|ひと}に{必要|ひつよう}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{口座|こうざ}や{通帳|つうちょう}・キャッシュカードを{他|た}の{人|ひと}に{売|う}ったり、{渡|わた}したりしてはいけません。{犯罪|はんざい}です。",
-    "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。{口座|こうざ}や{通帳|つうちょう}・カードを{売|う}ったり{人|ひと}にあげたりしてはいけません。{犯罪|はんざい}です。",
-    "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank. Do not sell or give your account, passbook or cash card to anyone. It is a crime."
+    "ja": "{法律|ほうりつ}のきまりではありません。{日本|にほん}で{暮|く}らすには、ほとんどの{人|ひと}に{必要|ひつよう}です。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います。{口座|こうざ}や{通帳|つうちょう}・キャッシュカードを{他|た}の{人|ひと}に{売|う}ったり、{渡|わた}したりしてはいけません。{犯罪|はんざい}です。{在留|ざいりゅう}{期間|きかん}が3か{月|げつ}{以下|いか}で{在留|ざいりゅう}カードが{出|で}ない{人|ひと}は、{住民|じゅうみん}{登録|とうろく}がないので、どの{銀行|ぎんこう}でも{口座|こうざ}を{作|つく}れません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{法律|ほうりつ}のきまりではありません。でも、ほとんどの{人|ひと}に{必要|ひつよう}です。{口座|こうざ}や{通帳|つうちょう}・カードを{売|う}ったり{人|ひと}にあげたりしてはいけません。{犯罪|はんざい}です。{在留|ざいりゅう}{期間|きかん}が3か{月|げつ}{以下|いか}の{人|ひと}は、どの{銀行|ぎんこう}でも{口座|こうざ}を{作|つく}れません（{要|よう}{確認|かくにん}）。",
+    "en": "Not a legal rule, but most people living in Japan need one. Conditions differ by bank. Do not sell or give your account, passbook or cash card to anyone. It is a crime. If your period of stay is 3 months or less and you have no residence card, you are not registered as a resident, so no bank can open an account for you (to be checked)."
   },
   "deadline": null,
   "where": {
