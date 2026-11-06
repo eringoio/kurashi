@@ -1,5 +1,7 @@
 /* アクセシビリティの自動の検査（SPEC 15.2）。新しい画面を足したら、PAGES に1行足す。
-   どの画面も、3つの表示レベル × 文字の大きさ3つで、次を確かめる：
+   11/7 5章（作者：テストが多すぎる）：全画面（PAGES）は ふつうの日本語 × 幅 320・1280 × 文字の大きさ0 だけ。
+   代表の5画面（FULL：入口・できごとの全体・質問・手続きのページ＝くわしく・病院）だけ、3つの表示レベル × 文字の大きさ3つ × 幅3つ。
+   代表の画面では、次を確かめる：
    - axe（WCAG 2.2 AA のタグ）の違反 0
    - 幅 320px（400% の拡大と同じ）と 640px（200% の拡大と同じ）で横スクロール 0
    - 文字の間隔を広げても（1.4.12）横スクロール 0
@@ -9,6 +11,8 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 
 export const PAGES = ['/', '/info/out-of-scope', '/info/coming-soon', '/info/disclaimer', '/info/about', '/move', '/move/from', '/move/objects', '/move/basis', '/move/check', '/now', '/all', '/c/nagoya-tennyu-juukyochi', '/c/bank-account-open', '/review', '/search', '/gomi', '/visit/ward_office', '/today', '/s/ward-office', '/qr', '/here', '/letter', '/calendar', '/words', '/clinic', '/e/E-move-within', '/e/E-bank', '/c/bank-resident-change', '/c/mail-forward', '/e/E-job', '/c/zairyu-shikakugai', '/e/E-gomi', '/e/E-house-search', '/c/housing-search', '/c/housing-initial-costs', '/e/E-stay-renew'];
+/** 全部の組み合わせで見る代表の画面 */
+export const FULL = ['/', '/all', '/move/basis', '/c/nagoya-tennyu-juukyochi', '/clinic'];
 const LEVELS = [
   { id: 'ja', lang: 'ja' },
   { id: 'ja_easy', lang: 'ja' },
@@ -44,11 +48,12 @@ async function axe(page: Page, what: string, include?: string) {
 const SPACING = `* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important; } p { margin-bottom: 2em !important; }`;
 
 for (const path of PAGES) {
-  for (const lv of LEVELS) {
+  const full = FULL.includes(path);
+  for (const lv of full ? LEVELS : LEVELS.slice(0, 1)) {
     test(`${path} ${lv.id}`, async ({ page }) => {
-      for (const width of WIDTHS) {
+      for (const width of full ? WIDTHS : [320, 1280]) {
         await page.setViewportSize({ width, height: 720 });
-        for (const size of SIZES) {
+        for (const size of full ? SIZES : [0]) {
           await page.goto(path);
           await setPrefs(page, lv.id, size);
           const what = `${path} ${lv.id} 文字${size} 幅${width}`;
