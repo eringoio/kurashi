@@ -86,7 +86,7 @@ export function MultiPick({ legend, options, selected, onChange, mergeNote }: { 
             <button key={o.id} type="button" className="k-check" aria-pressed={on} onClick={() => toggle(o.id)}>
               <span className="k-check__box" aria-hidden="true">{on ? '✓' : ''}</span>
               {o.art && <img src={art(o.art)} alt="" />}
-              <span className="pt-grow"><Bi t={o.label} />{o.hint && <span className="pt-hint"><One t={o.hint} /></span>}</span>
+              <span className="pt-grow"><Bi phrase t={o.label} />{o.hint && <span className="pt-hint"><One t={o.hint} /></span>}</span>
             </button>
           );
         })}
@@ -109,7 +109,7 @@ export function BelongingStatus({ item, onChange }: { item: BelongingVM; onChang
     <fieldset className={'pt-fieldset pt-belong pt-belong--' + item.status}>
       <legend className="pt-belong__name">
         {item.art && <img src={art(item.art + (item.status === 'have' ? '' : '-dim'))} alt="" />}
-        <Bi t={item.label} />
+        <Bi phrase t={item.label} />
       </legend>
       <p className="label"><One k="pat.status.label" /></p>
       <div className="pt-seg">

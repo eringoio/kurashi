@@ -47,7 +47,18 @@ export function segs(s: string): Seg[] {
     last = m.index! + m[0].length;
   }
   if (last < s.length) out.push({ t: s.slice(last) });
-  return out;
+  // 長いふりがな（正式名の「転入届（住居地の届出）」など）は、ふりがなの中で改行できず横にはみ出る。
+  // 漢字の側と読みの側に同じ数の「（」「）」があれば、括弧の所で分ける（11/7。320px の窓口の画面）
+  return out.flatMap((g) => {
+    if (!g.r) return [g];
+    const a = g.t.split(/(（[^（）]*）)/).filter(Boolean);
+    const b = g.r.split(/(（[^（）]*）)/).filter(Boolean);
+    if (a.length < 2 || a.length !== b.length) return [g];
+    return a.map((t, i) => (/^（/.test(t) ? { t: t.slice(0, 1), r: undefined } : { t, r: b[i] })).flatMap((x, i) => {
+      if (!/^（/.test(a[i])) return [x];
+      return [{ t: '（' }, { t: a[i].slice(1, -1), r: b[i].slice(1, -1) }, { t: '）' }];
+    });
+  });
 }
 /** ふりがなを外した文（漢字のまま） */
 export const plain = (s: string) => s.replace(RUBY, '$1');

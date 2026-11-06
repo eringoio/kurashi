@@ -66,7 +66,7 @@ export function Answers({ q, onPick }: { q: Question; onPick: (v: Value) => void
       {q.options.map((o) => (
         <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')} onClick={() => onPick(o.value)}>
           {o.icon && <img src={art(o.icon)} alt="" />}
-          <Bi t={o.label} />
+          <Bi phrase t={o.label} />
         </button>
       ))}
     </div>

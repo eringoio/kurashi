@@ -506,9 +506,9 @@
     "en": "Tap everything you have"
   },
   "objects.note": {
-    "ja": "さわらなかった{物|もの}は「{持|も}っていない」として{進|すす}みます。あとで{変|か}えられます。",
-    "ja_easy": "さわらなかった{物|もの}は「{持|も}っていない」になります。",
-    "en": "Anything you do not tap counts as “I don't have it”. You can change this later."
+    "ja": "さわらない{物|もの}は「{持|も}っていない」になります。あとで{変|か}えられます。",
+    "ja_easy": "さわらない{物|もの}は「{持|も}っていない」になります。",
+    "en": "Anything you do not tap counts as “I don't have it”. You can change it later."
   },
   "objects.held": {
     "ja": "{持|も}っている",
@@ -1511,9 +1511,9 @@
     "en": "How to put out garbage"
   },
   "gomi.draft": {
-    "ja": "{下書|したが}きのデータです（{作者|さくしゃ}の{確認|かくにん}{待|ま}ち）。{最後|さいご}は{市|し}の{公式|こうしき}の{案内|あんない}で{確|たし}かめてください。",
-    "ja_easy": "{下書|したが}きです。{市|し}のページで{確|たし}かめてください。",
-    "en": "Draft data (not yet reviewed). Check the official city guide."
+    "ja": "{最後|さいご}は{市|し}の{公式|こうしき}の{案内|あんない}で{確|たし}かめてください。",
+    "ja_easy": "{市|し}のページでも{確|たし}かめてください。",
+    "en": "Check the official city guide too."
   },
   "gomi.search.label": {
     "ja": "これ、{何|なに}ごみ？",
@@ -2946,9 +2946,9 @@
     "en": "Words"
   },
   "words.sub": {
-    "ja": "{窓口|まどぐち}や{書類|しょるい}で{出会|であ}った{言葉|ことば}が、{新|あたら}しい{順|じゅん}に{残|のこ}ります。★で{大事|だいじ}にします。",
+    "ja": "{出会|であ}った{言葉|ことば}が{残|のこ}ります。★で{大事|だいじ}にします。",
     "ja_easy": "{出会|であ}った{言葉|ことば}が{残|のこ}ります。★を{付|つ}けられます。",
-    "en": "Words you met at counters and on letters are kept, newest first. Star the ones you want to remember."
+    "en": "Words you meet are kept. Star the ones to remember."
   },
   "words.filter": {
     "ja": "{絞|しぼ}り{込|こ}み",
@@ -3001,9 +3001,9 @@
     "en": "Search"
   },
   "words.empty": {
-    "ja": "まだありません。{付|つ}き{添|そ}いの「{窓口|まどぐち}で」や「{届|とど}いた{書類|しょるい}」で{出会|であ}った{言葉|ことば}が、ここに{残|のこ}ります。",
+    "ja": "まだありません。",
     "ja_easy": "まだありません。",
-    "en": "Nothing yet. Words you meet at counters or on letters will appear here."
+    "en": "Nothing yet."
   },
   "words.start": {
     "ja": "まず、{言|い}えると{便利|べんり}な{文|ぶん}",

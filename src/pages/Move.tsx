@@ -40,7 +40,7 @@ export function Move({ step }: { step: string }) {
     return (
       <>
         <div className="art" aria-hidden="true"><img src={art('homemove')} alt="" /><img src={art('homecheck')} alt="" /></div>
-        <Head eyebrow={<One k="move.step" />}><Bi k="move.changed" /></Head>
+        <Head eyebrow={<One k="move.step" />}><Bi phrase k="move.changed" /></Head>
         <div className="list">
           <button type="button" className="k-answer" onClick={() => navigate('/move/from')}><img src={art('homemove')} alt="" /><Bi phrase k="move.yes" /></button>
           <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(noChangeEvents().length ? '/move/nochange' : '/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi phrase k="move.no" /></button>
@@ -56,7 +56,7 @@ export function Move({ step }: { step: string }) {
     const built = DATA().flow.built_origins;
     return (
       <>
-        <Head eyebrow={<One k="move.step" />}><Bi t={qo.text} /></Head>
+        <Head eyebrow={<One k="move.step" />}><Bi phrase t={qo.text} /></Head>
         <QuestionBlockNoTitle>
           {qo.options.map((o) => (
             <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')}
@@ -69,7 +69,7 @@ export function Move({ step }: { step: string }) {
                 void answerAndGo('Q-origin', o.value, to);
               }}>
               {o.icon && <img src={art(o.icon)} alt="" />}
-              <Bi t={o.label} />
+              <Bi phrase t={o.label} />
             </button>
           ))}
         </QuestionBlockNoTitle>
@@ -86,11 +86,11 @@ export function Move({ step }: { step: string }) {
     const qb = q('Q-residence-basis');
     return (
       <>
-        <Head eyebrow={<One k="q.eyebrow" />}><Bi t={qb.text} /></Head>
+        <Head eyebrow={<One k="q.eyebrow" />}><Bi phrase t={qb.text} /></Head>
         <QuestionBlockNoTitle>
           {qb.options.map((o) => (
             <button key={String(o.value)} type="button" className="k-answer" onClick={() => void answerAndGo('Q-residence-basis', o.value, o.value === 'short_stay' ? '/info/out-of-scope' : '/move/q')}>
-              <Bi t={o.label} />
+              <Bi phrase t={o.label} />
             </button>
           ))}
         </QuestionBlockNoTitle>
@@ -104,12 +104,12 @@ export function Move({ step }: { step: string }) {
     return (
       <>
         <div className="art" aria-hidden="true"><img src={art('cardback')} alt="" className="art--big" /></div>
-        <Head eyebrow={<One k="check.eyebrow" />}><Bi t={qc.text} /></Head>
+        <Head eyebrow={<One k="check.eyebrow" />}><Bi phrase t={qc.text} /></Head>
         <p className="sub"><Bi t={qc.why_asked} /></p>
         <QuestionBlockNoTitle>
           {qc.options.map((o) => (
             <button key={String(o.value)} type="button" className="k-answer" onClick={() => void answerAndGo('Q-zairyu-back-address', o.value, '/move/q')}>
-              <Bi t={o.label} />
+              <Bi phrase t={o.label} />
             </button>
           ))}
         </QuestionBlockNoTitle>
@@ -132,7 +132,7 @@ function Upfront() {
   if (out || !next) return null;
   return (
     <>
-      <Head eyebrow={<One k="q.eyebrow" />}><Bi t={next.text} /></Head>
+      <Head eyebrow={<One k="q.eyebrow" />}><Bi phrase t={next.text} /></Head>
       <Answers q={next} onPick={(v) => void g.answer(next.id, v)} />
       <WhyAsked t={next.why_asked} />
     </>
@@ -192,7 +192,7 @@ function NoChange() {
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('homecheck')} alt="" /></div>
-      <Head eyebrow={<One k="move.step" />}><Bi k="move.nochange.title" /></Head>
+      <Head eyebrow={<One k="move.step" />}><Bi phrase k="move.nochange.title" /></Head>
       <p className="sub"><Bi k="move.nochange.sub" /></p>
       <ul className="list" role="list">
         {noChangeEvents().map((e) => (
@@ -212,7 +212,7 @@ function Unsure() {
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('ask')} alt="" /></div>
-      <Head eyebrow={<One k="move.step" />}><Bi k="move.unsure.title" /></Head>
+      <Head eyebrow={<One k="move.step" />}><Bi phrase k="move.unsure.title" /></Head>
       <div className="prose">
         <p><Bi k="move.unsure.p1" /></p>
         <p><Bi k="move.unsure.p2" /></p>

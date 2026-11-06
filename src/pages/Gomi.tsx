@@ -70,7 +70,7 @@ function GomiTool() {
     <>
       <div className="art" aria-hidden="true"><img src={art('bin')} alt="" /></div>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="gomi.title" /></h1></div>
-      <p className="draftmark"><Bi k="gomi.draft" /></p>
+      <p className="sub"><Bi k="gomi.draft" /></p>
 
       {/* 1. 住所（区＋町名）。作者の決定 11/6 F：住所と捨てたい物が分かれば、いつ・どのごみ・どう出すが1つの画面で分かる */}
       <section className="group" aria-labelledby={id + '-a'}>
@@ -87,7 +87,6 @@ function GomiTool() {
           <input id={id} type="search" value={q} onChange={(e) => { setQ(e.target.value); setSel(null); }} autoComplete="off" enterKeyHint="search" aria-describedby={id + '-hint'} />
           <p id={id + '-hint'} className="sub"><One k="gomi.search.hint" /></p>
         </div>
-        {d.areas.business && <p className="sub"><Bi t={d.areas.business.text} /> <Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></p>}
         <div aria-live="polite">
           {q.trim() && !sel && (found.length ? (
             <ul className="list" role="list">
@@ -188,7 +187,9 @@ function GomiTool() {
         </ul>
       </details>
       {!pa.p && <p className="sub"><Bi t={d.areas.coverage} /></p>}
-      <div className="links">{d.areas.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}</div>
+      <div className="links">{d.areas.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}
+        {/* 家庭ごみの外（事業系ごみ）は、リンクだけ（B-7a：段落をやめた） */}
+        {d.areas.business && <p><Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></p>}</div>
 
       {/* ライセンスの表示（CC BY など。出典に license があるものだけ） */}
       {d.items.sources.filter((s) => s.license).map((s) => (
