@@ -440,6 +440,30 @@
       "owner_type": "government",
       "title": "外国人の受入れ・共生に関する金融関連施策について",
       "language": "ja"
+    },
+    {
+      "source_id": "nic-contact",
+      "url": "https://www.nic-nagoya.or.jp/japanese/contact/",
+      "owner": "公益財団法人 名古屋国際センター",
+      "owner_type": "public_corp",
+      "title": "お問い合わせ",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-info-center",
+      "url": "https://www.moj.go.jp/isa/consultation/center/index.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "外国人在留総合インフォメーションセンター",
+      "language": "ja"
+    },
+    {
+      "source_id": "yorisoi-n2",
+      "url": "https://www.since2011.net/yorisoi/n2/",
+      "owner": "一般社団法人 社会的包摂サポートセンター",
+      "owner_type": "private",
+      "title": "よりそいホットライン（外国語）",
+      "language": "en"
     }
   ]
 }

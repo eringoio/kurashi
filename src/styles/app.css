@@ -410,3 +410,9 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 /* ロゴ（Kurashi。A-11）：上の帯と入口・免責 */
 .brand img.brand__logo { width: auto; height: 34px; }
 .art img.art__logo { width: auto; height: 64px; }
+/* 相談窓口のシート（I-4） */
+.help { gap: 14px; }
+.help__item { display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; border-bottom: 1.5px dashed var(--line-dash); }
+.help__name { margin: 0; font-weight: 700; }
+.help__item .sub { margin: 0; }
+.help__tel { min-height: var(--target-min); flex-wrap: wrap; gap: 4px 10px; padding: 6px 12px; }

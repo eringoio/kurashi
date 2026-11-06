@@ -1,0 +1,121 @@
+{
+  "$comment": "相談窓口（上の帯の「相談」）。作者の指示 2026-11-06（docs/TODO_2026-11-06.md の I-4）。電話番号・時間は公式ページの本文で取り直したものだけ。取れなかったもの（FRESC ヘルプデスク・名古屋市の多文化共生の担当）は入れていない。学校の留学生係は入れない（作者）。",
+  "contacts": [
+    {
+      "id": "nic",
+      "phone": "052-581-0100",
+      "name": {
+        "ja": "{名古屋|なごや}{国際|こくさい}センター（NIC）",
+        "ja_easy": "{名古屋|なごや}{国際|こくさい}センター（NIC）",
+        "en": "Nagoya International Center (NIC)"
+      },
+      "what": {
+        "ja": "{暮|く}らしの{相談|そうだん}・{情報|じょうほう}。{窓口|まどぐち}は{外国語|がいこくご}でも{相談|そうだん}できます（{言葉|ことば}と{曜日|ようび}は{要|よう}{確認|かくにん}）",
+        "ja_easy": "くらしの{相談|そうだん}。{外国語|がいこくご}でも{相談|そうだん}できます（{言葉|ことば}と{曜日|ようび}は{要|よう}{確認|かくにん}）",
+        "en": "Advice and information about daily life. The counter also helps in other languages (languages and days: to be checked)"
+      },
+      "hours": {
+        "ja": "9:00〜19:00（{月曜|げつよう}は{休|やす}み）",
+        "ja_easy": "9:00〜19:00（{月曜|げつよう}は{休|やす}み）",
+        "en": "9:00–19:00 (closed Mondays)"
+      },
+      "url": "https://www.nic-nagoya.or.jp/japanese/contact/",
+      "evidence": {
+        "source_ids": [
+          "nic-contact"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "quote": "お問い合わせ（開館時間 09:00 - 19:00）TEL: 052-581-0100"
+      }
+    },
+    {
+      "id": "isa-info",
+      "phone": "0570-013904",
+      "name": {
+        "ja": "{外国人|がいこくじん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンター（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}）",
+        "ja_easy": "{在留|ざいりゅう}のことの{電話|でんわ}{相談|そうだん}（{入管|にゅうかん}）",
+        "en": "Immigration Services Agency: Information Center for Foreign Residents"
+      },
+      "what": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}・{在留|ざいりゅう}カードの{手続|てつづ}きの{問|と}い{合|あ}わせ。{外国語|がいこくご}も{使|つか}えます",
+        "ja_easy": "ビザ・{在留|ざいりゅう}カードのこと。{外国語|がいこくご}も{使|つか}えます",
+        "en": "Questions about residence status and the residence card. Other languages are available"
+      },
+      "hours": {
+        "ja": "{平日|へいじつ} 8:30〜17:15",
+        "ja_easy": "{平日|へいじつ} 8:30〜17:15",
+        "en": "Weekdays 8:30–17:15"
+      },
+      "url": "https://www.moj.go.jp/isa/consultation/center/index.html",
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "quote": "TEL ０５７０－０１３９０４"
+      }
+    },
+    {
+      "id": "yorisoi",
+      "phone": "0120-279-338",
+      "name": {
+        "ja": "よりそいホットライン（{外国語|がいこくご}）",
+        "ja_easy": "よりそいホットライン（{外国語|がいこくご}）",
+        "en": "Yorisoi Hotline (foreign languages)"
+      },
+      "what": {
+        "ja": "{困|こま}りごとの{電話|でんわ}{相談|そうだん}。{無料|むりょう}。{案内|あんない}が{流|なが}れたら 2 を{押|お}すと{外国語|がいこくご}",
+        "ja_easy": "{困|こま}ったときの{電話|でんわ}。{無料|むりょう}。2 を{押|お}すと{外国語|がいこくご}",
+        "en": "Phone help for any worry. Free. Press 2 for foreign languages"
+      },
+      "hours": {
+        "ja": "{外国語|がいこくご}は{毎日|まいにち} 10:00〜22:00",
+        "ja_easy": "{外国語|がいこくご}は{毎日|まいにち} 10:00〜22:00",
+        "en": "Foreign languages: every day 10:00–22:00"
+      },
+      "url": "https://www.since2011.net/yorisoi/n2/",
+      "evidence": {
+        "source_ids": [
+          "yorisoi-n2"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "quote": "The consultation hours for the Foreign Language Line are available from 10:00 a.m. to 10:00 p.m. everyday."
+      }
+    },
+    {
+      "id": "7119",
+      "phone": "#7119",
+      "name": {
+        "ja": "{救急|きゅうきゅう}{安心|あんしん}センターなごや",
+        "ja_easy": "{救急|きゅうきゅう}の{相談|そうだん}",
+        "en": "Emergency advice line (Nagoya)"
+      },
+      "what": {
+        "ja": "{病院|びょういん}へ{行|い}くか、{救急車|きゅうきゅうしゃ}を{呼|よ}ぶか{迷|まよ}ったとき",
+        "ja_easy": "{病院|びょういん}か{救急車|きゅうきゅうしゃ}か{迷|まよ}ったとき",
+        "en": "When you are not sure whether to see a doctor or call an ambulance"
+      },
+      "hours": {
+        "ja": "24{時間|じかん}",
+        "ja_easy": "24{時間|じかん}",
+        "en": "24 hours"
+      },
+      "url": "https://www.city.nagoya.jp/bousai/shoubou/1012724/1013205/1034493/1013206.html",
+      "evidence": {
+        "source_ids": [
+          "nagoya-7119"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "verified",
+        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "quote": "#7119をダイヤルすることで、24時間365日体制で看護師等からアドバイスを受けることが"
+      }
+    }
+  ]
+}

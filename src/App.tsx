@@ -11,7 +11,7 @@ import { Consent } from './ui/Consent';
 import { Link, usePath } from './ui/router';
 import { Settings } from './ui/Settings';
 import { GlobeIcon, HelpIcon } from './ui/icons';
-import { Sheet } from './ui/Sheet';
+import { HelpSheet } from './ui/HelpSheet';
 import { Home } from './pages/Home';
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
@@ -143,12 +143,7 @@ export function App() {
       </div>
       <div className="sr-only" aria-live="polite" role="status">{live}</div>
       {sheet === 'settings' && <Settings onClose={close} onLive={onLive} />}
-      {sheet === 'help' && (
-        <Sheet title={<One k="help.title" />} onClose={close}>
-          <p className="draftmark"><Bi k="page.draftMark" /></p>
-          <p><Bi k="help.body" /></p>
-        </Sheet>
-      )}
+      {sheet === 'help' && <HelpSheet onClose={close} />}
     </div>
   );
 }

@@ -341,75 +341,59 @@
     "en": "Where to get help"
   },
   "help.body": {
-    "ja": "（{仮|かり}）{相談|そうだん}{窓口|まどぐち}の{連絡|れんらく}{先|さき}は、{公式|こうしき}のページで{確|たし}かめてから{載|の}せます。いまは、{名古屋|なごや}{市|し}の{公式|こうしき}ページと、{学校|がっこう}の{留学生|りゅうがくせい}{係|がかり}に{聞|き}いてください。",
-    "ja_easy": "（{仮|かり}）{連絡先|れんらくさき}は、あとで{載|の}せます。いまは、{学校|がっこう}の{人|ひと}に{聞|き}いてください。",
-    "en": "(Draft) Contact details will be added after we check the official pages. For now, ask the City of Nagoya or your school's international student office.",
-    "status": "draft"
+    "ja": "{困|こま}ったときの{相談|そうだん}{先|さき}です。{押|お}すと{電話|でんわ}がかかります。",
+    "ja_easy": "{困|こま}ったときの{電話|でんわ}です。{押|お}すとかかります。",
+    "en": "Where to get help. Tap a number to call."
   },
   "page.outOfScope.title": {
     "ja": "このアプリでは、まだ{案内|あんない}していません",
     "ja_easy": "このアプリでは、まだ{案内|あんない}していません",
-    "en": "This app does not cover this yet",
-    "status": "draft"
+    "en": "This app does not cover this yet"
   },
   "page.outOfScope.body": {
-    "ja": "（{仮|かり}）このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。{名古屋|なごや}{市|し}の{外|そと}へ{引|ひ}っ{越|こ}す{人|ひと}、{名古屋|なごや}{市|し}{以外|いがい}で{引|ひ}っ{越|こ}す{人|ひと}、{住|す}むためではない{短|みじか}い{滞在|たいざい}の{人|ひと}の{手続|てつづ}きは、まだ{案内|あんない}していません。あなたの{場合|ばあい}は、{引|ひ}っ{越|こ}し{先|さき}・{引|ひ}っ{越|こ}し{前|まえ}の{市区|しく}{町村|ちょうそん}の{公式|こうしき}の{情報|じょうほう}で{確|たし}かめてください。",
-    "ja_easy": "（{仮|かり}）このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。あなたの{手続|てつづ}きは、まだ{案内|あんない}していません。{市|し}や{町|まち}の{公式|こうしき}のページで{確|たし}かめてください。",
-    "en": "(Draft) This app guides people who live in Nagoya City. It does not yet cover moving out of Nagoya, moving within another city, or short stays that are not for living. Please check the official information of your city or town.",
-    "status": "draft"
+    "ja": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}しています。あなたの{場合|ばあい}は、{名古屋市|なごやし}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "en": "This app guides people who live in Nagoya City through their procedures. For your case, please check the official website of the City of Nagoya."
   },
   "page.outOfScope.link": {
-    "ja": "{名古屋|なごや}{市|し}の{公式|こうしき}ページ（{引|ひ}っ{越|こ}しの{手続|てつづ}き）",
-    "ja_easy": "{名古屋市|なごやし}の{公式|こうしき}のページ",
-    "en": "City of Nagoya official page (moving procedures)"
+    "ja": "{名古屋|なごや}{市|し}の{公式|こうしき}サイト",
+    "ja_easy": "{名古屋市|なごやし}の{公式|こうしき}サイト",
+    "en": "City of Nagoya official website"
   },
   "page.comingSoon.title": {
     "ja": "{準備|じゅんび}{中|ちゅう}です",
     "ja_easy": "じゅんびしています",
-    "en": "Coming soon",
-    "status": "draft"
+    "en": "Coming soon"
   },
   "page.comingSoon.body": {
-    "ja": "（{仮|かり}）この{案内|あんない}は、まだ{作|つく}っていません。{作|つく}るときも、{出典|しゅってん}を{確|たし}かめたことだけを{書|か}きます。いまは、{公式|こうしき}のページか{相談|そうだん}{窓口|まどぐち}で{確|たし}かめてください。",
-    "ja_easy": "（{仮|かり}）まだ{作|つく}っていません。{公式|こうしき}のページか、{相談|そうだん}するところで{確|たし}かめてください。",
-    "en": "(Draft) This guide is not ready yet. When it is, it will only say what we have checked in official sources. For now, please check official pages or ask for help.",
-    "status": "draft"
-  },
-  "page.comingSoon.events": {
-    "ja": "{準備|じゅんび}{中|ちゅう}の{出来事|できごと}：{働|はたら}き{始|はじ}めた・{仕事|しごと}が{変|か}わった／{学校|がっこう}に{入|はい}った・{卒業|そつぎょう}した／{結婚|けっこん}した・パートナーと{暮|く}らし{始|はじ}めた／{子|こ}どもが{生|う}まれた／{事業|じぎょう}を{始|はじ}めた／{何|なに}かをなくした",
-    "ja_easy": "じゅんびしていること：{働|はたら}く／{学校|がっこう}／{結婚|けっこん}／{子|こ}ども／{仕事|しごと}を{始|はじ}める／なくしもの",
-    "en": "Coming later: starting or changing a job / starting or finishing school / marriage or living with a partner / having a baby / starting a business / losing something",
-    "status": "draft"
+    "ja": "この{案内|あんない}は、まだ{作|つく}っていません。{名古屋|なごや}{市|し}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "ja_easy": "この{案内|あんない}は、まだ{作|つく}っていません。{名古屋市|なごやし}の{公式|こうしき}サイトで{確|たし}かめてください。",
+    "en": "This guide is not ready yet. Please check the official website of the City of Nagoya."
   },
   "page.disclaimer.title": {
     "ja": "ご{利用|りよう}の{前|まえ}に",
     "ja_easy": "{使|つか}う{前|まえ}に",
-    "en": "Before you use this app",
-    "status": "draft"
+    "en": "Before you use this app"
   },
   "page.disclaimer.p1": {
-    "ja": "（{仮|かり}）このアプリは、{名古屋|なごや}{市|し}や{国|くに}の{機関|きかん}が{運営|うんえい}するものではありません。{公開|こうかい}されている{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きに{気|き}づくための{案内|あんない}をします。",
-    "ja_easy": "（{仮|かり}）このアプリは、{市|し}や{国|くに}のものではありません。{公式|こうしき}の{情報|じょうほう}をもとに、{案内|あんない}します。",
-    "en": "(Draft) This app is not run by the City of Nagoya or any government office. It helps you notice procedures, based on published official information.",
-    "status": "draft"
+    "ja": "このアプリは、{名古屋|なごや}{市|し}や{国|くに}の{機関|きかん}が{運営|うんえい}するものではありません。{公開|こうかい}されている{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きに{気|き}づくための{案内|あんない}をします。",
+    "ja_easy": "このアプリは、{市|し}や{国|くに}のものではありません。{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きを{案内|あんない}します。",
+    "en": "This app is not run by the City of Nagoya or any government office. It helps you notice procedures, based on published official information."
   },
   "page.disclaimer.p2": {
-    "ja": "（{仮|かり}）{内容|ないよう}は{確認|かくにん}した{日|ひ}の{時点|じてん}のものです。{制度|せいど}や{期限|きげん}は{変|か}わることがあります。「{要|よう}{確認|かくにん}」と{書|か}いたことは、{窓口|まどぐち}で{確|たし}かめてください。{最終|さいしゅう}{的|てき}な{判断|はんだん}は、{手続|てつづ}きの{窓口|まどぐち}が{行|おこな}います。",
-    "ja_easy": "（{仮|かり}）{制度|せいど}や{期限|きげん}は{変|か}わることがあります。「{要確認|ようかくにん}」のことは、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "(Draft) Information is as of the date it was checked. Rules and deadlines can change. Anything marked “to be checked” must be confirmed at the counter. The office in charge makes the final decision.",
-    "status": "draft"
+    "ja": "{内容|ないよう}は{確認|かくにん}した{日|ひ}の{時点|じてん}のものです。{制度|せいど}や{期限|きげん}は{変|か}わることがあります。",
+    "ja_easy": "{内容|ないよう}は{確|たし}かめた{日|ひ}のものです。{制度|せいど}や{期限|きげん}は{変|か}わることがあります。",
+    "en": "Information is as of the date it was checked. Rules and deadlines can change."
   },
   "page.disclaimer.p3": {
-    "ja": "（{仮|かり}）{在留|ざいりゅう}{資格|しかく}・{働|はたら}くこと・{税金|ぜいきん}・{医療|いりょう}について、あなたの{場合|ばあい}にどうなるかは{判断|はんだん}しません。{学校|がっこう}・{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}・{専門|せんもん}{家|か}に{相談|そうだん}してください。",
-    "ja_easy": "（{仮|かり}）ビザ・{仕事|しごと}・{税金|ぜいきん}・{病気|びょうき}のことは、{決|き}められません。{学校|がっこう}や{専門|せんもん}の{人|ひと}に{聞|き}いてください。",
-    "en": "(Draft) We do not decide your individual case for residence status, work, tax or medical matters. Please ask your school, the Nagoya Regional Immigration Services Bureau, or a professional.",
-    "status": "draft"
+    "ja": "このアプリは、{手続|てつづ}きの{手順|てじゅん}と{窓口|まどぐち}を{案内|あんない}するものです。{法律|ほうりつ}の{助言|じょげん}ではなく、あなたの{場合|ばあい}にどうなるかの{判断|はんだん}はしません。{判断|はんだん}は、{手続|てつづ}きの{窓口|まどぐち}・{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}・{専門|せんもん}{家|か}が{行|おこな}います。",
+    "ja_easy": "このアプリは、{手続|てつづ}きの{順番|じゅんばん}と{行|い}く{所|ところ}を{案内|あんない}します。{法律|ほうりつ}の{相談|そうだん}ではありません。あなたの{場合|ばあい}にどうなるかは、{窓口|まどぐち}・{入管|にゅうかん}・{専門|せんもん}の{人|ひと}が{決|き}めます。",
+    "en": "This app shows the steps and the offices for procedures. It is not legal advice and does not decide what happens in your case. The office in charge, the Nagoya Regional Immigration Services Bureau or a professional decides."
   },
   "page.disclaimer.p4": {
-    "ja": "（{仮|かり}）このアプリは{申請|しんせい}を{代|か}わりに{行|おこな}いません。{特定|とくてい}の{会社|かいしゃ}・{銀行|ぎんこう}を{勧|すす}めるものではありません。",
-    "ja_easy": "（{仮|かり}）{申請|しんせい}は{代|か}わりにしません。{会社|かいしゃ}や{銀行|ぎんこう}を{勧|すす}めません。",
-    "en": "(Draft) This app does not apply for you, and does not recommend any company or bank.",
-    "status": "draft"
+    "ja": "このアプリは{申請|しんせい}を{代|か}わりに{行|おこな}いません。{特定|とくてい}の{会社|かいしゃ}・{銀行|ぎんこう}を{勧|すす}めるものではありません。",
+    "ja_easy": "{申請|しんせい}は{代|か}わりにしません。{会社|かいしゃ}や{銀行|ぎんこう}を{勧|すす}めません。",
+    "en": "This app does not apply for you, and does not recommend any company or bank."
   },
   "page.about.title": {
     "ja": "このアプリについて",
@@ -417,9 +401,9 @@
     "en": "About this app"
   },
   "page.about.p1": {
-    "ja": "{名古屋|なごや}{市|し}で{暮|く}らす{人|ひと}が、{生活|せいかつ}の{出来事|できごと}から、{知|し}らなかった{手続|てつづ}きに{気|き}づくためのアプリです（{名前|なまえ}は{暫定|ざんてい}です）。",
+    "ja": "{名古屋|なごや}{市|し}で{暮|く}らす{人|ひと}が、{生活|せいかつ}の{出来事|できごと}から、{知|し}らなかった{手続|てつづ}きに{気|き}づくためのアプリ「Kurashi」です。",
     "ja_easy": "{名古屋市|なごやし}で{暮|く}らす{人|ひと}が、{知|し}らなかった{手続|てつづ}きに{気|き}づくためのアプリです。",
-    "en": "An app that helps people living in Nagoya notice procedures they did not know about, starting from events in their life. (The name is temporary.)"
+    "en": "An app that helps people living in Nagoya notice procedures they did not know about, starting from events in their life: Kurashi."
   },
   "page.about.p2": {
     "ja": "{答|こた}えは、この{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。{写真|しゃしん}と{位置|いち}は、{押|お}したときだけ{使|つか}い、{保存|ほぞん}も{送信|そうしん}もしません。",
@@ -2600,5 +2584,15 @@
     "ja": "{確認|かくにん}",
     "ja_easy": "{確認|かくにん}",
     "en": "Check"
+  },
+  "page.disclaimer.p5": {
+    "ja": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページの{本文|ほんぶん}と{照合|しょうごう}しています（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめた{文|ぶん}には、{確認済|かくにんず}みの{印|しるし}があります。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{確|たし}かめてください。",
+    "ja_easy": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページと{比|くら}べました（AIチェックの{印|しるし}）。{作者|さくしゃ}が{確|たし}かめた{文|ぶん}には{確認済|かくにんず}みの{印|しるし}があります。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Some text has been checked by AI against the official page (AI-check mark). Text the author checked on the official page has the checked mark. Please confirm text without a mark, and anything marked \"to be checked\", at the office."
+  },
+  "help.site": {
+    "ja": "{公式|こうしき}ページ",
+    "ja_easy": "{公式|こうしき}ページ",
+    "en": "Official page"
   }
 }

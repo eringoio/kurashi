@@ -8,11 +8,12 @@ import { Link, useFocusTitle } from '../ui/router';
 export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: string; link?: { k: UiKey; href: string }; dev?: boolean }> = {
   'out-of-scope': {
     title: 'page.outOfScope.title', body: ['page.outOfScope.body'], icon: 'cross',
-    // 公式のリンクは仮（11/6 に確かめる）
+    // 範囲外は細かく列挙せず、名古屋市の公式サイトへ（作者 11/6 I-1）
     link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' },
   },
-  'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body', 'page.comingSoon.events'], icon: 'clock', dev: true },
-  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p2', 'page.disclaimer.p3', 'page.disclaimer.p4'], icon: 'logo' },
+  // 準備中の一覧は出さない。公式サイトへ（作者 11/6 I-2）
+  'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body'], icon: 'clock', link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' } },
+  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p3', 'page.disclaimer.p5', 'page.disclaimer.p2', 'page.disclaimer.p4'], icon: 'logo' },
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2', 'page.about.p3'], icon: 'bulb' },
 };
 
