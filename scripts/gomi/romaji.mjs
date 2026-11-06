@@ -1,15 +1,14 @@
 /* 収集日の写し（data/private/gomi-schedule.json。Git に入れない）の町名に、ローマ字（Hepburn。長音は書かない）を付ける。
-   よみは kuromoji（形態素解析）。町名のよみは間違うことがあるので、画面では日本語の町名といっしょに出す（"Romaji（日本語）"）。
+   よみは data/gomi/town-readings.json（町・丁目は住所マスター、大字・字はウィキペディアの各町の記事。出典はファイルの中）。
+   表に無い町名があれば止まる（推測のよみは付けない）。画面では日本語の町名といっしょに出す（"Romaji（日本語）"）。
    使い方：node scripts/gomi/romaji.mjs   … 写しの各行に romaji を足して書き戻す（もう付いている行は変えない。--force で作り直す） */
 import fs from 'node:fs';
 import path from 'node:path';
-import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
-const require = createRequire(import.meta.url);
-const kuromoji = require('kuromoji');
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FILE = path.join(ROOT, 'data', 'private', 'gomi-schedule.json');
+const READINGS = path.join(ROOT, 'data', 'gomi', 'town-readings.json');
 const FORCE = process.argv.includes('--force');
 
 const BASE = {
@@ -23,7 +22,7 @@ const SMALL = { キ: 'k', シ: 's', チ: 'ch', ニ: 'n', ヒ: 'h', ミ: 'm', リ
 const YOON = { ャ: 'a', ュ: 'u', ョ: 'o' };
 const VOWEL_SMALL = { ァ: 'a', ィ: 'i', ゥ: 'u', ェ: 'e', ォ: 'o' };
 
-/** カタカナ → Hepburn（長音符は書かない：Aioicho ではなく Aioichō の ō も o） */
+/** カタカナ → Hepburn（長音符 ー は書かない） */
 export function kataToRomaji(kana) {
   let out = '';
   const chars = [...kana];
@@ -39,65 +38,88 @@ export function kataToRomaji(kana) {
     }
     if (nx && VOWEL_SMALL[nx] && BASE[c]) { out += BASE[c].slice(0, -1) + VOWEL_SMALL[nx]; i++; continue; }
     if (c === 'ン') { out += 'n'; continue; }
-    out += BASE[c] ?? (/[A-Za-z0-9]/.test(c) ? c : '');
+    out += BASE[c] ?? (/[A-Za-z0-9|]/.test(c) ? c : '');
   }
   return out;
 }
 
-const KNUM = { 〇: 0, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
-function kanjiNumber(s) {
-  if (/^[〇一二三四五六七八九]+$/.test(s) && s.length > 1) return Number([...s].map((c) => KNUM[c]).join(''));
-  let n = 0;
+const KN = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+const KNUM = Object.fromEntries(KN.map((c, i) => [c, i]));
+function chomeNumber(s) {
+  if (/^\d+$/.test(s)) return Number(s);
   const m = /^(?:([一二三四五六七八九])?十)?([一二三四五六七八九])?$/.exec(s);
   if (!m) return null;
+  let n = 0;
   if (s.includes('十')) n += (m[1] ? KNUM[m[1]] : 1) * 10;
   if (m[2]) n += KNUM[m[2]];
-  return n || (KNUM[s] ?? null);
+  return n || null;
 }
 
-function buildTokenizer() {
-  return new Promise((resolve, reject) => {
-    kuromoji.builder({ dicPath: path.join(ROOT, 'node_modules', 'kuromoji', 'dict') }).build((err, t) => (err ? reject(err) : resolve(t)));
-  });
-}
-
+const toKata = (x) => x.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : s);
-
+/** 語の切れ目の「う」（井上＝い・の・うえ、元植田＝もと・うえだ）は長音ではない。表のよみで | を入れておく */
+const KEEP = [['イノウエ', 'イノ|ウエ'], ['モトウエ', 'モト|ウエ']];
 /** 長音（ou・oo・uu）は書かない（Hepburn の簡単な書き方） */
 const dropLong = (r) => r.replace(/ou|oo/g, 'o').replace(/uu/g, 'u');
+/** ひらがなのよみ（スペースは語の区切り）→ "Narumicho Aibaramachi" */
+export function readingToRomaji(reading) {
+  return reading.split(/\s+/).map((w) => {
+    let k = toKata(w);
+    for (const [a, b] of KEEP) k = k.replace(a, b);
+    return cap(dropLong(kataToRomaji(k)).replace(/\|/g, ''));
+  }).join(' ');
+}
 
-export function makeRomaji(tokenizer, town) {
-  const toKata = (x) => x.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
-  const reading = (x) => tokenizer.tokenize(x).map((t) => (t.reading && t.reading !== '*' ? t.reading : t.surface_form)).join('');
-  const word = (x) => cap(dropLong(kataToRomaji(toKata(reading(x)))));
-  // 「栄四丁目」→ Sakae 4-chome。「相川一丁目、二丁目」→ Aikawa 1-chome, 2-chome
-  const pieces = town.split('、');
+const norm = (s) => s.replace(/\(字なし\)|（字なし）/g, '').replace(/[､・]/g, '、').replace(/ニ丁目/g, '二丁目').trim();
+const variants = (s) => [...new Set([s, s.replace(/ヶ/g, 'ケ'), s.replace(/ケ/g, 'ヶ')])];
+
+/** 町名（例「栄四丁目」「相川一丁目、二丁目」「鳴海町　相原町」）→ ローマ字。よみが表に無ければ null。
+    3つ目からの区切り（「県道…の東側」「6-1、8」など）はローマ字にしない（画面で日本語といっしょに出る） */
+export function makeRomaji(readings, ward, town) {
+  const [head, aza] = norm(town).split('　');
+  const table = readings.towns[ward] || {};
+  const read = (name) => variants(name).map((v) => table[v]).find(Boolean);
   const out = [];
-  let base = '';
-  pieces.forEach((piece, i) => {
-    const m = /^(.*?)([〇一二三四五六七八九十]+)丁目$/.exec(piece);
-    if (m && i > 0 && !m[1]) { const n = kanjiNumber(m[2]); if (n) out.push(n + '-chome'); return; }
-    if (m) { base = word(m[1]); const n = kanjiNumber(m[2]); out.push((base ? base + ' ' : '') + (n ? n + '-chome' : '')); return; }
-    out.push(word(piece));
-  });
-  return out.join(', ');
+  for (const [i, piece] of head.split('、').entries()) {
+    const m = /^(.*?)([〇一二三四五六七八九十0-9]+)丁目$/.exec(piece);
+    if (m && i > 0 && !m[1]) { const n = chomeNumber(m[2]); if (!n) return null; out.push(n + '-chome'); continue; }
+    const r = read(m ? m[1] : piece);
+    if (!r) return null;
+    const n = m ? chomeNumber(m[2]) : null;
+    out.push(readingToRomaji(r) + (n ? ' ' + n + '-chome' : ''));
+  }
+  let s = out.join(', ');
+  if (aza) {
+    const t = readings.aza[head] || {};
+    const r = variants(aza).map((v) => t[v]).find(Boolean);
+    if (!r) return null;
+    s += ' ' + readingToRomaji(r);
+  }
+  return s;
 }
 
 async function main() {
   const p = JSON.parse(fs.readFileSync(FILE, 'utf8'));
-  const tk = await buildTokenizer();
+  const readings = JSON.parse(fs.readFileSync(READINGS, 'utf8'));
   const cache = new Map();
+  const missing = new Set();
   let n = 0;
   for (const a of p.areas) {
     if (a.romaji && !FORCE) continue;
-    if (!cache.has(a.town)) cache.set(a.town, makeRomaji(tk, a.town));
-    a.romaji = cache.get(a.town);
+    const key = a.ward + '|' + a.town;
+    if (!cache.has(key)) cache.set(key, makeRomaji(readings, a.ward, a.town));
+    const r = cache.get(key);
+    if (!r) { missing.add(key); continue; }
+    a.romaji = r;
     n++;
+  }
+  if (missing.size) {
+    console.error(`no reading in data/gomi/town-readings.json for ${missing.size} towns (nothing written):\n` + [...missing].join('\n'));
+    process.exit(1);
   }
   fs.writeFileSync(FILE, JSON.stringify(p, null, 1));
   console.log(`romaji added to ${n} rows (${cache.size} distinct towns)`);
-  const sample = [...cache.entries()].slice(0, 8).map(([k, v]) => `${k} -> ${v}`).join('\n');
-  console.log(sample);
+  console.log([...cache.entries()].slice(0, 8).map(([k, v]) => `${k} -> ${v}`).join('\n'));
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await main();
