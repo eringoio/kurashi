@@ -51,9 +51,6 @@ export function Info({ id, reason }: { id: string; reason?: Text }) {
       {page.link && (
         <p><a className="link" href={page.link.href} target="_blank" rel="noopener noreferrer"><Bi k={page.link.k} /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></p>
       )}
-      <div className="links">
-        <Link to="/" className="link"><Bi k="nav.home" /></Link>
-      </div>
     </>
   );
 }

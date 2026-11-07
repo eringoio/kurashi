@@ -9,7 +9,8 @@ import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
 import { usePrefs } from './storage/prefs';
 import { Consent } from './ui/Consent';
-import { ReportButton } from './ui/ReportSheet';
+import { PageNav, type NavSpec } from './ui/PageNav';
+import { useEvent } from './guide/useEvent';
 import { AboutDoneLine, AboutPage } from './ui/About';
 import { initTelemetry, trackView } from './ui/telemetry';
 import { Link, useFocusTitle, usePath } from './ui/router';
@@ -21,6 +22,9 @@ import { ShareSheet } from './ui/ShareSheet';
 import { useSeen, WordsButton, WordsPage } from './ui/Words';
 import { pageWordIds } from './core/words';
 import { GroupPage, Home } from './pages/Home';
+// 入口と検索を1つにした形（作者 11/7 の試し）。前の入口にもどすときは false にする
+import { HomeSearch } from './pages/HomeSearch';
+const COMBINED_HOME = true;
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
 import { All, Now } from './pages/Plan';
@@ -30,7 +34,7 @@ import { PromisePage, ResumePage } from './pages/Entry';
 import { Review } from './pages/Review';
 import { Search } from './pages/Search';
 import { Gomi } from './pages/Gomi';
-import { SidePanel, useSide } from './ui/SidePanel';
+import { eventShowsAll, SidePanel, useSide } from './ui/SidePanel';
 import { cardHome } from './guide/catalogue';
 import { VisitPage } from './pages/Visit';
 import { parseVisitPath } from './core/accompany';
@@ -69,8 +73,19 @@ function continueOf(g: Guide, v: Pick<Vault, 'entries' | 'get'>): string {
   return continuePath(v.entries('occurrences').map(([, o]) => o as Occurrence), legacy);
 }
 
-/** PageNav（報告ボタン入り）を自分で出す画面と、報告ボタンを出さない画面（作者用・QR を作る） */
-const hasPageNav = (p: string) => /^\/(c|e)\//.test(p) || p === '/now' || p === '/all' || p === '/review' || p === '/qr';
+/** 下の道案内（PageNav）の中身。どの画面も同じ形で、関係のないボタンだけ省く（11/8 作者）。
+    入口（/）は報告だけ。作者用（/review・/qr・/dev）には出さない。いまの画面と同じ行き先のボタンは出さない。
+    guidesOnly：/e/{id} が一覧を出すとき（案内だけ・すぐにやることの一覧）は「いまの手続き」を出さない */
+function pageNavOf(path: string, guidesOnly: boolean): NavSpec | null {
+  if (path === '/') return { home: false, report: path };
+  if (path === '/review' || path === '/qr' || path.startsWith('/dev/')) return null;
+  let now: string | undefined;
+  let all: string | undefined;
+  const e = /^\/e\/(E-[a-z0-9-]+)/.exec(path);
+  if (e) { const base = '/e/' + e[1]; now = guidesOnly ? undefined : base; all = guidesOnly ? base : base + '/all'; }
+  else if (/^\/(now|all|calendar|today|past)$/.test(path) || /^\/(c|visit)\//.test(path)) { now = '/now'; all = '/all'; }
+  return { now: now === path ? undefined : now, all: all === path ? undefined : all, home: true, report: path };
+}
 
 /** まとめた項目（/g/{group}）が無いとき（U12）。見出しと入口へのリンク */
 function NotFound() {
@@ -138,7 +153,9 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
     const ids = e.kind === 'promise_today' || e.kind === 'promise_past' ? e.card_ids : [];
     return <PromisePage past={path === '/past'} cardIds={ids} />;
   }
-  return <Home hasProgress={guideProgress(v)} continueTo={continueOf(g, v)} />;
+  return COMBINED_HOME
+    ? <HomeSearch hasProgress={guideProgress(v)} continueTo={continueOf(g, v)} />
+    : <Home hasProgress={guideProgress(v)} continueTo={continueOf(g, v)} />;
 }
 
 export function App() {
@@ -158,6 +175,10 @@ export function App() {
   // 広い画面（デスクトップ）では、右に「全体」を並べる。いま・開いた項目のときだけ（全体の画面と、最初の道のりでは出さない）
   // 右に出すのは、いま（/now）・開いた項目（/c/*）・生活イベント（/e/*。全体を除く）。今日の予定・付き添いには出さない（K-36）
   const side = useSide(path);
+  const evId = /^\/e\/(E-[a-z0-9-]+)/.exec(path)?.[1] ?? '';
+  const eg = useEvent(evId);
+  const guidesOnly = !!eg && eventShowsAll(eg);
+  const nav = pageNavOf(path, guidesOnly);
   // 使われ方の数（13.4）：送ってよいかは、設定の「送らない」・見るだけ・ブラウザの「追跡しない」で決める
   useEffect(() => { initTelemetry({ allowed: () => v.mode !== 'view_only' && v.get('settings', 'counts') !== false, level: () => level.id }); }, [v, level]);
   useEffect(() => { trackView(path); }, [path]);
@@ -178,9 +199,7 @@ export function App() {
         {/* ロゴは帯だけ（A-4）：480px〜 ロゴ、〜479px マーク（280px 未満は文字だけ）。見えない方は display:none なので、読み上げの名前は「Kurashi」1つ */}
         <Link to="/" className="brand">
           <img src="/icons/kurashi-logo.svg" alt="Kurashi" className="brand__logo brand__logo--full" />
-          <img src="/icons/kurashi-mark.svg" alt="Kurashi" className="brand__logo brand__logo--mark" />
-          <span className="brand__tag"><One k="app.tag" /></span>
-        </Link>
+          <img src="/icons/kurashi-mark.svg" alt="Kurashi" className="brand__logo brand__logo--mark" />        </Link>
         <div className="bar__btns">
           {/* ことば（K-26）：どの画面からでも開ける。もどると元の画面と位置へ */}
           <WordsButton />
@@ -206,9 +225,8 @@ export function App() {
           <Consent onLive={onLive} />
           <AboutDoneLine />
           <Route path={path} onLive={onLive} />
-          {/* 報告ボタン：下の道案内（PageNav）が無い画面にも置く（2026-11-07。作者用・保存の画面には出さない） */}
-          {!hasPageNav(path) && <div className="pagenav pagenav--report"><ReportButton key={path} path={path} /></div>}
-          {/* 報告ボタン（A-9）は、各画面の下の道案内（PageNav）の中 */}
+          {/* 下の道案内（報告ボタン A-9 を含む）。どの画面も同じ形（11/8） */}
+          {nav && <PageNav {...nav} />}
         </main>
         {side && <SidePanel current={path} />}
       </div>

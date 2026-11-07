@@ -82,7 +82,6 @@ export function CalendarPage() {
           <ul className="list" role="list">{v.card_ids.map((cid) => { const c = DATA().cards.find((x) => x.id === cid); return c ? <li key={cid}><Link className="k-answer" to={'/e/' + v.event_id + '/c/' + cid}><Bi phrase t={c.title} /></Link></li> : null; })}</ul>
         </section>
       ))}
-      {!empty && <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>}
     </>
   );
 }

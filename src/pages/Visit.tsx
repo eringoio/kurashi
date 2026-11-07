@@ -244,7 +244,6 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
     return (
       <>
         <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="visit.none" /></h1></div>
-        <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
       </>
     );
   }

@@ -1,6 +1,6 @@
 /* 開いた項目（SPEC 6A.4・7章 S5。試作 D の「全体から開いた手続き」の形）。
    画面の順：名前と状態 → 理由の一文 → お知らせ・すぐ行う行動・案内 → できること（公式ページ・電話・日を決める・済んだ）
-   → 手続きの方法（押さない一覧）→ 出典の1行 → くわしく（シート）。
+   → 手続きの方法（押さない一覧）→ 期限・お金などの短い行と出典の一覧（11/8：くわしくのシートはやめた）。下の道案内は App の外枠。
    答えた・日を決めたあとは、この項目の上に変わったことを1行で出す（6A.5 v0.5.14）。結果の画面と「つぎへ」は「済んだ」のときだけ。 */
 import { useState } from 'react';
 import type { EngineOutput } from '../core/engine';
@@ -12,7 +12,7 @@ import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { ChangeLine, DayChoice, dayTitle, FocusCard, fmtDay, Notes, officialLink, QuestionBlock, ResultView, SectionWhy, SourceLine, SourcesSheet, StateLabel, stateKey, whyText, type Last } from '../ui/guide';
+import { ChangeLine, DayChoice, dayTitle, FocusCard, fmtDay, Notes, officialLink, QuestionBlock, ResultView, SectionWhy, CardFacts, CardSources, StateLabel, stateKey, whyText, type Last } from '../ui/guide';
 import { visitGroup } from '../core/visit';
 import { Reminder } from '../ui/Reminder';
 import { CostChart, FloorPlan } from '../ui/HouseVisual';
@@ -21,7 +21,6 @@ import type { CardView } from '../core/engine';
 import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
 import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle } from '../ui/router';
-import { PageNav } from '../ui/PageNav';
 import { useSeen } from '../ui/Words';
 import '../styles/card.css';
 
@@ -66,7 +65,6 @@ const ExtMark = () => <><span aria-hidden="true" className="clinic__extmark">↗
 
 function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string) => void; g: CardGuide; paths: CardPaths }) {
   const { level } = usePrefs();
-  const [sheet, setSheet] = useState(false);
   const [mode, setMode] = useState<Mode>({ kind: 'main' });
   const [last, setLast] = useState<Last | null>(null);
   useFocusTitle('card:' + id + ':' + mode.kind);
@@ -85,8 +83,6 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const alts = toAlternatives(c.card, g.mode);
   const official = officialLink(c);
   const phones = urgentShown ? [] : (c.card.urgent?.contacts ?? []).filter((x) => x.type === 'phone');
-  const sheetEl = sheet && <SourcesSheet c={c} objects={g.objects} facts={g.out.facts} onClose={() => setSheet(false)} shown={{ where: isGuide }} />;
-  const nav = <PageNav now={paths.now} all={paths.all} report={paths.card + id} />;
 
   if (mode.kind === 'done') {
     // 済んだと記録したときだけ、結果の画面と「つぎへ」（6A.5 v0.5.14）
@@ -95,10 +91,8 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
         <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => navigate(paths.now)} rate={c.card.id}>
           <div className="links">
             <button type="button" className="link" onClick={() => setMode({ kind: 'main' })}><Bi k="card.backItem" /></button>
-            <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>
           </div>
         </ResultView>
-        {sheetEl}
       </>
     );
   }
@@ -199,10 +193,10 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
           {alts.map((a, i) => <p key={i}><Bi t={a.text} /></p>)}
         </div>
       )}
-      <SourceLine c={c} />
-      <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>
-      {nav}
-      {sheetEl}
+      {/* 大事な事実と出典はページの中に（11/8：くわしくのシートをやめた）。質問があるときは質問だけにする（1画面に1つの判断） */}
+      {c.questions.length === 0 && methods.length === 0 && !isGuide && <p className="sub"><Bi t={c.card.summary} /></p>}
+      {c.questions.length === 0 && <CardFacts c={c} where={!isGuide} />}
+      <CardSources c={c} />
     </>
   );
 }

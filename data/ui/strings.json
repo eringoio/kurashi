@@ -5,11 +5,6 @@
     "ja_easy": "Kurashi",
     "en": "Kurashi"
   },
-  "app.tag": {
-    "ja": "{試作|しさく}",
-    "ja_easy": "{試作|しさく}",
-    "en": "Prototype"
-  },
   "app.skip": {
     "ja": "{本文|ほんぶん}へ{移|うつ}る",
     "ja_easy": "{本文|ほんぶん}へ",
@@ -826,9 +821,9 @@
     "en": "Planned day"
   },
   "card.more": {
-    "ja": "くわしく（{理由|りゆう}・{出典|しゅってん}・{確認|かくにん}{日|び}）",
-    "ja_easy": "くわしく",
-    "en": "Details (why, sources, check date)"
+    "ja": "この{手続|てつづ}きのページを{開|ひら}く",
+    "ja_easy": "この{手続|てつづ}きのページを{開|ひら}く",
+    "en": "Open this item"
   },
   "card.done": {
     "ja": "{済|す}んだと{記録|きろく}する",
@@ -1289,6 +1284,26 @@
     "ja": "ほけん、ねんきん、ぎんこう、じゅうしょ",
     "ja_easy": "ほけん、ねんきん、ぎんこう、じゅうしょ",
     "en": "insurance, pension, bank, address"
+  },
+  "home.ask": {
+    "ja": "{困|こま}っていること・{知|し}りたいこと（{言葉|ことば}でも{文|ぶん}でも）",
+    "ja_easy": "{困|こま}っていることを{書|か}いてください（ことばでも{文|ぶん}でも）",
+    "en": "What do you need? (a word or a sentence)"
+  },
+  "home.heard": {
+    "ja": "{手|て}がかりにした{言葉|ことば}",
+    "ja_easy": "{見|み}つけたことば",
+    "en": "Words we picked up"
+  },
+  "home.chips": {
+    "ja": "ほけん、ねんきん、ぎんこう、ひっこしました、アルバイトをしたい",
+    "ja_easy": "ほけん、ねんきん、ぎんこう、ひっこしました、アルバイトをしたい",
+    "en": "insurance, pension, bank, I moved to Nagoya, part-time job"
+  },
+  "home.browse": {
+    "ja": "{生活|せいかつ}のできごとから{選|えら}ぶ",
+    "ja_easy": "できごとから{選|えら}ぶ",
+    "en": "Or choose a life event"
   },
   "pat.sample": {
     "ja": "{見本|みほん}です。{本物|ほんもの}のガイドではありません。",
@@ -3229,6 +3244,11 @@
     "ja": "{一覧|いちらん}",
     "ja_easy": "{一覧|いちらん}",
     "en": "All items"
+  },
+  "nav.label": {
+    "ja": "{画面|がめん}の{移動|いどう}",
+    "ja_easy": "ほかの{画面|がめん}へ",
+    "en": "Page menu"
   },
   "res.changed.line": {
     "ja": "{card}：{state}になりました",

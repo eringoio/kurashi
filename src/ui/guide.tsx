@@ -7,7 +7,7 @@ import type { CardView, EngineOutput, Note, Section } from '../core/engine';
 import type { Evidence, Question, Text, Value } from '../core/schema';
 import { trustMark } from '../core/trust';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { LEVELS, line, plain, show, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
+import { LEVELS, line, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
 import { daySuggestions } from '../core/date';
 import { earliestDay } from '../core/visit';
 import { usePrefs } from '../storage/prefs';
@@ -184,27 +184,6 @@ const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'wh
 export function SectionWhy({ c }: { c: CardView }) {
   if (!c.sectionWhy || c.sectionWhy === 'answer' || c.sectionWhy === 'waits') return null;
   return <p className="sub"><Bi k={SECTION_WHY[c.sectionWhy]} /></p>;
-}
-
-/** 理由の全部（シートの中）：あなたの答え・理由・ルールの文 */
-export function Reason({ c, objects, facts }: { c: CardView; objects: Record<string, boolean>; facts: Map<string, Value> }) {
-  const answers = c.reasonFacts.map((f) => factLabel(f, facts.get(f)!, objects)).filter((x): x is Text => !!x);
-  const f = c.falseRule;
-  return (
-    <div className="sheet__row reason">
-      <span className="sheet__k"><One k="card.why" /></span>
-      {answers.length > 0 && (
-        <p className="answers">
-          <span className="sr-only"><One k="card.yourAnswers" />：</span>
-          {answers.map((a, i) => <span key={i} className="chip chip--static"><One t={a} /></span>)}
-        </p>
-      )}
-      <p><Bi phrase t={whyText(c)} /></p>
-      {c.state === 'excluded' && !c.card.reasons.excluded && f?.kind !== 'entry' && f?.reason_when_false && <p className="sub"><Bi t={f.reason_when_false} /></p>}
-      <SectionWhy c={c} />
-      {c.state === 'shown' && c.reasonRules.slice(1).map((r) => <p key={r.id} className="sub"><Bi t={r.statement} /></p>)}
-    </div>
-  );
 }
 
 /** 関係の注記。where：page＝開いた項目に出すもの（する事に関わる）／day＝日を選ぶとき／all＝シート */
@@ -471,20 +450,47 @@ export function officialLink(c: CardView): { url: string; label?: Text; owner?: 
 const fmtDate = (ymd: string, lv: Level) =>
   new Intl.DateTimeFormat(lv.kind === 'foreign' ? lv.lang : 'ja', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(ymd + 'T00:00:00Z'));
 
-/** 出典の1行：「出典：持ち主「題」（確認日）」。カードの根拠の最初の出典 */
-export function SourceLine({ c }: { c: CardView }) {
+/** 項目の大事な事実（11/8 作者：くわしくのシートをやめ、ページの中に短く）。いつまで・お金・どこで・もらう書類・正式な名前。
+    ページのほかの所（理由の一文・方法の一覧）に出ている内容は出さない */
+export function CardFacts({ c, where }: { c: CardView; where: boolean }) {
+  const docs = DOCUMENTS().filter((x) => (x.issued_by_card ?? []).includes(c.card.id));
+  const n = c.card.official_name;
+  return (
+    <dl className="k-facts">
+      {c.card.deadline && <div><dt><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></dt><dd><Bi t={c.card.deadline.text} /></dd></div>}
+      {c.card.fee && <div><dt><One k="card.fee" /> <TrustMark e={c.card.fee.evidence} /></dt><dd><Bi t={c.card.fee.text} /></dd></div>}
+      {where && <div><dt><One k="card.where" /></dt><dd><Bi t={c.card.where.text} /></dd></div>}
+      {docs.length > 0 && <div><dt><One k="card.issued" /></dt><dd>{docs.map((x, i) => <span key={x.id}>{i > 0 && '・'}<Bi t={x.title} /></span>)}</dd></div>}
+      <div><dt><One k="card.official" /></dt><dd className="k-facts__name"><span lang="ja"><Ruby s={`{${n.ja}|${n.reading}}`} /></span><Speak ja={`{${n.ja}|${n.reading}}`} /></dd></div>
+    </dl>
+  );
+}
+
+/** 出典の一覧（11/8：シートの代わりに、ページの下に）。カード・ルール・期限・お金・場所・方法・代わりの書類の出典を1回ずつ。
+    確認日と確認状態はまとめて1行 */
+export function CardSources({ c }: { c: CardView }) {
   const { level } = usePrefs();
-  const s = c.card.evidence.source_ids.map((id) => DATA().sources.find((x) => x.source_id === id)).find((x) => !!x);
-  if (!s) return null;
-  const name = s.owner + '「' + s.title + '」';
-  const t = fill(ui('card.sourceLine'), 'date', (lv) => fmtDate(c.card.evidence.checked_at, lv));
-  // 外国語の文の中の日本語の名前は lang="ja" で包む（読み上げの言語。15.2）
-  const sh = level.kind === 'foreign' ? show(t, level) : null;
-  if (sh && sh.mainLang !== 'ja') {
-    const [a, b = ''] = plain(sh.main).split('{source}');
-    return <p className="sub k-source"><span lang={sh.mainLang}>{a}<span lang="ja">{name}</span>{b}</span></p>;
-  }
-  return <p className="sub k-source"><One t={fill(t, 'source', () => name)} /></p>;
+  const d = DATA();
+  const evs: (Pick<Evidence, 'source_ids'> | undefined)[] = [c.card.evidence, ...c.reasonRules.map((r) => r.evidence), c.card.deadline?.evidence, c.card.fee?.evidence, c.card.where.evidence, ...(c.card.methods ?? []).map((m) => m.evidence), ...(c.card.alternatives ?? []).map((a) => a.evidence)];
+  const ids = [...new Set(evs.flatMap((e) => e?.source_ids ?? []))];
+  const srcs = ids.map((id) => d.sources.find((x) => x.source_id === id)).filter((x): x is NonNullable<typeof x> => !!x);
+  if (!srcs.length) return null;
+  return (
+    <section className="k-sources" aria-labelledby={'src-' + c.card.id}>
+      <h2 className="label" id={'src-' + c.card.id}><One k="src.source" /></h2>
+      <ul role="list">
+        {srcs.map((x) => (
+          <li key={x.source_id} lang="ja">
+            {x.url
+              ? <a className="link" href={x.url} target="_blank" rel="noopener noreferrer">{x.owner}「{x.title}」<span aria-hidden="true"> ↗</span><span className="sr-only"><One k="clinic.newTab" /></span></a>
+              : <>{x.owner}「{x.title}」</>}
+            {x.owner_type === 'product' && <span className="sub"> <One k="src.product" /></span>}
+          </li>
+        ))}
+      </ul>
+      <p className="sub"><One k="src.checked" />：{fmtDate(c.card.evidence.checked_at, level)}・<One k={('src.status.' + c.card.evidence.status) as UiKey} /></p>
+    </section>
+  );
 }
 
 /** 答えた・日を決めたあとの1行（SPEC 6A.5 v0.5.14）：結果の画面を出さず、次の1つの上に出す */
@@ -569,67 +575,6 @@ export function ResultView({ eyebrow, title, sub, onNext, children, rate }: { ey
       {children}
       {rate && <Rate id={rate} />}
     </>
-  );
-}
-
-/** 理由・出典・確認日・確認状態（5.3：触れば必ず見られる） */
-export function SourcesSheet({ c, objects, facts, onClose, shown = {} }: { c: CardView; objects: Record<string, boolean>; facts: Map<string, Value>; onClose: () => void; shown?: { what?: boolean; where?: boolean } }) {
-  const d = DATA();
-  // 出典は、どの欄の根拠かを添えて並べる（方法・代わりの書類の出典も入れる。U06）
-  const fields: [UiKey, (Pick<Evidence, 'source_ids'> | undefined)[]][] = [
-    ['card.rule', [c.card.evidence, ...c.reasonRules.map((r) => r.evidence)]],
-    ['card.deadline', [c.card.deadline?.evidence]],
-    ['card.fee', [c.card.fee?.evidence]],
-    ['card.where', [c.card.where.evidence]],
-    ['pat.method.label', (c.card.methods ?? []).map((m) => m.evidence)],
-    ['ev.alt', (c.card.alternatives ?? []).map((a) => a.evidence)],
-  ];
-  const byId = new Map<string, UiKey[]>();
-  for (const [k, es] of fields) for (const e of es) for (const id of e?.source_ids ?? []) { const l = byId.get(id) ?? []; if (!l.includes(k)) l.push(k); byId.set(id, l); }
-  const srcIds = [...byId.keys()];
-  return (
-    <Sheet title={<One t={c.card.title} />} onClose={onClose}>
-      <Reason c={c} objects={objects} facts={facts} />
-      <Notes c={c} where="all" />
-      {!shown.what && <div className="sheet__row"><span className="sheet__k"><One k="card.what" /></span><Bi t={c.card.summary} /></div>}
-      {c.card.deadline && <div className="sheet__row"><span className="sheet__k"><One k="card.deadline" /> <TrustMark e={c.card.deadline.evidence} /></span><Bi t={c.card.deadline.text} /></div>}
-      {c.card.fee && <div className="sheet__row"><span className="sheet__k"><One k="card.fee" /> <TrustMark e={c.card.fee.evidence} /></span><Bi t={c.card.fee.text} /></div>}
-      {!shown.where && <div className="sheet__row"><span className="sheet__k"><One k="card.where" /></span><Bi t={c.card.where.text} /></div>}
-      {/* この手続きでもらう書類（B-12）。data/documents.json の issued_by_card */}
-      {DOCUMENTS().some((x) => (x.issued_by_card ?? []).includes(c.card.id)) && (
-        <div className="sheet__row"><span className="sheet__k"><One k="card.issued" /></span>
-          <span>{DOCUMENTS().filter((x) => (x.issued_by_card ?? []).includes(c.card.id)).map((x, i) => <span key={x.id}>{i > 0 && '・'}<Bi t={x.title} /></span>)}</span>
-        </div>
-      )}
-      <div className="sheet__row">
-        <span className="sheet__k"><One k="card.official" /></span>
-        <span lang="ja"><Ruby s={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} /></span>
-        <Speak ja={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} />
-      </div>
-      {c.reasonRules.map((r) => (
-        <div className="sheet__row" key={r.id}>
-          <span className="sheet__k"><One k="card.rule" /> <TrustMark e={r.evidence} /></span>
-          <Bi t={r.statement} />
-          <span className="sheet__sub"><One k="src.status" />：<One k={('src.status.' + r.evidence.status) as UiKey} />・<One k="src.checked" />：{r.evidence.checked_at}</span>
-        </div>
-      ))}
-      <div className="sheet__row">
-        <span className="sheet__k"><One k="src.status" /></span>
-        <span><TrustMark e={c.card.evidence} /> <One k={('src.status.' + c.card.evidence.status) as UiKey} /></span>
-        <span className="sheet__sub"><One k="src.checked" />：{c.card.evidence.checked_at}</span>
-      </div>
-      {srcIds.map((id) => {
-        const s = d.sources.find((x) => x.source_id === id)!;
-        return (
-          <div className="sheet__row" key={id}>
-            <span className="sheet__k"><One k="src.source" />（{byId.get(id)!.map((k, i) => <span key={k}>{i > 0 && '・'}<One k={k} /></span>)}）</span>
-            <span lang="ja">{s.owner}「{s.title}」</span>
-            {s.owner_type === 'product' && <span className="sheet__sub"><One k="src.product" /></span>}
-            {s.url && <a className="link" href={s.url} target="_blank" rel="noopener noreferrer"><One k="src.open" /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="clinic.newTab" /></span></a>}
-          </div>
-        );
-      })}
-    </Sheet>
   );
 }
 

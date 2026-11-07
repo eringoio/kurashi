@@ -19,7 +19,6 @@ import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, Res
 import { MultiPick, UrgentAction } from '../ui/patterns';
 import { toPickOptions, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
-import { PageNav } from '../ui/PageNav';
 import { useSide } from '../ui/SidePanel';
 import { AllEmpty, AllGroups, hasOpen, TodayStep, todayViews } from './Plan';
 
@@ -193,7 +192,6 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
       <EvTabs base={base} current="now" wideHide />
       {!done && ch.line}
       {body}
-      <PageNav now={base} all={base + '/all'} report={base} />
       <StartNew g={g} onLive={onLive} />
     </>
   );
@@ -215,7 +213,6 @@ function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string
       <AllGroups cards={cards} base={base + '/c/'}
         extraRow={(c) => (g.event.checklist && c.state !== 'ask' ? { check: { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } } : {})} />
       {!idle && !onlyGuides && <Link to={base} className="k-answer"><Bi phrase k="all.go" /></Link>}
-      <PageNav now={base} all={base + '/all'} report={base + '/all'} />
       <StartNew g={g} onLive={onLive} />
     </>
   );

@@ -50,7 +50,6 @@ export function Move({ step }: { step: string }) {
           <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(noChangeEvents().length ? '/move/nochange' : '/info/coming-soon'); }}><img src={art('homecheck')} alt="" /><Bi phrase k="move.no" /></button>
           <button type="button" className="k-answer" onClick={() => { void g.setResume(null); navigate(hasEntryExtras() ? '/move/unsure' : '/info/coming-soon'); }}><img src={art('ask')} alt="" /><Bi phrase k="move.unknown" /></button>
         </div>
-        <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
       </>
     );
   }
@@ -80,7 +79,6 @@ export function Move({ step }: { step: string }) {
             </button>
           ))}
         </QuestionBlockNoTitle>
-        <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>
       </>
     );
   }
@@ -208,7 +206,6 @@ function NoChange() {
           </li>
         ))}
       </ul>
-      <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }
@@ -230,7 +227,6 @@ function Unsure() {
         <button type="button" className="k-answer" onClick={() => navigate(extra ? '/move/nochange' : '/info/coming-soon')}><img src={art('homecheck')} alt="" /><Bi phrase k="move.unsure.same" /></button>
       </div>
       <p><a className="link" href="https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007835.html" target="_blank" rel="noopener noreferrer"><Bi k="move.unsure.link" /></a></p>
-      <div className="links"><Link to="/move" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

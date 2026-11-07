@@ -38,3 +38,7 @@ export const ListIcon = () => (
 export const FlagIcon = () => (
   <svg {...P}><path d="M6 21V4" /><path d="M6 4h11l-2 4 2 4H6" /></svg>
 );
+/** 家（入口にもどる） */
+export const HomeIcon = () => (
+  <svg {...P}><path d="M4 11l8-7 8 7" /><path d="M6 10v10h12V10" /></svg>
+);

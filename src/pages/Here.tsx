@@ -7,7 +7,7 @@ import { Bi, One } from '../i18n/Ruby';
 import { fill } from '../ui/guide';
 import { ui, type UiKey } from '../i18n/text';
 import { art } from '../ui/art';
-import { Link, navigate, useFocusTitle } from '../ui/router';
+import { navigate, useFocusTitle } from '../ui/router';
 import { CardList } from './Scene';
 import { clearHerePlace, peekHerePlace } from '../ui/Location';
 
@@ -100,7 +100,6 @@ export function Here() {
         <summary><Bi k="here.sourceMore" /></summary>
         <p className="sub"><Bi k="here.credit" /></p>
       </details>
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

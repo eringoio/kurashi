@@ -28,7 +28,6 @@ rt { font-size: max(.5em, 9px); font-weight: 500; }
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: nowrap; padding: 8px max(12px, env(safe-area-inset-right, 0px)) 4px max(16px, env(safe-area-inset-left, 0px)); }
 .brand { font-weight: 700; font-size: 18px; display: inline-flex; align-items: center; gap: 8px; min-height: var(--target-min); color: var(--ink); text-decoration: none; letter-spacing: .02em; }
 .brand img { width: 32px; height: 32px; }
-.brand__tag { font-size: var(--fs-small); font-weight: 500; color: var(--ink-subtle); border: 1.5px solid var(--line-dim); border-radius: var(--radius-pill); padding: 0 8px; line-height: 1.6; }
 .bar__btns { display: flex; gap: 6px; flex-wrap: nowrap; flex-shrink: 0; }
 .pill { min-height: var(--target-min); padding: 0 14px; border: 1.5px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); font-size: var(--fs-small); }
 
@@ -414,8 +413,6 @@ ul.plain { list-style: none; margin: 0 0 6px; padding: 0; font-weight: 700; colo
 .art img.art__logo { width: auto; height: 64px; }
 .brand__logo--mark { display: none; }
 /* 帯は1段（A-4）：幅で ロゴ → マーク → 無し。「試作」の札は 640px 未満で消す（480px では相談・設定の文字と並ぶと入らない） */
-.brand__tag { white-space: nowrap; }
-@media (max-width: 639.98px) { .brand__tag { display: none; } }
 @media (max-width: 479.98px) {
   .brand__logo--full { display: none; }
   .brand__logo--mark { display: block; }
@@ -452,7 +449,6 @@ fieldset legend svg { vertical-align: -0.2em; }
   .bar__btns .pill--icon { padding-inline: 10px; min-width: var(--target-min); justify-content: center; }
 }
 /* 報告（A-9） */
-.report__open { margin-top: 12px; }
 .report__text { min-height: 7em; resize: vertical; }
 .report__item { border-bottom: 1.5px dashed var(--line-dash); padding: 6px 0; }
 .report__item p { margin: 4px 0 0; white-space: pre-wrap; }
@@ -569,17 +565,12 @@ h1[data-autofocus]:focus-visible { outline: none; }
 @media (min-width: 1024px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (min-width: 640px) { :root[data-size="2"] .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-/* 下の道案内（PageNav）：印つきの3つのボタンを1列に。せまいときは折り返す */
-.pagenav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.pagenav > .report__open { display: contents; }
-.pagenav__btn, .pagenav .report__open .link { box-sizing: border-box; min-height: var(--target-min); display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border: 1.5px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); color: var(--ink); font-size: max(var(--fs-small), 15px); font-weight: 700; text-decoration: none; line-height: 1.5; text-align: left; }
-.pagenav__btn svg, .pagenav .report__open .link::before { flex: none; }
-.pagenav .report__open .link { margin: 0; color: var(--ink-muted); border-color: var(--line-dim); font-weight: 500; }
-.pagenav .report__open .link::before { content: ""; width: 20px; height: 20px; background: currentColor; -webkit-mask: var(--flag) center / contain no-repeat; mask: var(--flag) center / contain no-repeat; }
-.pagenav { --flag: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 21V4'/><path d='M6 4h11l-2 4 2 4H6'/></svg>"); }
-.pagenav__btn:hover, .pagenav .report__open .link:hover { background: var(--sand-soft); color: var(--ink); }
-.pagenav__btn .bi__ja, .pagenav .bi__ja { font-size: max(.8em, 13px); }
-@media (max-width: 479.98px) { .pagenav > * { flex: 1 1 auto; } .pagenav .report__open .link { width: 100%; justify-content: center; } }
+/* 下の道案内（PageNav）：どの画面でも同じ形の、印つきのボタンを1列に（11/8）。せまいときは折り返す。上に細い線で本文と分ける */
+.pagenav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line-dim); }
+.pagenav__btn { box-sizing: border-box; min-height: var(--target-min); display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 4px 14px; border: 1.5px solid var(--ink); border-radius: var(--radius-pill); background: var(--white); color: var(--ink); font: inherit; font-size: max(var(--fs-small), 15px); font-weight: 700; text-decoration: none; line-height: 1.5; text-align: left; cursor: pointer; }
+.pagenav__btn svg { flex: none; }
+.pagenav__btn:hover { background: var(--sand-soft); color: var(--ink); }
+@media (max-width: 479.98px) { .pagenav > * { flex: 1 1 auto; justify-content: center; } }
 
 /* 広い画面で右の列が出ているとき、本文のいま／全体の切り替えと「全体を見る」は出さない（A が付ける） */
 @media (min-width: 1024px) { .k-views--wide-hide, .wide-hide { display: none; } }
@@ -652,3 +643,6 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .privacy__row { border-left: 3px solid var(--blue); padding-left: 10px; }
 .privacy dt { font-weight: 700; }
 .privacy dd { margin: 0; }
+
+/* 入口の検索：手がかりにした言葉（HomeSearch） */
+.home-heard { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }

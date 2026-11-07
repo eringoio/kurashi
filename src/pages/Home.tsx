@@ -31,13 +31,12 @@ export function GroupPage({ group }: { group: string }) {
       <ul className="list" role="list">
         {events.map((e) => <li key={e.id}><Link to={'/e/' + e.id} className="k-answer"><img src={art(e.illustration)} alt="" /><Bi phrase t={e.title} /></Link></li>)}
       </ul>
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }
 
 /** 引っ越し（E-move）は今までどおり /move。ほかの built のイベントは共通の /e/{id} */
-function menuItems(): Item[] {
+export function menuItems(): Item[] {
   const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined).sort((a, b) => a.menu! - b.menu!);
   const count = (g: string) => events.filter((e) => e.group === g).length;
   const seen = new Set<string>();
@@ -57,7 +56,7 @@ function menuItems(): Item[] {
   const fixed = [FIXED.gomi, FIXED.clinic, FIXED.letter, FIXED.search].filter((f) => !events.some((e) => e.group === f.key));
   return [...list, ...fixed].sort((a, b) => a.menu - b.menu);
 }
-const LINKS = [
+export const LINKS = [
   { k: 'home.about', to: '/info/about' },
   { k: 'home.disclaimer', to: '/info/disclaimer' },
   { k: 'privacy.link', to: '/info/privacy' },

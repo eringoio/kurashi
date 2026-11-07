@@ -26,7 +26,6 @@
 .pt-methods__list { margin: 4px 0 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 4px; line-height: 1.7; overflow-wrap: anywhere; min-width: 0; }
 .pt-methods__list .pt-hint { display: block; }
 .pt-methods__more summary { min-height: var(--target-min); display: flex; align-items: center; color: var(--blue); font-weight: 700; cursor: pointer; }
-.k-source { margin: 0; font-size: var(--fs-small, 14px); overflow-wrap: anywhere; }
 
 /* 見出しの箱（K-44d）：絵を小さく、左に絵・右に名前と状態。高さを約半分に */
 div.focus { display: grid; grid-template-columns: auto 1fr; justify-items: start; align-items: center; column-gap: 14px; row-gap: 4px; padding: 10px 14px; text-align: left; box-shadow: 6px 6px 0 -2.5px var(--sand-soft), 6px 6px 0 0 var(--ink); }
@@ -44,3 +43,16 @@ div.focus > :not(.focus__art) { grid-column: 2; min-width: 0; }
 .house-visual .house-terms img { grid-row: 1 / span 2; }
 .house-visual .house-terms__word, .house-visual .house-terms__desc { grid-column: 2; }
 .house-visual .house-num--out { border-style: dashed; }
+
+/* 大事な事実（11/8：くわしくのシートの代わり）。見出しを小さく、中身を下に。区切りは点線 */
+.k-facts { margin: 0; display: flex; flex-direction: column; min-width: 0; }
+.k-facts > div { padding: 6px 0; border-bottom: 1.5px dashed var(--line-dash); min-width: 0; overflow-wrap: anywhere; }
+.k-facts > div:first-child { border-top: 1.5px dashed var(--line-dash); }
+.k-facts dt { margin: 0; font-size: var(--fs-small); font-weight: 700; color: var(--ink-muted); }
+.k-facts dd { margin: 0; line-height: 1.7; }
+.k-facts__name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+/* 出典の一覧（11/8） */
+.k-sources { min-width: 0; font-size: var(--fs-small); overflow-wrap: anywhere; }
+.k-sources h2.label { margin: 0 0 4px; }
+.k-sources ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+.k-sources .sub { margin: 6px 0 0; }

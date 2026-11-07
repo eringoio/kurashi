@@ -34,16 +34,34 @@ function sideTarget(path: string): { eventId: string | null; cardId: string | nu
   return null;
 }
 
-/** 右の列を出すか（広い画面で、最初の道のりが済んでいるときだけ）。本文の側で「全体」へのタブを隠すのにも使う（.k-views--wide-hide） */
+/** 生活イベントの /e/{id} が一覧（全体）を出すとき：案内だけのできごと・すぐにやることの一覧（EventEntry と同じ条件） */
+export function eventShowsAll(eg: NonNullable<ReturnType<typeof useEvent>>): boolean {
+  const idle = nowStep(eg.out, eg.today).kind === 'idle';
+  const guidesOnly = idle && eg.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office');
+  return guidesOnly || (!!eg.event.checklist && eg.out.upfront.length === 0);
+}
+
+/** 右の列を出すか（11/8 作者：画面ごとにばらばら → 1つの決まりに）。広い画面で、次のすべてのとき：
+    - いま（/now・/e/{id}）か開いた項目（/c/*・/e/{id}/c/*）。一覧（全体）を出している画面には出さない（同じ一覧が2回になる）
+    - 最初の質問が済んでいる（引っ越しは持っている物まで、生活イベントは入口の質問）。済む前は ？ ばかりで役に立たない
+    - 本文に出ていない項目が1つ以上ある
+    本文の側で「全体」へのタブを隠すのにも使う（.k-views--wide-hide） */
 export function useSide(path: string): boolean {
   const wide = useWide();
   const g = useGuide();
   const t = sideTarget(path);
   const eg = useEvent(t?.eventId ?? '');
   if (!wide || !t) return false;
-  if (!t.eventId) return g.objectsDone;
-  // 生活イベント：開いた項目では、いつも（そのできごとの全体がわかる）。いまの画面では、入口の質問が済んでから
-  return !!eg && (!!t.cardId || eg.out.upfront.length === 0);
+  if (!t.eventId) return g.objectsDone && sideCards(g.out, g.today, t.cardId).length > 0;
+  if (!eg || eg.out.upfront.length > 0) return false;
+  if (!t.cardId && eventShowsAll(eg)) return false;
+  return sideCards(eg.out, eg.today, t.cardId).length > 0;
+}
+
+/** 右に出す項目（本文に出ているもの・関係なかったものを除く） */
+function sideCards(out: EngineOutput, today: string, cardId: string | null): CardView[] {
+  const hide = inBody(out, today, cardId);
+  return out.cards.filter((c) => c.state !== 'out_of_scope' && c.state !== 'excluded' && !hide.has(c.card.id));
 }
 
 const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', done: 'done', excluded: 'out', out: 'out' };
@@ -82,10 +100,9 @@ export function SidePanel({ current }: { current: string }) {
   const src = t.eventId ? eg : g;
   if (!src) return null;
   const base = t.eventId ? '/e/' + t.eventId + '/c/' : '/c/';
-  const hide = inBody(src.out, src.today, t.cardId);
   // 全体の画面と同じ順（いま → 確かめる → 待つ → あとで）。関係なかったものは出さない（全体の画面で、理由と一緒に見られる）
   const rank = (c: CardView) => (c.state === 'ask' ? 1.5 : SECTION_ORDER.indexOf(c.section ?? 'later'));
-  const cards = src.out.cards.filter((c) => c.state !== 'out_of_scope' && c.state !== 'excluded' && !hide.has(c.card.id));
+  const cards = sideCards(src.out, src.today, t.cardId);
   const rest = cards.filter((c) => c.section !== 'done').sort((a, b) => rank(a) - rank(b));
   const done = cards.filter((c) => c.section === 'done');
   return (

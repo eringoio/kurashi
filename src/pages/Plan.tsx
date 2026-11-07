@@ -12,7 +12,6 @@ import { useState, type ReactNode } from 'react';
 import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, WorldMap } from '../ui/guide';
 import { visitGroup } from '../core/visit';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
-import { PageNav } from '../ui/PageNav';
 import { useSide } from '../ui/SidePanel';
 import '../styles/world.css';
 import '../styles/card.css';
@@ -142,7 +141,6 @@ export function Now() {
       {!done && ch.line}
       {body}
       <div className="links"><Link to="/calendar" className="link"><Bi k="cal.open" /></Link></div>
-      <PageNav now="/now" all="/all" report="/now" />
     </>
   );
 }
@@ -191,7 +189,6 @@ export function AllEmpty() {
   return (
     <>
       <p className="sub k-empty"><Bi k="all.empty" /></p>
-      <Link to="/" className="k-answer"><Bi phrase k="nav.home" /></Link>
     </>
   );
 }
@@ -210,7 +207,6 @@ export function All({ onlyGuides }: { onlyGuides?: boolean } = {}) {
       <AllGroups cards={cards} />
       {/* 「1つずつ進める」は、いまの1つがあるときだけ。2つ目のボタン（K-43） */}
       {!idle && !onlyGuides && <Link to="/now" className="k-answer"><Bi phrase k="all.go" /></Link>}
-      <PageNav now="/now" all="/all" report="/all" />
     </>
   );
 }

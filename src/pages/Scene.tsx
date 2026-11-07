@@ -49,7 +49,6 @@ export function ScenePage({ id }: { id: string }) {
     return (
       <>
         <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="scene.notFound" /></h1></div>
-        <div className="links"><Link to="/" className="link"><Bi k="scene.menu" /></Link></div>
       </>
     );
   }
@@ -62,7 +61,6 @@ export function ScenePage({ id }: { id: string }) {
         <h1 id="screen-title" tabIndex={-1}><Bi phrase t={s.title} /></h1>
       </div>
       <CardList place={s.shows.place} />
-      <div className="links"><Link to="/" className="link"><Bi k="scene.menu" /></Link></div>
     </>
   );
 }

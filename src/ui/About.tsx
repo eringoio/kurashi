@@ -86,7 +86,6 @@ export function AboutPage() {
           </div>
         </section>
       ))}
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

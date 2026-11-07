@@ -11,6 +11,7 @@ import { Bi, One } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { Sheet } from './Sheet';
+import { FlagIcon } from './icons';
 
 const MAX = 2000;
 
@@ -48,9 +49,7 @@ export function ReportButton({ path }: { path: string }) {
   };
   return (
     <>
-      <div className="links report__open">
-        <button type="button" className="link" onClick={() => { setOpen(true); setState('idle'); }}><Bi k="report.open" /></button>
-      </div>
+      <button type="button" className="pagenav__btn" onClick={() => { setOpen(true); setState('idle'); }}><FlagIcon /><One k="report.open" /></button>
       {open && (
         <Sheet title={<One k="report.title" />} onClose={() => setOpen(false)}>
           {state === 'sent' ? (

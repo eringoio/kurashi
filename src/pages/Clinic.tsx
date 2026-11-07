@@ -203,7 +203,6 @@ export function ClinicPage({ step }: { step: '' | 'departments' | 'before' }) {
   return (
     <>
       {body}
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

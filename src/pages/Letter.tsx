@@ -12,7 +12,7 @@ import { fill, CardRow } from '../ui/guide';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { Link, useFocusTitle } from '../ui/router';
+import { useFocusTitle } from '../ui/router';
 import { useSeen, WordList } from '../ui/Words';
 import { docWordIds } from '../core/words';
 import { trackError } from '../ui/telemetry';
@@ -177,7 +177,6 @@ export function Letter() {
       {body}
       <div className="links">
         {st.k !== 'intro' && <button type="button" className="link" onClick={() => setSt({ k: 'intro' })}><Bi k="letter.again" /></button>}
-        <Link to="/" className="link"><Bi k="nav.home" /></Link>
       </div>
     </>
   );

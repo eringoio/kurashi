@@ -198,7 +198,6 @@ function GomiTool() {
 
       {/* ライセンスの表示（CC BY：名前と出典を小さく、下に） */}
       <p className="sub"><Bi k="gomi.license" /> {d.items.sources.filter((x) => x.license).map((x, i) => <span key={x.source_id}>{i > 0 && ' / '}<a className="link" href={x.url} target="_blank" rel="noopener noreferrer">{x.title}<span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></span>)}</p>
-      <div className="links"><Link to="/" className="link"><Bi k="nav.home" /></Link></div>
     </>
   );
 }

@@ -63,7 +63,6 @@ export function PromisePage({ past, cardIds }: { past: boolean; cardIds: string[
           {(views.length > 0 || events.length > 0) && <Link to={views.length ? '/c/' + views[0].card.id : '/e/' + events[0][0] + '/c/' + events[0][1][0]} className="k-answer"><Bi phrase k="promise.notYet" /></Link>}
         </div>
       )}
-      <div className="links"><Link to="/now" className="link"><Bi k="now.back" /></Link></div>
     </>
   );
 }
