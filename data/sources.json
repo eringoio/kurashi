@@ -1325,7 +1325,7 @@
       "source_id": "isa-card-guide",
       "url": "https://www.moj.go.jp/isa/applications/guide/11_00025.html",
       "owner": "出入国在留管理庁",
-      "title": "在留カードに関する案内（資格外活動許可の記載）",
+      "title": "オンライン申請における資格外活動許可の郵送での交付について",
       "owner_type": "government",
       "language": "ja"
     },
@@ -1359,6 +1359,30 @@
       "owner": "全国健康保険協会",
       "owner_type": "public_corp",
       "title": "マイナ保険証（資格情報のお知らせ・資格確認書）",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-closeup-50",
+      "url": "https://www.mhlw.go.jp/stf/web_magazine/closeup/50.html",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "医療機関・薬局では、マイナ保険証か資格確認書をご提示ください",
+      "language": "ja"
+    },
+    {
+      "source_id": "kyokai-kenpo-mynahoken-uketsuke",
+      "url": "https://www.kyoukaikenpo.or.jp/benefit/mynumber_insurance_card/001/index.html",
+      "owner": "全国健康保険協会",
+      "owner_type": "public_corp",
+      "title": "マイナ保険証等での受診",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-hihokensha-qa",
+      "url": "https://jsite.mhlw.go.jp/tokyo-hellowork/kakushu_jouhou/koyouhoken/koyouhoken/QA/hihokensya_qa.html",
+      "owner": "厚生労働省（東京労働局・ハローワーク）",
+      "owner_type": "government",
+      "title": "雇用保険 被保険者に関するQ&A",
       "language": "ja"
     },
     {

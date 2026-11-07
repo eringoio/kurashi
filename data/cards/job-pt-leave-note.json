@@ -37,9 +37,9 @@
     "reading": "あるばいとのたいしょく"
   },
   "summary": {
-    "ja": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」の{人|ひと}は、アルバイトを{辞|や}めても、ふつうは{入管|にゅうかん}に{届|とど}けません（{留学|りゅうがく}の{届出|とどけで}は{学校|がっこう}についてです。{要|よう}{確認|かくにん}）。{辞|や}めたことは、{会社|かいしゃ}がハローワークに{届|とど}けます。{最後|さいご}の{給料|きゅうりょう}が{払|はら}われないときは、{相談|そうだん}{窓口|まどぐち}に{相談|そうだん}できます。{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、14{日|にち}{以内|いない}に{入管|にゅうかん}へ{届|とど}けます。",
-    "ja_easy": "アルバイトをやめても、ふつうは{入管|にゅうかん}に{届|とど}けはいりません（{要確認|ようかくにん}）。やめたことは{会社|かいしゃ}がハローワークに{届|とど}けます。{仕事|しごと}の{在留資格|ざいりゅうしかく}の{人|ひと}は、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます。",
-    "en": "On a Student or Dependent status, you usually do not report a part-time job change to immigration (the Student notice is about your school; to be checked). Your employer reports your leaving to Hello Work. If your last pay is not paid, you can ask a consultation counter. With a work status, notify immigration within 14 days."
+    "ja": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」の{人|ひと}は、アルバイトを{辞|や}めても、ふつうは{入管|にゅうかん}に{届|とど}けません（{留学|りゅうがく}の{届出|とどけで}は{学校|がっこう}についてです。{要|よう}{確認|かくにん}）。{辞|や}めたことは、{会社|かいしゃ}がハローワークに{届|とど}けます。{最後|さいご}の{給料|きゅうりょう}が{払|はら}われないときは、{相談|そうだん}{窓口|まどぐち}に{相談|そうだん}できます。",
+    "ja_easy": "アルバイトをやめても、ふつうは{入管|にゅうかん}に{届|とど}けはいりません（{要確認|ようかくにん}）。やめたことは{会社|かいしゃ}がハローワークに{届|とど}けます。",
+    "en": "On a Student or Dependent status, you usually do not report a part-time job change to immigration (the Student notice is about your school; to be checked). Your employer reports your leaving to Hello Work. If your last pay is not paid, you can ask a consultation counter."
   },
   "lead": {
     "ja": "ふつうは、{入管|にゅうかん}への{届|とど}けは{要|い}りません。",

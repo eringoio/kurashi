@@ -1168,7 +1168,7 @@
         "en": "Do you already have \"permission to engage in an activity other than that permitted\"?"
       },
       "why_asked": {
-        "ja": "{受|う}けている{人|ひと}は、{許可|きょか}の{手続|てつづ}きを{省|はぶ}けるためです。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードに{書|か}かれています。",
+        "ja": "{許可|きょか}を{受|う}けている{人|ひと}は、{許可|きょか}の{手続|てつづ}きが{要|い}らないためです。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードに{書|か}かれます。",
         "ja_easy": "もらっている{人|ひと}は、この{手続|てつづ}きはいらないからです。{在留|ざいりゅう}カードを{見|み}てください。",
         "en": "If you already have it, you can skip that step. When granted, it is written on your residence card."
       },

@@ -173,7 +173,7 @@ describe('オープンデータ（BODIK、CC BY 4.0）の取り込み', () => {
     const raw = opendata.items as { review?: unknown; category?: string; evidence: { source_ids: string[] } }[];
     expect(raw.filter((x) => !x.review).every((x) => x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
     expect(raw.filter((x) => x.review).every((x) => !x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
-    expect(opendata.counts.review).toBe(11);
+    expect(opendata.counts.review).toBe(5);
     const r = od.find((x) => x.review)!;
     expect(judgeItem(d.items, r).kind).toBe('review');
   });

@@ -77,7 +77,8 @@
           "nagoya-kokuho-kanyu-page"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check"
+        "status": "needs_check",
+        "quote": "保険料は、毎月、口座振替(自動払込)により納付していただきます。"
       },
       "issued_by_card": [
         "nagoya-kokuho-kanyu"

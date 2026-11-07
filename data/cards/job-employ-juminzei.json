@@ -27,9 +27,9 @@
     "reading": "しみんぜい・けんみんぜいのとくべつちょうしゅう"
   },
   "summary": {
-    "ja": "{会社|かいしゃ}で{働|はたら}く{人|ひと}の{市民|しみん}{税|ぜい}・{県民|けんみん}{税|ぜい}は、{毎月|まいつき}の{給料|きゅうりょう}から{引|ひ}かれます（{特別|とくべつ}{徴収|ちょうしゅう}）。{自分|じぶん}でする{手続|てつづ}きはありません（{要|よう}{確認|かくにん}）。",
+    "ja": "{会社|かいしゃ}で{働|はたら}く{人|ひと}の{市民|しみん}{税|ぜい}・{県民|けんみん}{税|ぜい}は、{毎月|まいつき}の{給料|きゅうりょう}から{引|ひ}かれます（{特別|とくべつ}{徴収|ちょうしゅう}）。ふつうは、{自分|じぶん}でする{手続|てつづ}きはありません（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{税金|ぜいきん}は{給料|きゅうりょう}から{引|ひ}かれます（{要|よう}{確認|かくにん}）。",
-    "en": "If you work for a company, city and prefectural resident tax is taken from your salary every month (special collection). There is nothing for you to file (to be checked)."
+    "en": "If you work for a company, city and prefectural resident tax is taken from your salary every month (special collection). Usually there is nothing for you to file (to be checked)."
   },
   "deadline": null,
   "where": {
