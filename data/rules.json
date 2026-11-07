@@ -1144,8 +1144,8 @@
       "id": "R-sr-has-mynumber",
       "kind": "selection",
       "condition": {
-        "fact": "sr_has_mynumber",
-        "eq": "yes"
+        "fact": "has_mynumber_card",
+        "eq": true
       },
       "statement": {
         "ja": "マイナンバーカードを{持|も}っている",

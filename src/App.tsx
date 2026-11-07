@@ -9,6 +9,8 @@ import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
 import { usePrefs } from './storage/prefs';
 import { Consent } from './ui/Consent';
+import { ReportButton } from './ui/ReportSheet';
+import { AboutDoneLine, AboutPage } from './ui/About';
 import { initTelemetry, trackView } from './ui/telemetry';
 import { Link, useFocusTitle, usePath } from './ui/router';
 import { Settings } from './ui/Settings';
@@ -67,6 +69,9 @@ function continueOf(g: Guide, v: Pick<Vault, 'entries' | 'get'>): string {
   return continuePath(v.entries('occurrences').map(([, o]) => o as Occurrence), legacy);
 }
 
+/** PageNav（報告ボタン入り）を自分で出す画面と、報告ボタンを出さない画面（作者用・QR を作る） */
+const hasPageNav = (p: string) => /^\/(c|e)\//.test(p) || p === '/now' || p === '/all' || p === '/review' || p === '/qr';
+
 /** まとめた項目（/g/{group}）が無いとき（U12）。見出しと入口へのリンク */
 function NotFound() {
   useFocusTitle('notfound');
@@ -113,6 +118,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (scene) return <ScenePage key={scene} id={scene} />;
   const visit = parseVisitPath(path);
   if (visit) return <VisitPage key={path} place={visit.place} stage={visit.stage} onLive={onLive} />;
+  if (path === '/about') return <AboutPage />;
   if (path === '/now') return <Now />;
   if (path === '/all') return <All />;
   if (path === '/resume') return <ResumePage />;
@@ -198,7 +204,10 @@ export function App() {
           {g.mode === 'verified' && <div className="k-notice" role="note"><Bi k="review.banner" /></div>}
           {/* 保存の同意は本文の上の細い帯（試作 D。11/7 作者：上に） */}
           <Consent onLive={onLive} />
+          <AboutDoneLine />
           <Route path={path} onLive={onLive} />
+          {/* 報告ボタン：下の道案内（PageNav）が無い画面にも置く（2026-11-07。作者用・保存の画面には出さない） */}
+          {!hasPageNav(path) && <div className="pagenav pagenav--report"><ReportButton key={path} path={path} /></div>}
           {/* 報告ボタン（A-9）は、各画面の下の道案内（PageNav）の中 */}
         </main>
         {side && <SidePanel current={path} />}

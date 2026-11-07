@@ -61,6 +61,15 @@
       "id": "Q-residence-basis",
       "fact": "residence_basis",
       "stage": "upfront",
+      "implied": [
+        {
+          "when": {
+            "fact": "nationality",
+            "eq": "japanese"
+          },
+          "value": "japanese"
+        }
+      ],
       "ask_when": {
         "fact": "origin",
         "eq": "abroad"
@@ -119,65 +128,11 @@
       ]
     },
     {
-      "id": "Q-role",
-      "fact": "role",
-      "stage": "upfront",
-      "scope": "person",
-      "ask_when": {
-        "all": []
-      },
-      "text": {
-        "ja": "{今|いま}のおもな{立場|たちば}は？（{学校|がっこう}と{仕事|しごと}の{両方|りょうほう}なら、おもなほう）",
-        "ja_easy": "あなたは、いま{何|なに}をしていますか？",
-        "en": "What do you mainly do now? (If both school and work, the main one)"
-      },
-      "why_asked": {
-        "ja": "{健康|けんこう}{保険|ほけん}のカードが{変|か}わります。",
-        "ja_easy": "{健康保険|けんこうほけん}のことが{変|か}わります。",
-        "en": "This changes the health insurance guidance."
-      },
-      "options": [
-        {
-          "value": "student",
-          "icon": "student",
-          "label": {
-            "ja": "{学生|がくせい}",
-            "ja_easy": "{学生|がくせい}",
-            "en": "Student"
-          }
-        },
-        {
-          "value": "working",
-          "icon": "work",
-          "label": {
-            "ja": "{働|はたら}いている・{働|はたら}き{始|はじ}める",
-            "ja_easy": "{働|はたら}いている・{働|はたら}き{始|はじ}める",
-            "en": "Working / starting work"
-          }
-        },
-        {
-          "value": "other",
-          "label": {
-            "ja": "どちらでもない",
-            "ja_easy": "どちらでもない",
-            "en": "Neither"
-          }
-        },
-        {
-          "value": "unknown",
-          "label": {
-            "ja": "わからない・{答|こた}えたくない",
-            "ja_easy": "わからない・{答|こた}えたくない",
-            "en": "Not sure / prefer not to say"
-          }
-        }
-      ]
-    },
-    {
       "id": "Q-nationality",
       "fact": "nationality",
       "stage": "upfront",
       "scope": "person",
+      "group": "about",
       "ask_when": {
         "all": []
       },
@@ -209,6 +164,14 @@
             "ja_easy": "{日本|にほん}ではない{国籍|こくせき}",
             "en": "Another nationality"
           }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "{答|こた}えたくない",
+            "ja_easy": "{答|こた}えたくない",
+            "en": "Prefer not to say"
+          }
         }
       ]
     },
@@ -217,6 +180,7 @@
       "fact": "zairyu_status",
       "stage": "upfront",
       "scope": "person",
+      "group": "about",
       "ask_when": {
         "all": [
           {
@@ -338,10 +302,67 @@
       ]
     },
     {
+      "id": "Q-role",
+      "fact": "role",
+      "stage": "upfront",
+      "scope": "person",
+      "group": "about",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{今|いま}のおもな{立場|たちば}は？（{学校|がっこう}と{仕事|しごと}の{両方|りょうほう}なら、おもなほう）",
+        "ja_easy": "あなたは、いま{何|なに}をしていますか？",
+        "en": "What do you mainly do now? (If both school and work, the main one)"
+      },
+      "why_asked": {
+        "ja": "{健康|けんこう}{保険|ほけん}のカードが{変|か}わります。",
+        "ja_easy": "{健康保険|けんこうほけん}のことが{変|か}わります。",
+        "en": "This changes the health insurance guidance."
+      },
+      "options": [
+        {
+          "value": "student",
+          "icon": "student",
+          "label": {
+            "ja": "{学生|がくせい}",
+            "ja_easy": "{学生|がくせい}",
+            "en": "Student"
+          }
+        },
+        {
+          "value": "working",
+          "icon": "work",
+          "label": {
+            "ja": "{働|はたら}いている・{働|はたら}き{始|はじ}める",
+            "ja_easy": "{働|はたら}いている・{働|はたら}き{始|はじ}める",
+            "en": "Working / starting work"
+          }
+        },
+        {
+          "value": "other",
+          "label": {
+            "ja": "どちらでもない",
+            "ja_easy": "どちらでもない",
+            "en": "Neither"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない・{答|こた}えたくない",
+            "ja_easy": "わからない・{答|こた}えたくない",
+            "en": "Not sure / prefer not to say"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-age-band",
       "fact": "age_band",
       "stage": "upfront",
       "scope": "person",
+      "group": "about",
       "ask_when": {
         "all": []
       },
@@ -554,11 +575,29 @@
     {
       "id": "Q-mynumber-card",
       "fact": "has_mynumber_card",
-      "stage": "in_card",
+      "stage": "upfront",
       "scope": "person",
       "ask_when": {
-        "fact": "origin",
-        "eq": "other_city"
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "student",
+              "family",
+              "work",
+              "spouse",
+              "long_term",
+              "designated",
+              "cultural",
+              "trainee",
+              "other"
+            ]
+          }
+        ]
       },
       "text": {
         "ja": "マイナンバーカードを{持|も}っていますか？",
@@ -566,9 +605,9 @@
         "en": "Do you have a My Number Card?"
       },
       "why_asked": {
-        "ja": "{転入|てんにゅう}{届|とどけ}のやり{方|かた}と、カードの{住所|じゅうしょ}の{書|か}き{換|か}えが{変|か}わります。",
-        "ja_easy": "{手続|てつづ}きのやり{方|かた}が{変|か}わります。",
-        "en": "This changes how you submit the moving-in notice and update the card."
+        "ja": "{持|も}っている{人|ひと}は、{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}したあとに、カードの{有効|ゆうこう}{期限|きげん}も{延|の}ばす{必要|ひつよう}があるためです。",
+        "ja_easy": "カードがある{人|ひと}は、{更新|こうしん}のあとにカードの{期限|きげん}も{延|の}ばします。",
+        "en": "If you have the card, you also need to extend its expiry date after renewing your period of stay."
       },
       "options": [
         {
@@ -1148,70 +1187,6 @@
             "ja": "いいえ・まだ",
             "ja_easy": "いいえ・まだ",
             "en": "No, not yet"
-          }
-        },
-        {
-          "value": "unknown",
-          "label": {
-            "ja": "わからない",
-            "ja_easy": "わかりません",
-            "en": "Not sure"
-          }
-        }
-      ]
-    },
-    {
-      "id": "Q-sr-mynumber",
-      "fact": "sr_has_mynumber",
-      "stage": "upfront",
-      "scope": "person",
-      "ask_when": {
-        "all": [
-          {
-            "fact": "nationality",
-            "eq": "foreign"
-          },
-          {
-            "fact": "zairyu_status",
-            "in": [
-              "student",
-              "family",
-              "work",
-              "spouse",
-              "long_term",
-              "designated",
-              "cultural",
-              "trainee",
-              "other"
-            ]
-          }
-        ]
-      },
-      "text": {
-        "ja": "マイナンバーカードを{持|も}っていますか？",
-        "ja_easy": "マイナンバーカードがありますか？",
-        "en": "Do you have a My Number Card?"
-      },
-      "why_asked": {
-        "ja": "{持|も}っている{人|ひと}は、{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}したあとに、カードの{有効|ゆうこう}{期限|きげん}も{延|の}ばす{必要|ひつよう}があるためです。",
-        "ja_easy": "カードがある{人|ひと}は、{更新|こうしん}のあとにカードの{期限|きげん}も{延|の}ばします。",
-        "en": "If you have the card, you also need to extend its expiry date after renewing your period of stay."
-      },
-      "options": [
-        {
-          "value": "yes",
-          "label": {
-            "ja": "はい",
-            "ja_easy": "はい",
-            "en": "Yes"
-          }
-        },
-        {
-          "value": "no",
-          "label": {
-            "ja": "いいえ",
-            "ja_easy": "いいえ",
-            "en": "No"
           }
         },
         {

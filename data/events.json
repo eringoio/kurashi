@@ -190,7 +190,7 @@
       "questions": [
         "Q-nationality",
         "Q-zairyu-status",
-        "Q-sr-mynumber"
+        "Q-mynumber-card"
       ],
       "card_ids": [
         "zairyu-koshin",

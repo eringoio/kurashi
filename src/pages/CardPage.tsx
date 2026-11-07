@@ -92,7 +92,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
     // 済んだと記録したときだけ、結果の画面と「つぎへ」（6A.5 v0.5.14）
     return (
       <>
-        <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => navigate(paths.now)}>
+        <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => navigate(paths.now)} rate={c.card.id}>
           <div className="links">
             <button type="button" className="link" onClick={() => setMode({ kind: 'main' })}><Bi k="card.backItem" /></button>
             <button type="button" className="link" onClick={() => setSheet(true)}><Bi k="card.more" /></button>

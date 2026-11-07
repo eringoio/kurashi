@@ -146,6 +146,10 @@ export const Question = z.object({
   scope: z.enum(['person', 'event']).default('event'),
   /** 複数選択（答えは value の配列） */
   multi: z.boolean().optional(),
+  /** about：「あなたについて」（国籍・在留資格・立場・年齢）。最初の入口でまとめて1回聞く（2026-11-07。src/core/about.ts） */
+  group: z.literal('about').optional(),
+  /** ほかの答えで同じことが決まるとき（例：日本国籍なら、住民登録の形は「日本国籍」）。未回答で when が T なら、この値にする。推測ではなく同じ事実（8.1） */
+  implied: z.array(z.object({ when: Condition, value: ValueZ })).optional(),
   ask_when: Condition,
   text: Text,
   why_asked: Text,

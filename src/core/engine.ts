@@ -101,6 +101,12 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   for (const q of data.questions) {
     if (x.answers[q.id] !== undefined && evalCond(q.ask_when, facts).v === 'F') facts.delete(q.fact);
   }
+  // ほかの答えで同じことが決まる質問（implied）。答えも持ち物も無いときだけ
+  for (const q of data.questions) {
+    if (facts.has(q.fact) || !q.implied) continue;
+    const hit = q.implied.find((i) => evalCond(i.when, facts).v === 'T');
+    if (hit) facts.set(q.fact, hit.value);
+  }
 
   // 2. ルールを評価。未確認のルールは、値にかかわらず U（原因は残す。10.4）
   const raw = new Map<string, Eval>();

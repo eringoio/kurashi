@@ -625,8 +625,8 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .consent { margin-bottom: 4px; padding: 8px 12px; border-width: 1.5px; border-radius: var(--radius-md); flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
 .consent__q { margin: 0; flex: 1 1 14em; font-size: var(--fs-body); line-height: 1.6; }
 .consent__note { margin: 0; flex: 1 1 100%; order: 3; }
-.consent .pair { flex: 0 1 auto; flex-wrap: wrap; gap: 6px; }
-.consent .pair .k-answer { flex: 0 1 auto; min-height: var(--target-min); padding: 2px 14px; font-size: var(--fs-body); border-width: 2px; }
+.consent .pair { flex: 1 1 100%; display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+.consent .pair .k-answer { flex: 1 1 7em; width: auto; min-height: var(--target-min); padding: 2px 14px; font-size: var(--fs-body); border-width: 2px; }
 
 /* K-52：上の帯・本文・右の列を同じ幅の入れ物にそろえる。右の列が無いときは本文を真ん中に、あるときは 2 つを組にして真ん中に */
 @media (min-width: 1024px) {
@@ -642,3 +642,13 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 :root[data-size="2"] .bar, :root[data-size="2"] .bar__btns { flex-wrap: wrap; }
 :root[data-size="2"] .bar__btns { justify-content: flex-end; }
 @media (min-width: 640px) { .bar, .bar__btns { flex-wrap: wrap; } .bar__btns { justify-content: flex-end; } }
+
+/* 役に立ったか（13.4。結果の画面の下に小さく） */
+.rate { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-soft); display: flex; flex-direction: column; gap: 6px; }
+.rate .label, .rate .sub { margin: 0; }
+
+/* 使う情報（13.1 の8）：何を（太字）と一文 */
+.privacy { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.privacy__row { border-left: 3px solid var(--blue); padding-left: 10px; }
+.privacy dt { font-weight: 700; }
+.privacy dd { margin: 0; }

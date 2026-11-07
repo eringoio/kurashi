@@ -14,6 +14,8 @@ flow({
   await snap({ name: 'どこから', expected: '「どこから引っ越しましたか？」', why: '経路を分ける質問（A1・B1・X2）' },
     async () => { await expect(h1).toHaveText('どこから引っ越しましたか？'); });
 
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap('ほかの市・町・村から');
   await snap({ name: '持ち物', input: 'ほかの市・町・村から', expected: '「持っている物を、全部さわってください」', why: 'A1 と同じ画面。経路でデータだけが違う' },
     async () => { await expect(h1).toHaveText('持っている物を、全部さわってください'); });

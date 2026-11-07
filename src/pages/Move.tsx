@@ -11,6 +11,8 @@ import { art } from '../ui/art';
 import { Answers, WhyAsked } from '../ui/guide';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { eventForOrigin, hasEntryExtras, noChangeEvents } from './moveEntry';
+import { ABOUT_SKIPPED, aboutNext } from '../core/about';
+import { AboutStep } from '../ui/About';
 
 const q = (id: string) => DATA().questions.find((x) => x.id === id)!;
 
@@ -31,7 +33,9 @@ async function finish(g: ReturnType<typeof useGuide>) {
 
 export function Move({ step }: { step: string }) {
   const g = useGuide();
-  useFocusTitle('move:' + step);
+  const { vault: v } = usePrefs();
+  const skipped = v.get('settings', ABOUT_SKIPPED) === true;
+  useFocusTitle('move:' + step + (step === 'from' ? ':' + (aboutNext(DATA().questions, g.answers)?.id ?? '') : ''));
   useEffect(() => { void g.setResume(step === 'nochange' || step === 'unsure' ? null : '/move' + (step ? '/' + step : '')); }, [step]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const answerAndGo = async (qid: string, v: Value, to: string) => { await g.answer(qid, v); navigate(to); };
@@ -52,6 +56,9 @@ export function Move({ step }: { step: string }) {
   }
 
   if (step === 'from') {
+    // あなたについて（国籍など）を先にまとめて聞く（2026-11-07）。答えずに進んだら聞かない
+    const about = !skipped ? aboutNext(DATA().questions, g.answers) : undefined;
+    if (about) return <AboutStep key={about.id} q={about} onAnswer={(val) => g.answer(about.id, val)} />;
     const qo = q('Q-origin');
     const built = DATA().flow.built_origins;
     return (
@@ -88,7 +95,8 @@ export function Move({ step }: { step: string }) {
       <>
         <Head eyebrow={<One k="q.eyebrow" />}><Bi phrase t={qb.text} /></Head>
         <QuestionBlockNoTitle>
-          {qb.options.map((o) => (
+          {/* 日本以外の国籍と答えた人には「日本国籍」を出さない（日本国籍なら、この質問は出ない。implied） */}
+          {qb.options.filter((o) => !(o.value === 'japanese' && g.answers['Q-nationality'] === 'foreign')).map((o) => (
             <button key={String(o.value)} type="button" className="k-answer" onClick={() => void answerAndGo('Q-residence-basis', o.value, o.value === 'short_stay' ? '/info/out-of-scope' : '/move/q')}>
               <Bi phrase t={o.label} />
             </button>
@@ -155,7 +163,7 @@ function Objects() {
     await g.setObjects(held);
     const card = list.find((o) => o.check_question);
     // 在留カードがない人には、住民登録の根拠を1問だけ聞く（6A.2）。ある人には裏の住所を確かめる（6A.3）
-    if (origin === 'abroad' && !held['zairyu-card']) navigate('/move/basis');
+    if (origin === 'abroad' && !held['zairyu-card'] && g.answers['Q-nationality'] !== 'japanese') navigate('/move/basis');
     else if (card && held[card.id]) navigate('/move/check');
     else navigate('/move/q');
   };

@@ -4,6 +4,9 @@
    答えた・日を決めたあとは、次の1つの上に1行（6A.5 v0.5.14）。結果の画面は「済んだ」のときだけ。 */
 import { useState, type ReactNode } from 'react';
 import { nowStep } from '../core/now';
+import { ABOUT_SKIPPED, aboutNext, wantsAbout } from '../core/about';
+import { DATA } from '../core/data';
+import { AboutStep } from '../ui/About';
 import type { Question } from '../core/schema';
 import { visitGroup } from '../core/visit';
 import { visitPath } from '../core/accompany';
@@ -76,13 +79,15 @@ function Missing() {
 }
 
 function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void }) {
-  const { level } = usePrefs();
+  const { level, vault } = usePrefs();
   const base = '/e/' + g.event.id;
   const cp = base + '/c/';
   const ch = useChange(g);
   const [done, setDone] = useState<string | null>(null);
   const step = nowStep(g.out, g.today);
-  useFocusTitle('ev:' + g.occ?.id + ':' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
+  // あなたについて：最初の質問に国籍などがあれば、ほかの質問の前に、まとめて聞く（2026-11-07）
+  const about = step.kind === 'upfront' && wantsAbout(g.out.upfront, vault.get('settings', ABOUT_SKIPPED) === true, DATA().questions, g.answers) ? aboutNext(DATA().questions, g.answers) : undefined;
+  useFocusTitle((about ? 'about:' + about.id + ':' : '') + 'ev:' + g.occ?.id + ':' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
   const Title = ({ children }: { children: ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
   const eyebrow = <p className="eyebrow"><One t={g.event.title} /></p>;
   const today = todayViews(step);
@@ -91,7 +96,7 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   if (done) {
     const c = g.out.cards.find((x) => x.card.id === done)!;
     body = (
-      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)}>
+      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -107,6 +112,8 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </>
     );
+  } else if (step.kind === 'upfront' && about) {
+    body = <AboutStep key={about.id} q={about} onAnswer={(val) => { ch.setLast(null); return g.answer(about.id, val); }} />;
   } else if (step.kind === 'upfront') {
     const pick = (v: Parameters<typeof g.answer>[1]) => { ch.setLast(null); void g.answer(step.q.id, v); };
     body = (

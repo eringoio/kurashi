@@ -36,6 +36,9 @@ export function setSender(f: (body: string) => void) { send = f; }
 /** 開発のサーバー・テストでは送らない（手元で試すときは VITE_EV=1） */
 const ON = import.meta.env?.PROD === true || import.meta.env?.VITE_EV === '1';
 
+/** 使われ方の数を送ってよいか（開発のサーバーでも、画面の出し分けには使う） */
+export const countsAllowed = () => !browserOptOut() && allowed();
+
 export function track(k: EvKind, fields: EvFields = {}, force = false) {
   if (!(ON || force) || browserOptOut() || !allowed()) return;
   send(JSON.stringify({ k, p: fields.p ?? routeOf(location.pathname), f: fields.f, l: levelOf(), w: width(), b: BUILD, x: fields.x, y: fields.y }));

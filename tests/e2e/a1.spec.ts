@@ -22,7 +22,19 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await expect(h1(page)).toHaveText('最近、住む場所は変わりましたか？');
   await check(page, '住む場所');
   await tap(page, 'はい');
+  // あなたについて（v0.5.17）：国籍 → 在留資格 → 立場 → 年齢を、最初にまとめて1回。答えたら次の画面の上に1行
+  await expect(page.locator('.eyebrow').first()).toHaveText('あなたについて');
+  await expect(h1(page)).toHaveText('国籍は？');
+  await check(page, 'あなたについて');
+  await tap(page, '日本以外の国籍');
+  await expect(h1(page)).toHaveText('在留資格は？');
+  await tap(page, '留学');
+  await expect(h1(page)).toHaveText(/今のおもな立場/);
+  await tap(page, /^学生$/);
+  await expect(h1(page)).toHaveText('年齢は？');
+  await tap(page, '20歳から59歳まで');
   await expect(h1(page)).toHaveText('どこから引っ越しましたか？');
+  await expect(page.locator('.k-change__line')).toContainText('あなたについて：日本以外の国籍・留学・学生・20歳から59歳まで');
   await tap(page, '日本の外から');
 
   await expect(h1(page)).toHaveText('持っている物を、全部さわってください');
@@ -39,11 +51,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await expect(page.getByRole('region', { name: /残しますか/ })).toBeVisible();
   await check(page, '在留カードの裏');
   await tap(page, '書いてある');
-
-  await expect(h1(page)).toHaveText(/今のおもな立場/);
-  await tap(page, /^学生$/);
-  await expect(h1(page)).toHaveText('年齢は？');
-  await tap(page, '20歳から59歳まで');
+  // 立場と年齢は、あなたについてで答えたので聞かない
 
   // 最初の確かめのあと、全体が1回だけ開く（6A.4）
   await expect(h1(page)).toHaveText('これからのこと');
@@ -128,6 +136,8 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
 test('A1：在留カードがない人には、住民登録の根拠を1問だけ聞く。短い滞在は範囲外', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/move/from');
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap(page, '日本の外から');
   await tap(page, 'つぎへ');
   await expect(h1(page)).toHaveText('日本での住民登録について、あてはまるものは？');
@@ -139,6 +149,8 @@ test('A1：在留カードがない人には、住民登録の根拠を1問だ�
 test('B1：ほかの市から来た人も、同じ画面とデータの追加だけで動く', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/move/from');
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap(page, 'ほかの市・町・村から');
   await expect(h1(page)).toHaveText('持っている物を、全部さわってください');
   await page.getByRole('button', { name: /^マイナンバーカード/ }).click();

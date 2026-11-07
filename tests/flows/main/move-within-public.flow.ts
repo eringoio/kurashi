@@ -11,6 +11,8 @@ flow({
   await page.goto('/');
   await page.getByRole('link', { name: '引っ越し・住む場所のこと' }).click();
   await page.getByRole('button', { name: 'はい' }).first().click();
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await page.getByRole('button', { name: /名古屋市の中で/ }).click();
   await snap({ name: '同じ区か', input: '引っ越し → はい → 名古屋市の中で', expected: '「引っ越した先は、前の住所と同じ区の中ですか？」（本番でも準備中にならない）', why: 'B-14 の 45：転居届・転入届を公開にした' },
     async () => { await expect(h1).toHaveText('引っ越した先は、前の住所と同じ区の中ですか？'); });

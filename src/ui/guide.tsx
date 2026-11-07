@@ -19,6 +19,7 @@ import { CalendarGrid } from './CalendarGrid';
 import { AddToCalendar } from './AddToCalendar';
 import { dayInfo } from '../core/calendar';
 import { HOLIDAYS, HOURS, type PlaceHours } from '../core/calendarData';
+import { Rate } from './Rate';
 
 /** 一覧での状態（SPEC 15.2：色＋形＋文字。形は印の文字と枠の線） */
 export type StateKey = 'today' | 'check' | 'ask' | 'wait' | 'later' | 'done' | 'excluded' | 'out';
@@ -555,7 +556,8 @@ export function RedoStep({ redo, cards, today, onAnswer, onPlan, onCancel }: { r
 }
 
 /** 操作の結果（D の「この答えで変わったこと」「決めました」）。つぎへ で、いまの1つへ */
-export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow: UiKey; title: ReactNode; sub?: ReactNode; onNext: () => void; children?: ReactNode }) {
+/** rate：役に立ったかを聞く（カードか行く所の id。済んだ・行ってきたのときだけ） */
+export function ResultView({ eyebrow, title, sub, onNext, children, rate }: { eyebrow: UiKey; title: ReactNode; sub?: ReactNode; onNext: () => void; children?: ReactNode; rate?: string }) {
   return (
     <>
       <div className="head">
@@ -565,6 +567,7 @@ export function ResultView({ eyebrow, title, sub, onNext, children }: { eyebrow:
       {sub && <div className="sub">{sub}</div>}
       <button type="button" className="k-answer k-answer--primary" onClick={onNext}><Bi phrase k="nav.next" /></button>
       {children}
+      {rate && <Rate id={rate} />}
     </>
   );
 }

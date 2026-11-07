@@ -10,7 +10,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 
-export const PAGES = ['/', '/info/out-of-scope', '/info/coming-soon', '/info/disclaimer', '/info/about', '/move', '/move/from', '/move/objects', '/move/basis', '/move/check', '/now', '/all', '/c/nagoya-tennyu-juukyochi', '/c/bank-account-open', '/review', '/search', '/gomi', '/visit/ward_office', '/today', '/s/ward-office', '/qr', '/here', '/letter', '/calendar', '/words', '/clinic', '/e/E-move-within', '/e/E-bank', '/e/E-bank/c/bank-resident-change', '/c/mail-forward', '/e/E-job', '/e/E-job/c/zairyu-shikakugai', '/e/E-house-search', '/e/E-house-search/c/housing-search', '/e/E-house-search/c/housing-initial-costs', '/e/E-house-search/c/housing-public', '/e/E-stay-renew'];
+export const PAGES = ['/', '/info/out-of-scope', '/info/coming-soon', '/info/disclaimer', '/info/about', '/info/privacy', '/about', '/move', '/move/from', '/move/objects', '/move/basis', '/move/check', '/now', '/all', '/c/nagoya-tennyu-juukyochi', '/c/bank-account-open', '/review', '/search', '/gomi', '/visit/ward_office', '/today', '/s/ward-office', '/qr', '/here', '/letter', '/calendar', '/words', '/clinic', '/e/E-move-within', '/e/E-bank', '/e/E-bank/c/bank-resident-change', '/c/mail-forward', '/e/E-job', '/e/E-job/c/zairyu-shikakugai', '/e/E-house-search', '/e/E-house-search/c/housing-search', '/e/E-house-search/c/housing-initial-costs', '/e/E-house-search/c/housing-public', '/e/E-stay-renew'];
 /** 全部の組み合わせで見る代表の画面 */
 export const FULL = ['/', '/all', '/move/basis', '/c/nagoya-tennyu-juukyochi', '/clinic'];
 const LEVELS = [

@@ -22,18 +22,19 @@ test('報告：手続きのページの下から送る → ありがとう → /
   await expect(d).toContainText('ありがとうございます');
 
   await page.goto('/review');
-  await page.getByLabel('トークン').fill('dev-token');
-  await page.getByRole('button', { name: '読む' }).click();
+  await page.getByRole('region', { name: '報告' }).getByLabel('トークン').fill('dev-token');
+  await page.getByRole('region', { name: '報告' }).getByRole('button', { name: '読む' }).click();
   const sec = page.getByRole('region', { name: '報告' });
   await expect(sec).toContainText(word);
   await expect(sec).toContainText('/c/nagoya-tennyu-juukyochi');
 });
 
-test('報告：入口・設定などのページにはボタンを出さない。トークンが違えば読めない', async ({ page }) => {
+test('報告：どの画面にもボタンがある（v0.5.17。作者の画面にはない）。トークンが違えば読めない', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('button', { name: 'まちがいを知らせる' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'まちがいを知らせる' })).toHaveCount(1);
   await page.goto('/review');
-  await page.getByLabel('トークン').fill('wrong');
-  await page.getByRole('button', { name: '読む' }).click();
+  await expect(page.getByRole('button', { name: 'まちがいを知らせる' })).toHaveCount(0);
+  await page.getByRole('region', { name: '報告' }).getByLabel('トークン').fill('wrong');
+  await page.getByRole('region', { name: '報告' }).getByRole('button', { name: '読む' }).click();
   await expect(page.getByRole('alert')).toContainText('401');
 });

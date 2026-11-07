@@ -415,40 +415,65 @@
     "ja_easy": "{使|つか}う{情報|じょうほう}",
     "en": "What information we use"
   },
-  "page.privacy.p1": {
-    "ja": "{答|こた}え・{持|も}ち{物|もの}・{日付|ひづけ}：この{端末|たんまつ}の{中|なか}だけで{使|つか}います。「{残|のこ}す」を{選|えら}んだときだけ、この{端末|たんまつ}に{残|のこ}します。{手続|てつづ}きと{期限|きげん}を{選|えら}ぶためです。",
-    "ja_easy": "{答|こた}え・{持|も}ち{物|もの}・{日|にち}：このスマホの{中|なか}だけで{使|つか}います。「{残|のこ}す」を{選|えら}んだときだけ{残|のこ}します。",
-    "en": "Answers, belongings and dates: used only on this device, and kept only if you chose “Keep”. We use them to choose your procedures and deadlines."
+  "page.privacy.lead": {
+    "ja": "{何|なに}を・どこで・なぜ{使|つか}うか。",
+    "ja_easy": "{何|なに}を、なぜ{使|つか}うか。",
+    "en": "What we use, where, and why."
   },
-  "page.privacy.p2": {
-    "ja": "{位置|いち}：「{使|つか}う」と{答|こた}えたときだけ、この{端末|たんまつ}の{中|なか}で{区役所|くやくしょ}の{場所|ばしょ}と{比|くら}べます。{送|おく}らず、{残|のこ}しません。{近|ちか}い{窓口|まどぐち}を{出|だ}すためです。",
-    "ja_easy": "{場所|ばしょ}：「{使|つか}う」と{答|こた}えたときだけ{使|つか}います。{送|おく}りません。{残|のこ}しません。",
-    "en": "Location: only if you chose “Use”. It is compared with ward office locations on this device. It is not sent or saved. We use it to show the nearest office."
+  "privacy.r1.what": {
+    "ja": "{答|こた}え・{持|も}ち{物|もの}・{日付|ひづけ}",
+    "ja_easy": "{答|こた}え・{持|も}ち{物|もの}・{日|にち}",
+    "en": "Answers, belongings, dates"
   },
-  "page.privacy.p3": {
-    "ja": "{届|とど}いた{書類|しょるい}の{写真|しゃしん}：{押|お}したときだけ、このアプリのサーバーを{通|とお}して Claude（Anthropic {社|しゃ}の AI）に{送|おく}ります。このアプリは{保存|ほぞん}しません。Anthropic {社|しゃ}では{最大|さいだい}30{日|にち}{保存|ほぞん}され、{安全|あんぜん}{上|じょう}の{問題|もんだい}として{検知|けんち}されたときは{最長|さいちょう}2{年|ねん}{保存|ほぞん}されることがあります（{要|よう}{確認|かくにん}）。{何|なに}の{書類|しょるい}かを{読|よ}むためです。",
-    "ja_easy": "{書類|しょるい}の{写真|しゃしん}：{押|お}したときだけ AI に{送|おく}ります。このアプリは{残|のこ}しません。AI の{会社|かいしゃ}では、30{日|にち}まで{残|のこ}ることがあります（{要|よう}{確認|かくにん}）。",
-    "en": "Letter photo: sent only when you tap, through this app's server to Claude (Anthropic's AI). This app does not save it. Anthropic keeps it for up to 30 days, or up to 2 years if it is flagged for safety (to be confirmed). We use it to read what kind of letter it is."
+  "privacy.r1.how": {
+    "ja": "この{端末|たんまつ}の{中|なか}だけ。「{残|のこ}す」を{選|えら}んだときだけ{残|のこ}します。{手続|てつづ}きと{期限|きげん}を{選|えら}ぶためです。",
+    "ja_easy": "このスマホの{中|なか}だけです。{手続|てつづ}きを{選|えら}ぶためです。",
+    "en": "Only on this device, kept only if you chose “Keep”. To choose your procedures and deadlines."
   },
-  "page.privacy.p4": {
-    "ja": "{報告|ほうこく}：{送|おく}ったときだけ、{書|か}いた{文|ぶん}・この{画面|がめん}の{場所|ばしょ}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}・{手続|てつづ}きの{状態|じょうたい}をサーバーに{残|のこ}します。まちがいを{直|なお}すためです。",
-    "ja_easy": "{報告|ほうこく}：{送|おく}ったときだけ、{書|か}いた{文|ぶん}をサーバーに{残|のこ}します。まちがいを{直|なお}すためです。",
-    "en": "Reports: only when you send one, we keep your text, this page, the display language, the time and the state of your procedures on our server. We use it to fix mistakes."
+  "privacy.r2.what": {
+    "ja": "{位置|いち}",
+    "ja_easy": "{場所|ばしょ}",
+    "en": "Location"
   },
-  "page.privacy.p5": {
-    "ja": "{使|つか}われ{方|かた}の{数|かず}：{開|ひら}いた{画面|がめん}の{種類|しゅるい}・{前|まえ}の{画面|がめん}の{種類|しゅるい}・{表示|ひょうじ}の{言葉|ことば}・{画面|がめん}の{幅|はば}・エラーの{種類|しゅるい}を、{数|かず}として{送|おく}ります。だれかは{分|わ}かりません（ID・クッキー・IP アドレスは{使|つか}いません。{答|こた}えは{送|おく}りません）。{困|こま}るところを{見|み}つけて{直|なお}すためです。{下|した}で{止|と}められます。",
-    "ja_easy": "{使|つか}われ{方|かた}の{数|かず}：どの{画面|がめん}が{開|ひら}かれたかの{数|かず}だけを{送|おく}ります。だれかは{分|わ}かりません。{答|こた}えは{送|おく}りません。{下|した}で{止|と}められます。",
-    "en": "Usage counts: we send counts of which kind of page was opened, the page before it, the display language, the screen width and error types. They cannot tell who you are (no ID, cookie or IP address, and no answers). We use them to find and fix problems. You can turn this off below."
+  "privacy.r2.how": {
+    "ja": "「{使|つか}う」を{選|えら}んだときだけ。{端末|たんまつ}の{中|なか}で{比|くら}べ、{送|おく}らず、{残|のこ}しません。{近|ちか}い{窓口|まどぐち}を{出|だ}すためです。",
+    "ja_easy": "「{使|つか}う」のときだけ。{送|おく}りません。{近|ちか}い{窓口|まどぐち}を{出|だ}すためです。",
+    "en": "Only if you chose “Use”. Compared on this device, never sent or kept. To show the nearest office."
+  },
+  "privacy.r3.what": {
+    "ja": "{届|とど}いた{書類|しょるい}の{写真|しゃしん}",
+    "ja_easy": "{書類|しょるい}の{写真|しゃしん}",
+    "en": "Letter photo"
+  },
+  "privacy.r3.how": {
+    "ja": "{押|お}したときだけ Claude（Anthropic {社|しゃ}の AI）に{送|おく}ります。このアプリは{残|のこ}しません。Anthropic {社|しゃ}では{最大|さいだい}30{日|にち}、{安全|あんぜん}{上|じょう}の{問題|もんだい}があると{最長|さいちょう}2{年|ねん}{残|のこ}ります（{要|よう}{確認|かくにん}）。{書類|しょるい}を{読|よ}むためです。",
+    "ja_easy": "{押|お}したときだけ AI に{送|おく}ります。このアプリは{残|のこ}しません（AI の{会社|かいしゃ}では30{日|にち}まで。{要|よう}{確認|かくにん}）。",
+    "en": "Sent to Claude (Anthropic's AI) only when you tap. This app keeps nothing. Anthropic keeps it up to 30 days, or up to 2 years if flagged for safety (to be confirmed). To read the letter."
+  },
+  "privacy.r4.what": {
+    "ja": "{報告|ほうこく}",
+    "ja_easy": "{報告|ほうこく}",
+    "en": "Reports"
+  },
+  "privacy.r4.how": {
+    "ja": "{送|おく}ったときだけ、{書|か}いた{文|ぶん}・{画面|がめん}の{場所|ばしょ}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}・{手続|てつづ}きの{状態|じょうたい}をサーバーに{残|のこ}します。まちがいを{直|なお}すためです。",
+    "ja_easy": "{送|おく}ったときだけ、{書|か}いた{文|ぶん}を{残|のこ}します。まちがいを{直|なお}すためです。",
+    "en": "Only when you send one: your text, the page, display language, time and procedure states are kept on our server. To fix mistakes."
+  },
+  "privacy.r5.what": {
+    "ja": "{使|つか}われ{方|かた}の{数|かず}",
+    "ja_easy": "{使|つか}われ{方|かた}の{数|かず}",
+    "en": "Usage counts"
+  },
+  "privacy.r5.how": {
+    "ja": "{開|ひら}いた{画面|がめん}の{種類|しゅるい}・{前|まえ}の{画面|がめん}・{表示|ひょうじ}の{言葉|ことば}・{画面|がめん}の{幅|はば}・エラーの{種類|しゅるい}を、{数|かず}として{送|おく}ります。ID・クッキー・IP アドレス・{答|こた}えは{使|つか}いません。{困|こま}るところを{直|なお}すためです。",
+    "ja_easy": "{開|ひら}いた{画面|がめん}の{数|かず}だけ。だれかは{分|わ}かりません。アプリを{直|なお}すためです。",
+    "en": "Counts of page types, the page before, display language, screen width and error types. No ID, cookie, IP address or answers. To find and fix problems."
   },
   "page.privacy.never": {
-    "ja": "{集|あつ}めないもの：{名前|なまえ}・{住所|じゅうしょ}・{電話|でんわ}{番号|ばんごう}・{在留|ざいりゅう}カードやマイナンバーの{番号|ばんごう}・{答|こた}えの{中身|なかみ}・どの{人|ひと}が{何|なに}を{開|ひら}いたか。",
-    "ja_easy": "{集|あつ}めないもの：{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}・{答|こた}え。",
-    "en": "We never collect: names, addresses, phone numbers, residence card or My Number numbers, your answers, or who opened what."
-  },
-  "page.privacy.p6": {
-    "ja": "{上|うえ}に{書|か}いたほかに、{情報|じょうほう}をだれにも{渡|わた}しません。{広告|こうこく}はありません。",
-    "ja_easy": "ほかの{人|ひと}に{情報|じょうほう}を{渡|わた}しません。{広告|こうこく}はありません。",
-    "en": "Apart from what is written above, we give information to no one. There are no ads."
+    "ja": "{集|あつ}めないもの：{名前|なまえ}・{住所|じゅうしょ}・{電話|でんわ}{番号|ばんごう}・{在留|ざいりゅう}カードやマイナンバーの{番号|ばんごう}・{答|こた}えの{中身|なかみ}。{広告|こうこく}はありません。",
+    "ja_easy": "{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}・{答|こた}えは{集|あつ}めません。{広告|こうこく}はありません。",
+    "en": "We never collect names, addresses, phone numbers, card numbers or your answers. No ads."
   },
   "privacy.counts": {
     "ja": "{使|つか}われ{方|かた}の{数|かず}を{送|おく}る",
@@ -3469,5 +3494,70 @@
     "ja": "{最初|さいしょ}の{画面|がめん}を{開|ひら}く",
     "ja_easy": "{最初|さいしょ}の{画面|がめん}を{開|ひら}く",
     "en": "Open the first screen"
+  },
+  "about.eyebrow": {
+    "ja": "あなたについて",
+    "ja_easy": "あなたについて",
+    "en": "About you"
+  },
+  "about.note": {
+    "ja": "{国籍|こくせき}などで、{要|い}る{手続|てつづ}きが{変|か}わります。{答|こた}えはこの{端末|たんまつ}の{中|なか}だけで{使|つか}います。",
+    "ja_easy": "{国籍|こくせき}などで、{手続|てつづ}きが{変|か}わります。{答|こた}えはこのスマホの{中|なか}だけで{使|つか}います。",
+    "en": "Procedures depend on your nationality and status. Answers stay on this device."
+  },
+  "about.skip": {
+    "ja": "{答|こた}えずに{進|すす}む",
+    "ja_easy": "{答|こた}えずに{進|すす}む",
+    "en": "Skip"
+  },
+  "about.change": {
+    "ja": "{答|こた}えを{変|か}える",
+    "ja_easy": "{答|こた}えを{変|か}える",
+    "en": "Change answers"
+  },
+  "about.none": {
+    "ja": "まだ{答|こた}えていません",
+    "ja_easy": "まだ{答|こた}えていません",
+    "en": "Not answered yet"
+  },
+  "rate.q": {
+    "ja": "この{案内|あんない}は{役|やく}に{立|た}ちましたか？",
+    "ja_easy": "{役|やく}に{立|た}ちましたか？",
+    "en": "Was this guide helpful?"
+  },
+  "rate.yes": {
+    "ja": "はい",
+    "ja_easy": "はい",
+    "en": "Yes"
+  },
+  "rate.no": {
+    "ja": "いいえ",
+    "ja_easy": "いいえ",
+    "en": "No"
+  },
+  "rate.why.wrongInfo": {
+    "ja": "{情報|じょうほう}が{違|ちが}った",
+    "ja_easy": "{情報|じょうほう}が{違|ちが}った",
+    "en": "Information was wrong"
+  },
+  "rate.why.unclear": {
+    "ja": "わかりにくい",
+    "ja_easy": "わかりにくい",
+    "en": "Hard to understand"
+  },
+  "rate.why.counter": {
+    "ja": "{窓口|まどぐち}で{違|ちが}うことを{言|い}われた",
+    "ja_easy": "{窓口|まどぐち}で{違|ちが}うと{言|い}われた",
+    "en": "The counter said something different"
+  },
+  "rate.why.documents": {
+    "ja": "{書類|しょるい}が{足|た}りなかった",
+    "ja_easy": "{書類|しょるい}が{足|た}りなかった",
+    "en": "I was missing documents"
+  },
+  "rate.thanks": {
+    "ja": "ありがとうございます。{案内|あんない}を{直|なお}すときに{使|つか}います。",
+    "ja_easy": "ありがとうございます。",
+    "en": "Thank you. We use this to improve the guide."
   }
 }

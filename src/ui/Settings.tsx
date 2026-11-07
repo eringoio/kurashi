@@ -117,6 +117,7 @@ export function Settings({ onClose, onLive }: { onClose: () => void; onLive: (s:
         </fieldset>
       )}
 
+      <Link to="/about" className="link" onClick={onClose}><Bi k="about.eyebrow" /></Link>
       <Link to="/info/about" className="link" onClick={onClose}><Bi k="home.about" /></Link>
       <Link to="/info/privacy" className="link" onClick={onClose}><Bi k="privacy.link" /></Link>
     </Sheet>

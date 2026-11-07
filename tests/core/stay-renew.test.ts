@@ -16,7 +16,7 @@ const json = { events: [ev], cards: data.cards.filter((c) => ev.card_ids.include
 const TODAY = '2026-11-05';
 const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1, m.indexOf('|')));
 const go = (status: string | undefined, card?: string, over: Partial<EngineInput> = {}) =>
-  run(data, { answers: { ...statusAnswers(status), ...(card ? { 'Q-sr-mynumber': card } : {}) }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
+  run(data, { answers: { ...statusAnswers(status), ...(card ? { 'Q-mynumber-card': card === 'yes' ? true : card === 'no' ? false : card } : {}) }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
 const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state).map((c) => c.card.id).sort();
 const BOTH = ['zairyu-koshin', 'zairyu-mynumber-extend'];
@@ -38,7 +38,7 @@ describe('在留期間を更新する（下書き）', () => {
   });
   it('最初に、在留期間が決まっているかを聞く。決まっていれば、マイナンバーカードの有無を聞く', () => {
     expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-nationality']);
-    expect(go('student').upfront.map((q) => q.id)).toEqual(['Q-sr-mynumber']);
+    expect(go('student').upfront.map((q) => q.id)).toEqual(['Q-mynumber-card']);
     expect(go('permanent').upfront).toEqual([]);
   });
   it('在留期間が決まっていて、カードがある：更新と、カードの期限の延長を出す', () => {

@@ -36,10 +36,10 @@ test('写真読み取りが off（既定）：一覧が直接出て、選ぶと�
   await expect(h1(page)).toHaveText('届いた書類がわからないとき');
   await expect(page.locator('input[type=file]')).toHaveCount(0);
   await expect(page.getByRole('button', { name: /見本の書類で試す|一覧から選ぶ|写真を撮る/ })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: /国民年金の加入のお知らせ/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /国民年金の?加入のお知らせ/ })).toBeVisible();
   await check(page, '入口（一覧）');
-  await tap(page, /国民年金の加入のお知らせ/);
-  await expect(h1(page)).toHaveText('国民年金の加入のお知らせ');
+  await tap(page, /国民年金の?加入のお知らせ/);
+  await expect(h1(page)).toHaveText(/国民年金の?加入のお知らせ/);
   await expect(page.locator('img.letter__photo')).toHaveAttribute('src', '/samples/nenkin-oshirase-sample.svg');
   await expect(page.locator('section[aria-labelledby="letter-words"] ul.words')).toContainText(/基礎.*年金.*番号/);
   await expect(page.getByRole('heading', { name: '大事な言葉' })).toBeVisible();
@@ -105,8 +105,8 @@ test('いいえ → 一覧 → 国民年金の加入のお知らせ → 関係�
   await expect(h1(page)).toHaveText('書類の上のほうに、この言葉がありますか？');
   await tap(page, /^いいえ/);
   await expect(h1(page)).toContainText('どの書類ですか？');
-  await tap(page, /国民年金の加入のお知らせ/);
-  await expect(h1(page)).toHaveText('国民年金の加入のお知らせ');
+  await tap(page, /国民年金の?加入のお知らせ/);
+  await expect(h1(page)).toHaveText(/国民年金の?加入のお知らせ/);
   await expect(page.locator('section[aria-labelledby="letter-cards"] li')).not.toHaveCount(0);
   await check(page, '結果（年金）');
 });

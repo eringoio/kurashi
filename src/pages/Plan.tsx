@@ -58,7 +58,7 @@ export function Now() {
     // 済んだと記録したときだけ、結果の画面と「つぎへ」（6A.5 v0.5.14）
     const c = g.out.cards.find((x) => x.card.id === done)!;
     body = (
-      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)}>
+      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );

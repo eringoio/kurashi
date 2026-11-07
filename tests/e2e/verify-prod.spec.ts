@@ -65,6 +65,8 @@ test('保存：同意の前は IndexedDB に何も書かれない（画面を一
   await page.waitForLoadState('networkidle');
   await page.getByRole('link', { name: '引っ越し・住む場所のこと' }).click();
   await page.getByRole('button', { name: 'はい' }).first().click();
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await page.getByRole('button', { name: '日本の外から' }).first().click();
   await page.getByRole('button', { name: /^在留カード/ }).first().click();
   await page.getByRole('button', { name: 'つぎへ' }).first().click();

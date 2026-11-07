@@ -18,6 +18,7 @@ import { cardHome } from '../guide/catalogue';
 import { Speak } from '../ui/Speak';
 import { AddToCalendar } from '../ui/AddToCalendar';
 import { HeardWords, useSeen } from '../ui/Words';
+import { track } from '../ui/telemetry';
 /** 窓口で見せた手続きの正式名を「ことば」に残す（10b） */
 function SeenNames({ ids }: { ids: string[] }) { useSeen(ids); return null; }
 
@@ -193,6 +194,8 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
 
   const finish = async (o: VisitOutcome, ids: string[]) => {
     await g.setPlans(ids, outcomePatch(o, place, g.today));
+    // 行ってきた結果の数（13.4。行く所と結果の種類だけ）
+    track('outcome', { x: place, y: o });
     await g.setResume(null);
     setRes({ kind: afterOutcome(o), ids, told: o });
     onLive(line(ui('visit.res.eyebrow'), level));
@@ -200,6 +203,7 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
   // 手続きごとの結果（B-7）。選んでいない手続きは変えない（未確認）
   const save = async (r: Record<string, CardResult>) => {
     for (const [id, x] of Object.entries(r)) await g.setPlans([id], resultPatch(x, place, g.today));
+    for (const [id, x] of Object.entries(r)) if (!x.ok) track('outcome', { x: id, y: 'not_done' });
     const all = (v?.cards ?? []).map((c) => c.card.id);
     await g.setResume(null);
     setRes({ kind: 'mixed', done: all.filter((id) => r[id]?.ok === true), notDone: all.filter((id) => r[id]?.ok === false), open: all.filter((id) => !r[id]) });
@@ -211,13 +215,13 @@ export function VisitPage({ place, stage, onLive }: { place: string; stage: Visi
       <section className="visitgroup"><h2 className="label"><One phrase k={k} /></h2><ul className="list" role="list">{g.out.cards.filter((c) => ids.includes(c.card.id)).map((c) => <CardRow key={c.card.id} c={c} />)}</ul></section>
     );
     return (
-      <ResultView eyebrow="visit.res.eyebrow" title={<Bi k="visit.res.mixed" />} sub={<>{list(res.done, 'visit.res.sumDone')}{list(res.notDone, 'visit.res.sumNotDone')}{list(res.open, 'visit.res.sumOpen')}</>} onNext={() => navigate('/now')} />
+      <ResultView eyebrow="visit.res.eyebrow" title={<Bi k="visit.res.mixed" />} sub={<>{list(res.done, 'visit.res.sumDone')}{list(res.notDone, 'visit.res.sumNotDone')}{list(res.open, 'visit.res.sumOpen')}</>} onNext={() => navigate('/now')} rate={place} />
     );
   }
   if (res) {
     const views = g.out.cards.filter((c) => res.ids.includes(c.card.id));
     if (res.kind === 'done') {
-      return <ResultView eyebrow="visit.res.eyebrow" title={<Bi t={withPlace(ui('visit.res.done'), place)} />} sub={<Bi k="visit.res.doneSub" />} onNext={() => navigate('/now')} />;
+      return <ResultView eyebrow="visit.res.eyebrow" title={<Bi t={withPlace(ui('visit.res.done'), place)} />} sub={<Bi k="visit.res.doneSub" />} onNext={() => navigate('/now')} rate={place} />;
     }
     if (res.kind === 'check') {
       return (

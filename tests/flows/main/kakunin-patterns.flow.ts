@@ -11,6 +11,8 @@ flow({
 }, async (page, snap) => {
   const tap = (name: string | RegExp) => page.getByRole('button', { name }).first().click();
   await page.goto('/move/from');
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap('ほかの市・町・村から');
   await tap('つぎへ');
   await tap(/^学生$/);

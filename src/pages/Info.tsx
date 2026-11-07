@@ -20,7 +20,7 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
   // 使いやすさの決まり（WCAG など）は、開いたときだけ（K-52）
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2'], icon: 'bulb', more: { k: 'info.a11yMore', body: ['page.about.p3'] }, privacy: true },
   // 使う情報（作者の指示 2026-11-07。SPEC 13）：何を・どこへ・なぜ。使われ方の数は、ここで止められる
-  privacy: { title: 'page.privacy.title', body: ['page.privacy.p1', 'page.privacy.p2', 'page.privacy.p3', 'page.privacy.p4', 'page.privacy.p5', 'page.privacy.never', 'page.privacy.p6'], icon: 'you', counts: true },
+  privacy: { title: 'page.privacy.title', body: ['page.privacy.lead'], icon: 'you', counts: true },
 };
 
 /** reason：範囲外の理由（イベントの範囲のルールの reason_when_false）。あれば本文の代わりに出す（一般の文は、ほかの画面と食い違うことがあるため） */
@@ -45,6 +45,7 @@ export function Info({ id, reason }: { id: string; reason?: Text }) {
           <div className="prose">{page.more.body.map((k) => <p key={k}><Bi k={k} /></p>)}</div>
         </details>
       )}
+      {page.counts && <PrivacyRows />}
       {page.counts && <CountsSwitch />}
       {page.privacy && <p><Link to="/info/privacy" className="link"><Bi k="privacy.link" /></Link></p>}
       {page.link && (
@@ -71,5 +72,22 @@ function CountsSwitch() {
         <button type="button" className="seg" aria-pressed={!on} onClick={() => pick(false)}><One k="privacy.countsOff" /></button>
       </div>
     </fieldset>
+  );
+}
+
+/** 使う情報の行：何を（太字）と、どこで・なぜ（一文） */
+function PrivacyRows() {
+  return (
+    <>
+      <dl className="privacy">
+        {[1, 2, 3, 4, 5].map((n) => (
+          <div key={n} className="privacy__row">
+            <dt><Bi k={('privacy.r' + n + '.what') as UiKey} /></dt>
+            <dd><Bi k={('privacy.r' + n + '.how') as UiKey} /></dd>
+          </div>
+        ))}
+      </dl>
+      <p className="sub"><Bi k="page.privacy.never" /></p>
+    </>
   );
 }

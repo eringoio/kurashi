@@ -133,6 +133,8 @@ test('AT-clinic-05：同意して残したあとに通しで動かしても、In
   await start(page);
   await page.getByRole('link', { name: '引っ越し・住む場所のこと' }).click();
   await tap(page, 'はい');
+  // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
+  await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap(page, '日本の外から');
   for (const name of [/^在留カード/, /^パスポート/, /^学生証/]) await page.getByRole('button', { name }).click();
   await tap(page, 'つぎへ');
