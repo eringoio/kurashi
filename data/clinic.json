@@ -80,13 +80,15 @@
         "ja_easy": "{目|め}が{痛|いた}いです。",
         "en": "My eye hurts."
       },
-      "note": "出典を探す（JNTO の指さしシートの表にない）",
+      "note": "作者の経験で確認（2026-11-07）",
       "evidence": {
         "source_ids": [
-          "jnto-mi-guide"
+          "jnto-mi-guide",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     },
     {
@@ -545,13 +547,15 @@
         "ja_easy": "こころの{相談|そうだん}をしたいです。",
         "en": "I want to talk about my mental health."
       },
-      "note": "出典を探す（JNTO の指さしシートの表にない）",
+      "note": "作者の経験で確認（2026-11-07）",
       "evidence": {
         "source_ids": [
-          "jnto-mi-guide"
+          "jnto-mi-guide",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     },
     {
@@ -1383,10 +1387,12 @@
       },
       "evidence": {
         "source_ids": [
-          "jnto-mi-guide"
+          "jnto-mi-guide",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     },
     {
@@ -1452,10 +1458,12 @@
       },
       "evidence": {
         "source_ids": [
-          "mhlw-tokubetsu-ryokin"
+          "mhlw-tokubetsu-ryokin",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     }
   ],

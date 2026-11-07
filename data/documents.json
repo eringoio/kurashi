@@ -74,11 +74,13 @@
       "evidence": {
         "source_ids": [
           "nagoya-kokuho-nofu",
-          "nagoya-kokuho-kanyu-page"
+          "nagoya-kokuho-kanyu-page",
+          "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "保険料は、毎月、口座振替(自動払込)により納付していただきます。"
+        "status": "verified",
+        "quote": "保険料は、毎月、口座振替(自動払込)により納付していただきます。",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       },
       "issued_by_card": [
         "nagoya-kokuho-kanyu"

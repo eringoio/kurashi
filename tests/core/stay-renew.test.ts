@@ -23,11 +23,11 @@ const BOTH = ['zairyu-koshin', 'zairyu-mynumber-extend'];
 const mine = (where: string) => where.startsWith('zairyu-') || where.startsWith('R-sr') || where.startsWith('rel-sr') || where === 'E-stay-renew';
 
 describe('在留期間を更新する（下書き）', () => {
-  it('型と参照の検査を通る。2枚。verified は無い。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。2枚。verified は作者の確認（マイナンバーカードの3つの欄）だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.card_ids).toEqual(BOTH);
     const s = JSON.stringify(json);
-    expect(s).not.toContain('"verified"');
+    expect(s.split('"verified"').length - 1).toBe(3); // where・methods[0]・methods[2]（作者 11/7）
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
     expect(s).not.toMatch(/https?:\/\/[^"]*\?/);
   });
@@ -80,13 +80,16 @@ describe('在留期間を更新する（下書き）', () => {
     expect(fee.evidence.status).toBe('needs_check');
     expect(plain(fee.text.ja)).toContain('2026年9月30日');
   });
-  it('マイナンバーカードの期限を延ばす：作者の知見。needs_check。窓口で確認（要確認）', () => {
+  it('マイナンバーカードの期限を延ばす：作者の知見。窓口・メール・手数料は作者が経験で確認（11/7）', () => {
     const c = view(go('student', 'yes'), 'zairyu-mynumber-extend').card;
     expect(plain(c.summary.ja)).toContain('自動では変わりません');
-    expect(plain(c.summary.ja)).toContain('要確認');
-    for (const e of [c.evidence, c.deadline!.evidence, c.where.evidence, c.methods![0].evidence]) {
+    for (const e of [c.evidence, c.deadline!.evidence]) {
       expect(e.status).toBe('needs_check');
       expect(e.source_ids).toContain('author-2026-11-05');
+    }
+    for (const e of [c.where.evidence, c.methods![0].evidence, c.methods![2].evidence]) {
+      expect(e.status).toBe('verified');
+      expect(e.source_ids).toContain('author-2026-11-07');
     }
     expect(c.evidence.note).toContain('作者の知見（2026-11-05）。2026-11-06 に作者が確認'); // B-5（11/6）
   });

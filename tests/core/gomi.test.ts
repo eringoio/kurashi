@@ -96,9 +96,12 @@ const item = (id: string) => d.items.items.find((x) => x.id === id)!;
 const cat = (id: string, choice?: string) => { const r = judgeItem(d.items, item(id), choice); return r.kind === 'result' ? r.category.id : r.kind; };
 
 describe('下書きのデータ', () => {
-  it('型と参照を通る。すべて needs_check。公開の確定（verified）は無い', () => {
-    expect(JSON.stringify([items, areas, delivery])).not.toContain('"verified"');
-    expect(d.items.items.every((x) => x.evidence.status === 'needs_check' && !!x.evidence.quote)).toBe(true);
+  it('型と参照を通る。verified は作者の確認（author-2026-11-07）だけ', () => {
+    expect(JSON.stringify([areas, delivery])).not.toContain('"verified"');
+    for (const x of d.items.items) {
+      if (x.evidence.status === 'verified') expect(x.evidence.source_ids, x.id).toContain('author-2026-11-07');
+      else expect(x.evidence.status === 'needs_check' && !!x.evidence.quote, x.id).toBe(true);
+    }
   });
   it('古い30cmの基準を、いまの判定に使わない（2026年10月以降は45L）', () => {
     const text = JSON.stringify(items);
@@ -171,11 +174,9 @@ describe('オープンデータ（BODIK、CC BY 4.0）の取り込み', () => {
   });
   it('区分は、いまの市の表（2026年10月）の行から。市の表に無い行だけ区分を出さない', () => {
     const raw = opendata.items as { review?: unknown; category?: string; evidence: { source_ids: string[] } }[];
-    expect(raw.filter((x) => !x.review).every((x) => x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
-    expect(raw.filter((x) => x.review).every((x) => !x.evidence.source_ids.includes('gomi-search-1035233'))).toBe(true);
-    expect(opendata.counts.review).toBe(5);
-    const r = od.find((x) => x.review)!;
-    expect(judgeItem(d.items, r).kind).toBe('review');
+    // 市の表の行か、作者が経験で確かめた行（11/7。隠していた5品目）
+    expect(raw.filter((x) => !x.review).every((x) => x.evidence.source_ids.includes('gomi-search-1035233') || x.evidence.source_ids.includes('author-2026-11-07'))).toBe(true);
+    expect(opendata.counts.review).toBe(0);
   });
   it('手で確かめた品目が先。同じ品目のオープンデータの行は使わない', () => {
     expect(searchItems(d.items, 'かさ')[0].id).toBe('kasa');

@@ -33,20 +33,22 @@
   },
   "deadline": {
     "text": {
-      "ja": "{住居|じゅうきょ}{地|ち}を{決|き}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}。14{日|にち}めが{閉庁|へいちょう}{日|び}のときは、{次|つぎ}の{開|ひらき}{庁|ちょう}{日|び}までです（{要|よう}{確認|かくにん}）。{早|はや}めに{行|い}きます。",
-      "ja_easy": "{住|す}むところが{決|き}まった{日|ひ}の{次|つぎ}の{日|ひ}を1{日|にち}{目|め}として、14{日|にち}いないです。14{日|にち}めがお{休|やす}みの{日|ひ}のときは、{次|つぎ}に{窓口|まどぐち}が{開|ひら}く{日|ひ}までです（{要確認|ようかくにん}）。{早|はや}めに{行|い}きます。",
-      "en": "Within 14 days; the day after you set your place of residence is day 1. If day 14 is a closed day, the next open day is the deadline (to be checked). Go as early as you can."
+      "ja": "{住居|じゅうきょ}{地|ち}を{決|き}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}。14{日|にち}めが{閉庁|へいちょう}{日|び}のときは、{次|つぎ}の{開|ひらき}{庁|ちょう}{日|び}までです。{早|はや}めに{行|い}きます。",
+      "ja_easy": "{住|す}むところが{決|き}まった{日|ひ}の{次|つぎ}の{日|ひ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}です。14{日|にち}めがお{休|やす}みの{日|ひ}のときは、{次|つぎ}に{窓口|まどぐち}が{開|ひら}く{日|ひ}までです。{早|はや}めに{行|い}きます。",
+      "en": "Within 14 days; the day after you set your place of residence is day 1. If day 14 is a closed day, the next open day is the deadline. Go as early as you can."
     },
     "evidence": {
       "source_ids": [
         "nagoya-juumin-todoke",
         "isa-juukyochi",
         "nagoya-lifescene-tennyu-kazu",
-        "B-nagoya-faq-39"
+        "B-nagoya-faq-39",
+        "author-2026-11-07"
       ],
       "checked_at": "2026-11-07",
-      "status": "needs_check",
-      "quote": "（住所を異動した日の翌日が、１日目となります。）"
+      "status": "verified",
+      "quote": "（住所を異動した日の翌日が、１日目となります。）",
+      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
     }
   },
   "where": {

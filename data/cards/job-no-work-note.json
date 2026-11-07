@@ -33,9 +33,9 @@
     "reading": "しかくがいかつどうきょか"
   },
   "summary": {
-    "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」は、{働|はたら}くことを{目的|もくてき}にした{在留|ざいりゅう}{資格|しかく}ではありません。{働|はたら}きたいときは、{先|さき}に{入管|にゅうかん}で{相談|そうだん}してください（{許可|きょか}が{出|で}る{場合|ばあい}もあります。{要|よう}{確認|かくにん}）。",
-    "ja_easy": "「{文化活動|ぶんかかつどう}」「{研修|けんしゅう}」は、{働|はたら}くための{在留資格|ざいりゅうしかく}ではありません。{働|はたら}きたいときは、{先|さき}に{入管|にゅうかん}で{聞|き}きます（{要確認|ようかくにん}）。",
-    "en": "Cultural Activities and Trainee are not statuses for working. If you want to work, first ask immigration; permission may be possible in some cases (to be checked)."
+    "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」は、{働|はたら}くことを{目的|もくてき}にした{在留|ざいりゅう}{資格|しかく}ではありません。{働|はたら}きたいときは、{先|さき}に{入管|にゅうかん}で{相談|そうだん}してください（{許可|きょか}が{出|で}る{場合|ばあい}もあります）。",
+    "ja_easy": "「{文化活動|ぶんかかつどう}」「{研修|けんしゅう}」は、{働|はたら}くための{在留資格|ざいりゅうしかく}ではありません。{働|はたら}きたいときは、{先|さき}に{入管|にゅうかん}で{聞|き}きます。",
+    "en": "Cultural Activities and Trainee are not statuses for working. If you want to work, first ask immigration; permission may be possible in some cases."
   },
   "lead": {
     "ja": "{働|はたら}く{前|まえ}に、{入管|にゅうかん}で{相談|そうだん}します。",
@@ -50,10 +50,12 @@
     },
     "evidence": {
       "source_ids": [
-        "isa-status-list"
+        "isa-status-list",
+        "author-2026-11-07"
       ],
       "checked_at": "2026-11-07",
-      "status": "needs_check"
+      "status": "verified",
+      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
     }
   },
   "links": [
@@ -70,10 +72,12 @@
   "evidence": {
     "source_ids": [
       "isa-status-list",
-      "isa-shikakugai-guide"
+      "isa-shikakugai-guide",
+      "author-2026-11-07"
     ],
     "checked_at": "2026-11-07",
-    "status": "needs_check",
-    "quote": "三の表（非就労資格）"
+    "status": "verified",
+    "quote": "三の表（非就労資格）",
+    "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
   }
 }

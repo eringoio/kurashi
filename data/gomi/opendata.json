@@ -26,8 +26,8 @@
   },
   "counts": {
     "items": 1228,
-    "shown": 1223,
-    "review": 5
+    "shown": 1228,
+    "review": 0
   },
   "items": [
     {
@@ -3555,20 +3555,19 @@
       "aliases": [
         "かーぺっと・ほっとかーぺっと"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "bodik-sagyo-01",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "カーペット・ホットカーペット | 粗大ごみ | "
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "カーペット・ホットカーペット | 粗大ごみ | ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      },
+      "category": "sodai",
+      "note": {
+        "ja": "45リットルの指定袋に入るカーペットは可燃ごみ。電気カーペット・ホットカーペットは、袋に入れば不燃ごみ。袋に入らなければ粗大ごみ（事前申込制）。"
       }
     },
     {
@@ -5682,25 +5681,24 @@
     {
       "id": "od_dc5e4fefe5",
       "label": {
-        "ja": "木の幹・根"
+        "ja": "木の幹・丸太・根"
       },
       "aliases": [
         "きのみき・ね"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "bodik-sagyo-01",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "木の幹・根 | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "木の幹・根 | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      },
+      "category": "sodai",
+      "note": {
+        "ja": "45リットルの指定袋に入る長さで、太さ10cm以下は可燃ごみ、10cmをこえるものは不燃ごみ。袋に入らなければ粗大ごみ（事前申込制）。長さ180cm・15cm×15cmをこえるものは、市では収集しません。"
       }
     },
     {
@@ -8022,47 +8020,45 @@
     {
       "id": "od_9635eff176",
       "label": {
-        "ja": "こいのぼり"
+        "ja": "鯉のぼり"
       },
       "aliases": [],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "bodik-sagyo-01",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "こいのぼり | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "こいのぼり | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      },
+      "category": "kanen",
+      "note": {
+        "ja": "45リットルの指定袋に入らないものは、粗大ごみ（事前申込制）。"
       }
     },
     {
       "id": "od_323326611b",
       "label": {
-        "ja": "こいのぼりのポール"
+        "ja": "鯉のぼりのポール"
       },
       "aliases": [
         "こいのぼりのぽーる"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "bodik-sagyo-01",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "こいのぼりのポール | 粗大ごみ | "
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "こいのぼりのポール | 粗大ごみ | ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      },
+      "category": "sodai",
+      "note": {
+        "ja": "粗大ごみ（事前申込制）。"
       }
     },
     {
@@ -15934,16 +15930,18 @@
       ],
       "category": "kogata",
       "note": {
-        "ja": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。水銀血圧計は、区の環境事業所へ持ち込みます（市の表の別の行と食い違うため要確認）。 小型家電・充電式家電のリサイクル"
+        "ja": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。水銀血圧計は、区の環境事業所へ持ち込みます。 小型家電・充電式家電のリサイクル"
       },
       "evidence": {
         "source_ids": [
           "bodik-sagyo-01",
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "電子血圧計・電子体温計 | 小型家電 | 回収ボックスを利用できない場合は可燃ごみへ"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "電子血圧計・電子体温計 | 小型家電 | 回収ボックスを利用できない場合は可燃ごみへ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     },
     {
@@ -23981,20 +23979,19 @@
       "aliases": [
         "ものほしはんがー"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "bodik-sagyo-01",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "物干しハンガー（洗濯ばさみ付き） | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "物干しハンガー（洗濯ばさみ付き） | 可燃ごみ | 30センチメートル角を超えるものは、粗大ごみへ",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      },
+      "category": "plastic",
+      "note": {
+        "ja": "プラスチック製のもの。45リットルの指定袋に入らなければ粗大ごみ（事前申込制）。"
       }
     },
     {

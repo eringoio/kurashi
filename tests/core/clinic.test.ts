@@ -15,10 +15,11 @@ describe('データ', () => {
     expect(d.departments).toHaveLength(20);
     expect(checkClinic(d, src)).toEqual([]);
   });
-  it('どの場所にも診療科が1つ以上。すべて確認待ち', () => {
+  it('どの場所にも診療科が1つ以上。確認待ちか、作者の確認（author-2026-11-07）', () => {
     for (const p of d.parts) {
       expect(p.departments.length, p.id).toBeGreaterThan(0);
-      expect(p.evidence.status).toBe('needs_check');
+      if (p.evidence.status === 'verified') expect(p.evidence.source_ids, p.id).toContain('author-2026-11-07');
+      else expect(p.evidence.status).toBe('needs_check');
     }
   });
   it('リンクは https で、クエリ文字列が無い', () => {

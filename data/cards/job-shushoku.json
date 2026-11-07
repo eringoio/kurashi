@@ -27,24 +27,26 @@
       "en": "This guide is for people with Student, Dependent or similar status."
     },
     "check_at_office": {
-      "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "{在留|ざいりゅう}{資格|しかく}がわからないので、{入管|にゅうかん}で{確認|かくにん}します（{要確認|ようかくにん}）。",
-      "en": "We cannot tell because your status is unknown. Check with immigration (to be checked)."
+      "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{入管|にゅうかん}で{確認|かくにん}してください。",
+      "ja_easy": "{在留|ざいりゅう}{資格|しかく}がわからないので、{入管|にゅうかん}で{確認|かくにん}します。",
+      "en": "We cannot tell because your status is unknown. Check with immigration."
     }
   },
   "deadline": {
     "text": {
-      "ja": "{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}の{事由|じゆう}が{生|しょう}じたときから、{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}する{日|ひ}まで（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{変|か}える{理由|りゆう}ができたときから、{在留|ざいりゅう}{期間|きかん}が{終|お}わる{日|ひ}まで（{要確認|ようかくにん}）",
-      "en": "From when the reason for the change arises until the day your period of stay ends (to be checked)"
+      "ja": "{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}の{事由|じゆう}が{生|しょう}じたときから、{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}する{日|ひ}まで",
+      "ja_easy": "{変|か}える{理由|りゆう}ができたときから、{在留|ざいりゅう}{期間|きかん}が{終|お}わる{日|ひ}まで",
+      "en": "From when the reason for the change arises until the day your period of stay ends"
     },
     "evidence": {
       "source_ids": [
-        "B-moj-shikaku-henko"
+        "B-moj-shikaku-henko",
+        "author-2026-11-07"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check",
-      "quote": "申請期間 在留資格の変更の事由が生じたときから在留期間満了日以前"
+      "checked_at": "2026-11-07",
+      "status": "verified",
+      "quote": "申請期間 在留資格の変更の事由が生じたときから在留期間満了日以前",
+      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
     }
   },
   "id": "job-shushoku",
@@ -66,9 +68,9 @@
     "reading": "ざいりゅうしかくへんこうきょかしんせい"
   },
   "summary": {
-    "ja": "{留学|りゅうがく}から{就職|しゅうしょく}など、{別|べつ}の{在留|ざいりゅう}{資格|しかく}に{当|あ}たる{活動|かつどう}をするときは、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}ではなく「{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}」を{申請|しんせい}します。{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は1か{月|げつ}から2か{月|げつ}です。{必要|ひつよう}な{書類|しょるい}は{変|か}えたい{在留|ざいりゅう}{資格|しかく}ごとに{違|ちが}い、このアプリでは{確|たし}かめていません。{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{会社|かいしゃ}で{働|はたら}くときは、{在留|ざいりゅう}{資格|しかく}を{変|か}える{申請|しんせい}をします。1か{月|げつ}から2か{月|げつ}かかります。{書類|しょるい}は{入管|にゅうかん}で{確認|かくにん}します（{要確認|ようかくにん}）。",
-    "en": "When you start activity that falls under another status, such as working after studying, apply for a \"change of status of residence\" instead of an extension of the period of stay. The standard processing time is 1 to 2 months. Required documents differ by the status you want and have not been checked in this app. Check with immigration (to be checked)."
+    "ja": "{留学|りゅうがく}から{就職|しゅうしょく}など、{別|べつ}の{在留|ざいりゅう}{資格|しかく}に{当|あ}たる{活動|かつどう}をするときは、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}ではなく「{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}」を{申請|しんせい}します。{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は1か{月|げつ}から2か{月|げつ}です。{必要|ひつよう}な{書類|しょるい}は{変|か}えたい{在留|ざいりゅう}{資格|しかく}ごとに{違|ちが}い、このアプリでは{確|たし}かめていません。{入管|にゅうかん}で{確認|かくにん}してください。",
+    "ja_easy": "{会社|かいしゃ}で{働|はたら}くときは、{在留|ざいりゅう}{資格|しかく}を{変|か}える{申請|しんせい}をします。1か{月|げつ}から2か{月|げつ}かかります。{書類|しょるい}は{入管|にゅうかん}で{確認|かくにん}します。",
+    "en": "When you start activity that falls under another status, such as working after studying, apply for a \"change of status of residence\" instead of an extension of the period of stay. The standard processing time is 1 to 2 months. Required documents differ by the status you want and have not been checked in this app. Check with immigration."
   },
   "where": {
     "text": {
@@ -78,28 +80,32 @@
     },
     "evidence": {
       "source_ids": [
-        "B-moj-shikaku-henko"
+        "B-moj-shikaku-henko",
+        "author-2026-11-07"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check",
-      "quote": "提出先 住居地を管轄する地方出入国在留管理官署"
+      "checked_at": "2026-11-07",
+      "status": "verified",
+      "quote": "提出先 住居地を管轄する地方出入国在留管理官署",
+      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
     }
   },
   "methods": [
     {
       "type": "counter",
       "text": {
-        "ja": "{手数料|てすうりょう}は{許可|きょか}される{在留|ざいりゅう}{期間|きかん}で{違|ちが}い、{収入|しゅうにゅう}{印紙|いんし}で{納|おさ}めます（{窓口|まどぐち}の{場合|ばあい}、3か{月|げつ}{以下|いか}10,000{円|えん}から5{年|ねん}{以上|いじょう}75,000{円|えん}まで。{減額|げんがく}・{免除|めんじょ}があります。{要|よう}{確認|かくにん}）。",
-        "ja_easy": "お{金|かね}は、{許可|きょか}される{期間|きかん}で{違|ちが}います（10,000{円|えん}から75,000{円|えん}）。{収入印紙|しゅうにゅういんし}で{払|はら}います（{要確認|ようかくにん}）。",
-        "en": "The fee depends on the permitted period of stay and is paid with a revenue stamp (counter application: from 10,000 yen for 3 months or less to 75,000 yen for 5 years or more; reductions and exemptions exist; to be checked)."
+        "ja": "{手数料|てすうりょう}は{許可|きょか}される{在留|ざいりゅう}{期間|きかん}で{違|ちが}い、{収入|しゅうにゅう}{印紙|いんし}で{納|おさ}めます（{窓口|まどぐち}の{場合|ばあい}、3か{月|げつ}{以下|いか}10,000{円|えん}から5{年|ねん}{以上|いじょう}75,000{円|えん}まで。{減額|げんがく}・{免除|めんじょ}があります）。",
+        "ja_easy": "お{金|かね}は、{許可|きょか}される{期間|きかん}で{違|ちが}います（10,000{円|えん}から75,000{円|えん}）。{収入印紙|しゅうにゅういんし}で{払|はら}います。",
+        "en": "The fee depends on the permitted period of stay and is paid with a revenue stamp (counter application: from 10,000 yen for 3 months or less to 75,000 yen for 5 years or more; reductions and exemptions exist)."
       },
       "evidence": {
         "source_ids": [
-          "B-moj-shikaku-henko"
+          "B-moj-shikaku-henko",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "許可期間 手数料 ３月以下 １０，０００円 ３月超６月以下 １８，０００円 ６月超１年未満 ２５，０００円 １年 ３３，０００円 １年超３年未満 ４８，０００円 ３年以上５年未満 ６４，０００円 ５年以上 ７５，０００円"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "許可期間 手数料 ３月以下 １０，０００円 ３月超６月以下 １８，０００円 ６月超１年未満 ２５，０００円 １年 ３３，０００円 １年超３年未満 ４８，０００円 ３年以上５年未満 ６４，０００円 ５年以上 ７５，０００円",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     },
     {
@@ -111,20 +117,24 @@
       },
       "evidence": {
         "source_ids": [
-          "B-moj-shikaku-henko"
+          "B-moj-shikaku-henko",
+          "author-2026-11-07"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "（注）本来の在留資格に基づく活動を行っていない場合には、在留資格を取り消される場合があります。"
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "（注）本来の在留資格に基づく活動を行っていない場合には、在留資格を取り消される場合があります。",
+        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
       }
     }
   ],
   "evidence": {
     "source_ids": [
-      "B-moj-shikaku-henko"
+      "B-moj-shikaku-henko",
+      "author-2026-11-07"
     ],
-    "checked_at": "2026-11-05",
-    "status": "needs_check",
-    "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。"
+    "checked_at": "2026-11-07",
+    "status": "verified",
+    "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。",
+    "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
   }
 }
