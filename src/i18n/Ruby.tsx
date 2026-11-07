@@ -25,8 +25,10 @@ function breaksOf(plainText: string): Set<number> {
 
 /** 数と単位を nb の span に包む */
 function withNb(t: string, key: string): ReactNode[] {
-  return nbParts(t).map((p, i) => (p.nb ? <span key={key + '-' + i} className="nb">{p.t}</span> : <Fragment key={key + '-' + i}>{p.t}</Fragment>));
+  // 電話番号は、狭い画面ではハイフンのあとで折り返せる（320px の横スクロールを防ぐ）
+  return nbParts(t).map((p, i) => (p.nb ? (TEL.test(p.t) ? <span key={key + '-' + i} className="nb nb--tel">{p.t.split('-').map((x, j) => <Fragment key={j}>{j > 0 && <>-<wbr /></>}{x}</Fragment>)}</span> : <span key={key + '-' + i} className="nb">{p.t}</span>) : <Fragment key={key + '-' + i}>{p.t}</Fragment>));
 }
+const TEL = /^\d{2,4}-\d{2,4}-\d{3,4}$/;
 
 /** furigana を渡すと、設定にかかわらずふりがなを付ける（ことば。作者 11/7 K-5） */
 export function Ruby({ s, phrase, furigana: force }: { s: string; phrase?: boolean; furigana?: boolean }) {
