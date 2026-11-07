@@ -38,13 +38,9 @@ async function toWardDay(page: Page) {
   for (const name of ['まだどれにも入っていない', /^どちらでもない（厚生年金/, /^ない$/, /^はい$/]) await tap(page, name);
   await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
 }
-/** カレンダーは「ほかの日を選ぶ」を押したときだけ開く（K-42） */
+/** カレンダーは日を選ぶ画面に最初から出る（作者の指示 11/7） */
 async function openCal(page: Page) {
-  const b = page.getByRole('button', { name: 'ほかの日を選ぶ' });
-  await expect(b).toHaveAttribute('aria-expanded', 'false');
-  await expect(page.locator('.cal__table')).toHaveCount(0);
-  await b.click();
-  await expect(b).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.cal__table')).toBeVisible();
 }
 const decided = (page: Page) => page.locator('.k-change__line');
 

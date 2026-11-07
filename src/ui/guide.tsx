@@ -268,7 +268,6 @@ export function dayTitle(c: CardView): LocalizedText {
 export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void }) {
   const { level } = usePrefs();
   const [off, setOff] = useState<Set<string>>(new Set());
-  const [showCal, setShowCal] = useState(false);
   const [blockedPressed, setBlockedPressed] = useState(false);
   const c = group[0];
   const sel = group.filter((x) => !off.has(x.card.id));
@@ -338,10 +337,9 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
         )}
       </p>
       {hours?.open && <HoursLine h={hours} />}
-      {/* ほかの日は、押したときだけカレンダーを開く（K-42：日を選ぶ画面を1画面に収める） */}
-      <button type="button" className="link" aria-expanded={showCal} onClick={() => setShowCal(!showCal)}><Bi k="day.other" /></button>
-      {showCal && <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />}
-      <button type="button" className="link" onClick={onLater}><Bi k="day.later" /></button>
+      {/* カレンダーは最初から出す（作者の指示 11/7：日を選ぶときすぐ見える） */}
+      <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
+      <button type="button" className="k-answer k-answer--small" onClick={onLater}><Bi k="day.later" /></button>
     </>
   );
 }

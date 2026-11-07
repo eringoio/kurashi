@@ -41,9 +41,10 @@ describe('あなたについて', () => {
 });
 
 describe('あなたについて（始めたら最後まで）', () => {
-  it('国籍と在留資格だけ要る入口でも、答え始めたら立場と年齢まで聞く', () => {
+  it('国籍と在留資格だけ要る入口でも、答え始めたら年齢まで聞く。留学・仕事なら立場は聞かない（在留資格で決まる）', () => {
     const a = { 'Q-nationality': 'foreign', 'Q-zairyu-status': 'student' };
     expect(wantsAbout(go('E-job', a).upfront, false, data.questions, a as never)).toBe(true);
-    expect(next(a)).toBe('Q-role');
+    expect(next(a)).toBe('Q-age-band');
+    expect(next({ 'Q-nationality': 'foreign', 'Q-zairyu-status': 'family' })).toBe('Q-role');
   });
 });

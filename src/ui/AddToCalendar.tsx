@@ -70,10 +70,20 @@ export function AddToCalendar({ day, place, cardIds, small }: { day: string; pla
             {place === 'ward_office' && location === 'on' && (
               <button type="button" className="link" onClick={async () => { const r = await getPosition(); if (typeof r !== 'string') setOffice(nearest(PLACES().filter((p) => p.kind === 'ward_office'), r)?.id ?? ''); }}><One k="cal.icsHere" /></button>
             )}
-            <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`}><CalendarIcon /><Bi phrase k="cal.icsMake" /></a>
+            <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`} onClick={(e) => openOnIos(e, make())}><CalendarIcon /><Bi phrase k="cal.icsMake" /></a>
           </div>
         </Sheet>
       )}
     </>
   );
+}
+
+/** iPhone・iPad：download の形だと「ファイル」に保存されるだけ。text/calendar のファイルをそのまま開くと「カレンダーに追加」が出る */
+const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+function openOnIos(e: { preventDefault: () => void }, ics: string) {
+  if (!isIos()) return;
+  e.preventDefault();
+  const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+  window.location.href = url;
+  setTimeout(() => URL.revokeObjectURL(url), 60_000);
 }

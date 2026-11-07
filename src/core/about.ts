@@ -17,7 +17,8 @@ const factsOf = (qs: Question[], answers: Record<string, Value>) => {
 /** いま聞けるあなたについての質問（ask_when が T のもの。答えたものも含む） */
 export function aboutAskable(qs: Question[], answers: Record<string, Value>): Question[] {
   const f = factsOf(qs, answers);
-  return aboutQuestions(qs).filter((q) => evalCond(q.ask_when, f).v === 'T');
+  // ほかの答えで決まる質問（implied。例：在留資格が留学なら立場は学生）は聞かない
+  return aboutQuestions(qs).filter((q) => evalCond(q.ask_when, f).v === 'T' && (answers[q.id] !== undefined || !q.implied?.some((i) => evalCond(i.when, f).v === 'T')));
 }
 
 /** 次に聞く1つ（未回答で、いま聞けるもの）。無ければ undefined */

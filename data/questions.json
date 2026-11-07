@@ -53,7 +53,8 @@
             "ja": "そのほか（{名古屋|なごや}{市|し}の{外|そと}へ・{名古屋|なごや}{市|し}{以外|いがい}で）",
             "ja_easy": "そのほか（{名古屋市|なごやし}の{外|そと}へ）",
             "en": "Other (moving out of Nagoya, or elsewhere)"
-          }
+          },
+          "icon": "pin"
         }
       ]
     },
@@ -171,7 +172,8 @@
             "ja": "{答|こた}えたくない",
             "ja_easy": "{答|こた}えたくない",
             "en": "Prefer not to say"
-          }
+          },
+          "icon": "ask"
         }
       ]
     },
@@ -345,7 +347,8 @@
             "ja": "どちらでもない",
             "ja_easy": "どちらでもない",
             "en": "Neither"
-          }
+          },
+          "icon": "status-other"
         },
         {
           "value": "unknown",
@@ -353,7 +356,40 @@
             "ja": "わからない・{答|こた}えたくない",
             "ja_easy": "わからない・{答|こた}えたくない",
             "en": "Not sure / prefer not to say"
-          }
+          },
+          "icon": "ask"
+        }
+      ],
+      "implied": [
+        {
+          "when": {
+            "all": [
+              {
+                "fact": "nationality",
+                "eq": "foreign"
+              },
+              {
+                "fact": "zairyu_status",
+                "eq": "student"
+              }
+            ]
+          },
+          "value": "student"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "fact": "nationality",
+                "eq": "foreign"
+              },
+              {
+                "fact": "zairyu_status",
+                "eq": "work"
+              }
+            ]
+          },
+          "value": "working"
         }
       ]
     },
@@ -913,7 +949,8 @@
             "ja": "ない",
             "ja_easy": "ない",
             "en": "No"
-          }
+          },
+          "icon": "bank-dim"
         },
         {
           "value": "unknown",
@@ -921,7 +958,8 @@
             "ja": "わからない",
             "ja_easy": "わかりません",
             "en": "Not sure"
-          }
+          },
+          "icon": "ask"
         }
       ]
     },
@@ -1021,7 +1059,8 @@
             "ja": "{会社|かいしゃ}に{就職|しゅうしょく}する・した",
             "ja_easy": "{会社|かいしゃ}で{働|はたら}き{始|はじ}める",
             "en": "Start (or started) a full-time job"
-          }
+          },
+          "icon": "status-work"
         },
         {
           "value": "leave",
@@ -1029,7 +1068,8 @@
             "ja": "{仕事|しごと}を{辞|や}める・{辞|や}めた",
             "ja_easy": "{仕事|しごと}を{辞|や}める",
             "en": "Leave (or left) a job"
-          }
+          },
+          "icon": "work-dim"
         }
       ]
     },
