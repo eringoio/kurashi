@@ -14,7 +14,7 @@ export const USER_STORES: StoreName[] = ['profile', 'occurrences', 'objects', 'p
 export const DB_NAME = 'kurashi';
 export const SCHEMA_VERSION = 2;
 
-/** undecided：まだ聞いていない／kept：残す／not_kept：残さない（または何も残さない）／unavailable：残せない環境／view_only：見るだけ */
+/** undecided：まだ聞いていない／kept：残す／not_kept：残さない／unavailable：残せない環境／view_only：見るだけ */
 export type Mode = 'undecided' | 'kept' | 'not_kept' | 'unavailable' | 'view_only';
 
 type Mem = Map<StoreName, Map<string, unknown>>;
@@ -32,8 +32,6 @@ export class Vault {
   private saved: { mem: Mem; mode: Mode } | null = null;
   private listeners = new Set<() => void>();
   mode: Mode = 'undecided';
-  /** 「何も残さない」を選んだ。この開いている間は、もう聞かない */
-  askedThisSession = false;
   persisted: boolean | null = null;
 
   private constructor(private env: VaultEnv) {}
@@ -85,7 +83,7 @@ export class Vault {
     return (['profile', 'plan', 'objects', 'items', 'occurrences'] as StoreName[]).some((s) => this.mem.get(s)!.size > 0);
   }
   shouldAskConsent(): boolean {
-    return this.mode === 'undecided' && !this.askedThisSession && this.hasProgress();
+    return this.mode === 'undecided' && this.hasProgress();
   }
 
   async put(store: StoreName, key: string, value: unknown) {
@@ -141,14 +139,6 @@ export class Vault {
     this.mode = this.db ? 'not_kept' : 'unavailable';
     this.emit();
   }
-  /** 「何も残さない」：印も書かない。次に開いたとき、また聞く */
-  async keepNothing() {
-    if (this.mode === 'view_only') return;
-    if (this.db) await this.clearDb();
-    this.mode = this.db ? 'undecided' : 'unavailable';
-    this.askedThisSession = true;
-    this.emit();
-  }
   /** 全部消す：すべてのストアと、Service Worker のキャッシュ（ある場合） */
   async wipe() {
     if (this.mode === 'view_only') return;
@@ -161,7 +151,6 @@ export class Vault {
       /* キャッシュがなくても動く */
     }
     this.mode = this.db ? 'undecided' : 'unavailable';
-    this.askedThisSession = false;
     this.persisted = null;
     this.emit();
   }

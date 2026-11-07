@@ -621,13 +621,12 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 /* 「なぜ聞くの？」は答えのすぐ下に小さく */
 .link--why { align-self: flex-start; margin-top: -6px; font-size: var(--fs-small); }
 
-/* K-47：「残しますか」は本文の列のいちばん下の細い帯（順番は CSS の order で下へ。App.tsx で Route の後ろに移せば、読む順も同じになる） */
-.consent { order: 90; margin-top: 6px; padding: 8px 12px; border-width: 1.5px; border-radius: var(--radius-md); flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+/* 「残しますか」は本文の上の細い帯（11/7：K-47 の「下」をやめて上へ。画面はふさがない） */
+.consent { margin-bottom: 4px; padding: 8px 12px; border-width: 1.5px; border-radius: var(--radius-md); flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
 .consent__q { margin: 0; flex: 1 1 14em; font-size: var(--fs-body); line-height: 1.6; }
 .consent__note { margin: 0; flex: 1 1 100%; order: 3; }
 .consent .pair { flex: 0 1 auto; flex-wrap: wrap; gap: 6px; }
 .consent .pair .k-answer { flex: 0 1 auto; min-height: var(--target-min); padding: 2px 14px; font-size: var(--fs-body); border-width: 2px; }
-.consent > .link { order: 4; }
 
 /* K-52：上の帯・本文・右の列を同じ幅の入れ物にそろえる。右の列が無いときは本文を真ん中に、あるときは 2 つを組にして真ん中に */
 @media (min-width: 1024px) {

@@ -9,6 +9,11 @@ import './styles/app.css';
 import { App } from './App';
 import { PrefsProvider } from './storage/prefs';
 import { Vault } from './storage/vault';
+import { ErrorBoundary } from './ui/ErrorBoundary';
+import { listenErrors } from './ui/telemetry';
+
+// 起きたエラーの種類を数える（13.4。送ってよいときだけ）
+listenErrors();
 
 // 古い Safari でも動くように、トップレベルの await を使わない
 void Vault.open().then((vault) => {
@@ -17,7 +22,7 @@ void Vault.open().then((vault) => {
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <PrefsProvider vault={vault}>
-        <App />
+        <ErrorBoundary><App /></ErrorBoundary>
       </PrefsProvider>
     </StrictMode>,
   );

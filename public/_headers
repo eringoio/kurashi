@@ -1,6 +1,8 @@
 # 静的なファイルの応答に付ける印（Cloudflare Workers の静的配信）
+# Content-Security-Policy：ページから送れる先は自分のサーバーだけ（SPEC 13.4。外のスクリプト・送信を止める。11/7）
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY
   Permissions-Policy: camera=(self), geolocation=(self), microphone=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'

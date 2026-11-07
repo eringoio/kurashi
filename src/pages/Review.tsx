@@ -10,6 +10,7 @@ import { type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { Link, useFocusTitle } from '../ui/router';
 import { ReviewReports } from './ReviewReports';
+import { ReviewUsage } from './ReviewUsage';
 
 function Status({ e }: { e: Evidence }) {
   const d = DATA();
@@ -47,6 +48,7 @@ export function Review() {
       <p className="sub"><Bi k="review.sub" /></p>
       {/* 報告の一覧（A-9）。作者のトークンで読む */}
       <ReviewReports />
+      <ReviewUsage />
       {/* 本番では見本（確認済み）の切り替えを出さない（DATA_CONTRACT 5章） */}
       {!import.meta.env.PROD && <fieldset>
         <legend className="label"><One k="review.mode" /></legend>

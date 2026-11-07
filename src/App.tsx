@@ -9,6 +9,7 @@ import { useGuide, type Guide } from './guide/useGuide';
 import { Bi, One } from './i18n/Ruby';
 import { usePrefs } from './storage/prefs';
 import { Consent } from './ui/Consent';
+import { initTelemetry, trackView } from './ui/telemetry';
 import { Link, useFocusTitle, usePath } from './ui/router';
 import { Settings } from './ui/Settings';
 import { line, ui } from './i18n/text';
@@ -151,6 +152,9 @@ export function App() {
   // 広い画面（デスクトップ）では、右に「全体」を並べる。いま・開いた項目のときだけ（全体の画面と、最初の道のりでは出さない）
   // 右に出すのは、いま（/now）・開いた項目（/c/*）・生活イベント（/e/*。全体を除く）。今日の予定・付き添いには出さない（K-36）
   const side = useSide(path);
+  // 使われ方の数（13.4）：送ってよいかは、設定の「送らない」・見るだけ・ブラウザの「追跡しない」で決める
+  useEffect(() => { initTelemetry({ allowed: () => v.mode !== 'view_only' && v.get('settings', 'counts') !== false, level: () => level.id }); }, [v, level]);
+  useEffect(() => { trackView(path); }, [path]);
   const routed = useRef(false);
   useEffect(() => {
     if (routed.current) return;
@@ -192,8 +196,9 @@ export function App() {
         <main className="col" id="main" tabIndex={-1}>
           {v.mode === 'unavailable' && <div className="k-notice" role="note"><Bi k="storage.unavailable" /></div>}
           {g.mode === 'verified' && <div className="k-notice" role="note"><Bi k="review.banner" /></div>}
-          <Route path={path} onLive={onLive} />
+          {/* 保存の同意は本文の上の細い帯（試作 D。11/7 作者：上に） */}
           <Consent onLive={onLive} />
+          <Route path={path} onLive={onLive} />
           {/* 報告ボタン（A-9）は、各画面の下の道案内（PageNav）の中 */}
         </main>
         {side && <SidePanel current={path} />}

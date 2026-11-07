@@ -2,8 +2,9 @@
    保存しない・ログに中身を書かない（SPEC 13.3）。 */
 import { handleReadDocument, type Env as ReadEnv } from './readDocument';
 import { handleReport, handleReports, type Env as ReportEnv } from './report';
+import { handleEv, handleUsage, type Env as EvEnv } from './ev';
 
-interface Env extends ReadEnv, ReportEnv { ASSETS: { fetch(req: Request): Promise<Response> } }
+interface Env extends ReadEnv, ReportEnv, EvEnv { ASSETS: { fetch(req: Request): Promise<Response> } }
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
@@ -12,6 +13,9 @@ export default {
     // 報告（A-9）。本文は path・scene・text・level・at だけ
     if (url.pathname === '/api/report') return handleReport(req, env);
     if (url.pathname === '/api/reports') return handleReports(req, env);
+    // 使われ方の数（13.4）。数だけ。ID・IP・答えは受け取らない
+    if (url.pathname === '/api/ev') return handleEv(req, env);
+    if (url.pathname === '/api/usage') return handleUsage(req, env);
     if (url.pathname.startsWith('/api/')) return new Response(JSON.stringify({ error: 'not_found' }), { status: 404, headers: { 'content-type': 'application/json' } });
     return env.ASSETS.fetch(req);
   },

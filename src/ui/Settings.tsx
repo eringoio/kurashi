@@ -87,6 +87,7 @@ export function Settings({ onClose, onLive }: { onClose: () => void; onLive: (s:
             {(v.mode === 'not_kept' || v.mode === 'undecided') && <button type="button" className="seg" onClick={async () => { await v.keep(); onLive(L('consent.keptNote')); }}><One k="settings.startKeep" /></button>}
             {v.mode !== 'unavailable' && <button type="button" className="seg" onClick={() => { v.startViewOnly(); onClose(); }}><One k="settings.viewOnly" /></button>}
           </div>
+          {v.mode !== 'unavailable' && <p className="sheet__sub"><Bi k="settings.shared" /></p>}
           {stores.length > 0 && (
             <details className="stores">
               <summary><One k="settings.stores" />（{stores.length}）</summary>
@@ -117,6 +118,7 @@ export function Settings({ onClose, onLive }: { onClose: () => void; onLive: (s:
       )}
 
       <Link to="/info/about" className="link" onClick={onClose}><Bi k="home.about" /></Link>
+      <Link to="/info/privacy" className="link" onClick={onClose}><Bi k="privacy.link" /></Link>
     </Sheet>
   );
 }

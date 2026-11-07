@@ -43,15 +43,6 @@ describe('保存（SPEC 9.9）', () => {
     await w.put('profile', 'Q-origin', 'abroad');
     expect(w.shouldAskConsent()).toBe(false);
   });
-  it('「何も残さない」は印も書かず、次に開いたときまた聞く', async () => {
-    const v = await reopen();
-    await v.put('profile', 'Q-origin', 'abroad');
-    await v.keepNothing();
-    expect(v.shouldAskConsent()).toBe(false);
-    const w = await reopen();
-    await w.put('profile', 'Q-origin', 'abroad');
-    expect(w.shouldAskConsent()).toBe(true);
-  });
   it('見るだけは、保存を読まず、書かない。終わると元に戻る', async () => {
     const v = await reopen();
     await v.put('profile', 'Q-origin', 'abroad');

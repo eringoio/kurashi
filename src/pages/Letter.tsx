@@ -15,6 +15,7 @@ import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 import { useSeen, WordList } from '../ui/Words';
 import { docWordIds } from '../core/words';
+import { trackError } from '../ui/telemetry';
 /** 結果の書類の名前を「ことば」に残す（10b） */
 function SeenDoc({ id }: { id: string }) { useSeen(['doc:' + id]); return null; }
 
@@ -68,7 +69,7 @@ export function Letter() {
   const onFile = async (f: File | undefined) => {
     if (!f) return;
     try { const j = await toJpeg(f); setSt({ k: 'preview', photo: { ...j, media: 'image/jpeg', sample: false } }); }
-    catch { setSt({ k: 'failed' }); }
+    catch { trackError('photo', 'resize'); setSt({ k: 'failed' }); }
     if (file.current) file.current.value = '';
   };
   const send = async (photo: Photo) => {
@@ -78,8 +79,9 @@ export function Letter() {
       if (!r.ok) throw new Error(String(r.status));
       const body = await r.json() as { sample?: boolean };
       const ids = cleanCandidates(body, DOCUMENTS().map((d) => d.id)).map((c) => c.id);
+      if (!ids.length) trackError('read', 'no_candidate');
       setSt(ids.length ? { k: 'confirm', ids, i: 0, sample: !!body.sample || photo.sample } : { k: 'failed' });
-    } catch { setSt({ k: 'failed' }); }
+    } catch (e) { trackError('read', (e as Error).message); setSt({ k: 'failed' }); }
   };
 
   const fileInput = (

@@ -60,6 +60,7 @@ function menuItems(): Item[] {
 const LINKS = [
   { k: 'home.about', to: '/info/about' },
   { k: 'home.disclaimer', to: '/info/disclaimer' },
+  { k: 'privacy.link', to: '/info/privacy' },
 ] as const;
 
 export function Home({ hasProgress, continueTo = '/now' }: { hasProgress: boolean; continueTo?: string }) {

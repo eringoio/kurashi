@@ -112,7 +112,7 @@ test('保存の同意・見るだけ・全部消す', async ({ page }) => {
   await page.getByRole('button', { name: /見るだけにする/ }).click();
   await expect(page.locator('.viewonly')).toContainText('見るだけ（保存しません）');
   await axe(page, '見るだけ');
-  await page.getByRole('button', { name: '見るだけを終わる' }).click();
+  await page.getByRole('button', { name: '終わる', exact: true }).click();
   // 全部消す
   await page.getByRole('button', { name: SETTINGS }).click();
   await page.getByRole('dialog').getByRole('button', { name: '全部消す' }).click();
