@@ -3,13 +3,16 @@
    - キーを持つジョブは読む権限だけ。キーは画面のコードに無い。
    - AI の文は PR の本文でリンク・メンションにならない。費用の上限（回数・トークン・timeout）がある。
    「承認前に本番へ入らない」（verified にしない・値を変えない）は tests/unit/apply-update.test.ts。 */
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { aiCell } from '../../src/core/update';
 import { handleUsage } from '../../worker/ev';
 
 const read = (f: string) => readFileSync(f, 'utf8');
+// 更新のワークフローは kurashi_proto だけにある（公開リポジトリには置かない。作者の決定 2026-11-07）
+const WF = '.github/workflows/data-update.yml';
+const hasWf = existsSync(WF);
 const walk = (d: string): string[] => readdirSync(d).flatMap((n) => { const p = join(d, n); return statSync(p).isDirectory() ? walk(p) : [p]; });
 
 describe('更新のエージェントを一般の利用者が動かせない', () => {
@@ -23,14 +26,14 @@ describe('更新のエージェントを一般の利用者が動かせない', (
     const routes = [...read('worker/index.ts').matchAll(/url\.pathname === '([^']+)'/g)].map((m) => m[1]).sort();
     expect(routes).toEqual(['/api/ev', '/api/read-document', '/api/report', '/api/reports', '/api/usage']);
   });
-  it('ワークフローは手で動かすときだけ。pull_request・push・pull_request_target では動かない', () => {
-    const y = read('.github/workflows/data-update.yml');
+  it.skipIf(!hasWf)('ワークフローは手で動かすときだけ。pull_request・push・pull_request_target では動かない', () => {
+    const y = read(WF);
     const on = y.split(/\njobs:/)[0].split(/\non:/)[1];
     expect(on).toMatch(/workflow_dispatch:/);
     expect(on).not.toMatch(/^\s*(pull_request|pull_request_target|push|schedule):/m);
   });
-  it('キーを持つジョブは読む権限だけ。キーを渡すのは data:agent の段だけ', () => {
-    const y = read('.github/workflows/data-update.yml');
+  it.skipIf(!hasWf)('キーを持つジョブは読む権限だけ。キーを渡すのは data:agent の段だけ', () => {
+    const y = read(WF);
     const check = y.split(/\n {2}pr:/)[0].split(/\n {2}check:/)[1];
     expect(check).toMatch(/permissions:\s*\n\s*contents: read/);
     expect(check).not.toMatch(/contents: write|pull-requests: write/);

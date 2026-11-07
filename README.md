@@ -26,7 +26,7 @@
 ## Claude の使い方
 
 1. **アプリの中**：届いた書類の写真から、どの書類に近いかの候補だけを Claude（既定は `claude-haiku-5-5`）が返します（`worker/readDocument.ts`）。写真は保存しません。名前・番号・金額は返させません。API キーが無いときは見本の結果を返します。
-2. **データの確認**：公式のページを取得し、変わったところを Claude が照合して、確認待ちの PR を作ります（`.github/workflows/data-update.yml`・`scripts/update-agent.ts`）。キーを持つジョブと PR を作るジョブを分けています。
+2. **データの確認**：公式のページを取得し、変わったところを Claude が照合して、確認待ちの更新案を作ります（`scripts/fetch-sources.ts`・`scripts/update-agent.ts`・`scripts/apply-update.ts`）。AI の提案は確認状態を下げるだけで、作者が確かめて承認するまで本番に入りません。この処理とそのキーは、開発用の非公開リポジトリだけで動かします（このリポジトリには、ワークフローも Secret も置きません）。
 3. **開発**：仕様・実装・テスト・アクセシビリティの検査を Claude Code で作りました。手続きの根拠は、Claude が公式のページから引用を取り、別の照合で確かめました（データの `evidence`）。
 
 ## 手元で動かす
