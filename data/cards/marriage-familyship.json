@@ -1,0 +1,240 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-familyship",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": {
+    "all": [
+      "R-mar-event",
+      "R-mar-partner"
+    ]
+  },
+  "title": {
+    "ja": "パートナーシップ・ファミリーシップの{宣誓|せんせい}",
+    "ja_easy": "パートナーシップ・ファミリーシップの{宣誓|せんせい}（ふたりの{届|とど}け）",
+    "en": "Partnership / familyship pledge"
+  },
+  "official_name": {
+    "ja": "名古屋市ファミリーシップ制度",
+    "reading": "なごやしふぁみりーしっぷせいど"
+  },
+  "summary": {
+    "ja": "{互|たが}いを{人生|じんせい}のパートナーとするふたりが{市|し}に{宣誓|せんせい}すると、{市|し}が{宣誓書|せんせいしょ}{受領証|じゅりょうしょう}などを{出|だ}します。{対象|たいしょう}は{成年|せいねん}のふたりで、{少|すく}なくとも1{人|ひとり}が{名古屋市|なごやし}に{住所|じゅうしょ}がある（{転入|てんにゅう}{予定|よてい}を{含|ふく}む）ことが{要|い}ります。{事前|じぜん}の{予約|よやく}が{要|い}ります。{費用|ひよう}はかかりません。{法律上|ほうりつじょう}の{効果|こうか}（{婚姻|こんいん}・{相続|そうぞく}・{税|ぜい}の{控除|こうじょ}など）はありません。{受領証|じゅりょうしょう}を{見|み}せて{使|つか}える{市|し}のサービスがあり、{市営|しえい}{住宅|じゅうたく}にも{申|もう}し{込|こ}めます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ふたりが{市|し}に{宣誓|せんせい}（やくそく）すると、{市|し}が{受領証|じゅりょうしょう}を{出|だ}します。ふたりとも{大人|おとな}で、1{人|ひとり}は{名古屋市|なごやし}に{住|す}んでいる（{引|ひ}っ{越|こ}し{予定|よてい}でもよい）ことが{要|い}ります。{先|さき}に{予約|よやく}します。お{金|かね}はかかりません。{結婚|けっこん}と{同|おな}じ{法律|ほうりつ}の{効果|こうか}はありません。{市営|しえい}{住宅|じゅうたく}にも{申|もう}し{込|こ}めます（{要|よう}{確認|かくにん}）。",
+    "en": "Two people who take each other as life partners pledge to the city, and the city issues a pledge receipt. Both must be adults and at least one must live in Nagoya (or plan to move in). You must book first. There is no fee. It has no legal effect (marriage, inheritance, tax deductions, etc.). The receipt lets you use some city services, and you can apply for city housing (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "イーブルなごや（{中区|なかく}）。{区役所|くやくしょ}では{宣誓|せんせい}できません。オンラインもあります",
+      "ja_easy": "イーブルなごや（{中区|なかく}）。{区役所|くやくしょ}ではできません。オンラインもあります",
+      "en": "Eble Nagoya (Naka ward). Not at ward offices. Online is also possible"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "宣誓場所：原則イーブルなごや（名古屋市男女平等参画推進センター、名古屋市中区大井町7―25）"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{対象|たいしょう}は{成年|せいねん}のふたりで、{少|すく}なくとも{一方|いっぽう}が{市内|しない}に{住所|じゅうしょ}がある、または{転入|てんにゅう}{予定|よてい}の{人|ひと}です。ふたりが{互|たが}いに{婚姻|こんいん}していないこと、ほかの{人|ひと}と{婚姻|こんいん}（{事実上|じじつじょう}を{含|ふく}む）していないこと、{近親者|きんしんしゃ}でないことも{要|い}ります。",
+        "ja_easy": "ふたりとも{大人|おとな}で、1{人|ひとり}は{名古屋市|なごやし}に{住|す}んでいる（{引|ひ}っ{越|こ}し{予定|よてい}でもよい）ことが{要|い}ります。ふたりは{結婚|けっこん}していないこと、ほかの{人|ひと}と{結婚|けっこん}していないことも{要|い}ります。",
+        "en": "Both must be adults, and at least one must live in Nagoya or plan to move in. You must not be married to each other or to anyone else (including de facto), and must not be close relatives."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "少なくともいずれか一方が市内に住所を有し、又は市内への転入を予定していること。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}は{住民票|じゅうみんひょう}の{写|うつ}し、{独身|どくしん}であることを{証明|しょうめい}する{書類|しょるい}（どちらも{宣誓日|せんせいび}から3か{月|げつ}{以内|いない}に{発行|はっこう}されたもの）、{本人|ほんにん}{確認|かくにん}{書類|しょるい}です。{予約|よやく}のあと、{市|し}から{必要|ひつよう}な{書類|しょるい}の{連絡|れんらく}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{持|も}ち{物|もの}は、{住民票|じゅうみんひょう}の{写|うつ}し、{独身|どくしん}の{証明|しょうめい}の{書類|しょるい}（3か{月|げつ}{以内|いない}に{出|だ}したもの）、{身分|みぶん}{証明|しょうめい}{書|しょ}です。{予約|よやく}のあと、{市|し}から{連絡|れんらく}があります（{要|よう}{確認|かくにん}）。",
+        "en": "Bring a copy of your resident record, a document proving you are single (both issued within 3 months of the pledge date) and ID. After booking, the city contacts you about the documents (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "独身であることを証明する書類（独身証明書等）（宣誓日から3か月以内に発行されたものに限ります。）"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{宣誓|せんせい}の{日|ひ}の3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{電話|でんわ}か{申込|もうしこみ}フォームで{予約|よやく}します。{宣誓|せんせい}できる{時間|じかん}は{平日|へいじつ}の{昼間|ひるま}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{宣誓|せんせい}の{日|ひ}の3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{予約|よやく}します（{電話|でんわ}かフォーム）。{平日|へいじつ}の{昼|ひる}だけです（{要|よう}{確認|かくにん}）。",
+        "en": "Book between 3 months and 1 week before the pledge date, by phone or the booking form. Pledges are on weekday daytime only (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "宣誓予定日の原則3か月前から1週間前までに、次の方法で事前予約してください。"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{宣誓|せんせい}は{対面|たいめん}のほかに、オンライン（{申込|もうしこみ}フォーム、またはウェブ{会議|かいぎ}）でもできます。{書類|しょるい}は{郵送|ゆうそう}で{送|おく}ります。",
+        "ja_easy": "{対面|たいめん}のほかに、オンラインでもできます。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります。",
+        "en": "You can pledge in person or online (by form or web meeting). Documents are sent by post."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "宣誓の手続きは、オンラインを活用した宣誓と対面での宣誓がございます。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{外国籍|がいこくせき}の{人|ひと}は{予約|よやく}のときに「{日本|にほん}{国籍|こくせき}でないこと」を{伝|つた}えます。{独身|どくしん}を{証明|しょうめい}する{書類|しょるい}は{国|くに}によって{違|ちが}うため、{予約|よやく}のときに{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}は、{予約|よやく}のときに「{日本|にほん}の{国籍|こくせき}ではない」と{伝|つた}えます。{独身|どくしん}の{書類|しょるい}は、{予約|よやく}のときに{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If you are a foreign national, say so when booking (\"not a Japanese national\"). Ask at booking which document proves you are single (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "宣誓者が外国籍の方：日本国籍でないこと"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{宣誓|せんせい}と{受領証|じゅりょうしょう}の{交付|こうふ}に{費用|ひよう}はかかりません。{書類|しょるい}の{発行|はっこう}{手数料|てすうりょう}や、{返信|へんしん}{用|よう}の{切手|きって}{代|だい}は{自分|じぶん}で{払|はら}います。",
+        "ja_easy": "{宣誓|せんせい}と{受領証|じゅりょうしょう}は{無料|むりょう}です。{書類|しょるい}を{取|と}るお{金|かね}と{切手|きって}{代|だい}は{自分|じぶん}で{払|はら}います。",
+        "en": "The pledge and the receipt are free. You pay for the documents you obtain and for the return postage."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "（注）宣誓に必要な書類の交付手数料、返信用封筒及び切手代などは、宣誓者の自己負担となります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{受領証|じゅりょうしょう}などは{宣誓|せんせい}から10{日|にち}ほどで{郵送|ゆうそう}されます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{受領証|じゅりょうしょう}は、10{日|にち}ほどで{郵便|ゆうびん}で{届|とど}きます（{要|よう}{確認|かくにん}）。",
+        "en": "The receipt is mailed about 10 days after the pledge (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "交付手続きから交付まで10日ほどかかります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "この{制度|せいど}は{法律|ほうりつ}{上|じょう}の{効果|こうか}（{婚姻|こんいん}や{財産|ざいさん}の{相続|そうぞく}、{税金|ぜいきん}の{控除|こうじょ}など）を{生|しょう}じるものではありません。{在留|ざいりゅう}{資格|しかく}にも{関係|かんけい}しません。",
+        "ja_easy": "この{制度|せいど}には、{結婚|けっこん}と{同|おな}じ{法律|ほうりつ}の{効果|こうか}（{相続|そうぞく}や{税金|ぜいきん}など）はありません。{在留|ざいりゅう}{資格|しかく}にも{関係|かんけい}ありません。",
+        "en": "This system does not create legal effects (marriage, inheritance, tax deductions, etc.). It has no effect on your residence status."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "名古屋市ファミリーシップ制度は、法律上の効果（婚姻や財産の相続、税金の控除等）が生じるものではありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{受領証|じゅりょうしょう}や{受領証明|じゅりょうしょうめい}カードを{見|み}せると{使|つか}える{名古屋市|なごやし}のサービスの{一覧|いちらん}が、{市|し}のページにあります。{制度|せいど}ごとに{条件|じょうけん}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{受領証|じゅりょうしょう}を{見|み}せると{使|つか}える{市|し}のサービスの{一覧|いちらん}が、{市|し}のページにあります。{条件|じょうけん}はサービスごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "The city page lists city services you can use by showing the receipt or card. Each service has its own conditions (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-familyship"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "ファミリーシップ宣誓書受領証や受領証明カード等を提示すること等で、利用可能となる名古屋市の行政サービス等の一覧です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{宣誓|せんせい}した{人|ひと}は、{市営|しえい}{住宅|じゅうたく}に{申|もう}し{込|こ}めます（{宣誓書|せんせいしょ}{記載|きさい}{内容|ないよう}{等|とう}{証明書|しょうめいしょ}が{要|い}ります）。{名古屋市|なごやし}か{愛知県|あいちけん}のどちらの{宣誓|せんせい}でもよいと、{市|し}のページにあります。ほかの{条件|じょうけん}（{所得|しょとく}など）は{市営|しえい}{住宅|じゅうたく}のカードを{見|み}ます。",
+        "ja_easy": "{宣誓|せんせい}した{人|ひと}は、{市営|しえい}{住宅|じゅうたく}に{申|もう}し{込|こ}めます（{宣誓|せんせい}の{証明書|しょうめいしょ}が{要|い}ります）。{名古屋市|なごやし}か{愛知県|あいちけん}の{宣誓|せんせい}でよいです。ほかの{条件|じょうけん}は、{市営|しえい}{住宅|じゅうたく}のカードを{見|み}ます。",
+        "en": "People who have taken the pledge can apply for city housing (a certificate of the pledge contents is required). A pledge to Nagoya or Aichi both count, per the city page. Other conditions (income etc.) are on the city housing card."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-shiei-shikaku-mar"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "名古屋市または愛知県のファミリーシップ制度の宣誓をされた方も申し込むことができます。（ただし、ファミリーシップ宣誓書記載内容等証明書の提出が必要）。"
+      }
+    }
+  ],
+  "keywords": [
+    "パートナーシップ",
+    "ファミリーシップ",
+    "宣誓",
+    "同性",
+    "partnership",
+    "familyship",
+    "pledge",
+    "same-sex",
+    "LGBT",
+    "family system"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{結婚|けっこん}（{婚姻届|こんいんとどけ}）を{選|えら}んだ{人|ひと}には{出|だ}していません。",
+      "ja_easy": "{結婚|けっこん}（{婚姻届|こんいんとどけ}）を{選|えら}んだ{人|ひと}には{出|だ}していません。",
+      "en": "Not shown when you chose marriage registration."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "互いを人生のパートナーとし、日常生活において、対等な立場で継続的な共同生活を行っている又は行うことを約したお2人が市に宣誓し、市が宣誓書受領証等を交付するものです。"
+  }
+}

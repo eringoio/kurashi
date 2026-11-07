@@ -9,7 +9,9 @@ const data = loadData();
 const TODAY = '2026-11-05';
 const A1 = { 'Q-origin': 'abroad', 'Q-role': 'student', 'Q-age-band': '20_59', 'Q-zairyu-back-address': 'no', 'Q-moved-in': 'yes', 'Q-insurance': 'none', 'Q-pension-type': 'none', 'Q-bank-account': false };
 const A1_OBJ = { 'zairyu-card': true, passport: true, 'room-key': true, 'student-id': true };
-const out = (plan = {}) => run(data, { answers: A1, objects: A1_OBJ, plan, createdOn: TODAY, today: TODAY });
+// 画面（src/guide/useGuide.ts）と同じく、引っ越しのできごと（E-move）のカードだけで判定する
+const MOVE = data.events.find((e) => e.id === 'E-move')!;
+const out = (plan = {}) => run(data, { answers: A1, objects: A1_OBJ, plan, createdOn: TODAY, today: TODAY, event: { ...MOVE, questions: [], facts: [] } });
 const ids = (cs: { card: { id: string } }[]) => cs.map((c) => c.card.id);
 
 describe('同じ所の項目は、行く日を一度に聞く', () => {

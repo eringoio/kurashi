@@ -1,0 +1,229 @@
+{
+  "id": "lost-mynumber-reissue",
+  "data_version": 1,
+  "illustration": "mycard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-mynumber",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "マイナンバーカードの{再|さい}{交付|こうふ}",
+    "ja_easy": "マイナンバーカードをもう{一度|いちど}もらう",
+    "en": "Reissue your My Number Card"
+  },
+  "official_name": {
+    "ja": "マイナンバーカードの再交付",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{警察|けいさつ}に{届|とど}けて{受理|じゅり}{番号|ばんごう}を{控|ひか}えたあと、{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）で、{紛失|ふんしつ}・{廃止|はいし}{届|とどけ}と{再|さい}{交付|こうふ}の{申請|しんせい}をします。{本人|ほんにん}か{法定|ほうてい}{代理人|だいりにん}が{行|い}きます。ふつうはカードができるまで{約|やく}1か{月|げつ}です。{家|いえ}の{中|なか}でなくしたときは{遺失|いしつ}{届|とどけ}が{受理|じゅり}されないので、{再|さい}{交付|こうふ}の{手続|てつづ}きのときにその{旨|むね}を{窓口|まどぐち}に{伝|つた}えます。",
+    "ja_easy": "{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}をメモしたあと、{区役所|くやくしょ}で{再|さい}{交付|こうふ}をたのみます。{本人|ほんにん}か{法定|ほうてい}{代理人|だいりにん}が{行|い}きます。カードができるまで、ふつうは{約|やく}1か{月|げつ}かかります。{家|いえ}の{中|なか}でなくしたときは、{警察|けいさつ}は{届|とど}けを{受|う}けつけません。{区役所|くやくしょ}でそのことを{言|い}います。",
+    "en": "After the police report and noting the receipt number, go to the citizens section of your ward office (the resident services section at a branch office) and file the loss/cancellation notice and the reissue application. You or your legal representative must go. Normal issue takes about 1 month. If you lost it inside your home, the police cannot accept a loss report, so tell the counter so when you apply."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}{市民課|しみんか}（{支所|ししょ}は{区民|くみん}{生活課|せいかつか}）",
+      "ja_easy": "{区役所|くやくしょ}の{市民課|しみんか}",
+      "en": "Citizens section of your ward office (resident services section at a branch office)"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-nagoya-faq-2917"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "お住まいの区の区役所市民課または支所区民生活課へご本人又は法定代理人が行き、紛失・廃止届を提出し、再交付申請を行ってください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
+        "verdict": "agree",
+        "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c3"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "C-nagoya-faq-2917"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{紛失|ふんしつ}・{廃止届|はいしとどけ}を{出|だ}して、{再|さい}{交付|こうふ}を{申請|しんせい}します。{本人|ほんにん}か{法定|ほうてい}{代理人|だいりにん}が{行|い}きます。",
+        "ja_easy": "{本人|ほんにん}が{行|い}って、{届|とど}けと{申請|しんせい}をします。",
+        "en": "File the loss/cancellation notice and apply for the reissue. You or your legal representative must go."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お住まいの区の区役所市民課または支所区民生活課へご本人又は法定代理人が行き、紛失・廃止届を提出し、再交付申請を行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c3"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}のとき、{本人|ほんにん}{確認|かくにん}{書類|しょるい}を1{点|てん}{持|も}っていきます。マイナンバーカード・{運転|うんてん}{免許証|めんきょしょう}・{旅券|りょけん}・{在留|ざいりゅう}カード・{特別|とくべつ}{永住者|えいじゅうしゃ}{証明書|しょうめいしょ}・{身体|しんたい}{障害者|しょうがいしゃ}{手帳|てちょう}のうち1{点|てん}です。それがないときは{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{身分証|みぶんしょう}を1まい{持|も}っていきます。{在留|ざいりゅう}カードでもかまいません。ないときは{窓口|まどぐち}で{聞|き}いてください（{要確認|ようかくにん}）。",
+        "en": "Bring one ID: My Number Card, driver licence, passport, residence card, special permanent resident certificate or disability certificate. If you have none, ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "(1) マイナンバーカード・運転免許証・旅券・在留カード・特別永住者証明書・身体障害者手帳のうち1点",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{再|さい}{交付|こうふ}の{申請|しんせい}には、{顔写真|かおじゃしん}（{縦|たて}4.5cm×{横|よこ}3.5cm）が{要|い}ります。{本人|ほんにん}{確認|かくにん}はカードを{受|う}け{取|と}るときにします。",
+        "ja_easy": "{顔写真|かおじゃしん}（{縦|たて}4.5cm×{横|よこ}3.5cm）を{持|も}っていきます。",
+        "en": "Bring a photo (4.5 cm tall x 3.5 cm wide) for the reissue application. Your identity is checked when you receive the card."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "■顔写真（縦4.5cm×横3.5cm） ※本人確認はマイナンバーカード受け取りの際に実施",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{再|さい}{交付|こうふ}の{手数料|てすうりょう}は1,000{円|えん}です（{電子|でんし}{証明書|しょうめいしょ}が{不要|ふよう}なときは800{円|えん}）。カードを{受|う}け{取|と}るときに{払|はら}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{手数料|てすうりょう}は1,000{円|えん}です。カードをもらうときに{払|はら}います（{要確認|ようかくにん}）。",
+        "en": "The reissue fee is 1,000 yen (800 yen without the electronic certificate), paid when you receive the card (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "再交付手数料は1000円（電子証明書が不要の場合は800円）です。 ※手数料はマイナンバーカード受け取りの際に支払い"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "カードができたら、{交付|こうふ}{通知書|つうちしょ}に{書|か}いてある{場所|ばしょ}（{住所地|じゅうしょち}の{区役所|くやくしょ}・{支所|ししょ}）に、{交付|こうふ}{通知書|つうちしょ}と{本人|ほんにん}{確認|かくにん}{書類|しょるい}を{持|も}って{受|う}け{取|と}りに{行|い}きます。",
+        "ja_easy": "カードができたら、{通知書|つうちしょ}と{身分証|みぶんしょう}を{持|も}って{区役所|くやくしょ}に{受|う}け{取|と}りに{行|い}きます。",
+        "en": "When the card is ready, take the delivery notice and an ID to the ward office or branch office shown on the notice to collect it."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "交付通知書に記載された交付場所（住所地の区役所・支所）へ、交付通知書及び本人確認書類（＊）をお持ちいただき、マイナンバーカードをお受け取りください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c15"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{特急|とっきゅう}で{作|つく}る{制度|せいど}があります（{原則|げんそく}1{週間|しゅうかん}。{手数料|てすうりょう}2,000{円|えん}、{電子|でんし}{証明|しょうめい}{書|しょ}が{要|い}らないときは1,800{円|えん}）。{使|つか}える{期間|きかん}は「30{日|にち}{以内|いない}」ですが、いつから{数|かぞ}えるかは{公式|こうしき}の{案内|あんない}で{書|か}き{方|かた}が{違|ちが}います（なくした{日|ひ}から／{紛失|ふんしつ}{届|とどけ}を{出|だ}した{日|ひ}から）。{区役所|くやくしょ}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{早|はや}く{作|つく}る{方法|ほうほう}もあります。いつまでかは、{区役所|くやくしょ}で{聞|き}いてください。",
+        "en": "There is an express reissue (about 1 week; 2,000 yen, or 1,800 yen without e-certificates). It must be within 30 days, but official pages differ on when the 30 days start (the loss, or the loss report). Ask the ward office (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "R-digital-safety",
+          "R-jlis-express4"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "紛失の場合、市区町村に紛失届を出した日から30日以内となります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{再|さい}{交付|こうふ}のときは、なくしたカードの{廃止|はいし}{手続|てつづ}きが{必要|ひつよう}です。",
+        "ja_easy": "{再|さい}{交付|こうふ}のときは、なくしたカードを{使|つか}えなくする{手続|てつづ}き（{廃止|はいし}）が{要|い}ります。",
+        "en": "For a reissue, the lost card must be cancelled (abolished)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-kojinbango-lost1"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "再交付にあたっては、紛失したカードの廃止手続きが必要ですのでご注意ください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-card-stop/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{自宅|じたく}でなくしたため{遺失|いしつ}{届|とどけ}が{受理|じゅり}されないときは、{再|さい}{交付|こうふ}の{手続|てつづ}きのときにその{旨|むね}を{伝|つた}えます。",
+        "ja_easy": "{家|いえ}でなくして、{警察|けいさつ}の{遺失|いしつ}{届|とどけ}が{受|う}けつけられないときは、{再|さい}{交付|こうふ}の{手続|てつづ}きのときに、そのことを{言|い}います。",
+        "en": "If the loss report is not accepted because you lost it at home, say so when you apply for the reissue."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-kojinbango-lost1"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "また自宅紛失のため遺失届が受理されない場合は、再発行手続きの際にその旨をお伝えください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-card-stop/c10"
+        }
+      }
+    }
+  ]
+}

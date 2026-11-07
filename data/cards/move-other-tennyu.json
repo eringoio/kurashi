@@ -1,0 +1,99 @@
+{
+  "id": "move-other-tennyu",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-other",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{新|あたら}しい{市区|しく}{町村|ちょうそん}で{転入|てんにゅう}{届|とどけ}",
+    "ja_easy": "{新|あたら}しい{市|し}で{転入|てんにゅう}{届|とどけ}",
+    "en": "Move-in notice at your new city"
+  },
+  "official_name": {
+    "ja": "新しい市区町村で転入届",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{住|す}み{始|はじ}めてから14{日|にち}{以内|いない}に、{新|あたら}しい{市区|しく}{町村|ちょうそん}に{転入|てんにゅう}{届|とどけ}を{出|だ}します。{転出|てんしゅつ}{証明|しょうめい}{書|しょ}（またはマイナンバーカード）と{在留|ざいりゅう}カードを{持|も}っていきます。{在留|ざいりゅう}カードの{裏|うら}に{新|あたら}しい{住所|じゅうしょ}が{書|か}かれます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{転出|てんしゅつ}{証明|しょうめい}{書|しょ}と{在留|ざいりゅう}カードを{持|も}っていきます（{要|よう}{確認|かくにん}）。",
+    "en": "Within 14 days of moving in, file a move-in notice at your new city. Bring the move-out certificate (or My Number Card) and your residence card. The new address is written on the back of the residence card (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{住|す}み{始|はじ}めてから14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of moving in (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "egov-juki-ho",
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{新|あたら}しい{市区|しく}{町村|ちょうそん}の{窓口|まどぐち}",
+      "ja_easy": "{新|あたら}しい{市|し}の{窓口|まどぐち}",
+      "en": "Counter of your new city"
+    },
+    "evidence": {
+      "source_ids": [
+        "egov-juki-ho",
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "methods": [],
+  "keywords": [
+    "転出届",
+    "てんしゅつ",
+    "引っ越し",
+    "市外",
+    "move out",
+    "tenshutsu",
+    "moving to another city"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{名古屋|なごや}{市|し}に{関係|かんけい}しない{引|ひ}っ{越|こ}しのときだけです。",
+      "ja_easy": "{名古屋|なごや}{市|し}ではない{引|ひ}っ{越|こ}しのときだけです。",
+      "en": "Only when the move does not involve Nagoya."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "egov-juki-ho",
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-07",
+    "status": "needs_check"
+  },
+  "lead": {
+    "ja": "{住|す}み{始|はじ}めてから14{日|にち}{以内|いない}に、{新|あたら}しい{市区|しく}{町村|ちょうそん}に{転入|てんにゅう}{届|とどけ}を{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{住|す}み{始|はじ}めて14{日|にち}{以内|いない}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
+    "en": "Within 14 days of moving in, file a move-in notice at your new city (to be checked)."
+  },
+  "notices": [
+    {
+      "text": {
+        "ja": "このアプリはいま{名古屋|なごや}{市|し}を{主|おも}に{案内|あんない}しています。くわしくは、{新|あたら}しい{市区|しく}{町村|ちょうそん}の{案内|あんない}で{確|たし}かめてください。",
+        "ja_easy": "このアプリは{名古屋|なごや}{市|し}の{案内|あんない}が{中心|ちゅうしん}です。{新|あたら}しい{市|し}のページでも{確|たし}かめてください。",
+        "en": "This app mainly covers Nagoya. Please also check the guide of your new city."
+      }
+    }
+  ]
+}

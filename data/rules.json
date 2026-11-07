@@ -1313,6 +1313,746 @@
         "checked_at": "2026-11-04",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-mo-city",
+      "kind": "selection",
+      "condition": {
+        "fact": "move_dest",
+        "eq": "other_city"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}から、ほかの{市町村|しちょうそん}（{日本|にほん}の{中|なか}）へ{引|ひ}っ{越|こ}す",
+        "ja_easy": "{名古屋|なごや}{市|し}から、ほかの{市町村|しちょうそん}（{日本|にほん}の{中|なか}）へ{引|ひ}っ{越|こ}す",
+        "en": "You are moving from Nagoya to another municipality in Japan"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-abroad",
+      "kind": "selection",
+      "condition": {
+        "fact": "move_dest",
+        "eq": "abroad"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}から、{日本|にほん}の{外|そと}（{国外|こくがい}）へ{引|ひ}っ{越|こ}す",
+        "ja_easy": "{名古屋|なごや}{市|し}から、{日本|にほん}の{外|そと}へ{引|ひ}っ{越|こ}す",
+        "en": "You are moving from Nagoya to outside Japan"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}から{引|ひ}っ{越|こ}す{人|ひと}の{案内|あんない}です。",
+        "ja_easy": "{名古屋|なごや}{市|し}から{引|ひ}っ{越|こ}す{人|ひと}の{案内|あんない}です。",
+        "en": "This guide is for people moving out of Nagoya."
+      },
+      "reason_when_false": {
+        "ja": "このアプリは{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}します。ほかの{市町村|しちょうそん}の{中|なか}だけの{引|ひ}っ{越|こ}しは、その{市町村|しちょうそん}の{案内|あんない}で{確認|かくにん}してください。",
+        "ja_easy": "このアプリは、{名古屋|なごや}{市|し}に{住|す}む{人|ひと}のためのものです。ほかの{市|し}の{中|なか}で{引|ひ}っ{越|こ}すときは、その{市|し}の{案内|あんない}を{見|み}てください。",
+        "en": "This app guides people who live in Nagoya. For a move inside another municipality, please check that municipality's guide."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-other",
+      "kind": "selection",
+      "condition": {
+        "fact": "move_dest",
+        "eq": "not_nagoya"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}に{関係|かんけい}しない{引|ひ}っ{越|こ}しです。",
+        "ja_easy": "{名古屋|なごや}{市|し}ではない{引|ひ}っ{越|こ}しです。",
+        "en": "The move does not involve Nagoya."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-scope",
+      "kind": "scope",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "marriage"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}した",
+        "ja_easy": "{結婚|けっこん}した",
+        "en": "I got married"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_kind",
+        "in": [
+          "japanese_foreign",
+          "foreign_foreign"
+        ]
+      },
+      "statement": {
+        "ja": "ふたりのどちらかが{外国|がいこく}{籍|せき}",
+        "ja_easy": "ふたりのどちらかが{外国|がいこく}の{国籍|こくせき}",
+        "en": "At least one of the two is a foreign national"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-japanese-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_kind",
+        "eq": "japanese_foreign"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と{外国|がいこく}{籍|せき}の{人|ひと}の{結婚|けっこん}",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}と{外国|がいこく}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}",
+        "en": "One Japanese national and one foreign national"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-name-changed",
+      "kind": "selection",
+      "condition": {
+        "fact": "name_changed",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる",
+        "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる",
+        "en": "My name will change because of the marriage"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-konin",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_type",
+        "eq": "konin"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}（{婚姻届|こんいんとどけ}）",
+        "ja_easy": "{結婚|けっこん}（{婚姻届|こんいんとどけ}）",
+        "en": "Marriage (registration)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-partner",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_type",
+        "eq": "partnership"
+      },
+      "statement": {
+        "ja": "パートナーシップ・ファミリーシップの{宣誓|せんせい}",
+        "ja_easy": "パートナーシップ・ファミリーシップの{宣誓|せんせい}",
+        "en": "Partnership / familyship pledge"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-scope",
+      "kind": "scope",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "divorce"
+      },
+      "statement": {
+        "ja": "{離婚|りこん}した",
+        "ja_easy": "{離婚|りこん}した",
+        "en": "I got divorced"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-spouse-status",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "family",
+              "spouse"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」",
+        "en": "My status is \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\""
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-agreement",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_route",
+        "eq": "agreement"
+      },
+      "statement": {
+        "ja": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）",
+        "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）",
+        "en": "Divorce by agreement"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-court",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_route",
+        "eq": "court"
+      },
+      "statement": {
+        "ja": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった",
+        "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった",
+        "en": "Divorce decided by mediation or court"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-japanese",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_japanese",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "あなたか{相手|あいて}が{日本|にほん}{国籍|こくせき}",
+        "ja_easy": "あなたか{相手|あいて}が{日本|にほん}の{国籍|こくせき}",
+        "en": "You or your spouse is a Japanese national"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-scope",
+      "kind": "scope",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-wallet",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "lost_wallet"
+      },
+      "statement": {
+        "ja": "{財布|さいふ}をなくした",
+        "ja_easy": "{財布|さいふ}をなくした",
+        "en": "You lost your wallet"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-payment",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "fact": "lost_items",
+            "has": "cash_card"
+          },
+          {
+            "fact": "lost_items",
+            "has": "credit_card"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "お{金|かね}のカードが{入|はい}っていた",
+        "ja_easy": "お{金|かね}のカードがあった",
+        "en": "A bank or credit card was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-zairyu",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "zairyu_card"
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}カードが{入|はい}っていた",
+        "ja_easy": "{在留|ざいりゅう}カードがあった",
+        "en": "Your residence card was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-mynumber",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "mynumber_card"
+      },
+      "statement": {
+        "ja": "マイナンバーカードが{入|はい}っていた",
+        "ja_easy": "マイナンバーカードがあった",
+        "en": "Your My Number Card was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-license",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "license"
+      },
+      "statement": {
+        "ja": "{運転|うんてん}{免許|めんきょ}{証|しょう}が{入|はい}っていた",
+        "ja_easy": "{運転免許証|うんてんめんきょしょう}があった",
+        "en": "Your driver's license was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-hoken",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "health_insurance"
+      },
+      "statement": {
+        "ja": "{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}などが{入|はい}っていた",
+        "ja_easy": "{保険|ほけん}の{紙|かみ}があった",
+        "en": "Your health insurance certificate was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-passport-jp",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "lost_items",
+            "has": "passport"
+          },
+          {
+            "fact": "passport_country",
+            "eq": "japan"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{日本|にほん}の{旅券|りょけん}が{入|はい}っていた",
+        "ja_easy": "{日本|にほん}のパスポートがあった",
+        "en": "Your Japanese passport was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-passport-foreign",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "lost_items",
+            "has": "passport"
+          },
+          {
+            "fact": "passport_country",
+            "eq": "other_country"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{日本|にほん}{以外|いがい}の{国|くに}の{旅券|りょけん}が{入|はい}っていた",
+        "ja_easy": "ほかの{国|くに}のパスポートがあった",
+        "en": "A passport from another country was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-reported",
+      "kind": "selection",
+      "condition": {
+        "fact": "police_reported",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{警察|けいさつ}にはもう{届|とど}けた",
+        "ja_easy": "{警察|けいさつ}にもう{言|い}った",
+        "en": "Already reported to the police"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-reported-online",
+      "kind": "selection",
+      "condition": {
+        "fact": "police_reported",
+        "eq": "online_waiting"
+      },
+      "statement": {
+        "ja": "オンラインで{送|おく}り、{受理|じゅり}{番号|ばんごう}の{知|し}らせを{待|ま}っている",
+        "ja_easy": "インターネットで{送|おく}って、{待|ま}っている",
+        "en": "You sent it online and are waiting for the receipt number"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-no-zairyu",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "fact": "lost_items",
+          "has": "zairyu_card"
+        }
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}カードは{入|はい}っていなかった",
+        "ja_easy": "{在留|ざいりゅう}カードはなかった",
+        "en": "Your residence card was not inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-scope",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "だれでも{使|つか}えます。",
+        "ja_easy": "だれでも{使|つか}えます。",
+        "en": "Anyone can use this."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-new",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "new"
+      },
+      "statement": {
+        "ja": "{運転|うんてん}{免許|めんきょ}を{新|あたら}しく{取|と}る",
+        "ja_easy": "{運転|うんてん}{免許|めんきょ}を{新|あたら}しく{取|と}る",
+        "en": "You want to get a driving licence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-switch",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "switch"
+      },
+      "statement": {
+        "ja": "{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}える",
+        "ja_easy": "{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}にかえる",
+        "en": "You want to convert a foreign licence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-renew",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "renew"
+      },
+      "statement": {
+        "ja": "{免許|めんきょ}を{更新|こうしん}する",
+        "ja_easy": "{免許|めんきょ}を{更新|こうしん}する",
+        "en": "You want to renew your licence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-change",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "change"
+      },
+      "statement": {
+        "ja": "{住所|じゅうしょ}・{名前|なまえ}が{変|か}わった",
+        "ja_easy": "{住所|じゅうしょ}・{名前|なまえ}が{変|か}わった",
+        "en": "Your address or name has changed"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-lost",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "lost"
+      },
+      "statement": {
+        "ja": "{免許証|めんきょしょう}をなくした・{汚|よご}した",
+        "ja_easy": "{免許証|めんきょしょう}をなくした・{汚|よご}した",
+        "en": "You lost or damaged your licence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      }
     }
   ]
 }

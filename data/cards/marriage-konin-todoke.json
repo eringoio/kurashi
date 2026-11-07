@@ -1,0 +1,256 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-konin-todoke",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-event"
+    ]
+  },
+  "title": {
+    "ja": "{婚姻届|こんいんとどけ}",
+    "ja_easy": "{結婚|けっこん}の{届|とど}け（{婚姻届|こんいんとどけ}）",
+    "en": "Marriage registration"
+  },
+  "official_name": {
+    "ja": "婚姻届",
+    "reading": "こんいんとどけ"
+  },
+  "summary": {
+    "ja": "{区役所|くやくしょ}の{市民課|しみんか}（{支所|ししょ}は{区民生活課|くみんせいかつか}）に{婚姻届|こんいんとどけ}を{出|だ}します。{婚姻届|こんいんとどけ}に{期限|きげん}は{定|さだ}められておらず、{届出|とどけで}をしたときから{効力|こうりょく}があります（{要|よう}{確認|かくにん}）。「14{日|にち}{以内|いない}」ではありません。{夫婦|ふうふ}それぞれの{署名|しょめい}と、{成人|せいじん}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{要|い}ります。",
+    "ja_easy": "{区役所|くやくしょ}で、{結婚|けっこん}の{届|とど}け（{婚姻届|こんいんとどけ}）を{出|だ}します。{出|だ}す{日|ひ}の{決|き}まりはありません。{出|だ}したときから、{結婚|けっこん}の{効力|こうりょく}が{始|はじ}まります（{要|よう}{確認|かくにん}）。「14{日|にち}いない」ではありません。ふたりの{署名|しょめい}と、{大人|おとな}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{要|い}ります。",
+    "en": "Submit the marriage registration at the ward office. No filing deadline is set: it takes effect when you file it (to be checked). It is not \"within 14 days\". It needs both spouses' signatures and the signatures of two adult witnesses."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{期限|きげん}なし（{届出|とどけで}をしたときから{効力|こうりょく}があります）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{出|だ}す{日|ひ}の{決|き}まりはありません（{出|だ}したときから{効力|こうりょく}があります）（{要|よう}{確認|かくにん}）",
+      "en": "No deadline (it takes effect when filed) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "届出期間 期限なし(届出をしたときから効力があります)"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office (citizens' section) or branch office"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "窓口:区役所市民課・支所区民生活課",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c1"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}の{場所|ばしょ}は、{夫|おっと}か{妻|つま}の{本籍|ほんせき}{地|ち}または{所在地|しょざいち}の{区役所|くやくしょ}・{支所|ししょ}です。",
+        "ja_easy": "{出|だ}す{場所|ばしょ}は、{夫|おっと}か{妻|つま}の{本籍|ほんせき}の{区|く}か、いま{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}）です。",
+        "en": "File at the ward or branch office for the registered domicile or the current address of either spouse."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出の場所 夫もしくは妻の本籍地または所在地の区役所・支所",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}に、{夫婦|ふうふ}{双方|そうほう}の{署名|しょめい}と、{成人|せいじん}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{要|い}ります。{押印|おういん}は{任意|にんい}です。",
+        "ja_easy": "{届|とど}けの{紙|かみ}に、ふたりの{署名|しょめい}と、{大人|おとな}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{要|い}ります。はんこは、なくてもよいです。",
+        "en": "The form needs both spouses' signatures and two adult witnesses' signatures. A seal is optional."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届書(夫婦双方の署名、成人の証人2人の届書への署名がしてあるもの。押印は任意。)",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}をする{人|ひと}の{本人|ほんにん}{確認|かくにん}ができる{物|もの}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{旅券|りょけん}など）を{持|も}っていきます。",
+        "ja_easy": "{届|とど}けに{行|い}く{人|ひと}の{身分|みぶん}{証明|しょうめい}{書|しょ}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、パスポートなど）を{持|も}っていきます。",
+        "en": "Bring identification for the person filing (My Number Card, driver's license, passport, etc.)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出をする人の本人確認をする資料(マイナンバーカード、運転免許証、旅券など)",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}は{記載|きさい}{例|れい}を{見|み}て{書|か}きます。わからないことは、{出|だ}す{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}に{問|と}い{合|あ}わせます。",
+        "ja_easy": "{届|とど}けの{紙|かみ}は、{書|か}き{方|かた}の{見本|みほん}を{見|み}て{書|か}きます。わからないことは、{出|だ}す{区役所|くやくしょ}に{聞|き}きます。",
+        "en": "Fill in the form using the sample entries. Ask the ward or branch office where you file if anything is unclear."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届書は記載例を確認して記載し、不明な点は提出先の区役所市民課・支所区民生活課にお問合せください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}に{不備|ふび}があると、{後日|ごじつ}、{来庁|らいちょう}を{求|もと}められることがあります。{平日|へいじつ}の{昼間|ひるま}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{届|とどけ}{書|しょ}に{書|か}きます。",
+        "ja_easy": "{届|とど}けの{紙|かみ}にまちがいがあると、あとで{区役所|くやくしょ}に{行|い}くことがあります。{平日|へいじつ}の{昼|ひる}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{紙|かみ}に{書|か}きます。",
+        "en": "If the form has errors you may be asked to come back later. Write a number that can be reached on weekday daytime."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届書に不備がある場合は、後日ご来庁いただく場合があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c11"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}で{結婚|けっこん}するときは、ふたりに{結婚|けっこん}の{条件|じょうけん}がそろっていると{認|みと}められて{届出|とどけで}が{受理|じゅり}されると、{結婚|けっこん}が{成立|せいりつ}します（{日本人|にほんじん}と{外国|がいこく}{人|じん}、または{外国|がいこく}{人|じん}どうしの{場合|ばあい}の{法務省|ほうむしょう}の{説明|せつめい}）。",
+        "ja_easy": "{日本|にほん}で{結婚|けっこん}するときは、{条件|じょうけん}がそろっていて、{届|とど}けが{受|う}け{取|と}られると、{結婚|けっこん}が{成立|せいりつ}します（{法務省|ほうむしょう}の{説明|せつめい}）。",
+        "en": "When you marry in Japan, the marriage is formed when the registration is accepted after both people are found to meet the requirements (Ministry of Justice explanation for cases involving foreign nationals)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "両当事者に婚姻の要件が備わっていると認められ、届出が受理されると、有効な婚姻が成立します",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}はA3サイズの{白|しろ}い{普通|ふつう}{紙|し}で、{欠|か}けやかすれがないように{印刷|いんさつ}します。{守|まも}らないと{受理|じゅり}できないことがあります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{届|とど}けの{紙|かみ}は、A3の{白|しろ}い{紙|かみ}に、はっきり{印刷|いんさつ}します。{守|まも}らないと、{受|う}け{取|と}れないことがあります（{要|よう}{確認|かくにん}）。",
+        "en": "Print the form on plain white A3 paper without missing parts or fading. It may not be accepted otherwise (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "A3サイズで印刷して使用してください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}は24{時間|じかん}365{日|にち}{出|だ}せます。{開|ひらき}{庁|ちょう}{時間|じかん}{外|がい}は{守衛|しゅえい}{室|しつ}で{預|あず}かり、{次|つぎ}の{受付|うけつけ}{時間|じかん}に{記載|きさい}{内容|ないよう}を{確認|かくにん}してから{正式|せいしき}に{受理|じゅり}されます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{届|とど}けは、24{時間|じかん}いつでも{出|だ}せます。{時間|じかん}{外|がい}は、{次|つぎ}の{受付|うけつけ}のときに{中|なか}を{確|たし}かめてから{受|う}け{取|と}られます（{要|よう}{確認|かくにん}）。",
+        "en": "You can submit the form at any time. Outside office hours it is kept at the guard room and formally accepted after checking in the next open hours (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "翌受付時間帯に記載内容を確認してから正式に受理をします。"
+      }
+    }
+  ],
+  "keywords": [
+    "婚姻届",
+    "結婚",
+    "こんいん",
+    "こんいんとどけ",
+    "marriage",
+    "marriage registration",
+    "get married"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-konin-rikon"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "窓口:区役所市民課・支所区民生活課"
+  }
+}

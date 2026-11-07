@@ -1,0 +1,225 @@
+{
+  "id": "lost-passport-jp",
+  "data_version": 1,
+  "illustration": "passport",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-passport-jp",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{日本|にほん}の{旅券|りょけん}の{紛失|ふんしつ}{届|とどけ}",
+    "ja_easy": "{日本|にほん}のパスポートをなくした{届|とど}け",
+    "en": "Report a lost Japanese passport"
+  },
+  "official_name": {
+    "ja": "日本の旅券の紛失届",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "すぐに{警察|けいさつ}{署|しょ}へ{届|とど}け、そのあと{愛知|あいち}{県|けん}の{旅券|りょけん}{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。{紛失|ふんしつ}{届|とどけ}を{出|だ}すと、そのパスポートは{失効|しっこう}します。{新|あたら}しい{旅券|りょけん}の{申請|しんせい}も{同時|どうじ}にできます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "すぐに{警察|けいさつ}{署|しょ}に{届|とど}けます。そのあと、{愛知|あいち}{県|けん}の{旅券|りょけん}の{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。{届|とど}けると、そのパスポートは{使|つか}えなくなります。{新|あたら}しい{旅券|りょけん}の{申請|しんせい}も{同時|どうじ}にできます（{要|よう}{確認|かくにん}）。",
+    "en": "Report it to the police right away, then file a loss notice at the Aichi passport counter. Once you file, that passport is invalidated. You can apply for a new one at the same time (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{愛知|あいち}{県|けん}の{旅券|りょけん}{窓口|まどぐち}",
+      "ja_easy": "{愛知県|あいちけん}のパスポートの{窓口|まどぐち}",
+      "en": "Aichi Prefecture passport office"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-passport-funshitsu"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "place": "pref_passport",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "C-aichi-passport-funshitsu"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{先|さき}に{警察|けいさつ}{署|しょ}に{届|とど}け{出|で}て、そのあとで{愛知|あいち}{県|けん}の{旅券|りょけん}{窓口|まどぐち}（{都道府県|とどうふけん}の{申請|しんせい}{窓口|まどぐち}）に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。",
+        "ja_easy": "{先|さき}に{警察|けいさつ}{署|しょ}に{届|とど}けます。そのあと、{愛知|あいち}{県|けん}の{旅券|りょけん}の{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。",
+        "en": "Report to the police first, then file the loss notice at the prefectural passport counter (Aichi)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mofa-passport-qa"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "まず、警察署に届出を、その後に各都道府県の申請窓口に紛失届を提出してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "5ee5841e7656834911b4101ecfa3149187c1748044e83d7cd73bcbb20bf5d32a",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-jp/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{紛失|ふんしつ}{一般|いっぱん}{旅券|りょけん}{等|とう}{届出|とどけで}{書|しょ}に、{警察|けいさつ}に{届|とど}け{出|で}た{遺失|いしつ}（{盗難|とうなん}）{届|とどけ}の{受理|じゅり}{番号|ばんごう}・{日付|ひづけ}・{警察|けいさつ}{署|しょ}の{名前|なまえ}を{書|か}きます。{届出|とどけで}{書|しょ}は{受付|うけつけ}{窓口|まどぐち}にあります。",
+        "ja_easy": "{届出|とどけで}{書|しょ}（{紛失|ふんしつ}{一般|いっぱん}{旅券|りょけん}{等|とう}{届出|とどけで}{書|しょ}）に、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}と{日付|ひづけ}、{警察|けいさつ}{署|しょ}の{名前|なまえ}を{書|か}きます。{届出|とどけで}{書|しょ}は、{窓口|まどぐち}にあります。",
+        "en": "On the loss notification form, write the police receipt number, date and station name. The form is available at the counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "紛失一般旅券等届出書に、警察へ届け出た遺失（盗難）届",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-jp/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{火災|かさい}や{災害|さいがい}でなくした・{焼|や}けたときは、{消防署|しょうぼうしょ}または{市区|しく}{町村|ちょうそん}が{出|だ}したり{災|わざわい}{証明|しょうめい}{書|しょ}を{出|だ}します。",
+        "ja_easy": "{火事|かじ}や{災害|さいがい}でなくした・{燃|も}えたときは、{消防署|しょうぼうしょ}か{市区|しく}{町村|ちょうそん}が{出|だ}した、り{災|さい}{証明|しょうめい}{書|しょ}を{出|だ}します。",
+        "en": "If lost or burned in a fire or disaster, submit a disaster certificate issued by the fire department or municipality."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "り災証明書（消防署又は市区町村が発行したもの）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-jp/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{紛失|ふんしつ}の{届出|とどけで}をすると、そのパスポートは{失効|しっこう}します。{届出|とどけで}のあとで{見|み}つかっても、{使|つか}うことはできません。{見|み}つかったときは、{穴|あな}あけの{処理|しょり}のために{旅券|りょけん}{窓口|まどぐち}に{持|も}って{行|い}きます。",
+        "ja_easy": "{届|とど}けると、そのパスポートは{使|つか}えなくなります。あとで{見|み}つかっても、{使|つか}えません。{見|み}つかったら、{穴|あな}をあける{処理|しょり}のために、{旅券|りょけん}の{窓口|まどぐち}に{持|も}って{行|い}きます。",
+        "en": "Once you file the notice, the passport is invalid. If you find it later you still cannot use it; take it to the passport counter to be punched."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "紛失の届出後に紛失したパスポートを発見した場合でも、そのパスポートは使用することができません。穴あけ処理をしますので、各旅券窓口までお持ちください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-jp/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{家|いえ}の{外|そと}でなくしたとき、または{盗|ぬす}まれたときは、{警察|けいさつ}に{遺失|いしつ}（{盗難|とうなん}）{届|とどけ}を{出|だ}したことを{証明|しょうめい}する{書類|しょるい}か、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}の{控|ひか}えを{出|だ}します。",
+        "ja_easy": "{家|いえ}の{外|そと}でなくしたとき、{盗|ぬす}まれたときは、{警察|けいさつ}に{届|とど}けたことがわかる{書類|しょるい}か、{受理|じゅり}{番号|ばんごう}のメモを{出|だ}します。",
+        "en": "If lost outside the home or stolen, submit proof of the police report or a copy of the police receipt number."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "警察に遺失（盗難）届を提出したことを証明する書類又は警察の受理番号の控え"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{紛失|ふんしつ}の{届出|とどけいで}だけのときは、{届出|とどけで}{日|び}の{前|ぜん}6か{月|げつ}{以内|いない}に{撮|と}ったパスポート{用|よう}の{写真|しゃしん}が1{枚|まい}{要|い}ります。",
+        "ja_easy": "{届|とど}けだけのときは、{届|とど}ける{日|ひ}の{前|ぜん}6か{月|げつ}{以内|いない}に{撮|と}った、パスポート{用|よう}の{写真|しゃしん}が1{枚|まい}{要|い}ります。",
+        "en": "For a loss notice alone, one passport photo taken within 6 months before the filing date is needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "届出日前6か月以内に撮影されたもの。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}のときは、{運転|うんてん}{免許|めんきょ}{証|しょう}などの{身元|みもと}{確認|かくにん}{書類|しょるい}を{見|み}せます。",
+        "ja_easy": "{届|とど}けるときは、{運転|うんてん}{免許|めんきょ}{証|しょう}などの{身分|みぶん}のわかる{書類|しょるい}を{見|み}せます。",
+        "en": "Show ID such as a driver's license when you file the notice."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mofa-passport-qa"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "その際、運転免許証等の身元確認書類の提示が必要です。"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{電子|でんし}{申請|しんせい}でも{届|とど}け{出|で}られますが、マイナンバーカードの2{種類|しゅるい}のパスワードが{必要|ひつよう}です（{利用|りよう}{者|しゃ}{証明|しょうめい}{用|よう}は{数字|すうじ}4{桁|けた}、{署名|しょめい}{用|よう}は6〜16{桁|けた}）。",
+        "ja_easy": "インターネットでも{届|とど}けられます。マイナンバーカードの2つのパスワードが{要|い}ります。",
+        "en": "You can file online, but you need two passwords of your My Number Card (a 4-digit one and a 6-16 character one)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu-denshi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "利用者証明用電子証明書パスワード（数字4桁）及び署名用電子証明書用暗証番号（大文字英字と数字含む6～16桁）が必要です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "パスポートを{紛失|ふんしつ}・{焼失|しょうしつ}した{人|ひと}、{盗|ぬす}まれた{人|ひと}は、{代理人|だいりにん}による{提出|ていしゅつ}はできません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "なくした{人|ひと}、{燃|も}やした{人|ひと}、{盗|ぬす}まれた{人|ひと}は、{代理|だいり}の{人|ひと}は{出|だ}せません（{要|よう}{確認|かくにん}）。",
+        "en": "If your passport was lost, burned or stolen, a proxy cannot submit the application (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-dairi"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "有効中のパスポートを紛失・焼失された方、又は盗難にあった方"
+      }
+    }
+  ]
+}

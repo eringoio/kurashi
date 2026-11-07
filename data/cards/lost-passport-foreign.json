@@ -1,0 +1,84 @@
+{
+  "id": "lost-passport-foreign",
+  "data_version": 1,
+  "illustration": "passport",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-passport-foreign",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{外国|がいこく}の{旅券|りょけん}をなくしたとき",
+    "ja_easy": "ほかの{国|くに}のパスポートをなくしたとき",
+    "en": "If you lost a foreign passport"
+  },
+  "official_name": {
+    "ja": "外国旅券の紛失",
+    "reading": "がいこくりょけんのふんしつ"
+  },
+  "summary": {
+    "ja": "{発行|はっこう}した{国|くに}の{在日|ざいにち}{大使館|たいしかん}・{領事館|りょうじかん}に{連絡|れんらく}します。{手続|てつづ}きと{必要|ひつよう}な{物|もの}は{国|くに}ごとに{違|ちが}うので、{大使館|たいしかん}・{領事館|りょうじかん}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{自分|じぶん}の{国|くに}の{大使館|たいしかん}に{連絡|れんらく}します。{国|くに}によって{違|ちが}います（{要確認|ようかくにん}）。",
+    "en": "Contact your country's embassy or consulate in Japan. Steps and documents differ by country, so ask them (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{発行|はっこう}した{国|くに}の{在日|ざいにち}{大使館|たいしかん}・{領事館|りょうじかん}（{外務省|がいむしょう}の{駐日|ちゅうにち}{外国|がいこく}{公館|こうかん}リスト）",
+      "ja_easy": "{自分|じぶん}の{国|くに}の{大使館|たいしかん}",
+      "en": "Your country's embassy or consulate in Japan (MOFA list)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mofa-emblist"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "place": "embassy",
+  "kind": "procedure",
+  "keywords": [
+    "passport",
+    "embassy",
+    "大使館",
+    "旅券"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mofa-emblist"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{旅券|りょけん}は{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}のときにも{見|み}せます。{旅券|りょけん}もなくしたときは、{見|み}せられない{理由|りゆう}を{書|か}いた{理由|りゆう}{書|しょ}が{要|い}ります。",
+        "ja_easy": "パスポートは、{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}のときにも{見|み}せます。パスポートもなくしたときは、わけを{書|か}いた{紙|かみ}（{理由|りゆう}{書|しょ}）が{要|い}ります。",
+        "en": "You also show your passport when applying to reissue a residence card. If you lost the passport too, a written explanation is needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "旅券（又は在留資格証明書）を提示できないとき（自宅に忘れた等の理由を除く）は、その理由を記載した理由書",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-foreign/c4"
+        }
+      }
+    }
+  ]
+}

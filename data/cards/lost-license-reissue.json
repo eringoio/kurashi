@@ -1,0 +1,96 @@
+{
+  "id": "lost-license-reissue",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-license",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{運転|うんてん}{免許|めんきょ}{証|しょう}の{再|さい}{交付|こうふ}",
+    "ja_easy": "{運転免許証|うんてんめんきょしょう}をもう{一度|いちど}もらう",
+    "en": "Reissue your driver's license"
+  },
+  "official_name": {
+    "ja": "運転免許証の再交付",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}などで{申請|しんせい}します。{再|さい}{交付|こうふ}の{条件|じょうけん}に{警察|けいさつ}の{届出|とどけで}は{書|か}かれていませんが、{愛知|あいち}{県警|けんけい}は、{免許|めんきょ}{証|しょう}をなくしたときは{速|すみ}やかに{警察|けいさつ}に{届|とど}け{出|で}るよう{案内|あんない}しています（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}などで{申請|しんせい}します。{再|さい}{交付|こうふ}の{条件|じょうけん}に{警察|けいさつ}の{届|とど}けは{書|か}かれていませんが、{愛知|あいち}{県警|けんけい}は、すぐに{警察|けいさつ}に{届|とど}けるように{案内|あんない}しています（{要|よう}{確認|かくにん}）。",
+    "en": "Apply at the license center. A police report is not listed as a condition, but Aichi Police advise reporting a lost license to the police promptly (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}・{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター・{一部|いちぶ}の{警察|けいさつ}{署|しょ}（{名古屋|なごや}{市内|しない}は{受付|うけつけ}が{限|かぎ}られます。{警察|けいさつ}{署|しょ}では{後日|ごじつ}の{交付|こうふ}になります）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{免許|めんきょ}の{試験場|しけんじょう}など。{警察署|けいさつしょ}では、あとの{日|ひ}に{受|う}け{取|と}ります（{要確認|ようかくにん}）",
+      "en": "License center or some police stations (limited in Nagoya; at police stations you receive it later) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-menkyo-saikofu"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "place": "license_center",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "C-aichi-menkyo-saikofu",
+      "C-aichi-police-soudan-sonota"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  },
+  "alternatives": [
+    {
+      "text": {
+        "ja": "{写真|しゃしん}{付|つ}きの{本人|ほんにん}{確認|かくにん}{書類|しょるい}が{無|な}いときは、{住民票|じゅうみんひょう}・{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}など{複数|ふくすう}の{書類|しょるい}を{持|も}っていきます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{写真|しゃしん}のある{身分証|みぶんしょう}が{無|な}いときは、ほかの{書類|しょるい}を{何枚|なんまい}か{持|も}っていきます（{要確認|ようかくにん}）。",
+        "en": "Without photo ID, bring several other documents such as a residence record (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-menkyo-saikofu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{愛知|あいち}{県警|けんけい}は、{運転|うんてん}{免許|めんきょ}{証|しょう}を{盗|ぬす}まれた（なくした）ときは、{速|すみ}やかに{警察|けいさつ}に{届|とど}け{出|で}るよう{案内|あんない}しています。",
+        "ja_easy": "{愛知|あいち}{県警|けんけい}は、{運転|うんてん}{免許|めんきょ}{証|しょう}をなくしたら、すぐに{警察|けいさつ}に{届|とど}けるように{案内|あんない}しています。",
+        "en": "Aichi Police advise reporting a stolen or lost driver's license to the police promptly."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-soudan-sonota"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "速やかに警察への届出を行う",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "07e05ebdea03c6b0cd10d8f2a6b375ca58918f048b189d0d9ce2c3c9e9516376",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-card-stop/c4"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "marriage-hoken-nenkin",
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-event"
+    ]
+  },
+  "title": {
+    "ja": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}の{確認|かくにん}",
+    "ja_easy": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}",
+    "en": "Marriage, health insurance and pension: check"
+  },
+  "official_name": {
+    "ja": "結婚と健康保険・年金",
+    "reading": "けっこんとけんこうほけんねんきん"
+  },
+  "summary": {
+    "ja": "{結婚|けっこん}すると、{健康|けんこう}{保険|ほけん}と{年金|ねんきん}の{入|はい}り{方|かた}が{変|か}わることがあります。{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被扶養者|ひふようしゃ}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}が{要|い}ります（{要|よう}{確認|かくにん}）。{第3号|だいさんごう}{被保険者|ひほけんしゃ}の{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}{届|とどけ}は、{配偶|はいぐう}{者|しゃ}の{勤|つと}め{先|さき}に{出|だ}します。マイナンバーと{基礎|きそ}{年金|ねんきん}{番号|ばんごう}が{結|むす}びついている{人|ひと}は、{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}の{手続|てつづき}が{原則|げんそく}{不要|ふよう}です（{要|よう}{確認|かくにん}）。{結|むす}びつきはねんきんネットか{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{確認|かくにん}できます。",
+    "ja_easy": "{結婚|けっこん}すると、{健康|けんこう}{保険|ほけん}や{年金|ねんきん}の{入|はい}り{方|かた}が{変|か}わることがあります。{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}の{家族|かぞく}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けが{要|い}ります（{要|よう}{確認|かくにん}）。{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っている{人|ひと}は、{名前|なまえ}や{住所|じゅうしょ}が{変|か}わったら{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}に{伝|つた}えます。マイナンバーと{年金|ねんきん}の{番号|ばんごう}が{結|むす}びついている{人|ひと}は、{名前|なまえ}や{住所|じゅうしょ}の{手続|てつづ}きがいらないことがあります（{要|よう}{確認|かくにん}）。",
+    "en": "Marriage can change how you are covered by health insurance and pension. If you become a dependant on a workplace health insurance, you must file to leave National Health Insurance (to be checked). A Category 3 insured person reports name and address changes to the spouse's employer. If your My Number and basic pension number are linked, name and address changes generally need no procedure (to be checked). You can check the link on Nenkin Net or at a pension office."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{保険年金課|ほけんねんきんか}・{支所|ししょ}{区民福祉課|くみんふくしか}（{国民|こくみん}{健康|けんこう}{保険|ほけん}）",
+      "ja_easy": "{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}（{国民|こくみん}{健康|けんこう}{保険|ほけん}）",
+      "en": "Ward insurance and pension section or branch welfare section (National Health Insurance)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-47"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "国民健康保険、後期高齢者医療保険、子ども医療に加入されている場合 各区の保険年金課または支所区民福祉課での手続があります。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c13"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{第3号|だいさんごう}{被保険者|ひほけんしゃ}の{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}{届|とどけ}は、{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}の{事業|じぎょう}{主|ぬし}（{事務|じむ}{担当|たんとう}{者|しゃ}）に{出|だ}します。",
+        "ja_easy": "{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っている{人|ひと}（{第3号|だいさんごう}{被保険者|ひほけんしゃ}）は、{名前|なまえ}や{住所|じゅうしょ}の{変更|へんこう}の{届|とど}けを、{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}に{出|だ}します。",
+        "en": "A Category 3 insured person submits the name or address change form to the spouse's employer (the person in charge of administration)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-jusho-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "国民年金第3号被保険者については、配偶者の勤務先の事業主（事務担当者）へ変更届を提出する必要があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "a7edd8086ae7d0241b2730246e224b330df67b8fdc40451821c7ec695e61ba6b",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーと{基礎|きそ}{年金|ねんきん}{番号|ばんごう}が{結|むす}びついているかは、ねんきんネットか{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{確認|かくにん}できます。",
+        "ja_easy": "マイナンバーと{年金|ねんきん}の{番号|ばんごう}が{結|むす}びついているかは、ねんきんネットか{年金|ねんきん}{事務所|じむしょ}で{確|たし}かめられます。",
+        "en": "You can check whether your My Number and basic pension number are linked on Nenkin Net or at a nearby pension office."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-scene-kekkon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "（※）ご自身の状況は、「ねんきんネット」やお近くの年金事務所でご確認いただけます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "2f526718021a2811ad6ec1d87a386672e0dec67186940bf17c8da0d95c129825",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{全国|ぜんこく}{健康|けんこう}{保険|ほけん}{協会|きょうかい}（{協会|きょうかい}けんぽ）の{被扶養者|ひふようしゃ}の{氏名|しめい}{変更|へんこう}などは、{届出|とどけで}が{必要|ひつよう}です。",
+        "ja_easy": "{協会|きょうかい}けんぽの{被扶養者|ひふようしゃ}の{名前|なまえ}の{変更|へんこう}などは、{届|とど}けが{要|い}ります。",
+        "en": "Name changes and similar changes for dependants of the National Health Insurance Association (Kyokai Kenpo) require a notification."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-scene-kekkon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "ただし、全国健康保険協会管掌の健康保険被扶養者の氏名変更等については届出が必要となりますので"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{名古屋|なごや}{市|し}のやさしい{日本語|にほんご}のページには、{結婚|けっこん}するときの{確認|かくにん}として、{婚姻届|こんいんとどけ}・{住民|じゅうみん}{票|ひょう}・{印鑑|いんかん}{登録|とうろく}・{健康|けんこう}{保険|ほけん}・{年金|ねんきん}・{介護|かいご}{保険|ほけん}・{運転|うんてん}{免許|めんきょ}{証|しょう}が{並|なら}んでいます。",
+        "ja_easy": "{名古屋|なごや}{市|し}のやさしい{日本語|にほんご}のページには、{結婚|けっこん}するときに{見|み}ることとして、{婚姻届|こんいんとどけ}・{住民|じゅうみん}{票|ひょう}・{印鑑|いんかん}{登録|とうろく}・{健康|けんこう}{保険|ほけん}・{年金|ねんきん}・{介護|かいご}{保険|ほけん}・{運転|うんてん}{免許|めんきょ}{証|しょう}が{出|で}ています。",
+        "en": "Nagoya's easy-Japanese page lists marriage registration, resident record, seal registration, health insurance, pension, nursing care insurance and driver's license as items to check when you marry."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-easyjp-tetsuzuki"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "結婚するとき チェック すること リンク先 □ 婚姻届 □ 住民票 □ 印鑑登録 □ 健康保険・年金・介護保険",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ae6a2f38eb553309fc46f03ce4a73ac626224beca5404dd381fa3b8ba0ec85fe",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{結婚|けっこん}などで{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被扶養者|ひふようしゃ}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}をします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{結婚|けっこん}して{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}の{家族|かぞく}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けをします（{要|よう}{確認|かくにん}）。",
+        "en": "If you become a dependant on workplace health insurance, for example through marriage, file to leave National Health Insurance (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-kanyu-mar"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "職場の健康保険に加入したとき、被扶養者になったときは、国民健康保険をやめる届出をしてください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{氏名|しめい}が{変|か}わったとき、{世帯主|せたいぬし}が{変|か}わったとき、{世帯|せたい}が{分|わ}かれたとき・{一緒|いっしょ}になったときは、14{日|にち}{以内|いない}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}が{必要|ひつよう}です。{結婚|けっこん}を{名指|なざ}しした{記載|きさい}はありません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{名前|なまえ}が{変|か}わったとき、{世帯主|せたいぬし}が{変|か}わったとき、{世帯|せたい}が{分|わ}かれたとき・{一緒|いっしょ}になったときは、14{日|にち}いないに{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けが{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "A name change, a change of household head, or a household split or merger requires a National Health Insurance notification within 14 days. The page does not mention marriage by name (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-kanyu-mar"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "住所や氏名が変わったとき、世帯主が変わったとき、世帯が分かれたとき、一緒になったときも、14日以内に届出が必要です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{国民|こくみん}{年金|ねんきん}の{免除|めんじょ}・{納付|のうふ}{猶予|ゆうよ}の{継続|けいぞく}{審査|しんさ}を{希望|きぼう}した{人|ひと}は、{結婚|けっこん}で{配偶|はいぐう}{者|しゃ}の{有無|うむ}が{変|か}わったときに「{配偶|はいぐう}{者|しゃ}{状況|じょうきょう}{変更|へんこう}{届|とどけ}」が{必要|ひつよう}です（{令|りょう}{和|わ}{元年|がんねん}7{月|つき}1{日|にち}{以降|いこう}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{国民|こくみん}{年金|ねんきん}の{免除|めんじょ}などの{審査|しんさ}を{続|つづ}けたい{人|ひと}は、{結婚|けっこん}で{配偶|はいぐう}{者|しゃ}の{有無|うむ}が{変|か}わったとき、「{配偶|はいぐう}{者|しゃ}{状況|じょうきょう}{変更|へんこう}{届|とどけ}」が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "If you asked for continued review of pension exemption or deferral, a spouse status change notice is required when marriage changes whether you have a spouse (from 1 July 2019) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-menjo"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "継続審査を希望した方で、令和元年7月1日以降、婚姻により配偶者を有するに至ったまたは離婚・死亡により配偶者を有しなくなった方は、「国民年金保険料免除・納付猶予継続申請者の配偶者状況変更届」の提出が必要です。"
+      }
+    }
+  ],
+  "keywords": [
+    "健康保険",
+    "国民健康保険",
+    "年金",
+    "扶養",
+    "health insurance",
+    "pension",
+    "dependant",
+    "marriage"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-easyjp-tetsuzuki",
+      "B-nenkin-jusho-henko",
+      "B-nagoya-kokuho-kanyu-mar"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "結婚するとき チェック すること リンク先 □ 婚姻届 □ 住民票 □ 印鑑登録 □ 健康保険・年金・介護保険"
+  }
+}

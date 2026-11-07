@@ -1,0 +1,327 @@
+{
+  "id": "lost-police-report",
+  "data_version": 1,
+  "illustration": "hall",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-lost-wallet",
+      "R-lost-no-zairyu"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}す",
+    "ja_easy": "{警察|けいさつ}に{届|とど}ける",
+    "en": "Report the loss to the police"
+  },
+  "official_name": {
+    "ja": "警察に遺失届を出す",
+    "reading": "いしつとどけ"
+  },
+  "summary": {
+    "ja": "{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}のどこでも{届|とど}けられます。オンラインや{電話|でんわ}での{届出|とどけいで}も{受|う}け{付|つ}けています。{受理|じゅり}{番号|ばんごう}を{紙|かみ}に{控|ひか}えます（このアプリには{入力|にゅうりょく}しません）。カードを{止|と}めるのは、{届|とど}ける{前|まえ}でもかまいません。{届出|とどけで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}は、{警察|けいさつ}{署|しょ}でもらいます。{交番|こうばん}は{困|こま}ったときに{頼|たよ}れる{場所|ばしょ}です。",
+    "ja_easy": "{交番|こうばん}などで{届|とど}けます。インターネットや{電話|でんわ}でも{届|とど}けられます。もらった{番号|ばんごう}を{紙|かみ}に{書|か}いておきます。{証明|しょうめい}{書|しょ}は{警察|けいさつ}{署|しょ}でもらいます。{困|こま}ったときは{交番|こうばん}に{行|い}けます。",
+    "en": "You can report at any police station or koban, online, or by phone. Keep the receipt number on paper (do not enter it here). You can stop your cards before this. The certificate of the report is issued at a police station. A koban (police box) is a place you can go to when you need help."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{期限|きげん}の{定|さだ}めは{見|み}つかっていません。{早|はや}めに（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{早|はや}めに（{要確認|ようかくにん}）",
+      "en": "No fixed deadline found; as soon as you can (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "あきらめずに、早めに警察へ届け出てください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "どこの{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在所|ちゅうざいしょ}でも",
+      "ja_easy": "{近|ちか}くの{交番|こうばん}・{警察署|けいさつしょ}",
+      "en": "Any police station or koban"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "届出は、どこの警察署、交番・駐在所でも構いません。また、オンラインや電話による届出も受け付けています。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+        "verdict": "agree",
+        "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+      }
+    }
+  },
+  "place": "police",
+  "kind": "procedure",
+  "keywords": [
+    "遺失届",
+    "いしつとどけ",
+    "police",
+    "lost property"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "A-aichi-police-ishitsu",
+      "C-aichi-police-ishitsu",
+      "C-npa-ishitsu-online"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在所|ちゅうざいしょ}",
+        "ja_easy": "{交番|こうばん}・{警察署|けいさつしょ}",
+        "en": "Police station or koban"
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出は、どこの警察署、交番・駐在所でも構いません。また、オンラインや電話による届出も受け付けています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{愛知|あいち}{県警|けんけい}のオンラインの{届出|とどけで}。{送|おく}ったあと、メールで「{受付|うけつけ}{番号|ばんごう}」と、{警察|けいさつ}{署|しょ}の「{受理|じゅり}{番号|ばんごう}」が{届|とど}きます。{受付|うけつけ}{番号|ばんごう}は{受理|じゅり}{番号|ばんごう}ではありません。",
+        "ja_easy": "インターネットでも{届|とど}けられます。あとでメールで、2つの{番号|ばんごう}が{来|き}ます。",
+        "en": "Aichi police online report. By email you get a \"reception number\" and later the police station's \"receipt number\". They are different."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c4"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "オンラインの{届出|とどけで}は、{警察|けいさつ}{署|しょ}で{受理|じゅり}されるまで{数|すう}{日|にち}かかることがあります。",
+        "ja_easy": "インターネットの{届出|とどけで}は、{受理|じゅり}されるまで、{数|すう}{日|にち}かかることがあります。",
+        "en": "An online report can take several days to be accepted by the police station."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "オンラインによる届出は警察署で受理されるまで数日かかる場合があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c3"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{急|いそ}ぐときは、{最寄|もよ}りの{警察|けいさつ}{署|しょ}または{交番|こうばん}などに{直接|ちょくせつ}{届|とど}けます。",
+        "ja_easy": "いそぐときは、{近|ちか}くの{警察|けいさつ}{署|しょ}か{交番|こうばん}に{行|い}って{届|とど}けます。",
+        "en": "If you are in a hurry, go directly to the nearest police station or koban."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-npa-ishitsu-online"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お急ぎの場合は、最寄りの警察署又は交番等に直接届出を行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "24cd0365171b20eb28907d70f298ad7063573ba7fb48022aa862edd7f437ce76",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-online/c5"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{電話|でんわ}での{届出|とどけいで}も{受|う}け{付|つ}けています。{電話|でんわ}{番号|ばんごう}は{愛知|あいち}{県警|けんけい}の{公式|こうしき}ページで{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{電話|でんわ}でも{届|とど}けられます。{番号|ばんごう}は、{愛知|あいち}{県警|けんけい}のページで{見|み}ます（{要|よう}{確認|かくにん}）。",
+        "en": "Reports by phone are also accepted. Check the number on the official Aichi Police page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出は、どこの警察署、交番・駐在所でも構いません。また、オンラインや電話による届出も受け付けています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "when": "R-lost-reported-online",
+      "text": {
+        "ja": "もう{送|おく}っています。{受理|じゅり}{番号|ばんごう}のメールが{来|く}るまで{待|ま}ちます。メールが{来|き}ていなくても、{受理|じゅり}されていないとは{限|かぎ}りません。{届|とど}いたら、この{手続|てつづ}きを「{済|す}んだ」にします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "もう{送|おく}りました。メールを{待|ま}ちます。{来|き}たら「{済|す}んだ」にします。",
+        "en": "Already sent. Wait for the receipt-number email. No email yet does not mean it was rejected. When it arrives, mark this as done (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "オンラインによる届出は警察署で受理されるまで数日かかる場合があります。・入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}のあとで{住所|じゅうしょ}が{変|か}わったときは、{届|とど}け{出|で}た{警察|けいさつ}{署|しょ}または{交番|こうばん}に{届|とど}け{出|で}ます。",
+        "ja_easy": "{届|とど}けたあとで{引|ひ}っ{越|こ}したときは、{届|とど}けた{警察|けいさつ}{署|しょ}か{交番|こうばん}に{知|し}らせます。",
+        "en": "If your address changes after you report, tell the police station or koban where you made the report."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出後、お住いの住所地が変更となった場合は届出をした警察署又は交番へ届出てください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{公的|こうてき}{機関|きかん}から{警察|けいさつ}の{証明|しょうめい}{書|しょ}を{求|もと}められたときは、{遺失|いしつ}{届|とどけ}を{出|だ}した{警察|けいさつ}{署|しょ}に{問|と}い{合|あ}わせます。{警察|けいさつ}{署|しょ}で{備|そな}え{付|つ}けの{用紙|ようし}に{書|か}いて{申請|しんせい}し、{審査|しんさ}のうえ、{証明|しょうめい}{書|しょ}が{出|で}ます。",
+        "ja_easy": "{役所|やくしょ}などから{警察|けいさつ}の{証明|しょうめい}{書|しょ}をたのまれたら、{遺失|いしつ}{届|とどけ}を{出|だ}した{警察|けいさつ}{署|しょ}に{聞|き}きます。{警察|けいさつ}{署|しょ}で{用紙|ようし}に{書|か}いて、{調|しら}べてもらってから、{証明|しょうめい}{書|しょ}が{出|で}ます。",
+        "en": "If a public office asks for a police certificate, ask the police station where you filed the report. You fill in the form at the station, and the certificate is issued after review."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "このような場合には、遺失届、被害届等の届出をした警察署に問い合わせてください。警察署において、備え付けの用紙に必要事項を記載していただき、審査の上、証明書を発給します。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証明|しょうめい}{書|しょ}を{申請|しんせい}できるのは{警察|けいさつ}{署|しょ}だけです。{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}では、{遺失|いしつ}{届|とどけ}は{出|だ}せても、{証明|しょうめい}{書|しょ}の{申請|しんせい}はできません。",
+        "ja_easy": "{証明|しょうめい}{書|しょ}の{申請|しんせい}は、{警察|けいさつ}{署|しょ}だけです。{交番|こうばん}や{駐在|ちゅうざい}{所|しょ}では、できません。",
+        "en": "Certificates can be requested only at a police station, not at a koban or chuzaisho (you can still file the report there)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "交番や駐在所では、遺失届などの届出はできますが、証明書の発給の願い出はできません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c11"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証明|しょうめい}{書|しょ}の{申請|しんせい}の{時間|じかん}は、{土曜|どよう}・{日曜|にちよう}・{祝日|しゅくじつ}と12{月|つき}29{日|にち}〜1{月|つき}3{日|にち}を{除|のぞ}く{平日|へいじつ}の{午前|ごぜん}9{時|じ}から{正午|しょうご}まで、{午後|ごご}1{時|じ}から{午後|ごご}4{時|じ}までです。{時間|じかん}や{日数|にっすう}は{証明|しょうめい}の{内容|ないよう}で{違|ちが}うので、{余裕|よゆう}をもって{行|い}きます。",
+        "ja_easy": "{証明|しょうめい}{書|しょ}の{申請|しんせい}は、{土曜|どよう}・{日曜|にちよう}・{祝日|しゅくじつ}と12{月|つき}29{日|にち}〜1{月|つき}3{日|にち}{以外|いがい}の{平日|へいじつ}で、{午前|ごぜん}9{時|じ}〜{正午|しょうご}と{午後|ごご}1{時|じ}〜{午後|ごご}4{時|じ}です。{時間|じかん}がかかることがあるので、{早|はや}めに{行|い}きます。",
+        "en": "Certificate requests are taken on weekdays 9:00-12:00 and 13:00-16:00 (not Sat, Sun, holidays, or Dec 29 - Jan 3). Time needed varies, so allow extra time."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "遺失物届出証明及び犯罪被害にかかる警察証明の申請時間については、土曜日、日曜日、祝日、年末年始（12月29日～翌年1月3日）を除く、平日の午前９時から正午まで及び午後１時から午後４時までになります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証明|しょうめい}{書|しょ}を{何|なに}に{使|つか}うか、どこに{出|だ}すかがはっきりしないときは、{出|だ}してもらえません。{使|つか}い{道|みち}や{出|だ}す{先|さき}を、{先|さき}に{確|たし}かめておきます。",
+        "ja_easy": "{何|なに}に{使|つか}うか、どこに{出|だ}すかが、はっきりしないと、{証明|しょうめい}{書|しょ}は{出|で}ません。{先|さき}に{調|しら}べておきます。",
+        "en": "A certificate cannot be issued if the purpose or the place to submit it is unclear. Check these first."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "警察証明は、証明書を必要とする理由や証明書の提出先が明確でない場合は発給できません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c9"
+        }
+      }
+    }
+  ]
+}

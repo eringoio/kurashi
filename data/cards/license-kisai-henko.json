@@ -1,0 +1,239 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-kisai-henko",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "kind": "procedure",
+  "keywords": [
+    "住所変更",
+    "免許 住所変更",
+    "氏名変更",
+    "記載事項変更",
+    "じゅうしょへんこう",
+    "change address license",
+    "change name license",
+    "kisai henko",
+    "本籍"
+  ],
+  "eligibility": "R-license-goal-change",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は、{住所|じゅうしょ}・{名前|なまえ}・{本籍|ほんせき}が{変|か}わった{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{住所|じゅうしょ}や{名前|なまえ}が{変|か}わった{人|ひと}のためのものです。",
+      "en": "This guide is for people whose address, name or registered domicile has changed."
+    }
+  },
+  "title": {
+    "ja": "{免許証|めんきょしょう}の{住所|じゅうしょ}・{名前|なまえ}を{変|か}える",
+    "ja_easy": "{免許証|めんきょしょう}の{住所|じゅうしょ}や{名前|なまえ}を{変|か}える",
+    "en": "Change the address or name on your licence"
+  },
+  "official_name": {
+    "ja": "運転免許証の記載事項の変更",
+    "reading": "うんてんめんきょしょうのきさいじこうのへんこう"
+  },
+  "summary": {
+    "ja": "{住所|じゅうしょ}・{氏名|しめい}・{本籍|ほんせき}が{変|か}わったら、{速|すみ}やかに{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{警察署|けいさつしょ}へ{届|とど}けます。{日数|にっすう}の{決|き}まりは{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}は{無料|むりょう}です（{要|よう}{確認|かくにん}）。{外国籍|がいこくせき}の{人|ひと}は、{在留|ざいりゅう}カードなどの{提示|ていじ}が{必要|ひつよう}です（{要|よう}{確認|かくにん}）。マイナ{免許証|めんきょしょう}の{人|ひと}は{手続|てつづ}きが{違|ちが}います。",
+    "ja_easy": "{住所|じゅうしょ}や{名前|なまえ}が{変|か}わったら、すぐに{警察署|けいさつしょ}か{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}へ{行|い}きます（{要確認|ようかくにん}）。お{金|かね}はかかりません（{要確認|ようかくにん}）。",
+    "en": "If your address, name or registered domicile changes, report it promptly to the driving licence test centre or a police station. The page sets no number of days (to be checked). There is no fee (to be checked). Foreign nationals must show a residence card or similar (to be checked). The procedure differs for Mynumber-linked licences."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{速|すみ}やかに（{日数|にっすう}の{決|き}まりは{本文|ほんぶん}にありません）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "すぐに（{要確認|ようかくにん}）",
+      "en": "Promptly (the page sets no number of days) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "aichi-police-menkyo-kihen"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "速やかに運転免許試験場、東三河運転免許センター又は警察署へ届け出てください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、{警察署|けいさつしょ}（44{署|しょ}。{名古屋市内|なごやしない}の{区|く}の{警察署|けいさつしょ}を{含|ふく}む）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{警察署|けいさつしょ}か{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{要確認|ようかくにん}）",
+      "en": "The driving licence test centre, the Higashi-Mikawa centre, or a police station (44 stations, including those in Nagoya wards) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "aichi-police-menkyo-kihen"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "44警察署（中部空港警察署を除く）"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}の{受付|うけつけ}は、{令和|れいわ}8{年|ねん}4{月|がつ}から{日曜|にちよう}〜{木曜|もくよう}です。{金曜|きんよう}は{受付|うけつけ}しません。",
+        "ja_easy": "{試験場|しけんじょう}は、{日曜|にちよう}から{木曜|もくよう}です。{金曜|きんよう}はできません。",
+        "en": "From April 2026 the driving licence test centre accepts this Sunday to Thursday. Not on Fridays."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "ai_checked",
+        "quote": "令和8年4月から、運転免許試験場での受付曜日は、日曜日から木曜日となり、金曜日は受付しません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ae8d6dfd7c45b09efd1cdd404fb278423e552938f29a85b523a1c62ad31017f5",
+          "verdict": "agree",
+          "ref": "research/logs/license_2026-11-07.md"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察署|けいさつしょ}の{受付|うけつけ}は{月曜|げつよう}〜{金曜|きんよう}の9:00〜16:00。{土曜日|どようび}・{祝日|しゅくじつ}・{振替|ふりかえ}{休日|きゅうじつ}・{年末年始|ねんまつねんし}（12{月|がつ}29{日|にち}〜1{月|がつ}3{日|にち}）は{受付|うけつけ}しません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{警察署|けいさつしょ}は{月|げつ}〜{金|きん}の9{時|じ}〜16{時|じ}です（{要確認|ようかくにん}）",
+        "en": "Police stations accept applications Monday to Friday, 9:00-16:00. Closed on Saturdays, public holidays, substitute holidays and 29 December to 3 January (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "土曜日、祝日、振替休日及び年末年始（12月29日～1月3日）は、受付を行いません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住所|じゅうしょ}だけ{変|か}えるとき：{運転|うんてん}{免許証|めんきょしょう}（マイナ{免許証|めんきょしょう}）と、{新|あたら}しい{住所|じゅうしょ}がわかる{書類|しょるい}を1つ。{住民票|じゅうみんひょう}の{写|うつ}し（{個人|こじん}{番号|ばんごう}なし。コピーは{不可|ふか}）、マイナンバーカード、{新|あたら}しい{住所|じゅうしょ}に{届|とど}いた{郵便物|ゆうびんぶつ}などです（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{住所|じゅうしょ}だけ：{免許証|めんきょしょう}と、{新|あたら}しい{住所|じゅうしょ}がわかる{書類|しょるい}（{住民票|じゅうみんひょう}など）（{要確認|ようかくにん}）",
+        "en": "Address change only: your licence and one document showing your new address, such as a resident record copy (without My Number; photocopies not accepted), a My Number Card, or mail delivered to the new address (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "ご本人の新住所を確認することができる書類（個人番号が印字されていない住民票の写し（コピーしたものは不可）、マイナンバーカード（通知カードは除く）又は新住所に届いた郵便物などのいずれか1つ）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国籍|がいこくせき}の{人|ひと}で{運転|うんてん}{免許証|めんきょしょう}だけの{場合|ばあい}は、{在留|ざいりゅう}カードなどの{提示|ていじ}が{必要|ひつよう}です。{提示|ていじ}がないと{住所|じゅうしょ}を{変|か}えられません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{外国|がいこく}の{人|ひと}は、{在留|ざいりゅう}カードを{見|み}せます。{見|み}せないと{変|か}えられません（{要確認|ようかくにん}）",
+        "en": "Foreign nationals holding only a conventional licence must show a residence card or similar. Without it the address cannot be changed (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "※上記書類に記載されている住所に変更します。提示がない場合、住所変更ができません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{名前|なまえ}が{変|か}わったとき：{新|あたら}しい{名前|なまえ}が{書|か}かれたマイナンバーカード、または{本籍|ほんせき}（{国籍|こくせき}）が{書|か}かれた{住民票|じゅうみんひょう}の{写|うつ}し（{個人|こじん}{番号|ばんごう}なし）（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{名前|なまえ}が{変|か}わったとき：マイナンバーカードか{住民票|じゅうみんひょう}の{写|うつ}し（{要確認|ようかくにん}）",
+        "en": "Name change: a My Number Card showing the new name, or a resident record copy showing the registered domicile (nationality), without My Number (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "新氏名が記載されたマイナンバーカード又は本籍（又は国籍）記載の個人番号が印字されていない住民票の写し"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナ{免許証|めんきょしょう}の{人|ひと}は、{先|さき}に{市区町村|しくちょうそん}でマイナンバーカードの{記載|きさい}{事項|じこう}を{変|か}えてから、{免許|めんきょ}の{手続|てつづ}きをします。ワンストップで{連携|れんけい}している{事項|じこう}は、{警察|けいさつ}での{手続|てつづ}きが{要|い}りません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "マイナ{免許証|めんきょしょう}の{人|ひと}は、{先|さき}に{区役所|くやくしょ}などでカードを{変|か}えます（{要確認|ようかくにん}）",
+        "en": "If you have a Mynumber-linked licence, first change the details on the My Number Card at your municipality, then do the licence procedure. Items linked by the one-stop service need no police procedure (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "自治体でマイナンバーカードの記載事項変更後に手続をしてください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{代理人|だいりにん}でも{申請|しんせい}できます（{委任状|いにんじょう}と{代理人|だいりにん}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}が{必要|ひつよう}）（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{代理|だいり}の{人|ひと}でも{申請|しんせい}できます（{要確認|ようかくにん}）",
+        "en": "A proxy can apply (a letter of authorisation and the proxy's ID are needed) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "委任状により、代理人による申請を受理しています。 代理人の方は本人確認書類が必要です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}は{無料|むりょう}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "お{金|かね}はかかりません（{要確認|ようかくにん}）",
+        "en": "There is no fee (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "手数料 無料"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{免許証|めんきょしょう}の{裏面|うらめん}の{備考欄|びこうらん}は、{公安|こうあん}{委員会|いいんかい}が{書|か}きます。{自分|じぶん}で{新|あたら}しい{住所|じゅうしょ}を{書|か}かないでください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{免許証|めんきょしょう}の{裏|うら}に、{自分|じぶん}で{書|か}かないでください（{要確認|ようかくにん}）",
+        "en": "The remarks box on the back of the licence is filled in by the Public Safety Commission. Do not write the new address yourself (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "aichi-police-menkyo-kihen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "運転免許証の備考欄（裏面）は公安委員会が変更後の内容を記載します。ご自身で新住所等を記載しないでください。"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "aichi-police-menkyo-kihen"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "速やかに運転免許試験場、東三河運転免許センター又は警察署へ届け出てください。"
+  }
+}

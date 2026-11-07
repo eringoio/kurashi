@@ -1,0 +1,203 @@
+{
+  "id": "move-out-abroad-tenshutsu",
+  "data_version": 1,
+  "illustration": "plane",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-abroad",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{国外|こくがい}{転出|てんしゅつ}{届|とどけ}を{出|だ}す（{日本|にほん}の{外|そと}へ{引|ひ}っ{越|こ}すとき）",
+    "ja_easy": "{国外|こくがい}へ{行|い}くときの{転出|てんしゅつ}{届|とどけ}",
+    "en": "Report your move abroad (overseas move-out)"
+  },
+  "official_name": {
+    "ja": "転出届（国外転出）",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{日本|にほん}の{外|そと}へ{引|ひ}っ{越|こ}して、{海外|かいがい}での{滞在|たいざい}がおおむね1{年|ねん}{以上|いじょう}になるときは、{出国|しゅっこく}の{前|まえ}に、{今|いま}の{区|く}の{区役所|くやくしょ}に{転出|てんしゅつ}{届|とどけ}を{出|だ}します。{窓口|まどぐち}か{郵送|ゆうそう}で{出|だ}し、オンラインでは{出|だ}せません。マイナンバーカードを{持|も}っている{人|ひと}は{持|も}って{行|い}きます。{届出|とどけで}の{日数|にっすう}の{目安|めやす}は、{市|し}のページによって{違|ちが}います。{要|よう}{確認|かくにん}です。",
+    "ja_easy": "{日本|にほん}の{外|そと}へ{行|い}って、1{年|ねん}{以上|いじょう}になるときは、{出国|しゅっこく}の{前|まえ}に、{区役所|くやくしょ}に「{転出|てんしゅつ}{届|とどけ}」を{出|だ}します。{窓口|まどぐち}か{郵送|ゆうそう}で{出|だ}します。インターネットでは{出|だ}せません。マイナンバーカードがある{人|ひと}は、{持|も}って{行|い}きます。",
+    "en": "If you are moving outside Japan for about one year or longer, file a move-out notice at your ward office before you leave. File at the counter or by mail; online filing is not available. Bring your My Number Card if you have one. The recommended filing period differs between city pages, so please check at the office (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{出国|しゅっこく}する{前|まえ}。{届出|とどけで}の{目安|めやす}は{市|し}のページで「{転出|てんしゅつ}する{日|ひ}の30{日|にち}{前|まえ}から」と「お{引越|ひっこ}しの2{週間|しゅうかん}{前|まえ}から」と{違|ちが}います。{日数|にっすう}は{要|よう}{確認|かくにん}です。{出国|しゅっこく}の{日|ひ}より{後|のち}でも{届出|とどけで}はできますが、{速|すみ}やかに{届|とど}けます。",
+      "ja_easy": "{出国|しゅっこく}する{前|まえ}です。いつから{出|だ}せるかは、ページで{書|か}き{方|かた}がちがいます。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "Before you leave. City pages give different guides (\"from 30 days before\" and \"from 2 weeks before\"). Please check the number of days at the office (to be checked). You can still file after departure, but do so promptly."
+    },
+    "evidence": {
+      "source_ids": [
+        "A-nagoya-faq-40",
+        "B-nagoya-faq-37"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check",
+      "quote": "あらかじめ（転出する日の30日前から転出予定日までが目安）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{今|いま}{住|す}んでいる{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}を{置|お}く{区|く}は{支所|ししょ}の{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{今|いま}の{区役所|くやくしょ}",
+      "en": "Citizens Section of your current ward office (the branch office in wards that have one)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-37"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "お住まいの区の区役所市民課または支所区民生活課",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
+        "verdict": "agree",
+        "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c4"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{区役所|くやくしょ}の{窓口|まどぐち}に{出|だ}します。{本人|ほんにん}{確認|かくにん}ができるもの（{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）を{持|も}って{行|い}きます。",
+        "ja_easy": "{区役所|くやくしょ}のまどぐちに{出|だ}します。{本人|ほんにん}だとわかるもの（{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・マイナンバーカードなど）を{持|も}って{行|い}きます。",
+        "en": "File at the ward office counter. Bring ID (driver's licence, passport, My Number Card, etc.)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-37"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "窓口に来られる人の本人確認ができるもの （運転免許証、パスポート、マイナンバーカード等）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c7"
+        }
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{郵送|ゆうそう}でも{出|だ}せます。{本人|ほんにん}{確認|かくにん}ができるもののコピーを{同封|どうふう}します。{海外|かいがい}へ{引|ひ}っ{越|こ}す{人|ひと}は、オンラインでは{申請|しんせい}できません。",
+        "ja_easy": "{郵送|ゆうそう}でも{出|だ}せます。{本人|ほんにん}だとわかるもののコピーを{入|い}れます。インターネットでは{出|だ}せません。",
+        "en": "You can also file by mail; enclose a copy of your ID. Online filing is not available for people moving abroad."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-online-jizen"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "海外に引越す方は、オンラインで申請できません。窓口または郵送で手続きしてください。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "b504629f024943da11b1f32f986f0b79b6b6abfd7250393261e879b6c4e687cc",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とど}けられるのは、{本人|ほんにん}・{世帯|せたい}{主|ぬし}・{代理人|だいりにん}です。",
+        "ja_easy": "{出|だ}せる{人|ひと}は、{本人|ほんにん}・{世帯|せたい}{主|ぬし}・{代理|だいり}の{人|ひと}です。",
+        "en": "The person moving, the head of household, or a proxy can file."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-37"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "本人又は世帯主又は代理人",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{出国|しゅっこく}したあとでも、{代理人|だいりにん}が{手続|てつづ}きできます。{代理人|だいりにん}は{本人|ほんにん}の{委任|いにん}{状|じょう}が{要|い}ります。",
+        "ja_easy": "{出国|しゅっこく}したあとでも、{代理|だいり}の{人|ひと}が{出|だ}せます。{代理|だいり}の{人|ひと}は、{委任|いにん}{状|じょう}が{要|い}ります。",
+        "en": "Even after you have left Japan, a proxy can file for you. A proxy needs a power-of-attorney letter from you."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-37"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "出国後であっても、代理人により手続き可能ですので、必ずお届けください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{通知|つうち}カードまたはマイナンバーカードを{持|も}って{行|い}きます（{持|も}っている{人|ひと}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{通知|つうち}カードかマイナンバーカードがある{人|ひと}は、{持|も}って{行|い}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Bring your Notification Card or My Number Card (if you have one; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-37"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "○通知カードまたはマイナンバーカード"
+      }
+    }
+  ],
+  "keywords": [
+    "国外転出",
+    "海外",
+    "帰国",
+    "転出届",
+    "moving abroad",
+    "leaving Japan",
+    "overseas move-out"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "ほかの{市町村|しちょうそん}へ{引|ひ}っ{越|こ}すときは、{国外|こくがい}ではなく{市外|しがい}への{転出|てんしゅつ}{届|とどけ}です。",
+      "ja_easy": "{日本|にほん}の{中|なか}で{引|ひ}っ{越|こ}すときは、{市|し}の{外|そと}への{転出|てんしゅつ}{届|とどけ}です。",
+      "en": "If you are moving within Japan, the ordinary move-out report applies instead."
+    },
+    "check_at_office": {
+      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "A-nagoya-faq-40"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "海外に引越しをする場合（概ね１年以上が目安）も、転出届をしてください。"
+  }
+}

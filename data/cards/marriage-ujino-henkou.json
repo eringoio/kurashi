@@ -1,0 +1,173 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-ujino-henkou",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-japanese-foreign"
+    ]
+  },
+  "title": {
+    "ja": "{日本人|にほんじん}の{氏|うじ}の{変更|へんこう}（{外国|がいこく}{籍|せき}の{人|ひと}と{結婚|けっこん}した{日本人|にほんじん}{向|む}け）",
+    "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}の{名字|みょうじ}の{変更|へんこう}",
+    "en": "Family-name change for the Japanese spouse"
+  },
+  "official_name": {
+    "ja": "外国人との婚姻による氏の変更の届出",
+    "reading": "がいこくじんとのこんいんによるうじのへんこうのとどけで"
+  },
+  "summary": {
+    "ja": "{日本人|にほんじん}が{外国|がいこく}{人|じん}と{結婚|けっこん}しても、{日本人|にほんじん}の{氏|うじ}は{当然|とうぜん}には{変|か}わりません。{外国|がいこく}{人|じん}{配偶|はいぐう}{者|しゃ}の{氏|うじ}にしたいときは、{婚姻|こんいん}の{日|ひ}から6か{月|げつ}{以内|いない}なら、{戸籍|こせき}の{届出|とどけで}{窓口|まどぐち}に{氏|うじ}の{変更|へんこう}の{届出|とどけで}をします（{要|よう}{確認|かくにん}）。6か{月|げつ}を{過|す}ぎたときは、{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}を{得|え}てから{届出|とどけで}をします。{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きです。",
+    "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}が{外国|がいこく}の{人|ひと}と{結婚|けっこん}しても、{名字|みょうじ}は{自動|じどう}では{変|か}わりません。{結婚|けっこん}した{相手|あいて}の{名字|みょうじ}にしたいときは、{結婚|けっこん}の{日|ひ}から6か{月|げつ}いないなら、{戸籍|こせき}の{窓口|まどぐち}に{届|とど}けを{出|だ}します（{要|よう}{確認|かくにん}）。6か{月|げつ}をすぎたときは、{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}が{先|さき}に{要|い}ります。{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きです。",
+    "en": "A Japanese national's family name does not change automatically on marrying a foreign national. To take the spouse's name, file a notification at the family register counter within 6 months of the marriage (to be checked). After 6 months, family court permission is needed first. This is for people with a Japanese family register."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{婚姻|こんいん}の{日|ひ}から6か{月|げつ}{以内|いない}（{過|す}ぎたときは{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{結婚|けっこん}の{日|ひ}から6か{月|げつ}いない（すぎたときは{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}）（{要|よう}{確認|かくにん}）",
+      "en": "Within 6 months of the marriage (after that, family court permission) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-minji15"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "婚姻の日から６か月以内であれば、戸籍届出窓口に氏の変更の届出をするだけで、外国人配偶者の氏に変更することができます。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{戸籍|こせき}の{届出|とどけで}{窓口|まどぐち}",
+      "ja_easy": "{戸籍|こせき}の{届|とど}けの{窓口|まどぐち}",
+      "en": "The family register notification counter"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-minji15"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "婚姻の日から６か月が過ぎている場合には、家庭裁判所の許可を得た上で、戸籍届出窓口に氏の変更の届出をすれば、氏を変更することができます。"
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本人|にほんじん}が{外国|がいこく}{人|じん}と{婚姻|こんいん}しても、{日本人|にほんじん}の{氏|うじ}は{当然|とうぜん}には{変|か}わりません。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}が{外国|がいこく}の{人|ひと}と{結婚|けっこん}しても、{名字|みょうじ}は{自動|じどう}では{変|か}わりません。",
+        "en": "A Japanese national's family name does not change automatically when marrying a foreign national."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国人と婚姻しても日本人の氏は当然には変わりません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}の{日|ひ}から6か{月|げつ}を{過|す}ぎている{場合|ばあい}は、{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}を{得|え}たうえで、{戸籍|こせき}{届出|とどけで}{窓口|まどぐち}に{氏|うじ}の{変更|へんこう}の{届出|とどけで}をします。",
+        "ja_easy": "{結婚|けっこん}の{日|ひ}から6か{月|げつ}をすぎているときは、{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}をもらってから、{戸籍|こせき}の{窓口|まどぐち}に{届|とど}けを{出|だ}します。",
+        "en": "If more than 6 months have passed since the marriage, obtain family court permission and then file the notification at the family register counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻の日から６か月が過ぎている場合には、家庭裁判所の許可を得た上で、戸籍届出窓口に氏の変更の届出をすれば、氏を変更することができます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本人|にほんじん}が{戸籍|こせき}の{筆頭者|ひっとうしゃ}でなければ、その{人|ひと}を{筆頭者|ひっとうしゃ}とする{新|あたら}しい{戸籍|こせき}が{作|つく}られます。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}が{戸籍|こせき}のいちばん{上|じょう}の{人|ひと}でないときは、その{人|ひと}のための{新|あたら}しい{戸籍|こせき}が{作|つく}られます。",
+        "en": "If the Japanese national is not the head of their family register, a new register headed by them is created."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "あなたが戸籍の筆頭者でなければ、あなたを筆頭者とする新しい戸籍が作られます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}{人|じん}についての{戸籍|こせき}は{作|つく}られませんが、{日本人|にほんじん}の{戸籍|こせき}に、その{外国|がいこく}{人|じん}の{氏名|しめい}・{生年月日|せいねんがっぴ}・{国籍|こくせき}と、{婚姻|こんいん}した{事実|じじつ}が{記載|きさい}されます。",
+        "ja_easy": "{外国|がいこく}の{人|ひと}の{戸籍|こせき}は{作|つく}られませんが、{日本|にほん}の{国籍|こくせき}の{人|ひと}の{戸籍|こせき}に、その{人|ひと}の{名前|なまえ}・{生|う}まれた{日|ひ}・{国籍|こくせき}と、{結婚|けっこん}したことが{書|か}かれます。",
+        "en": "No family register is created for the foreign national, but their name, date of birth and nationality and the fact of the marriage are entered in the Japanese national's register."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "日本人が外国人と婚姻をした場合には、外国人についての戸籍は作られませんが、配偶者である日本人の戸籍に、その外国人（氏名・生年月日・国籍）と婚姻した事実が記載されます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c5"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "氏の変更",
+    "戸籍",
+    "日本人",
+    "family name",
+    "family register",
+    "koseki"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と{外国|がいこく}{籍|せき}の{人|ひと}の{結婚|けっこん}の{場合|ばあい}だけ{出|だ}しています。",
+      "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}と{外国|がいこく}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}の{場合|ばあい}だけ{出|だ}しています。",
+      "en": "Shown only for a marriage between a Japanese national and a foreign national."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-minji15"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "外国人と婚姻しても日本人の氏は当然には変わりません。"
+  }
+}

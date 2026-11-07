@@ -1,0 +1,126 @@
+{
+  "id": "move-out-abroad-hoken-nenkin",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-abroad",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}の{手続|てつづ}きを{窓口|まどぐち}で{確認|かくにん}する",
+    "ja_easy": "{健康|けんこう}{保険|ほけん}と{年金|ねんきん}の{手続|てつづ}きを{聞|き}く",
+    "en": "Ask about National Health Insurance and National Pension"
+  },
+  "official_name": {
+    "ja": "国外転出時の国民健康保険・国民年金",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}や{国民|こくみん}{年金|ねんきん}に{入|はい}っている{人|ひと}は、{国外|こくがい}{転出|てんしゅつ}のときに、{転出|てんしゅつ}{届|とどけ}とは{別|べつ}の{手続|てつづ}きが{要|い}ります。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）に{問|と}い{合|あ}わせてください。{海外|かいがい}への{転出|てんしゅつ}{届|とどけ}は、{滞在|たいざい}がおおむね1{年|ねん}{以上|いじょう}になる{場合|ばあい}に{必要|ひつよう}で、{引|ひ}っ{越|こ}しの2{週間|しゅうかん}{前|まえ}から{引|ひ}っ{越|こ}しの{日|ひ}までが{目安|めやす}です（{要|よう}{確認|かくにん}）。{年金|ねんきん}は{海外|かいがい}に{住|す}むと{国民|こくみん}{年金|ねんきん}の{強制|きょうせい}{加入|かにゅう}ではなくなります。{日本|にほん}{国籍|こくせき}の{人|ひと}は、{出国|しゅっこく}{前|まえ}に{住|す}んでいる{市区町村|しくちょうそん}の{窓口|まどぐち}で{任意|にんい}{加入|かにゅう}ができます。{外国|がいこく}{籍|せき}の{人|ひと}は{出国|しゅっこく}{後|ご}2{年|ねん}{以内|いない}に{脱退|だったい}{一時金|いちじきん}を{請求|せいきゅう}できます。{保険料|ほけんりょう}を{納|おさ}めた{期間|きかん}が6か{月|げつ}{以上|いじょう}などの{条件|じょうけん}があるので{要|よう}{確認|かくにん}です。{帰国|きこく}して{住民|じゅうみん}{登録|とうろく}をしたときは、{転入|てんにゅう}した{市区町村|しくちょうそん}で{強制|きょうせい}{加入|かにゅう}の{手続|てつづ}きが{必要|ひつよう}です。",
+    "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}や{国民|こくみん}{年金|ねんきん}に{入|はい}っている{人|ひと}は、{国外|こくがい}へ{行|い}くとき、{転出|てんしゅつ}{届|とどけ}とは{別|べつ}の{手続|てつづ}きがあります。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{聞|き}いてください。1{年|ねん}ぐらい{以上|いじょう}{海外|かいがい}にいるときは、{引|ひ}っ{越|こ}す{前|まえ}に{転出|てんしゅつ}{届|とどけ}を{出|だ}します（{要|よう}{確認|かくにん}）。{年金|ねんきん}は、{外国|がいこく}に{住|す}むと{国民年金|こくみんねんきん}に{必|かなら}ず{入|はい}る{人|ひと}ではなくなります。{日本|にほん}{国籍|こくせき}の{人|ひと}は、{出国|しゅっこく}の{前|まえ}に{市区町村|しくちょうそん}の{窓口|まどぐち}で{任意|にんい}{加入|かにゅう}ができます。{外国|がいこく}{籍|せき}の{人|ひと}は、{出国|しゅっこく}してから2{年|ねん}{以内|いない}に、{脱退一時金|だったいいちじきん}をもらう{手続|てつづ}きができます。{条件|じょうけん}があります（{要|よう}{確認|かくにん}）。",
+    "en": "If you are in National Health Insurance or the National Pension, a procedure separate from the move-out notice is needed when you move abroad. Ask the insurance and pension section of your ward office. The overseas move-out notice is needed if you will stay abroad for about one year or more; the guide is from 2 weeks before you move until the moving day (to be checked). Pension: once you live abroad you are no longer compulsorily covered by the National Pension. Japanese nationals can join voluntarily; apply at your city office before you leave. Non-Japanese nationals can claim a lump-sum withdrawal payment within 2 years after leaving Japan. Conditions apply, such as 6 months or more of paid contributions (to be checked). If you return and register your address, you must enroll again at the city office where you register."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
+      "en": "Insurance and pension section of the ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-37"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "国民健康保険、国民年金にご加入されている場合は別途、手続きが必要となりますので、詳しくは現在お住まいの区役所保険年金課・支所区民福祉課にお問い合わせください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
+        "verdict": "agree",
+        "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c17"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "guide",
+  "keywords": [
+    "国民年金",
+    "国保",
+    "脱退一時金",
+    "任意加入",
+    "pension",
+    "lump-sum withdrawal"
+  ],
+  "reasons": {
+    "check_at_office": {
+      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-37",
+      "B-nenkin-kaigai",
+      "B-nenkin-dattai",
+      "B-nenkin-dattai-tetsuzuki",
+      "B-nenkin-ninni-kanyu"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "国民健康保険、国民年金にご加入されている場合は別途、手続きが必要となりますので、詳しくは現在お住まいの区役所保険年金課・支所区民福祉課にお問い合わせください。"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}が{国民|こくみん}{年金|ねんきん}に{任意|にんい}{加入|かにゅう}するときは、{出国|しゅっこく}{前|まえ}に、{住|す}んでいる{市区町村|しくちょうそん}の{窓口|まどぐち}で{手続|てつづ}きします。",
+        "ja_easy": "{日本|にほん}{国籍|こくせき}の{人|ひと}が{国民年金|こくみんねんきん}に{任意|にんい}{加入|かにゅう}するときは、{出国|しゅっこく}の{前|まえ}に、{市区町村|しくちょうそん}の{窓口|まどぐち}で{手続|てつづ}きします。",
+        "en": "If you are a Japanese national and want to join the National Pension voluntarily, apply at your city office before you leave."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-ninni-kanyu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "（1）これから海外に転出する方お住まいの市区町村窓口",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "dffff0ecc801590eedb21cbad71e33f351bfc7ba8f1af5de8fab37f84b74e504",
+          "verdict": "agree",
+          "ref": "research/audits/nenkin.json#P-nenkin-ninni-kanyu/c4"
+        }
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{脱退|だったい}{一時金|いちじきん}は{請求書|せいきゅうしょ}と{書類|しょるい}を、{日本|にほん}{年金|ねんきん}{機構|きこう}に{郵送|ゆうそう}するか、{電子|でんし}{申請|しんせい}で{出|だ}します。{共済|きょうさい}{組合|くみあい}に{入|はい}っていた{期間|きかん}がある{人|ひと}は、{提出|ていしゅつ}{先|さき}が{変|か}わります。",
+        "ja_easy": "{脱退一時金|だったいいちじきん}は、{書類|しょるい}を{日本年金機構|にほんねんきんきこう}に{郵便|ゆうびん}で{送|おく}るか、インターネットで{出|だ}します。{共済|きょうさい}{組合|くみあい}に{入|はい}っていた{人|ひと}は、{出|だ}す{所|ところ}が{変|か}わります。",
+        "en": "For the lump-sum withdrawal payment, send the claim form and documents to the Japan Pension Service by post, or apply electronically. If you were in a mutual aid association, the place to submit changes."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-dattai-tetsuzuki"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "日本年金機構本部または各共済組合等（※1）へ提出してください。 （※1）加入していた制度およびその期間により提出先が異なります。 提出方法 郵送または電子申請（※2）で提出してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "da256f53a11bc4ff62f9ea9eec6b302289883dfb70872407c1b8d94c9c87836d",
+          "verdict": "agree",
+          "ref": "research/audits/nenkin.json#P-nenkin-dattai-ichijikin/c17"
+        }
+      }
+    }
+  ]
+}

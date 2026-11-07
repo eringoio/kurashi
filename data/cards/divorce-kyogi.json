@@ -1,0 +1,331 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "divorce-kyogi",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-div-agreement",
+  "title": {
+    "ja": "{協議|きょうぎ}{離婚|りこん}の{届|とどけ}",
+    "ja_easy": "{離婚|りこん}の{届|とど}け（{話|はな}し{合|あ}いで{離婚|りこん}するとき）",
+    "en": "Divorce by agreement: registration"
+  },
+  "official_name": {
+    "ja": "離婚届（協議離婚）",
+    "reading": "りこんとどけきょうぎりこん"
+  },
+  "summary": {
+    "ja": "{協議|きょうぎ}{離婚|りこん}は{夫婦|ふうふ}の{話|はな}し{合|あ}いだけで{決|き}める{離婚|りこん}です。{離婚届|りこんとどけ}を{区役所|くやくしょ}に{出|だ}した{日|ひ}に{成立|せいりつ}します（{期限|きげん}はありません）。{話|はな}し{合|あ}いで{決|き}めたら、{離婚届|りこんとどけ}（{夫婦|ふうふ}2{人|ふたり}と{成人|せいじん}の{証人|しょうにん}2{人|にん}の{署名|しょめい}）と、{窓口|まどぐち}に{行|い}く{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}を{持|も}って、{夫|おっと}か{妻|つま}の{住所|じゅうしょ}か{本籍|ほんせき}の{区|く}の{区役所|くやくしょ}・{支所|ししょ}に{出|だ}します。{外国|がいこく}{籍|せき}の{人|ひと}がいるときは、{要|い}る{物|もの}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{協議|きょうぎ}{離婚|りこん}は、{夫婦|ふうふ}の{話|はな}し{合|あ}いで{決|き}める{離婚|りこん}です。{離婚届|りこんとどけ}を{出|だ}した{日|ひ}に{離婚|りこん}になります。{決|き}めたら、{離婚届|りこんとどけ}（2{人|ふたり}と{証人|しょうにん}2{人|にん}の{名前|なまえ}）と{本人|ほんにん}{確認|かくにん}の{書類|しょるい}を{持|も}って、{区役所|くやくしょ}に{出|だ}します。{外国|がいこく}{籍|せき}の{人|ひと}は、{要|い}る{物|もの}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "en": "A divorce by agreement (協議離婚) is decided only by the couple talking it over. It takes effect on the day you submit the divorce notice to the ward office (there is no deadline). Once you decide, take the divorce notice (signed by both spouses and two adult witnesses) and an ID of the person going to the counter to the ward or branch office where either spouse lives or has their registered domicile. If a foreign national is involved, other documents are needed (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{届出|とどけで}{期間|きかん}の{定|さだ}めなし（{届出|とどけで}をしたときから{効力|こうりょく}があります）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{出|だ}す{日|ひ}の{決|き}まりはありません（{出|だ}したときから{効力|こうりょく}があります）（{要|よう}{確認|かくにん}）",
+      "en": "No filing period (takes effect when filed) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon-div"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "期限なし(届出をしたときから効力があります)"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{夫|おっと}または{妻|つま}の{所在地|しょざいち}か{本籍|ほんせき}がある{区|く}の{区役所|くやくしょ}・{支所|ししょ}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{夫|おっと}か{妻|つま}が{住|す}んでいる{区|く}か、{本籍|ほんせき}の{区|く}の{区役所|くやくしょ}（{要|よう}{確認|かくにん}）",
+      "en": "The ward or branch office where either spouse lives or has their registered domicile (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-97"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "届出人の方（夫・妻）の所在地又は本籍がある区の区役所・支所"
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{協議|きょうぎ}{離婚|りこん}の{届|とどけ}{書|しょ}には、{夫婦|ふうふ}{双方|そうほう}の{署名|しょめい}と、{成人|せいじん}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{必要|ひつよう}です。{押印|おういん}は{任意|にんい}です。{未成年|みせいねん}の{子|こ}がいる{場合|ばあい}は{親権|しんけん}{者|しゃ}を{記入|きにゅう}します。",
+        "ja_easy": "{離婚届|りこんとどけ}には、ふたりの{署名|しょめい}と、{大人|おとな}の{証人|しょうにん}2{人|にん}の{署名|しょめい}が{要|い}ります。はんこは、なくてもよいです。{未成年|みせいねん}の{子|こ}がいるときは、{親権|しんけん}{者|しゃ}を{書|か}きます。",
+        "en": "The form needs both spouses' and two adult witnesses' signatures; a seal is optional. If there are minor children, enter who has parental authority."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届書（夫婦双方の署名、成人の証人2人の届書への署名がしてあるもの。押印は任意。未成年の子どもがいる場合は親権者を記入。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c3"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証人|しょうにん}が{必要|ひつよう}なのは、{協議|きょうぎ}{離婚|りこん}のときだけです。",
+        "ja_easy": "{証人|しょうにん}が{要|い}るのは、{話|はな}し{合|あ}いで{離婚|りこん}するときだけです。",
+        "en": "Witnesses are needed only for divorce by agreement."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-98"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "協議離婚の時だけ証人が必要です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証人|しょうにん}は{離婚|りこん}の{事実|じじつ}を{知|し}っている{成年|せいねん}の{人|ひと}で、{当事者|とうじしゃ}{以外|いがい}ならだれでもかまいません。{署名|しょめい}{欄|らん}は{証人|しょうにん}{本人|ほんにん}が{書|か}き、2{人|にん}{分|ぶん}が{必要|ひつよう}です。",
+        "ja_easy": "{証人|しょうにん}は、{離婚|りこん}のことを{知|し}っている{大人|おとな}で、ふたり{以外|いがい}の{人|ひと}ならだれでもよいです。{署名|しょめい}は{証人|しょうにん}{本人|ほんにん}が{書|か}き、2{人|にん}{分|ぶん}が{要|い}ります。",
+        "en": "A witness is an adult who knows of the divorce and is not one of the couple. Each witness signs personally; two are needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-98"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "証人は離婚の事実を知っている人で、成年に達している当事者以外の方ならどなたでも可能です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離婚届|りこんとどけ}を{窓口|まどぐち}に{持|も}ってくる{人|ひと}の{氏名|しめい}が{確認|かくにん}できる{書類|しょるい}（{運転|うんてん}{免許|めんきょ}{証|しょう}、{旅券|りょけん}、マイナンバーカードなど）を{持|も}っていきます。",
+        "ja_easy": "{離婚届|りこんとどけ}を{持|も}っていく{人|ひと}の{身分|みぶん}{証明|しょうめい}{書|しょ}（{運転|うんてん}{免許|めんきょ}{証|しょう}、パスポート、マイナンバーカードなど）を{持|も}っていきます。",
+        "en": "Bring ID showing the name of the person who takes the form to the counter (driver's license, passport, My Number Card, etc.)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "離婚届を区役所・支所の窓口にお持ちいただく方の氏名が確認できる書類",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}を{持|も}って{行|い}く{人|ひと}はだれでもよく、{委任|いにん}{状|じょう}は{要|い}りません。ただし、{届|とどけ}{書|しょ}の{署名|しょめい}は{本人|ほんにん}が{自分|じぶん}で{書|か}きます。",
+        "ja_easy": "{届|とど}けを{持|も}って{行|い}く{人|ひと}は、だれでもよく、{委任|いにん}{状|じょう}は{要|い}りません。ただし、{署名|しょめい}は{本人|ほんにん}が{自分|じぶん}で{書|か}きます。",
+        "en": "Anyone may take the form to the counter and no power of attorney is needed, but each person must sign the form themselves."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "書類をお持ちになる方≫どなたでも可能です。委任状は必要ありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}に{不備|ふび}があると、{後日|ごじつ}、{来庁|らいちょう}を{求|もと}められることがあります。{平日|へいじつ}の{昼間|ひるま}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{届|とどけ}{書|しょ}に{書|か}きます。",
+        "ja_easy": "{紙|かみ}にまちがいがあると、あとで{区役所|くやくしょ}に{行|い}くことがあります。{平日|へいじつ}の{昼|ひる}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{書|か}きます。",
+        "en": "If the form has errors you may be asked to come back later. Write a number that can be reached on weekday daytime."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "内容に不備がある場合等は、後日あらためてご来庁いただくことがありますので",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{未成年|みせいねん}の{子|こ}がいる{場合|ばあい}は{親権|しんけん}{者|しゃ}を{定|さだ}める{必要|ひつよう}があり、{離婚届|りこんとどけ}の{所定|しょてい}の{欄|らん}に{書|か}きます。{子|こ}が{複数|ふくすう}のときは、それぞれの{親権|しんけん}{者|しゃ}を{定|さだ}めます。",
+        "ja_easy": "{未成年|みせいねん}の{子|こ}がいるときは、{親権|しんけん}{者|しゃ}を{決|き}めて、{離婚届|りこんとどけ}の{欄|らん}に{書|か}きます。{子|こ}が{何|なん}{人|にん}かいるときは、ひとりずつ{決|き}めます。",
+        "en": "If there are minor children, decide who has parental authority and enter it on the form. With several children, decide for each child."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-94"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "未成年の子どもがいる場合は親権者を定める必要があります。離婚届出用紙の所定の欄に記入してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "aabdb1b1e07f6968ae57907ae1522e1d048a4c3b29e105959fbd89e91bd67a9a",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{子|こ}を{離婚|りこん}{後|ご}の{新|あたら}しい{戸籍|こせき}に{移|うつ}すときは、{別|べつ}に「{入籍届|にゅうせきとどけ}」が{必要|ひつよう}です。{離婚届|りこんとどけ}だけでは、{子|こ}の{戸籍|こせき}は{動|うご}きません。",
+        "ja_easy": "{子|こ}を{離婚|りこん}のあとの{新|あたら}しい{戸籍|こせき}に{移|うつ}すときは、{別|べつ}に「{入籍届|にゅうせきとどけ}」が{要|い}ります。{離婚届|りこんとどけ}だけでは、{子|こ}の{戸籍|こせき}は{変|か}わりません。",
+        "en": "To move a child into the new family register after divorce, a separate entry notification is needed. The divorce registration alone does not change the child's register."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "子を離婚後の新しい戸籍に移すときは別途、「入籍届」が必要になります。（離婚届のみでは、子の戸籍は異動しません。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}で{姓|せい}を{改|あらた}めた{人|ひと}が、{離婚|りこん}{後|ご}も{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{称|しょう}する{場合|ばあい}は、{別|べつ}に「{離婚|りこん}の{際|さい}に{称|しょう}していた{氏|うじ}を{称|しょう}する{届|とどけ}」が{必要|ひつよう}です。",
+        "ja_easy": "{結婚|けっこん}で{名字|みょうじ}を{変|か}えた{人|ひと}が、{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}うときは、{別|べつ}に「{離婚|りこん}の{際|さい}に{称|しょう}していた{氏|うじ}を{称|しょう}する{届|とどけ}」が{要|い}ります。",
+        "en": "A person who changed their surname on marriage and wants to keep it after divorce must file a separate notification to continue using that name."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "婚姻により姓を改めた方が離婚後も婚姻中の氏を称する場合は、別途、「離婚の際に称していた氏を称する届」が必要になります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c14"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{含|ふく}まれる{場合|ばあい}は、{必要|ひつよう}な{物|もの}が{異|こと}なります。{届|とど}け{出|で}る{区役所|くやくしょ}・{支所|ししょ}に{尋|たず}ねてください。",
+        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}がいるときは、{必要|ひつよう}な{物|もの}がちがいます。{届|とど}ける{区役所|くやくしょ}に{聞|き}いてください。",
+        "en": "If a foreign national is involved, the required items differ. Ask the ward or branch office where you will file."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "(外国籍の方の場合、必要なものが異なりますので、届出される区役所・支所へお尋ねください。)"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "2026{年|ねん}4{月|つき}1{日|にち}{以降|いこう}は、{離婚届|りこんとどけ}のときに、{未成年|みせいねん}の{子|こ}の{親権|しんけん}を、{父母|ちちはは}の{一方|いっぽう}（{単独|たんどく}{親権|しんけん}）にするか{双方|そうほう}（{共同|きょうどう}{親権|しんけん}）にするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "2026{年|ねん}4{月|つき}1{日|にち}からは、{離婚届|りこんとどけ}のときに、{子|こ}の{親権|しんけん}を、ひとりにするか、ふたりにするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "en": "From 1 April 2026 you can choose, on the divorce form, sole or joint parental authority for minor children (Nagoya City guidance) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "令和8年4月1日以降、離婚届出の際に未成年の子の親権を父母の一方（単独親権）とするか双方（共同親権）とするか選択できるようになります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{相手|あいて}が{勝手|かって}に{離婚届|りこんとどけ}を{出|だ}すことが{心配|しんぱい}なときは、{本籍|ほんせき}{地|ち}の{市区|しく}{町村|ちょうそん}に{書面|しょめん}で「{不|ふ}{受理|じゅり}{申出|もうしで}」をする{制度|せいど}があります。{郵送|ゆうそう}ではできません。{判断|はんだん}はせず、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{相手|あいて}が{勝手|かって}に{離婚届|りこんとどけ}を{出|だ}すのが{心配|しんぱい}なときは、{本籍|ほんせき}の{市役所|しやくしょ}などに、{書面|しょめん}で「{不|ふ}{受理|じゅり}{申出|もうしで}」をする{制度|せいど}があります。{郵送|ゆうそう}ではできません。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+        "en": "If you are worried that your spouse might file without you, there is a \"non-acceptance request\" made in writing to the municipality of your registered domicile; it cannot be made by mail. This app does not assess your case; ask at the counter (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-89"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "本籍地の市区町村長に対して、書面で不受理の申出を行うことにより、その後に提出された協議離婚届は届け出た者が本人であることを確認できなければ受理されなくなります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離婚届|りこんとどけ}は24{時間|じかん}365{日|にち}{出|だ}せます。{開|ひらき}{庁|ちょう}{時間|じかん}{外|がい}は{次|つぎ}の{開|ひらき}{庁|ちょう}{時間|じかん}に{内容|ないよう}を{確認|かくにん}してから{正式|せいしき}に{受理|じゅり}されます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{離婚届|りこんとどけ}は、24{時間|じかん}いつでも{出|だ}せます。{時間|じかん}{外|がい}は、{次|つぎ}の{受付|うけつけ}のときに{中|なか}を{確|たし}かめてから{受|う}け{取|と}られます（{要|よう}{確認|かくにん}）。",
+        "en": "You can submit the form at any time. Outside office hours it is formally accepted after checking in the next open hours (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "区役所の開庁時間以外の時間（土曜・日曜・祝日・祝日の振替休日・年末年始12月29日から翌年1月3日及び平日の時間外）に届出される場合は、翌開庁時間に記載内容等を確認してから正式に受理をします。"
+      }
+    }
+  ],
+  "keywords": [
+    "離婚届",
+    "協議離婚",
+    "離婚",
+    "りこん",
+    "divorce",
+    "divorce registration"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{話|はな}し{合|あ}いで{離婚|りこん}する{人|ひと}に{出|だ}しています。",
+      "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}する{人|ひと}に{出|だ}しています。",
+      "en": "Shown for a divorce by agreement."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-konin-rikon-div",
+      "B-nagoya-faq-97"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "期限なし(届出をしたときから効力があります)"
+  }
+}

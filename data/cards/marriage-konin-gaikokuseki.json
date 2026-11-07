@@ -1,0 +1,292 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "marriage-konin-gaikokuseki",
+  "illustration": "passport",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-foreign"
+    ]
+  },
+  "title": {
+    "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{含|ふく}まれる{婚姻届|こんいんとどけ}の{書類|しょるい}",
+    "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}がいる{結婚|けっこん}の{届|とど}けの{書類|しょるい}",
+    "en": "Documents for a marriage with a foreign national"
+  },
+  "official_name": {
+    "ja": "婚姻届（外国籍の人が含まれる場合）",
+    "reading": "こんいんとどけがいこくせきのひとがふくまれるばあい"
+  },
+  "summary": {
+    "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{含|ふく}まれる{婚姻届|こんいんとどけ}は、{必要|ひつよう}な{書類|しょるい}が{国|くに}によって{違|ちが}います。{日本|にほん}で{先|さき}に{届|とど}け{出|で}る{場合|ばあい}、{一般|いっぱん}{的|てき}には{外国|がいこく}{籍|せき}の{人|ひと}の{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}と{国籍|こくせき}を{証明|しょうめい}する{物|もの}、およびその{日本語|にほんご}{訳|やく}が{要|い}ります（{要|よう}{確認|かくにん}）。{届|とど}け{出|で}る{前|まえ}に、{出|だ}す{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}に{相談|そうだん}してください。",
+    "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}がいる{結婚|けっこん}の{届|とど}けは、{書類|しょるい}が{国|くに}によって{違|ちが}います。{日本|にほん}で{先|さき}に{届|とど}けるときは、ふつう、その{人|ひと}の{国|くに}の{大使館|たいしかん}などでもらう「{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}」と、{国籍|こくせき}がわかる{物|もの}と、その{日本語|にほんご}の{訳|やく}が{要|い}ります（{要|よう}{確認|かくにん}）。{出|だ}す{前|まえ}に、{区役所|くやくしょ}に{相談|そうだん}します。",
+    "en": "The documents for a marriage that includes a foreign national differ by country. When you file in Japan first, you generally need a certificate of legal capacity to marry, proof of nationality and their Japanese translations (to be checked). Consult the ward office before you file."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{届|とど}け{出|で}る{予定|よてい}の{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}（{先|さき}に{相談|そうだん}する）",
+      "ja_easy": "{届|とど}ける{予定|よてい}の{区役所|くやくしょ}（{先|さき}に{相談|そうだん}する）",
+      "en": "The ward or branch office where you plan to file (consult first)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-69"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "国により添付書類は違います。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c3"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{必要|ひつよう}な{書類|しょるい}は{外国|がいこく}{人|じん}の{国籍|こくせき}と、{日本|にほん}と{外国|がいこく}{人|じん}の{本国|ほんごく}のどちらで{先|さき}に{届出|とどけで}をするかなどによって{違|ちが}います。",
+        "ja_easy": "{必要|ひつよう}な{書類|しょるい}は、{国籍|こくせき}や、{日本|にほん}と{国|くに}のどちらで{先|さき}に{届|とど}けるかなどで{違|ちが}います。",
+        "en": "The required documents depend on the foreign national's nationality and on whether you file first in Japan or in their home country."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国人の国籍や、届出を日本と外国人の本国のどちらで先に行うかなどによって、必要な書類が違います。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}は、{結婚|けっこん}しようとする{外国|がいこく}{人|じん}の{本国|ほんごく}の{大使|たいし}・{公使|こうし}・{領事|りょうじ}など{権限|けんげん}のある{人|ひと}が、{本国|ほんごく}の{法律|ほうりつ}でその{結婚|けっこん}に{必要|ひつよう}な{条件|じょうけん}がそろっていることを{証明|しょうめい}する{書面|しょめん}です。",
+        "ja_easy": "{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}は、その{人|ひと}の{国|くに}の{大使館|たいしかん}などの{人|ひと}が、「{国|くに}の{法律|ほうりつ}で{結婚|けっこん}できる」ことを{証明|しょうめい}する{紙|かみ}です。",
+        "en": "The certificate of legal capacity to marry is a document in which an authorized official of the foreign national's home country (ambassador, minister or consul) certifies that the requirements of home-country law are met."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "婚姻要件具備証明書は、婚姻をしようとする外国人の本国の大使、公使又は領事など権限を持っている者が本国法上その婚姻に必要な要件を備えていることを証明する書面です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}は、その{国|くに}の{大使館|たいしかん}または{領事館|りょうじかん}に{問|と}い{合|あ}わせます。",
+        "ja_easy": "{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}は、その{国|くに}の{大使館|たいしかん}か{領事館|りょうじかん}に{聞|き}きます。",
+        "en": "Ask the embassy or consulate of the country concerned about the certificate."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "各国の大使館または領事館にお問い合わせ下さい。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}{語|ご}で{書|か}かれた{書類|しょるい}には、すべて{日本語|にほんご}の{訳|やく}{文|ぶん}を{付|つ}け、だれが{翻訳|ほんやく}したかを{書|か}きます。{翻訳|ほんやく}{者|しゃ}は{本人|ほんにん}でもかまいません。",
+        "ja_easy": "{外国|がいこく}のことばの{書類|しょるい}には、{日本語|にほんご}の{訳|やく}をつけて、{訳|やく}した{人|ひと}の{名前|なまえ}を{書|か}きます。{訳|やく}す{人|ひと}は、{本人|ほんにん}でもよいです。",
+        "en": "Attach a Japanese translation to every document in a foreign language and state who translated it. The translator may be the person themselves."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国語で書かれた書類を提出する際には、そのすべてに日本語の訳文を付け、また、誰が翻訳したのかを記入しておかなければなりません。翻訳者は本人でもかまいません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{本国|ほんごく}に{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}を{発行|はっこう}する{制度|せいど}がない{国|くに}では、{代|か}わりの{書類|しょるい}を{出|だ}します。",
+        "ja_easy": "{国|くに}に{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}の{制度|せいど}がないときは、かわりの{書類|しょるい}を{出|だ}します。",
+        "en": "If the home country has no system for issuing this certificate, you submit a substitute document."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "婚姻要件具備証明書に代わる書類を提出することになります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{代|か}わりの{書類|しょるい}の{例|れい}は、{本国|ほんごく}の{領事|りょうじ}の{面前|めんぜん}で{宣誓|せんせい}し、{領事|りょうじ}が{署名|しょめい}した{宣誓|せんせい}{書|しょ}（{日本語|にほんご}{訳|やく}が{必要|ひつよう}）です。{認|みと}められる{場合|ばあい}があります。",
+        "ja_easy": "かわりの{書類|しょるい}の{例|れい}は、{領事|りょうじ}の{前|まえ}でちかい、{領事|りょうじ}が{署名|しょめい}した{書類|しょるい}です（{日本語|にほんご}の{訳|やく}が{要|い}ります）。{認|みと}められることがあります。",
+        "en": "One example of a substitute is an affidavit sworn before the home-country consul and signed by the consul (with a Japanese translation). It may be accepted in some cases."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "領事が署名した宣誓書が発行されれば、この宣誓書（日本語訳が必要です。）が婚姻要件具備証明書に代わるものとして認められる場合があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{証明|しょうめい}{書|しょ}も{代|か}わりの{証明|しょうめい}{書|しょ}も{出|だ}せないときは、{本国|ほんごく}の{法律|ほうりつ}の{写|うつ}し（{出典|しゅってん}と{日本語|にほんご}{訳|やく}つき）と、{本国|ほんごく}の{公的|こうてき}{機関|きかん}が{出|だ}した{身分|みぶん}{証明|しょうめい}の{書類|しょるい}（{日本語|にほんご}{訳|やく}つき）などを{出|だ}します。",
+        "ja_easy": "{証明|しょうめい}{書|しょ}もかわりの{書類|しょるい}も{出|だ}せないときは、{国|くに}の{法律|ほうりつ}の{写|うつ}しと、{国|くに}の{役所|やくしょ}が{出|だ}した{身分|みぶん}の{書類|しょるい}などを、{日本語|にほんご}の{訳|やく}をつけて{出|だ}します。",
+        "en": "If neither can be issued, submit a copy of the home-country law (with source and Japanese translation) and an identity document issued by a public body of the home country (with translation)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "外国人の本国の法律の写し（出典を明らかにするとともに、日本語訳の添付が必要です。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}の{本人|ほんにん}{確認|かくにん}など、{必要|ひつよう}な{物|もの}は{日本人|にほんじん}と{異|こと}なります。{届|とど}け{出|で}る{区役所|くやくしょ}・{支所|ししょ}に{尋|たず}ねてください。",
+        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}の{身分|みぶん}{証明|しょうめい}{書|しょ}などは、{日本人|にほんじん}とちがいます。{届|とど}ける{区役所|くやくしょ}に{聞|き}いてください。",
+        "en": "The items needed, such as identification for a foreign national, differ from those for Japanese nationals. Ask the ward or branch office where you will file."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "(外国籍の方の場合、必要なものが異なりますので、届出される区役所・支所へお尋ねください。)",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c14"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}で{先|さき}に{届|とど}け{出|で}る{場合|ばあい}、{外国|がいこく}{人|じん}については、{一般|いっぱん}{的|てき}に、{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}と{国籍|こくせき}を{証明|しょうめい}する{物|もの}、およびその{日本語|にほんご}{訳|やく}が{必要|ひつよう}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{日本|にほん}で{先|さき}に{届|とど}けるときは、{外国|がいこく}の{人|ひと}について、ふつう、{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}と{国籍|こくせき}の{証明|しょうめい}と、その{日本語|にほんご}の{訳|やく}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "When filing in Japan first, a foreign national generally needs a certificate of legal capacity to marry, proof of nationality and Japanese translations (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "外国人について：一般的には婚姻要件具備証明書と国籍を証明するもの、およびその日本語訳"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}で{結婚|けっこん}するには、{届|とどけ}{書|しょ}のほかに{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}とその{日本語|にほんご}{訳|やく}が{必要|ひつよう}です（{法務省|ほうむしょう}の{説明|せつめい}。{外国|がいこく}{人|じん}が{日本|にほん}で{届|とど}け{出|で}る{場合|ばあい}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{日本|にほん}で{結婚|けっこん}するときは、{届|とど}けの{紙|かみ}のほかに、{婚姻|こんいん}{要件|ようけん}{具備|ぐび}{証明書|しょうめいしょ}と{日本語|にほんご}の{訳|やく}が{要|い}ります（{法務省|ほうむしょう}の{説明|せつめい}）（{要|よう}{確認|かくにん}）。",
+        "en": "To marry in Japan, a certificate of legal capacity to marry and its Japanese translation are needed in addition to the form (Ministry of Justice explanation) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻要件具備証明書とその日本語訳が必要です。"
+      }
+    }
+  ],
+  "keywords": [
+    "婚姻要件具備証明書",
+    "国際結婚",
+    "外国人と結婚",
+    "international marriage",
+    "certificate of legal capacity to marry",
+    "embassy"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "どちらも{日本|にほん}{国籍|こくせき}の{人|ひと}の{結婚|けっこん}には{出|だ}していません。",
+      "ja_easy": "どちらも{日本|にほん}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}には{出|だ}していません。",
+      "en": "Not shown when both people are Japanese nationals."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-69",
+      "B-moj-minji15"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "外国人の国籍や、届出を日本と外国人の本国のどちらで先に行うかなどによって、必要な書類が違います。"
+  }
+}

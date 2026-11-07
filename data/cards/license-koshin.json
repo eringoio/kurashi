@@ -1,0 +1,234 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-koshin",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "kind": "procedure",
+  "keywords": [
+    "免許更新",
+    "めんきょこうしん",
+    "更新",
+    "更新連絡書",
+    "renew driving license",
+    "license renewal",
+    "koshin",
+    "ゴールド",
+    "ブルー",
+    "グリーン"
+  ],
+  "eligibility": "R-license-goal-renew",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は{運転|うんてん}{免許|めんきょ}を{更新|こうしん}する{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{免許|めんきょ}を{更新|こうしん}する{人|ひと}のためのものです。",
+      "en": "This guide is for people renewing a driving licence."
+    }
+  },
+  "title": {
+    "ja": "{運転|うんてん}{免許|めんきょ}を{更新|こうしん}する",
+    "ja_easy": "{運転|うんてん}{免許|めんきょ}を{更新|こうしん}する",
+    "en": "Renew your driving licence"
+  },
+  "official_name": {
+    "ja": "運転免許証の更新",
+    "reading": "うんてんめんきょしょうのこうしん"
+  },
+  "summary": {
+    "ja": "{有効|ゆうこう}{期間|きかん}が{終|お}わる{前|まえ}の{誕生日|たんじょうび}の1か{月|げつ}{前|まえ}から、{有効|ゆうこう}{期間|きかん}の{最後|さいご}の{日|ひ}までの{間|あいだ}に{更新|こうしん}します（{要|よう}{確認|かくにん}）。{予約制|よやくせい}です。{外国籍|がいこくせき}の{人|ひと}は{在留|ざいりゅう}カードなどの{提示|ていじ}が{必要|ひつよう}です（{令和|れいわ}7{年|ねん}10{月|がつ}1{日|にち}から）（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}と{講習|こうしゅう}の{区分|くぶん}は{持|も}っている{免許|めんきょ}と{違反|いはん}の{履歴|りれき}で{変|か}わります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{誕生日|たんじょうび}の1か{月|げつ}{前|まえ}から、{免許|めんきょ}の{期限|きげん}の{日|ひ}までに{更新|こうしん}します（{要確認|ようかくにん}）。{予約|よやく}がいります。{外国|がいこく}の{人|ひと}は{在留|ざいりゅう}カードを{見|み}せます（{要確認|ようかくにん}）。",
+    "en": "Renew between one month before the birthday before your licence expires and the last day of validity (to be checked). Renewal is by reservation. Foreign nationals must show a residence card or similar (from 1 October 2025) (to be checked). Fees and the type of course depend on the licence you hold and your violation record (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{有効|ゆうこう}{期間|きかん}が{終|お}わる{前|まえ}の{誕生日|たんじょうび}の1か{月|げつ}{前|まえ}から、{有効|ゆうこう}{期間|きかん}の{最後|さいご}の{日|ひ}まで。{最後|さいご}の{日|ひ}が{休日|きゅうじつ}なら、{休日|きゅうじつ}の{次|つぎ}の{平日|へいじつ}までです（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{誕生日|たんじょうび}の1か{月|げつ}{前|まえ}から、{免許|めんきょ}の{期限|きげん}の{日|ひ}まで（{要確認|ようかくにん}）",
+      "en": "From one month before the birthday before expiry until the last day of validity. If the last day is a holiday, until the first weekday after it (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-aichi-koshin"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "更新期間 免許の有効期間が満了する直前の誕生日の一か月前から該当有効期間が満了する日までの間(誕生日の前後１か月間)に更新手続を行ってください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、23の{警察署|けいさつしょ}、{西|にし}・{港|みなと}{警察署|けいさつしょ}（{分庁舎|ぶんちょうしゃ}）。{名古屋市内|なごやしない}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{西|にし}・{港|みなと}（{分庁舎|ぶんちょうしゃ}）です（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{警察署|けいさつしょ}など（{要確認|ようかくにん}）",
+      "en": "The driving licence test centre, the Higashi-Mikawa centre, 23 police stations, and the Nishi and Minato police stations (branch offices). In Nagoya: the test centre and the Nishi/Minato branch offices (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-aichi-koshin"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "運転免許試験場 東三河運転免許センター 23警察署 西警察署・港警察署（分庁舎）"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}の{手続|てつづ}きは{予約制|よやくせい}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{更新|こうしん}は{予約|よやく}がいります（{要確認|ようかくにん}）",
+        "en": "Renewal is by reservation (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "運転免許証の更新手続は予約制です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}{連絡書|れんらくしょ}は{免許証|めんきょしょう}に{書|か}かれた{住所|じゅうしょ}に{送|おく}られ、{誕生日|たんじょうび}の1か{月|げつ}くらい{前|まえ}に{届|とど}きます。{手元|てもと}になくても{手続|てつづ}きできます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{更新|こうしん}のおしらせ（{更新|こうしん}{連絡書|れんらくしょ}）は、{誕生日|たんじょうび}の1か{月|げつ}くらい{前|まえ}に{届|とど}きます（{要確認|ようかくにん}）",
+        "en": "A renewal notice is mailed to the address on your licence and arrives about one month before your birthday. You can renew without it (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "更新する年の誕生日の１か月くらい前に届きます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{運転|うんてん}{免許証|めんきょしょう}かマイナ{免許証|めんきょしょう}（{両方|りょうほう}でも{可|か}）。{必要|ひつよう}な{人|ひと}は{眼鏡|めがね}など（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{免許証|めんきょしょう}。めがねがいる{人|ひと}はめがね（{要確認|ようかくにん}）",
+        "en": "Bring: your driving licence or Mynumber-linked licence (or both), and glasses if you need them (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "運転免許証 又は マイナ免許証 若しくは その両方 眼鏡など（必要な方のみ）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国籍|がいこくせき}の{人|ひと}は{在留|ざいりゅう}カード、{特別|とくべつ}{永住者|えいじゅうしゃ}{証明書|しょうめいしょ}、{特定|とくてい}{事項|じこう}が{書|か}かれた{住民票|じゅうみんひょう}の{写|うつ}し、{特定|とくてい}{在留|ざいりゅう}カード、{特定|とくてい}{特別|とくべつ}{永住者|えいじゅうしゃ}{証明書|しょうめいしょ}のどれかが{必要|ひつよう}です（{令和|れいわ}7{年|ねん}10{月|がつ}1{日|にち}から）（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{外国|がいこく}の{人|ひと}は、{在留|ざいりゅう}カードなどが{必要|ひつよう}です（{要確認|ようかくにん}）",
+        "en": "Foreign nationals need one of: a residence card, special permanent resident certificate, a copy of the resident record with the specified items, a specified residence card, or a specified special permanent resident certificate (from 1 October 2025) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国籍の方は下記のうちいずれかが必要です。 在留カード 特別永住者証明書 住民票の写し（特定事項が記載されたもの） 特定在留カード 特定特別永住者証明書"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}{手数料|てすうりょう}：{従来|じゅうらい}の{免許証|めんきょしょう}のみ 2,850{円|えん}、マイナ{免許証|めんきょしょう}のみ 2,100{円|えん}、{両方|りょうほう} 2,950{円|えん}（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{更新|こうしん}のお{金|かね}：{従来|じゅうらい}の{免許証|めんきょしょう}は2,850円、マイナ{免許証|めんきょしょう}は2,100円、{両方|りょうほう}は2,950円（{要確認|ようかくにん}）",
+        "en": "Renewal fee: conventional licence only 2,850 yen; Mynumber-linked licence only 2,100 yen; both 2,950 yen (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "更新手数料 従来の免許証のみ マイナ免許証のみ 従来の免許証＋マイナ免許証 更新手数料 2,850円 2,100円 2,950円"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{講習|こうしゅう}{手数料|てすうりょう}（{対面|たいめん}）：{優良|ゆうりょう} 500{円|えん}、{一般|いっぱん} 800{円|えん}、{違反|いはん} 1,400{円|えん}、{初回|しょかい} 1,400{円|えん}。オンライン{講習|こうしゅう}は{優良|ゆうりょう}・{一般|いっぱん}とも 200{円|えん}（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{講習|こうしゅう}のお{金|かね}は、{区分|くぶん}で{違|ちが}います（500円〜1,400円）（{要確認|ようかくにん}）",
+        "en": "Course fee (in person): excellent 500 yen, general 800 yen, violator 1,400 yen, first-time 1,400 yen. Online course: 200 yen for excellent and general (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "従来の対面講習 500円 800円 1,400円 1,400円 オンライン講習 200円 200円"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}は{愛知県|あいちけん}{証紙|しょうし}かキャッシュレスで{払|はら}います。{他県|たけん}の{証紙|しょうし}は{使|つか}えません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "お{金|かね}は{愛知県|あいちけん}の{証紙|しょうし}かキャッシュレスで{払|はら}います（{要確認|ようかくにん}）",
+        "en": "Pay by Aichi revenue stamps or cashless payment. Revenue stamps of other prefectures are not accepted (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "他県証紙では受付できません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}は{誕生日|たんじょうび}の40{日|にち}{前|まえ}を{基準|きじゅん}に、{過去|かこ}5{年間|ねんかん}の{違反歴|いはんれき}などで{決|き}まります（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{講習|こうしゅう}の{種類|しゅるい}は、{過去|かこ}5{年|ねん}の{違反|いはん}などで{決|き}まります（{要確認|ようかくにん}）",
+        "en": "The course category is decided by your violation history over the past 5 years, counted from 40 days before your birthday (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "誕生日の40日前の日を基準日として過去5年間の違反歴等によって区分されます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{土曜日|どようび}・{祝日|しゅくじつ}・{振替|ふりかえ}{休日|きゅうじつ}・{年末年始|ねんまつねんし}（12{月|がつ}29{日|にち}〜1{月|がつ}3{日|にち}）は{受付|うけつけ}していません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{土曜日|どようび}・{祝日|しゅくじつ}・{年末年始|ねんまつねんし}は{休|やす}みです（{要確認|ようかくにん}）",
+        "en": "No service on Saturdays, public holidays, substitute holidays, or 29 December to 3 January (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "土曜日、祝日、振替休日及び年末年始（12月29日～1月3日）は、受付をしていません。（日曜日が祝日の場合は受付をします。）"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "license-aichi-koshin"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "運転免許証の更新手続は予約制です。"
+  }
+}

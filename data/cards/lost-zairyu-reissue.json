@@ -1,0 +1,248 @@
+{
+  "id": "lost-zairyu-reissue",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-zairyu",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}",
+    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらう",
+    "en": "Reissue your residence card"
+  },
+  "official_name": {
+    "ja": "在留カードの再交付",
+    "reading": "ざいりゅうかーどのさいこうふ"
+  },
+  "summary": {
+    "ja": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}をもらいます。{届出|とどけで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}（{届|とど}けた{警察|けいさつ}{署|しょ}でもらえます）か{受理|じゅり}{番号|ばんごう}を{持|も}って、{住居|じゅうきょ}{地|ち}を{管轄|かんかつ}する{入管|にゅうかん}で{再|さい}{交付|こうふ}を{申請|しんせい}します。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}をもらいます。{警察|けいさつ}の{証明|しょうめい}{書|しょ}か{受理|じゅり}{番号|ばんごう}を{持|も}って、{入管|にゅうかん}に{行|い}きます。お{金|かね}はかかりません（{要|よう}{確認|かくにん}）。",
+    "en": "First report it to the police and get a receipt number. Take the police certificate of the report (from the police station where you reported) or the receipt number to the immigration office for your address and apply for a new card. There is no fee (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "なくしたと{知|し}った{日|ひ}から14{日|にち}{以内|いない}。{国外|こくがい}で{知|し}ったときは、その{後|あと}{最初|さいしょ}に{入国|にゅうこく}した{日|ひ}から（{要|よう}{確認|かくにん}）",
+      "ja_easy": "なくしたとわかった{日|ひ}から14{日|にち}まで（{要確認|ようかくにん}）",
+      "en": "Within 14 days of learning of the loss; if abroad, from your first re-entry (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-zairyu-reissue-lost"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "申請期間 当該事実を知った日（本邦から出国している間に当該事実を知った場合は、その後最初に入国した日）から１４日以内"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住居|じゅうきょ}{地|ち}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "The regional immigration office for your address"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-zairyu-reissue-lost"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "申請先 住居地を管轄する地方出入国在留管理官署"
+    }
+  },
+  "place": "immigration",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-moj-zairyu-reissue-lost",
+      "C-isa-reissue-lost"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "申請期間 当該事実を知った日（本邦から出国している間に当該事実を知った場合は、その後最初に入国した日）から１４日以内"
+  },
+  "alternatives": [
+    {
+      "text": {
+        "ja": "{写真|しゃしん}は{基本|きほん}{要|い}ります（1{歳|さい}{未満|みまん}のこどもは{要|い}りません）。{本人|ほんにん}が16{歳|さい}{未満|みまん}のときは、{同居|どうきょ}する16{歳|さい}{以上|いじょう}の{親族|しんぞく}が{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{写真|しゃしん}は{要|い}ります（1{歳|さい}{未満|みまん}のこどもは{要|い}りません）。16{歳|さい}{未満|みまん}のこどもは、{家族|かぞく}が{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "en": "A photo is usually needed (not for children under 1). If the person is under 16, a relative aged 16 or over who lives with them applies (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "令和８年６月１４日以降に交付される在留カードからは１歳以上の方について写真の提出が必要となりました。"
+      }
+    },
+    {
+      "text": {
+        "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}をなくしたときは、{入管|にゅうかん}ではなく、{住|す}んでいる{区|く}の{区役所|くやくしょ}で{手続|てつづ}きします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}は、{区役所|くやくしょ}です。",
+        "en": "For a Special Permanent Resident Certificate, apply at your ward office, not immigration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "R-moj-tokubetsu-reissue"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "住居地の市区町村の担当窓口"
+      }
+    }
+  ],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}に{届|とど}けて{受理|じゅり}{番号|ばんごう}をもらい、{紛失|ふんしつ}・{盗難|とうなん}の{陳述書|ちんじゅつしょ}に{書|か}きます。{遺失|いしつ}{届出|とどけで}などの{対象|たいしょう}にならないときは、そのことを{陳述書|ちんじゅつしょ}に{書|か}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{警察|けいさつ}でもらった{番号|ばんごう}を、{陳述書|ちんじゅつしょ}に{書|か}きます（{要確認|ようかくにん}）。",
+        "en": "Get a receipt number from the police and write it on the loss/theft statement. If a loss report does not apply, say so on the statement (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "紛失・盗難に係る陳述書（紛失や盗難の場合は警察へ届出の上、届出受理番号が必要です。）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{資格|しかく}{外|がい}{活動|かつどう}{許可書|きょかしょ}をもらっている{人|ひと}は、その{許可書|きょかしょ}も{見|み}せます。",
+        "ja_easy": "{資格外活動許可書|しかくがいかつどうきょかしょ}を{持|も}っている{人|ひと}は、それも{持|も}っていきます。",
+        "en": "If you have a permission-to-engage-in-other-activity certificate, show it too."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "資格外活動許可書を提示（同許可書の交付を受けているものに限る。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "600bcab0468ad413beaeb492458eeac2e552faacd672b5e1a66b37195bb773e1",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-reissue-lost/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "14{日|にち}を{過|す}ぎたときは、{理由|りゆう}などを{書|か}いた{書類|しょるい}が{別|べつ}に{要|い}ります。",
+        "ja_easy": "14{日|にち}を{過|す}ぎたときは、{理由|りゆう}を{書|か}いた{紙|かみ}も{要|い}ります。",
+        "en": "If more than 14 days have passed, a document giving the reason is also required."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "申請期間（紛失の事実を知った日から１４日以内）を超えた場合は、理由等を記載した書類（参考様式 PDF:34KB）が別途必要となります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "600bcab0468ad413beaeb492458eeac2e552faacd672b5e1a66b37195bb773e1",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-reissue-lost/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "お{金|かね}はかかりません（{要確認|ようかくにん}）。",
+        "en": "There is no fee (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "手数料 手数料はかかりません"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{旅券|りょけん}（または{在留|ざいりゅう}{資格|しかく}{証明|しょうめい}{書|しょ}）を{見|み}せます。{旅券|りょけん}を{見|み}せられないとき（{家|いえ}に{忘|わす}れた、は{理由|りゆう}になりません）は、その{理由|りゆう}を{書|か}いた{理由|りゆう}{書|しょ}が{要|い}ります。",
+        "ja_easy": "パスポート（または{在留|ざいりゅう}{資格|しかく}{証明|しょうめい}{書|しょ}）を{見|み}せます。{見|み}せられないときは、わけを{書|か}いた{紙|かみ}（{理由|りゆう}{書|しょ}）が{要|い}ります。「{家|いえ}にわすれた」は、わけになりません。",
+        "en": "Show your passport (or certificate of status of residence). If you cannot, a written explanation is needed (forgetting it at home does not count)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "旅券（又は在留資格証明書）を提示できないとき（自宅に忘れた等の理由を除く）は、その理由を記載した理由書",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-foreign/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{愛知|あいち}{県警|けんけい}の{案内|あんない}では、{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}のときは、{届出|とどけで}をした{警察|けいさつ}{署|しょ}に、{届出|とどけで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}を{願|ねが}い{出|で}ます。{入管|にゅうかん}に{出|だ}す{書類|しょるい}として、{受理|じゅり}{番号|ばんごう}のほかに{要|い}るかは、{入管|にゅうかん}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{愛知|あいち}{県警|けんけい}は、{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}のときは、{届|とど}けた{警察|けいさつ}{署|しょ}で「{届出|とどけいで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}」をたのむ、と{案内|あんない}しています。{入管|にゅうかん}で{必要|ひつよう}か、{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "en": "Aichi Police say that for a residence card reissue you ask the police station where you reported for a certificate that the report was accepted. Check with immigration whether you need it in addition to the receipt number (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-tounan"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "在留カードの遺失又は盗難による再交付の手続きについて、届出をした警察署に証明書の発給を願い出てください。届出を受理したことの証明書を発給します。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "93db44e6f2e2b750c3025b7bbf9ba97413ffca47374d3bcbcb70b2e7808abd69",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{火災|かさい}や{災害|さいがい}で{失|うしな}ったときは、り{災|さい}{証明|しょうめい}{書|しょ}などを{出|だ}します。{出|だ}せないときは、{理由|りゆう}{書|しょ}を{求|もと}められることがあります。",
+        "ja_easy": "{火事|かじ}や{災害|さいがい}でなくしたときは、り{災|さい}{証明|しょうめい}{書|しょ}などを{出|だ}します。{出|だ}せないときは、わけを{書|か}いた{紙|かみ}（{理由|りゆう}{書|しょ}）をたのまれることがあります。",
+        "en": "If lost in a fire or disaster, submit a disaster certificate. If you cannot, you may be asked for a written explanation."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "り災証明書等（提出できない場合は理由書の提出をお願いする場合があります。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-disaster/c4"
+        }
+      }
+    }
+  ]
+}

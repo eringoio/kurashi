@@ -1,0 +1,254 @@
+{
+  "id": "move-out-city-tenshutsu",
+  "data_version": 1,
+  "illustration": "box",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-city",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{転出|てんしゅつ}{届|とどけ}を{出|だ}す（ほかの{市町村|しちょうそん}へ{引|ひ}っ{越|こ}すとき）",
+    "ja_easy": "{転出|てんしゅつ}{届|とどけ}（ほかの{市|し}へ{引|ひ}っ{越|こ}すとき）",
+    "en": "Report your move-out (to another municipality)"
+  },
+  "official_name": {
+    "ja": "転出届",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "ほかの{市町村|しちょうそん}へ{引|ひ}っ{越|こ}すときは、{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}を{置|お}く{区|く}は{支所|ししょ}でも{可|か}）に{転出|てんしゅつ}{届|とどけ}を{出|だ}し、{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{受|う}け{取|と}ります。{新|あたら}しい{市区|しく}{町村|ちょうそん}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{使|つか}います。{印鑑|いんかん}{登録|とうろく}は{市外|しがい}へ{転出|てんしゅつ}すると{廃止|はいし}になります。",
+    "ja_easy": "ほかの{市|し}へ{引|ひ}っ{越|こ}すときは、{今|いま}の{区役所|くやくしょ}に「{転出|てんしゅつ}{届|とどけ}」を{出|だ}して、「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらいます。{新|あたら}しい{市|し}では「{転入|てんにゅう}{届|とどけ}」を{出|だ}します。",
+    "en": "When moving to another municipality, file a move-out notice (tenshutsu-todoke) at your ward office and receive a move-out certificate. You use it when you file a move-in notice in the new municipality. Your seal registration ends when you move out of the city."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{転出|てんしゅつ}する{日|ひ}まで（{引|ひ}っ{越|こ}しの{前|まえ}）。{届出|とどけで}の{目安|めやす}は{転出|てんしゅつ}する{日|ひ}の30{日|にち}{前|まえ}から{転出|てんしゅつ}{予定|よてい}{日|び}までです。{転出|てんしゅつ}{日|び}より{後|のち}でも{届|とど}けられますが、すみやかに{届|とど}けます（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{引|ひ}っ{越|こ}す{日|ひ}まで。{引|ひ}っ{越|こ}しの30{日|にち}{前|まえ}から{出|だ}せます。{引|ひ}っ{越|こ}したあとでも{出|だ}せますが、{早|はや}く{出|だ}します（{要|よう}{確認|かくにん}）。",
+      "en": "By the day you move out. The guide is from 30 days before your planned move-out date. You can still file after that date, but do so promptly (to be checked)."
+    },
+    "evidence": {
+      "source_ids": [
+        "A-nagoya-faq-40",
+        "A-nagoya-juumin-todoke-out"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "あらかじめ（転出する日の30日前から転出予定日までが目安）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{今|いま}{住|す}んでいる{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}を{置|お}く{区|く}は{支所|ししょ}の{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{今|いま}の{区役所|くやくしょ}",
+      "en": "Citizens Section of your current ward office (the branch office in wards that have one)"
+    },
+    "evidence": {
+      "source_ids": [
+        "A-nagoya-tenshutsu-lifescene"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "お住まいの区の区役所市民課・支所区民生活課にて転出届を行ってください",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "669250ebaf645839c8ce9f82cb1ceda5e5a1c7b634315267fb698d725192c442",
+        "verdict": "agree",
+        "ref": "research/audits/move.json#P-move-tenshutsu-city/c1"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{区役所|くやくしょ}の{窓口|まどぐち}に{出|だ}します。{届|とど}けられるのは、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{名古屋|なごや}{市|し}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理人|だいりにん}は{委任|いにん}{状|じょう}が{要|い}ります。",
+        "ja_easy": "{区役所|くやくしょ}のまどぐちに{出|だ}します。{出|だ}せる{人|ひと}は、{引|ひ}っ{越|こ}す{本人|ほんにん}と、{名古屋|なごや}{市|し}で{同|おな}じ{世帯|せたい}の{人|ひと}です。{代理|だいり}の{人|ひと}は、{委任|いにん}{状|じょう}が{要|い}ります。",
+        "en": "File at the ward office counter. The person moving, or a member of the same household in Nagoya, can file. A proxy needs a power-of-attorney letter."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-faq-40"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "引越しをする本人 引越しをする人と同じ世帯の人（名古屋市で同じ世帯の人に限ります。） ※代理人による届け出も可能ですが、その場合、委任状が必要です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "940201206fb2d60dd8a778108c2bcee947e306a15598829ebe005ba390cbf9be",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}に{行|い}く{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{旅券|りょけん}・{在留|ざいりゅう}カード・{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}など）を{持|も}って{行|い}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}{資格|しかく}{確認|かくにん}{書|しょ}・{介護|かいご}{保険|ほけん}{被|ひ}{保険|ほけん}{者|しゃ}{証|しょう}は、{加入|かにゅう}している{人|ひと}だけです。",
+        "ja_easy": "{本人|ほんにん}だとわかる{書類|しょるい}（マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・パスポート・{在留|ざいりゅう}カードなど）を{持|も}って{行|い}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}や{介護|かいご}{保険|ほけん}に{入|はい}っている{人|ひと}は、{保険|ほけん}の{証|あかし}も{持|も}って{行|い}きます。",
+        "en": "Bring ID for the person at the counter (My Number Card, driver's licence, passport, residence card, etc.). Bring your insurance certificate only if you are in National Health Insurance or Long-term Care Insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-juumin-todoke-out"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "窓口に来られた方の本人確認ができる書類(マイナンバーカード、運転免許証、旅券、在留カード、特別永住者証明書など) 代理の方の場合、委任状 国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ)",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手続|てつづ}きが{終|お}わると、{転出|てんしゅつ}{証明|しょうめい}{書|しょ}をもらいます。{新|あたら}しい{市区|しく}{町村|ちょうそん}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{必|かなら}ず{要|い}るので、なくさないようにします。",
+        "ja_easy": "{手続|てつづ}きが{終|お}わると、「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらいます。{新|あたら}しい{市|し}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{必|かなら}ず{要|い}るので、なくさないでください。",
+        "en": "When the procedure is finished you receive a move-out certificate. You must have it when you file the move-in notice in the new municipality, so keep it safe."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-faq-40"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "新たにお住まいになる市区町村で転入の手続きをする際、必ず必要となりますので、紛失することのないよう保管してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "940201206fb2d60dd8a778108c2bcee947e306a15598829ebe005ba390cbf9be",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{引|ひ}っ{越|こ}し{先|さき}がまだ{決|き}まっていないと、{届出|とどけで}はできません。{少|すく}なくとも、{引|ひ}っ{越|こ}し{先|さき}の{市区|しく}{町村|ちょうそん}（{最小|さいしょう}の{行政|ぎょうせい}{区|く}）が{決|き}まってから{出|だ}します。",
+        "ja_easy": "{引|ひ}っ{越|こ}し{先|さき}がまだ{決|き}まっていないと、{出|だ}せません。{引|ひ}っ{越|こ}し{先|さき}の{市|し}や{区|く}だけでも{決|き}まってから{出|だ}します。",
+        "en": "You cannot file while the destination is undecided. File once at least the destination municipality (the smallest administrative district) is decided."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-faq-40"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "少なくとも最小行政区がどこかが決まってから、届け出てください",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "940201206fb2d60dd8a778108c2bcee947e306a15598829ebe005ba390cbf9be",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{転出|てんしゅつ}{日|び}より{後|のち}になっても{届出|とどけで}はできます。すみやかに{届|とど}けます。",
+        "ja_easy": "{引|ひ}っ{越|こ}したあとでも{出|だ}せます。{早|はや}く{出|だ}します。",
+        "en": "You can still file after the move-out date. Do it promptly."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-faq-40"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "あらかじめ届出できず、転出日以降に届出することになってしまっても届出は可能ですので、速やかに届出をしてください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "940201206fb2d60dd8a778108c2bcee947e306a15598829ebe005ba390cbf9be",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city/c3"
+        }
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{郵送|ゆうそう}でも{転出|てんしゅつ}{届|とどけ}を{出|だ}せます（{市外|しがい}への{転出|てんしゅつ}{届|とどけ}だけ）。{送|おく}り{先|さき}は、{住|す}んでいた{区|く}の{区役所|くやくしょ}です（{支所|ししょ}の{管内|かんない}の{場合|ばあい}は{支所|ししょ}）。{必要|ひつよう}な{物|もの}は{公式|こうしき}ページで{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{郵送|ゆうそう}でも{出|だ}せます（{市|し}の{外|そと}へ{出|で}るときだけ）。{送|おく}り{先|さき}は、{住|す}んでいた{区|く}の{区役所|くやくしょ}です。{必要|ひつよう}な{物|もの}は、{公式|こうしき}ページで{見|み}てください（{要|よう}{確認|かくにん}）。",
+        "en": "You can also file by mail (move-out notices to other municipalities only). Send it to the ward office you lived in (the branch office if you lived in its area). Check the official page for what to send (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-juumin-todoke-out"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "以下の書類をご用意の上、お住まいだった区の区役所(支所管内の場合は支所)にお送りください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city-online/c3"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{転出|てんしゅつ}する{人|ひと}の{中|なか}にマイナンバーカードを{持|も}っている{人|ひと}がいれば、オンラインでも{転出|てんしゅつ}{届|とどけ}を{出|だ}せます。",
+        "ja_easy": "{引|ひ}っ{越|こ}す{人|ひと}の{中|なか}にマイナンバーカードがある{人|ひと}がいれば、インターネットでも{出|だ}せます。",
+        "en": "If anyone moving has a My Number Card, you can also file the move-out notice online."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-nagoya-juumin-todoke-out"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "転出される方の中にマイナンバーカードをお持ちの方がいる場合は、オンラインで転出届ができるようになりました。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "9bc704c04ac78fbf5618866c3ba07d6c761d5eba3d78b97f1a1f1f551074881a",
+          "verdict": "agree",
+          "ref": "research/audits/move.json#P-move-tenshutsu-city-online/c1"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "転出届",
+    "てんしゅつ",
+    "引っ越し",
+    "市外",
+    "move out",
+    "tenshutsu",
+    "moving to another city"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{日本|にほん}の{外|そと}へ{引|ひ}っ{越|こ}すときは、{国外|こくがい}{転出|てんしゅつ}の{届|とど}けです。",
+      "ja_easy": "{日本|にほん}の{外|そと}へ{行|い}くときは、{国外|こくがい}{転出|てんしゅつ}の{届|とど}けです。",
+      "en": "If you are moving outside Japan, the overseas move-out report applies."
+    },
+    "check_at_office": {
+      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "A-nagoya-juumin-todoke-out",
+      "A-nagoya-tenshutsu-lifescene"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "市外へ転出されますと印鑑登録は廃止になります"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "lost-card-stop",
+  "data_version": 1,
+  "illustration": "cashcard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-payment",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "カードを{止|と}める",
+    "ja_easy": "カードを{止|と}める",
+    "en": "Stop your cards"
+  },
+  "official_name": {
+    "ja": "カードを止める",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "キャッシュカード・クレジットカードは、{発行|はっこう}{元|もと}の{銀行|ぎんこう}やクレジット{会社|かいしゃ}にすぐ{連絡|れんらく}して、{利用|りよう}{停止|ていし}の{手続|てつづ}きをします。{警察|けいさつ}への{届出|とどけいで}とは{別|べつ}です。",
+    "ja_easy": "カードを{出|だ}した{会社|かいしゃ}（{銀行|ぎんこう}・クレジット{会社|かいしゃ}）に、すぐ{連絡|れんらく}して、カードを{止|と}めます。{警察|けいさつ}に{届|とど}けるのとは、べつです。",
+    "en": "Contact the bank or credit card company that issued the card right away and have it suspended. This is separate from the police report."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "カードを{発行|はっこう}した{銀行|ぎんこう}・クレジット{会社|かいしゃ}（{連絡|れんらく}{先|さき}は{発行|はっこう}{元|もと}の{案内|あんない}で{確認|かくにん}）",
+      "ja_easy": "カードを{出|だ}した{会社|かいしゃ}（{連絡|れんらく}{先|さき}は、{会社|かいしゃ}の{案内|あんない}で{見|み}ます）",
+      "en": "The bank or credit card company that issued the card (get the contact details from the issuer)"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+        "verdict": "agree",
+        "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+      }
+    }
+  },
+  "kind": "procedure",
+  "keywords": [
+    "カード",
+    "停止",
+    "stop card"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "A-aichi-police-ishitsu",
+      "C-aichi-police-ishitsu"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check"
+  },
+  "urgent": {
+    "text": {
+      "ja": "{悪用|あくよう}される{前|まえ}に、すぐ{止|と}めてください。",
+      "ja_easy": "すぐに{止|と}めてください。",
+      "en": "Stop it right away before someone uses it."
+    },
+    "contacts": [
+      {
+        "type": "link",
+        "label": {
+          "ja": "カードを{止|と}めるときの{案内|あんない}（{愛知|あいち}{県警|けんけい}）。{連絡|れんらく}{先|さき}はカードの{裏|うら}や{発行|はっこう}した{会社|かいしゃ}の{公式|こうしき}サイト",
+          "ja_easy": "カードの{止|と}め{方|かた}（{愛知県|あいちけん}の{警察|けいさつ}）",
+          "en": "How to stop cards (Aichi Police). Contact the issuer shown on the card or its official site"
+        },
+        "value": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/ishitsu.html",
+        "evidence": {
+          "source_ids": [
+            "C-aichi-police-ishitsu"
+          ],
+          "checked_at": "2026-11-05",
+          "status": "ai_checked",
+          "quote": "銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。",
+          "ai_check": {
+            "fetched_at": "2026-11-04",
+            "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+            "verdict": "agree",
+            "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+          }
+        }
+      }
+    ]
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "カードの{発行|はっこう}{元|もと}（{銀行|ぎんこう}・クレジット{会社|かいしゃ}）に{速|すみ}やかに{連絡|れんらく}して、{利用|りよう}{停止|ていし}の{手続|てつづ}きを{必|かなら}ず{行|おこな}います。",
+        "ja_easy": "カードを{出|だ}した{会社|かいしゃ}に、すぐ{連絡|れんらく}して、カードを{止|と}めてもらいます。",
+        "en": "Contact the issuer (bank or credit card company) promptly and be sure to have the card suspended."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "落とした物の中に、キャッシュカードやクレジットカード、携帯電話などが含まれている場合には、それらが悪用されないように銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+        }
+      }
+    }
+  ]
+}

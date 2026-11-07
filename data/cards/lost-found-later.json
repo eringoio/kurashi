@@ -1,0 +1,326 @@
+{
+  "id": "lost-found-later",
+  "data_version": 1,
+  "illustration": "homecheck",
+  "awareness_type": "option",
+  "obligation": "check",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-wallet",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "あとで{見|み}つかったとき",
+    "ja_easy": "あとで{見|み}つかったとき",
+    "en": "If you find it later"
+  },
+  "official_name": {
+    "ja": "発見後の手続き",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{見|み}つかっても、{止|と}めたカードがすぐ{使|つか}えるとは{限|かぎ}りません。{止|と}めただけか、{廃止|はいし}・{再|さい}{交付|こうふ}したかで、することが{違|ちが}います。それぞれの{会社|かいしゃ}・{窓口|まどぐち}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{見|み}つかっても、すぐ{使|つか}えるとは{限|かぎ}りません。{聞|き}いてください。",
+    "en": "Even if you find it, a stopped card may not work right away. What to do depends on whether it was only stopped, cancelled or reissued. Check with each issuer (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "カードの{会社|かいしゃ}・{区役所|くやくしょ}・{入管|にゅうかん}など、それぞれの{窓口|まどぐち}",
+      "ja_easy": "それぞれの{窓口|まどぐち}",
+      "en": "Each issuer or office"
+    },
+    "evidence": {
+      "source_ids": [
+        "kurashi-spec"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "見つかった",
+    "みつかった",
+    "found"
+  ],
+  "reasons": {},
+  "methods": [
+    {
+      "type": "counter",
+      "when": "R-lost-mynumber",
+      "text": {
+        "ja": "マイナンバーカード：{一時|いちじ}{停止|ていし}だけなら、{見|み}つかったカードを{市区|しく}{町村|ちょうそん}の{窓口|まどぐち}（{名古屋|なごや}{市|し}では{区役所|くやくしょ}）に{持|も}って{行|い}き、{一時|いちじ}{停止|ていし}を{解除|かいじょ}してもらうと、{引|ひ}き{続|つづ}き{使|つか}えます。{解除|かいじょ}のときに、フリーダイヤルへの{連絡|れんらく}は{要|い}りません。",
+        "ja_easy": "マイナンバーカード：{止|と}めただけなら、{見|み}つかったカードを{区役所|くやくしょ}に{持|も}って{行|い}って、{止|と}めたのをもどしてもらうと、また{使|つか}えます。{電話|でんわ}は{要|い}りません。",
+        "en": "My Number Card: if it was only suspended, take the found card to your municipality (Nagoya: ward office) and have the suspension lifted; you can keep using it. You do not need to call the hotline."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-kojinbango-lost2"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お住まいの市区町村に見つかったマイナンバーカードをお持ちいただき、一時停止の解除をしていただくことで、引き続きカードをご利用いただけます。※マイナンバー総合フリーダイヤルへのご連絡は不要です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "d6c979ceaf49aef0eaf911254392067eb8937ddc534e9590078d3d005005bcf6",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-found-after/c3"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードの{再|さい}{交付|こうふ}を{受|う}けるときは、なくしたカードの{廃止|はいし}{手続|てつづ}きが{必要|ひつよう}です。{廃止|はいし}・{再|さい}{交付|こうふ}の{手続|てつづ}きをしたあとは、{窓口|まどぐち}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードを{再|さい}{交付|こうふ}してもらうときは、なくしたカードを{使|つか}えなくする{手続|てつづ}き（{廃止|はいし}）が{要|い}ります。そのあとのことは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "To get a My Number Card reissued, the lost card must be cancelled. After cancellation or reissue, ask the counter what to do (to be checked)."
+      },
+      "when": "R-lost-mynumber",
+      "evidence": {
+        "source_ids": [
+          "C-kojinbango-lost1"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "再交付にあたっては、紛失したカードの廃止手続きが必要ですのでご注意ください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-found-after/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-lost-zairyu",
+      "text": {
+        "ja": "{在留|ざいりゅう}カード：{再|さい}{交付|こうふ}を{受|う}けたあとで{古|ふる}いカードが{見|み}つかったら、{見|み}つけた{日|ひ}から14{日|にち}{以内|いない}に、{古|ふる}いカードを{入管|にゅうかん}に{返|かえ}します（{返納|へんのう}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カード：{新|あたら}しいカードのあとで{古|ふる}いカードが{見|み}つかったら、14{日|にち}の{間|あいだ}に{返|かえ}します。",
+        "en": "Residence card: if you find the old card after getting a new one, return the old card to immigration within 14 days (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "R-moj-henno"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "紛失した旧在留カードを発見した場合には、発見の日から１４日以内に古い在留カード"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-payment",
+      "text": {
+        "ja": "キャッシュカード・クレジットカード：{止|と}めたカードをまた{使|つか}えるかは、{会社|かいしゃ}によって{違|ちが}います。{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "カード：{会社|かいしゃ}に{聞|き}きます。",
+        "en": "Bank and credit cards: whether a stopped card can be used again depends on the company. Ask them (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{旅券|りょけん}：{紛失|ふんしつ}の{届出|とどけで}のあとで{見|み}つかっても、そのパスポートは{使|つか}えません。{穴|あな}あけの{処理|しょり}のために、{旅券|りょけん}{窓口|まどぐち}に{持|も}って{行|い}きます。",
+        "ja_easy": "{旅券|りょけん}：{届|とど}けたあとで{見|み}つかっても、そのパスポートは{使|つか}えません。{穴|あな}をあける{処理|しょり}のために、{旅券|りょけん}の{窓口|まどぐち}に{持|も}って{行|い}きます。",
+        "en": "Passport: even if you find it after filing the notice, you cannot use it. Take it to the passport counter to be punched."
+      },
+      "when": "R-lost-passport-jp",
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "紛失の届出後に紛失したパスポートを発見した場合でも、そのパスポートは使用することができません。穴あけ処理をしますので、各旅券窓口までお持ちください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-found-after/c1"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{警察|けいさつ}に{届出|とどけで}のあった{落|お}とし{物|もの}は、{届出|とどけいで}から3か{月|げつ}{間|かん}、インターネットで{検索|けんさく}できます。",
+        "ja_easy": "{警察|けいさつ}に{届|とど}けられた{落|お}とし{物|もの}は、{届|とど}けてから3か{月|げつ}、インターネットでさがせます。",
+        "en": "Items reported to the police can be searched online for 3 months from the report."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "警察へ届出のあった落とし物については、届出から3か月間、インターネットを利用して検索することもできます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-search/c1"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}に{届|とど}けられた{落|お}とし{物|もの}は、{届|とど}けられた{日|ひ}から3か{月|げつ}{間|かん}、{警察|けいさつ}{署|しょ}で{保管|ほかん}されます。",
+        "ja_easy": "{警察|けいさつ}に{届|とど}けられた{落|お}とし{物|もの}は、{届|とど}けられた{日|ひ}から3か{月|げつ}、{警察|けいさつ}{署|しょ}にあります。",
+        "en": "Items handed in to the police are kept at the police station for 3 months from the day they were handed in."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "警察に届けられた日から3か月間、警察署で保管します。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-search/c2"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{銀行|ぎんこう}などから「{警察|けいさつ}に{届|とど}いている」と{連絡|れんらく}があったら、{届|とど}いている{警察|けいさつ}{署|しょ}に{電話|でんわ}で{問|と}い{合|あ}わせて、{物|もの}の{詳細|しょうさい}を{確認|かくにん}してから{引|ひ}き{取|と}りに{行|い}きます。",
+        "ja_easy": "{銀行|ぎんこう}などから「{警察|けいさつ}に{届|とど}いている」と{連絡|れんらく}があったら、その{警察|けいさつ}{署|しょ}に{電話|でんわ}して、どんな{物|もの}かを{聞|き}いてから、{取|と}りに{行|い}きます。",
+        "en": "If a bank or similar tells you your item is at the police, phone that police station, confirm the details, and then go to collect it."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "必ず、落とし物が届けられている警察署に電話で問い合わせ、届けられている落とし物の詳細を確認してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-pickup/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "キャッシュカード・クレジットカード・{携帯|けいたい}{電話|でんわ}は、{警察|けいさつ}が{銀行|ぎんこう}や{携帯|けいたい}{電話|でんわ}{会社|かいしゃ}などを{通|つう}じて{持|も}ち{主|ぬし}に{連絡|れんらく}するため、{連絡|れんらく}が{来|く}るまで{日数|にっすう}がかかることがあります。",
+        "ja_easy": "カードや{携帯|けいたい}{電話|でんわ}は、{警察|けいさつ}が{銀行|ぎんこう}などをとおして{連絡|れんらく}するので、{連絡|れんらく}が{来|く}るまで{日|ひ}がかかることがあります。",
+        "en": "For cash cards, credit cards and phones, the police contact the owner through banks or carriers, so it can take some days before you hear."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "銀行等を経由して持ち主と思われる方へ連絡しているため、落とした方への連絡に日数がかかってしまうことがあります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-pickup/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{引|ひ}き{取|と}りには{運転|うんてん}{免許|めんきょ}{証|しょう}・{健康|けんこう}{保険|ほけん}{証|しょう}など、{身分|みぶん}を{証明|しょうめい}できる{物|もの}を{持|も}って{行|い}きます。{郵送|ゆうそう}で{連絡|れんらく}があったときは、その{郵便|ゆうびん}{物|ぶつ}も{必要|ひつよう}です。",
+        "ja_easy": "{取|と}りに{行|い}くときは、{免許|めんきょ}{証|しょう}や{保険|ほけん}{証|しょう}など、{身分|みぶん}がわかる{物|もの}を{持|も}って{行|い}きます。{手紙|てがみ}で{連絡|れんらく}が{来|き}たときは、その{手紙|てがみ}も{持|も}って{行|い}きます。",
+        "en": "Bring ID such as a driver's license or health insurance card. If you were notified by mail, bring that mail too."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "身分を証明できる物（運転免許証、健康保険証等）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-pickup/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}に{届|とど}けられた{落|お}とし{物|もの}は、ふつう{受理|じゅり}した{翌日|よくじつ}には、{管轄|かんかつ}の{警察|けいさつ}{署|しょ}に{移|うつ}されます。",
+        "ja_easy": "{交番|こうばん}や{駐|ちゅう}{在所|ざいしょ}に{届|とど}けられた{落|お}とし{物|もの}は、ふつう{次|じ}の{日|ひ}に、{警察|けいさつ}{署|しょ}に{移|うつ}されます。",
+        "en": "Items handed in at a koban or chuzaisho are normally moved to the competent police station the next day."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "落とし物は、通常、受理した翌日には管轄警察署へ移送されますので、注意してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-pickup/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}{署|しょ}での{引|ひ}き{取|と}りの{時間|じかん}は、{土曜|どよう}・{日曜|にちよう}・{祝日|しゅくじつ}と12{月|つき}29{日|にち}〜1{月|つき}3{日|にち}を{除|のぞ}く{平日|へいじつ}の{午前|ごぜん}9{時|じ}から{正午|しょうご}まで、{午後|ごご}1{時|じ}から{午後|ごご}4{時|じ}までです。",
+        "ja_easy": "{警察|けいさつ}{署|しょ}で{取|と}れるのは、{土曜|どよう}・{日曜|にちよう}・{祝日|しゅくじつ}と12{月|つき}29{日|にち}〜1{月|つき}3{日|にち}{以外|いがい}の{平日|へいじつ}で、{午前|ごぜん}9{時|じ}〜{正午|しょうご}と{午後|ごご}1{時|じ}〜{午後|ごご}4{時|じ}です。",
+        "en": "Pickup hours at the police station: weekdays 9:00-12:00 and 13:00-16:00 (not Sat, Sun, holidays, or Dec 29 - Jan 3)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "受付時間内（土曜日、日曜日、休日及び12月29日～1月3日を除く、平日の午前９時から正午まで及び午後１時から午後４時までの間）に警察署へ引き取りに来てください。"
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{行|い}けないときは、{代理人|だいりにん}に{頼|たの}む（{委任|いにん}{状|じょう}などが{必要|ひつよう}）か、{警察|けいさつ}{署|しょ}から{郵送|ゆうそう}してもらうこともできます。{郵送|ゆうそう}のときは{送料|そうりょう}を{負担|ふたん}します。",
+        "ja_easy": "{行|い}けないときは、{代理|だいり}の{人|ひと}にたのむ（{委任|いにん}{状|じょう}などが{要|い}ります）か、{郵送|ゆうそう}してもらえます。{郵送|ゆうそう}のお{金|かね}は{自分|じぶん}で{払|はら}います。",
+        "en": "If you cannot go, you can ask a representative (a power of attorney is needed) or have the item mailed; you pay the postage."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "事情があって、警察署へ落とし物（拾い物）を受け取りに行くことが困難な場合には、代理人へ受け取りを依頼（委任状等が必要です。）又は警察署から落とし物（拾い物）を郵送等で送付することも可能です。"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  }
+}

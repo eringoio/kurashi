@@ -1,0 +1,215 @@
+{
+  "id": "lost-mynumber-stop",
+  "data_version": 1,
+  "illustration": "mycard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-mynumber",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "マイナンバーカードを{一時|いちじ}{停止|ていし}する",
+    "ja_easy": "マイナンバーカードを{止|と}める",
+    "en": "Suspend your My Number Card"
+  },
+  "official_name": {
+    "ja": "マイナンバーカードを一時停止する",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "カードの{停止|ていし}は24{時間|じかん}できます（マイナンバー{総合|そうごう}フリーダイヤル 0120-95-0178。{無料|むりょう}）。{警察|けいさつ}の{届|とど}けと、どちらを{先|さき}にしてもかまいません。",
+    "ja_easy": "カードを{止|と}める{電話|でんわ}は24{時間|じかん}できます（0120-95-0178。{無料|むりょう}）。{警察|けいさつ}と、どちらが{先|さき}でもいいです。",
+    "en": "You can suspend the card 24 hours a day (My Number toll-free line 0120-95-0178, free). You may do this before or after reporting to the police."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "マイナンバー{総合|そうごう}フリーダイヤル（0120-95-0178）",
+      "ja_easy": "マイナンバーの{電話|でんわ}（0120-95-0178）",
+      "en": "My Number toll-free line (0120-95-0178)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-mynumber-faq-pub"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "カードの機能停止のお手続きが必要となりますので、マイナンバー総合フリーダイヤル（",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "8ab02d07fb21dbbc294b69cf24d2043bbb4097941b3eaed26f523bc34f83637d",
+        "verdict": "agree",
+        "ref": "research/audits/mynumber.json#P-mynumber-teishi/c6"
+      }
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-kojinbango-security",
+      "C-kojinbango-lost1"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check"
+  },
+  "urgent": {
+    "text": {
+      "ja": "24{時間|じかん}365{日|にち}、{無料|むりょう}で{受|う}け{付|つ}けています。",
+      "ja_easy": "いつでも、お{金|かね}なしで{電話|でんわ}できます。",
+      "en": "Open 24 hours, 365 days. The call is free."
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "label": {
+          "ja": "マイナンバー{総合|そうごう}フリーダイヤル",
+          "ja_easy": "マイナンバーの{電話|でんわ}",
+          "en": "My Number toll-free line"
+        },
+        "value": "0120-95-0178",
+        "evidence": {
+          "source_ids": [
+            "B-kojinbango-security"
+          ],
+          "checked_at": "2026-11-06",
+          "status": "needs_check"
+        }
+      },
+      {
+        "type": "link",
+        "label": {
+          "ja": "マイナンバーカードの{一時|いちじ}{停止|ていし}（{公式|こうしき}）",
+          "ja_easy": "{止|と}める{方法|ほうほう}（{公式|こうしき}）",
+          "en": "How to suspend the card (official)"
+        },
+        "value": "https://www.kojinbango-card.go.jp/security/",
+        "evidence": {
+          "source_ids": [
+            "B-kojinbango-security"
+          ],
+          "checked_at": "2026-11-04",
+          "status": "needs_check"
+        }
+      }
+    ]
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "24{時間|じかん}365{日|にち}、{電話|でんわ}で{受|う}け{付|つ}けています。スマートフォンに{入|い}れたカードも{止|と}められます。",
+        "ja_easy": "いつでも{電話|でんわ}できます。スマートフォンに{入|い}れたカードも{止|と}められます。",
+        "en": "Open 24 hours, 365 days. A card added to your smartphone can be suspended too."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-kojinbango-faq-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "マイナンバーカード及びスマートフォンのマイナンバーカードの一時利用停止をコールセンターにて 24時間365日受け付けています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c1"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{通話|つうわ}は{無料|むりょう}です。{英語|えいご}・{中国語|ちゅうごくご}・{韓国語|かんこくご}・スペイン{語|ご}・ポルトガル{語|ご}でも{話|はな}せます。",
+        "ja_easy": "お{金|かね}はかかりません。{英語|えいご}・{中国語|ちゅうごくご}・{韓国語|かんこくご}・スペイン{語|ご}・ポルトガル{語|ご}でも{話|はな}せます。",
+        "en": "The call is free. English, Chinese, Korean, Spanish and Portuguese are available."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-kojinbango-faq-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "通話は無料で、外国語にも対応しています（英語・中国語・韓国語・スペイン語・ポルトガル語）。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c2"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{音声|おんせい}ガイダンスが{流|なが}れたら、2{番|ばん}を{選|えら}びます。",
+        "ja_easy": "{音声|おんせい}の{案内|あんない}が{始|はじ}まったら、2{番|ばん}を{選|えら}びます。",
+        "en": "When the voice guidance starts, choose 2."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-kojinbango-faq-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "（音声ガイダンス2番をお選びください。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c3"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{一時|いちじ}{停止|ていし}は、{原則|げんそく}として{本人|ほんにん}が{電話|でんわ}します。{代理人|だいりにん}による{一時|いちじ}{停止|ていし}もできます。",
+        "ja_easy": "カードを{止|と}める{電話|でんわ}は、ふつうは{本人|ほんにん}がします。{代|か}わりの{人|ひと}（{代理人|だいりにん}）にたのむこともできます。",
+        "en": "The suspension is normally requested by the cardholder. A representative can also request it."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-kojinbango-lost1"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "一時停止の手続きは、原則ご本人様にお願いしておりますが、代理人による一時停止も可能です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-card-stop/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "カードが{見|み}つかったときは、{見|み}つかったカードを{持|も}って{市区町村|しくちょうそん}の{窓口|まどぐち}へ{行|い}き、{一時|いちじ}{停止|ていし}の{解除|かいじょ}をしてもらいます。フリーダイヤルへの{連絡|れんらく}は{要|い}りません。{名古屋市|なごやし}のどの{窓口|まどぐち}かは、{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "カードが{見|み}つかったら、そのカードを{持|も}って{区役所|くやくしょ}に{行|い}き、{止|と}めたのをもどしてもらいます。{電話|でんわ}は{要|い}りません（{要確認|ようかくにん}）。",
+        "en": "If the card is found, take it to your municipality and have the suspension lifted. You do not need to call the hotline again. Ask your ward office which counter handles it in Nagoya (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jlis-lost2"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お住まいの市区町村に見つかったマイナンバーカードをお持ちいただき、一時停止の解除をしていただくことで、引き続きカードをご利用いただけます。※マイナンバー総合フリーダイヤルへのご連絡は不要です。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "92e267f9187ff6aaa08e8d7275bf030413bef7b25ff5bb51b0bcfbfb0543c0b8",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-kaijo-found/c1"
+        }
+      }
+    }
+  ]
+}

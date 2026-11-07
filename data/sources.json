@@ -1392,6 +1392,694 @@
       "owner_type": "government",
       "title": "宅地建物取引業者の報酬額に関する国土交通省告示（大阪府の掲載）",
       "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-juumin-todoke-out",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007835.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民基本台帳の届出（転入・転居・転出）",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-tenshutsu-lifescene",
+      "url": "https://www.city.nagoya.jp/lifescene/sumai/1034690/1017951.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市外への転出の手続き（国内）",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-tennyu-tokurei",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007836.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカードを利用した転出・転入届（転入届の特例）",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-nagoya-faq-40",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=40",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市外へ転出（引越し）をするときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-37",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=37",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "海外へ転出（引越し）するときの手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-kanyu",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011751.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の加入と脱退",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-mynumber-kokugai",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007889.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国外でのマイナンバーカードの利用",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-henno",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00020.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留カード等の返納",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-kaigai",
+      "url": "https://www.nenkin.go.jp/service/scenebetsu/kaigai.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "海外への転出／海外からの転入",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-faq",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011812/1011813.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "加入・脱退・保険料についてのよくある質問（FAQ)について（国民健康保険）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-hitsuyo-mo",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011752.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の手続きに必要なもの",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-dattai",
+      "url": "https://www.nenkin.go.jp/service/jukyu/seido/sonota-kyufu/dattai-ichiji/20150406.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "脱退一時金の制度",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-dattai-tetsuzuki",
+      "url": "https://www.nenkin.go.jp/service/jukyu/tetsuduki/sonota-kyufu/20140710.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "脱退一時金を請求する方の手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-ninni-kanyu",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/20140627-02.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金の任意加入の手続き（日本の年金制度への継続加入）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-saishunyukoku",
+      "url": "https://www.moj.go.jp/isa/immigration/procedures/16-5.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "再入国許可申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-online-jizen",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007833/1007834/1007837.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "オンラインによる転出届・転入届（転居届）の事前作成サービス",
+      "language": "ja"
+    },
+    {
+      "source_id": "egov-juki-ho",
+      "url": "https://laws.e-gov.go.jp/law/342AC0000000081",
+      "owner": "デジタル庁（e-Gov 法令検索）",
+      "owner_type": "government",
+      "title": "住民基本台帳法",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-aichi-menkyo-kihen-mar",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kihen/kihen.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "記載事項の変更手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-kisai-henko",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00009.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "住居地以外の在留カード記載事項の変更届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-minji15",
+      "url": "https://www.moj.go.jp/MINJI/minji15.html",
+      "owner": "法務省民事局",
+      "owner_type": "government",
+      "title": "国際結婚、海外での出生等に関する戸籍Q&A",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-easyjp-tetsuzuki",
+      "url": "https://www.city.nagoya.jp/kurashi/easyjapanese/1017885/1017886.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "いろいろな手続き（やさしい日本語）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-2892-mar",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=2892",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカードの記載内容に変更があった時（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-47",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=47",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "世帯主の変更をするときの手続き方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-48",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=48",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "世帯の合併や分離の手続き方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-69",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=69",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "外国人と結婚する場合の手続方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-kanyu-mar",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011751.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の加入と脱退",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-konin-rikon",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007825/1007827.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "婚姻・離婚届",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-mynumber-faq-mar",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007876.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカード（個人番号カード）に関するよくあるご質問",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-jusho-henko",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/20120803.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金第1号被保険者の住所・氏名変更手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-menjo",
+      "url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金保険料の免除制度・納付猶予制度",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-scene-kekkon",
+      "url": "https://www.nenkin.go.jp/service/scenebetsu/kekkon.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "結婚・離婚・出産・育児",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship",
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028139.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "名古屋市ファミリーシップ制度　制度の内容",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-shiei-shikaku-mar",
+      "url": "https://www.city.nagoya.jp/kurashi/juutaku/1014583/1014585/1014586/1014587/1014588.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "市営住宅の申込資格",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-courts-rikon",
+      "url": "https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_08_01/index.html",
+      "owner": "裁判所",
+      "owner_type": "government",
+      "title": "離婚（離婚訴訟）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-courts-rikon-chotei",
+      "url": "https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_01/index.html",
+      "owner": "裁判所",
+      "owner_type": "government",
+      "title": "夫婦関係調整調停（離婚）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-haigusha-todoke",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00016.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "配偶者に関する届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-easyjp-tetsuzuki-div",
+      "url": "https://www.city.nagoya.jp/kurashi/easyjapanese/1017885/1017886.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "いろいろな手続き（やさしい日本語）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-47-div",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=47",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "世帯主の変更をするときの手続き方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-48-div",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=48",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "世帯の合併や分離の手続き方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-89",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=89",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "離婚届の不受理申出（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-94",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=94",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "離婚して子供を引き取る場合の戸籍の手続（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-95",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=95",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "離婚後、婚姻中の姓をそのまま名乗ることはできますか（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-97",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=97",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "離婚届の手続方法について知りたい（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-98",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=98",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "離婚届の証人欄の記入方法を知りたい（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-kanyu-div",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011751.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の加入と脱退",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-konin-rikon-div",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007825/1007827.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "婚姻・離婚届",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-jusho-henko-div",
+      "url": "https://www.nenkin.go.jp/service/kokunen/kanyu/20120803.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金第1号被保険者の住所・氏名変更手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-menjo-div",
+      "url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金保険料の免除制度・納付猶予制度",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nenkin-rikon-bunkatsu",
+      "url": "https://www.nenkin.go.jp/service/jukyu/seido/kyotsu/rikon/20140421-04.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "離婚時の年金分割",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-aichi-police-ishitsu",
+      "url": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/ishitsu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "遺失・拾得に関すること",
+      "language": "ja"
+    },
+    {
+      "source_id": "A-aichi-passport-lost",
+      "url": "https://www.pref.aichi.jp/soshiki/kenminseikatsu/kokunai-funshitsu.html",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "パスポートの紛失・焼失・盗難（国内）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-zairyu-reissue-lost",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00010.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留カードの再交付申請（紛失・盗難）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-kokuho-hitsuyo",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011750/1011752.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の手続きに必要なもの",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-kojinbango-security",
+      "url": "https://www.kojinbango-card.go.jp/security/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "government",
+      "title": "マイナンバーカードの安全性（紛失時の一時停止）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-aichi-menkyo-saikofu",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kihen/saikouhu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "再交付（紛失・汚破損）手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mofa-emblist",
+      "url": "https://www.mofa.go.jp/mofaj/link/emblist/index.html",
+      "owner": "外務省",
+      "owner_type": "government",
+      "title": "駐日外国公館リスト",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-isa-reissue-lost",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00010.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "紛失等による在留カードの再交付申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-nagoya-faq-2917",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=2917",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカードを再度取得したい（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-kojinbango-lost1",
+      "url": "https://www.kojinbango-card.go.jp/faq_lost_found1/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "government",
+      "title": "カード・通知書を紛失した場合",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-passport-funshitsu",
+      "url": "https://www.pref.aichi.jp/site/passport/funshitsu.html",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "紛失・焼失したとき又は盗難にあったとき【窓口申請】",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-menkyo-saikofu",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kihen/saikouhu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "再交付（紛失・汚破損）手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-nagoya-kokuho-denshi-saikofu",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011815/1033736.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "【電子申請】資格確認書・資格情報のお知らせの再交付申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-npa-ishitsu-online",
+      "url": "https://www.npa.go.jp/bureau/soumu/ishitsubutsu/ishitsu-todokedekensaku.html",
+      "owner": "警察庁",
+      "owner_type": "government",
+      "title": "落とし物の届出・検索",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-police-soudan-sonota",
+      "url": "https://www.pref.aichi.jp/police/soudan/qa/sonota/soudan.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "よくある警察相談Q&A（その他）",
+      "language": "ja"
+    },
+    {
+      "source_id": "R-moj-henno",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00020.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留カード等の返納",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jlis-lost2",
+      "url": "https://www.kojinbango-card.go.jp/faq_lost_found2/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp",
+      "title": "機能停止後にカードが見つかった場合（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "R-jlis-express4",
+      "url": "https://www.kojinbango-card.go.jp/faq_express_apply4/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp",
+      "title": "特急発行の申請期限（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "R-digital-safety",
+      "url": "https://www.digital.go.jp/policies/mynumber/safety",
+      "owner": "デジタル庁",
+      "owner_type": "government",
+      "title": "マイナンバーカードの安全性",
+      "language": "ja"
+    },
+    {
+      "source_id": "R-moj-tokubetsu-reissue",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00032.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "特別永住者証明書の再交付申請（紛失等）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-kojinbango-faq-lost",
+      "url": "https://www.kojinbango-card.go.jp/faq_lost_found5/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp",
+      "title": "マイナンバーカード紛失時の一時停止方法（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-police-ishitsu",
+      "url": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/ishitsu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "遺失・拾得に関すること",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-keisatsu-shomei",
+      "url": "https://www.pref.aichi.jp/police/shinsei/soumu/keisatusyoumei.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "警察証明",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-police-tounan",
+      "url": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/tounan.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "盗難・遺失届出証明等の警察証明事務に関すること",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-kojinbango-lost2",
+      "url": "https://www.kojinbango-card.go.jp/faq_lost_found2/",
+      "owner": "J-LIS",
+      "owner_type": "public_corp",
+      "title": "機能停止後に見つかった場合",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mofa-passport-qa",
+      "url": "https://www.mofa.go.jp/mofaj/toko/passport/pass_4.html",
+      "owner": "外務省",
+      "owner_type": "government",
+      "title": "こんな時、パスポートQ&A",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-2282",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=2282",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "本人確認について知りたい（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-2928",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=2928",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイナンバーカード（もしくは通知カード）を紛失したが、転出の手続きができるか知りたい。（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-passport-funshitsu-denshi",
+      "url": "https://www.pref.aichi.jp/site/passport/funshitsudenshi.html",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "紛失・焼失したとき又は盗難にあったとき【電子申請】",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-mofa-emblist",
+      "url": "https://www.mofa.go.jp/mofaj/link/emblist/index.html",
+      "owner": "外務省",
+      "owner_type": "government",
+      "title": "駐日外国公館リスト",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-aichi-passport-dairi",
+      "url": "https://www.pref.aichi.jp/site/passport/dairiteishutsu.html",
+      "owner": "愛知県",
+      "owner_type": "government",
+      "title": "代理提出",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-menkyoshiken",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/menkyoshiken/index.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許試験（外免切替の資料一覧）",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-npa-gaimen",
+      "url": "https://www.npa.go.jp/policies/application/license_renewal/have_DL_issed_another_country.html",
+      "owner": "警察庁",
+      "owner_type": "government",
+      "title": "外国の運転免許をお持ちの方",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-menkyo-ichiran",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/menkyo/",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許 手続きのご案内",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-koshin",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/koushin/menkyo/koushin.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許証の更新手続",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-saikofu",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kihen/saikouhu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "再交付（紛失・汚破損）手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-mynumber",
+      "url": "https://www.pref.aichi.jp/police/menkyo/topics/kojinbango-card-menkyo.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "マイナンバーカードと運転免許証の一体化",
+      "language": "ja"
     }
   ]
 }

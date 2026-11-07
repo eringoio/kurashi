@@ -1,0 +1,155 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-mynumber-card",
+  "illustration": "mycard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-name-changed"
+    ]
+  },
+  "title": {
+    "ja": "マイナンバーカードの{記載|きさい}{事項|じこう}の{変更|へんこう}",
+    "ja_easy": "マイナンバーカードの{名前|なまえ}を{変|か}える",
+    "en": "Update your My Number Card"
+  },
+  "official_name": {
+    "ja": "マイナンバーカードの記載事項変更",
+    "reading": "まいなんばーかーどのきさいじこうへんこう"
+  },
+  "summary": {
+    "ja": "{氏名|しめい}など{記載|きさい}{事項|じこう}に{変更|へんこう}があったときは、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に、{住|す}んでいる{区|く}の{区役所|くやくしょ}または{支所|ししょ}でカードの{記載|きさい}{事項|じこう}を{変更|へんこう}します（{要|よう}{確認|かくにん}）。カードを{持|も}っていきます。{届出|とどけで}のときはカードの{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{名前|なまえ}などが{変|か}わったときは、{変|か}わった{日|ひ}から14{日|にち}いないに、{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}）で、カードの{内容|ないよう}を{変|か}えます（{要|よう}{確認|かくにん}）。カードを{持|も}っていきます。{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
+    "en": "When your name or other details change, update your card at the ward or branch office where you live within 14 days (to be checked). Bring the card. You must enter the card's PIN (to be checked)."
+  },
+  "lead": {
+    "ja": "{名前|なまえ}などが{変|か}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}でカードを{変更|へんこう}します。",
+    "ja_easy": "{名前|なまえ}などが{変|か}わったら、14{日|にち}いないに{区役所|くやくしょ}でカードを{直|なお}します。",
+    "en": "If your name or other details change, update the card at the ward office within 14 days."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{変|か}わった{日|ひ}から14{日|にち}いない（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the change (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-2892-mar"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "氏名など記載事項に変更があったときは、変更があった日から14日以内にマイナンバーカードの記載事項を変更する必要がありますので、お住まいの区の区役所または支所にお持ちください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}または{支所|ししょ}",
+      "ja_easy": "{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}）",
+      "en": "The ward or branch office where you live"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-2892-mar"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "お住まいの区の区役所または支所にお持ちください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "07d8f1ae8cb2df300cd174525a8058828fb1b96c297e56e1942859383bb66609",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c2"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを、{住所|じゅうしょ}{地|ち}の{区役所|くやくしょ}または{支所|ししょ}に{持|も}っていきます。",
+        "ja_easy": "マイナンバーカードを、{住|す}んでいる{区|く}の{区役所|くやくしょ}に{持|も}っていきます。",
+        "en": "Take your My Number Card to the ward or branch office for your address."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-2892-mar"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お住まいの区の区役所または支所にお持ちください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "07d8f1ae8cb2df300cd174525a8058828fb1b96c297e56e1942859383bb66609",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}のときは、カードの{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}が{必要|ひつよう}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{届|とど}けのときは、{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
+        "en": "You must enter the card's PIN when you file (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-faq-mar"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "その際、カードの暗証番号の入力が必要となりますのでご注意ください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{運転|うんてん}{免許|めんきょ}{証|しょう}の{記載|きさい}{事項|じこう}を{変|か}える{前|まえ}に、このカードの{変更|へんこう}を{先|さき}にします。{免許|めんきょ}の{手続|てつづ}きは{別|べつ}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{免許|めんきょ}の{手続|てつづ}きの{前|まえ}に、このカードの{変更|へんこう}を{先|さき}にします。{免許|めんきょ}の{手続|てつづ}きは{別|べつ}です（{要|よう}{確認|かくにん}）。",
+        "en": "If your driver's license is on your My Number Card, update the card first and then do the license procedure, which is separate (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichi-menkyo-kihen-mar"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "自治体でマイナンバーカードの記載事項変更後に手続をしてください。"
+      }
+    }
+  ],
+  "keywords": [
+    "マイナンバーカード",
+    "氏名変更",
+    "記載事項",
+    "My Number Card",
+    "name change"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる{人|ひと}に{出|だ}しています。",
+      "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる{人|ひと}に{出|だ}しています。",
+      "en": "Shown to people whose name changes through marriage."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-2892-mar"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "氏名など記載事項に変更があったときは、変更があった日から14日以内にマイナンバーカードの記載事項を変更する必要がありますので、お住まいの区の区役所または支所にお持ちください。"
+  }
+}

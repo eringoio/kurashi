@@ -1,0 +1,157 @@
+{
+  "id": "lost-no-id-consult",
+  "data_version": 1,
+  "illustration": "ask",
+  "awareness_type": "option",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-wallet",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{身分証|みぶんしょう}が{何|なに}も{残|のこ}っていないとき",
+    "ja_easy": "{身分証|みぶんしょう}が{全部|ぜんぶ}ないとき",
+    "en": "If you have no ID left"
+  },
+  "official_name": {
+    "ja": "身分証が何も残っていないとき",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{手続|てつづ}きごとに、{使|つか}える{本人|ほんにん}{確認|かくにん}の{書類|しょるい}が{違|ちが}います。{何|なに}も{残|のこ}っていないときは、それぞれの{窓口|まどぐち}で、{代|か}わりに{使|つか}える{物|もの}を{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{手続|てつづ}きによって、{使|つか}える{身分|みぶん}{証|しょう}がちがいます。{何|なに}もないときは、{窓口|まどぐち}で、{代|か}わりの{物|もの}を{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "Each procedure accepts different ID. If you have nothing left, ask each office what else you can use (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "それぞれの{手続|てつづ}きの{窓口|まどぐち}",
+      "ja_easy": "それぞれの{窓口|まどぐち}",
+      "en": "Each office"
+    },
+    "evidence": {
+      "source_ids": [
+        "A-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "A-aichi-police-ishitsu",
+      "C-aichi-keisatsu-shomei",
+      "B-nagoya-faq-2282",
+      "B-nagoya-faq-2928"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}の{証明|しょうめい}{書|しょ}の{申請|しんせい}：{写真|しゃしん}つきの{身分|みぶん}{証明|しょうめい}{書|しょ}（{運転|うんてん}{免許|めんきょ}{証|しょう}・{旅券|りょけん}・{在留|ざいりゅう}カードなど）1{点|てん}、または{健康|けんこう}{保険|ほけん}{証|しょう}・{年金|ねんきん}{手帳|てちょう}・{学生|がくせい}{証|しょう}・{会社|かいしゃ}の{身分|みぶん}{証明|しょうめい}{書|しょ}などの{場合|ばあい}は2{点|てん}が{必要|ひつよう}です。",
+        "ja_easy": "{警察|けいさつ}の{証明|しょうめい}{書|しょ}をたのむとき：{写真|しゃしん}つきの{身分|みぶん}{証|しょう}（{免許|めんきょ}{証|しょう}・パスポート・{在留|ざいりゅう}カードなど）1つ。{保険|ほけん}{証|しょう}・{学生|がくせい}{証|しょう}などのときは2つ。",
+        "en": "Police certificate: one photo ID (driver's license, passport, residence card, etc.), or two items such as a health insurance card, pension book, student ID or employee ID."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "本人（代理人）確認書類として、運転免許証、旅券、在留カードなどの写真付きの身分証明書1点又は健康保険証、年金手帳、学生証、会社等の身分証明書などの場合は2点",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-shoumei/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{落|お}とし{物|もの}を{受|う}け{取|と}るとき：{運転|うんてん}{免許|めんきょ}{証|しょう}・{健康|けんこう}{保険|ほけん}{証|しょう}など、{身分|みぶん}を{証明|しょうめい}できる{物|もの}を{持|も}って{行|い}きます。",
+        "ja_easy": "{落|お}とし{物|もの}を{受|う}け{取|と}るとき：{免許|めんきょ}{証|しょう}や{保険|ほけん}{証|しょう}など、{身分|みぶん}がわかる{物|もの}を{持|も}って{行|い}きます。",
+        "en": "To collect a found item: bring ID such as a driver's license or health insurance card."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "身分を証明できる物（運転免許証、健康保険証等）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-pickup/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}で{旅券|りょけん}（または{在留|ざいりゅう}{資格|しかく}{証明|しょうめい}{書|しょ}）を{見|み}せられないときは、{理由|りゆう}{書|しょ}が{要|い}ります（{家|いえ}に{忘|わす}れた、は{理由|りゆう}になりません）。",
+        "ja_easy": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}でパスポートを{見|み}せられないときは、わけを{書|か}いた{紙|かみ}（{理由|りゆう}{書|しょ}）が{要|い}ります。「{家|いえ}にわすれた」は、わけになりません。",
+        "en": "If you cannot show your passport for a residence card reissue, a written explanation is needed (forgetting it at home does not count)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "旅券（又は在留資格証明書）を提示できないとき（自宅に忘れた等の理由を除く）は、その理由を記載した理由書",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-passport-foreign/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードの{紛失|ふんしつ}{届|とどけ}（{名古屋|なごや}{市|し}）：{運転|うんてん}{免許|めんきょ}{証|しょう}などがないときは、「{氏名|しめい}・{生年月日|せいねんがっぴ}」または「{氏名|しめい}・{住所|じゅうしょ}」が{書|か}かれた{年金|ねんきん}{手帳|てちょう}・{社員|しゃいん}{証|しょう}・{学生|がくせい}{証|しょう}などのうち1{点|てん}でもよいとされています（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "マイナンバーカードの{紛失|ふんしつ}{届|とどけ}（{名古屋|なごや}{市|し}）：{免許|めんきょ}{証|しょう}などがないときは、{名前|なまえ}と{生|う}まれた{日|ひ}（または{住所|じゅうしょ}）がある{年金|ねんきん}{手帳|てちょう}・{社員|しゃいん}{証|しょう}・{学生|がくせい}{証|しょう}などが1つあればよいとされています（{要|よう}{確認|かくにん}）。",
+        "en": "My Number Card loss notice (Nagoya): if you have no license etc., one item such as a pension book, employee ID or student ID showing name and birth date (or name and address) is accepted (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-2928"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "(2) (1)をお持ちでない場合は「氏名・生年月日」または「氏名・住所」が記載されている年金手帳・社員証・学生証等のうち1点"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{名古屋|なごや}{市|し}の{窓口|まどぐち}で{証明|しょうめい}{書|しょ}を{申請|しんせい}するとき、{本人|ほんにん}{確認|かくにん}{書類|しょるい}がない{場合|ばあい}は、{本人|ほんにん}{名義|めいぎ}の{預金|よきん}{通帳|つうちょう}やキャッシュカードなど、{本人|ほんにん}しか{持|も}たない{物|もの}を{見|み}せると、{補助|ほじょ}{的|てき}に{確認|かくにん}されます。{本人|ほんにん}しか{知|し}らないことを{聞|き}かれる{場合|ばあい}もあります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{名古屋|なごや}{市|し}の{窓口|まどぐち}で、{身分|みぶん}{証|しょう}がないとき：{本人|ほんにん}の{名前|なまえ}の{通帳|つうちょう}やキャッシュカードなどを{見|み}せると、{確|たし}かめてもらえます。{本人|ほんにん}しか{知|し}らないことを{聞|き}かれることもあります（{要|よう}{確認|かくにん}）。",
+        "en": "At Nagoya counters, if you have no ID, items only you would hold (a bankbook or cash card in your name) can be shown as supplementary proof; you may also be asked questions only you can answer (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-2282"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "上記本人確認書類をお持ちでない場合で、本人様名義の預金通帳やキャッシュカードなど、通常ご本人しか持ち得ないものをお持ちの場合はそれらも提示していただき、補充的に確認させていただきます。"
+      }
+    }
+  ]
+}

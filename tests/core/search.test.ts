@@ -18,8 +18,9 @@ describe('入口の検索', () => {
     expect(top('ビザを更新したい')[0]).toBe('zairyu-koshin');
   });
   it('打っている途中の言葉でも', () => {
-    expect(top('insur', 10)).toContain('nagoya-kokuho-kanyu');
-    expect(top('ほけ', 10)).toContain('nagoya-kokuho-kanyu');
+    // 公開のカードが増えたので、見つかるかだけを確かめる（画面では入口の順に並び、引っ越しのカードが先）
+    expect(top('insur', 50)).toContain('nagoya-kokuho-kanyu');
+    expect(top('ほけ', 50)).toContain('nagoya-kokuho-kanyu');
   });
   it('合う言葉が無ければ空', () => {
     expect(rank(cards, 'zzzz')).toEqual([]);

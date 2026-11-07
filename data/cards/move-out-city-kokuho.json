@@ -1,0 +1,141 @@
+{
+  "id": "move-out-city-kokuho",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-city",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}を{返|かえ}す（{入|はい}っている{人|ひと}）",
+    "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{紙|かみ}を{返|かえ}す",
+    "en": "Return your National Health Insurance certificate (if enrolled)"
+  },
+  "official_name": {
+    "ja": "国民健康保険の脱退",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{人|ひと}は、{市外|しがい}へ{転出|てんしゅつ}するとき、{資格|しかく}{確認|かくにん}{書|しょ}を{返|かえ}します（{持|も}っている{場合|ばあい}のみ）。{転出|てんしゅつ}{先|さき}の{市町村|しちょうそん}で、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{手続|てつづ}きをします。{修学|しゅうがく}のために{市外|しがい}で{生活|せいかつ}する{学生|がくせい}は、{届出|とどけで}をすると{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}が{続|つづ}きます（{在学|ざいがく}{証明書|しょうめいしょ}か{学生証|がくせいしょう}）。{外国人|がいこくじん}{留学生|りゅうがくせい}が{対象|たいしょう}かは{要|よう}{確認|かくにん}です。{介護|かいご}{保険|ほけん}・{手当|てあて}・{医療|いりょう}{証|しょう}などの{扱|あつか}いも{要|よう}{確認|かくにん}です。",
+    "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{人|ひと}は、{市|し}の{外|そと}へ{引|ひ}っ{越|こ}すとき、{保険|ほけん}の{紙|かみ}を{返|かえ}します。{新|あたら}しい{市|し}で、あらためて{手続|てつづ}きをします。{勉強|べんきょう}のために{市|し}の{外|そと}に{住|す}む{学生|がくせい}は、{届|とど}けると{名古屋|なごや}{市|し}の{保険|ほけん}が{続|つづ}きます。{留学生|りゅうがくせい}も{同|おな}じかは、{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "If you are in Nagoya National Health Insurance, return the certificate (only if you have one) when you move out of the city, then complete the procedure in your new municipality. A student who lives outside the city to study can stay in Nagoya's insurance by filing a notice (bring a certificate of enrollment or student ID). Ask the office whether this applies to international students, and about long-term care insurance and other items (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{事実|じじつ}が{発生|はっせい}した{日|ひ}から14{日|にち}{以内|いない}（{原則|げんそく}）",
+      "ja_easy": "14{日|にち}いない（{原則|げんそく}）",
+      "en": "Within 14 days of the change (as a rule)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-kokuho-hitsuyo-mo"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "届出は、原則として事実(転居、退職、出生、死亡等)が発生した日から14日以内にしてください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}",
+      "en": "Insurance and pension section of the ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-kokuho-hitsuyo-mo"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "国民健康保険の届出や申請については、お住まいの区の区役所保険年金課または支所区民福祉課で手続きをしてください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
+        "verdict": "agree",
+        "ref": "research/audits/hoken.json#P-hoken-kokuho-jusho-henko/c3"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [
+    "国保",
+    "国民健康保険",
+    "脱退",
+    "転出",
+    "health insurance move out"
+  ],
+  "reasons": {
+    "check_at_office": {
+      "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているかどうかは、このアプリでは{聞|き}いていません（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているか、{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+      "en": "We do not ask whether you are in National Health Insurance (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-kokuho-kanyu"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "ai_checked",
+    "quote": "市外へ転出するときは、名古屋市の国民健康保険の資格確認書をお返しいただき（お持ちの場合のみ）、転出先の市町村で国民健康保険の手続きをしてください。",
+    "ai_check": {
+      "fetched_at": "2026-11-04",
+      "sha256": "7db71a09c3268724515b3a5a62b102e898669c078bdf66eb5d2fdf66e003ebcc",
+      "verdict": "agree",
+      "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c5"
+    }
+  },
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "オンラインで{転出|てんしゅつ}{届|とどけ}をしたとき（{引|ひ}っ{越|こ}しワンストップサービスを{含|ふく}む）は、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}は{要|い}りません。ただし、{修学|しゅうがく}・{入院|にゅういん}・{施設|しせつ}{入所|にゅうしょ}で{市外|しがい}に{出|で}る{場合|ばあい}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{届出|とどけで}が{要|い}ります。",
+        "ja_easy": "インターネットで{転出|てんしゅつ}{届|とどけ}をしたときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けは{要|い}りません。{勉強|べんきょう}・{入院|にゅういん}・{施設|しせつ}に{入|はい}るために{市|し}の{外|そと}へ{行|い}くときは、{区役所|くやくしょ}で{届|とど}けます。",
+        "en": "If you filed the move-out notice online (including the One-Stop Moving Service), you do not need to report the end of National Health Insurance. If you leave the city to study, to enter a hospital or to enter a care facility, you still must report at the ward office insurance and pension section."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-faq"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "引越しワンストップサービスで転出の届出をした場合は、国民健康保険の届出は不要です。ただし、修学や病院への入院、介護施設等への入所により市外に転出する場合は名古屋市の国民健康保険の資格が継続するので、本市のお住まいの区の区役所保険年金課または支所区民福祉課で届出を行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "4a6c91c4c0ee7ffe372197d73ebfde84c7f7637aae51de31906435e0c5f05857",
+          "verdict": "agree",
+          "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c10"
+        }
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{窓口|まどぐち}に{行|い}けないときは、{郵送|ゆうそう}か{電子|でんし}{申請|しんせい}でも{届|とど}け{出|で}られます。",
+        "ja_easy": "{窓口|まどぐち}に{行|い}けないときは、{郵便|ゆうびん}かインターネットでもできます。",
+        "en": "If you cannot go to the counter, you can also report by mail or by electronic application."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo-mo"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お手続きのため、窓口にお越しいただくことが難しい場合は、郵送または電子申請での届け出もできます。また、区役所の窓口は平日のほか一部日曜日にも開庁しています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
+          "verdict": "agree",
+          "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c11"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "divorce-shimei",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-div-japanese",
+  "title": {
+    "ja": "{離婚|りこん}{後|ご}の{氏|うじ}の{届|とどけ}（{日本|にほん}の{戸籍|こせき}がある{人|ひと}{向|む}け）",
+    "ja_easy": "{離婚|りこん}のあとの{名字|みょうじ}の{届|とど}け（{日本|にほん}の{戸籍|こせき}がある{人|ひと}）",
+    "en": "Family name after divorce (people with a Japanese family register)"
+  },
+  "official_name": {
+    "ja": "離婚の際に称していた氏を称する届",
+    "reading": "りこんのさいにしょうしていたうじをしょうするとどけ"
+  },
+  "summary": {
+    "ja": "{婚姻|こんいん}で{姓|せい}を{改|あらた}めた{人|ひと}が、{離婚|りこん}のあとも{婚姻|こんいん}{中|ちゅう}の{姓|せい}を{使|つか}いたいときは、{離婚|りこん}と{同時|どうじ}または{離婚|りこん}{後|ご}3か{月|げつ}{以内|いない}に、「{離婚|りこん}の{際|さい}に{称|しょう}していた{氏|うじ}を{称|しょう}する{届|とどけ}」を{出|だ}します（{要|よう}{確認|かくにん}）。{離婚届|りこんとどけ}とは{別|べつ}の{届|とどけ}です（{要|よう}{確認|かくにん}）。3か{月|げつ}を{過|す}ぎたときは、{家庭|かてい}{裁判所|さいばんしょ}に{氏|うじ}の{変更|へんこう}の{許可|きょか}を{申|もう}し{立|た}てます。{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きです。{外国|がいこく}{籍|せき}の{人|ひと}が{自国|じこく}の{氏|うじ}をどうするかは、このカードの{外|そと}です。{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{結婚|けっこん}で{名字|みょうじ}を{変|か}えた{人|ひと}が、{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}いたいときは、{離婚|りこん}と{同時|どうじ}か、{離婚|りこん}のあと3か{月|げつ}いないに「{離婚|りこん}の{際|さい}に{称|しょう}していた{氏|うじ}を{称|しょう}する{届|とどけ}」を{出|だ}します（{要|よう}{確認|かくにん}）。{離婚届|りこんとどけ}とは{別|べつ}の{届|とど}けです（{要|よう}{確認|かくにん}）。3か{月|げつ}をすぎたときは、{家庭|かてい}{裁判所|さいばんしょ}の{許可|きょか}が{要|い}ります。{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きです。{外国|がいこく}の{国籍|こくせき}の{人|ひと}が{自分|じぶん}の{国|くに}の{名前|なまえ}をどうするかは、このカードにはありません。{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "A person who changed their surname on marriage and wants to keep it after divorce files a \"notification to continue using the name used during marriage\" at the same time as the divorce or within 3 months after it (to be checked). It is separate from the divorce registration (to be checked). After 3 months, permission from the family court is needed. This is for people with a Japanese family register. How a foreign national handles their home-country name is outside this card; ask at the counter (to be checked)."
+  },
+  "lead": {
+    "ja": "{離婚|りこん}{後|ご}も{婚姻|こんいん}{中|ちゅう}の{姓|せい}を{使|つか}うときは、3か{月|げつ}{以内|いない}に{届|とどけ}を{出|だ}します。",
+    "ja_easy": "{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}うときは、3か{月|げつ}いないに{届|とど}けを{出|だ}します。",
+    "en": "To keep your married surname after divorce, file a notification within 3 months."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{離婚|りこん}と{同時|どうじ}または{離婚|りこん}{後|ご}3か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{離婚|りこん}と{同時|どうじ}か、{離婚|りこん}のあと3か{月|げつ}いない（{要|よう}{確認|かくにん}）",
+      "en": "At the same time as the divorce or within 3 months after it (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-95"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "婚姻により姓を改められた方は、離婚と同時または離婚後3ヶ月以内に「離婚の際に称していた氏を称する届」を提出することにより、婚姻中の姓をそのまま使用することができます。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{本籍|ほんせき}{地|ち}または{所在地|しょざいち}の{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}",
+      "ja_easy": "{本籍|ほんせき}の{区|く}か、{住|す}んでいる{区|く}の{区役所|くやくしょ}",
+      "en": "The citizens' section of the ward office, or branch office, for your registered domicile or current address"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-95"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "本籍地または所在地の区役所市民課・支所区民生活課",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "1716c28255730738ee16f034cd6d205d35ab7f041a874608ed0a2b51b61da666",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-rikon-shimei/c3"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "3か{月|げつ}を{超|こ}えた{場合|ばあい}は、{家庭|かてい}{裁判所|さいばんしょ}に{氏|うじ}の{変更|へんこう}の{許可|きょか}を{申|もう}し{立|た}て、{許可|きょか}が{得|え}られれば{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{名乗|なの}れます。",
+        "ja_easy": "3か{月|げつ}をすぎたときは、{家庭|かてい}{裁判所|さいばんしょ}に{名字|みょうじ}の{変更|へんこう}の{許可|きょか}を{申|もう}し{立|た}て、{許可|きょか}がおりれば{結婚|けっこん}{中|ちゅう}の{名字|みょうじ}を{使|つか}えます。",
+        "en": "After 3 months, apply to the family court for permission to change the name; if granted you may use the name from the marriage."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-95"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "3ヶ月を超えた場合は、家庭裁判所に氏の変更の許可の申請を申し立て、許可が得られた場合は婚姻中の氏を名乗ることが出来ます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}に{不備|ふび}があると、{後日|ごじつ}、{来庁|らいちょう}を{求|もと}められることがあります。{平日|へいじつ}の{昼間|ひるま}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{届|とどけ}{書|しょ}に{書|か}きます。",
+        "ja_easy": "{届|とど}けにまちがいがあると、あとで{区役所|くやくしょ}に{行|い}くことがあります。{平日|へいじつ}の{昼|ひる}に{連絡|れんらく}できる{電話|でんわ}{番号|ばんごう}を{書|か}きます。",
+        "en": "If the form has errors you may be asked to come back later. Write a number that can be reached on weekday daytime."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-95"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "内容に不備がある場合等は、後日あらためてご来庁いただくことがありますので",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "1716c28255730738ee16f034cd6d205d35ab7f041a874608ed0a2b51b61da666",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-shimei/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "この{届|とどけ}は{離婚届|りこんとどけ}とは{別|べつ}の{届|とどけ}として{必要|ひつよう}です。{離婚届|りこんとどけ}だけでは{足|た}りません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "この{届|とど}けは、{離婚届|りこんとどけ}とは{別|べつ}に{必要|ひつよう}です（{要|よう}{確認|かくにん}）。",
+        "en": "This is a separate notification; the divorce registration alone is not enough (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻により姓を改めた方が離婚後も婚姻中の氏を称する場合は、別途、「離婚の際に称していた氏を称する届」が必要になります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "この{届|とどけ}は24{時間|じかん}365{日|にち}{出|だ}せます。{時間|じかん}{外|がい}は{次|つぎ}の{開|ひらき}{庁|ちょう}{時間|じかん}に{確認|かくにん}してから{正式|せいしき}に{受理|じゅり}されます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "この{届|とど}けは、24{時間|じかん}いつでも{出|だ}せます。{時間|じかん}{外|がい}は、{次|つぎ}の{受付|うけつけ}のときに{確|たし}かめてから{受|う}け{取|と}られます（{要|よう}{確認|かくにん}）。",
+        "en": "This notification can be submitted at any time; outside office hours it is formally accepted after checking in the next open hours (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-95"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "24時間365日受付"
+      }
+    }
+  ],
+  "keywords": [
+    "離婚後の氏",
+    "婚氏続称",
+    "離婚の際に称していた氏",
+    "surname after divorce",
+    "family name",
+    "divorce"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "あなたか{相手|あいて}が{日本|にほん}{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
+      "ja_easy": "あなたか{相手|あいて}が{日本|にほん}の{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
+      "en": "Shown when you or your spouse is a Japanese national."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-95"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "婚姻により姓を改められた方は、離婚と同時または離婚後3ヶ月以内に「離婚の際に称していた氏を称する届」を提出することにより、婚姻中の姓をそのまま使用することができます。"
+  }
+}

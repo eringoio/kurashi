@@ -1,0 +1,224 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-seitai-henko",
+  "illustration": "house",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-event"
+    ]
+  },
+  "title": {
+    "ja": "{世帯|せたい}の{届|とどけ}（{世帯主|せたいぬし}{変更|へんこう}・{世帯|せたい}{合併|がっぺい}・{世帯|せたい}{分離|ぶんり}）",
+    "ja_easy": "{世帯|せたい}の{届|とど}け（{世帯主|せたいぬし}・{世帯|せたい}の{変更|へんこう}）",
+    "en": "Household registration changes"
+  },
+  "official_name": {
+    "ja": "世帯主変更届・世帯合併届・世帯分離届",
+    "reading": "せたいぬしへんこうとどけ・せたいがっぺいとどけ・せたいぶんりとどけ"
+  },
+  "summary": {
+    "ja": "{結婚|けっこん}で{一緒|いっしょ}に{住|す}むなど、{世帯|せたい}の{形|かたち}が{変|か}わるときは、{世帯主|せたいぬし}{変更|へんこう}{届|とどけ}・{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}を、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に{区役所|くやくしょ}{市民課|しみんか}（{支所|ししょ}は{区民生活課|くみんせいかつか}）に{出|だ}します（{要|よう}{確認|かくにん}）。{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}は{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}し、{郵送|ゆうそう}はできません。{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しの{届出|とどけで}も14{日|にち}{以内|いない}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{結婚|けっこん}して{一緒|いっしょ}に{住|す}むなど、{世帯|せたい}が{変|か}わるときは、{変|か}わった{日|ひ}から14{日|にち}いないに、{区役所|くやくしょ}で{届|とど}けを{出|だ}します（{要|よう}{確認|かくにん}）。{世帯|せたい}を{合|あ}わせる{届|とど}け・{分|わ}ける{届|とど}けは、{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}します。{郵送|ゆうそう}はできません。{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しの{届|とど}けも14{日|にち}いないです（{要|よう}{確認|かくにん}）。",
+    "en": "When the make-up of your household changes, for example you start living together after marriage, file a household head change, merger or separation notice with the ward office within 14 days of the change (to be checked). Merger and separation notices must be filed at the counter; mail is not accepted. If your address changes, the move notification is also due within 14 days (to be checked)."
+  },
+  "lead": {
+    "ja": "{世帯|せたい}の{形|かたち}が{変|か}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}へ{届|とどけ}を{出|だ}します。",
+    "ja_easy": "{世帯|せたい}が{変|か}わったら、14{日|にち}いないに{区役所|くやくしょ}に{届|とど}けを{出|だ}します。",
+    "en": "If your household changes, file a notification at the ward office within 14 days."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}（{翌日|よくじつ}が1{日|にち}{目|め}）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{変|か}わった{日|ひ}から14{日|にち}いない（{次|つぎ}の{日|ひ}が1{日|にち}{目|め}）（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the change (the next day is day 1) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-47"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "世帯主の変更があった日から14日以内（世帯主の変更のあった翌日を１日目とします。）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{市民課|しみんか}・{支所|ししょ}{区民生活課|くみんせいかつか}",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office (citizens' section) or branch office"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-47"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "≪受付窓口≫ お住まいの区の区役所市民課または支所区民生活課",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c5"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}は、{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}します。{郵送|ゆうそう}の{届出|とどけで}はできません。",
+        "ja_easy": "{世帯|せたい}を{合|あ}わせる{届|とど}け・{分|わ}ける{届|とど}けは、{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}します。{郵送|ゆうそう}はできません。",
+        "en": "Household merger and separation notices are filed directly at the counter. Mail is not accepted."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-48"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "窓口にて直接（※郵送でのお届けはできません）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0d677676f0e2ce80303d2239531dde1ad1d6648b02857ae7aa8ea528efb58ade",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c10"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{世帯主|せたいぬし}{変更|へんこう}には、{世帯|せたい}{変更|へんこう}{届|とどけ}（{窓口|まどぐち}にあります）と、{窓口|まどぐち}に{来|く}る{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{在留|ざいりゅう}カードなど）を{持|も}っていきます。{代理人|だいりにん}は{委任|いにん}{状|じょう}が{必要|ひつよう}です。",
+        "ja_easy": "{世帯主|せたいぬし}を{変|か}えるときは、{窓口|まどぐち}の{届|とど}けの{紙|かみ}と、{来|く}る{人|ひと}の{身分|みぶん}{証明|しょうめい}{書|しょ}（マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{在留|ざいりゅう}カードなど）を{持|も}っていきます。{代理|だいり}の{人|ひと}は{委任|いにん}{状|じょう}が{要|い}ります。",
+        "en": "For a household head change, bring the change form (available at the counter) and ID for the person at the counter (My Number Card, driver's license, residence card, etc.). An agent needs a power of attorney."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-47"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{世帯|せたい}{合併|がっぺい}・{世帯|せたい}{分離|ぶんり}には、{来庁|らいちょう}する{人|ひと}の{名前|なまえ}が{確認|かくにん}できる{書類|しょるい}（{運転|うんてん}{免許|めんきょ}{証|しょう}、{旅券|りょけん}、マイナンバーカードなど）を{持|も}っていきます。",
+        "ja_easy": "{世帯|せたい}を{合|あ}わせる・{分|わ}ける{届|とど}けには、{来|く}る{人|ひと}の{身分|みぶん}{証明|しょうめい}{書|しょ}（{運転|うんてん}{免許|めんきょ}{証|しょう}、パスポート、マイナンバーカードなど）を{持|も}っていきます。",
+        "en": "For a merger or separation, bring a document confirming the name of the person at the counter (driver's license, passport, My Number Card, etc.)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-48"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お持ちいただくもの：窓口に来られる人のお名前を確認できる書類（運転免許証、パスポート、マイナンバーカードなど）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0d677676f0e2ce80303d2239531dde1ad1d6648b02857ae7aa8ea528efb58ade",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届|とどけ}{書|しょ}を{書|か}くために、{世帯|せたい}{全員|ぜんいん}の{氏名|しめい}・{生年月日|せいねんがっぴ}、{正確|せいかく}な{住所|じゅうしょ}、{新旧|しんきゅう}の{世帯主|せたいぬし}の{氏名|しめい}、{変更|へんこう}のあった{日|ひ}を{確認|かくにん}してから{行|い}きます。",
+        "ja_easy": "{紙|かみ}を{書|か}くために、{世帯|せたい}の{全員|ぜんいん}の{名前|なまえ}と{生|う}まれた{日|ひ}、{正|ただ}しい{住所|じゅうしょ}、{前|まえ}と{後|ご}の{世帯主|せたいぬし}の{名前|なまえ}、{変|か}わった{日|ひ}を{確|たし}かめてから{行|い}きます。",
+        "en": "Check the names and dates of birth of all household members, the exact address, the names of the old and new household heads and the date of the change before you go."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-47"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "世帯全員の氏名・生年月日",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{後期|こうき}{高齢|こうれい}{者|しゃ}{医療|いりょう}・{子|こ}ども{医療|いりょう}に{入|はい}っている{場合|ばあい}は、{区役所|くやくしょ}{保険年金課|ほけんねんきんか}（{支所|ししょ}は{区民福祉課|くみんふくしか}）でも{手続|てつづき}があります。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}などに{入|はい}っているときは、{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}（{支所|ししょ}は{区民福祉課|くみんふくしか}）でも{手続|てつづ}きがあります。",
+        "en": "If you are in National Health Insurance, the late-stage elderly system or child medical care, there is also a procedure at the ward's insurance and pension section (branch: resident welfare section)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-47"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "国民健康保険、後期高齢者医療保険、子ども医療に加入されている場合 各区の保険年金課または支所区民福祉課での手続があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c13"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住所|じゅうしょ}が{変|か}わる{場合|ばあい}、{引|ひ}っ{越|こ}したあとは14{日|にち}{以内|いない}に{新|あたら}しい{住所|じゅうしょ}の{役所|やくしょ}へ{転入|てんにゅう}{届|とどけ}を{出|だ}します（{名古屋|なごや}{市|し}のやさしい{日本語|にほんご}のページ）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しのあと14{日|にち}いないに、{新|あたら}しい{住所|じゅうしょ}の{役所|やくしょ}に{届|とど}けを{出|だ}します（{要|よう}{確認|かくにん}）。",
+        "en": "If your address changes, file the move-in notification with the office for your new address within 14 days of moving (Nagoya's easy-Japanese page) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-easyjp-tetsuzuki"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "ひっこした あと 14日より はやく あたらしい いえの 役所に 転入届を だします。"
+      }
+    }
+  ],
+  "keywords": [
+    "世帯",
+    "世帯主",
+    "世帯合併",
+    "世帯分離",
+    "household",
+    "household head",
+    "merge households"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-47",
+      "B-nagoya-faq-48"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "世帯主の変更があった日から14日以内（世帯主の変更のあった翌日を１日目とします。）"
+  }
+}

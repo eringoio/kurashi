@@ -1,0 +1,187 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-saikofu",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "kind": "procedure",
+  "keywords": [
+    "免許 再交付",
+    "免許をなくした",
+    "さいこうふ",
+    "免許 紛失",
+    "lost license",
+    "reissue driving license",
+    "saikofu",
+    "汚損",
+    "破損"
+  ],
+  "eligibility": "R-license-goal-lost",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は{免許証|めんきょしょう}をなくした・{汚|よご}した・{壊|こわ}した{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{免許証|めんきょしょう}をなくした・{汚|よご}した{人|ひと}のためのものです。",
+      "en": "This guide is for people who lost, soiled or damaged their licence."
+    }
+  },
+  "title": {
+    "ja": "{免許証|めんきょしょう}を{再交付|さいこうふ}してもらう",
+    "ja_easy": "{免許証|めんきょしょう}をもういちど{出|だ}してもらう",
+    "en": "Get your licence reissued"
+  },
+  "official_name": {
+    "ja": "運転免許証の再交付",
+    "reading": "うんてんめんきょしょうのさいこうふ"
+  },
+  "summary": {
+    "ja": "{免許証|めんきょしょう}をなくした・{汚|よご}した・{壊|こわ}したときは、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}などで{再交付|さいこうふ}を{申請|しんせい}します。{試験場|しけんじょう}と{東三河|ひがしみかわ}センターは{当日|とうじつ}に{受|う}け{取|と}れ、{警察署|けいさつしょ}で{申請|しんせい}すると{後日|ごじつ}の{受|う}け{取|と}りです（{要|よう}{確認|かくにん}）。{西|にし}・{港|みなと}{警察署|けいさつしょ}は{再交付|さいこうふ}を{受|う}け{付|つ}けていません。{手数料|てすうりょう}の{金額|きんがく}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{免許証|めんきょしょう}をなくしたら、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{警察署|けいさつしょ}へ{行|い}きます。{警察署|けいさつしょ}では{後日|ごじつ}の{受|う}け{取|と}りです（{要確認|ようかくにん}）。",
+    "en": "If you lost, soiled or damaged your licence, apply for reissue at the driving licence test centre or similar. The test centre and the Higashi-Mikawa centre issue it the same day; applying at a police station means collecting it later (to be checked). Nishi and Minato police stations do not handle reissues. The fee amount is not on the page (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、23の{警察署|けいさつしょ}。{西|にし}・{港|みなと}{警察署|けいさつしょ}では{受|う}け{付|つ}けていません（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{警察署|けいさつしょ}。{西|にし}・{港|みなと}{警察署|けいさつしょ}では{受|う}け{付|つ}けていません（{要確認|ようかくにん}）",
+      "en": "The driving licence test centre, the Higashi-Mikawa centre, or 23 police stations. Nishi and Minato police stations do not accept reissues (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-aichi-saikofu"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "西・港警察署は、再交付の受付はしていません。"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{当日|とうじつ}に{受|う}け{取|と}れるのは{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターです。23の{警察署|けいさつしょ}で{申請|しんせい}すると、{後日|ごじつ}の{交付|こうふ}になります（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{警察署|けいさつしょ}で{申請|しんせい}すると、{後日|ごじつ}に{受|う}け{取|と}ります（{要確認|ようかくにん}）",
+        "en": "The test centre and the Higashi-Mikawa centre issue the licence the same day. Applying at one of the 23 police stations means collecting it on a later day (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "23警察署で再交付申請を行う場合には、後日交付となります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{写真|しゃしん}1{枚|まい}（{申請|しんせい}の6か{月|げつ}{以内|いない}、{無帽|むぼう}、{正面|しょうめん}、{無背景|むはいけい}）が{要|い}ります。{持|も}ち{込|こ}みの{写真|しゃしん}は{使|つか}えず、{専用|せんよう}の{写真機|しゃしんき}で{撮影|さつえい}します（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{写真|しゃしん}は、その{場|ば}で{撮|と}ります（{要確認|ようかくにん}）",
+        "en": "One photo is required (taken within 6 months, bareheaded, facing front, plain background). Your own photo is not accepted; it is taken at a dedicated photo machine (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "持ち込み写真による再交付は行っておりません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}：{顔写真|かおじゃしん}つきの{身分|みぶん}{証明書|しょうめいしょ}（パスポート、マイナンバーカード、{在留|ざいりゅう}カードなど）。{顔写真|かおじゃしん}がない{場合|ばあい}は{複数|ふくすう}の{書類|しょるい}が{必要|ひつよう}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{顔写真|かおじゃしん}のある{身分|みぶん}{証明書|しょうめいしょ}（パスポート、{在留|ざいりゅう}カードなど）を{持|も}っていきます（{要確認|ようかくにん}）",
+        "en": "ID: a photo ID such as a passport, My Number Card or residence card. Without a photo ID, several documents are needed (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "ご本人であることを確認することができる書類（下記1又は2のいずれか一方）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{再交付|さいこうふ}と{同時|どうじ}に{住所|じゅうしょ}を{変|か}えるときは、{新|あたら}しい{住所|じゅうしょ}がわかる{書類|しょるい}を1つ{持|も}っていきます。{県外|けんがい}から{住所|じゅうしょ}を{変|か}える{場合|ばあい}、{警察署|けいさつしょ}では{受|う}け{付|つ}けられません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{住所|じゅうしょ}も{変|か}えるときは、{新|あたら}しい{住所|じゅうしょ}の{書類|しょるい}もいります（{要確認|ようかくにん}）",
+        "en": "If you also change your address, bring one document showing the new address. A change of address from outside the prefecture cannot be accepted at a police station (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "県外からの住所変更をする場合は受付できません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}は{愛知県|あいちけん}の{収入|しゅうにゅう}{証紙|しょうし}かキャッシュレスで{払|はら}います。{他県|たけん}の{証紙|しょうし}は{使|つか}えません。{金額|きんがく}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "お{金|かね}は{愛知県|あいちけん}の{証紙|しょうし}かキャッシュレスで{払|はら}います（{要確認|ようかくにん}）",
+        "en": "Pay the fee with Aichi revenue stamps or cashless payment. Stamps of other prefectures are not accepted. The amount is not on the page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "愛知県収入証紙又はキャッシュレスにより納付"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナ{免許証|めんきょしょう}にしたいときは、マイナンバーカードを{持|も}っていきます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "マイナ{免許証|めんきょしょう}にしたいときは、マイナンバーカードも{持|も}っていきます（{要確認|ようかくにん}）",
+        "en": "If you want a Mynumber-linked licence, bring your My Number Card (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "マイナンバーカード（マイナ免許証を希望する場合）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{土曜日|どようび}・{祝日|しゅくじつ}・{振替|ふりかえ}{休日|きゅうじつ}・{年末年始|ねんまつねんし}（12{月|がつ}29{日|にち}〜1{月|がつ}3{日|にち}）は{受付|うけつけ}していません。{試験場|しけんじょう}の{受付|うけつけ}{曜日|ようび}は{変|か}わることがあるので、{行|い}く{前|まえ}に{確認|かくにん}してください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{行|い}く{前|まえ}に、{受付|うけつけ}の{曜日|ようび}を{確認|かくにん}します（{要確認|ようかくにん}）",
+        "en": "No service on Saturdays, public holidays, substitute holidays or 29 December to 3 January. The test centre's service days can change, so check before you go (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "※土曜日、日曜日、祝日、振替休日及び年末年始（12月29日～1月3日）は、受付をしていません。"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "license-aichi-saikofu"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "免許証を亡失、滅失、汚損、破損したとき"
+  }
+}

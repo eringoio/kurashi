@@ -41,7 +41,8 @@ const CLINIC_SAME: Record<string, string> = { nihongo: 'say-nihongo', english: '
 export const clinicPhraseWord = (id: string) => CLINIC_SAME[id] ?? 'clinic-phrase:' + id;
 
 /** できごとの group → 分野 */
-const GROUP_TOPIC: Record<string, WordTopic> = { move: 'ward_office', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi' };
+// 結婚・離婚・ファミリーシップは区役所の届け。財布・運転免許は、いまは基本の言葉（2026-11-08。専用の言葉は提出のあと）
+const GROUP_TOPIC: Record<string, WordTopic> = { move: 'ward_office', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic' };
 /** 場面 → 分野（言葉の表の scene の1つめ） */
 const sceneTopic = (sc: string | undefined): WordTopic => (sc === 'move' ? 'ward_office' : (WORD_TOPICS as readonly string[]).includes(sc ?? '') ? (sc as WordTopic) : 'other');
 
@@ -103,7 +104,7 @@ export function docWordIds(docId: string): string[] {
 }
 
 /** できごとの group → 場面 */
-const GROUP_SCENE: Record<string, string> = { move: 'move', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi' };
+const GROUP_SCENE: Record<string, string> = { move: 'move', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic' };
 /** 行く所（カードの place・付き添い）→ 場面 */
 const PLACE_SCENE: Record<string, string> = { ward_office: 'ward_office', prev_city: 'ward_office', bank: 'bank', immigration: 'immigration', clinic: 'clinic' };
 /** QR の場面（data/scenes.json）→ 場面 */

@@ -1,0 +1,175 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "divorce-nyukan-todoke",
+  "illustration": "letter",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "eligibility": "R-div-spouse-status",
+  "title": {
+    "ja": "{配偶|はいぐう}{者|しゃ}に{関|かん}する{届出|とどけで}（{離婚|りこん}したとき・{入管|にゅうかん}へ）",
+    "ja_easy": "{離婚|りこん}したら、{入管|にゅうかん}に{届|とど}け",
+    "en": "Notification concerning your spouse (after divorce)"
+  },
+  "official_name": {
+    "ja": "配偶者に関する届出",
+    "reading": "はいぐうしゃにかんするとどけで"
+  },
+  "summary": {
+    "ja": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」の{人|ひと}が、{配偶|はいぐう}{者|しゃ}と{離婚|りこん}または{死別|しべつ}したときは、14{日|にち}{以内|いない}に{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}へ「{配偶|はいぐう}{者|しゃ}に{関|かん}する{届出|とどけで}」をします（{要|よう}{確認|かくにん}）。{電子|でんし}{届出|とどけで}システム（オンライン、24{時間|じかん}）、{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}の{窓口|まどぐち}、{郵送|ゆうそう}のどれでもできます。{届出|とどけで}をするのは、{中長期|ちゅうちょうき}{在留|ざいりゅう}{者|しゃ}{本人|ほんにん}です。",
+    "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」の{人|ひと}が{離婚|りこん}（または{死別|しべつ}）したときは、14{日|にち}いないに{入管|にゅうかん}へ「{配偶|はいぐう}{者|しゃ}に{関|かん}する{届出|とどけで}」をします（{要|よう}{確認|かくにん}）。インターネット（24{時間|じかん}）、{入管|にゅうかん}の{窓口|まどぐち}、{郵送|ゆうそう}のどれでもできます。{届|とど}けるのは、{本人|ほんにん}です。",
+    "en": "If your status is \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\" and you divorce (or your spouse dies), file the \"notification concerning your spouse\" with the Immigration Services Agency within 14 days (to be checked). You can file online (24 hours), at a regional immigration office counter or by mail. The person themselves files it."
+  },
+  "lead": {
+    "ja": "{配偶者|はいぐうしゃ}と{離婚|りこん}・{死別|しべつ}したら、14{日|にち}{以内|いない}に{入管|にゅうかん}へ{届|とど}け{出|で}ます（{一部|いちぶ}の{在留資格|ざいりゅうしかく}）。",
+    "ja_easy": "{夫|おっと}や{妻|つま}と{離婚|りこん}・{死別|しべつ}したら、14{日|にち}いないに{入管|にゅうかん}に{知|し}らせます（{一部|いちぶ}の{在留資格|ざいりゅうしかく}）。",
+    "en": "After divorce or the death of your spouse, notify Immigration within 14 days (certain statuses)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{離婚|りこん}の{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{離婚|りこん}した{日|ひ}から14{日|にち}いない（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the divorce (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-haigusha-todoke"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{電子|でんし}{届出|とどけで}システム（オンライン）・{最寄|もよ}りの{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}の{窓口|まどぐち}・{郵送|ゆうそう}",
+      "ja_easy": "インターネット・{入管|にゅうかん}の{窓口|まどぐち}・{郵送|ゆうそう}",
+      "en": "Electronic notification system (online), the nearest regional immigration office counter, or mail"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-haigusha-todoke"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "インターネットによる場合 電子届出システム を利用して、２４時間、３６５日、オンラインで届出を行うことができる",
+      "ai_check": {
+        "fetched_at": "2026-11-05",
+        "sha256": "4785b57b2653bc0e0ef0c138b8a37ce56f4983706ef2f8891f60cae73c7f38df",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-rikon-hoken-nenkin-zairyu/c3"
+      }
+    }
+  },
+  "place": "immigration",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}では{在留|ざいりゅう}カードを{提示|ていじ}して{届出|とどけで}{書|しょ}を{出|だ}します。{郵送|ゆうそう}では{届出|とどけで}{書|しょ}に{在留|ざいりゅう}カードの{写|うつ}しを{同封|どうふう}します。オンラインでは、{届出|とどけで}{事項|じこう}を{証|しょう}する{資料|しりょう}の{提出|ていしゅつ}は{不要|ふよう}です。",
+        "ja_easy": "{窓口|まどぐち}では{在留|ざいりゅう}カードを{見|み}せて{届出|とどけで}{書|しょ}を{出|だ}します。{郵送|ゆうそう}では{在留|ざいりゅう}カードのコピーを{入|い}れます。インターネットでは、{証明|しょうめい}する{書類|しょるい}は{要|い}りません。",
+        "en": "At the counter, show your residence card and submit the form. By mail, enclose a copy of the card. Online, no supporting documents are needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出事項を証する資料の提出は必要ありません。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "4785b57b2653bc0e0ef0c138b8a37ce56f4983706ef2f8891f60cae73c7f38df",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-hoken-nenkin-zairyu/c4"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}をするのは、{中長期|ちゅうちょうき}{在留|ざいりゅう}{者|しゃ}{本人|ほんにん}です。",
+        "ja_easy": "{届|とど}けるのは、{中長期|ちゅうちょうき}{在留|ざいりゅう}{者|しゃ}の{本人|ほんにん}です。",
+        "en": "The medium- to long-term resident submits the notification themselves."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "届出者 中長期在留者本人"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{郵送|ゆうそう}で{届|とど}け{出|で}ると、{受|う}け{付|つ}けた{旨|むね}の{連絡|れんらく}はありません。{追跡|ついせき}できる{方法|ほうほう}で{発送|はっそう}するよう{勧|すす}められています。",
+        "ja_easy": "{郵送|ゆうそう}で{届|とど}けると、{受|う}け{付|つ}けたという{連絡|れんらく}はありません。{追跡|ついせき}できる{方法|ほうほう}で{送|おく}るように{言|い}われています。",
+        "en": "No acceptance notice is sent for mailed notifications; the agency recommends a trackable mailing method."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "郵送で届出を行った場合は、届出を受け付けた旨の連絡等はしていません",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "4785b57b2653bc0e0ef0c138b8a37ce56f4983706ef2f8891f60cae73c7f38df",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-hoken-nenkin-zairyu/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "この{届出|とどけで}は{出入国|しゅつにゅうこく}{管理|かんり}{及|およ}び{難民|なんみん}{認定|にんてい}{法|ほう}{第|だい}19{条|じょう}の16{第|だい}3{号|ごう}にもとづく{義務|ぎむ}とされています（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "この{届|とど}けは、{入管|にゅうかん}{法|ほう}{第|だい}19{条|じょう}の16{第|だい}3{号|ごう}にもとづく{決|き}まりです（{入管|にゅうかん}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "en": "This notification is an obligation under Article 19-16, item 3 of the Immigration Control Act (Immigration Services Agency guidance) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "出入国管理及び難民認定法第１９条の１６第３号"
+      }
+    }
+  ],
+  "keywords": [
+    "配偶者に関する届出",
+    "離婚",
+    "入管",
+    "家族滞在",
+    "notification concerning spouse",
+    "divorce",
+    "immigration",
+    "dependent"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "この{届出|とどけで}は、{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」の{人|ひと}{向|む}けです。ほかの{在留|ざいりゅう}{資格|しかく}（{留学|りゅうがく}など）の{人|ひと}には{出|だ}していません。{必要|ひつよう}かどうかは、{入管|にゅうかん}の{案内|あんない}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "この{届|とど}けは、{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」の{人|ひと}{向|む}けです。{留学|りゅうがく}などの{人|ひと}には{出|だ}していません。{入管|にゅうかん}の{案内|あんない}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+      "en": "This notification is for people with the status \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\". It is not shown for other statuses such as Student. Check the Immigration Services Agency guidance (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-haigusha-todoke"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
+  }
+}

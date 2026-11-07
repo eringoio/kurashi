@@ -1,0 +1,235 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-gaimen-kirikae",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "kind": "procedure",
+  "keywords": [
+    "外免切替",
+    "がいめんきりかえ",
+    "外国免許",
+    "免許切替",
+    "foreign license",
+    "convert license",
+    "gaimen",
+    "国際免許",
+    "international driving permit"
+  ],
+  "eligibility": "R-license-goal-switch",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}える{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}にかえる{人|ひと}のためのものです。",
+      "en": "This guide is for people converting a foreign licence to a Japanese one."
+    }
+  },
+  "title": {
+    "ja": "{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}える",
+    "ja_easy": "{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}にかえる",
+    "en": "Convert a foreign licence to a Japanese licence"
+  },
+  "official_name": {
+    "ja": "外国免許からの切替え（外免切替）",
+    "reading": "がいこくめんきょからのきりかえ（がいめんきりかえ）"
+  },
+  "summary": {
+    "ja": "{外国|がいこく}の{免許|めんきょ}を{持|も}っている{人|ひと}は、{試験|しけん}の{一部|いちぶ}が{免除|めんじょ}されて、{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}えられます。{免許|めんきょ}を{取|と}ったあと、その{国|くに}に{通算|つうさん}3か{月|げつ}{以上|いじょう}{滞在|たいざい}していたことが{条件|じょうけん}です。{本人|ほんにん}が{申請|しんせい}します（{代理|だいり}は{不可|ふか}）。{愛知県|あいちけん}の{現在|げんざい}の{手順|てじゅん}・{手数料|てすうりょう}・{予約|よやく}の{決|き}まりは{案内|あんない}（PDF）で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}にかえられます。その{国|くに}に{3か月|さんかげつ}{以上|いじょう}いたことが{必要|ひつよう}です。{自分|じぶん}で{行|い}きます。{手順|てじゅん}とお{金|かね}は{愛知県警|あいちけんけい}のページで{確認|かくにん}します（{要確認|ようかくにん}）。",
+    "en": "If you hold a foreign licence, parts of the test are waived and you can switch to a Japanese licence. You must have stayed in that country for a total of at least 3 months after getting the licence. You must apply in person (no proxy). Check the current Aichi steps, fees and reservation rules in the guide (PDF) (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{都道府県|とどうふけん}{警察|けいさつ}の{運転|うんてん}{免許|めんきょ}センター{等|など}。{名古屋市|なごやし}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白区|てんぱくく}）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白区|てんぱくく}）（{要確認|ようかくにん}）",
+      "en": "The driving licence centre of the prefectural police for your address. In Nagoya, the driving licence test centre (Tempaku Ward) (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-npa-gaimen"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "日本での住所地を管轄する都道府県警察の運転免許センター等"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}の{免許|めんきょ}を{取|と}ったあと、その{国|くに}に{通算|つうさん}3か{月|げつ}{以上|いじょう}{滞在|たいざい}していたことが{条件|じょうけん}です。{出入国|しゅつにゅうこく}の{証印|しょういん}のある{旅券|りょけん}などで{示|しめ}します（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{免許|めんきょ}を{取|と}ったあと、その{国|くに}に{3か月|さんかげつ}{以上|いじょう}いた{証明|しょうめい}が{要|い}ります（{要確認|ようかくにん}）",
+        "en": "You must have stayed in that country for a total of at least 3 months after getting the licence, shown by a passport with entry/exit stamps or similar (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国等の免許を受けた後、その国等に通算して３か月以上滞在していたことが条件となります"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{代理|だいり}による{申請|しんせい}は{認|みと}められません。{必|かなら}ず{本人|ほんにん}が{申請|しんせい}します（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{自分|じぶん}で{行|い}きます。{代理|だいり}の{人|ひと}は{申請|しんせい}できません（{要確認|ようかくにん}）",
+        "en": "Applications by proxy are not accepted. You must apply in person (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "代理による申請は認められていません。必ず、ご本人が申請を行ってください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{住民基本台帳法|じゅうみんきほんだいちょうほう}の{適用|てきよう}を{受|う}けない{外国人|がいこくじん}は、{例外|れいがい}を{除|のぞ}き、{原則|げんそく}として{運転|うんてん}{免許|めんきょ}の{申請|しんせい}ができません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{住民票|じゅうみんひょう}がない{外国人|がいこくじん}は、{申請|しんせい}できないことが{多|おお}いです（{要確認|ようかくにん}）",
+        "en": "Foreign nationals not covered by the Basic Resident Register Act cannot, with limited exceptions, apply for a driving licence (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国人の方で、住民基本台帳法の適用を受けない方は法令で定める例外的な場合（※）を除き原則として運転免許の申請はできません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}（1）：{申請書|しんせいしょ}と、{病気|びょうき}の{症状|しょうじょう}などの{質問票|しつもんひょう}（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{申請書|しんせいしょ}、{質問票|しつもんひょう}（{要確認|ようかくにん}）",
+        "en": "What to bring (1): the application form and the questionnaire on illness symptoms (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "申請書と併せて、病気の症状等についての「質問票」を提出する必要があります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}（2）：{本籍|ほんせき}（{外国人|がいこくじん}は{特定|とくてい}{事項|じこう}）が{書|か}かれた{住民票|じゅうみんひょう}の{写|うつ}し（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{住民票|じゅうみんひょう}の{写|うつ}し（{要確認|ようかくにん}）",
+        "en": "What to bring (2): a copy of your resident record showing the registered domicile (for foreign nationals, the specified items) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "本籍（外国人の方については特定事項）記載の住民票の写し"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}（3）：{外国|がいこく}の{免許証|めんきょしょう}（{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}は{不可|ふか}）と、その{日本語|にほんご}の{翻訳文|ほんやくぶん}（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{外国|がいこく}の{免許証|めんきょしょう}と{日本語|にほんご}の{翻訳|ほんやく}。{国際|こくさい}{免許|めんきょ}は{使|つか}えません（{要確認|ようかくにん}）",
+        "en": "What to bring (3): your foreign licence (an international driving permit is not accepted) and its Japanese translation (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国等の行政庁等の免許に係る免許証（国際運転免許証は不可。）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}（4）：{外国|がいこく}に{通算|つうさん}3か{月|げつ}{以上|いじょう}{滞在|たいざい}したことがわかる、{出入国|しゅつにゅうこく}の{証印|しょういん}のある{旅券|りょけん}など（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{出入国|しゅつにゅうこく}のはんこがあるパスポート（{要確認|ようかくにん}）",
+        "en": "What to bring (4): a passport with entry/exit stamps or similar showing a total stay of at least 3 months abroad (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "当該免許を取得後、当該外国等に通算して３か月間以上滞在していたことが確認できる出入国の証印のある旅券等の書類"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}（5）：マイナンバーカード、{旅券|りょけん}など{本人|ほんにん}を{確認|かくにん}できる{書類|しょるい}のどれか1つ。{写真|しゃしん}1{枚|まい}（{申請|しんせい}の6か{月|げつ}{以内|いない}に{撮影|さつえい}）（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：マイナンバーカードかパスポート。{写真|しゃしん}1{枚|まい}（{要確認|ようかくにん}）",
+        "en": "What to bring (5): one ID such as a My Number Card or passport, and one photo taken within the last 6 months (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "マイナンバーカード、旅券等、本人であることを確認できる書類をいずれか一つ"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}がかかります。{金額|きんがく}は{本文|ほんぶん}になく、{愛知県|あいちけん}の{案内|あんない}（PDF）で{確認|かくにん}してください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "お{金|かね}がかかります。{金額|きんがく}は{愛知県警|あいちけんけい}のページで{確認|かくにん}します（{要確認|ようかくにん}）",
+        "en": "A fee is charged. The amount is not on the page; check the Aichi guide (PDF) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "8)手数料"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{外免|がいめん}{切替|きりかえ}は{事前|じぜん}{予約|よやく}が{要|い}ります（{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターの{案内|あんない}。{平針|ひらばり}の{試験場|しけんじょう}は{要|よう}{確認|かくにん}）。{代理|だいり}{申請|しんせい}はできません。{日本語|にほんご}が{分|わ}からない{人|ひと}は{通訳|つうやく}を{連|つ}れて{行|い}きます。",
+        "ja_easy": "{先|さき}に{予約|よやく}します（{要|よう}{確認|かくにん}）。{日本語|にほんご}が{分|わ}からない{人|ひと}は、{通訳|つうやく}の{人|ひと}といっしょに{行|い}きます。",
+        "en": "You need to reserve in advance (per the Higashi-Mikawa centre guide; check for Hirabari). No proxy applications. If you do not understand Japanese, bring an interpreter."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-menkyo-ichiran"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国免許切替予約WEBサイト（外部サイトへリンク）"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "license-npa-gaimen"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "外国等の行政庁等の免許を受けている方は、その免許で運転することができる自動車等に関する日本の免許を、試験の一部免除により取得する手続を申請することができます"
+  }
+}

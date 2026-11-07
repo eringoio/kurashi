@@ -1,0 +1,166 @@
+{
+  "id": "move-out-abroad-zairyu",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-abroad",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{在留|ざいりゅう}カードを{返|かえ}す（{在留|ざいりゅう}カードを{持|も}つ{人|ひと}が{出国|しゅっこく}するとき）",
+    "ja_easy": "{出国|しゅっこく}するときに{在留|ざいりゅう}カードを{返|かえ}す",
+    "en": "Return your residence card (when you leave Japan)"
+  },
+  "official_name": {
+    "ja": "在留カードの返納",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{在留|ざいりゅう}カードを{持|も}つ{人|ひと}が{出国|しゅっこく}するときは、{出入国|しゅつにゅうこく}の{港|みなと}で、すぐに{在留|ざいりゅう}カードを{返|かえ}します。ただし、{再|さい}{入国|にゅうこく}{許可|きょか}による{出国|しゅっこく}は、この{返納|へんのう}の{対象|たいしょう}ではありません。{日本|にほん}に{戻|もど}る{予定|よてい}で、{出国|しゅっこく}の{日|ひ}から1{年|ねん}{以内|いない}に{戻|もど}るなら、みなし{再|さい}{入国|にゅうこく}{許可|きょか}の{対象|たいしょう}になることがあります（{在留|ざいりゅう}{期間|きかん}「3{月|つき}」{以下|いか}の{人|ひと}と「{短期|たんき}{滞在|たいざい}」の{人|ひと}は{除|のぞ}く）。{要|よう}{確認|かくにん}です。",
+    "ja_easy": "{日本|にほん}を{出|で}るとき、{空港|くうこう}などで、すぐに{在留|ざいりゅう}カードを{返|かえ}します。{再入国許可|さいにゅうこくきょか}で{出|で}る{人|ひと}は、{返|かえ}しません。{出|で}てから1{年|ねん}{以内|いない}に{日本|にほん}に{戻|もど}るときは、{許可|きょか}がいらないことがあります（{要確認|ようかくにん}）。",
+    "en": "When you leave Japan, return your residence card right away at the port of departure. Leaving with a re-entry permit is not covered by this rule. If you will return within 1 year of leaving, a deemed re-entry permit may apply (not for stays of 3 months or less, or short-term visitors). Please check at the counter (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{出国|しゅっこく}するとき（{出入国|しゅつにゅうこく}の{港|みなと}で、{直|ただ}ちに）",
+      "ja_easy": "{出国|しゅっこく}するとき（すぐ）",
+      "en": "Immediately when you leave (at the port of departure)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-henno"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "（１）のウ又はオ → 直ちに返納（ウは出入国港において返納）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{出入国|しゅつにゅうこく}の{港|みなと}（{空港|くうこう}など）",
+      "ja_easy": "{空港|くうこう}など",
+      "en": "The port of departure (e.g. an airport)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-henno"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "（１）のウ又はオ → 直ちに返納（ウは出入国港において返納）",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
+        "verdict": "agree",
+        "ref": "research/audits/zairyu.json#P-zairyu-henno/c3"
+      }
+    }
+  },
+  "kind": "procedure",
+  "keywords": [
+    "在留カード",
+    "返納",
+    "出国",
+    "return residence card",
+    "leaving Japan"
+  ],
+  "reasons": {
+    "check_at_office": {
+      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-henno"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "ア 在留カードの交付を受けた中長期在留者が中長期在留者でなくなったとき イ 在留カードの有効期間が満了したとき ウ 中長期在留者が出国（再入国許可による出国を除く。）したとき"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードは{出国|しゅっこく}（{再|さい}{入国|にゅうこく}{許可|きょか}による{出国|しゅっこく}を{除|のぞ}く）のほか、{在留|ざいりゅう}{期間|きかん}が{満了|まんりょう}したとき、{中長期|ちゅうちょうき}{在留者|ざいりゅうしゃ}でなくなったときなどに{失効|しっこう}します。{失効|しっこう}したカードは{返|かえ}します。",
+        "ja_easy": "{出国|しゅっこく}のほか、{在留期間|ざいりゅうきかん}が{終|お}わったときなどに、カードは{使|つか}えなくなります。そのカードは{返|かえ}します。",
+        "en": "The card also expires when your period of stay ends or when you stop being a mid- to long-term resident, not only when you leave Japan. Return the expired card."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-henno"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "ア 在留カードの交付を受けた中長期在留者が中長期在留者でなくなったとき イ 在留カードの有効期間が満了したとき ウ 中長期在留者が出国（再入国許可による出国を除く。）したとき",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-henno/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{期限|きげん}までに{返|かえ}さないと、{罰金|ばっきん}になることがあります。",
+        "ja_easy": "{返|かえ}さないと、お{金|かね}を{払|はら}うことになるかもしれません。",
+        "en": "If you do not return it on time, you may be fined."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-henno"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "期限内に返納しないと罰金に処せられることがあります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
+          "verdict": "agree",
+          "ref": "research/audits/zairyu.json#P-zairyu-henno/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{再|さい}{入国|にゅうこく}{許可|きょか}で{出国|しゅっこく}したあと、{許可|きょか}の{期間|きかん}の{中|なか}に{戻|もど}らなかったときは、カードが{失効|しっこう}します。{失効|しっこう}した{日|ひ}から14{日|にち}{以内|いない}に{返|かえ}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{許可|きょか}の{期間|きかん}に{戻|もど}らなかったときは、14{日|にち}{以内|いない}にカードを{返|かえ}します（{要確認|ようかくにん}）。",
+        "en": "If you leave with a re-entry permit and do not return within its validity, the card expires. Return it within 14 days of expiry (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-henno"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "（１）のア、イ又はエ → 失効した日から１４日以内に返納"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{有効|ゆうこう}な{旅券|りょけん}を{持|も}ち、{出国|しゅっこく}の{日|ひ}から1{年|ねん}{以内|いない}に{再|さい}{入国|にゅうこく}するときは、ふつうの{再|さい}{入国|にゅうこく}{許可|きょか}をとらなくてよい（みなし{再|さい}{入国|にゅうこく}{許可|きょか}）とされています。{在留|ざいりゅう}{期間|きかん}「3{月|つき}」{以下|いか}の{人|ひと}と「{短期|たんき}{滞在|たいざい}」の{人|ひと}は{除|のぞ}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "パスポートがあって、{出|で}てから1{年|ねん}{以内|いない}に{戻|もど}るなら、{許可|きょか}をとらなくてよいことがあります（{要確認|ようかくにん}）。",
+        "en": "With a valid passport, re-entering within 1 year of departure generally needs no ordinary re-entry permit (deemed re-entry permit). Stays of 3 months or less and short-term visitors are excluded (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-saishunyukoku"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "有効な旅券を所持している方のうち、「３月」以下の在留期間を決定された方及び「短期滞在」の在留資格をもって在留する方以外の方が、出国の日から１年以内に再入国する場合には、原則として通常の再入国許可の取得を不要とするものです。"
+      }
+    }
+  ]
+}

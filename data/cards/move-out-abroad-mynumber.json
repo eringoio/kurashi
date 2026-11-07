@@ -1,0 +1,172 @@
+{
+  "id": "move-out-abroad-mynumber",
+  "data_version": 1,
+  "illustration": "mycard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-mo-abroad",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "マイナンバーカードを{国外|こくがい}でも{使|つか}い{続|つづ}ける（{日本|にほん}{国籍|こくせき}の{人|ひと}）",
+    "ja_easy": "{国外|こくがい}でもマイナンバーカードを{使|つか}う（{日本|にほん}の{国籍|こくせき}の{人|ひと}）",
+    "en": "Keep using your My Number Card abroad (Japanese nationals)"
+  },
+  "official_name": {
+    "ja": "マイナンバーカードの国外継続利用の手続き",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}は、{国外|こくがい}{転出|てんしゅつ}の{届出|とどけで}のときに{手続|てつづ}きをすると、{転出|てんしゅつ}{後|ご}もマイナンバーカードと{電子|でんし}{証明|しょうめい}{書|しょ}を{使|つか}い{続|つづ}けられます。{国外|こくがい}{転出|てんしゅつ}{予定|よてい}{日|び}の{前日|ぜんじつ}までに{手続|てつづ}きが{必要|ひつよう}です。{外国|がいこく}{籍|せき}の{人|ひと}の{扱|あつか}いは、{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}は、{国外|こくがい}へ{行|い}くときに{手続|てつづ}きをすると、あともマイナンバーカードを{使|つか}えます。{予定|よてい}{日|び}の{前|まえ}の{日|ひ}までに{手続|てつづ}きが{要|い}ります。",
+    "en": "Japanese nationals can keep using the My Number Card and electronic certificate abroad if they apply when filing the move-out report. The procedure must be done by the day before departure. For non-Japanese nationals, please ask the ward office (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{国外|こくがい}{転出|てんしゅつ}{予定|よてい}{日|び}の{前日|ぜんじつ}まで",
+      "ja_easy": "{国外|こくがい}へ{行|い}く{日|ひ}の{前|まえ}の{日|ひ}まで",
+      "en": "By the day before your planned departure"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-mynumber-kokugai"
+      ],
+      "checked_at": "2026-11-04",
+      "status": "needs_check",
+      "quote": "マイナンバーカードの国外継続利用を希望される場合、国外転出予定日の前日までに手続きが必要です。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}の{市民|しみん}{課|か}",
+      "en": "Citizens section of the ward office"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-mynumber-kokugai"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "以下の書類をお持ちになって区役所市民課・支所区民生活課にお越しください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
+        "verdict": "agree",
+        "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c4"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [
+    "マイナンバーカード",
+    "国外",
+    "継続利用",
+    "My Number Card abroad"
+  ],
+  "reasons": {
+    "check_at_office": {
+      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-mynumber-kokugai"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "令和6年5月27日から、日本国籍の方について、国外転出後もマイナンバーカードを継続して利用できることになりました。"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{本人|ほんにん}が{行|い}くときは、マイナンバーカード（{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}が{必要|ひつよう}）と、{住民票|じゅうみんひょう}の{転出届|てんしゅつとどけ}に{必要|ひつよう}な{書類|しょるい}を{持|も}っていきます。",
+        "ja_easy": "{本人|ほんにん}が{行|い}くときは、カードと{暗証|あんしょう}{番号|ばんごう}、{転出届|てんしゅつとどけ}の{書類|しょるい}を{持|も}っていきます。",
+        "en": "If you go yourself, bring the My Number Card (you enter the PIN at the counter) and the documents needed for the move-out notice."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-kokugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "本人がお越しになる場合 マイナンバーカード（暗証番号の入力が必要です。）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c6"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日曜|にちよう}{窓口|まどぐち}の{日|ひ}は、{本籍|ほんせき}が{名古屋市|なごやし}の{外|そと}にある{人|ひと}の{国外|こくがい}{継続|けいぞく}{利用|りよう}の{手続|てつづ}きはできません。",
+        "ja_easy": "{日曜|にちよう}{窓口|まどぐち}の{日|ひ}は、{本籍|ほんせき}が{名古屋市|なごやし}の{外|そと}の{人|ひと}は{手続|てつづ}きできません。",
+        "en": "On Sunday-counter days, people whose registered domicile is outside Nagoya cannot do this procedure."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-kokugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "日曜窓口実施日は、名古屋市外に本籍がある方についてマイナンバーカードの国外継続利用の手続きを取り扱うことができません。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{代理人|だいりにん}が{行|い}くときは、{持|も}ち{物|もの}や{委任状|いにんじょう}が{変|か}わります。{国外|こくがい}で{電子|でんし}{証明書|しょうめいしょ}を{使|つか}うときは、{区役所|くやくしょ}から{本人|ほんにん}に{送|おく}る{照会書|しょうかいしょ}{兼|けん}{回答書|かいとうしょ}も{要|い}ります。{事前|じぜん}に{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{代理人|だいりにん}が{行|い}くときは、{先|さき}に{区役所|くやくしょ}に{聞|き}いてください（{要確認|ようかくにん}）。",
+        "en": "If an agent goes for you, the documents and power of attorney differ. To use the electronic certificate abroad, a reply form sent to you by the ward office is also needed. Ask the counter beforehand (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-kokugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "法定代理人の方や同一世帯人の方がお越しになる場合 本人のマイナンバーカード(必ず本人に住民基本台帳用暗証番号(数字4桁)を確認してきてください。）"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{国外|こくがい}に{出|で}たあとにカードをなくしたり{盗|ぬす}まれたりしたときは、{国外|こくがい}{転出者|てんしゅつしゃ}{向|む}けの{専用|せんよう}コールセンター（24{時間|じかん}365{日|にち}）に{電話|でんわ}して、{一時|いちじ}{停止|ていし}を{申請|しんせい}します。{電話|でんわ}{番号|ばんごう}は{市|し}の{公式|こうしき}ページで{確認|かくにん}してください。",
+        "ja_easy": "{国外|こくがい}でカードをなくしたら、{専用|せんよう}の{電話|でんわ}で{止|と}めます。{番号|ばんごう}は{市|し}の{公式|こうしき}ページを{見|み}てください。",
+        "en": "If you lose the card or it is stolen after you leave Japan, call the dedicated call center for people who moved abroad (24 hours, 365 days) to suspend it. See the city official page for the number."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-kokugai"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "国外転出者向けマイナンバーカードを紛失した場合または盗難にあった場合は、下記コールセンターに電話することで一時停止申請をしてください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
+          "verdict": "agree",
+          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c15"
+        }
+      }
+    }
+  ]
+}

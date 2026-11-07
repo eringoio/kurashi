@@ -1,0 +1,138 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-shinki",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "kind": "procedure",
+  "keywords": [
+    "運転免許",
+    "うんてんめんきょ",
+    "免許を取る",
+    "教習所",
+    "driving licence",
+    "get a driving license",
+    "driving school",
+    "shinki"
+  ],
+  "eligibility": "R-license-goal-new",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は{運転|うんてん}{免許|めんきょ}を{新|あたら}しく{取|と}る{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{免許|めんきょ}を{新|あたら}しく{取|と}る{人|ひと}のためのものです。",
+      "en": "This guide is for people getting a driving licence for the first time."
+    }
+  },
+  "title": {
+    "ja": "{運転|うんてん}{免許|めんきょ}を{新|あたら}しく{取|と}る",
+    "ja_easy": "{運転|うんてん}{免許|めんきょ}を{新|あたら}しく{取|と}る",
+    "en": "Get a driving licence"
+  },
+  "official_name": {
+    "ja": "運転免許試験（新規取得）",
+    "reading": "うんてんめんきょしけん（しんきしゅとく）"
+  },
+  "summary": {
+    "ja": "{愛知県|あいちけん}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}で{試験|しけん}を{受|う}けます。{外国語|がいこくご}の{学科|がっか}{試験|しけん}の{案内|あんない}があります。{申請|しんせい}のときは、{原則|げんそく}{住民票|じゅうみんひょう}の{写|うつ}しが{要|い}ります（{要|よう}{確認|かくにん}）。{受験|じゅけん}{資格|しかく}・{手数料|てすうりょう}・{試験|しけん}の{流|なが}れは{愛知県警|あいちけんけい}の{案内|あんない}（PDF）で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{愛知県|あいちけん}では、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}で{試験|しけん}を{受|う}けます。{住民票|じゅうみんひょう}の{写|うつ}しが{要|い}ります（{要確認|ようかくにん}）。{試験|しけん}の{流|なが}れとお{金|かね}は、{愛知県警|あいちけんけい}のページで{見|み}ます（{要確認|ようかくにん}）。",
+    "en": "In Aichi you take the tests at the driving licence test centre. A guide to the written test in foreign languages is available. A copy of your resident record is, in principle, required when applying (to be checked). Check the eligibility, fees and test steps in the Aichi Prefectural Police guide (PDF) (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{名古屋市|なごやし}{天白区|てんぱくく}）。{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターでも{受|う}けられます（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白区|てんぱくく}）（{要確認|ようかくにん}）",
+      "en": "The driving licence test centre (Tempaku Ward, Nagoya). The Higashi-Mikawa centre is another test location (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-aichi-menkyoshiken"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "受験場所にて案内が違いますので注意してください。"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申請|しんせい}のとき、{原則|げんそく}として{住民票|じゅうみんひょう}の{写|うつ}しが{必要|ひつよう}です（{令和|れいわ}7{年|ねん}10{月|がつ}1{日|にち}から）。{例外|れいがい}の{内容|ないよう}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{免許|めんきょ}を{申|もう}し{込|こ}むとき、{住民票|じゅうみんひょう}の{写|うつ}しが{要|い}ります（{要確認|ようかくにん}）",
+        "en": "A copy of your resident record is, in principle, required when applying (from 1 October 2025). The page does not list the exceptions (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-menkyoshiken"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "運転免許申請時には、原則、住民票の写しが必要！（令和７年10月１日以降）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国語|がいこくご}による{学科|がっか}{試験|しけん}の{案内|あんない}があります。{言語|げんご}の{種類|しゅるい}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{外国語|がいこくご}の{学科|がっか}{試験|しけん}の{案内|あんない}があります（{要確認|ようかくにん}）",
+        "en": "There is a guide to the written test in foreign languages. The page does not say which languages (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-menkyoshiken"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国語による学科試験 滞在証明書（PDF:43KB）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{予約|よやく}が{必要|ひつよう}なのは、{普通|ふつう}{第一種|だいいっしゅ}の{学科|がっか}{試験|しけん}を{受|う}ける{人|ひと}のうち、{他県|たけん}の{指定|してい}{教習所|きょうしゅうじょ}の{卒業者|そつぎょうしゃ}と、{愛知県内|あいちけんない}の{指定|してい}{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した{再受験者|さいじゅけんしゃ}（2{回目|かいめ}{以降|いこう}）です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{予約|よやく}がいる{人|ひと}と、いらない{人|ひと}がいます。{愛知県警|あいちけんけい}のページで{確認|かくにん}します（{要確認|ようかくにん}）",
+        "en": "A reservation is needed for those taking the ordinary Class I written test who graduated from a designated driving school in another prefecture, or who graduated from one in Aichi and are retaking the test (2nd time on) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-menkyoshiken"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "予約が必要になる方は普通第一種の学科試験を受験される方で、他県の指定教習所の卒業者及び愛知県内の指定教習所を卒業した再受験者（２回目以降）です"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{手数料|てすうりょう}は{令和|れいわ}7{年|ねん}3{月|がつ}24{日|にち}からの{金額|きんがく}がPDFにあります。{金額|きんがく}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "お{金|かね}は{愛知県警|あいちけんけい}のページ（PDF）で{見|み}ます（{要確認|ようかくにん}）",
+        "en": "Fees are listed in a PDF effective from 24 March 2025. The page text gives no amounts (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-menkyoshiken"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "※以下のPDFに記載の手数料は令和７年３月24日からのものです"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "license-aichi-menkyoshiken"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "運転免許試験 受験資格等 運転免許の受験資格 運転免許により運転できる車の種類 受験要領"
+  }
+}

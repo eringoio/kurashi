@@ -1,0 +1,305 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "divorce-saiban",
+  "illustration": "hall",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "eligibility": "R-div-court",
+  "title": {
+    "ja": "{調停|ちょうてい}・{裁判|さいばん}による{離婚|りこん}の{届|とどけ}",
+    "ja_easy": "{調停|ちょうてい}や{裁判|さいばん}で{離婚|りこん}するときの{届|とど}け",
+    "en": "Divorce by mediation or court: registration"
+  },
+  "official_name": {
+    "ja": "離婚届（調停・裁判）",
+    "reading": "りこんとどけちょうていさいばん"
+  },
+  "summary": {
+    "ja": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}や{裁判|さいばん}で{離婚|りこん}が{決|き}まったときは、{裁判|さいばん}の{確定|かくてい}または{調停|ちょうてい}の{成立|せいりつ}の{日|ひ}から{数|かぞ}えて10{日|にち}{以内|いない}に、{離婚届|りこんとどけ}を{区役所|くやくしょ}に{出|だ}します（{要|よう}{確認|かくにん}）。{届出|とどけで}をする{人|ひと}は、{訴|うった}えを{起|お}こした{人|ひと}です（{要|よう}{確認|かくにん}）。10{日|にち}を{過|す}ぎたときは、{相手方|あいてがた}も{届|とど}け{出|で}ることができます。{離婚届|りこんとどけ}のほかに、{審判|しんぱん}{書|しょ}・{判決|はんけつ}{書|しょ}の{謄本|とうほん}と{確定|かくてい}{証明|しょうめい}{書|しょ}、または{調停|ちょうてい}{調書|ちょうしょ}・{和解|わかい}{調書|ちょうしょ}・{認諾|にんだく}{調書|ちょうしょ}の{謄本|とうほん}が{要|い}ります。どれにあたるかは、{窓口|まどぐち}か{裁判所|さいばんしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}や{裁判|さいばん}で{離婚|りこん}が{決|き}まったときは、{決|き}まった{日|ひ}から{数|かぞ}えて10{日|にち}いないに、{区役所|くやくしょ}に{離婚届|りこんとどけ}を{出|だ}します（{要|よう}{確認|かくにん}）。{出|だ}すのは、{裁判|さいばん}を{起|お}こした{人|ひと}です（{要|よう}{確認|かくにん}）。10{日|にち}をすぎたときは、{相手|あいて}も{出|だ}せます。{裁判所|さいばんしょ}の{書類|しょるい}（{判決|はんけつ}{書|しょ}・{調停|ちょうてい}{調書|ちょうしょ}など）も{要|い}ります。どれにあたるかは、{窓口|まどぐち}か{裁判所|さいばんしょ}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "When a divorce is decided by family court mediation or a court ruling, submit the divorce registration at the ward office within 10 days counted from the day the ruling becomes final or the mediation is concluded (to be checked). The person who brought the case files it (to be checked); after 10 days the other party may also file. You also need court documents: a transcript of the judgment or decision with a certificate of finality, or a transcript of the mediation, settlement or acknowledgement record. Confirm which applies at the counter or the court (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{裁判|さいばん}の{確定|かくてい}または{調停|ちょうてい}の{成立|せいりつ}の{日|ひ}から{数|かぞ}えて10{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{決|き}まった{日|ひ}から{数|かぞ}えて10{日|にち}いない（{要|よう}{確認|かくにん}）",
+      "en": "Within 10 days counted from the day the ruling becomes final or the mediation is concluded (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon-div"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "裁判の確定または調停の成立した日から数えて10日以内"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{夫|おっと}または{妻|つま}の{本籍|ほんせき}{地|ち}または{所在地|しょざいち}の{区役所|くやくしょ}・{支所|ししょ}",
+      "ja_easy": "{夫|おっと}か{妻|つま}の{本籍|ほんせき}の{区|く}か、{住|す}んでいる{区|く}の{区役所|くやくしょ}",
+      "en": "The ward or branch office of the registered domicile or the current address of either spouse"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon-div"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "届出の場所 夫もしくは妻の本籍地または所在地の区役所・支所",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+        "verdict": "agree",
+        "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c7"
+      }
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離婚届|りこんとどけ}と、{審判|しんぱん}{書|しょ}・{判決|はんけつ}{書|しょ}の{謄本|とうほん}と{確定|かくてい}{証明|しょうめい}{書|しょ}、または{調停|ちょうてい}{調書|ちょうしょ}・{和解|わかい}{調書|ちょうしょ}・{認諾|にんだく}{調書|ちょうしょ}の{謄本|とうほん}が{必要|ひつよう}です。",
+        "ja_easy": "{離婚届|りこんとどけ}と、{判決|はんけつ}{書|しょ}などの{写|うつ}しと{確定|かくてい}{証明|しょうめい}{書|しょ}、または{調停|ちょうてい}{調書|ちょうしょ}などの{写|うつ}しが{要|い}ります。",
+        "en": "You need the divorce form and either a transcript of the decision or judgment with a certificate of finality, or a transcript of the mediation, settlement or acknowledgement record."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "審判書もしくは判決書の謄本と確定証明書または調停調書の謄本、和解調書の謄本、もしくは認諾調書の謄本",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c5"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{調停|ちょうてい}{等|とう}の{確定|かくてい}の{日|ひ}から10{日|にち}を{過|す}ぎたときは、{相手方|あいてがた}も{届出|とどけで}ができます。",
+        "ja_easy": "10{日|にち}をすぎたときは、{相手|あいて}の{人|ひと}も{届|とど}けを{出|だ}せます。",
+        "en": "After the 10 days have passed, the other party may also file."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "調停等の確定の日から10日を経過した場合は、相手方も届出することができます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}は、{当事者|とうじしゃ}{間|かん}の{話|はな}し{合|あ}いがまとまらない{場合|ばあい}や{話|はな}し{合|あ}いができない{場合|ばあい}に{利用|りよう}できます。",
+        "ja_easy": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}は、{話|はな}し{合|あ}いがまとまらないときや、{話|はな}し{合|あ}いができないときに{使|つか}えます。",
+        "en": "Family court mediation can be used when the two sides cannot reach agreement or cannot talk."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon-chotei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "離婚について当事者間の話合いがまとまらない場合や話合いができない場合には、家庭裁判所の調停手続を利用することができます。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c8"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{調停|ちょうてい}の{申立|もうしたて}{先|さき}は、{相手方|あいてがた}の{住所|じゅうしょ}{地|ち}の{家庭|かてい}{裁判所|さいばんしょ}、または{当事者|とうじしゃ}が{合意|ごうい}で{定|さだ}める{家庭|かてい}{裁判所|さいばんしょ}です。",
+        "ja_easy": "{調停|ちょうてい}を{申|もう}し{立|た}てるのは、{相手|あいて}の{住所|じゅうしょ}の{家庭|かてい}{裁判所|さいばんしょ}か、ふたりが{合意|ごうい}で{決|き}めた{家庭|かてい}{裁判所|さいばんしょ}です。",
+        "en": "Apply for mediation at the family court for the other party's address, or one the parties agree on."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon-chotei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "相手方の住所地の家庭裁判所又は当事者が合意で定める家庭裁判所",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c9"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{調停|ちょうてい}では{離婚|りこん}そのもののほか、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育|よういく}{費|ひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
+        "ja_easy": "{調停|ちょうてい}では、{離婚|りこん}のほかに、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育|よういく}{費|ひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
+        "en": "In mediation, besides the divorce itself, the parties discuss parental authority, contact with children, child support, property division, pension split ratio and compensation."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon-chotei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "親権者を父母の双方とするか一方とするかを定める必要があるほか",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c12"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{家事|かじ}{調停|ちょうてい}で{解決|かいけつ}できない{場合|ばあい}は、{離婚|りこん}{訴訟|そしょう}を{起|お}こします。",
+        "ja_easy": "{調停|ちょうてい}で{解決|かいけつ}できないときは、{離婚|りこん}の{裁判|さいばん}（{訴訟|そしょう}）を{起|お}こします。",
+        "en": "If family mediation does not settle the matter, a divorce lawsuit is filed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "離婚について家事調停で解決ができない場合には，離婚訴訟を起こすことになります。",
+        "ai_check": {
+          "fetched_at": "2026-11-05",
+          "sha256": "d102ab3aaab5cd56c4379b5821a6928c5724c4c5c1d69fee59357fde10a6596d",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c13"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}により{姓|せい}を{改|あらた}めた{人|ひと}が{離婚|りこん}{後|ご}も{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{称|しょう}する{場合|ばあい}は、{裁判|さいばん}{離婚|りこん}の{場合|ばあい}も、{別|べつ}に「{離婚|りこん}の{際|さい}に{称|しょう}していた{氏|うじ}を{称|しょう}する{届|とどけ}」が{必要|ひつよう}です。",
+        "ja_easy": "{結婚|けっこん}で{名字|みょうじ}を{変|か}えた{人|ひと}が、{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}うときは、{裁判|さいばん}で{離婚|りこん}した{場合|ばあい}も、{別|べつ}に{届|とど}けが{要|い}ります。",
+        "en": "A person who changed their surname on marriage and wants to keep it after divorce must file a separate notification, including after a court divorce."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "婚姻により姓を改めた方が離婚後も婚姻中の氏を称する場合は、別途、「離婚の際に称していた氏を称する届」が必要になります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c18"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{調停|ちょうてい}の{申|さる}{立|だ}てには、{収入|しゅうにゅう}{印紙|いんし}1200{円|えん}{分|ぶん}と{連絡|れんらく}{用|よう}の{郵便|ゆうびん}{切手|きって}が{要|い}ります。{郵便|ゆうびん}{切手|きって}の{額|がく}は{裁判所|さいばんしょ}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{調停|ちょうてい}を{申|もう}し{立|た}てるには、{収入|しゅうにゅう}{印紙|いんし}1200{円|えん}{分|ぶん}と、{郵便|ゆうびん}{切手|きって}が{要|い}ります。{切手|きって}の{金額|きんがく}は{裁判所|さいばんしょ}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "A mediation application needs 1,200 yen in revenue stamps and postage stamps for correspondence; the postage amount differs by court (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon-chotei"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "収入印紙1200円分"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離婚|りこん}{訴訟|そしょう}の{費用|ひよう}は{収入|しゅうにゅう}{印紙|いんし}と{郵便|ゆうびん}{切手|きって}です。{印紙|いんし}の{額|がく}は{請求|せいきゅう}{内容|ないよう}によって{違|ちが}うので、{訴状|そじょう}を{出|だ}す{家庭|かてい}{裁判所|さいばんしょ}に{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{離婚|りこん}の{裁判|さいばん}には、{収入|しゅうにゅう}{印紙|いんし}と{郵便|ゆうびん}{切手|きって}が{要|い}ります。{印紙|いんし}の{金額|きんがく}は{内容|ないよう}で{違|ちが}うので、{家庭|かてい}{裁判所|さいばんしょ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "A divorce lawsuit needs revenue stamps and postage stamps. The stamp amount varies with the claim, so ask the family court where you file (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "収入印紙（請求する内容によって異なりますので，訴状を提出する家庭裁判所へ確認してください。）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{届出|とどけで}をする{人|ひと}は、{訴|うった}えを{起|お}こした{人|ひと}（{調停|ちょうてい}・{審判|しんぱん}の{申立人|もうしたてにん}、{訴|うった}えの{提起|ていき}{者|しゃ}）です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{届|とど}けを{出|だ}すのは、{裁判|さいばん}や{調停|ちょうてい}を{起|お}こした{人|ひと}です（{要|よう}{確認|かくにん}）。",
+        "en": "The person who files is the one who brought the case (the applicant in mediation or the plaintiff) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "届出をする人 訴えを起こした人"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{裁判|さいばん}{離婚|りこん}の{届|とどけ}{書|しょ}は、{届出|とどけで}{人|ひと}の{署名|しょめい}があればよく、{協議|きょうぎ}{離婚|りこん}のような{証人|しょうにん}2{人|にん}は{書|か}かれていません。{押印|おういん}は{任意|にんい}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{裁判|さいばん}で{離婚|りこん}するときの{届|とど}けは、{出|だ}す{人|ひと}の{署名|しょめい}があればよいです。{証人|しょうにん}2{人|にん}は{要|い}りません（{要|よう}{確認|かくにん}）。",
+        "en": "For a court divorce the form needs the filer's signature; the two witnesses required for a divorce by agreement are not mentioned (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "離婚届(届出人の署名があるもの。押印は任意。）"
+      }
+    }
+  ],
+  "keywords": [
+    "調停離婚",
+    "裁判離婚",
+    "離婚",
+    "家庭裁判所",
+    "divorce",
+    "mediation",
+    "family court"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった{人|ひと}に{出|だ}しています。",
+      "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった{人|ひと}に{出|だ}しています。",
+      "en": "Shown when a divorce is decided by mediation or court."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-konin-rikon-div"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "裁判の確定または調停の成立した日から数えて10日以内"
+  }
+}

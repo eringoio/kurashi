@@ -1,0 +1,92 @@
+{
+  "id": "lost-facility-ask",
+  "data_version": 1,
+  "illustration": "search",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-wallet",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{駅|えき}・{店|てん}などに{問|と}い{合|あ}わせる",
+    "ja_easy": "{駅|えき}・お{店|みせ}に{聞|き}く",
+    "en": "Ask the station or shop"
+  },
+  "official_name": {
+    "ja": "施設への問い合わせ",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{駅|えき}・デパート・{電車|でんしゃ}・バスなど{管理|かんり}{者|しゃ}のいる{場所|ばしょ}でなくしたときは、その{場所|ばしょ}の{管理|かんり}{者|しゃ}にも、{届|とど}いていないか{問|と}い{合|あ}わせます。{警察|けいさつ}への{届|とどけ}と{同時|どうじ}に{進|すす}めてかまいません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{駅|えき}やお{店|みせ}の{人|ひと}にも{聞|き}きます。{警察|けいさつ}と{同|おな}じときにしていいです。",
+    "en": "If you lost it at a station, store, train or bus, also ask the operator. You can do this at the same time as the police report (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "なくした{場所|ばしょ}の{管理|かんり}{者|しゃ}（{駅|えき}・デパート・{遊園|ゆうえん}{地|ち}・ホテル・{病院|びょういん}・ビル・{電車|でんしゃ}・バス・タクシー・フェリーなど）",
+      "ja_easy": "なくした{場所|ばしょ}の{管理|かんり}{者|しゃ}（{駅|えき}・お{店|みせ}・ホテル・{病院|びょういん}・{電車|でんしゃ}・バス・タクシーなど）",
+      "en": "The operator of the place where you lost it (station, department store, amusement park, hotel, hospital, building, train, bus, taxi, ferry, etc.)"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "「特定の場所」とは、駅、デパート、遊園地などの施設やホテル、病院、ビルなどの建物の中、さらには、電車、バス、タクシー、フェリーなどの乗り物の中のように管理者のいる場所のことをいいます。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+        "verdict": "agree",
+        "ref": "research/audits/lost.json#P-lost-facility-inquiry/c2"
+      }
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "忘れ物",
+    "わすれもの",
+    "落とし物",
+    "lost and found",
+    "station"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "A-aichi-police-ishitsu"
+    ],
+    "checked_at": "2026-11-04",
+    "status": "needs_check",
+    "quote": "落としたと思われる場所が、駅、デパートなど特定の場所（※）である場合には、その場所の管理者にも落とし物として届いていないかを問い合わせ、確認してください。"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "なくしたと{思|おも}う{場所|ばしょ}が、{駅|えき}やデパートなど{管理|かんり}{者|しゃ}のいる{場所|ばしょ}のときは、その{管理|かんり}{者|しゃ}にも、{落|お}とし{物|もの}として{届|とど}いていないか{問|と}い{合|あ}わせて{確認|かくにん}します。",
+        "ja_easy": "なくした{場所|ばしょ}が{駅|えき}やお{店|みせ}など、{管理|かんり}する{人|ひと}がいる{所|ところ}なら、その{人|ひと}にも、{届|とど}いていないか{聞|き}きます。",
+        "en": "If you think you lost it at a place with an operator, such as a station or department store, ask the operator whether it was handed in."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "落としたと思われる場所が、駅、デパートなど特定の場所（※）である場合には、その場所の管理者にも落とし物として届いていないかを問い合わせ、確認してください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-facility-inquiry/c1"
+        }
+      }
+    }
+  ]
+}

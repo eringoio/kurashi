@@ -1,0 +1,131 @@
+{
+  "id": "lost-hoken-reissue",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "nagoya_resident",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-hoken",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}などの{再|さい}{交付|こうふ}",
+    "ja_easy": "{保険|ほけん}の{紙|かみ}をもう{一度|いちど}もらう",
+    "en": "Reissue your health insurance certificate"
+  },
+  "official_name": {
+    "ja": "健康保険の資格確認書などの再交付",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{人|ひと}が、{資格|しかく}{確認|かくにん}{書|しょ}か{資格|しかく}{情報|じょうほう}のお{知|し}らせをなくしたり{汚|よご}したりしたときの{再|さい}{交付|こうふ}です。{区役所|くやくしょ}（{支所|ししょ}）の{窓口|まどぐち}のほか、{電子|でんし}{申請|しんせい}でもできます。{届|とど}くものは、マイナ{保険証|ほけんしょう}を{持|も}っているかで{変|か}わります（{持|も}っている{人|ひと}は{資格|しかく}{情報|じょうほう}のお{知|し}らせ、{持|も}っていない{人|ひと}は{資格|しかく}{確認|かくにん}{書|しょ}）。{会社|かいしゃ}の{保険|ほけん}は{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{紙|かみ}をなくしたら、{区役所|くやくしょ}へ{行|い}きます。インターネットでもできます。マイナ{保険証|ほけんしょう}を{持|も}っているかで、{届|とど}くものが{変|か}わります。{会社|かいしゃ}の{保険|ほけん}は{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "If you are in Nagoya National Health Insurance and lose or damage your certificate (shikaku-kakunin-sho) or notice (shikaku-joho no oshirase), you can apply for a reissue at the ward office or online. What is sent depends on whether you have a My Number card registered as a health insurance card (notice if yes, certificate if no). For employer insurance, ask your employer (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{保険|ほけん}{年金|ねんきん}{課|か}・{支所|ししょ}{区民|くみん}{福祉|ふくし}{課|か}",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office insurance section"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-kokuho-hitsuyo"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "国民健康保険の届出や申請については、お住まいの区の区役所保険年金課または支所区民福祉課で手続きをしてください。",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
+        "verdict": "agree",
+        "ref": "research/audits/hoken.json#P-hoken-kokuho-jusho-henko/c3"
+      }
+    }
+  },
+  "place": "ward_office",
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "C-nagoya-kokuho-denshi-saikofu"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "ai_checked",
+    "quote": "名古屋市の国民健康保険の加入者が、資格確認書、資格情報のお知らせのいずれかを汚損（破れ・汚れ）・紛失等した場合における再交付申請の手続きです。",
+    "ai_check": {
+      "fetched_at": "2026-11-04",
+      "sha256": "368c058c6a80348830d85800401dfb697a69afedd581cb3c4653e0cf13b71e8a",
+      "verdict": "agree",
+      "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c1"
+    }
+  },
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{市|し}のページの{下|した}のリンクから{電子|でんし}{申請|しんせい}ができます。{申請|しんせい}できるのは、{世帯主|せたいぬし}・{再|さい}{交付|こうふ}を{受|う}ける{本人|ほんにん}・{住民票|じゅうみんひょう}{上|じょう}{同|おな}じ{世帯|せたい}の{人|ひと}です。{顔写真|かおじゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{画像|がぞう}（マイナンバーカードは、おもて{面|めん}だけ）と、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{番号|ばんごう}（8{桁|けた}）・{世帯主|せたいぬし}の{名前|なまえ}が{要|い}ります。",
+        "ja_easy": "インターネットで{申|もう}し{込|こ}めます。{申|もう}し{込|こ}めるのは、{世帯主|せたいぬし}・{本人|ほんにん}・{同|おな}じ{世帯|せたい}の{人|ひと}です。{顔写真|かおじゃしん}つきの{身分証|みぶんしょう}の{写真|しゃしん}と、{保険|ほけん}の{番号|ばんごう}（8けた）が{要|い}ります。マイナンバーカードは、おもての{面|めん}だけです。",
+        "en": "You can apply online from the link at the bottom of the city page. Applicants: the head of household, the person receiving the reissue, or a member of the same household on the resident record. You need an image of a photo ID (for My Number card, the front only), your insurance number (8 digits) and the head of household's name."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-kokuho-denshi-saikofu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お住まいの区の区役所保険年金課や支所区民福祉課の窓口に行くことなく、ページ下部のリンク先から電子申請をすることができます。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "368c058c6a80348830d85800401dfb697a69afedd581cb3c4653e0cf13b71e8a",
+          "verdict": "agree",
+          "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c2"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}では{届出|とどけで}をする{人|ひと}の{顔写真|かおじゃしん}つきの{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{運転|うんてん}{免許証|めんきょしょう}・パスポート・マイナンバーカードなど）を{持|も}って{行|い}きます。{一部|いちぶ}の{世帯員|せたいいん}だけがなくしたときは、なくしていない{人|ひと}の{資格|しかく}{確認|かくにん}{書|しょ}などでもかまいません。{汚|よご}れた・{破|やぶ}れたときは、その{資格|しかく}{確認|かくにん}{書|しょ}などを{持|も}って{行|い}きます。{在留|ざいりゅう}カードを{本人|ほんにん}{確認|かくにん}{書類|しょるい}にできるかは、{要|よう}{確認|かくにん}。",
+        "ja_easy": "{窓口|まどぐち}には、{顔写真|かおじゃしん}つきの{身分証|みぶんしょう}（{運転|うんてん}{免許証|めんきょしょう}・パスポート・マイナンバーカードなど）を{持|も}って{行|い}きます。{汚|よご}れた・{破|やぶ}れたときは、その{紙|かみ}も{持|も}って{行|い}きます。{在留|ざいりゅう}カードが{使|つか}えるかは、{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+        "en": "At the counter, bring photo ID of the person filing (driver's license, passport, My Number card, etc.). If only some household members lost theirs, the certificate of a member who did not lose it also works. If it is dirty or torn, bring it. Ask the office whether a residence card is accepted as ID (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-hitsuyo"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "次のいずれか1点をお持ちください。 公的機関が発行した顔写真付きの本人確認書類(運転免許証、パスポート、マイナンバーカード等で、届出をする人のもの) 紛失していない他の世帯員の資格確認書または資格情報のお知らせ（お持ちのもの）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
+          "verdict": "agree",
+          "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c11"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{愛知|あいち}{県警|けんけい}の{案内|あんない}では、{健康|けんこう}{保険|ほけん}{証|しょう}をなくしたときは、{警察|けいさつ}に{届|とど}け{出|で}るとともに、{発行|はっこう}{元|もと}の{勤務|きんむ}{先|さき}の{会社|かいしゃ}や{市区|しく}{町村|ちょうそん}{役場|やくば}にも{届|とど}け{出|で}ます。{資格|しかく}{確認|かくにん}{書|しょ}などにも{同|おな}じかは{要|よう}{確認|かくにん}です。",
+        "ja_easy": "{愛知|あいち}{県警|けんけい}は、{健康|けんこう}{保険|ほけん}{証|しょう}をなくしたら、{警察|けいさつ}に{届|とど}けて、{会社|かいしゃ}や{区役所|くやくしょ}にも{知|し}らせるように{案内|あんない}しています。{資格|しかく}{確認|かくにん}{書|しょ}でも{同|おな}じか、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "Aichi Police advise that for a lost health insurance card you report to the police and also to the issuer (employer or municipal office). Ask the office whether the same applies to a certificate of eligibility (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-soudan-sonota"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "速やかに警察への届出を行うとともに、健康保険証の場合には、発行元となる勤務先会社や市区町村役場にも届出をしてください。"
+      }
+    }
+  ]
+}

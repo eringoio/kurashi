@@ -1,0 +1,136 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-zairyu-shimei",
+  "illustration": "card",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-foreign",
+      "R-mar-name-changed"
+    ]
+  },
+  "title": {
+    "ja": "{在留|ざいりゅう}カードの{氏名|しめい}{変更|へんこう}の{届出|とどけで}",
+    "ja_easy": "{在留|ざいりゅう}カードの{名前|なまえ}を{変|か}える{届|とど}け",
+    "en": "Report your name change (residence card)"
+  },
+  "official_name": {
+    "ja": "在留カードの記載事項の変更届出（氏名）",
+    "reading": "ざいりゅうかーどのきさいじこうのへんこうとどけで"
+  },
+  "summary": {
+    "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わった{外国|がいこく}{籍|せき}の{人|ひと}は、{在留|ざいりゅう}カードの{記載|きさい}{事項|じこう}の{変更|へんこう}を、{変更|へんこう}が{生|しょう}じた{日|ひ}から14{日|にち}{以内|いない}に{届|とど}け{出|で}ます（{要|よう}{確認|かくにん}）。{変更|へんこう}{後|ご}の{氏名|しめい}が{書|か}かれた{旅券|りょけん}と、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}した{場合|ばあい}は{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{名前|なまえ}が{変|か}わったら、{在留|ざいりゅう}カード → マイナンバーカード → {運転|うんてん}{免許|めんきょ}{証|しょう} → {銀行|ぎんこう} の{順|じゅん}に{変|か}えます。マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{先|さき}にマイナンバーカードを{変|か}えます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わった{外国|がいこく}の{国籍|こくせき}の{人|ひと}は、{変|か}わった{日|ひ}から14{日|にち}いないに、{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。{新|あたら}しい{名前|なまえ}のパスポートと、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}したときは{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{名前|なまえ}が{変|か}わったら、{在留|ざいりゅう}カード、マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{銀行|ぎんこう}の{順|じゅん}に{変|か}えます（{要|よう}{確認|かくにん}）。",
+    "en": "If your name changed through marriage and you are a foreign national, report the change of your residence card details within 14 days of the change (to be checked). Submit your passport showing the new name and a marriage certificate (a family register transcript if you married a Japanese national). When your name changes, update in this order: residence card, My Number Card, driving licence, bank. If your licence is on your My Number Card, update the My Number Card first (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{変更|へんこう}が{生|しょう}じた{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{変|か}わった{日|ひ}から14{日|にち}いない（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the change (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-kisai-henko"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "届出時期 上記の記載事項に変更が生じた日から１４日以内"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}（{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}）。{届出|とどけで}の{方法|ほうほう}は{入管|にゅうかん}の{案内|あんない}で{確認|かくにん}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{入管|にゅうかん}。{届|とど}け{方|かた}は{入管|にゅうかん}の{案内|あんない}で{確|たし}かめます（{要|よう}{確認|かくにん}）",
+      "en": "Immigration Services Agency (regional immigration office). Check its guidance for how to file (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-kisai-henko"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "needs_check",
+      "quote": "届出時期 上記の記載事項に変更が生じた日から１４日以内"
+    }
+  },
+  "place": "immigration",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}で{氏名|しめい}を{変更|へんこう}した{場合|ばあい}の{届出|とどけで}には、{変更|へんこう}{後|ご}の{氏名|しめい}が{書|か}かれた{旅券|りょけん}と、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}した{場合|ばあい}は{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。",
+        "ja_easy": "{結婚|けっこん}で{名前|なまえ}を{変|か}えたときは、{新|あたら}しい{名前|なまえ}のパスポートと、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}したときは{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。",
+        "en": "For a name change through marriage, submit a passport showing the new name and a marriage certificate (a family register transcript if you married a Japanese national)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-kisai-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "婚姻により氏名を変更した場合 氏名変更後の記載のなされた旅券及び結婚証明書（日本人と結婚した場合は戸籍謄本）",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "573ec4d5c280d213e97f2c356155a190cdfa5ab9711cd5ea9fc0856186e01e80",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c7"
+        }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{先|さき}に{旅券|りょけん}の{訂正|ていせい}または{再|さい}{交付|こうふ}を{受|う}けていないと、その{日|ひ}に{交付|こうふ}されない{場合|ばあい}があります（{在留|ざいりゅう}カード・{旅券|りょけん}の{手続|てつづ}きで{入管|にゅうかん}が{示|しめ}している{注意|ちゅうい}）。",
+        "ja_easy": "{先|さき}にパスポートの{訂正|ていせい}や{再|さい}{発行|はっこう}を{受|う}けていないと、その{日|ひ}にカードがもらえないことがあります。",
+        "en": "If you have not yet had your passport corrected or reissued, the card may not be issued the same day (a note given by the Immigration Services Agency)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-kisai-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "先に旅券の訂正又は再交付を受けていないと即日交付されない場合があります。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "573ec4d5c280d213e97f2c356155a190cdfa5ab9711cd5ea9fc0856186e01e80",
+          "verdict": "agree",
+          "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c10"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "在留カード",
+    "氏名変更",
+    "名前が変わった",
+    "residence card",
+    "name change",
+    "marriage"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる{外国|がいこく}{籍|せき}の{人|ひと}に{出|だ}しています。ほかの{人|ひと}には{出|だ}していません。",
+      "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる{外国|がいこく}の{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
+      "en": "Shown to foreign nationals whose name changes through marriage."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-kisai-henko"
+    ],
+    "checked_at": "2026-11-05",
+    "status": "needs_check",
+    "quote": "届出時期 上記の記載事項に変更が生じた日から１４日以内"
+  }
+}

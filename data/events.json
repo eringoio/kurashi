@@ -281,6 +281,253 @@
           "en": "What kind of garbage is this? (search by item name)"
         }
       }
+    },
+    {
+      "id": "E-move-out",
+      "group": "move",
+      "title": {
+        "ja": "{名古屋|なごや}{市|し}から{出|で}ていく",
+        "ja_easy": "{名古屋|なごや}{市|し}から{出|で}ていく",
+        "en": "I am moving out of Nagoya"
+      },
+      "illustration": "box",
+      "status": "built",
+      "facts": [
+        {
+          "fact": "origin",
+          "value": "out_of_area"
+        }
+      ],
+      "questions": [
+        "Q-move-dest"
+      ],
+      "card_ids": [
+        "move-out-city-tenshutsu",
+        "move-out-city-kokuho",
+        "move-out-abroad-tenshutsu",
+        "move-out-abroad-mynumber",
+        "move-out-abroad-zairyu",
+        "move-out-abroad-hoken-nenkin",
+        "move-other-tenshutsu",
+        "move-other-tennyu",
+        "move-other-after"
+      ],
+      "scope_rule": "R-mo-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "tool": {
+        "path": "/gomi",
+        "label": {
+          "ja": "{引|ひ}っ{越|こ}しで{出|で}るごみを{調|しら}べる（これ、{何|なに}ごみ？）",
+          "ja_easy": "{引|ひ}っ{越|こ}しのごみを{調|しら}べる",
+          "en": "Check garbage from your move (what kind of garbage is this?)"
+        }
+      }
+    },
+    {
+      "id": "E-marriage",
+      "group": "family",
+      "title": {
+        "ja": "{結婚|けっこん}したい",
+        "ja_easy": "{結婚|けっこん}したい",
+        "en": "I want to get married"
+      },
+      "illustration": "letter",
+      "status": "built",
+      "menu": 10,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "marriage"
+        },
+        {
+          "fact": "marriage_type",
+          "value": "konin"
+        }
+      ],
+      "questions": [
+        "Q-marriage-kind",
+        "Q-marriage-name"
+      ],
+      "card_ids": [
+        "marriage-konin-gaikokuseki",
+        "marriage-konin-todoke",
+        "marriage-zairyu-shimei",
+        "marriage-mynumber-card",
+        "marriage-seitai-henko",
+        "marriage-hoken-nenkin",
+        "marriage-ujino-henkou"
+      ],
+      "scope_rule": "R-mar-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-familyship",
+      "group": "familyship",
+      "title": {
+        "ja": "ファミリーシップ{制度|せいど}（{宣誓|せんせい}）",
+        "ja_easy": "ファミリーシップ{制度|せいど}",
+        "en": "Familyship system (pledge)"
+      },
+      "illustration": "house",
+      "status": "built",
+      "menu": 12,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "marriage"
+        },
+        {
+          "fact": "marriage_type",
+          "value": "partnership"
+        }
+      ],
+      "questions": [],
+      "card_ids": [
+        "marriage-familyship"
+      ],
+      "scope_rule": "R-mar-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-divorce",
+      "group": "family",
+      "title": {
+        "ja": "{離婚|りこん}したい",
+        "ja_easy": "{離婚|りこん}したい",
+        "en": "I want to get divorced"
+      },
+      "illustration": "doc",
+      "status": "built",
+      "menu": 11,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "divorce"
+        }
+      ],
+      "questions": [
+        "Q-divorce-route",
+        "Q-nationality",
+        "Q-zairyu-status",
+        "Q-divorce-japanese"
+      ],
+      "card_ids": [
+        "divorce-kyogi",
+        "divorce-nyukan-todoke",
+        "divorce-jusho-hoken-nenkin",
+        "divorce-saiban",
+        "divorce-shimei"
+      ],
+      "scope_rule": "R-div-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "E-lost-wallet",
+      "group": "lost",
+      "title": {
+        "ja": "{財布|さいふ}をなくした",
+        "ja_easy": "{財布|さいふ}をなくした",
+        "en": "I lost my wallet"
+      },
+      "illustration": "cashcard",
+      "status": "built",
+      "menu": 9,
+      "facts": [
+        {
+          "fact": "event",
+          "value": "lost_wallet"
+        }
+      ],
+      "questions": [
+        "Q-lost-items",
+        "Q-passport-country",
+        "Q-police-reported"
+      ],
+      "card_ids": [
+        "lost-card-stop",
+        "lost-mynumber-stop",
+        "lost-police-report",
+        "lost-police-report-zairyu",
+        "lost-zairyu-reissue",
+        "lost-mynumber-reissue",
+        "lost-license-reissue",
+        "lost-hoken-reissue",
+        "lost-passport-jp",
+        "lost-passport-foreign",
+        "lost-no-id-consult",
+        "lost-facility-ask",
+        "lost-found-later"
+      ],
+      "scope_rule": "R-lost-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "checklist": true
+    },
+    {
+      "id": "E-license",
+      "group": "license",
+      "title": {
+        "ja": "{運転|うんてん}{免許|めんきょ}",
+        "ja_easy": "{運転|うんてん}{免許|めんきょ}",
+        "en": "Driving licence"
+      },
+      "illustration": "card",
+      "status": "built",
+      "facts": [
+        {
+          "fact": "event",
+          "value": "license"
+        }
+      ],
+      "questions": [
+        "Q-license-goal"
+      ],
+      "card_ids": [
+        "license-shinki",
+        "license-gaimen-kirikae",
+        "license-kokusai",
+        "license-koshin",
+        "license-kisai-henko",
+        "license-saikofu"
+      ],
+      "scope_rule": "R-license-scope",
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check"
+      },
+      "menu": 13
     }
   ]
 }

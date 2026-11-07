@@ -1,0 +1,141 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-kokusai",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "kind": "guide",
+  "keywords": [
+    "国際運転免許証",
+    "こくさいうんてんめんきょしょう",
+    "国際免許",
+    "international driving permit",
+    "IDP",
+    "drive in japan",
+    "ジュネーブ条約",
+    "翻訳文"
+  ],
+  "eligibility": "R-license-goal-switch",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は{外国|がいこく}の{免許|めんきょ}を{持|も}っている{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{外国|がいこく}の{免許|めんきょ}を{持|も}っている{人|ひと}のためのものです。",
+      "en": "This guide is for people who hold a foreign licence."
+    }
+  },
+  "title": {
+    "ja": "{切|き}り{替|か}えるまで、{外国|がいこく}の{免許|めんきょ}で{運転|うんてん}できる{期間|きかん}",
+    "ja_easy": "{切|き}りかえるまで、{外国|がいこく}の{免許|めんきょ}で{運転|うんてん}できる{期間|きかん}",
+    "en": "How long you can drive on a foreign licence or international permit"
+  },
+  "official_name": {
+    "ja": "国際運転免許証・外国の免許証による運転",
+    "reading": "こくさいうんてんめんきょしょう・がいこくのめんきょしょうによるうんてん"
+  },
+  "summary": {
+    "ja": "{日本|にほん}で{運転|うんてん}できるのは、{日本|にほん}の{免許証|めんきょしょう}、ジュネーブ{条約|じょうやく}の{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}、または{対象|たいしょう}の{国|くに}・{地域|ちいき}の{免許証|めんきょしょう}に{日本語|にほんご}の{翻訳文|ほんやくぶん}をつけたものです（{要|よう}{確認|かくにん}）。{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}や{外国|がいこく}の{免許証|めんきょしょう}で{運転|うんてん}できる{期間|きかん}は、{日本|にほん}に{上陸|じょうりく}した{日|ひ}から1{年間|ねんかん}か、{免許証|めんきょしょう}の{有効|ゆうこう}{期間|きかん}の、{短|みじか}いほうです（{要|よう}{確認|かくにん}）。{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}えるときは、{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}は{使|つか}えません。",
+    "ja_easy": "{国際|こくさい}{免許|めんきょ}や{外国|がいこく}の{免許|めんきょ}で{運転|うんてん}できるのは、{日本|にほん}に{来|き}てから1{年|ねん}か、{免許|めんきょ}の{期限|きげん}の、{短|みじか}いほうまでです（{要確認|ようかくにん}）。{切|き}りかえには{国際|こくさい}{免許|めんきょ}は{使|つか}えません。",
+    "en": "To drive in Japan you need a Japanese licence, an international driving permit under the Geneva Convention, or a licence from a listed country or region with a Japanese translation (to be checked). You can drive on an international permit or foreign licence for one year from the day you land in Japan or until the licence expires, whichever is shorter (to be checked). An international permit cannot be used as the licence when converting to a Japanese licence."
+  },
+  "lead": {
+    "ja": "{日本|にほん}では{日本|にほん}の{免許|めんきょ}{証|しょう}や{国際|こくさい}{運転|うんてん}{免許|めんきょ}{証|しょう}などで{運転|うんてん}できます。",
+    "ja_easy": "日本の免許証か、国際免許証で運転できます。",
+    "en": "In Japan you can drive with a Japanese licence or an international driving permit, among others."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{日本|にほん}に{上陸|じょうりく}した{日|ひ}から1{年間|ねんかん}か、{免許証|めんきょしょう}の{有効|ゆうこう}{期間|きかん}の、{短|みじか}いほうまで。{日本|にほん}に{住民票|じゅうみんひょう}のある{人|ひと}が3か{月|げつ}{未満|みまん}で{帰国|きこく}した{場合|ばあい}、その{帰国|きこく}した{日|ひ}は{数|かぞ}え{始|はじ}めの{日|ひ}になりません（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{日本|にほん}に{来|き}てから1{年|ねん}か、{免許|めんきょ}の{期限|きげん}の、{短|みじか}いほうまで（{要確認|ようかくにん}）",
+      "en": "One year from the day you land in Japan or until the licence expires, whichever is shorter. If a person on the resident register returns after less than 3 months abroad, that return date does not start the count (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-npa-gaimen"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "日本に上陸した日から起算して1年間又は当該免許証の有効期間（※１）のいずれか短い期間"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{切|き}り{替|か}えのとき）。この{案内|あんない}そのものに、{行|い}く{所|ところ}はありません",
+      "ja_easy": "{切|き}りかえは{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}です（{要確認|ようかくにん}）",
+      "en": "The driving licence test centre (when converting). This guide itself has no place to go (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-npa-gaimen"
+      ],
+      "checked_at": "2026-11-06",
+      "status": "needs_check",
+      "quote": "日本での住所地を管轄する都道府県警察の運転免許センター等"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{翻訳文|ほんやくぶん}つきの{外国|がいこく}の{免許証|めんきょしょう}で{運転|うんてん}できる{国|くに}・{地域|ちいき}は、スイス、ドイツ、フランス、ベルギー、モナコ、{台湾|たいわん}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{翻訳|ほんやく}をつけて{運転|うんてん}できる{国|くに}は、スイス・ドイツ・フランス・ベルギー・モナコ・{台湾|たいわん}です（{要確認|ようかくにん}）",
+        "en": "Countries and regions whose licence plus a Japanese translation is accepted: Switzerland, Germany, France, Belgium, Monaco and Taiwan (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "現在、スイス連邦、ドイツ連邦共和国、フランス共和国、ベルギー王国、モナコ公国及び台湾が対象となります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}の{有効|ゆうこう}{期間|きかん}は、{発給|はっきゅう}の{日|ひ}から1{年間|ねんかん}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{国際|こくさい}{免許|めんきょ}は、{出|だ}した{日|ひ}から1{年|ねん}です（{要確認|ようかくにん}）",
+        "en": "An international driving permit is valid for one year from the date of issue (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "国際運転免許証の有効期間は発給の日から１年間"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}えるときは、{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}は{申請|しんせい}の{免許証|めんきょしょう}として{使|つか}えません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{切|き}りかえには、{国際|こくさい}{免許|めんきょ}は{使|つか}えません（{要確認|ようかくにん}）",
+        "en": "When converting to a Japanese licence, an international driving permit cannot be used as the licence for the application (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "外国等の行政庁等の免許に係る免許証（国際運転免許証は不可。）"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "license-npa-gaimen"
+    ],
+    "checked_at": "2026-11-06",
+    "status": "needs_check",
+    "quote": "日本で運転するためには、次のいずれかの免許証を所持している必要があります。"
+  }
+}

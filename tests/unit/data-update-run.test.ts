@@ -14,6 +14,11 @@ const q = (s: string) => `"${s}"`;
 const run = (args: string[]) => execFileSync('npx', ['vite-node', ...args.map(q)], { cwd: repo, env, shell: true, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
 const json = (f: string) => JSON.parse(readFileSync(join(tmp, f), 'utf8'));
 const FIX = ['nagoya-juumin-todoke', 'nagoya-kokuho-kanyu-page'];
+// 同じ URL の出典（下書きを公開に移したときの別名）は、同じページとして扱う
+const SOURCES = JSON.parse(readFileSync(join(repo, 'data', 'sources.json'), 'utf8')).sources as { source_id: string; url: string | null }[];
+const urlOf = (id: string) => SOURCES.find((s) => s.source_id === id)!.url;
+const sameAs = (id: string) => SOURCES.filter((s) => s.url && s.url === urlOf(id)).map((s) => s.source_id).sort();
+const FIX_ALL = FIX.flatMap(sameAs);
 
 describe('data update pipeline (fixtures)', () => {
   it('runs fetch twice and the agent, end to end', () => {
@@ -23,7 +28,8 @@ describe('data update pipeline (fixtures)', () => {
       expect(idx1[id].result).toBe('ok');
       expect(idx1[id].sha256).toMatch(/^[0-9a-f]{64}$/);
     }
-    const others = Object.entries(idx1).filter(([id]) => !FIX.includes(id));
+    for (const id of FIX_ALL) expect(idx1[id].result, id).toBe('ok');
+    const others = Object.entries(idx1).filter(([id]) => !FIX_ALL.includes(id));
     expect(others.length).toBeGreaterThan(0);
     for (const [, v] of others) expect((v as { result: string }).result).not.toBe('ok');
     // 1回目は記録だけ（AI を使わない・データを変えない）
@@ -32,8 +38,8 @@ describe('data update pipeline (fixtures)', () => {
 
     run(['scripts/fetch-sources.ts', '--', '--fixtures', 'tests/fixtures/sources/run2', '--root', tmp, '--date', '2026-11-08']);
     const last = json('last-run.json');
-    expect(last.changed).toEqual(['nagoya-kokuho-kanyu-page']);
-    expect(last.unchanged).toEqual(['nagoya-juumin-todoke']);
+    expect([...last.changed].sort()).toEqual(sameAs('nagoya-kokuho-kanyu-page'));
+    expect([...last.unchanged].sort()).toEqual(sameAs('nagoya-juumin-todoke'));
     expect(existsSync(join(tmp, 'snapshots', 'nagoya-kokuho-kanyu-page', '2026-11-08.txt'))).toBe(true);
     expect(existsSync(join(tmp, 'snapshots', 'nagoya-juumin-todoke', '2026-11-01.txt'))).toBe(true);
 

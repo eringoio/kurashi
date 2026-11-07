@@ -22,12 +22,13 @@ const domains = (JSON.parse(readFileSync('data/official-domains.json', 'utf8')).
 const host = (u: string) => { try { return new URL(u).hostname; } catch { return ''; } };
 const allowed = (u: string) => domains.some((d) => host(u) === d || host(u).endsWith('.' + d));
 
-/** 見本：URL から source_id のファイルを読む。robots.txt と無いものは 404 */
-const byUrl = new Map(sources.filter((s) => s.url).map((s) => [s.url!, s.source_id]));
+/** 見本：URL から source_id のファイルを読む。robots.txt と無いものは 404。
+    同じ URL に出典が複数あるとき（下書きを公開に移したときの別名）は、見本のファイルがある ID を使う */
+const byUrl = new Map<string, string[]>();
+for (const s of sources) if (s.url) byUrl.set(s.url, [...(byUrl.get(s.url) ?? []), s.source_id]);
 const fixtureFetch = async (u: string) => {
-  const id = byUrl.get(u);
-  const f = id && fixtures ? join(fixtures, id + '.html') : '';
-  if (!f || !existsSync(f)) return new Response('', { status: 404 });
+  const f = fixtures ? (byUrl.get(u) ?? []).map((id) => join(fixtures, id + '.html')).find((p) => existsSync(p)) : undefined;
+  if (!f) return new Response('', { status: 404 });
   return new Response(readFileSync(f), { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
 };
 

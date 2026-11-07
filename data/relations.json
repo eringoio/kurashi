@@ -591,6 +591,471 @@
         "checked_at": "2026-11-07",
         "status": "verified"
       }
+    },
+    {
+      "id": "rel-mo-city-kokuho",
+      "type": "related",
+      "from": "move-out-city-tenshutsu",
+      "to": "move-out-city-kokuho",
+      "explain": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{人|ひと}は、{保険|ほけん}の{窓口|まどぐち}の{手続|てつづ}きもあります。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{人|ひと}は、{保険|ほけん}の{手続|てつづ}きもあります。",
+        "en": "If you are in National Health Insurance, there is also a procedure at the insurance counter."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-kanyu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "市外へ転出するときは、名古屋市の国民健康保険の資格確認書をお返しいただき（お持ちの場合のみ）、転出先の市町村で国民健康保険の手続きをしてください。"
+      }
+    },
+    {
+      "id": "rel-mo-abroad-mynumber",
+      "type": "related",
+      "from": "move-out-abroad-tenshutsu",
+      "to": "move-out-abroad-mynumber",
+      "explain": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}は、{国外|こくがい}{転出|てんしゅつ}の{届出|とどけで}のときに、カードの{手続|てつづ}きもできます。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}は、{同|おな}じとき、カードの{手続|てつづ}きもできます。",
+        "en": "Japanese nationals can complete the card procedure at the time of the move-out report."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-kokugai"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "マイナンバーカードの国外継続利用を希望される場合、国外転出予定日の前日までに手続きが必要です。"
+      }
+    },
+    {
+      "id": "rel-mo-abroad-zairyu",
+      "type": "related",
+      "from": "move-out-abroad-tenshutsu",
+      "to": "move-out-abroad-zairyu",
+      "explain": {
+        "ja": "{在留|ざいりゅう}カードは{出国|しゅっこく}のときに{空港|くうこう}などで{返|かえ}します。{区役所|くやくしょ}の{届出|とどけいで}とは{別|べつ}です。",
+        "ja_easy": "{在留|ざいりゅう}カードは、{出国|しゅっこく}のときに{空港|くうこう}などで{返|かえ}します。",
+        "en": "The residence card is returned at the port of departure, separately from the ward-office report."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-henno"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "（１）のウ又はオ → 直ちに返納（ウは出入国港において返納）"
+      }
+    },
+    {
+      "id": "rel-mo-abroad-hoken",
+      "type": "related",
+      "from": "move-out-abroad-tenshutsu",
+      "to": "move-out-abroad-hoken-nenkin",
+      "explain": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}に{入|はい}っている{人|ひと}は、{別|べつ}の{手続|てつづ}きもあります。",
+        "ja_easy": "{健康|けんこう}{保険|ほけん}と{年金|ねんきん}に{入|はい}っている{人|ひと}は、{別|べつ}の{手続|てつづ}きもあります。",
+        "en": "If you are in National Health Insurance or the National Pension, there are separate procedures."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-37"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "国民健康保険、国民年金にご加入されている場合は別途、手続きが必要となりますので、詳しくは現在お住まいの区役所保険年金課・支所区民福祉課にお問い合わせください。"
+      }
+    },
+    {
+      "id": "rel-mar-gaikoku-before-todoke",
+      "type": "practical_prerequisite",
+      "from": "marriage-konin-gaikokuseki",
+      "to": "marriage-konin-todoke",
+      "explain": {
+        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{含|ふく}まれるときは、{先|さき}に{書類|しょるい}を{確|たし}かめて{区役所|くやくしょ}に{相談|そうだん}してから、{婚姻届|こんいんとどけ}を{出|だ}します。",
+        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}がいるときは、{先|さき}に{書類|しょるい}を{確|たし}かめて{区役所|くやくしょ}に{相談|そうだん}してから、{婚姻届|こんいんとどけ}を{出|だ}します。",
+        "en": "If a foreign national is included, check the documents and consult the ward office first, then submit the marriage registration."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-69",
+          "B-nagoya-konin-rikon"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "国により添付書類は違います。"
+      }
+    },
+    {
+      "id": "rel-mar-todoke-before-zairyu",
+      "type": "practical_prerequisite",
+      "from": "marriage-konin-todoke",
+      "to": "marriage-zairyu-shimei",
+      "explain": {
+        "ja": "{在留|ざいりゅう}カードの{氏名|しめい}{変更|へんこう}の{届出|とどけで}には、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}した{場合|ばあい}は{戸籍|こせき}{謄本|とうほん}）が{要|い}ります。{婚姻|こんいん}の{手続|てつづ}きが{済|す}んでから{届|とど}け{出|で}ます。",
+        "ja_easy": "{在留|ざいりゅう}カードの{名前|なまえ}を{変|か}える{届|とど}けには、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}したときは{戸籍|こせき}{謄本|とうほん}）が{要|い}ります。{婚姻届|こんいんとどけ}のあとに{届|とど}けます。",
+        "en": "The residence card name-change report needs a marriage certificate (a family register transcript if you married a Japanese national). Report after the marriage registration is done."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-kisai-henko"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻により氏名を変更した場合 氏名変更後の記載のなされた旅券及び結婚証明書（日本人と結婚した場合は戸籍謄本）"
+      }
+    },
+    {
+      "id": "rel-mar-14days-parallel",
+      "type": "parallel",
+      "card_ids": [
+        "marriage-zairyu-shimei",
+        "marriage-mynumber-card",
+        "marriage-seitai-henko"
+      ],
+      "explain": {
+        "ja": "この3つは、どれも{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}の{届出|とどけで}です（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。どれから{行|おこな}っても、{同|おな}じ{日|ひ}に{行|い}ってもかまいません。",
+        "ja_easy": "この3つは、どれも{変|か}わった{日|ひ}から14{日|にち}いないの{届|とど}けです（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。",
+        "en": "All three are due within 14 days of the change (to be checked). There is no fixed order; you can do them in any order or on the same day."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-2892-mar",
+          "B-moj-kisai-henko",
+          "B-nagoya-faq-47"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "氏名など記載事項に変更があったときは、変更があった日から14日以内にマイナンバーカードの記載事項を変更する必要がありますので、お住まいの区の区役所または支所にお持ちください。"
+      }
+    },
+    {
+      "id": "rel-mar-seitai-hoken",
+      "type": "related",
+      "from": "marriage-seitai-henko",
+      "to": "marriage-hoken-nenkin",
+      "explain": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているときは、{世帯|せたい}の{届|とどけ}のほかに、{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}でも{手続|てつづき}があります。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているときは、{世帯|せたい}の{届|とど}けのほかに、{保険年金課|ほけんねんきんか}でも{手続|てつづ}きがあります。",
+        "en": "If you are in National Health Insurance, there is a separate procedure at the insurance and pension section in addition to the household notice."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-47"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "国民健康保険、後期高齢者医療保険、子ども医療に加入されている場合 各区の保険年金課または支所区民福祉課での手続があります。"
+      }
+    },
+    {
+      "id": "rel-div-nyukan-parallel-jusho",
+      "type": "parallel",
+      "card_ids": [
+        "divorce-nyukan-todoke",
+        "divorce-jusho-hoken-nenkin"
+      ],
+      "explain": {
+        "ja": "{入管|にゅうかん}への{届出|とどけで}も、{世帯|せたい}・{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}も、14{日|にち}{以内|いない}です（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。",
+        "ja_easy": "{入管|にゅうかん}への{届|とど}けも、{世帯|せたい}・{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けも、14{日|にち}いないです（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。",
+        "en": "Both the Immigration notification and the household and National Health Insurance notices are due within 14 days (to be checked). There is no fixed order."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke",
+          "B-nagoya-faq-48-div"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
+      }
+    },
+    {
+      "id": "rel-div-kyogi-nyukan",
+      "type": "related",
+      "from": "divorce-kyogi",
+      "to": "divorce-nyukan-todoke",
+      "explain": {
+        "ja": "{入管|にゅうかん}への{届出|とどけで}の14{日|にち}は、{離婚|りこん}の{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{離婚届|りこんとどけ}を{出|だ}した{日|ひ}を、{区役所|くやくしょ}で{確認|かくにん}してください。",
+        "ja_easy": "{入管|にゅうかん}への{届|とど}けの14{日|にち}は、{離婚|りこん}した{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。",
+        "en": "The 14 days for the Immigration notification are counted from the day of the divorce (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
+      }
+    },
+    {
+      "id": "rel-div-saiban-nyukan",
+      "type": "related",
+      "from": "divorce-saiban",
+      "to": "divorce-nyukan-todoke",
+      "explain": {
+        "ja": "{入管|にゅうかん}への{届出|とどけで}の14{日|にち}は、{離婚|りこん}の{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}した{場合|ばあい}に、どの{日|ひ}からになるかは、{入管|にゅうかん}で{確認|かくにん}してください。",
+        "ja_easy": "{入管|にゅうかん}への{届|とど}けの14{日|にち}は、{離婚|りこん}した{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{裁判|さいばん}のときにどの{日|ひ}からかは、{入管|にゅうかん}に{聞|き}いてください。",
+        "en": "The 14 days for the Immigration notification are counted from the day of the divorce (to be checked). Ask Immigration which date applies after a mediation or court divorce."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-haigusha-todoke"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
+      }
+    },
+    {
+      "id": "rel-div-kyogi-shimei",
+      "type": "related",
+      "from": "divorce-kyogi",
+      "to": "divorce-shimei",
+      "explain": {
+        "ja": "{離婚|りこん}のあとも{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{使|つか}いたいときは、{離婚届|りこんとどけ}とは{別|べつ}の{届|とどけ}が{要|い}ります。",
+        "ja_easy": "{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}いたいときは、{離婚届|りこんとどけ}とは{別|べつ}の{届|とど}けが{要|い}ります。",
+        "en": "To keep your married name after divorce, a notification separate from the divorce registration is needed."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻により姓を改めた方が離婚後も婚姻中の氏を称する場合は、別途、「離婚の際に称していた氏を称する届」が必要になります。"
+      }
+    },
+    {
+      "id": "rel-div-saiban-shimei",
+      "type": "related",
+      "from": "divorce-saiban",
+      "to": "divorce-shimei",
+      "explain": {
+        "ja": "{裁判|さいばん}で{離婚|りこん}した{場合|ばあい}も、{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{使|つか}いたいときは、{別|べつ}の{届|とどけ}が{要|い}ります。",
+        "ja_easy": "{裁判|さいばん}で{離婚|りこん}した{場合|ばあい}も、{同|おな}じ{名字|みょうじ}を{使|つか}いたいときは、{別|べつ}の{届|とど}けが{要|い}ります。",
+        "en": "After a court divorce too, keeping your married name needs a separate notification."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "needs_check",
+        "quote": "婚姻により姓を改めた方が離婚後も婚姻中の氏を称する場合は、別途、「離婚の際に称していた氏を称する届」が必要になります。"
+      }
+    },
+    {
+      "id": "rel-police-before-zairyu-reissue",
+      "type": "legal_prerequisite",
+      "from": "lost-police-report-zairyu",
+      "to": "lost-zairyu-reissue",
+      "explain": {
+        "ja": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}を{確|たし}かめます。",
+        "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}を{確|たし}かめます。",
+        "en": "Report to the police first and check the receipt number."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "satisfied_when_rule_ids": [
+        "R-lost-reported"
+      ]
+    },
+    {
+      "id": "rel-police-before-mynumber-reissue",
+      "type": "practical_prerequisite",
+      "from": "lost-police-report",
+      "to": "lost-mynumber-reissue",
+      "explain": {
+        "ja": "{先|さき}に{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}して、{受理|じゅり}{番号|ばんごう}を{控|ひか}えます。{家|いえ}の{中|なか}で{見|み}あたらないときなど、{遺失|いしつ}{届|とどけ}が{受理|じゅり}されないときは、{再|さい}{交付|こうふ}の{手続|てつづ}きのときに、そのことを{伝|つた}えます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}を{控|ひか}えます。{届|とどけ}が{受|う}け{付|つ}けられないときは、{窓口|まどぐち}でそう{言|い}います（{要確認|ようかくにん}）。",
+        "en": "Report to the police first and keep the receipt number. If the police cannot accept the report (for example, it is somewhere at home), tell the office when you apply (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "satisfied_when_rule_ids": [
+        "R-lost-reported"
+      ]
+    },
+    {
+      "id": "rel-police-before-passport-jp",
+      "type": "practical_prerequisite",
+      "from": "lost-police-report",
+      "to": "lost-passport-jp",
+      "explain": {
+        "ja": "{家|いえ}の{外|そと}でなくした・{盗|ぬす}まれたときは、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{紛失|ふんしつ}{届|とどけ}は{本人|ほんにん}が{出|だ}します（{代理|だいり}はできません）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{外|そと}でなくしたら、{警察|けいさつ}の{番号|ばんごう}が{要|い}ります。{自分|じぶん}で{行|い}きます（{要確認|ようかくにん}）。",
+        "en": "If lost or stolen outside your home, you need the police receipt number. You must report in person (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "satisfied_when_rule_ids": [
+        "R-lost-reported"
+      ]
+    },
+    {
+      "id": "rel-stop-parallel",
+      "type": "parallel",
+      "card_ids": [
+        "lost-card-stop",
+        "lost-police-report",
+        "lost-facility-ask",
+        "lost-police-report-zairyu"
+      ],
+      "explain": {
+        "ja": "{止|と}めることと{警察|けいさつ}への{届|とどけ}は、どちらを{先|さき}にしてもかまいません。",
+        "ja_easy": "どちらを{先|さき}にしてもいいです。",
+        "en": "You may stop the cards and report to the police in either order."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-police-online-wait",
+      "type": "waits_for",
+      "card_id": "lost-police-report",
+      "item_id": "police-receipt-number",
+      "when_rule_ids": [
+        "R-lost-reported-online"
+      ],
+      "explain": {
+        "ja": "{受理|じゅり}{番号|ばんごう}のメールを{待|ま}っています。",
+        "ja_easy": "メールを{待|ま}っています。",
+        "en": "Waiting for the receipt-number email."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "オンラインによる届出は警察署で受理されるまで数日かかる場合があります。・入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。"
+      }
+    },
+    {
+      "id": "rel-police-before-mynumber-reissue-zairyu",
+      "type": "practical_prerequisite",
+      "from": "lost-police-report-zairyu",
+      "to": "lost-mynumber-reissue",
+      "explain": {
+        "ja": "{先|さき}に{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}して、{受理|じゅり}{番号|ばんごう}を{控|ひか}えます。{家|いえ}の{中|なか}で{見|み}あたらないときなど、{遺失|いしつ}{届|とどけ}が{受理|じゅり}されないときは、{再|さい}{交付|こうふ}の{手続|てつづ}きのときに、そのことを{伝|つた}えます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}を{控|ひか}えます。{届|とどけ}が{受|う}け{付|つ}けられないときは、{窓口|まどぐち}でそう{言|い}います（{要確認|ようかくにん}）。",
+        "en": "Report to the police first and keep the receipt number. If the police cannot accept the report (for example, it is somewhere at home), tell the office when you apply (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "satisfied_when_rule_ids": [
+        "R-lost-reported"
+      ]
+    },
+    {
+      "id": "rel-police-before-passport-jp-zairyu",
+      "type": "practical_prerequisite",
+      "from": "lost-police-report-zairyu",
+      "to": "lost-passport-jp",
+      "explain": {
+        "ja": "{家|いえ}の{外|そと}でなくした・{盗|ぬす}まれたときは、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{紛失|ふんしつ}{届|とどけ}は{本人|ほんにん}が{出|だ}します（{代理|だいり}はできません）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{外|そと}でなくしたら、{警察|けいさつ}の{番号|ばんごう}が{要|い}ります。{自分|じぶん}で{行|い}きます（{要確認|ようかくにん}）。",
+        "en": "If lost or stolen outside your home, you need the police receipt number. You must report in person (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-passport-funshitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check"
+      },
+      "satisfied_when_rule_ids": [
+        "R-lost-reported"
+      ]
+    },
+    {
+      "id": "rel-police-online-wait-zairyu",
+      "type": "waits_for",
+      "card_id": "lost-police-report-zairyu",
+      "item_id": "police-receipt-number",
+      "when_rule_ids": [
+        "R-lost-reported-online"
+      ],
+      "explain": {
+        "ja": "{受理|じゅり}{番号|ばんごう}のメールを{待|ま}っています。",
+        "ja_easy": "メールを{待|ま}っています。",
+        "en": "Waiting for the receipt-number email."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "オンラインによる届出は警察署で受理されるまで数日かかる場合があります。・入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。"
+      }
+    },
+    {
+      "id": "rel-license-kokusai-gaimen",
+      "type": "related",
+      "from": "license-kokusai",
+      "to": "license-gaimen-kirikae",
+      "explain": {
+        "ja": "{国際|こくさい}{運転|うんてん}{免許証|めんきょしょう}で{運転|うんてん}できる{期間|きかん}が{終|お}わる{前|まえ}に、{切|き}り{替|か}えを{考|かんが}えます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{運転|うんてん}できる{期間|きかん}が{終|お}わる{前|まえ}に、{切|き}りかえを{考|かんが}えます（{要確認|ようかくにん}）。",
+        "en": "Think about converting before the period you can drive on the foreign licence or international permit ends (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "日本に上陸した日から起算して1年間又は当該免許証の有効期間（※１）のいずれか短い期間"
+      }
+    },
+    {
+      "id": "rel-license-saikofu-kisai",
+      "type": "related",
+      "from": "license-saikofu",
+      "to": "license-kisai-henko",
+      "explain": {
+        "ja": "{再交付|さいこうふ}のときに、{住所|じゅうしょ}の{変更|へんこう}も{一緒|いっしょ}にできます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{再交付|さいこうふ}のときに、{住所|じゅうしょ}も{変|か}えられます（{要確認|ようかくにん}）。",
+        "en": "You can change your address at the same time as a reissue (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-06",
+        "status": "needs_check",
+        "quote": "住所を変更する場合ご本人の新住所を確認できる書類"
+      }
     }
   ]
 }
