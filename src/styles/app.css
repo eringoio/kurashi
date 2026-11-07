@@ -77,8 +77,8 @@ p { margin: 0; }
 .consent__note { font-size: var(--fs-small); color: var(--ink-muted); }
 
 /* 下からのシート */
-.scrim { position: fixed; inset: 0; background: rgba(34, 32, 28, 0.45); }
-.sheet { position: fixed; left: 50%; bottom: 0; transform: translateX(-50%); width: min(480px, 100%); max-height: 88vh; overflow-y: auto; background: var(--paper); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; padding: 18px max(18px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 14px; }
+.scrim { position: fixed; inset: 0; z-index: 100; background: rgba(34, 32, 28, 0.45); }
+.sheet { position: fixed; z-index: 101; left: 50%; bottom: 0; transform: translateX(-50%); width: min(480px, 100%); max-height: 88vh; overflow-y: auto; background: var(--paper); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; padding: 18px max(18px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 14px; }
 .sheet__head { display: flex; align-items: center; gap: 10px; }
 .sheet__head h2 { margin: 0; flex: 1; font-size: 20px; }
 .close { width: var(--target-min); height: var(--target-min); border-radius: 50%; border: 1.5px solid var(--ink); background: var(--white); font-size: 20px; flex: none; }
@@ -646,3 +646,10 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 
 /* 入口の検索：手がかりにした言葉（HomeSearch） */
 .home-heard { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
+
+/* 320px で横にはみ出さない（11/7）：長い正式名の読みは下の行、電話番号はハイフンのあとで折り返せる、
+   状態の札は狭い画面で折り返す。行の端のふりがな（rt）が 1px はみ出すのは、本文の列で切る */
+.k-facts__reading { display: block; font-size: var(--fs-small); color: var(--ink-muted); overflow-wrap: anywhere; }
+.nb--tel { white-space: normal; }
+.col { overflow-x: clip; }
+@media (max-width: 400px) { .k-state { white-space: normal; max-width: 100%; } }

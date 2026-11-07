@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { cpSync, existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { afterAll, describe, expect, it } from 'vitest';
@@ -26,6 +26,9 @@ describe('data update pipeline (fixtures)', () => {
     const others = Object.entries(idx1).filter(([id]) => !FIX.includes(id));
     expect(others.length).toBeGreaterThan(0);
     for (const [, v] of others) expect((v as { result: string }).result).not.toBe('ok');
+    // 1回目は記録だけ（AI を使わない・データを変えない）
+    run(['scripts/update-agent.ts', '--', '--root', tmp]);
+    expect(json('report/2026-11-01.json').baseline).toBe(true);
 
     run(['scripts/fetch-sources.ts', '--', '--fixtures', 'tests/fixtures/sources/run2', '--root', tmp, '--date', '2026-11-08']);
     const last = json('last-run.json');
@@ -39,7 +42,15 @@ describe('data update pipeline (fixtures)', () => {
     expect(report.sample).toBe(true);
     expect(report.date).toBe('2026-11-08');
     expect(existsSync(join(tmp, 'report', '2026-11-08.md'))).toBe(true);
+    expect(report.baseline).toBe(false);
     for (const v of report.verdicts) expect(v.verdict).toMatch(/^(unchanged|changed|unclear)$/);
+
+    // データに入れる：写しの data/ にだけ書く。verified にはしない
+    cpSync(join(repo, 'data'), join(tmp, 'data'), { recursive: true });
+    run(['scripts/apply-update.ts', '--', '--root', tmp, '--data', join(tmp, 'data')]);
+    expect(readFileSync(join(tmp, 'report', '2026-11-08.md'), 'utf8')).toContain('## データに入れたこと');
+    const before = readFileSync(join(repo, 'data', 'rules.json'), 'utf8');
+    expect(readFileSync(join(tmp, 'data', 'rules.json'), 'utf8').match(/"verified"/g)?.length ?? 0).toBeLessThanOrEqual(before.match(/"verified"/g)?.length ?? 0);
   }, 90_000);
 
   it('snapshots are git-ignored', () => {

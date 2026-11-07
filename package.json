@@ -24,6 +24,7 @@
     "check:quotes": "vite-node scripts/check-quotes.ts",
     "data:fetch": "vite-node scripts/fetch-sources.ts --",
     "data:agent": "vite-node scripts/update-agent.ts --",
+    "data:apply": "vite-node scripts/apply-update.ts --",
     "deploy": "npm run build && wrangler deploy",
     "worker:dev": "npm run build && wrangler dev"
   },

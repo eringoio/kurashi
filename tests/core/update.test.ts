@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { EvidenceAt } from '../../src/core/quotes';
-import { acceptAi, compareIndex, judgeByQuotes, prBody, type IndexEntry, type SourceIndex, type Verdict } from '../../src/core/update';
+import { acceptAi, addedLines, compareIndex, excerpt, judgeByQuotes, nearest, prBody, shouldMarkNeedsCheck, stableText, type IndexEntry, type SourceIndex, type Verdict } from '../../src/core/update';
 
 const ent = (id: string, sha: string | null, result = 'ok'): IndexEntry => ({ source_id: id, url: `https://example.test/${id}`, fetched_at: '2026-11-01', result, sha256: sha, http_status: result === 'ok' ? 200 : 403 });
 const ev = (where: string, source_ids: string[], quote?: string): EvidenceAt => ({
@@ -94,5 +94,47 @@ describe('prBody', () => {
     const md = prBody('2026-11-01', cmp, vs, false);
     expect(md).not.toContain('見本の実行');
     expect(md).not.toMatch(/\|\s*verified\s*\|/);
+  });
+});
+
+describe('stable hash and excerpts', () => {
+  it('stableText drops short date / page-id lines only', () => {
+    const t = '国民健康保険の加入\n最終更新日：2026年10月1日\nページID：12345\n14日以内に届け出てください';
+    expect(stableText(t)).toBe('国民健康保険の加入\n14日以内に届け出てください');
+  });
+  it('compareIndex uses stable_sha256 when both sides have it', () => {
+    const a = { ...ent('a', 'h1'), stable_sha256: 's1' };
+    const b = { ...ent('a', 'h2'), stable_sha256: 's1' };
+    expect(compareIndex({ a }, { a: b }).unchanged).toEqual(['a']);
+    expect(compareIndex({ a: ent('a', 'h1') }, { a: b }).changed).toEqual(['a']);
+  });
+  it('addedLines lists only new lines', () => {
+    expect(addedLines('a\nb\n更新日：1', 'a\nc\n更新日：2')).toEqual(['c']);
+  });
+  it('excerpt keeps the part near the old quote and the changed lines, within the limit', () => {
+    const filler = Array.from({ length: 400 }, (_, i) => '案内の文' + i).join('\n') + '\n';
+    const body = filler + '保険年金課（3階）で受け付けます' + filler;
+    const out = excerpt(body, ['保険年金課（2階）で受け付けます'], filler + filler, 2000, 100);
+    expect(out).toContain('保険年金課（3階）');
+    expect(out.length).toBeLessThanOrEqual(2000);
+    expect(out.length).toBeLessThan(body.length / 5);
+  });
+  it('nearest returns -1 when nothing is similar', () => {
+    expect(nearest('abcdefg', '国民健康保険')).toBe(-1);
+  });
+});
+
+describe('shouldMarkNeedsCheck', () => {
+  const v = (verdict: Verdict['verdict'], why: Verdict['why']): Verdict => ({ where: 'x', source_id: 's', verdict, why, url: null });
+  it('lowers verified / ai_checked when changed or unclear', () => {
+    expect(shouldMarkNeedsCheck(v('changed', 'ai'), 'verified')).toBe(true);
+    expect(shouldMarkNeedsCheck(v('unclear', 'quote_missing'), 'ai_checked')).toBe(true);
+    expect(shouldMarkNeedsCheck(v('unclear', 'no_quote'), 'verified')).toBe(true);
+  });
+  it('keeps unchanged, fetch failures, and draft / needs_check as they are', () => {
+    expect(shouldMarkNeedsCheck(v('unchanged', 'quote_found'), 'verified')).toBe(false);
+    expect(shouldMarkNeedsCheck(v('unclear', 'fetch_failed'), 'verified')).toBe(false);
+    expect(shouldMarkNeedsCheck(v('changed', 'ai'), 'draft')).toBe(false);
+    expect(shouldMarkNeedsCheck(v('changed', 'ai'), 'needs_check')).toBe(false);
   });
 });

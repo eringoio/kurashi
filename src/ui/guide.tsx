@@ -268,7 +268,6 @@ export function dayTitle(c: CardView): LocalizedText {
 export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void }) {
   const { level } = usePrefs();
   const [off, setOff] = useState<Set<string>>(new Set());
-  const [showCal, setShowCal] = useState(false);
   const [blockedPressed, setBlockedPressed] = useState(false);
   const c = group[0];
   const sel = group.filter((x) => !off.has(x.card.id));
@@ -338,10 +337,9 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
         )}
       </p>
       {hours?.open && <HoursLine h={hours} />}
-      {/* ほかの日は、押したときだけカレンダーを開く（K-42：日を選ぶ画面を1画面に収める） */}
-      <button type="button" className="link" aria-expanded={showCal} onClick={() => setShowCal(!showCal)}><Bi k="day.other" /></button>
-      {showCal && <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />}
-      <button type="button" className="link" onClick={onLater}><Bi k="day.later" /></button>
+      {/* カレンダーは最初から出す（作者の指示 11/7：日を選ぶときすぐ見える） */}
+      <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
+      <button type="button" className="k-answer k-answer--small" onClick={onLater}><Bi k="day.later" /></button>
     </>
   );
 }
@@ -461,7 +459,10 @@ export function CardFacts({ c, where }: { c: CardView; where: boolean }) {
       {c.card.fee && <div><dt><One k="card.fee" /> <TrustMark e={c.card.fee.evidence} /></dt><dd><Bi t={c.card.fee.text} /></dd></div>}
       {where && <div><dt><One k="card.where" /></dt><dd><Bi t={c.card.where.text} /></dd></div>}
       {docs.length > 0 && <div><dt><One k="card.issued" /></dt><dd>{docs.map((x, i) => <span key={x.id}>{i > 0 && '・'}<Bi t={x.title} /></span>)}</dd></div>}
-      <div><dt><One k="card.official" /></dt><dd className="k-facts__name"><span lang="ja"><Ruby s={`{${n.ja}|${n.reading}}`} /></span><Speak ja={`{${n.ja}|${n.reading}}`} /></dd></div>
+      <div><dt><One k="card.official" /></dt><dd className="k-facts__name"><span lang="ja">{n.ja.length > 12
+        // 長い正式名は、名前全体のふりがなが折り返せないので、読みを下の行に出す（320px）
+        ? <>{n.ja}<span className="k-facts__reading">{n.reading}</span></>
+        : <Ruby s={`{${n.ja}|${n.reading}}`} />}</span><Speak ja={`{${n.ja}|${n.reading}}`} /></dd></div>
     </dl>
   );
 }

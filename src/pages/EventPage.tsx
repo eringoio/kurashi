@@ -41,7 +41,7 @@ function StartNew({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   if (!has) return null;
   return (
     <div className="links">
-      <button type="button" className="link" onClick={async () => { await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNewShort" /></button>
+      <button type="button" className="k-answer k-answer--small" onClick={async () => { await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNewShort" /></button>
     </div>
   );
 }

@@ -29,12 +29,11 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await tap(page, '日本以外の国籍');
   await expect(h1(page)).toHaveText('在留資格は？');
   await tap(page, '留学');
-  await expect(h1(page)).toHaveText(/今のおもな立場/);
-  await tap(page, /^学生$/);
+  // 立場は在留資格（留学）で決まるので聞かない
   await expect(h1(page)).toHaveText('年齢は？');
   await tap(page, '20歳から59歳まで');
   await expect(h1(page)).toHaveText('どこから引っ越しましたか？');
-  await expect(page.locator('.k-change__line')).toContainText('あなたについて：日本以外の国籍・留学・学生・20歳から59歳まで');
+  await expect(page.locator('.k-change__line')).toContainText('あなたについて：日本以外の国籍・留学・20歳から59歳まで');
   await tap(page, '日本の外から');
 
   await expect(h1(page)).toHaveText('持っている物を、全部さわってください');

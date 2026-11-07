@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
 import { areaRow, banchiOf, privateSchedule, romajiOf, rowsOf, SCHEDULE_ON, toSchedules, townsOf } from '../core/gomiSchedule';
+import { nearest, PLACES } from '../core/places';
+import { getPosition } from './Location';
 import { Bi, One } from '../i18n/Ruby';
 import { line } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
@@ -47,6 +49,13 @@ export function GomiAreaFields({ wards, saved, onSet, area }: {
           {wards.map((w) => <option key={w.id} value={w.id}>{line(w.label, level)}</option>)}
         </select>
       </label>
+      {/* 現在地から区を選ぶ（押したときだけ位置を使う。残さない。SPEC 6A.11）。いちばん近い区役所の区 */}
+      <button type="button" className="link" onClick={async () => {
+        const r = await getPosition();
+        if (typeof r === 'string') return;
+        const w = nearest(PLACES().filter((x) => x.kind === 'ward_office'), r)?.ward;
+        if (w && wards.some((x) => x.id === w)) onSet({ ward_id: w, set_on: new Date().toISOString().slice(0, 10) });
+      }}><One k="cal.icsHere" /></button>
       {area.p && saved && (
         <label className="qrfield">
           <span className="label"><One k="gomi.area.town" /></span>

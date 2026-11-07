@@ -177,7 +177,7 @@ export function Letter() {
     <>
       {body}
       <div className="links">
-        {st.k !== 'intro' && <button type="button" className="link" onClick={() => setSt({ k: 'intro' })}><Bi k="letter.again" /></button>}
+        {st.k !== 'intro' && <button type="button" className="k-answer k-answer--small" onClick={() => setSt({ k: "intro" })}><Bi k="letter.again" /></button>}
       </div>
     </>
   );

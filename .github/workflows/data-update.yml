@@ -1,40 +1,88 @@
-# 待ち — GitHub のリモートと、シークレット ANTHROPIC_API_KEY が必要（作者が用意する）。
+# データの更新の確認（docs/DATA_UPDATE.md）。週1回の実行は、作者が動かすと決めるまで止めている（作者の指示 2026-11-05）。
+# 作者が用意するもの：リポジトリの Secrets に ANTHROPIC_API_KEY（データ更新専用のキー。Console で月の上限を付ける）。
+# 1回目は記録だけ（AI を使わず、データも変えない）。2回目から、変わった項目を needs_check にした PR を作る。
+#
+# キーを守るため：
+# - 起動は schedule と workflow_dispatch だけ（pull_request では動かない。フォークにキーが渡らない）。
+# - キーを持つジョブ（check）は、リポジトリを読むだけの権限。PR を作るジョブ（pr）は、キーを持たない。
+# - 使う部品（actions）は、コミットの SHA で固定する（タグが動いても中身が変わらない）。
 name: data-update
-# 作者の指示（2026-11-05）：作者が動かすと決めるまで、週1回の実行を止め、手で動かすときだけにする。動かすときは schedule の行を戻す
 on:
   # schedule:
   #   - cron: '0 18 * * 0' # 日曜 18:00 UTC = 月曜 03:00 JST
   workflow_dispatch:
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+concurrency:
+  group: data-update
+  cancel-in-progress: false
 jobs:
-  update:
+  check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      # sources/index.json（前回のハッシュ）はリポジトリにあるので、checkout で戻る
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # sources/index.json（前回のハッシュ）はリポジトリにある
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      # 前の週の本文（Git に入れない）。差分を作るのと、304 を頼むのに使う
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: sources/snapshots
+          key: snapshots-${{ github.run_id }}
+          restore-keys: snapshots-
       - run: npm run data:fetch
       - run: npm run data:agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          UPDATE_MAX_CALLS: '30'
+      - run: npm run data:apply
       - run: node scripts/gomi/import-opendata.mjs
-      - id: meta
+      # 変わったファイルだけを、次のジョブに渡す（キーは渡さない）
+      - id: pack
         run: |
+          mkdir -p out
+          git add -A sources/index.json data
+          git diff --cached --binary > out/changes.patch
           f=$(ls sources/report/*.md | sort | tail -n 1)
-          echo "report=$f" >> "$GITHUB_OUTPUT"
+          cp "$f" out/report.md
           echo "date=$(basename "$f" .md)" >> "$GITHUB_OUTPUT"
-      - uses: peter-evans/create-pull-request@v6
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: data-update
+          path: out/
+          retention-days: 14
+    outputs:
+      date: ${{ steps.pack.outputs.date }}
+
+  pr:
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: data-update
+          path: out
+      - run: |
+          if [ -s out/changes.patch ]; then git apply --index out/changes.patch; fi
+          git reset -q
+      - uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           branch: data-update/${{ github.run_id }}
-          title: データの更新の確認（${{ steps.meta.outputs.date }}）
-          commit-message: データの更新の確認（${{ steps.meta.outputs.date }}）
-          body-path: ${{ steps.meta.outputs.report }}
+          title: データの更新の確認（${{ needs.check.outputs.date }}）
+          commit-message: データの更新の確認（${{ needs.check.outputs.date }}）
+          body-path: out/report.md
           add-paths: |
             sources/index.json
-            drafts/gomi/opendata.json
+            data/**
+           
