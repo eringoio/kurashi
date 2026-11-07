@@ -119,7 +119,8 @@ export function Letter() {
         <div className="head"><Title><Bi k="letter.check" /></Title></div>
         <img className="letter__photo" src={st.photo.url} alt={line(ui('letter.photoAlt'), level)} />
         {st.photo.sample && <p className="draftmark"><Bi k="letter.sampleMark" /></p>}
-        <div className="k-notice" role="note"><Bi k="letter.consent" /></div>
+        {/* くわしい保持・アメリカの制度は「使う情報について」。写真が消えないよう、新しいタブで開く */}
+        <div className="k-notice" role="note"><Bi k="letter.consent" /> <a className="link" href="/info/privacy" target="_blank" rel="noopener"><Bi k="privacy.link" /><span className="sr-only"><One k="here.newTab" /></span></a></div>
         <div className="list">
           <button type="button" className="k-answer k-answer--primary" disabled={busy} aria-busy={busy} onClick={() => void send(st.photo)}><Bi phrase k={busy ? 'letter.sending' : 'letter.send'} /></button>
           <button type="button" className="k-answer" disabled={busy} onClick={() => file.current?.click()}><Bi phrase k="letter.retake" /></button>

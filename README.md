@@ -31,7 +31,7 @@ npm run build        # 型の検査とビルド（dist/）
 npm run worker:dev   # ビルドしてから wrangler dev（http://localhost:8787）
 ```
 
-API キーが無いので、`/api/read-document`（届いた書類を撮る）は見本の結果を返します。
+API キーが無いので、`/api/read-document`（届いた書類を撮る）は見本の結果を返します。写真の欄は `VITE_LETTER_READ=on` を付けてビルドしたときだけ出ます（PowerShell：`$env:VITE_LETTER_READ='on'; npm run worker:dev`）。試し方は `docs/DOCUMENT_CAPTURE_PLAN.md`。
 
 ### 作者の手順（作者のアカウントで行う）
 
@@ -53,7 +53,7 @@ API キーが無いので、`/api/read-document`（届いた書類を撮る）�
    npm run deploy
    ```
 
-   最初は `https://kurashi.<アカウント>.workers.dev` で開きます。
+   最初は `https://kurashi.<アカウント>.workers.dev` で開きます。写真の読み取りを出すときは、`VITE_LETTER_READ=on` を付けて公開します（PowerShell：`$env:VITE_LETTER_READ='on'; npm run deploy`）。付けないと、書類は一覧から選ぶだけです。
 
 4. `kurashi.eringo.io` で開くようにする：`eringo.io` を Cloudflare で管理しているなら、`wrangler.toml` の `routes` の行の `#` を外して、もう一度 `npm run deploy`。ほかの所で管理しているなら、Cloudflare のダッシュボードで Worker に独自のドメインを足し、言われた DNS の記録を作る。
 

@@ -441,9 +441,9 @@
     "en": "Letter photo"
   },
   "privacy.r3.how": {
-    "ja": "{押|お}したときだけ Claude（Anthropic {社|しゃ}の AI）に{送|おく}ります。このアプリは{残|のこ}しません。Anthropic {社|しゃ}では{最大|さいだい}30{日|にち}、{安全|あんぜん}{上|じょう}の{問題|もんだい}があると{最長|さいちょう}2{年|ねん}{残|のこ}ります（{要|よう}{確認|かくにん}）。{書類|しょるい}を{読|よ}むためです。",
-    "ja_easy": "{押|お}したときだけ AI に{送|おく}ります。このアプリは{残|のこ}しません（AI の{会社|かいしゃ}では30{日|にち}まで。{要|よう}{確認|かくにん}）。",
-    "en": "Sent to Claude (Anthropic's AI) only when you tap. This app keeps nothing. Anthropic keeps it up to 30 days, or up to 2 years if flagged for safety (to be confirmed). To read the letter."
+    "ja": "{押|お}したときだけ、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{残|のこ}しません。Anthropic {社|しゃ}では30{日|にち}{以内|いない}に{消|き}えます。{安全|あんぜん}{上|じょう}の{問題|もんだい}と{判定|はんてい}されたときは{最長|さいちょう}2{年|ねん}（{判定|はんてい}の{点数|てんすう}は{最長|さいちょう}7{年|ねん}）、{法律|ほうりつ}で{求|もと}められたときはそれより{長|なが}く{残|のこ}ります。{学習|がくしゅう}には{使|つか}わないとされています（2026{年|ねん}11{月|がつ}7{日|なのか}に{確認|かくにん}）。{書類|しょるい}の{種類|しゅるい}を{調|しら}べるためです。",
+    "ja_easy": "{押|お}したときだけ、AI（アメリカの{会社|かいしゃ}）に{送|おく}ります。このアプリは{残|のこ}しません。AI の{会社|かいしゃ}は、ふつう30{日|にち}{以内|いない}に{消|け}します。",
+    "en": "Sent only when you tap, to Claude, an AI by Anthropic in the United States. This app keeps nothing. Anthropic deletes it within 30 days. If it is flagged for safety, Anthropic keeps it up to 2 years (safety scores up to 7 years), or longer if the law requires. Anthropic states that it does not use it for training (checked 7 Nov 2026). To find what kind of letter it is."
   },
   "privacy.r4.what": {
     "ja": "{報告|ほうこく}",
@@ -494,6 +494,11 @@
     "ja": "{使|つか}う{情報|じょうほう}について",
     "ja_easy": "{使|つか}う{情報|じょうほう}",
     "en": "What information we use"
+  },
+  "privacy.usLaw": {
+    "ja": "アメリカの{個人|こじん}{情報|じょうほう}の{制度|せいど}（{個人|こじん}{情報|じょうほう}{保護|ほご}{委員会|いいんかい}）",
+    "ja_easy": "アメリカの{個人|こじん}{情報|じょうほう}のきまり",
+    "en": "Personal information rules in the United States (Personal Information Protection Commission, Japanese)"
   },
   "info.a11yMore": {
     "ja": "{使|つか}いやすさについて",
@@ -2196,9 +2201,9 @@
     "en": "Sample (fictional letter)"
   },
   "letter.consent": {
-    "ja": "この{写真|しゃしん}を{読|よ}むために Claude（AI）に{送|おく}ります。このアプリは{保存|ほぞん}しません（Anthropic {社|しゃ}では{最大|さいだい}30{日|にち}{保存|ほぞん}されます。{要|よう}{確認|かくにん}）。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
-    "ja_easy": "この{写真|しゃしん}を AI に{送|おく}ります。このアプリは{残|のこ}しません。{名前|なまえ}や{住所|じゅうしょ}は{隠|かく}してください。",
-    "en": "This photo will be sent to Claude (AI) to read it. This app does not save it (Anthropic keeps it for up to 30 days; to be confirmed). Take it so that names, addresses and numbers do not show, or cover them."
+    "ja": "この{写真|しゃしん}を{読|よ}むために、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{保存|ほぞん}しません。Anthropic {社|しゃ}では30{日|にち}{以内|いない}に{消|き}え、{学習|がくしゅう}には{使|つか}わないとされています。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
+    "ja_easy": "この{写真|しゃしん}を AI（アメリカの{会社|かいしゃ}）に{送|おく}ります。このアプリは{残|のこ}しません。{名前|なまえ}や{住所|じゅうしょ}は{隠|かく}してください。",
+    "en": "This photo is sent to Claude, an AI by Anthropic in the United States, to read it. This app does not save it. Anthropic deletes it within 30 days and states that it does not use it for training. Take the photo so that names, addresses and numbers do not show, or cover them."
   },
   "letter.send": {
     "ja": "{送|おく}る（{同意|どうい}する）",

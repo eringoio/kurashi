@@ -20,7 +20,8 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
   // 使いやすさの決まり（WCAG など）は、開いたときだけ（K-52）
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2'], icon: 'bulb', more: { k: 'info.a11yMore', body: ['page.about.p3'] }, privacy: true },
   // 使う情報（作者の指示 2026-11-07。SPEC 13）：何を・どこへ・なぜ。使われ方の数は、ここで止められる
-  privacy: { title: 'page.privacy.title', body: ['page.privacy.lead'], icon: 'you', counts: true },
+  // 書類の写真は外国（アメリカ）の Anthropic 社に送るので、その国の制度の情報を示す（個人情報保護法施行規則17条2項。SPEC 13.6）
+  privacy: { title: 'page.privacy.title', body: ['page.privacy.lead'], icon: 'you', counts: true, link: { k: 'privacy.usLaw', href: 'https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/' } },
 };
 
 /** reason：範囲外の理由（イベントの範囲のルールの reason_when_false）。あれば本文の代わりに出す（一般の文は、ほかの画面と食い違うことがあるため） */
