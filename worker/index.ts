@@ -11,8 +11,14 @@ export default {
     const url = new URL(req.url);
     if (url.pathname === '/api/read-document') return handleReadDocument(req, env);
     // 報告（A-9）。本文は path・scene・text・level・at だけ
-    if (url.pathname === '/api/report') return handleReport(req, env);
-    if (url.pathname === '/api/reports') return handleReports(req, env);
+    // 本番で KV が未設定なら必ず失敗させる。メモリに保存して成功表示しない。
+    if (url.pathname === '/api/report' || url.pathname === '/api/reports') {
+      if (!env.REPORTS) return new Response(JSON.stringify({ error: 'storage_unavailable' }), {
+        status: 503,
+        headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+      });
+      return url.pathname === '/api/report' ? handleReport(req, env) : handleReports(req, env);
+    }
     // 使われ方の数（13.4）。数だけ。ID・IP・答えは受け取らない
     if (url.pathname === '/api/ev') return handleEv(req, env);
     if (url.pathname === '/api/usage') return handleUsage(req, env);
