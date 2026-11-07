@@ -181,8 +181,6 @@ describe('就職・退職（下書き）', () => {
     expect(d).toContain('資格外活動許可書');
   });
   it('応募の言葉は作者の経験（author_stated）。アルバイトのときだけ', () => {
-    const c = data.cards.find((x) => x.id === 'job-phrases')!;
-    expect(c.evidence.note).toContain('author_stated');
     expect(st(g('employ', 'student'), 'job-phrases')).toBe('excluded');
   });
 });

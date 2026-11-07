@@ -12,7 +12,7 @@ const read = (src: string, day: string) => { const f = join(ROOT, src, day + '.t
 const sha = (s: string) => createHash('sha256').update(s).digest('hex');
 
 // 公開のデータと、下書き（drafts/data/*.bundle.json）の両方を確かめる
-const bundles = readdirSync('drafts/data').filter((f) => f.endsWith('.bundle.json')).map((f) => JSON.parse(readFileSync(join('drafts/data', f), 'utf8')) as Bundle);
+const bundles = (existsSync('drafts/data') ? readdirSync('drafts/data') : []).filter((f) => f.endsWith('.bundle.json')).map((f) => JSON.parse(readFileSync(join('drafts/data', f), 'utf8')) as Bundle);
 const items = collectEvidence(loadData(withBundles(baseRaw(), bundles)));
 const err = checkQuotes(items, read, sha);
 const q = authorQueue(items);
