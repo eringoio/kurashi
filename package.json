@@ -1,6 +1,7 @@
 {
   "name": "kurashi",
   "private": true,
+  "license": "MIT",
   "version": "0.0.1",
   "description": "kurashi（暫定）— 名古屋市で暮らす人が、生活の出来事から知らなかった手続きに気づくための Web アプリ",
   "type": "module",

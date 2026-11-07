@@ -4,7 +4,7 @@ import { cleanCandidates, DOCUMENTS, loadDocuments, SAMPLE_RESULT } from '../../
 import { loadData } from '../../src/core/data';
 import { handleReadDocument, instruction, MAX_BASE64, type Reader } from '../../worker/readDocument';
 
-const KEY = 'sk-ant-test-0000-secret';
+const KEY = 'test-dummy-key-not-real';
 const req = (body: unknown, init: RequestInit = {}) => new Request('http://x/api/read-document', {
   method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), ...init,
 });
