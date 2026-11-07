@@ -42,8 +42,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "頭痛 内科・脳神経外科"
       }
     },
     {
@@ -136,8 +137,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "耳や鼻の異常 耳鼻咽喉科"
       }
     },
     {
@@ -187,8 +189,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "歯痛 歯科"
       }
     },
     {
@@ -235,8 +238,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "胸部痛 循環器内科・呼吸器内科"
       }
     },
     {
@@ -284,8 +288,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "腹痛 内科・消化器内科・産婦人科(女性）"
       }
     },
     {
@@ -346,8 +351,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "骨折・関節痛 整形外科 / ケガ・切り傷 外科・形成外科"
       }
     },
     {
@@ -396,8 +402,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "発熱・喉の痛み・せき・鼻水 内科"
       }
     },
     {
@@ -446,8 +453,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "湿疹・じんましん 皮膚科 / やけど 皮膚科・形成外科・外科"
       }
     },
     {
@@ -492,8 +500,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "排尿困難・血尿・排尿時の痛み 泌尿器科"
       }
     },
     {
@@ -586,8 +595,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "こどもの病気 小児科"
       }
     },
     {
@@ -627,8 +637,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "妊娠中 産科・婦人科"
       }
     },
     {
@@ -668,8 +679,9 @@
         "source_ids": [
           "jnto-mi-guide"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "どの科にかかればよいかが不明 総合診療科"
       }
     }
   ],
@@ -1152,16 +1164,17 @@
       "tsuyaku"
     ],
     "child": {
-      "ja": "{子|こ}どもは{多|おお}くの{場合|ばあい}、まず{小児科|しょうにか}で{相談|そうだん}できます。",
-      "ja_easy": "{子|こ}どもは、まず{小児科|しょうにか}で{相談|そうだん}できます。",
-      "en": "For children, you can usually start at a pediatrics clinic (shonika)."
+      "ja": "{子|こ}どもの{病気|びょうき}は、{小児科|しょうにか}で{相談|そうだん}できます。",
+      "ja_easy": "{子|こ}どもの{病気|びょうき}は、{小児科|しょうにか}です。",
+      "en": "For a child's illness, you can go to a pediatrics clinic (shonika)."
     },
     "evidence": {
       "source_ids": [
         "jnto-mi-guide"
       ],
       "checked_at": "2026-11-07",
-      "status": "needs_check"
+      "status": "needs_check",
+      "quote": "こどもの病気 小児科"
     }
   },
   "links": [
@@ -1323,10 +1336,12 @@
     },
     "evidence": {
       "source_ids": [
+        "jnto-mi-guide",
         "mhlw-navii"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check"
+      "checked_at": "2026-11-07",
+      "status": "needs_check",
+      "quote": "診察希望時にはできる限り事前に各医療機関にご連絡ください。"
     }
   },
   "bring": [
@@ -1345,10 +1360,12 @@
       },
       "evidence": {
         "source_ids": [
-          "jnto-mi-guide"
+          "mhlw-closeup-50",
+          "kyokai-kenpo-mynahoken-uketsuke"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "医療機関・薬局の受付では、マイナ保険証をお持ちの方は「マイナ保険証」を、マイナ保険証をお持ちでない方は「資格確認書」をご提示ください。 / 資格情報のお知らせのみでは受診できません。"
       }
     },
     {

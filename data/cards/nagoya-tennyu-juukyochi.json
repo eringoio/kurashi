@@ -41,10 +41,12 @@
       "source_ids": [
         "nagoya-juumin-todoke",
         "isa-juukyochi",
-        "nagoya-lifescene-tennyu-kazu"
+        "nagoya-lifescene-tennyu-kazu",
+        "B-nagoya-faq-39"
       ],
       "checked_at": "2026-11-07",
-      "status": "needs_check"
+      "status": "needs_check",
+      "quote": "（住所を異動した日の翌日が、１日目となります。）"
     }
   },
   "where": {

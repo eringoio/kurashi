@@ -27,9 +27,9 @@
     "reading": "しゃかいほけん・こようほけんのかにゅう"
   },
   "summary": {
-    "ja": "{会社|かいしゃ}で{働|はたら}くと、{国籍|こくせき}にかかわらず、{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}に{入|はい}ります。31{日|にち}{以上|いじょう}{働|はたら}く{見込|みこ}みで、{週|しゅう}20{時間|じかん}{以上|いじょう}なら{雇用|こよう}{保険|ほけん}にも{入|はい}ります。{手続|てつづ}きは{会社|かいしゃ}がします（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{会社|かいしゃ}で{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}と{年金|ねんきん}に{入|はい}ります。{会社|かいしゃ}が{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-    "en": "When you work for a company, you join its health insurance and employees' pension, regardless of nationality. If you are expected to work 31 days or more and 20 hours or more a week, you also join employment insurance. The company does the paperwork (to be checked)."
+    "ja": "{会社|かいしゃ}で{働|はたら}くと、{国籍|こくせき}にかかわらず、{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}に{入|はい}ります。31{日|にち}{以上|いじょう}{働|はたら}く{見込|みこ}みで、{週|しゅう}20{時間|じかん}{以上|いじょう}なら{雇用|こよう}{保険|ほけん}にも{入|はい}ります。{昼間|ひるま}の{学校|がっこう}に{通|かよ}う{留学生|りゅうがくせい}は、{原則|げんそく}{雇用|こよう}{保険|ほけん}に{入|はい}りません。{手続|てつづ}きは{会社|かいしゃ}がします（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{会社|かいしゃ}で{働|はたら}くと、{会社|かいしゃ}の{保険|ほけん}と{年金|ねんきん}に{入|はい}ります。{留学生|りゅうがくせい}は、{雇用保険|こようほけん}には{原則|げんそく}{入|はい}りません。{会社|かいしゃ}が{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "en": "When you work for a company, you join its health insurance and employees' pension, regardless of nationality. If you are expected to work 31 days or more and 20 hours or more a week, you also join employment insurance. International students at a daytime school are normally not covered by employment insurance. The company does the paperwork (to be checked)."
   },
   "deadline": null,
   "where": {
@@ -70,10 +70,11 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "D-nenkin-kounen-tekiyo"
+      "D-nenkin-kounen-tekiyo",
+      "mhlw-hihokensha-qa"
     ],
     "checked_at": "2026-11-06",
     "status": "needs_check",
-    "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。"
+    "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。 / 1週間の所定労働時間が20時間以上であること。 / 31日以上の雇用見込みがあること。 / 「昼間学生」に該当する留学生は原則、被保険者となりません"
   }
 }

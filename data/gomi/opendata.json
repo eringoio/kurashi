@@ -25,9 +25,9 @@
     "note": "市の表の行（名前・区分・短い備考）を区分と備考に使う。ページの全文は保存していない"
   },
   "counts": {
-    "items": 1227,
-    "shown": 1216,
-    "review": 11
+    "items": 1228,
+    "shown": 1223,
+    "review": 5
   },
   "items": [
     {
@@ -6479,50 +6479,38 @@
     {
       "id": "od_4bfd327d5d",
       "label": {
-        "ja": "櫛（くし、金属製）"
+        "ja": "櫛（金属製）"
       },
       "aliases": [
         "くし"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "櫛（くし、金属製） | 不燃ごみ | "
-      }
+        "quote": "櫛（金属製） | 不燃ごみ"
+      },
+      "category": "funen"
     },
     {
       "id": "od_b93ba52626",
       "label": {
-        "ja": "櫛（くし、プラスチック製）"
+        "ja": "櫛（プラスチック製）"
       },
       "aliases": [
         "くし"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "櫛（くし、プラスチック製） | プラスチック資源 | "
-      }
+        "quote": "櫛（プラスチック製） | プラスチック資源"
+      },
+      "category": "plastic"
     },
     {
       "id": "od_cb2c005eb6",
@@ -8373,26 +8361,20 @@
     {
       "id": "od_43b495caa8",
       "label": {
-        "ja": "コーヒーがら及びフィルター"
+        "ja": "コーヒーがら、コーヒー用フィルター"
       },
       "aliases": [
         "こーひーがらおよびふぃるたー"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "コーヒーがら及びフィルター | 可燃ごみ | "
-      }
+        "quote": "コーヒーがら、コーヒー用フィルター | 可燃ごみ"
+      },
+      "category": "kanen"
     },
     {
       "id": "od_f1ca69fc11",
@@ -14597,25 +14579,46 @@
     {
       "id": "od_4f2f5046c6",
       "label": {
-        "ja": "注射針、注射器（在宅医療用）"
+        "ja": "注射針（在宅医療用）"
       },
       "aliases": [
-        "ちゅうしゃはり、ちゅうしゃき"
+        "ちゅうしゃばり",
+        "ちゅうしゃはり"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
+      "evidence": {
+        "source_ids": [
+          "gomi-search-1035233"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "注射針（在宅医療用） | その他 | かかりつけの病院・診療所へ返却してください。"
+      },
+      "category": "sonota",
+      "note": {
+        "ja": "かかりつけの病院・診療所へ返却してください。"
+      }
+    },
+    {
+      "id": "od_syringe_barrel",
+      "label": {
+        "ja": "注射筒（在宅医療用）"
+      },
+      "aliases": [
+        "ちゅうしゃとう",
+        "ちゅうしゃき",
+        "注射器"
+      ],
+      "category": "kanen",
+      "note": {
+        "ja": "内袋を密閉して可燃ごみに出します。注射針は外して、かかりつけの病院・診療所へ返却してください。"
       },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "注射針、注射器（在宅医療用） | その他 | かかりつけの病院・診療所へ返却してください"
+        "quote": "内袋を密閉し、可燃ごみへ注射針は外して、かかりつけの病院・診療所へ返却してください。"
       }
     },
     {
@@ -15931,7 +15934,7 @@
       ],
       "category": "kogata",
       "note": {
-        "ja": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。※水銀血圧計は市では収集しません。販売店などにご相談ください。 小型家電・充電式家電のリサイクル"
+        "ja": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。水銀血圧計は、区の環境事業所へ持ち込みます（市の表の別の行と食い違うため要確認）。 小型家電・充電式家電のリサイクル"
       },
       "evidence": {
         "source_ids": [
@@ -24263,26 +24266,20 @@
     {
       "id": "od_4b9319cefb",
       "label": {
-        "ja": "湯のみ茶碗"
+        "ja": "湯のみ茶わん"
       },
       "aliases": [
         "ゆのみちゃわん"
       ],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "湯のみ茶碗 | 不燃ごみ | "
-      }
+        "quote": "湯のみ茶わん | 不燃ごみ"
+      },
+      "category": "funen"
     },
     {
       "id": "od_9a2b35f878",
@@ -25121,23 +25118,24 @@
     {
       "id": "od_81469ea6ae",
       "label": {
-        "ja": "れんが"
+        "ja": "レンガ"
       },
-      "aliases": [],
-      "review": {
-        "reason": {
-          "ja": "この品目は、いまの市の分別検索の表に見つかりませんでした。市の表で確かめてください。",
-          "ja_easy": "いまの{市|し}のページに、この{品物|しなもの}がありません。",
-          "en": "This item was not found in the current city table. Please check."
-        }
-      },
+      "aliases": [
+        "れんが",
+        "brick"
+      ],
       "evidence": {
         "source_ids": [
-          "bodik-sagyo-01"
+          "gomi-search-1035233",
+          "gomi-sodai-1050522"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "れんが | 粗大ごみ | 1回の収集につき5個まで"
+        "quote": "1度の収集に5個まで。"
+      },
+      "category": "sonota",
+      "note": {
+        "ja": "1回の収集で5個まで（1個4kg程度）。粗大ごみ受付センターに申し込み、受付番号を書いた紙を貼って、粗大ごみの日に出します。手数料はかかりません。"
       }
     },
     {

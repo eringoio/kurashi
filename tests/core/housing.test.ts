@@ -88,8 +88,8 @@ describe('住まい探し（下書き）', () => {
     expect(card('housing-public').evidence.status).toBe('needs_check');
   });
   it('各カードに、確認先（要確認）を付ける', () => {
-    for (const id of IDS.filter((x) => x !== 'housing-public')) expect(plain(card(id).summary.ja), id).toContain('契約書と不動産会社で確認（要確認）');
-    expect(plain(card('housing-public').summary.ja)).toContain('窓口で確認（要確認）');
+    for (const id of IDS.filter((x) => x !== 'housing-public')) expect(plain(card(id).summary.ja), id).toContain('契約書を見て、不動産会社に確認します（要確認）');
+    expect(plain(card('housing-public').summary.ja)).toContain('窓口で確認してください（要確認）');
   });
   it('期限・費用・カード全体の根拠は needs_check のまま', () => {
     for (const c of data.cards.filter((x) => IDS.includes(x.id))) {

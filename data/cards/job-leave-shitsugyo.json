@@ -58,9 +58,9 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{離職|りしょく}{票|ひょう}は{前|まえ}の{会社|かいしゃ}に{離職|りしょく}{証明|しょうめい}{書|しょ}を{頼|たの}んで、それをハローワークに{出|だ}してもらうものです。",
-        "ja_easy": "{前|まえ}の{会社|かいしゃ}に{書類|しょるい}を{頼|たの}みます。",
-        "en": "The separation notice is issued after you ask your former employer for a separation certificate and it is sent to Hello Work."
+        "ja": "{前|まえ}の{会社|かいしゃ}が{離職|りしょく}{証明書|しょうめいしょ}をハローワークに{出|だ}すと、ハローワークが{離職票|りしょくひょう}を{出|だ}します。{会社|かいしゃ}に{頼|たの}みます。",
+        "ja_easy": "{前|まえ}の{会社|かいしゃ}に{頼|たの}むと、ハローワークから{離職票|りしょくひょう}が{出|で}ます。",
+        "en": "Your former employer submits a separation certificate to Hello Work, and Hello Work issues the separation notice. Ask the employer for it."
       },
       "evidence": {
         "source_ids": [
@@ -68,15 +68,15 @@
         ],
         "checked_at": "2026-11-06",
         "status": "needs_check",
-        "quote": "前に勤めていた会社に対して「離職証明書」の交付を請求し、その離職証明書を公共職業安定所に提出"
+        "quote": "前に勤めていた会社に対して「離職証明書」の交付を請求し、その離職証明書を公共職業安定所に提出 / 「離職票」とは、離職した際に事業主から提出される離職証明書に基づいて、公共職業安定所から交付されるものです。"
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{最初|さいしょ}の7{日|にち}は{待期|たいき}で、{手当|てあて}はありません。{自分|じぶん}の{都合|つごう}で{辞|や}めたときは、さらに{原則|げんそく}1か{月|げつ}{待|ま}ちます（{要|よう}{確認|かくにん}）。",
+        "ja": "{求職|きゅうしょく}の{申|もう}し{込|こ}みと{離職票|りしょくひょう}の{提出|ていしゅつ}のあと、7{日間|かかん}は{待期|たいき}{期間|きかん}で、{手当|てあて}は{出|で}ません。{自分|じぶん}の{都合|つごう}で{辞|や}めたときは、さらに{原則|げんそく}1か{月|げつ}{待|ま}ちます（{要|よう}{確認|かくにん}）。",
         "ja_easy": "{少|すこ}し{待|ま}ちます。",
-        "en": "There is a 7-day waiting period with no allowance. If you left for your own reasons, there is normally another 1 month (to be checked)."
+        "en": "The 7-day waiting period starts after you apply for work and hand in the separation notice; no allowance is paid. If you left for your own reasons, there is normally another 1 month (to be checked)."
       },
       "evidence": {
         "source_ids": [
@@ -84,7 +84,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "needs_check",
-        "quote": "離職日が令和７年４月１日以降である場合は原則１か月"
+        "quote": "離職日が令和７年４月１日以降である場合は原則１か月 / 離職票の提出と求職の申込みを行った日（受給資格決定日）から通算して7日間を待期期間といい"
       }
     }
   ],
