@@ -22,9 +22,9 @@
     "reading": "こうざかいせつ"
   },
   "summary": {
-    "ja": "もう1つ{口座|こうざ}を{作|つく}るときも、{手続|てつづ}きは「{口座|こうざ}を{作|つく}る」と{同|おな}じです。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "もう1つ{作|つく}るときも、{手続|てつづ}きは{同|おな}じです（{要|よう}{確認|かくにん}）。",
-    "en": "Opening another account works the same way as opening your first one. Conditions differ by bank (to be checked)."
+    "ja": "もう1つ{口座|こうざ}を{作|つく}るときの{手続|てつづ}きは、「{口座|こうざ}を{作|つく}る」と{同|おな}じです。ゆうちょ{銀行|ぎんこう}は1{人|ひとり}1{口座|こうざ}です。ほかの{銀行|ぎんこう}は、{目的|もくてき}を{聞|き}いたり{断|ことわ}ったりすることがあります。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "もう1つ{作|つく}るときも、{手続|てつづ}きは{同|おな}じです。ゆうちょ{銀行|ぎんこう}は、1{人|ひとり}1つです。ほかの{銀行|ぎんこう}は、{理由|りゆう}を{聞|き}いたり、{断|ことわ}ったりすることがあります（{要|よう}{確認|かくにん}）。",
+    "en": "Opening another account works the same way as the first. Japan Post Bank allows only one account per person. Other banks may ask why you want a second account and can refuse. Conditions differ by bank (to be checked)."
   },
   "deadline": null,
   "where": {
@@ -49,17 +49,19 @@
     "source_ids": [
       "kurashi-spec",
       "B-mufg-kouza-shorui",
-      "B-yucho-gaikokujin-pub"
+      "B-jpb-kouza-kaisetsu",
+      "B-mizuho-kouza-attention",
+      "B-fsa-multi-account-request"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   },
   "notices": [
     {
       "text": {
-        "ja": "{口座|こうざ}・{通帳|つうちょう}・キャッシュカードを、{人|ひと}に{売|う}ったり{渡|わた}したりしないでください。{犯罪|はんざい}です。{使|つか}わない{口座|こうざ}は、{銀行|ぎんこう}で{解約|かいやく}します。",
-        "ja_easy": "{口座|こうざ}やカードを{人|ひと}に{売|う}ったり、あげたりしないでください。{犯罪|はんざい}です。",
-        "en": "Never sell or give your account, passbook or cash card to anyone. It is a crime. Close accounts you no longer use at the bank."
+        "ja": "{口座|こうざ}・{通帳|つうちょう}・キャッシュカードを、{他人|たにん}に{使|つか}わせる{目的|もくてき}で{売|う}ったり{渡|わた}したりしないでください。{犯罪|はんざい}です。{使|つか}わない{口座|こうざ}は、{銀行|ぎんこう}で{解約|かいやく}します。",
+        "ja_easy": "{他|ほか}の{人|ひと}に{使|つか}わせるために、{口座|こうざ}やカードを{売|う}ったり{渡|わた}したりしてはいけません。{犯罪|はんざい}です。",
+        "en": "Never sell or give your account, passbook or cash card to someone else so that they can use it. It is a crime. Close accounts you no longer use at the bank."
       },
       "evidence": {
         "source_ids": [

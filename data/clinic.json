@@ -1158,13 +1158,10 @@
     },
     "evidence": {
       "source_ids": [
-        "mhlw-tokubetsu-ryokin",
-        "gov-online-shokai",
-        "mhlw-shokai-juten"
+        "jnto-mi-guide"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "紹介状のありなしにかかわらず、受診は可能ですが、紹介状がなく来院された場合は、一部負担金（３割負担等）とは別の「特別の料金」が原則必要となります。"
+      "checked_at": "2026-11-07",
+      "status": "needs_check"
     }
   },
   "links": [
@@ -1340,6 +1337,11 @@
         "ja": "マイナ{保険証|ほけんしょう}または{資格確認書|しかくかくにんしょ}",
         "ja_easy": "マイナ{保険証|ほけんしょう}または{資格確認書|しかくかくにんしょ}",
         "en": "My Number health card or eligibility certificate"
+      },
+      "desc": {
+        "ja": "「{資格|しかく}{情報|じょうほう}のお{知|し}らせ」だけでは、{受付|うけつけ}で{保険証|ほけんしょう}の{代|か}わりになりません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "「{資格|しかく}{情報|じょうほう}のお{知|し}らせ」だけでは、{受付|うけつけ}で{使|つか}えません（{要|よう}{確認|かくにん}）",
+        "en": "The \"notice of eligibility information\" (資格情報のお知らせ) alone is not proof at reception (to be checked)"
       },
       "evidence": {
         "source_ids": [

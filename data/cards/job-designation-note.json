@@ -32,9 +32,9 @@
     "reading": "していしょ"
   },
   "summary": {
-    "ja": "{在留|ざいりゅう}カードに「{指定|してい}{書|しょ}により{指定|してい}された{就労|しゅうろう}{活動|かつどう}のみ{可|か}」とある{人|ひと}は、{指定|してい}{書|しょ}に{書|か}いてある{仕事|しごと}だけができます。{旅券|りょけん}に{付|つ}いている{指定|してい}{書|しょ}を{確|たし}かめてください。",
-    "ja_easy": "カードに「{指定書|していしょ}により{指定|してい}された{就労活動|しゅうろうかつどう}のみ{可|か}」とある{人|ひと}は、{指定書|していしょ}の{仕事|しごと}だけできます。{指定書|していしょ}を{見|み}てください。",
-    "en": "If your card says only work in your designation is allowed, you can do only the work written in your designation document. Check the designation attached to your passport."
+    "ja": "{在留|ざいりゅう}カードに「{指定|してい}{書|しょ}により{指定|してい}された{就労|しゅうろう}{活動|かつどう}のみ{可|か}」とある{人|ひと}（{特定|とくてい}{活動|かつどう}）は、{指定|してい}{書|しょ}に{書|か}いてある{仕事|しごと}だけができます。{旅券|りょけん}に{付|つ}いている{指定|してい}{書|しょ}を{確|たし}かめてください。アルバイトの{個別|こべつ}{許可|きょか}の{内容|ないよう}は、{指定|してい}{書|しょ}ではなく「{資格外|しかくがい}{活動|かつどう}{許可書|きょかしょ}」に{書|か}いてあります。",
+    "ja_easy": "カードに「{指定書|していしょ}により{指定|してい}された{就労活動|しゅうろうかつどう}のみ{可|か}」とある{人|ひと}（{特定活動|とくていかつどう}）は、{指定書|していしょ}の{仕事|しごと}だけできます。{指定書|していしょ}を{見|み}てください。アルバイトの{許可|きょか}は「{資格外活動許可書|しかくがいかつどうきょかしょ}」を{見|み}ます。",
+    "en": "If your card says only work in your designation is allowed (Designated Activities), you can do only the work written in your designation document, attached to your passport. The terms of an individual part-time permit are on a separate permission document (資格外活動許可書), not the designation."
   },
   "lead": {
     "ja": "{指定|してい}{書|しょ}を{確|たし}かめてください。",
@@ -57,7 +57,8 @@
   },
   "evidence": {
     "source_ids": [
-      "isa-card-point"
+      "isa-card-point",
+      "isa-card-guide"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check",

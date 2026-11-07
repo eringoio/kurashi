@@ -53,15 +53,16 @@
         "R-juukyochi-done"
       ],
       "explain": {
-        "ja": "{多|おお}くの{銀行|ぎんこう}で、{在留|ざいりゅう}カードに{今|いま}の{住所|じゅうしょ}があることが{必要|ひつよう}です（{銀行|ぎんこう}によって{違|ちが}います）。",
-        "ja_easy": "{多|おお}くの{銀行|ぎんこう}で、{在留|ざいりゅう}カードに{今|いま}の{住所|じゅうしょ}が{要|い}ります。",
-        "en": "Many banks need your current address on your residence card (it differs by bank)."
+        "ja": "{銀行|ぎんこう}は{今|いま}の{住所|じゅうしょ}がわかる{書類|しょるい}を{求|もと}めます。{区役所|くやくしょ}に{先|さき}に{届|とど}けると、{在留|ざいりゅう}カードに{住所|じゅうしょ}が{入|はい}ります（{銀行|ぎんこう}の{決|き}まりではありません。{銀行|ぎんこう}ごとに{違|ちが}います）。",
+        "ja_easy": "{銀行|ぎんこう}は{今|いま}の{住所|じゅうしょ}がわかる{書類|しょるい}を{見|み}ます。{先|さき}に{区役所|くやくしょ}に{届|とど}けると{進|すす}めやすいです。",
+        "en": "Banks ask for ID showing your current address. Registering at the ward office first puts it on your residence card (the usual reason, not a bank rule; it differs by bank)."
       },
       "evidence": {
         "source_ids": [
-          "kurashi-spec"
+          "B-mufg-kouza-shorui",
+          "isa-juukyochi"
         ],
-        "checked_at": "2026-11-04",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       },
       "day_order": {
@@ -110,15 +111,15 @@
       "office_scope": "same_building",
       "keep_needs_check": true,
       "explain": {
-        "ja": "{同|おな}じ{区役所|くやくしょ}でできる{可能|かのう}{性|せい}があります（{担当|たんとう}の{課|か}が{別|べつ}のことがあります。{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{同|おな}じ{区役所|くやくしょ}でできるかもしれません。",
-        "en": "These may be possible at the same ward office (different sections; to be checked)."
+        "ja": "{同|おな}じ{区役所|くやくしょ}で、1{回|かい}で{済|す}むことが{多|おお}いです。ただし、{担当|たんとう}の{課|か}が{別|べつ}で、{書類|しょるい}が{足|た}りないと、もう{一度|いちど}{行|い}くことがあります。",
+        "ja_easy": "{同|おな}じ{区役所|くやくしょ}で、1{回|かい}で{済|す}むことが{多|おお}いです。でも、{課|か}がちがいます。{書類|しょるい}が{足|た}りないと、もう{一度|いちど}{行|い}きます。",
+        "en": "Often these can be done in one trip to the same ward office, but this is not guaranteed: the sections are separate, and you may need to come back if a document is missing."
       },
       "evidence": {
         "source_ids": [
           "nagoya-lifescene-tennyu"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -225,66 +226,66 @@
     },
     {
       "id": "rel-job-permit-before-kyujin",
-      "type": "legal_prerequisite",
+      "type": "practical_prerequisite",
       "from": "zairyu-shikakugai",
       "to": "job-kyujin",
       "satisfied_when_rule_ids": [
         "R-job-permit-yes"
       ],
       "explain": {
-        "ja": "{働|はたら}く{前|まえ}に{許可|きょか}が{要|い}ります。{仕事|しごと}を{探|さが}すときは、{先|さき}に{許可|きょか}を{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{働|はたら}く{前|まえ}に{許可|きょか}がいります。{先|さき}に{許可|きょか}を{確認|かくにん}します（{要確認|ようかくにん}）。",
-        "en": "Permission is needed before you work, so check your permission before you look for a job (to be checked)."
+        "ja": "{働|はたら}き{始|はじ}める{前|まえ}に{許可|きょか}が{要|い}ります。{探|さが}すだけなら{要|い}りません。{会社|かいしゃ}は{在留|ざいりゅう}カードを{確認|かくにん}するので、{早|はや}めに{受|う}けると{安心|あんしん}です（おすすめ）。",
+        "ja_easy": "{働|はたら}く{前|まえ}に{許可|きょか}がいります。{探|さが}すだけなら、いりません。{早|はや}めにもらうと{安心|あんしん}です（おすすめ）。",
+        "en": "Permission is needed before you start paid work, not to look for work. Employers check your card, so getting it early helps (advice, not a rule)."
       },
       "evidence": {
         "source_ids": [
           "B-moj-shikakugai"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
       }
     },
     {
       "id": "rel-job-permit-before-rodo-joken",
-      "type": "legal_prerequisite",
+      "type": "practical_prerequisite",
       "from": "zairyu-shikakugai",
       "to": "job-rodo-joken",
       "satisfied_when_rule_ids": [
         "R-job-permit-yes"
       ],
       "explain": {
-        "ja": "{契約|けいやく}して{働|はたら}き{始|はじ}める{前|まえ}に、{許可|きょか}を{受|う}けておきます（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{契約|けいやく}して{働|はたら}く{前|まえ}に、{許可|きょか}をもらいます（{要確認|ようかくにん}）。",
-        "en": "Get the permission before you sign a contract and start work (to be checked)."
+        "ja": "{働|はたら}き{始|はじ}める{前|まえ}に{許可|きょか}が{要|い}ります。{契約|けいやく}の{話|はなし}や{条件|じょうけん}の{確認|かくにん}だけなら{要|い}りません。{早|はや}めに{受|う}けておくと{安心|あんしん}です（おすすめ）。",
+        "ja_easy": "{働|はたら}く{前|まえ}に{許可|きょか}がいります。{条件|じょうけん}を{聞|き}くだけなら、いりません。{早|はや}めにもらうと{安心|あんしん}です（おすすめ）。",
+        "en": "Permission is needed before you start work, not to discuss a contract or check conditions. Getting it early helps (advice, not a rule)."
       },
       "evidence": {
         "source_ids": [
           "B-moj-shikakugai"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
       }
     },
     {
       "id": "rel-job-permit-before-chingin",
-      "type": "legal_prerequisite",
+      "type": "practical_prerequisite",
       "from": "zairyu-shikakugai",
       "to": "job-saitei-chingin",
       "satisfied_when_rule_ids": [
         "R-job-permit-yes"
       ],
       "explain": {
-        "ja": "{時給|じきゅう}を{決|き}めて{働|はたら}き{始|はじ}める{前|まえ}に、{許可|きょか}を{受|う}けておきます（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{時給|じきゅう}を{決|き}めて{働|はたら}く{前|まえ}に、{許可|きょか}をもらいます（{要確認|ようかくにん}）。",
-        "en": "Get the permission before you agree an hourly wage and start work (to be checked)."
+        "ja": "{時給|じきゅう}を{調|しら}べるだけなら{許可|きょか}は{要|い}りません。{働|はたら}き{始|はじ}める{前|まえ}には{要|い}ります（おすすめ：{早|はや}めに{受|う}ける）。",
+        "ja_easy": "{時給|じきゅう}を{調|しら}べるだけなら、いりません。{働|はたら}く{前|まえ}にはいります（おすすめ）。",
+        "en": "You do not need permission just to check wages. You need it before you start work (advice: get it early)."
       },
       "evidence": {
         "source_ids": [
           "B-moj-shikakugai"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
       }

@@ -45,9 +45,9 @@
     "reading": "ろうどうじょうけんのめいじとがいこくじんろうどうしゃそうだんこーなー"
   },
   "summary": {
-    "ja": "{契約|けいやく}を{結|むす}ぶとき、{会社|かいしゃ}は{賃金|ちんぎん}や{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせることになっています（{要|よう}{確認|かくにん}）。{知|し}らされた{条件|じょうけん}が{事実|じじつ}と{違|ちが}うときは、すぐに{契約|けいやく}をやめることができます（{労働|ろうどう}{基準|きじゅん}{法|ほう}{第|だい}15{条|じょう}{第|だい}2{項|こう}）。{外国語|がいこくご}で{相談|そうだん}できる{窓口|まどぐち}があります。{曜日|ようび}と{時間|じかん}が{変|か}わることがあるので、{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
-    "ja_easy": "{契約|けいやく}のとき、{会社|かいしゃ}は{給料|きゅうりょう}や{働|はたら}く{時間|じかん}を{紙|かみ}で{知|し}らせます（{要確認|ようかくにん}）。{紙|かみ}と{違|ちが}うときは、すぐにやめることができます。{外国語|がいこくご}で{相談|そうだん}できる{所|ところ}があります。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
-    "en": "When you sign a contract, the employer is to give you your wages, working hours and other conditions in writing (to be checked). If the conditions given differ from the facts, you can end the contract immediately (Labor Standards Act, Art. 15, para. 2). There are places where you can consult in a foreign language. Days and hours can change, so check the day and time before you go."
+    "ja": "{契約|けいやく}を{結|むす}ぶとき、{会社|かいしゃ}は{賃金|ちんぎん}や{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせることになっています。{希望|きぼう}すれば、メール・FAX・SNS でも{受|う}け{取|と}れます（{印刷|いんさつ}できるもの。{要|よう}{確認|かくにん}）。{知|し}らされた{条件|じょうけん}が{事実|じじつ}と{違|ちが}うときは、すぐに{契約|けいやく}をやめることができます（{労働|ろうどう}{基準|きじゅん}{法|ほう}{第|だい}15{条|じょう}{第|だい}2{項|こう}）。{外国語|がいこくご}で{相談|そうだん}できる{窓口|まどぐち}があります。{曜日|ようび}と{時間|じかん}が{変|か}わることがあるので、{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+    "ja_easy": "{契約|けいやく}のとき、{会社|かいしゃ}は{給料|きゅうりょう}や{働|はたら}く{時間|じかん}を{紙|かみ}で{知|し}らせます。{希望|きぼう}すれば、メールなどでも{受|う}け{取|と}れます（{印刷|いんさつ}できるもの。{要確認|ようかくにん}）。{紙|かみ}と{違|ちが}うときは、すぐにやめることができます。{外国語|がいこくご}で{相談|そうだん}できる{所|ところ}があります。{行|い}く{前|まえ}に{曜日|ようび}と{時間|じかん}を{確認|かくにん}します。",
+    "en": "When you sign a contract, the employer is to give you your wages, working hours and other conditions in writing. If you ask for it, email, fax or a messaging app is also allowed, if you can print it (to be checked). If the conditions given differ from the facts, you can end the contract immediately (Labor Standards Act, Art. 15, para. 2). There are places where you can consult in a foreign language. Days and hours can change, so check the day and time before you go."
   },
   "where": {
     "text": {
@@ -140,13 +140,14 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{会社|かいしゃ}は{契約|けいやく}のとき、{賃金|ちんぎん}・{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせます。{条件|じょうけん}を{書|か}いたものをもらいます。",
-        "ja_easy": "{契約|けいやく}のとき、{給料|きゅうりょう}や{時間|じかん}を{紙|かみ}で{知|し}らせます。{書|か}いた{紙|かみ}をもらいます。",
-        "en": "At contract signing the employer notifies you of wages, hours and other conditions in writing. Get the conditions in writing."
+        "ja": "{会社|かいしゃ}は{契約|けいやく}のとき、{賃金|ちんぎん}・{労働|ろうどう}{時間|じかん}などの{労働|ろうどう}{条件|じょうけん}を{書面|しょめん}で{知|し}らせます。あなたが{望|のぞ}めば、メール・FAX・SNS でもよく、{印刷|いんさつ}できることが{条件|じょうけん}です。",
+        "ja_easy": "{契約|けいやく}のとき、{給料|きゅうりょう}や{時間|じかん}を{紙|かみ}で{知|し}らせます。あなたが{望|のぞ}めば、メールなどでもよいです（{印刷|いんさつ}できるもの）。",
+        "en": "The employer gives you wages, hours and other conditions in writing. Email, fax or a messaging app is OK only if you want it and you can print it."
       },
       "evidence": {
         "source_ids": [
-          "B-mhlw-keiyaku-meiji"
+          "B-mhlw-keiyaku-meiji",
+          "mhlw-meiji-leaflet"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",

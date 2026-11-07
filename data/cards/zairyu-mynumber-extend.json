@@ -69,20 +69,21 @@
     "reading": "まいなんばーかーどのゆうこうきげんのえんちょう"
   },
   "summary": {
-    "ja": "{更新|こうしん}の{許可|きょか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、{区役所|くやくしょ}で{期限|きげん}を{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、マイナンバーカードの{期限|きげん}も{区役所|くやくしょ}で{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
-    "en": "After you receive your new residence card, extend your My Number Card at the ward office before it expires. It does not change automatically (to be checked). If the card expires before the renewal result comes out, go to the ward office before it expires to extend it for the special period (to be checked)."
+    "ja": "{更新|こうしん}の{許可|きょか}が{出|で}て{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、マイナンバーカードの{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に、{区役所|くやくしょ}で{期限|きげん}を{延|の}ばします。{自動|じどう}では{変|か}わりません（{要|よう}{確認|かくにん}）。{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}をします（{最長|さいちょう}2か{月|げつ}）。",
+    "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、マイナンバーカードの{期限|きげん}も{区役所|くやくしょ}で{延|の}ばします。{自動|じどう}では{変|か}わりません（{要確認|ようかくにん}）。{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}をします（{最長|さいちょう}2か{月|げつ}）。",
+    "en": "After you receive your new residence card, extend your My Number Card at the ward office before it expires. It does not change automatically (to be checked). If the card expires before the result comes out, extend it at the ward office before it expires (special period, up to 2 months)."
   },
   "where": {
     "text": {
-      "ja": "お{住|す}まいの{市区町村|しくちょうそん}の{窓口|まどぐち}（{名古屋市|なごやし}は{区役所|くやくしょ}・{支所|ししょ}。{窓口|まどぐち}で{確認|かくにん}・{要|よう}{確認|かくにん}）",
-      "ja_easy": "{住|す}んでいる{市|し}の{窓口|まどぐち}（{名古屋市|なごやし}は{区役所|くやくしょ}）（{要確認|ようかくにん}）",
-      "en": "The counter of your municipality (in Nagoya, the ward office or branch office; to be checked)"
+      "ja": "{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）。{更新|こうしん}の{結果|けっか}を{待|ま}つ{間|ま}の{延長|えんちょう}は、{窓口|まどぐち}に{電話|でんわ}で{確認|かくにん}します（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）。{結果|けっか}を{待|ま}つ{間|ま}の{延長|えんちょう}は、{窓口|まどぐち}に{電話|でんわ}で{聞|き}きます（{要確認|ようかくにん}）",
+      "en": "Citizens Section of the ward office (Ward Residents Section at a branch office). If your renewal is still pending, call the counter first to confirm (to be checked)"
     },
     "evidence": {
       "source_ids": [
         "author-2026-11-05",
-        "IA-moj-mynumber-tokurei"
+        "IA-moj-mynumber-tokurei",
+        "nagoya-mynumber-tokkyu"
       ],
       "checked_at": "2026-11-07",
       "status": "needs_check"
@@ -92,14 +93,16 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}{以外|いがい}の{外国籍|がいこくせき}の{人|ひと}のカードの{有効|ゆうこう}{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}と{同|おな}じです。{切|き}れると{失効|しっこう}し、{新|あたら}しく{作|つく}るのに{手数料|てすうりょう}がかかります（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "カードの{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{終|お}わりの{日|ひ}と{同|おな}じです（{要|よう}{確認|かくにん}）。",
-        "en": "For foreign nationals other than permanent and special permanent residents, the card expires on the same day as the period of stay. If it expires, it becomes invalid and a new one costs a fee (to be checked)."
+        "ja": "カードの{有効|ゆうこう}{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}までです。{永住|えいじゅう}{者|しゃ}・{特別|とくべつ}{永住|えいじゅう}{者|しゃ}・{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}の{人|ひと}は{別|べつ}です。{期限|きげん}が{切|き}れたあとの{再|さい}{発行|はっこう}は1,000{円|えん}（{特急|とっきゅう}は2,000{円|えん}）です。{手数料|てすうりょう}がかからない{場合|ばあい}もあります（{名古屋|なごや}{市|し}の{一覧|いちらん}は{要|よう}{確認|かくにん}）。",
+        "ja_easy": "カードの{期限|きげん}は、{在留|ざいりゅう}{期間|きかん}の{終|お}わりの{日|ひ}までです。{永住|えいじゅう}{者|しゃ}・{特別|とくべつ}{永住|えいじゅう}{者|しゃ}・{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}の{人|ひと}はちがいます。{再|さい}{発行|はっこう}は1,000{円|えん}（{特急|とっきゅう}は2,000{円|えん}）です。お{金|かね}がかからない{場合|ばあい}もあります。{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "The card expires with your period of stay, except for permanent residents, special permanent residents and Highly Skilled Professional (ii). Reissue costs 1,000 yen (2,000 yen express). It is free in some cases; ask the counter (the Nagoya list is to be checked)."
       },
       "evidence": {
         "source_ids": [
           "author-2026-11-05",
-          "IA-moj-mynumber-tokurei"
+          "IA-moj-mynumber-tokurei",
+          "nagoya-mynumber-tokkyu",
+          "B-nagoya-mynumber-faq-pub"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",
@@ -109,13 +112,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}して{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}で{手続|てつづ}きをします。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカードを{持|も}って{行|い}きます。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{要|よう}{確認|かくにん}です。",
-        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}へ{行|い}きます。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカードを{持|も}って{行|い}きます。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
-        "en": "After you receive the new residence card, go to the counter before the expiry date, with the new residence card and your My Number Card. What Nagoya ward offices ask you to bring is to be checked."
+        "ja": "{在留|ざいりゅう}{期間|きかん}を{更新|こうしん}して{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、{有効|ゆうこう}{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}で{手続|てつづ}きをします。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカード（{暗証|あんしょう}{番号|ばんごう}も{必要|ひつよう}）を{持|も}って{行|い}きます。{予約|よやく}{制|せい}のサービスコーナーは、{窓口|まどぐち}とは{条件|じょうけん}が{違|ちが}うので、{使|つか}う{前|まえ}に{確認|かくにん}します。",
+        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードをもらったら、{期限|きげん}が{切|き}れる{前|まえ}に{窓口|まどぐち}へ{行|い}きます。{新|あたら}しい{在留|ざいりゅう}カードとマイナンバーカードを{持|も}って{行|い}きます。{暗証|あんしょう}{番号|ばんごう}もいります。{予約|よやく}のサービスコーナーは、{使|つか}う{前|まえ}に{条件|じょうけん}を{聞|き}きます。",
+        "en": "After you receive the new residence card, go to the counter before the expiry date. Bring the new residence card and your My Number Card (you also need the PIN). The reservation-only service corner has its own conditions, so check before you use it."
       },
       "evidence": {
         "source_ids": [
-          "author-2026-11-05"
+          "author-2026-11-05",
+          "B-nagoya-mynumber-faq-pub",
+          "nagoya-mynumber-service-corner"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check"
@@ -124,13 +129,14 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にマイナンバーカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}の{手続|てつづ}きをします。{持|も}ち{物|もの}は、マイナンバーカードと、「{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}{中|ちゅう}」のスタンプがある{在留|ざいりゅう}カード（オンラインで{申請|しんせい}したときは{受付|うけつけ}のメール）です。{特例|とくれい}{期間|きかん}の{延長|えんちょう}は1{回|かい}だけです。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{要|よう}{確認|かくにん}です。",
-        "ja_easy": "{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}の{手続|てつづ}きをします。{持|も}ち{物|もの}：マイナンバーカードと、「{申請中|しんせいちゅう}」のスタンプがある{在留|ざいりゅう}カード（オンラインで{申|もう}し{込|こ}んだ{人|ひと}は{受付|うけつけ}のメール）。{延長|えんちょう}は1{回|かい}だけです。{名古屋|なごや}{市|し}の{区役所|くやくしょ}の{持|も}ち{物|もの}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。",
-        "en": "If your card expires before the renewal result comes out, go to the ward office before it expires and extend it for the special period. Bring your My Number Card and your residence card with the \"renewal application pending\" stamp (for an online application, the acknowledgement email). The special period can be extended only once. What Nagoya ward offices ask you to bring is to be checked."
+        "ja": "{更新|こうしん}の{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{特例|とくれい}{期間|きかん}の{延長|えんちょう}をします。{持|も}ち{物|もの}：マイナンバーカード、{在留|ざいりゅう}カード、「{申請|しんせい}{中|ちゅう}」のスタンプ（オンラインで{申請|しんせい}した{人|ひと}は、{入管|にゅうかん}の{受付|うけつけ}{完了|かんりょう}メール）。{延長|えんちょう}されるのは{結果|けっか}を{待|ま}つ{間|ま}（{最長|さいちょう}2か{月|げつ}）だけで、{再|さい}{延長|えんちょう}はできません。{新|あたら}しい{在留|ざいりゅう}カードを{受|う}け{取|と}ったら、もう{一度|いちど}{窓口|まどぐち}でカードの{期限|きげん}を{更新|こうしん}します。{名古屋|なごや}{市|し}の{窓口|まどぐち}がメールを{受|う}け{付|つ}けるかは、{電話|でんわ}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{結果|けっか}が{出|で}る{前|まえ}にカードの{期限|きげん}が{来|く}るときは、{期限|きげん}が{切|き}れる{前|まえ}に{区役所|くやくしょ}で{延長|えんちょう}をします。{持|も}ち{物|もの}：マイナンバーカード、{在留|ざいりゅう}カード、「{申請|しんせい}{中|ちゅう}」のスタンプ（オンラインで{申請|しんせい}した{人|ひと}は{入管|にゅうかん}の{受付|うけつけ}{完了|かんりょう}メール）。{延長|えんちょう}は{結果|けっか}を{待|ま}つ{間|ま}（{最長|さいちょう}2か{月|げつ}）だけです。もう{一度|いちど}は{延長|えんちょう}できません。{新|あたら}しい{在留|ざいりゅう}カードをもらったら、また{窓口|まどぐち}でカードの{期限|きげん}を{更新|こうしん}します。{名古屋|なごや}{市|し}がメールを{受|う}け{付|つ}けるかは、{電話|でんわ}で{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "If your card expires before the result comes out, go to the ward office before it expires. Bring your My Number Card, your residence card, and the \"pending\" stamp (if you applied online, the acceptance-complete email from Immigration). The extension covers only the waiting period (up to 2 months) and cannot be extended again. When you receive the new residence card, go back and update the card expiry. Whether Nagoya accepts the email: call to confirm (to be checked)."
       },
       "evidence": {
         "source_ids": [
-          "IA-moj-mynumber-tokurei"
+          "IA-moj-mynumber-tokurei",
+          "isa-online-application"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check"
@@ -140,7 +146,8 @@
   "evidence": {
     "source_ids": [
       "author-2026-11-05",
-      "IA-moj-mynumber-tokurei"
+      "IA-moj-mynumber-tokurei",
+      "nagoya-mynumber-tokkyu"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check",

@@ -33,22 +33,22 @@
     "reading": "こくみんけんこうほけんのかにゅう"
   },
   "summary": {
-    "ja": "{日本|にほん}に{住所|じゅうしょ}がある{人|ひと}は、どれかの{公的|こうてき}{医療|いりょう}{保険|ほけん}に{入|はい}ります。{職場|しょくば}の{健康|けんこう}{保険|ほけん}などに{入|はい}っていない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{住民|じゅうみん}{登録|とうろく}のある{外国|がいこく}{人|じん}（3か{月|げつ}を{超|こ}える{在留|ざいりゅう}）も{対象|たいしょう}です（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{日本|にほん}に{住|す}んでいる{人|ひと}は、{健康|けんこう}{保険|ほけん}に{入|はい}ります。{会社|かいしゃ}の{保険|ほけん}がない{人|ひと}は、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。3か{月|げつ}より{長|なが}く{日本|にほん}にいる{外国|がいこく}{人|じん}も{入|はい}ります（{要|よう}{確認|かくにん}）。",
-    "en": "Everyone with an address in Japan must be in a public health insurance. If you are not covered by an employer's insurance, join National Health Insurance at the insurance and pension section of your ward office. Foreign residents registered for more than 3 months are included (to be checked)."
+    "ja": "{名古屋|なごや}{市|し}に{住|す}んでいて、{職場|しょくば}の{健康|けんこう}{保険|ほけん}にも{扶養|ふよう}にも{入|はい}っていない{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}（{支所|ししょ}は{区民|くみん}{福祉|ふくし}{課|か}）で{手続|てつづ}きします。{外国|がいこく}{人|じん}は、3か{月|げつ}を{超|こ}えて{在留|ざいりゅう}するときに{対象|たいしょう}です。75{歳|さい}{以上|いじょう}の{人|ひと}、{生活|せいかつ}{保護|ほご}を{受|う}けている{世帯|せたい}、{医療|いりょう}{滞在|たいざい}や{長期|ちょうき}{滞在|たいざい}（{観光|かんこう}など）の「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{対象|たいしょう}{外|がい}です。",
+    "ja_easy": "{名古屋|なごや}{市|し}に{住|す}んでいて、{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}に{入|はい}っていない{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{手続|てつづ}きします。3か{月|げつ}より{長|なが}く{日本|にほん}にいる{外国|がいこく}{人|じん}も{入|はい}ります。75{歳|さい}{以上|いじょう}の{人|ひと}、{生活|せいかつ}{保護|ほご}の{世帯|せたい}、{医療|いりょう}や{観光|かんこう}で{長|なが}くいる「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{入|はい}りません。",
+    "en": "If you live in Nagoya and are covered neither by workplace insurance nor as a dependant, join National Health Insurance at the insurance and pension section of your ward office (the ward welfare section at a branch office). Foreign residents qualify with a stay of more than 3 months. Exceptions include people aged 75 or over, households on public assistance, and Designated Activities for medical stay or long-stay tourism."
   },
   "deadline": {
     "text": {
-      "ja": "{加入|かにゅう}の{届出|とどけで}は、{原則|げんそく}として{事実|じじつ}（{転入|てんにゅう}・{退職|たいしょく}など）があった{日|ひ}から14{日|にち}{以内|いない}。{遅|おく}れると、{届出|とどけで}の{日|ひ}からしか{保険|ほけん}が{使|つか}えず、{前日|ぜんじつ}までの{医療|いりょう}{費|ひ}は{全額|ぜんがく}{自己|じこ}{負担|ふたん}になります（{要|よう}{確認|かくにん}）",
-      "ja_easy": "14{日|にち}いないに{届|とど}けます。{遅|おく}れると、{病院|びょういん}のお{金|かね}を{全部|ぜんぶ}{自分|じぶん}で{払|はら}うことがあります（{要|よう}{確認|かくにん}）",
-      "en": "Report within 14 days of the event (as a rule). If you are late, insurance applies only from the report date, and earlier medical costs are fully out of pocket (to be checked)."
+      "ja": "{加入|かにゅう}の{届出|とどけで}は、{原則|げんそく}として{事実|じじつ}（{転入|てんにゅう}・{退職|たいしょく}など）があった{日|ひ}から14{日|にち}{以内|いない}。{遅|おく}れると、{原則|げんそく}として{届出|とどけで}の{日|ひ}からしか{保険|ほけん}が{使|つか}えず、その{前|まえ}の{医療|いりょう}{費|ひ}は{全額|ぜんがく}{自己|じこ}{負担|ふたん}になります",
+      "ja_easy": "14{日|にち}いないに{届|とど}けます。{遅|おく}れると、{原則|げんそく}として、{届|とど}けた{日|ひ}からしか{保険|ほけん}が{使|つか}えません。その{前|まえ}の{病院|びょういん}のお{金|かね}は、{全部|ぜんぶ}{自分|じぶん}で{払|はら}います",
+      "en": "Report within 14 days of the event (as a rule). If you are late, insurance as a rule applies only from the report date, and earlier medical costs are fully out of pocket"
     },
     "evidence": {
       "source_ids": [
         "nagoya-kokuho-kanyu-page",
         "B-nagoya-kokuho-hitsuyo-pub"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-07",
       "status": "needs_check"
     }
   },
@@ -82,9 +82,10 @@
   "evidence": {
     "source_ids": [
       "nagoya-kokuho-kanyu-page",
-      "B-nagoya-kokuho-hitsuyo-pub"
+      "B-nagoya-kokuho-hitsuyo-pub",
+      "nagoya-kouki-hihokensha"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   },
   "methods": [

@@ -66,15 +66,15 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{郵便局|ゆうびんきょく}の{窓口|まどぐち}では、{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{在留|ざいりゅう}カードなど）を{見|み}せます（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{在留|ざいりゅう}カードなどを{見|み}せます（{要|よう}{確認|かくにん}）。",
-        "en": "At the counter, show an ID such as your residence card (to be checked)."
+        "ja": "{郵便|ゆうびん}{局|きょく}の{窓口|まどぐち}では、{出|だ}す{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{在留|ざいりゅう}カードなど）と、{引|ひ}っ{越|こ}す{人|ひと}の{本人|ほんにん}{確認|かくにん}{書類|しょるい}を{見|み}せます。{同|おな}じ{人|ひと}なら1つです（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{窓口|まどぐち}では、{出|だ}す{人|ひと}と{引|ひ}っ{越|こ}す{人|ひと}の{在留|ざいりゅう}カードなどを{見|み}せます。{同|おな}じ{人|ひと}なら1つです（{要確認|ようかくにん}）。",
+        "en": "At the counter, show ID (e.g. a residence card) for the person filing and for the person moving. One ID is enough if they are the same person (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "jp-post-tenkyo"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "転居届の提出の際に、提出者の本人確認をさせていただいております。"
       }

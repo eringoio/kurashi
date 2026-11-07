@@ -22,19 +22,20 @@
     "reading": "きゃっしゅかーどのりようていし"
   },
   "summary": {
-    "ja": "キャッシュカードや{通帳|つうちょう}をなくした・{盗|ぬす}まれたときは、すぐに{銀行|ぎんこう}の{電話|でんわ}・アプリ・Webで{止|と}めます（{銀行|ぎんこう}ごとに{違|ちが}います）。{多|おお}くの{銀行|ぎんこう}は24{時間|じかん}{受|う}け{付|つ}けます（{第|だい}2{土曜|どよう}の{夜|よる}など、{止|と}まる{時間|じかん}がある{銀行|ぎんこう}もあります。{要|よう}{確認|かくにん}）。{止|と}めたあとで、{再|さい}{発行|はっこう}を{申|もう}し{込|こ}みます。",
-    "ja_easy": "カードや{通帳|つうちょう}をなくしたら、すぐ{銀行|ぎんこう}に{電話|でんわ}するか、アプリで{止|と}めます。{銀行|ぎんこう}によって{方法|ほうほう}が{違|ちが}います。24{時間|じかん}できる{銀行|ぎんこう}が{多|おお}いです（{要|よう}{確認|かくにん}）。",
-    "en": "If you lose your cash card or passbook, or it is stolen, stop it at once by phone, app or web form (this differs by bank). Many banks accept this 24 hours a day, though some have a short break (e.g. the night of the second Saturday at MUFG; to be checked). After stopping it, apply for a new one."
+    "ja": "キャッシュカードや{通帳|つうちょう}をなくした・{盗|ぬす}まれたときは、すぐに{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}にかけます。アプリでも{止|と}められる{銀行|ぎんこう}があります。{受|う}け{付|つ}けの{時間|じかん}や{方法|ほうほう}は{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。{止|と}めたあとで、{再|さい}{発行|はっこう}を{申|もう}し{込|こ}みます。",
+    "ja_easy": "カードや{通帳|つうちょう}をなくしたら、すぐ{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}にかけます。アプリで{止|と}められる{銀行|ぎんこう}もあります。{時間|じかん}や{方法|ほうほう}は{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "en": "Call your bank's lost-card line at once. Some banks also let you stop the card in their app. Hours and options differ by bank (to be checked). After stopping it, apply for a new one."
   },
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}・アプリ・Web（{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
-      "ja_easy": "{銀行|ぎんこう}の{電話|でんわ}か、アプリ（{銀行|ぎんこう}によって{違|ちが}います。{要|よう}{確認|かくにん}）",
-      "en": "Your bank's lost-card phone line, app or web form (differs by bank; to be checked)"
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}（アプリで{止|と}められる{銀行|ぎんこう}もあります。{銀行|ぎんこう}ごとに{違|ちが}います。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{銀行|ぎんこう}の{紛失|ふんしつ}の{電話|でんわ}（アプリで{止|と}められる{銀行|ぎんこう}もあります。{要|よう}{確認|かくにん}）",
+      "en": "Your bank's lost-card phone line (some banks also allow stopping it in the app; differs by bank; to be checked)"
     },
     "evidence": {
       "source_ids": [
+        "B-zenginkyo-loss-list",
         "B-mufg-card-loss",
         "B-yucho-funshitsu"
       ],
@@ -50,10 +51,99 @@
   "evidence": {
     "source_ids": [
       "B-mufg-card-loss",
-      "B-yucho-funshitsu"
+      "B-yucho-funshitsu",
+      "B-zenginkyo-loss-list"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check",
     "quote": "キャッシュカードを紛失した場合は、スマートフォンアプリまたは電話ですぐに利用停止登録を行ってください。"
-  }
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "ゆうちょ{銀行|ぎんこう}：カード{紛失|ふんしつ}センター 0120-794-889（24{時間|じかん}）、またはWebフォーム。",
+        "ja_easy": "ゆうちょ{銀行|ぎんこう}：0120-794-889（24{時間|じかん}）、またはWebフォーム。",
+        "en": "Japan Post Bank: Card Loss Center 0120-794-889 (24 hours), or the web form."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-yucho-funshitsu"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{三菱|みつびし}UFJ{銀行|ぎんこう}：0120-544-565（24{時間|じかん}。{第|だい}2{土曜|どよう}の{夜|よる}を{除|のぞ}く）、またはアプリ。",
+        "ja_easy": "{三菱|みつびし}UFJ{銀行|ぎんこう}：0120-544-565（24{時間|じかん}。{第|だい}2{土曜|どよう}の{夜|よる}はできません）、またはアプリ。",
+        "en": "MUFG Bank: 0120-544-565 (24 hours, except the night of the second Saturday), or the app."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-card-loss"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{三井住友|みついすみとも}{銀行|ぎんこう}：SMBCダイレクトかアプリ（{日曜|にちよう}21{時|じ}〜{月曜|げつよう}7{時|じ}を{除|のぞ}く）、または 0120-956-999（24{時間|じかん}）。",
+        "ja_easy": "{三井住友|みついすみとも}{銀行|ぎんこう}：0120-956-999（24{時間|じかん}）、またはSMBCダイレクトかアプリ（{日曜|にちよう}21{時|じ}〜{月曜|げつよう}7{時|じ}はできません）。",
+        "en": "Sumitomo Mitsui Banking Corporation: 0120-956-999 (24 hours), or SMBC Direct or the app (not Sunday 21:00 to Monday 7:00)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-smbc-card-loss"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "みずほ{銀行|ぎんこう}：{平日|へいじつ}9〜17{時|じ}は{口座|こうざ}のある{支店|してん}、それ{以外|いがい}は 0120-415-415。",
+        "ja_easy": "みずほ{銀行|ぎんこう}：{平日|へいじつ}9〜17{時|じ}は{口座|こうざ}のある{支店|してん}、ほかの{時間|じかん}は 0120-415-415。",
+        "en": "Mizuho Bank: your branch on weekdays 9:00 to 17:00, otherwise 0120-415-415."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mizuho-card-loss"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "あいち{銀行|ぎんこう}：0120-858-029（24{時間|じかん}）、またはWeb・アプリ。",
+        "ja_easy": "あいち{銀行|ぎんこう}：0120-858-029（24{時間|じかん}）、またはWeb・アプリ。",
+        "en": "Aichi Bank: 0120-858-029 (24 hours), or online or the app."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-aichibank-card-faq"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "ほかの{銀行|ぎんこう}の{連絡先|れんらくさき}（{全国|ぜんこく}{銀行|ぎんこう}{協会|きょうかい}）",
+        "ja_easy": "ほかの{銀行|ぎんこう}の{連絡先|れんらくさき}（{全国|ぜんこく}{銀行|ぎんこう}{協会|きょうかい}）",
+        "en": "Contacts for other banks (Japanese Bankers Association)"
+      },
+      "url": "https://www.zenginkyo.or.jp/abstract/loss/",
+      "source_id": "B-zenginkyo-loss-list"
+    }
+  ]
 }

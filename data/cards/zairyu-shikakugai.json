@@ -69,9 +69,9 @@
     "reading": "しかくがいかつどうきょか"
   },
   "summary": {
-    "ja": "{留学|りゅうがく}や{家族|かぞく}{滞在|たいざい}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}が{働|はたら}くときは、{働|はたら}き{始|はじ}める{前|まえ}に「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」を{受|う}けます（{要|よう}{確認|かくにん}）。{包括|ほうかつ}{許可|きょか}は{原則|げんそく}として1{週|しゅう}に28{時間|じかん}{以内|いない}で、{風俗|ふうぞく}{営業|えいぎょう}などが{行|おこな}われている{場所|ばしょ}では{働|はたら}けません（{要|よう}{確認|かくにん}）。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{留学|りゅうがく}や{家族滞在|かぞくたいざい}の{人|ひと}は、アルバイトを{始|はじ}める{前|まえ}に「{資格外活動許可|しかくがいかつどうきょか}」をもらいます（{要確認|ようかくにん}）。1{週間|しゅうかん}に28{時間|じかん}まで（{要確認|ようかくにん}）。{許可|きょか}をもらうと、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。お{金|かね}はかかりません（{要確認|ようかくにん}）。",
-    "en": "If your status is Student or Dependent, get \"permission to engage in an activity other than that permitted by the status of residence\" before you start work (to be checked). The general permission is, in principle, up to 28 hours a week, and not at places running adult-entertainment businesses (to be checked). The permission is written on the back of your residence card. No fee (to be checked)."
+    "ja": "{留学|りゅうがく}や{家族|かぞく}{滞在|たいざい}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}が{働|はたら}くときは、{働|はたら}き{始|はじ}める{前|まえ}に「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」を{受|う}けます（{要|よう}{確認|かくにん}）。{包括|ほうかつ}{許可|きょか}は{原則|げんそく}として1{週|しゅう}に28{時間|じかん}{以内|いない}で、{風俗|ふうぞく}{営業|えいぎょう}などが{行|おこな}われている{場所|ばしょ}では{働|はたら}けません（{要|よう}{確認|かくにん}）。{許可|きょか}の{内容|ないよう}は、{在留|ざいりゅう}カードに{書|か}かれます。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{留学|りゅうがく}や{家族滞在|かぞくたいざい}の{人|ひと}は、アルバイトを{始|はじ}める{前|まえ}に「{資格外活動許可|しかくがいかつどうきょか}」をもらいます（{要確認|ようかくにん}）。1{週間|しゅうかん}に28{時間|じかん}まで（{要確認|ようかくにん}）。{許可|きょか}の{内容|ないよう}は、{在留|ざいりゅう}カードに{書|か}かれます。お{金|かね}はかかりません（{要確認|ようかくにん}）。",
+    "en": "If your status is Student or Dependent, get \"permission to engage in an activity other than that permitted by the status of residence\" before you start work (to be checked). The general permission is, in principle, up to 28 hours a week, and not at places running adult-entertainment businesses (to be checked). The permission is written on your residence card. No fee (to be checked)."
   },
   "where": {
     "text": {
@@ -92,17 +92,17 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{在留|ざいりゅう}カードを{見|み}せて、{申請|しんせい}{書|しょ}を{出|だ}します。{旅券|りょけん}（パスポート）も{持|も}って{行|い}きます。",
-        "ja_easy": "{在留|ざいりゅう}カードとパスポートを{持|も}って{行|い}きます。",
-        "en": "Show your residence card and submit the application form. Also bring your passport."
+        "ja": "{在留|ざいりゅう}カードを{見|み}せて、{申請|しんせい}{書|しょ}を{出|だ}します。{旅券|りょけん}（パスポート）か{在留|ざいりゅう}{資格|しかく}{証明書|しょうめいしょ}も{持|も}って{行|い}きます。ほかの{書類|しょるい}は、{在留|ざいりゅう}{資格|しかく}や{許可|きょか}の{種類|しゅるい}で{違|ちが}います。",
+        "ja_easy": "{在留|ざいりゅう}カードとパスポートを{持|も}って{行|い}きます。ほかの{書類|しょるい}は{入管|にゅうかん}で{聞|き}きます。",
+        "en": "Show your residence card and submit the application form. Also bring your passport or certificate of status of residence. Other documents depend on your status and the type of permission."
       },
       "evidence": {
         "source_ids": [
-          "author-2026-11-07"
+          "author-2026-11-07",
+          "B-moj-shikakugai-shinsei"
         ],
         "checked_at": "2026-11-07",
-        "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "status": "needs_check"
       }
     },
     {
@@ -140,9 +140,9 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は2{週間|しゅうかん}から2か{月|げつ}です。{働|はたら}き{始|はじ}める{日|ひ}の{前|まえ}に{余裕|よゆう}をもって{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{許可|きょか}が{出|で}るまで、2{週間|しゅうかん}から2か{月|げつ}かかります。はやめに{行|い}きます（{要確認|ようかくにん}）。",
-        "en": "The standard processing time is 2 weeks to 2 months. Apply well before your first work day (to be checked)."
+        "ja": "{標準|ひょうじゅん}{処理|しょり}{期間|きかん}は2{週間|しゅうかん}から2か{月|げつ}です（{目安|めやす}）。{働|はたら}き{始|はじ}める{前|まえ}に{余裕|よゆう}をもって{申請|しんせい}します。{申請|しんせい}しただけでは{働|はたら}けません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "2{週間|しゅうかん}から2か{月|げつ}くらいかかるのが{目安|めやす}です。{許可|きょか}が{出|で}るまで{働|はたら}けません。はやめに{行|い}きます（{要確認|ようかくにん}）。",
+        "en": "The standard processing time is 2 weeks to 2 months (an estimate). Apply well before your first work day. Applying alone does not let you work (to be checked)."
       },
       "evidence": {
         "source_ids": [
@@ -156,23 +156,34 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードの{裏面|うらめん}に{許可|きょか}の{内容|ないよう}が{記載|きさい}され、カードの IC チップにも{書|か}き{込|こ}まれます。",
-        "ja_easy": "{許可|きょか}をもらうと、{在留|ざいりゅう}カードの{裏|うら}に{書|か}かれます。",
-        "en": "Once permitted, the outline of the permission is written on the back of your residence card and on its IC chip."
+        "ja": "{許可|きょか}の{内容|ないよう}は、{在留|ざいりゅう}カード（{新|あたら}しい{一体型|いったいがた}は{表|おもて}。{従来|じゅうらい}は{裏|うら}）に{書|か}かれ、IC チップにも{入|はい}ります。{個別|こべつ}{許可|きょか}では「{資格外|しかくがい}{活動|かつどう}{許可書|きょかしょ}」も{出|で}るので、{旅券|りょけん}と{一緒|いっしょ}に{持|も}ちます。",
+        "ja_easy": "{許可|きょか}の{内容|ないよう}は、{在留|ざいりゅう}カードに{書|か}かれます。{仕事|しごと}ごとの{許可|きょか}では「{資格外活動許可書|しかくがいかつどうきょかしょ}」ももらいます。パスポートと{一緒|いっしょ}に{持|も}ちます。",
+        "en": "The permission is written on your residence card (on the back; on the front of the new combined card) and on its IC chip. An individual permit also comes with a permission document (資格外活動許可書): keep it with your passport."
       },
       "evidence": {
         "source_ids": [
-          "B-moj-shikakugai"
+          "B-moj-shikakugai",
+          "isa-card-guide"
         ],
         "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "在留カードの裏面には、資格外活動許可を受けている場合に、その許可の要旨が記載され、在留カードに内蔵するICチップにも書き込まれます。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "f654d31c87ce4467afee7b17eade59ff1c4721dd33d4b0b93196497e4b3a7679",
-          "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-shikakugai/c15"
-        }
+        "status": "needs_check",
+        "quote": "在留カードの裏面には、資格外活動許可を受けている場合に、その許可の要旨が記載され、在留カードに内蔵するICチップにも書き込まれます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ほとんどの{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}の{人|ひと}は、{包括|ほうかつ}{許可|きょか}（1{週|しゅう}に28{時間|じかん}{以内|いない}）です。それをこえる{仕事|しごと}や{決|き}まった{仕事|しごと}は、{個別|こべつ}{許可|きょか}が{要|い}ります。カードの{欄|らん}を{見|み}てください。",
+        "ja_easy": "{包括|ほうかつ}{許可|きょか}は1{週間|しゅうかん}に28{時間|じかん}まで。それより{多|おお}い{仕事|しごと}は、{仕事|しごと}ごとの{許可|きょか}（{個別|こべつ}{許可|きょか}）がいります。カードの{欄|らん}を{見|み}ます。",
+        "en": "Most students and dependents get a blanket permit: up to 28 hours a week (students: up to 8 hours a day in school vacations). Work outside that needs an individual permit for a specific job. Check the field on your card."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-shikakugai-taisho",
+          "B-moj-shikakugai-shinsei"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check"
       }
     },
     {
@@ -189,6 +200,22 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "「留学」の在留資格をもって在留する外国人が、在籍する大学又は高等専門学校（第４学年、第５学年及び専攻科に限る。）との契約に基づいて報酬を受けて行う教育又は研究を補助する活動については、資格外活動の許可を受けることを要しない"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "オンラインは、{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}・{期間|きかん}の{更新|こうしん}・{資格|しかく}の{取得|しゅとく}の{申請|しんせい}と{同時|どうじ}に{出|だ}すときだけです。",
+        "ja_easy": "オンラインは、{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}・{更新|こうしん}・{取得|しゅとく}と{一緒|いっしょ}に{出|だ}すときだけです。",
+        "en": "Online filing is only possible together with an application to change, extend or acquire a status of residence."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikakugai-shinsei"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "資格外活動許可申請は、オンラインで申請できます（ただし、在留資格変更許可申請、在留期間更新許可申請又は在留資格取得許可申請と同時に行う場合に限ります。）。"
       }
     }
   ],

@@ -43,9 +43,9 @@
       "from": "2027-01-11",
       "to": null,
       "label": {
-        "ja": "インターネットの事前予約だけです（2027年1月11日から）。午前の搬入は前日23時59分まで、午後は当日11時59分までに申し込みます。",
-        "ja_easy": "インターネットで{先|さき}に{予約|よやく}します（2027{年|ねん}1{月|がつ}11{日|にち}から）。",
-        "en": "Online booking only (from Jan 11, 2027). Book by 23:59 the day before for morning, by 11:59 the same day for afternoon."
+        "ja": "インターネットの事前予約だけです（2027年1月11日から）。午前の搬入は前日23時59分まで、午後は当日11時59分までに申し込みます。手数料の減免を受ける人（災害ごみなど）は、ネット予約を使えません。区の環境事業所に聞いてください。",
+        "ja_easy": "インターネットで{先|さき}に{予約|よやく}します（2027{年|ねん}1{月|がつ}11{日|にち}から）。{手数料|てすうりょう}を{減|へ}らす・なくす{人|ひと}（{災害|さいがい}のごみなど）は、ネットで{予約|よやく}できません。{区|く}の{環境事業所|かんきょうじぎょうしょ}に{聞|き}いてください。",
+        "en": "Online booking only (from Jan 11, 2027). Book by 23:59 the day before for morning, by 11:59 the same day for afternoon. If you get a fee reduction (e.g. disaster waste), you cannot book online: ask your ward's Environmental Office."
       },
       "evidence": {
         "source_ids": [
