@@ -23,7 +23,7 @@ describe('更新のエージェントを一般の利用者が動かせない', (
     }
   });
   it('Worker の /api/* は、決まった5つだけ（更新を動かす経路が無い）', () => {
-    const routes = [...read('worker/index.ts').matchAll(/url\.pathname === '([^']+)'/g)].map((m) => m[1]).sort();
+    const routes = [...new Set([...read('worker/index.ts').matchAll(/url\.pathname === '([^']+)'/g)].map((m) => m[1]))].sort();
     expect(routes).toEqual(['/api/ev', '/api/read-document', '/api/report', '/api/reports', '/api/usage']);
   });
   it.skipIf(!hasWf)('ワークフローは手で動かすときだけ。pull_request・push・pull_request_target では動かない', () => {

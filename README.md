@@ -69,6 +69,13 @@ npm run deploy
   - `npx wrangler secret delete ANTHROPIC_API_KEY`
   - Console でキーを無効にする
 
+### まちがいを知らせる（報告）
+
+- 報告は KV（`REPORTS`）に保存し、1年で自動で消えます。名前・連絡先・IP は保存しません。
+- KV が無いとき、本番は 503 を返します（受け付けたように見せません）。
+- 回数の制限は IP ごとに1分3件です（Cloudflare の Rate Limiting。目安で、IP は残しません）。
+- 作者は `/review` の「報告」で、Worker のシークレット `REPORTS_TOKEN` を入れて読みます。
+
 ## データ
 
 ガイドのデータは `data/` にあります（カードは `data/cards/` に1枚1ファイル）。形は `docs/DATA_CONTRACT.md`、言語の足し方は `docs/ADD_LANGUAGE.md`、テストの回し方は `docs/TESTS.md` です。

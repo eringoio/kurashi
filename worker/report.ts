@@ -1,21 +1,24 @@
 /* 報告ボタン（作者の指示 2026-11-06 A-9）。「案内とちがうところを知らせる」。
    POST /api/report：本文は { path, scene, text, level, at } だけ。名前・連絡先は受け取らない。1件 2,000字まで。1 IP 1分に3件まで（IP は数えるだけで残さない）。
    GET /api/reports：作者だけ（Authorization: Bearer <REPORTS_TOKEN>。トークンは Worker のシークレット）。
-   保存は KV の REPORTS（wrangler.toml の binding）。KV が無いとき（手元・作成前）は、この Worker のメモリの中だけ（消える）。ログに中身を書かない。
+   保存は KV の REPORTS（wrangler.toml の binding。1年で消える）。本番の入口（worker/index.ts）は KV が無ければ 503。メモリは手元の開発サーバーとテストだけ。ログに中身を書かない。
    11/7 B-5：任意の steps（手続きの id・状態・段階だけ。最大50件）も受け取る。 */
 import { MAX_STEPS, STEP_ID, type ReportStep } from '../src/core/reportSteps';
 
 export interface KvLike {
-  put(key: string, value: string): Promise<void>;
+  put(key: string, value: string, opts?: { expirationTtl?: number }): Promise<void>;
   get(key: string): Promise<string | null>;
   list(opts?: { prefix?: string; limit?: number }): Promise<{ keys: { name: string }[] }>;
 }
-export interface Env { REPORTS?: KvLike; REPORTS_TOKEN?: string }
+export interface RateLimiter { limit(opts: { key: string }): Promise<{ success: boolean }> }
+export interface Env { REPORTS?: KvLike; REPORTS_TOKEN?: string; REPORT_LIMIT?: RateLimiter }
 
 export interface Report { id: string; path: string; scene: string | null; text: string; level: string; at: string; received_at: string; steps?: ReportStep[] }
 
 export const MAX_TEXT = 2000;
 export const PER_MINUTE = 3;
+/** 報告を残す期間（1年。作者の決定 2026-11-08。KV の expirationTtl で自動で消える） */
+export const REPORT_TTL = 31_536_000;
 
 /** KV が無いときのメモリ（手元の npm run dev・テスト・KV の作成前） */
 const mem = new Map<string, string>();
@@ -73,14 +76,22 @@ export async function handleReport(req: Request, env: Env, now = Date.now()): Pr
   const kv = env.REPORTS ?? memoryKv;
   if (req.method !== 'POST') return json(405, { error: 'method' });
   const ip = req.headers.get('cf-connecting-ip') ?? 'local';
-  if (!allow(ip, now)) return json(429, { error: 'too_many' });
+  // 回数の制限：本番は Cloudflare の Rate Limiting（REPORT_LIMIT。Worker どうしで共有。IP は数えるだけで残さない）。無いとき（手元・テスト）はこの Worker のメモリ
+  const ok = env.REPORT_LIMIT ? (await env.REPORT_LIMIT.limit({ key: 'report:' + ip })).success : allow(ip, now);
+  if (!ok) return json(429, { error: 'too_many' });
   let body: unknown;
   try { body = await req.json(); } catch { return json(400, { error: 'body' }); }
   const r = parseReport(body);
   if (typeof r === 'string') return json(400, { error: r });
   const received_at = new Date(now).toISOString();
   const id = received_at.replace(/[-:.TZ]/g, '') + '-' + Math.random().toString(36).slice(2, 8);
-  await kv.put('report:' + id, JSON.stringify({ id, ...r, received_at } satisfies Report));
+  // 書き込めたときだけ 201。失敗したら成功と言わない（本文はログに書かない）
+  try {
+    await kv.put('report:' + id, JSON.stringify({ id, ...r, received_at } satisfies Report), { expirationTtl: REPORT_TTL });
+  } catch {
+    console.warn('report: storage_failed');
+    return json(503, { error: 'storage_failed' });
+  }
   return json(201, { ok: true });
 }
 
@@ -90,9 +101,14 @@ export async function handleReports(req: Request, env: Env): Promise<Response> {
   const auth = req.headers.get('authorization') ?? '';
   if (auth !== 'Bearer ' + env.REPORTS_TOKEN) return json(401, { error: 'unauthorized' });
   const kv = env.REPORTS ?? memoryKv;
-  const { keys } = await kv.list({ prefix: 'report:', limit: 1000 });
   const list: Report[] = [];
-  for (const k of keys) { const v = await kv.get(k.name); if (v) list.push(JSON.parse(v) as Report); }
+  try {
+    const { keys } = await kv.list({ prefix: 'report:', limit: 1000 });
+    for (const k of keys) { const v = await kv.get(k.name); if (v) list.push(JSON.parse(v) as Report); }
+  } catch {
+    console.warn('reports: storage_failed');
+    return json(503, { error: 'storage_failed' });
+  }
   list.sort((a, b) => b.received_at.localeCompare(a.received_at));
   return json(200, { reports: list });
 }

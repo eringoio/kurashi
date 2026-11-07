@@ -42,11 +42,17 @@ dataset = "kurashi_ev"
 # 公開の URL（作者が Cloudflare で eringo.io を持っているとき）。待ち：作者の確認のあとで外す
 # routes = [{ pattern = "kurashi.eringo.io", custom_domain = true }]
 
-# 報告ボタン（A-9。作者の指示 2026-11-06）。待ち：作者が KV を作る（npx wrangler kv namespace create REPORTS）→ 出た id を下に書いて # を外す。
-# 一覧を見るトークンは npx wrangler secret put REPORTS_TOKEN（ここには書かない）。KV が無いあいだは、Worker のメモリの中だけ（消える）。
-# [[kv_namespaces]]
-# binding = "REPORTS"
-# id = "<作者が作った KV の id>"
+# 報告ボタン（A-9。作者の指示 2026-11-06）。KV「REPORTS」（2026-11-08 に作成。id は秘密ではない）。報告は1年で消える。
+# 一覧を見るトークンは npx wrangler secret put REPORTS_TOKEN（ここには書かない）。本番の入口は KV が無ければ 503（メモリに置いて成功と言わない）。
+# 報告の回数の制限（IP ごとに1分3件。Worker どうしで共有する目安。IP は残さない）
+[[ratelimits]]
+name = "REPORT_LIMIT"
+namespace_id = "1002"
+simple = { limit = 3, period = 60 }
+
+[[kv_namespaces]]
+binding = "REPORTS"
+id = "af48cd5ee551462c9bad0b0da7a566e9"
 
 # 写真の読み取りの1日の数（READ_MODE=public に要る。test では無くてよい）。待ち：npx wrangler kv namespace create USAGE → id を書いて # を外す
 # [[kv_namespaces]]
