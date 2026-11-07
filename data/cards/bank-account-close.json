@@ -162,7 +162,8 @@
     "source_ids": [
       "B-yucho-gaikokujin-pub",
       "B-yucho-faq-819",
-      "B-yucho-faq-10026"
+      "B-yucho-faq-10026",
+      "B-zenginkyo-gaikokujin-pub"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check",
@@ -171,9 +172,9 @@
   "notices": [
     {
       "text": {
-        "ja": "{口座|こうざ}・{通帳|つうちょう}・キャッシュカードを、{人|ひと}に{売|う}ったり{渡|わた}したりしないでください。{犯罪|はんざい}です。{使|つか}わない{口座|こうざ}は、{銀行|ぎんこう}で{解約|かいやく}します。",
-        "ja_easy": "{口座|こうざ}やカードを{人|ひと}に{売|う}ったり、あげたりしないでください。{犯罪|はんざい}です。",
-        "en": "Never sell or give your account, passbook or cash card to anyone. It is a crime. Close accounts you no longer use at the bank."
+        "ja": "{口座|こうざ}・{通帳|つうちょう}・キャッシュカードを、{他人|たにん}に{使|つか}わせる{目的|もくてき}で{売|う}ったり{渡|わた}したりしないでください。{犯罪|はんざい}です。{使|つか}わない{口座|こうざ}は、{銀行|ぎんこう}で{解約|かいやく}します。",
+        "ja_easy": "{他|ほか}の{人|ひと}に{使|つか}わせるために、{口座|こうざ}やカードを{売|う}ったり{渡|わた}したりしてはいけません。{犯罪|はんざい}です。",
+        "en": "Never sell or give your account, passbook or cash card to someone else so that they can use it. It is a crime. Close accounts you no longer use at the bank."
       },
       "evidence": {
         "source_ids": [

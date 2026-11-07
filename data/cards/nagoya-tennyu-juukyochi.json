@@ -27,36 +27,38 @@
     "reading": "てんにゅうとどけ（じゅうきょちのとどけで）"
   },
   "summary": {
-    "ja": "{日本|にほん}の{外|そと}から{来|き}て{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カードを{見|み}せて{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{住居|じゅうきょ}{地|ち}の{届出|とどけで}をしたとみなされます（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}はかかりません。{窓口|まどぐち}で{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
-    "ja_easy": "{日本|にほん}の{外|そと}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カードを{見|み}せて{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{住所|じゅうしょ}のとどけも{済|す}むようです（{要|よう}{確認|かくにん}）。お{金|かね}はかかりません。{窓口|まどぐち}で、{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
-    "en": "After you start living in Nagoya, submit a moving-in notice at the ward office. Show your residence card; filing the notice is treated as your residence-address notification (to be checked). No fee. At the counter, your address is written on the back of your residence card."
+    "ja": "{日本|にほん}の{外|そと}から{来|き}て{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カード（または{旅券|りょけん}）を{持|も}って{行|い}き、{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{入管|にゅうかん}への{住居|じゅうきょ}{地|ち}の{届出|とどけで}をしたことになります。{入管|にゅうかん}へ{別|べつ}に{行|い}く{必要|ひつよう}はありません。{手数料|てすうりょう}はかかりません。{窓口|まどぐち}で{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
+    "ja_easy": "{日本|にほん}の{外|そと}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{在留|ざいりゅう}カード（または{旅券|りょけん}）を{持|も}って{行|い}きます。{転入|てんにゅう}{届|とどけ}を{出|だ}すと、{入管|にゅうかん}への{住所|じゅうしょ}のとどけも{済|す}みます。{入管|にゅうかん}へ{別|べつ}に{行|い}かなくてかまいません。お{金|かね}はかかりません。{窓口|まどぐち}で、{在留|ざいりゅう}カードの{裏|うら}に{住所|じゅうしょ}を{書|か}いてもらいます。",
+    "en": "After you start living in Nagoya, file a moving-in notice at the Citizens Section of your ward office (the Ward Residents Section at a branch office). Bring your residence card (or passport). Filing it counts as your residence-address notification to Immigration, so you do not need a separate visit to Immigration. No fee. At the counter, your address is written on the back of your residence card."
   },
   "deadline": {
     "text": {
-      "ja": "{住居|じゅうきょ}{地|ち}を{定|さだ}めた{日|ひ}から14{日|にち}{以内|いない}（{名古屋|なごや}{市|し}の{案内|あんない}では「{異動|いどう}した{日|ひ}から{数|かぞ}えて14{日|にち}{以内|いない}」）。{日|にち}の{数|かぞ}え{方|かた}は{要|よう}{確認|かくにん}。",
-      "ja_easy": "{住|す}むところが{決|き}まった{日|ひ}から14{日|にち}いない（{市|し}の{案内|あんない}では「うつった{日|ひ}から{数|かぞ}えて14{日|にち}いない」）。{日|にち}の{数|かぞ}え{方|かた}は{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
-      "en": "Within 14 days of the day you set your place of residence (the city says \"within 14 days from the day you moved\"). How to count the days: ask at the counter (to be checked)."
+      "ja": "{住居|じゅうきょ}{地|ち}を{決|き}めた{日|ひ}の{翌日|よくじつ}を1{日|にち}{目|め}として、14{日|にち}{以内|いない}。14{日|にち}めが{閉庁|へいちょう}{日|び}のときは、{次|つぎ}の{開|ひらき}{庁|ちょう}{日|び}までです（{要|よう}{確認|かくにん}）。{早|はや}めに{行|い}きます。",
+      "ja_easy": "{住|す}むところが{決|き}まった{日|ひ}の{次|つぎ}の{日|ひ}を1{日|にち}{目|め}として、14{日|にち}いないです。14{日|にち}めがお{休|やす}みの{日|ひ}のときは、{次|つぎ}に{窓口|まどぐち}が{開|ひら}く{日|ひ}までです（{要確認|ようかくにん}）。{早|はや}めに{行|い}きます。",
+      "en": "Within 14 days; the day after you set your place of residence is day 1. If day 14 is a closed day, the next open day is the deadline (to be checked). Go as early as you can."
     },
     "evidence": {
       "source_ids": [
         "nagoya-juumin-todoke",
-        "isa-juukyochi"
+        "isa-juukyochi",
+        "nagoya-lifescene-tennyu-kazu"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-07",
       "status": "needs_check"
     }
   },
   "where": {
     "text": {
-      "ja": "{住|す}む{区|く}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}",
-      "ja_easy": "{住|す}む{区|く}の{区役所|くやくしょ}",
-      "en": "Citizens Section of your ward office or branch"
+      "ja": "{住|す}む{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{住|す}む{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
+      "en": "Citizens Section of your ward office (Ward Residents Section at a branch office)"
     },
     "evidence": {
       "source_ids": [
-        "nagoya-juumin-todoke"
+        "nagoya-juumin-todoke",
+        "nagoya-lifescene-tennyu"
       ],
-      "checked_at": "2026-11-02",
+      "checked_at": "2026-11-07",
       "status": "needs_check"
     }
   },
@@ -78,7 +80,7 @@
       "nagoya-juumin-todoke",
       "isa-juukyochi"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-07",
     "status": "needs_check"
   },
   "methods": [

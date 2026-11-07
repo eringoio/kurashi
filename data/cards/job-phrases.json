@@ -98,18 +98,18 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{履歴書|りれきしょ}の{写真|しゃしん}は3か{月|げつ}{以内|いない}のもの。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます。",
-        "ja_easy": "{履歴書|りれきしょ}の{写真|しゃしん}は、3か{月|げつ}{以内|いない}のものです。{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターで{見|み}てもらえます。",
-        "en": "Use a CV photo taken within 3 months. The Nagoya Employment Service Center for Foreigners can check your CV."
+        "ja": "{履歴書|りれきしょ}の{写真|しゃしん}は、{必要|ひつよう}なときは{胸|むね}から{上|うえ}の{自分|じぶん}だけ、{縦|たて}4×{横|よこ}3cm ぐらい。ハローワークは、およそ3か{月|げつ}{以内|いない}に{撮|と}ったものをすすめています（{決|き}まりではありません）。{添削|てんさく}は{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターでできます。",
+        "ja_easy": "{履歴書|りれきしょ}の{写真|しゃしん}は、{必要|ひつよう}なときは{胸|むね}から{上|うえ}の{自分|じぶん}だけ、4×3cm ぐらい。3か{月|げつ}{以内|いない}のものがすすめです（{決|き}まりではありません）。{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターで{見|み}てもらえます。",
+        "en": "If a photo is needed: just you, chest up, about 3 × 4 cm. Hello Work recommends a photo taken within about 3 months. This is advice, not a legal rule. The Nagoya Employment Service Center for Foreigners can check your CV."
       },
       "evidence": {
         "source_ids": [
           "B-jsite-aichi-foreigner",
-          "kurashi-spec"
+          "hellowork-oubo-shorui"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "応募書類（履歴書等）の添削"
+        "quote": "概ね３ヶ月以内"
       }
     }
   ]

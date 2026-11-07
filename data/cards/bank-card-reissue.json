@@ -35,10 +35,10 @@
     },
     "evidence": {
       "source_ids": [
-        "B-mufg-jusho",
-        "B-yucho-henko"
+        "B-yucho-funshitsu",
+        "B-mufg-card-loss"
       ],
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-07",
       "status": "needs_check"
     }
   },

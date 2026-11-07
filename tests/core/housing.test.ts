@@ -53,9 +53,9 @@ describe('住まい探し（下書き）', () => {
     const o = out(other);
     expect(o.cards.every((c) => c.state === 'excluded')).toBe(true);
   });
-  it('境目：保証料は「目安。会社によってちがう（要確認）」で、2つの数字を両方書く', () => {
+  it('境目：保証料は「会社によって違う」で、重なる2つの例を書く（固定の額にしない）', () => {
     const t = plain(card('housing-guarantor').summary.ja);
-    expect(t).toContain('目安です。会社によってちがいます（要確認）');
+    expect(t).toContain('会社によって違います。国土交通省の冊子の例は');
     expect(t).toContain('35〜50%');
     expect(t).toContain('半月分');
     expect(card('housing-guarantor').methods!.some((m) => m.evidence.status === 'needs_check' && plain(m.text.ja).includes('保証料'))).toBe(true);
@@ -81,9 +81,10 @@ describe('住まい探し（下書き）', () => {
     const note = out().cards.find((c) => c.card.id === 'housing-move-in')!.notes.map((n) => n.kind);
     expect(note).toContain('related');
   });
-  it('市営住宅等：単身の留学生は、ふつう申し込めない（要確認）と書く', () => {
+  it('市営住宅等：留学生かどうかは条件ではない（単身の留学生を一律に除外しない）', () => {
     const t = plain(card('housing-public').summary.ja);
-    expect(t).toContain('単身の留学生は、ふつう申し込めません（要確認）');
+    expect(t).toContain('留学生かどうかは、条件ではありません');
+    expect(t).not.toContain('単身の留学生は、ふつう申し込めません');
     expect(card('housing-public').evidence.status).toBe('needs_check');
   });
   it('各カードに、確認先（要確認）を付ける', () => {

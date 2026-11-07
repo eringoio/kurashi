@@ -58,24 +58,25 @@
     {
       "id": "kokuho-nofu",
       "title": {
-        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}の{納付|のうふ}{書|しょ}",
-        "ja_easy": "{国民健康保険|こくみんけんこうほけん}のお{金|かね}を{払|はら}う{紙|かみ}",
-        "en": "National Health Insurance premium payment slip"
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}の{納入|のうにゅう}{通知|つうち}{書|しょ}・{納付|のうふ}{書|しょ}",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}のお{金|かね}を{払|はら}う{紙|かみ}",
+        "en": "National Health Insurance premium notice and payment slips"
       },
-      "look_for": "{納付|のうふ}{書|しょ}",
+      "look_for": "納入通知書・納付書",
       "summary": {
-        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}を{払|はら}うための{書類|しょるい}です。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
-        "ja_easy": "{保険|ほけん}のお{金|かね}を{払|はら}う{紙|かみ}です。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
-        "en": "This is for paying your National Health Insurance premium. Check the due date and amount printed on the slip."
+        "ja": "{毎年|まいとし}6{月|つき}に{届|とど}く「{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}{納入|のうにゅう}{通知|つうち}{書|しょ}」で、1{年|ねん}の{保険|ほけん}{料|りょう}が{決|き}まります。6{月|つき}から3{月|つき}まで10{回|かい}に{分|わ}けて{払|はら}います。{払|はら}い{方|かた}は{口座|こうざ}{振替|ふりかえ}がふつうで、{納付|のうふ}{書|しょ}でも{払|はら}えます。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
+        "ja_easy": "6{月|つき}に、{保険|ほけん}のお{金|かね}を{知|し}らせる{紙|かみ}が{届|とど}きます。6{月|つき}から3{月|つき}まで10{回|かい}に{分|わ}けて{払|はら}います。ふつうは{銀行|ぎんこう}の{口座|こうざ}から{引|ひ}かれます。{納付|のうふ}{書|しょ}でも{払|はら}えます。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
+        "en": "The National Health Insurance Premium Payment Notice (kokumin kenko hoken-ryo nonyu tsuchisho) arrives in June and sets the year's premium, paid in 10 installments from June to March. Automatic bank transfer is the standard method; you can also pay with a payment slip (nofusho). Check the due date and amount printed on the document."
       },
       "card_ids": [
         "nagoya-kokuho-kanyu"
       ],
       "evidence": {
         "source_ids": [
+          "nagoya-kokuho-nofu",
           "nagoya-kokuho-kanyu-page"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       },
       "issued_by_card": [

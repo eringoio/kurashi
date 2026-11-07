@@ -26,11 +26,11 @@ const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-ching
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('仕事・アルバイト（公開）', () => {
-  it('型と参照の検査を通る。19枚。verified は作者の答え・決定だけ。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。19枚。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.card_ids.length).toBe(19);
     const s = JSON.stringify(json);
-    for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.every((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
+    for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
     expect(s).not.toMatch(/https?:\/\/[^"]*\?/);
   });
@@ -79,7 +79,10 @@ describe('仕事・アルバイト（公開）', () => {
     const o = go('student');
     const order = o.cards.map((c) => c.card.id);
     for (const id of ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin']) expect(order.indexOf('zairyu-shikakugai')).toBeLessThan(order.indexOf(id));
-    expect(view(o, 'job-kyujin').notes.some((n) => n.kind === 'legal_prereq')).toBe(true);
+    // 探す・契約の話・時給の確認の前に許可が要る、とは言わない（#245）。おすすめの順の注記だけ
+    expect(view(o, 'job-kyujin').notes.some((n) => n.kind === 'practical_prereq')).toBe(true);
+    expect(view(o, 'job-kyujin').notes.some((n) => n.kind === 'legal_prereq')).toBe(false);
+    expect(data.relations.filter((r) => r.id.startsWith('rel-job-permit-before')).every((r) => r.type === 'practical_prerequisite')).toBe(true);
   });
   it('最低賃金：日付つき（2026年10月1日から 愛知県 1,195円。作者 11/7 K-13：前の額は書かず最小限、くわしくは労働局のリンク）。needs_check', () => {
     const c = view(go('student'), 'job-saitei-chingin').card;
@@ -142,6 +145,41 @@ describe('就職・退職（下書き）', () => {
     expect(st(g('leave', 'japanese'), 'job-leave-nyukan')).toBe('excluded');
     expect(plain(data.cards.find((c) => c.id === 'job-leave-nyukan')!.summary.ja)).toContain('3か月');
   });
+  it('入管の届け（就職・退職）：契約機関と活動機関の2つ。一覧・起点の日・方法ごとの書類。オンラインだけ「資料不要」', () => {
+    for (const id of ['job-employ-nyukan', 'job-leave-nyukan']) {
+      const c = data.cards.find((x) => x.id === id)!;
+      const all = JSON.stringify(c);
+      const t = plain(JSON.stringify(c.methods!.map((m) => m.text.ja)));
+      expect(c.links!.map((l) => l.url)).toEqual(['https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00015.html', 'https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00014.html']);
+      for (const w of ['特定技能', '介護', '興行', '研究', '高度専門職1号イ・ロ', '契約機関の届出', '教授', '経営・管理', '企業内転勤', '法律・会計業務', '高度専門職1号ハ', '留学', '活動機関の届出']) expect(t, id + w).toContain(w);
+      expect(plain(c.deadline!.text.ja)).toContain('14日以内');
+      expect(plain(c.deadline!.text.ja)).toMatch(/契約.*(日|から).*活動機関/s);
+      const online = c.methods!.filter((m) => m.type === 'online' && plain(m.text.ja).includes('資料は要りません'));
+      expect(online.length).toBe(1);
+      expect(plain(c.methods!.find((m) => m.type === 'counter')!.text.ja)).toContain('在留カードを見せて');
+      expect(plain(c.methods!.find((m) => m.type === 'mail')!.text.ja)).toContain('写し');
+      expect(plain(c.summary.ja)).not.toContain('資料は要りません');
+      expect(all).not.toMatch(/"status":s*"verified"/);
+    }
+    const leave = plain(JSON.stringify(data.cards.find((x) => x.id === 'job-leave-nyukan')!.methods!.map((m) => m.text.ja)));
+    expect(leave).toContain('自動');
+    expect(leave).toContain('猶予');
+  });
+  it('資格外活動許可：包括と個別を分ける（28時間は包括だけ）。旅券か在留資格証明書。オンラインは変更・更新・取得と同時だけ', () => {
+    const c = data.cards.find((x) => x.id === 'zairyu-shikakugai')!;
+    const t = plain(c.methods!.map((m) => m.text.ja).join(" "));
+    expect(t).toContain('包括許可');
+    expect(t).toContain('個別許可');
+    expect(t).toContain('資格外活動許可書');
+    expect(t).toContain('在留資格証明書');
+    expect(t).toMatch(/同時に出すときだけ/);
+    expect(t).not.toContain('書かれます。' + '個別');
+    expect(plain(c.methods!.find((m) => /標準処理期間/.test(plain(m.text.ja)))!.text.ja_easy)).toContain('目安');
+    expect(c.methods![0].evidence.status).toBe('needs_check'); // 文を変えたので、作者がもう一度確かめるまで verified にしない
+    expect(c.methods![0].evidence.source_ids).toContain('B-moj-shikakugai-shinsei');
+    const d = plain(data.cards.find((x) => x.id === 'job-designation-note')!.summary.ja);
+    expect(d).toContain('資格外活動許可書');
+  });
   it('応募の言葉は作者の経験（author_stated）。アルバイトのときだけ', () => {
     const c = data.cards.find((x) => x.id === 'job-phrases')!;
     expect(c.evidence.note).toContain('author_stated');
@@ -173,11 +211,43 @@ describe('在留資格の区分（6A.16）', () => {
     expect(st(o, 'job-saitei-chingin')).not.toBe('excluded');
     expect(st(g('part_time', 'designated', { 'Q-work-limit': 'none' }), 'job-designation-note')).toBe('excluded');
   });
-  it('「就労不可」：留学生と同じ（資格外活動許可を聞く）。「在留資格に基づく…のみ可」：入管の届けを出す', () => {
-    const o = g('part_time', 'other', { 'Q-work-limit': 'not_allowed' });
-    expect(o.upfront.map((q) => q.id)).toContain('Q-job-permit');
-    expect(st(o, 'zairyu-shikakugai')).not.toBe('excluded');
+  it('「就労不可」：許可を聞く。許可がある人は許可の案内、許可がない人は入管で相談の1枚だけ。わからない・未回答は決めない', () => {
+    for (const s of ['other', 'designated']) {
+      const base = { 'Q-work-limit': 'not_allowed' };
+      expect(g('part_time', s, base).upfront.map((q) => q.id)).toContain('Q-job-permit');
+      const yes = g('part_time', s, { ...base, 'Q-job-permit': 'yes' });
+      expect(st(yes, 'zairyu-shikakugai'), s).not.toBe('excluded');
+      expect(st(yes, 'job-no-work-note'), s).toBe('excluded');
+      expect(st(yes, 'job-kyujin'), s).toBe('shown');
+      const no = g('part_time', s, { ...base, 'Q-job-permit': 'no' });
+      expect(st(no, 'job-no-work-note'), s).not.toBe('excluded');
+      for (const id of ['zairyu-shikakugai', 'job-kyujin', 'job-rodo-joken', 'job-saitei-chingin']) expect(st(no, id), s + id).toBe('excluded');
+      for (const a of [{} as Record<string, string>, { 'Q-job-permit': 'unknown' }]) {
+        const u = g('part_time', s, { ...base, ...a });
+        expect(st(u, 'job-kyujin'), s).not.toBe('shown');
+        expect(st(u, 'job-kyujin'), s).not.toBe('excluded');
+        expect(st(u, 'job-no-work-note'), s).not.toBe('shown');
+      }
+    }
     expect(st(g('employ', 'designated', { 'Q-work-limit': 'status_only' }), 'job-employ-nyukan')).not.toBe('excluded');
+  });
+  it('在留資格がわからない：働ける・働けないを決めない（仕事のカードは窓口で確認）', () => {
+    const u = g('part_time', 'unknown');
+    expect(st(u, 'job-kyujin')).not.toBe('shown');
+    expect(st(u, 'job-no-work-note')).not.toBe('shown');
+    expect(st(u, 'job-kyujin')).not.toBe('excluded');
+  });
+  it('留学・家族滞在は許可がなくても、許可の申請の案内を出す（働けない扱いにしない）', () => {
+    for (const s of ['student', 'family']) for (const a of [{} as Record<string, string>, { 'Q-job-permit': 'no' }, { 'Q-job-permit': 'unknown' }]) {
+      const o = g('part_time', s, a);
+      expect(st(o, 'zairyu-shikakugai'), s).not.toBe('excluded');
+      expect(st(o, 'job-no-work-note'), s).toBe('excluded');
+    }
+  });
+  it('R-job-can-work の言い方は「働ける」と言い切らない', () => {
+    const r = data.rules.get('R-job-can-work')!;
+    expect(plain(r.statement.ja_easy)).not.toBe('働ける人');
+    expect(plain(r.statement.ja_easy)).toContain('ではない');
   });
   it('留学・家族滞在の就職：在留資格の変更を先に（保険・住民税より前）', () => {
     for (const s of ['student', 'family']) {

@@ -133,15 +133,16 @@
         ]
       },
       "statement": {
-        "ja": "ほかの{公的|こうてき}な{健康|けんこう}{保険|ほけん}に{入|はい}っていない、75{歳|さい}{未満|みまん}の{人|ひと}が{対象|たいしょう}です。",
-        "ja_easy": "ほかの{健康保険|けんこうほけん}がない、75{歳|さい}より{若|わか}い{人|ひと}が{入|はい}ります。",
-        "en": "For people under 75 who are not in any other public health insurance."
+        "ja": "ほかの{公的|こうてき}な{健康|けんこう}{保険|ほけん}に{入|はい}っていない、75{歳|さい}{未満|みまん}の{人|ひと}が{対象|たいしょう}です。75{歳|さい}になると、{自動|じどう}で{後期|こうき}{高齢|こうれい}{者|しゃ}{医療|いりょう}に{移|うつ}ります。",
+        "ja_easy": "ほかの{健康|けんこう}{保険|ほけん}がない、75{歳|さい}より{若|わか}い{人|ひと}が{入|はい}ります。75{歳|さい}になると、{自動|じどう}で{別|べつ}の{制度|せいど}に{移|うつ}ります。",
+        "en": "For people under 75 who are not in any other public health insurance. At 75 you move automatically to the Latter-Stage Elderly Medical Care System."
       },
       "evidence": {
         "source_ids": [
-          "nagoya-kokuho-kanyu-page"
+          "nagoya-kokuho-kanyu-page",
+          "nagoya-kouki-hihokensha"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -163,15 +164,15 @@
         ]
       },
       "statement": {
-        "ja": "ほかの{公的|こうてき}な{医療|いりょう}{保険|ほけん}に{入|はい}っておらず、{住民|じゅうみん}{登録|とうろく}をした{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。",
-        "ja_easy": "ほかの{健康保険|けんこうほけん}がなくて、{住所|じゅうしょ}を{届|とど}けた{人|ひと}は、{国民健康保険|こくみんけんこうほけん}に{入|はい}ります。",
-        "en": "People who are registered as residents and have no other public health insurance join National Health Insurance."
+        "ja": "ほかの{公的|こうてき}な{医療|いりょう}{保険|ほけん}に{入|はい}っておらず、{住民|じゅうみん}{登録|とうろく}をした{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{医療|いりょう}{滞在|たいざい}や{長期|ちょうき}{滞在|たいざい}（{観光|かんこう}など）の「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{入|い}れません。",
+        "ja_easy": "ほかの{健康|けんこう}{保険|ほけん}がなくて、{住所|じゅうしょ}を{届|とど}けた{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}ります。{医療|いりょう}や{観光|かんこう}で{長|なが}くいる「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{入|い}れません。",
+        "en": "People who are registered as residents and have no other public health insurance join National Health Insurance. People on Designated Activities for medical stay or long-stay tourism cannot join."
       },
       "evidence": {
         "source_ids": [
           "nagoya-kokuho-kanyu-page"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -192,13 +193,15 @@
         ]
       },
       "statement": {
-        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}るかは{仕事|しごと}によります。{入|はい}るときは{会社|かいしゃ}から{案内|あんない}があり、{保険|ほけん}の{証|あかし}も{会社|かいしゃ}から{受|う}け{取|と}ります。{入|はい}らないときは{国民|こくみん}{健康|けんこう}{保険|ほけん}です。",
-        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}るかは、{仕事|しごと}で{違|ちが}います。{入|はい}るときは{会社|かいしゃ}が{教|おし}えてくれます。",
-        "en": "Whether you join workplace health insurance depends on the job. If you do, your employer tells you and gives you the insurance document. If not, you join National Health Insurance."
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}るかは{仕事|しごと}によります。{入|はい}ると{会社|かいしゃ}から「{資格|しかく}{情報|じょうほう}のお{知|し}らせ」が{届|とど}き、マイナ{保険|ほけん}{証|しょう}を{使|つか}わない{人|ひと}には「{資格|しかく}{確認|かくにん}{書|しょ}」も{届|とど}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}は14{日|にち}{以内|いない}にやめる{届出|とどけで}をします。{入|はい}らないときは{国民|こくみん}{健康|けんこう}{保険|ほけん}です。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}るかは、{仕事|しごと}で{違|ちが}います。{入|はい}ると、{会社|かいしゃ}から「{資格|しかく}{情報|じょうほう}のお{知|し}らせ」が{届|とど}きます。マイナ{保険|ほけん}{証|しょう}を{使|つか}わない{人|ひと}は「{資格|しかく}{確認|かくにん}{書|しょ}」も{届|とど}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}は、14{日|にち}いないにやめる{届|とど}けをします。",
+        "en": "Whether you join workplace health insurance depends on the job. If you do, you receive a \"Notice of Eligibility Information\" (shikaku joho no oshirase), and also a \"Certificate of Eligibility\" (shikaku kakuninsho) if you do not use the My Number health card. Cancel National Health Insurance within 14 days. If you do not join, you stay on National Health Insurance."
       },
       "evidence": {
         "source_ids": [
           "nagoya-kokuho-kanyu-page",
+          "B-nagoya-kokuho-hitsuyo-pub",
+          "kyokai-kenpo-mynahokensho",
           "author-2026-11-07"
         ],
         "checked_at": "2026-11-07",
@@ -221,15 +224,15 @@
         ]
       },
       "statement": {
-        "ja": "ほかの{市町村|しちょうそん}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{名古屋|なごや}{市|し}で{入|はい}り{直|なお}します。",
-        "ja_easy": "ほかの{市|し}で{国民健康保険|こくみんけんこうほけん}だった{人|ひと}は、{名古屋市|なごやし}で{入|はい}り{直|なお}します。",
-        "en": "People who had National Health Insurance in another city join again in Nagoya."
+        "ja": "ほかの{市町村|しちょうそん}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{名古屋|なごや}{市|し}で{入|はい}り{直|なお}します。ただし、{学校|がっこう}に{通|かよ}うために{住所|じゅうしょ}を{移|うつ}した{学生|がくせい}など、{前|まえ}の{市町村|しちょうそん}の{保険|ほけん}を{続|つづ}けられる{例外|れいがい}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "ほかの{市|し}で{国民|こくみん}{健康|けんこう}{保険|ほけん}だった{人|ひと}は、{名古屋|なごや}{市|し}で{入|はい}り{直|なお}します。{学校|がっこう}に{通|かよ}うために{住所|じゅうしょ}を{移|うつ}した{学生|がくせい}などは、{前|まえ}の{市|し}の{保険|ほけん}を{続|つづ}けることがあります（{要確認|ようかくにん}）。",
+        "en": "People who had National Health Insurance in another city join again in Nagoya. There are exceptions, such as students who moved to attend school, who may keep their previous city's insurance (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "nagoya-kokuho-kanyu-page"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -249,15 +252,16 @@
         ]
       },
       "statement": {
-        "ja": "{日本|にほん}に{住|す}む20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}の{人|ひと}で、{厚生|こうせい}{年金|ねんきん}に{入|はい}っておらず、{厚生|こうせい}{年金|ねんきん}に{入|はい}る{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}にも{入|はい}っていない{人|ひと}は、{国民|こくみん}{年金|ねんきん}の{第|だい}1{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}です。",
-        "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までの{人|ひと}で、{会社|かいしゃ}の{年金|ねんきん}がない{人|ひと}は、{国民年金|こくみんねんきん}に{入|はい}ります。",
-        "en": "People living in Japan aged 20 to 59 who are not in the Employees' Pension and not a dependent spouse of someone in it are Category 1 members of the National Pension."
+        "ja": "{日本|にほん}に{住|す}む20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{厚生|こうせい}{年金|ねんきん}に{入|はい}っておらず、{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}にも{入|はい}っていない{人|ひと}は、{国民|こくみん}{年金|ねんきん}の{第|だい}1{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}です。{医療|いりょう}{滞在|たいざい}や{長期|ちょうき}{滞在|たいざい}（{観光|かんこう}など）の「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{入|い}れません。",
+        "ja_easy": "{日本|にほん}に{住|す}む20{歳|さい}から59{歳|さい}までで、{会社|かいしゃ}の{年金|ねんきん}がなく、{夫|おっと}や{妻|つま}の{扶養|ふよう}でもない{人|ひと}は、{国民|こくみん}{年金|ねんきん}に{入|はい}ります。{医療|いりょう}や{観光|かんこう}で{長|なが}くいる「{特定|とくてい}{活動|かつどう}」の{人|ひと}は{入|い}れません。",
+        "en": "People living in Japan aged 20 to 59 who are not in the Employees' Pension and not a dependent spouse are Category 1 members of the National Pension. People on Designated Activities for medical stay or long-stay tourism cannot join."
       },
       "evidence": {
         "source_ids": [
-          "nenkin-kanyu-page"
+          "nenkin-kanyu-page",
+          "B-nenkin-tekiyojogai"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -277,15 +281,16 @@
         ]
       },
       "statement": {
-        "ja": "{厚生|こうせい}{年金|ねんきん}に{入|はい}る{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}に{入|はい}っている20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}の{人|ひと}は、{第|だい}3{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}です。{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}を{通|とお}して{手続|てつづ}きします。",
-        "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}の{人|ひと}の{家族|かぞく}（{扶養|ふよう}）は、その{会社|かいしゃ}で{手続|てつづ}きします。",
-        "en": "Dependent spouses (aged 20 to 59) of people in the Employees' Pension are Category 3 members. The spouse's employer handles it."
+        "ja": "{厚生|こうせい}{年金|ねんきん}に{入|はい}る{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}に{入|はい}っている20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}の{人|ひと}は、{第|だい}3{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}になれます。{年収|ねんしゅう}が130{万|まん}{円|えん}{未満|みまん}（{障害|しょうがい}があるときは180{万|まん}{円|えん}{未満|みまん}）で、ふつうは{日本|にほん}に{住|す}んでいることが{条件|じょうけん}です。{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}を{通|とお}して{手続|てつづ}きします。",
+        "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}の{人|ひと}の{妻|つま}や{夫|おっと}（{扶養|ふよう}）は、その{会社|かいしゃ}で{手続|てつづ}きします。{年収|ねんしゅう}が130{万|まん}{円|えん}より{少|すく}ないことなどが{条件|じょうけん}です。",
+        "en": "Dependent spouses (aged 20 to 59) of people in the Employees' Pension can be Category 3 members if their income is under 1.3 million yen a year (1.8 million with a disability) and they generally live in Japan. The spouse's employer handles it."
       },
       "evidence": {
         "source_ids": [
-          "nenkin-kanyu-page"
+          "nenkin-kanyu-page",
+          "B-nenkin-kanyu"
         ],
-        "checked_at": "2026-11-02",
+        "checked_at": "2026-11-07",
         "status": "needs_check"
       }
     },
@@ -729,6 +734,10 @@
                   {
                     "fact": "work_limit",
                     "eq": "not_allowed"
+                  },
+                  {
+                    "fact": "job_permit",
+                    "eq": "yes"
                   }
                 ]
               }
@@ -737,9 +746,9 @@
         ]
       },
       "statement": {
-        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族|かぞく}{滞在|たいざい}」、または{在留|ざいりゅう}カードに「{就労|しゅうろう}{不可|ふか}」",
-        "ja_easy": "{在留資格|ざいりゅうしかく}が「{留学|りゅうがく}」か「{家族滞在|かぞくたいざい}」、またはカードに「{就労不可|しゅうろうふか}」",
-        "en": "Your status is Student or Dependent, or your card says 就労不可"
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{留学|りゅうがく}」か「{家族|かぞく}{滞在|たいざい}」、または{在留|ざいりゅう}カードが「{就労|しゅうろう}{不可|ふか}」で{許可|きょか}がある",
+        "ja_easy": "{在留資格|ざいりゅうしかく}が「{留学|りゅうがく}」か「{家族滞在|かぞくたいざい}」、またはカードが「{就労不可|しゅうろうふか}」で{許可|きょか}がある",
+        "en": "Your status is Student or Dependent, or your card says 就労不可 and you have a permit"
       },
       "evidence": {
         "source_ids": [
@@ -951,6 +960,10 @@
                     {
                       "fact": "work_limit",
                       "eq": "not_allowed"
+                    },
+                    {
+                      "fact": "job_permit",
+                      "eq": "yes"
                     }
                   ]
                 }
@@ -1030,19 +1043,50 @@
               "eq": "foreign"
             },
             {
-              "fact": "zairyu_status",
-              "in": [
-                "cultural",
-                "trainee"
+              "any": [
+                {
+                  "fact": "zairyu_status",
+                  "in": [
+                    "cultural",
+                    "trainee"
+                  ]
+                },
+                {
+                  "all": [
+                    {
+                      "not": {
+                        "fact": "zairyu_status",
+                        "in": [
+                          "student",
+                          "family",
+                          "work",
+                          "spouse",
+                          "permanent",
+                          "long_term",
+                          "cultural",
+                          "trainee"
+                        ]
+                      }
+                    },
+                    {
+                      "fact": "work_limit",
+                      "eq": "not_allowed"
+                    },
+                    {
+                      "fact": "job_permit",
+                      "eq": "no"
+                    }
+                  ]
+                }
               ]
             }
           ]
         }
       },
       "statement": {
-        "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」ではない",
-        "ja_easy": "{働|はたら}ける{人|ひと}",
-        "en": "Not Cultural Activities or Trainee"
+        "ja": "「{文化|ぶんか}{活動|かつどう}」「{研修|けんしゅう}」ではなく、{許可|きょか}のない「{就労|しゅうろう}{不可|ふか}」でもない",
+        "ja_easy": "「{文化活動|ぶんかかつどう}」「{研修|けんしゅう}」や、{許可|きょか}のない「{就労不可|しゅうろうふか}」ではない",
+        "en": "Not Cultural Activities or Trainee, and not 就労不可 without a permit"
       },
       "evidence": {
         "source_ids": [
@@ -1062,18 +1106,49 @@
             "eq": "foreign"
           },
           {
-            "fact": "zairyu_status",
-            "in": [
-              "cultural",
-              "trainee"
+            "any": [
+              {
+                "fact": "zairyu_status",
+                "in": [
+                  "cultural",
+                  "trainee"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "not": {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family",
+                        "work",
+                        "spouse",
+                        "permanent",
+                        "long_term",
+                        "cultural",
+                        "trainee"
+                      ]
+                    }
+                  },
+                  {
+                    "fact": "work_limit",
+                    "eq": "not_allowed"
+                  },
+                  {
+                    "fact": "job_permit",
+                    "eq": "no"
+                  }
+                ]
+              }
             ]
           }
         ]
       },
       "statement": {
-        "ja": "{在留|ざいりゅう}{資格|しかく}が「{文化|ぶんか}{活動|かつどう}」か「{研修|けんしゅう}」",
-        "ja_easy": "{在留資格|ざいりゅうしかく}が「{文化活動|ぶんかかつどう}」か「{研修|けんしゅう}」",
-        "en": "Your status is Cultural Activities or Trainee"
+        "ja": "{在留|ざいりゅう}{資格|しかく}が「{文化|ぶんか}{活動|かつどう}」か「{研修|けんしゅう}」、または{在留|ざいりゅう}カードが「{就労|しゅうろう}{不可|ふか}」で{許可|きょか}がない",
+        "ja_easy": "{在留資格|ざいりゅうしかく}が「{文化活動|ぶんかかつどう}」か「{研修|けんしゅう}」、またはカードが「{就労不可|しゅうろうふか}」で{許可|きょか}がない",
+        "en": "Your status is Cultural Activities or Trainee, or your card says 就労不可 and you have no permit"
       },
       "evidence": {
         "source_ids": [

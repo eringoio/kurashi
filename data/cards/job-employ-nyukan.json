@@ -18,32 +18,33 @@
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{入管|にゅうかん}に{所属|しょぞく}{機関|きかん}を{届|とど}ける（{転職|てんしょく}したとき）",
-    "ja_easy": "{入管|にゅうかん}に{会社|かいしゃ}を{届|とど}ける",
-    "en": "Tell immigration about your employer (when you change jobs)"
+    "ja": "{入管|にゅうかん}に{届|とど}ける（{転職|てんしょく}・{就職|しゅうしょく}したとき）",
+    "ja_easy": "{入管|にゅうかん}に{会社|かいしゃ}などを{届|とど}ける",
+    "en": "Tell immigration about your new employer or organisation"
   },
   "official_name": {
-    "ja": "所属（契約）機関に関する届出",
-    "reading": "しょぞく（けいやく）きかんにかんするとどけで"
+    "ja": "契約機関に関する届出／活動機関に関する届出",
+    "reading": "けいやくきかんにかんするとどけで／かつどうきかんにかんするとどけで"
   },
   "summary": {
-    "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}などの{人|ひと}は、{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}に、{入管|にゅうかん}に{届|とど}けます。オンラインでもでき、{資料|しりょう}は{要|い}りません。{契約|けいやく}した{日|ひ}が{来|く}る{前|まえ}には{出|だ}せません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
-    "en": "If your status is Engineer/Specialist in Humanities/International Services or similar, notify immigration within 14 days of signing with a new employer. It can be done online with no documents. It cannot be filed before the contract date (to be checked)."
+    "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、{在留|ざいりゅう}{資格|しかく}によって「{契約|けいやく}{機関|きかん}の{届出|とどけで}」か「{活動|かつどう}{機関|きかん}の{届出|とどけで}」を、14{日|にち}{以内|いない}に{入管|にゅうかん}に{出|だ}します（{要|よう}{確認|かくにん}）。どちらかは、{下|した}の{方法|ほうほう}の{一覧|いちらん}で{確|たし}かめます。",
+    "ja_easy": "{在留資格|ざいりゅうしかく}によって、{届|とど}ける{名前|なまえ}が2つあります。どちらも14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けます（{要確認|ようかくにん}）。",
+    "en": "Depending on your status, you file either a contract-organisation notice or an activity-organisation notice, within 14 days (to be checked). The list below shows which one applies."
   },
   "deadline": {
     "text": {
-      "ja": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "en": "Within 14 days of signing with the new employer (to be checked)"
+      "ja": "{契約|けいやく}した{日|ひ}（{契約|けいやく}{機関|きかん}の{届出|とどけで}）か{新|あたら}しい{所属先|しょぞくさき}に{入|はい}った{日|ひ}（{活動|かつどう}{機関|きかん}の{届出|とどけで}）から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{契約|けいやく}した{日|ひ}か{入|はい}った{日|ひ}から14{日|にち}{以内|いない}（{要確認|ようかくにん}）",
+      "en": "Within 14 days of signing the new contract (contract-organisation statuses) or joining the new organisation (activity-organisation statuses) (to be checked)"
     },
     "evidence": {
       "source_ids": [
-        "D-isa-shozoku-qa"
+        "D-isa-keiyaku-kikan",
+        "D-isa-katsudo-kikan"
       ],
       "checked_at": "2026-11-07",
       "status": "needs_check",
-      "quote": "「会社を辞めた」、「新しい会社に入社した」等の届出事由の発生日から１４日以内に提出してください。"
+      "quote": "上記の事由が生じた日から１４日以内"
     }
   },
   "where": {
@@ -54,11 +55,12 @@
     },
     "evidence": {
       "source_ids": [
+        "D-isa-keiyaku-kikan",
         "D-isa-katsudo-kikan"
       ],
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-07",
       "status": "needs_check",
-      "quote": "届出事項を証する資料の提出は必要ありません。"
+      "quote": "最寄りの地方出入国在留管理官署において、在留カードを提示の上で、届出書を提出してください。"
     }
   },
   "kind": "procedure",
@@ -66,17 +68,84 @@
     {
       "type": "online",
       "text": {
-        "ja": "{契約|けいやく}を{結|むす}んだ{日|ひ}が{来|き}てから{出|だ}します。{出|だ}さないと{罰則|ばっそく}があります（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{契約|けいやく}した{日|ひ}が{来|き}てから{出|だ}します。",
-        "en": "File it once the contract date has come. There are penalties for not filing (to be checked)."
+        "ja": "{契約|けいやく}{機関|きかん}の{届出|とどけで}（{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}、{特定|とくてい}{技能|ぎのう}、{技能|ぎのう}、{介護|かいご}、{興行|こうぎょう}、{研究|けんきゅう}、{高度|こうど}{専門職|せんもんしょく}1{号|ごう}イ・ロ、2{号|ごう}イ・ロ）：{会社|かいしゃ}との{契約|けいやく}が{終|お}わった{日|ひ}、{新|あたら}しい{会社|かいしゃ}と{契約|けいやく}した{日|ひ}から14{日|にち}{以内|いない}。",
+        "ja_easy": "{契約|けいやく}{機関|きかん}の{届出|とどけで}（{技術・人文知識・国際業務|ぎじゅつ・じんぶんちしき・こくさいぎょうむ}、{特定技能|とくていぎのう}、{技能|ぎのう}、{介護|かいご}、{興行|こうぎょう}、{研究|けんきゅう}、{高度専門職|こうどせんもんしょく}など）：{会社|かいしゃ}と{契約|けいやく}した{日|ひ}・{契約|けいやく}が{終|お}わった{日|ひ}から14{日|にち}{以内|いない}。",
+        "en": "Contract-organisation notice (Engineer/Specialist in Humanities/International Services, Specified Skilled Worker, Skilled Labor, Nursing Care, Entertainer, Researcher, Highly Skilled Professional 1-i/ro and 2-i/ro): within 14 days of a contract ending or a new contract being signed."
       },
       "evidence": {
         "source_ids": [
+          "D-isa-keiyaku-kikan"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "契約機関の名称変更、所在地変更、消滅、契約機関との契約の終了若しくは新たな契約の締結があった高度専門職１号イ又はロ、高度専門職２号（イ又はロ）、研究、技術・人文知識・国際業務、介護、興行（所属機関との契約に基づいて活動に従事する者に限る。）、技能又は特定技能の在留資格を有する中長期在留者"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{活動|かつどう}{機関|きかん}の{届出|とどけで}（{教授|きょうじゅ}、{経営|けいえい}・{管理|かんり}、{企業内|きぎょうない}{転勤|てんきん}、{医療|いりょう}、{教育|きょういく}、{法律|ほうりつ}・{会計|かいけい}{業務|ぎょうむ}、{高度|こうど}{専門職|せんもんしょく}1{号|ごう}ハ・2{号|ごう}ハ、{技能|ぎのう}{実習|じっしゅう}、{留学|りゅうがく}、{研修|けんしゅう}）：{所属先|しょぞくさき}から{離|はな}れた{日|ひ}、{新|あたら}しい{所属先|しょぞくさき}に{入|はい}った{日|ひ}から14{日|にち}{以内|いない}。",
+        "ja_easy": "{活動|かつどう}{機関|きかん}の{届出|とどけで}（{教授|きょうじゅ}、{経営・管理|けいえい・かんり}、{企業内転勤|きぎょうないてんきん}、{医療|いりょう}、{教育|きょういく}、{法律・会計業務|ほうりつ・かいけいぎょうむ}、{高度専門職|こうどせんもんしょく}1{号|ごう}ハ、{技能実習|ぎのうじっしゅう}、{留学|りゅうがく}、{研修|けんしゅう}）：{所属先|しょぞくさき}から{離|はな}れた{日|ひ}・{新|あたら}しい{所属先|しょぞくさき}に{入|はい}った{日|ひ}から14{日|にち}{以内|いない}。",
+        "en": "Activity-organisation notice (Professor, Business Manager, Intra-company Transferee, Medical Services, Instructor, Legal/Accounting Services, Highly Skilled Professional 1-ha and 2-ha, Technical Intern Training, Student, Trainee): within 14 days of leaving or joining an organisation."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-katsudo-kikan"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "活動機関の名称変更、所在地変更、消滅、活動機関からの離脱や移籍があった教授、高度専門職１号ハ、高度専門職２号（ハ）、経営・管理、法律・会計業務、医療、教育、企業内転勤、技能実習、留学又は研修の在留資格を有する中長期在留者"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "オンライン（{電子|でんし}{届出|とどけで}システム）では、{届出|とどけで}を{証|あかし}する{資料|しりょう}は{要|い}りません。まだ{来|き}ていない{日|ひ}の{届出|とどけで}は{出|だ}せません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "オンラインでは{資料|しりょう}は{要|い}りません。まだ{来|き}ていない{日|ひ}の{届出|とどけで}は{出|だ}せません（{要確認|ようかくにん}）。",
+        "en": "Online (electronic notification system) needs no supporting documents. A notice cannot be filed for a date that has not yet come (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-katsudo-kikan",
           "D-isa-shozoku-qa"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",
-        "quote": "未来日を届出事由発生日とする届出はできません。実際に転職等の事実が発生してから届出をお願いします。"
+        "quote": "届出事項を証する資料の提出は必要ありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{窓口|まどぐち}では、{在留|ざいりゅう}カードを{見|み}せて{届出書|とどけでしょ}を{出|だ}します。",
+        "ja_easy": "{窓口|まどぐち}では、{在留|ざいりゅう}カードを{見|み}せて、{届出書|とどけでしょ}を{出|だ}します。",
+        "en": "At the counter, show your residence card and submit the notification form."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-keiyaku-kikan",
+          "D-isa-katsudo-kikan"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "最寄りの地方出入国在留管理官署において、在留カードを提示の上で、届出書を提出してください。"
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{郵送|ゆうそう}は、{届出書|とどけでしょ}に{在留|ざいりゅう}カードの{写|うつ}しを{入|い}れて{送|おく}ります。",
+        "ja_easy": "{郵送|ゆうそう}は、{届出書|とどけでしょ}と{在留|ざいりゅう}カードのコピーを{送|おく}ります。",
+        "en": "By post, enclose a copy of your residence card with the form."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-keiyaku-kikan",
+          "D-isa-katsudo-kikan"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "届出書と在留カードの写しを同封し、封筒の表面に朱書きで「届出書在中」又は「NOTIFICATION ENCLOSED」と記載の上、次の宛先に送付してください。"
       }
     }
   ],
@@ -84,10 +153,31 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "D-isa-keiyaku-kikan"
+      "D-isa-keiyaku-kikan",
+      "D-isa-katsudo-kikan"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-07",
     "status": "needs_check",
     "quote": "契約機関との契約の終了若しくは新たな契約の締結があった高度専門職１号イ又はロ、高度専門職２号（イ又はロ）、研究、技術・人文知識・国際業務"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{契約|けいやく}{機関|きかん}に{関|かん}する{届出|とどけで}（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}）",
+        "ja_easy": "{契約|けいやく}{機関|きかん}の{届出|とどけで}（{入管|にゅうかん}）",
+        "en": "Contract-organisation notice (Immigration Services Agency)"
+      },
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00015.html",
+      "source_id": "D-isa-keiyaku-kikan"
+    },
+    {
+      "label": {
+        "ja": "{活動|かつどう}{機関|きかん}に{関|かん}する{届出|とどけで}（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}）",
+        "ja_easy": "{活動|かつどう}{機関|きかん}の{届出|とどけで}（{入管|にゅうかん}）",
+        "en": "Activity-organisation notice (Immigration Services Agency)"
+      },
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00014.html",
+      "source_id": "D-isa-katsudo-kikan"
+    }
+  ]
 }
