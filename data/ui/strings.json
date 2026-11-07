@@ -3195,6 +3195,36 @@
     "ja_easy": "{手続|てつづ}きと{段階|だんかい}",
     "en": "Procedures and stage"
   },
+  "review.readTest": {
+    "ja": "{写真|しゃしん}の{読|よ}み{取|と}りのテスト",
+    "ja_easy": "{写真|しゃしん}を{読|よ}むテスト",
+    "en": "Photo reading test"
+  },
+  "review.readTestNote": {
+    "ja": "テスト{用|よう}のトークンを{入|い}れると、このタブだけで「{届|とど}いた{書類|しょるい}」に{写真|しゃしん}の{欄|らん}が{出|で}ます。タブを{閉|と}じると{消|き}えます。",
+    "ja_easy": "トークンを{入|い}れると、このタブだけで{写真|しゃしん}を{使|つか}えます。タブを{閉|と}じると{消|き}えます。",
+    "en": "Enter the test token to show the photo field on the letter page in this tab only. It is removed when you close the tab."
+  },
+  "review.readTestSave": {
+    "ja": "このタブで{使|つか}う",
+    "ja_easy": "このタブで{使|つか}う",
+    "en": "Use in this tab"
+  },
+  "review.readTestClear": {
+    "ja": "{消|け}す",
+    "ja_easy": "{消|け}す",
+    "en": "Remove"
+  },
+  "review.readTestOn": {
+    "ja": "このタブで{使|つか}っています",
+    "ja_easy": "このタブで{使|つか}っています",
+    "en": "In use in this tab"
+  },
+  "review.readTestOff": {
+    "ja": "{使|つか}っていません",
+    "ja_easy": "{使|つか}っていません",
+    "en": "Not in use"
+  },
   "st.check_alt": {
     "ja": "{窓口|まどぐち}で{確認|かくにん}",
     "ja_easy": "{窓口|まどぐち}で{聞|き}く",

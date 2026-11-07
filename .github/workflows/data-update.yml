@@ -1,5 +1,6 @@
 # データの更新の確認（docs/DATA_UPDATE.md）。週1回の実行は、作者が動かすと決めるまで止めている（作者の指示 2026-11-05）。
-# 作者が用意するもの：リポジトリの Secrets に ANTHROPIC_API_KEY（データ更新専用のキー。Console で月の上限を付ける）。
+# 作者が用意するもの：kurashi_proto（非公開）の Secrets にだけ ANTHROPIC_API_KEY（Workspace「kurashi-data-update」のキー。月の上限 5ドル）。公開リポジトリ eringoio/kurashi と Worker には置かない（作者の決定 2026-11-07）。
+# AI の提案は PR の本文と needs_check だけ。本番に入るのは、作者が PR を確かめてマージし、手でデプロイしたときだけ。
 # 1回目は記録だけ（AI を使わず、データも変えない）。2回目から、変わった項目を needs_check にした PR を作る。
 #
 # キーを守るため：

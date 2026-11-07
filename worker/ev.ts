@@ -4,7 +4,9 @@
    GET /api/usage：作者だけ（Authorization: Bearer <REPORTS_TOKEN>）。手元はメモリの集計。公開は Analytics Engine の SQL API（シークレット CF_ACCOUNT_ID・CF_API_TOKEN がある時だけ）。 */
 
 export interface AeLike { writeDataPoint(p: { blobs?: string[]; doubles?: number[]; indexes?: string[] }): void }
-export interface Env { EV?: AeLike; REPORTS_TOKEN?: string; CF_ACCOUNT_ID?: string; CF_API_TOKEN?: string }
+import { jstDay, readCount, type CounterKv } from './usage';
+
+export interface Env { EV?: AeLike; REPORTS_TOKEN?: string; CF_ACCOUNT_ID?: string; CF_API_TOKEN?: string; USAGE?: CounterKv }
 
 export const KINDS = ['view', 'error', 'outcome', 'helpful'] as const;
 export type Kind = (typeof KINDS)[number];
@@ -57,7 +59,7 @@ export async function handleEv(req: Request, env: Env): Promise<Response> {
   return new Response(null, { status: 204 });
 }
 
-export interface Usage { views: [string, number][]; pairs: [string, number][]; errors: [string, number][]; helpful: [string, number, number][]; outcomes: [string, number][] }
+export interface Usage { views: [string, number][]; pairs: [string, number][]; errors: [string, number][]; helpful: [string, number, number][]; outcomes: [string, number][]; read_today?: number; read_yesterday?: number }
 
 /** 集計（作者の画面用） */
 export function summarize(list: Ev[]): Usage {
@@ -81,12 +83,14 @@ async function readAe(env: Env): Promise<Ev[]> {
   return ((await r.json()) as { data: Ev[] }).data;
 }
 
-export async function handleUsage(req: Request, env: Env): Promise<Response> {
+export async function handleUsage(req: Request, env: Env, now = Date.now()): Promise<Response> {
   if (req.method !== 'GET') return json(405, { error: 'method' });
   if (!env.REPORTS_TOKEN || req.headers.get('authorization') !== 'Bearer ' + env.REPORTS_TOKEN) return json(401, { error: 'token' });
   if (env.EV && !(env.CF_ACCOUNT_ID && env.CF_API_TOKEN)) return json(503, { error: 'no_reader' });
   try {
-    return json(200, summarize(env.EV ? await readAe(env) : mem));
+    // 写真の読み取りの回数（KV があるときだけ。目安の数え方）
+    const reads = env.USAGE ? { read_today: await readCount(env.USAGE, jstDay(now)), read_yesterday: await readCount(env.USAGE, jstDay(now - 86_400_000)) } : {};
+    return json(200, { ...summarize(env.EV ? await readAe(env) : mem), ...reads });
   } catch {
     return json(502, { error: 'read' });
   }

@@ -149,6 +149,8 @@ export function acceptAi(v: Verdict, raw: unknown, body: string): Verdict {
 }
 
 const cell = (s?: string | null) => (s ?? '').replace(/\|/g, '｜').replace(/\n/g, ' ').slice(0, 200);
+/** AI が書いた文（新しい引用・提案）：リンク・HTML・メンションにならないようにする（外のページの指示を PR に持ち込ませない） */
+export const aiCell = (s?: string | null) => cell(s).replace(/[[\]<>`]/g, '').replace(/:\/\//g, ':／／').replace(/@/g, '＠');
 /** PR の本文（作者が読む）。changed・unclear の項目は needs_check にする提案。verified にはしない */
 export interface RunInfo { baseline?: boolean; usage?: { calls: number; input_tokens: number; output_tokens: number }; skipped_by_limit?: number }
 export function prBody(date: string, cmp: ReturnType<typeof compareIndex>, verdicts: Verdict[], sample: boolean, info: RunInfo = {}): string {
@@ -165,7 +167,7 @@ export function prBody(date: string, cmp: ReturnType<typeof compareIndex>, verdi
     '',
     '| 項目 | 出典 | 判定 | 理由 | 前の引用 | 新しい引用 | 提案 |',
     '|---|---|---|---|---|---|---|',
-    ...need.map((v) => `| ${cell(v.where)} | ${v.url ? `[${cell(v.source_id)}](${v.url})` : cell(v.source_id)} | ${v.verdict} | ${v.why} | ${cell(v.old_quote)} | ${cell(v.new_quote)} | ${cell(v.proposal)} |`),
+    ...need.map((v) => `| ${cell(v.where)} | ${v.url ? `[${cell(v.source_id)}](${v.url})` : cell(v.source_id)} | ${v.verdict} | ${v.why} | ${cell(v.old_quote)} | ${aiCell(v.new_quote)} | ${aiCell(v.proposal)} |`),
   ];
   if (cmp.failed.length) lines.push('', '取得できなかった出典（403 などは回避しない。前の本文のまま）：' + cmp.failed.join('、'));
   return lines.join('\n') + '\n';

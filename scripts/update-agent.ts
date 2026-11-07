@@ -4,7 +4,8 @@
    - ANTHROPIC_API_KEY があれば、引用が見つからなかった項目だけ Claude に聞く。トークンを減らすため：
      ・出典ごとに1回だけ聞く（その出典の項目をまとめる）
      ・本文の全体ではなく、前の引用に近い所の前後と、前の週から変わった行だけを送る（excerpt）
-     ・1回の実行で聞く数に上限（UPDATE_MAX_CALLS。既定 30）。超えた分は ai_limit として作者に回す
+     ・1回の実行で聞く数に上限（UPDATE_MAX_CALLS。既定 30）と入力トークンの上限（UPDATE_MAX_INPUT_TOKENS。既定 200,000）。超えた分は ai_limit として作者に回す
+     ・キー（ANTHROPIC_API_KEY）は kurashi_proto の GitHub Secret だけ（作者の決定 2026-11-07）。公開リポジトリと Worker には置かない
      ・引用の無い根拠（no_quote）は聞かない（比べるものが無い）。作者に回す
    - 新しい引用が本文にそのまま無ければ採らない（acceptAi）。verified にはしない。
    - 1回目（前回の記録が無い）は記録だけ：AI を使わず、data:apply もデータを変えない。
@@ -24,6 +25,8 @@ const root = arg('--root') ?? 'sources';
 // アプリの中（データの更新）は安いモデル。設定で変えられる
 const MODEL = process.env.UPDATE_MODEL || 'claude-haiku-5-5';
 const MAX_CALLS = Number(process.env.UPDATE_MAX_CALLS || 30);
+// 1回の実行で送る入力トークンの上限（超えたら残りは ai_limit として作者に回す）。費用の確実な上限は Anthropic の Workspace の支出の上限
+const MAX_INPUT_TOKENS = Number(process.env.UPDATE_MAX_INPUT_TOKENS || 200_000);
 
 const read = (f: string) => SourceIndex.parse(existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : {});
 const prev = read(join(root, 'index.prev.json'));
@@ -44,7 +47,7 @@ let verdicts = judgeByQuotes(items, [...cmp.changed, ...cmp.added, ...cmp.failed
 const key = baseline ? undefined : process.env.ANTHROPIC_API_KEY;
 const info: RunInfo = { baseline };
 if (key) {
-  const client = new Anthropic({ apiKey: key, maxRetries: 2 });
+  const client = new Anthropic({ apiKey: key, maxRetries: 2, timeout: 60_000 });
   const usage = { calls: 0, input_tokens: 0, output_tokens: 0 };
   let skipped = 0;
   // 出典ごとにまとめる（AI に聞くのは、引用があるのに見つからなかった項目だけ）
@@ -55,7 +58,7 @@ if (key) {
   for (const [sid, idx] of groups) {
     const b = body(sid);
     if (!b) continue;
-    if (usage.calls >= MAX_CALLS) { for (const i of idx) verdicts[i] = { ...verdicts[i], why: 'ai_limit' }; skipped += idx.length; continue; }
+    if (usage.calls >= MAX_CALLS || usage.input_tokens >= MAX_INPUT_TOKENS) { for (const i of idx) verdicts[i] = { ...verdicts[i], why: 'ai_limit' }; skipped += idx.length; continue; }
     const list = idx.map((i, n) => `${n + 1}. 項目「${verdicts[i].where}」 前の引用：${verdicts[i].old_quote}`).join('\n');
     const res = await client.beta.messages.create({
       model: MODEL, max_tokens: 1024,

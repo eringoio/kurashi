@@ -51,7 +51,23 @@ npx wrangler login
 npm run deploy
 ```
 
-写真の読み取りを本物にするときだけ、`npx wrangler secret put ANTHROPIC_API_KEY` でキーを入れ、`VITE_LETTER_READ=on` を付けて公開します。キーはファイルに書きません。
+### 写真の読み取り（Anthropic API）の守り
+
+有料の呼び出しは、`wrangler.toml` の `READ_MODE` で決まります。
+
+| `READ_MODE` | 動き |
+|---|---|
+| `off`（値が無いときも） | 見本の結果だけを返します。API は呼びません |
+| `test`（いまの設定） | テスト用のトークンを持つ人だけが API を呼べます。ほかの人は 401 で、画面に写真の欄も出ません |
+| `public` | だれでも使えます。IP ごとの制限と、1日の数を数える KV（`USAGE`）が無いと 503 です |
+
+- キーとトークンは Worker のシークレットにだけ入れます（`npx wrangler secret put ANTHROPIC_API_KEY`・`npx wrangler secret put READ_TEST_TOKEN`）。ファイルにも GitHub にも書きません。
+- テストでは、`/review` の「写真の読み取りのテスト」にトークンを入れると、そのタブだけ「届いた書類」に写真の欄が出ます。
+- IP ごとの制限（1分に5回）と1日の上限（100回）は目安です。費用を確実に止めるのは、Anthropic Console の Workspace の支出の上限です。
+- すぐ止めるときは、次のどれか1つをします。
+  - Cloudflare のダッシュボードで `READ_MODE` を `off` にする
+  - `npx wrangler secret delete ANTHROPIC_API_KEY`
+  - Console でキーを無効にする
 
 ## データ
 

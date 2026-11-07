@@ -16,6 +16,7 @@ import { useFocusTitle } from '../ui/router';
 import { useSeen, WordList } from '../ui/Words';
 import { docWordIds } from '../core/words';
 import { trackError } from '../ui/telemetry';
+import { getReadToken, READ_TOKEN_HEADER } from '../ui/readToken';
 /** 結果の書類の名前を「ことば」に残す（10b） */
 function SeenDoc({ id }: { id: string }) { useSeen(['doc:' + id]); return null; }
 
@@ -24,6 +25,8 @@ const LONG = 1600;
 export const LETTER_READ_ON = import.meta.env.VITE_LETTER_READ === 'on'
   // 開発のときだけ、テストのために sessionStorage の kurashi:letter_read=on でも on にする（本番のビルドでは読まない）
   || (import.meta.env.DEV && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('kurashi:letter_read') === 'on');
+/** 作者のテスト（READ_MODE=test）：/review でトークンを入れたタブだけ、写真の欄を出す（v0.5.23） */
+const readOn = () => LETTER_READ_ON || !!getReadToken();
 
 type Photo = { url: string; data: string; media: 'image/jpeg'; sample: boolean };
 type St =
@@ -75,7 +78,9 @@ export function Letter() {
   const send = async (photo: Photo) => {
     setSt({ k: 'sending', photo });
     try {
-      const r = await fetch('/api/read-document', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ consent: true, media_type: photo.media, data: photo.data }) });
+      const token = getReadToken();
+      const headers: Record<string, string> = { 'content-type': 'application/json', ...(token ? { [READ_TOKEN_HEADER]: token } : {}) };
+      const r = await fetch('/api/read-document', { method: 'POST', headers, body: JSON.stringify({ consent: true, media_type: photo.media, data: photo.data }) });
       if (!r.ok) throw new Error(String(r.status));
       const body = await r.json() as { sample?: boolean };
       const ids = cleanCandidates(body, DOCUMENTS().map((d) => d.id)).map((c) => c.id);
@@ -109,7 +114,7 @@ export function Letter() {
       <>
         <div className="art" aria-hidden="true"><img src={art('letter')} alt="" className="art--big" /></div>
         <div className="head"><Title><Bi phrase k="letter.title" /></Title></div>
-        {LETTER_READ_ON ? <><p className="sub"><Bi k="letter.intro" /></p>{fileInput}{alt}</> : <><p className="sub"><Bi k="letter.pickHint" /></p>{pickList}</>}
+        {readOn() ? <><p className="sub"><Bi k="letter.intro" /></p>{fileInput}{alt}</> : <><p className="sub"><Bi k="letter.pickHint" /></p>{pickList}</>}
       </>
     );
   } else if (st.k === 'preview' || st.k === 'sending') {
@@ -161,7 +166,7 @@ export function Letter() {
       <>
         <div className="head"><Title><Bi k="letter.failed" /></Title></div>
         <p className="sub"><Bi k="letter.failedSub" /></p>
-        {LETTER_READ_ON && fileInput}
+        {readOn() && fileInput}
         {alt}
       </>
     );

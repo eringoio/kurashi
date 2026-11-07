@@ -170,3 +170,31 @@ test('English：入口と確認が通る', async ({ page }) => {
   await expect(page.getByRole('button', { name: /Yes/ }).first()).toBeVisible();
   await check(page, 'English 確認');
 });
+
+test('作者のテスト（READ_MODE=test）：/review でトークンを入れたタブだけ写真の欄が出て、送るときにトークンが付く。401 でも止まらない', async ({ page }) => {
+  const sent: (string | null)[] = [];
+  await page.route('**/api/read-document', (r) => { sent.push(r.request().headers()['x-kurashi-read-token'] ?? null); return r.fulfill({ status: 401, contentType: 'application/json', body: '{"error":"unauthorized"}' }); });
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto('/letter');
+  await expect(page.locator('input[type=file]')).toHaveCount(0);
+  await page.goto('/review');
+  const sec = page.locator('section[aria-labelledby="review-read"]');
+  await sec.locator('input[type=password]').fill('test-token-e2e');
+  await sec.getByRole('button', { name: 'このタブで使う' }).click();
+  await expect(sec.getByRole('status')).toHaveText('このタブで使っています');
+  await expect(sec.locator('input[type=password]')).toHaveValue('');
+  // URL・localStorage・IndexedDB にトークンが無い
+  expect(page.url()).not.toContain('test-token-e2e');
+  expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain('test-token-e2e');
+  await page.goto('/letter');
+  await file(page);
+  await tap(page, /^送る（同意する）/);
+  await expect(h1(page)).toHaveText('読み取れませんでした');
+  expect(sent).toEqual(['test-token-e2e']);
+  // 消すと、写真の欄はもう出ない
+  await page.goto('/review');
+  await sec.getByRole('button', { name: '消す' }).click();
+  await expect(sec.getByRole('status')).toHaveText('使っていません');
+  await page.goto('/letter');
+  await expect(page.locator('input[type=file]')).toHaveCount(0);
+});
