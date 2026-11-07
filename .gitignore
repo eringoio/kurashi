@@ -21,6 +21,7 @@ desktop.ini
 .idea/
 
 # デモ動画の書き出し・字体（どちらも作り直せる）
+demo-video/assets
 demo-video/**/out/
 demo-video/**/src/fonts/*.ttf
 demo-video/use-cases/kit/fonts/
