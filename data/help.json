@@ -116,6 +116,40 @@
         "verified_by": "author-instruction-2026-11-06 (I-4)",
         "quote": "#7119をダイヤルすることで、24時間365日体制で看護師等からアドバイスを受けることが"
       }
+    },
+    {
+      "id": "sodai",
+      "phone": "0120-758-530",
+      "show_on": [
+        "/gomi",
+        "/e/E-gomi",
+        "/c/gomi-sodai",
+        "/c/gomi-mochikomi"
+      ],
+      "name": {
+        "ja": "{粗大|そだい}ごみ{受付|うけつけ}センター（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{大|おお}きなごみの{申|もう}し{込|こ}み（{名古屋|なごや}{市|し}）",
+        "en": "Bulky Waste Reception Center (Nagoya City)"
+      },
+      "what": {
+        "ja": "{粗大|そだい}ごみの{申|もう}し{込|こ}み。{携帯|けいたい}{電話|でんわ}・{愛知|あいち}{県外|けんがい}からは 052-950-2581（{通話|つうわ}{料|りょう}がかかります）",
+        "ja_easy": "{大|おお}きなごみの{申|もう}し{込|こ}み。{携帯|けいたい}からは 052-950-2581（お{金|かね}がかかります）",
+        "en": "Apply for bulky waste collection. From a mobile phone or outside Aichi: 052-950-2581 (call charges apply)"
+      },
+      "hours": {
+        "ja": "9:00〜17:00（{土日|どにち}・{年末年始|ねんまつねんし}は{休|やす}み。{祝日|しゅくじつ}も{受付|うけつけ}）",
+        "ja_easy": "9:00〜17:00（{土曜|どよう}・{日曜|にちよう}・{年末年始|ねんまつねんし}は{休|やす}み）",
+        "en": "9:00–17:00 (closed Sat, Sun and New Year; open on public holidays)"
+      },
+      "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/1035058/1012184/1046468/1046635.html",
+      "evidence": {
+        "source_ids": [
+          "gomi-sodai-1046635"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "needs_check",
+        "quote": "フリーダイヤル電話番号:0120－758－530"
+      }
     }
   ]
 }

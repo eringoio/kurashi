@@ -882,9 +882,9 @@
       "scene": [
         "gomi"
       ],
-      "ja": "{手数料|てすうりょう}{納付券|のうふけん}",
+      "ja": "{粗大|そだい}ごみ{処理|しょり}{手数料|てすうりょう}{納付券|のうふけん}（シール）",
       "easy": "{粗大|そだい}ごみに{貼|は}る{券|けん}",
-      "en": "Fee ticket (for bulky waste)",
+      "en": "Bulky waste fee ticket (sticker)",
       "status": "verified"
     },
     {

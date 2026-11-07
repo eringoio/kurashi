@@ -1,15 +1,17 @@
 /* 相談窓口のシート（上の帯の「相談」。作者の指示 2026-11-06 I-4）。押すと電話がかかる。公式ページは新しいタブ */
-import { HELP, telHref } from '../core/help';
+import { helpFor, telHref } from '../core/help';
 import { Bi, One } from '../i18n/Ruby';
 import { PhoneIcon } from './icons';
+import { usePath } from './router';
 import { Sheet } from './Sheet';
 
 export function HelpSheet({ onClose }: { onClose: () => void }) {
+  const path = usePath();
   return (
     <Sheet title={<One k="help.title" />} onClose={onClose}>
       <p><Bi k="help.body" /></p>
       <ul className="list help" role="list">
-        {HELP().map((c) => (
+        {helpFor(path).map((c) => (
           <li key={c.id} className="help__item">
             <p className="help__name"><Bi t={c.name} /></p>
             <p className="sub"><Bi t={c.what} /></p>
