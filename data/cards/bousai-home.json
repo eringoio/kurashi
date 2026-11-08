@@ -22,9 +22,9 @@
     "reading": "かぐのてんとうぼうしなど"
   },
   "summary": {
-    "ja": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}・{割|わ}れるガラスで、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}め、{寝|ね}る{所|ところ}の{近|ちか}くに{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{強|つよ}い{揺|ゆ}れで{電気|でんき}を{切|き}る{感|かん}{震|しん}ブレーカーもあります。{借|か}りている{部屋|へや}で{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{大家|おおや}・{不動産|ふどうさん}{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}や{落|お}ちる{物|もの}で、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}めます。{寝|ね}る{所|ところ}の{近|ちか}くに、{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{借|か}りている{部屋|へや}の{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
-    "en": "In an earthquake, falling furniture, falling objects and broken glass can hurt you. Fix furniture to the wall, and do not put tall furniture near where you sleep. Keep your escape route clear. There are also seismic breakers that cut the power in strong shaking. In a rented room, ask the landlord or agent before making holes in the walls (to be checked)."
+    "ja": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}・{割|わ}れるガラスで、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}め、{寝|ね}る{所|ところ}の{近|ちか}くに{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{強|つよ}い{揺|ゆ}れで{電気|でんき}を{切|き}る{感|かん}{震|しん}ブレーカーもあります。{借|か}りている{部屋|へや}で{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{大家|おおや}・{不動産|ふどうさん}{会社|かいしゃ}に{聞|き}きます。",
+    "ja_easy": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}や{落|お}ちる{物|もの}で、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}めます。{寝|ね}る{所|ところ}の{近|ちか}くに、{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{借|か}りている{部屋|へや}の{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。",
+    "en": "In an earthquake, falling furniture, falling objects and broken glass can hurt you. Fix furniture to the wall, and do not put tall furniture near where you sleep. Keep your escape route clear. There are also seismic breakers that cut the power in strong shaking. In a rented room, ask the landlord or agent before making holes in the walls."
   },
   "lead": {
     "ja": "{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}・{割|わ}れるガラスに{備|そな}えます。",
@@ -43,7 +43,8 @@
         "nagoya-bousai-hibi"
       ],
       "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "status": "verified",
+      "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
     }
   },
   "kind": "guide",
@@ -121,6 +122,7 @@
       "nagoya-bousai-hibi"
     ],
     "checked_at": "2026-11-08",
-    "status": "needs_check"
+    "status": "verified",
+    "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
   }
 }

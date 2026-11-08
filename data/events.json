@@ -917,7 +917,7 @@
         ],
         "checked_at": "2026-11-08",
         "status": "verified",
-        "verified_by": "Claude 2026-11-08（SPEC 6A.20 の定義と同じ。作者の確認は docs/AUTHOR_CHECK.md の B-1）"
+        "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
       },
       "goal_card_ids": [
         "bousai-hazard",

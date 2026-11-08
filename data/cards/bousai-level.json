@@ -22,9 +22,9 @@
     "reading": "けいかいれべる"
   },
   "summary": {
-    "ja": "{大雨|おおあめ}・{洪水|こうずい}・{土砂|どしゃ}{災害|さいがい}・{高潮|たかしお}のとき、{警戒|けいかい}レベル1〜5で{行動|こうどう}の{目安|めやす}を{伝|つた}えます。{避難|ひなん}の{情報|じょうほう}は{市町村|しちょうそん}が{出|だ}します。レベル3（{高齢|こうれい}{者|しゃ}{等|とう}{避難|ひなん}）で、{時間|じかん}がかかる{人|ひと}は{危険|きけん}な{所|ところ}から{逃|に}げます。レベル4（{避難|ひなん}{指示|しじ}）で、{危険|きけん}な{所|ところ}にいる{人|ひと}は{全員|ぜんいん}{逃|に}げます。レベル5（{緊急|きんきゅう}{安全|あんぜん}{確保|かくほ}）を{待|ま}たないでください。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{新|あたら}しくなりました（{要|よう}{確認|かくにん}）。{地震|じしん}・{津波|つなみ}には、このレベルを{使|つか}いません。",
-    "ja_easy": "{大雨|おおあめ}・{水|みず}があふれる・{土砂|どしゃ}・{高潮|たかしお}のとき、レベル1〜5で、{何|なに}をするかを{伝|つた}えます。{逃|に}げる{情報|じょうほう}は、{市|し}が{出|だ}します。レベル3で、{時間|じかん}がかかる{人|ひと}（お{年寄|としよ}りなど）は{逃|に}げます。レベル4で、{危|あぶ}ない{所|ところ}にいる{人|ひと}は、みんな{逃|に}げます。レベル5を{待|ま}ちません。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{変|か}わりました（{要|よう}{確認|かくにん}）。{地震|じしん}・{津波|つなみ}は、このレベルではありません。",
-    "en": "For heavy rain, floods, landslides and storm surge, alert levels 1 to 5 tell you what to do. The city or town issues evacuation information. At level 3 (elderly and others evacuate), people who need time to move leave dangerous places. At level 4 (evacuation order), everyone in a dangerous place leaves. Do not wait for level 5 (emergency safety measures). JMA renamed its weather warnings from 29 May 2026 (to be checked). These levels are not used for earthquakes and tsunamis."
+    "ja": "{大雨|おおあめ}・{洪水|こうずい}・{土砂|どしゃ}{災害|さいがい}・{高潮|たかしお}のとき、{警戒|けいかい}レベル1〜5で{行動|こうどう}の{目安|めやす}を{伝|つた}えます。{避難|ひなん}の{情報|じょうほう}は{市町村|しちょうそん}が{出|だ}します。レベル3（{高齢|こうれい}{者|しゃ}{等|とう}{避難|ひなん}）で、{時間|じかん}がかかる{人|ひと}は{危険|きけん}な{所|ところ}から{逃|に}げます。レベル4（{避難|ひなん}{指示|しじ}）で、{危険|きけん}な{所|ところ}にいる{人|ひと}は{全員|ぜんいん}{逃|に}げます。レベル5（{緊急|きんきゅう}{安全|あんぜん}{確保|かくほ}）を{待|ま}たないでください。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{新|あたら}しくなりました。{地震|じしん}・{津波|つなみ}には、このレベルを{使|つか}いません。",
+    "ja_easy": "{大雨|おおあめ}・{水|みず}があふれる・{土砂|どしゃ}・{高潮|たかしお}のとき、レベル1〜5で、{何|なに}をするかを{伝|つた}えます。{逃|に}げる{情報|じょうほう}は、{市|し}が{出|だ}します。レベル3で、{時間|じかん}がかかる{人|ひと}（お{年寄|としよ}りなど）は{逃|に}げます。レベル4で、{危|あぶ}ない{所|ところ}にいる{人|ひと}は、みんな{逃|に}げます。レベル5を{待|ま}ちません。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{変|か}わりました。{地震|じしん}・{津波|つなみ}は、このレベルではありません。",
+    "en": "For heavy rain, floods, landslides and storm surge, alert levels 1 to 5 tell you what to do. The city or town issues evacuation information. At level 3 (elderly and others evacuate), people who need time to move leave dangerous places. At level 4 (evacuation order), everyone in a dangerous place leaves. Do not wait for level 5 (emergency safety measures). JMA renamed its weather warnings from 29 May 2026. These levels are not used for earthquakes and tsunamis."
   },
   "lead": {
     "ja": "{警戒|けいかい}レベル4（{避難|ひなん}{指示|しじ}）までに、{危険|きけん}な{所|ところ}から{逃|に}げます。",
@@ -43,7 +43,8 @@
         "jma-alertlevel"
       ],
       "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "status": "verified",
+      "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
     }
   },
   "kind": "guide",
@@ -91,6 +92,7 @@
       "jma-keiho-2026"
     ],
     "checked_at": "2026-11-08",
-    "status": "needs_check"
+    "status": "verified",
+    "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
   }
 }
