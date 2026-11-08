@@ -738,8 +738,8 @@
         "en": "Have you started living at your new address?"
       },
       "why_asked": {
-        "ja": "{住所|じゅうしょ}の{届|とど}けは{住|す}み{始|はじ}めてから{出|だ}します。",
-        "ja_easy": "{住所|じゅうしょ}の{届|とど}けは、{住|す}んでから{出|だ}します。",
+        "ja": "{住所|じゅうしょ}の{届出|とどけで}は{住|す}み{始|はじ}めてから{出|だ}します。",
+        "ja_easy": "{住所|じゅうしょ}の{届出|とどけで}は、{住|す}んでから{出|だ}します。",
         "en": "You register your address after you move in."
       },
       "options": [

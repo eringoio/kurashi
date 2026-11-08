@@ -62,7 +62,7 @@ flow({
   await answerThenNext(/^はい$/);
 
   await snap({ name: '区役所の日（まとめて）', input: 'はい', expected: '「いつ、区役所に行きますか？」。区役所の3つの手続きを同じ日にまとめて聞く', why: '同じ所の項目は行く日を一度に聞く（SPEC 6A.5）' },
-    async () => { await expect(h1).toHaveText('いつ、区役所に行きますか？'); await expect(page.locator('.together .k-check')).toHaveCount(3); await expect(page.locator('.together')).toContainText('住所の届け'); });
+    async () => { await expect(h1).toHaveText('いつ、区役所に行きますか？'); await expect(page.locator('.together .k-check')).toHaveCount(3); await expect(page.locator('.together')).toContainText('住所の届出'); });
 
   await tap(/^今日/);
   await snap({ name: '今日に決めた', input: '今日', expected: '「〇〇に決めました」', why: '選んだあとは次の1つの上に1行だけ' },

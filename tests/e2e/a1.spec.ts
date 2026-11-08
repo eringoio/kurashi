@@ -80,7 +80,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   // 質問が終わったら、全体が1回だけ開く（道と持ち物。6A.4 v0.5.31）。キャラクターは いまの1つ に立つ
   await expect(h1(page)).toHaveText('これからのこと');
   await expect(page.locator('.road [data-road-here] .road__you')).toHaveCount(1);
-  await expect(page.locator('.road [aria-current="step"]').first()).toContainText('住所の届け');
+  await expect(page.locator('.road [aria-current="step"]').first()).toContainText('住所の届出');
   await expect(page.getByRole('heading', { name: '持ち物' })).toBeVisible();
   await check(page, '全体');
   await page.getByRole('link', { name: '1つずつ進める' }).click();
@@ -89,9 +89,9 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   // 同じ所（区役所）の項目は、行く日を一度に聞く（6A.5）
   await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
   await expect(page.locator('.together .k-check')).toHaveCount(3);
-  await expect(page.locator('.together')).toContainText('住所の届け');
+  await expect(page.locator('.together')).toContainText('住所の届出');
   await check(page, '日を決める');
-  // 区役所は今日にする（銀行の日は、住所の届けの日から後だけ選べる）
+  // 区役所は今日にする（銀行の日は、住所の届出の日から後だけ選べる）
   await tap(page, /^今日/);
   await expect(change).toHaveText(/に決めました$/);
   // 区役所の3つを今日に決めたので、「いま」は今日の予定を先に出す（K-35：「日を決める」の後ろに隠さない）
@@ -156,11 +156,11 @@ test('B1：ほかの市から来た人も、同じ画面とデータの追加だ
   await expect(h1(page)).toHaveText('前に住んでいた市区町村で、転出届を出しましたか？');
   await tap(page, 'マイナンバーカードを使って出した');
   await check(page, '答えの結果（B1）');
-  // 残りの質問は最初の答えで進め、終わったら全体（道）が1回だけ開く。国外からの経路のカード（住所の届け）は
+  // 残りの質問は最初の答えで進め、終わったら全体（道）が1回だけ開く。国外からの経路のカード（住所の届出）は
   // 「関係なかったもの」に理由つきで入る（道の下の閉じた一覧）
   for (let i = 0; i < 8 && (await page.locator('.k-qleft').count()); i++) await page.locator('.list .k-answer').first().click();
   await expect(h1(page)).toHaveText('これからのこと');
   await page.locator('summary', { hasText: '関係なかったもの' }).click();
-  await expect(page.locator('.all-list').getByRole('link', { name: /住所の届け/ })).toBeVisible();
+  await expect(page.locator('.all-list').getByRole('link', { name: /住所の届出/ })).toBeVisible();
   await check(page, '全体（B1）');
 });

@@ -63,6 +63,7 @@ p { margin: 0; }
 .pair .k-answer { flex: 1 1 8em; justify-content: center; text-align: center; min-height: var(--target-min); }
 .links { display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .link { display: inline-flex; align-items: center; min-height: var(--target-min); padding: 0; border: none; background: none; color: var(--blue); font-size: max(var(--fs-small), 15px); text-decoration: underline; text-underline-offset: 4px; line-height: 1.7; text-align: left; }
+.link--icon { gap: 6px; }
 .link:hover { color: var(--blue-deep); }
 
 /* 注記（12.3 の A2）・仮の文の印 */

@@ -91,7 +91,6 @@ function GomiTool() {
     <>
       <div className="art" aria-hidden="true"><img src={art('bin')} alt="" /></div>
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="gomi.title" /></h1></div>
-      <p className="sub"><Bi k="gomi.draft" /></p>
 
       {/* 1. 住所（区＋町名）。作者の決定 11/6 F：住所と捨てたい物が分かれば、いつ・どのごみ・どう出すが1つの画面で分かる */}
       <section className="group" aria-labelledby={id + '-a'}>
@@ -202,6 +201,7 @@ function GomiTool() {
       <p className="sub"><Bi k="gomi.license" /> {d.items.sources.filter((x) => x.license).map((x, i) => <span key={x.source_id}>{i > 0 && ' / '}<a className="link" href={x.url} target="_blank" rel="noopener noreferrer">{x.title}<span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></span>)}</p>
       <div className="gomi-sources">
         <p className="sub"><Bi k="gomi.sources" /></p>
+        <p className="sub"><Bi k="gomi.draft" /></p>
         <ul role="list">
           {d.areas.links.map((l) => <li key={l.url}><Ext label={l.label} url={l.url} /></li>)}
           {d.areas.business && <li><Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></li>}

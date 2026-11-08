@@ -18,8 +18,8 @@
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{住所|じゅうしょ}の{届|とど}け",
-    "ja_easy": "{住所|じゅうしょ}の{届|とど}け",
+    "ja": "{住所|じゅうしょ}の{届出|とどけで}",
+    "ja_easy": "{住所|じゅうしょ}の{届出|とどけで}",
     "en": "Address registration"
   },
   "official_name": {

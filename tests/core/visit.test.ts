@@ -47,15 +47,15 @@ describe('手続きを探す', () => {
   });
 });
 
-describe('銀行の日は、住所の届けの日より前にできない（day_order。v0.4.5）', () => {
+describe('銀行の日は、住所の届出の日より前にできない（day_order。v0.4.5）', () => {
   const bank = (plan = {}) => out(plan).cards.find((x) => x.card.id === 'bank-account-open')!.dayRule;
-  it('住所の届けの日がまだなら、先に決める', () => {
+  it('住所の届出の日がまだなら、先に決める', () => {
     expect(bank()).toEqual({ kind: 'need_first', from: 'nagoya-tennyu-juukyochi' });
   });
-  it('住所の届けの日を決めたら、その日から後', () => {
+  it('住所の届出の日を決めたら、その日から後', () => {
     expect(bank({ 'nagoya-tennyu-juukyochi': { card_id: 'nagoya-tennyu-juukyochi', status: 'todo', planned_on: '2026-11-07' } })).toEqual({ kind: 'min', day: '2026-11-07', from: 'nagoya-tennyu-juukyochi' });
   });
-  it('住所の届けが済んだら、いつでもよい', () => {
+  it('住所の届出が済んだら、いつでもよい', () => {
     expect(bank({ 'nagoya-tennyu-juukyochi': { card_id: 'nagoya-tennyu-juukyochi', status: 'done' } })).toEqual({ kind: 'free' });
   });
 });

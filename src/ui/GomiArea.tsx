@@ -9,6 +9,7 @@ import { Bi, One } from '../i18n/Ruby';
 import { line } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from './art';
+import { PinIcon } from './icons';
 import { fmtDay } from './guide';
 
 /** ごみの区分の絵（design/assets/illustrations/gomi-*.svg）。無い区分は bin */
@@ -72,10 +73,10 @@ export function GomiAreaFields({ wards, saved, onSet, area, fromHere = false }: 
         {wardMissing && <Need k="gomi.area.need" at={id + 'w'} />}
       </label>
       {/* 現在地から区を選ぶ（押したときだけ位置を使う。残さない。SPEC 6A.11）。いちばん近い区役所の区 */}
-      <button type="button" className="link" onClick={async () => {
+      <button type="button" className="link link--icon" onClick={async () => {
         const w = await wardHere(wards);
         if (w) onSet({ ward_id: w, set_on: new Date().toISOString().slice(0, 10) });
-      }}><One k="cal.icsHere" /></button>
+      }}><PinIcon /><One k="cal.icsHere" /></button>
       {fromHere && saved && (townMissing || banchiMissing) && <p className="sub" role="note"><Bi k="gomi.area.fromHere" /></p>}
       {area.p && saved && (
         <label className={'qrfield' + (townMissing || townUnknown ? ' is-missing' : '')}>

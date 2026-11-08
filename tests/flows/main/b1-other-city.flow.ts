@@ -31,11 +31,11 @@ flow({
 
   await tap(/^学生$/);
   await tap('20歳未満');
-  await snap({ name: '全体', input: '学生・20歳未満', expected: '「これからのこと」。国外からの経路のカード（住所の届け）は「関係なかったもの」に理由つきで入る', why: 'origin=other_city のとき、国外からの経路のカードは入口で対象外（tests/core/b1.test.ts。制度の対象外とは言わない）' },
+  await snap({ name: '全体', input: '学生・20歳未満', expected: '「これからのこと」。国外からの経路のカード（住所の届出）は「関係なかったもの」に理由つきで入る', why: 'origin=other_city のとき、国外からの経路のカードは入口で対象外（tests/core/b1.test.ts。制度の対象外とは言わない）' },
     async () => {
       await expect(h1).toHaveText('これからのこと');
       await page.locator('summary', { hasText: '関係なかったもの' }).click();
-      await expect(page.getByRole('link', { name: /住所の届け/ })).toBeVisible();
+      await expect(page.getByRole('link', { name: /住所の届出/ })).toBeVisible();
     });
 
   await page.getByRole('link', { name: 'いま', exact: true }).click();

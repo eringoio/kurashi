@@ -365,6 +365,16 @@
     "ja_easy": "{使|つか}う{前|まえ}に",
     "en": "Before you use this app"
   },
+  "page.disclaimer.noGuarantee": {
+    "ja": "{公式|こうしき}の{情報|じょうほう}を{参考|さんこう}に{作|つく}っていますが、{内容|ないよう}が{正|ただ}しいことや{最新|さいしん}であることは{保証|ほしょう}できません。{手続|てつづ}きをする{前|まえ}に、{公式|こうしき}のページや{窓口|まどぐち}で{確|たし}かめてください。",
+    "ja_easy": "{公式|こうしき}の{情報|じょうほう}を{見|み}て{作|つく}っています。でも、まちがいや{古|ふる}い{情報|じょうほう}があるかもしれません。{手続|てつづ}きの{前|まえ}に、{公式|こうしき}のページや{窓口|まどぐち}で{確|たし}かめてください。",
+    "en": "We make this app from official information, but we cannot guarantee that it is correct or up to date. Before you start a procedure, please check the official page or ask at the office."
+  },
+  "page.disclaimer.report": {
+    "ja": "まちがいや{古|ふる}い{情報|じょうほう}、うまく{動|うご}かないところに{気|き}づいたら、{画面|がめん}の「まちがいを{知|し}らせる」から{教|おし}えてください。",
+    "ja_easy": "まちがいや{古|ふる}い{情報|じょうほう}、おかしいところがあったら、「ちがうところを{知|し}らせる」から{教|おし}えてください。",
+    "en": "If you find a mistake, old information or something that does not work, please tell us with “Report a mistake” on the screen."
+  },
   "page.disclaimer.p1": {
     "ja": "このアプリは、{名古屋|なごや}{市|し}や{国|くに}の{機関|きかん}が{運営|うんえい}するものではありません。{公開|こうかい}されている{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きに{気|き}づくための{案内|あんない}をします。",
     "ja_easy": "このアプリは、{市|し}や{国|くに}のものではありません。{公式|こうしき}の{情報|じょうほう}をもとに、{手続|てつづ}きを{案内|あんない}します。",
@@ -991,9 +1001,9 @@
     "en": "Check status"
   },
   "src.status.verified": {
-    "ja": "{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめました",
-    "ja_easy": "{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめました",
-    "en": "The author checked it on the official page"
+    "ja": "{作者|さくしゃ}が{公式|こうしき}ページと{照合|しょうごう}しました",
+    "ja_easy": "{作者|さくしゃ}が{公式|こうしき}ページと{比|くら}べました",
+    "en": "The author compared it with the official page"
   },
   "src.status.needs_check": {
     "ja": "{要|よう}{確認|かくにん}",
@@ -2591,9 +2601,9 @@
     "en": "Call"
   },
   "trust.human": {
-    "ja": "{確認済|かくにんず}み",
-    "ja_easy": "{確認済|かくにんず}み",
-    "en": "Checked"
+    "ja": "{照合済|しょうごうず}み",
+    "ja_easy": "{照合済|しょうごうず}み",
+    "en": "Compared"
   },
   "trust.label": {
     "ja": "{確認|かくにん}",
@@ -2601,9 +2611,9 @@
     "en": "Check"
   },
   "page.disclaimer.p5": {
-    "ja": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページの{本文|ほんぶん}と{照合|しょうごう}しています（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}ページで{確|たし}かめた{文|ぶん}には、{確認済|かくにんず}みの{印|しるし}があります。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{確|たし}かめてください。",
-    "ja_easy": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページと{比|くら}べました（AIチェックの{印|しるし}）。{作者|さくしゃ}が{確|たし}かめた{文|ぶん}には{確認済|かくにんず}みの{印|しるし}があります。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Some text has been checked by AI against the official page (AI-check mark). Text the author checked on the official page has the checked mark. Please confirm text without a mark, and anything marked \"to be checked\", at the office."
+    "ja": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページの{本文|ほんぶん}と{照合|しょうごう}しています（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}ページと{照合|しょうごう}した{文|ぶん}には、{照合済|しょうごうず}みの{印|しるし}があります。{印|しるし}があっても、{内容|ないよう}が{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、とくに{窓口|まどぐち}で{確|たし}かめてください。",
+    "ja_easy": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページと{比|くら}べました（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}のページと{比|くら}べた{文|ぶん}には、{照合済|しょうごうず}みの{印|しるし}があります。{印|しるし}があっても、{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Some text has been compared by AI with the official page (AI-check mark). Text the author compared with the official page has the \"compared\" mark. A mark does not mean the text is always correct. Please confirm text without a mark, and anything marked \"to be checked\", at the office."
   },
   "help.site": {
     "ja": "{公式|こうしき}ページ",
@@ -2761,9 +2771,9 @@
     "en": "Sending"
   },
   "report.thanks": {
-    "ja": "ありがとうございます。{作者|さくしゃ}が{確|たし}かめて、{案内|あんない}を{直|なお}します。",
+    "ja": "ありがとうございます。いただいた{内容|ないよう}を{確|たし}かめて、{必要|ひつよう}なときは{案内|あんない}を{直|なお}します。",
     "ja_easy": "ありがとうございます。",
-    "en": "Thank you. The author will check it and fix the guide."
+    "en": "Thank you. We will look into it and fix the guide if needed."
   },
   "report.error": {
     "ja": "{送|おく}れませんでした。{時間|じかん}をおいて、もう{一度|いちど}{送|おく}ってください。",
@@ -3666,9 +3676,9 @@
     "en": "In Nakagawa and Minato wards, put cans in the yellow basket without a bag."
   },
   "gomi.sources": {
-    "ja": "{出典|しゅってん}",
-    "ja_easy": "{出典|しゅってん}",
-    "en": "Sources"
+    "ja": "{出典|しゅってん}・{公式|こうしき}の{情報|じょうほう}",
+    "ja_easy": "{出典|しゅってん}・{公式|こうしき}の{情報|じょうほう}",
+    "en": "Sources and official information"
   },
   "gomi.area.ask": {
     "ja": "ごみを{出|だ}す{日|ひ}を{知|し}るには、{自宅|じたく}の{住所|じゅうしょ}を{区|く}・{町名|ちょうめい}・{番地|ばんち}まで{入|い}れてください。",
@@ -4321,8 +4331,8 @@
     "en": "The procedure you chose"
   },
   "card.moveLinks": {
-    "ja": "{住所|じゅうしょ}の{届|とど}け{出|で}（どこからどこへ{引|ひ}っ{越|こ}しますか）",
-    "ja_easy": "{住所|じゅうしょ}の{届|とど}け（どこからどこへ{引|ひ}っ{越|こ}しますか）",
+    "ja": "{住所|じゅうしょ}の{届出|とどけで}（どこからどこへ{引|ひ}っ{越|こ}しますか）",
+    "ja_easy": "{住所|じゅうしょ}の{届出|とどけで}（どこからどこへ{引|ひ}っ{越|こ}しますか）",
     "en": "Address notification (where are you moving from and to?)"
   },
   "card.moveLinksNote": {

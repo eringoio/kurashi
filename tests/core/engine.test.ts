@@ -66,7 +66,7 @@ describe('A1（公開時点のデータ：公式のルールは needs_check）',
 
 describe('A1（確認済みデータの fixture）', () => {
   const o = run(data, input({ mode: 'verified' }));
-  it('住所の届けは在留カードの裏の答えから済み。国保・年金は「いま」', () => {
+  it('住所の届出は在留カードの裏の答えから済み。国保・年金は「いま」', () => {
     expect(byId(o)).toMatchObject({
       'nagoya-tennyu-juukyochi': { state: 'shown', section: 'done' },
       'nagoya-kokuho-kanyu': { state: 'shown', section: 'today' },
@@ -74,7 +74,7 @@ describe('A1（確認済みデータの fixture）', () => {
       'bank-account-open': { state: 'shown', section: 'today' },
     });
   });
-  it('裏に住所がないときは、国保は「住所の届けのあとが多い」という注記だけ。日は止めない（条件付きの実務上の前提）', () => {
+  it('裏に住所がないときは、国保は「住所の届出のあとが多い」という注記だけ。日は止めない（条件付きの実務上の前提）', () => {
     const o2 = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-zairyu-back-address': 'no' } }));
     const k = o2.cards.find((c) => c.card.id === 'nagoya-kokuho-kanyu')!;
     expect(k.section).toBe('today');
@@ -121,7 +121,7 @@ describe('最初の質問と範囲', () => {
     expect(o.upfront).toEqual([]);
     expect(new Set(o.cards.map((c) => c.state))).toEqual(new Set(['out_of_scope']));
   });
-  it('住み始めていない人の住所の届けは「あとで」（fixture）', () => {
+  it('住み始めていない人の住所の届出は「あとで」（fixture）', () => {
     const o = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-moved-in': 'not_yet', 'Q-zairyu-back-address': 'no' } }));
     const c = o.cards.find((x) => x.card.id === 'nagoya-tennyu-juukyochi')!;
     expect([c.section, c.sectionWhy]).toEqual(['later', 'moved_in_not_yet']);

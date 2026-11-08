@@ -147,7 +147,7 @@ describe('終わったら：手続きごとの2択', () => {
 
 // B-6（作者 11/6）：持ち物を手続きごとに。同じ物は1回だけ
 describe('持ち物を手続きごとに', () => {
-  it('在留カードは住所の届けに、保険のカードは国保に。同じ物は最初の手続きだけ', () => {
+  it('在留カードは住所の届出に、保険のカードは国保に。同じ物は最初の手続きだけ', () => {
     const v = visits(planned(TODAY))[0];
     const b = bringByCard(v);
     const of = (id: string) => b.groups.find((g) => g.card.card.id === id)!.items.map((x) => x.object.id);

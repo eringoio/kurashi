@@ -16,7 +16,7 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
   },
   // 準備中の一覧は出さない。公式サイトへ（作者 11/6 I-2）
   'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body'], icon: 'clock', link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' } },
-  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.p3', 'page.disclaimer.p5', 'page.disclaimer.p2', 'page.disclaimer.p4'], icon: 'logo' },
+  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.noGuarantee', 'page.disclaimer.p3', 'page.disclaimer.p5', 'page.disclaimer.p2', 'page.disclaimer.p4', 'page.disclaimer.report'], icon: 'logo' },
   // 使いやすさの決まり（WCAG など）は、開いたときだけ（K-52）
   about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2'], icon: 'bulb', more: { k: 'info.a11yMore', body: ['page.about.p3'] }, privacy: true },
   // 使う情報（作者の指示 2026-11-07。SPEC 13）：何を・どこへ・なぜ。使われ方の数は、ここで止められる

@@ -140,7 +140,7 @@ test('いまいる場所：English でも崩れない', async ({ page, context }
   await check(page, '一覧（English）');
 });
 
-/** A1 の経路で、区役所の3つ（住所の届け・国保・年金）を今日に決めて、つぎへ まで。保存に同意する */
+/** A1 の経路で、区役所の3つ（住所の届出・国保・年金）を今日に決めて、つぎへ まで。保存に同意する */
 async function planWardToday(page: Page) {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/');

@@ -49,7 +49,7 @@ describe('カレンダーの形', () => {
 });
 
 describe('.ics', () => {
-  const ics = buildIcs([{ uid: '2026-11-06-ward_office@kurashi', day: '2026-11-06', summary: '区役所へ：住所の届け、国民健康保険', location: '名古屋市中区栄四丁目1-8', description: '持ち物：在留カード\nほかの持ち物は窓口で確認（要確認）' }], '20261105T000000Z');
+  const ics = buildIcs([{ uid: '2026-11-06-ward_office@kurashi', day: '2026-11-06', summary: '区役所へ：住所の届出、国民健康保険', location: '名古屋市中区栄四丁目1-8', description: '持ち物：在留カード\nほかの持ち物は窓口で確認（要確認）' }], '20261105T000000Z');
   it('終日の予定（DTEND は次の日）。改行は CRLF', () => {
     expect(ics).toContain('DTSTART;VALUE=DATE:20261106');
     expect(ics).toContain('DTEND;VALUE=DATE:20261107');
@@ -57,7 +57,7 @@ describe('.ics', () => {
     expect(ics.endsWith('END:VCALENDAR\r\n')).toBe(true);
   });
   it('カンマ・改行を逃がす', () => {
-    expect(ics.replace(/\r\n /g, '')).toContain('SUMMARY:区役所へ：住所の届け\\、国民健康保険'.replace('\\、', '、'));
+    expect(ics.replace(/\r\n /g, '')).toContain('SUMMARY:区役所へ：住所の届出\\、国民健康保険'.replace('\\、', '、'));
     expect(ics.replace(/\r\n /g, '')).toContain('持ち物：在留カード\\nほかの持ち物');
   });
   it('長い行は 75 オクテットで折り返す', () => {

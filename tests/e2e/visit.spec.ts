@@ -20,7 +20,7 @@ function cleanUrl(page: Page, what: string) {
 const h1 = (page: Page) => page.locator('h1');
 const tap = (page: Page, name: string | RegExp) => page.getByRole('button', { name }).first().click();
 
-/** A1 の経路で、区役所の3つ（住所の届け・国保・年金）を今日に決めて、つぎへ まで。保存に同意する */
+/** A1 の経路で、区役所の3つ（住所の届出・国保・年金）を今日に決めて、つぎへ まで。保存に同意する */
 async function planWardToday(page: Page) {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/');
@@ -118,12 +118,12 @@ test('付き添い：行く前 → 窓口で → 終わったら → 全部で�
 // B-7（作者 11/6）：手続きごとの2択。できなかったの理由は任意。選んでいない手続きは未確認（今日の予定に残る）
 const row = (page: Page, name: RegExp) => page.getByRole('group', { name });
 
-test('付き添い：国保だけ「できなかった（別の書類が要る）」、住所の届けは「できた」、年金は選ばない → 未確認は今日の予定に残る', async ({ page }) => {
+test('付き添い：国保だけ「できなかった（別の書類が要る）」、住所の届出は「できた」、年金は選ばない → 未確認は今日の予定に残る', async ({ page }) => {
   await startVisit(page);
   await toAfter(page);
   await row(page, /国民健康保険/).getByRole('button', { name: 'できなかった', exact: true }).click();
   await row(page, /国民健康保険/).getByRole('button', { name: '別の書類が要ると言われた' }).click();
-  await row(page, /住所の届け/).getByRole('button', { name: 'できた', exact: true }).click();
+  await row(page, /住所の届出/).getByRole('button', { name: 'できた', exact: true }).click();
   await check(page, '手続きごとに選んだ');
   await tap(page, '記録する');
   await expect(h1(page)).toHaveText('記録しました');
@@ -133,18 +133,18 @@ test('付き添い：国保だけ「できなかった（別の書類が要る�
   await check(page, '結果（手続きごと）');
   await tap(page, 'つぎへ');
   await expect(page).toHaveURL(/\/now$/);
-  // できた：住所の届けは日が残らない。国保は「確かめること」。年金（未確認）は今日の予定に残る
+  // できた：住所の届出は日が残らない。国保は「確かめること」。年金（未確認）は今日の予定に残る
   await page.goto('/all');
   await expect(page.locator('main')).toContainText('国民健康保険');
   await page.goto('/today');
   await expect(page.locator('main')).toContainText('国民年金');
-  await expect(page.locator('main')).not.toContainText('住所の届け');
+  await expect(page.locator('main')).not.toContainText('住所の届出');
 });
 
 test('付き添い：全部「できなかった（ここではない）」→ 記録する', async ({ page }) => {
   await startVisit(page);
   await toAfter(page);
-  for (const name of [/住所の届け/, /国民健康保険/, /国民年金/]) {
+  for (const name of [/住所の届出/, /国民健康保険/, /国民年金/]) {
     await row(page, name).getByRole('button', { name: 'できなかった', exact: true }).click();
     await row(page, name).getByRole('button', { name: 'ここではないと言われた' }).click();
   }
