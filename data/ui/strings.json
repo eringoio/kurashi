@@ -4349,5 +4349,20 @@
     "ja": "あとで：",
     "ja_easy": "あとで：",
     "en": "After: "
+  },
+  "search.docs": {
+    "ja": "{書類|しょるい}",
+    "ja_easy": "{書類|しょるい}（{紙|かみ}・メール）",
+    "en": "Documents"
+  },
+  "letter.search": {
+    "ja": "{書類|しょるい}を{探|さが}す（{名前|なまえ}や、{書|か}いてある{言葉|ことば}）",
+    "ja_easy": "{書類|しょるい}を{探|さが}す（{名前|なまえ}や{紙|かみ}の{言葉|ことば}）",
+    "en": "Search documents (by name or words on it)"
+  },
+  "letter.searchNone": {
+    "ja": "{合|あ}う{書類|しょるい}が{見|み}つかりません。ほかの{言葉|ことば}でも{探|さが}せます。",
+    "ja_easy": "{書類|しょるい}が{見|み}つかりません。ほかの{言葉|ことば}で{探|さが}してください。",
+    "en": "No matching document. Try other words."
   }
 }

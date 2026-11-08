@@ -36,13 +36,16 @@ const stem = (w: string) => w.replace(/(ing|ed|es|s|e)$/, '') || w;
 /** 日本語の文を、助詞などで区切る（分かち書きのかわり。ゆるくてよい） */
 const JA_SPLIT = /(?:したい|したら|したので|しました|します|する|ので|から|まで|けど|ため|たい|ました|です|ます|ください|って|を|は|が|に|で|と|も|へ|や|の|か|ね|よ)/g;
 
-interface Term { text: string; latin: boolean; words: string[] }
+/** weak：説明の文から取った言葉（書類の概要など）。探す言葉が文の中にあれば当たり。名前で合うより弱く数える（v0.5.31） */
+interface Term { text: string; latin: boolean; words: string[]; weak?: boolean; name?: boolean }
 
 export interface Searchable {
   card: {
     title: Record<string, string | undefined>;
     official_name: { ja: string; reading: string };
     keywords: string[];
+    /** 説明の文（弱い手がかり。書類の概要・何のため・すること など。v0.5.31） */
+    body?: string[];
   };
 }
 
@@ -51,13 +54,18 @@ function termsOf(c: Searchable): Term[] {
   const raw = [...t.map(plainOf), ...t.map(readingOf), c.card.official_name.ja, c.card.official_name.reading, ...c.card.keywords];
   const seen = new Set<string>();
   const out: Term[] = [];
-  for (const r of raw) {
+  const push = (r: string, weak: boolean) => {
     const s = spaced(r);
-    if (!s || seen.has(s)) continue;
+    if (!s || seen.has(s)) return;
     seen.add(s);
     const latin = LATIN.test(s);
-    out.push({ text: latin ? s : s.replace(/ /g, ''), latin, words: latin ? s.split(' ').filter((w) => !STOP.has(w)).map(stem) : [] });
-  }
+    out.push({ text: latin ? s : s.replace(/ /g, ''), latin, words: latin ? s.split(' ').filter((w) => !STOP.has(w)).map(stem) : [], weak });
+  };
+  raw.forEach((r) => push(r, false));
+  // 名前（表示名・よみ・正式な名前）の言葉に印。名前で合うと、同じ強さのほかの手がかりより少し上（v0.5.31）
+  const names = new Set([...t.map(plainOf), ...t.map(readingOf), c.card.official_name.ja, c.card.official_name.reading].map((r) => spaced(r).replace(LATIN.test(spaced(r)) ? /$^/ : / /g, '')));
+  out.forEach((x) => { if (!x.weak && names.has(x.text)) x.name = true; });
+  (c.card.body ?? []).forEach((r) => { push(plainOf(r), true); push(readingOf(r), true); });
   return out;
 }
 
@@ -91,10 +99,23 @@ export function score(c: Searchable, q: Query): { score: number; hits: string[] 
   if (!q.compact) return { score: 0, hits: [] };
   // 同じ言葉でカードの言葉が何度も合っても、1回と数える。長い言葉で合うほど強い（「ごみの日」は「ごみ」より強い）
   const ja = new Set<string>();
+  const weakJa = new Set<string>();
+  const weakLatin = new Map<number, string>();
   const latinWhole = new Set<number>();
   const latinPart = new Map<number, string>();
   const qWords = q.latin;
+  let nameHit = false;
   for (const t of termsOf(c)) {
+    if (t.name && !t.latin && (q.compact.includes(t.text) || q.ja.some((w) => t.text.includes(w)) || (q.compact.length <= 8 && t.text.includes(q.compact)))) nameHit = true;
+    if (t.weak) {
+      // 説明の文：探す言葉（区切った言葉・2文字以上）が文の中にあるか。英語は語がそのまま文の中にあるか
+      if (t.latin) qWords.forEach((w, i) => { if (w.length >= 3 && t.words.some((tw) => tw === w || tw.startsWith(w))) weakLatin.set(i, w); });
+      else {
+        for (const w of q.ja) if (w.length >= 2 && t.text.includes(w)) weakJa.add(w);
+        if (q.compact.length >= 2 && q.compact.length <= 12 && t.text.includes(q.compact)) weakJa.add(q.compact);
+      }
+      continue;
+    }
     if (t.latin) {
       const n = t.words.length;
       if (!n) continue;
@@ -121,6 +142,12 @@ export function score(c: Searchable, q: Query): { score: number; hits: string[] 
   const hits = [...jaHits];
   for (const i of [...latinWhole].sort((a, b) => a - b)) hits.push(q.latinRaw[i]);
   for (const [i, w] of latinPart) if (!latinWhole.has(i)) { total += 1; hits.push(q.latinRaw[i] ?? w); }
+  if (nameHit && total > 0) total += 0.5;
+  // 説明の文で合った言葉（名前で合った言葉と同じものは数えない）。名前の半分の強さ
+  const weakHits = [...weakJa].filter((w) => !jaHits.some((o) => o.includes(w)) && ![...weakJa].some((o) => o !== w && o.includes(w)));
+  total += weakHits.reduce((n, w) => n + w.length, 0) / 2;
+  hits.push(...weakHits);
+  for (const [i, w] of weakLatin) if (!latinWhole.has(i) && !latinPart.has(i)) { total += 0.5; hits.push(q.latinRaw[i] ?? w); }
   return { score: total, hits: [...new Set(hits)] };
 }
 

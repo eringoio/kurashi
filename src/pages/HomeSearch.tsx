@@ -9,6 +9,7 @@ import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { CardRow } from '../ui/guide';
+import { DocResults, useDocSearch } from '../ui/DocSearch';
 import { LocationAsk, NearBand } from '../ui/Location';
 import { Link, useFocusTitle } from '../ui/router';
 import { LINKS, menuItems } from './Home';
@@ -28,6 +29,8 @@ export function HomeSearch({ hasProgress, continueTo = '/now' }: { hasProgress: 
   // 「ほかの手続きを探す」の箱は、ここに検索があるので出さない
   const items = menuItems().filter((m) => m.key !== 'search');
   const asking = !!q.trim();
+  // 書類も探す（v0.5.31）。手続きが無くても、書類があれば「見つかりません」にしない
+  const docs = useDocSearch(q);
   return (
     <>
       <div className="head">
@@ -41,8 +44,8 @@ export function HomeSearch({ hasProgress, continueTo = '/now' }: { hasProgress: 
         </div>
       </div>
       {/* 結果の数は読み上げにも知らせる（数だけ。15.2） */}
-      <p className="sr-only" role="status">{asking ? (found.length ? <><Bi k="search.found" />（{found.length}）</> : <Bi k="search.none" />) : null}</p>
-      {asking && (
+      <p className="sr-only" role="status">{asking ? (found.length + docs.length ? <><Bi k="search.found" />（{found.length + docs.length}）</> : <Bi k="search.none" />) : null}</p>
+      {asking && (found.length > 0 || docs.length === 0) && (
         <section className="group" aria-labelledby={id + 'f'}>
           {found.length ? (
             <>
@@ -58,6 +61,7 @@ export function HomeSearch({ hasProgress, continueTo = '/now' }: { hasProgress: 
           )}
         </section>
       )}
+      {asking && <DocResults q={q} />}
       {/* 位置（A-6）：使うかを一度だけ聞く。使うなら近くの区役所の帯 */}
       <LocationAsk />
       <NearBand />

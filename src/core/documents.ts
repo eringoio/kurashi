@@ -62,6 +62,28 @@ export const KnownDocument = z.object({
 });
 export type KnownDocument = z.infer<typeof KnownDocument>;
 
+/** 書類を探すための形（src/core/search.ts の Searchable。v0.5.31）。
+    強い手がかり：書類の名前（全部の表示レベル）・書類の見出しの言葉・発行元・大事な言葉とその意味。
+    弱い手がかり：概要・何のため・誰に関係・届き方・すること・注意・書く欄 */
+export interface DocSearchItem { doc: KnownDocument; card: { title: Record<string, string | undefined>; official_name: { ja: string; reading: string }; keywords: string[]; body: string[] } }
+const RUBY = /\{([^|{}]+)\|([^|{}]+)\}/g;
+const textsOf = (t: Text | undefined): string[] => (t ? Object.entries(t).filter(([k, v]) => k !== 'status' && typeof v === 'string').map(([, v]) => v as string) : []);
+export function docSearchItems(docs: KnownDocument[]): DocSearchItem[] {
+  return docs.map((d) => {
+    const plain = (s: string) => s.replace(RUBY, '$1');
+    const reading = (s: string) => s.replace(RUBY, '$2');
+    const keywords = [
+      ...textsOf(d.issuer).flatMap((s) => [plain(s), reading(s)]),
+      ...d.key_words.flatMap((k) => [plain(k.word), reading(k.word), ...textsOf(k.meaning).map(plain)]),
+    ];
+    const body = [
+      ...textsOf(d.summary), ...textsOf(d.purpose), ...textsOf(d.who), ...textsOf(d.how_to_get), ...textsOf(d.caution),
+      ...d.actions.flatMap(textsOf), ...d.fields.flatMap((f) => [f.label, ...textsOf(f.meaning)]),
+    ];
+    return { doc: d, card: { title: d.title, official_name: { ja: plain(d.look_for), reading: reading(d.look_for) }, keywords, body } };
+  });
+}
+
 /** strict：関係する書類の id が一覧に無ければ止める。本番（要確認の書類を読まない）では、無い id を黙って外す */
 export function loadDocuments(raw: unknown = documentsJson, strict = true): KnownDocument[] {
   const list = z.object({ documents: z.array(KnownDocument) }).parse(raw).documents;

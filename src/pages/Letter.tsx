@@ -9,6 +9,7 @@ import { cleanCandidates, DOCUMENTS, type KnownDocument } from '../core/document
 import { Bi, One, Ruby } from '../i18n/Ruby';
 import { fill } from '../ui/guide';
 import { DocAbout } from '../ui/DocAbout';
+import { DocSearchList } from '../ui/DocSearch';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
@@ -100,11 +101,10 @@ export function Letter() {
       <button type="button" className="k-answer" onClick={() => setSt({ k: 'pick' })}><Bi phrase k="letter.pick" /></button>
     </div>
   );
+  // 書類の一覧と検索の欄（v0.5.31）：名前と、説明の大事な言葉から探せる
   const pickList = (
-    <ul className="list" role="list">
-      {DOCUMENTS().map((d) => <li key={d.id}><button type="button" className="k-answer" onClick={() => setSt({ k: 'result', doc: d, sample: false })}><img src={art('doc')} alt="" /><Bi phrase t={d.title} /></button></li>)}
-      <li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>
-    </ul>
+    <DocSearchList onPick={(d) => setSt({ k: 'result', doc: d, sample: false })}
+      extra={<li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>} />
   );
 
   let body: React.ReactNode;
