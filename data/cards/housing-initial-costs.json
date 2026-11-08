@@ -118,15 +118,16 @@
   "visual": "costs",
   "fee": {
     "text": {
-      "ja": "{家賃|やちん}の{目安|めやす}：{名古屋|なごや}{市|し}の{民営|みんえい}{借家|しゃくや}で、29㎡{以下|いか}（ワンルーム・1K ぐらい）は{平均|へいきん}{月|つき}50,322{円|えん}（{住宅|じゅうたく}・{土地|とち}{統計|とうけい}{調査|ちょうさ}、2023{年|ねん}）。4〜6{万|まん}{円|えん}が{多|おお}いです（{目安|めやす}。{要|よう}{確認|かくにん}）。{共益費|きょうえきひ}・{管理費|かんりひ}は{別|べつ}のことが{多|おお}いです。",
-      "ja_easy": "{小|ちい}さい{部屋|へや}（ワンルーム・1K）の{家賃|やちん}は、{名古屋|なごや}{市|し}で{月|つき}{約|やく}5{万|まん}{円|えん}です。4〜6{万|まん}{円|えん}が{多|おお}いです（{要|よう}{確認|かくにん}）。",
-      "en": "Rent guide: in Nagoya, private rentals of 29 m² or less (about one room / 1K) average 50,322 yen a month (Housing and Land Survey, 2023). Most are 40,000–60,000 yen (a guide; to be checked). Common or management fees are often extra."
+      "ja": "2023{年|ねん}の{住宅|じゅうたく}・{土地|とち}{統計|とうけい}{調査|ちょうさ}では、{名古屋|なごや}{市|し}の29㎡{以下|いか}の{民営|みんえい}{借家|しゃくや}の{平均|へいきん}{家賃|やちん}は{月|つき}{約|やく}5{万|まん}{円|えん}です。4{万|まん}〜6{万|まん}{円|えん}{未満|みまん}の{住宅|じゅうたく}が{約|やく}{半数|はんすう}を{占|し}めます。{実際|じっさい}の{募集|ぼしゅう}{家賃|やちん}は、{場所|ばしょ}・{築|ちく}{年数|ねんすう}・{設備|せつび}などで{異|こと}なります。{共益|きょうえき}{費|ひ}・{管理|かんり}{費|ひ}は{別|べつ}のことが{多|おお}いです。",
+      "ja_easy": "2023{年|ねん}の{調査|ちょうさ}では、{名古屋市|なごやし}の29㎡{以下|いか}の{小|ちい}さい{部屋|へや}の{家賃|やちん}は、1か{月|げつ}{平均|へいきん} {約|やく}5{万|まん}{円|えん}でした。4〜6{万|まん}{円|えん}{未満|みまん}の{部屋|へや}が{約半分|やくはんぶん}です。",
+      "en": "According to the 2023 Housing and Land Survey, private rentals of 29 m² or less in Nagoya averaged about ¥50,000 per month. About half were rented for ¥40,000 to less than ¥60,000 per month. Current asking rents vary by location, building age and amenities. Common or management fees are often extra."
     },
     "evidence": {
       "source_ids": [
-        "estat-jutaku-r5-130-2"
+        "estat-jutaku-r5-130-2",
+        "estat-jutaku-r5-130-1"
       ],
-      "checked_at": "2026-11-07",
+      "checked_at": "2026-11-08",
       "status": "ai_checked",
       "quote": "名古屋市 | 総数 | 29ｍ2以下\t50,322",
       "ai_check": {

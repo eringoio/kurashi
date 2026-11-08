@@ -211,9 +211,9 @@ test('書類の説明（/doc）：書類の種類で出る欄が変わる。関�
   await expect(page.getByText('くわしく')).toBeVisible();
   await check(page, '転入学通知書');
   await page.getByRole('link', { name: /転入届/ }).first().click();
-  // 書いて出す（要確認・公開の前）：期限の注意・見本の画像なし・見本のリンクなし
+  // 書いて出す（作者が確認済み・公開）：期限の注意・見本の画像なし・見本のリンクなし
   await expect(h1(page)).toHaveText(/転入届/);
-  await expect(page.locator('.draftmark')).toContainText('確認中');
+  await expect(page.locator('.draftmark')).toHaveCount(0);
   await expect(page.locator('.doc__sample')).toHaveCount(0);
   await expect(page.locator('.k-notice').first()).toContainText('14日以内');
   await expect(page.locator('.doc__linkkind')).not.toContainText(['実物の見本']);

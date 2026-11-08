@@ -30,10 +30,13 @@ describe('書類のデータ', () => {
     expect(candidates.candidates.every((c) => c.status === 'research')).toBe(true);
   });
 
-  it('要確認（review）の書類は本番に出さない。今の7件は公開のまま', () => {
-    const pub = docs.filter((d) => isShown(d, false)).map((d) => d.id);
-    expect(pub).toEqual(['kokuho-shikaku', 'kokuho-nofu', 'nenkin-oshirase', 'tenshutsu-shomeisho', 'kokuho-shikaku-joho', 'kojin-bango-tsuchisho', 'tennyugaku-tsuchisho']);
-    expect(docs.filter((d) => d.publication === 'review').every((d) => d.evidence.status !== 'verified')).toBe(true);
+  it('公開は16件（作者が 11/8 に9件を確認）。要確認（review）の書類は本番に出さない', () => {
+    expect(docs.filter((d) => isShown(d, false)).length).toBe(16);
+    // 公開の書類は、作者が確かめた（verified_by）か、要確認の札が出る（needs_check）
+    for (const d of docs.filter((x) => x.publication === 'public')) expect(d.evidence.status === 'verified' ? d.evidence.verified_by : d.evidence.status, d.id).toBeTruthy();
+    expect(isShown({ ...by('tennyu-todoke'), publication: 'review' }, false)).toBe(false);
+    expect(isShown({ ...by('tennyu-todoke'), publication: 'review' }, true)).toBe(true);
+    expect(isShown({ ...by('tennyu-todoke'), publication: 'research' }, true)).toBe(false);
   });
 
   it('関係する書類の id が無いと読み込めない', () => {

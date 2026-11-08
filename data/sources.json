@@ -898,6 +898,14 @@
       "language": "ja"
     },
     {
+      "source_id": "estat-jutaku-r5-130-1",
+      "url": "https://www.e-stat.go.jp/stat-search/database?statdisp_id=0004021543",
+      "owner": "総務省統計局（e-Stat）",
+      "owner_type": "government",
+      "title": "令和5年住宅・土地統計調査 130-1 住宅の建て方、延べ面積別住宅の１か月当たり家賃別民営借家（専用住宅）数－全国、都道府県、市区",
+      "language": "ja"
+    },
+    {
       "source_id": "B-nagoya-gomi-index",
       "url": "https://www.city.nagoya.jp/kurashi/gomi/1012183/index.html",
       "owner": "名古屋市",
