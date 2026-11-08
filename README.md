@@ -2,7 +2,7 @@
 
 名古屋市に住む人（とくに来日した留学生）が、生活の出来事から「知らなかった手続き」に気づくための Web アプリです。Built with Claude: Japan 2026 の提出物です。
 
-- 公開の URL：https://kurashi.eringo.io
+- 公開の URL：https://kurashi.eringo-io.workers.dev/ （独自ドメイン kurashi.eringo.io は準備中）
 - ライセンス：MIT（`LICENSE`）。第三者の著作物と出典は `THIRD_PARTY_NOTICES.md`
 
 ## できること
