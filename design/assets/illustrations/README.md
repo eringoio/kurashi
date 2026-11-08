@@ -52,6 +52,12 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `gomi-hakka.svg` | Garbage | 発火性危険物 | Fire-risk items (spray cans, batteries) | ごみの画面の区分 |
 | `gomi-kaden.svg` | Garbage | 家電4品目 | Four home appliances | ごみの画面の区分 |
 | `gomi-not.svg` | Garbage | 市が集めない物 | Items the city does not collect | ごみの画面の区分 |
+| `bag-kanen.svg` | Garbage bag | 可燃ごみの指定袋（赤い印刷） | Burnable-waste bag (red print) | ごみの種類の表の袋 |
+| `bag-funen.svg` | Garbage bag | 不燃ごみの指定袋（緑の印刷） | Non-burnable bag (green print) | ごみの種類の表の袋 |
+| `bag-shigen.svg` | Garbage bag | 資源用の指定袋（青い印刷） | Resource bag (blue print) | ごみの種類の表の袋 |
+| `bag-clear.svg` | Garbage bag | 無色透明の袋 | Clear bag | ごみの種類の表の袋 |
+| `bag-basket.svg` | Garbage bag | 青いかご（袋を使わない） | Blue basket (no bag) | ごみの種類の表の袋 |
+| `bag-none.svg` | Garbage bag | 収集日の袋を使わない | No collection bag | ごみの種類の表の袋 |
 | `status-japan.svg` · `status-japan-dim.svg` | Status | 日本国籍（戸籍の紙） | Japanese nationality (family register) | 在留資格の質問（B-4） |
 | `status-foreign.svg` · `status-foreign-dim.svg` | Status | 日本以外の国籍（在留カード＋地球） | Non-Japanese nationality | 在留資格の質問（B-4） |
 | `status-student.svg` · `status-student-dim.svg` | Status | 在留資格：留学 | Status: Student | 在留資格の質問（B-4） |

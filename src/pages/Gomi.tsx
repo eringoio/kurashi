@@ -1,23 +1,25 @@
 /* ごみの出し方（/gomi。SPEC v0.4.6 の5・docs/COMING_SOON_PLAN.md の4・ごみのハンドオフ）。
    1. 「これ、何ごみ？」：品目の名前で探す → 区分・出し方・次の行動。結果を変える条件（材質・大きさ）だけを聞く。
    2. ごみを出す地域：区を手で選ぶ（端末だけ。同意の前は保存しない）。収集日の表が無い地域は、日付を作らず公式の検索へ。
-   3. 自己搬入：日を聞かず、時期ごとの受付の方法を並べる（K-23）。
-   写真・現在地からは探さない（作っていない機能をボタンにしない）。探した言葉・日付は URL にも保存にも入れない（13.4）。 */
-import { useEffect, useId, useMemo, useState } from 'react';
+   3. 収集日（2週間）：町名まで選ぶと出る（市の掲載の許可 2026-11-08。既定で出す）。位置を使う設定なら、区を現在地から先に入れる。
+   4. ごみの種類と袋：種類ごとに、袋と品目の表。自己搬入の受付の方法は、自己搬入のカード（gomi-mochikomi）だけに書く。
+   写真からは探さない（作っていない機能をボタンにしない）。探した言葉・日付は URL にも保存にも入れない（13.4）。 */
+import { memo, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { DATA } from '../core/data';
-import { areaStatus, judgeItem, nextCollection, searchItems, type AreaChoice, type GomiItem } from '../core/gomi';
+import { areaStatus, judgeItem, nextCollection, searchItems, type AreaChoice, type GomiItem, type GomiItems } from '../core/gomi';
 import { gomiData } from '../core/gomiData';
 import { todayJst } from '../core/date';
 import { activeNotices } from '../core/notice';
 import type { Occurrence } from '../core/occurrence';
 import type { Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
+import type { UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 import { fmtDay } from '../ui/guide';
 import { Info } from './Info';
-import { GomiAreaFields, GomiWeek, gomiIcon, useArea, type Place } from '../ui/GomiArea';
+import { bagIcon, GomiAreaFields, GomiWeek, gomiIcon, useArea, wardHere, type Place } from '../ui/GomiArea';
 import { areaIdToSave, SCHEDULE_ON } from '../core/gomiSchedule';
 
 const AREA_KEY = 'gomi_area';
@@ -39,7 +41,7 @@ export function Gomi() {
 
 function GomiTool() {
   const d = gomiData()!;
-  const { level, vault: v } = usePrefs();
+  const { level, vault: v, location } = usePrefs();
   const today = todayJst();
   const [q, setQ] = useState('');
   const [sel, setSel] = useState<GomiItem | null>(null);
@@ -69,6 +71,14 @@ function GomiTool() {
     const next = saved ? areaIdToSave(saved.area_id, rowId) : undefined;
     if (saved && next !== undefined) void v.put('settings', AREA_KEY, { ...saved, area_id: next });
   }, [rowId, saved, v]);
+  // 位置を使う設定で、まだ区を選んでいなければ、現在地にいちばん近い区役所の区を入れる（この画面で1回だけ。位置は残さない）
+  const asked = useRef(false);
+  useEffect(() => {
+    if (location !== 'on' || saved || asked.current) return;
+    asked.current = true;
+    // 調べている間に人が区を選んだら、上書きしない
+    void wardHere(d.areas.wards).then((w) => { if (w && !v.get('settings', AREA_KEY)) void setPlace({ ward_id: w, set_on: todayJst() }); });
+  }, [location, saved]);
   const pick = (it: GomiItem) => { setSel(it); setChoice(undefined); };
 
   return (
@@ -84,6 +94,9 @@ function GomiTool() {
         {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
         {!SCHEDULE_ON && saved && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
       </section>
+
+      {/* 収集日のカレンダー（2週間）。町名まで選ぶと出る */}
+      <GomiWeek area={pa} categories={d.items.categories} today={today} />
 
       {/* 2. これ、何ごみ？ */}
       <section className="group" aria-labelledby={id + '-s'}>
@@ -134,7 +147,8 @@ function GomiTool() {
           {res.kind === 'result' && (
             <>
               {/* 結論：区分。公開前のデータなので「下書き・要確認」を文字で付ける（色だけにしない） */}
-              <p className="focus__name gomi-result"><img src={gomiIcon(res.category.id)} alt="" className="gomi-result__art" /><Bi t={res.category.label} /> <span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span></p>
+              <p className="focus__name gomi-result"><img src={gomiIcon(res.category.id)} alt="" className="gomi-result__art" /><Bi t={res.category.label} />{res.category.evidence.status !== 'verified' && <> <span className="k-state k-state--check"><One k="gomi.result.unapproved" /></span></>}</p>
+              <p className="gomi-bag"><img src={bagIcon(res.category.bag)} alt="" /><Bi k={`gomi.bag.${res.category.bag}` as UiKey} /></p>
               <p><Bi t={res.category.how} /></p>
               {sel.note && <p className="sub"><Bi t={sel.note} /></p>}
               {/* 収集日（作者 11/7 K-10）：日が分かるときだけ出す。地域を選んでいないときは、上の欄を指す1行だけ。地域を選んだのに日が無いときは出さない（地域の欄の下にもう書いてある） */}
@@ -159,14 +173,6 @@ function GomiTool() {
         </section>
       )}
 
-      {/* 3. 収集日のカレンダー（on のときだけ） */}
-      <GomiWeek area={pa} categories={d.items.categories} today={today} />
-
-      {/* 3b. 分け方・収集日のカードへの入口（K-18：/e/E-gomi をこの画面へ寄せた） */}
-      <ul className="list" role="list">
-        {(['gomi-bunbetsu', 'gomi-shushubi'] as const).map((cid) => { const c = DATA().cards.find((x) => x.id === cid); return c ? <li key={cid}><Link className="k-answer" to={'/e/E-gomi/c/' + cid}><Bi phrase t={c.title} /></Link></li> : null; })}
-      </ul>
-
       {/* 4. 必要なときだけ：自己搬入。粗大ごみの案内は、探した物が粗大ごみのときだけ結果の下に出す（K-22） */}
       <section className="group" aria-labelledby={id + '-m'}>
         <h2 id={id + '-m'}><Bi phrase k="gomi.more.title" /></h2>
@@ -175,29 +181,71 @@ function GomiTool() {
         <ul className="list" role="list">
           <li><Link className="k-answer" to="/e/E-gomi/c/gomi-mochikomi"><Bi k="gomi.more.mochikomi" /></Link></li>
         </ul>
-        {/* 自己搬入：日を聞かない。時期ごとの受付の方法をそのまま並べる（K-23） */}
-        <div className="k-notice" role="note">
-          {d.delivery.regimes.map((r) => <p key={r.id}><Bi t={r.label} /></p>)}
-          {d.delivery.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}
-        </div>
       </section>
 
-      {/* 5. ごみの種類（「分け方を知る」をこの画面に。作者 11/6 F） */}
-      <details className="group gomi-kinds">
-        <summary><Bi k="gomi.kinds.title" /></summary>
-        <ul className="list" role="list">
-          {d.items.categories.map((c) => (
-            <li key={c.id} className="gomi-kind"><img src={gomiIcon(c.id)} alt="" /><span><strong><Bi t={c.label} /></strong><span className="sub"><Bi t={c.how} /></span></span></li>
-          ))}
-        </ul>
-      </details>
+      {/* 5. ごみの種類と袋。種類ごとに、袋と品目の表（作者 11/8） */}
+      <section className="group" aria-labelledby={id + '-k'}>
+        <h2 id={id + '-k'}><Bi phrase k="gomi.kinds.title" /></h2>
+        <Kinds items={d.items} />
+      </section>
       {!pa.p && <p className="sub"><Bi t={d.areas.coverage} /></p>}
-      <div className="links">{d.areas.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}
-        {/* 家庭ごみの外（事業系ごみ）は、リンクだけ（B-7a：段落をやめた） */}
-        {d.areas.business && <p><Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></p>}</div>
 
-      {/* ライセンスの表示（CC BY：名前と出典を小さく、下に） */}
+      {/* ライセンスの表示（CC BY：名前と出典を小さく、下に）。その下に、市のページ（収集日・分け方の検索・事業系ごみ）を出典として */}
       <p className="sub"><Bi k="gomi.license" /> {d.items.sources.filter((x) => x.license).map((x, i) => <span key={x.source_id}>{i > 0 && ' / '}<a className="link" href={x.url} target="_blank" rel="noopener noreferrer">{x.title}<span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></span>)}</p>
+      <div className="gomi-sources">
+        <p className="sub"><Bi k="gomi.sources" /></p>
+        <ul role="list">
+          {d.areas.links.map((l) => <li key={l.url}><Ext label={l.label} url={l.url} /></li>)}
+          {d.areas.business && <li><Ext label={d.areas.business.link.label} url={d.areas.business.link.url} /></li>}
+        </ul>
+      </div>
     </>
   );
 }
+
+/** 種類ごとの品目（「〜を選ぶ」の品目は、選んだ答えの種類の中に「品目（答え）」で出す）。確かめ中（review）の品目は出さない */
+function itemsByKind(data: GomiItems): Map<string, { key: string; label: Text; choice?: Text; note?: Text }[]> {
+  const m = new Map<string, { key: string; label: Text; choice?: Text; note?: Text }[]>();
+  const push = (cat: string, x: { key: string; label: Text; choice?: Text; note?: Text }) => { const a = m.get(cat) ?? []; a.push(x); m.set(cat, a); };
+  for (const it of data.items) {
+    if (it.review) continue;
+    if (it.category) push(it.category, { key: it.id, label: it.label, note: it.note });
+    else it.ask?.choices.forEach((c) => { if (c.category) push(c.category, { key: it.id + ':' + c.value, label: it.label, choice: c.label, note: it.note }); });
+  }
+  for (const a of m.values()) a.sort((x, y) => x.label.ja.localeCompare(y.label.ja, 'ja'));
+  return m;
+}
+
+/** ごみの種類と袋。種類ごとに開くと、出し方と品目の表。品目の表は開いたときだけ作る（1,000行をこえるため） */
+const Kinds = memo(function Kinds({ items }: { items: GomiItems }) {
+  const by = useMemo(() => itemsByKind(items), [items]);
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  return (
+    <ul className="gomi-kinds" role="list">
+      {items.categories.map((c) => {
+        const list = by.get(c.id) ?? [];
+        return (
+          <li key={c.id}>
+            <details onToggle={(e) => { const o = (e.currentTarget as HTMLDetailsElement).open; setOpen((x) => ({ ...x, [c.id]: o })); }}>
+              <summary className="gomi-kind">
+                <img src={gomiIcon(c.id)} alt="" />
+                <span><strong><Bi t={c.label} /></strong><span className="gomi-bag"><img src={bagIcon(c.bag)} alt="" /><Bi k={`gomi.bag.${c.bag}` as UiKey} /></span></span>
+              </summary>
+              <p><Bi t={c.how} /></p>
+              {c.id === 'kan' && <p className="sub"><Bi k="gomi.bag.kanNote" /></p>}
+              {open[c.id] && list.length > 0 && (
+                <table className="gomi-table">
+                  <caption><Bi k="gomi.kinds.items" /> ({list.length})</caption>
+                  <thead><tr><th scope="col"><One k="gomi.kinds.item" /></th><th scope="col"><One k="gomi.kinds.note" /></th></tr></thead>
+                  <tbody>
+                    {list.map((x) => <tr key={x.key}><th scope="row"><One t={x.label} />{x.choice && <>（<One t={x.choice} />）</>}</th><td>{x.note ? <One t={x.note} /> : ''}</td></tr>)}
+                  </tbody>
+                </table>
+              )}
+            </details>
+          </li>
+        );
+      })}
+    </ul>
+  );
+});

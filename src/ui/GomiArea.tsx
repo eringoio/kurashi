@@ -1,8 +1,8 @@
 /* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地の文字は保存しない。保存するのは表の行の area_id だけ）。
    収集日は VITE_GOMI_SCHEDULE=on で、data/private/gomi-schedule.json があるときだけ出す（許諾の返事まで既定は off）。 */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
-import { areaRow, banchiOf, privateSchedule, romajiOf, rowsOf, SCHEDULE_ON, toSchedules, townsOf } from '../core/gomiSchedule';
+import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, toSchedules, townsOf, type PrivateSchedule } from '../core/gomiSchedule';
 import { nearest, PLACES } from '../core/places';
 import { getPosition } from './Location';
 import { Bi, One } from '../i18n/Ruby';
@@ -17,12 +17,23 @@ const ICON: Record<string, string> = {
   bin: 'gomi-bin', kan: 'gomi-kan', sodai: 'gomi-bulky', hakka: 'gomi-hakka', denchi: 'gomi-hakka', kaden4: 'gomi-kaden', pc: 'gomi-not',
 };
 export const gomiIcon = (category: string) => art(ICON[category] ?? 'bin');
+/** 袋の絵（bag-*.svg） */
+export const bagIcon = (bag: string) => art('bag-' + bag);
+
+/** 現在地からいちばん近い区役所の区（端末の中だけ。送らない・残さない）。分からなければ null */
+export async function wardHere(wards: { id: string }[]): Promise<string | null> {
+  const r = await getPosition();
+  if (typeof r === 'string') return null;
+  const w = nearest(PLACES().filter((x) => x.kind === 'ward_office'), r)?.ward;
+  return w && wards.some((x) => x.id === w) ? w : null;
+}
 
 export interface Place { ward_id: string; town?: string; area_id?: string | null; set_on: string }
 
 /** 町名・番地から、収集日の表の地域。番地で分かれていて選んでいなければ null。画面でまだ選んでいなければ、保存した area_id から戻す（K-21） */
 export function useArea(saved: Place | null) {
-  const p = SCHEDULE_ON ? privateSchedule() : null;
+  const [p, setP] = useState<PrivateSchedule | null>(() => scheduleNow() ?? null);
+  useEffect(() => { let live = true; void loadSchedule().then((x) => { if (live) setP(x); }); return () => { live = false; }; }, []);
   const [picked, setBanchi] = useState<string | null>(null);
   const banchi = banchiOf(picked, saved?.area_id);
   const rows = p && saved?.town ? rowsOf(p, saved.ward_id, saved.town) : [];
@@ -51,10 +62,8 @@ export function GomiAreaFields({ wards, saved, onSet, area }: {
       </label>
       {/* 現在地から区を選ぶ（押したときだけ位置を使う。残さない。SPEC 6A.11）。いちばん近い区役所の区 */}
       <button type="button" className="link" onClick={async () => {
-        const r = await getPosition();
-        if (typeof r === 'string') return;
-        const w = nearest(PLACES().filter((x) => x.kind === 'ward_office'), r)?.ward;
-        if (w && wards.some((x) => x.id === w)) onSet({ ward_id: w, set_on: new Date().toISOString().slice(0, 10) });
+        const w = await wardHere(wards);
+        if (w) onSet({ ward_id: w, set_on: new Date().toISOString().slice(0, 10) });
       }}><One k="cal.icsHere" /></button>
       {area.p && saved && (
         <label className="qrfield">

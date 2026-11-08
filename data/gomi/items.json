@@ -119,10 +119,12 @@
           "gomi-bag-1012258",
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "必ず名古屋市指定の家庭用可燃ごみ袋に入れてください"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "必ず名古屋市指定の家庭用可燃ごみ袋に入れてください",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "kanen"
     },
     {
       "id": "funen",
@@ -143,10 +145,12 @@
           "gomi-bag-1012258",
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "必ず名古屋市指定の家庭用不燃ごみ袋に入れてください"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "必ず名古屋市指定の家庭用不燃ごみ袋に入れてください",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "funen"
     },
     {
       "id": "plastic",
@@ -168,10 +172,12 @@
           "gomi-bag-1012258",
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "資源用の指定袋に入れてください"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "資源用の指定袋に入れてください",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "shigen"
     },
     {
       "id": "kan",
@@ -189,12 +195,15 @@
       "links": [],
       "evidence": {
         "source_ids": [
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "飲料・食品用以外は不燃ごみに出してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "飲料・食品用以外は不燃ごみに出してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "shigen"
     },
     {
       "id": "bin",
@@ -212,12 +221,15 @@
       "links": [],
       "evidence": {
         "source_ids": [
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "割れたびんは、丈夫な紙などで包み「キケン」と表示してから、不燃ごみへ出してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "割れたびんは、丈夫な紙などで包み「キケン」と表示してから、不燃ごみへ出してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "basket"
     },
     {
       "id": "denchi",
@@ -253,12 +265,15 @@
       "evidence": {
         "source_ids": [
           "gomi-denchi-1012421",
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "電池類をひとまとめにして無色透明の袋に入れてください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "電池類をひとまとめにして無色透明の袋に入れてください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "clear"
     },
     {
       "id": "hakka",
@@ -293,12 +308,15 @@
       ],
       "evidence": {
         "source_ids": [
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "穴あけ不要です。中身を完全に使い切ってください。中身が使い切れない場合は、環境事業所へお持ち込みください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "穴あけ不要です。中身を完全に使い切ってください。中身が使い切れない場合は、環境事業所へお持ち込みください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "shigen"
     },
     {
       "id": "juden",
@@ -335,10 +353,12 @@
         "source_ids": [
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "環境事業所まで持ち込めない場合は、粗大ごみに出してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "環境事業所まで持ち込めない場合は、粗大ごみに出してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "keikou",
@@ -376,10 +396,12 @@
           "gomi-keikou-1012215",
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "各区の環境事業所にお持ち込みください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "各区の環境事業所にお持ち込みください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "kaden4",
@@ -416,10 +438,12 @@
         "source_ids": [
           "gomi-kaden-1012224"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "（注）市では収集しません。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "（注）市では収集しません。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "pc",
@@ -457,10 +481,12 @@
           "gomi-kogata-1012213",
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "デスクトップパソコンなど回収ボックスに入らないパソコンは、メーカーに回収を依頼するか、小型家電リサイクル法の認定事業者であるリネットジャパンリサイクル株式会社に宅配便による回収を依頼してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "デスクトップパソコンなど回収ボックスに入らないパソコンは、メーカーに回収を依頼するか、小型家電リサイクル法の認定事業者であるリネットジャパンリサイクル株式会社に宅配便による回収を依頼してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "sodai",
@@ -498,10 +524,12 @@
           "gomi-sodai-1046469",
           "gomi-sodai-1033988"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "手数料納付券は250円、500円券の2種類あります。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "手数料納付券は250円、500円券の2種類あります。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "kogata",
@@ -521,10 +549,12 @@
         "source_ids": [
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "くわしくは、小型家電のページをご覧ください。取り外し可能な電池類は取り外して出してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "kami",
@@ -542,12 +572,15 @@
       "links": [],
       "evidence": {
         "source_ids": [
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "紙製容器包装・雑がみ"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "紙製容器包装・雑がみ",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "shigen"
     },
     {
       "id": "kamipack",
@@ -567,10 +600,12 @@
         "source_ids": [
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "紙パック"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "紙パック",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "petbottle",
@@ -588,12 +623,15 @@
       "links": [],
       "evidence": {
         "source_ids": [
-          "gomi-search-1035233"
+          "gomi-search-1035233",
+          "gomi-bag-1012258"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "ペットボトル"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "ペットボトル",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "shigen"
     },
     {
       "id": "shokuyouyu",
@@ -613,10 +651,12 @@
         "source_ids": [
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "回収店舗まで持ち込めない場合は、布や紙に染み込ませるか、固化剤で固め、紙に包んで可燃ごみに出してください。"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "回収店舗まで持ち込めない場合は、布や紙に染み込ませるか、固化剤で固め、紙に包んで可燃ごみに出してください。",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     },
     {
       "id": "sonota",
@@ -636,10 +676,12 @@
         "source_ids": [
           "gomi-search-1035233"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "その他"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "その他",
+        "verified_by": "author 2026-11-08（ごみの種類を全部確認）"
+      },
+      "bag": "none"
     }
   ],
   "items": [

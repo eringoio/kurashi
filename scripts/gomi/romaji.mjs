@@ -1,4 +1,4 @@
-/* 収集日の写し（data/private/gomi-schedule.json。Git に入れない）の町名に、ローマ字（Hepburn。長音は書かない）を付ける。
+/* 収集日の写し（data/gomi/schedule.json。公開。市の掲載の許可 2026-11-08）の町名に、ローマ字（Hepburn。長音は書かない）を付ける。
    よみは data/gomi/town-readings.json（町・丁目は住所マスター、大字・字はウィキペディアの各町の記事。出典はファイルの中）。
    表に無い町名があれば止まる（推測のよみは付けない）。画面では日本語の町名といっしょに出す（"Romaji（日本語）"）。
    使い方：node scripts/gomi/romaji.mjs   … 写しの各行に romaji を足して書き戻す（もう付いている行は変えない。--force で作り直す） */
@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const FILE = path.join(ROOT, 'data', 'private', 'gomi-schedule.json');
+const FILE = path.join(ROOT, 'data', 'gomi', 'schedule.json');
 const READINGS = path.join(ROOT, 'data', 'gomi', 'town-readings.json');
 const FORCE = process.argv.includes('--force');
 

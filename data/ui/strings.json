@@ -2871,9 +2871,9 @@
     "en": "From a copy of the city table (to be checked). Days around New Year may differ."
   },
   "gomi.kinds.title": {
-    "ja": "ごみの{種類|しゅるい}と{出|だ}し{方|かた}",
-    "ja_easy": "ごみの{種類|しゅるい}",
-    "en": "Types of garbage and how to put them out"
+    "ja": "ごみの{種類|しゅるい}と{袋|ふくろ}",
+    "ja_easy": "ごみの{種類|しゅるい}と{袋|ふくろ}",
+    "en": "Types of garbage and bags"
   },
   "house.plan.title": {
     "ja": "{間取|まど}り{図|ず}の{見方|みかた}",
@@ -3614,5 +3614,70 @@
     "ja": "ありがとうございます。{案内|あんない}を{直|なお}すときに{使|つか}います。",
     "ja_easy": "ありがとうございます。",
     "en": "Thank you. We use this to improve the guide."
+  },
+  "gomi.kinds.bag": {
+    "ja": "{袋|ふくろ}",
+    "ja_easy": "{袋|ふくろ}",
+    "en": "Bag"
+  },
+  "gomi.kinds.kind": {
+    "ja": "{種類|しゅるい}",
+    "ja_easy": "{種類|しゅるい}",
+    "en": "Type"
+  },
+  "gomi.kinds.items": {
+    "ja": "この{種類|しゅるい}の{品目|ひんもく}",
+    "ja_easy": "この{種類|しゅるい}のもの",
+    "en": "Items of this type"
+  },
+  "gomi.kinds.item": {
+    "ja": "{品目|ひんもく}",
+    "ja_easy": "もの",
+    "en": "Item"
+  },
+  "gomi.kinds.note": {
+    "ja": "{備考|びこう}",
+    "ja_easy": "メモ",
+    "en": "Note"
+  },
+  "gomi.bag.kanen": {
+    "ja": "{可燃|かねん}ごみの{指定|してい}{袋|ぶくろ}（{赤|あか}い{印刷|いんさつ}）",
+    "ja_easy": "{燃|も}えるごみの{袋|ふくろ}（{赤|あか}い{字|じ}）",
+    "en": "Burnable-waste designated bag (red print)"
+  },
+  "gomi.bag.funen": {
+    "ja": "{不燃|ふねん}ごみの{指定|してい}{袋|ぶくろ}（{緑|みどり}の{印刷|いんさつ}）",
+    "ja_easy": "{燃|も}えないごみの{袋|ふくろ}（{緑|みどり}の{字|じ}）",
+    "en": "Non-burnable designated bag (green print)"
+  },
+  "gomi.bag.shigen": {
+    "ja": "{資源|しげん}{用|よう}の{指定|してい}{袋|ぶくろ}（{青|あお}い{印刷|いんさつ}）か、45リットルまでの{無色|むしょく}{透明|とうめい}の{袋|ふくろ}",
+    "ja_easy": "{資源|しげん}の{袋|ふくろ}（{青|あお}い{字|じ}）か、{中|なか}が{見|み}える{透明|とうめい}の{袋|ふくろ}（45リットルまで）",
+    "en": "Resource designated bag (blue print), or a clear colorless bag up to 45 L"
+  },
+  "gomi.bag.clear": {
+    "ja": "{無色|むしょく}{透明|とうめい}の{袋|ふくろ}（{市|し}の{指定|してい}{袋|ぶくろ}は{使|つか}えません）",
+    "ja_easy": "{透明|とうめい}の{袋|ふくろ}（{市|し}の{袋|ふくろ}は{使|つか}えません）",
+    "en": "Clear colorless bag (city designated bags cannot be used)"
+  },
+  "gomi.bag.basket": {
+    "ja": "{袋|ふくろ}に{入|い}れず、ステーションの{青|あお}いかごに{入|い}れます",
+    "ja_easy": "{袋|ふくろ}に{入|い}れないで、{青|あお}いかごに{入|い}れます",
+    "en": "No bag: put it in the blue basket at the collection point"
+  },
+  "gomi.bag.none": {
+    "ja": "{収集|しゅうしゅう}{日|び}の{袋|ふくろ}には{入|い}れません（{出|だ}し{方|かた}を{見|み}てください）",
+    "ja_easy": "{集|あつ}める{日|ひ}の{袋|ふくろ}には{入|い}れません",
+    "en": "Not put out in a collection bag (see how to put it out)"
+  },
+  "gomi.bag.kanNote": {
+    "ja": "{中川|なかがわ}{区|く}・{港|みなと}{区|く}は、{袋|ふくろ}に{入|い}れず{黄色|きいろ}のかごに{入|い}れます。",
+    "ja_easy": "{中川区|なかがわく}・{港区|みなとく}は、{袋|ふくろ}に{入|い}れないで{黄色|きいろ}のかごに{入|い}れます。",
+    "en": "In Nakagawa and Minato wards, put cans in the yellow basket without a bag."
+  },
+  "gomi.sources": {
+    "ja": "{出典|しゅってん}",
+    "ja_easy": "{出典|しゅってん}",
+    "en": "Sources"
   }
 }

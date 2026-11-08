@@ -1,5 +1,5 @@
-/* 収集日の表（作者の決定 2026-11-06 F）。名古屋市の表の写しは data/private/gomi-schedule.json（.gitignore。許諾が出るまで公開しない）。
-   VITE_GOMI_SCHEDULE=on のときだけ読む（既定は off）。ファイルが無くてもビルドは通る（何も出さない）。
+/* 収集日の表。名古屋市の表（市のページ 1037098 の町名表）を data/gomi/schedule.json に写したもの（市の掲載の許可：2026-11-08）。
+   既定で出す。VITE_GOMI_SCHEDULE=off のときだけ出さない。大きいので /gomi を開いたときに別に読む（loadSchedule）。
    住所は区＋町名（丁目まで）を残す。番地で曜日が分かれる町だけ、そのときに番地を聞く。
    番地の文字は残さない。残すのは表の行の id（area_id）だけで、同意のあと、この端末の中だけ（K-21）。 */
 import type { Schedule, ScheduleRule } from './gomi';
@@ -10,21 +10,29 @@ export interface PrivateSchedule { source: { url: string; title: string; fetched
 /** 年末年始（12/29〜1/3）の収集の例外は、写しの表に無い。この日までだけ日付を出す */
 export const EXCEPTIONS_UNTIL = '2026-12-28';
 
-export const SCHEDULE_ON = import.meta.env.VITE_GOMI_SCHEDULE === 'on';
+export const SCHEDULE_ON = import.meta.env.VITE_GOMI_SCHEDULE !== 'off';
 
-const files: Record<string, unknown> = SCHEDULE_ON
-  ? import.meta.glob('../../data/private/gomi-schedule.json', { eager: true, import: 'default' })
-  : {};
+const FILE = '../../data/gomi/schedule.json';
+const loaders: Record<string, () => Promise<unknown>> = SCHEDULE_ON ? import.meta.glob('../../data/gomi/schedule.json', { import: 'default' }) : {};
 
-let cached: PrivateSchedule | null | undefined;
-export function privateSchedule(raw: unknown = files['../../data/private/gomi-schedule.json']): PrivateSchedule | null {
+/** 表の形を確かめる。形が違えば null */
+export function privateSchedule(raw: unknown): PrivateSchedule | null {
   if (raw === undefined) return null;
-  if (cached !== undefined && raw === files['../../data/private/gomi-schedule.json']) return cached;
   const p = raw as PrivateSchedule;
-  const ok = !!p && Array.isArray(p.areas);
-  const v = ok ? p : null;
-  if (raw === files['../../data/private/gomi-schedule.json']) cached = v;
-  return v;
+  return p && Array.isArray(p.areas) ? p : null;
+}
+
+let loaded: PrivateSchedule | null | undefined;
+let pending: Promise<PrivateSchedule | null> | null = null;
+/** 読み終わっていれば表（無ければ null）。まだなら undefined */
+export const scheduleNow = () => loaded;
+/** 表を1回だけ読む（別のファイル） */
+export function loadSchedule(): Promise<PrivateSchedule | null> {
+  if (loaded !== undefined) return Promise.resolve(loaded);
+  const get = loaders[FILE];
+  if (!get) { loaded = null; return Promise.resolve(null); }
+  pending ??= get().then((raw) => (loaded = privateSchedule(raw)), () => (loaded = null));
+  return pending;
 }
 
 /** 区の町名の一覧（同じ町名の番地の行は1つにまとめる） */

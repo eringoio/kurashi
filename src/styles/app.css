@@ -472,7 +472,23 @@ fieldset legend svg { vertical-align: -0.2em; }
 .gomi-week__cat img { width: 28px; height: 28px; }
 .gomi-kind { display: flex; gap: 10px; align-items: flex-start; }
 .gomi-kind img { width: 44px; height: 44px; flex: none; }
-.gomi-kind > span { display: flex; flex-direction: column; }
+.gomi-kind > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.gomi-kinds { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.gomi-kinds > li { border-bottom: 1.5px dashed var(--line-dash); padding: 6px 0; }
+.group .gomi-kinds summary { flex-wrap: nowrap; align-items: center; gap: 10px; line-height: 1.5; padding: 2px 0; list-style: none; }
+.gomi-kinds summary::-webkit-details-marker { display: none; }
+.gomi-kinds summary::after { content: ""; flex: none; width: 10px; height: 10px; margin-left: auto; margin-right: 6px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); }
+.gomi-kinds details[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.gomi-kinds summary .gomi-bag { font-weight: 400; }
+.gomi-bag { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-small); }
+.gomi-bag img, .gomi-kind .gomi-bag img { width: 28px; height: 28px; flex: none; }
+.gomi-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); margin-top: 8px; table-layout: fixed; }
+.gomi-table caption { text-align: start; font-weight: 700; padding-bottom: 4px; }
+.gomi-table th, .gomi-table td { text-align: start; vertical-align: top; padding: 4px 6px; border-bottom: 1px solid var(--line-dash); overflow-wrap: anywhere; }
+.gomi-table thead th { width: 40%; }
+.gomi-table tbody th { font-weight: 400; }
+.gomi-sources p { margin: 0; }
+.gomi-sources ul { margin: 4px 0 0; padding-inline-start: 1.2em; display: flex; flex-direction: column; gap: 6px; }
 /* 住まい探しの図（E） */
 .house-plan { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; }
 .house-plan__img { width: min(100%, 260px); height: auto; flex: none; }

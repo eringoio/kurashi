@@ -13,7 +13,7 @@ describe('入口の検索', () => {
     expect(top('health insurance and pension', 6)).toContain('nagoya-kokuho-kanyu');
   });
   it('日本語の文から', () => {
-    expect(top('ごみの日はいつ？')[0]).toBe('gomi-shushubi');
+    expect(top('粗大ごみを出したい')[0]).toBe('gomi-sodai');
     expect(top('引っ越したので住所を変えたい', 4)).toContain('move-within-tenkyo');
     expect(top('ビザを更新したい')[0]).toBe('zairyu-koshin');
   });

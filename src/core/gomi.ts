@@ -18,6 +18,8 @@ export const GomiCategory = z.object({
   label: Text,
   how: Text,
   links: z.array(Link).default([]),
+  /** 出すときの袋（名古屋市「家庭ごみ・資源排出用の袋について」1012258）。none：収集日の袋に入れない */
+  bag: z.enum(['kanen', 'funen', 'shigen', 'clear', 'basket', 'none']).default('none'),
   evidence: Evidence,
 });
 export type GomiCategory = z.infer<typeof GomiCategory>;

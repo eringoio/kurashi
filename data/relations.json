@@ -501,25 +501,6 @@
       }
     },
     {
-      "id": "rel-gomi-bunbetsu-shushubi",
-      "type": "related",
-      "from": "gomi-bunbetsu",
-      "to": "gomi-shushubi",
-      "explain": {
-        "ja": "{分|わ}け{方|かた}がわかったら、{収集|しゅうしゅう}{日|び}も{調|しら}べます。",
-        "ja_easy": "{分|わ}け{方|かた}がわかったら、{収集|しゅうしゅう}の{日|ひ}も{調|しら}べます。",
-        "en": "Once you know how to separate, check your collection day too."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nagoya-gomi-app"
-        ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check",
-        "quote": "収集日カレンダー お住まいの地域を設定することで、収集日をカレンダー形式で確認できます。"
-      }
-    },
-    {
       "id": "rel-gomi-sodai-mochikomi",
       "type": "related",
       "from": "gomi-sodai",
