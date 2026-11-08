@@ -122,8 +122,8 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
     if (evs.length === 1) return <Redirect to={'/e/' + evs[0].id} />;
     return evs.length > 1 && ('home.group.' + grp[1]) in STRINGS ? <GroupPage key={grp[1]} group={grp[1]} /> : <NotFound />;
   }
-  const ev = /^\/e\/(E-[a-z0-9-]+)(\/all)?$/.exec(path);
-  if (ev) return <EventEntry key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] ? 'all' : 'now'} onLive={onLive} />;
+  const ev = /^\/e\/(E-[a-z0-9-]+)(\/all|\/step)?$/.exec(path);
+  if (ev) return <EventEntry key={ev[1] + (ev[2] ?? '')} eventId={ev[1]} view={ev[2] === '/all' ? 'all' : ev[2] === '/step' ? 'step' : 'now'} onLive={onLive} />;
   const card = /^\/c\/([a-z0-9-]+)$/.exec(path);
   if (card) {
     // 引っ越しに無いカードは、そのカードのあるできごとの画面で開く（U16）

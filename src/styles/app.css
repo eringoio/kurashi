@@ -686,3 +686,29 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .doc__more > .doc__part + .doc__part { margin-top: 12px; }
 .doc__warn { border-left-width: 6px; font-weight: 700; }
 .doc__linkkind { display: inline-block; font-size: var(--fs-small); font-weight: 700; padding: 0 8px; border: 1.5px solid var(--line-dim); border-radius: var(--radius-pill); }
+
+/* —— 全体の画面（SPEC 6A.17 v0.5.28：財布の紛失）—— */
+.ov-phase, .ov-ask, .ov-redo { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ov-phase h2, .ov-ask h2, .ov-redo h2 { margin: 0; font-size: max(var(--fs-title) * .8, 20px); line-height: 1.5; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ov-phase--urgent { padding: 14px; border: 4px solid var(--orange); border-radius: var(--radius-lg); background: var(--white); }
+.ov-phase__badge { padding: 0 8px; }
+.ov-ask { padding: 14px; border: 3px dotted var(--ink-subtle); border-radius: var(--radius-lg); background: var(--white); }
+.ov-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ov-item { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); min-width: 0; }
+.ov-item--done, .ov-item--na { border-style: dashed; border-color: var(--line-dim); }
+.ov-item--urgent { border-color: var(--orange); border-width: 3px; }
+.ov-item__link { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; min-height: var(--target-min); color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.ov-item__link img { width: 40px; height: 40px; flex: none; }
+.ov-item__name { flex: 1 1 8em; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
+.ov-item__name .bi__ja { font-size: max(.8em, 14px); }
+.ov-item__pre { margin: 0; font-size: max(var(--fs-small), 15px); color: var(--ink-subtle); overflow-wrap: anywhere; }
+.ov-parts { display: flex; flex-direction: column; gap: 8px; }
+.ov-part { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+.ov-track { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
+.ov-track__label { font-size: max(var(--fs-small), 15px); font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.ov-track__select { min-height: var(--target-min); max-width: 100%; padding: 0 10px; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); color: var(--ink); font: inherit; font-size: max(var(--fs-small), 16px); }
+.ov-track__select--done { border-color: var(--orange); }
+.ov-track__select--na { border-style: dashed; border-color: var(--line-dim); }
+.ov-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 8px 12px; border: 3px solid var(--orange); border-radius: var(--radius-md); background: var(--white); }
+.ov-strip__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 14px; }
+.ov-pin .link img { width: 28px; height: 28px; margin-right: 6px; flex: none; }

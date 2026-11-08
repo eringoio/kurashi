@@ -21,6 +21,7 @@ import { toPickOptions, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
 import { useSide } from '../ui/SidePanel';
 import { AllEmpty, AllGroups, hasOpen, TodayStep, todayViews } from './Plan';
+import { PinnedLinks, UrgentStrip } from './EventOverview';
 
 function EvTabs({ base, current, wideHide }: { base: string; current: 'now' | 'all'; wideHide?: boolean }) {
   const { level } = usePrefs();
@@ -60,11 +61,11 @@ function MultiQuestion({ q, onAnswer }: { q: Question; onAnswer: (v: string[]) =
 
 /** onlyGuides：日を決める手続きが無く、案内だけの出来事（いま と 全体 が同じになる）。WP-A の EventEntry が渡す。
     渡されないときは、ここで同じ形で決める（いまの1つが無く、関係する項目がある） */
-export function EventPage({ eventId, view, onLive, onlyGuides }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void; onlyGuides?: boolean }) {
+export function EventPage({ eventId, view, onLive, onlyGuides, step: stepMode }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void; onlyGuides?: boolean; step?: boolean }) {
   const g = useEvent(eventId);
   if (!g) return <Missing />;
   const guides = onlyGuides ?? (nowStep(g.out, g.today).kind === 'idle' && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office'));
-  return view === 'all' ? <EventAll g={g} onLive={onLive} onlyGuides={guides} /> : <EventNow g={g} onLive={onLive} />;
+  return view === 'all' ? <EventAll g={g} onLive={onLive} onlyGuides={guides} /> : <EventNow g={g} onLive={onLive} stepMode={stepMode} />;
 }
 
 function Missing() {
@@ -77,13 +78,14 @@ function Missing() {
   );
 }
 
-function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void }) {
+/** stepMode：段のあるできごとの「1つずつ進める」（/e/{id}/step。v0.5.28）。すぐ行う行動は上に目立たせて出し、質問・ほかの手続きを止めない */
+function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) => void; stepMode?: boolean }) {
   const { level, vault } = usePrefs();
   const base = '/e/' + g.event.id;
   const cp = base + '/c/';
   const ch = useChange(g);
   const [done, setDone] = useState<string | null>(null);
-  const step = nowStep(g.out, g.today);
+  const step = nowStep(g.out, g.today, { urgentFirst: !stepMode });
   // あなたについて：最初の質問に国籍などがあれば、ほかの質問の前に、まとめて聞く（2026-11-07）
   const about = step.kind === 'upfront' && wantsAbout(g.out.upfront, vault.get('settings', ABOUT_SKIPPED) === true, DATA().questions, g.answers) ? aboutNext(DATA().questions, g.answers) : undefined;
   useFocusTitle((about ? 'about:' + about.id + ':' : '') + 'ev:' + g.occ?.id + ':' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
@@ -189,7 +191,9 @@ function EventNow({ g, onLive }: { g: EventGuide; onLive: (s: string) => void })
   }
   return (
     <>
-      <EvTabs base={base} current="now" wideHide />
+      {stepMode
+        ? <><div className="links"><Link to={base} className="link"><Bi k="ov.back" /></Link></div><UrgentStrip g={g} base={base} /><PinnedLinks g={g} base={base} /></>
+        : <EvTabs base={base} current="now" wideHide />}
       {!done && ch.line}
       {body}
       <StartNew g={g} onLive={onLive} />

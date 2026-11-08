@@ -12,11 +12,12 @@ export type NowStep =
   | { kind: 'until'; views: CardView[] }
   | { kind: 'idle' };
 
-export function nowStep(o: EngineOutput, today: string): NowStep {
+/** urgentFirst：false なら、すぐ行う行動を質問より先に出さない（全体の画面のあるできごと。行動は画面の上に目立たせて出し、ほかを止めない。v0.5.28） */
+export function nowStep(o: EngineOutput, today: string, { urgentFirst = true }: { urgentFirst?: boolean } = {}): NowStep {
   const open = o.cards.filter((c) => c.section !== 'done' && c.state !== 'excluded' && c.state !== 'out_of_scope');
   // 0. すぐ行う行動（カードの利用停止など）：当てはまるとわかったら、残りの質問より先に出す（DATA_CONTRACT 3章）
   // 本人が「よくわからない」と答えて当てはまるか決まらないとき（cause: unknown）も、止めるのは害が無いので先に出す
-  for (const c of open) if (c.card.urgent && (c.state === 'shown' || (c.state === 'check_at_office' && c.cause === 'unknown')) && c.plan?.status !== 'dismissed') return { kind: 'urgent', view: c };
+  if (urgentFirst) for (const c of open) if (c.card.urgent && (c.state === 'shown' || (c.state === 'check_at_office' && c.cause === 'unknown')) && c.plan?.status !== 'dismissed') return { kind: 'urgent', view: c };
   if (o.upfront.length) return { kind: 'upfront', q: o.upfront[0] };
   // 確かめの質問は、前提の段で並べ替える前の順（questionRank）で聞く
   const byQ = [...open].sort((a, b) => a.questionRank - b.questionRank);

@@ -160,6 +160,7 @@ export function checkRefs(d: GuideData): string[] {
     ev(e.id, e.evidence);
     text3(e.id + '.title', e.title);
     e.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${e.id}：カード ${id} がない`); });
+    e.phases?.forEach((ph) => ph.card_ids.forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：段 ${ph.id} のカード ${id} がイベントにない`); }));
     e.questions.forEach((id) => { if (!d.questions.some((q) => q.id === id)) err.push(`${e.id}：質問 ${id} がない`); });
     if (e.scope_rule && !d.rules.has(e.scope_rule)) err.push(`${e.id}：範囲のルール ${e.scope_rule} がない`);
   }

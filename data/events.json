@@ -505,7 +505,73 @@
         "checked_at": "2026-11-04",
         "status": "needs_check"
       },
-      "checklist": true
+      "checklist": true,
+      "phases": [
+        {
+          "id": "now",
+          "title": {
+            "ja": "いますぐ",
+            "ja_easy": "いますぐ",
+            "en": "Right now"
+          },
+          "card_ids": [
+            "lost-card-stop",
+            "lost-mynumber-stop"
+          ]
+        },
+        {
+          "id": "search",
+          "title": {
+            "ja": "{探|さが}す・{届|とど}ける",
+            "ja_easy": "{探|さが}す・{届|とど}ける",
+            "en": "Search and report"
+          },
+          "note": {
+            "ja": "{警察|けいさつ}への{届出|とどけで}、{駅|えき}・{店|みせ}への{問|と}い{合|あ}わせ、{落|お}とし{物|もの}の{検索|けんさく}は、{同時|どうじ}に{進|すす}められます。",
+            "ja_easy": "{警察|けいさつ}・{駅|えき}や{店|みせ}・{落|お}とし{物|もの}の{検索|けんさく}は、{同|おな}じときにしてもいいです。",
+            "en": "You can report to the police, ask the station or shop, and search for lost items at the same time."
+          },
+          "card_ids": [
+            "lost-police-report",
+            "lost-police-report-zairyu",
+            "lost-facility-ask"
+          ]
+        },
+        {
+          "id": "reissue",
+          "title": {
+            "ja": "{再|さい}{発行|はっこう}",
+            "ja_easy": "もう{一度|いちど}もらう",
+            "en": "Get new cards"
+          },
+          "note": {
+            "ja": "{前|まえ}に{要|い}ることがまだでも、くわしい{説明|せつめい}を{見|み}て{準備|じゅんび}できます。",
+            "ja_easy": "{前|まえ}にすることがまだでも、{説明|せつめい}を{見|み}て{準備|じゅんび}できます。",
+            "en": "You can read the details and prepare even if an earlier step is not done yet."
+          },
+          "card_ids": [
+            "lost-zairyu-reissue",
+            "lost-mynumber-reissue",
+            "lost-license-reissue",
+            "lost-hoken-reissue",
+            "lost-passport-jp",
+            "lost-passport-foreign",
+            "lost-no-id-consult"
+          ]
+        },
+        {
+          "id": "found",
+          "title": {
+            "ja": "{見|み}つかったとき",
+            "ja_easy": "{見|み}つかったとき",
+            "en": "If you find it"
+          },
+          "card_ids": [
+            "lost-found-later"
+          ],
+          "pin": true
+        }
+      ]
     },
     {
       "id": "E-license",

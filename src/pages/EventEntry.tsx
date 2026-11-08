@@ -8,12 +8,15 @@ import { nowStep } from '../core/now';
 import { useEvent } from '../guide/useEvent';
 import { Bi } from '../i18n/Ruby';
 import { navigate } from '../ui/router';
+import { overviewReady } from '../core/overview';
+import { EventOverview } from './EventOverview';
 import { EventPage } from './EventPage';
 import { Info } from './Info';
 
-export function EventEntry({ eventId, view, onLive }: { eventId: string; view: 'now' | 'all'; onLive: (s: string) => void }) {
+export function EventEntry({ eventId, view, onLive }: { eventId: string; view: 'now' | 'all' | 'step'; onLive: (s: string) => void }) {
   const g = useEvent(eventId);
-  const idle = !!g && nowStep(g.out, g.today).kind === 'idle';
+  const phased = !!g?.event.phases?.length;
+  const idle = !!g && nowStep(g.out, g.today, { urgentFirst: !phased }).kind === 'idle';
   const tool = g && g.out.scope !== 'F' && idle && g.event.questions.length === 0 ? g.event.tool?.path : undefined;
   // 履歴を増やさずに置きかえる（もどるで /e/... に来て、また飛ばされることがないように）
   useEffect(() => { if (tool) { history.replaceState(null, '', tool); dispatchEvent(new PopStateEvent('popstate')); } }, [tool]);
@@ -28,9 +31,12 @@ export function EventEntry({ eventId, view, onLive }: { eventId: string; view: '
       </>
     );
   }
+  // 段のあるできごと（v0.5.28）：1つずつ進める画面は任意。最初の質問に答えたら、いま／全体のどちらも全体の画面
+  if (g && phased && view === 'step') return <EventPage eventId={eventId} view="now" step onLive={onLive} />;
+  if (g && overviewReady(g.event, g.answers)) return <EventOverview g={g} onLive={onLive} />;
   // 案内だけのできごと（いまやることが無く、見せる項目がある）：いま／全体が同じになるので、一覧だけ
   const onlyGuides = !!g && idle && g.out.cards.some((c) => c.state === 'shown' || c.state === 'check_at_office');
   // すぐにやることの一覧（K-15）：最初の質問が済んだら、全体（チェックの一覧）を出す
   const checklist = !!g && view === 'now' && !!g.event.checklist && g.out.upfront.length === 0;
-  return <EventPage eventId={eventId} view={onlyGuides || checklist ? 'all' : view} onlyGuides={onlyGuides} onLive={onLive} />;
+  return <EventPage eventId={eventId} view={onlyGuides || checklist || view === 'all' ? 'all' : 'now'} onlyGuides={onlyGuides} onLive={onLive} />;
 }

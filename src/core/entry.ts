@@ -13,6 +13,8 @@ export interface PlanRecord {
   /** 付き添いの「終わったら」で、窓口で言われたこと（別の書類が要る／ここではない）。「確かめる」に移す（6A.6） */
   visit_told?: 'need_document' | 'wrong_place';
   visit_told_on?: Ymd;
+  /** 手続きの中の物ごとの状態（カードの parts。財布の紛失：キャッシュカード・クレジットカードの停止。v0.5.28） */
+  parts?: Record<string, PlanRecord['status']>;
 }
 
 export interface EntryInput {

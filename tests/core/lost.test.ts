@@ -227,12 +227,19 @@ describe('なくした場所の質問は無くなった（K-15）／在留カー
     expect(nowStep(o, TODAY)).toMatchObject({ kind: 'urgent', view: { card: { id: 'lost-card-stop' } } });
     expect(data.relations.some((r) => (r.type === 'legal_prerequisite' || r.type === 'practical_prerequisite') && (r.to === 'lost-facility-ask' || r.from === 'lost-facility-ask'))).toBe(false);
   });
-  it('在留カードをなくした：警察署の遺失届（在留カード）が出る。必要（legal）。警察署に行く注意。ふつうの遺失届は出ない', () => {
+  it('在留カードをなくした：遺失届（在留カード）が出る。必要（legal）。交番でも届けられる（v0.5.28：公式に合わせた）。受付番号と受理番号は別。ふつうの遺失届は出ない', () => {
     const o = out({ ...base, 'Q-lost-items': ['zairyu_card'] });
     const z = view(o, 'lost-police-report-zairyu');
     expect(z.state).toBe('shown');
     expect(z.card.obligation).toBe('legal');
-    expect(JSON.stringify(z.card.notices ?? []).replace(/\{([^|{}]+)\|[^{}]+\}/g, '$1')).toContain('交番ではなく、必ず警察署に行ってください。');
+    const plain = (x: unknown) => JSON.stringify(x).replace(/\{([^|{}]+)\|[^{}]+\}/g, '$1');
+    const all = plain([z.card.title, z.card.summary, z.card.lead, z.card.notices, z.card.where]);
+    expect(all).not.toContain('交番ではなく');
+    expect(plain(z.card.summary.ja)).toContain('交番');
+    expect(plain(z.card.notices)).toContain('「受付番号」は、警察署の「受理番号」ではありません');
+    // 証明書だけは警察署（交番では申請できない）
+    expect(plain(z.card.summary.ja)).toContain('交番では申請できません');
+    expect(z.card.evidence.status).toBe('needs_check');
     expect(view(o, 'lost-police-report').state).toBe('excluded');
     expect(shown(o)).not.toContain('lost-police-report');
   });

@@ -118,5 +118,31 @@
         }
       }
     }
+  ],
+  "parts": [
+    {
+      "id": "cash_card",
+      "label": {
+        "ja": "キャッシュカード",
+        "ja_easy": "キャッシュカード",
+        "en": "Bank cash card"
+      },
+      "when": {
+        "fact": "lost_items",
+        "has": "cash_card"
+      }
+    },
+    {
+      "id": "credit_card",
+      "label": {
+        "ja": "クレジットカード",
+        "ja_easy": "クレジットカード",
+        "en": "Credit card"
+      },
+      "when": {
+        "fact": "lost_items",
+        "has": "credit_card"
+      }
+    }
   ]
 }

@@ -18,18 +18,18 @@
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{警察|けいさつ}{署|しょ}に{遺失|いしつ}{届|とどけ}を{出|だ}す（{在留|ざいりゅう}カード）",
-    "ja_easy": "{警察|けいさつ}{署|しょ}に{届|とど}ける（{在留|ざいりゅう}カード）",
-    "en": "Report the loss at a police station (residence card)"
+    "ja": "{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}す（{在留|ざいりゅう}カード）",
+    "ja_easy": "{警察|けいさつ}に{届|とど}ける（{在留|ざいりゅう}カード）",
+    "en": "Report the loss to the police (residence card)"
   },
   "official_name": {
     "ja": "警察に遺失届を出す",
     "reading": "いしつとどけ"
   },
   "summary": {
-    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{遺失|いしつ}{届|とどけ}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{交番|こうばん}ではなく、{警察|けいさつ}{署|しょ}に{行|い}ってください。{受理|じゅり}{番号|ばんごう}を{紙|かみ}に{控|ひか}えます。{届出|とどけで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}も{警察|けいさつ}{署|しょ}でもらえます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}{署|しょ}の{番号|ばんごう}が{要|い}ります。{交番|こうばん}ではなく{警察|けいさつ}{署|しょ}へ{行|い}きます。",
-    "en": "To get a new residence card you need the acceptance number of a loss report. Go to a police station, not a koban (police box). Write down the acceptance number. You can also get a certificate of the report at the police station (to be checked)."
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{警察|けいさつ}への{届出|とどけで}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{届出|とどけで}は{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}のどこでもでき、オンラインや{電話|でんわ}でもできます。{受理|じゅり}{番号|ばんごう}を{紙|かみ}に{控|ひか}えます。{入管|にゅうかん}から{届出|とどけで}の{証明|しょうめい}{書|しょ}を{求|もと}められたときは、{届|とど}けた{警察|けいさつ}{署|しょ}で{申請|しんせい}します（{交番|こうばん}では{申請|しんせい}できません）（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}の{番号|ばんごう}（{受理|じゅり}{番号|ばんごう}）が{要|い}ります。{交番|こうばん}でも{警察署|けいさつしょ}でも{届|とど}けられます。{番号|ばんごう}を{紙|かみ}に{書|か}いておきます。",
+    "en": "To get a new residence card you need the acceptance number (juri bango) of your police report. You can report at any police station, koban (police box) or rural police box, and also online or by phone. Write down the acceptance number. If immigration asks for a certificate of the report, apply at the police station where you reported (a koban cannot issue it) (to be checked)."
   },
   "deadline": {
     "text": {
@@ -48,9 +48,9 @@
   },
   "where": {
     "text": {
-      "ja": "どこの{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在所|ちゅうざいしょ}でも",
-      "ja_easy": "{近|ちか}くの{交番|こうばん}・{警察署|けいさつしょ}",
-      "en": "Any police station or koban"
+      "ja": "どこの{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}でも。オンライン・{電話|でんわ}でも",
+      "ja_easy": "{近|ちか}くの{交番|こうばん}・{警察署|けいさつしょ}。インターネット・{電話|でんわ}でも",
+      "en": "Any police station or koban; also online or by phone"
     },
     "evidence": {
       "source_ids": [
@@ -83,10 +83,76 @@
       "C-npa-ishitsu-online",
       "B-moj-zairyu-reissue-lost"
     ],
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-08",
     "status": "needs_check"
   },
   "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在所|ちゅうざいしょ}",
+        "ja_easy": "{交番|こうばん}・{警察署|けいさつしょ}",
+        "en": "Police station or koban"
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出は、どこの警察署、交番・駐在所でも構いません。また、オンラインや電話による届出も受け付けています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{急|いそ}ぐときは、{最寄|もよ}りの{警察|けいさつ}{署|しょ}または{交番|こうばん}などに{直接|ちょくせつ}{届|とど}けます。",
+        "ja_easy": "いそぐときは、{近|ちか}くの{警察|けいさつ}{署|しょ}か{交番|こうばん}に{行|い}って{届|とど}けます。",
+        "en": "If you are in a hurry, go directly to the nearest police station or koban."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-npa-ishitsu-online"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "お急ぎの場合は、最寄りの警察署又は交番等に直接届出を行ってください。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "24cd0365171b20eb28907d70f298ad7063573ba7fb48022aa862edd7f437ce76",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-online/c5"
+        }
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{電話|でんわ}での{届出|とどけいで}も{受|う}け{付|つ}けています。{電話|でんわ}{番号|ばんごう}は{愛知|あいち}{県警|けんけい}の{公式|こうしき}ページで{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{電話|でんわ}でも{届|とど}けられます。{番号|ばんごう}は、{愛知|あいち}{県警|けんけい}のページで{見|み}ます（{要|よう}{確認|かくにん}）。",
+        "en": "Reports by phone are also accepted. Check the number on the official Aichi Police page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "届出は、どこの警察署、交番・駐在所でも構いません。また、オンラインや電話による届出も受け付けています。",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+          "verdict": "agree",
+          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        }
+      }
+    },
     {
       "type": "online",
       "text": {
@@ -221,17 +287,36 @@
     }
   ],
   "lead": {
-    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{遺失|いしつ}{届|とどけ}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{交番|こうばん}ではなく、{警察|けいさつ}{署|しょ}に{行|い}ってください。",
-    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}{署|しょ}の{番号|ばんごう}が{要|い}ります。{交番|こうばん}ではなく{警察|けいさつ}{署|しょ}へ{行|い}きます。",
-    "en": "To get a new residence card you need the acceptance number of a loss report. Go to a police station, not a koban (police box)."
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{届出|とどけで}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{交番|こうばん}でも{警察|けいさつ}{署|しょ}でも{届|とど}けられます。",
+    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}の{番号|ばんごう}が{要|い}ります。{交番|こうばん}でも{警察署|けいさつしょ}でもいいです。",
+    "en": "To get a new residence card you need the acceptance number of your police report. A koban or a police station can take the report."
   },
   "notices": [
     {
       "text": {
-        "ja": "{交番|こうばん}ではなく、{必|かなら}ず{警察|けいさつ}{署|しょ}に{行|い}ってください。",
-        "ja_easy": "{交番|こうばん}ではなく、{警察|けいさつ}{署|しょ}へ{行|い}きます。",
-        "en": "Go to a police station, not a koban (police box)."
+        "ja": "オンラインで{送|おく}ったときにすぐ{届|とど}く「{受付|うけつけ}{番号|ばんごう}」は、{警察|けいさつ}{署|しょ}の「{受理|じゅり}{番号|ばんごう}」ではありません。{入管|にゅうかん}には{受理|じゅり}{番号|ばんごう}を{書|か}きます。",
+        "ja_easy": "インターネットで{送|おく}ったときの{受付|うけつけ}{番号|ばんごう}と、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}は、ちがいます。{入管|にゅうかん}には{受理|じゅり}{番号|ばんごう}を{書|か}きます。",
+        "en": "The reception number (uketsuke bango) you get right after an online report is not the acceptance number (juri bango) from the police station. Write the acceptance number for immigration."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。"
       }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{落|お}とし{物|もの}の{検索|けんさく}・オンラインの{届出|とどけで}（{警察庁|けいさつちょう}）",
+        "ja_easy": "{落|お}とし{物|もの}を{探|さが}す・{届|とど}ける（{警察|けいさつ}）",
+        "en": "Search for lost items and report online (National Police Agency)"
+      },
+      "url": "https://www.npa.go.jp/bureau/soumu/ishitsubutsu/ishitsu-todokedekensaku.html",
+      "source_id": "C-npa-ishitsu-online"
     }
   ]
 }

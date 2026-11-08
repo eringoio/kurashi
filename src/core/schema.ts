@@ -118,6 +118,9 @@ export const Card = z.object({
   kind: z.enum(['procedure', 'guide']).default('procedure'),
   /** すぐ行う行動（カードの利用停止など）。質問より先に出す */
   urgent: z.object({ text: Text, contacts: z.array(Contact) }).optional(),
+  /** 1つの手続きの中で、別々に記録する物（財布の紛失：キャッシュカードとクレジットカードの停止。v0.5.28）。
+      when が T か U（わからない）の物だけ出す。U は「要確認」。手続きの状態は、物の状態からまとめる（src/core/overview.ts） */
+  parts: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), label: Text, when: Condition })).optional(),
   /** 手続きの方法（窓口・電子申請・郵送・電話）。when が偽の方法は出さない */
   methods: z.array(z.object({ type: z.enum(['counter', 'online', 'mail', 'phone']), text: Text, when: RuleExpr.optional(), evidence: Evidence })).optional(),
   /** 必要な物が無いときの代わり（身分証をなくしたときなど） */
@@ -209,6 +212,10 @@ export const EventDef = z.object({
   tool: z.object({ path: z.string().regex(/^\/[a-z-]+$/), label: Text }).optional(),
   /** すぐにやることの一覧（作者 11/7 K-15：財布の紛失）。最初の質問のあとは全体を出し、手続きごとに「済んだ」の印を付けられる */
   checklist: z.boolean().optional(),
+  /** 全体の画面（v0.5.28：財布の紛失）。最初の質問のあと、手続きを段ごとに全部見せる。すぐ行う行動は目立たせるが、ほかを止めない。
+      1つずつ進める画面は /e/{id}/step。どの段にも入らないカードは「そのほか」。
+      pin：この段の手続きへのリンクを、全体の画面と1つずつの画面の上にいつも出す（財布が見つかったとき） */
+  phases: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), title: Text, note: Text.optional(), card_ids: z.array(z.string()), pin: z.boolean().optional() })).optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;
