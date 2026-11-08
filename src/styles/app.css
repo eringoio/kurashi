@@ -707,13 +707,23 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .ov-item__name { flex: 1 1 8em; min-width: 0; font-weight: 700; overflow-wrap: anywhere; }
 .ov-item__name .bi__ja { font-size: max(.8em, 14px); }
 .ov-item__pre { margin: 0; font-size: max(var(--fs-small), 15px); color: var(--ink-subtle); overflow-wrap: anywhere; }
-.ov-parts { display: flex; flex-direction: column; gap: 8px; }
-.ov-part { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
-.ov-track { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
-.ov-track__label { font-size: max(var(--fs-small), 15px); font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
-.ov-track__select { min-height: var(--target-min); max-width: 100%; padding: 0 10px; border: 2px solid var(--ink); border-radius: var(--radius-md); background: var(--white); color: var(--ink); font: inherit; font-size: max(var(--fs-small), 16px); }
-.ov-track__select--done { border-color: var(--orange); }
-.ov-track__select--na { border-style: dashed; border-color: var(--line-dim); }
+/* チェックリスト（src/ui/Checklist.tsx。v0.5.35）。箱は k-check__box、押せる所は 44px 以上 */
+.ck-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ck-item { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-width: 0; border-bottom: 1px solid var(--line-dim); }
+.ck-item:last-child { border-bottom: 0; }
+.ck-row { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; }
+.ck__hit { position: relative; display: inline-flex; align-items: center; gap: 8px; min-width: var(--target-min); min-height: var(--target-min); cursor: pointer; flex: none; }
+.ck__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.ck__input:disabled { cursor: default; }
+.ck__input:checked + .ck__box { background: var(--blue); border-color: var(--blue); }
+.ck__input:focus-visible + .ck__box { outline: 3px solid var(--focus); outline-offset: 3px; }
+.ck__input:disabled + .ck__box { opacity: .6; }
+.ck__text { font-weight: 700; font-size: max(var(--fs-small), 16px); }
+.ck__name { flex: 1 1 8em; min-width: 0; min-height: var(--target-min); display: flex; align-items: center; padding: 6px 0; overflow-wrap: anywhere; cursor: pointer; }
+.ck__name .link { cursor: pointer; }
+.ck-item--done .ck__name { color: var(--ink-subtle); }
+.ck__na { font-size: max(var(--fs-small), 15px); color: var(--ink-subtle); border: 1px dashed var(--line-dim); border-radius: var(--radius-md); padding: 0 8px; }
+.ck__count { margin: 0 0 4px; }
 .ov-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 8px 12px; border: 3px solid var(--orange); border-radius: var(--radius-md); background: var(--white); }
 .ov-strip__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 14px; }
 .ov-pin .link img { width: 28px; height: 28px; margin-right: 6px; flex: none; }

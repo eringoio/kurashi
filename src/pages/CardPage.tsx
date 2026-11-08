@@ -21,8 +21,8 @@ import type { CardView } from '../core/engine';
 import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
 import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle } from '../ui/router';
-import { TrackSelect } from './EventOverview';
-import { partViews, rollup, STATUS_OF, type Track } from '../core/overview';
+import { Checklist } from '../ui/Checklist';
+import { checkPart, partViews, type Track } from '../core/overview';
 import { useSeen } from '../ui/Words';
 import { StayRenewFlow } from '../ui/StayRenew';
 import { stayExpired } from '../core/stayRenew';
@@ -65,32 +65,24 @@ export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: st
 /** できごとの入口の道（引っ越しは /move） */
 const eventPath = (id: string) => (id === 'E-move' ? '/move' : '/e/' + id);
 
-/** 物ごとの記録（parts。入居のとき：鍵・電気・ガス…）。くわしい案内のカードがあれば名前から開ける（v0.5.30） */
+/** 物ごとの記録（parts。入居のとき：鍵・電気・ガス…）。案内のカードなのでチェックボックス（v0.5.35）。
+    くわしい案内のカードがあれば名前から開ける（v0.5.30） */
 function PartsList({ c, g, base, onLive }: { c: CardView; g: CardGuide; base: string; onLive: (s: string) => void }) {
   const { level } = usePrefs();
   const parts = partViews(c, g.out.facts);
   if (!parts.length) return null;
-  const name = line(c.card.title, level);
-  const setPart = (id: string, t: Track) => {
-    const next = { ...(c.plan?.parts ?? {}), [id]: STATUS_OF[t] };
-    void g.setPlan(c.card.id, { parts: next, status: STATUS_OF[rollup(parts.map((p) => ({ track: p.id === id ? t : p.track })))] });
+  const items = parts.map((p) => {
+    const def = c.card.parts!.find((x) => x.id === p.id)!;
+    return { id: p.id, label: p.label, track: p.track, to: def.card && g.out.cards.some((x) => x.card.id === def.card) ? base + def.card : null };
+  });
+  const toggle = (id: string, done: boolean, pending: Record<string, Track>) => {
+    void g.setPlan(c.card.id, checkPart(c, parts, id, done, pending));
     onLive(line(ui('ov.saved'), level));
   };
   return (
     <section className="ov-phase" aria-labelledby="card-parts-h">
       <h2 id="card-parts-h"><Bi phrase k="card.parts" /></h2>
-      <ul className="ov-list" role="list">
-        {parts.map((p) => {
-          const def = c.card.parts!.find((x) => x.id === p.id)!;
-          const to = def.card && g.out.cards.some((x) => x.card.id === def.card) ? base + def.card : null;
-          return (
-            <li key={p.id} className={'ov-item ov-item--' + p.track}>
-              {to ? <Link to={to} className="link"><Bi phrase t={p.label} /></Link> : <p><Bi phrase t={p.label} /></p>}
-              <TrackSelect label="ov.status" name={line(p.label, level) + '（' + name + '）'} value={p.track} onChange={(t) => setPart(p.id, t)} />
-            </li>
-          );
-        })}
-      </ul>
+      <Checklist items={items} onToggle={toggle} />
     </section>
   );
 }

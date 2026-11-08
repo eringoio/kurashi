@@ -85,13 +85,24 @@ test('住まい：はじめから全体の画面。公的住宅をすぐ開け�
 test('住まい：入居の電気・水道を記録すると、再読み込みしても残る', async ({ page }) => {
   await page.goto('/e/E-house-search/c/housing-move-in');
   await keep(page);
-  const water = page.getByRole('combobox', { name: /水道/ });
+  // 案内なのでチェックボックス（v0.5.35）。手続きの4つの状態の選択は出さない
+  await expect(page.getByRole('combobox', { name: /水道/ })).toHaveCount(0);
+  const water = page.getByRole('checkbox', { name: /水道/ });
   // 同意の前は保存しない（9.9）：はじめの記録のあと「残す」を押し、もう一度記録する
-  await water.selectOption('doing');
+  await water.check();
   await keep(page);
-  await water.selectOption('done');
+  await water.uncheck();
+  await water.check();
+  // 続けて押しても、前に押した物の記録を消さない
+  await page.getByRole('checkbox', { name: /^ガス/ }).check();
+  await page.getByRole('checkbox', { name: /インターネット/ }).check();
+  // リンクの無い項目は、名前を押してもチェックできる
+  await page.getByText('郵便の転送', { exact: true }).click();
+  await expect(page.getByText(/このリストで 4\/7 完了/)).toBeVisible();
   await page.reload();
-  await expect(page.getByRole('combobox', { name: /水道/ })).toHaveValue('done');
+  for (const n of [/水道/, /^ガス/]) await expect(page.getByRole('checkbox', { name: n })).toBeChecked();
+  await expect(page.getByRole('checkbox', { name: /郵便の転送/ })).toBeChecked();
+  await expect(page.getByRole('checkbox', { name: /^電気/ })).not.toBeChecked();
 });
 
 test('財布：すぐ行う行動（カードの停止）が最初のまま', async ({ page }) => {

@@ -3916,24 +3916,9 @@
     "en": "All the steps"
   },
   "ov.sub": {
-    "ja": "どれからでも{開|ひら}けます。{終|お}わったら{状態|じょうたい}を{変|か}えます。",
-    "ja_easy": "どれからでも{見|み}られます。{終|お}わったら{変|か}えます。",
-    "en": "Open any step in any order. Change the status when you finish."
-  },
-  "ov.status": {
-    "ja": "{状態|じょうたい}",
-    "ja_easy": "どこまでできたか",
-    "en": "Status"
-  },
-  "ov.track.todo": {
-    "ja": "{未|み}{対応|たいおう}",
-    "ja_easy": "まだ",
-    "en": "Not started"
-  },
-  "ov.track.doing": {
-    "ja": "{対応|たいおう}{中|ちゅう}",
-    "ja_easy": "しているところ",
-    "en": "In progress"
+    "ja": "どれからでも{開|ひら}けます。{終|お}わったら{記録|きろく}します。",
+    "ja_easy": "どれからでも{見|み}られます。{終|お}わったら{記録|きろく}します。",
+    "en": "Open any step in any order. Record it when you finish."
   },
   "ov.track.done": {
     "ja": "{完了|かんりょう}",
@@ -3984,6 +3969,11 @@
     "ja": "{記録|きろく}しました",
     "ja_easy": "{記録|きろく}しました",
     "en": "Saved"
+  },
+  "ck.count": {
+    "ja": "このリストで {n}/{m} {完了|かんりょう}",
+    "ja_easy": "このリストで {n}/{m} できた",
+    "en": "{n} of {m} done on this list"
   },
   "sr.expiry.q": {
     "ja": "{在留|ざいりゅう}{期間|きかん}はいつまでですか？",

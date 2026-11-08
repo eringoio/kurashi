@@ -1,6 +1,6 @@
 /* 全体の画面（SPEC 6A.17 v0.5.28：財布の紛失）。画面に依存しない。
    - 手続きを段（phases）ごとに全部見せる。すぐ行う行動は目立たせるが、ほかの手続きを止めない
-   - 状態は4つ：未対応・対応中・完了・該当しない（保存は PlanRecord の status をそのまま使う）
+   - 画面の記録はチェックボックス（済んだ・まだ。v0.5.36）。保存は PlanRecord の status のまま。前に記録した 対応中・該当しない は読める（Track）
    - 1つの手続きの中で別々に記録する物（parts：キャッシュカードとクレジットカード）は、物ごとに状態を持ち、手続きの状態はまとめて決める
    - 当てはまるかわからない（U）ものは「要確認」。対象・対象外を勝手に決めない */
 import type { CardView, EngineOutput } from './engine';
@@ -9,7 +9,6 @@ import { evalCond, type TV } from './logic';
 import type { EventDef, Value } from './schema';
 
 export type Track = 'todo' | 'doing' | 'done' | 'na';
-export const TRACKS: Track[] = ['todo', 'doing', 'done', 'na'];
 type Status = PlanRecord['status'];
 
 /** 保存の状態 → 4つの状態。提出した・待っている も「対応中」 */
@@ -46,6 +45,16 @@ export function rollup(parts: Pick<PartView, 'track'>[]): Track {
   if (t.every((x) => x === 'done' || x === 'na')) return 'done';
   if (t.some((x) => x === 'doing' || x === 'done')) return 'doing';
   return 'todo';
+}
+
+/** チェックボックスの物を1つ変えたときの記録。チェック = done、外す = todo。手続きの状態は今までと同じ rollup で決める。
+    pending：まだ画面に戻ってきていない、前に押した物（続けて押しても前の記録を消さない） */
+export function checkPart(c: CardView, parts: PartView[], id: string, done: boolean, pending: Record<string, Track> = {}): Pick<PlanRecord, 'parts' | 'status'> {
+  const over: Record<string, Track> = { ...pending, [id]: done ? 'done' : 'todo' };
+  return {
+    parts: { ...(c.plan?.parts ?? {}), ...Object.fromEntries(Object.entries(over).map(([k, t]) => [k, STATUS_OF[t]])) },
+    status: STATUS_OF[rollup(parts.map((p) => ({ track: over[p.id] ?? p.track })))],
+  };
 }
 
 export interface PhaseView { id: string; title?: NonNullable<EventDef['phases']>[number]['title']; note?: NonNullable<EventDef['phases']>[number]['note']; cards: CardView[] }

@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { checkRefs, loadData } from '../../src/core/data';
 import { run, type EngineInput } from '../../src/core/engine';
 import { nowStep } from '../../src/core/now';
-import { overviewReady, singleGoal } from '../../src/core/overview';
+import { checkPart, overviewReady, partViews, singleGoal } from '../../src/core/overview';
 import type { Value } from '../../src/core/schema';
 
 const data = loadData();
@@ -111,6 +111,17 @@ describe('住まい：総合の案内（全体の画面）', () => {
       const parts = data.cards.find((c) => c.id === id)!.parts!.map((p) => p.id);
       for (const p of ['electricity', 'gas', 'water', 'internet', 'mail', 'address']) expect(parts, id).toContain(p);
     }
+  });
+  it('チェックリスト（v0.5.35・v0.5.36）：前に記録した done はチェック済み、対応中は消さない', () => {
+    const plan = { 'housing-move-in': { card_id: 'housing-move-in', status: 'preparing' as const, parts: { water: 'done' as const, gas: 'preparing' as const } } };
+    const c = v(go('E-house-search', {}, { plan }), 'housing-move-in');
+    const parts = partViews(c, new Map());
+    expect(parts.find((p) => p.id === 'water')!.track).toBe('done');
+    // 電気をチェック：ほかの物の記録（ガスの preparing）はそのまま
+    const next = checkPart(c, parts, 'electricity', true);
+    expect(next.parts).toMatchObject({ water: 'done', gas: 'preparing', electricity: 'done' });
+    expect(next.status).toBe('preparing');
+    expect(checkPart(c, parts, 'water', false).parts!.water).toBe('todo');
   });
   it('入居・退去から、引っ越しの届け出のできごとへ（6つの場合。転出・転入・転居を分ける）', () => {
     const links = [...data.cards.find((c) => c.id === 'housing-move-in')!.event_links!, ...data.cards.find((c) => c.id === 'housing-move-out')!.event_links!];

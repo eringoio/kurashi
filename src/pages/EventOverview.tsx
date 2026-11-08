@@ -1,18 +1,19 @@
 /* 全体の画面（SPEC 6A.17 v0.5.28）。段（phases）のあるできごとで、最初の質問に答えたあとに出す。イベントの名前で分岐しない。
    - 手続きを段ごとに全部見せる。どれからでも開ける。前に要ることがまだでも、開いて準備できる
    - すぐ行う行動（urgent）は段の中で目立たせ、電話・リンクをその場に出す。ほかの手続きを止めない
-   - 状態は4つ（未対応・対応中・完了・該当しない）。物ごとに記録する手続き（parts）は物ごとに選ぶ
+   - 記録はチェックボックス（済んだ・まだ。v0.5.36）。物ごとに記録する手続き（parts）は物ごとにチェック
    - 当てはまるかわからない手続き・物は「要確認」。対象・対象外を決めない
    - 残りの入口の質問は、この画面の中で答えられる（答えなくても全体は見られる）
    - 1つずつ進める画面（/e/{id}/step）は任意 */
 import { Fragment, useState } from 'react';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
-import { needsCheck, partViews, phaseViews, prereqFrom, rollup, STATUS_OF, trackOf, tracked, TRACKS, urgentOpen, type Track } from '../core/overview';
-import type { Text, Value } from '../core/schema';
+import { checkPart, needsCheck, partViews, phaseViews, prereqFrom, STATUS_OF, trackOf, tracked, urgentOpen, type Track } from '../core/overview';
+import { CheckBox, Checklist, NaMark } from '../ui/Checklist';
+import type { Value } from '../core/schema';
 import type { EventGuide } from '../guide/useEvent';
 import { Bi, One } from '../i18n/Ruby';
-import { line, ui, type UiKey } from '../i18n/text';
+import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art, artDim } from '../ui/art';
 import { afterText, Answers, WhyAsked } from '../ui/guide';
@@ -20,21 +21,7 @@ import { Contacts, MultiPick } from '../ui/patterns';
 import { toContact, toPickOptions } from '../ui/patterns/map';
 import { Link, useFocusTitle } from '../ui/router';
 
-const TRACK_KEY: Record<Track, UiKey> = { todo: 'ov.track.todo', doing: 'ov.track.doing', done: 'ov.track.done', na: 'ov.track.na' };
-
-/** 状態を選ぶ。見える名前（label）を読み上げの名前の頭に入れる（WCAG 2.5.3） */
-export function TrackSelect({ label, name, value, onChange }: { label: Text | UiKey; name: string; value: Track; onChange: (t: Track) => void }) {
-  const { level } = usePrefs();
-  const text = typeof label === 'string' ? line(ui(label), level) : line(label, level);
-  return (
-    <label className="ov-track">
-      <span className="ov-track__label">{typeof label === 'string' ? <One k={label} /> : <One t={label} />}</span>
-      <select className={'ov-track__select ov-track__select--' + value} value={value} aria-label={text + '：' + name} onChange={(e) => onChange(e.target.value as Track)}>
-        {TRACKS.map((t) => <option key={t} value={t}>{line(ui(TRACK_KEY[t]), level)}</option>)}
-      </select>
-    </label>
-  );
-}
+const CheckMark = () => <span className="k-state k-state--check"><span aria-hidden="true">？</span><One k="ov.check" /></span>;
 
 export function UrgentStrip({ g, base }: { g: EventGuide; base: string }) {
   const open = urgentOpen(g.out);
@@ -70,12 +57,6 @@ function Item({ g, c, base, onLive }: { g: EventGuide; c: CardView; base: string
   const pre = prereqFrom(c).map((id) => g.out.cards.find((x) => x.card.id === id)).filter((x): x is CardView => !!x && x.state !== 'excluded');
   const said = () => onLive(line(ui('ov.saved'), level));
   const setCard = (t: Track) => { void g.setPlan(c.card.id, { status: STATUS_OF[t] }); said(); };
-  const setPart = (id: string, t: Track) => {
-    const next = { ...(c.plan?.parts ?? {}), [id]: STATUS_OF[t] };
-    const status = STATUS_OF[rollup(parts.map((p) => ({ track: p.id === id ? t : p.track })))];
-    void g.setPlan(c.card.id, { parts: next, status });
-    said();
-  };
   return (
     <li className={'ov-item ov-item--' + track + (urgent ? ' ov-item--urgent' : '')}>
       <Link to={base + '/c/' + c.card.id} className="ov-item__link">
@@ -90,16 +71,19 @@ function Item({ g, c, base, onLive }: { g: EventGuide; c: CardView; base: string
         <p className="ov-item__pre"><One k="ov.prereq" />{pre.map((p, i) => <span key={p.card.id}>{i > 0 && '・'}<One t={p.card.title} /></span>)}</p>
       )}
       {!tracked(c) ? null : parts.length > 0 ? (
-        <div className="ov-parts">
-          {parts.map((p) => (
-            <div key={p.id} className="ov-part">
-              <TrackSelect label={p.label} name={name} value={p.track} onChange={(t) => setPart(p.id, t)} />
-              {p.applies === 'U' && <span className="k-state k-state--check"><span aria-hidden="true">？</span><One k="ov.check" /></span>}
-            </div>
-          ))}
-        </div>
+        // 記録はチェックボックス（v0.5.35・v0.5.36）。物ごとの記録（カードの停止など）はチェックリスト
+        <Checklist context={name} items={parts.map((p) => {
+          const card = c.card.parts!.find((x) => x.id === p.id)!.card;
+          return { id: p.id, label: p.label, track: p.track, to: card && g.out.cards.some((x) => x.card.id === card) ? base + '/c/' + card : null, extra: p.applies === 'U' ? <CheckMark /> : undefined };
+        })} onToggle={(id, v, pending) => { void g.setPlan(c.card.id, checkPart(c, parts, id, v, pending)); said(); }} />
       ) : (
-        <TrackSelect label="ov.status" name={name} value={track} onChange={setCard} />
+        <div className="ck-row">
+          {/* 答えから済んだとわかったもの（記録ではない）は外せない */}
+          <CheckBox name={line(ui('ov.track.done'), level) + '：' + name} checked={track === 'done'} disabled={c.section === 'done' && c.plan?.status !== 'done'} onChange={(v) => setCard(v ? 'done' : 'todo')}>
+            <One k="ov.track.done" />
+          </CheckBox>
+          {track === 'na' && <NaMark />}
+        </div>
       )}
     </li>
   );
