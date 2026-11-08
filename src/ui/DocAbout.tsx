@@ -47,7 +47,7 @@ export function DocAbout({ doc, sample = false }: { doc: KnownDocument; sample?:
         {(doc.kind || doc.issuer) && (
           <p className="doc__tags">
             {doc.kind && <span className={'doc__tag' + (doc.kind === 'warning' ? ' doc__tag--warn' : '')}><One k={('doc.kind.' + doc.kind) as UiKey} /></span>}
-            {doc.issuer && <span className="doc__issuer"><One k="doc.issuer" />：<Bi t={doc.issuer} /></span>}
+            {doc.issuer && <span className="doc__issuer"><One k={doc.direction === "submit" ? "doc.submitTo" : "doc.issuer"} />：<Bi t={doc.issuer} /></span>}
           </p>
         )}
       </div>

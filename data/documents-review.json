@@ -18,9 +18,9 @@
         "en": "The form you submit at the ward office when you move to Nagoya from another city."
       },
       "issuer": {
-        "ja": "{出|だ}す{先|さき}：{新|あたら}しく{住|す}む{区|く}の{区役所|くやくしょ}・{支所|ししょ}",
-        "ja_easy": "{出|だ}すところ：{住|す}む{区|く}の{区役所|くやくしょ}",
-        "en": "Submit to: the ward office of your new ward"
+        "ja": "{新|あたら}しく{住|す}む{区|く}の{区役所|くやくしょ}・{支所|ししょ}",
+        "ja_easy": "{住|す}む{区|く}の{区役所|くやくしょ}",
+        "en": "the ward office of your new ward"
       },
       "who": {
         "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{引|ひ}っ{越|こ}した{人|ひと}（{市内|しない}の{引|ひ}っ{越|こ}しは{転居|てんきょ}{届|とどけ}）。",
@@ -546,9 +546,9 @@
         "en": "A report you make to the police when you lose something."
       },
       "issuer": {
-        "ja": "{出|だ}す{先|さき}：{愛知|あいち}{県|けん}{警察|けいさつ}（{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}）",
-        "ja_easy": "{出|だ}すところ：{警察|けいさつ}",
-        "en": "Submit to: Aichi Police (station or koban)"
+        "ja": "{愛知|あいち}{県|けん}{警察|けいさつ}（{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}）",
+        "ja_easy": "{警察|けいさつ}",
+        "en": "Aichi Police (station or koban)"
       },
       "who": {
         "ja": "{物|もの}を{落|お}とした・なくした{人|ひと}（{盗|ぬす}まれたときは{別|べつ}の{届|とど}け）。",
