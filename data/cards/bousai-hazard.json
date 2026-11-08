@@ -1,0 +1,131 @@
+{
+  "id": "bousai-hazard",
+  "data_version": 1,
+  "illustration": "hazardmap",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "ハザードマップを{見|み}る",
+    "ja_easy": "{危|あぶ}ない{所|ところ}の{地図|ちず}を{見|み}る",
+    "en": "Check the hazard map"
+  },
+  "official_name": {
+    "ja": "なごやハザードマップ",
+    "reading": "なごやはざーどまっぷ"
+  },
+  "summary": {
+    "ja": "{家|いえ}・{職場|しょくば}・{学校|がっこう}の{場所|ばしょ}の、{洪水|こうずい}・{内水|ないすい}{氾濫|はんらん}（{雨水|あまみず}があふれる）・{高潮|たかしお}・{津波|つなみ}・{地震|じしん}・{液状|えきじょう}{化|か}などの{危険|きけん}を、{公式|こうしき}の{地図|ちず}で{確|たし}かめます。{名古屋|なごや}{市|し}には{区|く}ごとのハザードマップと、{住所|じゅうしょ}で{探|さが}せる{名古屋|なごや}{市|し}{防災|ぼうさい}アプリがあります。{名古屋|なごや}の{外|そと}は、{国|くに}のハザードマップポータルサイトで{見|み}られます。{地図|ちず}に{色|いろ}がない{所|ところ}も、{安全|あんぜん}とは{限|かぎ}りません。{区|く}の{名前|なまえ}だけでは、{危険|きけん}かどうかは{決|き}まりません。",
+    "ja_easy": "{家|いえ}・{仕事|しごと}・{学校|がっこう}の{場所|ばしょ}に、{水|みず}があふれる・{津波|つなみ}・{地震|じしん}などの{危険|きけん}があるか、{公式|こうしき}の{地図|ちず}で{見|み}ます。{名古屋|なごや}{市|し}は、{区|く}ごとの{地図|ちず}と、{住所|じゅうしょ}で{探|さが}せる{名古屋|なごや}{市|し}{防災|ぼうさい}アプリがあります。{名古屋|なごや}の{外|そと}は、{国|くに}の{地図|ちず}のサイトで{見|み}ます。{地図|ちず}に{色|いろ}がない{所|ところ}も、{安全|あんぜん}とは{限|かぎ}りません。",
+    "en": "Check the risks of river flooding, inland flooding (rainwater overflowing), storm surge, tsunami, earthquakes and liquefaction at your home, work and school on the official maps. Nagoya has a hazard map for each ward and the Nagoya City disaster-prevention app, where you can search by address. Outside Nagoya, use the national hazard map portal. A place with no colour on the map is not always safe. The ward name alone does not tell you the risk."
+  },
+  "lead": {
+    "ja": "{家|いえ}・{学校|がっこう}・{職場|しょくば}の{危険|きけん}を、{公式|こうしき}の{地図|ちず}で{確|たし}かめます。",
+    "ja_easy": "{家|いえ}・{学校|がっこう}・{仕事|しごと}の{場所|ばしょ}が{危|あぶ}なくないか、{公式|こうしき}の{地図|ちず}で{見|み}ます。",
+    "en": "Check the risks at your home, school and work on the official maps."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-hazardmap"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "home",
+      "label": {
+        "ja": "{家|いえ}の{場所|ばしょ}を{確|たし}かめた",
+        "ja_easy": "{家|いえ}の{場所|ばしょ}を{見|み}た",
+        "en": "Checked my home"
+      }
+    },
+    {
+      "id": "school_work",
+      "label": {
+        "ja": "{学校|がっこう}・{職場|しょくば}の{場所|ばしょ}を{確|たし}かめた",
+        "ja_easy": "{学校|がっこう}・{仕事|しごと}の{場所|ばしょ}を{見|み}た",
+        "en": "Checked my school or workplace"
+      }
+    },
+    {
+      "id": "kinds",
+      "label": {
+        "ja": "どの{災害|さいがい}の{危険|きけん}があるかを{知|し}った",
+        "ja_easy": "どの{災害|さいがい}が{危|あぶ}ないか、わかった",
+        "en": "I know which disasters are a risk"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "はざーどまっぷ",
+    "ハザードマップ",
+    "hazard map",
+    "しんすい",
+    "浸水",
+    "flood map",
+    "えきじょうか",
+    "液状化"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "なごやハザードマップ（{区|く}ごと）",
+        "ja_easy": "{名古屋|なごや}の{危|あぶ}ない{所|ところ}の{地図|ちず}（{区|く}ごと）",
+        "en": "Nagoya hazard maps (by ward)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1036428.html",
+      "source_id": "nagoya-bousai-hazardmap"
+    },
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリ（{住所|じゅうしょ}で{探|さが}す）",
+        "ja_easy": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリ",
+        "en": "Nagoya City disaster-prevention app (search by address)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/jouhou/1036430/1013493.html",
+      "source_id": "nagoya-bousai-app"
+    },
+    {
+      "label": {
+        "ja": "ハザードマップポータルサイト（{全国|ぜんこく}）",
+        "ja_easy": "{国|くに}の{地図|ちず}のサイト（{日本|にほん}{全国|ぜんこく}）",
+        "en": "Hazard map portal (all of Japan)"
+      },
+      "url": "https://disaportal.gsi.go.jp/",
+      "source_id": "mlit-disaportal"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-hazardmap",
+      "nagoya-bousai-app",
+      "mlit-disaportal"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

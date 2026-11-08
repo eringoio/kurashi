@@ -1,0 +1,266 @@
+{
+  "id": "bousai-bag",
+  "data_version": 1,
+  "illustration": "bousai-bag",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{持|も}ち{出|だ}す{袋|ふくろ}（{防災|ぼうさい}バッグ）",
+    "ja_easy": "{逃|に}げるときに{持|も}つ{袋|ふくろ}",
+    "en": "Grab bag (emergency bag)"
+  },
+  "official_name": {
+    "ja": "非常持出品",
+    "reading": "ひじょうもちだしひん"
+  },
+  "summary": {
+    "ja": "{逃|に}げるときに{持|も}って{出|で}る{物|もの}を、1つの{袋|ふくろ}にまとめます。{命|いのち}を{守|まも}ることが{先|さき}です。{袋|ふくろ}を{取|と}りに{戻|もど}らないでください。{重|おも}すぎると{逃|に}げにくいので、{持|も}って{歩|ある}ける{量|りょう}にします。{季節|きせつ}や、{自分|じぶん}に{要|い}る{物|もの}に{合|あ}わせます。{下|した}の{一覧|いちらん}は{名古屋|なごや}{市|し}のチェックリストなどから{作|つく}った{目安|めやす}です。",
+    "ja_easy": "{逃|に}げるときに{持|も}つ{物|もの}を、1つの{袋|ふくろ}に{入|い}れます。{命|いのち}を{守|まも}ることが{先|さき}です。{袋|ふくろ}を{取|と}りに{戻|もど}りません。{重|おも}いと{逃|に}げにくいので、{持|も}って{歩|ある}ける{量|りょう}にします。{季節|きせつ}や、{自分|じぶん}に{要|い}る{物|もの}に{合|あ}わせます。",
+    "en": "Put the things you take when you flee into one bag. Your life comes first: do not go back for the bag. A heavy bag slows you down, so pack only what you can carry. Adjust it to the season and your own needs. The list below is a guide based on Nagoya City's checklist and other sources."
+  },
+  "lead": {
+    "ja": "{逃|に}げるときに{持|も}つ{物|もの}を1つの{袋|ふくろ}に。{持|も}って{歩|ある}ける{量|りょう}にします。",
+    "ja_easy": "{逃|に}げるときに{持|も}つ{物|もの}を、1つの{袋|ふくろ}に{入|い}れます。",
+    "en": "Put what you take when you flee in one bag. Keep it light enough to carry."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-checklist"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "water_food",
+      "label": {
+        "ja": "{水|みず}とすぐ{食|た}べられる{物|もの}",
+        "ja_easy": "{水|みず}と、すぐ{食|た}べられる{物|もの}",
+        "en": "Water and ready-to-eat food"
+      }
+    },
+    {
+      "id": "light",
+      "label": {
+        "ja": "{懐中|かいちゅう}{電灯|でんとう}・{電池|でんち}",
+        "ja_easy": "{懐中|かいちゅう}{電灯|でんとう}・{電池|でんち}",
+        "en": "Flashlight and batteries"
+      }
+    },
+    {
+      "id": "radio",
+      "label": {
+        "ja": "{携帯|けいたい}ラジオ",
+        "ja_easy": "{小|ちい}さいラジオ",
+        "en": "Portable radio"
+      }
+    },
+    {
+      "id": "battery",
+      "label": {
+        "ja": "モバイルバッテリー・{充電|じゅうでん}ケーブル",
+        "ja_easy": "スマホの{充電|じゅうでん}{器|き}・ケーブル",
+        "en": "Power bank and charging cable"
+      }
+    },
+    {
+      "id": "medicine",
+      "label": {
+        "ja": "{常備薬|じょうびやく}・お{薬|くすり}{手帳|てちょう}の{写|うつ}し",
+        "ja_easy": "いつも{飲|の}む{薬|くすり}・お{薬|くすり}{手帳|てちょう}のコピー",
+        "en": "Regular medicine and a copy of your medicine record"
+      }
+    },
+    {
+      "id": "first_aid",
+      "label": {
+        "ja": "ばんそうこう・{包帯|ほうたい}などの{救急|きゅうきゅう}{用品|ようひん}",
+        "ja_easy": "ばんそうこう・{包帯|ほうたい}",
+        "en": "First-aid items (plasters, bandages)"
+      }
+    },
+    {
+      "id": "cash",
+      "label": {
+        "ja": "{現金|げんきん}・{小銭|こぜに}",
+        "ja_easy": "お{金|かね}・{小|ちい}さいお{金|かね}",
+        "en": "Cash and coins"
+      }
+    },
+    {
+      "id": "id_copy",
+      "label": {
+        "ja": "{身分|みぶん}{証|しょう}のコピー（{水|みず}にぬれないように）",
+        "ja_easy": "{在留|ざいりゅう}カードなどのコピー（ぬれないように）",
+        "en": "Copies of your ID (kept dry)"
+      }
+    },
+    {
+      "id": "gloves",
+      "label": {
+        "ja": "{軍手|ぐんて}・{頭|あたま}を{守|まも}る{物|もの}・{笛|ふえ}",
+        "ja_easy": "{手袋|てぶくろ}・{頭|あたま}を{守|まも}る{物|もの}・{笛|ふえ}",
+        "en": "Work gloves, head protection, whistle"
+      }
+    },
+    {
+      "id": "toilet",
+      "label": {
+        "ja": "{携帯|けいたい}トイレ・ごみ{袋|ぶくろ}",
+        "ja_easy": "{袋|ふくろ}のトイレ・ごみ{袋|ぶくろ}",
+        "en": "Portable toilet bags and rubbish bags"
+      }
+    },
+    {
+      "id": "towel",
+      "label": {
+        "ja": "タオル・ウェットティッシュ・ティッシュ",
+        "ja_easy": "タオル・ウェットティッシュ・ティッシュ",
+        "en": "Towel, wet wipes, tissues"
+      }
+    },
+    {
+      "id": "clothes",
+      "label": {
+        "ja": "{着替|きが}え・{下着|したぎ}・{靴下|くつした}",
+        "ja_easy": "{着|き}る{物|もの}・{下着|したぎ}・{靴下|くつした}",
+        "en": "Change of clothes, underwear, socks"
+      }
+    },
+    {
+      "id": "weather",
+      "label": {
+        "ja": "{雨具|あまぐ}・{寒|さむ}さや{暑|あつ}さへの{備|そな}え",
+        "ja_easy": "{雨|あめ}の{服|ふく}・{寒|さむ}さ{暑|あつ}さの{物|もの}",
+        "en": "Rain gear and items for cold or heat"
+      }
+    },
+    {
+      "id": "mask",
+      "label": {
+        "ja": "マスク・{手|て}を{清潔|せいけつ}にする{物|もの}",
+        "ja_easy": "マスク・{手|て}をきれいにする{物|もの}",
+        "en": "Masks and hand hygiene items"
+      }
+    },
+    {
+      "id": "memo",
+      "label": {
+        "ja": "{連絡|れんらく}{先|さき}と{避難|ひなん}{場所|ばしょ}のメモ（{紙|かみ}）",
+        "ja_easy": "{電話|でんわ}{番号|ばんごう}と{逃|に}げる{所|ところ}のメモ（{紙|かみ}）",
+        "en": "Paper note of contacts and evacuation sites"
+      }
+    },
+    {
+      "id": "extra_baby",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：ミルク・おむつなど{赤|あか}ちゃんの{物|もの}",
+        "ja_easy": "{要|い}る{人|ひと}：{赤|あか}ちゃんのミルク・おむつ",
+        "en": "If needed: baby milk, nappies"
+      }
+    },
+    {
+      "id": "extra_sanitary",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：{生理|せいり}{用品|ようひん}",
+        "ja_easy": "{要|い}る{人|ひと}：{生理|せいり}{用品|ようひん}",
+        "en": "If needed: sanitary products"
+      }
+    },
+    {
+      "id": "extra_allergy",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：アレルギーに{合|あ}う{食|た}べ{物|もの}",
+        "ja_easy": "{要|い}る{人|ひと}：アレルギーに{合|あ}う{食|た}べ{物|もの}",
+        "en": "If needed: allergy-safe food"
+      }
+    },
+    {
+      "id": "extra_glasses",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：{予備|よび}の{眼鏡|めがね}・コンタクトの{物|もの}",
+        "ja_easy": "{要|い}る{人|ひと}：{予備|よび}の{眼鏡|めがね}・コンタクト",
+        "en": "If needed: spare glasses, contact-lens items"
+      }
+    },
+    {
+      "id": "extra_care",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：{補聴器|ほちょうき}の{電池|でんち}・{介助|かいじょ}の{物|もの}",
+        "ja_easy": "{要|い}る{人|ひと}：{補聴器|ほちょうき}の{電池|でんち}・{介助|かいじょ}の{物|もの}",
+        "en": "If needed: hearing-aid batteries, care items"
+      }
+    },
+    {
+      "id": "extra_pet",
+      "label": {
+        "ja": "{必要|ひつよう}な{人|ひと}：ペットの{食|た}べ{物|もの}・{用品|ようひん}",
+        "ja_easy": "{要|い}る{人|ひと}：ペットの{食|た}べ{物|もの}",
+        "en": "If needed: pet food and supplies"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "ぼうさいばっぐ",
+    "防災バッグ",
+    "もちだしぶくろ",
+    "持ち出し袋",
+    "emergency bag",
+    "grab bag",
+    "go bag",
+    "checklist"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{防災|ぼうさい}{用品|ようひん}チェックリスト（{名古屋|なごや}{市|し}・PDF）",
+        "ja_easy": "{防災|ぼうさい}の{物|もの}の{一覧|いちらん}（{名古屋|なごや}{市|し}・PDF）",
+        "en": "Disaster supplies checklist (Nagoya City, PDF)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/036/469/bosaiyohincheckrist.pdf",
+      "source_id": "nagoya-bousai-checklist"
+    },
+    {
+      "label": {
+        "ja": "{非常|ひじょう}{持出品|もちだしひん}・{備蓄|びちく}{品|ひん}（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{持|も}ち{出|だ}す{物|もの}・{家|いえ}に{置|お}く{物|もの}（{名古屋|なごや}{市|し}）",
+        "en": "Grab-bag and stockpile items (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/taisaku/1036441/1013561.html",
+      "source_id": "nagoya-bousai-bichiku"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-checklist",
+      "nagoya-bousai-bichiku",
+      "bousai-go-mochidashi"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

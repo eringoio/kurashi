@@ -125,7 +125,9 @@ describe('住まい：総合の案内（全体の画面）', () => {
   });
   it('入居・退去から、引っ越しの届け出のできごとへ（6つの場合。転出・転入・転居を分ける）', () => {
     const links = [...data.cards.find((c) => c.id === 'housing-move-in')!.event_links!, ...data.cards.find((c) => c.id === 'housing-move-out')!.event_links!];
-    const pairs = new Set(links.map((l) => l.event + ':' + l.card_ids.join(',')));
+    // 防災への入口（v0.5.38）は届け出ではないので、別に確かめる
+    expect(links.filter((l) => l.event === 'E-bousai').map((l) => l.card_ids.join(','))).toEqual(['bousai-hazard,bousai-hinan']);
+    const pairs = new Set(links.filter((l) => l.event !== 'E-bousai').map((l) => l.event + ':' + l.card_ids.join(',')));
     expect(pairs).toEqual(new Set([
       'E-move:nagoya-tennyu-juukyochi', 'E-move:move-out-notice,nagoya-tennyu-todoke',
       'E-move-within:move-within-tenkyo', 'E-move-within:move-within-tennyu',
@@ -182,8 +184,8 @@ describe('引っ越し・そのほか', () => {
   });
 });
 
-describe('全13のできごと：「あとで」だけの行き止まりがない', () => {
-  expect(data.events.length).toBe(13);
+describe('全14のできごと：「あとで」だけの行き止まりがない', () => {
+  expect(data.events.length).toBe(14);
   for (const ev of data.events) {
     const q0 = ev.questions[0] ? data.questions.find((q) => q.id === ev.questions[0])! : null;
     for (const opt of q0 ? q0.options.map((x) => x.value) : [null]) {

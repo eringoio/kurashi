@@ -1,0 +1,84 @@
+{
+  "id": "bousai-dosha",
+  "data_version": 1,
+  "illustration": "landslide",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{土砂|どしゃ}{災害|さいがい}のとき",
+    "ja_easy": "{土砂|どしゃ}がくずれるとき",
+    "en": "Landslide"
+  },
+  "official_name": {
+    "ja": "土砂災害",
+    "reading": "どしゃさいがい"
+  },
+  "summary": {
+    "ja": "がけや{斜面|しゃめん}の{近|ちか}くは、{大雨|おおあめ}で{土砂|どしゃ}が{崩|くず}れることがあります。{家|いえ}が{土砂|どしゃ}{災害|さいがい}{警戒|けいかい}{区域|くいき}にあるか、ハザードマップで{確|たし}かめます。{気象庁|きしょうちょう}の{土砂|どしゃ}キキクルと{市|し}の{避難|ひなん}の{情報|じょうほう}を{見|み}て、{危険|きけん}な{所|ところ}から{早|はや}めに{逃|に}げます。",
+    "ja_easy": "がけや{山|やま}の{近|ちか}くは、{大雨|おおあめ}で{土|つち}がくずれることがあります。{家|いえ}が{危|あぶ}ない{場所|ばしょ}にあるか、{地図|ちず}で{見|み}ます。{気象庁|きしょうちょう}のキキクル（{地図|ちず}）と{市|し}の{情報|じょうほう}を{見|み}て、{早|はや}く{逃|に}げます。",
+    "en": "Near cliffs and slopes, heavy rain can cause landslides. Check on the hazard map whether your home is in a landslide warning area. Watch JMA's landslide risk map (Kikikuru) and the city's evacuation information, and leave dangerous places early."
+  },
+  "lead": {
+    "ja": "がけや{山|やま}の{近|ちか}くは、{早|はや}めに{逃|に}げます。",
+    "ja_easy": "がけや{山|やま}の{近|ちか}くは、{早|はや}く{逃|に}げます。",
+    "en": "Near cliffs and slopes, leave early."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "jma-dosha"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "どしゃ",
+    "土砂",
+    "landslide",
+    "がけ",
+    "kikikuru",
+    "キキクル"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{土砂|どしゃ}キキクル（{気象庁|きしょうちょう}）",
+        "ja_easy": "キキクル（{気象庁|きしょうちょう}）",
+        "en": "Landslide risk map Kikikuru (JMA)"
+      },
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/doshakeikai.html",
+      "source_id": "jma-dosha"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "jma-dosha",
+      "nagoya-bousai-hazardmap"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

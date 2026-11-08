@@ -1,0 +1,105 @@
+{
+  "id": "bousai-now",
+  "data_version": 1,
+  "illustration": "siren",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "いま{危|あぶ}ないと{感|かん}じたら",
+    "ja_easy": "いま{危|あぶ}ないと{思|おも}ったら",
+    "en": "If you feel in danger now"
+  },
+  "official_name": {
+    "ja": "緊急時の連絡と公式の情報",
+    "reading": "きんきゅうじのれんらくとこうしきのじょうほう"
+  },
+  "summary": {
+    "ja": "{命|いのち}を{守|まも}ることを{最|さい}{優先|ゆうせん}にします。{火事|かじ}・けが・{急|きゅう}な{病気|びょうき}は119、{事件|じけん}・{事故|じこ}は110に{電話|でんわ}します（{日本|にほん}の{中|なか}で）。{避難|ひなん}の{情報|じょうほう}は{名古屋|なごや}{市|し}が、{気象|きしょう}の{警報|けいほう}などは{気象庁|きしょうちょう}が{出|だ}します。このアプリは、いまの{危険|きけん}・{避難|ひなん}の{指示|しじ}・{避難|ひなん}{場所|ばしょ}が{開|あ}いているかを{判断|はんだん}しません。{公式|こうしき}の{最新|さいしん}の{情報|じょうほう}を{見|み}てください。",
+    "ja_easy": "まず、{自分|じぶん}の{命|いのち}を{守|まも}ります。{火事|かじ}・けが・{急|きゅう}な{病気|びょうき}は119、{事件|じけん}・{事故|じこ}は110に{電話|でんわ}します。{逃|に}げる（{避難|ひなん}）の{情報|じょうほう}は{名古屋|なごや}{市|し}が、{天気|てんき}の{警報|けいほう}は{気象庁|きしょうちょう}が{出|だ}します。このアプリは、いま{危|あぶ}ないかどうかを{決|き}めません。{公式|こうしき}の{新|あたら}しい{情報|じょうほう}を{見|み}てください。",
+    "en": "Protect your life first. Call 119 for fire, injury or sudden illness, and 110 for crimes and accidents (within Japan). Nagoya City issues evacuation information; the Japan Meteorological Agency (JMA) issues weather warnings. This app does not judge the current danger, give evacuation orders, or tell you whether a shelter is open. Check the latest official information."
+  },
+  "lead": {
+    "ja": "{命|いのち}を{守|まも}ることが{最|さい}{優先|ゆうせん}です。119・110と、{公式|こうしき}の{最新|さいしん}の{情報|じょうほう}を{見|み}ます。",
+    "ja_easy": "まず{命|いのち}を{守|まも}ります。119・110と、{公式|こうしき}の{新|あたら}しい{情報|じょうほう}を{見|み}ます。",
+    "en": "Protect your life first. Use 119 or 110 and check the latest official information."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{気象庁|きしょうちょう}・{名古屋|なごや}{市|し}（{公式|こうしき}の{最新|さいしん}の{情報|じょうほう}）",
+      "ja_easy": "{気象庁|きしょうちょう}・{名古屋|なごや}{市|し}",
+      "en": "JMA and Nagoya City (latest official information)"
+    },
+    "evidence": {
+      "source_ids": [
+        "jma-bosai"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "119",
+    "110",
+    "きんきゅう",
+    "緊急",
+    "emergency",
+    "warning",
+    "けいほう",
+    "警報"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{気象庁|きしょうちょう}の{防災|ぼうさい}{情報|じょうほう}（{警報|けいほう}・{地図|ちず}）",
+        "ja_easy": "{気象庁|きしょうちょう}の{情報|じょうほう}（{警報|けいほう}）",
+        "en": "JMA disaster information (warnings, maps)"
+      },
+      "url": "https://www.jma.go.jp/bosai/",
+      "source_id": "jma-bosai"
+    },
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+        "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+        "en": "Nagoya City disaster-prevention portal"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/index.html",
+      "source_id": "nagoya-bousai-portal"
+    },
+    {
+      "label": {
+        "ja": "{外国|がいこく}{人|じん}の{方|ほう}への{災害|さいがい}の{情報|じょうほう}（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{外国|がいこく}{人|じん}のための{災害|さいがい}の{情報|じょうほう}",
+        "en": "Disaster information for foreign residents (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/international/1053765.html",
+      "source_id": "nagoya-bousai-foreign"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "jma-bosai",
+      "nagoya-bousai-portal",
+      "nagoya-bousai-foreign"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

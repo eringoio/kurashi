@@ -2600,6 +2600,198 @@
       "owner_type": "government",
       "title": "A1-8 所得税の青色申告承認申請手続",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-portal",
+      "url": "https://www.city.nagoya.jp/bousaiportal/index.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "名古屋市 防災危機管理ポータル",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-hazardmap",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1036428.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "なごやハザードマップ",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-hinanbasho",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1013390/1013492.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "指定緊急避難場所・指定避難所",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-app",
+      "url": "https://www.city.nagoya.jp/bousaiportal/jouhou/1036430/1013493.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "名古屋市防災アプリ",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-bichiku",
+      "url": "https://www.city.nagoya.jp/bousaiportal/taisaku/1036441/1013561.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "非常持出品・備蓄品",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-hibi",
+      "url": "https://www.city.nagoya.jp/bousaiportal/taisaku/1013556.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "日頃の備え",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-checklist",
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/036/469/bosaiyohincheckrist.pdf",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "防災用品チェックリスト（PDF）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-jishin",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036438/1013444.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "地震が起きたとき",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-tsunami",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036438/1041937.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "津波警報が発令されたとき",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-fusuigai",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036437/1013449.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "風水害に備えて",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-timeline",
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1013495.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "マイ・タイムライン",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-safetytips",
+      "url": "https://www.city.nagoya.jp/bousaiportal/international/1037420.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "外国人向け防災アプリ Safety tips",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-bousai-foreign",
+      "url": "https://www.city.nagoya.jp/bousaiportal/international/1053765.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "外国人の方への災害関連情報",
+      "language": "ja"
+    },
+    {
+      "source_id": "bousai-go-bichiku",
+      "url": "https://www.bousai.go.jp/juyou/emergency_request.html",
+      "owner": "防災庁（bousai.go.jp）",
+      "owner_type": "government",
+      "title": "災害への備え（最低3日・できれば1週間）",
+      "language": "ja"
+    },
+    {
+      "source_id": "bousai-go-mochidashi",
+      "url": "https://www.bousai.go.jp/kohou/kouhoubousai/h28/83/special_03.html",
+      "owner": "防災庁（bousai.go.jp）",
+      "owner_type": "government",
+      "title": "非常持ち出し袋と備蓄",
+      "language": "ja"
+    },
+    {
+      "source_id": "gov-online-bousai",
+      "url": "https://www.gov-online.go.jp/tokusyu/bousai/preparation.html",
+      "owner": "政府広報オンライン",
+      "owner_type": "government",
+      "title": "災害への備え（携帯トイレなど）",
+      "language": "ja"
+    },
+    {
+      "source_id": "jma-bosai",
+      "url": "https://www.jma.go.jp/bosai/",
+      "owner": "気象庁",
+      "owner_type": "government",
+      "title": "気象庁 防災情報",
+      "language": "ja"
+    },
+    {
+      "source_id": "jma-keiho-2026",
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/keiho-update2026/",
+      "owner": "気象庁",
+      "owner_type": "government",
+      "title": "新たな防災気象情報（2026年5月29日から）",
+      "language": "ja"
+    },
+    {
+      "source_id": "jma-alertlevel",
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/alertlevel.html",
+      "owner": "気象庁",
+      "owner_type": "government",
+      "title": "防災気象情報と警戒レベルとの対応",
+      "language": "ja"
+    },
+    {
+      "source_id": "jma-dosha",
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/doshakeikai.html",
+      "owner": "気象庁",
+      "owner_type": "government",
+      "title": "土砂キキクル（大雨警報（土砂災害）の危険度分布）",
+      "language": "ja"
+    },
+    {
+      "source_id": "mlit-disaportal",
+      "url": "https://disaportal.gsi.go.jp/",
+      "owner": "国土交通省",
+      "owner_type": "government",
+      "title": "ハザードマップポータルサイト",
+      "language": "ja"
+    },
+    {
+      "source_id": "nerv-download",
+      "url": "https://nerv.app/download.html",
+      "owner": "株式会社ゲヒルン",
+      "owner_type": "private",
+      "title": "特務機関NERV防災 ダウンロード",
+      "language": "ja"
+    },
+    {
+      "source_id": "web171",
+      "url": "https://www.web171.jp/",
+      "owner": "NTT東日本・NTT西日本",
+      "owner_type": "private",
+      "title": "災害用伝言板（web171）",
+      "language": "ja"
+    },
+    {
+      "source_id": "ntt-saigai-171",
+      "url": "https://www.ntt-east.co.jp/saigai/web171/index.html",
+      "owner": "NTT東日本",
+      "owner_type": "private",
+      "title": "災害用伝言ダイヤル（171）・災害用伝言板（web171）",
+      "language": "ja"
     }
   ]
 }

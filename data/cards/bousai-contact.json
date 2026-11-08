@@ -1,0 +1,139 @@
+{
+  "id": "bousai-contact",
+  "data_version": 1,
+  "illustration": "phone",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{家族|かぞく}・{友|とも}だちとの{連絡|れんらく}",
+    "ja_easy": "{家族|かぞく}・{友|とも}だちとの{連絡|れんらく}",
+    "en": "Contact with family and friends"
+  },
+  "official_name": {
+    "ja": "災害用伝言ダイヤル（171）・災害用伝言板（web171）",
+    "reading": "さいがいようでんごんだいやる・さいがいようでんごんばん"
+  },
+  "summary": {
+    "ja": "{災害|さいがい}のときは、{電話|でんわ}がつながりにくくなります。{会|あ}えないときの{集|あつ}まる{場所|ばしょ}と、{連絡|れんらく}の{方法|ほうほう}を{決|き}めておきます。{災害|さいがい}{用|よう}{伝言|でんごん}ダイヤル171と、インターネットのweb171は、{大|おお}きな{災害|さいがい}のときなどに{使|つか}えます（{使|つか}える{条件|じょうけん}があります）。{学校|がっこう}・{職場|しょくば}から{家|いえ}までの{帰|かえ}り{方|かた}も{確|たし}かめます。{電話|でんわ}{番号|ばんごう}は{紙|かみ}にも{書|か}いておきます。{国|くに}の{家族|かぞく}への{連絡|れんらく}の{方法|ほうほう}も{決|き}めておきます。",
+    "ja_easy": "{災害|さいがい}のとき、{電話|でんわ}がつながりにくくなります。{会|あ}えないとき、どこで{会|あ}うか、どう{連絡|れんらく}するかを{決|き}めます。171（{電話|でんわ}）とweb171（インターネット）で、{伝言|でんごん}を{残|のこ}せます（{大|おお}きな{災害|さいがい}のときなど）。{学校|がっこう}・{仕事|しごと}から{家|いえ}に{帰|かえ}る{道|みち}も{見|み}ておきます。{電話|でんわ}{番号|ばんごう}は{紙|かみ}にも{書|か}きます。{国|くに}の{家族|かぞく}への{連絡|れんらく}も{決|き}めます。",
+    "en": "In a disaster, phone lines get busy. Decide where to meet and how to contact each other if you are separated. The Disaster Emergency Message Dial 171 and the online web171 can be used in large disasters (conditions apply). Also check how to get home from school or work. Write phone numbers on paper too. Decide how you will contact your family in your home country."
+  },
+  "lead": {
+    "ja": "{会|あ}えないときの{集|あつ}まる{場所|ばしょ}と、{連絡|れんらく}の{方法|ほうほう}を{決|き}めておきます。",
+    "ja_easy": "{会|あ}えないとき、どこで{会|あ}うか、どう{連絡|れんらく}するかを{決|き}めます。",
+    "en": "Decide where to meet and how to contact each other if you get separated."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{災害|さいがい}{用|よう}{伝言|でんごん}ダイヤル171・web171（NTT）",
+      "ja_easy": "171・web171",
+      "en": "Message dial 171 and web171 (NTT)"
+    },
+    "evidence": {
+      "source_ids": [
+        "ntt-saigai-171"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "meet",
+      "label": {
+        "ja": "{集|あつ}まる{場所|ばしょ}を{決|き}めた",
+        "ja_easy": "{会|あ}う{場所|ばしょ}を{決|き}めた",
+        "en": "Decided where to meet"
+      }
+    },
+    {
+      "id": "method",
+      "label": {
+        "ja": "{連絡|れんらく}の{方法|ほうほう}を{決|き}めた（171・web171・SNSなど）",
+        "ja_easy": "{連絡|れんらく}の{方法|ほうほう}を{決|き}めた",
+        "en": "Decided how to contact each other (171, web171, social media)"
+      }
+    },
+    {
+      "id": "paper",
+      "label": {
+        "ja": "{大事|だいじ}な{電話|でんわ}{番号|ばんごう}を{紙|かみ}に{書|か}いた",
+        "ja_easy": "{大事|だいじ}な{電話|でんわ}{番号|ばんごう}を{紙|かみ}に{書|か}いた",
+        "en": "Wrote important numbers on paper"
+      }
+    },
+    {
+      "id": "route",
+      "label": {
+        "ja": "{学校|がっこう}・{職場|しょくば}から{家|いえ}まで{帰|かえ}る{道|みち}を{確|たし}かめた",
+        "ja_easy": "{学校|がっこう}・{仕事|しごと}から{家|いえ}に{帰|かえ}る{道|みち}を{見|み}た",
+        "en": "Checked the way home from school or work"
+      }
+    },
+    {
+      "id": "abroad",
+      "label": {
+        "ja": "{国|くに}の{家族|かぞく}と{連絡|れんらく}の{方法|ほうほう}を{決|き}めた",
+        "ja_easy": "{国|くに}の{家族|かぞく}と、{連絡|れんらく}の{方法|ほうほう}を{決|き}めた",
+        "en": "Agreed how to reach family abroad"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "171",
+    "web171",
+    "でんごん",
+    "伝言",
+    "れんらく",
+    "連絡",
+    "family",
+    "contact",
+    "safety confirmation"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{災害|さいがい}{用|よう}{伝言|でんごん}ダイヤル171・web171の{使|つか}い{方|かた}（NTT{東日本|ひがしにほん}）",
+        "ja_easy": "171・web171の{使|つか}い{方|かた}",
+        "en": "How to use 171 and web171 (NTT East)"
+      },
+      "url": "https://www.ntt-east.co.jp/saigai/web171/index.html",
+      "source_id": "ntt-saigai-171"
+    },
+    {
+      "label": {
+        "ja": "{災害|さいがい}{用|よう}{伝言板|でんごんばん} web171",
+        "ja_easy": "web171",
+        "en": "web171 message board"
+      },
+      "url": "https://www.web171.jp/",
+      "source_id": "web171"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "ntt-saigai-171",
+      "web171",
+      "nagoya-bousai-hibi"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

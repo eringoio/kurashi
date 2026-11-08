@@ -1,0 +1,126 @@
+{
+  "id": "bousai-home",
+  "data_version": 1,
+  "illustration": "furniture",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{家|いえ}の{中|なか}の{安全|あんぜん}",
+    "ja_easy": "{家|いえ}の{中|なか}を{安全|あんぜん}に",
+    "en": "Make your home safer"
+  },
+  "official_name": {
+    "ja": "家具の転倒防止など",
+    "reading": "かぐのてんとうぼうしなど"
+  },
+  "summary": {
+    "ja": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}・{割|わ}れるガラスで、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}め、{寝|ね}る{所|ところ}の{近|ちか}くに{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{強|つよ}い{揺|ゆ}れで{電気|でんき}を{切|き}る{感|かん}{震|しん}ブレーカーもあります。{借|か}りている{部屋|へや}で{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{大家|おおや}・{不動産|ふどうさん}{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{地震|じしん}のとき、{倒|たお}れる{家具|かぐ}や{落|お}ちる{物|もの}で、けがをすることがあります。{家具|かぐ}を{壁|かべ}に{留|と}めます。{寝|ね}る{所|ところ}の{近|ちか}くに、{高|たか}い{家具|かぐ}を{置|お}きません。{逃|に}げる{道|みち}に{物|もの}を{置|お}きません。{借|か}りている{部屋|へや}の{壁|かべ}に{穴|あな}をあけるときは、{先|さき}に{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "In an earthquake, falling furniture, falling objects and broken glass can hurt you. Fix furniture to the wall, and do not put tall furniture near where you sleep. Keep your escape route clear. There are also seismic breakers that cut the power in strong shaking. In a rented room, ask the landlord or agent before making holes in the walls (to be checked)."
+  },
+  "lead": {
+    "ja": "{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}・{割|わ}れるガラスに{備|そな}えます。",
+    "ja_easy": "{倒|たお}れる{家具|かぐ}・{落|お}ちる{物|もの}に、{気|き}をつけます。",
+    "en": "Prepare for falling furniture, falling objects and broken glass."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-hibi"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "furniture",
+      "label": {
+        "ja": "{家具|かぐ}を{壁|かべ}に{留|と}めた",
+        "ja_easy": "{家具|かぐ}を{壁|かべ}に{留|と}めた",
+        "en": "Fixed furniture to the wall"
+      }
+    },
+    {
+      "id": "bed",
+      "label": {
+        "ja": "{寝|ね}る{所|ところ}の{近|ちか}くに{倒|たお}れる{物|もの}がない",
+        "ja_easy": "{寝|ね}る{所|ところ}の{近|ちか}くに、{倒|たお}れる{物|もの}がない",
+        "en": "Nothing can fall on my bed"
+      }
+    },
+    {
+      "id": "exit",
+      "label": {
+        "ja": "{逃|に}げる{道|みち}に{物|もの}がない",
+        "ja_easy": "{逃|に}げる{道|みち}に{物|もの}がない",
+        "en": "My escape route is clear"
+      }
+    },
+    {
+      "id": "glass",
+      "label": {
+        "ja": "ガラスが{飛|と}び{散|ち}らないようにした",
+        "ja_easy": "ガラスが{飛|と}ばないようにした",
+        "en": "Protected against flying glass"
+      }
+    },
+    {
+      "id": "bedside",
+      "label": {
+        "ja": "{枕|まくら}もとにスリッパと{懐中|かいちゅう}{電灯|でんとう}",
+        "ja_easy": "{寝|ね}る{所|ところ}の{近|ちか}くにスリッパと{明|あ}かり",
+        "en": "Slippers and a flashlight by the bed"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "かぐ",
+    "家具",
+    "てんとう",
+    "転倒",
+    "furniture",
+    "kanshin",
+    "感震ブレーカー"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{日頃|ひごろ}の{備|そな}え（{名古屋|なごや}{市|し}）",
+        "ja_easy": "ふだんの{備|そな}え（{名古屋|なごや}{市|し}）",
+        "en": "Everyday preparation (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/taisaku/1013556.html",
+      "source_id": "nagoya-bousai-hibi"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-hibi"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

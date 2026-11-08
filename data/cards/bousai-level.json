@@ -1,0 +1,96 @@
+{
+  "id": "bousai-level",
+  "data_version": 1,
+  "illustration": "levels",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{警戒|けいかい}レベルと{避難|ひなん}の{情報|じょうほう}",
+    "ja_easy": "{危|あぶ}ない{度合|どあ}い（{警戒|けいかい}レベル）",
+    "en": "Alert levels and evacuation information"
+  },
+  "official_name": {
+    "ja": "警戒レベル",
+    "reading": "けいかいれべる"
+  },
+  "summary": {
+    "ja": "{大雨|おおあめ}・{洪水|こうずい}・{土砂|どしゃ}{災害|さいがい}・{高潮|たかしお}のとき、{警戒|けいかい}レベル1〜5で{行動|こうどう}の{目安|めやす}を{伝|つた}えます。{避難|ひなん}の{情報|じょうほう}は{市町村|しちょうそん}が{出|だ}します。レベル3（{高齢|こうれい}{者|しゃ}{等|とう}{避難|ひなん}）で、{時間|じかん}がかかる{人|ひと}は{危険|きけん}な{所|ところ}から{逃|に}げます。レベル4（{避難|ひなん}{指示|しじ}）で、{危険|きけん}な{所|ところ}にいる{人|ひと}は{全員|ぜんいん}{逃|に}げます。レベル5（{緊急|きんきゅう}{安全|あんぜん}{確保|かくほ}）を{待|ま}たないでください。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{新|あたら}しくなりました（{要|よう}{確認|かくにん}）。{地震|じしん}・{津波|つなみ}には、このレベルを{使|つか}いません。",
+    "ja_easy": "{大雨|おおあめ}・{水|みず}があふれる・{土砂|どしゃ}・{高潮|たかしお}のとき、レベル1〜5で、{何|なに}をするかを{伝|つた}えます。{逃|に}げる{情報|じょうほう}は、{市|し}が{出|だ}します。レベル3で、{時間|じかん}がかかる{人|ひと}（お{年寄|としよ}りなど）は{逃|に}げます。レベル4で、{危|あぶ}ない{所|ところ}にいる{人|ひと}は、みんな{逃|に}げます。レベル5を{待|ま}ちません。{気象庁|きしょうちょう}の{情報|じょうほう}の{名前|なまえ}は、2026{年|ねん}5{月|がつ}29{日|にち}から{変|か}わりました（{要|よう}{確認|かくにん}）。{地震|じしん}・{津波|つなみ}は、このレベルではありません。",
+    "en": "For heavy rain, floods, landslides and storm surge, alert levels 1 to 5 tell you what to do. The city or town issues evacuation information. At level 3 (elderly and others evacuate), people who need time to move leave dangerous places. At level 4 (evacuation order), everyone in a dangerous place leaves. Do not wait for level 5 (emergency safety measures). JMA renamed its weather warnings from 29 May 2026 (to be checked). These levels are not used for earthquakes and tsunamis."
+  },
+  "lead": {
+    "ja": "{警戒|けいかい}レベル4（{避難|ひなん}{指示|しじ}）までに、{危険|きけん}な{所|ところ}から{逃|に}げます。",
+    "ja_easy": "レベル4までに、{危|あぶ}ない{所|ところ}から{逃|に}げます。",
+    "en": "Leave dangerous places by alert level 4 (evacuation order)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{市町村|しちょうそん}（{避難|ひなん}の{情報|じょうほう}）・{気象庁|きしょうちょう}（{気象|きしょう}の{情報|じょうほう}）",
+      "ja_easy": "{市|し}（{逃|に}げる{情報|じょうほう}）・{気象庁|きしょうちょう}（{天気|てんき}の{情報|じょうほう}）",
+      "en": "City (evacuation information) and JMA (weather information)"
+    },
+    "evidence": {
+      "source_ids": [
+        "jma-alertlevel"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "visual": "levels",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "けいかいれべる",
+    "警戒レベル",
+    "alert level",
+    "ひなんしじ",
+    "避難指示",
+    "evacuation order",
+    "けいほう",
+    "警報"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{防災|ぼうさい}{気象|きしょう}{情報|じょうほう}と{警戒|けいかい}レベル（{気象庁|きしょうちょう}）",
+        "ja_easy": "{警戒|けいかい}レベル（{気象庁|きしょうちょう}）",
+        "en": "Weather information and alert levels (JMA)"
+      },
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/alertlevel.html",
+      "source_id": "jma-alertlevel"
+    },
+    {
+      "label": {
+        "ja": "{新|あたら}しい{防災|ぼうさい}{気象|きしょう}{情報|じょうほう}（2026{年|ねん}5{月|がつ}29{日|にち}から・{気象庁|きしょうちょう}）",
+        "ja_easy": "{新|あたら}しい{天気|てんき}の{警報|けいほう}の{名前|なまえ}（{気象庁|きしょうちょう}）",
+        "en": "New weather warnings from 29 May 2026 (JMA)"
+      },
+      "url": "https://www.jma.go.jp/jma/kishou/know/bosai/keiho-update2026/",
+      "source_id": "jma-keiho-2026"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "jma-alertlevel",
+      "jma-keiho-2026"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

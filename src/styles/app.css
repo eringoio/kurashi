@@ -739,3 +739,29 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .sr-docs { list-style: none; margin: 0; padding: 0; }
 .sr-docs .k-check { width: 100%; text-align: left; }
 .sr-docs__note { margin: 4px 0 0 8px; }
+/* 防災の図（SPEC 6A.20）：備蓄の量と警戒レベル */
+.bousai-calc { display: flex; flex-direction: column; gap: 10px; }
+.bousai-calc__row { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+.bousai-calc__row > .label { min-width: 4em; }
+.bousai-calc__row .house-plans { flex: 1 1 14em; }
+.bousai-step { display: flex; align-items: center; gap: 8px; }
+.bousai-step__btn { width: var(--target-answer); min-height: var(--target-min); justify-content: center; padding: 0; font-size: 22px; font-weight: 700; }
+.bousai-step__btn:disabled { opacity: .45; }
+.bousai-step__n { min-width: 3.5em; text-align: center; font-size: var(--fs-answer); font-weight: 700; }
+.bousai-amounts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.bousai-amounts li { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; padding: 8px 10px; border: 1.5px solid var(--line-soft); border-radius: var(--radius-md); background: var(--white); }
+.bousai-amounts img { width: 44px; height: 44px; grid-row: span 2; }
+.bousai-amounts__name { font-weight: 700; }
+.bousai-amounts__n { grid-column: 2; display: flex; flex-direction: column; }
+.bousai-amounts__n strong { font-size: 1.5em; }
+.bousai-levels { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.bousai-levels__row { display: grid; grid-template-columns: 4.2em 1fr; gap: 10px; align-items: start; padding: 8px 10px; border-radius: var(--radius-md); border: 1.5px solid var(--line-soft); background: var(--white); }
+.bousai-levels__n { display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--ink); border-radius: var(--radius-sm); padding: 2px 4px; background: var(--white); }
+.bousai-levels__n strong { font-size: 1.4em; line-height: 1.1; }
+.bousai-levels__word { font-size: var(--fs-small); }
+.bousai-levels__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.bousai-levels__info { font-weight: 700; }
+.bousai-levels__row--3 .bousai-levels__n { background: var(--art-butter-pale); }
+.bousai-levels__row--4 .bousai-levels__n { background: var(--art-pink); border-width: 3px; }
+.bousai-levels__row--5 .bousai-levels__n { background: var(--art-lilac); border-width: 3px; border-style: double; }
+.bousai-levels__row--4, .bousai-levels__row--5 { border-color: var(--line-dim); }

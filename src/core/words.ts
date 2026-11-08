@@ -12,7 +12,7 @@ export type WordKind = 'heard' | 'say' | 'word' | 'official' | 'doc';
 export const WORD_KINDS: WordKind[] = ['word', 'say', 'heard', 'official', 'doc'];
 
 /** 分野（一覧の見出し）。この順に並べる。分野の中は WORD_KINDS の順 */
-export const WORD_TOPICS = ['basic', 'ward_office', 'calendar', 'gomi', 'clinic', 'bank', 'job', 'housing', 'immigration', 'letter', 'other'] as const;
+export const WORD_TOPICS = ['basic', 'ward_office', 'calendar', 'gomi', 'clinic', 'bank', 'job', 'housing', 'bousai', 'immigration', 'letter', 'other'] as const;
 export type WordTopic = (typeof WORD_TOPICS)[number];
 
 const Word = z.object({ id: z.string().regex(/^(heard|say|word)-[a-z0-9-]+$/), kind: z.enum(['heard', 'say', 'word']), scene: z.array(z.string()), ja: z.string(), easy: z.string(), en: z.string(), status: z.enum(['needs_check', 'verified']) });
@@ -42,7 +42,7 @@ export const clinicPhraseWord = (id: string) => CLINIC_SAME[id] ?? 'clinic-phras
 
 /** できごとの group → 分野 */
 // 結婚・離婚・ファミリーシップは区役所の届け。財布・運転免許は、いまは基本の言葉（2026-11-08。専用の言葉は提出のあと）
-const GROUP_TOPIC: Record<string, WordTopic> = { move: 'ward_office', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic' };
+const GROUP_TOPIC: Record<string, WordTopic> = { move: 'ward_office', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic', bousai: 'bousai' };
 /** 場面 → 分野（言葉の表の scene の1つめ） */
 const sceneTopic = (sc: string | undefined): WordTopic => (sc === 'move' ? 'ward_office' : (WORD_TOPICS as readonly string[]).includes(sc ?? '') ? (sc as WordTopic) : 'other');
 
@@ -104,7 +104,7 @@ export function docWordIds(docId: string): string[] {
 }
 
 /** できごとの group → 場面 */
-const GROUP_SCENE: Record<string, string> = { move: 'move', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic' };
+const GROUP_SCENE: Record<string, string> = { move: 'move', bank: 'bank', job: 'job', zairyu: 'immigration', housing: 'housing', gomi: 'gomi', family: 'ward_office', familyship: 'ward_office', lost: 'basic', license: 'basic', bousai: 'bousai' };
 /** 行く所（カードの place・付き添い）→ 場面 */
 const PLACE_SCENE: Record<string, string> = { ward_office: 'ward_office', prev_city: 'ward_office', bank: 'bank', immigration: 'immigration', clinic: 'clinic' };
 /** QR の場面（data/scenes.json）→ 場面 */

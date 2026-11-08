@@ -133,8 +133,8 @@ export const Card = z.object({
   /** 探すときの言葉（よみ・ローマ字・英語など）。画面には出さない */
   keywords: z.array(z.string()).default([]),
   /** 何か月後の予定（カレンダーに追加）。from の日（arrival＝日本に住み始めた日）から months か月後（作者 11/6 C。例：銀行の居住者への変更） */
-  /** 見て分かる形（作者 11/6 E）：floorplan＝間取り図の例と読み方、costs＝初期費用の図（家賃の何か月分）。カードのページに出す */
-  visual: z.enum(['floorplan', 'costs']).optional(),
+  /** 見て分かる形（作者 11/6 E）：floorplan＝間取り図の例と読み方、costs＝初期費用の図（家賃の何か月分）。stock＝備蓄の量の目安（人数×日数）、levels＝警戒レベルの行（防災。v0.5.38）。カードのページに出す */
+  visual: z.enum(['floorplan', 'costs', 'stock', 'levels']).optional(),
   /** 手続きの中の決まった流れ（stay_renew：在留期間の更新。満了日 → 在留資格 → 書類 → 方法 → 予定日。SPEC 6A.18 v0.5.29） */
   flow: z.enum(['stay_renew']).optional(),
   reminder: z.object({ months: z.number().int().min(1).max(24), from: z.enum(['arrival']) }).optional(),

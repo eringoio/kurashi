@@ -1,0 +1,81 @@
+{
+  "id": "bousai-takashio",
+  "data_version": 1,
+  "illustration": "stormsurge",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{高潮|たかしお}のとき",
+    "ja_easy": "{高潮|たかしお}（{海|うみ}の{水|みず}が{上|あ}がる）のとき",
+    "en": "Storm surge"
+  },
+  "official_name": {
+    "ja": "高潮",
+    "reading": "たかしお"
+  },
+  "summary": {
+    "ja": "{台風|たいふう}などで{海|うみ}の{水|みず}の{高|たか}さが{上|あ}がり、{海|うみ}の{水|みず}が{陸|りく}に{入|はい}る{災害|さいがい}です。{津波|つなみ}とは{違|ちが}います。{海|うみ}の{近|ちか}くに{住|す}んでいる{人|ひと}は、ハザードマップで{危険|きけん}と{避難|ひなん}{場所|ばしょ}を{確|たし}かめ、{風|かぜ}や{雨|あめ}が{強|つよ}くなる{前|まえ}に{逃|に}げます。",
+    "ja_easy": "{台風|たいふう}などで{海|うみ}の{水|みず}が{上|あ}がって、{町|まち}に{入|はい}ります。{津波|つなみ}とは{違|ちが}います。{海|うみ}の{近|ちか}くの{人|ひと}は、{地図|ちず}で{危|あぶ}ないか、どこに{逃|に}げるかを{見|み}ます。{風|かぜ}や{雨|あめ}が{強|つよ}くなる{前|まえ}に{逃|に}げます。",
+    "en": "In a typhoon, the sea level can rise and seawater can flow onto land. This is different from a tsunami. If you live near the coast, check the risk and evacuation sites on the hazard map, and leave before the wind and rain get strong."
+  },
+  "lead": {
+    "ja": "{台風|たいふう}などで{海面|かいめん}が{上|あ}がる{災害|さいがい}です。{津波|つなみ}とは{違|ちが}います。",
+    "ja_easy": "{台風|たいふう}などで、{海|うみ}の{水|みず}が{上|あ}がります。{津波|つなみ}とは{違|ちが}います。",
+    "en": "Sea level rises in a typhoon. It is different from a tsunami."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-hazardmap"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "たかしお",
+    "高潮",
+    "storm surge"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "なごやハザードマップ（{高潮|たかしお}）",
+        "ja_easy": "{名古屋|なごや}の{危|あぶ}ない{所|ところ}の{地図|ちず}",
+        "en": "Nagoya hazard maps (storm surge)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1036428.html",
+      "source_id": "nagoya-bousai-hazardmap"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-hazardmap",
+      "nagoya-bousai-fusuigai"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

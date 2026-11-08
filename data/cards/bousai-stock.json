@@ -1,0 +1,173 @@
+{
+  "id": "bousai-stock",
+  "data_version": 1,
+  "illustration": "water",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{家|いえ}の{備蓄|びちく}",
+    "ja_easy": "{家|いえ}に{置|お}いておく{物|もの}",
+    "en": "Home stockpile"
+  },
+  "official_name": {
+    "ja": "備蓄品",
+    "reading": "びちくひん"
+  },
+  "summary": {
+    "ja": "{電気|でんき}・{水道|すいどう}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。{最低|さいてい}3{日|にち}、できれば7{日|にち}{分|ぶん}を{用意|ようい}します。{水|みず}は1{人|にん}1{日|にち}{約|やく}3リットル（{飲|の}む・{料理|りょうり}）、{携帯|けいたい}トイレは1{人|にん}1{日|にち}5〜6{回|かい}が{目安|めやす}です。{食|た}べ{物|もの}は、ふだん{食|た}べる{物|もの}を{多|おお}めに{買|か}い、{使|つか}ったら{買|か}い{足|た}します（ローリングストック）。{期限|きげん}と{電池|でんち}を、ときどき{確|たし}かめます。",
+    "ja_easy": "{電気|でんき}・{水|みず}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。3{日|にち}{分|ぶん}、できれば7{日|にち}{分|ぶん}です。{水|みず}は1{人|にん}1{日|にち}3リットルぐらい、{袋|ふくろ}のトイレは1{人|にん}1{日|にち}5〜6{回|かい}ぐらいです。ふだん{食|た}べる{物|もの}を{多|おお}く{買|か}って、{使|つか}ったら{買|か}い{足|た}します。ときどき、{期限|きげん}と{電池|でんち}を{見|み}ます。",
+    "en": "These are things you keep at home so you can live even if electricity, water and gas stop. Prepare at least 3 days' worth, ideally 7. Guide amounts: about 3 litres of water per person per day (drinking and cooking), and portable toilet bags for 5 to 6 uses per person per day. For food, buy a little more of what you usually eat and replace it as you use it (\"rolling stock\"). Check expiry dates and batteries from time to time."
+  },
+  "lead": {
+    "ja": "{最低|さいてい}3{日|にち}、できれば7{日|にち}{分|ぶん}。{水|みず}は1{人|にん}1{日|にち}{約|やく}3リットルが{目安|めやす}です。",
+    "ja_easy": "3{日|にち}{分|ぶん}、できれば7{日|にち}{分|ぶん}。{水|みず}は1{人|にん}1{日|にち}3リットルぐらい。",
+    "en": "At least 3 days, ideally 7. Water: about 3 litres per person per day."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-bichiku"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "water",
+      "label": {
+        "ja": "{水|みず}（1{人|にん}1{日|にち}{約|やく}3リットル）",
+        "ja_easy": "{水|みず}（1{人|にん}1{日|にち}3リットルぐらい）",
+        "en": "Water (about 3 L per person per day)"
+      }
+    },
+    {
+      "id": "food",
+      "label": {
+        "ja": "{食|た}べ{物|もの}（ローリングストック）",
+        "ja_easy": "{食|た}べ{物|もの}（{使|つか}ったら{買|か}い{足|た}す）",
+        "en": "Food (rolling stock)"
+      }
+    },
+    {
+      "id": "toilet",
+      "label": {
+        "ja": "{携帯|けいたい}トイレ・{簡易|かんい}トイレ",
+        "ja_easy": "{袋|ふくろ}のトイレ",
+        "en": "Portable or simple toilets"
+      }
+    },
+    {
+      "id": "paper",
+      "label": {
+        "ja": "トイレットペーパー・ティッシュ・ウェットティッシュ",
+        "ja_easy": "トイレットペーパー・ティッシュ",
+        "en": "Toilet paper, tissues, wet wipes"
+      }
+    },
+    {
+      "id": "stove",
+      "label": {
+        "ja": "カセットコンロとボンベ",
+        "ja_easy": "カセットコンロとガス",
+        "en": "Camping gas stove and cartridges"
+      }
+    },
+    {
+      "id": "container",
+      "label": {
+        "ja": "{水|みず}を{入|い}れる{容器|ようき}・{袋|ふくろ}",
+        "ja_easy": "{水|みず}を{入|い}れる{入|い}れ{物|もの}",
+        "en": "Containers or bags for water"
+      }
+    },
+    {
+      "id": "light",
+      "label": {
+        "ja": "{明|あ}かり・{電池|でんち}・ラジオ",
+        "ja_easy": "{明|あ}かり・{電池|でんち}・ラジオ",
+        "en": "Lights, batteries, radio"
+      }
+    },
+    {
+      "id": "medicine",
+      "label": {
+        "ja": "{薬|くすり}・{体|からだ}に{要|い}る{物|もの}・ペットの{物|もの}",
+        "ja_easy": "{薬|くすり}・{体|からだ}に{要|い}る{物|もの}・ペットの{物|もの}",
+        "en": "Medicine, personal care and pet items"
+      }
+    }
+  ],
+  "visual": "stock",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "びちく",
+    "備蓄",
+    "みず",
+    "水",
+    "water",
+    "stockpile",
+    "けいたいといれ",
+    "携帯トイレ",
+    "food"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{非常|ひじょう}{持出品|もちだしひん}・{備蓄|びちく}{品|ひん}（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{持|も}ち{出|だ}す{物|もの}・{家|いえ}に{置|お}く{物|もの}（{名古屋|なごや}{市|し}）",
+        "en": "Grab-bag and stockpile items (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/taisaku/1036441/1013561.html",
+      "source_id": "nagoya-bousai-bichiku"
+    },
+    {
+      "label": {
+        "ja": "{災害|さいがい}への{備|そな}え（{国|くに}）",
+        "ja_easy": "{災害|さいがい}への{備|そな}え（{国|くに}）",
+        "en": "Preparing for disasters (national government)"
+      },
+      "url": "https://www.bousai.go.jp/juyou/emergency_request.html",
+      "source_id": "bousai-go-bichiku"
+    },
+    {
+      "label": {
+        "ja": "{携帯|けいたい}トイレなどの{備|そな}え（{政府|せいふ}{広報|こうほう}オンライン）",
+        "ja_easy": "{袋|ふくろ}のトイレなど（{国|くに}）",
+        "en": "Portable toilets and other supplies (Government public relations)"
+      },
+      "url": "https://www.gov-online.go.jp/tokusyu/bousai/preparation.html",
+      "source_id": "gov-online-bousai"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-bichiku",
+      "bousai-go-bichiku",
+      "gov-online-bousai"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "bousai-typhoon",
+  "data_version": 1,
+  "illustration": "typhoon",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{台風|たいふう}・{大雨|おおあめ}のとき",
+    "ja_easy": "{台風|たいふう}・{大雨|おおあめ}のとき",
+    "en": "Typhoon and heavy rain"
+  },
+  "official_name": {
+    "ja": "風水害に備えて",
+    "reading": "ふうすいがいにそなえて"
+  },
+  "summary": {
+    "ja": "{近|ちか}づく{前|まえ}に、{情報|じょうほう}を{確|たし}かめ、ベランダなどの{飛|と}びそうな{物|もの}を{片付|かたづ}け、スマホを{充電|じゅうでん}し、{備|そな}えの{物|もの}を{用意|ようい}します。{強|つよ}い{風|かぜ}や{雨|あめ}のときは{無理|むり}に{外|そと}に{出|で}ず、{川|かわ}や{海|うみ}の{様子|ようす}を{見|み}に{行|い}きません。{避難|ひなん}するかは、{市|し}の{避難|ひなん}の{情報|じょうほう}とハザードマップで{決|き}めます。{危|あぶ}なくなってから{動|うご}くのは{避|さ}けます。",
+    "ja_easy": "{台風|たいふう}が{来|く}る{前|まえ}に、{情報|じょうほう}を{見|み}て、ベランダの{飛|と}びそうな{物|もの}を{中|なか}に{入|い}れます。スマホを{充電|じゅうでん}します。{強|つよ}い{風|かぜ}や{雨|あめ}のときは、{外|そと}に{出|で}ません。{川|かわ}や{海|うみ}を{見|み}に{行|い}きません。{逃|に}げるかは、{市|し}の{情報|じょうほう}と{地図|ちず}で{決|き}めます。{危|あぶ}なくなる{前|まえ}に{動|うご}きます。",
+    "en": "Before it approaches, check the information, bring in things on the balcony that could blow away, charge your phone and get your supplies ready. During strong wind and rain, do not go out unless you must, and do not go to look at rivers or the sea. Decide whether to evacuate from the city's evacuation information and the hazard map. Avoid moving once it has become dangerous."
+  },
+  "lead": {
+    "ja": "{近|ちか}づく{前|まえ}に{備|そな}え、{危|あぶ}なくなる{前|まえ}に{動|うご}きます。",
+    "ja_easy": "{来|く}る{前|まえ}に{準備|じゅんび}して、{危|あぶ}なくなる{前|まえ}に{動|うご}きます。",
+    "en": "Prepare before it arrives and move before it gets dangerous."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-fusuigai"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "たいふう",
+    "台風",
+    "typhoon",
+    "おおあめ",
+    "大雨",
+    "heavy rain",
+    "storm",
+    "ぼうふう",
+    "暴風"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{風水害|ふうすいがい}に{備|そな}えて（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{台風|たいふう}・{大雨|おおあめ}に{備|そな}える（{名古屋|なごや}{市|し}）",
+        "en": "Preparing for storms and floods (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036437/1013449.html",
+      "source_id": "nagoya-bousai-fusuigai"
+    },
+    {
+      "label": {
+        "ja": "マイ・タイムライン（{名古屋|なごや}{市|し}）",
+        "ja_easy": "いつ{何|なに}をするかの{計画|けいかく}（{名古屋|なごや}{市|し}）",
+        "en": "My Timeline evacuation plan (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1013495.html",
+      "source_id": "nagoya-bousai-timeline"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-fusuigai",
+      "nagoya-bousai-timeline"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

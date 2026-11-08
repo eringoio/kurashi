@@ -1,0 +1,80 @@
+{
+  "id": "bousai-tsunami",
+  "data_version": 1,
+  "illustration": "tsunami",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{津波|つなみ}のとき",
+    "ja_easy": "{津波|つなみ}のとき",
+    "en": "Tsunami"
+  },
+  "official_name": {
+    "ja": "津波警報が発令されたとき",
+    "reading": "つなみけいほうがはつれいされたとき"
+  },
+  "summary": {
+    "ja": "{強|つよ}い{揺|ゆ}れ・{長|なが}い{揺|ゆ}れを{感|かん}じたとき、または{津波|つなみ}{警報|けいほう}などが{出|で}たときは、すぐ{海|うみ}・{川|かわ}から{離|はな}れ、できるだけ{高|たか}い{所|ところ}へ{逃|に}げます。{高|たか}い{所|ところ}が{遠|とお}いときは、{津波|つなみ}{避難|ひなん}ビルなどを{使|つか}います。{原則|げんそく}、{歩|ある}いて{逃|に}げます。{警報|けいほう}が{解除|かいじょ}されるまで{戻|もど}りません。",
+    "ja_easy": "{強|つよ}い{揺|ゆ}れ・{長|なが}い{揺|ゆ}れのとき、または{津波|つなみ}の{警報|けいほう}が{出|で}たときは、すぐ{海|うみ}や{川|かわ}から{離|はな}れて、{高|たか}い{所|ところ}へ{逃|に}げます。{高|たか}い{所|ところ}が{遠|とお}いときは、{津波|つなみ}のときに{逃|に}げるビルへ{行|い}きます。{歩|ある}いて{逃|に}げます。{警報|けいほう}が{終|お}わるまで、{戻|もど}りません。",
+    "en": "If you feel strong or long shaking, or a tsunami warning is issued, leave the coast and rivers at once and go as high as you can. If high ground is far, use a designated tsunami evacuation building. As a rule, evacuate on foot. Do not go back until the warning is lifted."
+  },
+  "lead": {
+    "ja": "{海|うみ}・{川|かわ}から{離|はな}れ、すぐ{高|たか}い{所|ところ}へ。{警報|けいほう}が{解除|かいじょ}されるまで{戻|もど}りません。",
+    "ja_easy": "{海|うみ}・{川|かわ}から{離|はな}れて、すぐ{高|たか}い{所|ところ}へ{逃|に}げます。",
+    "en": "Leave the coast and rivers and go to high ground at once."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-tsunami"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "つなみ",
+    "津波",
+    "tsunami"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{津波|つなみ}{警報|けいほう}が{発令|はつれい}されたとき（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{津波|つなみ}のとき（{名古屋|なごや}{市|し}）",
+        "en": "When a tsunami warning is issued (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036438/1041937.html",
+      "source_id": "nagoya-bousai-tsunami"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-tsunami"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

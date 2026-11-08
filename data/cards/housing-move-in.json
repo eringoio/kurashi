@@ -317,6 +317,18 @@
       "card_ids": [
         "move-within-tennyu"
       ]
+    },
+    {
+      "event": "E-bousai",
+      "label": {
+        "ja": "{住|す}み{始|はじ}めたら：{災害|さいがい}への{備|そな}え",
+        "ja_easy": "{住|す}み{始|はじ}めたら：{災害|さいがい}に{備|そな}える",
+        "en": "Once you live there: disaster preparedness"
+      },
+      "card_ids": [
+        "bousai-hazard",
+        "bousai-hinan"
+      ]
     }
   ]
 }

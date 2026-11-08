@@ -16,6 +16,7 @@ import { ChangeLine, DayChoice, dayTitle, FocusCard, fmtDay, Notes, officialLink
 import { visitGroup } from '../core/visit';
 import { Reminder } from '../ui/Reminder';
 import { CostChart, FloorPlan } from '../ui/HouseVisual';
+import { AlertLevels, StockCalc } from '../ui/BousaiVisual';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
 import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
@@ -209,6 +210,8 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
       {isGuide && <LifeGuide g={toGuide(c.card, g.mode)} />}
       {c.card.visual === 'floorplan' && <FloorPlan />}
       {c.card.visual === 'costs' && <CostChart />}
+      {c.card.visual === 'stock' && <StockCalc />}
+      {c.card.visual === 'levels' && <AlertLevels />}
       {c.card.reminder && c.state !== 'excluded' && c.questions.length === 0 && <Reminder card={c.card} />}
       <Notes c={c} where="page" />
 

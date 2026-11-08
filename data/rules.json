@@ -3419,6 +3419,26 @@
         "checked_at": "2026-11-08",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-bousai-all",
+      "kind": "selection",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "{防災|ぼうさい}の{案内|あんない}は、{国籍|こくせき}・{在留|ざいりゅう}{資格|しかく}・{仕事|しごと}に{関係|かんけい}なく、{誰|だれ}でも{見|み}られます。",
+        "ja_easy": "{防災|ぼうさい}の{案内|あんない}は、{誰|だれ}でも{見|み}られます。",
+        "en": "Disaster-preparedness guidance is for everyone, whatever your nationality, status or work."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "Claude 2026-11-08（SPEC 6A.20 の定義と同じ。作者の確認は docs/AUTHOR_CHECK.md の B-1）"
+      }
     }
   ]
 }

@@ -72,3 +72,19 @@ The hand-drawn pieces of the kurashi prototype (Claude Design canvas, round 6, a
 | `plan-1dk.svg` | Plans | 間取り図：1DK | Floor plan: 1DK | 住まい探しの間取り図（B-8a） |
 | `plan-1ldk.svg` | Plans | 間取り図：1LDK | Floor plan: 1LDK | 住まい探しの間取り図（B-8a） |
 | `plan-2dk.svg` | Plans | 間取り図：2DK | Floor plan: 2DK | 住まい探しの間取り図（B-8a） |
+| `helmet.svg` · `helmet-dim.svg` | Disaster | 防災（ヘルメット） | Disaster preparedness (helmet) | 防災の入口 |
+| `siren.svg` · `siren-dim.svg` | Disaster | いま危ないとき | Emergency light | 防災：いま危ないとき |
+| `hazardmap.svg` · `hazardmap-dim.svg` | Disaster | ハザードマップ | Hazard map | 防災：ハザードマップ |
+| `hinan.svg` · `hinan-dim.svg` | Disaster | 避難場所へ | To the evacuation site | 防災：避難場所と避難所 |
+| `bousai-bag.svg` · `bousai-bag-dim.svg` | Disaster | 持ち出す袋 | Grab bag | 防災：持ち出す袋、備蓄の量 |
+| `water.svg` · `water-dim.svg` | Disaster | 水のボトル | Water bottles | 防災：家の備蓄、備蓄の量 |
+| `furniture.svg` · `furniture-dim.svg` | Disaster | 壁に留めた家具 | Furniture fixed to the wall | 防災：家の中の安全 |
+| `phone.svg` · `phone-dim.svg` | Disaster | 電話 | Phone | 防災：家族との連絡（171） |
+| `phone-alert.svg` · `phone-alert-dim.svg` | Disaster | スマホの通知 | Phone alert | 防災：情報を受け取る（アプリ） |
+| `levels.svg` · `levels-dim.svg` | Disaster | 警戒レベル | Alert levels | 防災：警戒レベル |
+| `quake.svg` · `quake-dim.svg` | Disaster | 地震 | Earthquake | 防災：地震 |
+| `tsunami.svg` · `tsunami-dim.svg` | Disaster | 津波 | Tsunami | 防災：津波 |
+| `typhoon.svg` · `typhoon-dim.svg` | Disaster | 台風 | Typhoon | 防災：台風・大雨 |
+| `flood.svg` · `flood-dim.svg` | Disaster | 洪水 | Flood | 防災：洪水・内水氾濫 |
+| `stormsurge.svg` · `stormsurge-dim.svg` | Disaster | 高潮 | Storm surge | 防災：高潮 |
+| `landslide.svg` · `landslide-dim.svg` | Disaster | 土砂災害 | Landslide | 防災：土砂災害 |

@@ -1,0 +1,140 @@
+{
+  "id": "bousai-apps",
+  "data_version": 1,
+  "illustration": "phone-alert",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{情報|じょうほう}を{受|う}け{取|と}る（アプリ）",
+    "ja_easy": "{情報|じょうほう}をもらう（アプリ）",
+    "en": "Get alerts (apps)"
+  },
+  "official_name": {
+    "ja": "防災アプリ",
+    "reading": "ぼうさいあぷり"
+  },
+  "summary": {
+    "ja": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリは、{住所|じゅうしょ}で{危険|きけん}な{所|ところ}と{避難|ひなん}{場所|ばしょ}を{確|たし}かめられ、お{知|し}らせも{届|とど}きます。Safety tipsは、{観光|かんこう}{庁|ちょう}が{監修|かんしゅう}した{外国|がいこく}{人|じん}{向|む}けのアプリで、15の{言語|げんご}で{地震|じしん}・{津波|つなみ}・{気象|きしょう}の{警報|けいほう}などを{知|し}らせます。NERV{防災|ぼうさい}は{民間|みんかん}の{会社|かいしゃ}のアプリで、{地震|じしん}・{津波|つなみ}・{気象|きしょう}の{情報|じょうほう}を{知|し}らせます。{通知|つうち}と{位置|いち}の{設定|せってい}が{要|い}ることがあります。このアプリから{通知|つうち}は{届|とど}きません。",
+    "ja_easy": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリは、{住所|じゅうしょ}で{危|あぶ}ない{所|ところ}と{逃|に}げる{所|ところ}を{見|み}られます。お{知|し}らせも{来|き}ます。Safety tipsは、{外国|がいこく}{人|じん}のためのアプリです。15の{言葉|ことば}で、{地震|じしん}・{津波|つなみ}・{天気|てんき}の{警報|けいほう}を{知|し}らせます。NERV{防災|ぼうさい}は、{会社|かいしゃ}のアプリで、{地震|じしん}・{津波|つなみ}・{天気|てんき}の{情報|じょうほう}を{知|し}らせます。お{知|し}らせと{場所|ばしょ}の{設定|せってい}が{要|い}ることがあります。このアプリからは、お{知|し}らせは{来|き}ません。",
+    "en": "The Nagoya City disaster-prevention app lets you check risks and evacuation sites by address and sends notices. Safety tips is an app for foreign visitors and residents supervised by the Japan Tourism Agency; it sends earthquake, tsunami and weather warnings in 15 languages. NERV Disaster Prevention is an app from a private company that sends earthquake, tsunami and weather information. You may need to turn on notifications and location. This app (Kurashi) does not send alerts."
+  },
+  "lead": {
+    "ja": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリ・Safety tips・NERV{防災|ぼうさい}で、{警報|けいほう}などを{受|う}け{取|と}れます。",
+    "ja_easy": "アプリで、{警報|けいほう}などのお{知|し}らせをもらえます。",
+    "en": "Apps such as the Nagoya City app, Safety tips and NERV can send you alerts."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "スマホのアプリ",
+      "ja_easy": "スマホのアプリ",
+      "en": "Smartphone apps"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-app"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "city_app",
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリを{入|い}れた",
+        "ja_easy": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリを{入|い}れた",
+        "en": "Installed the Nagoya City app"
+      }
+    },
+    {
+      "id": "safety_tips",
+      "label": {
+        "ja": "Safety tipsを{入|い}れた",
+        "ja_easy": "Safety tipsを{入|い}れた",
+        "en": "Installed Safety tips"
+      }
+    },
+    {
+      "id": "nerv",
+      "label": {
+        "ja": "NERV{防災|ぼうさい}を{入|い}れた",
+        "ja_easy": "NERV{防災|ぼうさい}を{入|い}れた",
+        "en": "Installed NERV"
+      }
+    },
+    {
+      "id": "notify",
+      "label": {
+        "ja": "{通知|つうち}を{受|う}け{取|と}る{設定|せってい}にした",
+        "ja_easy": "お{知|し}らせが{来|く}る{設定|せってい}にした",
+        "en": "Turned on notifications"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "あぷり",
+    "アプリ",
+    "app",
+    "safety tips",
+    "nerv",
+    "ねるふ",
+    "つうち",
+    "通知",
+    "alert"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリ（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{名古屋|なごや}{市|し}{防災|ぼうさい}アプリ",
+        "en": "Nagoya City disaster-prevention app"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/jouhou/1036430/1013493.html",
+      "source_id": "nagoya-bousai-app"
+    },
+    {
+      "label": {
+        "ja": "Safety tips（{外国|がいこく}{人|じん}{向|む}け・{名古屋|なごや}{市|し}の{案内|あんない}）",
+        "ja_easy": "Safety tips（{外国|がいこく}{人|じん}のため）",
+        "en": "Safety tips (for foreign visitors and residents)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/international/1037420.html",
+      "source_id": "nagoya-bousai-safetytips"
+    },
+    {
+      "label": {
+        "ja": "NERV{防災|ぼうさい}のダウンロード（{公式|こうしき}）",
+        "ja_easy": "NERV{防災|ぼうさい}（{公式|こうしき}）",
+        "en": "NERV Disaster Prevention download (official)"
+      },
+      "url": "https://nerv.app/download.html",
+      "source_id": "nerv-download"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-app",
+      "nagoya-bousai-safetytips",
+      "nerv-download"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

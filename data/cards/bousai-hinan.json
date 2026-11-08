@@ -1,0 +1,111 @@
+{
+  "id": "bousai-hinan",
+  "data_version": 1,
+  "illustration": "hinan",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{避難|ひなん}{場所|ばしょ}と{避難所|ひなんじょ}を{知|し}る",
+    "ja_easy": "{逃|に}げる{場所|ばしょ}を{知|し}る",
+    "en": "Know your evacuation sites and shelters"
+  },
+  "official_name": {
+    "ja": "指定緊急避難場所・指定避難所",
+    "reading": "していきんきゅうひなんばしょ・していひなんじょ"
+  },
+  "summary": {
+    "ja": "{指定|してい}{緊急|きんきゅう}{避難|ひなん}{場所|ばしょ}は、{命|いのち}を{守|まも}るためにすぐ{逃|に}げる{所|ところ}です。{洪水|こうずい}・{津波|つなみ}・{地震|じしん}など、{災害|さいがい}の{種類|しゅるい}ごとに{決|き}まっています。{指定|してい}{避難所|ひなんじょ}は、{家|いえ}に{住|す}めなくなったときに、しばらく{暮|く}らす{所|ところ}です。{近|ちか}い{所|ところ}が、いつも{安全|あんぜん}とは{限|かぎ}りません。{災害|さいがい}の{種類|しゅるい}ごとの{場所|ばしょ}を、ふだんから{確|たし}かめます。{家|いえ}が{安全|あんぜん}なら、{家|いえ}にいる（{在宅|ざいたく}{避難|ひなん}）こともあります。{開|あ}いているかどうかは、そのときの{市|し}の{情報|じょうほう}を{見|み}ます。",
+    "ja_easy": "すぐ{逃|に}げる{所|ところ}（{指定|してい}{緊急|きんきゅう}{避難|ひなん}{場所|ばしょ}）は、{災害|さいがい}の{種類|しゅるい}ごとに{決|き}まっています。{家|いえ}に{住|す}めなくなったとき、しばらく{暮|く}らす{所|ところ}（{指定|してい}{避難所|ひなんじょ}）は{別|べつ}です。{近|ちか}い{所|ところ}が、いつも{安全|あんぜん}とは{限|かぎ}りません。ふだんから、{災害|さいがい}の{種類|しゅるい}ごとの{場所|ばしょ}を{見|み}ておきます。{家|いえ}が{安全|あんぜん}なら、{家|いえ}にいることもあります。{開|あ}いているかは、そのときの{市|し}の{情報|じょうほう}を{見|み}ます。",
+    "en": "A designated emergency evacuation site is where you flee at once to save your life. Sites are set for each type of disaster (flood, tsunami, earthquake and so on). A designated shelter is where you stay for a while if you cannot live at home. The nearest place is not always safe. Check the sites for each type of disaster in advance. If your home is safe, you may stay at home. Whether a place is open is announced by the city at the time."
+  },
+  "lead": {
+    "ja": "すぐ{逃|に}げる「{避難|ひなん}{場所|ばしょ}」と、しばらく{暮|く}らす「{避難所|ひなんじょ}」は{違|ちが}います。",
+    "ja_easy": "すぐ{逃|に}げる{所|ところ}と、しばらく{暮|く}らす{所|ところ}は、{違|ちが}います。",
+    "en": "An evacuation site (to flee to at once) is different from a shelter (to stay for a while)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-hinanbasho"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "parts": [
+    {
+      "id": "by_kind",
+      "label": {
+        "ja": "{災害|さいがい}の{種類|しゅるい}ごとの{避難|ひなん}{場所|ばしょ}を{確|たし}かめた",
+        "ja_easy": "{災害|さいがい}の{種類|しゅるい}ごとに、{逃|に}げる{所|ところ}を{見|み}た",
+        "en": "Checked evacuation sites for each disaster type"
+      }
+    },
+    {
+      "id": "shelter",
+      "label": {
+        "ja": "{指定|してい}{避難所|ひなんじょ}を{確|たし}かめた",
+        "ja_easy": "しばらく{暮|く}らす{所|ところ}を{見|み}た",
+        "en": "Checked the designated shelter"
+      }
+    },
+    {
+      "id": "walk",
+      "label": {
+        "ja": "{避難|ひなん}{場所|ばしょ}まで{歩|ある}いてみた",
+        "ja_easy": "{逃|に}げる{所|ところ}まで{歩|ある}いてみた",
+        "en": "Walked the route to the evacuation site"
+      }
+    }
+  ],
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "ひなんじょ",
+    "避難所",
+    "ひなんばしょ",
+    "避難場所",
+    "shelter",
+    "evacuation site",
+    "evacuation"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{指定|してい}{緊急|きんきゅう}{避難|ひなん}{場所|ばしょ}・{指定|してい}{避難所|ひなんじょ}（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{逃|に}げる{所|ところ}・{暮|く}らす{所|ところ}の{一覧|いちらん}（{名古屋|なごや}{市|し}）",
+        "en": "Evacuation sites and shelters (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1013390/1013492.html",
+      "source_id": "nagoya-bousai-hinanbasho"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-hinanbasho",
+      "nagoya-bousai-hazardmap"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

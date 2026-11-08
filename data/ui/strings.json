@@ -3565,6 +3565,11 @@
     "ja_easy": "{住|す}まい",
     "en": "Housing"
   },
+  "words.topic.bousai": {
+    "ja": "{防災|ぼうさい}",
+    "ja_easy": "{防災|ぼうさい}",
+    "en": "Disaster preparedness"
+  },
   "words.topic.immigration": {
     "ja": "{在留|ざいりゅう}カード・{入管|にゅうかん}",
     "ja_easy": "{在留|ざいりゅう}カード・{入管|にゅうかん}",
@@ -4604,5 +4609,150 @@
     "ja": "ごみを{入力|にゅうりょく}して{調|しら}べましょう",
     "ja_easy": "ごみの{名前|なまえ}を{入|い}れて{調|しら}べましょう",
     "en": "Type an item to look it up"
+  },
+  "bousai.stock.title": {
+    "ja": "{備|そな}えの{量|りょう}の{目安|めやす}",
+    "ja_easy": "{準備|じゅんび}する{量|りょう}",
+    "en": "How much to stock"
+  },
+  "bousai.stock.sub": {
+    "ja": "{人数|にんずう}と{日数|にっすう}を{選|えら}ぶと、{目安|めやす}の{量|りょう}が{出|で}ます。",
+    "ja_easy": "{人数|にんずう}と{日数|にっすう}を{選|えら}ぶと、{量|りょう}がわかります。",
+    "en": "Choose the number of people and days to see guide amounts."
+  },
+  "bousai.stock.people": {
+    "ja": "{人数|にんずう}",
+    "ja_easy": "{何|なん}{人|にん}",
+    "en": "People"
+  },
+  "bousai.stock.peopleUnit": {
+    "ja": "{人|ひと}",
+    "ja_easy": "{人|ひと}",
+    "en": " people"
+  },
+  "bousai.stock.less": {
+    "ja": "1{人|にん}{減|へ}らす",
+    "ja_easy": "1{人|にん}へらす",
+    "en": "One fewer person"
+  },
+  "bousai.stock.more": {
+    "ja": "1{人|にん}{増|ふ}やす",
+    "ja_easy": "1{人|にん}ふやす",
+    "en": "One more person"
+  },
+  "bousai.stock.days": {
+    "ja": "{日数|にっすう}",
+    "ja_easy": "{何|なん}{日|にち}",
+    "en": "Days"
+  },
+  "bousai.stock.d3": {
+    "ja": "3{日|にち}（{最低|さいてい}）",
+    "ja_easy": "3{日|にち}（{少|すく}なくとも）",
+    "en": "3 days (minimum)"
+  },
+  "bousai.stock.d7": {
+    "ja": "7{日|にち}（できれば）",
+    "ja_easy": "7{日|にち}（できれば）",
+    "en": "7 days (ideally)"
+  },
+  "bousai.stock.water": {
+    "ja": "{水|みず}（{飲|の}む・{料理|りょうり}）",
+    "ja_easy": "{水|みず}（{飲|の}む・{料理|りょうり}）",
+    "en": "Water (drinking, cooking)"
+  },
+  "bousai.stock.liter": {
+    "ja": "リットル",
+    "ja_easy": "リットル",
+    "en": " litres"
+  },
+  "bousai.stock.bottles": {
+    "ja": "2リットルのペットボトルで",
+    "ja_easy": "2リットルのボトルで",
+    "en": "In 2-litre bottles:"
+  },
+  "bousai.stock.bottleUnit": {
+    "ja": "{本|ほん}",
+    "ja_easy": "{本|ほん}",
+    "en": " bottles"
+  },
+  "bousai.stock.toilet": {
+    "ja": "{携帯|けいたい}トイレ",
+    "ja_easy": "{袋|ふくろ}のトイレ",
+    "en": "Portable toilet bags"
+  },
+  "bousai.stock.toiletUnit": {
+    "ja": "{回|かい}{分|ぶん}",
+    "ja_easy": "{回|かい}{分|ぶん}",
+    "en": " uses"
+  },
+  "bousai.stock.formula": {
+    "ja": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。{携帯|けいたい}トイレ：{人数|にんずう}×{日数|にっすう}×5〜6{回|かい}。",
+    "ja_easy": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。トイレ：{人数|にんずう}×{日数|にっすう}×5〜6{回|かい}。",
+    "en": "Water: people × days × 3 L. Toilet bags: people × days × 5–6."
+  },
+  "bousai.stock.note": {
+    "ja": "{目安|めやす}です。{年齢|ねんれい}・{体|からだ}・{季節|きせつ}で{変|か}わります。{水|みず}を{全部|ぜんぶ}、{持|も}ち{出|だ}す{袋|ふくろ}に{入|い}れません。",
+    "ja_easy": "{目安|めやす}です。{人|ひと}や{季節|きせつ}で{変|か}わります。{水|みず}を{全部|ぜんぶ}、{持|も}ち{出|だ}す{袋|ふくろ}に{入|い}れません。",
+    "en": "These are guides; needs vary by age, health and season. Do not put all the water in your grab bag."
+  },
+  "bousai.lv.title": {
+    "ja": "{警戒|けいかい}レベルとすること",
+    "ja_easy": "レベルとすること",
+    "en": "Alert levels and what to do"
+  },
+  "bousai.lv.sub": {
+    "ja": "{大雨|おおあめ}・{洪水|こうずい}・{土砂|どしゃ}{災害|さいがい}・{高潮|たかしお}のとき。{地震|じしん}・{津波|つなみ}には{使|つか}いません。",
+    "ja_easy": "{大雨|おおあめ}・{水|みず}・{土砂|どしゃ}・{高潮|たかしお}のとき。{地震|じしん}・{津波|つなみ}は{違|ちが}います。",
+    "en": "For heavy rain, floods, landslides and storm surge. Not for earthquakes or tsunamis."
+  },
+  "bousai.lv.name": {
+    "ja": "レベル",
+    "ja_easy": "レベル",
+    "en": "Level"
+  },
+  "bousai.lv.1": {
+    "ja": "{情報|じょうほう}を{確|たし}かめ、{心構|こころがま}えをします。",
+    "ja_easy": "{情報|じょうほう}を{見|み}ます。",
+    "en": "Check the information and get ready."
+  },
+  "bousai.lv.2": {
+    "ja": "{避難|ひなん}の{方法|ほうほう}と{道|みち}を{確|たし}かめます。",
+    "ja_easy": "{逃|に}げる{方法|ほうほう}と{道|みち}を{見|み}ます。",
+    "en": "Check how and where you will evacuate."
+  },
+  "bousai.lv.3.info": {
+    "ja": "{高齢|こうれい}{者|しゃ}{等|とう}{避難|ひなん}",
+    "ja_easy": "{高齢|こうれい}{者|しゃ}{等|とう}{避難|ひなん}（お{年寄|としよ}りなどが{逃|に}げる）",
+    "en": "Elderly and others evacuate"
+  },
+  "bousai.lv.3": {
+    "ja": "{時間|じかん}がかかる{人|ひと}は、{危険|きけん}な{所|ところ}から{逃|に}げます。ほかの{人|ひと}も{準備|じゅんび}します。",
+    "ja_easy": "{時間|じかん}がかかる{人|ひと}は{逃|に}げます。ほかの{人|ひと}も{準備|じゅんび}します。",
+    "en": "People who need time leave dangerous places. Others get ready."
+  },
+  "bousai.lv.4.info": {
+    "ja": "{避難|ひなん}{指示|しじ}",
+    "ja_easy": "{避難|ひなん}{指示|しじ}（みんな{逃|に}げる）",
+    "en": "Evacuation order"
+  },
+  "bousai.lv.4": {
+    "ja": "{危険|きけん}な{所|ところ}にいる{人|ひと}は、{全員|ぜんいん}{逃|に}げます。",
+    "ja_easy": "{危|あぶ}ない{所|ところ}にいる{人|ひと}は、みんな{逃|に}げます。",
+    "en": "Everyone in a dangerous place leaves."
+  },
+  "bousai.lv.5.info": {
+    "ja": "{緊急|きんきゅう}{安全|あんぜん}{確保|かくほ}",
+    "ja_easy": "{緊急|きんきゅう}{安全|あんぜん}{確保|かくほ}",
+    "en": "Emergency safety measures"
+  },
+  "bousai.lv.5": {
+    "ja": "{命|いのち}が{危|あぶ}ない{状況|じょうきょう}です。すぐに、できるだけ{安全|あんぜん}な{行動|こうどう}をとります。レベル5を{待|ま}たないでください。",
+    "ja_easy": "{命|いのち}が{危|あぶ}ないです。すぐに{安全|あんぜん}な{所|ところ}へ。レベル5を{待|ま}ちません。",
+    "en": "Your life is in danger. Act at once to be as safe as you can. Do not wait for level 5."
+  },
+  "bousai.lv.from": {
+    "ja": "{市町村|しちょうそん}の{情報|じょうほう}",
+    "ja_easy": "{市|し}の{情報|じょうほう}",
+    "en": "From the city"
   }
 }

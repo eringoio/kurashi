@@ -2196,6 +2196,171 @@
       "easy": "{大事|だいじ}",
       "en": "Important",
       "status": "verified"
+    },
+    {
+      "id": "word-bousai",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{防災|ぼうさい}",
+      "easy": "{災害|さいがい}に{備|そな}えること",
+      "en": "Disaster preparedness",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-hinan",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難|ひなん}",
+      "easy": "{危|あぶ}ない{所|ところ}から{逃|に}げること",
+      "en": "Evacuation",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-hinanbasho",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難場所|ひなんばしょ}",
+      "easy": "すぐ{逃|に}げる{所|ところ}",
+      "en": "Evacuation site",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-hinanjo",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難所|ひなんじょ}",
+      "easy": "{家|いえ}に{住|す}めないとき、しばらく{暮|く}らす{所|ところ}",
+      "en": "Evacuation shelter",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-keihou",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{警報|けいほう}",
+      "easy": "{危|あぶ}ないことを{知|し}らせる{情報|じょうほう}",
+      "en": "Warning",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-hinan-shiji",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難指示|ひなんしじ}",
+      "easy": "{危|あぶ}ない{所|ところ}にいる{人|ひと}は、みんな{逃|に}げる（レベル4）",
+      "en": "Evacuation order (level 4)",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-jishin",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{地震|じしん}",
+      "easy": "{地面|じめん}が{揺|ゆ}れること",
+      "en": "Earthquake",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-tsunami",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{津波|つなみ}",
+      "easy": "{地震|じしん}のあとに{来|く}る{大|おお}きな{波|なみ}",
+      "en": "Tsunami",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-taifu",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{台風|たいふう}",
+      "easy": "{強|つよ}い{風|かぜ}と{雨|あめ}の{嵐|あらし}",
+      "en": "Typhoon",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-kouzui",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{洪水|こうずい}",
+      "easy": "{川|かわ}の{水|みず}があふれること",
+      "en": "Flood",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-teiden",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{停電|ていでん}",
+      "easy": "{電気|でんき}が{止|と}まること",
+      "en": "Power outage",
+      "status": "needs_check"
+    },
+    {
+      "id": "word-dansui",
+      "kind": "word",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{断水|だんすい}",
+      "easy": "{水道|すいどう}の{水|みず}が{止|と}まること",
+      "en": "Water outage",
+      "status": "needs_check"
+    },
+    {
+      "id": "say-hinanjo-doko",
+      "kind": "say",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難所|ひなんじょ}はどこですか",
+      "easy": "{逃|に}げる{所|ところ}を{聞|き}く",
+      "en": "Where is the evacuation shelter?",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-hinan-shite",
+      "kind": "heard",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{避難|ひなん}してください",
+      "easy": "{逃|に}げてください",
+      "en": "Please evacuate.",
+      "status": "needs_check"
+    },
+    {
+      "id": "heard-takadai",
+      "kind": "heard",
+      "scene": [
+        "bousai"
+      ],
+      "ja": "{高|たか}い{所|ところ}へ{逃|に}げてください",
+      "easy": "{高|たか}い{所|ところ}へ{逃|に}げて",
+      "en": "Go to high ground.",
+      "status": "needs_check"
     }
   ]
 }

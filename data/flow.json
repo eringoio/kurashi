@@ -109,7 +109,22 @@
     "license-kokusai",
     "license-koshin",
     "license-kisai-henko",
-    "license-saikofu"
+    "license-saikofu",
+    "bousai-now",
+    "bousai-hazard",
+    "bousai-hinan",
+    "bousai-bag",
+    "bousai-stock",
+    "bousai-home",
+    "bousai-contact",
+    "bousai-apps",
+    "bousai-level",
+    "bousai-jishin",
+    "bousai-tsunami",
+    "bousai-typhoon",
+    "bousai-flood",
+    "bousai-takashio",
+    "bousai-dosha"
   ],
   "built_origins": [
     "abroad",

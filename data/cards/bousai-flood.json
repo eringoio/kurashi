@@ -1,0 +1,86 @@
+{
+  "id": "bousai-flood",
+  "data_version": 1,
+  "illustration": "flood",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{洪水|こうずい}・{内水|ないすい}{氾濫|はんらん}のとき",
+    "ja_easy": "{水|みず}があふれるとき（{洪水|こうずい}）",
+    "en": "River and inland flooding"
+  },
+  "official_name": {
+    "ja": "洪水・内水氾濫",
+    "reading": "こうずい・ないすいはんらん"
+  },
+  "summary": {
+    "ja": "{洪水|こうずい}は{川|かわ}の{水|みず}があふれること、{内水|ないすい}{氾濫|はんらん}は{雨水|あまみず}が{流|なが}れきらず{町|まち}に{水|みず}がたまることです。ハザードマップで、{水|みず}が{来|く}る{所|ところ}と{深|ふか}さを{確|たし}かめます。{地図|ちず}が{安全|あんぜん}を{約束|やくそく}するわけではありません。{地下街|ちかがい}・{地下|ちか}{室|しつ}、{水|みず}のたまった{道|みち}・アンダーパス（{線路|せんろ}などの{下|した}をくぐる{道|みち}）には{入|はい}りません。{危険|きけん}な{所|ところ}にいる{人|ひと}は、{警戒|けいかい}レベル4までに{逃|に}げます。",
+    "ja_easy": "{洪水|こうずい}は、{川|かわ}の{水|みず}があふれることです。{内水|ないすい}{氾濫|はんらん}は、{雨|あめ}の{水|みず}が{流|なが}れないで、{町|まち}に{水|みず}がたまることです。{地図|ちず}で、{水|みず}が{来|く}る{所|ところ}と{深|ふか}さを{見|み}ます。{地下|ちか}や、{水|みず}のたまった{道|みち}、{線路|せんろ}の{下|した}をくぐる{道|みち}に{入|はい}りません。{危|あぶ}ない{所|ところ}にいる{人|ひと}は、レベル4までに{逃|に}げます。",
+    "en": "River flooding is when a river overflows. Inland flooding is when rainwater cannot drain away and collects in the town. Check on the hazard map where water may come and how deep. The map does not promise safety. Do not enter underground malls, basements, flooded roads or underpasses. People in dangerous places leave by alert level 4."
+  },
+  "lead": {
+    "ja": "{地下|ちか}や{水|みず}のたまった{道|みち}に{入|はい}らず、{警戒|けいかい}レベル4までに{逃|に}げます。",
+    "ja_easy": "{地下|ちか}や、{水|みず}のたまった{道|みち}に{入|はい}りません。",
+    "en": "Stay out of basements and flooded roads; leave by level 4."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-hazardmap"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "こうずい",
+    "洪水",
+    "flood",
+    "ないすい",
+    "内水",
+    "しんすい",
+    "浸水",
+    "underpass"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "なごやハザードマップ（{洪水|こうずい}・{内水|ないすい}）",
+        "ja_easy": "{名古屋|なごや}の{危|あぶ}ない{所|ところ}の{地図|ちず}",
+        "en": "Nagoya hazard maps (flooding)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hazardmap/1036428.html",
+      "source_id": "nagoya-bousai-hazardmap"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-hazardmap",
+      "nagoya-bousai-fusuigai"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

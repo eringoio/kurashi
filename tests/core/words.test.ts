@@ -70,7 +70,7 @@ describe('ことば', () => {
   });
   it('公開のできごとの画面には、どれも大事な言葉がある。言葉の場面は、どこかの画面で出る', () => {
     for (const e of DATA().events.filter((x) => x.status === 'built')) expect(pageWordIds('/e/' + e.id).length, e.id).toBeGreaterThan(5);
-    const scenes = new Set(['/', '/move', '/e/E-bank', '/e/E-job', '/e/E-stay-renew', '/e/E-house-search', '/gomi', '/clinic', '/letter', '/calendar', '/visit/ward_office'].flatMap(pageScenes));
+    const scenes = new Set(['/', '/move', '/e/E-bank', '/e/E-job', '/e/E-stay-renew', '/e/E-house-search', '/e/E-bousai', '/gomi', '/clinic', '/letter', '/calendar', '/visit/ward_office'].flatMap(pageScenes));
     for (const w of W) for (const sc of w.scene) expect(scenes.has(sc), w.id + ' ' + sc).toBe(true);
   });
   it('並び：分野の順、分野の中は 単語 → 言う文 → 聞こえる言葉 → 手続きの名前。曜日は月から日', () => {

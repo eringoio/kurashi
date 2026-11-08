@@ -1,0 +1,83 @@
+{
+  "id": "bousai-jishin",
+  "data_version": 1,
+  "illustration": "quake",
+  "awareness_type": "option",
+  "obligation": "none",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-bousai-all",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{地震|じしん}のとき",
+    "ja_easy": "{地震|じしん}のとき",
+    "en": "Earthquake"
+  },
+  "official_name": {
+    "ja": "地震が起きたとき",
+    "reading": "じしんがおきたとき"
+  },
+  "summary": {
+    "ja": "まず{身|み}を{守|まも}ります。{家具|かぐ}・{窓|まど}から{離|はな}れ、{丈夫|じょうぶ}な{机|つくえ}の{下|した}などで{頭|あたま}を{守|まも}ります。{揺|ゆ}れている{間|あいだ}に、{無理|むり}に{火|ひ}を{消|け}しに{行|い}きません。すぐ{外|そと}に{飛|と}び{出|だ}しません。{揺|ゆ}れがおさまったら、{火|ひ}・けが・{建物|たてもの}の{壊|こわ}れたところ・{逃|に}げる{道|みち}を{確|たし}かめます。{海|うみ}や{川|かわ}の{近|ちか}くでは、{津波|つなみ}に{気|き}をつけます。",
+    "ja_easy": "まず、{自分|じぶん}を{守|まも}ります。{家具|かぐ}や{窓|まど}から{離|はな}れて、{強|つよ}い{机|つくえ}の{下|した}などで{頭|あたま}を{守|まも}ります。{揺|ゆ}れている{間|あいだ}は、{火|ひ}を{消|け}しに{行|い}きません。すぐ{外|そと}に{出|で}ません。{揺|ゆ}れが{止|と}まったら、{火|ひ}・けが・{建物|たてもの}を{見|み}ます。{海|うみ}や{川|かわ}の{近|ちか}くでは、{津波|つなみ}に{気|き}をつけます。",
+    "en": "Protect yourself first. Move away from furniture and windows and protect your head, for example under a sturdy table. Do not force yourself to put out a fire while it is shaking. Do not run outside straight away. When the shaking stops, check for fire, injuries, building damage and your escape route. Near the sea or rivers, watch out for a tsunami."
+  },
+  "lead": {
+    "ja": "まず{身|み}を{守|まも}ります。{揺|ゆ}れがおさまるまで{外|そと}に{飛|と}び{出|だ}しません。",
+    "ja_easy": "まず、{頭|あたま}を{守|まも}ります。すぐ{外|そと}に{出|で}ません。",
+    "en": "Protect yourself first. Do not run outside while it shakes."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ（{公式|こうしき}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{防災|ぼうさい}のページ",
+      "en": "Nagoya City's disaster-prevention pages (official)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-bousai-jishin"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "ぼうさい",
+    "防災",
+    "さいがい",
+    "災害",
+    "disaster",
+    "bousai",
+    "じしん",
+    "地震",
+    "earthquake",
+    "ゆれ",
+    "揺れ",
+    "quake"
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{地震|じしん}が{起|お}きたとき（{名古屋|なごや}{市|し}）",
+        "ja_easy": "{地震|じしん}のとき（{名古屋|なごや}{市|し}）",
+        "en": "When an earthquake happens (Nagoya City)"
+      },
+      "url": "https://www.city.nagoya.jp/bousaiportal/hinan/1036438/1013444.html",
+      "source_id": "nagoya-bousai-jishin"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nagoya-bousai-jishin"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}
