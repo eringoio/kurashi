@@ -14,8 +14,8 @@ import { fmtDay } from './guide';
 const MARK: Partial<Record<DayTag, string>> = { closed: '休', past_deadline: '！', blocked: '×', unknown_hours: '？' };
 const ORDER: DayTag[] = ['past_deadline', 'closed', 'blocked', 'unknown_hours'];
 
-export function CalendarGrid({ today, current, min, deadline, hours, holidays, onPick, marks, readOnly }: {
-  today: string; current?: string; min?: string | null; deadline?: string | null; hours?: Hours; holidays: Record<string, string>; onPick?: (d: string) => void;
+export function CalendarGrid({ today, current, min, max, deadline, hours, holidays, onPick, marks, readOnly }: {
+  today: string; current?: string; min?: string | null; max?: string | null; deadline?: string | null; hours?: Hours; holidays: Record<string, string>; onPick?: (d: string) => void;
   /** 行く日を決めた日ごとの件数。省略すると、保存してある手続きの日（引っ越しと生活イベントの両方）から作る */
   marks?: Record<string, number>;
   /** 見るだけ（押せない）。休み・開いている時間の印は出さない */
@@ -25,11 +25,11 @@ export function CalendarGrid({ today, current, min, deadline, hours, holidays, o
   const g = useGuide();
   const eventPlans = openEventPlans(vault.entries('occurrences').map(([, o]) => o as Occurrence)).map((x) => x.plan);
   const mk = marks ?? plannedMarks(uniquePlans([...Object.values(g.plan), ...eventPlans]), today);
-  const weeks = monthGrid(today, 5);
+  const weeks = monthGrid(today, 5, min);
   const used = new Set<DayTag>();
   let anyPlanned = false;
   const info = (d: string): DayInfo => {
-    const x = dayInfo({ day: d, today, min, deadline, hours, holidays });
+    const x = dayInfo({ day: d, today, min, max, deadline, hours, holidays });
     if (readOnly) x.tags = x.tags.filter((t) => t === 'today' || t === 'holiday');
     x.tags.forEach((t) => used.add(t));
     if (mk[d]) anyPlanned = true;

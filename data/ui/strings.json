@@ -3934,5 +3934,340 @@
     "ja": "{記録|きろく}しました",
     "ja_easy": "{記録|きろく}しました",
     "en": "Saved"
+  },
+  "sr.expiry.q": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}はいつまでですか？",
+    "ja_easy": "{在留期間|ざいりゅうきかん}はいつまでですか？",
+    "en": "Until when is your period of stay?"
+  },
+  "sr.expiry.label": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}（{満了|まんりょう}{日|び}）",
+    "ja_easy": "{在留期間|ざいりゅうきかん}（{満了日|まんりょうび}）",
+    "en": "Period of stay (date of expiration)"
+  },
+  "sr.expiry.save": {
+    "ja": "この{日|ひ}にする",
+    "ja_easy": "この{日|ひ}にする",
+    "en": "Use this date"
+  },
+  "sr.expiry.none": {
+    "ja": "{満了|まんりょう}{日|び}の{欄|らん}がない・わからない",
+    "ja_easy": "{満了日|まんりょうび}がない・わからない",
+    "en": "No expiry date on my card / not sure"
+  },
+  "sr.expiry.empty": {
+    "ja": "{日付|ひづけ}を{入|い}れてください。",
+    "ja_easy": "{日付|ひづけ}を{入|い}れてください。",
+    "en": "Enter a date."
+  },
+  "sr.expiry.noneNote": {
+    "ja": "{満了|まんりょう}{日|び}がわからないと、{予定|よてい}{日|び}を{決|き}められません。{在留|ざいりゅう}カードを{見|み}るか、{入管|にゅうかん}に{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{満了日|まんりょうび}がわからないと、{予定日|よていび}を{決|き}められません。{在留|ざいりゅう}カードを{見|み}るか、{入管|にゅうかん}に{聞|き}きます（{要確認|ようかくにん}）。",
+    "en": "Without the expiry date you cannot choose a date. Check your residence card or ask immigration (to be checked)."
+  },
+  "sr.period.q": {
+    "ja": "{許可|きょか}されている{在留|ざいりゅう}{期間|きかん}は？",
+    "ja_easy": "{許可|きょか}されている{在留期間|ざいりゅうきかん}は？",
+    "en": "What period of stay were you granted?"
+  },
+  "sr.period.why": {
+    "ja": "6か{月|げつ}{以上|いじょう}なら、{満了|まんりょう}の3か{月|げつ}{前|まえ}から{申請|しんせい}できます。{在留|ざいりゅう}カードの「{在留|ざいりゅう}{期間|きかん}」の{欄|らん}に{書|か}いてあります（{例|れい}：1{年|ねん}）。",
+    "ja_easy": "6か{月|げつ}{以上|いじょう}なら、{終|お}わる3か{月|げつ}{前|まえ}から{出|だ}せます。{在留|ざいりゅう}カードに{書|か}いてあります（{例|れい}：1{年|ねん}）。",
+    "en": "If it is 6 months or longer, you can apply from 3 months before expiry. It is on your residence card (for example, 1 year)."
+  },
+  "sr.period.long": {
+    "ja": "6か{月|げつ}{以上|いじょう}（6か{月|げつ}・1{年|ねん}・3{年|ねん}・5{年|ねん}など）",
+    "ja_easy": "6か{月|げつ}{以上|いじょう}（1{年|ねん}など）",
+    "en": "6 months or longer (6 months, 1, 3 or 5 years, etc.)"
+  },
+  "sr.period.short": {
+    "ja": "6か{月|げつ}より{短|みじか}い（3か{月|げつ}など）",
+    "ja_easy": "6か{月|げつ}より{短|みじか}い（3か{月|げつ}など）",
+    "en": "Shorter than 6 months (3 months, etc.)"
+  },
+  "sr.period.unknown": {
+    "ja": "わからない",
+    "ja_easy": "わかりません",
+    "en": "Not sure"
+  },
+  "sr.status.q": {
+    "ja": "{現在|げんざい}の{在留|ざいりゅう}{資格|しかく}は{何|なに}ですか？",
+    "ja_easy": "いまの{在留資格|ざいりゅうしかく}は{何|なん}ですか？",
+    "en": "What is your current status of residence?"
+  },
+  "sr.status.why": {
+    "ja": "{在留|ざいりゅう}カードの{表|おもて}の「{在留|ざいりゅう}{資格|しかく}」の{欄|らん}です。{在留|ざいりゅう}{資格|しかく}によって、{手続|てつづ}きと{書類|しょるい}が{違|ちが}います。",
+    "ja_easy": "{在留|ざいりゅう}カードの「{在留資格|ざいりゅうしかく}」の{欄|らん}です。{在留資格|ざいりゅうしかく}で、{手続|てつづ}きと{書類|しょるい}が{違|ちが}います。",
+    "en": "It is in the \"Status\" field on the front of your residence card. The procedure and documents depend on it."
+  },
+  "sr.sum.expiry": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}の{満了|まんりょう}{日|び}",
+    "ja_easy": "{在留期間|ざいりゅうきかん}が{終|お}わる{日|ひ}",
+    "en": "Period of stay ends"
+  },
+  "sr.sum.none": {
+    "ja": "わからない",
+    "ja_easy": "わからない",
+    "en": "Not sure"
+  },
+  "sr.sum.period": {
+    "ja": "{許可|きょか}されている{期間|きかん}",
+    "ja_easy": "{許可|きょか}されている{期間|きかん}",
+    "en": "Granted period"
+  },
+  "sr.sum.status": {
+    "ja": "{在留|ざいりゅう}{資格|しかく}",
+    "ja_easy": "{在留資格|ざいりゅうしかく}",
+    "en": "Status"
+  },
+  "sr.sum.docs": {
+    "ja": "{書類|しょるい}",
+    "ja_easy": "{書類|しょるい}",
+    "en": "Documents"
+  },
+  "sr.sum.docsCount": {
+    "ja": "{n}つ チェック{済|ず}み",
+    "ja_easy": "{n}つ チェックした",
+    "en": "{n} checked"
+  },
+  "sr.sum.method": {
+    "ja": "{申請|しんせい}の{方法|ほうほう}",
+    "ja_easy": "{申請|しんせい}の{方法|ほうほう}",
+    "en": "How to apply"
+  },
+  "sr.change": {
+    "ja": "{変|か}える",
+    "ja_easy": "{変|か}える",
+    "en": "Change"
+  },
+  "sr.open": {
+    "ja": "{申請|しんせい}できる{日|ひ}：{date}から",
+    "ja_easy": "{出|だ}せる{日|ひ}：{date}から",
+    "en": "You can apply from {date}"
+  },
+  "sr.advisedBy": {
+    "ja": "{入管|にゅうかん}がすすめる{時期|じき}：{date}まで",
+    "ja_easy": "{入管|にゅうかん}がすすめる{時期|じき}：{date}まで",
+    "en": "Immigration recommends applying by {date}"
+  },
+  "sr.docs.title": {
+    "ja": "{基本|きほん}の{書類|しょるい}",
+    "ja_easy": "{基本|きほん}の{書類|しょるい}",
+    "en": "Basic documents"
+  },
+  "sr.docs.more": {
+    "ja": "{詳|くわ}しい{必要|ひつよう}{書類|しょるい}を{公式|こうしき}ページで{確認|かくにん}する",
+    "ja_easy": "{要|い}る{書類|しょるい}を{公式|こうしき}のページで{見|み}る",
+    "en": "Check the full document list on the official page"
+  },
+  "sr.docs.moreHint": {
+    "ja": "ページの{中|なか}の「{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}」を{見|み}てください",
+    "ja_easy": "ページの{中|なか}の「{在留期間更新許可申請|ざいりゅうきかんこうしんきょかしんせい}」を{見|み}てください",
+    "en": "Look for \"在留期間更新許可申請\" (Extension of Period of Stay) on the page"
+  },
+  "sr.docs.generalHint": {
+    "ja": "{入管|にゅうかん}のページで{自分|じぶん}の{在留|ざいりゅう}{資格|しかく}を{選|えら}び、「{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}」を{見|み}てください",
+    "ja_easy": "{入管|にゅうかん}のページで{自分|じぶん}の{在留資格|ざいりゅうしかく}を{選|えら}んでください",
+    "en": "Choose your status on the immigration page and look for \"在留期間更新許可申請\""
+  },
+  "sr.docs.next": {
+    "ja": "{書類|しょるい}を{見|み}た（つぎへ）",
+    "ja_easy": "{書類|しょるい}を{見|み}た（つぎへ）",
+    "en": "I have seen the documents (next)"
+  },
+  "sr.method.q": {
+    "ja": "どの{方法|ほうほう}で{申請|しんせい}しますか？",
+    "ja_easy": "どの{方法|ほうほう}で{出|だ}しますか？",
+    "en": "How will you apply?"
+  },
+  "sr.method.counter": {
+    "ja": "{入管|にゅうかん}の{窓口|まどぐち}",
+    "ja_easy": "{入管|にゅうかん}の{窓口|まどぐち}",
+    "en": "At the immigration counter"
+  },
+  "sr.method.online": {
+    "ja": "オンライン",
+    "ja_easy": "オンライン",
+    "en": "Online"
+  },
+  "sr.method.onlineClosed": {
+    "ja": "{今日|きょう}は{満了|まんりょう}{日|び}なので、オンラインでは{申請|しんせい}できません。",
+    "ja_easy": "{今日|きょう}は{終|お}わる{日|ひ}なので、オンラインではできません。",
+    "en": "Today is the expiry date, so you cannot apply online."
+  },
+  "sr.day.counter": {
+    "ja": "{入管|にゅうかん}へ{申請|しんせい}に{行|い}く{予定|よてい}{日|び}",
+    "ja_easy": "{入管|にゅうかん}へ{申請|しんせい}に{行|い}く{日|ひ}",
+    "en": "Day you will go to immigration to apply"
+  },
+  "sr.day.online": {
+    "ja": "オンラインで{申請|しんせい}する{予定|よてい}{日|び}",
+    "ja_easy": "オンラインで{申請|しんせい}する{日|ひ}",
+    "en": "Day you will apply online"
+  },
+  "sr.day.range": {
+    "ja": "{選|えら}べる{日|ひ}：{from}〜{to}",
+    "ja_easy": "{選|えら}べる{日|ひ}：{from}〜{to}",
+    "en": "You can choose {from} – {to}"
+  },
+  "sr.day.outside": {
+    "ja": "{前|まえ}に{決|き}めた{予定|よてい}{日|び}（{date}）は、{選|えら}べる{日|ひ}の{外|そと}です。{決|き}め{直|なお}してください。",
+    "ja_easy": "{前|まえ}に{決|き}めた{日|ひ}（{date}）は、{選|えら}べません。もう{一度|いちど}{決|き}めてください。",
+    "en": "The date you chose before ({date}) is no longer possible. Please choose again."
+  },
+  "sr.day.none": {
+    "ja": "この{方法|ほうほう}で{選|えら}べる{日|ひ}がありません。{入管|にゅうかん}の{窓口|まどぐち}に{至急|しきゅう}{確認|かくにん}してください。",
+    "ja_easy": "この{方法|ほうほう}で{選|えら}べる{日|ひ}がありません。すぐ{入管|にゅうかん}に{聞|き}いてください。",
+    "en": "No day is possible with this method. Contact the immigration office urgently."
+  },
+  "sr.planned": {
+    "ja": "{申請|しんせい}の{予定|よてい}{日|び}",
+    "ja_easy": "{申請|しんせい}する{日|ひ}",
+    "en": "Planned application day"
+  },
+  "sr.applied.btn": {
+    "ja": "{申請|しんせい}したと{記録|きろく}する",
+    "ja_easy": "{申請|しんせい}したと{記録|きろく}する",
+    "en": "Record that I applied"
+  },
+  "sr.applied.state": {
+    "ja": "{申請|しんせい}しました（{date}）。{結果|けっか}を{待|ま}っています。",
+    "ja_easy": "{申請|しんせい}しました（{date}）。{結果|けっか}を{待|ま}っています。",
+    "en": "You applied ({date}). Waiting for the result."
+  },
+  "sr.permit.btn": {
+    "ja": "{許可|きょか}が{出|で}たと{記録|きろく}する",
+    "ja_easy": "{許可|きょか}が{出|で}たと{記録|きろく}する",
+    "en": "Record that it was approved"
+  },
+  "sr.applied.undo": {
+    "ja": "{申請|しんせい}の{記録|きろく}を{取|と}り{消|け}す",
+    "ja_easy": "{申請|しんせい}の{記録|きろく}を{消|け}す",
+    "en": "Undo the application record"
+  },
+  "sr.warn.soon": {
+    "ja": "{在留|ざいりゅう}{期限|きげん}が{近|ちか}づいています。できるだけ{早|はや}めに{申請|しんせい}しましょう。",
+    "ja_easy": "{在留期限|ざいりゅうきげん}が{近|ちか}づいています。できるだけ{早|はや}めに{申請|しんせい}しましょう。",
+    "en": "Your period of stay ends soon. Please apply as early as you can."
+  },
+  "sr.warn.week": {
+    "ja": "{在留|ざいりゅう}{期限|きげん}まであと{n}{日|にち}です。できるだけ{早|はや}く{申請|しんせい}することをおすすめします。{必要|ひつよう}{書類|しょるい}と{入管|にゅうかん}の{受付|うけつけ}{日|び}を{確認|かくにん}してください。",
+    "ja_easy": "{在留期限|ざいりゅうきげん}まであと{n}{日|にち}です。できるだけ{早|はや}く{申請|しんせい}してください。{書類|しょるい}と{入管|にゅうかん}の{受付|うけつけ}の{日|ひ}を{確|たし}かめてください。",
+    "en": "{n} days left until your period of stay ends. We recommend applying as soon as possible. Check the documents and the days immigration accepts applications."
+  },
+  "sr.warn.today": {
+    "ja": "{今日|きょう}が{在留|ざいりゅう}{期限|きげん}です。オンライン{申請|しんせい}はできません。{窓口|まどぐち}での{申請|しんせい}について{至急|しきゅう}{確認|かくにん}してください。",
+    "ja_easy": "{今日|きょう}が{在留期限|ざいりゅうきげん}です。オンラインではできません。{窓口|まどぐち}での{申請|しんせい}について、すぐ{確|たし}かめてください。",
+    "en": "Today is the last day of your period of stay. You cannot apply online. Check urgently about applying at the counter."
+  },
+  "sr.warn.expired": {
+    "ja": "{在留|ざいりゅう}{期限|きげん}が{過|す}ぎた{場合|ばあい}は、{速|すみ}やかに{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}へ{相談|そうだん}してください。ただし、{期限|きげん}{前|まえ}に{更新|こうしん}・{変更|へんこう}{申請|しんせい}を{済|す}ませている{場合|ばあい}など、{特例|とくれい}{期間|きかん}が{適用|てきよう}されることがあります。",
+    "ja_easy": "{在留期限|ざいりゅうきげん}が{過|す}ぎたら、すぐ{入管|にゅうかん}に{相談|そうだん}してください。でも、{期限|きげん}の{前|まえ}に{申請|しんせい}していれば、「{特例期間|とくれいきかん}」になることがあります。",
+    "en": "If your period of stay has passed, consult the immigration bureau promptly. However, the special period may apply, for example if you applied for an extension or change before it ended."
+  },
+  "sr.notThis": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}ではありません",
+    "ja_easy": "{在留期間|ざいりゅうきかん}の{更新|こうしん}ではありません",
+    "en": "This is not a period-of-stay extension"
+  },
+  "sr.link.card": {
+    "ja": "{在留|ざいりゅう}カードの{有効|ゆうこう}{期間|きかん}の{更新|こうしん}{申請|しんせい}（{入管|にゅうかん}）",
+    "ja_easy": "{在留|ざいりゅう}カードの{更新|こうしん}（{入管|にゅうかん}）",
+    "en": "Renewal of the residence card validity (Immigration Services Agency)"
+  },
+  "sr.link.spc": {
+    "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}{申請|しんせい}（{入管|にゅうかん}）",
+    "ja_easy": "{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}（{入管|にゅうかん}）",
+    "en": "Renewal of the Special Permanent Resident Certificate (Immigration Services Agency)"
+  },
+  "sr.link.general": {
+    "ja": "{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}（{入管|にゅうかん}）",
+    "ja_easy": "{在留期間|ざいりゅうきかん}の{更新|こうしん}（{入管|にゅうかん}）",
+    "en": "Extension of period of stay (Immigration Services Agency)"
+  },
+  "sr.link.status": {
+    "ja": "{在留|ざいりゅう}{資格|しかく}の{一覧|いちらん}（{入管|にゅうかん}）",
+    "ja_easy": "{在留資格|ざいりゅうしかく}の{一覧|いちらん}（{入管|にゅうかん}）",
+    "en": "List of statuses of residence (Immigration Services Agency)"
+  },
+  "sr.link.change": {
+    "ja": "{在留|ざいりゅう}{資格|しかく}{変更|へんこう}{許可|きょか}{申請|しんせい}（{入管|にゅうかん}）",
+    "ja_easy": "{在留資格|ざいりゅうしかく}の{変更|へんこう}（{入管|にゅうかん}）",
+    "en": "Change of status of residence (Immigration Services Agency)"
+  },
+  "sr.link.tokurei": {
+    "ja": "{特例|とくれい}{期間|きかん}とは？（{入管|にゅうかん}）",
+    "ja_easy": "{特例期間|とくれいきかん}（{入管|にゅうかん}）",
+    "en": "What is the special period? (Immigration Services Agency)"
+  },
+  "sr.link.online": {
+    "ja": "オンライン{申請|しんせい}のQ&A（{入管|にゅうかん}）",
+    "ja_easy": "オンラインの{質問|しつもん}と{答|こた}え（{入管|にゅうかん}）",
+    "en": "Online application Q&A (Immigration Services Agency)"
+  },
+  "sr.exp.title": {
+    "ja": "{在留|ざいりゅう}{期限|きげん}が{過|す}ぎています",
+    "ja_easy": "{在留期限|ざいりゅうきげん}が{過|す}ぎています",
+    "en": "Your period of stay has passed"
+  },
+  "sr.exp.q": {
+    "ja": "{在留|ざいりゅう}{期限|きげん}が{切|き}れる{前|まえ}に、{更新|こうしん}や{変更|へんこう}の{申請|しんせい}をしましたか？",
+    "ja_easy": "{在留期限|ざいりゅうきげん}が{終|お}わる{前|まえ}に、{更新|こうしん}や{変更|へんこう}の{申請|しんせい}をしましたか？",
+    "en": "Did you apply for an extension or change before your period of stay ended?"
+  },
+  "sr.exp.applied": {
+    "ja": "はい、{申請|しんせい}して{結果|けっか}を{待|ま}っています",
+    "ja_easy": "はい、{申請|しんせい}して{結果|けっか}を{待|ま}っています",
+    "en": "Yes, I applied and am waiting for the result"
+  },
+  "sr.exp.not": {
+    "ja": "いいえ、まだ{申請|しんせい}していません",
+    "ja_easy": "いいえ、まだ{申請|しんせい}していません",
+    "en": "No, I have not applied yet"
+  },
+  "sr.exp.permitted": {
+    "ja": "すでに{新|あたら}しい{許可|きょか}を{受|う}けました",
+    "ja_easy": "もう{新|あたら}しい{許可|きょか}をもらいました",
+    "en": "I have already received a new permission"
+  },
+  "sr.exp.unknown": {
+    "ja": "わかりません",
+    "ja_easy": "わかりません",
+    "en": "Not sure"
+  },
+  "sr.exp.consultTitle": {
+    "ja": "{早|はや}めに{入管|にゅうかん}へ{相談|そうだん}してください",
+    "ja_easy": "{早|はや}く{入管|にゅうかん}に{相談|そうだん}してください",
+    "en": "Please consult immigration soon"
+  },
+  "sr.exp.appliedTitle": {
+    "ja": "{申請|しんせい}{中|ちゅう}の{方|かた}へ",
+    "ja_easy": "{申請|しんせい}している{人|ひと}へ",
+    "en": "If you have applied"
+  },
+  "sr.exp.permittedBtn": {
+    "ja": "{新|あたら}しい{満了|まんりょう}{日|び}を{入|い}れる",
+    "ja_easy": "{新|あたら}しい{満了日|まんりょうび}を{入|い}れる",
+    "en": "Enter the new expiry date"
+  },
+  "sr.exp.answer": {
+    "ja": "{答|こた}えを{変|か}える",
+    "ja_easy": "{答|こた}えを{変|か}える",
+    "en": "Change the answer"
+  },
+  "sr.exp.address": {
+    "ja": "{所在地|しょざいち}",
+    "ja_easy": "{場所|ばしょ}",
+    "en": "Address"
+  },
+  "sr.link.nagoya": {
+    "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}（{入管|にゅうかん}）",
+    "ja_easy": "{名古屋|なごや}の{入管|にゅうかん}のページ",
+    "en": "Nagoya Regional Immigration Services Bureau (official page)"
+  },
+  "sr.link.region": {
+    "ja": "{全国|ぜんこく}の{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{住|す}んでいる{所|ところ}の{入管|にゅうかん}を{探|さが}す）",
+    "ja_easy": "{全国|ぜんこく}の{入管|にゅうかん}（{住|す}んでいる{所|ところ}の{入管|にゅうかん}を{探|さが}す）",
+    "en": "Regional immigration bureaus in Japan (find the one for your address)"
   }
 }

@@ -241,7 +241,7 @@ export function hoursLine(h: PlaceHours): Text {
 }
 
 /** 開いている時間の1行。年末年始・日曜窓口などはシートへ（A-4） */
-function HoursLine({ h }: { h: PlaceHours }) {
+export function HoursLine({ h }: { h: PlaceHours }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="sub">

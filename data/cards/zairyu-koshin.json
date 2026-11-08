@@ -24,9 +24,9 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "この{案内|あんない}は、{在留|ざいりゅう}{期間|きかん}が{決|き}まっている{人|ひと}{向|む}けです。{永住者|えいじゅうしゃ}・{特別|とくべつ}{永住者|えいじゅうしゃ}の{人|ひと}は、{入管|にゅうかん}や{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "この{案内|あんない}は、{在留|ざいりゅう}{期間|きかん}が{決|き}まっている{人|ひと}のためのものです。{永住者|えいじゅうしゃ}・{特別永住者|とくべつえいじゅうしゃ}は、{入管|にゅうかん}や{区役所|くやくしょ}で{聞|き}きます（{要確認|ようかくにん}）。",
-      "en": "This guide is for people whose period of stay is fixed. Permanent Residents and Special Permanent Residents should check with immigration or the ward office (to be checked)."
+      "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}は、{在留|ざいりゅう}{期間|きかん}が{決|き}まっている{人|ひと}の{手続|てつづ}きです。{永住|えいじゅう}{者|しゃ}・{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}は{在留|ざいりゅう}カードの{有効|ゆうこう}{期間|きかん}の{更新|こうしん}、{特別|とくべつ}{永住|えいじゅう}{者|しゃ}は{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{更新|こうしん}です（{下|した}の{案内|あんない}。{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{在留期間|ざいりゅうきかん}の{更新|こうしん}は、{在留期間|ざいりゅうきかん}が{決|き}まっている{人|ひと}の{手続|てつづ}きです。{永住者|えいじゅうしゃ}などは、カードの{更新|こうしん}です（{下|した}の{案内|あんない}。{要確認|ようかくにん}）。",
+      "en": "Extension of period of stay is for people with a fixed period. Permanent Residents and Highly Skilled Professional (ii) renew the residence card; Special Permanent Residents renew their certificate (see below; to be checked)."
     },
     "check_at_office": {
       "ja": "{在留|ざいりゅう}{資格|しかく}がわからないので、{出|だ}すか{言|い}い{切|き}れません。{在留|ざいりゅう}カードの{在留|ざいりゅう}{期間|きかん}の{欄|らん}を{見|み}るか、{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
@@ -206,5 +206,6 @@
       "url": "https://www.moj.go.jp/isa/applications/procedures/16-3.html",
       "source_id": "B-moj-koshin"
     }
-  ]
+  ],
+  "flow": "stay_renew"
 }

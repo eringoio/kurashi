@@ -1,6 +1,7 @@
 /* 開いたときの入口の出し分け（SPEC 6A.1「開いたときの入口の出し分け」）。
    上から順に判定し、最初に当てはまったものを返す。画面の名前には依存しない。 */
 import { before, sameDay, type Ymd } from './date';
+import type { StayRecord } from './stayRenew';
 import { LEGACY_EVENT, LEGACY_ID, type Occurrence } from './occurrence';
 
 /** 途中の手順（9.9 の resume） */
@@ -15,6 +16,8 @@ export interface PlanRecord {
   visit_told_on?: Ymd;
   /** 手続きの中の物ごとの状態（カードの parts。財布の紛失：キャッシュカード・クレジットカードの停止。v0.5.28） */
   parts?: Record<string, PlanRecord['status']>;
+  /** 在留期間の更新の流れの答え（満了日・在留資格・書類・方法。SPEC 6A.18 v0.5.29）。予定日は planned_on、申請したは status=submitted、許可が出たは done */
+  stay?: StayRecord;
 }
 
 export interface EntryInput {

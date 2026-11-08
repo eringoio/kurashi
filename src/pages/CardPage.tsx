@@ -22,6 +22,8 @@ import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
 import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { useSeen } from '../ui/Words';
+import { StayRenewFlow } from '../ui/StayRenew';
+import { stayExpired } from '../core/stayRenew';
 import '../styles/card.css';
 
 type Mode = { kind: 'main' } | { kind: 'pick' } | { kind: 'redo'; q: Question } | { kind: 'done' };
@@ -76,6 +78,8 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
   const k = stateKey(c);
   const canPlan = c.dayRule.kind !== 'no_day' && (c.state === 'shown' || c.state === 'check_at_office') && c.section !== 'done' && c.section !== 'wait';
   const isGuide = c.card.kind === 'guide';
+  // 決まった流れのある手続き（在留期間の更新。6A.18）：質問・できることの所を、その流れにする
+  const isFlow = c.card.flow === 'stay_renew';
   const recordDone = () => { void g.setPlan(c.card.id, { status: 'done' }); onLive(L('card.recordedDone')); setLast(null); setMode({ kind: 'done' }); };
   const urgent = toUrgent(c.card, recordDone);
   const urgentShown = !!urgent && c.plan?.status !== 'done' && c.questions.length === 0;
@@ -145,7 +149,14 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       {c.card.reminder && c.state !== 'excluded' && c.questions.length === 0 && <Reminder card={c.card} />}
       <Notes c={c} where="page" />
 
-      {c.questions.length > 0 ? (
+      {isFlow ? (
+        <>
+          <StayRenewFlow c={c} g={g} onPermit={recordDone} onLive={onLive} />
+          {c.plan?.status === 'done' && (
+            <button type="button" className="k-answer" onClick={() => { void g.setPlan(c.card.id, { status: 'submitted' }); onLive(L('card.recordedUndone')); }}><Bi phrase k="card.undone" /></button>
+          )}
+        </>
+      ) : c.questions.length > 0 ? (
         // 1画面に1つの判断（15.2）：確かめの質問があるときは、それだけを出す
         <>
           <QuestionBlock key={c.questions[0].id} q={c.questions[0]} onPick={(v) => void answer(c.questions[0], v)} />
@@ -186,7 +197,8 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
           ))}
         </ul>
       )}
-      {methods.length > 0 && c.questions.length === 0 && <MethodList methods={methods} />}
+      {/* 在留期限を過ぎたときは、オンラインを含む方法の一覧を出さない（期限後のオンライン申請へ誘導しない。6A.18） */}
+      {methods.length > 0 && (c.questions.length === 0 || isFlow) && !(isFlow && stayExpired(c.plan?.stay, g.today, c.plan?.status)) && <MethodList methods={methods} />}
       {alts.length > 0 && (
         <div className="k-notice" role="note">
           <p className="label"><One k="ev.alt" />{alts.some((a) => a.unverified) && <> <span className="pt-tag"><One k="pat.confirm" /></span></>}</p>
@@ -195,7 +207,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
       )}
       {/* 大事な事実と出典はページの中に（11/8：くわしくのシートをやめた）。質問があるときは質問だけにする（1画面に1つの判断） */}
       {c.questions.length === 0 && methods.length === 0 && !isGuide && <p className="sub"><Bi t={c.card.summary} /></p>}
-      {c.questions.length === 0 && <CardFacts c={c} where={!isGuide} />}
+      {(c.questions.length === 0 || isFlow) && !(isFlow && stayExpired(c.plan?.stay, g.today, c.plan?.status)) && <CardFacts c={c} where={!isGuide} />}
       <CardSources c={c} />
     </>
   );

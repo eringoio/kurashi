@@ -36,7 +36,8 @@ export type DayTag = 'today' | 'holiday' | 'closed' | 'blocked' | 'past_deadline
 export interface DayInfo { day: Ymd; selectable: boolean; tags: DayTag[]; holiday?: string }
 
 /** 日ごとの状態。min：前の手続きの日（これより前は選べない）。deadline：確認済みの期限の日（過ぎても選べる） */
-export function dayInfo(x: { day: Ymd; today: Ymd; min?: Ymd | null; deadline?: Ymd | null; hours?: Hours; holidays: Record<string, string> }): DayInfo {
+/** max：これより後は選べない（在留期間の満了日など。期限を過ぎた日として示す。v0.5.29） */
+export function dayInfo(x: { day: Ymd; today: Ymd; min?: Ymd | null; max?: Ymd | null; deadline?: Ymd | null; hours?: Hours; holidays: Record<string, string> }): DayInfo {
   const tags: DayTag[] = [];
   if (x.day === x.today) tags.push('today');
   const hol = x.holidays[x.day];
@@ -46,15 +47,18 @@ export function dayInfo(x: { day: Ymd; today: Ymd; min?: Ymd | null; deadline?: 
   if (o === 'unknown') tags.push('unknown_hours');
   const blocked = !!x.min && x.day < x.min;
   if (blocked) tags.push('blocked');
-  if (x.deadline && x.day > x.deadline) tags.push('past_deadline');
-  return { day: x.day, selectable: x.day >= x.today && !blocked && o !== 'closed', tags, holiday: hol };
+  const over = !!x.max && x.day > x.max;
+  if ((x.deadline && x.day > x.deadline) || over) tags.push('past_deadline');
+  return { day: x.day, selectable: x.day >= x.today && !blocked && !over && o !== 'closed', tags, holiday: hol };
 }
 
 const addDays = (d: Ymd, n: number): Ymd => new Date(Date.parse(d + 'T00:00:00Z') + n * 86_400_000).toISOString().slice(0, 10);
 
 /** 今日から weeks 週分のカレンダー（日曜始まり）。今日より前の日は null（空のます） */
-export function monthGrid(today: Ymd, weeks = 5): (Ymd | null)[][] {
-  const start = addDays(today, -weekday(today));
+/** from：この日の週から始める（選べる最初の日が先のとき。v0.5.29） */
+export function monthGrid(today: Ymd, weeks = 5, from?: Ymd | null): (Ymd | null)[][] {
+  const first = from && from > today ? from : today;
+  const start = addDays(first, -weekday(first));
   return Array.from({ length: weeks }, (_, w) => Array.from({ length: 7 }, (_, i) => {
     const d = addDays(start, w * 7 + i);
     return d < today ? null : d;

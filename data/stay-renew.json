@@ -1,0 +1,537 @@
+{
+  "$comment": "在留期間の更新の流れ（SPEC 6A.18 v0.5.29。src/core/stayRenew.ts・src/ui/StayRenew.tsx）。在留資格の選択肢・基本の書類・分かれ道の事実。すべて出典つき（sources.json）。2026-11-08 に公式の本文で確かめた（needs_check。作者の確認待ち）。追加の書類は一律に必須にしない（公式のページへ）。",
+  "statuses": [
+    {
+      "id": "student",
+      "icon": "status-student",
+      "label": {
+        "ja": "{留学|りゅうがく}",
+        "ja_easy": "{留学|りゅうがく}",
+        "en": "Student (留学)"
+      },
+      "docs_source": "isa-status-student"
+    },
+    {
+      "id": "dependent",
+      "icon": "status-family",
+      "label": {
+        "ja": "{家族|かぞく}{滞在|たいざい}",
+        "ja_easy": "{家族滞在|かぞくたいざい}",
+        "en": "Dependent (家族滞在)"
+      },
+      "docs_source": "isa-status-dependent"
+    },
+    {
+      "id": "engineer",
+      "icon": "status-work",
+      "label": {
+        "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}",
+        "ja_easy": "{技術|ぎじゅつ}・{人文知識|じんぶんちしき}・{国際業務|こくさいぎょうむ}",
+        "en": "Engineer / Specialist in Humanities / International Services"
+      },
+      "docs_source": "isa-status-gijinkoku"
+    },
+    {
+      "id": "work_other",
+      "icon": "status-work",
+      "label": {
+        "ja": "ほかの{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}（{特定|とくてい}{技能|ぎのう}・{技能|ぎのう}{実習|じっしゅう}・{技能|ぎのう}など）",
+        "ja_easy": "ほかの{仕事|しごと}の{在留資格|ざいりゅうしかく}（{特定技能|とくていぎのう}・{技能実習|ぎのうじっしゅう}など）",
+        "en": "Another work status (Specified Skilled Worker, Technical Intern Training, Skilled Labor, etc.)"
+      }
+    },
+    {
+      "id": "spouse",
+      "icon": "status-spouse",
+      "label": {
+        "ja": "{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}・{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}",
+        "ja_easy": "{日本人|にほんじん}の{配偶者等|はいぐうしゃとう}・{永住者|えいじゅうしゃ}の{配偶者等|はいぐうしゃとう}",
+        "en": "Spouse or Child of Japanese National / of Permanent Resident"
+      }
+    },
+    {
+      "id": "long_term",
+      "icon": "status-longterm",
+      "label": {
+        "ja": "{定住|ていじゅう}{者|しゃ}",
+        "ja_easy": "{定住者|ていじゅうしゃ}",
+        "en": "Long-Term Resident (定住者)"
+      }
+    },
+    {
+      "id": "designated",
+      "icon": "status-other",
+      "label": {
+        "ja": "{特定|とくてい}{活動|かつどう}",
+        "ja_easy": "{特定活動|とくていかつどう}",
+        "en": "Designated Activities (特定活動)"
+      }
+    },
+    {
+      "id": "cultural",
+      "icon": "status-other",
+      "label": {
+        "ja": "{文化|ぶんか}{活動|かつどう}",
+        "ja_easy": "{文化活動|ぶんかかつどう}",
+        "en": "Cultural Activities (文化活動)"
+      }
+    },
+    {
+      "id": "permanent",
+      "icon": "status-permanent",
+      "label": {
+        "ja": "{永住|えいじゅう}{者|しゃ}",
+        "ja_easy": "{永住者|えいじゅうしゃ}",
+        "en": "Permanent Resident (永住者)"
+      }
+    },
+    {
+      "id": "hsp2",
+      "icon": "status-work",
+      "label": {
+        "ja": "{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}",
+        "ja_easy": "{高度専門職|こうどせんもんしょく}2{号|ごう}",
+        "en": "Highly Skilled Professional (ii) (高度専門職2号)"
+      }
+    },
+    {
+      "id": "special_permanent",
+      "icon": "status-permanent",
+      "label": {
+        "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}",
+        "ja_easy": "{特別永住者|とくべつえいじゅうしゃ}",
+        "en": "Special Permanent Resident (特別永住者)"
+      }
+    },
+    {
+      "id": "short_stay",
+      "icon": "status-other",
+      "label": {
+        "ja": "{短期|たんき}{滞在|たいざい}",
+        "ja_easy": "{短期滞在|たんきたいざい}",
+        "en": "Temporary Visitor (短期滞在)"
+      }
+    },
+    {
+      "id": "other",
+      "icon": "status-other",
+      "label": {
+        "ja": "そのほかの{在留|ざいりゅう}{資格|しかく}",
+        "ja_easy": "ほかの{在留資格|ざいりゅうしかく}",
+        "en": "Another status"
+      }
+    },
+    {
+      "id": "unknown",
+      "icon": "status-other",
+      "label": {
+        "ja": "わからない",
+        "ja_easy": "わかりません",
+        "en": "Not sure"
+      }
+    }
+  ],
+  "docs": [
+    {
+      "id": "form",
+      "text": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}{書|しょ}（1{通|つう}）",
+        "ja_easy": "{在留期間更新許可申請書|ざいりゅうきかんこうしんきょかしんせいしょ}（1{通|つう}）",
+        "en": "Application for Extension of Period of Stay (1 copy)"
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-status-student",
+          "isa-status-dependent",
+          "isa-status-gijinkoku"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間更新許可申請書　１通"
+      }
+    },
+    {
+      "id": "photo",
+      "text": {
+        "ja": "{写真|しゃしん}1{枚|まい}（{縦|たて}4cm×{横|よこ}3cm。{出|だ}す{日|ひ}の{前|まえ}6か{月|げつ}{以内|いない}に{撮|と}ったもの）",
+        "ja_easy": "{写真|しゃしん}1{枚|まい}（たて4cm×よこ3cm。6か{月|げつ}{以内|いない}にとったもの）",
+        "en": "One photo (4 cm × 3 cm, taken within 6 months before you apply)"
+      },
+      "note": {
+        "ja": "{在留|ざいりゅう}カードを{受|う}け{取|と}る{日|ひ}に1{歳|さい}になっていない{人|ひと}は、{写真|しゃしん}は{要|い}りません。2026{年|ねん}6{月|つき}14{日|にち}から、1{歳|さい}{以上|いじょう}16{歳|さい}{未満|みまん}の{人|ひと}も{写真|しゃしん}が{要|い}ります。ほかに{要|い}らない{場合|ばあい}があるかは、{入管|にゅうかん}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードをもらう{日|ひ}に1さいになっていない{人|ひと}は、{写真|しゃしん}は{要|い}りません。2026{年|ねん}6{月|がつ}14{日|にち}から、1さい{以上|いじょう}16さい{未満|みまん}の{人|ひと}も{写真|しゃしん}が{要|い}ります（{要確認|ようかくにん}）。",
+        "en": "No photo is needed if the person is under 1 year old on the day the residence card is issued. From 14 June 2026, people aged 1 to 15 also need a photo. Ask immigration whether other cases need no photo (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-status-dependent",
+          "isa-photo-spec",
+          "isa-photo-2026"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留カードの交付の日において年齢が１歳に満たない方は、写真の提出は不要です"
+      }
+    },
+    {
+      "id": "passport",
+      "text": {
+        "ja": "パスポート（{窓口|まどぐち}で{見|み}せる）",
+        "ja_easy": "パスポート（{見|み}せる）",
+        "en": "Passport (show it)"
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-status-student",
+          "isa-status-dependent",
+          "isa-status-gijinkoku"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "パスポート及び在留カード　提示"
+      }
+    },
+    {
+      "id": "card",
+      "text": {
+        "ja": "{在留|ざいりゅう}カード（{窓口|まどぐち}で{見|み}せる）",
+        "ja_easy": "{在留|ざいりゅう}カード（{見|み}せる）",
+        "en": "Residence card (show it)"
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-status-student",
+          "isa-status-dependent",
+          "isa-status-gijinkoku"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "パスポート及び在留カード　提示"
+      }
+    },
+    {
+      "id": "extra",
+      "text": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}や{事情|じじょう}に{応|おう}じた{書類|しょるい}（{学校|がっこう}・{勤|つと}め{先|さき}・{家族|かぞく}・{収入|しゅうにゅう}など）",
+        "ja_easy": "{在留資格|ざいりゅうしかく}や{事情|じじょう}で{違|ちが}う{書類|しょるい}（{学校|がっこう}・{会社|かいしゃ}・{家族|かぞく}・{収入|しゅうにゅう}など）",
+        "en": "Documents for your status and situation (school, employer, family, income, etc.)"
+      },
+      "note": {
+        "ja": "{人|ひと}によって{違|ちが}います。{公式|こうしき}のページで{確|たし}かめます。",
+        "ja_easy": "{人|ひと}によって{違|ちが}います。{公式|こうしき}のページで{確|たし}かめます。",
+        "en": "They differ from person to person. Check the official page."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "日本での活動内容（在留資格）に応じた申請書・資料を提出いただきます。"
+      }
+    }
+  ],
+  "facts": {
+    "expiry_hint": {
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの{表|おもて}の「{在留|ざいりゅう}{期間|きかん}（{満了|まんりょう}{日|び}）」の{日付|ひづけ}です。カードの{有効|ゆうこう}{期間|きかん}（「このカードは…まで{有効|ゆうこう}です」）とは{違|ちが}うので、{気|き}をつけます。",
+        "ja_easy": "{在留|ざいりゅう}カードの「{在留期間|ざいりゅうきかん}（{満了日|まんりょうび}）」の{日|ひ}です。「このカードは…まで{有効|ゆうこう}です」の{日|ひ}ではありません。",
+        "en": "Use the date in “Period of stay (date of expiration)” on the front of your residence card. It is different from the card’s validity date (“This card is valid until …”)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-card-fields"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間（満了日）"
+      }
+    },
+    "open_long": {
+      "text": {
+        "ja": "6か{月|げつ}{以上|いじょう}の{在留|ざいりゅう}{期間|きかん}がある{人|ひと}は、{満了|まんりょう}の3か{月|げつ}{前|まえ}から{申請|しんせい}できます。",
+        "ja_easy": "{在留期間|ざいりゅうきかん}が6か{月|げつ}{以上|いじょう}の{人|ひと}は、{終|お}わる3か{月|げつ}{前|まえ}から{申請|しんせい}できます。",
+        "en": "If your period of stay is 6 months or longer, you can apply from 3 months before it ends."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間の満了する日以前（６か月以上の在留期間を有する者にあっては在留期間の満了する３か月前から。）"
+      }
+    },
+    "open_short": {
+      "text": {
+        "ja": "6か{月|げつ}より{短|みじか}い・わからない{人|ひと}は、{満了|まんりょう}{日|び}までに{申請|しんせい}します。いつから{受|う}け{付|つ}けるかは{入管|にゅうかん}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "6か{月|げつ}より{短|みじか}い{人|ひと}・わからない{人|ひと}は、{終|お}わる{日|ひ}までに{申請|しんせい}します。いつから{出|だ}せるかは{入管|にゅうかん}に{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "If your period is shorter than 6 months or you are not sure, apply by the expiry date. Ask immigration from when they accept it (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間の満了する日以前"
+      }
+    },
+    "advised": {
+      "text": {
+        "ja": "{入管|にゅうかん}は、{満了|まんりょう}の3か{月|げつ}{前|まえ}から45{日|にち}{前|まえ}までに{申請|しんせい}するよう{求|もと}めています。",
+        "ja_easy": "{入管|にゅうかん}は、{終|お}わる3か{月|げつ}{前|まえ}から45{日|にち}{前|まえ}までに{出|だ}してください、と{言|い}っています。",
+        "en": "Immigration asks you to apply between 3 months and 45 days before expiry."
+      },
+      "evidence": {
+        "source_ids": [
+          "IA-moj-mynumber-tokurei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間の満了する３か月前（注２）から４５日前までの申請に努めてください。"
+      }
+    },
+    "where": {
+      "text": {
+        "ja": "{区役所|くやくしょ}ではありません。{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{名古屋|なごや}{市|し}なら{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}）で{申請|しんせい}します。",
+        "ja_easy": "{区役所|くやくしょ}ではありません。{入管|にゅうかん}（{名古屋|なごや}{出入国在留管理局|しゅつにゅうこくざいりゅうかんりきょく}）で{申請|しんせい}します。",
+        "en": "Not the ward office. Apply at the regional immigration office for your address (for Nagoya City: Nagoya Regional Immigration Services Bureau)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "住居地を管轄する地方出入国在留管理官署"
+      }
+    },
+    "online": {
+      "text": {
+        "ja": "オンラインは24{時間|じかん}{受|う}け{付|つ}けます。{満了|まんりょう}{日|び}の{当日|とうじつ}と、{満了|まんりょう}{日|び}を{過|す}ぎた{後|のち}はできません。{外国|がいこく}から・{再|さい}{入国|にゅうこく}{許可|きょか}で{出国|しゅっこく}{中|ちゅう}もできません。{使|つか}う{条件|じょうけん}は{入管|にゅうかん}のページで{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "オンラインは24{時間|じかん}{出|だ}せます。{終|お}わる{日|ひ}の{当日|とうじつ}と、{過|す}ぎた{後|あと}はできません。{外国|がいこく}からもできません（{要確認|ようかくにん}）。",
+        "en": "Online is open 24 hours. You cannot apply online on the expiry day or after it, from abroad, or while out of Japan on a re-entry permit. Check the conditions on the immigration page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-online-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期限の最終日（在留期間の満了日の当日）に、オンラインで申請することはできません。"
+      }
+    },
+    "designated": {
+      "text": {
+        "ja": "{特定|とくてい}{活動|かつどう}は、{指定|してい}{書|しょ}（パスポートに{付|つ}いた{紙|かみ}）に{書|か}かれた{活動|かつどう}によって、{更新|こうしん}できるかと{要|い}る{書類|しょるい}が{違|ちが}います。{指定|してい}{書|しょ}を{見|み}て、{入管|にゅうかん}で{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{特定活動|とくていかつどう}は、{指定書|していしょ}（パスポートについた{紙|かみ}）の{内容|ないよう}で、{更新|こうしん}できるか・{書類|しょるい}が{違|ちが}います。{入管|にゅうかん}に{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "For Designated Activities, whether you can renew and which documents you need depend on the activity in your designation paper (attached to your passport). Check with immigration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin",
+          "isa-status-list"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "現に有する在留資格の活動を継続しようとする外国人"
+      }
+    },
+    "change": {
+      "text": {
+        "ja": "これからの{活動|かつどう}が{今|いま}の{在留|ざいりゅう}{資格|しかく}と{違|ちが}うとき（{卒業|そつぎょう}して{就職|しゅうしょく}するなど）は、{更新|こうしん}ではなく{在留|ざいりゅう}{資格|しかく}{変更|へんこう}{許可|きょか}{申請|しんせい}です。",
+        "ja_easy": "これからすることが{今|いま}の{在留資格|ざいりゅうしかく}と{違|ちが}うとき（{卒業|そつぎょう}して{働|はたら}くなど）は、{更新|こうしん}ではなく「{在留資格|ざいりゅうしかく}の{変更|へんこう}」です。",
+        "en": "If your activity will change (for example, you graduate and start work), apply for a change of status, not an extension."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin",
+          "B-moj-shikaku-henko"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "現に有する在留資格の活動を継続しようとする外国人"
+      }
+    },
+    "card": {
+      "text": {
+        "ja": "{永住|えいじゅう}{者|しゃ}・{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}の{人|ひと}に、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{有効|ゆうこう}{期間|きかん}の{更新|こうしん}を、カードの{有効|ゆうこう}{期間|きかん}が{終|お}わる3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までに、{入管|にゅうかん}で{申請|しんせい}します。{手数料|てすうりょう}はかかりません。オンラインではできません。",
+        "ja_easy": "{永住者|えいじゅうしゃ}・{高度専門職|こうどせんもんしょく}2{号|ごう}の{人|ひと}は、{在留期間|ざいりゅうきかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{有効期間|ゆうこうきかん}が{終|お}わる3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までに、{入管|にゅうかん}でカードを{更新|こうしん}します。お{金|かね}はかかりません。",
+        "en": "Permanent Residents and Highly Skilled Professional (ii) have no period-of-stay renewal. Renew the residence card itself at immigration, from 3 months before the card’s validity date until that date. No fee. Not available online."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-card-renewal",
+          "isa-online-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "現に有する在留カードの有効期間の満了日の３か月前から有効期間の満了日まで"
+      }
+    },
+    "spc": {
+      "text": {
+        "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}は、{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}です。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{特別永住者|とくべつえいじゅうしゃ}は、{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}です。{区役所|くやくしょ}で{申請|しんせい}します（{要確認|ようかくにん}）。",
+        "en": "Special Permanent Residents renew the Special Permanent Resident Certificate. Apply at your ward office (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-spc-renewal"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    "short": {
+      "text": {
+        "ja": "{短期|たんき}{滞在|たいざい}の{更新|こうしん}は、ふつうの{更新|こうしん}と{扱|あつか}いが{違|ちが}います。オンラインではできません。{入管|にゅうかん}の{案内|あんない}を{見|み}て、{入管|にゅうかん}に{確認|かくにん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{短期滞在|たんきたいざい}の{更新|こうしん}は、ふつうの{更新|こうしん}と{違|ちが}います。オンラインではできません。{入管|にゅうかん}に{聞|き}きます（{要確認|ようかくにん}）。",
+        "en": "Extending a Temporary Visitor stay is handled differently from a normal renewal and cannot be done online. Check the immigration guide and ask immigration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-koshin",
+          "isa-online-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "「外交」、「短期滞在」若しくは「特定活動（出国準備期間）」の在留資格を有する方又は当該在留資格への変更を希望する方は対象外となります。"
+      }
+    },
+    "unknown": {
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの{表|おもて}の「{在留|ざいりゅう}{資格|しかく}」の{欄|らん}を{見|み}て、{選|えら}んでください。",
+        "ja_easy": "{在留|ざいりゅう}カードの「{在留資格|ざいりゅうしかく}」を{見|み}て、{選|えら}んでください。",
+        "en": "Look at “Status” on the front of your residence card and choose it."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-card-fields"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留資格"
+      }
+    },
+    "expired": {
+      "text": {
+        "ja": "{満了|まんりょう}{日|び}を{過|す}ぎると、オンラインでは{申請|しんせい}できません。",
+        "ja_easy": "{終|お}わる{日|ひ}を{過|す}ぎると、オンラインでは{出|だ}せません。",
+        "en": "After the expiry date you cannot apply online."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-online-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期限（又は出生等した日から３０日）を経過している場合は、オンラインで申請することはできません。"
+      }
+    },
+    "special_period": {
+      "text": {
+        "ja": "{満了|まんりょう}{日|び}までに{申請|しんせい}して、{満了|まんりょう}{日|び}までに{結果|けっか}が{出|で}ないときは、{結果|けっか}が{出|で}る{時|とき}か、{満了|まんりょう}{日|び}から2か{月|げつ}が{経|た}つ{日|ひ}の{終|お}わりの、{早|はや}いほうまで、{今|いま}の{在留|ざいりゅう}{資格|しかく}のまま{日本|にほん}にいられます（{特例|とくれい}{期間|きかん}）。{申請|しんせい}の{期限|きげん}がのびるわけではありません。",
+        "ja_easy": "{終|お}わる{日|ひ}までに{申請|しんせい}して、まだ{結果|けっか}が{出|で}ないときは、{結果|けっか}が{出|で}るまで（いちばん{長|なが}くて{終|お}わる{日|ひ}から2か{月|げつ}）、{日本|にほん}にいられます（{特例期間|とくれいきかん}）。{申請|しんせい}の{期限|きげん}がのびるのではありません。",
+        "en": "If you apply by the expiry date and no decision is made by then, you may stay with your current status until the decision or until the end of the day 2 months after expiry, whichever is earlier (special period). This does not extend the deadline to apply."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-tokurei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "当該処分がされる時又は在留期間の満了の日から二月が経過する日が終了する時のいずれか早い時までの間は"
+      }
+    },
+    "expired_consult": {
+      "text": {
+        "ja": "{在留|ざいりゅう}{期限|きげん}を{過|す}ぎている{可能|かのう}{性|せい}があります。できるだけ{早|はや}く、{管轄|かんかつ}の{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}に{連絡|れんらく}・{出頭|しゅっとう}し、{必要|ひつよう}な{手続|てつづ}きを{確認|かくにん}してください。パスポート、{在留|ざいりゅう}カード、{申請|しんせい}に{関|かん}する{書類|しょるい}などがあれば{持参|じさん}してください。{書類|しょるい}がすべてそろうまで{相談|そうだん}を{先延|さきの}ばしにしないでください。",
+        "ja_easy": "{在留期限|ざいりゅうきげん}を{過|す}ぎているかもしれません。できるだけ{早|はや}く{入管|にゅうかん}に{連絡|れんらく}して、{行|い}ってください。パスポート、{在留|ざいりゅう}カード、{申請|しんせい}の{書類|しょるい}があれば{持|も}っていきます。{書類|しょるい}が{全部|ぜんぶ}そろうまで{待|ま}たないでください。",
+        "en": "Your period of stay may have ended. As soon as possible, contact and visit the regional immigration bureau for your address and confirm what you need to do. Bring your passport, residence card and any application papers you have. Do not wait until you have every document."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-region-list"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "地方出入国在留管理官署"
+      }
+    },
+    "expired_applied": {
+      "text": {
+        "ja": "{在留|ざいりゅう}{期限|きげん}{前|まえ}に{更新|こうしん}・{変更|へんこう}{申請|しんせい}をしている{場合|ばあい}、{条件|じょうけん}によっては「{特例|とくれい}{期間|きかん}」が{適用|てきよう}されます。{申請|しんせい}{受付|うけつけ}の{記録|きろく}や{在留|ざいりゅう}カードなどを{確認|かくにん}してください。{特例|とくれい}{期間|きかん}が{適用|てきよう}されるかどうか、またいつまで{滞在|たいざい}できるかは{個別|こべつ}の{条件|じょうけん}によって{異|こと}なります。{不明|ふめい}な{場合|ばあい}は{入管|にゅうかん}に{確認|かくにん}してください。",
+        "ja_easy": "{在留期限|ざいりゅうきげん}の{前|まえ}に{申請|しんせい}していれば、「{特例期間|とくれいきかん}」になることがあります。{申請|しんせい}の{受付|うけつけ}の{記録|きろく}や{在留|ざいりゅう}カードを{見|み}てください。いつまでいられるかは、{人|ひと}によって{違|ちが}います。わからないときは{入管|にゅうかん}に{聞|き}いてください。",
+        "en": "If you applied for an extension or change before your period of stay ended, the \"special period\" may apply depending on the conditions. Check your application receipt record and residence card. Whether it applies and until when you may stay depend on your case. If unsure, ask immigration."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-tokurei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留カードを所持している方が、在留期間更新許可申請又は在留資格変更許可申請"
+      }
+    },
+    "expired_permitted": {
+      "text": {
+        "ja": "{新|あたら}しい{在留|ざいりゅう}カードの「{在留|ざいりゅう}{期間|きかん}（{満了|まんりょう}{日|び}）」を{確認|かくにん}して、この{画面|がめん}の{満了|まんりょう}{日|び}を{新|あたら}しい{日|ひ}に{変|か}えてください。",
+        "ja_easy": "{新|あたら}しい{在留|ざいりゅう}カードの「{在留期間|ざいりゅうきかん}（{満了日|まんりょうび}）」を{見|み}て、ここの{日|ひ}を{新|あたら}しい{日|ひ}に{変|か}えてください。",
+        "en": "Check “Period of stay (date of expiration)” on your new residence card and change the date here to the new one."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-card-fields"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "在留期間（満了日）"
+      }
+    }
+  },
+  "nagoya": {
+    "name": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{名古屋|なごや}{出入国在留管理局|しゅつにゅうこくざいりゅうかんりきょく}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "scope": {
+      "ja": "{愛知|あいち}{県|けん}に{住|す}んでいる{場合|ばあい}（{名古屋|なごや}{市|し}を{含|ふく}む）",
+      "ja_easy": "{愛知県|あいちけん}に{住|す}んでいる{人|ひと}（{名古屋市|なごやし}も）",
+      "en": "If you live in Aichi Prefecture (including Nagoya City)"
+    },
+    "address": {
+      "ja": "{名古屋|なごや}{市|し}{港区|みなとく}{正保町|しょうほちょう}5{丁目|ちょうめ}18{番|ばん}",
+      "ja_easy": "{名古屋市|なごやし}{港区|みなとく}{正保町|しょうほちょう}5{丁目|ちょうめ}18{番|ばん}",
+      "en": "5-18 Shoho-cho, Minato-ku, Nagoya"
+    },
+    "phones": [
+      {
+        "label": {
+          "ja": "{電話|でんわ}",
+          "ja_easy": "{電話|でんわ}",
+          "en": "Phone"
+        },
+        "value": "0570-052259"
+      },
+      {
+        "label": {
+          "ja": "IP{電話|でんわ}{等|とう}",
+          "ja_easy": "IP{電話|でんわ}など",
+          "en": "IP phone, etc."
+        },
+        "value": "052-217-8944"
+      }
+    ],
+    "evidence": {
+      "source_ids": [
+        "isa-nagoya"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "愛知県名古屋市港区正保町5-18"
+    }
+  }
+}

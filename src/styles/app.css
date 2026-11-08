@@ -712,3 +712,15 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .ov-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 8px 12px; border: 3px solid var(--orange); border-radius: var(--radius-md); background: var(--white); }
 .ov-strip__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 14px; }
 .ov-pin .link img { width: 28px; height: 28px; margin-right: 6px; flex: none; }
+
+/* 在留期間の更新の流れ（6A.18 v0.5.29）：答えた段の短い一覧と、書類のチェック */
+.sr-flow { display: flex; flex-direction: column; gap: 12px; }
+.sr-sum { margin: 0; display: flex; flex-direction: column; gap: 4px; border: 2px solid var(--line-dim); border-radius: var(--radius-md); padding: 8px 12px; background: var(--white); }
+.sr-sum__row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.sr-sum__row dt { font-size: var(--fs-small); color: var(--ink-muted); flex: 0 1 auto; }
+.sr-sum__row dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.sr-sum__row dd:last-child { margin-left: auto; }
+.sr-sum .link { min-height: var(--target-min); }
+.sr-docs { list-style: none; margin: 0; padding: 0; }
+.sr-docs .k-check { width: 100%; text-align: left; }
+.sr-docs__note { margin: 4px 0 0 8px; }

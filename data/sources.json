@@ -998,7 +998,7 @@
       "url": "https://www.moj.go.jp/isa/10_00270.html",
       "owner": "出入国在留管理庁（法務省）",
       "owner_type": "government",
-      "title": "マイナンバーカードの有効期限と在留期間の更新中の特例期間（出入国在留管理庁。ページの題名は要確認）",
+      "title": "在留期間内での変更又は更新許可を希望する場合について",
       "language": "ja"
     },
     {
@@ -2439,6 +2439,118 @@
       "owner": "厚生労働省（群馬労働局）",
       "owner_type": "government",
       "title": "解雇・退職に関する事項のあらまし",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-status-student",
+      "url": "https://www.moj.go.jp/isa/applications/status/student.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格「留学」",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-status-dependent",
+      "url": "https://www.moj.go.jp/isa/applications/status/dependent.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格「家族滞在」",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-status-gijinkoku",
+      "url": "https://www.moj.go.jp/isa/applications/status/gijinkoku.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格「技術・人文知識・国際業務」",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-card-renewal",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00011.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留カードの有効期間の更新申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-spc-renewal",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri10_00031.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "特別永住者証明書の有効期間の更新申請",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-tokurei",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/tokureikikan_00001.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "特例期間とは？",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-online-qa",
+      "url": "https://www.moj.go.jp/isa/applications/online/online-QA.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "オンラインでの申請手続に関するＱ＆Ａ",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-photo-spec",
+      "url": "https://www.moj.go.jp/isa/applications/status/photo_info_00002.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "提出写真の規格",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-photo-2026",
+      "url": "https://www.moj.go.jp/isa/11_00093.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "新様式の在留カード等交付に係る１歳以上１６歳未満の方の顔写真の提出について",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-fee-2026",
+      "url": "https://www.moj.go.jp/isa/01_00644.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "令和８年１０月１日付け在留許可手数料の額の改定等について",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-card-fields",
+      "url": "https://www.moj.go.jp/isa/content/930001578.pdf",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "「在留カード」及び「特別永住者証明書」の主な記載内容",
+      "language": "ja"
+    },
+    {
+      "source_id": "law-gyosei-kyujitsu",
+      "url": "https://laws.e-gov.go.jp/law/363AC0000000091",
+      "owner": "e-Gov 法令検索（デジタル庁）",
+      "owner_type": "government",
+      "title": "行政機関の休日に関する法律",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-nagoya",
+      "url": "https://www.moj.go.jp/isa/about/region/nagoya/",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "名古屋出入国在留管理局",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-region-list",
+      "url": "https://www.moj.go.jp/isa/about/region/",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "地方出入国在留管理官署",
       "language": "ja"
     }
   ]
