@@ -26,6 +26,7 @@ import { partViews, rollup, STATUS_OF, type Track } from '../core/overview';
 import { useSeen } from '../ui/Words';
 import { StayRenewFlow } from '../ui/StayRenew';
 import { stayExpired } from '../core/stayRenew';
+import { EventOutOfScope } from './EventEntry';
 import '../styles/card.css';
 
 type Mode = { kind: 'main' } | { kind: 'pick' } | { kind: 'redo'; q: Question } | { kind: 'done' };
@@ -51,6 +52,8 @@ export function CardPage({ id, onLive }: { id: string; onLive: (s: string) => vo
 export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: string; onLive: (s: string) => void }) {
   const ev = useEvent(eventId);
   if (!ev) return <NotFound />;
+  // 範囲外（例：日本国籍の人の在留期間の更新）の項目を直接開いたとき：対象外の案内と、もどる道
+  if (ev.out.scope === 'F') return <EventOutOfScope g={ev} />;
   const base = '/e/' + eventId;
   // 目的の手続き：入口の最初の質問（目的）に答えていれば、ここから選び直せる（v0.5.30。目的の画面へ直接来たとき）
   const q0 = ev.event.questions[0];
@@ -190,7 +193,8 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
     );
   }
 
-  const officialBtn = official && (
+  // 公式のページを決められない手続き（銀行の口座など）：リンクの代わりに、直接確認する案内の文
+  const officialBtn = c.card.official_link_none ? <p className="k-notice" role="note"><Bi t={c.card.official_link_none} /></p> : official && (
     <a className="k-answer k-official" href={official.url} target="_blank" rel="noopener noreferrer">
       <span className="pt-grow"><Bi phrase k="card.officialOpen" />{official.label ? <span className="pt-hint"><One t={official.label} /></span> : official.owner && <span className="pt-hint" lang="ja">{official.owner}</span>}</span>
       <ExtMark />
@@ -292,7 +296,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
 
 /** 確認の期限を過ぎた（12.3 の A2）：色＋縦の線＋文字の注記と、公式のページへのリンク */
 function Outdated({ c }: { c: CardView }) {
-  const src = c.card.evidence.source_ids.map((id) => DATA().sources.find((s) => s.source_id === id)).find((s) => s?.url);
+  const src = c.card.official_link_none ? undefined : c.card.evidence.source_ids.map((id) => DATA().sources.find((s) => s.source_id === id)).find((s) => s?.url);
   return (
     <div className="k-notice k-notice--warn" role="note">
       <Bi k="card.outdated" />

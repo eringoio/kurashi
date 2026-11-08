@@ -38,3 +38,46 @@ test('報告：どの画面にもボタンがある（v0.5.17。作者の画面�
   await page.getByRole('region', { name: '報告' }).getByRole('button', { name: '読む' }).click();
   await expect(page.getByRole('alert')).toContainText('401');
 });
+
+test('報告：1文字ずつ打ってもフォーカスが入力欄に残る。Escape で閉じると開いたボタンに戻る', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 700 });
+  await page.goto('/c/nagoya-tennyu-juukyochi');
+  const opener = page.getByRole('button', { name: 'まちがいを知らせる' });
+  await opener.click();
+  const ta = page.getByRole('dialog').getByLabel('違ったところ');
+  await ta.focus();
+  for (const ch of 'abcあい') {
+    await ta.pressSequentially(ch);
+    await expect(ta).toBeFocused();
+  }
+  await expect(ta).toHaveValue('abcあい');
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(opener).toBeFocused();
+});
+
+test('報告：HTML の 200（SPA の代わりの返事）は送れたことにしない。入力は残り、直して送れる', async ({ page }) => {
+  await page.route('**/api/report', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>x</title>' }));
+  await page.goto('/c/nagoya-tennyu-juukyochi');
+  await page.getByRole('button', { name: 'まちがいを知らせる' }).click();
+  const d = page.getByRole('dialog');
+  await d.getByLabel('違ったところ').fill('テストです');
+  await d.getByRole('button', { name: '送る' }).click();
+  await expect(d.getByRole('alert')).toBeVisible();
+  await expect(d).not.toContainText('ありがとうございます');
+  await expect(d.getByLabel('違ったところ')).toHaveValue('テストです');
+  await expect(d.getByRole('button', { name: '送る' })).toBeEnabled();
+});
+
+test('報告：シートの見出しと「閉じる」は、小さい画面でも見えて押せる', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 480 });
+  await page.goto('/c/nagoya-tennyu-juukyochi');
+  await page.getByRole('button', { name: 'まちがいを知らせる' }).click();
+  const x = page.getByRole('dialog').getByRole('button', { name: '閉じる' });
+  const b = await x.boundingBox();
+  expect(b!.y).toBeGreaterThanOrEqual(0);
+  expect(b!.width).toBeGreaterThanOrEqual(44);
+  expect(b!.height).toBeGreaterThanOrEqual(44);
+  await x.click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+});

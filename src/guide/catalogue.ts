@@ -25,6 +25,25 @@ export function cardHome(cardId: string): string | null {
   return e.id === MOVE ? '/c/' + cardId : '/e/' + e.id + '/c/' + cardId;
 }
 
+/** 本人の答え（profile）だけで、範囲のルールが「範囲外」と決まっているできごとか。
+    未回答（U）は範囲外にしない（国籍を推測しない）。できごとの中の答え（occurrence）は見ない */
+export function eventOutOfScope(event: EventDef, profile: Record<string, Value>): boolean {
+  if (!event.scope_rule) return false;
+  const data = DATA();
+  return run(data, { answers: answersFor(null, profile, data.questions), objects: {}, plan: {}, createdOn: null, today: todayJst(), mode: 'public', event }).scope === 'F';
+}
+
+/** 入口・探すの出し分け：本人の答えで範囲外と決まっているできごとの id */
+export function useHiddenEvents(): Set<string> {
+  const { vault: v } = usePrefs();
+  const rev = v.rev;
+  return useMemo(() => {
+    const profile = Object.fromEntries(v.entries('profile')) as Record<string, Value>;
+    return new Set(builtEvents().filter((e) => e.id !== MOVE && eventOutOfScope(e, profile)).map((e) => e.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [v, rev]);
+}
+
 export interface CatalogueGroup { event: EventDef; base: string; views: CardView[] }
 
 /** できごとごとの判定の結果（いまの答え・進捗で）。カードは最初のできごとにだけ入れる */
@@ -46,6 +65,8 @@ export function useCatalogue(): CatalogueGroup[] {
         const occ = currentOf(stored, event.id);
         views = run(data, { answers: answersFor(occ, profile, data.questions), objects: {}, plan: occ?.plan ?? {}, createdOn: occ?.started_on ?? null, today, mode: g.mode, event }).cards;
       }
+      // 範囲外のできごと（例：日本国籍の人の在留期間の更新）は、探す・一覧に出さない。カードは、ほかのできごとにあればそちらで出す
+      if (event.id !== MOVE && eventOutOfScope(event, profile)) continue;
       views = views.filter((c) => event.card_ids.includes(c.card.id) && !seen.has(c.card.id));
       views.forEach((c) => seen.add(c.card.id));
       if (views.length) groups.push({ event, base: event.id === MOVE ? '/c/' : '/e/' + event.id + '/c/', views });

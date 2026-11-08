@@ -4,10 +4,10 @@
    日・行く所・手続き・持ち物を入れた予定のファイルを、この端末の中で作る（送らない）。区役所の住所は、選んだときだけ入れる（選んだ区は残さない）。 */
 import { useState } from 'react';
 import { bringList } from '../core/accompany';
-import { buildIcs } from '../core/calendar';
+import { buildIcs, googleCalendarUrl, type IcsEvent } from '../core/calendar';
 import { HOURS } from '../core/calendarData';
 import { DATA } from '../core/data';
-import { nearest, PLACES } from '../core/places';
+import { PLACES } from '../core/places';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One } from '../i18n/Ruby';
 import { line, plain, ui, type UiKey } from '../i18n/text';
@@ -15,11 +15,10 @@ import { usePrefs } from '../storage/prefs';
 import { CalendarIcon } from './icons';
 import { hoursLine } from './guide';
 import { Sheet } from './Sheet';
-import { getPosition } from './Location';
 
 export function AddToCalendar({ day, place, cardIds, small }: { day: string; place?: string; cardIds: string[]; small?: boolean }) {
   const g = useGuide();
-  const { level, location } = usePrefs();
+  const { level } = usePrefs();
   const [open, setOpen] = useState(false);
   const [office, setOffice] = useState('');
   if (day <= g.today) return null;
@@ -31,22 +30,20 @@ export function AddToCalendar({ day, place, cardIds, small }: { day: string; pla
   const o = PLACES().find((p) => p.id === office);
   const h = place ? HOURS()[place] : undefined;
 
-  const make = () => {
-    const desc = [
+  // .ics と Google カレンダーは、同じ予定のデータから作る
+  const event = (): IcsEvent => ({
+    uid: `${day}-${place ?? 'visit'}@kurashi.eringo.io`, day,
+    summary: (placeName ? placeName + '：' : '') + cards.map((c) => L(c.title)).join('、'),
+    location: o ? plain(o.name.ja) + ' ' + o.address : placeName || undefined,
+    description: [
       ...cards.map((c) => '・' + L(c.title) + '（' + c.official_name.ja + '）'),
       bring.length ? L(ui('cal.icsBring')) + '：' + bring.map((b) => L(b.object.title)).join('、') : '',
       L(ui('cal.icsOther')),
       h?.open ? L(hoursLine(h)) : '',
       'Kurashi',
-    ].filter(Boolean).join('\n');
-    const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
-    return buildIcs([{
-      uid: `${day}-${place ?? 'visit'}@kurashi.eringo.io`, day,
-      summary: (placeName ? placeName + '：' : '') + cards.map((c) => L(c.title)).join('、'),
-      location: o ? plain(o.name.ja) + ' ' + o.address : placeName || undefined,
-      description: desc,
-    }], stamp);
-  };
+    ].filter(Boolean).join('\n'),
+  });
+  const make = () => buildIcs([event()], new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z'));
 
   return (
     <>
@@ -66,11 +63,10 @@ export function AddToCalendar({ day, place, cardIds, small }: { day: string; pla
                 </select>
               </label>
             )}
-            {/* 位置を使う人だけ（A-6）：いちばん近い区役所を選ぶ。位置は残さない */}
-            {place === 'ward_office' && location === 'on' && (
-              <button type="button" className="link" onClick={async () => { const r = await getPosition(); if (typeof r !== 'string') setOffice(nearest(PLACES().filter((p) => p.kind === 'ward_office'), r)?.id ?? ''); }}><One k="cal.icsHere" /></button>
-            )}
             <a className="k-answer k-answer--primary" href={'data:text/calendar;charset=utf-8,' + encodeURIComponent(make())} download={`kurashi-${day}.ics`} onClick={(e) => openOnIos(e, make())}><CalendarIcon /><Bi phrase k="cal.icsMake" /></a>
+            {/* Google カレンダー：予定の作成画面を開く。押したときだけ、予定の文と行く所の住所が Google に渡る。保存は Google 側で */}
+            <a className="k-answer" href={googleCalendarUrl(event())} target="_blank" rel="noopener noreferrer"><CalendarIcon /><Bi phrase k="cal.gcal" /></a>
+            <p className="sub"><Bi k="cal.gcalNote" /></p>
           </div>
         </Sheet>
       )}

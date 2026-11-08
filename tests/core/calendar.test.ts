@@ -1,6 +1,6 @@
 /* カレンダー：開いている日・祝日・期限を過ぎた日・.ics */
 import { describe, expect, it } from 'vitest';
-import { buildIcs, dayInfo, monthGrid, openState, type Hours } from '../../src/core/calendar';
+import { buildIcs, googleCalendarUrl, dayInfo, monthGrid, openState, type Hours } from '../../src/core/calendar';
 
 const WARD: Hours = { weekdays: [1, 2, 3, 4, 5], open: '08:45', close: '17:15', closed: ['holidays', '12-29..01-03'] };
 const HOL = { '2026-11-03': '文化の日', '2026-11-23': '勤労感謝の日' };
@@ -63,5 +63,43 @@ describe('.ics', () => {
   it('長い行は 75 オクテットで折り返す', () => {
     const enc = new TextEncoder();
     for (const l of ics.split('\r\n')) expect(enc.encode(l).length).toBeLessThanOrEqual(75);
+  });
+  it('終日の予定に時刻・架空の営業時間を入れない。月末・年末は翌日を終端にする', () => {
+    expect(ics).not.toMatch(/DTSTART:|DTSTART;TZID|T\d{6}(?!Z)/);
+    const e = (day: string) => buildIcs([{ uid: 'x', day, summary: 's' }], '20261105T000000Z');
+    expect(e('2026-12-31')).toContain('DTEND;VALUE=DATE:20270101');
+    expect(e('2028-02-28')).toContain('DTEND;VALUE=DATE:20280229');
+  });
+  it('折り返しは日本語の文字の途中で切らず、つなぐと元に戻る（長い説明・複数行）', () => {
+    const description = '・' + '在留カードの住所変更の届出と国民健康保険の加入、'.repeat(8) + '\nほかの持ち物は窓口で確認（要確認）';
+    const out = buildIcs([{ uid: 'x', day: '2026-11-06', summary: 's', description }], '20261105T000000Z');
+    const enc = new TextEncoder();
+    for (const l of out.split('\r\n')) expect(enc.encode(l).length).toBeLessThanOrEqual(75);
+    const joined = out.replace(/\r\n /g, '');
+    expect(joined).toContain('DESCRIPTION:' + description.replace(/\n/g, '\\n').replace(/,/g, '\\,'));
+    expect(joined).not.toContain('\uFFFD');
+  });
+});
+
+describe('Google カレンダーのリンク', () => {
+  const ev = { day: '2026-11-06', summary: '中区役所：在留カード、国保', location: '中区役所 名古屋市中区栄四丁目1-8', description: '・在留カード\n持ち物：パスポート & 在留カード' };
+  const url = new URL(googleCalendarUrl(ev));
+  it('テンプレートのリンク（OAuth・キーなし）。終日（開始/翌日）', () => {
+    expect(url.origin + url.pathname).toBe('https://calendar.google.com/calendar/render');
+    expect(url.searchParams.get('action')).toBe('TEMPLATE');
+    expect(url.searchParams.get('dates')).toBe('20261106/20261107');
+    expect(url.searchParams.get('dates')).not.toContain('T');
+  });
+  it('日本語・改行・& が正しく符号化され、読み戻すと元の文', () => {
+    expect(url.searchParams.get('text')).toBe(ev.summary);
+    expect(url.searchParams.get('details')).toBe(ev.description);
+    expect(url.searchParams.get('location')).toBe(ev.location);
+    expect(googleCalendarUrl(ev)).not.toMatch(/[\u3000-\u9fff\n ]|\+/);
+  });
+  it('場所・説明が無いときはその項目を入れない。月末は翌月1日', () => {
+    const u = new URL(googleCalendarUrl({ day: '2026-12-31', summary: 's' }));
+    expect(u.searchParams.has('location')).toBe(false);
+    expect(u.searchParams.has('details')).toBe(false);
+    expect(u.searchParams.get('dates')).toBe('20261231/20270101');
   });
 });

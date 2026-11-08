@@ -51,6 +51,11 @@
     }
   },
   "place": "bank",
+  "official_link_none": {
+    "ja": "{口座|こうざ}{開設|かいせつ}の{条件|じょうけん}や{必要|ひつよう}な{書類|しょるい}は、{銀行|ぎんこう}によって{違|ちが}います。{口座|こうざ}を{開|ひら}きたい{銀行|ぎんこう}に{直接|ちょくせつ}{確認|かくにん}してください。",
+    "ja_easy": "{口座|こうざ}を{作|つく}る{条件|じょうけん}や{書類|しょるい}は、{銀行|ぎんこう}によって{違|ちが}います。{口座|こうざ}を{作|つく}りたい{銀行|ぎんこう}に{直接|ちょくせつ}{聞|き}いてください。",
+    "en": "Requirements and documents differ by bank. Please check directly with the bank where you want to open an account."
+  },
   "keywords": [
     "ぎんこう",
     "こうざ",

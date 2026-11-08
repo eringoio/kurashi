@@ -141,6 +141,9 @@ export const Card = z.object({
   reasons: z.object({ excluded: Text.optional(), check_at_office: Text.optional(), check_at_office_coverage: Text.optional() }),
   /** 公式のページへのリンク（作者 11/7 K-12・K-13：必要な書類や、くわしい額は公式のページへ）。カードのページに出す。source_id は sources.json の出典 */
   links: z.array(z.object({ label: Text, url: z.string().url(), source_id: z.string() })).optional(),
+  /** 公式のページを1つに決められない手続き（例：銀行の口座。条件は銀行ごとに違う）。あれば、根拠の出典から公式のページを選ばず、
+      出典の一覧も文字だけにして（外部リンクを出さない）、この文を「公式ページを開く」の代わりに出す。出典の記録（evidence）はそのまま残す */
+  official_link_none: Text.optional(),
   /** お知らせ（期間つき。B-7c）。いまの日が期間の外なら出さない */
   notices: z.array(Notice).optional(),
   evidence: Evidence,

@@ -32,3 +32,28 @@ test('入口の検索：書類も出て、説明の画面へ進める', async ({
   await docs.getByRole('link', { name: /ねんきん定期便/ }).click();
   await expect(page).toHaveURL(/\/doc\/nenkin-teikibin$/);
 });
+
+test('戻る・進む：/letter の検索 → 詳細（/doc/{id}）→ 戻る = 一覧と検索の言葉 → 進む = 同じ詳細。URL・履歴に言葉を入れない', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => { history.pushState(null, '', '/letter'); window.dispatchEvent(new PopStateEvent('popstate')); });
+  const pick = page.getByRole('button', { name: /一覧から選ぶ/ });
+  if (await pick.isVisible().catch(() => false)) await pick.click();
+  await page.getByRole('searchbox', { name: /書類を探す/ }).fill('加入記録');
+  await page.locator('ul.list').last().getByRole('button', { name: /ねんきん定期便/ }).click();
+  await expect(page).toHaveURL(/\/doc\/nenkin-teikibin$/);
+  const docUrl = page.url();
+  expect(new URL(docUrl).search).toBe('');
+  expect(await page.evaluate(() => JSON.stringify(history.state))).toBe('null');
+  await expect(page.locator('#screen-title')).toContainText('ねんきん定期便');
+  await page.goBack();
+  await expect(page).toHaveURL(/\/letter$/);
+  await expect(page.getByRole('searchbox', { name: /書類を探す/ })).toHaveValue('加入記録');
+  await expect(page.locator('#screen-title')).toBeFocused();
+  await page.goForward();
+  await expect(page).toHaveURL(docUrl);
+  await expect(page.locator('#screen-title')).toContainText('ねんきん定期便');
+  await page.reload();
+  await expect(page.locator('#screen-title')).toContainText('ねんきん定期便');
+  await page.goBack(); // 再読み込みのあとはメモリが空。入口に戻る（エラーなし）
+  await expect(page).toHaveURL(/\/letter$/);
+});

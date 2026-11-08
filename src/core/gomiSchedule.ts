@@ -73,6 +73,38 @@ export function areaIdToSave(savedAreaId: string | null | undefined, rowId: stri
   return rowId === (savedAreaId ?? null) ? undefined : rowId;
 }
 
+/* 町名の検索（ごみの町名ピッカー）。日本語の町名と、写しに付いたローマ字だけを使う。読みやローマ字を推測で作らない。 */
+const KANJI_DIGIT: Record<string, number> = { 〇: 0, 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+function kanjiNumber(s: string): string {
+  // 一〜九十九（十の位がある形も）。それ以外はそのまま
+  const m = /^([一二三四五六七八九])?十([一二三四五六七八九])?$/.exec(s);
+  if (m) return String((m[1] ? KANJI_DIGIT[m[1]] : 1) * 10 + (m[2] ? KANJI_DIGIT[m[2]] : 0));
+  return [...s].every((c) => c in KANJI_DIGIT) ? [...s].map((c) => KANJI_DIGIT[c]).join('') : s;
+}
+/** 比べるための形：全角→半角・小文字・漢数字→算用数字・空白と区切りを消す */
+export function townKey(s: string): string {
+  return s.normalize('NFKC').toLowerCase()
+    .replace(/[〇一二三四五六七八九十]+/g, (m) => kanjiNumber(m))
+    .replace(/[\s\-‐‑–—ー・、,.，]+/g, '');
+}
+
+/** 検索語に合う町名（townsOf の並びのまま。先頭が合うものを先に）。空の検索語は全件。部分一致だけで、別の町に合わせない */
+export function searchTowns(p: PrivateSchedule, ward: string, query: string): string[] {
+  const all = townsOf(p, ward);
+  const q = townKey(query);
+  if (!q) return all;
+  const romaji = new Map<string, string>();
+  for (const a of p.areas) if (a.ward === ward && a.romaji && !romaji.has(a.town)) romaji.set(a.town, townKey(a.romaji));
+  const head: string[] = [];
+  const rest: string[] = [];
+  for (const t of all) {
+    const keys = [townKey(t), romaji.get(t)].filter((k): k is string => !!k);
+    if (keys.some((k) => k.startsWith(q))) head.push(t);
+    else if (keys.some((k) => k.includes(q))) rest.push(t);
+  }
+  return [...head, ...rest];
+}
+
 /** gomi.ts の Schedule の形にする（作者が表示を on にしたので、未承認でも出す。画面には「要確認」を付ける） */
 export function toSchedules(p: PrivateSchedule): Schedule[] {
   return p.areas.flatMap((a) => Object.entries(a.days).map(([category, rule]) => ({

@@ -99,6 +99,17 @@ function fold(line: string): string {
 }
 const ymd = (d: Ymd) => d.replace(/-/g, '');
 
+/* Google カレンダー（予定の作成画面を開くリンク。OAuth・API キーは使わない）。.ics と同じ IcsEvent から作る。
+   時刻が無いので終日（dates=開始/翌日）。開いても保存はされない（Google 側で保存して初めて入る）。
+   URL に入れるのは予定の文・行く所の公開の住所だけ（位置・個人の答えは入れない）。 */
+export const GCAL_BASE = 'https://calendar.google.com/calendar/render';
+export function googleCalendarUrl(e: Pick<IcsEvent, 'day' | 'summary' | 'location' | 'description'>): string {
+  const p = new URLSearchParams({ action: 'TEMPLATE', text: e.summary, dates: `${ymd(e.day)}/${ymd(addDays(e.day, 1))}` });
+  if (e.description) p.set('details', e.description);
+  if (e.location) p.set('location', e.location);
+  return GCAL_BASE + '?' + p.toString().replace(/\+/g, '%20');
+}
+
 /** 終日の予定の .ics。stamp は作った日時（UTC、YYYYMMDDTHHMMSSZ） */
 export function buildIcs(events: IcsEvent[], stamp: string): string {
   const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//kurashi//JP', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];

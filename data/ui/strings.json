@@ -1545,6 +1545,11 @@
     "ja_easy": "{新|あたら}しく{始|はじ}める（{前|まえ}の「{終|お}わった」は{使|つか}いません）",
     "en": "Start again (earlier \"done\" marks are not reused)"
   },
+  "ev.changeNationality": {
+    "ja": "{国籍|こくせき}の{答|こた}えを「{日本|にほん}{国籍|こくせき}ではない」に{変|か}える",
+    "ja_easy": "{国籍|こくせき}の{答|こた}えを「{日本|にほん}の{国籍|こくせき}ではない」に{変|か}える",
+    "en": "Change my answer to \"not Japanese nationality\""
+  },
   "ev.startedNew": {
     "ja": "{新|あたら}しい{出来事|できごと}として{始|はじ}めました。",
     "ja_easy": "{新|あたら}しく{始|はじ}めました。",
@@ -2064,6 +2069,41 @@
     "ja": "（{新|あたら}しいタブで{開|ひら}きます）",
     "ja_easy": "（{新|あたら}しいタブ）",
     "en": "(opens in a new tab)"
+  },
+  "office.title": {
+    "ja": "{行|い}く{場所|ばしょ}",
+    "ja_easy": "{行|い}く{場所|ばしょ}",
+    "en": "Where to go"
+  },
+  "office.needWard": {
+    "ja": "{行|い}く{区役所|くやくしょ}は、{住|す}んでいる（これから{住|す}む）{区|く}で{決|き}まります。{区|く}を{選|えら}んでください。いまいる{場所|ばしょ}からは{決|き}めません。",
+    "ja_easy": "{行|い}く{区役所|くやくしょ}は、{住|す}む{区|く}で{決|き}まります。{区|く}を{選|えら}んでください。",
+    "en": "The ward office depends on the ward where you live (or will live), not where you are now. Please choose your ward."
+  },
+  "office.pickWard": {
+    "ja": "{住|す}む{区|く}",
+    "ja_easy": "{住|す}む{区|く}",
+    "en": "Your ward"
+  },
+  "office.pickNone": {
+    "ja": "{区|く}を{選|えら}ぶ",
+    "ja_easy": "{区|く}を{選|えら}ぶ",
+    "en": "Choose a ward"
+  },
+  "office.byHome": {
+    "ja": "{選|えら}んだ{区|く}の{窓口|まどぐち}です。{引|ひ}っ{越|こ}しの{前|まえ}は{要|よう}{確認|かくにん}（{新居|しんきょ}の{区|く}の{役所|やくしょ}）。",
+    "ja_easy": "{選|えら}んだ{区|く}の{窓口|まどぐち}です。",
+    "en": "This is the office for the ward you chose."
+  },
+  "office.check": {
+    "ja": "{行|い}く{場所|ばしょ}は{要|よう}{確認|かくにん}です。{公式|こうしき}ページで{確|たし}かめてください。",
+    "ja_easy": "{行|い}く{場所|ばしょ}は、{公式|こうしき}ページで{確|たし}かめてください。",
+    "en": "The place to go is not confirmed yet. Please check the official page."
+  },
+  "office.unknown": {
+    "ja": "{行|い}く{場所|ばしょ}の{案内|あんない}は、まだありません。",
+    "ja_easy": "{行|い}く{場所|ばしょ}の{案内|あんない}は、まだありません。",
+    "en": "There is no guidance on where to go yet."
   },
   "src.status.ai_checked": {
     "ja": "{出典|しゅってん}と AI で{照合|しょうごう}しました",
@@ -4484,5 +4524,85 @@
     "ja": "これが{最後|さいご}の{質問|しつもん}です",
     "ja_easy": "これで {最後|さいご}です",
     "en": "This is the last question"
+  },
+  "cal.gcal": {
+    "ja": "Googleカレンダーで{開|ひら}く",
+    "ja_easy": "Googleカレンダーで{開|ひら}く",
+    "en": "Open in Google Calendar"
+  },
+  "cal.gcalNote": {
+    "ja": "Googleカレンダーを{開|ひら}くと、{予定|よてい}の{文|ぶん}と{行|い}く{所|ところ}の{住所|じゅうしょ}がGoogleに{送|おく}られます。Googleで「{保存|ほぞん}」を{押|お}すまで、{予定|よてい}は{入|はい}りません。",
+    "ja_easy": "Googleカレンダーを{開|ひら}くと、{予定|よてい}の{文|ぶん}と{行|い}く{所|ところ}の{住所|じゅうしょ}がGoogleに{送|おく}られます。Googleで「{保存|ほぞん}」を{押|お}すまで、{予定|よてい}は{入|はい}りません。",
+    "en": "Opening Google Calendar sends the event text and the office address to Google. The event is not added until you press Save there."
+  },
+  "now.visit.title": {
+    "ja": "{行|い}く{所|ところ}と{持|も}ち{物|もの}",
+    "ja_easy": "{行|い}く{所|ところ}と{持|も}ち{物|もの}",
+    "en": "Where to go and what to bring"
+  },
+  "now.visit.ward": {
+    "ja": "{区役所|くやくしょ}は、{住|す}む{区|く}で{決|き}まります。{区|く}を{選|えら}ぶと{場所|ばしょ}が{出|で}ます（{保存|ほぞん}しません）。",
+    "ja_easy": "{区役所|くやくしょ}は、{住|す}む{区|く}で{決|き}まります。{区|く}を{選|えら}ぶと{場所|ばしょ}が{出|で}ます（{保存|ほぞん}しません）。",
+    "en": "The ward office depends on the ward you live in. Choose a ward to see the place (not saved)."
+  },
+  "now.visit.wardPick": {
+    "ja": "{住|す}む{区|く}",
+    "ja_easy": "{住|す}む{区|く}",
+    "en": "Ward you live in"
+  },
+  "now.visit.wardNone": {
+    "ja": "{選|えら}んでください",
+    "ja_easy": "{選|えら}んでください",
+    "en": "Choose one"
+  },
+  "now.visit.noAddr": {
+    "ja": "{場所|ばしょ}は、{公式|こうしき}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{場所|ばしょ}は、{公式|こうしき}のページで{見|み}てください（{要|よう}{確認|かくにん}）。",
+    "en": "Check the place on the official page (to be checked)."
+  },
+  "now.visit.check": {
+    "ja": "この{区|く}の{区役所|くやくしょ}は{要|よう}{確認|かくにん}です。",
+    "ja_easy": "この{区|く}の{区役所|くやくしょ}は{要|よう}{確認|かくにん}です。",
+    "en": "The office for this ward is to be checked."
+  },
+  "gomi.town.hint": {
+    "ja": "{町名|ちょうめい}の{一部|いちぶ}を{入|い}れると{絞|しぼ}り{込|こ}めます。{下|した}の{一覧|いちらん}から、{自宅|じたく}の{町名|ちょうめい}を{選|えら}んでください。",
+    "ja_easy": "{町|まち}の{名前|なまえ}の{一部|いちぶ}を{入|い}れると、{少|すく}なくなります。{下|した}の{中|なか}から{選|えら}んでください。",
+    "en": "Type part of the town name (Japanese or romaji) to narrow the list. Then tap your town below."
+  },
+  "gomi.town.countUnit": {
+    "ja": "{件|けん}の{町名|ちょうめい}",
+    "ja_easy": "つの{町|まち}",
+    "en": " towns"
+  },
+  "gomi.town.none": {
+    "ja": "{合|あ}う{町名|ちょうめい}がありません。{別|べつ}の{文字|もじ}で{試|ため}してください。",
+    "ja_easy": "{合|あ}う{町|まち}がありません。ほかの{文字|もじ}で{試|ため}してください。",
+    "en": "No matching town. Try different letters."
+  },
+  "gomi.town.change": {
+    "ja": "{町名|ちょうめい}を{変|か}える",
+    "ja_easy": "{町|まち}を{変|か}える",
+    "en": "Change town"
+  },
+  "gomi.town.cancel": {
+    "ja": "{変|か}えない",
+    "ja_easy": "{変|か}えない",
+    "en": "Keep this town"
+  },
+  "gomi.area.suggestNear": {
+    "ja": "{現在地|げんざいち}にいちばん{近|ちか}い{区役所|くやくしょ}の{区|く}：",
+    "ja_easy": "いまいる{所|ところ}に{近|ちか}い{区役所|くやくしょ}の{区|く}：",
+    "en": "Ward of the nearest ward office to your current location:"
+  },
+  "gomi.area.suggestNote": {
+    "ja": "{現在地|げんざいち}と{住|す}んでいる{所|ところ}は{違|ちが}うかもしれません。{自宅|じたく}の{区|く}か{確|たし}かめてから{決|き}めてください。",
+    "ja_easy": "いまいる{所|ところ}と{家|いえ}は{違|ちが}うかもしれません。{家|いえ}の{区|く}か{確|たし}かめて{決|き}めてください。",
+    "en": "Where you are now may not be where you live. Confirm this is your home ward before using it."
+  },
+  "gomi.area.suggestUse": {
+    "ja": "この{区|く}を{自宅|じたく}の{区|く}にする",
+    "ja_easy": "この{区|く}を{家|いえ}の{区|く}にする",
+    "en": "Use this as my home ward"
   }
 }

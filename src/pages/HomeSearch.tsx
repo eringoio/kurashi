@@ -3,7 +3,7 @@
    言葉1つでも、文でも探せる（src/core/search.ts）。探した言葉は URL にも保存にも入れない（SPEC 13.4）。 */
 import { useId, useMemo, useState } from 'react';
 import { rank } from '../core/search';
-import { useCatalogue } from '../guide/catalogue';
+import { useCatalogue, useHiddenEvents } from '../guide/catalogue';
 import { Bi } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
@@ -17,6 +17,7 @@ import { LINKS, menuItems } from './Home';
 export function HomeSearch({ hasProgress, continueTo = '/now' }: { hasProgress: boolean; continueTo?: string }) {
   useFocusTitle('home');
   const groups = useCatalogue();
+  const hidden = useHiddenEvents();
   const { level } = usePrefs();
   const [q, setQ] = useState('');
   const id = useId();
@@ -27,7 +28,7 @@ export function HomeSearch({ hasProgress, continueTo = '/now' }: { hasProgress: 
   const heard = hitSet.filter((w) => !hitSet.some((o) => o !== w && o.includes(w))).slice(0, 8);
   const chips = line(ui('home.chips'), level).split(/、|,\s*/).filter(Boolean);
   // 「ほかの手続きを探す」の箱は、ここに検索があるので出さない
-  const items = menuItems().filter((m) => m.key !== 'search');
+  const items = menuItems(hidden).filter((m) => m.key !== 'search');
   const asking = !!q.trim();
   // 書類も探す（v0.5.31）。手続きが無くても、書類があれば「見つかりません」にしない
   const docs = useDocSearch(q);

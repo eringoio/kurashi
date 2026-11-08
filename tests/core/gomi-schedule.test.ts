@@ -1,7 +1,7 @@
 /* 収集日の写し（作者の決定 2026-11-06 F）。data/private/ は Git に入らないので、見本の小さな表で確かめる */
 import { describe, expect, it } from 'vitest';
 import { nextCollection } from '../../src/core/gomi';
-import { areaIdToSave, areaRow, banchiOf, privateSchedule, rowsOf, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
+import { areaIdToSave, areaRow, banchiOf, privateSchedule, rowsOf, searchTowns, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
 
 const P: PrivateSchedule = {
   source: { url: 'https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html', title: 'ごみ収集日検索', fetched_at: '2026-11-06', valid_from: null },
@@ -45,6 +45,28 @@ describe('収集日の写し', () => {
   });
   it('写しが無いときは null（ビルドも画面もそのまま）', () => {
     expect(privateSchedule(undefined)).toBeNull();
+  });
+});
+
+describe('町名の検索', () => {
+  const Q: PrivateSchedule = { ...P, areas: [
+    ...P.areas.map((a) => ({ ...a, romaji: a.town === '栄四丁目' ? 'Sakae 4-chome' : 'Kanayama 5-chome' })),
+    { id: 'naka-4', ward: 'naka', town: '大須一丁目', banchi: null, days: {} },
+    { id: 'minami-1', ward: 'minami', town: '栄生町', banchi: null, romaji: 'Sakaecho', days: {} },
+  ] };
+  it('日本語・全角・算用数字・ローマ字で同じ町に届く', () => {
+    expect(searchTowns(Q, 'naka', '栄四')).toEqual(['栄四丁目']);
+    expect(searchTowns(Q, 'naka', '栄4')).toEqual(['栄四丁目']);
+    expect(searchTowns(Q, 'naka', '栄４丁目')).toEqual(['栄四丁目']);
+    expect(searchTowns(Q, 'naka', 'SAKAE 4')).toEqual(['栄四丁目']);
+    expect(searchTowns(Q, 'naka', 'sakae4-chome')).toEqual(['栄四丁目']);
+  });
+  it('別の区や別の町には合わせない・空なら全件・合わなければ0件', () => {
+    expect(searchTowns(Q, 'naka', '栄生')).toEqual([]);
+    expect(searchTowns(Q, 'naka', '')).toEqual(townsOf(Q, 'naka'));
+    expect(searchTowns(Q, 'naka', 'zzz')).toEqual([]);
+    expect(searchTowns(Q, 'naka', 'osu')).toEqual([]); // ローマ字が無い町は日本語でだけ探す。推測しない
+    expect(searchTowns(Q, 'naka', '大須1')).toEqual(['大須一丁目']);
   });
 });
 

@@ -7,6 +7,7 @@ import type { UiKey } from '../i18n/text';
 import { Bi } from '../i18n/Ruby';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
+import { useHiddenEvents } from '../guide/catalogue';
 import { LocationAsk, NearBand } from '../ui/Location';
 
 type Item = { key: string; title: ReactNode; icon: string; to: string; menu: number };
@@ -22,7 +23,8 @@ const groupKey = (g: string): UiKey | null => (('home.group.' + g) in STRINGS ? 
 /** まとめた項目の中（/g/{group}）：その group の出来事を並べる（作者 11/7 K-16） */
 export function GroupPage({ group }: { group: string }) {
   useFocusTitle('group:' + group);
-  const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined && e.group === group).sort((a, b) => a.menu! - b.menu!);
+  const hidden = useHiddenEvents();
+  const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined && e.group === group && !hidden.has(e.id)).sort((a, b) => a.menu! - b.menu!);
   const key = groupKey(group);
   if (!key || !events.length) return null;
   return (
@@ -36,8 +38,8 @@ export function GroupPage({ group }: { group: string }) {
 }
 
 /** 引っ越し（E-move）は今までどおり /move。ほかの built のイベントは共通の /e/{id} */
-export function menuItems(): Item[] {
-  const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined).sort((a, b) => a.menu! - b.menu!);
+export function menuItems(hidden: ReadonlySet<string> = new Set()): Item[] {
+  const events = DATA().events.filter((e) => e.status === 'built' && e.menu !== undefined && !hidden.has(e.id)).sort((a, b) => a.menu! - b.menu!);
   const count = (g: string) => events.filter((e) => e.group === g).length;
   const seen = new Set<string>();
   const list: Item[] = [];
@@ -64,6 +66,7 @@ export const LINKS = [
 
 export function Home({ hasProgress, continueTo = '/now' }: { hasProgress: boolean; continueTo?: string }) {
   useFocusTitle('home');
+  const hidden = useHiddenEvents();
   return (
     <>
       <div className="head">
@@ -75,7 +78,7 @@ export function Home({ hasProgress, continueTo = '/now' }: { hasProgress: boolea
       {hasProgress && <Link to={continueTo} className="k-answer k-answer--primary"><img src={art('calendar')} alt="" /><span className="k-answer__text"><Bi phrase k="home.continue" /></span></Link>}
       <nav aria-labelledby="screen-title">
         <ul className="tiles" role="list">
-          {menuItems().map((m) => (
+          {menuItems(hidden).map((m) => (
             <li key={m.key}>
               <Link to={m.to} className="tile">
                 <img src={art(m.icon)} alt="" />

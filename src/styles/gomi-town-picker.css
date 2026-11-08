@@ -1,0 +1,18 @@
+/* ごみの町名ピッカー専用（検索欄＋スクロールできる一覧）。ネイティブの datalist は使わない（スマホで候補を制御できないため） */
+.town-picker { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.town-picker__list {
+  list-style: none; margin: 0; padding: 0;
+  max-height: min(48vh, 360px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+  border: 1.5px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--white);
+}
+.town-picker__list li + li { border-top: 1px solid var(--line-soft); }
+.town-picker__opt {
+  display: block; width: 100%; min-height: 48px; padding: 8px 14px; border: none; background: none; color: var(--ink);
+  font: inherit; font-size: var(--fs-body); text-align: left; line-height: 1.5; overflow-wrap: anywhere; touch-action: manipulation;
+}
+.town-picker__opt:hover { background: var(--blue-tint); }
+.town-picker__opt:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+.town-picker__count { margin: 0; }
+.town-picker__done { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.town-picker__done strong { overflow-wrap: anywhere; }
+.gomi-suggest { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }

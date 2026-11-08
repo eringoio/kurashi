@@ -3,10 +3,18 @@ import { useEffect, useSyncExternalStore, type AnchorHTMLAttributes, type MouseE
 
 const listeners = new Set<() => void>();
 const notify = () => listeners.forEach((f) => f());
-if (typeof window !== 'undefined') window.addEventListener('popstate', notify);
+/** 今の画面へ、ブラウザの戻る・進む（popstate）で来たか。リンクなどの navigate で来たときは false。
+    先に登録する（notify の再描画より前に印を付ける） */
+let byHistory = false;
+export const arrivedByHistory = () => byHistory;
+if (typeof window !== 'undefined') {
+  window.addEventListener('popstate', () => { byHistory = true; });
+  window.addEventListener('popstate', notify);
+}
 
 export function navigate(path: string) {
   if (path === location.pathname) return;
+  byHistory = false;
   history.pushState(null, '', path);
   notify();
 }

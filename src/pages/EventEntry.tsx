@@ -6,13 +6,27 @@
 import { useEffect } from 'react';
 import { DATA } from '../core/data';
 import { nowStep } from '../core/now';
-import { useEvent } from '../guide/useEvent';
+import { useEvent, type EventGuide } from '../guide/useEvent';
 import { Bi } from '../i18n/Ruby';
 import { navigate } from '../ui/router';
 import { overviewReady, singleGoal } from '../core/overview';
 import { EventOverview } from './EventOverview';
 import { EventPage } from './EventPage';
 import { Info } from './Info';
+
+/** 範囲外の案内（入口と、項目の直接の URL の両方）。理由・答えを変える道・入口にもどる道を出す。保存した進捗は消さない */
+export function EventOutOfScope({ g }: { g: EventGuide }) {
+  return (
+    <>
+      <Info id="out-of-scope" reason={g.event.scope_rule ? DATA().rules.get(g.event.scope_rule)?.reason_when_false : undefined} />
+      <div className="links">
+        {g.answers['Q-nationality'] === 'japanese' && g.event.questions.includes('Q-nationality')
+          ? <button type="button" className="link" onClick={() => void g.answer('Q-nationality', 'foreign')}><Bi k="ev.changeNationality" /></button>
+          : <button type="button" className="link" onClick={async () => { await g.startNew(); navigate('/e/' + g.event.id); }}><Bi k="ev.startNew" /></button>}
+      </div>
+    </>
+  );
+}
 
 export function EventEntry({ eventId, view, onLive }: { eventId: string; view: 'now' | 'all' | 'step'; onLive: (s: string) => void }) {
   const g = useEvent(eventId);
@@ -24,16 +38,7 @@ export function EventEntry({ eventId, view, onLive }: { eventId: string; view: '
   // 履歴を増やさずに置きかえる（もどるで /e/... に来て、また飛ばされることがないように）
   useEffect(() => { if (tool) { history.replaceState(null, '', tool); dispatchEvent(new PopStateEvent('popstate')); } }, [tool]);
   if (tool) return null;
-  if (g && g.out.scope === 'F') {
-    return (
-      <>
-        <Info id="out-of-scope" reason={g.event.scope_rule ? DATA().rules.get(g.event.scope_rule)?.reason_when_false : undefined} />
-        <div className="links">
-          <button type="button" className="link" onClick={async () => { await g.startNew(); navigate('/e/' + g.event.id); }}><Bi k="ev.startNew" /></button>
-        </div>
-      </>
-    );
-  }
+  if (g && g.out.scope === 'F') return <EventOutOfScope g={g} />;
   // 段のあるできごと（v0.5.28）：1つずつ進める画面は任意。最初の質問に答えたら、いま／全体のどちらも全体の画面
   if (g && phased && view === 'step') return <EventPage eventId={eventId} view="now" step onLive={onLive} />;
   if (g && overviewReady(g.event, g.answers)) return <EventOverview g={g} onLive={onLive} />;

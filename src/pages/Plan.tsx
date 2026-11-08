@@ -11,6 +11,7 @@ import { art } from '../ui/art';
 import { useEffect, useState, type ReactNode } from 'react';
 import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
 import { ProgressMap } from '../ui/ProgressMap';
+import { VisitInfo } from '../ui/VisitInfo';
 import { RoadBring } from '../ui/RoadMap';
 import { bringPlan } from '../core/accompany';
 import { DATA } from '../core/data';
@@ -109,6 +110,7 @@ export function Now() {
         <DayChoice group={group} today={g.today}
           onPick={(d, ids) => void ch.plan(c.card.id, d, ids)}
           onLater={() => navigate('/all')} />
+        {c.card.place && <VisitInfo place={c.card.place} cards={group} />}
       </>
     );
   } else if (step.kind === 'wait') {
@@ -127,7 +129,13 @@ export function Now() {
       </>
     );
   } else if (today) {
-    body = <TodayStep views={today} go="/today" />;
+    const places = [...new Set(today.map((v) => v.card.place).filter((p): p is string => !!p))];
+    body = (
+      <>
+        <TodayStep views={today} go="/today" />
+        {places.map((p) => <VisitInfo key={p} place={p} cards={today.filter((v) => v.card.place === p)} />)}
+      </>
+    );
   } else if (step.kind === 'until') {
     body = (
       <>

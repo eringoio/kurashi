@@ -35,9 +35,9 @@ export function DocResults({ q }: { q: string }) {
 }
 
 /** /letter の書類の一覧と、その上の検索の欄。onPick：書類を選んだとき（今までどおり一覧の中で説明を開く） */
-export function DocSearchList({ onPick, extra }: { onPick: (d: KnownDocument) => void; extra?: React.ReactNode }) {
+export function DocSearchList({ onPick, extra, initialQuery = '', onQueryChange }: { onPick: (d: KnownDocument) => void; extra?: React.ReactNode; initialQuery?: string; onQueryChange?: (q: string) => void }) {
   const id = useId();
-  const [q, setQ] = useState('');
+  const [q, setQ] = useState(initialQuery);
   const found = useDocSearch(q);
   const asking = !!q.trim();
   const list = asking ? found.map((x) => x.doc) : DOCUMENTS();
@@ -47,7 +47,7 @@ export function DocSearchList({ onPick, extra }: { onPick: (d: KnownDocument) =>
     <>
       <div role="search" className="search" aria-labelledby={id + 'l'}>
         <label id={id + 'l'} htmlFor={id} className="label"><Bi k="letter.search" /></label>
-        <input id={id} type="search" value={q} onChange={(e) => setQ(e.target.value)} autoComplete="off" enterKeyHint="search" />
+        <input id={id} type="search" value={q} onChange={(e) => { setQ(e.target.value); onQueryChange?.(e.target.value); }} autoComplete="off" enterKeyHint="search" />
       </div>
       {/* 結果の数は読み上げにも知らせる（15.2） */}
       <p className="sr-only" role="status">{asking ? (found.length ? <><Bi k="search.found" />（{found.length}）</> : <Bi k="letter.searchNone" />) : null}</p>

@@ -50,6 +50,11 @@
     }
   },
   "place": "bank",
+  "official_link_none": {
+    "ja": "{口座|こうざ}を{閉|と}じる{手続|てつづ}きは、{銀行|ぎんこう}によって{違|ちが}います。{口座|こうざ}のある{銀行|ぎんこう}に{直接|ちょくせつ}{確認|かくにん}してください。",
+    "ja_easy": "{口座|こうざ}を{閉|と}じる{手続|てつづ}きは、{銀行|ぎんこう}によって{違|ちが}います。{口座|こうざ}のある{銀行|ぎんこう}に{直接|ちょくせつ}{聞|き}いてください。",
+    "en": "How to close an account differs by bank. Please check directly with your bank."
+  },
   "kind": "guide",
   "methods": [
     {

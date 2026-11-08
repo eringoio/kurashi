@@ -440,6 +440,7 @@ export function WorldMap({ cards, base = '/c/', listId }: { cards: CardView[]; b
 
 /** 公式のページ：カードの links の最初、無ければ根拠（カード・期限・窓口・方法）の出典のうち、国・自治体・公的な法人で URL のあるもの */
 export function officialLink(c: CardView): { url: string; label?: Text; owner?: string } | null {
+  if (c.card.official_link_none) return null;
   const l = c.card.links?.[0];
   if (l) return { url: l.url, label: l.label };
   const ev = [c.card.evidence, c.card.deadline?.evidence, c.card.where.evidence, ...(c.card.methods ?? []).map((m) => m.evidence)].filter(Boolean);
@@ -488,7 +489,7 @@ export function CardSources({ c }: { c: CardView }) {
       <ul role="list">
         {srcs.map((x) => (
           <li key={x.source_id} lang="ja">
-            {x.url
+            {x.url && !c.card.official_link_none
               ? <a className="link" href={x.url} target="_blank" rel="noopener noreferrer">{x.owner}「{x.title}」<span aria-hidden="true"> ↗</span><span className="sr-only"><One k="clinic.newTab" /></span></a>
               : <>{x.owner}「{x.title}」</>}
             {x.owner_type === 'product' && <span className="sub"> <One k="src.product" /></span>}

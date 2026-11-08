@@ -13,7 +13,7 @@ import { DocSearchList } from '../ui/DocSearch';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { useFocusTitle } from '../ui/router';
+import { arrivedByHistory, navigate, useFocusTitle } from '../ui/router';
 import { useSeen } from '../ui/Words';
 import { trackError } from '../ui/telemetry';
 import { getReadToken, READ_TOKEN_HEADER } from '../ui/readToken';
@@ -58,16 +58,26 @@ async function toJpeg(src: Blob | string): Promise<{ url: string; data: string }
   return { url, data: url.slice(url.indexOf(',') + 1) };
 }
 
+/* 一覧から /doc/{id} へ進んだあと、ブラウザの戻るで /letter に戻ったとき、一覧と検索の言葉を戻す。
+   メモリ（この変数）の中だけ。URL・history.state・保存には入れない。写真は戻さない（SPEC 13.4）。 */
+let listMemo: { q: string } | null = null;
+const takeMemo = () => (arrivedByHistory() ? listMemo : null); // 戻る・進むで来たときだけ
+
+// 外に置く（中で作ると、描き直すたびに見出しが作り直されて、フォーカスが外れる）
+const Title = ({ children }: { children: React.ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
+
 const docOf = (id: string) => DOCUMENTS().find((d) => d.id === id)!;
 
 export function Letter() {
   const { level } = usePrefs();
-  const [st, setSt] = useState<St>({ k: 'intro' });
+  const [memo] = useState(takeMemo);
+  const [st, setSt] = useState<St>(memo ? { k: 'pick' } : { k: 'intro' });
+  const query = useRef(memo?.q ?? '');
+  useEffect(() => { listMemo = null; }, []);
   const file = useRef<HTMLInputElement>(null);
   useFocusTitle('letter:' + st.k + ('i' in st ? st.i : '') + ('doc' in st ? st.doc.id : ''));
-  // 画面を離れたら、写真をメモリから消す
-  useEffect(() => () => setSt({ k: 'intro' }), []);
-  const Title = ({ children }: { children: React.ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
+  // 画面を離れると、この画面の状態（写真を含む）は React ごと捨てられる。
+  // （ここで setSt すると、StrictMode の開発で入り直しのたびに入口へ戻ってしまうので、書かない）
 
   const onFile = async (f: File | undefined) => {
     if (!f) return;
@@ -103,7 +113,8 @@ export function Letter() {
   );
   // 書類の一覧と検索の欄（v0.5.31）：名前と、説明の大事な言葉から探せる
   const pickList = (
-    <DocSearchList onPick={(d) => setSt({ k: 'result', doc: d, sample: false })}
+    <DocSearchList initialQuery={query.current} onQueryChange={(q) => { query.current = q; }}
+      onPick={(d) => { listMemo = { q: query.current }; navigate('/doc/' + d.id); }}
       extra={<li><button type="button" className="k-answer" onClick={() => setSt({ k: 'unknown' })}><Bi phrase k="letter.dontKnow" /></button></li>} />
   );
 

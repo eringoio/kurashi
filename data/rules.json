@@ -1304,12 +1304,20 @@
       "id": "R-sr-scope",
       "kind": "selection",
       "condition": {
-        "all": []
+        "not": {
+          "fact": "nationality",
+          "eq": "japanese"
+        }
       },
       "statement": {
-        "ja": "だれでも{使|つか}えます。",
-        "ja_easy": "だれでも{使|つか}えます。",
-        "en": "Anyone can use this."
+        "ja": "{日本|にほん}{国籍|こくせき}ではない（まだ{答|こた}えていない{人|ひと}にも{出|だ}します）。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}ではない（まだ{答|こた}えていない{人|ひと}にも{出|だ}します）。",
+        "en": "Not a Japanese national (also shown if you have not answered yet)."
+      },
+      "reason_when_false": {
+        "ja": "{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}は、{日本|にほん}{国籍|こくせき}の{人|ひと}には{関係|かんけい}ありません。{国籍|こくせき}の{答|こた}えが{違|ちが}うときは、{答|こた}えを{変|か}えてください。",
+        "ja_easy": "{在留|ざいりゅう}{期間|きかん}を{延|の}ばす{手続|てつづ}きは、{日本|にほん}の{国籍|こくせき}の{人|ひと}には{関係|かんけい}ありません。{国籍|こくせき}の{答|こた}えが{違|ちが}うときは、{答|こた}えを{変|か}えてください。",
+        "en": "Renewing a period of stay does not apply to Japanese nationals. If your answer about nationality is wrong, you can change it."
       },
       "evidence": {
         "source_ids": [

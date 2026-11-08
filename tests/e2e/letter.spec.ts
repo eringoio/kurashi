@@ -111,6 +111,23 @@ test('いいえ → 一覧 → 国民年金の加入のお知らせ → 関係�
   await check(page, '結果（年金）');
 });
 
+test('写真の流れのあと一覧から詳細へ → 戻る：一覧に戻り、写真は残らない。進む：同じ詳細', async ({ page }) => {
+  await toPreview(page);
+  await tap(page, /^送る（同意する）/);
+  await tap(page, /^いいえ/);
+  await tap(page, /国民年金の?加入のお知らせ/);
+  await expect(page).toHaveURL(/\/doc\/[a-z0-9-]+$/);
+  const docUrl = page.url();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/letter$/);
+  await expect(h1(page)).toContainText('どの書類ですか？');
+  await expect(page.locator('img.letter__photo')).toHaveCount(0);
+  expect(await page.evaluate(() => JSON.stringify(history.state))).toBe('null');
+  await page.goForward();
+  await expect(page).toHaveURL(docUrl);
+  await expect(h1(page)).toHaveText(/国民年金の?加入のお知らせ/);
+});
+
 test('わからない → わからないときは', async ({ page }) => {
   await toPreview(page);
   await tap(page, /^送る（同意する）/);

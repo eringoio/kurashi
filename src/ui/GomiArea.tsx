@@ -1,16 +1,17 @@
 /* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地の文字は保存しない。保存するのは表の行の area_id だけ）。
    収集日は data/gomi/schedule.json（名古屋市の掲載の許可 2026-11-08）。既定で出す。VITE_GOMI_SCHEDULE=off のときだけ出さない（SPEC v0.5.24）。 */
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
-import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, toSchedules, townsOf, type PrivateSchedule } from '../core/gomiSchedule';
+import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, searchTowns, toSchedules, townsOf, type PrivateSchedule } from '../core/gomiSchedule';
 import { nearest, PLACES } from '../core/places';
 import { getPosition } from './Location';
 import { Bi, One } from '../i18n/Ruby';
-import { line } from '../i18n/text';
+import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from './art';
 import { PinIcon } from './icons';
 import { fmtDay } from './guide';
+import '../styles/gomi-town-picker.css';
 
 /** ごみの区分の絵（design/assets/illustrations/gomi-*.svg）。無い区分は bin */
 const ICON: Record<string, string> = {
@@ -45,16 +46,22 @@ export function useArea(saved: Place | null) {
 }
 
 /** 自宅の住所（区・町名・番地）。ごみの日を決めるために要る欄は、空のあいだ赤い枠と「入れてください」を出す（色だけにしない）。
-    区は現在地から入れられるが、町名・番地は本人が入れる（fromHere のとき、その旨を1行） */
-export function GomiAreaFields({ wards, saved, onSet, area, fromHere = false }: {
-  wards: { id: string; label: Parameters<typeof line>[0] }[]; saved: Place | null; onSet: (x: Place | null) => void; area: ReturnType<typeof useArea>; fromHere?: boolean;
+    現在地は区の「提案」にだけ使い、本人が押して確かめるまで決めない。町名は検索欄＋一覧（TownPicker）、番地は本人が選ぶ */
+export function GomiAreaFields({ wards, saved, onSet, area, autoSuggest = false }: {
+  wards: { id: string; label: Parameters<typeof line>[0] }[]; saved: Place | null; onSet: (x: Place | null) => void; area: ReturnType<typeof useArea>; autoSuggest?: boolean;
 }) {
   const { level } = usePrefs();
   const id = useId();
   const towns = area.p && saved ? townsOf(area.p, saved.ward_id) : [];
-  // K-19：外国語のときだけ、ローマ字（日本語）を添える
-  const rom = (t: string) => (level.kind === 'foreign' && area.p && saved ? romajiOf(area.p, saved.ward_id, t) : undefined);
-  const savedRom = saved?.town ? rom(saved.town) : undefined;
+  // 現在地からの区の提案（まだ決めていない。本人が押すまで保存しない）
+  const [suggest, setSuggest] = useState<string | null>(null);
+  const suggested = suggest && suggest !== saved?.ward_id ? wards.find((w) => w.id === suggest) : undefined;
+  const asked = useRef(false);
+  useEffect(() => {
+    if (!autoSuggest || saved || asked.current) return;
+    asked.current = true;
+    void wardHere(wards).then((w) => { if (w) setSuggest(w); });
+  }, [autoSuggest, saved]);
   // 番地：外国語のときは訳（data/gomi/banchi-names.json）。無ければ日本語のまま
   const banchiLabel = (b: string | null) => (b ? (level.kind === 'foreign' ? area.p?.banchi_en?.[b] ?? b : b) : '');
   const wardMissing = !saved;
@@ -66,27 +73,23 @@ export function GomiAreaFields({ wards, saved, onSet, area, fromHere = false }: 
     <div className="gomi-area">
       <label className={'qrfield' + (wardMissing ? ' is-missing' : '')}>
         <span className="label"><One k="gomi.area.ward" /></span>
-        <select className="field" value={saved?.ward_id ?? ''} aria-invalid={wardMissing || undefined} aria-describedby={wardMissing ? id + 'w' : undefined} onChange={(e) => onSet(e.target.value ? { ward_id: e.target.value, set_on: new Date().toISOString().slice(0, 10) } : null)}>
+        <select className="field" value={saved?.ward_id ?? ''} aria-invalid={wardMissing || undefined} aria-describedby={wardMissing ? id + 'w' : undefined} onChange={(e) => { area.setBanchi(null); onSet(e.target.value ? { ward_id: e.target.value, set_on: new Date().toISOString().slice(0, 10) } : null); }}>
           <option value="">—</option>
           {wards.map((w) => <option key={w.id} value={w.id}>{line(w.label, level)}</option>)}
         </select>
         {wardMissing && <Need k="gomi.area.need" at={id + 'w'} />}
       </label>
-      {/* 現在地から区を選ぶ（押したときだけ位置を使う。残さない。SPEC 6A.11）。いちばん近い区役所の区 */}
-      <button type="button" className="link link--icon" onClick={async () => {
-        const w = await wardHere(wards);
-        if (w) onSet({ ward_id: w, set_on: new Date().toISOString().slice(0, 10) });
-      }}><PinIcon /><One k="cal.icsHere" /></button>
-      {fromHere && saved && (townMissing || banchiMissing) && <p className="sub" role="note"><Bi k="gomi.area.fromHere" /></p>}
+      {/* 現在地から区を「提案」する（押したときだけ位置を使う。残さない。SPEC 6A.11）。現在地と住んでいる所は違うかもしれないので、自動では決めず、本人が「この区にする」を押して確かめる */}
+      <button type="button" className="link link--icon" onClick={async () => { const w = await wardHere(wards); if (w) setSuggest(w); }}><PinIcon /><One k="cal.icsHere" /></button>
+      {suggested && (
+        <div className="k-notice gomi-suggest" role="note">
+          <p><One k="gomi.area.suggestNear" /> <strong>{line(suggested.label, level)}</strong></p>
+          <p className="sub"><Bi k="gomi.area.suggestNote" /></p>
+          <button type="button" className="k-answer k-answer--small" onClick={() => { area.setBanchi(null); setSuggest(null); onSet({ ward_id: suggested.id, set_on: new Date().toISOString().slice(0, 10) }); }}><One k="gomi.area.suggestUse" /></button>
+        </div>
+      )}
       {area.p && saved && (
-        <label className={'qrfield' + (townMissing || townUnknown ? ' is-missing' : '')}>
-          <span className="label"><One k="gomi.area.town" /></span>
-          <input className="field" list="gomi-towns" value={saved.town ?? ''} aria-invalid={townMissing || townUnknown || undefined} aria-describedby={townMissing || townUnknown ? id + 't' : undefined} onChange={(e) => onSet({ ...saved, town: e.target.value || undefined, area_id: null })} autoComplete="off" />
-          <datalist id="gomi-towns">{towns.map((t) => { const r = rom(t); return <option key={t} value={t} label={r ? `${r}（${t}）` : undefined} />; })}</datalist>
-          {savedRom && <span className="sub" lang="en">{savedRom}（{saved!.town}）</span>}
-          {townMissing && <Need k="gomi.area.need" at={id + 't'} />}
-          {townUnknown && <Need k="gomi.area.pickTown" at={id + 't'} />}
-        </label>
+        <TownPicker key={saved.ward_id} p={area.p} ward={saved.ward_id} town={saved.town} missing={townMissing} unknown={townUnknown} needId={id + 't'} onPick={(t) => { area.setBanchi(null); onSet({ ...saved, town: t, area_id: null }); }} />
       )}
       {area.rows.length > 1 && (
         <label className={'qrfield' + (banchiMissing ? ' is-missing' : '')}>
@@ -98,6 +101,56 @@ export function GomiAreaFields({ wards, saved, onSet, area, fromHere = false }: 
           <span id={id + 'b'} className="sub">{banchiMissing && <><Need k="gomi.area.need" at={id + 'bn'} /> </>}<One k="gomi.area.banchiNote" /></span>
         </label>
       )}
+    </div>
+  );
+}
+
+/** 町名ピッカー：検索欄＋スクロールできる一覧（datalist は使わない）。入力中の文字はこの部品の中だけ（保存しない）。選んだ時点で正式な日本語の町名を onPick に渡す。
+    検索は日本語の町名と、写しに付いたローマ字（searchTowns）。外国語のときは「ローマ字（日本語）」を画面に描く */
+function TownPicker({ p, ward, town, missing, unknown, needId, onPick }: { p: PrivateSchedule; ward: string; town: string | undefined; missing: boolean; unknown: boolean; needId: string; onPick: (t: string) => void }) {
+  const { level } = usePrefs();
+  const id = useId();
+  const [q, setQ] = useState('');
+  const [editing, setEditing] = useState(false);
+  const changeBtn = useRef<HTMLButtonElement>(null);
+  const wasEditing = useRef(false);
+  useEffect(() => { if (wasEditing.current && !editing) changeBtn.current?.focus(); wasEditing.current = editing; }, [editing]);
+  const rom = (t: string) => (level.kind === 'foreign' ? romajiOf(p, ward, t) : undefined);
+  const found = searchTowns(p, ward, q);
+  const confirmed = !!town && !unknown && !editing;
+  const pick = (t: string) => { setQ(''); setEditing(false); onPick(t); };
+  const name = (t: string) => { const r = rom(t); return r ? <><span lang="en">{r}</span>（{t}）</> : <>{t}</>; };
+  if (confirmed) {
+    return (
+      <div className="qrfield">
+        <span className="label"><One k="gomi.area.town" /></span>
+        <div className="town-picker__done">
+          <strong>{name(town!)}</strong>
+          <button ref={changeBtn} type="button" className="link" onClick={() => setEditing(true)}><One k="gomi.town.change" /></button>
+        </div>
+      </div>
+    );
+  }
+  const listId = id + 'l';
+  return (
+    <div className={'qrfield town-picker' + ((missing || unknown) && !editing ? ' is-missing' : '')}>
+      <label htmlFor={id} className="label"><One k="gomi.area.town" /></label>
+      <input id={id} className="field" type="search" value={q} onChange={(e) => setQ(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} enterKeyHint="search" aria-controls={listId}
+        aria-invalid={((missing || unknown) && !editing) || undefined} aria-describedby={id + 'h' + (((missing || unknown) && !editing) ? ' ' + needId : '')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') { e.preventDefault(); if (found.length === 1) pick(found[0]); }
+          if (e.key === 'ArrowDown') { e.preventDefault(); (document.getElementById(listId)?.querySelector('button') as HTMLElement | null)?.focus(); }
+        }} />
+      <p id={id + 'h'} className="sub"><One k="gomi.town.hint" /></p>
+      <p className="sub town-picker__count" role="status">{found.length ? <>{found.length}<One k="gomi.town.countUnit" /></> : <One k="gomi.town.none" />}</p>
+      {found.length > 0 && (
+        <ul id={listId} className="town-picker__list" role="list" aria-label={line(ui('gomi.area.town'), level)}>
+          {found.map((t) => <li key={t}><button type="button" className="town-picker__opt" onClick={() => pick(t)}>{name(t)}</button></li>)}
+        </ul>
+      )}
+      {editing && <button type="button" className="link" onClick={() => { setQ(''); setEditing(false); }}><One k="gomi.town.cancel" /></button>}
+      {missing && !editing && <span id={needId} className="gomi-need"><One k="gomi.area.need" /></span>}
+      {unknown && !editing && <span id={needId} className="gomi-need"><One k="gomi.area.pickTown" /></span>}
     </div>
   );
 }

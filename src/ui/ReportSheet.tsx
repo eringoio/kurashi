@@ -43,8 +43,13 @@ export function ReportButton({ path }: { path: string }) {
         method: 'POST', headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ path, scene: sceneOf(path), text: text.trim(), level: level.id, at: new Date().toISOString(), steps: reportSteps(planOf(vault, sceneOf(path)), openCardOf(path)) }),
       });
-      setState(r.ok ? 'sent' : r.status === 429 ? 'busy' : 'error');
-      if (r.ok) setText('');
+      // 成功は 201 ＋ JSON { ok: true } だけ。SPA の代わりの HTML（200）などは成功にしない（入力は残す）
+      let ok = false;
+      if (r.status === 201 && /^application\/json/i.test(r.headers.get('content-type') ?? '')) {
+        try { ok = ((await r.json()) as { ok?: unknown } | null)?.ok === true; } catch { ok = false; }
+      }
+      setState(ok ? 'sent' : r.status === 429 ? 'busy' : 'error');
+      if (ok) setText('');
     } catch { setState('error'); }
   };
   return (

@@ -67,6 +67,20 @@ test('日を選ぶカレンダー：区役所の休み（土日・祝日）は�
   await expect(h1(page)).toHaveText('いつ、銀行に行きますか？');
 });
 
+test('「いま」の日を決める画面に、行く所と持ち物が小さく出る（区が未定なら区を選ぶ。決めつけない）', async ({ page }) => {
+  await toWardDay(page);
+  const info = page.getByRole('region', { name: /行く所と持ち物/ });
+  await expect(info).toBeVisible();
+  await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
+  await expect(info.getByRole('combobox', { name: /住む区/ })).toBeVisible();
+  await expect(info).not.toContainText('栄四丁目');
+  await info.getByRole('combobox', { name: /住む区/ }).selectOption({ label: '中区役所' });
+  await expect(info).toContainText('栄四丁目1-8');
+  await expect(info.getByRole('link', { name: /Google/ })).toHaveAttribute('href', /google\.com\/maps/);
+  await expect(info).toContainText('在留カード');
+  await check(page, 'いま（行く所と持ち物）');
+});
+
 test('日を決めたら、端末のカレンダーに入れる .ics を作れる（住所は選んだときだけ）', async ({ page }) => {
   await toWardDay(page);
   await openCal(page);
@@ -82,6 +96,13 @@ test('日を決めたら、端末のカレンダーに入れる .ics を作れ�
   await page.getByRole('combobox', { name: /行く区役所/ }).selectOption({ label: '中区役所' });
   const after = decodeURIComponent((await link.getAttribute('href'))!);
   expect(after).toContain('栄四丁目1-8');
+  // Google カレンダー：同じ予定の作成画面を開くリンク。送られることを書く。「入った」とは言わない
+  const g = new URL((await page.getByRole('dialog').getByRole('link', { name: /Googleカレンダーで開く/ }).getAttribute('href'))!);
+  expect(g.searchParams.get('dates')).toBe('20261106/20261107');
+  expect(g.searchParams.get('location')).toContain('栄四丁目1-8');
+  expect(g.searchParams.get('details')).toContain('在留カード');
+  await expect(page.getByRole('dialog')).toContainText('Googleに');
+  await expect(page.getByRole('dialog')).not.toContainText('登録しました');
   await check(page, '日を決めた（.ics）');
   // 選んだ区役所は残さない
   const stored = await page.evaluate(async () => {
@@ -111,7 +132,7 @@ test('カレンダーの画面：決めた日と行く所ごとに並ぶ', async
   // 次の手続きの日を選ぶカレンダーにも、決めた日に ● と「行く日」が付く（K-34）
   // 開いたままのことも、閉じているときもある
   if (!(await page.locator('.cal__table').count())) await page.getByRole('button', { name: 'ほかの日を選ぶ' }).click();
-  await expect(page.locator('.cal__table .cal__day--planned')).toContainText('11月6日（金）、行く日');
+  await expect(page.locator('.cal__table .cal__day--planned')).toContainText(/11月6日（金）.*行く日/);
   await expect(page.locator('.cal__table .cal__day--planned')).toContainText('●');
   await page.goto('/calendar');
   await expect(h1(page)).toHaveText('カレンダー');
@@ -120,7 +141,7 @@ test('カレンダーの画面：決めた日と行く所ごとに並ぶ', async
   const day = page.locator('.cal__day--planned');
   await expect(day).toHaveCount(1);
   await expect(day).toContainText('●');
-  await expect(day).toContainText('11月6日（金）、行く日');
+  await expect(day).toContainText(/11月6日（金）.*行く日/);
   await expect(page.locator('.cal__legend')).toContainText('行く日');
   await expect(page.locator('.cal__table button')).toHaveCount(0);
   await check(page, 'カレンダーの画面');

@@ -4,7 +4,7 @@
    3. 収集日（2週間）：町名まで選ぶと出る（市の掲載の許可 2026-11-08。既定で出す）。位置を使う設定なら、区を現在地から先に入れる。
    4. ごみの種類と袋：種類ごとに、袋と品目の表。自己搬入の受付の方法は、自己搬入のカード（gomi-mochikomi）だけに書く。
    写真からは探さない（作っていない機能をボタンにしない）。探した言葉・日付は URL にも保存にも入れない（13.4）。 */
-import { memo, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useId, useMemo, useState } from 'react';
 import { DATA } from '../core/data';
 import { areaStatus, judgeItem, nextCollection, searchItems, type AreaChoice, type GomiItem, type GomiItems } from '../core/gomi';
 import { gomiData } from '../core/gomiData';
@@ -19,7 +19,7 @@ import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
 import { fmtDay } from '../ui/guide';
 import { Info } from './Info';
-import { bagIcon, GomiAreaFields, GomiWeek, gomiIcon, useArea, wardHere, type Place } from '../ui/GomiArea';
+import { bagIcon, GomiAreaFields, GomiWeek, gomiIcon, useArea, type Place } from '../ui/GomiArea';
 import { areaIdToSave, SCHEDULE_ON } from '../core/gomiSchedule';
 
 /** 自宅の住所（区・町名・番地の行の id）。前の名前 gomi_area から移す */
@@ -76,15 +76,7 @@ function GomiTool() {
     const next = saved ? areaIdToSave(saved.area_id, rowId) : undefined;
     if (saved && next !== undefined) void v.put('settings', AREA_KEY, { ...saved, area_id: next });
   }, [rowId, saved, v]);
-  // 位置を使う設定で、まだ区を選んでいなければ、現在地にいちばん近い区役所の区を入れる（この画面で1回だけ。位置は残さない）
-  const asked = useRef(false);
-  const [fromHere, setFromHere] = useState(false);
-  useEffect(() => {
-    if (location !== 'on' || saved || asked.current) return;
-    asked.current = true;
-    // 調べている間に人が区を選んだら、上書きしない
-    void wardHere(d.areas.wards).then((w) => { if (w && !v.get('settings', AREA_KEY) && !v.get('settings', OLD_KEY)) { setFromHere(true); void setPlace({ ward_id: w, set_on: todayJst() }); } });
-  }, [location, saved]);
+  // 位置を使う設定のとき、区は「提案」だけ出す（現在地と住んでいる所は違うかもしれないので、自動では決めない。本人が確かめて決める）
   const pick = (it: GomiItem) => { setSel(it); setChoice(undefined); };
 
   return (
@@ -97,7 +89,7 @@ function GomiTool() {
         <h2 id={id + '-a'}><Bi phrase k="gomi.area.title" /></h2>
         {/* 収集日が出るまで（区・町名・番地がそろうまで）、何を入れるかを1行で聞く */}
         {SCHEDULE_ON && pa.status.kind !== 'ready' && area.kind !== 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.ask" /></p>}
-        <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => { if (!x || x.ward_id !== saved?.ward_id) setFromHere(false); void setPlace(x); }} area={pa} fromHere={fromHere} />
+        <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => { void setPlace(x); }} area={pa} autoSuggest={location === 'on'} />
         {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
         {!SCHEDULE_ON && saved && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
       </section>
