@@ -90,7 +90,7 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
   const [done, setDone] = useState<string | null>(null);
   const step = nowStep(g.out, g.today, { urgentFirst: !stepMode });
   // あなたについて：最初の質問に国籍などがあれば、ほかの質問の前に、まとめて聞く（2026-11-07）
-  const about = step.kind === 'upfront' && wantsAbout(g.out.upfront, vault.get('settings', ABOUT_SKIPPED) === true, DATA().questions, g.answers) ? aboutNext(DATA().questions, g.answers) : undefined;
+  const about = step.kind === 'upfront' && g.event.about_step !== false && wantsAbout(g.out.upfront, vault.get('settings', ABOUT_SKIPPED) === true, DATA().questions, g.answers) ? aboutNext(DATA().questions, g.answers) : undefined;
   useFocusTitle((about ? 'about:' + about.id + ':' : '') + 'ev:' + g.occ?.id + ':' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
   const Title = ({ children }: { children: ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
   const eyebrow = <p className="eyebrow"><One t={g.event.title} /></p>;

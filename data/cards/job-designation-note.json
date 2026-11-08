@@ -21,7 +21,12 @@
   "deadline": null,
   "id": "job-designation-note",
   "illustration": "doc",
-  "eligibility": "R-job-designation",
+  "eligibility": {
+    "all": [
+      "R-job-goal-work",
+      "R-job-designation"
+    ]
+  },
   "title": {
     "ja": "{指定|してい}{書|しょ}に{書|か}いてある{仕事|しごと}だけ",
     "ja_easy": "{指定書|していしょ}の{仕事|しごと}だけ",

@@ -22,7 +22,12 @@
   "id": "job-no-work-note",
   "illustration": "ask",
   "place": "immigration",
-  "eligibility": "R-job-no-work",
+  "eligibility": {
+    "all": [
+      "R-job-goal-work",
+      "R-job-no-work"
+    ]
+  },
   "title": {
     "ja": "{働|はたら}く{前|まえ}に{入管|にゅうかん}で{相談|そうだん}",
     "ja_easy": "{働|はたら}く{前|まえ}に{入管|にゅうかん}で{聞|き}く",

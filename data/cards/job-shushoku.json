@@ -1,7 +1,7 @@
 {
   "data_version": 1,
-  "awareness_type": "upcoming",
-  "obligation": "check",
+  "awareness_type": "applies",
+  "obligation": "legal",
   "domain": "government",
   "depth": "L2",
   "first_week": false,

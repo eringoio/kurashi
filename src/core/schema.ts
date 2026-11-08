@@ -230,6 +230,11 @@ export const EventDef = z.object({
   goal_card_ids: z.array(z.string()).optional(),
   /** 関連する情報・選択肢（v0.5.30）：「いま／あとで」のタスクに入れず、「関連する情報」に出す（もしものとき・ほかの方法など） */
   info_card_ids: z.array(z.string()).optional(),
+  /** 答えで変わる区分け（v0.5.32：仕事。目的ごとに「いま」「関連する情報」「あとで」が違う）。when のルール（selection）が T のときだけ、
+      goal・info・later に足す。later は「答えから、あとでする」（例：まだ事業を始めていない人の開業届） */
+  by_answer: z.array(z.object({ when: z.string(), goal_card_ids: z.array(z.string()).optional(), info_card_ids: z.array(z.string()).optional(), later_card_ids: z.array(z.string()).optional() })).optional(),
+  /** false：「あなたについて」をまとめて聞かない。要る質問だけを、目的の質問のあとに聞く（v0.5.32：仕事） */
+  about_step: z.boolean().optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;

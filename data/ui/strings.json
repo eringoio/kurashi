@@ -4295,6 +4295,11 @@
     "ja_easy": "「{card}」のあとでします。いま、{準備|じゅんび}はできます。",
     "en": "You do this after \"{card}\". You can read it and prepare now."
   },
+  "why.answerLater": {
+    "ja": "{答|こた}えから、この{手続|てつづ}きは{先|さき}のことです。{始|はじ}めたら、ここから{進|すす}めます。",
+    "ja_easy": "{答|こた}えから、これは{先|さき}のことです。{始|はじ}めたら{進|すす}めます。",
+    "en": "From your answers, this comes later. When you start, continue from here."
+  },
   "why.deferred": {
     "ja": "あなたが「あとでする」にしました。いつでも{再開|さいかい}できます。",
     "ja_easy": "あなたが「あとで」にしました。いつでも{始|はじ}められます。",
@@ -4404,6 +4409,11 @@
     "ja": "{次|つぎ}にすることは、まだ{決|き}まっていません。{質問|しつもん}に{答|こた}えると{決|き}まります。",
     "ja_easy": "{次|つぎ}に することは、まだ わかりません。{質問|しつもん}に {答|こた}えると わかります。",
     "en": "Your next step is not decided yet. Answer the questions to find it."
+  },
+  "road.onlyInfo": {
+    "ja": "{手続|てつづ}きはありません。{下|した}の{情報|じょうほう}を、{要|い}るときに{読|よ}んでください。",
+    "ja_easy": "{手続|てつづ}きは ありません。{下|した}の {情報|じょうほう}を {読|よ}んで ください。",
+    "en": "There is nothing you need to file. Read the information below when you need it."
   },
   "road.allDone": {
     "ja": "{全部|ぜんぶ}{済|す}みました",

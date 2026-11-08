@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-employ",
-      "R-job-can-work"
+      "R-job-can-work",
+      "R-job-ins-kokuho"
     ]
   },
   "coverage_rule_ids": [],

@@ -3,7 +3,7 @@
   "data_version": 1,
   "illustration": "hcard",
   "awareness_type": "applies",
-  "obligation": "legal",
+  "obligation": "check",
   "domain": "government",
   "depth": "L2",
   "first_week": true,
@@ -47,7 +47,7 @@
       "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。"
     }
   },
-  "kind": "procedure",
+  "kind": "guide",
   "methods": [
     {
       "type": "counter",
@@ -76,5 +76,10 @@
     "checked_at": "2026-11-06",
     "status": "needs_check",
     "quote": "適用事業所に常用的に使用される（※）70歳未満の方は、国籍や性別、年金の受給の有無にかかわらず、厚生年金保険の被保険者となります。 / 1週間の所定労働時間が20時間以上であること。 / 31日以上の雇用見込みがあること。 / 「昼間学生」に該当する留学生は原則、被保険者となりません"
+  },
+  "lead": {
+    "ja": "{加入|かにゅう}の{届|とど}けは{会社|かいしゃ}がします。{入|はい}ったかは、{保険|ほけん}{証|しょう}や{給与|きゅうよ}{明細|めいさい}で{確|たし}かめます。",
+    "ja_easy": "{届|とど}けは{会社|かいしゃ}がします。{入|はい}ったかを、{保険|ほけん}{証|しょう}や{給料|きゅうりょう}の{明細|めいさい}で{見|み}ます。",
+    "en": "Your employer files the enrolment. Check your insurance card or payslip."
   }
 }

@@ -1216,33 +1216,91 @@
           {
             "any": [
               {
-                "fact": "zairyu_status",
-                "in": [
-                  "student",
-                  "family",
-                  "cultural"
+                "all": [
+                  {
+                    "fact": "job_goal",
+                    "in": [
+                      "part_time",
+                      "biz_start"
+                    ]
+                  },
+                  {
+                    "any": [
+                      {
+                        "fact": "zairyu_status",
+                        "in": [
+                          "student",
+                          "family",
+                          "cultural"
+                        ]
+                      },
+                      {
+                        "all": [
+                          {
+                            "not": {
+                              "fact": "zairyu_status",
+                              "in": [
+                                "student",
+                                "family",
+                                "work",
+                                "spouse",
+                                "permanent",
+                                "long_term",
+                                "cultural",
+                                "trainee"
+                              ]
+                            }
+                          },
+                          {
+                            "fact": "work_limit",
+                            "eq": "not_allowed"
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 ]
               },
               {
                 "all": [
                   {
-                    "not": {
-                      "fact": "zairyu_status",
-                      "in": [
-                        "student",
-                        "family",
-                        "work",
-                        "spouse",
-                        "permanent",
-                        "long_term",
-                        "cultural",
-                        "trainee"
-                      ]
-                    }
+                    "fact": "job_goal",
+                    "in": [
+                      "employ",
+                      "pt_end",
+                      "leave"
+                    ]
                   },
                   {
-                    "fact": "work_limit",
-                    "eq": "not_allowed"
+                    "any": [
+                      {
+                        "fact": "zairyu_status",
+                        "eq": "cultural"
+                      },
+                      {
+                        "all": [
+                          {
+                            "not": {
+                              "fact": "zairyu_status",
+                              "in": [
+                                "student",
+                                "family",
+                                "work",
+                                "spouse",
+                                "permanent",
+                                "long_term",
+                                "cultural",
+                                "trainee"
+                              ]
+                            }
+                          },
+                          {
+                            "fact": "work_limit",
+                            "eq": "not_allowed"
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -1350,6 +1408,52 @@
       ]
     },
     {
+      "id": "Q-biz-aoiro",
+      "fact": "biz_aoiro",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "eq": "biz_end"
+      },
+      "text": {
+        "ja": "{青色|あおいろ}{申告|しんこく}をしていますか？",
+        "ja_easy": "青色申告をしていますか？",
+        "en": "Do you file blue-form tax returns?"
+      },
+      "why_asked": {
+        "ja": "{青色|あおいろ}{申告|しんこく}をしている{人|ひと}は、やめるときに{取|と}りやめの{届|とど}けも{出|だ}すためです。",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}の{人|ひと}は、やめる{届|とど}けも{出|だ}すからです。",
+        "en": "Blue-form filers also submit a notice to stop blue-form filing."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-biz-employees",
       "fact": "biz_employees",
       "stage": "in_card",
@@ -1399,6 +1503,98 @@
       ]
     },
     {
+      "id": "Q-biz-started",
+      "fact": "biz_started",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "eq": "biz_start"
+      },
+      "text": {
+        "ja": "{事業|じぎょう}はもう{始|はじ}めましたか？",
+        "ja_easy": "{仕事|しごと}（{事業|じぎょう}）は、もう{始|はじ}めましたか？",
+        "en": "Have you already started the business?"
+      },
+      "why_asked": {
+        "ja": "{開業|かいぎょう}{届|とどけ}は、{事業|じぎょう}を{始|はじ}めたあとに{出|だ}す{届|とど}けだからです。",
+        "ja_easy": "{開業|かいぎょう}{届|とどけ}は、{始|はじ}めたあとに{出|だ}すからです。",
+        "en": "The business-start notice is filed after you start."
+      },
+      "options": [
+        {
+          "value": "planning",
+          "label": {
+            "ja": "これから{始|はじ}める",
+            "ja_easy": "これから始める",
+            "en": "Not yet, I will start soon"
+          }
+        },
+        {
+          "value": "started",
+          "label": {
+            "ja": "もう{始|はじ}めた",
+            "ja_easy": "もう始めた",
+            "en": "Yes, I have started"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-biz-side",
+      "fact": "biz_side",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "eq": "biz_start"
+      },
+      "text": {
+        "ja": "{会社|かいしゃ}などに{勤|つと}めながら、{副業|ふくぎょう}として{始|はじ}めますか？",
+        "ja_easy": "{会社|かいしゃ}で{働|はたら}きながら、ほかの{仕事|しごと}として{始|はじ}めますか？",
+        "en": "Will you keep your job and run the business on the side?"
+      },
+      "why_asked": {
+        "ja": "{勤|つと}め{先|さき}の{保険|ほけん}に{入|はい}ったままの{人|ひと}は、ふつう{保険|ほけん}の{届|とど}けが{要|い}らないためです。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}のままの{人|ひと}は、{保険|ほけん}の{届|とど}けが{要|い}らないことが{多|おお}いからです。",
+        "en": "If you stay in your workplace insurance, you usually do not need an insurance filing."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい（{勤|つと}め{先|さき}は{続|つづ}ける）",
+            "ja_easy": "はい（{会社|かいしゃ}はやめない）",
+            "en": "Yes, I keep my job"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ（{事業|じぎょう}だけにする）",
+            "ja_easy": "いいえ（この{仕事|しごと}だけ）",
+            "en": "No, only the business"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-job-next",
       "fact": "job_next",
       "stage": "in_card",
@@ -1431,6 +1627,68 @@
             "ja": "いいえ（{間|あいだ}が{空|す}く・{次|つぎ}の{勤|つと}め{先|さき}がない）",
             "ja_easy": "いいえ",
             "en": "No (there is a gap, or no next job)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-job-koyo",
+      "fact": "koyo_hoken",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "any": [
+          {
+            "fact": "job_goal",
+            "eq": "leave"
+          },
+          {
+            "all": [
+              {
+                "fact": "job_goal",
+                "eq": "pt_end"
+              },
+              {
+                "fact": "insurance",
+                "eq": "employer_self"
+              }
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "{辞|や}める{仕事|しごと}で、{雇用|こよう}{保険|ほけん}に{入|はい}っていましたか？",
+        "ja_easy": "辞める仕事で、雇用保険に入っていましたか？",
+        "en": "Were you in employment insurance at the job you are leaving?"
+      },
+      "why_asked": {
+        "ja": "{失業|しつぎょう}{給付|きゅうふ}は、{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}の{手続|てつづ}きだからです。{給与|きゅうよ}{明細|めいさい}に「{雇用|こよう}{保険|ほけん}{料|りょう}」があれば、{入|はい}っています。",
+        "ja_easy": "{失業|しつぎょう}{給付|きゅうふ}は、{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}の{手続|てつづ}きです。{給料|きゅうりょう}の{明細|めいさい}に「{雇用|こよう}{保険|ほけん}{料|りょう}」があれば、{入|はい}っています。",
+        "en": "Unemployment benefits are only for people who were in employment insurance. If your payslip shows an employment insurance deduction, you were in it."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
           }
         },
         {

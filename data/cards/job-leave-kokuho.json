@@ -18,13 +18,7 @@
           "R-job-goal-pt-end"
         ]
       },
-      {
-        "any": [
-          "R-job-goal-leave",
-          "R-job-ins-employer"
-        ]
-      },
-      "R-job-not-pt-only",
+      "R-job-ins-employer",
       "R-job-can-work",
       "R-job-no-next-insurance"
     ]

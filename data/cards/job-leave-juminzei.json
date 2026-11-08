@@ -14,11 +14,10 @@
     "all": [
       {
         "any": [
-          "R-job-goal-leave",
-          "R-job-goal-pt-end"
+          "R-job-leave-regular",
+          "R-job-pt-end-employer-ins"
         ]
       },
-      "R-job-not-pt-only",
       "R-job-can-work"
     ]
   },

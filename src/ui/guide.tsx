@@ -180,7 +180,7 @@ export function whyText(c: CardView): LocalizedText {
   }
   return c.reasonRules[0]?.statement ? briefText(c.reasonRules[0].statement) as LocalizedText : cardLead(c.card) as LocalizedText;
 }
-const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace', deferred: 'why.deferred' } as const;
+const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace', deferred: 'why.deferred', answer_later: 'why.answerLater' } as const;
 /** 「〇〇のあとで」の文（段の after。v0.5.30）。手続きの名前を入れる */
 export function afterText(c: CardView): Text | null {
   const from = c.afterFrom ? DATA().cards.find((x) => x.id === c.afterFrom) : undefined;

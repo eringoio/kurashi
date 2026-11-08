@@ -1,0 +1,112 @@
+{
+  "id": "biz-end-aoiro",
+  "data_version": 1,
+  "illustration": "coins-dim",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-end",
+      "R-job-biz-aoiro"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{青色|あおいろ}{申告|しんこく}の{取|と}りやめの{届|とど}け",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}をやめる{届|とど}け",
+    "en": "Notice to stop blue-form filing"
+  },
+  "official_name": {
+    "ja": "所得税の青色申告の取りやめ届出書",
+    "reading": "しょとくぜいのあおいろしんこくのとりやめとどけでしょ"
+  },
+  "summary": {
+    "ja": "{青色|あおいろ}{申告|しんこく}をしていた{人|ひと}が{事業|じぎょう}をやめて、{青色|あおいろ}{申告|しんこく}もやめるときは、「{所得|しょとく}{税|ぜい}の{青色|あおいろ}{申告|しんこく}の{取|と}りやめ{届出|とどけで}{書|しょ}」を{税務署|ぜいむしょ}に{出|だ}します。{廃業|はいぎょう}{届|とどけ}と{一緒|いっしょ}に{出|だ}せます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}をしていた{人|ひと}は、{廃業|はいぎょう}{届|とどけ}と{一緒|いっしょ}に、{青色|あおいろ}{申告|しんこく}をやめる{届|とど}けを{税務署|ぜいむしょ}に{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "en": "If you filed blue-form returns and close the business, submit the \"Notice to Stop Blue-Form Filing\" to the tax office. You can file it with the business-closure notice (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{青色|あおいろ}{申告|しんこく}をやめる{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "ja_easy": "やめる{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "en": "By the tax-return deadline for the year you stop (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-aoiro-yame"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "青色申告を取りやめようとする年分の所得税の確定申告期限までに提出してください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-aoiro-yame"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [
+    "青色申告",
+    "取りやめ",
+    "aoiro"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nta-aoiro-yame",
+      "nta-kaigyo-todoke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "事業を廃止する方で青色申告の取りやめをされる方は、「青色申告の取りやめ届出書」も提出してください。"
+  },
+  "lead": {
+    "ja": "{事業|じぎょう}をやめて{青色|あおいろ}{申告|しんこく}もやめるときは、{取|と}りやめの{届|とど}けも{出|だ}します。",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}の{人|ひと}は、やめる{届|とど}けも{出|だ}します。",
+    "en": "If you close the business and stop blue-form filing, also file this notice."
+  },
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "e-Tax（インターネット）でも{出|だ}せます。{書面|しょめん}で{持|も}って{行|い}くか、{郵送|ゆうそう}もできます。",
+        "ja_easy": "インターネットか、{紙|かみ}で{出|だ}せます。",
+        "en": "File online via e-Tax, or on paper in person or by post."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-aoiro-yame"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{青色|あおいろ}{申告|しんこく}の{取|と}りやめ{届出|とどけで}{書|しょ}（{国税庁|こくぜいちょう}）",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}をやめる{届|とど}け（{国税庁|こくぜいちょう}）",
+        "en": "Notice to stop blue-form filing (NTA)"
+      },
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/23200008.htm",
+      "source_id": "nta-aoiro-yame"
+    }
+  ]
+}

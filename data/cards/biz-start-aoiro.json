@@ -2,7 +2,7 @@
   "id": "biz-start-aoiro",
   "data_version": 1,
   "illustration": "doc",
-  "awareness_type": "option",
+  "awareness_type": "applies",
   "obligation": "optional",
   "domain": "government",
   "depth": "L2",
@@ -22,23 +22,23 @@
     "reading": "しょとくぜいのあおいろしんこくしょうにんしんせいしょ"
   },
   "summary": {
-    "ja": "{青色|あおいろ}{申告|しんこく}にしたいときは、{開業|かいぎょう}{届|とどけ}とは{別|べつ}に{申請|しんせい}{書|しょ}を{出|だ}します。{期限|きげん}は、その{年|とし}の3{月|つき}15{日|にち}までです。1{月|つき}16{日|にち}{以後|いご}に{始|はじ}めた{人|ひと}は、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}です（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{青色|あおいろ}{申告|しんこく}にしたい{人|ひと}は、{別|べつ}に{申請|しんせい}します。{始|はじ}めてから2か{月|げつ}{以内|いない}などです（{要|よう}{確認|かくにん}）。",
-    "en": "To use blue-form returns, file a separate application: by 15 March of that year, or within 2 months of starting if you start on or after 16 January (to be checked)."
+    "ja": "{青色|あおいろ}{申告|しんこく}にすると、{帳簿|ちょうぼ}をつけることで{控除|こうじょ}などを{受|う}けられます（{要|よう}{確認|かくにん}）。{使|つか}える{人|ひと}は、{事業|じぎょう}{所得|しょとく}・{不動産|ふどうさん}{所得|しょとく}・{山林|さんりん}{所得|しょとく}がある{人|ひと}です。{開業|かいぎょう}{届|とどけ}とは{別|べつ}に「{所得|しょとく}{税|ぜい}の{青色|あおいろ}{申告|しんこく}{承認|しょうにん}{申請|しんせい}{書|しょ}」を、{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}に{出|だ}します。{期限|きげん}は、{青色|あおいろ}{申告|しんこく}にしたい{年|とし}の3{月|つき}15{日|にち}までです。その{年|とし}の1{月|つき}16{日|にち}{以後|いご}に{事業|じぎょう}を{始|はじ}めた{人|ひと}は、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}です。{期限|きげん}が{土|ど}・{日曜日|にちようび}・{祝日|しゅくじつ}などのときは、{次|つぎ}の{日|ひ}が{期限|きげん}です。{出|だ}さなければ{白色|はくしょく}{申告|しんこく}になります。",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}にすると、{税金|ぜいきん}が{安|やす}くなることがあります（{要|よう}{確認|かくにん}）。{事業|じぎょう}などの{所得|しょとく}がある{人|ひと}が{使|つか}えます。{開業|かいぎょう}{届|とどけ}とは{別|べつ}に、{申請|しんせい}{書|しょ}を{税務署|ぜいむしょ}に{出|だ}します。3{月|つき}15{日|にち}までです。1{月|つき}16{日|にち}より{後|のち}に{始|はじ}めた{人|ひと}は、{始|はじ}めてから2か{月|げつ}{以内|いない}です。{出|だ}さなくてもかまいません（{白色|はくしょく}{申告|しんこく}になります）。",
+    "en": "With blue-form returns you keep proper books and can get deductions (to be checked). It is for business, real-estate or forestry income. Besides the business-start notice, file the \"Application for Approval of Blue-Form Tax Return\" with the tax office for your address. Deadline: 15 March of the year you want it to start; if you start the business on or after 16 January, within 2 months of starting. If the deadline falls on a weekend or holiday, it moves to the next day. If you do not file, you use the white-form return."
   },
   "deadline": {
     "text": {
-      "ja": "その{年|とし}の3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}{以後|いご}に{始|はじ}めたときは、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}より{後|のち}に{始|はじ}めたら2か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "en": "By 15 March; within 2 months of starting if you start on/after 16 January (to be checked)"
+      "ja": "{青色|あおいろ}{申告|しんこく}にしたい{年|とし}の3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}{以後|いご}に{始|はじ}めたときは、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}（{土|ど}・{日曜日|にちようび}・{祝日|しゅくじつ}などなら{次|つぎ}の{日|ひ}）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}より{後|のち}に{始|はじ}めたら、2か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "By 15 March of that year; within 2 months of starting if you start on/after 16 January (next day if it falls on a weekend or holiday) (to be checked)"
     },
     "evidence": {
       "source_ids": [
-        "nta-2090"
+        "nta-aoiro-shinsei"
       ],
       "checked_at": "2026-11-08",
       "status": "needs_check",
-      "quote": "原則、青色申告書による申告をしようとする年の3月15日まで（その年の1月16日以後、新たに事業を開始したり不動産の貸付けをした場合には、その事業開始等の日から2月以内。）"
+      "quote": "青色申告書による申告をしようとする年の3月15日まで（その年の1月16日以後、新たに事業を開始したり不動産の貸付けをした場合には、その事業開始等の日（非居住者の場合には事業を国内において開始した日）から2月以内。）に提出してください。なお、提出期限が土・日曜日・祝日等に当たる場合は、これらの日の翌日が期限となります。"
     }
   },
   "where": {
@@ -49,21 +49,75 @@
     },
     "evidence": {
       "source_ids": [
-        "nta-2090"
+        "nta-aoiro-shinsei"
       ],
       "checked_at": "2026-11-08",
       "status": "needs_check"
     }
   },
   "kind": "procedure",
-  "keywords": [],
+  "keywords": [
+    "青色申告",
+    "あおいろしんこく",
+    "aoiro",
+    "blue return"
+  ],
   "reasons": {},
   "evidence": {
     "source_ids": [
+      "nta-aoiro-shinsei",
       "nta-2090"
     ],
     "checked_at": "2026-11-08",
     "status": "needs_check",
-    "quote": "その事業開始等の日から2月以内"
-  }
+    "quote": "青色申告書による申告をしようとする年の3月15日まで（その年の1月16日以後、新たに事業を開始したり不動産の貸付けをした場合には、その事業開始等の日（非居住者の場合には事業を国内において開始した日）から2月以内。）に提出してください。"
+  },
+  "lead": {
+    "ja": "{任意|にんい}ですが、{青色|あおいろ}{申告|しんこく}にしたいときは{申請|しんせい}の{期限|きげん}に{注意|ちゅうい}してください。",
+    "ja_easy": "しなくてもよい{申請|しんせい}です。{青色|あおいろ}{申告|しんこく}にしたいときは、{期限|きげん}に{気|き}をつけてください。",
+    "en": "Optional. If you want blue-form returns, watch the application deadline."
+  },
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "e-Tax（インターネット。スマートフォンからも）で{出|だ}せます。",
+        "ja_easy": "インターネットで{出|だ}せます（スマホでも）。",
+        "en": "You can file online via e-Tax (also from a smartphone)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-aoiro-shinsei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{書面|しょめん}で{作|つく}って、{税務署|ぜいむしょ}に{持|も}って{行|い}くか、{郵送|ゆうそう}もできます。",
+        "ja_easy": "{紙|かみ}に{書|か}いて、{税務署|ぜいむしょ}に{持|も}って{行|い}くか、{送|おく}ります。",
+        "en": "You can also file on paper at the tax office or by post."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-aoiro-shinsei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{青色|あおいろ}{申告|しんこく}{承認|しょうにん}{申請|しんせい}{書|しょ}（{国税庁|こくぜいちょう}）",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}の{申請|しんせい}{書|しょ}（{国税庁|こくぜいちょう}）",
+        "en": "Blue-form approval application (NTA)"
+      },
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/09.htm",
+      "source_id": "nta-aoiro-shinsei"
+    }
+  ]
 }

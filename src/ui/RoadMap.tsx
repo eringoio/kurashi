@@ -58,6 +58,8 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
   }
   const stages = ORDER.filter((k) => groups.get(k)?.length);
   const openLeft = shown.some((c) => c.section !== 'done');
+  // 関連する情報だけ（手続きがない。例：仕事の基本情報）：質問に答えると決まる、とは言わない（v0.5.32）
+  const onlyInfo = openLeft && shown.every((c) => c.section === 'info' || c.section === 'done');
   // キャラクターの段：いまの1つ／決まらないとき「はじめ」／全部済んだら「おわり」
   const youAt: 'now' | 'start' | 'end' = groups.has('now') ? 'now' : openLeft ? 'start' : 'end';
   const youKey = youAt === 'now' ? now![0] : youAt;
@@ -138,7 +140,7 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
             <span className="road__marker road__marker--you">{you}</span>
             <div className="road__body">
               <p className="road__stage-name"><One k="road.start" /></p>
-              <p className="road__note"><One k="road.noCurrent" /></p>
+              <p className="road__note"><One k={onlyInfo ? 'road.onlyInfo' : 'road.noCurrent'} /></p>
             </div>
           </li>
         )}

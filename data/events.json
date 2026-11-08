@@ -151,10 +151,8 @@
         }
       ],
       "questions": [
-        "Q-nationality",
-        "Q-zairyu-status",
-        "Q-work-limit",
         "Q-job-goal",
+        "Q-biz-started",
         "Q-job-permit"
       ],
       "card_ids": [
@@ -189,6 +187,7 @@
         "biz-start-employees",
         "biz-start-hoken",
         "biz-end-haigyo",
+        "biz-end-aoiro",
         "biz-end-invoice",
         "biz-end-employees",
         "biz-end-status",
@@ -205,6 +204,42 @@
       },
       "goal_card_ids": [
         "job-kyujin"
+      ],
+      "about_step": false,
+      "by_answer": [
+        {
+          "when": "R-job-goal-basics",
+          "info_card_ids": [
+            "job-saitei-chingin",
+            "job-rodo-joken",
+            "job-shakai-hoken",
+            "job-trouble"
+          ]
+        },
+        {
+          "when": "R-job-goal-pt",
+          "info_card_ids": [
+            "job-shakai-hoken"
+          ]
+        },
+        {
+          "when": "R-job-goal-biz-start",
+          "goal_card_ids": [
+            "biz-start-kaigyo"
+          ]
+        },
+        {
+          "when": "R-job-biz-planning",
+          "later_card_ids": [
+            "biz-start-kaigyo"
+          ]
+        },
+        {
+          "when": "R-job-goal-biz-end",
+          "goal_card_ids": [
+            "biz-end-haigyo"
+          ]
+        }
       ]
     },
     {

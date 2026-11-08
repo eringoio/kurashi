@@ -15,10 +15,10 @@
       {
         "any": [
           "R-job-goal-leave",
-          "R-job-goal-pt-end"
+          "R-job-pt-end-employer-ins"
         ]
       },
-      "R-job-not-pt-only",
+      "R-job-koyo-yes",
       "R-job-can-work"
     ]
   },
@@ -39,7 +39,7 @@
   },
   "lead": {
     "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、ハローワークで{手続|てつづ}きすると{基本|きほん}{手当|てあて}を{受|う}けられることがあります。",
-    "ja_easy": "仕事をやめたら、ハローワークでお金をもらえることがあります。",
+    "ja_easy": "{仕事|しごと}をやめたら、ハローワークでお{金|かね}をもらえることがあります。",
     "en": "If you were in employment insurance, you may get benefits through Hello Work."
   },
   "deadline": null,

@@ -26,9 +26,9 @@ const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-ching
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('仕事・アルバイト（公開）', () => {
-  it('型と参照の検査を通る。36枚（11/8：辞める・個人事業・会社を足した）。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。37枚（11/8：辞める・個人事業・会社を足した。v0.5.32：青色申告の取りやめ）。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(ev.card_ids.length).toBe(36);
+    expect(ev.card_ids.length).toBe(37);
     const s = JSON.stringify(json);
     for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
@@ -50,9 +50,11 @@ describe('仕事・アルバイト（公開）', () => {
     expect(st(go('permanent'))).not.toBe('shown');
     expect(view(go('work', { 'Q-job-goal': 'employ' }), 'job-side-work').state).not.toBe('shown');
   });
-  it('最初に、在留資格を聞く', () => {
+  it('最初に目的を聞き、国籍・在留資格は要るときだけ（v0.5.32）', () => {
     expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-nationality']);
-    expect(run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront.map((q) => q.id)).toEqual(['Q-nationality', 'Q-job-goal']);
+    expect(run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront.map((q) => q.id)).toEqual(['Q-job-goal', 'Q-nationality']);
+    // 基本情報だけなら、国籍も聞かない
+    expect(run(data, { answers: { 'Q-job-goal': 'basics' }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront).toEqual([]);
   });
   it('留学：資格外活動許可は shown。ほかのカードも出る。許可をもう受けたかを聞く', () => {
     const o = go('student');
@@ -267,13 +269,14 @@ describe('在留資格の区分（6A.16）', () => {
     }
     expect(st(g('employ', 'work'), 'job-shushoku')).toBe('excluded');
   });
-  it('留学・家族滞在が辞める：失業手当・住民税・国保は出さない。「届けは要りません」の1枚', () => {
+  it('留学・家族滞在が辞める：国保・雇用保険に入っていなければ、失業手当・住民税・国保は出さない。「届けは要りません」の1枚（v0.5.32：入っていた人は見落とさない）', () => {
     for (const s of ['student', 'family']) {
-      const o = g('leave', s);
+      const o = g('leave', s, { 'Q-insurance': 'kokuho', 'Q-job-koyo': 'no' });
       for (const id of ['job-leave-shitsugyo', 'job-leave-juminzei', 'job-leave-kokuho', 'job-leave-nyukan']) expect(st(o, id), s + id).toBe('excluded');
       expect(st(o, 'job-pt-leave-note'), s).not.toBe('excluded');
     }
     expect(st(g('leave', 'work'), 'job-pt-leave-note')).toBe('excluded');
-    expect(st(g('leave', 'permanent'), 'job-leave-shitsugyo')).not.toBe('excluded');
+    expect(st(g('leave', 'permanent', { 'Q-job-koyo': 'yes' }), 'job-leave-shitsugyo')).not.toBe('excluded');
+    expect(st(g('pt_end', 'student', { 'Q-insurance': 'employer_self', 'Q-job-koyo': 'yes' }), 'job-leave-shitsugyo')).not.toBe('excluded');
   });
 });

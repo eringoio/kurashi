@@ -42,7 +42,7 @@ export interface CardView {
   state: DisplayState;
   section: Section | null;
   /** 区分けの理由（あとで・待つの文の種類） */
-  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | 'visit_need_document' | 'visit_wrong_place' | 'after_card' | 'deferred' | null;
+  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | 'visit_need_document' | 'visit_wrong_place' | 'after_card' | 'deferred' | 'answer_later' | null;
   /** 本人が選んだ目的の手続き（events.json の goal_card_ids。v0.5.30） */
   goal: boolean;
   /** after_card のとき：この手続きのあとで生じる（段の after。名前を理由の文に入れる） */
@@ -182,6 +182,20 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   // 目的・関連する情報・段の「あとで」（v0.5.30。できごとのデータで決める。イベントの名前では分けない）
   const goals = new Set(x.event?.goal_card_ids ?? []);
   const infos = new Set(x.event?.info_card_ids ?? []);
+  const laters = new Set<string>();
+  // 答えで変わる区分け（v0.5.32）：ルールが T のときだけ足す
+  x.event?.by_answer?.forEach((b) => {
+    if (conf.get(b.when)?.v !== 'T') return;
+    b.goal_card_ids?.forEach((id) => goals.add(id));
+    b.info_card_ids?.forEach((id) => infos.add(id));
+    b.later_card_ids?.forEach((id) => laters.add(id));
+  });
+  // できごとの中の選択（目的など。scope: event の質問の答えだけで決まる selection のルール）で外れたカード（v0.5.32）。
+  // 前に進めていても「確かめる」に残さない（記録は消さない。目的を戻すとまた出る）
+  const eventFacts = new Set(data.questions.filter((q) => q.scope === 'event').map((q) => q.fact));
+  const bySelection = (id: string) => { const r = data.rules.get(id)!; return r.kind === 'selection' && [...factsIn(r.condition)].every((f) => eventFacts.has(f)); };
+  const maskExpr = (e: RuleExpr): Eval => (typeof e === 'string' ? (bySelection(e) ? { v: 'U', unanswered: new Set(), unknown: new Set(), unverified: false } : conf.get(e)!) : 'all' in e ? combineAll(e.all.map(maskExpr)) : combineAny(e.any.map(maskExpr)));
+  const offBySelection = (card: Card) => maskExpr(card.eligibility).v !== 'F';
   const afterOf = new Map<string, string[]>();
   x.event?.phases?.forEach((ph) => ph.after && ph.card_ids.forEach((id) => afterOf.set(id, ph.after!)));
   const visibleState = (st: DisplayState | undefined) => st === 'shown' || st === 'check_at_office' || st === 'ask';
@@ -241,7 +255,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
 
     // 区分け（10.3）。やること画面に入るのは shown と check_at_office だけ
     const inPlan = state === 'shown' || state === 'check_at_office';
-    const changed = !inPlan && ['preparing', 'submitted', 'waiting'].includes(status);
+    const changed = !inPlan && ['preparing', 'submitted', 'waiting'].includes(status) && !(x.event && state === 'excluded' && offBySelection(card));
     if (inPlan || changed) {
       const waits = data.relations.find((r) => r.type === 'waits_for' && r.card_id === card.id && relVerified(r) && (r.when_rule_ids ?? []).every((id) => ruleT(id) === 'T'));
       const legalNotMet = data.relations.find((r) => r.type === 'legal_prerequisite' && r.to === card.id && relVerified(r) && satisfied(r) === 'no' && !sameVisitVerified(data, r.from, r.to, relVerified));
@@ -260,6 +274,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (waits) { section = 'wait'; sectionWhy = 'waits'; notes.push({ kind: 'waits_for', relation: waits, verified: true }); }
       else if (legalNotMet) { section = 'later'; sectionWhy = 'after_prereq'; }
       else if (card.requires_moved_in && moved !== 'yes') { section = 'later'; sectionWhy = moved === 'not_yet' ? 'moved_in_not_yet' : moved === 'unknown' ? 'moved_in_unknown' : 'moved_in_unanswered'; }
+      // 答えから、あとでする（v0.5.32。例：まだ事業を始めていない人の開業届）
+      else if (laters.has(card.id) && status !== 'preparing') { section = 'later'; sectionWhy = 'answer_later'; }
       else if (status === 'preparing') section = 'today';
       // 目的の手続き（本人が選んだ）：期限や義務がなくても「いま」（v0.5.30）
       else if (goal) section = 'today';

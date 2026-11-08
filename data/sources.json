@@ -2592,6 +2592,14 @@
       "owner_type": "government",
       "title": "運転免許試験場（平針）での外国免許から国内免許への切替えについて",
       "language": "ja"
+    },
+    {
+      "source_id": "nta-aoiro-shinsei",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/09.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "A1-8 所得税の青色申告承認申請手続",
+      "language": "ja"
     }
   ]
 }

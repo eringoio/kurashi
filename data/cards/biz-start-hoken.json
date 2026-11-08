@@ -10,7 +10,12 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-biz-start",
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-start",
+      "R-job-biz-hoken-change"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{個人|こじん}{事業|じぎょう}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}",
@@ -51,5 +56,10 @@
     "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "名古屋市の国民健康保険に加入するときは、必ず14日以内に届出をしてください。"
+  },
+  "lead": {
+    "ja": "{勤|つと}め{先|さき}の{保険|ほけん}が{終|お}わる{人|ひと}などは、{国民|こくみん}{健康|けんこう}{保険|ほけん}と{国民|こくみん}{年金|ねんきん}の{手続|てつづ}きを{確|たし}かめます。",
+    "ja_easy": "{会社|かいしゃ}の{保険|ほけん}が{終|お}わる{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}と{国民|こくみん}{年金|ねんきん}を{確|たし}かめます。",
+    "en": "If your workplace insurance ends, check National Health Insurance and the National Pension."
   }
 }

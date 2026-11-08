@@ -3047,6 +3047,278 @@
         "checked_at": "2026-11-08",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-job-goal-work",
+      "kind": "selection",
+      "condition": {
+        "fact": "job_goal",
+        "in": [
+          "part_time",
+          "employ",
+          "pt_end",
+          "leave",
+          "biz_start",
+          "biz_end",
+          "company"
+        ]
+      },
+      "statement": {
+        "ja": "{働|はたら}く・{辞|や}める・{事業|じぎょう}の{目的|もくてき}を{選|えら}んだ（{基本|きほん}{情報|じょうほう}だけではない）",
+        "ja_easy": "{基本|きほん}の{情報|じょうほう}だけではない",
+        "en": "You chose a goal other than basic information"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-ins-kokuho",
+      "kind": "selection",
+      "condition": {
+        "fact": "insurance",
+        "eq": "kokuho"
+      },
+      "statement": {
+        "ja": "いま{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている",
+        "ja_easy": "いま{国民|こくみん}{健康|けんこう}{保険|ほけん}",
+        "en": "You are in National Health Insurance now"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-koyo-yes",
+      "kind": "selection",
+      "condition": {
+        "fact": "koyo_hoken",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{辞|や}める{仕事|しごと}で{雇用|こよう}{保険|ほけん}に{入|はい}っていた",
+        "ja_easy": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた",
+        "en": "You were in employment insurance"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-planning",
+      "kind": "selection",
+      "condition": {
+        "fact": "biz_started",
+        "eq": "planning"
+      },
+      "statement": {
+        "ja": "{事業|じぎょう}はこれから{始|はじ}める",
+        "ja_easy": "これから{始|はじ}める",
+        "en": "You have not started the business yet"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-hoken-change",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "all": [
+              {
+                "fact": "biz_side",
+                "eq": "no"
+              },
+              {
+                "fact": "insurance",
+                "in": [
+                  "employer_self",
+                  "none"
+                ]
+              }
+            ]
+          },
+          {
+            "fact": "insurance",
+            "eq": "employer_family"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{事業|じぎょう}だけにする（{勤|つと}め{先|さき}の{保険|ほけん}が{終|お}わる・{保険|ほけん}がない）、または{家族|かぞく}の{扶養|ふよう}に{入|はい}っている",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}が{終|お}わる、または{家族|かぞく}の{保険|ほけん}に{入|はい}っている",
+        "en": "You leave your workplace insurance or have none, or you are a family dependent"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-aoiro",
+      "kind": "selection",
+      "condition": {
+        "fact": "biz_aoiro",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{青色|あおいろ}{申告|しんこく}をしている",
+        "ja_easy": "青色申告をしている",
+        "en": "You file blue-form returns"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-pt-end-employer-ins",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "job_goal",
+            "in": [
+              "pt_end",
+              "leave"
+            ]
+          },
+          {
+            "fact": "insurance",
+            "eq": "employer_self"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{仕事|しごと}を{辞|や}める。その{仕事|しごと}で{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}に{入|はい}っていた",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}に{入|はい}っていた{仕事|しごと}を{辞|や}める",
+        "en": "You leave a job where you were in the workplace health insurance"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-leave-regular",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "job_goal",
+            "eq": "leave"
+          },
+          {
+            "not": {
+              "all": [
+                {
+                  "fact": "nationality",
+                  "eq": "foreign"
+                },
+                {
+                  "any": [
+                    {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family"
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "not": {
+                            "fact": "zairyu_status",
+                            "in": [
+                              "student",
+                              "family",
+                              "work",
+                              "spouse",
+                              "permanent",
+                              "long_term",
+                              "cultural",
+                              "trainee"
+                            ]
+                          }
+                        },
+                        {
+                          "fact": "work_limit",
+                          "eq": "not_allowed"
+                        },
+                        {
+                          "fact": "job_permit",
+                          "in": [
+                            "blanket",
+                            "individual",
+                            "both",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "fact": "zairyu_status",
+                          "eq": "cultural"
+                        },
+                        {
+                          "fact": "job_permit",
+                          "in": [
+                            "blanket",
+                            "individual",
+                            "both",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{仕事|しごと}を{辞|や}める（{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}のアルバイトではない）",
+        "ja_easy": "{仕事|しごと}を{辞|や}める（アルバイトの{留学生|りゅうがくせい}ではない）",
+        "en": "You leave a job (not a student or dependant part-time job)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     }
   ]
 }
