@@ -1,0 +1,157 @@
+{
+  "data_version": 1,
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {
+    "excluded": {
+      "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}が、{副業|ふくぎょう}・アルバイトをするときの{案内|あんない}です。",
+      "ja_easy": "{仕事|しごと}の{在留資格|ざいりゅうしかく}の{人|ひと}のための{案内|あんない}です。",
+      "en": "This is for people with a work status who want a side job."
+    }
+  },
+  "deadline": null,
+  "id": "job-side-work",
+  "illustration": "doc",
+  "eligibility": {
+    "all": [
+      "R-job-goal-pt",
+      "R-job-work-status"
+    ]
+  },
+  "title": {
+    "ja": "{副業|ふくぎょう}・アルバイトの{前|まえ}に（{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}）",
+    "ja_easy": "{仕事|しごと}の{在留資格|ざいりゅうしかく}の{人|ひと}の{副業|ふくぎょう}",
+    "en": "Before a side job (work status)"
+  },
+  "official_name": {
+    "ja": "資格外活動許可",
+    "reading": "しかくがいかつどうきょか"
+  },
+  "summary": {
+    "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、{今|いま}の{在留|ざいりゅう}{資格|しかく}の{活動|かつどう}の{範囲|はんい}の{仕事|しごと}なら、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}は{要|い}りません。{範囲|はんい}の{外|そと}の{仕事|しごと}で{報酬|ほうしゅう}を{受|う}けるときは、{前|まえ}もって{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}を{受|う}けるか、{在留|ざいりゅう}{資格|しかく}を{変|か}えます（{要|よう}{確認|かくにん}）。どちらに{当|あ}たるかは、{仕事|しごと}の{内容|ないよう}で{決|き}まります。{会社|かいしゃ}が{別|べつ}だから、という{理由|りゆう}だけでは{決|き}まりません。",
+    "ja_easy": "{今|いま}の{在留資格|ざいりゅうしかく}の{仕事|しごと}と{同|おな}じ{内容|ないよう}なら、{許可|きょか}は{要|い}りません。ちがう{仕事|しごと}なら、{前|まえ}に{許可|きょか}が{要|い}ります（{要確認|ようかくにん}）。",
+    "en": "With a work status, a job within the activities of your current status does not need permission for extra activities. To be paid for work outside it, get permission first or change your status (to be checked). It depends on the work, not just on working for another company."
+  },
+  "lead": {
+    "ja": "{仕事|しごと}の{内容|ないよう}が、{今|いま}の{在留|ざいりゅう}{資格|しかく}の{範囲|はんい}か{確|たし}かめてください。",
+    "ja_easy": "{仕事|しごと}の{内容|ないよう}を{確|たし}かめてください。",
+    "en": "Check whether the work fits your current status."
+  },
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-shikakugai-guide"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "現に有する在留資格に属さない収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合に必要な許可です。"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{今|いま}の{在留|ざいりゅう}{資格|しかく}に{当|あ}たらない{仕事|しごと}をするときは、その{在留|ざいりゅう}{資格|しかく}に{変|か}えるか、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}を{受|う}けます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留資格|ざいりゅうしかく}に{合|あ}わない{仕事|しごと}は、{許可|きょか}か{在留資格|ざいりゅうしかく}の{変更|へんこう}が{要|い}ります（{要確認|ようかくにん}）。",
+        "en": "For work that does not fit your status, change your status or get permission for extra activities (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-kanri-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "従事しようとする業務内容が当該在留資格に該当しない場合には、該当する在留資格に変更するか、出入国在留管理庁から資格外活動許可を受ける必要があります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{個人|こじん}{事業|じぎょう}{主|ぬし}として{活動|かつどう}するときや、{働|はたら}く{時間|じかん}がはっきりしない{仕事|しごと}（{業務|ぎょうむ}{委託|いたく}など）は、{資格|しかく}{外|がい}{活動|かつどう}の{個別|こべつ}{許可|きょか}になります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{自分|じぶん}で{仕事|しごと}をするときは、{別|べつ}の{許可|きょか}（{個別許可|こべつきょか}）です（{要確認|ようかくにん}）。",
+        "en": "Working as a sole proprietor, or work without clear hours (such as contract work), needs individual permission (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-shikakugai-guide"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "個人事業主として活動する場合や客観的に稼働時間を確認することが困難である活動に従事する場合"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{開業|かいぎょう}{届|とどけ}は、{税務署|ぜいむしょ}に{出|だ}す{税|ぜい}の{届|とど}けです（{開業|かいぎょう}した{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで）。{開業|かいぎょう}{届|とどけ}を{出|だ}しても、{入管|にゅうかん}の{許可|きょか}にはなりません。",
+        "ja_easy": "{開業届|かいぎょうとどけ}は{税金|ぜいきん}の{届|とど}けです。{入管|にゅうかん}の{許可|きょか}とは{別|べつ}です。",
+        "en": "The business-start notice (開業届) is a tax filing at the tax office (due by the tax-return deadline of that year). It is not immigration permission."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-kaigyo-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "事業の開始等の事実があった日の属する年分の確定申告期限までに提出してください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{事業|じぎょう}の{経営|けいえい}が{主|おも}な{活動|かつどう}になるときは、「{経営|けいえい}・{管理|かんり}」の{在留|ざいりゅう}{資格|しかく}が{要|い}ることがあります。2025{年|ねん}10{月|つき}16{日|にち}から{基準|きじゅん}が{変|か}わりました：{資本|しほん}{金|きん}{等|とう}3,000{万|まん}{円|えん}{以上|いじょう}、{常勤|じょうきん}{職員|しょくいん}1{人|にん}{以上|いじょう}、{申請|しんせい}{者|しゃ}か{常勤|じょうきん}{職員|しょくいん}の{日本語|にほんご}の{力|ちから}、{専門|せんもん}{家|か}が{確|たし}かめた{事業|じぎょう}{計画|けいかく}{書|しょ}。すでに「{経営|けいえい}・{管理|かんり}」の{人|ひと}は、2028{年|ねん}10{月|つき}16{日|にち}までの{更新|こうしん}では{経過|けいか}{措置|そち}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{会社|かいしゃ}の{経営|けいえい}が{主|おも}な{仕事|しごと}なら、「{経営|けいえい}・{管理|かんり}」の{在留資格|ざいりゅうしかく}のことがあります。2025{年|ねん}に{基準|きじゅん}が{変|か}わりました（{要確認|ようかくにん}）。",
+        "en": "If running a business becomes your main activity, you may need the Business Manager status. Its standards changed on 16 Oct 2025: ¥30 million in capital etc., at least one full-time employee, Japanese ability of the applicant or an employee, and a business plan checked by an expert. Current holders have a transition period for renewals until 16 Oct 2028 (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-keiei-kaisei-2025"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "３，０００万円以上の資本金等が必要になります"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "どちらに{当|あ}たるか{分|わ}からないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "isa-shikakugai-guide",
+      "isa-kanri-qa",
+      "isa-keiei-kaisei-2025",
+      "nta-kaigyo-todoke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "許可された在留資格に応じた活動以外に、収入を伴う事業を運営する活動又は報酬を受ける活動を行おうとする場合には、あらかじめ資格外活動の許可を受けていなければなりません。"
+  }
+}

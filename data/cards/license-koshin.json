@@ -97,6 +97,41 @@
     {
       "type": "counter",
       "text": {
+        "ja": "{警察|けいさつ}{署|しょ}で{更新|こうしん}できるのは、{優良|ゆうりょう}{運転|うんてん}{者|しゃ}、オンライン{更新|こうしん}{時|じ}{講習|こうしゅう}を{受|う}けた{一般|いっぱん}{運転|うんてん}{者|しゃ}、{高齢|こうれい}{者|しゃ}（{更新|こうしん}の{前後|ぜんご}で{免許|めんきょ}{証|しょう}の{持|も}ち{方|かた}が{変|か}わらない{人|ひと}）です。{違反|いはん}{運転|うんてん}{者|しゃ}・{初回|しょかい}{更新|こうしん}{者|しゃ}は{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{東|ひがし}{三|さん}{河|かわ}{運転|うんてん}{免許|めんきょ}センターで{更新|こうしん}します（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{警察署|けいさつしょ}で{更新|こうしん}できる{人|ひと}は{決|き}まっています。{違反|いはん}がある{人|ひと}・はじめての{更新|こうしん}の{人|ひと}は{運転免許試験場|うんてんめんきょしけんじょう}です（{要確認|ようかくにん}）",
+        "en": "At police stations, renewal is only for good drivers, regular drivers who finished the online course, and older drivers who keep the same licence form. Drivers with violations and first-time renewers go to the test centre or the Higashi-Mikawa centre (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin-yoyaku",
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "警察署での免許更新は、「優良運転者」「オンライン更新時講習受講済みの一般運転者」「高齢者」の方に限ります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}と{同時|どうじ}にマイナ{免許|めんきょ}{証|しょう}に{切|き}り{替|か}えることは、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{東|ひがし}{三|さん}{河|かわ}{運転|うんてん}{免許|めんきょ}センターでできます。{警察|けいさつ}{署|しょ}で{同時|どうじ}に{切|き}り{替|か}えられる{人|ひと}（{一般|いっぱん}{運転|うんてん}{者|しゃ}が{入|はい}るか）は、{県警|けんけい}のページの{説明|せつめい}が{食|く}い{違|ちが}っています。{警察|けいさつ}{署|しょ}で{切|き}り{替|か}えたい{人|ひと}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "マイナ{免許証|めんきょしょう}にするのは、{運転免許試験場|うんてんめんきょしけんじょう}でできます。{警察署|けいさつしょ}でできるかは、{試験場|しけんじょう}に{聞|き}いてください（{要確認|ようかくにん}）",
+        "en": "You can switch to the My Number licence at the same time as renewal at the test centre and the Higashi-Mikawa centre. Police pages disagree on who can switch at a police station (for example regular drivers). If you want to switch at a police station, ask the test centre (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin",
+          "license-aichi-mynumber",
+          "license-aichi-koshin-yoyaku"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "警察署で更新と同時にマイナ免許証にできる方は、講習区分が「優良運転者」の方に限ります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
         "ja": "{更新|こうしん}{連絡書|れんらくしょ}は{免許証|めんきょしょう}に{書|か}かれた{住所|じゅうしょ}に{送|おく}られ、{誕生日|たんじょうび}の1か{月|げつ}くらい{前|まえ}に{届|とど}きます。{手元|てもと}になくても{手続|てつづ}きできます（{要|よう}{確認|かくにん}）",
         "ja_easy": "{更新|こうしん}のおしらせ（{更新|こうしん}{連絡書|れんらくしょ}）は、{誕生日|たんじょうび}の1か{月|げつ}くらい{前|まえ}に{届|とど}きます（{要確認|ようかくにん}）",
         "en": "A renewal notice is mailed to the address on your licence and arrives about one month before your birthday. You can renew without it (to be checked)."

@@ -2240,6 +2240,38 @@
       "owner_type": "government",
       "title": "引越しに伴う転校の手続きの方法（FAQ）",
       "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-koshin-yoyaku",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/menkyo/kousinyoyaku.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許更新の予約",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-kanri-qa",
+      "url": "https://www.moj.go.jp/isa/immigration/faq/kanri_qa.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "外国人雇用に関するよくある質問（Q67）",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-keiei-kaisei-2025",
+      "url": "https://www.moj.go.jp/isa/applications/resources/10_00237.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格「経営・管理」に係る上陸許可基準等の改正（令和7年10月16日施行）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-kaigyo-todoke",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/04.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "個人事業の開業届出・廃業届出等手続",
+      "language": "ja"
     }
   ]
 }

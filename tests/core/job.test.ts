@@ -26,9 +26,9 @@ const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-ching
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('仕事・アルバイト（公開）', () => {
-  it('型と参照の検査を通る。19枚。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。20枚。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(ev.card_ids.length).toBe(19);
+    expect(ev.card_ids.length).toBe(20);
     const s = JSON.stringify(json);
     for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
@@ -40,6 +40,14 @@ describe('仕事・アルバイト（公開）', () => {
     expect(ai.length).toBeGreaterThan(0);
     for (const x of ai) expect(AI_CHECK_COUNTS[x.kind]).toBe(true);
     for (const x of items.filter((y) => ['deadline', 'fee', 'rule', 'relation', 'prerequisite', 'card_text'].includes(y.kind))) expect(x.e.status).not.toBe('ai_checked');
+  });
+  it('仕事の在留資格のアルバイト：副業のカード（範囲の中なら許可は要らない）が出て、資格外活動許可のカードは出ない。留学・永住者には出ない（v0.5.26）', () => {
+    const st = (o: ReturnType<typeof run>) => view(o, 'job-side-work').state;
+    expect(st(go('work'))).toBe('shown');
+    expect(view(go('work'), 'zairyu-shikakugai').state).not.toBe('shown');
+    expect(st(go('student'))).not.toBe('shown');
+    expect(st(go('permanent'))).not.toBe('shown');
+    expect(view(go('work', { 'Q-job-goal': 'employ' }), 'job-side-work').state).not.toBe('shown');
   });
   it('最初に、在留資格を聞く', () => {
     expect(go(undefined).upfront.map((q) => q.id)).toEqual(['Q-nationality']);

@@ -441,9 +441,9 @@
     "en": "Letter photo"
   },
   "privacy.r3.how": {
-    "ja": "{押|お}したときだけ、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{残|のこ}しません。Anthropic {社|しゃ}では30{日|にち}{以内|いない}に{消|き}えます。{安全|あんぜん}{上|じょう}の{問題|もんだい}と{判定|はんてい}されたときは{最長|さいちょう}2{年|ねん}（{判定|はんてい}の{点数|てんすう}は{最長|さいちょう}7{年|ねん}）、{法律|ほうりつ}で{求|もと}められたときはそれより{長|なが}く{残|のこ}ります。{学習|がくしゅう}には{使|つか}わないとされています（2026{年|ねん}11{月|がつ}7{日|なのか}に{確認|かくにん}）。{書類|しょるい}の{種類|しゅるい}を{調|しら}べるためです。",
-    "ja_easy": "{押|お}したときだけ、AI（アメリカの{会社|かいしゃ}）に{送|おく}ります。このアプリは{残|のこ}しません。AI の{会社|かいしゃ}は、ふつう30{日|にち}{以内|いない}に{消|け}します。",
-    "en": "Sent only when you tap, to Claude, an AI by Anthropic in the United States. This app keeps nothing. Anthropic deletes it within 30 days. If it is flagged for safety, Anthropic keeps it up to 2 years (safety scores up to 7 years), or longer if the law requires. Anthropic states that it does not use it for training (checked 7 Nov 2026). To find what kind of letter it is."
+    "ja": "{押|お}したときだけ、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{残|のこ}しません。Anthropic {社|しゃ}では30{日|にち}{以内|いない}に{消|き}えます。{安全|あんぜん}{上|じょう}の{問題|もんだい}と{判定|はんてい}されたときは{最長|さいちょう}2{年|ねん}（{判定|はんてい}の{点数|てんすう}は{最長|さいちょう}7{年|ねん}）、{法律|ほうりつ}で{求|もと}められたときはそれより{長|なが}く{残|のこ}ります。{学習|がくしゅう}には{使|つか}わないとされています（2026{年|ねん}11{月|がつ}7{日|なのか}に{確認|かくにん}）。{書類|しょるい}の{種類|しゅるい}を{調|しら}べるためです。{名前|なまえ}・{住所|じゅうしょ}・{顔|かお}などが{写|うつ}っていると、{個人|こじん}{情報|じょうほう}になることがあります。{外国|がいこく}の{会社|かいしゃ}に{送|おく}ることの{法律|ほうりつ}{上|じょう}の{扱|あつか}いは、{専門|せんもん}{家|か}の{確認|かくにん}を{待|ま}っています（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{押|お}したときだけ、AI（アメリカの{会社|かいしゃ}）に{送|おく}ります。このアプリは{残|のこ}しません。AI の{会社|かいしゃ}は、ふつう30{日|にち}{以内|いない}に{消|け}します。{名前|なまえ}などが{写|うつ}ると、{個人|こじん}の{情報|じょうほう}になることがあります（{要確認|ようかくにん}）。",
+    "en": "Sent only when you tap, to Claude, an AI by Anthropic in the United States. This app keeps nothing. Anthropic deletes it within 30 days. If it is flagged for safety, Anthropic keeps it up to 2 years (safety scores up to 7 years), or longer if the law requires. Anthropic states that it does not use it for training (checked 7 Nov 2026). To find what kind of letter it is. A photo that shows names, addresses or faces can be personal information. The legal handling of sending it to a company abroad is waiting for an expert check (to be checked)."
   },
   "privacy.r4.what": {
     "ja": "{報告|ほうこく}",
