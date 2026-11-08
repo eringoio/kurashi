@@ -1,0 +1,69 @@
+{
+  "id": "biz-start-aoiro",
+  "data_version": 1,
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-biz-start",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{青色|あおいろ}{申告|しんこく}をするときの{申請|しんせい}",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}の{申請|しんせい}",
+    "en": "Applying for blue-form tax returns"
+  },
+  "official_name": {
+    "ja": "所得税の青色申告承認申請書",
+    "reading": "しょとくぜいのあおいろしんこくしょうにんしんせいしょ"
+  },
+  "summary": {
+    "ja": "{青色|あおいろ}{申告|しんこく}にしたいときは、{開業|かいぎょう}{届|とどけ}とは{別|べつ}に{申請|しんせい}{書|しょ}を{出|だ}します。{期限|きげん}は、その{年|とし}の3{月|つき}15{日|にち}までです。1{月|つき}16{日|にち}{以後|いご}に{始|はじ}めた{人|ひと}は、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}です（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{青色|あおいろ}{申告|しんこく}にしたい{人|ひと}は、{別|べつ}に{申請|しんせい}します。{始|はじ}めてから2か{月|げつ}{以内|いない}などです（{要|よう}{確認|かくにん}）。",
+    "en": "To use blue-form returns, file a separate application: by 15 March of that year, or within 2 months of starting if you start on or after 16 January (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "その{年|とし}の3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}{以後|いご}に{始|はじ}めたときは、{始|はじ}めた{日|ひ}から2か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "3{月|つき}15{日|にち}まで。1{月|つき}16{日|にち}より{後|のち}に{始|はじ}めたら2か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "By 15 March; within 2 months of starting if you start on/after 16 January (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "原則、青色申告書による申告をしようとする年の3月15日まで（その年の1月16日以後、新たに事業を開始したり不動産の貸付けをした場合には、その事業開始等の日から2月以内。）"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nta-2090"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "その事業開始等の日から2月以内"
+  }
+}

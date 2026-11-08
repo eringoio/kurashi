@@ -1,0 +1,135 @@
+{
+  "id": "job-ssw-intern-note",
+  "data_version": 1,
+  "illustration": "ask",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      {
+        "any": [
+          "R-job-goal-pt",
+          "R-job-goal-biz-start"
+        ]
+      },
+      "R-job-work-status",
+      "R-job-ws-ssw-intern"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{特定|とくてい}{技能|ぎのう}・{技能|ぎのう}{実習|じっしゅう}の{人|ひと}のアルバイト・{副業|ふくぎょう}",
+    "ja_easy": "{特定|とくてい}{技能|ぎのう}・{技能|ぎのう}{実習|じっしゅう}の{人|ひと}の{副業|ふくぎょう}",
+    "en": "Side jobs with Specified Skilled Worker or Technical Intern Training"
+  },
+  "official_name": {
+    "ja": "在留資格「特定技能」「技能実習」の活動",
+    "reading": "ざいりゅうしかく「とくていぎのう」「ぎのうじっしゅう」のかつどう"
+  },
+  "summary": {
+    "ja": "「{特定|とくてい}{技能|ぎのう}」「{技能|ぎのう}{実習|じっしゅう}」は、{決|き}まった{受入|うけい}れ{先|さき}での{仕事|しごと}・{実習|じっしゅう}のための{在留|ざいりゅう}{資格|しかく}です。ふつうのアルバイトと{同|おな}じには{考|かんが}えません。{始|はじ}める{前|まえ}に、{下|した}の{案内|あんない}と{相談|そうだん}{先|さき}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "「{特定|とくてい}{技能|ぎのう}」「{技能|ぎのう}{実習|じっしゅう}」の{人|ひと}は、ほかの{仕事|しごと}を{始|はじ}める{前|まえ}に、{相談|そうだん}してください（{要|よう}{確認|かくにん}）。",
+    "en": "These statuses are for work or training at a set host organisation. Do not treat a side job like an ordinary part-time job; check before you start (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-info-center"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{特定|とくてい}{技能|ぎのう}の{人|ひと}は、{別|べつ}の{会社|かいしゃ}でアルバイトをすることはできません（{入管|にゅうかん}{庁|ちょう}の{特定|とくてい}{技能|ぎのう}のQ&A）。",
+        "ja_easy": "{特定|とくてい}{技能|ぎのう}の{人|ひと}は、ほかの{会社|かいしゃ}でアルバイトができません。",
+        "en": "With Specified Skilled Worker status you cannot do part-time work at another company (ISA Q&A)."
+      },
+      "when": "R-job-ws-ssw",
+      "evidence": {
+        "source_ids": [
+          "isa-ssw-faq"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "できません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{技能|ぎのう}{実習|じっしゅう}の{人|ひと}の{活動|かつどう}は、{技能|ぎのう}{実習|じっしゅう}{計画|けいかく}に{沿|そ}った{実習|じっしゅう}です。ほかの{仕事|しごと}をしたいときは、{始|はじ}める{前|まえ}に{実習|じっしゅう}{先|さき}・{監理|かんり}{団体|だんたい}か、{外国|がいこく}{人|じん}{技能|ぎのう}{実習|じっしゅう}{機構|きこう}に{相談|そうだん}してください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{技能|ぎのう}{実習|じっしゅう}の{人|ひと}は、ほかの{仕事|しごと}の{前|まえ}に、{実習|じっしゅう}{先|さき}か{機構|きこう}に{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+        "en": "Technical intern activities follow the training plan. Before any other work, ask your host, supervising organisation or OTIT (to be checked)."
+      },
+      "when": "R-job-ws-intern",
+      "evidence": {
+        "source_ids": [
+          "isa-ikusei-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "2027{年|ねん}4{月|つき}1{日|にち}から、{技能|ぎのう}{実習|じっしゅう}に{代|か}わる「{育成|いくせい}{就労|しゅうろう}」の{制度|せいど}が{始|はじ}まります（{将来|しょうらい}の{規則|きそく}）。",
+        "ja_easy": "2027{年|ねん}4{月|つき}から、{新|あたら}しい{制度|せいど}（{育成|いくせい}{就労|しゅうろう}）が{始|はじ}まります。",
+        "en": "From 1 April 2027, the new Employment for Skill Development system replaces technical intern training (future rule)."
+      },
+      "when": "R-job-ws-intern",
+      "evidence": {
+        "source_ids": [
+          "isa-ikusei-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "育成就労制度の運用開始と特定技能制度の適正化等の施行日は令和９年４月１日です。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "わからないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "isa-ssw-faq",
+      "isa-ikusei-qa"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "できません。"
+  }
+}

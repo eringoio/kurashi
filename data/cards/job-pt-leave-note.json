@@ -23,7 +23,12 @@
   "illustration": "doc",
   "eligibility": {
     "all": [
-      "R-job-goal-leave",
+      {
+        "any": [
+          "R-job-goal-leave",
+          "R-job-goal-pt-end"
+        ]
+      },
       "R-job-needs-permit"
     ]
   },

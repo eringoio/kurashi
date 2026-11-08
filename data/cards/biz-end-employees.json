@@ -1,0 +1,75 @@
+{
+  "id": "biz-end-employees",
+  "data_version": 1,
+  "illustration": "doc-dim",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-end",
+      "R-job-has-employees"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{従業|じゅうぎょう}{員|いん}がいたとき（やめるとき）",
+    "ja_easy": "{人|ひと}を{雇|やと}っていたとき",
+    "en": "If you had employees"
+  },
+  "official_name": {
+    "ja": "給与支払事務所等の廃止届出書",
+    "reading": "きゅうよしはらいじむしょとうのはいしとどけでしょ"
+  },
+  "summary": {
+    "ja": "{給料|きゅうりょう}を{払|はら}う{事務所|じむしょ}をやめたら、{税務署|ぜいむしょ}に「{給与|きゅうよ}{支払|しはらい}{事務所|じむしょ}{等|とう}の{廃止|はいし}{届出|とどけで}{書|しょ}」を1か{月|げつ}{以内|いない}に{出|だ}します。{源泉|げんせん}{徴収|ちょうしゅう}した{所得|しょとく}{税|ぜい}を{納|おさ}め、{従業|じゅうぎょう}{員|いん}に{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}を{渡|わた}します。{雇用|こよう}{保険|ほけん}・{社会|しゃかい}{保険|ほけん}の{手続|てつづ}きも{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "1か{月|げつ}{以内|いない}に{税務署|ぜいむしょ}に{届|とど}けます。{従業|じゅうぎょう}{員|いん}に{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}を{渡|わた}します（{要|よう}{確認|かくにん}）。",
+    "en": "File the salary-payment office closure notice within one month, pay withheld tax, and give staff their withholding slips. Check employment and social insurance too (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{事務所|じむしょ}をやめた{日|ひ}から1か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "1か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within one month (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-kyuyo-jimusho"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "開設、移転又は廃止の事実があった日から1か月以内に提出してください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nta-kyuyo-jimusho",
+      "nta-7411"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "開設、移転又は廃止の事実があった日から1か月以内に提出してください。"
+  }
+}

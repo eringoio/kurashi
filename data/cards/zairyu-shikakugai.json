@@ -119,6 +119,83 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "１週について２８時間以内（教育機関の長期休業期間にあっては、１日について８時間以内）の収入を伴う事業を運営する活動（注）又は報酬を受ける活動を行う場合は、資格外活動の包括許可が必要となります。"
+      },
+      "when": {
+        "all": [
+          "R-job-student",
+          "R-job-permit-not-individual-only"
+        ]
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-job-student",
+      "text": {
+        "ja": "{留学|りゅうがく}の{包括|ほうかつ}{許可|きょか}は、{学校|がっこう}に{在籍|ざいせき}している{間|あいだ}だけ{有効|ゆうこう}です。{卒業|そつぎょう}・{退学|たいがく}のあとは、この{許可|きょか}ではアルバイトができません。",
+        "ja_easy": "{学校|がっこう}を{卒業|そつぎょう}したら、この{許可|きょか}で{働|はたら}けません。",
+        "en": "Students' comprehensive permission is valid only while enrolled; after graduating or leaving, it no longer allows part-time work."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-kanri-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "留学生に対する包括的な資格外活動許可は、教育機関に在籍している間に限り有効です"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-job-permit-not-blanket-only",
+      "text": {
+        "ja": "{個別|こべつ}{許可|きょか}は、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}{書|しょ}に{書|か}いてある{活動|かつどう}だけが{対象|たいしょう}です。ほかの{仕事|しごと}を{始|はじ}めるときは、また{許可|きょか}が{要|い}ることがあります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{個別|こべつ}{許可|きょか}は、{許可|きょか}{書|しょ}に{書|か}いてある{仕事|しごと}だけです（{要|よう}{確認|かくにん}）。",
+        "en": "Individual permission covers only the activity on the permit document. Other work may need new permission (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-shikakugai-taisho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-job-permit-not-individual-only",
+      "text": {
+        "ja": "{勤|つと}め{先|さき}が2つ{以上|いじょう}あるときは、{全部|ぜんぶ}の{勤|つと}め{先|さき}の{時間|じかん}を{合|あ}わせて28{時間|じかん}{以内|いない}か{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{仕事|しごと}が2つあるときは、{合|あ}わせた{時間|じかん}で{考|かんが}えます（{要|よう}{確認|かくにん}）。",
+        "en": "With more than one job, check that the total across all jobs is within 28 hours (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-isa-shikakugai-taisho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "when": {
+        "all": [
+          "R-job-family",
+          "R-job-permit-not-individual-only"
+        ]
+      },
+      "text": {
+        "ja": "{家族|かぞく}{滞在|たいざい}の{人|ひと}の{包括|ほうかつ}{許可|きょか}は、1{週|しゅう}に28{時間|じかん}{以内|いない}です。{学校|がっこう}の{長期|ちょうき}{休業|きゅうぎょう}の{間|あいだ}の{例外|れいがい}（1{日|にち}8{時間|じかん}）は、{留学|りゅうがく}の{人|ひと}だけの{決|き}まりです。",
+        "ja_easy": "{家族|かぞく}{滞在|たいざい}の{人|ひと}は、1{週|しゅう}28{時間|じかん}{以内|いない}です。{休|やす}みの{間|あいだ}の{例外|れいがい}はありません。",
+        "en": "For Dependent status, comprehensive permission is up to 28 hours a week. The long-vacation exception (8 hours a day) is only for students."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-shikakugai-family"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "１週について２８時間以内の収入を伴う事業を運営する活動（注）又は報酬を受ける活動を行う場合は、資格外活動の包括許可が必要となります。"
       }
     },
     {

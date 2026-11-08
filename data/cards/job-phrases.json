@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-pt",
-      "R-job-can-work"
+      "R-job-can-work",
+      "R-job-pt-search-ok"
     ]
   },
   "coverage_rule_ids": [],

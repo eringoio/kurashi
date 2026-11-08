@@ -1,0 +1,131 @@
+{
+  "id": "biz-end-haigyo",
+  "data_version": 1,
+  "illustration": "doc-dim",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-biz-end",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{廃業|はいぎょう}{届|とどけ}を{出|だ}す",
+    "ja_easy": "{廃業|はいぎょう}{届|とどけ}を{出|だ}す",
+    "en": "File the business-closure notice"
+  },
+  "official_name": {
+    "ja": "個人事業の開業・廃業等届出書（廃業）",
+    "reading": "こじんじぎょうのかいぎょう・はいぎょうとうとどけでしょ（はいぎょう）"
+  },
+  "summary": {
+    "ja": "{事業|じぎょう}をやめたら、{税務署|ぜいむしょ}に「{個人|こじん}{事業|じぎょう}の{開業|かいぎょう}・{廃業|はいぎょう}{等|とう}{届出|とどけで}{書|しょ}」を{出|だ}します（{開業|かいぎょう}と{同|おな}じ{用紙|ようし}）。{期限|きげん}は、やめた{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}までです。やめた{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}もします（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "やめたら、{税務署|ぜいむしょ}に{廃業|はいぎょう}{届|とどけ}を{出|だ}します。その{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}までです（{要|よう}{確認|かくにん}）。",
+    "en": "After closing, file the closure notice (the same form as for starting) with the tax office by the tax-return deadline for that year, and file that year's return (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "やめた{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "ja_easy": "その{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "en": "By the tax-return deadline for the year you closed (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-kaigyo-todoke",
+        "nta-haigyo"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "事業の開始等の事実があった日の属する年分の確定申告期限まで"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{青色|あおいろ}{申告|しんこく}をしていた{人|ひと}は、「{所得|しょとく}{税|ぜい}の{青色|あおいろ}{申告|しんこく}の{取|と}りやめ{届出|とどけで}{書|しょ}」も、やめる{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}までに{出|だ}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}の{人|ひと}は、{取|と}りやめの{届|とど}けも{出|だ}します（{要|よう}{確認|かくにん}）。",
+        "en": "If you used blue-form returns, also file the withdrawal notice by that year's return deadline (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-aoiro-yame",
+          "nta-haigyo"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "青色申告を取りやめようとする年分の所得税の確定申告期限までに提出してください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{休|やす}むだけ（あとで{再開|さいかい}する）・{会社|かいしゃ}にする（{法人|ほうじん}{化|か}）のときは、{出|だ}す{届|とど}けが{違|ちが}います。{税務署|ぜいむしょ}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{休|やす}むだけ・{会社|かいしゃ}にするときは、{届|とど}けが{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "Pausing, or turning the business into a company, needs different filings; ask the tax office (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-haigyo"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "e-Tax（インターネット）でも{出|だ}せます。",
+        "ja_easy": "インターネットでも{出|だ}せます。",
+        "en": "You can also file online via e-Tax."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-kaigyo-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{廃業|はいぎょう}する{場合|ばあい}の{届出|とどけで}（{国税庁|こくぜいちょう}）",
+        "ja_easy": "{廃業|はいぎょう}の{届|とど}け（{国税庁|こくぜいちょう}）",
+        "en": "Filings when closing a business (NTA)"
+      },
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/43.htm",
+      "source_id": "nta-haigyo"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nta-kaigyo-todoke",
+      "nta-haigyo"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "事業の開始等の事実があった日の属する年分の確定申告期限まで"
+  }
+}

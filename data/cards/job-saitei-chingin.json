@@ -24,10 +24,14 @@
   "id": "job-saitei-chingin",
   "illustration": "coins",
   "eligibility": {
-    "all": [
-      "R-job-scope",
-      "R-job-goal-pt",
-      "R-job-can-work"
+    "any": [
+      "R-job-goal-basics",
+      {
+        "all": [
+          "R-job-goal-pt",
+          "R-job-can-work"
+        ]
+      }
     ]
   },
   "title": {

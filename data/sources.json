@@ -2272,6 +2272,174 @@
       "owner_type": "government",
       "title": "個人事業の開業届出・廃業届出等手続",
       "language": "ja"
+    },
+    {
+      "source_id": "isa-shikakugai-family",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00004.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "「家族滞在」の在留資格に係る資格外活動許可について",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-keizoku-shushoku",
+      "url": "https://www.moj.go.jp/isa/applications/resources/nyukan_nyukan84.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "大学等を卒業後就職活動のための滞在をご希望のみなさまへ",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-ssw-faq",
+      "url": "https://www.moj.go.jp/isa/policies/ssw/faq.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "特定技能制度に関するQ&A",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-ikusei-qa",
+      "url": "https://www.moj.go.jp/isa/applications/faq/ikusei_qa_00002.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "育成就労制度Q&A",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-shuro-shomei",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/syuurou_00001.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "就労資格証明書（入管法第19条の2）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-chingin-teppai-2026",
+      "url": "https://www.nenkin.go.jp/oshirase/taisetu/jigyosho/2026/202610/100104.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "2026（令和8）年10月に社会保険の短時間労働者に係る賃金要件が撤廃されました",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-tekiyo-kojin",
+      "url": "https://www.nenkin.go.jp/tokusetsu/tekiyokakudai_kojin.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "パート・アルバイトの皆さまへ（社会保険の加入対象の拡大）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-2090",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2090.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.2090 新たに事業を始めたときの届出など",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-2020",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2020.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.2020 確定申告",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-6501",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6501.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.6501 納税義務の免除",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-6498",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6498.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.6498 適格請求書等保存方式（インボイス制度）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-6603",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6603.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.6603 個人事業者が事業を廃止した場合",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-aoiro-yame",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/23200008.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "A1-9 所得税の青色申告の取りやめ手続",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-haigyo",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/43.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "個人で事業を廃業する場合の主な届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-kyuyo-jimusho",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/gensen/annai/1648_11.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "A2-7 給与支払事務所等の開設・移転・廃止の届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-7411",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hotei/7411.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "No.7411 「給与所得の源泉徴収票」の提出範囲と提出枚数等",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-hojin-setsuritsu",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/hojin/annai/1554_2.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "C1-4 内国普通法人等の設立の届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "moj-kabushiki",
+      "url": "https://www.moj.go.jp/MINJI/minji06_00134.html",
+      "owner": "法務省",
+      "owner_type": "government",
+      "title": "株式会社の設立手続（発起設立）について",
+      "language": "ja"
+    },
+    {
+      "source_id": "moj-godo",
+      "url": "https://www.moj.go.jp/MINJI/minji06_00141.html",
+      "owner": "法務省",
+      "owner_type": "government",
+      "title": "合同会社の設立手続について",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-chingin-shiharai",
+      "url": "https://jsite.mhlw.go.jp/gunma-roudoukyoku/hourei_seido_tetsuzuki/roudoukijun_keiyaku/jyouken04.html",
+      "owner": "厚生労働省（群馬労働局）",
+      "owner_type": "government",
+      "title": "賃金支払いに関する事項のあらまし",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-taishoku-shomei",
+      "url": "https://jsite.mhlw.go.jp/gunma-roudoukyoku/hourei_seido_tetsuzuki/roudoukijun_keiyaku/jyouken08.html",
+      "owner": "厚生労働省（群馬労働局）",
+      "owner_type": "government",
+      "title": "解雇・退職に関する事項のあらまし",
+      "language": "ja"
     }
   ]
 }

@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-leave",
-      "R-job-work-status"
+      "R-job-work-status",
+      "R-job-ws-answered"
     ]
   },
   "coverage_rule_ids": [],
@@ -79,7 +80,8 @@
         "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "契約機関の名称変更、所在地変更、消滅、契約機関との契約の終了若しくは新たな契約の締結があった高度専門職１号イ又はロ、高度専門職２号（イ又はロ）、研究、技術・人文知識・国際業務、介護、興行（所属機関との契約に基づいて活動に従事する者に限る。）、技能又は特定技能の在留資格を有する中長期在留者"
-      }
+      },
+      "when": "R-job-ws-not-activity-only"
     },
     {
       "type": "online",
@@ -95,7 +97,8 @@
         "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "活動機関の名称変更、所在地変更、消滅、活動機関からの離脱や移籍があった教授、高度専門職１号ハ、高度専門職２号（ハ）、経営・管理、法律・会計業務、医療、教育、企業内転勤、技能実習、留学又は研修の在留資格を有する中長期在留者"
-      }
+      },
+      "when": "R-job-ws-not-contract-only"
     },
     {
       "type": "online",

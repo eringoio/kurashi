@@ -1,0 +1,138 @@
+{
+  "id": "job-pt-end-pay",
+  "data_version": 1,
+  "illustration": "coins",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      {
+        "any": [
+          "R-job-goal-pt-end",
+          "R-job-goal-leave"
+        ]
+      },
+      "R-job-can-work"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{辞|や}めるときに{受|う}け{取|と}るもの",
+    "ja_easy": "{辞|や}めるときにもらうもの",
+    "en": "What to receive when you leave"
+  },
+  "official_name": {
+    "ja": "退職時の賃金の支払い・源泉徴収票",
+    "reading": "たいしょくじのちんぎんのしはらい・げんせんちょうしゅうひょう"
+  },
+  "summary": {
+    "ja": "{最後|さいご}の{給料|きゅうりょう}・{残業|ざんぎょう}{代|だい}・{使|つか}わなかった{有給|ゆうきゅう}{休暇|きゅうか}を{確|たし}かめます。{辞|や}めた{人|ひと}が{請求|せいきゅう}すれば、{会社|かいしゃ}は7{日|にち}{以内|いない}に{賃金|ちんぎん}を{払|はら}います。{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}は、{辞|や}めた{日|ひ}から1か{月|げつ}{以内|いない}にもらえます。{次|つぎ}の{勤|つと}め{先|さき}か{確定|かくてい}{申告|しんこく}で{使|つか}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{最後|さいご}の{給料|きゅうりょう}と、{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}をもらいます。{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}は、{辞|や}めてから1か{月|げつ}{以内|いない}です（{要|よう}{確認|かくにん}）。",
+    "en": "Check your last pay, overtime and unused paid leave. If you ask, wages must be paid within 7 days. You get a withholding slip (源泉徴収票) within one month; you need it for the next employer or your tax return (to be checked)."
+  },
+  "lead": {
+    "ja": "{最後|さいご}の{給料|きゅうりょう}と{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}を{確|たし}かめます。",
+    "ja_easy": "{最後|さいご}の{給料|きゅうりょう}と{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}をもらいます。",
+    "en": "Check your last pay and withholding slip."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{勤|つと}め{先|さき}",
+      "ja_easy": "{会社|かいしゃ}",
+      "en": "Your employer"
+    },
+    "evidence": {
+      "source_ids": [
+        "mhlw-chingin-shiharai"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{辞|や}めた{人|ひと}から{請求|せいきゅう}があれば、{会社|かいしゃ}は{請求|せいきゅう}の{日|ひ}から7{日|にち}{以内|いない}に{賃金|ちんぎん}を{払|はら}います（{労働|ろうどう}{基準|きじゅん}{法|ほう}{第|だい}23{条|じょう}）。",
+        "ja_easy": "お{願|ねが}いすれば、7{日|にち}{以内|いない}に{給料|きゅうりょう}をもらえます。",
+        "en": "On request, the employer must pay wages within 7 days (Labour Standards Act art. 23)."
+      },
+      "evidence": {
+        "source_ids": [
+          "mhlw-chingin-shiharai"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "退職した労働者から「賃金」の支払請求があった場合には、所定の賃金支払日にかかわらず請求日から7日以内に支払わなければなりません"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}は、{年|とし}の{途中|とちゅう}で{辞|や}めた{人|ひと}には、{辞|や}めた{日|ひ}から1か{月|げつ}{以内|いない}に{渡|わた}されます。",
+        "ja_easy": "{源泉|げんせん}{徴収|ちょうしゅう}{票|ひょう}は、{辞|や}めてから1か{月|げつ}{以内|いない}にもらえます。",
+        "en": "Employers give the withholding slip within one month after you leave mid-year."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-7411"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "年の中途で退職した方の場合は、退職の日以後1か月以内"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{働|はたら}いた{期間|きかん}や{仕事|しごと}の{内容|ないよう}などの{証明|しょうめい}{書|しょ}（{退職|たいしょく}{証明|しょうめい}{書|しょ}）は、{求|もと}めれば{会社|かいしゃ}が{出|だ}します。",
+        "ja_easy": "{頼|たの}めば、{退職|たいしょく}の{証明|しょうめい}{書|しょ}をもらえます。",
+        "en": "If you ask, the employer must issue a certificate of employment."
+      },
+      "evidence": {
+        "source_ids": [
+          "mhlw-taishoku-shomei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "労働者が退職の場合及び予告解雇のときに証明書の交付を請求したときは、使用者は遅滞なく、これを交付しなければなりません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{離職|りしょく}{票|ひょう}も{受|う}け{取|と}ります（{失業|しつぎょう}{手当|てあて}の{手続|てつづ}きに{使|つか}います）。",
+        "ja_easy": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{離職|りしょく}{票|ひょう}ももらいます。",
+        "en": "If you were in employment insurance, also get the separation slip (離職票)."
+      },
+      "when": "R-job-not-pt-only",
+      "evidence": {
+        "source_ids": [
+          "D-hellowork-kihonteate"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "mhlw-chingin-shiharai",
+      "nta-7411",
+      "mhlw-taishoku-shomei"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "請求日から7日以内に支払わなければなりません"
+  }
+}

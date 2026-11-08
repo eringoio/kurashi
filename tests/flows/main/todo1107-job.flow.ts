@@ -17,9 +17,9 @@ flow({
   await tap(/^日本以外の国籍/);
   await snap({ name: '在留資格', input: '日本以外の国籍', expected: '「在留資格は？」絵付きの7つ', why: 'B-4' }, async () => { await expect(h1).toHaveText('在留資格は？'); });
   await tap(/^留学/);
-  await snap({ name: '何をするか', input: '留学', expected: '「何をしますか？」アルバイトを始めたい／就職する・した／辞める・辞めた', why: 'D-1' }, async () => { await expect(h1).toHaveText('何をしますか？'); });
-  await tap(/^アルバイトを始めたい/);
-  await snap({ name: '資格外活動許可', input: 'アルバイトを始めたい', expected: '「「資格外活動許可」をもう受けていますか？」', why: '留学・家族滞在だけに聞く' }, async () => { await expect(h1).toContainText('資格外活動許可'); });
+  await snap({ name: '何をするか', input: '留学', expected: '「何をしますか？」アルバイトを始める／就職・転職する／アルバイトを辞める／仕事を辞める・辞めた／個人事業を始める・やめる（下に、会社・基本情報）', why: 'D-1' }, async () => { await expect(h1).toHaveText('何をしますか？'); });
+  await tap(/^アルバイトを始める/);
+  await snap({ name: '資格外活動許可', input: "アルバイトを始める", expected: '「「資格外活動許可」を受けていますか？」（包括許可・個別許可・両方・まだ・わからない）', why: '留学・家族滞在だけに聞く' }, async () => { await expect(h1).toContainText('資格外活動許可'); });
   await tap(/^まだ|^いいえ/);
   await page.getByRole('link', { name: '全体' }).first().click();
   await snap({ name: '全体', input: 'まだ → 全体', expected: '資格外活動許可・最低賃金・労働条件・求人・困ったとき・社会保険など。公式のルールは要確認のまま', why: 'C-1：needs_check・ai_checked のまま公開' }, async () => { await expect(page.getByText('資格外活動許可').first()).toBeVisible(); });

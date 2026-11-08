@@ -1,0 +1,146 @@
+{
+  "id": "company-setup",
+  "data_version": 1,
+  "illustration": "hall",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-company",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{会社|かいしゃ}をつくる{流|なが}れ",
+    "ja_easy": "{会社|かいしゃ}をつくる{流|なが}れ",
+    "en": "Steps to set up a company"
+  },
+  "official_name": {
+    "ja": "株式会社・合同会社の設立の登記",
+    "reading": "かぶしきがいしゃ・ごうどうがいしゃのせつりつのとうき"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}（{株式会社|かぶしきがいしゃ}・{合同|ごうどう}{会社|かいしゃ}）は、{個人|こじん}{事業|じぎょう}とは{別|べつ}の{手続|てつづ}きです。{定款|ていかん}をつくり、{出資|しゅっし}を{払|はら}い{込|こ}み、{本店|ほんてん}の{地域|ちいき}の{法務局|ほうむきょく}で{設立|せつりつ}の{登記|とうき}をします。{株式会社|かぶしきがいしゃ}の{定款|ていかん}は{公証|こうしょう}{人|じん}の{認証|にんしょう}が{要|い}り、{合同|ごうどう}{会社|かいしゃ}は{要|い}りません。{登記|とうき}のあと、{税務署|ぜいむしょ}に{法人|ほうじん}{設立|せつりつ}{届出|とどけで}{書|しょ}を2か{月|げつ}{以内|いない}に{出|だ}し、{会社|かいしゃ}は{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}に{入|はい}ります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{会社|かいしゃ}は、{定款|ていかん} → お{金|かね}を{払|はら}い{込|こ}む → {法務局|ほうむきょく}で{登記|とうき}、の{順|じゅん}です。そのあと{税務署|ぜいむしょ}と{年金|ねんきん}{事務所|じむしょ}の{手続|てつづ}きがあります（{要|よう}{確認|かくにん}）。",
+    "en": "A company is separate from self-employment: articles of incorporation, paying in capital, then registration at the Legal Affairs Bureau. Articles of a KK need notarisation; a GK's do not. Then file the corporation notice with the tax office within 2 months, and join health insurance and pension (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{本店|ほんてん}の{地域|ちいき}の{法務局|ほうむきょく}（{登記|とうき}）・{税務署|ぜいむしょ}",
+      "ja_easy": "{法務局|ほうむきょく}・{税務署|ぜいむしょ}",
+      "en": "Legal Affairs Bureau (registration) and tax office"
+    },
+    "evidence": {
+      "source_ids": [
+        "moj-kabushiki",
+        "moj-godo"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{株式会社|かぶしきがいしゃ}の{定款|ていかん}は、{本店|ほんてん}の{地域|ちいき}の{法務局|ほうむきょく}に{所属|しょぞく}する{公証|こうしょう}{人|じん}の{認証|にんしょう}を{受|う}けます。{合同|ごうどう}{会社|かいしゃ}の{定款|ていかん}は{認証|にんしょう}が{要|い}りません。",
+        "ja_easy": "{株式会社|かぶしきがいしゃ}は{公証|こうしょう}{人|じん}の{認証|にんしょう}が{要|い}ります。{合同|ごうどう}{会社|かいしゃ}は{要|い}りません。",
+        "en": "KK articles need notarisation; GK articles do not."
+      },
+      "evidence": {
+        "source_ids": [
+          "moj-kabushiki",
+          "moj-godo"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "なお、合同会社の定款については、公証人の認証を受ける必要はありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{税務署|ぜいむしょ}への{法人|ほうじん}{設立|せつりつ}{届出|とどけで}{書|しょ}は、{設立|せつりつ}の{日|ひ}（{登記|とうき}の{日|ひ}）から2か{月|げつ}{以内|いない}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{税務署|ぜいむしょ}には2か{月|げつ}{以内|いない}に{届|とど}けます（{要|よう}{確認|かくにん}）。",
+        "en": "File the corporation notice with the tax office within 2 months of registration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-hojin-setsuritsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "法人設立の日（設立登記の日）以後2月以内"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{会社|かいしゃ}などの{法人|ほうじん}の{事業|じぎょう}{所|しょ}は、{社長|しゃちょう}1{人|にん}だけでも{健康|けんこう}{保険|ほけん}・{厚生|こうせい}{年金|ねんきん}の{適用|てきよう}{事業|じぎょう}{所|しょ}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{会社|かいしゃ}は1{人|にん}でも、{健康|けんこう}{保険|ほけん}と{厚生|こうせい}{年金|ねんきん}に{入|はい}ります（{要|よう}{確認|かくにん}）。",
+        "en": "A corporation must join health insurance and pension even with only the owner (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-nenkin-kounen-tekiyo"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "厚生年金保険の適用事業所となるのは、株式会社などの法人の事業所（事業主のみの場合を含む）です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{会社|かいしゃ}をつくる{前|まえ}には、{在留|ざいりゅう}{資格|しかく}の{申請|しんせい}や、{外国|がいこく}{為替|かわせ}{及|およ}び{外国|がいこく}{貿易|ぼうえき}{法|ほう}の{報告|ほうこく}などが{要|い}ることがあります。",
+        "ja_easy": "{外国|がいこく}の{人|ひと}は、{先|さき}に{在留|ざいりゅう}{資格|しかく}などを{確|たし}かめます。",
+        "en": "Foreign nationals may first need a status-of-residence application or reports under the Foreign Exchange Act."
+      },
+      "when": "R-job-restricted",
+      "evidence": {
+        "source_ids": [
+          "moj-kabushiki"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人の方が日本において会社を設立するに当たっては、このページによる手続の前に日本に滞在する目的に応じた在留資格の取得の申請や外国為替及び外国貿易法に基づく報告などの手続が必要となる場合がありますので、御留意ください"
+      }
+    }
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{株式会社|かぶしきがいしゃ}の{設立|せつりつ}（{法務省|ほうむしょう}）",
+        "ja_easy": "{株式会社|かぶしきがいしゃ}（{法務省|ほうむしょう}）",
+        "en": "Setting up a KK (MOJ)"
+      },
+      "url": "https://www.moj.go.jp/MINJI/minji06_00134.html",
+      "source_id": "moj-kabushiki"
+    },
+    {
+      "label": {
+        "ja": "{合同|ごうどう}{会社|かいしゃ}の{設立|せつりつ}（{法務省|ほうむしょう}）",
+        "ja_easy": "{合同|ごうどう}{会社|かいしゃ}（{法務省|ほうむしょう}）",
+        "en": "Setting up a GK (MOJ)"
+      },
+      "url": "https://www.moj.go.jp/MINJI/minji06_00141.html",
+      "source_id": "moj-godo"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "moj-kabushiki",
+      "moj-godo",
+      "nta-hojin-setsuritsu"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "合同会社は、その本店の所在地において設立の登記をすることによって成立します（会社法第５７９条）。"
+  }
+}

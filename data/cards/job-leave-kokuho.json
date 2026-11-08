@@ -12,9 +12,21 @@
   "requires_moved_in": false,
   "eligibility": {
     "all": [
-      "R-job-goal-leave",
+      {
+        "any": [
+          "R-job-goal-leave",
+          "R-job-goal-pt-end"
+        ]
+      },
+      {
+        "any": [
+          "R-job-goal-leave",
+          "R-job-ins-employer"
+        ]
+      },
       "R-job-not-pt-only",
-      "R-job-can-work"
+      "R-job-can-work",
+      "R-job-no-next-insurance"
     ]
   },
   "coverage_rule_ids": [],
@@ -63,12 +75,36 @@
   "place": "ward_office",
   "kind": "procedure",
   "keywords": [],
-  "reasons": {},
+  "reasons": {
+    "excluded": {
+      "ja": "{辞|や}めた{次|つぎ}の{日|ひ}から{次|つぎ}の{勤|つと}め{先|さき}の{保険|ほけん}に{入|はい}る{人|ひと}と、{職場|しょくば}の{保険|ほけん}に{入|はい}っていなかった{人|ひと}には{出|だ}しません。",
+      "ja_easy": "すぐ{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}る{人|ひと}には{出|だ}しません。",
+      "en": "Not shown if you join the next employer's insurance straight away, or were not in workplace insurance."
+    }
+  },
   "evidence": {
     "source_ids": [
       "kurashi-spec"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check"
-  }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}を{任意|にんい}{継続|けいぞく}するときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けは{要|い}りません。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}を{続|つづ}けるときは、{国保|こくほ}の{届|とど}けはいりません。",
+        "en": "If you continue the company insurance voluntarily (任意継続), you do not file for National Health Insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-kokuho-kanyu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "会社などを退職して職場の健康保険の任意継続被保険者となるときは、国民健康保険への届出は必要ありません。"
+      }
+    }
+  ]
 }

@@ -1,0 +1,132 @@
+{
+  "id": "biz-start-permit",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-start",
+      "R-job-biz-check"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{個人|こじん}{事業|じぎょう}の{前|まえ}に、{在留|ざいりゅう}{資格|しかく}を{確|たし}かめる",
+    "ja_easy": "{事業|じぎょう}の{前|まえ}に、{在留|ざいりゅう}{資格|しかく}を{確|たし}かめる",
+    "en": "Before self-employment: check your status"
+  },
+  "official_name": {
+    "ja": "資格外活動許可（個別許可）",
+    "reading": "しかくがいかつどうきょか（こべつきょか）"
+  },
+  "summary": {
+    "ja": "{個人|こじん}{事業|じぎょう}{主|ぬし}として{活動|かつどう}するときや、{働|はたら}く{時間|じかん}を{客観|きゃっかん}{的|てき}に{確|たし}かめにくい{仕事|しごと}（{業務|ぎょうむ}{委託|いたく}など）は、{包括|ほうかつ}{許可|きょか}では{足|た}りず、{資格|しかく}{外|がい}{活動|かつどう}の{個別|こべつ}{許可|きょか}が{要|い}ります。{開業|かいぎょう}{届|とどけ}は{税|ぜい}の{届|とど}けで、{入管|にゅうかん}の{許可|きょか}にはなりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{自分|じぶん}で{事業|じぎょう}をするときは、{別|べつ}の{許可|きょか}（{個別|こべつ}{許可|きょか}）が{要|い}ります。{開業|かいぎょう}{届|とどけ}は{入管|にゅうかん}の{許可|きょか}ではありません（{要|よう}{確認|かくにん}）。",
+    "en": "Working as a sole proprietor, or work whose hours are hard to verify (such as contract work), needs individual permission, not comprehensive permission. The business-start notice is a tax filing, not immigration permission (to be checked)."
+  },
+  "lead": {
+    "ja": "{事業|じぎょう}を{始|はじ}める{前|まえ}に、{入管|にゅうかん}の{許可|きょか}を{確|たし}かめます。",
+    "ja_easy": "{始|はじ}める{前|まえ}に、{入管|にゅうかん}の{許可|きょか}を{確|たし}かめます。",
+    "en": "Check immigration permission before you start."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-info-center"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "「{特定|とくてい}{活動|かつどう}」の{人|ひと}は、{指定|してい}{書|しょ}に{書|か}いてある{活動|かつどう}か{確|たし}かめます。",
+        "ja_easy": "「{特定|とくてい}{活動|かつどう}」の{人|ひと}は、{指定|してい}{書|しょ}を{見|み}ます。",
+        "en": "Designated Activities: check that it is in your designation document."
+      },
+      "when": "R-job-designation",
+      "evidence": {
+        "source_ids": [
+          "isa-card-point"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{事業|じぎょう}の{経営|けいえい}が{主|おも}な{活動|かつどう}になるときは、「{経営|けいえい}・{管理|かんり}」の{在留|ざいりゅう}{資格|しかく}のことがあります（{会社|かいしゃ}を{設立|せつりつ}・{経営|けいえい}するの{案内|あんない}）。",
+        "ja_easy": "{事業|じぎょう}が{主|おも}な{仕事|しごと}なら、「{経営|けいえい}・{管理|かんり}」のことがあります。",
+        "en": "If running the business becomes your main activity, the Business Manager status may apply."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-keiei-kaisei-2025"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "わからないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{働|はたら}くことに{制限|せいげん}がない{人|ひと}と、{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}（{別|べつ}のカード）には{出|だ}しません。",
+      "ja_easy": "{制限|せいげん}がない{人|ひと}には{出|だ}しません。",
+      "en": "Not shown if your status has no work limits; work statuses see a separate card."
+    }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}について（{入管|にゅうかん}{庁|ちょう}）",
+        "ja_easy": "{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}（{入管|にゅうかん}）",
+        "en": "Permission for activities other than permitted (ISA)"
+      },
+      "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00045.html",
+      "source_id": "isa-shikakugai-guide"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "isa-shikakugai-guide",
+      "nta-kaigyo-todoke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "個人事業主として活動する場合や客観的に稼働時間を確認することが困難である活動に従事する場合"
+  }
+}

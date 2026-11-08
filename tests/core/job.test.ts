@@ -26,9 +26,9 @@ const COMMON = ['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-ching
 const mine = (where: string) => json.cards.some((c) => where.startsWith(c.id)) || where.startsWith('R-job') || where.startsWith('rel-job') || where === 'E-job';
 
 describe('仕事・アルバイト（公開）', () => {
-  it('型と参照の検査を通る。20枚。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
+  it('型と参照の検査を通る。36枚（11/8：辞める・個人事業・会社を足した）。verified は作者の答え・決定（公式の出典を足した行も含む）だけ。電話番号・クエリ付きの URL を書かない', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(ev.card_ids.length).toBe(20);
+    expect(ev.card_ids.length).toBe(36);
     const s = JSON.stringify(json);
     for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
@@ -43,7 +43,8 @@ describe('仕事・アルバイト（公開）', () => {
   });
   it('仕事の在留資格のアルバイト：副業のカード（範囲の中なら許可は要らない）が出て、資格外活動許可のカードは出ない。留学・永住者には出ない（v0.5.26）', () => {
     const st = (o: ReturnType<typeof run>) => view(o, 'job-side-work').state;
-    expect(st(go('work'))).toBe('shown');
+    expect(st(go('work'))).toBe('ask'); // 11/8：在留資格の名前を聞いてから（特定技能・技能実習は別のカード）
+    expect(st(go('work', { 'Q-work-status-detail': 'engineer' }))).toBe('shown');
     expect(view(go('work'), 'zairyu-shikakugai').state).not.toBe('shown');
     expect(st(go('student'))).not.toBe('shown');
     expect(st(go('permanent'))).not.toBe('shown');
@@ -78,8 +79,10 @@ describe('仕事・アルバイト（公開）', () => {
     expect([view(u, 'zairyu-shikakugai').state, view(u, 'zairyu-shikakugai').cause]).toEqual(['check_at_office', 'unknown']);
     expect(ids(u, 'excluded')).toEqual([]);
   });
-  it('許可をもう受けている：資格外活動許可は「済み」に動く。まだ・わからない：動かない', () => {
-    expect(view(go('student', { 'Q-job-permit': 'yes' }), 'zairyu-shikakugai').section).toBe('done');
+  it('包括許可があり在学中：資格外活動許可は「済み」に動く。個別許可・前の版の「はい」・卒業後・まだ・わからない：動かない（11/8）', () => {
+    expect(view(go('student', { 'Q-job-permit': 'blanket', 'Q-school-status': 'enrolled' }), 'zairyu-shikakugai').section).toBe('done');
+    expect(view(go('family', { 'Q-job-permit': 'both' }), 'zairyu-shikakugai').section).toBe('done');
+    for (const a of [{ 'Q-job-permit': 'yes' }, { 'Q-job-permit': 'individual' }, { 'Q-job-permit': 'blanket' }, { 'Q-job-permit': 'blanket', 'Q-school-status': 'graduated' }] as Record<string, string>[]) expect(view(go('student', a), 'zairyu-shikakugai').section, JSON.stringify(a)).not.toBe('done');
     expect(view(go('student', { 'Q-job-permit': 'no' }), 'zairyu-shikakugai').section).not.toBe('done');
     expect(view(go('student', { 'Q-job-permit': 'unknown' }), 'zairyu-shikakugai').section).not.toBe('done');
   });
@@ -197,10 +200,10 @@ describe('就職・退職（下書き）', () => {
 describe('在留資格の区分（6A.16）', () => {
   const g = (goal: string, status: string, extra: Record<string, string> = {}) => run(data, { answers: { 'Q-job-goal': goal, ...statusAnswers(status), ...extra }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
   const st = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!.state;
-  it('文化活動・研修（働けない）：入管で相談の1枚だけ。アルバイト・就職・辞めるのカードは出さない', () => {
-    for (const s of ['cultural', 'trainee']) {
+  it('研修・許可のない文化活動（働けない）：入管で相談の1枚だけ。アルバイト・就職・辞めるのカードは出さない（11/8：文化活動は許可の答えで分ける）', () => {
+    for (const [s, extra] of [['cultural', { 'Q-job-permit': 'no' }], ['trainee', {}]] as const) {
       for (const goal of ['part_time', 'employ', 'leave']) {
-        const o = g(goal, s);
+        const o = g(goal, s, extra);
         expect(st(o, 'job-no-work-note'), s + goal).not.toBe('excluded');
         for (const id of ['job-kyujin', 'job-rodo-joken', 'job-saitei-chingin', 'job-trouble', 'job-shakai-hoken', 'job-phrases', 'job-employ-hoken', 'job-employ-juminzei', 'job-employ-kokuho-stop', 'job-leave-shitsugyo', 'job-leave-kokuho', 'job-leave-juminzei', 'zairyu-shikakugai']) expect(st(o, id), s + goal + id).toBe('excluded');
       }

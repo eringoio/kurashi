@@ -27,9 +27,9 @@
   "illustration": "search",
   "eligibility": {
     "all": [
-      "R-job-scope",
       "R-job-goal-pt",
-      "R-job-can-work"
+      "R-job-can-work",
+      "R-job-pt-search-ok"
     ]
   },
   "title": {

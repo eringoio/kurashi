@@ -1,0 +1,94 @@
+{
+  "id": "biz-end-status",
+  "data_version": 1,
+  "illustration": "card",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-end",
+      "R-job-work-status",
+      "R-job-ws-manager"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "「{経営|けいえい}・{管理|かんり}」の{人|ひと}が{事業|じぎょう}をやめるとき",
+    "ja_easy": "「{経営|けいえい}・{管理|かんり}」の{人|ひと}がやめるとき",
+    "en": "Closing a business with Business Manager status"
+  },
+  "official_name": {
+    "ja": "所属（活動）機関に関する届出",
+    "reading": "しょぞく（かつどう）きかんにかんするとどけで"
+  },
+  "summary": {
+    "ja": "「{経営|けいえい}・{管理|かんり}」の{人|ひと}は、{事業|じぎょう}をやめると{在留|ざいりゅう}{資格|しかく}の{活動|かつどう}がなくなります。{所属|しょぞく}（{活動|かつどう}）{機関|きかん}の{届出|とどけで}を14{日|にち}{以内|いない}に{出|だ}し、これからの{在留|ざいりゅう}を{入管|にゅうかん}に{相談|そうだん}します。その{在留|ざいりゅう}{資格|しかく}の{活動|かつどう}を3か{月|げつ}{以上|いじょう}していないと、{取|と}り{消|け}されることがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "「{経営|けいえい}・{管理|かんり}」の{人|ひと}は、14{日|にち}{以内|いない}に{入管|にゅうかん}に{届|とど}けて、{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+    "en": "With Business Manager status, closing the business ends your status activity. File the activity-organisation notification within 14 days and consult immigration about staying. Not engaging in the activity for 3+ months can lead to cancellation (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{事業|じぎょう}から{離|はな}れた{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "D-isa-katsudo-kikan"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "上記の事由が生じた日から１４日以内"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-info-center"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "わからないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "D-isa-katsudo-kikan",
+      "D-isa-torikeshi"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "上記の事由が生じた日から１４日以内"
+  }
+}

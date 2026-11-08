@@ -28,10 +28,14 @@
   "id": "job-trouble",
   "illustration": "ask",
   "eligibility": {
-    "all": [
-      "R-job-scope",
-      "R-job-goal-pt",
-      "R-job-can-work"
+    "any": [
+      "R-job-goal-basics",
+      {
+        "all": [
+          "R-job-goal-pt-or-end",
+          "R-job-can-work"
+        ]
+      }
     ]
   },
   "title": {

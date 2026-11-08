@@ -1,0 +1,129 @@
+{
+  "id": "job-employ-content",
+  "data_version": 1,
+  "illustration": "status-work",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-employ",
+      "R-job-work-status"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{転職|てんしょく}{先|さき}の{仕事|しごと}が、{今|いま}の{在留|ざいりゅう}{資格|しかく}に{合|あ}うか",
+    "ja_easy": "{新|あたら}しい{仕事|しごと}が{在留|ざいりゅう}{資格|しかく}に{合|あ}うか",
+    "en": "Does the new job fit your status?"
+  },
+  "official_name": {
+    "ja": "在留資格の活動の範囲",
+    "reading": "ざいりゅうしかくのかつどうのはんい"
+  },
+  "summary": {
+    "ja": "{会社|かいしゃ}を{変|か}えるときは、{新|あたら}しい{仕事|しごと}の{内容|ないよう}が{今|いま}の{在留|ざいりゅう}{資格|しかく}の{活動|かつどう}に{当|あ}たるかを{確|たし}かめます。{当|あ}たらないときは、{働|はたら}き{始|はじ}める{前|まえ}に{在留|ざいりゅう}{資格|しかく}を{変|か}えるか、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}を{受|う}けます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{新|あたら}しい{仕事|しごと}が、{今|いま}の{在留|ざいりゅう}{資格|しかく}に{合|あ}うか{確|たし}かめます。{合|あ}わないときは、{働|はたら}く{前|まえ}に{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。",
+    "en": "When you change jobs, check that the new work fits your current status. If not, change status or get permission before you start (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-info-center"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{確|たし}かめたいときは「{就労|しゅうろう}{資格|しかく}{証明|しょうめい}{書|しょ}」を{申請|しんせい}できます。{必|かなら}ず{要|い}る{書類|しょるい}ではありません。",
+        "ja_easy": "「{就労|しゅうろう}{資格|しかく}{証明|しょうめい}{書|しょ}」で{確|たし}かめられます。なくても{働|はたら}けます。",
+        "en": "You can apply for a Certificate of Authorized Employment to confirm. It is not required."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-shuro-shomei",
+          "isa-kanri-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "これがなければ外国人が就労活動を行うことができないというものでもありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{特定|とくてい}{技能|ぎのう}で、{受入|うけい}れ{機関|きかん}（{会社|かいしゃ}）や{分野|ぶんや}を{変|か}えるときは、{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}{許可|きょか}{申請|しんせい}が{要|い}ります。",
+        "ja_easy": "{特定|とくてい}{技能|ぎのう}で{会社|かいしゃ}を{変|か}えるときは、{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}の{申請|しんせい}が{要|い}ります。",
+        "en": "With Specified Skilled Worker status, changing your host company or field needs a change-of-status application."
+      },
+      "when": "R-job-ws-ssw",
+      "evidence": {
+        "source_ids": [
+          "isa-ssw-faq"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "転職に当たり、受入れ機関又は分野を変更する場合は、在留資格「特定技能」の変更許可申請を行っていただく必要があります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{技能|ぎのう}{実習|じっしゅう}では、{本人|ほんにん}の{希望|きぼう}で{実習|じっしゅう}{先|さき}を{変|か}えること（{転籍|てんせき}）は、ふつうは{認|みと}められていません。{困|こま}ったときは{外国|がいこく}{人|じん}{技能|ぎのう}{実習|じっしゅう}{機構|きこう}に{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{技能|ぎのう}{実習|じっしゅう}は、{自分|じぶん}の{希望|きぼう}で{実習|じっしゅう}{先|さき}を{変|か}えられません。{困|こま}ったら{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+        "en": "In technical intern training, moving to another host at your own wish is generally not allowed. Ask OTIT if you have problems (to be checked)."
+      },
+      "when": "R-job-ws-intern",
+      "evidence": {
+        "source_ids": [
+          "isa-ikusei-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "技能実習制度では認められなかった外国人本人の意向による転籍を一定の条件の下で認めることなどを定めています。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "わからないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "isa-kanri-qa"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "従事しようとする業務内容が当該在留資格に該当しない場合には、該当する在留資格に変更するか、出入国在留管理庁から資格外活動許可を受ける必要があります。"
+  }
+}

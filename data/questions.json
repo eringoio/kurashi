@@ -1036,40 +1036,87 @@
       "text": {
         "ja": "{何|なに}をしますか？",
         "ja_easy": "{何|なに}をしますか？",
-        "en": "What are you doing?"
+        "en": "What do you want to do?"
       },
       "why_asked": {
-        "ja": "アルバイト・{就職|しゅうしょく}・{退職|たいしょく}で、{要|い}る{手続|てつづ}きが{違|ちが}うためです。",
+        "ja": "アルバイト・{就職|しゅうしょく}・{退職|たいしょく}・{個人|こじん}{事業|じぎょう}・{会社|かいしゃ}で、{要|い}る{手続|てつづ}きが{違|ちが}うためです。",
         "ja_easy": "することで、{手続|てつづ}きが{違|ちが}うからです。",
-        "en": "The procedures differ for a part-time job, starting a job, and leaving a job."
+        "en": "The procedures differ for each of these."
       },
       "options": [
         {
           "value": "part_time",
           "icon": "work",
           "label": {
-            "ja": "アルバイトを{始|はじ}めたい",
-            "ja_easy": "アルバイトをしたい",
+            "ja": "アルバイトを{始|はじ}める",
+            "ja_easy": "アルバイトを{始|はじ}める",
             "en": "Start a part-time job"
           }
         },
         {
           "value": "employ",
+          "icon": "status-work",
           "label": {
-            "ja": "{会社|かいしゃ}に{就職|しゅうしょく}する・した",
-            "ja_easy": "{会社|かいしゃ}で{働|はたら}き{始|はじ}める",
-            "en": "Start (or started) a full-time job"
-          },
-          "icon": "status-work"
+            "ja": "{就職|しゅうしょく}・{転職|てんしょく}する",
+            "ja_easy": "{会社|かいしゃ}で{働|はたら}き{始|はじ}める・{会社|かいしゃ}を{変|か}える",
+            "en": "Start or change jobs"
+          }
+        },
+        {
+          "value": "pt_end",
+          "icon": "work-dim",
+          "label": {
+            "ja": "アルバイトを{辞|や}める",
+            "ja_easy": "アルバイトを{辞|や}める",
+            "en": "Leave a part-time job"
+          }
         },
         {
           "value": "leave",
+          "icon": "work-dim",
           "label": {
             "ja": "{仕事|しごと}を{辞|や}める・{辞|や}めた",
-            "ja_easy": "{仕事|しごと}を{辞|や}める",
+            "ja_easy": "{会社|かいしゃ}を{辞|や}める",
             "en": "Leave (or left) a job"
+          }
+        },
+        {
+          "value": "biz_start",
+          "icon": "doc",
+          "label": {
+            "ja": "{個人|こじん}{事業|じぎょう}を{始|はじ}める",
+            "ja_easy": "{自分|じぶん}で{事業|じぎょう}を{始|はじ}める",
+            "en": "Start self-employment"
+          }
+        },
+        {
+          "value": "biz_end",
+          "icon": "doc-dim",
+          "label": {
+            "ja": "{個人|こじん}{事業|じぎょう}をやめる",
+            "ja_easy": "{自分|じぶん}の{事業|じぎょう}をやめる",
+            "en": "Close a sole proprietorship"
+          }
+        },
+        {
+          "value": "company",
+          "small": true,
+          "label": {
+            "ja": "{会社|かいしゃ}を{設立|せつりつ}・{経営|けいえい}する",
+            "ja_easy": "{会社|かいしゃ}をつくる",
+            "en": "Start or run a company"
           },
-          "icon": "work-dim"
+          "icon": "hall"
+        },
+        {
+          "value": "basics",
+          "small": true,
+          "label": {
+            "ja": "{働|はたら}くときの{基本|きほん}{情報|じょうほう}",
+            "ja_easy": "{働|はたら}くときのきほん",
+            "en": "Basics of working in Japan"
+          },
+          "icon": "bulb"
         }
       ]
     },
@@ -1172,7 +1219,8 @@
                 "fact": "zairyu_status",
                 "in": [
                   "student",
-                  "family"
+                  "family",
+                  "cultural"
                 ]
               },
               {
@@ -1203,22 +1251,38 @@
         ]
       },
       "text": {
-        "ja": "「{資格外|しかくがい}{活動|かつどう}{許可|きょか}」をもう{受|う}けていますか？",
-        "ja_easy": "「{資格外活動許可|しかくがいかつどうきょか}」をもうもらいましたか？",
-        "en": "Do you already have \"permission to engage in an activity other than that permitted\"?"
+        "ja": "「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}」を{受|う}けていますか？",
+        "ja_easy": "「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}」をもらっていますか？",
+        "en": "Do you have permission to engage in an activity other than that permitted (資格外活動許可)?"
       },
       "why_asked": {
-        "ja": "{許可|きょか}を{受|う}けている{人|ひと}は、{許可|きょか}の{手続|てつづ}きが{要|い}らないためです。{許可|きょか}を{受|う}けると、{在留|ざいりゅう}カードに{書|か}かれます。",
-        "ja_easy": "もらっている{人|ひと}は、この{手続|てつづ}きはいらないからです。{在留|ざいりゅう}カードを{見|み}てください。",
-        "en": "If you already have it, you can skip that step. When granted, it is written on your residence card."
+        "ja": "{許可|きょか}の{種類|しゅるい}で、できる{仕事|しごと}と{時間|じかん}が{違|ちが}うためです。{包括|ほうかつ}{許可|きょか}は{在留|ざいりゅう}カードの「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}{欄|らん}」に、{個別|こべつ}{許可|きょか}は「{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}{書|しょ}」に{書|か}いてあります。",
+        "ja_easy": "{許可|きょか}の{種類|しゅるい}で、できる{仕事|しごと}が{違|ちが}うからです。{在留|ざいりゅう}カードか、{許可|きょか}{書|しょ}を{見|み}てください。",
+        "en": "What you may do depends on the type. Comprehensive permission is printed on the residence card; individual permission is on a separate permit document."
       },
       "options": [
         {
-          "value": "yes",
+          "value": "blanket",
           "label": {
-            "ja": "はい（{在留|ざいりゅう}カードに{書|か}いてある）",
-            "ja_easy": "はい（{在留|ざいりゅう}カードに{書|か}いてある）",
-            "en": "Yes (it is written on my card)"
+            "ja": "{包括|ほうかつ}{許可|きょか}がある（{在留|ざいりゅう}カードの{資格外|しかくがい}{活動|かつどう}{許可|きょか}の{欄|らん}に{書|か}いてある）",
+            "ja_easy": "{在留|ざいりゅう}カードの{許可|きょか}の{欄|らん}に{書|か}いてある（{包括|ほうかつ}{許可|きょか}）",
+            "en": "Comprehensive permission (in the permission field of my residence card)"
+          }
+        },
+        {
+          "value": "individual",
+          "label": {
+            "ja": "{個別|こべつ}{許可|きょか}がある（{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}{書|しょ}に、{仕事|しごと}や{勤|つと}め{先|さき}が{書|か}いてある）",
+            "ja_easy": "{許可|きょか}{書|しょ}に{仕事|しごと}が{書|か}いてある（{個別|こべつ}{許可|きょか}）",
+            "en": "Individual permission (a permit document naming the work)"
+          }
+        },
+        {
+          "value": "both",
+          "label": {
+            "ja": "{両方|りょうほう}ある",
+            "ja_easy": "{両方|りょうほう}ある",
+            "en": "Both"
           }
         },
         {
@@ -1231,6 +1295,339 @@
         },
         {
           "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-biz-invoice",
+      "fact": "biz_invoice",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "eq": "biz_end"
+      },
+      "text": {
+        "ja": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか。またはインボイス（{適格|てきかく}{請求|せいきゅう}{書|しょ}{発行|はっこう}{事業|じぎょう}{者|しゃ}）の{登録|とうろく}をしていますか？",
+        "ja_easy": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか？インボイスの{登録|とうろく}がありますか？",
+        "en": "Do you pay consumption tax, or are you registered as a qualified invoice issuer?"
+      },
+      "why_asked": {
+        "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}やインボイスの{登録|とうろく}がある{人|ひと}は、やめるときに{税務署|ぜいむしょ}への{届|とど}けが{別|べつ}に{要|い}るためです。",
+        "ja_easy": "{届|とど}けが{別|べつ}に{要|い}るからです。",
+        "en": "If so, closing the business needs a separate filing with the tax office."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-biz-employees",
+      "fact": "biz_employees",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "in": [
+          "biz_start",
+          "biz_end"
+        ]
+      },
+      "text": {
+        "ja": "{人|ひと}を{雇|やと}って{給料|きゅうりょう}を{払|はら}いますか（{払|はら}っていましたか）？",
+        "ja_easy": "{人|ひと}を{雇|やと}っていますか？",
+        "en": "Do (did) you pay wages to employees?"
+      },
+      "why_asked": {
+        "ja": "{給料|きゅうりょう}を{払|はら}うと、{源泉|げんせん}{徴収|ちょうしゅう}と{税務署|ぜいむしょ}への{届|とど}けが{要|い}るためです。",
+        "ja_easy": "{給料|きゅうりょう}を{払|はら}うと、{届|とど}けが{要|い}るからです。",
+        "en": "Paying wages brings withholding tax and filings with the tax office."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-job-next",
+      "fact": "job_next",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{辞|や}めた{次|つぎ}の{日|ひ}から、{次|つぎ}の{勤|つと}め{先|さき}の{健康|けんこう}{保険|ほけん}に{入|はい}りますか？",
+        "ja_easy": "{辞|や}めた{次|つぎ}の{日|ひ}から、{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}りますか？",
+        "en": "Will you join the next employer's health insurance from the day after you leave?"
+      },
+      "why_asked": {
+        "ja": "すぐに{次|つぎ}の{勤|つと}め{先|さき}の{保険|ほけん}に{入|はい}る{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{手続|てつづ}きが{要|い}らないためです。",
+        "ja_easy": "すぐ{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}るなら、{国民|こくみん}{健康|けんこう}{保険|ほけん}はいらないからです。",
+        "en": "If you join the next employer's insurance straight away, you do not need National Health Insurance."
+      },
+      "options": [
+        {
+          "value": "next_day",
+          "label": {
+            "ja": "はい（{間|あいだ}を{空|あ}けずに{入|はい}る）",
+            "ja_easy": "はい",
+            "en": "Yes, with no gap"
+          }
+        },
+        {
+          "value": "gap",
+          "label": {
+            "ja": "いいえ（{間|あいだ}が{空|す}く・{次|つぎ}の{勤|つと}め{先|さき}がない）",
+            "ja_easy": "いいえ",
+            "en": "No (there is a gap, or no next job)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-school-status",
+      "fact": "school_status",
+      "stage": "in_card",
+      "scope": "person",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "eq": "student"
+          }
+        ]
+      },
+      "text": {
+        "ja": "いま、{学校|がっこう}に{在籍|ざいせき}していますか？",
+        "ja_easy": "いま、{学校|がっこう}の{学生|がくせい}ですか？",
+        "en": "Are you currently enrolled at your school?"
+      },
+      "why_asked": {
+        "ja": "{卒業|そつぎょう}や{退学|たいがく}のあとは、{在留|ざいりゅう}{期間|きかん}が{残|のこ}っていても、{包括|ほうかつ}{許可|きょか}でアルバイトを{続|つづ}けられないためです。",
+        "ja_easy": "{卒業|そつぎょう}したあとは、{同|おな}じ{許可|きょか}でアルバイトを{続|つづ}けられないからです。",
+        "en": "After graduating or leaving school, the comprehensive permission no longer covers part-time work, even if your period of stay remains."
+      },
+      "options": [
+        {
+          "value": "enrolled",
+          "label": {
+            "ja": "{在籍|ざいせき}している（{長|なが}い{休|やす}みの{間|あいだ}も{含|ふく}む）",
+            "ja_easy": "{学生|がくせい}です（{休|やす}みの{間|あいだ}も）",
+            "en": "Enrolled (including long vacations)"
+          }
+        },
+        {
+          "value": "graduated",
+          "label": {
+            "ja": "{卒業|そつぎょう}した",
+            "ja_easy": "{卒業|そつぎょう}した",
+            "en": "Graduated"
+          }
+        },
+        {
+          "value": "withdrawn",
+          "label": {
+            "ja": "{退学|たいがく}した・{除籍|じょせき}になった",
+            "ja_easy": "{学校|がっこう}をやめた",
+            "en": "Withdrew or was removed"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-work-status-detail",
+      "fact": "work_status_detail",
+      "stage": "in_card",
+      "scope": "person",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "any": [
+              {
+                "fact": "zairyu_status",
+                "eq": "work"
+              },
+              {
+                "all": [
+                  {
+                    "not": {
+                      "fact": "zairyu_status",
+                      "in": [
+                        "student",
+                        "family",
+                        "work",
+                        "spouse",
+                        "permanent",
+                        "long_term",
+                        "cultural",
+                        "trainee"
+                      ]
+                    }
+                  },
+                  {
+                    "fact": "work_limit",
+                    "eq": "status_only"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」の{欄|らん}には、{何|なん}と{書|か}いてありますか？",
+        "ja_easy": "{在留|ざいりゅう}カードの「{在留|ざいりゅう}{資格|しかく}」に、{何|なん}と{書|か}いてありますか？",
+        "en": "What does the \"Status\" field on your residence card say?"
+      },
+      "why_asked": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}によって、{入管|にゅうかん}への{届|とど}けの{種類|しゅるい}と、できる{仕事|しごと}の{範囲|はんい}が{違|ちが}うためです。{答|こた}えはこの{端末|たんまつ}の{中|なか}だけで{使|つか}います。",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}で、{届|とど}けとできる{仕事|しごと}が{変|か}わるからです。",
+        "en": "The type of immigration notification and the work you may do depend on it."
+      },
+      "options": [
+        {
+          "value": "engineer",
+          "label": {
+            "ja": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}",
+            "ja_easy": "{技術|ぎじゅつ}・{人文|じんぶん}{知識|ちしき}・{国際|こくさい}{業務|ぎょうむ}",
+            "en": "Engineer / Specialist in Humanities / International Services"
+          }
+        },
+        {
+          "value": "ssw",
+          "label": {
+            "ja": "{特定|とくてい}{技能|ぎのう}（1{号|ごう}・2{号|ごう}）",
+            "ja_easy": "{特定|とくてい}{技能|ぎのう}",
+            "en": "Specified Skilled Worker (i / ii)"
+          }
+        },
+        {
+          "value": "intern",
+          "label": {
+            "ja": "{技能|ぎのう}{実習|じっしゅう}",
+            "ja_easy": "{技能|ぎのう}{実習|じっしゅう}",
+            "en": "Technical Intern Training"
+          }
+        },
+        {
+          "value": "business_manager",
+          "label": {
+            "ja": "{経営|けいえい}・{管理|かんり}",
+            "ja_easy": "{経営|けいえい}・{管理|かんり}",
+            "en": "Business Manager"
+          }
+        },
+        {
+          "value": "hsp",
+          "label": {
+            "ja": "{高度|こうど}{専門|せんもん}{職|しょく}",
+            "ja_easy": "{高度|こうど}{専門|せんもん}{職|しょく}",
+            "en": "Highly Skilled Professional"
+          }
+        },
+        {
+          "value": "contract_other",
+          "label": {
+            "ja": "{技能|ぎのう}・{介護|かいご}・{興行|こうぎょう}・{研究|けんきゅう}",
+            "ja_easy": "{技能|ぎのう}・{介護|かいご}・{興行|こうぎょう}・{研究|けんきゅう}",
+            "en": "Skilled Labor, Nursing Care, Entertainer or Researcher"
+          }
+        },
+        {
+          "value": "activity_other",
+          "label": {
+            "ja": "{教授|きょうじゅ}・{教育|きょういく}・{医療|いりょう}・{法律|ほうりつ}・{会計|かいけい}{業務|ぎょうむ}・{企業|きぎょう}{内|ない}{転勤|てんきん}",
+            "ja_easy": "{教授|きょうじゅ}・{教育|きょういく}・{医療|いりょう}・{法律|ほうりつ}・{会計|かいけい}{業務|ぎょうむ}・{企業|きぎょう}{内|ない}{転勤|てんきん}",
+            "en": "Professor, Instructor, Medical Services, Legal/Accounting Services or Intra-company Transferee"
+          }
+        },
+        {
+          "value": "other",
+          "small": true,
+          "label": {
+            "ja": "そのほか（{芸術|げいじゅつ}・{宗教|しゅうきょう}・{報道|ほうどう}など）",
+            "ja_easy": "そのほか",
+            "en": "Other (Artist, Religious Activities, Journalist, etc.)"
+          }
+        },
+        {
+          "value": "unknown",
+          "small": true,
           "label": {
             "ja": "わからない",
             "ja_easy": "わかりません",

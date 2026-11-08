@@ -1,0 +1,90 @@
+{
+  "id": "biz-start-tax",
+  "data_version": 1,
+  "illustration": "coins",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-biz-start",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{帳簿|ちょうぼ}と{確定|かくてい}{申告|しんこく}・{消費|しょうひ}{税|ぜい}",
+    "ja_easy": "{帳簿|ちょうぼ}と{確定|かくてい}{申告|しんこく}",
+    "en": "Bookkeeping, tax returns and consumption tax"
+  },
+  "official_name": {
+    "ja": "所得税の確定申告・消費税",
+    "reading": "しょとくぜいのかくていしんこく・しょうひぜい"
+  },
+  "summary": {
+    "ja": "{売上|うりあげ}と{経費|けいひ}を{帳簿|ちょうぼ}につけ、{領収|りょうしゅう}{書|しょ}を{残|のこ}します。{所得|しょとく}{税|ぜい}の{確定|かくてい}{申告|しんこく}は、{原則|げんそく}として{翌年|よくねん}2{月|つき}16{日|にち}から3{月|つき}15{日|にち}までです。{消費|しょうひ}{税|ぜい}は、{前|まえ}{々|々}{年|とし}の{課税|かぜい}{売上|うりあげ}{高|だか}が1,000{万|まん}{円|えん}{以下|いか}なら、{原則|げんそく}として{納|おさ}めなくてよい（{免税|めんぜい}）ですが、インボイスの{登録|とうろく}をすると{免税|めんぜい}になりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{帳簿|ちょうぼ}をつけて、{毎年|まいとし}2{月|つき}16{日|にち}から3{月|つき}15{日|にち}に{確定|かくてい}{申告|しんこく}をします。{消費|しょうひ}{税|ぜい}とインボイスは{税務署|ぜいむしょ}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+    "en": "Keep books and receipts. File the income-tax return from 16 Feb to 15 Mar the next year. If taxable sales two years earlier were ¥10 million or less you are usually exempt from consumption tax, but not if you register for invoices (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "インボイス（{適格|てきかく}{請求|せいきゅう}{書|しょ}{発行|はっこう}{事業|じぎょう}{者|しゃ}）の{登録|とうろく}は、{申請|しんせい}したときだけです。{登録|とうろく}するかは{取引|とりひき}{先|さき}と{相談|そうだん}して{決|き}めます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "インボイスは、{申請|しんせい}した{人|ひと}だけです（{要|よう}{確認|かくにん}）。",
+        "en": "Invoice registration happens only if you apply; decide with your clients (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-6498",
+          "nta-6501"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "課税期間の基準期間における課税売上高が1,000万円以下であっても、適格請求書発行事業者の登録を受けている場合には、納税義務は免除されません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{業種|ぎょうしゅ}によっては、{始|はじ}める{前|まえ}に{許可|きょか}や{届出|とどけで}が{要|い}ります（{例|れい}：{食|た}べ{物|もの}の{店|みせ}）。{業種|ぎょうしゅ}ごとに{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{仕事|しごと}によっては、{別|べつ}の{許可|きょか}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "Some trades need a licence or notice before you start (for example food businesses). Check for your trade (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nta-2020",
+      "nta-6501"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "原則として、その年の翌年2月16日から3月15日までです。"
+  }
+}

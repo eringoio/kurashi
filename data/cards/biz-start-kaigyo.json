@@ -1,0 +1,99 @@
+{
+  "id": "biz-start-kaigyo",
+  "data_version": 1,
+  "illustration": "doc",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-biz-start",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{開業|かいぎょう}{届|とどけ}を{出|だ}す",
+    "ja_easy": "{開業|かいぎょう}{届|とどけ}を{出|だ}す",
+    "en": "File the business-start notice"
+  },
+  "official_name": {
+    "ja": "個人事業の開業・廃業等届出書",
+    "reading": "こじんじぎょうのかいぎょう・はいぎょうとうとどけでしょ"
+  },
+  "summary": {
+    "ja": "{事業|じぎょう}を{始|はじ}めたら、{税務署|ぜいむしょ}に「{個人|こじん}{事業|じぎょう}の{開業|かいぎょう}・{廃業|はいぎょう}{等|とう}{届出|とどけで}{書|しょ}」を{出|だ}します。{期限|きげん}は、{始|はじ}めた{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}までです。これは{税|ぜい}の{届|とど}けで、{在留|ざいりゅう}{資格|しかく}の{許可|きょか}ではありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{事業|じぎょう}を{始|はじ}めたら、{税務署|ぜいむしょ}に{開業|かいぎょう}{届|とどけ}を{出|だ}します。{期限|きげん}は、その{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}までです（{要|よう}{確認|かくにん}）。",
+    "en": "After starting, file the business-start notice with the tax office by the tax-return deadline for that year. It is a tax filing, not immigration permission (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{事業|じぎょう}を{始|はじ}めた{年|とし}の{分|ぶん}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "ja_easy": "その{年|とし}の{確定|かくてい}{申告|しんこく}の{期限|きげん}まで（{要|よう}{確認|かくにん}）",
+      "en": "By the tax-return deadline for the year you started (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090",
+        "nta-kaigyo-todoke"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "事業の開始等の事実があった日の属する年分の確定申告期限まで"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "e-Tax（インターネット）でも{出|だ}せます。",
+        "ja_easy": "インターネットでも{出|だ}せます。",
+        "en": "You can also file online via e-Tax."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-kaigyo-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ],
+  "reasons": {},
+  "links": [
+    {
+      "label": {
+        "ja": "{開業|かいぎょう}{届|とどけ}（{国税庁|こくぜいちょう}）",
+        "ja_easy": "{開業|かいぎょう}{届|とどけ}（{国税庁|こくぜいちょう}）",
+        "en": "Business-start notice (NTA)"
+      },
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/04.htm",
+      "source_id": "nta-kaigyo-todoke"
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "nta-2090",
+      "nta-kaigyo-todoke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "事業の開始等の事実があった日の属する年分の確定申告期限まで"
+  }
+}

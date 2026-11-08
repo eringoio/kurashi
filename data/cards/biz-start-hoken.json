@@ -1,0 +1,55 @@
+{
+  "id": "biz-start-hoken",
+  "data_version": 1,
+  "illustration": "hcard",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-job-goal-biz-start",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{個人|こじん}{事業|じぎょう}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}",
+    "ja_easy": "{事業|じぎょう}と{保険|ほけん}・{年金|ねんきん}",
+    "en": "Self-employment, health insurance and pension"
+  },
+  "official_name": {
+    "ja": "国民健康保険・国民年金",
+    "reading": "こくみんけんこうほけん・こくみんねんきん"
+  },
+  "summary": {
+    "ja": "{勤|つと}め{先|さき}の{保険|ほけん}に{入|はい}っていない{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}と{国民|こくみん}{年金|ねんきん}です。{勤|つと}めながら{副業|ふくぎょう}で{始|はじ}める{人|ひと}は、ふつうは{勤|つと}め{先|さき}の{保険|ほけん}のままです。{会社|かいしゃ}を{辞|や}めて{始|はじ}める{人|ひと}は、「{仕事|しごと}を{辞|や}める」の{案内|あんない}も{見|み}てください。{開業|かいぎょう}{届|とどけ}を{出|だ}しただけで、{保険|ほけん}の{届|とど}けが{要|い}るわけではありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{会社|かいしゃ}の{保険|ほけん}がない{人|ひと}は、{国民|こくみん}{健康|けんこう}{保険|ほけん}と{国民|こくみん}{年金|ねんきん}です。{会社|かいしゃ}に{勤|つと}めたまま{始|はじ}める{人|ひと}は、そのままです（{要|よう}{確認|かくにん}）。",
+    "en": "If you are not in workplace insurance, you are in National Health Insurance and the National Pension. If you keep a job, you usually keep its insurance. If you quit to start, see \"Leave a job\" too (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住|す}んでいる{区|く}の{区役所|くやくしょ}（{保険|ほけん}{年金|ねんきん}{課|か}）",
+      "ja_easy": "{区役所|くやくしょ}",
+      "en": "Ward office (insurance and pension)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-kokuho-kanyu"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-kokuho-kanyu"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "名古屋市の国民健康保険に加入するときは、必ず14日以内に届出をしてください。"
+  }
+}

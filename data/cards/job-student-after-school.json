@@ -1,0 +1,127 @@
+{
+  "id": "job-student-after-school",
+  "data_version": 1,
+  "illustration": "student",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      {
+        "any": [
+          "R-job-goal-pt",
+          "R-job-goal-employ"
+        ]
+      },
+      "R-job-student",
+      "R-job-school-ended"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{卒業|そつぎょう}・{退学|たいがく}のあとのアルバイト（{留学|りゅうがく}）",
+    "ja_easy": "{学校|がっこう}を{卒業|そつぎょう}したあとのアルバイト",
+    "en": "Part-time work after graduating (Student status)"
+  },
+  "official_name": {
+    "ja": "資格外活動許可（包括許可）の有効範囲",
+    "reading": "しかくがいかつどうきょか（ほうかつきょか）のゆうこうはんい"
+  },
+  "summary": {
+    "ja": "{留学|りゅうがく}の{包括|ほうかつ}{許可|きょか}は、{学校|がっこう}に{在籍|ざいせき}している{間|あいだ}だけ{有効|ゆうこう}です。{卒業|そつぎょう}や{退学|たいがく}のあとは、{在留|ざいりゅう}{期間|きかん}が{残|のこ}っていても、その{許可|きょか}ではアルバイトができません。{卒業|そつぎょう}{後|ご}も{日本|にほん}で{就職|しゅうしょく}{活動|かつどう}を{続|つづ}けるときは、「{特定|とくてい}{活動|かつどう}」への{変更|へんこう}を{入管|にゅうかん}に{相談|そうだん}します。{条件|じょうけん}を{満|み}たせば、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}を{受|う}けて1{週|しゅう}28{時間|じかん}{以内|いない}で{働|はたら}けることがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{留学|りゅうがく}の{許可|きょか}は、{学校|がっこう}の{学生|がくせい}の{間|あいだ}だけです。{卒業|そつぎょう}したら、アルバイトはできません。{就職|しゅうしょく}{活動|かつどう}を{続|つづ}けるときは、{入管|にゅうかん}に{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+    "en": "Comprehensive permission for students is valid only while you are enrolled. After you graduate or leave school, it no longer allows part-time work, even if your period of stay remains. To keep job-hunting in Japan, ask immigration about changing to Designated Activities; with conditions, you may get permission for up to 28 hours a week (to be checked)."
+  },
+  "lead": {
+    "ja": "{卒業|そつぎょう}・{退学|たいがく}のあとは、{今|いま}の{許可|きょか}ではアルバイトができません。",
+    "ja_easy": "{卒業|そつぎょう}したら、{今|いま}の{許可|きょか}で{働|はたら}けません。",
+    "en": "After graduating, your current permission no longer covers part-time work."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Nagoya Regional Immigration Services Bureau"
+    },
+    "evidence": {
+      "source_ids": [
+        "isa-info-center"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "guide",
+  "keywords": [],
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{大学|だいがく}・{専門|せんもん}{学校|がっこう}を{卒業|そつぎょう}して{就職|しゅうしょく}{活動|かつどう}を{続|つづ}ける{人|ひと}は、「{特定|とくてい}{活動|かつどう}」に{変|か}える{申請|しんせい}をします。{学校|がっこう}の{推薦|すいせん}{状|じょう}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{就職|しゅうしょく}{活動|かつどう}を{続|つづ}ける{人|ひと}は、「{特定|とくてい}{活動|かつどう}」にかえます。{学校|がっこう}の{推薦|すいせん}{状|じょう}が{要|い}ります（{要|よう}{確認|かくにん}）。",
+        "en": "Graduates who keep job-hunting apply to change to Designated Activities. A school recommendation is needed (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-keizoku-shushoku",
+          "isa-kanri-qa"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "一定の要件を満たせば、資格外活動の許可を受けて１週について２８時間以内で行う資格外活動（いわゆるアルバイト）が可能です。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{就職|しゅうしょく}が{決|き}まったら、{働|はたら}き{始|はじ}める{前|まえ}に、{仕事|しごと}に{合|あ}った{在留|ざいりゅう}{資格|しかく}への{変更|へんこう}を{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{就職|しゅうしょく}が{決|き}まったら、{働|はたら}く{前|まえ}に{在留|ざいりゅう}{資格|しかく}をかえます（{要|よう}{確認|かくにん}）。",
+        "en": "Once you have a job offer, apply to change to a matching work status before you start (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikaku-henko"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "わからないときは、{外国|がいこく}{人|じん}{在留|ざいりゅう}{総合|そうごう}インフォメーションセンターで{相談|そうだん}できます。",
+        "ja_easy": "わからないときは、{入管|にゅうかん}の{相談|そうだん}センターに{聞|き}けます。",
+        "en": "If unsure, ask the Immigration Information Center."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-info-center"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人在留総合インフォメーションセンター"
+      }
+    }
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{学校|がっこう}に{在籍|ざいせき}している{人|ひと}には{出|だ}しません。",
+      "ja_easy": "{学生|がくせい}の{人|ひと}には{出|だ}しません。",
+      "en": "Not shown while you are enrolled."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "isa-kanri-qa"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "留学生に対する包括的な資格外活動許可は、教育機関に在籍している間に限り有効ですので、卒業後いずれの教育機関にも在籍していない場合には、アルバイトをすることは認められません。"
+  }
+}

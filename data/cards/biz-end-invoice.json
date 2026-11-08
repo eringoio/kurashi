@@ -1,0 +1,80 @@
+{
+  "id": "biz-end-invoice",
+  "data_version": 1,
+  "illustration": "coins-dim",
+  "awareness_type": "applies",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-end",
+      "R-job-biz-invoice"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{消費|しょうひ}{税|ぜい}・インボイスの{届|とど}け（やめるとき）",
+    "ja_easy": "{消費|しょうひ}{税|ぜい}の{届|とど}け（やめるとき）",
+    "en": "Consumption tax and invoices when closing"
+  },
+  "official_name": {
+    "ja": "消費税の事業廃止届出書",
+    "reading": "しょうひぜいのじぎょうはいしとどけでしょ"
+  },
+  "summary": {
+    "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}がやめるときは、「{事業|じぎょう}{廃止|はいし}{届出|とどけで}{書|しょ}」を{速|すみ}やかに{出|だ}します。インボイスの{登録|とうろく}がある{人|ひと}も、{登録|とうろく}の{取消|とりけ}しの{届|とど}けではなく、この{事業|じぎょう}{廃止|はいし}{届出|とどけで}{書|しょ}を{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていた{人|ひと}やインボイスの{人|ひと}は、「{事業|じぎょう}{廃止|はいし}{届出|とどけで}{書|しょ}」を{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "en": "Consumption-tax payers file a business-closure notice promptly. Registered invoice issuers file this same notice, not the registration-cancellation form (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "やめたあと、{速|すみ}やかに（{要|よう}{確認|かくにん}）",
+      "ja_easy": "すぐに（{要|よう}{確認|かくにん}）",
+      "en": "Promptly after closing (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-6603"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "事由が生じた場合速やかに"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office for your address (or online via e-Tax)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nta-2090"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "kind": "procedure",
+  "keywords": [],
+  "reasons": {
+    "excluded": {
+      "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}でなく、インボイスの{登録|とうろく}もない{人|ひと}には{出|だ}しません。",
+      "ja_easy": "{消費|しょうひ}{税|ぜい}とインボイスがない{人|ひと}には{出|だ}しません。",
+      "en": "Not shown if you neither pay consumption tax nor hold an invoice registration."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "nta-6603"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "適格請求書発行事業者が事業の廃止に伴って適格請求書発行事業者の登録を取消す場合は、適格請求書発行事業者の登録の取消しを求める旨の届出書ではなく、事業廃止届出書を提出してください。"
+  }
+}
