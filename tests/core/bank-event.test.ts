@@ -35,10 +35,10 @@ describe('銀行の口座（公開）', () => {
     expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'japanese' }), 'bank-resident-change')).toBe('excluded');
     expect(data.flow.card_order.indexOf('bank-account-open-another')).toBeGreaterThan(data.flow.card_order.indexOf('bank-card-reissue'));
   });
-  it('居住者への変更：来日6か月の前後の人だけ。日本国籍・前から日本にいる人には出さない', () => {
+  it('居住者の登録を確かめる：来日の時期で外さない（kaizen/ginkou 3）。日本国籍には出さない', () => {
     expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'about6' }), 'bank-resident-change')).not.toBe('excluded');
     expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'lt6' }), 'bank-resident-change')).not.toBe('excluded');
-    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'long' }), 'bank-resident-change')).toBe('excluded');
+    expect(st(go({ 'Q-bank-has': true, 'Q-nationality': 'foreign', 'Q-arrival': 'long' }), 'bank-resident-change')).not.toBe('excluded');
   });
   it('6か月後の日（月末はその月の最後の日）', () => {
     expect(addMonths('2026-05-10', 6)).toBe('2026-11-10');

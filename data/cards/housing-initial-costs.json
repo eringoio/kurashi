@@ -69,9 +69,9 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{申|もう}し{込|こ}みの{書類|しょるい}は、パスポート、{在留|ざいりゅう}カード、{収入|しゅうにゅう}を{証明|しょうめい}するもの、{在職|ざいしょく}{証明書|しょうめいしょ}、{学生証|がくせいしょう}（{在学|ざいがく}{証明書|しょうめいしょ}）などです。{物件|ぶっけん}によって{違|ちが}います。",
-        "ja_easy": "{申|もう}し{込|こ}みのとき、パスポート、{在留|ざいりゅう}カード、{収入|しゅうにゅう}がわかるもの、{学生証|がくせいしょう}などを{出|だ}します。{部屋|へや}によって{違|ちが}います。",
-        "en": "Application documents include your passport, residence card, proof of income, employment certificate and student registration certificate. They differ by property."
+        "ja": "{申|もう}し{込|こ}みの{書類|しょるい}は{物件|ぶっけん}や{不動産|ふどうさん}{会社|がいしゃ}によって{違|ちが}います。{本人|ほんにん}{確認|かくにん}の{書類|しょるい}（{外国|がいこく}{籍|せき}の{人|ひと}は{在留|ざいりゅう}カードなど）、{収入|しゅうにゅう}を{証明|しょうめい}するもの、{在職|ざいしょく}{証明書|しょうめいしょ}、{学生証|がくせいしょう}などを{求|もと}められることがありますが、すべての{人|ひと}に{必要|ひつよう}とは{限|かぎ}りません。{先|さき}に{確|たし}かめてください。",
+        "ja_easy": "{申|もう}し{込|こ}みの{書類|しょるい}は{部屋|へや}や{会社|かいしゃ}によって{違|ちが}います。{本人|ほんにん}{確認|かくにん}の{書類|しょるい}（{外国|がいこく}{籍|せき}の{人|ひと}は{在留|ざいりゅう}カードなど）、{収入|しゅうにゅう}がわかるもの、{学生証|がくせいしょう}などを{聞|き}かれることがあります。{先|さき}に{確|たし}かめます。",
+        "en": "Application documents differ by property and agent. You may be asked for ID (a residence card or similar for foreign nationals), proof of income, an employment certificate or a student certificate, but not everyone needs all of them. Check in advance."
       },
       "evidence": {
         "source_ids": [

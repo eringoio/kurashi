@@ -13,29 +13,28 @@
   "eligibility": {
     "all": [
       "R-bank-has-account",
-      "R-foreign-national",
-      "R-bank-arrival-6m"
+      "R-foreign-national"
     ]
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{居住者|きょじゅうしゃ}への{変更|へんこう}（{来日|らいにち}6か{月|げつ}）",
-    "ja_easy": "6か{月|げつ}たったら{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}える",
-    "en": "Change to \"resident\" at your bank (6 months after arrival)"
+    "ja": "{銀行|ぎんこう}の{居住者|きょじゅうしゃ}・{非居住者|ひきょじゅうしゃ}の{登録|とうろく}を{確|たし}かめる",
+    "ja_easy": "{銀行|ぎんこう}の「{居住者|きょじゅうしゃ}」の{登録|とうろく}を{確|たし}かめる",
+    "en": "Check your bank's resident / non-resident registration"
   },
   "official_name": {
     "ja": "居住者・非居住者の区分の変更",
     "reading": "きょじゅうしゃ・ひきょじゅうしゃのくぶんのへんこう"
   },
   "summary": {
-    "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}{国内|こくない}で{働|はたら}く{場合|ばあい}（アルバイト・パートは{数|かぞ}えません）を{除|のぞ}き、{入国|にゅうこく}から6か{月|げつ}たつまで、{法令|ほうれい}では「{非|ひ}{居住|きょじゅう}{者|しゃ}」です。{銀行|ぎんこう}に{届|とど}けるのは{義務|ぎむ}ではありませんが、{届|とど}けた{方|ほう}がよいです。{非|ひ}{居住|きょじゅう}{者|しゃ}のままだと、{送金|そうきん}・{家賃|やちん}・{給料|きゅうりょう}のときに{高|たか}い{手数料|てすうりょう}がかかることがあります。",
-    "ja_easy": "{日本|にほん}で{働|はたら}く{人|ひと}（アルバイトは{数|かぞ}えません）を{除|のぞ}き、{日本|にほん}に{来|き}て6か{月|げつ}たつまでは、{法律|ほうりつ}では「{非|ひ}{居住者|きょじゅうしゃ}」です。{銀行|ぎんこう}に{知|し}らせるのは{義務|ぎむ}ではありません。でも、{知|し}らせたほうがいいです。そのままだと、{送金|そうきん}や{家賃|やちん}、{給料|きゅうりょう}のときに{手数料|てすうりょう}が{高|たか}くなることがあります。",
-    "en": "If you are not a Japanese national, you are legally a \"non-resident\" until 6 months after entry, unless you work in Japan (part-time jobs do not count). Telling your bank is not required, but it is better to do it. If you stay a non-resident, you may pay high fees for money transfers, rent and salary."
+    "ja": "{銀行|ぎんこう}の{口座|こうざ}には「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。これは{外為法|がいためほう}の{区分|くぶん}で、{在留|ざいりゅう}{資格|しかく}や{税金|ぜいきん}の{居住者|きょじゅうしゃ}とは{別|べつ}です。{銀行|ぎんこう}の{案内|あんない}では、{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}{国内|こくない}に{勤務|きんむ}する{場合|ばあい}（アルバイト・パートを{除|のぞ}く）か、{入国|にゅうこく}から6か{月|げつ}{以上|いじょう}たった{場合|ばあい}を{除|のぞ}き、{非居住者|ひきょじゅうしゃ}です。{来日|らいにち}から{長|なが}くたっていても、{銀行|ぎんこう}の{登録|とうろく}が{非居住者|ひきょじゅうしゃ}のままのことがあります。{届|とど}けは{法令|ほうれい}の{期限|きげん}ではありません。{手数料|てすうりょう}や{送金|そうきん}の{扱|あつか}いは{銀行|ぎんこう}ごとに{違|ちが}います。まず{銀行|ぎんこう}に{登録|とうろく}を{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}には「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。{在留|ざいりゅう}{資格|しかく}とは{別|べつ}です。{日本|にほん}で{会社|かいしゃ}に{勤|つと}める{人|ひと}（アルバイトは{入|はい}りません）か、{日本|にほん}に{来|き}て6か{月|げつ}{以上|いじょう}たった{人|ひと}は、ふつう{居住者|きょじゅうしゃ}です。でも、{銀行|ぎんこう}の{登録|とうろく}が{変|か}わっていないことがあります。{手数料|てすうりょう}は{銀行|ぎんこう}によって{違|ちが}います。{銀行|ぎんこう}で{登録|とうろく}を{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "Bank accounts are registered as \"resident\" or \"non-resident\". This is the category under the Foreign Exchange Act, separate from your residence status or tax residency. According to bank guidance, a non-Japanese national is a non-resident unless they work in Japan (excluding part-time jobs) or 6 months or more have passed since entry. Even if you have lived in Japan for a long time, your bank may still have you registered as non-resident. This is not a legal deadline. Fees and transfer rules differ by bank. First ask your bank how you are registered (to be checked)."
   },
   "lead": {
-    "ja": "{入国|にゅうこく}から6か{月|げつ}たったら、{銀行|ぎんこう}の{窓口|まどぐち}で「{居住|きょじゅう}{者|しゃ}」に{変|か}えましょう。",
-    "ja_easy": "日本に来て6か月たったら、銀行の窓口で「居住者」に変えます。",
-    "en": "Six months after you arrive, change to \"resident\" at your bank's counter."
+    "ja": "{銀行|ぎんこう}の{登録|とうろく}が「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」か、{銀行|ぎんこう}に{確|たし}かめましょう。",
+    "ja_easy": "{銀行|ぎんこう}の{登録|とうろく}が「{居住者|きょじゅうしゃ}」か、{銀行|ぎんこう}に{聞|き}きます。",
+    "en": "Ask your bank whether you are registered as a \"resident\" or a \"non-resident\"."
   },
   "deadline": null,
   "where": {
@@ -75,9 +74,9 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{居住|きょじゅう}{者|しゃ}になったら、{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}えます。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます。",
-        "ja_easy": "{居住者|きょじゅうしゃ}になったら、{銀行|ぎんこう}の{窓口|まどぐち}で{変|か}えます。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます。",
-        "en": "When you become a resident, change it at your bank's counter. Bring your residence card and passbook."
+        "ja": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます（{必要|ひつよう}なものは{銀行|ぎんこう}で{確|たし}かめます）。",
+        "ja_easy": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます（{銀行|ぎんこう}で{確|たし}かめます）。",
+        "en": "To change the registration, go to your bank's counter. Bring your residence card and passbook (ask your bank what is needed)."
       },
       "evidence": {
         "source_ids": [
@@ -107,9 +106,9 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{変|か}えないと、{口座|こうざ}は{非|ひ}{居住|きょじゅう}{者|しゃ}のままです。{送金|そうきん}を{受|う}けるとき・{送|おく}るときの{手数料|てすうりょう}が{高|たか}く、{手続|てつづ}きも{簡単|かんたん}ではありません。{電気|でんき}・{家賃|やちん}の{支払|しはら}いや{給料|きゅうりょう}の{受|う}け{取|と}りにも、{高|たか}い{手数料|てすうりょう}がかかることがあります。",
-        "ja_easy": "{変|か}えないと、{口座|こうざ}は「{非|ひ}{居住者|きょじゅうしゃ}」のままです。{送金|そうきん}の{手数料|てすうりょう}が{高|たか}く、{手続|てつづ}きも{大変|たいへん}です。{電気|でんき}や{家賃|やちん}の{支払|しはら}い、{給料|きゅうりょう}をもらうときも、{手数料|てすうりょう}が{高|たか}くなることがあります。",
-        "en": "If you do not change it, the account stays non-resident. Fees for receiving and sending money are high, and the procedure is not simple. Paying electricity or rent and receiving salary may also cost high fees."
+        "ja": "{非居住者|ひきょじゅうしゃ}の{登録|とうろく}のままだと、{送金|そうきん}や{支払|しはら}いの{手数料|てすうりょう}・{手続|てつづ}きが{変|か}わることがあります。{扱|あつか}いは{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{非居住者|ひきょじゅうしゃ}のままだと、{送金|そうきん}などの{手数料|てすうりょう}が{変|か}わることがあります。{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "If you stay registered as non-resident, fees and procedures for transfers and payments may differ. This depends on the bank (to be checked)."
       },
       "evidence": {
         "source_ids": [
