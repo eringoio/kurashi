@@ -5,7 +5,7 @@
 import type { Schedule, ScheduleRule } from './gomi';
 
 export interface PrivateArea { id: string; ward: string; town: string; banchi: string | null; romaji?: string; days: Record<string, ScheduleRule> }
-export interface PrivateSchedule { source: { url: string; title: string; fetched_at: string; valid_from: string | null }; areas: PrivateArea[] }
+export interface PrivateSchedule { source: { url: string; title: string; fetched_at: string; valid_from: string | null }; areas: PrivateArea[]; /** 番地の英訳（data/gomi/banchi-names.json。Claude が訳した） */ banchi_en?: Record<string, string> }
 
 /** 年末年始（12/29〜1/3）の収集の例外は、写しの表に無い。この日までだけ日付を出す */
 export const EXCEPTIONS_UNTIL = '2026-12-28';
@@ -13,7 +13,7 @@ export const EXCEPTIONS_UNTIL = '2026-12-28';
 export const SCHEDULE_ON = import.meta.env.VITE_GOMI_SCHEDULE !== 'off';
 
 const FILE = '../../data/gomi/schedule.json';
-const loaders: Record<string, () => Promise<unknown>> = SCHEDULE_ON ? import.meta.glob('../../data/gomi/schedule.json', { import: 'default' }) : {};
+const loaders: Record<string, () => Promise<unknown>> = SCHEDULE_ON ? import.meta.glob(['../../data/gomi/schedule.json', '../../data/gomi/banchi-names.json'], { import: 'default' }) : {};
 
 /** 表の形を確かめる。形が違えば null */
 export function privateSchedule(raw: unknown): PrivateSchedule | null {
@@ -31,7 +31,12 @@ export function loadSchedule(): Promise<PrivateSchedule | null> {
   if (loaded !== undefined) return Promise.resolve(loaded);
   const get = loaders[FILE];
   if (!get) { loaded = null; return Promise.resolve(null); }
-  pending ??= get().then((raw) => (loaded = privateSchedule(raw)), () => (loaded = null));
+  const names = loaders['../../data/gomi/banchi-names.json'];
+  pending ??= Promise.all([get(), names ? names().catch(() => null) : null]).then(([raw, n]) => {
+    const p = privateSchedule(raw);
+    if (p) p.banchi_en = (n as { names?: Record<string, string> } | null)?.names;
+    return (loaded = p);
+  }, () => (loaded = null));
   return pending;
 }
 

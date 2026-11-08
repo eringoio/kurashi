@@ -51,7 +51,7 @@ function walk(node, fn) {
 }
 
 const files = [
-  'data/ui/strings.json', 'data/rules.json', 'data/questions.json', 'data/objects.json', 'data/relations.json',
+  'data/ui/strings.json', 'data/rules.json', 'data/questions.json', 'data/objects.json', 'data/relations.json', 'data/gomi/item-names.json',
   ...fs.readdirSync(path.join(ROOT, 'data/cards')).map((f) => 'data/cards/' + f),
   // 下書きのできごとも（10d で短い一文 lead を足すため）
   ...(fs.existsSync(path.join(ROOT, 'drafts/data')) ? fs.readdirSync(path.join(ROOT, 'drafts/data')) : []).filter((f) => f.endsWith('.bundle.json')).map((f) => 'drafts/data/' + f),

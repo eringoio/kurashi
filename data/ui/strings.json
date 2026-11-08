@@ -1646,9 +1646,9 @@
     "en": "We do not have collection days for this area yet. Please use the city's search."
   },
   "gomi.area.title": {
-    "ja": "ごみを{出|だ}す{地域|ちいき}",
-    "ja_easy": "ごみを{出|だ}す{場所|ばしょ}",
-    "en": "Where you put out garbage"
+    "ja": "{自宅|じたく}の{住所|じゅうしょ}",
+    "ja_easy": "{家|いえ}の{住所|じゅうしょ}",
+    "en": "Home address"
   },
   "gomi.area.ward": {
     "ja": "{区|く}",
@@ -2856,9 +2856,9 @@
     "en": "Block number (this town is split by block)"
   },
   "gomi.area.banchiNote": {
-    "ja": "{番地|ばんち}は{残|のこ}しません。",
-    "ja_easy": "{番地|ばんち}は{残|のこ}しません。",
-    "en": "The block number is not saved."
+    "ja": "{住所|じゅうしょ}の{札|さつ}やはがきの{番地|ばんち}で{選|えら}んでください。",
+    "ja_easy": "{住所|じゅうしょ}の{番地|ばんち}で{選|えら}んでください。",
+    "en": "Choose using the block number on your address (for example on your residence card)."
   },
   "gomi.week.title": {
     "ja": "{収集|しゅうしゅう}{日|び}（2{週間|しゅうかん}）",
@@ -3630,16 +3630,6 @@
     "ja_easy": "この{種類|しゅるい}のもの",
     "en": "Items of this type"
   },
-  "gomi.kinds.item": {
-    "ja": "{品目|ひんもく}",
-    "ja_easy": "もの",
-    "en": "Item"
-  },
-  "gomi.kinds.note": {
-    "ja": "{備考|びこう}",
-    "ja_easy": "メモ",
-    "en": "Note"
-  },
   "gomi.bag.kanen": {
     "ja": "{可燃|かねん}ごみの{指定|してい}{袋|ぶくろ}（{赤|あか}い{印刷|いんさつ}）",
     "ja_easy": "{燃|も}えるごみの{袋|ふくろ}（{赤|あか}い{字|じ}）",
@@ -3679,5 +3669,25 @@
     "ja": "{出典|しゅってん}",
     "ja_easy": "{出典|しゅってん}",
     "en": "Sources"
+  },
+  "gomi.area.ask": {
+    "ja": "ごみを{出|だ}す{日|ひ}を{知|し}るには、{自宅|じたく}の{住所|じゅうしょ}を{区|く}・{町名|ちょうめい}・{番地|ばんち}まで{入|い}れてください。",
+    "ja_easy": "ごみの{日|ひ}を{知|し}るために、{家|いえ}の{住所|じゅうしょ}を{入|い}れてください（{区|く}・{町|まち}・{番地|ばんち}）。",
+    "en": "To see your garbage days, enter your home address: ward, town and block."
+  },
+  "gomi.area.need": {
+    "ja": "{入|い}れてください",
+    "ja_easy": "{入|い}れてください",
+    "en": "Please fill this in"
+  },
+  "gomi.area.pickTown": {
+    "ja": "{一覧|いちらん}の{町名|ちょうめい}から{選|えら}んでください",
+    "ja_easy": "{一覧|いちらん}から{選|えら}んでください",
+    "en": "Choose a town from the list"
+  },
+  "gomi.area.fromHere": {
+    "ja": "{区|く}は{現在地|げんざいち}から{入|い}れました。{家|いえ}にいないときは{選|えら}び{直|なお}してください。{町名|ちょうめい}・{番地|ばんち}はご{自分|じぶん}で{入|い}れてください。",
+    "ja_easy": "{区|く}は、いまいる{所|ところ}から{入|い}れました。{町|まち}と{番地|ばんち}は、{自分|じぶん}で{入|い}れてください。",
+    "en": "We filled in the ward from your current location (change it if you are not at home). Please enter the town and block yourself."
   }
 }

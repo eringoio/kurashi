@@ -13,7 +13,7 @@ import { activeNotices } from '../core/notice';
 import type { Occurrence } from '../core/occurrence';
 import type { Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
-import type { UiKey } from '../i18n/text';
+import { line, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
@@ -22,7 +22,9 @@ import { Info } from './Info';
 import { bagIcon, GomiAreaFields, GomiWeek, gomiIcon, useArea, wardHere, type Place } from '../ui/GomiArea';
 import { areaIdToSave, SCHEDULE_ON } from '../core/gomiSchedule';
 
-const AREA_KEY = 'gomi_area';
+/** 自宅の住所（区・町名・番地の行の id）。前の名前 gomi_area から移す */
+const AREA_KEY = 'home_address';
+const OLD_KEY = 'gomi_area';
 
 function Ext({ label, url }: { label: Text; url: string }) {
   return (
@@ -52,10 +54,13 @@ function GomiTool() {
   const res = sel ? judgeItem(d.items, sel, choice) : null;
 
   // 地域：区だけ。引っ越しの出来事を地域より後に始めていたら、選び直してもらう
-  const saved = v.get<AreaChoice & { town?: string }>('settings', AREA_KEY) ?? null;
+  const saved = v.get<AreaChoice & { town?: string }>('settings', AREA_KEY) ?? v.get<AreaChoice & { town?: string }>('settings', OLD_KEY) ?? null;
   const place: Place | null = saved ? { ward_id: saved.ward_id, town: saved.town, area_id: saved.area_id ?? null, set_on: saved.set_on } : null;
   const pa = useArea(place);
-  const setPlace = (x: Place | null) => (x ? v.put('settings', AREA_KEY, { ward_id: x.ward_id, area_id: x.area_id ?? null, town: x.town, set_on: x.set_on }) : v.del('settings', AREA_KEY));
+  const setPlace = async (x: Place | null) => {
+    if (v.get('settings', OLD_KEY)) await v.del('settings', OLD_KEY);
+    return x ? v.put('settings', AREA_KEY, { ward_id: x.ward_id, area_id: x.area_id ?? null, town: x.town, set_on: x.set_on }) : v.del('settings', AREA_KEY);
+  };
   const moveGroups = new Set(DATA().events.filter((e) => e.group === 'move').map((e) => e.id));
   const movedOn = v.entries('occurrences').map(([, o]) => o as Occurrence).filter((o) => moveGroups.has(o.event_id)).map((o) => o.started_on);
   const area = areaStatus(saved, { movedOn, areasWithData: d.schedules.map((s) => s.area_id) });
@@ -73,11 +78,12 @@ function GomiTool() {
   }, [rowId, saved, v]);
   // 位置を使う設定で、まだ区を選んでいなければ、現在地にいちばん近い区役所の区を入れる（この画面で1回だけ。位置は残さない）
   const asked = useRef(false);
+  const [fromHere, setFromHere] = useState(false);
   useEffect(() => {
     if (location !== 'on' || saved || asked.current) return;
     asked.current = true;
     // 調べている間に人が区を選んだら、上書きしない
-    void wardHere(d.areas.wards).then((w) => { if (w && !v.get('settings', AREA_KEY)) void setPlace({ ward_id: w, set_on: todayJst() }); });
+    void wardHere(d.areas.wards).then((w) => { if (w && !v.get('settings', AREA_KEY) && !v.get('settings', OLD_KEY)) { setFromHere(true); void setPlace({ ward_id: w, set_on: todayJst() }); } });
   }, [location, saved]);
   const pick = (it: GomiItem) => { setSel(it); setChoice(undefined); };
 
@@ -90,7 +96,9 @@ function GomiTool() {
       {/* 1. 住所（区＋町名）。作者の決定 11/6 F：住所と捨てたい物が分かれば、いつ・どのごみ・どう出すが1つの画面で分かる */}
       <section className="group" aria-labelledby={id + '-a'}>
         <h2 id={id + '-a'}><Bi phrase k="gomi.area.title" /></h2>
-        <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => void setPlace(x)} area={pa} />
+        {/* 収集日が出るまで（区・町名・番地がそろうまで）、何を入れるかを1行で聞く */}
+        {SCHEDULE_ON && pa.status.kind !== 'ready' && area.kind !== 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.ask" /></p>}
+        <GomiAreaFields wards={d.areas.wards} saved={area.kind === 'needs_recheck' ? null : place} onSet={(x) => { if (!x || x.ward_id !== saved?.ward_id) setFromHere(false); void setPlace(x); }} area={pa} fromHere={fromHere} />
         {area.kind === 'needs_recheck' && <p className="k-notice" role="note"><Bi k="gomi.area.recheck" /></p>}
         {!SCHEDULE_ON && saved && <p className="sub"><Bi k="gomi.area.wardOnly" /></p>}
       </section>
@@ -203,22 +211,24 @@ function GomiTool() {
   );
 }
 
-/** 種類ごとの品目（「〜を選ぶ」の品目は、選んだ答えの種類の中に「品目（答え）」で出す）。確かめ中（review）の品目は出さない */
-function itemsByKind(data: GomiItems): Map<string, { key: string; label: Text; choice?: Text; note?: Text }[]> {
-  const m = new Map<string, { key: string; label: Text; choice?: Text; note?: Text }[]>();
-  const push = (cat: string, x: { key: string; label: Text; choice?: Text; note?: Text }) => { const a = m.get(cat) ?? []; a.push(x); m.set(cat, a); };
+type KindItem = { key: string; label: Text; choice?: Text };
+/** 種類ごとの品目の名前（「〜を選ぶ」の品目は、選んだ答えの種類の中に「品目（答え）」で出す）。確かめ中（review）の品目は出さない。並びは表示の言葉で */
+function itemsByKind(data: GomiItems, sortKey: (t: Text) => string): Map<string, KindItem[]> {
+  const m = new Map<string, KindItem[]>();
+  const push = (cat: string, x: KindItem) => { const a = m.get(cat) ?? []; a.push(x); m.set(cat, a); };
   for (const it of data.items) {
     if (it.review) continue;
-    if (it.category) push(it.category, { key: it.id, label: it.label, note: it.note });
-    else it.ask?.choices.forEach((c) => { if (c.category) push(c.category, { key: it.id + ':' + c.value, label: it.label, choice: c.label, note: it.note }); });
+    if (it.category) push(it.category, { key: it.id, label: it.label });
+    else it.ask?.choices.forEach((c) => { if (c.category) push(c.category, { key: it.id + ':' + c.value, label: it.label, choice: c.label }); });
   }
-  for (const a of m.values()) a.sort((x, y) => x.label.ja.localeCompare(y.label.ja, 'ja'));
+  for (const a of m.values()) a.sort((x, y) => sortKey(x.label).localeCompare(sortKey(y.label), 'ja'));
   return m;
 }
 
 /** ごみの種類と袋。種類ごとに開くと、出し方と品目の表。品目の表は開いたときだけ作る（1,000行をこえるため） */
 const Kinds = memo(function Kinds({ items }: { items: GomiItems }) {
-  const by = useMemo(() => itemsByKind(items), [items]);
+  const { level } = usePrefs();
+  const by = useMemo(() => itemsByKind(items, (t) => line(t, level)), [items, level]);
   const [open, setOpen] = useState<Record<string, boolean>>({});
   return (
     <ul className="gomi-kinds" role="list">
@@ -234,13 +244,12 @@ const Kinds = memo(function Kinds({ items }: { items: GomiItems }) {
               <p><Bi t={c.how} /></p>
               {c.id === 'kan' && <p className="sub"><Bi k="gomi.bag.kanNote" /></p>}
               {open[c.id] && list.length > 0 && (
-                <table className="gomi-table">
-                  <caption><Bi k="gomi.kinds.items" /> ({list.length})</caption>
-                  <thead><tr><th scope="col"><One k="gomi.kinds.item" /></th><th scope="col"><One k="gomi.kinds.note" /></th></tr></thead>
-                  <tbody>
-                    {list.map((x) => <tr key={x.key}><th scope="row"><One t={x.label} />{x.choice && <>（<One t={x.choice} />）</>}</th><td>{x.note ? <One t={x.note} /> : ''}</td></tr>)}
-                  </tbody>
-                </table>
+                <>
+                  <p className="gomi-names__title"><Bi k="gomi.kinds.items" /> ({list.length})</p>
+                  <ul className="gomi-names" role="list">
+                    {list.map((x) => <li key={x.key}><One t={x.label} />{x.choice && <> (<One t={x.choice} />)</>}</li>)}
+                  </ul>
+                </>
               )}
             </details>
           </li>

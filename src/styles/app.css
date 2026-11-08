@@ -461,6 +461,9 @@ fieldset legend svg { vertical-align: -0.2em; }
 .dp-swatches code { overflow-wrap: anywhere; min-width: 0; }
 /* ごみの1つの画面（F） */
 .gomi-area { display: flex; flex-direction: column; gap: 8px; }
+.gomi-area .is-missing .field { border-color: var(--red); box-shadow: 0 0 0 2px var(--red); }
+.gomi-need { color: var(--red); font-weight: 700; font-size: var(--fs-small); }
+.gomi-need::before { content: "! "; }
 .gomi-result { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .gomi-result__art { width: 56px; height: 56px; }
 .gomi-week { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
@@ -482,11 +485,9 @@ fieldset legend svg { vertical-align: -0.2em; }
 .gomi-kinds summary .gomi-bag { font-weight: 400; }
 .gomi-bag { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-small); }
 .gomi-bag img, .gomi-kind .gomi-bag img { width: 28px; height: 28px; flex: none; }
-.gomi-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); margin-top: 8px; table-layout: fixed; }
-.gomi-table caption { text-align: start; font-weight: 700; padding-bottom: 4px; }
-.gomi-table th, .gomi-table td { text-align: start; vertical-align: top; padding: 4px 6px; border-bottom: 1px solid var(--line-dash); overflow-wrap: anywhere; }
-.gomi-table thead th { width: 40%; }
-.gomi-table tbody th { font-weight: 400; }
+.gomi-names__title { margin: 8px 0 4px; font-weight: 700; font-size: var(--fs-small); }
+.gomi-names { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 6px; font-size: var(--fs-small); }
+.gomi-names li { padding: 1px 8px; border: 1.5px solid var(--line-dash); border-radius: 999px; overflow-wrap: anywhere; }
 .gomi-sources p { margin: 0; }
 .gomi-sources ul { margin: 4px 0 0; padding-inline-start: 1.2em; display: flex; flex-direction: column; gap: 6px; }
 /* 住まい探しの図（E） */
