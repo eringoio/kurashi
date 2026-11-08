@@ -2201,9 +2201,9 @@
     "en": "Sample (fictional letter)"
   },
   "letter.consent": {
-    "ja": "この{写真|しゃしん}を{読|よ}むために、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{保存|ほぞん}しません。Anthropic {社|しゃ}では30{日|にち}{以内|いない}に{消|き}え、{学習|がくしゅう}には{使|つか}わないとされています。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
+    "ja": "この{写真|しゃしん}を{読|よ}むために、アメリカの Anthropic {社|しゃ}の AI（Claude）に{送|おく}ります。このアプリは{保存|ほぞん}しません。Anthropic {社|しゃ}では{通常|つうじょう}30{日|にち}{以内|いない}に{消|き}え（{利用|りよう}{規約|きやく}の{調査|ちょうさ}では{最長|さいちょう}2{年|ねん}{残|のこ}ることがあります）、{学習|がくしゅう}には{使|つか}わないとされています。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}が{写|うつ}らないように{撮|と}るか、{隠|かく}してください。",
     "ja_easy": "この{写真|しゃしん}を AI（アメリカの{会社|かいしゃ}）に{送|おく}ります。このアプリは{残|のこ}しません。{名前|なまえ}や{住所|じゅうしょ}は{隠|かく}してください。",
-    "en": "This photo is sent to Claude, an AI by Anthropic in the United States, to read it. This app does not save it. Anthropic deletes it within 30 days and states that it does not use it for training. Take the photo so that names, addresses and numbers do not show, or cover them."
+    "en": "This photo is sent to Claude, an AI by Anthropic in the United States, to read it. This app does not save it. Anthropic normally deletes it within 30 days (up to 2 years if it is checked for a usage-policy violation) and states that it does not use it for training. Take the photo so that names, addresses and numbers do not show, or cover them."
   },
   "letter.send": {
     "ja": "{送|おく}る（{同意|どうい}する）",
