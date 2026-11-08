@@ -1,6 +1,8 @@
 /* データの確認（作者用。D2・D3）：カード・ルール・関係・持ち物と、その確認状態を並べる。
    「確認済みとして見る」に切り替えると、確認済みデータの fixture（SPEC 18）と同じ扱いで画面を確かめられる。 */
 import { DATA } from '../core/data';
+import { ALL_DOCUMENTS } from '../core/documents';
+
 import { authorQueue, collectEvidence, type EvidenceAt } from '../core/quotes';
 import { AI_CHECK_COUNTS, FIELD_KINDS } from '../core/trust';
 import { CLINIC, departmentsFor } from '../core/clinic';
@@ -68,6 +70,7 @@ export function Review() {
           ))}
         </ul>
       </section>
+      <DocReview />
       <section className="group"><h2><Bi phrase k="review.rules" />（{d.rules.size}）</h2>
         <ul className="list review" role="list">{[...d.rules.values()].map((r) => <Item key={r.id} id={r.id + '（' + r.kind + '）'} title={r.statement} e={r.evidence} />)}</ul>
       </section>
@@ -121,6 +124,24 @@ function ClinicReview() {
           </Item>
         ))}
       </ul>
+    </section>
+  );
+}
+
+const CANDIDATES: Record<string, unknown> = import.meta.env.DEV ? import.meta.glob('../../data/document-candidates.json', { eager: true, import: 'default' }) : {};
+
+/** 書類（SPEC 6A.9a）：公開の段階・確認状態・調査資料の候補との対応。候補のうち、まだアプリの書類にないものの数 */
+function DocReview() {
+  const docs = ALL_DOCUMENTS();
+  const linked = new Set(docs.flatMap((x) => x.catalogue_ids));
+  // 調査資料の候補（388 件）は開発でだけ読む（本番の配信物に入れない）
+  const cand = Object.values(CANDIDATES)[0] as { as_of: string; candidates: unknown[] } | undefined;
+  return (
+    <section className="group"><h2><Bi phrase k="review.documents" />（{docs.length}）</h2>
+      <ul className="list review" role="list">
+        {docs.map((x) => <Item key={x.id} id={x.id + '（' + x.publication + '）'} title={x.title} e={x.evidence}><code className="review__expr">{x.catalogue_ids.join(', ') || '—'}</code></Item>)}
+      </ul>
+      {cand && <p className="sub"><One k="review.docCandidates" />：{cand.candidates.length}（{cand.as_of}）・{linked.size}</p>}
     </section>
   );
 }

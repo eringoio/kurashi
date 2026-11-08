@@ -198,3 +198,35 @@ test('作者のテスト（READ_MODE=test）：/review でトークンを入れ�
   await page.goto('/letter');
   await expect(page.locator('input[type=file]')).toHaveCount(0);
 });
+
+test('書類の説明（/doc）：書類の種類で出る欄が変わる。関係する書類へ移れる', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  // 受け取る通知：すること（番号付き）・誰に関係・くわしく・関係する書類
+  await page.goto('/doc/tennyugaku-tsuchisho');
+  await expect(h1(page)).toHaveText('転入学通知書');
+  await expect(page.locator('.doc__tag')).toHaveText(/通知/);
+  await expect(page.locator('.doc__steps li')).toHaveCount(3);
+  await expect(page.locator('.doc__sample figcaption')).toContainText('架空の見本');
+  await expect(page.getByRole('heading', { name: '誰に関係がある？' })).toBeVisible();
+  await expect(page.getByText('くわしく')).toBeVisible();
+  await check(page, '転入学通知書');
+  await page.getByRole('link', { name: /転入届/ }).first().click();
+  // 書いて出す（要確認・公開の前）：期限の注意・見本の画像なし・見本のリンクなし
+  await expect(h1(page)).toHaveText(/転入届/);
+  await expect(page.locator('.draftmark')).toContainText('確認中');
+  await expect(page.locator('.doc__sample')).toHaveCount(0);
+  await expect(page.locator('.k-notice').first()).toContainText('14日以内');
+  await expect(page.locator('.doc__linkkind')).not.toContainText(['実物の見本']);
+  // あやしい通知：注意の札と、電話しないこと
+  await page.goto('/doc/kakuu-seikyu');
+  await expect(page.locator('.doc__tag--warn')).toBeVisible();
+  await expect(page.locator('.doc__warn')).toContainText('電話しない');
+  await expect(page.locator('.doc__linkkind')).toContainText(['手続きの案内', '実物の見本', '関係する資料']);
+  // 確かめて残す：すること（保管）
+  await page.goto('/doc/nenkin-teikibin');
+  await expect(page.locator('.doc__steps')).toContainText('保管');
+  await check(page, 'ねんきん定期便');
+  // 無い書類は「見つからない」
+  await page.goto('/doc/no-such-doc');
+  await expect(page.locator('.doc')).toHaveCount(0);
+});

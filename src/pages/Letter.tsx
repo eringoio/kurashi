@@ -6,19 +6,18 @@
    「見本で試す」はやめ、一覧で選ぶ → 見本の画像（架空）と説明・大事な言葉。 */
 import { useEffect, useRef, useState } from 'react';
 import { cleanCandidates, DOCUMENTS, type KnownDocument } from '../core/documents';
-import { useGuide } from '../guide/useGuide';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { fill, CardRow } from '../ui/guide';
+import { fill } from '../ui/guide';
+import { DocAbout } from '../ui/DocAbout';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { useFocusTitle } from '../ui/router';
-import { useSeen, WordList } from '../ui/Words';
-import { docWordIds } from '../core/words';
+import { useSeen } from '../ui/Words';
 import { trackError } from '../ui/telemetry';
 import { getReadToken, READ_TOKEN_HEADER } from '../ui/readToken';
 /** 結果の書類の名前を「ことば」に残す（10b） */
-function SeenDoc({ id }: { id: string }) { useSeen(['doc:' + id]); return null; }
+export function SeenDoc({ id }: { id: string }) { useSeen(['doc:' + id]); return null; }
 
 const LONG = 1600;
 /** 写真の読み取り（Claude）。キーを入れて公開するときに on にする */
@@ -160,7 +159,7 @@ export function Letter() {
       </>
     );
   } else if (st.k === 'result') {
-    body = <><Result doc={st.doc} sample={st.sample} /><SeenDoc id={st.doc.id} /></>;
+    body = <><DocAbout doc={st.doc} sample={st.sample} /><SeenDoc id={st.doc.id} /></>;
   } else if (st.k === 'failed') {
     body = (
       <>
@@ -189,35 +188,3 @@ export function Letter() {
 }
 
 
-function Result({ doc, sample }: { doc: KnownDocument; sample: boolean }) {
-  const g = useGuide();
-  const { level } = usePrefs();
-  const cards = g.out.cards.filter((c) => doc.card_ids.includes(c.card.id));
-  return (
-    <>
-      <div className="head">
-        <p className="eyebrow"><One k="letter.resultEyebrow" /></p>
-        <h1 id="screen-title" tabIndex={-1}><Bi phrase t={doc.title} /></h1>
-      </div>
-      {sample && <p className="draftmark"><Bi k="letter.sampleMark" /></p>}
-      {/* 見本の画像（架空の書類。K-11） */}
-      {doc.sample && <img className="letter__photo" src={doc.sample} alt={line(ui('letter.sampleAlt'), level)} />}
-      <p><Bi t={doc.summary} /></p>
-      {doc.key_words.length > 0 && (
-        <section aria-labelledby="letter-words">
-          <h2 id="letter-words" className="label"><One phrase k="letter.keyWords" /></h2>
-          {/* ことばと同じ行（作者 11/7：どの表示レベルでも、ふりがな付きの日本語と英語） */}
-          <WordList ids={docWordIds(doc.id).slice(1)} />
-        </section>
-      )}
-      <div className="k-notice" role="note"><Bi k="letter.notRead" /></div>
-      {cards.length > 0 && (
-        <section aria-labelledby="letter-cards">
-          <h2 id="letter-cards" className="label"><One phrase k="letter.related" /></h2>
-          <ul className="list" role="list">{cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
-        </section>
-      )}
-      <p className="sub"><Bi k="letter.checkStatus" /></p>
-    </>
-  );
-}

@@ -53,7 +53,40 @@
             "en": "Valid until this date"
           }
         }
-      ]
+      ],
+      "kind": "certificate",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{名古屋|なごや}{市|し}（{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}）",
+        "ja_easy": "{名古屋市|なごやし}",
+        "en": "Nagoya City (ward office)"
+      },
+      "who": {
+        "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{人|ひと}。",
+        "ja_easy": "{名古屋市|なごやし}の{国民健康保険|こくみんけんこうほけん}に{入|はい}っている{人|ひと}。",
+        "en": "People in Nagoya National Health Insurance."
+      },
+      "related_docs": [
+        "kokuho-shikaku-joho",
+        "kokuho-nofu"
+      ],
+      "links": [
+        {
+          "source_id": "nagoya-kokuho-kanyu-page",
+          "kind": "procedure"
+        }
+      ],
+      "catalogue_ids": [
+        "WARD_SUPPORT-002",
+        "NHI_MAIL-014"
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "kokuho-nofu",
@@ -64,8 +97,8 @@
       },
       "look_for": "納入通知書・納付書",
       "summary": {
-        "ja": "{毎年|まいとし}6{月|つき}に{届|とど}く「{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}{納入|のうにゅう}{通知|つうち}{書|しょ}」で、1{年|ねん}の{保険|ほけん}{料|りょう}が{決|き}まります。6{月|つき}から3{月|つき}まで10{回|かい}に{分|わ}けて{払|はら}います。{払|はら}い{方|かた}は{口座|こうざ}{振替|ふりかえ}がふつうで、{納付|のうふ}{書|しょ}でも{払|はら}えます。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
-        "ja_easy": "6{月|つき}に、{保険|ほけん}のお{金|かね}を{知|し}らせる{紙|かみ}が{届|とど}きます。6{月|つき}から3{月|つき}まで10{回|かい}に{分|わ}けて{払|はら}います。ふつうは{銀行|ぎんこう}の{口座|こうざ}から{引|ひ}かれます。{納付|のうふ}{書|しょ}でも{払|はら}えます。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
+        "ja": "{毎年|まいとし}6{月|がつ}に{届|とど}く「{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}{納入|のうにゅう}{通知|つうち}{書|しょ}」で、1{年|ねん}の{保険|ほけん}{料|りょう}が{決|き}まります。6{月|がつ}から3{月|がつ}まで10{回|かい}に{分|わ}けて{払|はら}います。{払|はら}い{方|かた}は{口座|こうざ}{振替|ふりかえ}がふつうで、{納付|のうふ}{書|しょ}でも{払|はら}えます。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
+        "ja_easy": "6{月|がつ}に、{保険|ほけん}のお{金|かね}を{知|し}らせる{紙|かみ}が{届|とど}きます。6{月|がつ}から3{月|がつ}まで10{回|かい}に{分|わ}けて{払|はら}います。ふつうは{銀行|ぎんこう}の{口座|こうざ}から{引|ひ}かれます。{納付|のうふ}{書|しょ}でも{払|はら}えます。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
         "en": "The National Health Insurance Premium Payment Notice (kokumin kenko hoken-ryo nonyu tsuchisho) arrives in June and sets the year's premium, paid in 10 installments from June to March. Automatic bank transfer is the standard method; you can also pay with a payment slip (nofusho). Check the due date and amount printed on the document."
       },
       "card_ids": [
@@ -111,12 +144,45 @@
             "en": "Amount to pay"
           }
         }
-      ]
+      ],
+      "kind": "bill",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{名古屋|なごや}{市|し}",
+        "ja_easy": "{名古屋市|なごやし}",
+        "en": "Nagoya City"
+      },
+      "who": {
+        "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っている{世帯|せたい}。",
+        "ja_easy": "{名古屋市|なごやし}の{国民健康保険|こくみんけんこうほけん}に{入|はい}っている{家|いえ}。",
+        "en": "Households in Nagoya National Health Insurance."
+      },
+      "related_docs": [
+        "kokuho-shikaku"
+      ],
+      "links": [
+        {
+          "source_id": "nagoya-kokuho-nofu",
+          "kind": "procedure"
+        }
+      ],
+      "catalogue_ids": [
+        "WARD_SUPPORT-009",
+        "NHI_MAIL-001"
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "nagoya-kokuho-nofu",
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "nenkin-oshirase",
       "title": {
-        "ja": "国民年金加入のお知らせ",
+        "ja": "{国民|こくみん}{年金|ねんきん}{加入|かにゅう}のお{知|し}らせ",
         "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせ",
         "en": "National Pension enrollment notice"
       },
@@ -168,7 +234,34 @@
             "en": "Students can postpone payment (to be checked)"
           }
         }
-      ]
+      ],
+      "kind": "notice",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{日本|にほん}{年金|ねんきん}{機構|きこう}",
+        "ja_easy": "{日本年金機構|にほんねんきんきこう}",
+        "en": "Japan Pension Service"
+      },
+      "related_docs": [
+        "nenkin-nofusho"
+      ],
+      "links": [
+        {
+          "source_id": "nenkin-hatachi-page",
+          "kind": "procedure"
+        }
+      ],
+      "catalogue_ids": [
+        "PENSION_MAIL-030"
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "nenkin-hatachi-page",
+          "nenkin-kanyu-page"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "tenshutsu-shomeisho",
@@ -224,7 +317,30 @@
             "en": "Head of household"
           }
         }
-      ]
+      ],
+      "kind": "certificate",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{前|まえ}に{住|す}んでいた{市区|しく}{町村|ちょうそん}",
+        "ja_easy": "{前|まえ}に{住|す}んでいた{市|し}や{町|まち}",
+        "en": "Your previous city or town"
+      },
+      "related_docs": [
+        "tennyu-todoke"
+      ],
+      "links": [
+        {
+          "source_id": "B-nagoya-faq-54",
+          "kind": "reference"
+        }
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "B-nagoya-faq-54"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "kokuho-shikaku-joho",
@@ -279,7 +395,34 @@
             "en": "Date you joined"
           }
         }
-      ]
+      ],
+      "kind": "notice",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{名古屋|なごや}{市|し}（{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}）",
+        "ja_easy": "{名古屋市|なごやし}",
+        "en": "Nagoya City (ward office)"
+      },
+      "related_docs": [
+        "kokuho-shikaku"
+      ],
+      "links": [
+        {
+          "source_id": "nagoya-kokuho-kanyu-page",
+          "kind": "procedure"
+        }
+      ],
+      "catalogue_ids": [
+        "WARD_SUPPORT-002",
+        "NHI_MAIL-013"
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "nagoya-kokuho-kanyu-page"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "kojin-bango-tsuchisho",
@@ -326,7 +469,34 @@
             "en": "Photo ID — this paper cannot be used as one (to be checked)"
           }
         }
-      ]
+      ],
+      "kind": "notice",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{住|す}んでいる{市区|しく}{町村|ちょうそん}",
+        "ja_easy": "{住|す}んでいる{市|し}や{町|まち}",
+        "en": "Your city or town"
+      },
+      "related_docs": [
+        "tennyu-todoke"
+      ],
+      "links": [
+        {
+          "source_id": "B-nagoya-kojinbango-tsuchisho",
+          "kind": "procedure"
+        }
+      ],
+      "catalogue_ids": [
+        "MYNUMBER_MAIL-001",
+        "MYNUMBER_MAIL-010"
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "B-nagoya-kojinbango-tsuchisho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     },
     {
       "id": "tennyugaku-tsuchisho",
@@ -374,7 +544,62 @@
             "en": "School year"
           }
         }
-      ]
+      ],
+      "kind": "notice",
+      "direction": "receive",
+      "issuer": {
+        "ja": "{区役所|くやくしょ}（{転入|てんにゅう}{届|とどけ}のとき）",
+        "ja_easy": "{区役所|くやくしょ}",
+        "en": "Ward office (when you report moving in)"
+      },
+      "purpose": {
+        "ja": "{小学生|しょうがくせい}・{中学生|ちゅうがくせい}の{子|こ}どもが{引|ひ}っ{越|こ}しで{転校|てんこう}するときに、{新|あたら}しく{通|かよ}う{学校|がっこう}に{出|だ}す{書類|しょるい}です。",
+        "ja_easy": "{引|ひ}っ{越|こ}しで{学校|がっこう}が{変|か}わる{子|こ}どもの{書類|しょるい}です。{新|あたら}しい{学校|がっこう}に{出|だ}します。",
+        "en": "For a child in compulsory school who changes school because of a move. You give it to the new school."
+      },
+      "who": {
+        "ja": "{義務|ぎむ}{教育|きょういく}（{小学校|しょうがっこう}・{中学校|ちゅうがっこう}）の{子|こ}どもがいて、{名古屋|なごや}{市|し}に{転入|てんにゅう}する{世帯|せたい}。",
+        "ja_easy": "{小学校|しょうがっこう}・{中学校|ちゅうがっこう}の{子|こ}どもがいて、{名古屋市|なごやし}に{来|く}る{家|いえ}。",
+        "en": "Families moving into Nagoya with a child in elementary or junior high school."
+      },
+      "how_to_get": {
+        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{渡|わた}されます。",
+        "ja_easy": "{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}すときに、もらいます。",
+        "en": "The ward office gives it to you when you report moving in."
+      },
+      "actions": [
+        {
+          "ja": "{前|まえ}の{学校|がっこう}で{在学|ざいがく}{証明|しょうめい}{書|しょ}をもらう。",
+          "ja_easy": "{前|まえ}の{学校|がっこう}で「{在学証明書|ざいがくしょうめいしょ}」をもらう。",
+          "en": "Get a certificate of enrollment (在学証明書) from the old school."
+        },
+        {
+          "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}し、{転入|てんにゅう}{学|がく}{通知|つうち}{書|しょ}を{受|う}け{取|と}る。",
+          "ja_easy": "{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}して、この{書類|しょるい}をもらう。",
+          "en": "Report your move at the ward office and receive this notice."
+        },
+        {
+          "ja": "{在学|ざいがく}{証明|しょうめい}{書|しょ}と{一緒|いっしょ}に、{転校|てんこう}{先|さき}の{学校|がっこう}に{出|だ}す。",
+          "ja_easy": "{在学証明書|ざいがくしょうめいしょ}といっしょに、{新|あたら}しい{学校|がっこう}に{出|だ}す。",
+          "en": "Give it to the new school together with the certificate of enrollment."
+        }
+      ],
+      "related_docs": [
+        "tennyu-todoke"
+      ],
+      "links": [
+        {
+          "source_id": "B-nagoya-faq-39",
+          "kind": "procedure"
+        }
+      ],
+      "about_evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     }
   ]
 }

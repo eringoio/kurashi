@@ -126,6 +126,7 @@ export function pageScenes(path: string): string[] {
   const qr = /^\/(?:s|pack)\/([a-z0-9-]+)$/.exec(path);
   if (qr) return QR_SCENE[qr[1]] ? [QR_SCENE[qr[1]]] : [];
   if (path.startsWith('/clinic')) return ['clinic'];
+  if (path.startsWith('/doc/')) return ['letter'];
   const one: Record<string, string> = { '/gomi': 'gomi', '/letter': 'letter', '/calendar': 'calendar' };
   return one[path] ? [one[path]] : [];
 }

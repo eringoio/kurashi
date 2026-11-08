@@ -3689,5 +3689,170 @@
     "ja": "{区|く}は{現在地|げんざいち}から{入|い}れました。{家|いえ}にいないときは{選|えら}び{直|なお}してください。{町名|ちょうめい}・{番地|ばんち}はご{自分|じぶん}で{入|い}れてください。",
     "ja_easy": "{区|く}は、いまいる{所|ところ}から{入|い}れました。{町|まち}と{番地|ばんち}は、{自分|じぶん}で{入|い}れてください。",
     "en": "We filled in the ward from your current location (change it if you are not at home). Please enter the town and block yourself."
+  },
+  "doc.kind.notice": {
+    "ja": "{通知|つうち}・お{知|し}らせ",
+    "ja_easy": "お{知|し}らせ",
+    "en": "Notice"
+  },
+  "doc.kind.bill": {
+    "ja": "{支払|しはら}いの{書類|しょるい}（{納付|のうふ}{書|しょ}・{請求|せいきゅう}{書|しょ}）",
+    "ja_easy": "お{金|かね}を{払|はら}う{紙|かみ}",
+    "en": "Payment slip or bill"
+  },
+  "doc.kind.statement": {
+    "ja": "{内容|ないよう}を{確|たし}かめて{残|のこ}す{書類|しょるい}",
+    "ja_easy": "{見|み}て、とっておく{紙|かみ}",
+    "en": "Statement to check and keep"
+  },
+  "doc.kind.certificate": {
+    "ja": "{証明|しょうめい}{書|しょ}",
+    "ja_easy": "{証明書|しょうめいしょ}",
+    "en": "Certificate"
+  },
+  "doc.kind.application": {
+    "ja": "{書|か}いて{出|だ}す{書類|しょるい}（{届出|とどけで}{書|しょ}・{申請|しんせい}{書|しょ}）",
+    "ja_easy": "{書|か}いて{出|だ}す{紙|かみ}",
+    "en": "Form to fill in and submit"
+  },
+  "doc.kind.email": {
+    "ja": "メールのお{知|し}らせ",
+    "ja_easy": "メールのお{知|し}らせ",
+    "en": "Email notice"
+  },
+  "doc.kind.warning": {
+    "ja": "{注意|ちゅうい}：あやしい{書類|しょるい}",
+    "ja_easy": "{気|き}をつけて：あやしい{紙|かみ}",
+    "en": "Warning: possibly a scam"
+  },
+  "doc.issuer": {
+    "ja": "{出|だ}す{所|ところ}",
+    "ja_easy": "だすところ",
+    "en": "From"
+  },
+  "doc.inReview": {
+    "ja": "{確認|かくにん}{中|ちゅう}の{書類|しょるい}です（{公開|こうかい}の{前|まえ}）。{内容|ないよう}は{要|よう}{確認|かくにん}です。",
+    "ja_easy": "まだ{確|たし}かめている{書類|しょるい}です。",
+    "en": "This document is still being checked (not public yet)."
+  },
+  "doc.sample.illustration": {
+    "ja": "{説明|せつめい}{用|よう}の{架空|かくう}の{見本|みほん}です。{実物|じつぶつ}とは{形|かたち}が{違|ちが}います。",
+    "ja_easy": "{説明|せつめい}のための、{本物|ほんもの}ではない{見本|みほん}です。",
+    "en": "A made-up sample for explanation. The real document looks different."
+  },
+  "doc.sample.official": {
+    "ja": "{公式|こうしき}の{見本|みほん}です（{出|だ}す{所|ところ}が{公開|こうかい}しているもの）。",
+    "ja_easy": "{公式|こうしき}の{見本|みほん}です。",
+    "en": "Official sample published by the issuer."
+  },
+  "doc.sample.officialAlt": {
+    "ja": "{書類|しょるい}の{公式|こうしき}の{見本|みほん}",
+    "ja_easy": "{書類|しょるい}の{公式|こうしき}の{見本|みほん}",
+    "en": "Official sample of the document"
+  },
+  "doc.actions": {
+    "ja": "{何|なに}をすればいい？",
+    "ja_easy": "なにをすればいい？",
+    "en": "What should I do?"
+  },
+  "doc.actionsNone": {
+    "ja": "{内容|ないよう}を{確|たし}かめて、{必要|ひつよう}なら{保管|ほかん}してください。",
+    "ja_easy": "{書|か}いてあることを{見|み}て、{大切|たいせつ}にとっておいてください。",
+    "en": "Check what it says, and keep it if needed."
+  },
+  "doc.who": {
+    "ja": "{誰|だれ}に{関係|かんけい}がある？",
+    "ja_easy": "だれに{関係|かんけい}がある？",
+    "en": "Who is it for?"
+  },
+  "doc.more": {
+    "ja": "くわしく",
+    "ja_easy": "くわしく",
+    "en": "More details"
+  },
+  "doc.purpose": {
+    "ja": "{何|なん}のための{書類|しょるい}？",
+    "ja_easy": "なんのための{書類|しょるい}？",
+    "en": "What is it for?"
+  },
+  "doc.howToGet": {
+    "ja": "どこから{届|とど}く・どこでもらう？",
+    "ja_easy": "どこから{来|く}る？どこでもらう？",
+    "en": "Where does it come from?"
+  },
+  "doc.fields": {
+    "ja": "{書|か}く{欄|らん}",
+    "ja_easy": "{書|か}くところ",
+    "en": "What to fill in"
+  },
+  "doc.by.self": {
+    "ja": "{本人|ほんにん}",
+    "ja_easy": "{自分|じぶん}",
+    "en": "you"
+  },
+  "doc.by.employer": {
+    "ja": "{会社|かいしゃ}",
+    "ja_easy": "{会社|かいしゃ}",
+    "en": "employer"
+  },
+  "doc.by.school": {
+    "ja": "{学校|がっこう}",
+    "ja_easy": "{学校|がっこう}",
+    "en": "school"
+  },
+  "doc.by.doctor": {
+    "ja": "{医師|いし}",
+    "ja_easy": "お{医者|いしゃ}さん",
+    "en": "doctor"
+  },
+  "doc.by.office": {
+    "ja": "{役所|やくしょ}",
+    "ja_easy": "{役所|やくしょ}",
+    "en": "office"
+  },
+  "doc.relatedDocs": {
+    "ja": "{関係|かんけい}する{書類|しょるい}",
+    "ja_easy": "{関係|かんけい}する{書類|しょるい}",
+    "en": "Related documents"
+  },
+  "doc.links": {
+    "ja": "{公式|こうしき}の{情報|じょうほう}",
+    "ja_easy": "{公式|こうしき}の{情報|じょうほう}",
+    "en": "Official information"
+  },
+  "doc.link.procedure": {
+    "ja": "{手続|てつづ}きの{案内|あんない}",
+    "ja_easy": "{手続|てつづ}きの{案内|あんない}",
+    "en": "Procedure guide"
+  },
+  "doc.link.sample": {
+    "ja": "{実物|じつぶつ}の{見本|みほん}",
+    "ja_easy": "{本物|ほんもの}の{見本|みほん}",
+    "en": "Actual sample"
+  },
+  "doc.link.blank_form": {
+    "ja": "{空欄|くうらん}の{様式|ようしき}",
+    "ja_easy": "{書|か}く{前|まえ}の{紙|かみ}",
+    "en": "Blank form"
+  },
+  "doc.link.filled_example": {
+    "ja": "{記入|きにゅう}{例|れい}",
+    "ja_easy": "{書|か}き{方|かた}の{例|れい}",
+    "en": "Filled-in example"
+  },
+  "doc.link.reference": {
+    "ja": "{関係|かんけい}する{資料|しりょう}",
+    "ja_easy": "{関係|かんけい}する{資料|しりょう}",
+    "en": "Related material"
+  },
+  "review.documents": {
+    "ja": "{書類|しょるい}",
+    "ja_easy": "{書類|しょるい}",
+    "en": "Documents"
+  },
+  "review.docCandidates": {
+    "ja": "{調査|ちょうさ}{資料|しりょう}の{候補|こうほ}（{画面|がめん}に{出|だ}さない）",
+    "ja_easy": "{調|しら}べた{候補|こうほ}",
+    "en": "Research candidates (not shown)"
   }
 }

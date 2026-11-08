@@ -1,6 +1,8 @@
 /* 画面の外枠：上の帯（名前・相談窓口・設定）、見るだけの帯、本文、読み上げの知らせ（aria-live）、シート */
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { DATA, DRAFTS_LOADED } from './core/data';
+import { documentById } from './core/documents';
+import { DocPage } from './pages/DocPage';
 import STRINGS from '../data/ui/strings.json';
 import { chooseEntry, continuePath, type Resume } from './core/entry';
 import { legacyOccurrence, openEventPlans, type Occurrence } from './core/occurrence';
@@ -141,6 +143,8 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/qr') return <QrMaker />;
   if (path === '/here') return <Here />;
   if (path === '/letter') return <Letter />;
+  const doc = /^\/doc\/([a-z0-9-]+)$/.exec(path);
+  if (doc) return documentById(doc[1]) ? <DocPage key={doc[1]} id={doc[1]} /> : <NotFound />;
   if (path === '/calendar') return <CalendarPage />;
   if (path === '/words') return <WordsPage />;
   const clinic = /^\/clinic(?:\/(departments|before))?$/.exec(path);

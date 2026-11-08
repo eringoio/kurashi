@@ -1,6 +1,6 @@
 /* /api/read-document（6A.9・13.3）：同意が無ければ送らない、キーが無ければ見本、キーをログに出さない、一覧の外の候補を捨てる */
 import { describe, expect, it, vi } from 'vitest';
-import { cleanCandidates, DOCUMENTS, loadDocuments, SAMPLE_RESULT } from '../../src/core/documents';
+import { cleanCandidates, DOCUMENTS, isShown, loadDocuments, SAMPLE_RESULT } from '../../src/core/documents';
 import { loadData } from '../../src/core/data';
 import { handleReadDocument, instruction, MAX_BASE64, type Reader } from '../../worker/readDocument';
 
@@ -20,7 +20,8 @@ describe('知っている書類のデータ', () => {
   it('3種類。関係するカードがある。確認待ちか、作者が本文を確かめたもの（verified_by 付き）', () => {
     const cards = new Set(loadData().cards.map((c) => c.id));
     expect(DOCUMENTS().length).toBeGreaterThanOrEqual(3);
-    for (const d of DOCUMENTS()) {
+    // 公開の書類のカードは公開のデータに在る（要確認の書類は下書きのカードも指せる。tests/core/documents.test.ts）
+    for (const d of DOCUMENTS().filter((x) => isShown(x, false))) {
       for (const id of d.card_ids) expect(cards.has(id), d.id + ' ' + id).toBe(true);
       if (d.evidence.status === 'verified') expect(d.evidence.verified_by, d.id).toBeTruthy();
       else expect(d.evidence.status).toBe('needs_check');

@@ -2080,6 +2080,150 @@
       "owner_type": "government",
       "title": "マイナンバーカードと運転免許証の一体化",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-form-library",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007816/1007873.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民票・戸籍・印鑑登録などの申請書・届出書の様式",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-juminhyo-utsushi",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007816/1007824.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民票の写しの交付（表示を省略する項目）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-juminhyo-konbini",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007851/1052691/1053055.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "コンビニエンスストアでの証明書の交付（令和8年12月16日から）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-juminhyo-form",
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/007/873/zyuuminhyou.pdf",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民票の写し等交付申請書（PDF）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-juminhyo-form-note",
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/007/873/jyuuminnhyou_tyuui.pdf",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民票の写し等交付申請書の記載上の注意（PDF）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-nofusho-2026",
+      "url": "https://www.nenkin.go.jp/oshirase/taisetu/kojin/2026/202603/0302.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "令和8年度の国民年金保険料納付書の送付",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-nofusho-2026-sample",
+      "url": "https://www.nenkin.go.jp/oshirase/taisetu/kojin/2026/202603/0302.files/03.pdf",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "国民年金保険料納付書の見本（令和8年度。PDF）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-teikibin",
+      "url": "https://www.nenkin.go.jp/service/nenkinkiroku/torikumi/teikibin/teikibin.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "ねんきん定期便（見本）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nenkin-teikibin-kaito",
+      "url": "https://www.nenkin.go.jp/service/nenkinkiroku/torikumi/teikibin/20150331-01.html",
+      "owner": "日本年金機構",
+      "owner_type": "government",
+      "title": "ねんきん定期便の記録に「もれ」や「誤り」があるとき",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-police-menkyo-koshin",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/koushin/menkyo/koushin.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許証の更新手続",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-mail-kanryo",
+      "url": "https://www.moj.go.jp/isa/11_00108.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "審査完了に関するお知らせ（メールの見本）",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-mail-uketsuke",
+      "url": "https://www.moj.go.jp/isa/11_00111.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "申請受付番号のお知らせ（メールの見本）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-water-kenshinhyo",
+      "url": "https://www.water.city.nagoya.jp/category/meterkenshin/1114.html",
+      "owner": "名古屋市上下水道局",
+      "owner_type": "government",
+      "title": "水道ご使用量のお知らせ（検針票）の記載内容",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-water-shiharai",
+      "url": "https://www.water.city.nagoya.jp/category/ryoukinshiharai/1112.html",
+      "owner": "名古屋市上下水道局",
+      "owner_type": "government",
+      "title": "水道料金・下水道使用料のお支払い方法",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-police-ishitsu-qa",
+      "url": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/ishitsu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "落とし物をしたとき（遺失届）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-kokuho-sagi",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011736/1011737/1011744.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "国民健康保険の還付金をかたる詐欺に注意",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-faq-1058",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=1058",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "身に覚えがない訴訟に関する通知がきた場合（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "kokusen-sosho-hagaki",
+      "url": "https://www.kokusen.go.jp/news/data/n-20181129_1.html",
+      "owner": "国民生活センター",
+      "owner_type": "public_corp",
+      "title": "「訴訟最終告知のお知らせ」というハガキ（架空請求）",
+      "language": "ja"
     }
   ]
 }
