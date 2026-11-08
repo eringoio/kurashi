@@ -45,7 +45,9 @@
       "id": "passport",
       "illustration": "passport",
       "show_for": [
-        "abroad"
+        "abroad",
+        "other_city",
+        "within_nagoya"
       ],
       "title": {
         "ja": "パスポート",
@@ -53,23 +55,46 @@
         "en": "Passport"
       },
       "purpose": {
-        "ja": "{区役所|くやくしょ}に{行|い}く{日|ひ}の{持|も}ち{物|もの}に{入|い}れます",
-        "ja_easy": "{区役所|くやくしょ}に{持|も}っていきます",
-        "en": "Added to what to bring to the ward office"
+        "ja": "{住所|じゅうしょ}の{届|とど}け（{区役所|くやくしょ}）・{銀行|ぎんこう}・{入管|にゅうかん}に{持|も}っていきます",
+        "ja_easy": "{区役所|くやくしょ}・{銀行|ぎんこう}・{入管|にゅうかん}に{持|も}っていきます",
+        "en": "Bring it to the ward office (address registration), the bank and immigration"
       },
       "yields_when_held": [],
       "bring_to": [
-        "ward_office"
+        "ward_office",
+        "bank",
+        "immigration"
       ],
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
+        "checked_at": "2026-11-08",
         "status": "verified"
       },
       "bring_for": [
-        "nagoya-tennyu-juukyochi"
+        "nagoya-tennyu-juukyochi",
+        "nagoya-tennyu-todoke",
+        "move-within-tennyu",
+        "move-within-tenkyo",
+        "bank-account-open",
+        "bank-account-open-another",
+        "bank-info-change",
+        "bank-resident-change",
+        "bank-card-reissue",
+        "divorce-nyukan-todoke",
+        "job-no-work-note",
+        "job-shushoku",
+        "lost-zairyu-reissue",
+        "marriage-zairyu-shimei",
+        "zairyu-koshin",
+        "zairyu-shikakugai"
+      ],
+      "not_for_nationality": [
+        "japanese"
+      ],
+      "assume_held_unless_nationality": [
+        "japanese"
       ]
     },
     {

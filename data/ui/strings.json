@@ -4604,5 +4604,15 @@
     "ja": "この{区|く}を{自宅|じたく}の{区|く}にする",
     "ja_easy": "この{区|く}を{家|いえ}の{区|く}にする",
     "en": "Use this as my home ward"
+  },
+  "gomi.town.placeholder": {
+    "ja": "{町名|ちょうめい}の{一部|いちぶ}を{入|い}れて{探|さが}す",
+    "ja_easy": "{町|まち}の{名前|なまえ}を{入|い}れて{探|さが}す",
+    "en": "Type part of the town name"
+  },
+  "gomi.search.placeholder": {
+    "ja": "ごみを{入力|にゅうりょく}して{調|しら}べましょう",
+    "ja_easy": "ごみの{名前|なまえ}を{入|い}れて{調|しら}べましょう",
+    "en": "Type an item to look it up"
   }
 }

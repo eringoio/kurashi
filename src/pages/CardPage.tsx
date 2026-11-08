@@ -3,7 +3,7 @@
    → 手続きの方法（押さない一覧）→ 期限・お金などの短い行と出典の一覧（11/8：くわしくのシートはやめた）。下の道案内は App の外枠。
    答えた・日を決めたあとは、この項目の上に変わったことを1行で出す（6A.5 v0.5.14）。結果の画面と「つぎへ」は「済んだ」のときだけ。 */
 import { useState } from 'react';
-import type { EngineOutput } from '../core/engine';
+import { shownOptions, type EngineOutput } from '../core/engine';
 import type { PlanRecord } from '../core/entry';
 import type { Question, Value } from '../core/schema';
 import { useEvent } from '../guide/useEvent';
@@ -57,7 +57,9 @@ export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: st
   const base = '/e/' + eventId;
   // 目的の手続き：入口の最初の質問（目的）に答えていれば、ここから選び直せる（v0.5.30。目的の画面へ直接来たとき）
   const q0 = ev.event.questions[0];
-  const goalQ = ev.event.goal_card_ids?.includes(id) && q0 && ev.answers[q0] !== undefined ? DATA().questions.find((q) => q.id === q0 && !q.multi) : undefined;
+  const q0Def = ev.event.goal_card_ids?.includes(id) && q0 && ev.answers[q0] !== undefined ? DATA().questions.find((q) => q.id === q0 && !q.multi) : undefined;
+  // 選択肢は本人の答えで絞る（v0.5.34：留学の人に会社・個人事業を出さない）
+  const goalQ = q0Def ? shownOptions(DATA(), q0Def, ev.out.facts) : undefined;
   return <CardPageView id={id} onLive={onLive} g={{ ...ev, objects: {} }} paths={{ card: base + '/c/', now: base, all: base + '/all' }} goalQ={goalQ} />;
 }
 /** できごとの入口の道（引っ越しは /move） */

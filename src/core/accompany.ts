@@ -49,10 +49,12 @@ function orderBy(cards: CardView[], rels: SameVisit[]): { cards: CardView[]; ord
 }
 
 /** その所へ持っていく物（objects の bring_to）。その道のりで見せる物だけ。持っている物を先に */
-export function bringList(objects: ObjectDef[], place: string, held: Record<string, boolean>, origin: string | undefined): BringItem[] {
+export function bringList(objects: ObjectDef[], place: string, held: Record<string, boolean>, origin: string | undefined, nationality?: unknown): BringItem[] {
+  const nat = typeof nationality === 'string' ? nationality : undefined;
   const list = objects
-    .filter((o) => (o.bring_to ?? []).includes(place) && (!origin || o.show_for.includes(origin)))
-    .map((o) => ({ object: o, held: !!held[o.id] }));
+    .filter((o) => (o.bring_to ?? []).includes(place) && (!origin || o.show_for.includes(origin)) && !(nat && o.not_for_nationality?.includes(nat)))
+    // 答えが無い物は、assume_held_unless_nationality があれば「持っている」（その国籍の人を除く。国籍が未回答なら持っているとみなす）
+    .map((o) => ({ object: o, held: o.id in held ? !!held[o.id] : !!o.assume_held_unless_nationality && !(nat && o.assume_held_unless_nationality.includes(nat)) }));
   return [...list.filter((b) => b.held), ...list.filter((b) => !b.held)];
 }
 
@@ -70,7 +72,7 @@ export function visitsToday(out: EngineOutput, objects: ObjectDef[], held: Recor
       place,
       cards: o.cards,
       ordered: o.ordered,
-      bring: bringList(objects, place, held, origin),
+      bring: bringList(objects, place, held, origin, out.facts.get('nationality')),
       alternatives: o.cards.filter((c) => (c.card.alternatives ?? []).length > 0).map((c) => ({ card: c.card, items: c.card.alternatives! })),
     };
   });
@@ -137,7 +139,7 @@ export function bringPlan(out: EngineOutput, objects: ObjectDef[], held: Record<
   }
   return [...by.entries()].map(([place, cs]) => {
     const ids = new Set(cs.map((c) => c.card.id));
-    const bring = bringList(objects, place, held, origin).filter((b) => !b.object.bring_for || b.object.bring_for.some((id) => ids.has(id)));
+    const bring = bringList(objects, place, held, origin, out.facts.get('nationality')).filter((b) => !b.object.bring_for || b.object.bring_for.some((id) => ids.has(id)));
     return { place, cards: cs, bring };
   }).filter((x) => x.bring.length > 0);
 }

@@ -239,6 +239,17 @@
           "goal_card_ids": [
             "biz-end-haigyo"
           ]
+        },
+        {
+          "when": "R-job-employ-change",
+          "later_card_ids": [
+            "job-employ-hoken",
+            "job-employ-juminzei",
+            "job-employ-kokuho-stop"
+          ],
+          "after": [
+            "job-shushoku"
+          ]
         }
       ]
     },

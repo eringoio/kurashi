@@ -27,7 +27,7 @@ async function keptAndHome(page: Page) {
   // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
   await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap('日本の外から');
-  for (const name of [/^在留カード/, /^パスポート/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
+  for (const name of [/^在留カード/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
   await tap('つぎへ');
   await tap('書いてある');
   await tap(/^学生$/);

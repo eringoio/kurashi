@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-biz-start",
-      "R-job-biz-hoken-change"
+      "R-job-biz-hoken-change",
+      "R-job-not-pt-only"
     ]
   },
   "coverage_rule_ids": [],

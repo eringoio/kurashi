@@ -3085,6 +3085,98 @@
       }
     },
     {
+      "id": "R-job-employ-change",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "job_goal",
+            "eq": "employ"
+          },
+          {
+            "all": [
+              {
+                "fact": "nationality",
+                "eq": "foreign"
+              },
+              {
+                "any": [
+                  {
+                    "fact": "zairyu_status",
+                    "in": [
+                      "student",
+                      "family"
+                    ]
+                  },
+                  {
+                    "all": [
+                      {
+                        "not": {
+                          "fact": "zairyu_status",
+                          "in": [
+                            "student",
+                            "family",
+                            "work",
+                            "spouse",
+                            "permanent",
+                            "long_term",
+                            "cultural",
+                            "trainee"
+                          ]
+                        }
+                      },
+                      {
+                        "fact": "work_limit",
+                        "eq": "not_allowed"
+                      },
+                      {
+                        "fact": "job_permit",
+                        "in": [
+                          "blanket",
+                          "individual",
+                          "both",
+                          "yes"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "zairyu_status",
+                        "eq": "cultural"
+                      },
+                      {
+                        "fact": "job_permit",
+                        "in": [
+                          "blanket",
+                          "individual",
+                          "both",
+                          "yes"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{就職|しゅうしょく}する。{在留|ざいりゅう}{資格|しかく}の{変更|へんこう}が{先|さき}",
+        "ja_easy": "{就職|しゅうしょく}する。{在留資格|ざいりゅうしかく}の{変更|へんこう}が{先|さき}",
+        "en": "Starting a job; change of status comes first"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
       "id": "R-job-ins-kokuho",
       "kind": "selection",
       "condition": {

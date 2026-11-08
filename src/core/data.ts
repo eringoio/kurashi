@@ -169,7 +169,13 @@ export function checkRefs(d: GuideData): string[] {
     [...(e.goal_card_ids ?? []), ...(e.info_card_ids ?? [])].forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：目的・情報のカード ${id} がイベントにない`); });
     (e.goal_card_ids ?? []).forEach((id) => { if (e.info_card_ids?.includes(id)) err.push(`${e.id}：${id} が目的と情報の両方にある`); });
     if (e.scope_rule && !d.rules.has(e.scope_rule)) err.push(`${e.id}：範囲のルール ${e.scope_rule} がない`);
+    e.by_answer?.forEach((b) => {
+      if (!d.rules.has(b.when)) err.push(`${e.id}：by_answer のルール ${b.when} がない`);
+      [...(b.goal_card_ids ?? []), ...(b.info_card_ids ?? []), ...(b.later_card_ids ?? []), ...(b.after ?? [])].forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：by_answer のカード ${id} がイベントにない`); });
+    });
   }
+  // 選択肢の when（v0.5.34）：ルールがある
+  for (const q of d.questions) q.options.forEach((o) => { if (o.when && !d.rules.has(o.when)) err.push(`${q.id}.${String(o.value)}：選択肢のルール ${o.when} がない`); });
   err.push(...cycles(d));
   for (const r of d.relations) {
     ev(r.id, r.evidence);

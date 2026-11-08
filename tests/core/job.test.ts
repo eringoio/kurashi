@@ -56,6 +56,14 @@ describe('仕事・アルバイト（公開）', () => {
     // 基本情報だけなら、国籍も聞かない
     expect(run(data, { answers: { 'Q-job-goal': 'basics' }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront).toEqual([]);
   });
+  it('目的の選択肢は在留資格で絞る（v0.5.34）：仕事を辞める・個人事業・会社は、許可があればアルバイトだけの人（留学・家族滞在など）に出さない', () => {
+    const q = data.questions.find((x) => x.id === 'Q-job-goal')!;
+    expect(q.options.filter((o) => o.when === 'R-job-not-pt-only').map((o) => o.value)).toEqual(['leave', 'biz_start', 'biz_end', 'company']);
+    const first = (s?: string) => run(data, { answers: statusAnswers(s), objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront[0];
+    expect(first('student').options.map((o) => o.value)).toEqual(['part_time', 'employ', 'pt_end', 'basics']);
+    expect(first('work').options.length).toBe(8);
+    expect(first(undefined).options.length).toBe(8);
+  });
   it('留学：資格外活動許可は shown。ほかのカードも出る。許可をもう受けたかを聞く', () => {
     const o = go('student');
     expect(ids(o, 'shown')).toEqual(ALL);

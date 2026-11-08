@@ -157,3 +157,16 @@ describe('持ち物を手続きごとに', () => {
     expect(new Set(all).size).toBe(all.length);
   });
 });
+
+describe('パスポート（作者 11/8）：日本国籍でない人は持っているとみなし、区役所・銀行・入管に持っていく', () => {
+  it('国籍が未回答・外国籍なら「持っている」。日本国籍なら出さない', () => {
+    for (const place of ['ward_office', 'bank', 'immigration']) {
+      expect(bringList(data.objects, place, {}, 'abroad').find((b) => b.object.id === 'passport')?.held).toBe(true);
+      expect(bringList(data.objects, place, {}, 'within_nagoya', 'other').find((b) => b.object.id === 'passport')?.held).toBe(true);
+      expect(bringList(data.objects, place, {}, 'within_nagoya', 'japanese').some((b) => b.object.id === 'passport')).toBe(false);
+    }
+  });
+  it('本人が「持っていない」と答えたら、それを使う', () => {
+    expect(bringList(data.objects, 'ward_office', { passport: false }, 'abroad').find((b) => b.object.id === 'passport')?.held).toBe(false);
+  });
+});

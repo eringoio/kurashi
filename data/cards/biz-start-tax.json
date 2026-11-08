@@ -10,7 +10,12 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-biz-start",
+  "eligibility": {
+    "all": [
+      "R-job-goal-biz-start",
+      "R-job-not-pt-only"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{帳簿|ちょうぼ}と{確定|かくてい}{申告|しんこく}・{消費|しょうひ}{税|ぜい}",

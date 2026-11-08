@@ -153,8 +153,10 @@ function QuestionBlockNoTitle({ children }: { children: React.ReactNode }) {
 function Objects() {
   const g = useGuide();
   const origin = String(g.answers['Q-origin'] ?? 'abroad');
-  const list = DATA().objects.filter((o) => o.show_for.includes(origin));
-  const [held, setHeld] = useState<Record<string, boolean>>(() => Object.fromEntries(list.map((o) => [o.id, !!g.objects[o.id]])));
+  const nat = typeof g.answers['Q-nationality'] === 'string' ? (g.answers['Q-nationality'] as string) : undefined;
+  const list = DATA().objects.filter((o) => o.show_for.includes(origin) && !(nat && o.not_for_nationality?.includes(nat)));
+  // 答えていない物は、assume_held_unless_nationality があれば「持っている」から始める（日本国籍でない人のパスポート。作者 11/8）
+  const [held, setHeld] = useState<Record<string, boolean>>(() => Object.fromEntries(list.map((o) => [o.id, o.id in g.objects ? !!g.objects[o.id] : !!o.assume_held_unless_nationality && !(nat && o.assume_held_unless_nationality.includes(nat))])));
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const { level } = usePrefs();
   const L = (k: UiKey) => line(ui(k), level);

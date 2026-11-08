@@ -184,11 +184,13 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const infos = new Set(x.event?.info_card_ids ?? []);
   const laters = new Set<string>();
   // 答えで変わる区分け（v0.5.32）：ルールが T のときだけ足す
+  const afterOf = new Map<string, string[]>();
   x.event?.by_answer?.forEach((b) => {
     if (conf.get(b.when)?.v !== 'T') return;
     b.goal_card_ids?.forEach((id) => goals.add(id));
     b.info_card_ids?.forEach((id) => infos.add(id));
-    b.later_card_ids?.forEach((id) => laters.add(id));
+    // after があれば「〇〇のあと」（v0.5.34）。無ければ「答えから、あとで」
+    b.later_card_ids?.forEach((id) => (b.after?.length ? afterOf.set(id, b.after) : laters.add(id)));
   });
   // できごとの中の選択（目的など。scope: event の質問の答えだけで決まる selection のルール）で外れたカード（v0.5.32）。
   // 前に進めていても「確かめる」に残さない（記録は消さない。目的を戻すとまた出る）
@@ -196,7 +198,6 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const bySelection = (id: string) => { const r = data.rules.get(id)!; return r.kind === 'selection' && [...factsIn(r.condition)].every((f) => eventFacts.has(f)); };
   const maskExpr = (e: RuleExpr): Eval => (typeof e === 'string' ? (bySelection(e) ? { v: 'U', unanswered: new Set(), unknown: new Set(), unverified: false } : conf.get(e)!) : 'all' in e ? combineAll(e.all.map(maskExpr)) : combineAny(e.any.map(maskExpr)));
   const offBySelection = (card: Card) => maskExpr(card.eligibility).v !== 'F';
-  const afterOf = new Map<string, string[]>();
   x.event?.phases?.forEach((ph) => ph.after && ph.card_ids.forEach((id) => afterOf.set(id, ph.after!)));
   const visibleState = (st: DisplayState | undefined) => st === 'shown' || st === 'check_at_office' || st === 'ask';
   /** 段の after の手続き（この人に関係するもの）が、まだどれも済んでいない → そのうち最初のもの */
@@ -302,7 +303,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       if (card.requires_moved_in) want.add('moved_in');
     }
     // 同じ事実を聞く質問は、質問バンクの最初の1つだけ（11/6：Q-bank-account と Q-bank-has）
-    const questions = data.questions.filter((q, i, all) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T' && all.findIndex((y) => y.stage === 'in_card' && y.fact === q.fact) === i);
+    const questions = data.questions.filter((q, i, all) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T' && all.findIndex((y) => y.stage === 'in_card' && y.fact === q.fact) === i).map((q) => shownOptions(data, q, facts));
 
     // 理由（10.5）：判定に使った答えの事実と、適用条件のルール
     const ids = exprIds(card.eligibility).concat(card.coverage_rule_ids);
@@ -348,10 +349,19 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   // カードの中の質問（in_card）でも、イベントが入口で聞くと決めたなら聞く（11/6：銀行の Q-bank-has。引っ越しの最初の質問には出さないため）
   const fromEvent = scope === 'F' || !x.event ? [] : x.event.questions.map((id) => data.questions.find((q) => q.id === id)!).filter((q) => q && q.stage !== 'object_check' && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T');
   // 同じ fact を聞く質問は1つだけ（B-4：共通の Q-nationality と、できごとの国籍の質問が並ばないように。先に出た方を残す）
-  const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))].filter((q, i, all) => all.findIndex((y) => y.fact === q.fact) === i);
+  const upfront = [...fromEvent, ...fromBank.filter((q) => !fromEvent.includes(q))].filter((q, i, all) => all.findIndex((y) => y.fact === q.fact) === i).map((q) => shownOptions(data, q, facts));
 
   const sameVisit = data.relations.filter((r): r is Extract<Relation, { type: 'same_visit' }> => r.type === 'same_visit' && relVerified(r));
   return { facts, scope, upfront, cards, sameVisit };
+}
+
+/** 選択肢の when（v0.5.34）：ルールが F の選択肢を外した質問。外すものが無ければ同じ質問を返す。
+    本人の答え（在留資格など）だけで決まる選択の絞り込みで、制度の判定ではないので、ルールの確認状態は見ない。
+    残りが2つより少なくなるときは外さない */
+export function shownOptions(data: GuideData, q: Question, facts: Facts): Question {
+  if (!q.options.some((o) => o.when)) return q;
+  const options = q.options.filter((o) => !o.when || evalCond(data.rules.get(o.when)!.condition, facts).v !== 'F');
+  return options.length === q.options.length || options.length < 2 ? q : { ...q, options };
 }
 
 function sameVisitVerified(data: GuideData, a: string, b: string, ok: (r: Relation) => boolean) {

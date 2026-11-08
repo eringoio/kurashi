@@ -39,13 +39,14 @@ const ROWS: Row[] = [
   { n: '19 文化活動・個別許可', goal: 'part_time', who: 'cultural', a: { 'Q-job-permit': 'individual' }, on: ['zairyu-shikakugai'], off: ['job-no-work-note'], has: { 'zairyu-shikakugai': ['許可書に書いてある活動'] } },
   { n: '19b 文化活動・許可を聞く', goal: 'part_time', who: 'cultural', up: ['Q-job-permit'] },
   { n: '19c 文化活動・許可なし', goal: 'part_time', who: 'cultural', a: { 'Q-job-permit': 'no' }, on: ['job-no-work-note'], off: ['job-kyujin'] },
-  { n: '20 留学・会社', goal: 'company', who: 'student', shown: ['company-setup', 'company-status'], has: { 'company-setup': ['在留資格の申請'], 'company-status': ['別です', '資格外活動許可だけで'] } },
+  // v0.5.34：留学・家族滞在には、会社・個人事業の選択肢を出さない。答えてしまったとき（在留資格をあとで答えた）は、在留資格の確かめのカードだけ
+  { n: '20 留学・会社', goal: 'company', who: 'student', shown: ['company-status'], off: ['company-setup'], has: { 'company-status': ['別です', '資格外活動許可だけで'] } },
   { n: '21 留学・業務委託', goal: 'biz_start', who: 'student', shown: ['biz-start-permit'], off: ['job-side-work'], has: { 'biz-start-permit': ['個別許可'] } },
-  { n: '22 留学・開業届は許可ではない', goal: 'biz_start', who: 'student', has: { 'biz-start-kaigyo': ['在留資格の許可ではありません'], 'biz-start-permit': ['入管の許可にはなりません'] } },
+  { n: '22 留学・開業届は許可ではない', goal: 'biz_start', who: 'student', off: ['biz-start-kaigyo', 'biz-start-tax', 'biz-start-aoiro', 'biz-start-hoken', 'biz-start-employees'], has: { 'biz-start-permit': ['入管の許可にはなりません'] } },
   { n: '23 永住者・個人事業', goal: 'biz_start', who: 'permanent', a: { 'Q-insurance': 'employer_self', 'Q-biz-side': 'no' }, off: ['biz-start-permit', 'job-side-work', 'company-status'], shown: ['biz-start-kaigyo', 'biz-start-tax', 'biz-start-hoken'] },
   { n: '23b 永住者・会社', goal: 'company', who: 'permanent', shown: ['company-setup'], off: ['company-status'], lacks: { 'company-setup': ['3,000万', '在留資格の申請'] } },
   { n: '24 技人国・個人事業', goal: 'biz_start', who: 'work', a: { 'Q-work-status-detail': 'engineer' }, shown: ['job-side-work'], off: ['biz-start-permit'], has: { 'job-side-work': ['個人事業主', '経営・管理'] } },
-  { n: '25 家族滞在・ネットショップ', goal: 'biz_start', who: 'family', shown: ['biz-start-permit'] },
+  { n: '25 家族滞在・ネットショップ', goal: 'biz_start', who: 'family', shown: ['biz-start-permit'], off: ['biz-start-kaigyo', 'biz-start-tax'] },
   { n: '26 退職・次の日から次の会社の保険', goal: 'leave', who: 'permanent', a: { 'Q-job-next': 'next_day' }, off: ['job-leave-kokuho'] },
   { n: '26b 退職・間が空く', goal: 'leave', who: 'permanent', a: { 'Q-insurance': 'employer_self', 'Q-job-next': 'gap' }, shown: ['job-leave-kokuho'], has: { 'job-leave-kokuho': ['任意継続'] } },
   { n: '26c 退職・次の保険を聞く', goal: 'leave', who: 'japanese', ask: ['job-leave-kokuho'] },
@@ -81,6 +82,41 @@ describe('仕事の35の場面（11/8）', () => {
     for (const q of r.noUp ?? []) expect(o.upfront.map((x) => x.id)).not.toContain(q);
     for (const [id, ws] of Object.entries(r.has ?? {})) for (const w of ws) expect(text(id), id).toContain(w);
     for (const [id, ws] of Object.entries(r.lacks ?? {})) for (const w of ws) expect(text(id), id).not.toContain(w);
+  });
+  it('留学の人（在留資格を前に答えた）：何をしますか は アルバイト・就職・アルバイトを辞める・基本情報だけ。目的ごとのカード（v0.5.34）', () => {
+    const base = { objects: {}, plan: {}, createdOn: '2026-11-08', today: '2026-11-08', mode: 'public' as const, event: ev };
+    const offered = (status: Record<string, string>) => run(data, { ...base, answers: status }).upfront.find((q) => q.id === 'Q-job-goal')!.options.map((o) => o.value);
+    expect(offered(who('student'))).toEqual(['part_time', 'employ', 'pt_end', 'basics']);
+    expect(offered(who('family'))).toEqual(['part_time', 'employ', 'pt_end', 'basics']);
+    // 仕事の在留資格・永住者・日本国籍・まだ答えていない人は、8つのまま
+    const ALL8 = ['part_time', 'employ', 'pt_end', 'leave', 'biz_start', 'biz_end', 'company', 'basics'];
+    for (const s of ['work', 'permanent', 'japanese']) expect(offered(who(s)), s).toEqual(ALL8);
+    expect(run(data, { ...base, answers: {} }).upfront.find((q) => q.id === 'Q-job-goal')!.options.map((o) => o.value)).toEqual(ALL8);
+    // 出るカード（対象外でないもの）
+    const on = (goal: string, extra: Record<string, string> = {}) => go(goal, 'student', extra).cards.filter((c) => c.state !== 'excluded').map((c) => c.card.id).sort();
+    expect(on('part_time', { 'Q-job-permit': 'blanket', 'Q-school-status': 'enrolled' })).toEqual(['job-kyujin', 'job-phrases', 'job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble', 'zairyu-shikakugai']);
+    expect(on('employ', { 'Q-school-status': 'enrolled', 'Q-insurance': 'kokuho' })).toEqual(['job-employ-hoken', 'job-employ-juminzei', 'job-employ-kokuho-stop', 'job-shushoku']);
+    expect(on('pt_end', { 'Q-insurance': 'kokuho' })).toEqual(['job-pt-end-pay', 'job-pt-leave-note', 'job-trouble']);
+    expect(on('basics')).toEqual(['job-rodo-joken', 'job-saitei-chingin', 'job-shakai-hoken', 'job-trouble']);
+    // 就職：在留資格の変更が「いま」。会社の保険・住民税・国保をやめる届けは、その「あと」
+    const e = go('employ', 'student', { 'Q-school-status': 'enrolled', 'Q-insurance': 'kokuho' });
+    const sec = (id: string) => e.cards.find((c) => c.card.id === id)!;
+    expect(sec('job-shushoku').section).toBe('today');
+    for (const id of ['job-employ-hoken', 'job-employ-juminzei', 'job-employ-kokuho-stop']) {
+      expect(sec(id).section, id).toBe('later');
+      expect(sec(id).sectionWhy, id).toBe('after_card');
+      expect(sec(id).afterFrom, id).toBe('job-shushoku');
+    }
+    // 在留資格の変更が済んだら、会社の保険などは「いま」の順に戻る
+    const after = run(data, { ...base, answers: { 'Q-job-goal': 'employ', ...who('student'), 'Q-school-status': 'enrolled', 'Q-insurance': 'kokuho' }, plan: { 'job-shushoku': { status: 'done' } as never } });
+    expect(after.cards.find((c) => c.card.id === 'job-employ-kokuho-stop')!.section).toBe('today');
+    // 永住者の就職は、今までどおり（あとにしない）
+    expect(go('employ', 'permanent').cards.find((c) => c.card.id === 'job-employ-hoken')!.sectionWhy).not.toBe('after_card');
+  });
+  it('在留資格がまだわからない人が会社・個人事業を選んだ：国籍・在留資格を先に聞き、カードは「聞く」のまま（v0.5.34）', () => {
+    const o = run(data, { answers: { 'Q-job-goal': 'biz_start', 'Q-biz-started': 'planning' }, objects: {}, plan: {}, createdOn: '2026-11-08', today: '2026-11-08', mode: 'public', event: ev });
+    expect(o.upfront.map((q) => q.id)).toContain('Q-nationality');
+    for (const id of ['biz-start-kaigyo', 'biz-start-tax', 'biz-start-aoiro', 'biz-start-permit']) expect(o.cards.find((c) => c.card.id === id)!.state, id).toBe('ask');
   });
   it('開業届・廃業届の期限は「確定申告の期限まで」。「1か月以内」と書かない。青色申告は別の期限（2か月）', () => {
     for (const id of ['biz-start-kaigyo', 'biz-end-haigyo']) {

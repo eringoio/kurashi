@@ -149,7 +149,7 @@ async function planWardToday(page: Page) {
   // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
   await page.getByRole('button', { name: '答えずに進む' }).click();
   await tap(page, '日本の外から');
-  for (const name of [/^在留カード/, /^パスポート/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
+  for (const name of [/^在留カード/, /^部屋の鍵/, /^学生証/]) await page.getByRole('button', { name }).click();
   await tap(page, 'つぎへ');
   await tap(page, '書いてある');
   await tap(page, /^学生$/);

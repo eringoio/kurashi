@@ -13,7 +13,7 @@ import { activeNotices } from '../core/notice';
 import type { Occurrence } from '../core/occurrence';
 import type { Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
-import { line, type UiKey } from '../i18n/text';
+import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Link, useFocusTitle } from '../ui/router';
@@ -101,7 +101,7 @@ function GomiTool() {
       <section className="group" aria-labelledby={id + '-s'}>
         <div className="search">
           <label id={id + '-s'} htmlFor={id} className="label"><Bi k="gomi.search.label" /></label>
-          <input id={id} type="search" value={q} onChange={(e) => { setQ(e.target.value); setSel(null); }} autoComplete="off" enterKeyHint="search" aria-describedby={id + '-hint'} />
+          <input id={id} type="search" value={q} placeholder={line(ui('gomi.search.placeholder'), level)} onChange={(e) => { setQ(e.target.value); setSel(null); }} autoComplete="off" enterKeyHint="search" aria-describedby={id + '-hint'} />
           <p id={id + '-hint'} className="sub"><One k="gomi.search.hint" /></p>
         </div>
         <div aria-live="polite">
@@ -154,6 +154,9 @@ function GomiTool() {
               {next?.kind === 'date' && <p className="k-notice" role="note"><Bi k="gomi.next.date" /> {fmtDay(next.date, level)}</p>}
               {next?.kind === 'area' && area.kind === 'unset' && <p className="sub"><Bi k="gomi.next.noArea" /></p>}
               {res.category.id === 'sodai' && <p><Link className="k-answer" to="/e/E-gomi/c/gomi-sodai"><Bi k="gomi.sodaiHint" /></Link></p>}
+              {/* 粗大ごみのときだけ：お知らせ（期間の中だけ）と自己搬入（作者 11/8：「必要なときだけ」の欄をやめて、関係する結果の下に） */}
+              {res.category.route === 'bulky' && activeNotices(d.delivery.notices, today).map((n, i) => <p key={i} className="k-notice" role="note"><Bi t={n.text} /></p>)}
+              {res.category.route === 'bulky' && <p><Link className="k-answer" to="/e/E-gomi/c/gomi-mochikomi"><Bi k="gomi.more.mochikomi" /></Link></p>}
               {res.category.links.length > 0 && (
                 <div className="links">{res.category.links.map((l) => <p key={l.url}><Ext label={l.label} url={l.url} /></p>)}</div>
               )}
@@ -171,16 +174,6 @@ function GomiTool() {
           <button type="button" className="link" onClick={() => { setSel(null); setQ(''); }}><Bi k="gomi.result.again" /></button>
         </section>
       )}
-
-      {/* 4. 必要なときだけ：自己搬入。粗大ごみの案内は、探した物が粗大ごみのときだけ結果の下に出す（K-22） */}
-      <section className="group" aria-labelledby={id + '-m'}>
-        <h2 id={id + '-m'}><Bi phrase k="gomi.more.title" /></h2>
-        {/* お知らせ（期間の中だけ。B-7c：10月の粗大ごみの変更は 2027-03-31 まで） */}
-        {activeNotices(d.delivery.notices, today).map((n, i) => <p key={i} className="k-notice" role="note"><Bi t={n.text} /></p>)}
-        <ul className="list" role="list">
-          <li><Link className="k-answer" to="/e/E-gomi/c/gomi-mochikomi"><Bi k="gomi.more.mochikomi" /></Link></li>
-        </ul>
-      </section>
 
       {/* 5. ごみの種類と袋。種類ごとに、袋と品目の表（作者 11/8） */}
       <section className="group" aria-labelledby={id + '-k'}>

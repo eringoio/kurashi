@@ -26,7 +26,7 @@ export function AddToCalendar({ day, place, cardIds, small }: { day: string; pla
   const cards = DATA().cards.filter((c) => cardIds.includes(c.id));
   const placeName = place ? L((ui(('place.' + place) as UiKey) ?? { ja: place })) : '';
   const origin = typeof g.answers['Q-origin'] === 'string' ? (g.answers['Q-origin'] as string) : undefined;
-  const bring = place ? bringList(DATA().objects, place, g.objects, origin).filter((b) => b.held) : [];
+  const bring = place ? bringList(DATA().objects, place, g.objects, origin, g.out.facts.get('nationality')).filter((b) => b.held) : [];
   const o = PLACES().find((p) => p.id === office);
   const h = place ? HOURS()[place] : undefined;
 

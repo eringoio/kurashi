@@ -61,7 +61,6 @@ test('町が多い区で、最初と最後の候補へ届く。候補なしの�
   await expect(last).toBeInViewport();
   await search(page).fill('zzzzqq');
   await expect(opts(page)).toHaveCount(0);
-  await expect(page.locator('.town-picker__count')).not.toBeEmpty();
   await search(page).fill('');
   await opts(page).last().click();
   await expect(page.locator('.town-picker__done')).toBeVisible();
@@ -70,17 +69,14 @@ test('町が多い区で、最初と最後の候補へ届く。候補なしの�
   await expect(search(page)).toHaveValue('');
 });
 
-test('現在地は区を提案するだけ。本人が押すまで区を決めない', async ({ page, context }) => {
+test('現在地から選ぶと区が入る（作者 11/8）。家にいないときは選び直す、の1行', async ({ page, context }) => {
   await context.grantPermissions(['geolocation']);
   await context.setGeolocation({ latitude: 35.16898, longitude: 136.91008, accuracy: 30 }); // 中区役所
   await open(page);
   await page.getByRole('button', { name: /現在地から選ぶ/ }).click();
-  const note = page.locator('.gomi-suggest');
-  await expect(note).toContainText('違うかもしれません');
-  await expect(wardSelect(page)).toHaveValue('');
-  await note.getByRole('button').click();
   await expect(wardSelect(page)).toHaveValue('naka');
-  await expect(note).toHaveCount(0);
+  await expect(page.locator('.gomi-area')).toContainText('現在地から入れました');
+  await expect(search(page)).toBeVisible();
   const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
   expect(r.violations.map((v) => v.id)).toEqual([]);
 });

@@ -150,7 +150,8 @@ export const Card = z.object({
 });
 export type Card = z.infer<typeof Card>;
 
-export const Option = z.object({ value: ValueZ, label: Text, icon: z.string().optional(), small: z.boolean().optional() });
+/** when（v0.5.34）：ルールの id。そのルールが F のとき、この選択肢を出さない（T・U は出す。例：留学の人に「会社を設立・経営する」を出さない） */
+export const Option = z.object({ value: ValueZ, label: Text, icon: z.string().optional(), small: z.boolean().optional(), when: z.string().optional() });
 export const Question = z.object({
   id: z.string().regex(/^Q-/),
   fact: z.string(),
@@ -182,6 +183,10 @@ export const ObjectDef = z.object({
   bring_to: z.array(z.string().regex(/^[a-z_]+$/)).optional(),
   /** どの手続きで使うか（カードの id。本アプリの定義。作者 11/6 B-6）。「行く前」の持ち物を手続きごとに分けて出す */
   bring_for: z.array(z.string()).optional(),
+  /** この国籍の人には出さない（例：パスポートは日本国籍の人の手続きには要らない。作者 11/8） */
+  not_for_nationality: z.array(z.string()).optional(),
+  /** 答えが無いとき「持っている」とみなす（この国籍の人を除く。例：日本国籍でない人はパスポートを持っている。作者 11/8） */
+  assume_held_unless_nationality: z.array(z.string()).optional(),
   evidence: Evidence,
 });
 export type ObjectDef = z.infer<typeof ObjectDef>;
@@ -235,7 +240,9 @@ export const EventDef = z.object({
   info_card_ids: z.array(z.string()).optional(),
   /** 答えで変わる区分け（v0.5.32：仕事。目的ごとに「いま」「関連する情報」「あとで」が違う）。when のルール（selection）が T のときだけ、
       goal・info・later に足す。later は「答えから、あとでする」（例：まだ事業を始めていない人の開業届） */
-  by_answer: z.array(z.object({ when: z.string(), goal_card_ids: z.array(z.string()).optional(), info_card_ids: z.array(z.string()).optional(), later_card_ids: z.array(z.string()).optional() })).optional(),
+  by_answer: z.array(z.object({ when: z.string(), goal_card_ids: z.array(z.string()).optional(), info_card_ids: z.array(z.string()).optional(), later_card_ids: z.array(z.string()).optional(),
+    /** later_card_ids を「〇〇のあと」にする手続き（v0.5.34。例：留学から就職するときの会社の保険は、在留資格の変更のあと） */
+    after: z.array(z.string()).optional() })).optional(),
   /** false：「あなたについて」をまとめて聞かない。要る質問だけを、目的の質問のあとに聞く（v0.5.32：仕事） */
   about_step: z.boolean().optional(),
   evidence: Evidence,

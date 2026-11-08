@@ -1078,7 +1078,8 @@
             "ja": "{仕事|しごと}を{辞|や}める・{辞|や}めた",
             "ja_easy": "{会社|かいしゃ}を{辞|や}める",
             "en": "Leave (or left) a job"
-          }
+          },
+          "when": "R-job-not-pt-only"
         },
         {
           "value": "biz_start",
@@ -1087,7 +1088,8 @@
             "ja": "{個人|こじん}{事業|じぎょう}を{始|はじ}める",
             "ja_easy": "{自分|じぶん}で{事業|じぎょう}を{始|はじ}める",
             "en": "Start self-employment"
-          }
+          },
+          "when": "R-job-not-pt-only"
         },
         {
           "value": "biz_end",
@@ -1096,7 +1098,8 @@
             "ja": "{個人|こじん}{事業|じぎょう}をやめる",
             "ja_easy": "{自分|じぶん}の{事業|じぎょう}をやめる",
             "en": "Close a sole proprietorship"
-          }
+          },
+          "when": "R-job-not-pt-only"
         },
         {
           "value": "company",
@@ -1106,7 +1109,8 @@
             "ja_easy": "{会社|かいしゃ}をつくる",
             "en": "Start or run a company"
           },
-          "icon": "hall"
+          "icon": "hall",
+          "when": "R-job-not-pt-only"
         },
         {
           "value": "basics",

@@ -10,7 +10,12 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-job-goal-company",
+  "eligibility": {
+    "all": [
+      "R-job-goal-company",
+      "R-job-not-pt-only"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{会社|かいしゃ}をつくる{流|なが}れ",
