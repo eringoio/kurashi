@@ -2552,6 +2552,46 @@
       "owner_type": "government",
       "title": "地方出入国在留管理官署",
       "language": "ja"
+    },
+    {
+      "source_id": "nagoya-water-kaishi",
+      "url": "https://www.water.city.nagoya.jp/category/tyuushikaishi/1042.html",
+      "owner": "名古屋市上下水道局",
+      "owner_type": "government",
+      "title": "水道使用開始・中止などのお申し込み",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-water-uketsuke",
+      "url": "https://www.water.city.nagoya.jp/category/renraku/1040.html",
+      "owner": "名古屋市上下水道局",
+      "owner_type": "government",
+      "title": "お客さま受付センター（名水ダイヤル）のご案内",
+      "language": "ja"
+    },
+    {
+      "source_id": "tohogas-hikkoshi-checklist",
+      "url": "https://www.tohogas.co.jp/home/hikkoshi/checklist/",
+      "owner": "東邦ガス株式会社",
+      "owner_type": "private",
+      "title": "引越し手続きのアレコレ「チェックリスト」（ガス会社の1つの例）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-tennyu-kunai",
+      "url": "https://www.city.nagoya.jp/lifescene/sumai/1034689/1017945.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住民登録や戸籍に関する届出(転入)",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-police-gaimen-hirabari",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/menkyoshiken/gaimenkirikaejyo.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "運転免許試験場（平針）での外国免許から国内免許への切替えについて",
+      "language": "ja"
     }
   ]
 }

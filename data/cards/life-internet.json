@@ -1,0 +1,99 @@
+{
+  "id": "life-internet",
+  "data_version": 1,
+  "illustration": "search",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lifeline",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "インターネットを{始|はじ}める・やめる",
+    "ja_easy": "インターネットを{始|はじ}める・やめる",
+    "en": "Start or stop internet"
+  },
+  "official_name": {
+    "ja": "インターネットの契約・解約・移転",
+    "reading": "いんたーねっとのけいやく・かいやく・いてん"
+  },
+  "summary": {
+    "ja": "インターネットは、{自分|じぶん}で{選|えら}んだプロバイダーに{連絡|れんらく}して{始|はじ}めます。{部屋|へや}にもう{回線|かいせん}があるか、{不動産|ふどうさん}{会社|がいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。{退去|たいきょ}や{引|ひ}っ{越|こ}しのときは、{契約|けいやく}の{書類|しょるい}で、{解約|かいやく}・{移転|いてん}の{条件|じょうけん}（いつまでに{知|し}らせるか・{費用|ひよう}）を{確|たし}かめます。{条件|じょうけん}は{会社|がいしゃ}と{契約|けいやく}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "インターネットは、{自分|じぶん}で{選|えら}んだ{会社|かいしゃ}に{連絡|れんらく}して{始|はじ}めます。{部屋|へや}に{線|せん}があるか、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}すときは、やめる・{移|うつ}すときの{決|き}まりとお{金|かね}を、{契約|けいやく}の{紙|かみ}で{見|み}ます（{要|よう}{確認|かくにん}）。",
+    "en": "To start internet, contact the provider you chose. Ask the real estate agent whether the room already has a line (to be confirmed). When you move out or move, check the contract for the terms of cancelling or moving the service (notice period and fees). The terms differ by company and contract (to be confirmed)."
+  },
+  "lead": {
+    "ja": "{自分|じぶん}で{選|えら}んだ{会社|がいしゃ}（プロバイダー）に{申|もう}し{込|こ}みます。{引|ひ}っ{越|こ}しのときは、{解約|かいやく}・{移転|いてん}の{条件|じょうけん}を{確|たし}かめます。",
+    "ja_easy": "インターネットの{会社|かいしゃ}に{申|もう}し{込|こ}みます。{引|ひ}っ{越|こ}すときは、やめる・{移|うつ}す{条件|じょうけん}を{見|み}ます。",
+    "en": "Apply to the provider you choose. When you move, check the terms for cancelling or moving the service."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{不動産|ふどうさん}{会社|がいしゃ}（{電気|でんき}・ガス・{水道|すいどう}などの{連絡先|れんらくさき}を{聞|き}きます）",
+      "ja_easy": "{不動産|ふどうさん}の{会社|かいしゃ}（{電気|でんき}・ガス・{水|みず}の{連絡先|れんらくさき}を{聞|き}きます）",
+      "en": "The real estate agent (ask whom to contact for electricity, gas and water)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "Ask the real estate agent whom to contact for each of the above services.",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "インターネット：プロバイダーに{連絡|れんらく}して、{始|はじ}めます。",
+        "ja_easy": "インターネット：プロバイダーに{連絡|れんらく}して、{始|はじ}めます。",
+        "en": "Internet: contact an internet service provider to start service."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "For the Internet, contact an Internet service provider to begin Internet service.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c7"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "いんたーねっと",
+    "インターネット",
+    "プロバイダー",
+    "wifi",
+    "internet",
+    "provider",
+    "cancel internet"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "Ask the real estate agent whom to contact for each of the above services."
+  }
+}

@@ -21,6 +21,8 @@ import type { CardView } from '../core/engine';
 import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
 import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle } from '../ui/router';
+import { TrackSelect } from './EventOverview';
+import { partViews, rollup, STATUS_OF, type Track } from '../core/overview';
 import { useSeen } from '../ui/Words';
 import { StayRenewFlow } from '../ui/StayRenew';
 import { stayExpired } from '../core/stayRenew';
@@ -50,7 +52,64 @@ export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: st
   const ev = useEvent(eventId);
   if (!ev) return <NotFound />;
   const base = '/e/' + eventId;
-  return <CardPageView id={id} onLive={onLive} g={{ ...ev, objects: {} }} paths={{ card: base + '/c/', now: base, all: base + '/all' }} />;
+  // 目的の手続き：入口の最初の質問（目的）に答えていれば、ここから選び直せる（v0.5.30。目的の画面へ直接来たとき）
+  const q0 = ev.event.questions[0];
+  const goalQ = ev.event.goal_card_ids?.includes(id) && q0 && ev.answers[q0] !== undefined ? DATA().questions.find((q) => q.id === q0 && !q.multi) : undefined;
+  return <CardPageView id={id} onLive={onLive} g={{ ...ev, objects: {} }} paths={{ card: base + '/c/', now: base, all: base + '/all' }} goalQ={goalQ} />;
+}
+/** できごとの入口の道（引っ越しは /move） */
+const eventPath = (id: string) => (id === 'E-move' ? '/move' : '/e/' + id);
+
+/** 物ごとの記録（parts。入居のとき：鍵・電気・ガス…）。くわしい案内のカードがあれば名前から開ける（v0.5.30） */
+function PartsList({ c, g, base, onLive }: { c: CardView; g: CardGuide; base: string; onLive: (s: string) => void }) {
+  const { level } = usePrefs();
+  const parts = partViews(c, g.out.facts);
+  if (!parts.length) return null;
+  const name = line(c.card.title, level);
+  const setPart = (id: string, t: Track) => {
+    const next = { ...(c.plan?.parts ?? {}), [id]: STATUS_OF[t] };
+    void g.setPlan(c.card.id, { parts: next, status: STATUS_OF[rollup(parts.map((p) => ({ track: p.id === id ? t : p.track })))] });
+    onLive(line(ui('ov.saved'), level));
+  };
+  return (
+    <section className="ov-phase" aria-labelledby="card-parts-h">
+      <h2 id="card-parts-h"><Bi phrase k="card.parts" /></h2>
+      <ul className="ov-list" role="list">
+        {parts.map((p) => {
+          const def = c.card.parts!.find((x) => x.id === p.id)!;
+          const to = def.card && g.out.cards.some((x) => x.card.id === def.card) ? base + def.card : null;
+          return (
+            <li key={p.id} className={'ov-item ov-item--' + p.track}>
+              {to ? <Link to={to} className="link"><Bi phrase t={p.label} /></Link> : <p><Bi phrase t={p.label} /></p>}
+              <TrackSelect label="ov.status" name={line(p.label, level) + '（' + name + '）'} value={p.track} onChange={(t) => setPart(p.id, t)} />
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
+
+/** 別のできごとへの入口（入居・退去 → 引っ越しの届け出。v0.5.30）。答えは書き換えない（行った先で聞く） */
+function EventLinks({ c }: { c: CardView }) {
+  const list = c.card.event_links ?? [];
+  if (!list.length) return null;
+  const cards = DATA().cards;
+  return (
+    <section className="qblock" aria-labelledby="card-moves-h">
+      <h2 id="card-moves-h" className="qblock__title"><Bi phrase k="card.moveLinks" /></h2>
+      <div className="list">
+        {list.map((l, i) => (
+          <Link key={i} to={eventPath(l.event)} className="k-answer">
+            <span className="pt-grow"><Bi phrase t={l.label} />
+              <span className="pt-hint">{l.card_ids.map((id, j) => { const x = cards.find((y) => y.id === id); return x ? <span key={id}>{j > 0 && '・'}<One t={x.title} /></span> : null; })}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+      <p className="sub"><Bi k="card.moveLinksNote" /></p>
+    </section>
+  );
 }
 function NotFound() {
   return (
@@ -65,7 +124,7 @@ function NotFound() {
 const tel = (n: string) => n.replace(/[^0-9+#]/g, '').replace(/#/g, '%23');
 const ExtMark = () => <><span aria-hidden="true" className="clinic__extmark">↗</span><span className="sr-only"><One k="clinic.newTab" /></span></>;
 
-function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string) => void; g: CardGuide; paths: CardPaths }) {
+function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s: string) => void; g: CardGuide; paths: CardPaths; goalQ?: Question }) {
   const { level } = usePrefs();
   const [mode, setMode] = useState<Mode>({ kind: 'main' });
   const [last, setLast] = useState<Last | null>(null);
@@ -109,12 +168,17 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
         </div>
         {/* 日を変えるときは、この項目だけ。初めて決めるときは、同じ所の項目も一緒に聞く */}
         <DayChoice group={c.plan?.planned_on ? [c] : visitGroup(g.out.cards, c)} today={g.today}
-          onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d }); onLive(L('day.set') + fmtDay(d, level)); setLast({ kind: 'planned', cardId: c.card.id, day: d, ids }); setMode({ kind: 'main' }); }}
+          onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d, deferred: false }); onLive(L('day.set') + fmtDay(d, level)); setLast({ kind: 'planned', cardId: c.card.id, day: d, ids }); setMode({ kind: 'main' }); }}
           onLater={() => setMode({ kind: 'main' })} />
       </>
     );
   }
-  const answer = async (q: Question, v: Value) => { await g.answer(q.id, v); setLast({ kind: 'answered', cardId: c.card.id, q }); setMode({ kind: 'main' }); };
+  const answer = async (q: Question, v: Value) => {
+    await g.answer(q.id, v);
+    // 目的を選び直した：できごとの入口へ（新しい目的の手続きへ進む）
+    if (goalQ && q.id === goalQ.id) { navigate(paths.now); return; }
+    setLast({ kind: 'answered', cardId: c.card.id, q }); setMode({ kind: 'main' });
+  };
   if (mode.kind === 'redo') {
     // 答えを変える：その質問をもう一度聞く
     return (
@@ -136,6 +200,7 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
     <>
       <ChangeLine last={last} cards={g.out.cards} onUndo={(q) => setMode({ kind: 'redo', q })} />
       <FocusCard c={c} title />
+      {c.goal && <p className="eyebrow"><One k="card.goalBadge" /></p>}
       {/* 理由の一文。「次の答えによって…」は、すぐ下に質問があるので出さない（K-44） */}
       {!isGuide && c.state !== 'ask' && <p className="sub"><Bi phrase t={whyText(c)} /></p>}
       <SectionWhy c={c} />
@@ -187,8 +252,20 @@ function CardPageView({ id, onLive, g, paths }: { id: string; onLive: (s: string
           {!isGuide && c.plan?.status === 'done' && (
             <button type="button" className="k-answer" onClick={() => { void g.setPlan(c.card.id, { status: 'todo' }); onLive(L('card.recordedUndone')); }}><Bi phrase k="card.undone" /></button>
           )}
+          {/* 本人が「あとでする」（v0.5.30）：自動の「あとで」と分けて記録し、いつでも再開できる */}
+          {c.plan?.deferred && c.plan.status !== 'done' && (
+            <button type="button" className="k-answer" onClick={() => { void g.setPlan(c.card.id, { deferred: false }); onLive(L('card.resumed')); }}><Bi phrase k="card.resume" /></button>
+          )}
+          {canPlan && !c.plan?.planned_on && !c.plan?.deferred && c.plan?.status !== 'done' && (c.section === 'today' || c.section === 'check') && (
+            <button type="button" className="k-answer k-answer--small" onClick={() => { void g.setPlan(c.card.id, { deferred: true }); onLive(L('card.deferred')); }}><Bi phrase k="card.defer" /></button>
+          )}
+          {goalQ && (
+            <button type="button" className="link" onClick={() => setMode({ kind: 'redo', q: goalQ })}><Bi k="card.goalChange" /></button>
+          )}
         </div>
       )}
+      {c.card.parts && c.card.kind === 'guide' && (c.state === 'shown' || c.state === 'check_at_office') && <PartsList c={c} g={g} base={paths.card} onLive={onLive} />}
+      <EventLinks c={c} />
       {/* ほかの公式ページ（K-12・K-13）。最初の1つは上のボタン */}
       {c.card.links && c.card.links.length > 1 && (
         <ul className="clinic__links" role="list">

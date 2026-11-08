@@ -209,5 +209,114 @@
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check"
-  }
+  },
+  "parts": [
+    {
+      "id": "keys",
+      "label": {
+        "ja": "{鍵|かぎ}を{受|う}け{取|と}る・{部屋|へや}の{傷|きず}と{設備|せつび}を{確|たし}かめる（{写真|しゃしん}）",
+        "ja_easy": "{鍵|かぎ}をもらう・{部屋|へや}の{傷|きず}を{見|み}る（{写真|しゃしん}）",
+        "en": "Get the key and check damage and fittings (photos)"
+      }
+    },
+    {
+      "id": "electricity",
+      "label": {
+        "ja": "{電気|でんき}",
+        "ja_easy": "{電気|でんき}",
+        "en": "Electricity"
+      },
+      "card": "life-electricity"
+    },
+    {
+      "id": "gas",
+      "label": {
+        "ja": "ガス",
+        "ja_easy": "ガス",
+        "en": "Gas"
+      },
+      "card": "life-gas"
+    },
+    {
+      "id": "water",
+      "label": {
+        "ja": "{水道|すいどう}",
+        "ja_easy": "{水道|すいどう}",
+        "en": "Water"
+      },
+      "card": "life-water"
+    },
+    {
+      "id": "internet",
+      "label": {
+        "ja": "インターネット",
+        "ja_easy": "インターネット",
+        "en": "Internet"
+      },
+      "card": "life-internet"
+    },
+    {
+      "id": "mail",
+      "label": {
+        "ja": "{郵便|ゆうびん}の{転送|てんそう}",
+        "ja_easy": "{郵便|ゆうびん}の{転送|てんそう}",
+        "en": "Mail forwarding"
+      }
+    },
+    {
+      "id": "address",
+      "label": {
+        "ja": "{住所|じゅうしょ}の{届|とど}け{出|で}（{区役所|くやくしょ}など）",
+        "ja_easy": "{住所|じゅうしょ}の{届|とど}け（{区役所|くやくしょ}など）",
+        "en": "Address notification (ward office etc.)"
+      }
+    }
+  ],
+  "event_links": [
+    {
+      "event": "E-move",
+      "label": {
+        "ja": "{国外|こくがい}から{名古屋|なごや}へ",
+        "ja_easy": "{外国|がいこく}から{名古屋|なごや}へ",
+        "en": "From abroad to Nagoya"
+      },
+      "card_ids": [
+        "nagoya-tennyu-juukyochi"
+      ]
+    },
+    {
+      "event": "E-move",
+      "label": {
+        "ja": "ほかの{市町村|しちょうそん}から{名古屋|なごや}へ",
+        "ja_easy": "ほかの{町|まち}から{名古屋|なごや}へ",
+        "en": "From another city or town to Nagoya"
+      },
+      "card_ids": [
+        "move-out-notice",
+        "nagoya-tennyu-todoke"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{同|おな}じ{区|く}の{中|なか}",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{同|おな}じ{区|く}",
+        "en": "Within Nagoya, inside the same ward"
+      },
+      "card_ids": [
+        "move-within-tenkyo"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "en": "Within Nagoya, to another ward"
+      },
+      "card_ids": [
+        "move-within-tennyu"
+      ]
+    }
+  ]
 }

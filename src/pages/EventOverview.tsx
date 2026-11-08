@@ -8,14 +8,14 @@
 import { Fragment, useState } from 'react';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
-import { needsCheck, partViews, phaseViews, prereqFrom, rollup, STATUS_OF, trackOf, TRACKS, urgentOpen, type Track } from '../core/overview';
+import { needsCheck, partViews, phaseViews, prereqFrom, rollup, STATUS_OF, trackOf, tracked, TRACKS, urgentOpen, type Track } from '../core/overview';
 import type { Text, Value } from '../core/schema';
 import type { EventGuide } from '../guide/useEvent';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art, artDim } from '../ui/art';
-import { Answers, WhyAsked } from '../ui/guide';
+import { afterText, Answers, WhyAsked } from '../ui/guide';
 import { Contacts, MultiPick } from '../ui/patterns';
 import { toContact, toPickOptions } from '../ui/patterns/map';
 import { Link, useFocusTitle } from '../ui/router';
@@ -23,7 +23,7 @@ import { Link, useFocusTitle } from '../ui/router';
 const TRACK_KEY: Record<Track, UiKey> = { todo: 'ov.track.todo', doing: 'ov.track.doing', done: 'ov.track.done', na: 'ov.track.na' };
 
 /** 状態を選ぶ。見える名前（label）を読み上げの名前の頭に入れる（WCAG 2.5.3） */
-function TrackSelect({ label, name, value, onChange }: { label: Text | UiKey; name: string; value: Track; onChange: (t: Track) => void }) {
+export function TrackSelect({ label, name, value, onChange }: { label: Text | UiKey; name: string; value: Track; onChange: (t: Track) => void }) {
   const { level } = usePrefs();
   const text = typeof label === 'string' ? line(ui(label), level) : line(label, level);
   return (
@@ -84,10 +84,12 @@ function Item({ g, c, base, onLive }: { g: EventGuide; c: CardView; base: string
         {needsCheck(c) && <span className="k-state k-state--check"><span aria-hidden="true">？</span><One k="ov.check" /></span>}
       </Link>
       {urgent && c.card.urgent && <Contacts list={c.card.urgent.contacts.map(toContact)} />}
+      {/* 段の after：〇〇のあとで（v0.5.30） */}
+      {c.sectionWhy === 'after_card' && afterText(c) && <p className="ov-item__pre"><One t={afterText(c)!} /></p>}
       {pre.length > 0 && track !== 'done' && (
         <p className="ov-item__pre"><One k="ov.prereq" />{pre.map((p, i) => <span key={p.card.id}>{i > 0 && '・'}<One t={p.card.title} /></span>)}</p>
       )}
-      {parts.length > 0 ? (
+      {!tracked(c) ? null : parts.length > 0 ? (
         <div className="ov-parts">
           {parts.map((p) => (
             <div key={p.id} className="ov-part">
@@ -163,7 +165,7 @@ export function EventOverview({ g, onLive }: { g: EventGuide; onLive: (s: string
       })}
       <div className="links">
         <Link to={base + '/step'} className="k-answer"><Bi phrase k="ov.step" /></Link>
-        <button type="button" className="link" onClick={() => setRedo(true)}><Bi k="ov.redo" /></button>
+        {g.event.questions.length > 0 && <button type="button" className="link" onClick={() => setRedo(true)}><Bi k="ov.redo" /></button>}
       </div>
     </>
   );

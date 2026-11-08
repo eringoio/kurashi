@@ -57,7 +57,7 @@ const guideProgress = (v: Pick<Vault, 'entries'>) => (['profile', 'plan', 'objec
 
 /** 入口の出し分けの入力（6A.1）。保存した進捗から作る */
 function entryOf(g: Guide, resume: Resume | null, hasProgress: boolean, v: Pick<Vault, 'entries'>) {
-  const open = g.out.cards.filter((c) => c.section && c.section !== 'later');
+  const open = g.out.cards.filter((c) => c.section && c.section !== 'later' && c.section !== 'info');
   return chooseEntry({
     today: g.today, url: null, resume, hasProgress,
     // 生活イベント（/e/...）で決めた行く日も入れる（引っ越しの plan と同じに扱う）

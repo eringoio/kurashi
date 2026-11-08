@@ -14,6 +14,8 @@ const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1
 const out = (event = ev) => run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event });
 const card = (id: string) => data.cards.find((c) => c.id === id)!;
 const IDS = ['housing-search', 'housing-contract-check', 'housing-initial-costs', 'housing-guarantor', 'housing-move-in', 'housing-move-out', 'housing-public'];
+/** 電気・ガス・水道・インターネット（v0.5.30。引っ越しのできごとからも使う） */
+const LIFE = ['life-electricity', 'life-gas', 'life-water', 'life-internet'];
 
 describe('住まい探し（下書き）', () => {
   it('型と参照の検査を通る。確認済み（verified）は作者の答え（2026-11-07）だけ', () => {
@@ -24,7 +26,7 @@ describe('住まい探し（下書き）', () => {
   });
   it('入口のメニュー（menu 8・group housing・built）と7枚', () => {
     expect(ev).toMatchObject({ menu: 8, group: 'housing', status: 'built' });
-    expect(ev.card_ids).toEqual(IDS);
+    expect(ev.card_ids).toEqual([...IDS, ...LIFE]);
     expect(ev.questions).toEqual([]);
   });
   it('3表示レベルの文がそろい、電話番号を書いていない', () => {
@@ -38,10 +40,14 @@ describe('住まい探し（下書き）', () => {
     const o = out();
     expect(o.scope).toBe('T');
     expect(o.upfront).toEqual([]);
-    expect(o.cards.map((c) => c.card.id).sort()).toEqual([...IDS].sort());
+    expect(o.cards.map((c) => c.card.id).sort()).toEqual([...IDS, ...LIFE].sort());
     expect(o.cards.every((c) => c.state === 'shown')).toBe(true);
     expect(o.cards.every((c) => c.dayRule.kind === 'no_day')).toBe(true);
-    expect(nowStep(o, TODAY).kind).toBe('idle');
+    // v0.5.30：部屋の探し方は目的の手続き（いま）。公的住宅・費用・保証・契約・ライフラインは関連する情報（あとでにしない）
+    const st = nowStep(o, TODAY);
+    expect(st.kind === 'goal' && st.view.card.id).toBe('housing-search');
+    expect(o.cards.filter((c) => c.section === 'later')).toEqual([]);
+    expect(o.cards.find((c) => c.card.id === 'housing-public')!.section).toBe('info');
   });
   it('当てはまらない：ほかのイベントの経路には、住まいのカードが出ない', () => {
     const move = data.events.find((e) => e.id === 'E-move')!;
@@ -51,7 +57,8 @@ describe('住まい探し（下書き）', () => {
   it('当てはまらない：住まいのイベントの事実でなければ、7枚は「対象外」', () => {
     const other = { ...ev, facts: [{ fact: 'event', value: 'bank' }] };
     const o = out(other);
-    expect(o.cards.every((c) => c.state === 'excluded')).toBe(true);
+    expect(o.cards.filter((c) => IDS.includes(c.card.id)).every((c) => c.state === 'excluded')).toBe(true);
+    expect(o.cards.filter((c) => c.state === 'shown')).toEqual([]);
   });
   it('境目：保証料は「会社によって違う」で、重なる2つの例を書く（固定の額にしない）', () => {
     const t = plain(card('housing-guarantor').summary.ja);

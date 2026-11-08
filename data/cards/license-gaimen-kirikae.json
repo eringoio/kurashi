@@ -231,5 +231,16 @@
     "checked_at": "2026-11-06",
     "status": "needs_check",
     "quote": "外国等の行政庁等の免許を受けている方は、その免許で運転することができる自動車等に関する日本の免許を、試験の一部免除により取得する手続を申請することができます"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{愛知県警察|あいちけんけいさつ}：{試験場|しけんじょう}での{外国|がいこく}{免許|めんきょ}の{切替|きりか}え（{予約制|よやくせい}）",
+        "ja_easy": "{愛知県|あいちけん}の{警察|けいさつ}：{外国|がいこく}の{免許|めんきょ}の{切|き}り{替|か}え（{予約|よやく}が{要|い}ります）",
+        "en": "Aichi Police: switching a foreign licence at the test centre (reservation required)"
+      },
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/menkyoshiken/gaimenkirikaejyo.html",
+      "source_id": "aichi-police-gaimen-hirabari"
+    }
+  ]
 }

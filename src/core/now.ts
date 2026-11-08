@@ -7,6 +7,8 @@ export type NowStep =
   | { kind: 'upfront'; q: Question }
   | { kind: 'card_q'; view: CardView; q: Question }
   | { kind: 'plan'; view: CardView }
+  /** 目的の手続き（本人が選んだ。v0.5.30）：日を聞く前に、その手続きの説明（対象・書類・方法）を開く */
+  | { kind: 'goal'; view: CardView }
   | { kind: 'wait'; view: CardView }
   | { kind: 'today'; views: CardView[] }
   | { kind: 'until'; views: CardView[] }
@@ -24,12 +26,17 @@ export function nowStep(o: EngineOutput, today: string, { urgentFirst = true }: 
   // 1. 答えるとわかること（まだわからない）
   for (const c of byQ) if (c.state === 'ask' && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
   // 2. いま・確かめる項目の中の質問（住み始めたか、など）
-  for (const c of byQ) if ((c.section === 'today' || c.section === 'check' || c.section === 'later') && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
+  for (const c of byQ) if ((c.section === 'today' || c.section === 'check' || c.section === 'later') && !c.plan?.deferred && c.questions.length) return { kind: 'card_q', view: c, q: c.questions[0] };
   // 3. 今日が行く日（K-35）：今日の予定（/today と同じ項目）。「日を決める」より先に出す（今日の予定を隠さない）
   const due = agendaToday(o, today);
   if (due.length) return { kind: 'today', views: due };
-  // 4. 日が決まっていない、いま・確かめる項目
-  for (const c of open) if ((c.section === 'today' || c.section === 'check') && !c.plan?.planned_on && c.dayRule.kind !== 'no_day') return { kind: 'plan', view: c };
+  // 4. 日が決まっていない、いま・確かめる項目。目的の手続き（goal）は、日を聞く前に説明を開く（v0.5.30）。
+  //    並びはエンジンの順（法令の義務 → 目的 → ほか）なので、期限のある義務は目的より先に出る
+  for (const c of open) {
+    if (c.section !== 'today' && c.section !== 'check') continue;
+    if (c.goal && c.section === 'today' && !c.plan?.planned_on && (c.plan?.status ?? 'todo') === 'todo') return { kind: 'goal', view: c };
+    if (!c.plan?.planned_on && c.dayRule.kind !== 'no_day') return { kind: 'plan', view: c };
+  }
   // 5. 届くのを待っている
   for (const c of open) if (c.section === 'wait') return { kind: 'wait', view: c };
   // 6. 約束した日を待つ（今日より後の日だけ。今日の日は 3 で出す）

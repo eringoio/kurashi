@@ -59,7 +59,11 @@
       "card_ids": [
         "move-within-tenkyo",
         "move-within-tennyu",
-        "mail-forward"
+        "mail-forward",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
       ],
       "evidence": {
         "source_ids": [
@@ -75,7 +79,13 @@
           "ja_easy": "{引|ひ}っ{越|こ}しのごみを{調|しら}べる",
           "en": "Check garbage from your move (what kind of garbage is this?)"
         }
-      }
+      },
+      "info_card_ids": [
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
+      ]
     },
     {
       "id": "E-bank",
@@ -114,7 +124,14 @@
         ],
         "checked_at": "2026-11-04",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "bank-account-open"
+      ],
+      "info_card_ids": [
+        "bank-card-stop",
+        "bank-card-reissue"
+      ]
     },
     {
       "id": "E-job",
@@ -185,7 +202,10 @@
         ],
         "checked_at": "2026-11-05",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "job-kyujin"
+      ]
     },
     {
       "id": "E-stay-renew",
@@ -247,7 +267,11 @@
         "housing-guarantor",
         "housing-move-in",
         "housing-move-out",
-        "housing-public"
+        "housing-public",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
       ],
       "scope_rule": "R-house-scope",
       "evidence": {
@@ -256,7 +280,83 @@
         ],
         "checked_at": "2026-11-04",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "housing-search"
+      ],
+      "info_card_ids": [
+        "housing-public",
+        "housing-initial-costs",
+        "housing-guarantor",
+        "housing-contract-check",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
+      ],
+      "phases": [
+        {
+          "id": "search",
+          "title": {
+            "ja": "{部屋|へや}を{探|さが}す",
+            "ja_easy": "{部屋|へや}を{探|さが}す",
+            "en": "Find a room"
+          },
+          "note": {
+            "ja": "{民間|みんかん}の{部屋|へや}のほかに、{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}も{選|えら}べます（{条件|じょうけん}あり）。",
+            "ja_easy": "{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}もあります（{条件|じょうけん}があります）。",
+            "en": "Besides private rooms, city, prefectural and UR housing are also options (conditions apply)."
+          },
+          "card_ids": [
+            "housing-search",
+            "housing-public"
+          ]
+        },
+        {
+          "id": "contract",
+          "title": {
+            "ja": "{申|もう}し{込|こ}み・{契約|けいやく}の{前|まえ}",
+            "ja_easy": "{申|もう}し{込|こ}む・{契約|けいやく}する{前|まえ}",
+            "en": "Before you apply and sign"
+          },
+          "card_ids": [
+            "housing-initial-costs",
+            "housing-guarantor",
+            "housing-contract-check"
+          ]
+        },
+        {
+          "id": "move_in",
+          "title": {
+            "ja": "{入居|にゅうきょ}のとき",
+            "ja_easy": "{部屋|へや}に{入|はい}るとき",
+            "en": "When you move in"
+          },
+          "card_ids": [
+            "housing-move-in",
+            "life-electricity",
+            "life-gas",
+            "life-water",
+            "life-internet"
+          ]
+        },
+        {
+          "id": "move_out",
+          "title": {
+            "ja": "{部屋|へや}を{出|で}るとき",
+            "ja_easy": "{部屋|へや}を{出|で}るとき",
+            "en": "When you move out"
+          },
+          "note": {
+            "ja": "{電気|でんき}・ガス・{水道|すいどう}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{入居|にゅうきょ}のときの{各|かく}{案内|あんない}にあります。",
+            "ja_easy": "{電気|でんき}・ガス・{水|みず}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{案内|あんない}にあります。",
+            "en": "How to stop electricity, gas, water and internet is in the guides under \"When you move in\" above."
+          },
+          "card_ids": [
+            "housing-move-out"
+          ]
+        }
+      ]
     },
     {
       "id": "E-gomi",
@@ -325,7 +425,11 @@
         "move-out-abroad-hoken-nenkin",
         "move-other-tenshutsu",
         "move-other-tennyu",
-        "move-other-after"
+        "move-other-after",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
       ],
       "scope_rule": "R-mo-scope",
       "evidence": {
@@ -342,7 +446,13 @@
           "ja_easy": "{引|ひ}っ{越|こ}しのごみを{調|しら}べる",
           "en": "Check garbage from your move (what kind of garbage is this?)"
         }
-      }
+      },
+      "info_card_ids": [
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
+      ]
     },
     {
       "id": "E-marriage",
@@ -385,7 +495,62 @@
         ],
         "checked_at": "2026-11-05",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "marriage-konin-todoke"
+      ],
+      "phases": [
+        {
+          "id": "before",
+          "title": {
+            "ja": "{結婚|けっこん}する{前|まえ}",
+            "ja_easy": "{結婚|けっこん}する{前|まえ}",
+            "en": "Before you marry"
+          },
+          "note": {
+            "ja": "{条件|じょうけん}と{書類|しょるい}を{確|たし}かめます。",
+            "ja_easy": "{条件|じょうけん}と{書類|しょるい}を{見|み}ます。",
+            "en": "Check the conditions and documents."
+          },
+          "card_ids": [
+            "marriage-konin-gaikokuseki"
+          ]
+        },
+        {
+          "id": "todoke",
+          "title": {
+            "ja": "{婚姻届|こんいんとどけ}を{出|だ}す",
+            "ja_easy": "{婚姻届|こんいんとどけ}を{出|だ}す",
+            "en": "Submit the marriage registration"
+          },
+          "card_ids": [
+            "marriage-konin-todoke"
+          ]
+        },
+        {
+          "id": "after",
+          "title": {
+            "ja": "{結婚|けっこん}したあと（{当|あ}てはまる{人|ひと}だけ）",
+            "ja_easy": "{結婚|けっこん}したあと（{関係|かんけい}する{人|ひと}だけ）",
+            "en": "After you marry (only if it applies)"
+          },
+          "note": {
+            "ja": "{婚姻届|こんいんとどけ}を{出|だ}したあとに{生|しょう}じます。{期限|きげん}は、{婚姻届|こんいんとどけ}を{出|だ}した{日|ひ}からではなく、それぞれの{変更|へんこう}が{生|しょう}じた{日|ひ}から{数|かぞ}えるものがあります（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{婚姻届|こんいんとどけ}のあとにします。いつから{数|かぞ}えるかは、それぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
+            "en": "These arise after the marriage registration. Some deadlines count from the day each change happened, not the day you submitted the registration (to be confirmed)."
+          },
+          "card_ids": [
+            "marriage-zairyu-shimei",
+            "marriage-mynumber-card",
+            "marriage-seitai-henko",
+            "marriage-hoken-nenkin",
+            "marriage-ujino-henkou"
+          ],
+          "after": [
+            "marriage-konin-todoke"
+          ]
+        }
+      ]
     },
     {
       "id": "E-familyship",
@@ -419,7 +584,10 @@
         ],
         "checked_at": "2026-11-05",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "marriage-familyship"
+      ]
     },
     {
       "id": "E-divorce",
@@ -458,7 +626,47 @@
         ],
         "checked_at": "2026-11-05",
         "status": "needs_check"
-      }
+      },
+      "goal_card_ids": [
+        "divorce-kyogi",
+        "divorce-saiban"
+      ],
+      "phases": [
+        {
+          "id": "todoke",
+          "title": {
+            "ja": "{離婚|りこん}の{届|とど}け",
+            "ja_easy": "{離婚|りこん}の{届|とど}け",
+            "en": "Divorce registration"
+          },
+          "card_ids": [
+            "divorce-kyogi",
+            "divorce-saiban"
+          ]
+        },
+        {
+          "id": "after",
+          "title": {
+            "ja": "{離婚|りこん}したあと（{当|あ}てはまる{人|ひと}だけ）",
+            "ja_easy": "{離婚|りこん}したあと（{関係|かんけい}する{人|ひと}だけ）",
+            "en": "After the divorce (only if it applies)"
+          },
+          "note": {
+            "ja": "{離婚|りこん}の{届|とど}けのあとに{生|しょう}じます。{期限|きげん}の{数|かぞ}え{方|かた}はそれぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{離婚|りこん}の{届|とど}けのあとにします（{要|よう}{確認|かくにん}）。",
+            "en": "These arise after the divorce registration. Deadlines are counted differently for each (to be confirmed)."
+          },
+          "card_ids": [
+            "divorce-nyukan-todoke",
+            "divorce-jusho-hoken-nenkin",
+            "divorce-shimei"
+          ],
+          "after": [
+            "divorce-kyogi",
+            "divorce-saiban"
+          ]
+        }
+      ]
     },
     {
       "id": "E-lost-wallet",
@@ -608,7 +816,17 @@
         "checked_at": "2026-11-06",
         "status": "needs_check"
       },
-      "menu": 13
+      "menu": 13,
+      "goal_card_ids": [
+        "license-shinki",
+        "license-gaimen-kirikae",
+        "license-koshin",
+        "license-kisai-henko",
+        "license-saikofu"
+      ],
+      "info_card_ids": [
+        "license-kokusai"
+      ]
     }
   ]
 }

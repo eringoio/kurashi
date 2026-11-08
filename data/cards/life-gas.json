@@ -1,0 +1,128 @@
+{
+  "id": "life-gas",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lifeline",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "ガスを{使|つか}い{始|はじ}める・やめる",
+    "ja_easy": "ガスを{使|つか}い{始|はじ}める・やめる",
+    "en": "Start or stop gas"
+  },
+  "official_name": {
+    "ja": "ガスの開栓・閉栓の申し込み",
+    "reading": "がすのかいせん・へいせんのもうしこみ"
+  },
+  "summary": {
+    "ja": "ガスの{会社|がいしゃ}は{家|いえ}によって{違|ちが}います。どこに{連絡|れんらく}するかは{不動産|ふどうさん}{会社|がいしゃ}に{聞|き}きます。{入居日|にゅうきょび}の{前|まえ}にガス{会社|がいしゃ}へ{連絡|れんらく}して、{開栓|かいせん}を{頼|たの}みます。{開栓|かいせん}の{作業|さぎょう}には{立会|たちあ}いが{必要|ひつよう}です。{退去|たいきょ}するときも、やめる{日|ひ}をガス{会社|がいしゃ}に{知|し}らせます（{要|よう}{確認|かくにん}）。{混|こ}む{時期|じき}は{希望|きぼう}の{日|ひ}にならないことがあるので、{早|はや}めに{申|もう}し{込|こ}みます（ガス{会社|がいしゃ}の1つの{例|れい}。{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ガスの{会社|かいしゃ}は{家|いえ}によって{違|ちが}います。{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。{入|はい}る{前|まえ}に、ガスの{会社|かいしゃ}に{電話|でんわ}などで{頼|たの}みます。ガスを{始|はじ}める{日|ひ}は、{家|いえ}にいる{必要|ひつよう}があります。{出|で}るときも、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "en": "The gas company depends on the building. Ask the real estate agent whom to contact. Before you move in, contact the gas company and ask them to open the gas. Someone must be present for this work. When you move out, tell the gas company the day you stop (to be confirmed). In busy periods you may not get the day you want, so apply early (one gas company's example; to be confirmed)."
+  },
+  "lead": {
+    "ja": "ガス{会社|がいしゃ}に{連絡|れんらく}します。{使|つか}い{始|はじ}めるときの{開栓|かいせん}には、{立会|たちあ}いが{要|い}ります。",
+    "ja_easy": "ガスの{会社|かいしゃ}に{連絡|れんらく}します。{始|はじ}めるときは、{家|いえ}にいる{必要|ひつよう}があります。",
+    "en": "Contact the gas company. Someone must be present when the gas is opened."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{不動産|ふどうさん}{会社|がいしゃ}（{電気|でんき}・ガス・{水道|すいどう}などの{連絡先|れんらくさき}を{聞|き}きます）",
+      "ja_easy": "{不動産|ふどうさん}の{会社|かいしゃ}（{電気|でんき}・ガス・{水|みず}の{連絡先|れんらくさき}を{聞|き}きます）",
+      "en": "The real estate agent (ask whom to contact for electricity, gas and water)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "Ask the real estate agent whom to contact for each of the above services.",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "ガス：{入居日|にゅうきょび}の{前|まえ}にガス{会社|がいしゃ}へ{連絡|れんらく}して、{開栓|かいせん}を{頼|たの}みます。{開栓|かいせん}には{本人|ほんにん}の{立会|たちあ}いが{必要|ひつよう}です。",
+        "ja_easy": "ガス：{入|はい}る{日|ひ}の{前|まえ}にガス{会社|がいしゃ}へ{連絡|れんらく}して、ガスを{使|つか}えるようにしてもらいます。その{日|ひ}は、{自分|じぶん}がその{場|ば}にいます。",
+        "en": "Gas: contact the gas company before the move-in date and ask to have the gas turned on. You must be present when it is turned on."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "For gas, contact a gas company ahead of time and request that the gas be turned on before the move-in date. You must be present when the gas is turned on.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c4"
+        }
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{例|れい}：{東邦|とうほう}ガスは、{引|ひ}っ{越|こ}しの{日|ひ}に{開栓|かいせん}の{立会|たちあ}いが{要|い}ると{書|か}いています。ほかの{会社|かいしゃ}の{方法|ほうほう}は、その{会社|かいしゃ}に{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{例|れい}：{東邦|とうほう}ガスでは、ガスを{始|はじ}める{日|ひ}に{家|いえ}にいる{必要|ひつよう}があります。ほかの{会社|かいしゃ}は、その{会社|かいしゃ}に{聞|き}きます。",
+        "en": "Example: Toho Gas says someone must be present for opening on moving day. For other companies, ask that company (to be confirmed)."
+      },
+      "evidence": {
+        "source_ids": [
+          "tohogas-hikkoshi-checklist"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "引越し当日 ガスの開栓作業のお立会い ガスの開栓作業はお立会いが必要です。"
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{例|れい}：{東邦|とうほう}ガスの{引|ひ}っ{越|こ}しのチェックリスト",
+        "ja_easy": "{例|れい}：{東邦|とうほう}ガスの{引|ひ}っ{越|こ}しの{案内|あんない}",
+        "en": "Example: Toho Gas moving checklist"
+      },
+      "url": "https://www.tohogas.co.jp/home/hikkoshi/checklist/",
+      "source_id": "tohogas-hikkoshi-checklist"
+    }
+  ],
+  "keywords": [
+    "がす",
+    "ガス",
+    "開栓",
+    "かいせん",
+    "立会い",
+    "gas",
+    "open gas",
+    "stop gas"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en",
+      "tohogas-hikkoshi-checklist"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "引越し当日 ガスの開栓作業のお立会い ガスの開栓作業はお立会いが必要です。"
+  }
+}

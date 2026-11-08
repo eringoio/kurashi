@@ -22,11 +22,11 @@ import { HOLIDAYS, HOURS, type PlaceHours } from '../core/calendarData';
 import { Rate } from './Rate';
 
 /** 一覧での状態（SPEC 15.2：色＋形＋文字。形は印の文字と枠の線） */
-export type StateKey = 'today' | 'check' | 'ask' | 'wait' | 'later' | 'done' | 'excluded' | 'out';
+export type StateKey = 'today' | 'check' | 'ask' | 'wait' | 'later' | 'info' | 'done' | 'excluded' | 'out';
 export const stateKey = (c: CardView): StateKey =>
   c.state === 'excluded' ? 'excluded' : c.state === 'out_of_scope' ? 'out' : c.state === 'ask' ? 'ask' : (c.section ?? 'later');
-const MARK: Record<StateKey, string> = { today: '●', check: '！', ask: '？', wait: '…', later: '→', done: '✓', excluded: '×', out: '−' };
-const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', done: 'done', excluded: 'out', out: 'out' };
+const MARK: Record<StateKey, string> = { today: '●', check: '！', ask: '？', wait: '…', later: '→', info: 'i', done: '✓', excluded: '×', out: '−' };
+const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', info: 'info', done: 'done', excluded: 'out', out: 'out' };
 
 /** 「いま」の印の言葉は、義務の強さで分ける（AI レビューの指摘：すすめ・案内まで「必要」と言い切らない）。
     legal・local_rule：必要／practical：したほうがよい／check・optional・none：案内 */
@@ -110,7 +110,7 @@ export function QuestionBlock({ q, onPick }: { q: Question; onPick: (v: Value) =
 /** note：名前の下に出す短い文（関係なかったものの理由など。K-28） */
 export function CardRow({ c, extra, current, base = '/c/', check, compact, note }: { c: CardView; extra?: ReactNode; current?: boolean; base?: string; check?: { done: boolean; onToggle: () => void }; compact?: boolean; note?: ReactNode }) {
   const k = stateKey(c);
-  const dim = k === 'ask' || k === 'excluded' || k === 'out' || k === 'later';
+  const dim = k === 'ask' || k === 'excluded' || k === 'out' || k === 'later' || k === 'info';
   const { level } = usePrefs();
   return (
     <li className={check ? 'row-check' : undefined}>
@@ -180,9 +180,15 @@ export function whyText(c: CardView): LocalizedText {
   }
   return c.reasonRules[0]?.statement ? briefText(c.reasonRules[0].statement) as LocalizedText : cardLead(c.card) as LocalizedText;
 }
-const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace' } as const;
+const SECTION_WHY = { moved_in_not_yet: 'why.movedNotYet', moved_in_unknown: 'why.movedUnknown', moved_in_unanswered: 'why.movedUnanswered', after_prereq: 'why.afterPrereq', visit_need_document: 'why.visitNeedDocument', visit_wrong_place: 'why.visitWrongPlace', deferred: 'why.deferred' } as const;
+/** 「〇〇のあとで」の文（段の after。v0.5.30）。手続きの名前を入れる */
+export function afterText(c: CardView): Text | null {
+  const from = c.afterFrom ? DATA().cards.find((x) => x.id === c.afterFrom) : undefined;
+  return from ? fill(ui('why.afterCard'), 'card', (_lv, k) => String(from.title[k] ?? from.title.ja)) : null;
+}
 export function SectionWhy({ c }: { c: CardView }) {
   if (!c.sectionWhy || c.sectionWhy === 'answer' || c.sectionWhy === 'waits') return null;
+  if (c.sectionWhy === 'after_card') { const t = afterText(c); return t ? <p className="sub"><Bi t={t} /></p> : null; }
   return <p className="sub"><Bi k={SECTION_WHY[c.sectionWhy]} /></p>;
 }
 
@@ -527,11 +533,11 @@ export function ChangeLine({ last, cards, onUndo, onChangeDay }: { last: Last | 
 }
 
 /** いまの1つ（Now・EventNow）で使う：答える・日を決める・聞き直す。結果の画面は出さない */
-export function useChange(g: { out: EngineOutput; answer(qid: string, v: Value): Promise<void>; setPlans(ids: string[], p: { planned_on: string }): Promise<void> }) {
+export function useChange(g: { out: EngineOutput; answer(qid: string, v: Value): Promise<void>; setPlans(ids: string[], p: { planned_on: string; deferred?: boolean }): Promise<void> }) {
   const [last, setLast] = useState<Last | null>(null);
   const [redo, setRedo] = useState<Redo | null>(null);
   const answer = async (cardId: string, q: Question, v: Value) => { await g.answer(q.id, v); setRedo(null); setLast({ kind: 'answered', cardId, q }); };
-  const plan = async (cardId: string, d: string, ids: string[]) => { await g.setPlans(ids, { planned_on: d }); setRedo(null); setLast({ kind: 'planned', cardId, day: d, ids }); };
+  const plan = async (cardId: string, d: string, ids: string[]) => { await g.setPlans(ids, { planned_on: d, deferred: false }); setRedo(null); setLast({ kind: 'planned', cardId, day: d, ids }); };
   const line = redo ? null : <ChangeLine last={last} cards={g.out.cards} onUndo={(q) => last && setRedo({ kind: 'q', cardId: last.cardId, q })} onChangeDay={(id) => setRedo({ kind: 'day', cardId: id })} />;
   return { last, redo, setRedo, setLast, answer, plan, line };
 }
@@ -579,4 +585,4 @@ export function ResultView({ eyebrow, title, sub, onNext, children, rate }: { ey
   );
 }
 
-export const SECTION_ORDER: Section[] = ['today', 'check', 'wait', 'later', 'done'];
+export const SECTION_ORDER: Section[] = ['today', 'check', 'wait', 'later', 'info', 'done'];

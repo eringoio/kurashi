@@ -276,10 +276,10 @@ describe('INT-003 警察：提出・受理確認待ち・受理確認済みを�
 });
 
 describe('LOSS_008 見つかったとき：発見・停止・廃止・再交付を分ける', () => {
-  it('「あとで」に出し、全員の「いま」にしない。選んだ物の案内だけを出す', () => {
+  it('関連する情報に出し、全員の「いま」にしない。選んだ物の案内だけを出す', () => {
     const o = out({ ...base, 'Q-lost-items': ['mynumber_card'] });
     const f = view(o, 'lost-found-later');
-    expect(f.section).toBe('later');
+    expect(f.section).toBe('info'); // v0.5.30：もしものときの案内は関連する情報;
     const t = methodText(o, 'lost-found-later').join();
     expect(t).toContain('一時停止を解除');
     expect(t).not.toContain('在留カード');

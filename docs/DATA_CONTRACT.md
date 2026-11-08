@@ -133,3 +133,12 @@ SPEC v0.4.9 の決定の範囲だけを足す。今のデータはそのまま�
 - **共通の質問 `Q-nationality`**（B-4）：国籍（`japanese`／`foreign`。`scope: person`）。`Q-zairyu-status` は `nationality = foreign` のときだけ聞く。在留資格で分けるルールは `{all: [{fact: nationality, eq: foreign}, …]}` の形にする（日本国籍なら F）。
 - **下書きを公開へ移す**：`node scripts/bundle-to-data.mjs drafts/data/<名前>.bundle.json`。カードは1枚1ファイル、ほかは各ファイルの最後に足す。同じ出典は中身が同じなら足さない。確認状態は変えない。
 
+
+## 12. v1.5（2026-11-08。SPEC v0.5.30）
+
+すべて任意の項目。前のデータと保存はそのまま読める。
+
+- できごと：`goal_card_ids`（本人が選んだ目的の手続き。区分けは「いま」、次の一歩は `goal`）、`info_card_ids`（関連する情報・選択肢。区分け `info`）、段の `after`（その手続きのどれかが済むまで「あとで（〇〇のあと）」。日の下限にもなる）。
+- カード：`parts[].card`（物のくわしい案内のカード）、`parts[].when` は省略できる（いつも出す）、`event_links`（別のできごとへの入口。答えは書き換えない）。
+- 保存：`PlanRecord.deferred`（本人が「あとでする」にした。日を決めると消える）。
+- 検査（`checkRefs`）：目的・情報・after のカードがそのできごとにある、目的と情報に重ねない、parts の card と event_links の参照がある。

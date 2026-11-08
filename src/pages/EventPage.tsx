@@ -137,6 +137,18 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
         <WhyAsked t={step.q.why_asked} />
       </>
     );
+  } else if (step.kind === 'goal') {
+    // 目的の手続き（v0.5.30）：日を聞く前に、対象・書類・方法を開く。日が要る手続きは、開いた画面で日を決める
+    const c = step.view;
+    body = (
+      <>
+        <p className="eyebrow"><One k="now.eyebrow.goal" /></p>
+        <FocusCard c={c} />
+        <div className="head"><Title><Bi phrase t={c.card.title} /></Title></div>
+        <p className="sub"><Bi phrase t={whyText(c)} /></p>
+        <Link to={cp + c.card.id} className="k-answer k-answer--primary"><Bi phrase k="now.goal.open" /></Link>
+      </>
+    );
   } else if (step.kind === 'plan') {
     const c = step.view;
     const group = visitGroup(g.out.cards, c);
@@ -150,7 +162,7 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
         {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={(d, ids) => void ch.plan(c.card.id, d, ids)}
-          onLater={() => navigate(base + '/all')} />
+          onLater={async () => { await g.setPlan(c.card.id, { deferred: true }); ch.setLast(null); onLive(line(ui('card.deferred'), level)); }} />
       </>
     );
   } else if (step.kind === 'wait') {

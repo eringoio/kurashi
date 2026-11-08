@@ -1,0 +1,99 @@
+{
+  "id": "life-electricity",
+  "data_version": 1,
+  "illustration": "bulb",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lifeline",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{電気|でんき}を{使|つか}い{始|はじ}める・やめる",
+    "ja_easy": "{電気|でんき}を{使|つか}い{始|はじ}める・やめる",
+    "en": "Start or stop electricity"
+  },
+  "official_name": {
+    "ja": "電気の使用開始・停止の申し込み",
+    "reading": "でんきのしようかいし・ていしのもうしこみ"
+  },
+  "summary": {
+    "ja": "{電気|でんき}の{契約|けいやく}{先|さき}は{家|いえ}と{契約|けいやく}によって{違|ちが}います。{入居|にゅうきょ}の{前|まえ}に、{不動産|ふどうさん}{会社|がいしゃ}に、どこに{連絡|れんらく}するかを{聞|き}きます。ブレーカーについているはがきで{申|もう}し{込|こ}む{方法|ほうほう}もあります（{一般的|いっぱんてき}な{説明|せつめい}。{要|よう}{確認|かくにん}）。{退去|たいきょ}するときは、{契約|けいやく}している{会社|がいしゃ}に、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{電気|でんき}の{会社|かいしゃ}は{家|いえ}によって{違|ちが}います。{入|はい}る{前|まえ}に、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。ブレーカーのはがきで{申|もう}し{込|こ}むこともあります（{要|よう}{確認|かくにん}）。{出|で}るときは、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "en": "Who supplies electricity depends on the home and the contract. Before moving in, ask the real estate agent whom to contact. Some homes have a postcard on the breaker to apply (general explanation; to be confirmed). When you move out, tell the company you contract with the day you stop (to be confirmed)."
+  },
+  "lead": {
+    "ja": "{契約|けいやく}する{電気|でんき}の{会社|がいしゃ}に{申|もう}し{込|こ}みます。どこに{連絡|れんらく}するかは{不動産|ふどうさん}{会社|がいしゃ}に{聞|き}きます。",
+    "ja_easy": "{電気|でんき}の{会社|かいしゃ}に{申|もう}し{込|こ}みます。{不動産|ふどうさん}の{会社|かいしゃ}に、どこか{聞|き}きます。",
+    "en": "Apply to the electricity company you contract with. Ask the real estate agent whom to contact."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{不動産|ふどうさん}{会社|がいしゃ}（{電気|でんき}・ガス・{水道|すいどう}などの{連絡先|れんらくさき}を{聞|き}きます）",
+      "ja_easy": "{不動産|ふどうさん}の{会社|かいしゃ}（{電気|でんき}・ガス・{水|みず}の{連絡先|れんらくさき}を{聞|き}きます）",
+      "en": "The real estate agent (ask whom to contact for electricity, gas and water)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-mlit-guidebook-en"
+      ],
+      "checked_at": "2026-11-05",
+      "status": "ai_checked",
+      "quote": "Ask the real estate agent whom to contact for each of the above services.",
+      "ai_check": {
+        "fetched_at": "2026-11-04",
+        "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+        "verdict": "agree",
+        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+      }
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{電気|でんき}：ブレーカーについているはがきに、{氏名|しめい}・{住所|じゅうしょ}・{使用|しよう}{開始日|かいしび}を{書|か}いて{郵送|ゆうそう}します（{一般的|いっぱんてき}な{説明|せつめい}。{名古屋|なごや}の{電力|でんりょく}{会社|がいしゃ}の{手続|てつづ}きは{不動産|ふどうさん}{会社|がいしゃ}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
+        "ja_easy": "{電気|でんき}：ブレーカーについているはがきに、{名前|なまえ}・{住所|じゅうしょ}・{使|つか}い{始|はじ}める{日|ひ}を{書|か}いて、ポストに{入|い}れます（{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
+        "en": "Electricity: write your name, address and start date on the postcard attached to the breaker and mail it (general guidance; ask the agent about the Nagoya power company; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mlit-guidebook-en"
+        ],
+        "checked_at": "2026-11-05",
+        "status": "ai_checked",
+        "quote": "To apply for electricity, write your name, address, and usage start date on the postcard attached to the breaker and mail it in.",
+        "ai_check": {
+          "fetched_at": "2026-11-04",
+          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
+          "verdict": "agree",
+          "ref": "research/audits/housing.json#P-housing-nyukyo/c3"
+        }
+      }
+    }
+  ],
+  "keywords": [
+    "でんき",
+    "電気",
+    "ブレーカー",
+    "electricity",
+    "power",
+    "start electricity",
+    "stop electricity"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-mlit-guidebook-en"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "Ask the real estate agent whom to contact for each of the above services."
+  }
+}

@@ -18,6 +18,8 @@ export interface PlanRecord {
   parts?: Record<string, PlanRecord['status']>;
   /** 在留期間の更新の流れの答え（満了日・在留資格・書類・方法。SPEC 6A.18 v0.5.29）。予定日は planned_on、申請したは status=submitted、許可が出たは done */
   stay?: StayRecord;
+  /** 本人が「あとでする」と選んだ（v0.5.30）。自動の「あとで」と分けて、再開できる。日を決めたら消す */
+  deferred?: boolean;
 }
 
 export interface EntryInput {

@@ -145,7 +145,7 @@ export function Now() {
   );
 }
 
-const SEC_KEY: Record<Section, UiKey> = { today: 'sec.today', check: 'sec.check', wait: 'sec.wait', later: 'sec.later', done: 'sec.done' };
+const SEC_KEY: Record<Section, UiKey> = { today: 'sec.today', check: 'sec.check', wait: 'sec.wait', later: 'sec.later', info: 'sec.info', done: 'sec.done' };
 
 /** 一覧の中身（引っ越しとイベントで同じ）：見出しが状態を示すので、行は短く（K-43） */
 export function AllGroups({ cards, base, extraRow }: { cards: CardView[]; base?: string; extraRow?: (c: CardView) => Partial<Parameters<typeof CardRow>[0]> }) {

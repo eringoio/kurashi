@@ -154,6 +154,8 @@ export function checkRefs(d: GuideData): string[] {
     if (c.urgent) c.urgent.contacts.forEach((k, i) => { ev(`${c.id}.urgent[${i}]`, k.evidence); if (k.type === 'link' && !k.value.startsWith('https://')) err.push(`${c.id}.urgent[${i}]：https でないリンク`); });
     (c.methods ?? []).forEach((m, i) => { ev(`${c.id}.methods[${i}]`, m.evidence); if (m.when) ruleIds(m.when).forEach((id) => { if (!d.rules.has(id)) err.push(`${c.id}.methods[${i}]：ルール ${id} がない`); }); });
     (c.alternatives ?? []).forEach((a, i) => ev(`${c.id}.alternatives[${i}]`, a.evidence));
+    (c.parts ?? []).forEach((x) => { if (x.card && !cards.has(x.card)) err.push(`${c.id}.parts.${x.id}：カード ${x.card} がない`); });
+    (c.event_links ?? []).forEach((l) => { if (!d.events.some((y) => y.id === l.event)) err.push(`${c.id}.event_links：できごと ${l.event} がない`); l.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${c.id}.event_links：カード ${id} がない`); }); });
   }
   for (const id of d.flow.card_order) if (!cards.has(id)) err.push(`flow.json：カード ${id} がない`);
   for (const e of d.events) {
@@ -162,6 +164,10 @@ export function checkRefs(d: GuideData): string[] {
     e.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${e.id}：カード ${id} がない`); });
     e.phases?.forEach((ph) => ph.card_ids.forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：段 ${ph.id} のカード ${id} がイベントにない`); }));
     e.questions.forEach((id) => { if (!d.questions.some((q) => q.id === id)) err.push(`${e.id}：質問 ${id} がない`); });
+    // 目的・関連する情報・段の「あとで」の参照（v0.5.30）。目的と関連する情報は重ねない
+    e.phases?.forEach((ph) => ph.after?.forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：段 ${ph.id} の after ${id} がイベントにない`); }));
+    [...(e.goal_card_ids ?? []), ...(e.info_card_ids ?? [])].forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：目的・情報のカード ${id} がイベントにない`); });
+    (e.goal_card_ids ?? []).forEach((id) => { if (e.info_card_ids?.includes(id)) err.push(`${e.id}：${id} が目的と情報の両方にある`); });
     if (e.scope_rule && !d.rules.has(e.scope_rule)) err.push(`${e.id}：範囲のルール ${e.scope_rule} がない`);
   }
   err.push(...cycles(d));

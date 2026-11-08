@@ -147,5 +147,129 @@
     "checked_at": "2026-11-07",
     "status": "needs_check",
     "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance)."
-  }
+  },
+  "parts": [
+    {
+      "id": "notice",
+      "label": {
+        "ja": "{解約|かいやく}を{書面|しょめん}で{知|し}らせる（{契約書|けいやくしょ}の{期間|きかん}）",
+        "ja_easy": "{部屋|へや}を{出|で}ることを{紙|かみ}で{知|し}らせる",
+        "en": "Give written notice to end the contract"
+      }
+    },
+    {
+      "id": "inspection",
+      "label": {
+        "ja": "{退去日|たいきょび}の{立会|たちあ}い・{部屋|へや}の{写真|しゃしん}",
+        "ja_easy": "{出|で}る{日|ひ}に{一緒|いっしょ}に{部屋|へや}を{見|み}る・{写真|しゃしん}",
+        "en": "Move-out inspection and photos"
+      }
+    },
+    {
+      "id": "electricity",
+      "label": {
+        "ja": "{電気|でんき}",
+        "ja_easy": "{電気|でんき}",
+        "en": "Electricity"
+      },
+      "card": "life-electricity"
+    },
+    {
+      "id": "gas",
+      "label": {
+        "ja": "ガス",
+        "ja_easy": "ガス",
+        "en": "Gas"
+      },
+      "card": "life-gas"
+    },
+    {
+      "id": "water",
+      "label": {
+        "ja": "{水道|すいどう}",
+        "ja_easy": "{水道|すいどう}",
+        "en": "Water"
+      },
+      "card": "life-water"
+    },
+    {
+      "id": "internet",
+      "label": {
+        "ja": "インターネット",
+        "ja_easy": "インターネット",
+        "en": "Internet"
+      },
+      "card": "life-internet"
+    },
+    {
+      "id": "mail",
+      "label": {
+        "ja": "{郵便|ゆうびん}の{転送|てんそう}",
+        "ja_easy": "{郵便|ゆうびん}の{転送|てんそう}",
+        "en": "Mail forwarding"
+      }
+    },
+    {
+      "id": "address",
+      "label": {
+        "ja": "{住所|じゅうしょ}の{届|とど}け{出|で}（{区役所|くやくしょ}など）",
+        "ja_easy": "{住所|じゅうしょ}の{届|とど}け（{区役所|くやくしょ}など）",
+        "en": "Address notification (ward office etc.)"
+      }
+    },
+    {
+      "id": "refund",
+      "label": {
+        "ja": "{敷金|しききん}の{精算|せいさん}を{確|たし}かめる",
+        "ja_easy": "{敷金|しききん}が{返|かえ}るか{見|み}る",
+        "en": "Check the deposit settlement"
+      }
+    }
+  ],
+  "event_links": [
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}からほかの{市町村|しちょうそん}へ",
+        "ja_easy": "{名古屋|なごや}からほかの{町|まち}へ",
+        "en": "From Nagoya to another city or town"
+      },
+      "card_ids": [
+        "move-out-city-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}から{国外|こくがい}へ",
+        "ja_easy": "{名古屋|なごや}から{外国|がいこく}へ",
+        "en": "From Nagoya to another country"
+      },
+      "card_ids": [
+        "move-out-abroad-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{同|おな}じ{区|く}の{中|なか}",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{同|おな}じ{区|く}",
+        "en": "Within Nagoya, inside the same ward"
+      },
+      "card_ids": [
+        "move-within-tenkyo"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "en": "Within Nagoya, to another ward"
+      },
+      "card_ids": [
+        "move-within-tennyu"
+      ]
+    }
+  ]
 }

@@ -4269,5 +4269,85 @@
     "ja": "{全国|ぜんこく}の{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{住|す}んでいる{所|ところ}の{入管|にゅうかん}を{探|さが}す）",
     "ja_easy": "{全国|ぜんこく}の{入管|にゅうかん}（{住|す}んでいる{所|ところ}の{入管|にゅうかん}を{探|さが}す）",
     "en": "Regional immigration bureaus in Japan (find the one for your address)"
+  },
+  "sec.info": {
+    "ja": "{関連|かんれん}する{情報|じょうほう}・{選択肢|せんたくし}",
+    "ja_easy": "{知|し}っておくと{役|やく}に{立|た}つこと",
+    "en": "Related information and options"
+  },
+  "st.info": {
+    "ja": "{情報|じょうほう}",
+    "ja_easy": "{情報|じょうほう}",
+    "en": "Info"
+  },
+  "why.afterCard": {
+    "ja": "「{card}」のあとでします。いまは{中身|なかみ}を{見|み}て{準備|じゅんび}できます。",
+    "ja_easy": "「{card}」のあとでします。いま、{準備|じゅんび}はできます。",
+    "en": "You do this after \"{card}\". You can read it and prepare now."
+  },
+  "why.deferred": {
+    "ja": "あなたが「あとでする」にしました。いつでも{再開|さいかい}できます。",
+    "ja_easy": "あなたが「あとで」にしました。いつでも{始|はじ}められます。",
+    "en": "You chose to do this later. You can start again at any time."
+  },
+  "card.defer": {
+    "ja": "あとでする",
+    "ja_easy": "あとでする",
+    "en": "Do this later"
+  },
+  "card.resume": {
+    "ja": "{再開|さいかい}する",
+    "ja_easy": "もう{一度|いちど}{始|はじ}める",
+    "en": "Start again"
+  },
+  "card.deferred": {
+    "ja": "「あとでする」にしました。",
+    "ja_easy": "「あとで」にしました。",
+    "en": "Marked as \"later\"."
+  },
+  "card.resumed": {
+    "ja": "{再開|さいかい}しました。",
+    "ja_easy": "もう{一度|いちど}{始|はじ}めました。",
+    "en": "Started again."
+  },
+  "card.goalChange": {
+    "ja": "ほかの{目的|もくてき}を{選|えら}ぶ",
+    "ja_easy": "ほかのことを{選|えら}ぶ",
+    "en": "Choose a different goal"
+  },
+  "card.goalBadge": {
+    "ja": "あなたが{選|えら}んだ{手続|てつづ}き",
+    "ja_easy": "あなたが{選|えら}んだ{手続|てつづ}き",
+    "en": "The procedure you chose"
+  },
+  "card.moveLinks": {
+    "ja": "{住所|じゅうしょ}の{届|とど}け{出|で}（どこからどこへ{引|ひ}っ{越|こ}しますか）",
+    "ja_easy": "{住所|じゅうしょ}の{届|とど}け（どこからどこへ{引|ひ}っ{越|こ}しますか）",
+    "en": "Address notification (where are you moving from and to?)"
+  },
+  "card.moveLinksNote": {
+    "ja": "{選|えら}ぶと、その{引|ひ}っ{越|こ}しの{手続|てつづ}きの{画面|がめん}へ{進|すす}みます。もどるで、この{画面|がめん}にもどれます。",
+    "ja_easy": "{押|お}すと、その{引|ひ}っ{越|こ}しの{画面|がめん}へ{行|い}きます。もどるで、ここにもどれます。",
+    "en": "Choose one to go to that move. Use Back to come back to this page."
+  },
+  "card.parts": {
+    "ja": "することの{記録|きろく}",
+    "ja_easy": "したことの{記録|きろく}",
+    "en": "Record what you have done"
+  },
+  "now.eyebrow.goal": {
+    "ja": "あなたが{選|えら}んだ{手続|てつづ}き",
+    "ja_easy": "あなたが{選|えら}んだ{手続|てつづ}き",
+    "en": "The procedure you chose"
+  },
+  "now.goal.open": {
+    "ja": "{対象|たいしょう}・{書類|しょるい}・{方法|ほうほう}を{見|み}る",
+    "ja_easy": "{必要|ひつよう}なものと{方法|ほうほう}を{見|み}る",
+    "en": "See who can apply, documents and how"
+  },
+  "ov.after": {
+    "ja": "あとで：",
+    "ja_easy": "あとで：",
+    "en": "After: "
   }
 }

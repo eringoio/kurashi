@@ -54,10 +54,10 @@ describe('ごみの基本案内（下書き）', () => {
     for (const id of ['gomi-app', 'gomi-bunbetsu', 'gomi-shushubi']) expect(data.cards.find((c) => c.id === id)).toBeUndefined();
     expect(ev.tool?.path).toBe('/gomi');
   });
-  it('粗大ごみ・自己搬入は「あとで」（全員の今週の作業にしない）', () => {
+  it('粗大ごみ・自己搬入は関連する情報（全員の今週の作業にしない）', () => {
     const sec = (id: string) => o.cards.find((c) => c.card.id === id)!.section;
-    expect(sec('gomi-sodai')).toBe('later');
-    expect(sec('gomi-mochikomi')).toBe('later');
+    expect(sec('gomi-sodai')).toBe('info'); // v0.5.30：関連する情報（あとでにしない）
+    expect(sec('gomi-mochikomi')).toBe('info');
     expect(plain(card('gomi-sodai').title.ja)).toBe('粗大ごみを出す');
   });
   it('電話番号を書かない', () => {

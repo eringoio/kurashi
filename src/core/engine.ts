@@ -8,8 +8,9 @@ import { effectiveStatus, type FieldKind } from './trust';
 import type { PlanRecord } from './entry';
 
 export type DisplayState = 'shown' | 'check_at_office' | 'ask' | 'excluded' | 'out_of_scope';
-/** 区分け（10.3。v0.4 の表示名：いま・確かめる・届くのを待つ・あとで・もうできた） */
-export type Section = 'today' | 'check' | 'wait' | 'later' | 'done';
+/** 区分け（10.3。v0.4 の表示名：いま・確かめる・届くのを待つ・あとで・もうできた）。
+    info（v0.5.30）：関連する情報・選択肢。「いま／あとで」のタスクに入れない。「あとで」は「義務ではない」の意味に使わない */
+export type Section = 'today' | 'check' | 'wait' | 'later' | 'info' | 'done';
 /** check_at_office・ask の原因（10.5） */
 export type Cause = 'unknown' | 'unverified' | 'no_question' | 'coverage' | 'answer_changed';
 
@@ -41,7 +42,11 @@ export interface CardView {
   state: DisplayState;
   section: Section | null;
   /** 区分けの理由（あとで・待つの文の種類） */
-  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | 'visit_need_document' | 'visit_wrong_place' | null;
+  sectionWhy: 'moved_in_not_yet' | 'moved_in_unknown' | 'moved_in_unanswered' | 'after_prereq' | 'waits' | 'answer' | 'visit_need_document' | 'visit_wrong_place' | 'after_card' | 'deferred' | null;
+  /** 本人が選んだ目的の手続き（events.json の goal_card_ids。v0.5.30） */
+  goal: boolean;
+  /** after_card のとき：この手続きのあとで生じる（段の after。名前を理由の文に入れる） */
+  afterFrom: string | null;
   cause: Cause | null;
   /** 理由に出す答えの事実（判定に使ったものだけ）と、ルール */
   reasonFacts: string[];
@@ -171,6 +176,21 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   }
 
   const created = x.createdOn ?? x.today;
+  /** 前にすること（前提の関係。確認状態は問わない）が、この人に関係していて、まだ済んでいない */
+  const softPrereq = (id: string) => data.relations.some((r) => isPrereq(r) && r.to === id && visibleState(stateOf.get(r.from))
+    && x.plan[r.from]?.status !== 'done' && x.plan[r.from]?.status !== 'dismissed' && satisfied(r) !== 'yes');
+  // 目的・関連する情報・段の「あとで」（v0.5.30。できごとのデータで決める。イベントの名前では分けない）
+  const goals = new Set(x.event?.goal_card_ids ?? []);
+  const infos = new Set(x.event?.info_card_ids ?? []);
+  const afterOf = new Map<string, string[]>();
+  x.event?.phases?.forEach((ph) => ph.after && ph.card_ids.forEach((id) => afterOf.set(id, ph.after!)));
+  const visibleState = (st: DisplayState | undefined) => st === 'shown' || st === 'check_at_office' || st === 'ask';
+  /** 段の after の手続き（この人に関係するもの）が、まだどれも済んでいない → そのうち最初のもの */
+  const afterPending = (id: string): string | null => {
+    const list = (afterOf.get(id) ?? []).filter((a) => visibleState(stateOf.get(a)));
+    if (!list.length || list.some((a) => x.plan[a]?.status === 'done' || doneByAnswer.has(a))) return null;
+    return list[0];
+  };
   const cards: CardView[] = pre.map(({ card, state, cause, elig }) => {
     const plan = x.plan[card.id] ?? null;
     const status = plan?.status ?? 'todo';
@@ -179,6 +199,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     let sectionWhy: CardView['sectionWhy'] = null;
     let c: Cause | null = cause;
     let dayRule: DayRule = { kind: 'free' };
+    const goal = goals.has(card.id);
+    const afterFrom = afterPending(card.id);
+    // 段の after（できごとが起きたあとに生じる手続き）：その日より前の日は選べない（日が無ければ先にその日）
+    if (afterFrom) { const d = x.plan[afterFrom]?.planned_on; dayRule = d ? { kind: 'min', day: d, from: afterFrom } : { kind: 'need_first', from: afterFrom }; }
 
     // 関係の注記（needs_check の関係は注記だけ。9.6 の規則1）
     for (const r of data.relations) {
@@ -226,17 +250,29 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (status === 'dismissed') section = null;
       // 付き添いで「別の書類が要る」「ここではない」と言われた：日を決め直す前に確かめる（6A.6）
       else if (plan?.visit_told && !plan.planned_on) { section = 'check'; sectionWhy = plan.visit_told === 'need_document' ? 'visit_need_document' : 'visit_wrong_place'; }
+      // 段の after：〇〇のあとで生じる（例：できごとが起きたあとの届け出）。窓口で確かめる手続きでも、まだ生じていないので先に出さない
+      else if (afterFrom) { section = 'later'; sectionWhy = 'after_card'; }
       else if (state === 'check_at_office' || changed) { section = 'check'; if (changed) c = 'answer_changed'; }
+      // 本人が「あとでする」と選んだ（自動の「あとで」と分ける。v0.5.30）
+      else if (plan?.deferred) { section = 'later'; sectionWhy = 'deferred'; }
       else if (card.awareness_type === 'upcoming') section = 'later';
       else if (status === 'submitted' || status === 'waiting') section = 'wait';
       else if (waits) { section = 'wait'; sectionWhy = 'waits'; notes.push({ kind: 'waits_for', relation: waits, verified: true }); }
       else if (legalNotMet) { section = 'later'; sectionWhy = 'after_prereq'; }
       else if (card.requires_moved_in && moved !== 'yes') { section = 'later'; sectionWhy = moved === 'not_yet' ? 'moved_in_not_yet' : moved === 'unknown' ? 'moved_in_unknown' : 'moved_in_unanswered'; }
       else if (status === 'preparing') section = 'today';
-      // 相談・準備の案内（guide）：必要な案内はいつも「いま」。もしものときの案内（option）だけ「あとで」（v0.4.8）
+      // 目的の手続き（本人が選んだ）：期限や義務がなくても「いま」（v0.5.30）
+      else if (goal) section = 'today';
+      // 関連する情報・選択肢（できごとの info、もしものときの案内 option）：タスクに入れない（v0.5.30。前は「あとで」）
+      else if (x.event && (infos.has(card.id) || card.awareness_type === 'option')) section = 'info';
+      // 相談・準備の案内（guide）：必要な案内はいつも「いま」。できごとの外（A1 以外の古い経路）では option は「あとで」（v0.4.8）
       else if (card.kind === 'guide') section = card.awareness_type === 'option' ? 'later' : 'today';
       // 規則10（確認済みの期限が7日以内）：MVP のデータには確認済みの期限がまだない
       else if (card.obligation === 'legal' || (card.first_week && x.today <= addDays(created, 14))) section = 'today';
+      // 前にすること（前提の関係。未確認でも）がまだ：そのあとで（止めない。日の制限は確認済みの関係だけ）
+      else if (x.event && softPrereq(card.id)) { section = 'later'; sectionWhy = 'after_prereq'; }
+      // 時期の決まりも前にすることもない、この人に関係する手続き：いまできる（並行してできる。v0.5.30。前は「あとで」）
+      else if (x.event) section = 'today';
       else section = 'later';
     }
 
@@ -261,7 +297,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
     const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
     const outdated = [card.evidence, card.where.evidence, card.deadline?.evidence, ...reasonRules.map((r) => r.evidence)].some((e) => e && statusOf(e, false, 'card_text') === 'outdated');
-    return { card, state, section, sectionWhy, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated, notices: activeNotices(card.notices, x.today) };
+    return { card, state, section, sectionWhy, goal, afterFrom: sectionWhy === 'after_card' ? afterFrom : null, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated, notices: activeNotices(card.notices, x.today) };
   });
 
   // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。
@@ -279,8 +315,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     return d;
   };
   const ob = ['legal', 'local_rule', 'practical', 'check', 'optional', 'none'];
+  // 目的の手続きは、法令の義務の次（v0.5.30。全体の優先順位の3）。関連する情報は最後
+  const obRank = (c: CardView) => (c.section === 'info' ? ob.length : c.goal ? 0.5 : ob.indexOf(c.card.obligation));
   [...cards].sort((a, b) => ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id)).forEach((c, i) => { c.questionRank = i; });
-  cards.sort((a, b) => depth(a.card.id) - depth(b.card.id) || ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
+  cards.sort((a, b) => depth(a.card.id) - depth(b.card.id) || obRank(a) - obRank(b) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
 
   // 最初の質問：upfront で、未回答で、未定のルールの原因になっているもの（質問バンクの順）。範囲が F なら聞かない
   const pending = new Set<string>();

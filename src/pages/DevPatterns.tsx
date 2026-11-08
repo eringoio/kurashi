@@ -10,7 +10,7 @@ import { One } from '../i18n/Ruby';
 import { useFocusTitle } from '../ui/router';
 
 const COLORS = ['paper', 'sand', 'white', 'ink', 'ink-subtle', 'line-dim', 'blue', 'blue-tint', 'orange', 'orange-tint', 'red', 'art-pink', 'art-mint', 'art-sky', 'art-butter'];
-const STATES: StateKey[] = ['today', 'check', 'ask', 'wait', 'later', 'done', 'excluded'];
+const STATES: StateKey[] = ['today', 'check', 'ask', 'wait', 'later', 'info', 'done', 'excluded'];
 
 const Case = ({ title, children }: { title: T; children: ReactNode }) => (
   <section className="pt-case"><h2><Bi phrase t={title} /></h2>{children}</section>

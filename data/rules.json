@@ -3014,6 +3014,39 @@
         "checked_at": "2026-11-08",
         "status": "needs_check"
       }
+    },
+    {
+      "id": "R-lifeline",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "fact": "event",
+            "eq": "house_search"
+          },
+          {
+            "fact": "origin",
+            "in": [
+              "abroad",
+              "other_city",
+              "within_nagoya",
+              "out_of_area"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{住|す}まいを{探|さが}す・{引|ひ}っ{越|こ}す",
+        "ja_easy": "{部屋|へや}を{探|さが}す・{引|ひ}っ{越|こ}す",
+        "en": "You are looking for a home or moving"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
     }
   ]
 }

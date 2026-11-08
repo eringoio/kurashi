@@ -31,7 +31,7 @@ type EventPart = NonNullable<CardView['card']['parts']>[number];
 /** 手続きの中の物。当てはまらない（F）物は出さない。U は要確認 */
 export function partViews(c: CardView, facts: Map<string, Value>): PartView[] {
   return (c.card.parts ?? []).flatMap((p) => {
-    const v = evalCond(p.when, facts).v;
+    const v = p.when ? evalCond(p.when, facts).v : 'T';
     return v === 'F' ? [] : [{ id: p.id, label: p.label, applies: v, track: trackOfStatus(c.plan?.parts?.[p.id]) }];
   });
 }
@@ -69,9 +69,19 @@ export function phaseViews(ev: EventDef, out: EngineOutput): PhaseView[] {
 export const urgentOpen = (out: EngineOutput): CardView[] =>
   out.cards.filter((c) => c.card.urgent && (c.state === 'shown' || c.state === 'check_at_office') && trackOf(c) !== 'done' && trackOf(c) !== 'na');
 
-/** 全体の画面を出すか：段のあるできごとで、最初の質問（中身）に答えたあと */
+/** 全体の画面を出すか：段のあるできごとで、最初の質問（中身）に答えたあと。入口の質問が無いできごと（住まい）は、はじめから（v0.5.30） */
 export const overviewReady = (ev: EventDef, answers: Record<string, Value>): boolean =>
-  !!ev.phases?.length && ev.questions.length > 0 && answers[ev.questions[0]] !== undefined;
+  !!ev.phases?.length && (ev.questions.length === 0 || answers[ev.questions[0]] !== undefined);
+
+/** 状態を記録する手続きか。関連する情報（info）の案内は記録しない（読む物。v0.5.30）。物ごとに記録する物（parts）があれば記録する */
+export const tracked = (c: CardView): boolean => !(c.section === 'info' && c.card.kind === 'guide' && !c.card.parts?.length);
+
+/** 目的の手続きが1つだけで、ほかに進める手続きが無い（関連する情報だけ）：その手続きの画面へ直接進む（中間の一覧を挟まない。v0.5.30） */
+export function singleGoal(out: EngineOutput, step: { kind: string; view?: CardView }): CardView | null {
+  if (step.kind !== 'goal' || !step.view) return null;
+  const open = out.cards.filter((c) => c.section !== null && c.section !== 'done' && c.section !== 'info' && c.state !== 'excluded' && c.state !== 'out_of_scope');
+  return open.length === 1 && open[0] === step.view ? step.view : null;
+}
 
 /** 前に要ること（前提の関係で、まだ済んでいない）。カードを開いて準備するのは止めない */
 export const prereqFrom = (c: CardView): string[] =>

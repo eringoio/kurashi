@@ -1,0 +1,156 @@
+{
+  "id": "life-water",
+  "data_version": 1,
+  "illustration": "homecheck",
+  "awareness_type": "life_essential",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lifeline",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{水道|すいどう}を{使|つか}い{始|はじ}める・やめる",
+    "ja_easy": "{水道|すいどう}を{使|つか}い{始|はじ}める・やめる",
+    "en": "Start or stop your water supply"
+  },
+  "official_name": {
+    "ja": "水道使用開始・中止のお申し込み",
+    "reading": "すいどうしようかいし・ちゅうしのおもうしこみ"
+  },
+  "summary": {
+    "ja": "{名古屋市|なごやし}の{水道|すいどう}は{名古屋市上下水道局|なごやしじょうげすいどうきょく}です。{入居|にゅうきょ}・{退去|たいきょ}の{日|ひ}が{決|き}まったら、{使|つか}い{始|はじ}める{日|ひ}・やめる{日|ひ}を{知|し}らせます。{電話|でんわ}は{前|まえ}の{日|ひ}までに{連絡|れんらく}します（{前|まえ}の{日|ひ}が{土曜|どよう}・{日曜|にちよう}・{休日|きゅうじつ}・{年末年始|ねんまつねんし}なら、その{前|まえ}の{平日|へいじつ}まで）。インターネットは、2{営業日|えいぎょうび}{後|ご}からの{日付|ひづけ}で{受|う}け{付|つ}けます。お{客|きゃく}さま{番号|ばんごう}がわかるもの（「{水道|すいどう}ご{使用量|しようりょう}のお{知|し}らせ」など）があると{早|はや}く{済|す}みます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{名古屋市|なごやし}の{水道|すいどう}は、{名古屋市|なごやし}の{上下水道局|じょうげすいどうきょく}です。{使|つか}い{始|はじ}める{日|ひ}と、やめる{日|ひ}を{知|し}らせます。{電話|でんわ}は{前|まえ}の{日|ひ}までです（{休|やす}みの{日|ひ}の{前|まえ}は、その{前|まえ}の{平日|へいじつ}まで）。インターネットは、2{営業日|えいぎょうび}あとの{日|ひ}から{選|えら}べます（{要|よう}{確認|かくにん}）。",
+    "en": "In Nagoya, water is supplied by the Nagoya City Waterworks & Sewerage Bureau. When your move-in or move-out date is fixed, tell them the day you start or stop. By phone, call by the day before (if that day is a weekend, holiday or New Year holiday, by the last weekday before it). Online, you can choose a date from 2 business days later. Having your customer number (for example on the water usage notice) makes it faster (to be confirmed)."
+  },
+  "lead": {
+    "ja": "{名古屋市|なごやし}では、{上下水道局|じょうげすいどうきょく}に{電話|でんわ}かインターネットで{申|もう}し{込|こ}みます。",
+    "ja_easy": "{名古屋市|なごやし}の{水道|すいどう}は、{電話|でんわ}かインターネットで{申|もう}し{込|こ}みます。",
+    "en": "In Nagoya, apply to the Waterworks & Sewerage Bureau by phone or online."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{電話|でんわ}は{前|まえ}の{日|ひ}まで。インターネットは2{営業日|えいぎょうび}{後|ご}からの{日付|ひづけ}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{電話|でんわ}は{前|まえ}の{日|ひ}まで（{要|よう}{確認|かくにん}）",
+      "en": "By phone: by the day before. Online: dates from 2 business days later (to be confirmed)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-water-uketsuke",
+        "nagoya-water-kaishi"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "（注）お申し込みは、前日までにご連絡ください。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{名古屋市上下水道局|なごやしじょうげすいどうきょく}（お{客|きゃく}さま{受付|うけつけ}センター・インターネット）",
+      "ja_easy": "{名古屋市|なごやし}の{上下水道局|じょうげすいどうきょく}（{電話|でんわ}・インターネット）",
+      "en": "Nagoya City Waterworks & Sewerage Bureau (customer center or online)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-water-uketsuke"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "（注）お申し込みは、前日までにご連絡ください。"
+    }
+  },
+  "kind": "guide",
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{電話|でんわ}：お{客|きゃく}さま{受付|うけつけ}センター（{名水|めいすい}ダイヤル）。{前|まえ}の{日|ひ}までに{連絡|れんらく}します。",
+        "ja_easy": "{電話|でんわ}：{前|まえ}の{日|ひ}までに{電話|でんわ}します。",
+        "en": "Phone: the customer center (Meisui Dial). Call by the day before."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-water-uketsuke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "（注）お申し込みは、前日までにご連絡ください。"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "インターネット：{上下水道局|じょうげすいどうきょく}の{申込|もうしこみ}のページ（{日本語|にほんご}）。2{営業日|えいぎょうび}{後|ご}からの{日付|ひづけ}で{申|もう}し{込|こ}めます。",
+        "ja_easy": "インターネット：2{営業日|えいぎょうび}あとの{日|ひ}から{申|もう}し{込|こ}めます（{日本語|にほんご}のページ）。",
+        "en": "Online: the bureau's application page (in Japanese). You can choose a date from 2 business days later."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-water-kaishi"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "水道使用開始・中止のお申し込みは２営業日後の日付から受け付けます。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "お{客|きゃく}さま{番号|ばんごう}がわかるもの（「{水道|すいどう}ご{使用量|しようりょう}のお{知|し}らせ」など）を{手元|てもと}に{置|お}くと、{早|はや}く{済|す}みます。",
+        "ja_easy": "「{水道|すいどう}ご{使用量|しようりょう}のお{知|し}らせ」などがあると、{早|はや}く{済|す}みます。",
+        "en": "Keep something with your customer number (such as the water usage notice) at hand."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-water-uketsuke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "ご連絡の際、お手元にお客さま番号がわかるもの（「水道ご使用量のお知らせ」など）をご用意いただくとスムーズに手続きができます。"
+      }
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{水道|すいどう}の{使用|しよう}{開始|かいし}・{中止|ちゅうし}の{申|もう}し{込|こ}み",
+        "ja_easy": "{水道|すいどう}の{申|もう}し{込|こ}み",
+        "en": "Apply to start or stop water"
+      },
+      "url": "https://www.water.city.nagoya.jp/category/tyuushikaishi/1042.html",
+      "source_id": "nagoya-water-kaishi"
+    },
+    {
+      "label": {
+        "ja": "お{客|きゃく}さま{受付|うけつけ}センター（{名水|めいすい}ダイヤル）",
+        "ja_easy": "{電話|でんわ}の{受付|うけつけ}",
+        "en": "Customer center (phone)"
+      },
+      "url": "https://www.water.city.nagoya.jp/category/renraku/1040.html",
+      "source_id": "nagoya-water-uketsuke"
+    }
+  ],
+  "keywords": [
+    "すいどう",
+    "水道",
+    "みず",
+    "上下水道局",
+    "water",
+    "water supply",
+    "start water",
+    "stop water"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "nagoya-water-kaishi",
+      "nagoya-water-uketsuke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "水道使用開始・中止のお申し込みは２営業日後の日付から受け付けます。"
+  }
+}

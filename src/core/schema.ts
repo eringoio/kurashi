@@ -120,7 +120,12 @@ export const Card = z.object({
   urgent: z.object({ text: Text, contacts: z.array(Contact) }).optional(),
   /** 1つの手続きの中で、別々に記録する物（財布の紛失：キャッシュカードとクレジットカードの停止。v0.5.28）。
       when が T か U（わからない）の物だけ出す。U は「要確認」。手続きの状態は、物の状態からまとめる（src/core/overview.ts） */
-  parts: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), label: Text, when: Condition })).optional(),
+  parts: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), label: Text, when: Condition.optional(),
+    /** くわしい案内のカード（例：入居のときの「水道」→ life-water）。ある物は名前から開ける（v0.5.30） */
+    card: z.string().optional() })).optional(),
+  /** 別のできごとへの入口（v0.5.30：入居・退去から、引っ越しの届け出のできごとへ）。label は場合の名前、card_ids はそのできごとで出す主な届け出（名前を添える）。
+      答えは書き換えない（行った先で聞く） */
+  event_links: z.array(z.object({ event: z.string().regex(/^E-[a-z0-9-]+$/), label: Text, card_ids: z.array(z.string()) })).optional(),
   /** 手続きの方法（窓口・電子申請・郵送・電話）。when が偽の方法は出さない */
   methods: z.array(z.object({ type: z.enum(['counter', 'online', 'mail', 'phone']), text: Text, when: RuleExpr.optional(), evidence: Evidence })).optional(),
   /** 必要な物が無いときの代わり（身分証をなくしたときなど） */
@@ -217,7 +222,14 @@ export const EventDef = z.object({
   /** 全体の画面（v0.5.28：財布の紛失）。最初の質問のあと、手続きを段ごとに全部見せる。すぐ行う行動は目立たせるが、ほかを止めない。
       1つずつ進める画面は /e/{id}/step。どの段にも入らないカードは「そのほか」。
       pin：この段の手続きへのリンクを、全体の画面と1つずつの画面の上にいつも出す（財布が見つかったとき） */
-  phases: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), title: Text, note: Text.optional(), card_ids: z.array(z.string()), pin: z.boolean().optional() })).optional(),
+  phases: z.array(z.object({ id: z.string().regex(/^[a-z_]+$/), title: Text, note: Text.optional(), card_ids: z.array(z.string()), pin: z.boolean().optional(),
+    /** この段の手続きは、ここに書いた手続きのどれかが済んでから生じる（例：届けを出したあとに生じる届け出）。できごとの定義（本アプリ）。
+        それまでは「あとで」（〇〇のあとで）。開いて準備するのは止めない。行く日はその手続きの日より前を選べない（v0.5.30） */
+    after: z.array(z.string()).optional() })).optional(),
+  /** 目的の手続き（v0.5.30）：本人が選んだ「これをしたい」。期限や義務がなくても「いま」に出し、日を聞く前に説明を開く */
+  goal_card_ids: z.array(z.string()).optional(),
+  /** 関連する情報・選択肢（v0.5.30）：「いま／あとで」のタスクに入れず、「関連する情報」に出す（もしものとき・ほかの方法など） */
+  info_card_ids: z.array(z.string()).optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;

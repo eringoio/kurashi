@@ -12,7 +12,7 @@ const plain = (s: string) => s.replace(/[{][^|}]*[|][^}]*[}]/g, (m) => m.slice(1
 const go = (dest: string | undefined, over: Partial<EngineInput> = {}) =>
   run(data, { answers: dest ? { 'Q-move-dest': dest } : {}, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev, ...over });
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
-const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state).map((c) => c.card.id).sort();
+const ids = (o: ReturnType<typeof run>, state: string) => o.cards.filter((c) => c.state === state && !c.card.id.startsWith('life-')).map((c) => c.card.id).sort();
 const CITY = ['move-out-city-kokuho', 'move-out-city-tenshutsu'];
 const ABROAD = ['move-out-abroad-hoken-nenkin', 'move-out-abroad-mynumber', 'move-out-abroad-tenshutsu', 'move-out-abroad-zairyu'];
 /** 名古屋市に関係しない引っ越し（作者 11/7 K-9）：名古屋へ来るときと同じ流れの一般の案内 */

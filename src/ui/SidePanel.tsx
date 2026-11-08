@@ -64,7 +64,7 @@ function sideCards(out: EngineOutput, today: string, cardId: string | null): Car
   return out.cards.filter((c) => c.state !== 'out_of_scope' && c.state !== 'excluded' && !hide.has(c.card.id));
 }
 
-const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', done: 'done', excluded: 'out', out: 'out' };
+const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask', wait: 'wait', later: 'later', info: 'info', done: 'done', excluded: 'out', out: 'out' };
 
 /** 本文に出ている項目：開いた項目、または「いま」の項目 */
 function inBody(out: EngineOutput, today: string, cardId: string | null): Set<string> {

@@ -130,6 +130,10 @@ ul.list { list-style: none; margin: 0; padding: 0; }
 /* 状態のラベル（色＋形＋文字） */
 .k-state { gap: 6px; font-size: var(--fs-small); padding: 0 10px; white-space: nowrap; }
 .k-state--wait, .k-state--later { border-style: dashed; }
+/* 関連する情報・選択肢（v0.5.30）：タスクではないので点線。色だけで分けない（印 i と文字） */
+.k-state--info { color: var(--ink-subtle); border-style: dotted; }
+.row--info, .focus--info { border-style: dotted; }
+.world__item--info .world__label { color: var(--ink-subtle); border-style: dotted; }
 .k-state--done { background: var(--orange-tint); }
 
 /* 一覧の行 */
