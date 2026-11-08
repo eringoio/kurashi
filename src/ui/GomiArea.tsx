@@ -1,5 +1,5 @@
 /* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地の文字は保存しない。保存するのは表の行の area_id だけ）。
-   収集日は VITE_GOMI_SCHEDULE=on で、data/private/gomi-schedule.json があるときだけ出す（許諾の返事まで既定は off）。 */
+   収集日は data/gomi/schedule.json（名古屋市の掲載の許可 2026-11-08）。既定で出す。VITE_GOMI_SCHEDULE=off のときだけ出さない（SPEC v0.5.24）。 */
 import { useEffect, useId, useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
 import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, toSchedules, townsOf, type PrivateSchedule } from '../core/gomiSchedule';

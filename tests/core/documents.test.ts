@@ -60,6 +60,8 @@ describe('書類のデータ', () => {
     expect(by('tennyu-todoke').links.some((l) => l.kind === 'sample' || l.kind === 'filled_example')).toBe(false);
     // 架空請求は電話しないことを先に。審査完了は「許可」と言い切らない
     expect(by('kakuu-seikyu').caution?.ja).toMatch(/電話|でんわ/);
-    expect(by('zairyu-shinsa-kanryo').caution?.en).toMatch(/to be checked/);
+    expect(by('zairyu-shinsa-kanryo').caution?.en).toMatch(/not proof of approval/);
+    expect(by('zairyu-shinsa-kanryo').actions[2].ja).toMatch(/オンライン/);
+    expect(by('tennyugaku-tsuchisho').actions.map((a) => a.ja).join()).toMatch(/教科/);
   });
 });

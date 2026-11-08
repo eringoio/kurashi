@@ -2224,6 +2224,14 @@
       "owner_type": "public_corp",
       "title": "「訴訟最終告知のお知らせ」というハガキ（架空請求）",
       "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-faq-954",
+      "url": "https://faq.city.nagoya.jp/faq/detail.aspx?id=954",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "引越しに伴う転校の手続きの方法（FAQ）",
+      "language": "ja"
     }
   ]
 }

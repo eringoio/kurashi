@@ -396,9 +396,9 @@
         "en": "People who applied online, e.g. to extend or change their status."
       },
       "caution": {
-        "ja": "このメールは「{審査|しんさ}が{終|お}わった」という{知|し}らせです。{結果|けっか}（{許可|きょか}されたか）は、メールの{内容|ないよう}と{受|う}け{取|と}る{書類|しょるい}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}の{支払|しはら}いのメールは no-reply@service-dgft.com から{届|とど}きます。ほかの{所|ところ}からの{支払|しはら}いの{求|もと}めに{注意|ちゅうい}してください。",
-        "ja_easy": "{審査|しんさ}が{終|お}わったというメールです。{結果|けっか}は、メールをよく{見|み}てください。",
-        "en": "This email says the examination is finished. Check the result in the email and the documents you receive (to be checked). Fee payment emails come from no-reply@service-dgft.com; be careful of other senders."
+        "ja": "このメールは「{審査|しんさ}が{終|お}わった」という{知|し}らせで、{許可|きょか}の{証明|しょうめい}ではありません。{結果|けっか}は、メールの{内容|ないよう}と{受|う}け{取|と}る{書類|しょるい}で{確|たし}かめてください。オンラインの{申請|しんせい}の{手数料|てすうりょう}の{支払|しはら}いのメールは no-reply@service-dgft.com から{届|とど}きます。ほかの{所|ところ}からの{支払|しはら}いの{求|もと}めに{注意|ちゅうい}してください。",
+        "ja_easy": "{審査|しんさ}が{終|お}わったというメールです。{許可|きょか}のしるしではありません。",
+        "en": "This email says the examination is finished. It is not proof of approval. Check the result in the email and the documents you receive. Fee emails for online applications come from no-reply@service-dgft.com; be careful of other senders."
       },
       "actions": [
         {
@@ -412,9 +412,9 @@
           "en": "By post: send the listed documents by Letter Pack soon. At the counter: go within 14 days."
         },
         {
-          "ja": "{手数料|てすうりょう}を{払|はら}う（{令和|れいわ}8{年|ねん}10{月|がつ}1{日|ついたち}からの{申請|しんせい}はコンビニ{決済|けっさい}か{銀行|ぎんこう}{決済|けっさい}。それより{前|まえ}の{申請|しんせい}は{収入|しゅうにゅう}{印紙|いんし}）。",
+          "ja": "{手数料|てすうりょう}を{払|はら}う（{令|りょう}{和|わ}8{年|ねん}10{月|つき}1{日|にち}からオンラインで{申請|しんせい}した{人|ひと}は、コンビニ{決済|けっさい}か{銀行|ぎんこう}{決済|けっさい}。それより{前|まえ}のオンラインの{申請|しんせい}は{収入|しゅうにゅう}{印紙|いんし}）。",
           "ja_easy": "{手数料|てすうりょう}を{払|はら}う。",
-          "en": "Pay the fee (applications from 1 Oct 2026: convenience store or bank; earlier: revenue stamps)."
+          "en": "Pay the fee (online applications from 1 Oct 2026: convenience store or bank; earlier online applications: revenue stamps)."
         }
       ],
       "card_ids": [
@@ -480,9 +480,9 @@
         "en": "People who use Nagoya city water."
       },
       "caution": {
-        "ja": "このお{知|し}らせは{請求|せいきゅう}{書|しょ}ではありません。{口座|こうざ}{振替|ふりかえ}・クレジットカードの{人|ひと}には、{引|ひ}き{落|お}としの{金額|きんがく}と{日|ひ}を{前|まえ}もって{知|し}らせるものです。{払|はら}う{書類|しょるい}（{納入|のうにゅう}{通知|つうち}{書|しょ}）は{別|べつ}に{届|とど}きます。",
-        "ja_easy": "これは{払|はら}う{紙|かみ}ではありません。",
-        "en": "This is not a bill. For direct debit or card users it tells the amount and date in advance. A separate payment notice is sent if you pay by slip."
+        "ja": "{使用|しよう}{量|りょう}・{料金|りょうきん}と、{払|はら}い{方|かた}の{情報|じょうほう}が{書|か}いてあります。{口座|こうざ}{振替|ふりかえ}・クレジットカードの{人|ひと}には、{引|ひ}き{落|お}としの{金額|きんがく}と{日|ひ}を{前|まえ}もって{知|し}らせ、{前|まえ}の{分|ぶん}の{領収|りょうしゅう}が{入|はい}ることもあります。{納入|のうにゅう}{通知|つうち}{書|しょ}で{払|はら}う{人|ひと}には、{払|はら}う{紙|かみ}が{別|べつ}に{届|とど}くことがあります。",
+        "ja_easy": "お{金|かね}の{額|がく}と{払|はら}い{方|かた}が{書|か}いてあります。{払|はら}う{紙|かみ}が{別|べつ}に{来|く}ることもあります。",
+        "en": "It shows usage, charges and payment information. Direct-debit and card users see the amount and date in advance, sometimes with a receipt. If you pay by payment notice, the slip may come separately."
       },
       "actions": [
         {
@@ -674,7 +674,7 @@
         },
         {
           "source_id": "nagoya-juminhyo-form-note",
-          "kind": "filled_example"
+          "kind": "reference"
         },
         {
           "source_id": "nagoya-juminhyo-konbini",

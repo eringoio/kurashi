@@ -563,25 +563,25 @@
         "en": "Families moving into Nagoya with a child in elementary or junior high school."
       },
       "how_to_get": {
-        "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}すときに{渡|わた}されます。",
-        "ja_easy": "{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}すときに、もらいます。",
-        "en": "The ward office gives it to you when you report moving in."
+        "ja": "{区役所|くやくしょ}・{支所|ししょ}で{住所|じゅうしょ}の{手続|てつづ}きをすると、{通|かよ}う{学校|がっこう}{名|めい}を{書|か}いた{通知|つうち}が{郵送|ゆうそう}で{届|とど}きます（{急|いそ}ぐときは{窓口|まどぐち}で{渡|わた}されます）。",
+        "ja_easy": "{区役所|くやくしょ}で{住所|じゅうしょ}の{手続|てつづ}きをすると、{郵便|ゆうびん}で{来|き}ます。",
+        "en": "After you register your address at the ward office, it is mailed to you (or handed over at the counter if urgent)."
       },
       "actions": [
         {
-          "ja": "{前|まえ}の{学校|がっこう}で{在学|ざいがく}{証明|しょうめい}{書|しょ}をもらう。",
-          "ja_easy": "{前|まえ}の{学校|がっこう}で「{在学証明書|ざいがくしょうめいしょ}」をもらう。",
-          "en": "Get a certificate of enrollment (在学証明書) from the old school."
+          "ja": "{前|まえ}の{学校|がっこう}に{転学|てんがく}{届|とどけ}を{出|だ}し、{在学|ざいがく}{証明|しょうめい}{書|しょ}と{教科|きょうか}{用|よう}{図書|としょ}{給与|きゅうよ}{証明|しょうめい}{書|しょ}をもらう。",
+          "ja_easy": "{前|まえ}の{学校|がっこう}で「{在学証明書|ざいがくしょうめいしょ}」と「{教科用図書給与証明書|きょうかようとしょきゅうよしょうめいしょ}」をもらう。",
+          "en": "Tell the old school about the transfer and get the certificate of enrollment and the textbook certificate."
         },
         {
-          "ja": "{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}し、{転入|てんにゅう}{学|がく}{通知|つうち}{書|しょ}を{受|う}け{取|と}る。",
-          "ja_easy": "{区役所|くやくしょ}で{転入届|てんにゅうとどけ}を{出|だ}して、この{書類|しょるい}をもらう。",
-          "en": "Report your move at the ward office and receive this notice."
+          "ja": "{区役所|くやくしょ}・{支所|ししょ}で{住所|じゅうしょ}の{手続|てつづ}きをして、{転入|てんにゅう}{学|がく}{通知|つうち}{書|しょ}を{受|う}け{取|と}る。",
+          "ja_easy": "{区役所|くやくしょ}で{住所|じゅうしょ}の{手続|てつづ}きをして、この{書類|しょるい}をもらう。",
+          "en": "Register your address at the ward office and receive this notice."
         },
         {
-          "ja": "{在学|ざいがく}{証明|しょうめい}{書|しょ}と{一緒|いっしょ}に、{転校|てんこう}{先|さき}の{学校|がっこう}に{出|だ}す。",
-          "ja_easy": "{在学証明書|ざいがくしょうめいしょ}といっしょに、{新|あたら}しい{学校|がっこう}に{出|だ}す。",
-          "en": "Give it to the new school together with the certificate of enrollment."
+          "ja": "{転入|てんにゅう}{学|がく}{通知|つうち}{書|しょ}・{在学|ざいがく}{証明|しょうめい}{書|しょ}・{教科|きょうか}{用|よう}{図書|としょ}{給与|きゅうよ}{証明|しょうめい}{書|しょ}を{持|も}って、{新|あたら}しい{学校|がっこう}で{手続|てつづ}きをする。",
+          "ja_easy": "3つの{書類|しょるい}を{持|も}って、{新|あたら}しい{学校|がっこう}に{行|い}く。",
+          "en": "Take the three documents to the new school."
         }
       ],
       "related_docs": [
@@ -589,12 +589,17 @@
       ],
       "links": [
         {
-          "source_id": "B-nagoya-faq-39",
+          "source_id": "B-nagoya-faq-954",
           "kind": "procedure"
+        },
+        {
+          "source_id": "B-nagoya-faq-39",
+          "kind": "reference"
         }
       ],
       "about_evidence": {
         "source_ids": [
+          "B-nagoya-faq-954",
           "B-nagoya-faq-39"
         ],
         "checked_at": "2026-11-08",
