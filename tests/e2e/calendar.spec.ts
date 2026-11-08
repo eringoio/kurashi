@@ -33,9 +33,11 @@ async function toWardDay(page: Page) {
   await tap(page, /^学生$/);
   await tap(page, '20歳から59歳まで');
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
-  await page.getByRole('link', { name: 'いま', exact: true }).click();
-  // 答えたあとは結果の画面を出さず、次の1つへ（SPEC 6A.5 v0.5.14）
+  // 答えたあとは結果の画面を出さず、次の1つへ（SPEC 6A.5 v0.5.14）。最初の質問のあとは、手続きの質問をまとめて（v0.5.31）
   for (const name of ['まだどれにも入っていない', /^どちらでもない（厚生年金/, /^ない$/, /^はい$/]) await tap(page, name);
+  // 質問のあと、1回だけ全体（道と持ち物）。日を決めるのは「1つずつ進める」から
+  await expect(h1(page)).toHaveText('これからのこと');
+  await page.getByRole('link', { name: '1つずつ進める' }).click();
   await expect(h1(page)).toHaveText('いつ、区役所に行きますか？');
 }
 /** カレンダーは日を選ぶ画面に最初から出る（作者の指示 11/7） */

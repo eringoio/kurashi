@@ -4364,5 +4364,105 @@
     "ja": "{合|あ}う{書類|しょるい}が{見|み}つかりません。ほかの{言葉|ことば}でも{探|さが}せます。",
     "ja_easy": "{書類|しょるい}が{見|み}つかりません。ほかの{言葉|ことば}で{探|さが}してください。",
     "en": "No matching document. Try other words."
+  },
+  "road.label": {
+    "ja": "{進|すす}み{方|かた}",
+    "ja_easy": "{進|すす}み{方|かた}",
+    "en": "Your progress"
+  },
+  "road.next": {
+    "ja": "{次|つぎ}はこれ",
+    "ja_easy": "{次|つぎ}はこれ",
+    "en": "Next: this one"
+  },
+  "road.you": {
+    "ja": "あなたは ここ",
+    "ja_easy": "あなたは ここ",
+    "en": "You are here"
+  },
+  "road.anyOrder": {
+    "ja": "この{中|なか}は、どの{順|じゅん}でもできます",
+    "ja_easy": "どれから しても いいです",
+    "en": "Any order is fine here"
+  },
+  "road.after": {
+    "ja": "{n}のあと",
+    "ja_easy": "{n}のあと",
+    "en": "After: {n}"
+  },
+  "road.noCurrent": {
+    "ja": "{次|つぎ}にすることは、まだ{決|き}まっていません。{質問|しつもん}に{答|こた}えると{決|き}まります。",
+    "ja_easy": "{次|つぎ}に することは、まだ わかりません。{質問|しつもん}に {答|こた}えると わかります。",
+    "en": "Your next step is not decided yet. Answer the questions to find it."
+  },
+  "road.allDone": {
+    "ja": "{全部|ぜんぶ}{済|す}みました",
+    "ja_easy": "{全部|ぜんぶ} {終|お}わりました",
+    "en": "All done"
+  },
+  "road.start": {
+    "ja": "はじめ",
+    "ja_easy": "はじめ",
+    "en": "Start"
+  },
+  "road.todo": {
+    "ja": "これから",
+    "ja_easy": "これから",
+    "en": "To do"
+  },
+  "road.hidden": {
+    "ja": "{関係|かんけい}なかったもの {n}{件|けん}",
+    "ja_easy": "{関係|かんけい}ない もの {n}つ",
+    "en": "{n} not for you"
+  },
+  "road.now": {
+    "ja": "そのあと",
+    "ja_easy": "そのあと",
+    "en": "After that"
+  },
+  "dev.view.label": {
+    "ja": "{表示|ひょうじ}（{開発|かいはつ}だけ）",
+    "ja_easy": "{表示|ひょうじ}（{開発|かいはつ}だけ）",
+    "en": "View (development only)"
+  },
+  "dev.view.ring": {
+    "ja": "{輪|わ}",
+    "ja_easy": "{輪|わ}",
+    "en": "Ring"
+  },
+  "dev.view.road": {
+    "ja": "{道|みち}",
+    "ja_easy": "{道|みち}",
+    "en": "Road"
+  },
+  "road.bring.title": {
+    "ja": "{持|も}ち{物|もの}",
+    "ja_easy": "{持|も}っていく{物|もの}",
+    "en": "What to bring"
+  },
+  "road.bring.held": {
+    "ja": "{持|も}っている",
+    "ja_easy": "ある",
+    "en": "You have it"
+  },
+  "road.bring.missing": {
+    "ja": "まだない",
+    "ja_easy": "まだない",
+    "en": "Not yet"
+  },
+  "road.bring.for": {
+    "ja": "{使|つか}う{手続|てつづ}き：{n}",
+    "ja_easy": "{使|つか}う：{n}",
+    "en": "For: {n}"
+  },
+  "now.qLeft": {
+    "ja": "あと{n}{問|もん}で、あなたの{一覧|いちらん}ができます",
+    "ja_easy": "あと {n}{問|もん}です",
+    "en": "{n} more questions to make your list"
+  },
+  "now.qLeftOne": {
+    "ja": "これが{最後|さいご}の{質問|しつもん}です",
+    "ja_easy": "これで {最後|さいご}です",
+    "en": "This is the last question"
   }
 }

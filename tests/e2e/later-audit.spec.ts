@@ -110,10 +110,12 @@ test('銀行（口座がある）：一覧の上は いま の案内。もしも
   await page.getByRole('button', { name: '日本国籍' }).click();
   for (let i = 0; i < 4 && !(await page.getByRole('button', { name: 'ある', exact: true }).isVisible()); i++) await page.getByRole('button', { name: '答えずに進む' }).click({ timeout: 3000 }).catch(() => {});
   await page.getByRole('button', { name: 'ある', exact: true }).click();
-  for (let i = 0; i < 3 && !(await page.getByRole('heading', { name: /関連する情報/ }).count()); i++) {
+  // 道（v0.5.31）では、関連する情報は道の段の名前
+  const info = page.locator('.road__stage--info, h2', { hasText: /関連する情報/ }).first();
+  for (let i = 0; i < 3 && !(await info.count()); i++) {
     const b = page.locator('.k-answer').first();
     if (await b.count()) await b.click();
   }
-  await expect(page.getByRole('heading', { name: /関連する情報/ })).toBeVisible();
+  await expect(info).toBeVisible();
   await shot(page, 'bank');
 });

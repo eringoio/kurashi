@@ -50,6 +50,7 @@ import { ClinicPage } from './pages/Clinic';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
+const DevRoad = import.meta.env.DEV ? lazy(() => import('./pages/DevRoad')) : null;
 
 /** 手続きの進み具合があるか（入口の出し分けと「続きから」に使う）。「ことば」の記録（phrases）だけでは進み具合にしない
     （カード・病院を見ただけで、開いたときに引っ越しの質問へ送らないため。K-39） */
@@ -152,6 +153,7 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (path === '/search') return <Search />;
   if (path === '/gomi') return <Gomi />;
   if (DevPatterns && path === '/dev/patterns') return <Suspense fallback={null}><DevPatterns /></Suspense>;
+  if (DevRoad && path === '/dev/road') return <Suspense fallback={null}><DevRoad /></Suspense>;
   if (path === '/today' || path === '/past') {
     const e = entryOf(g, null, true, v);
     const ids = e.kind === 'promise_today' || e.kind === 'promise_past' ? e.card_ids : [];

@@ -3,7 +3,7 @@
    - どのページにも undefined を含むリンクが無い
    - /search：英語の語 housing で候補が出る（すべてのできごとを検索する）
    - /all の輪：どの項目も輪の箱の中（幅 320・640・1280） */
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
 const events = (JSON.parse(readFileSync('data/events.json', 'utf8')) as { events: { id: string; status?: string; card_ids: string[] }[] }).events;
@@ -43,24 +43,13 @@ test('検索：housing で候補が出る', async ({ page }) => {
   expect(hrefs.filter((h) => h?.includes('undefined'))).toEqual([]);
 });
 
-async function insideWorld(page: Page, what: string) {
-  const ring = (await page.locator('.world').boundingBox())!;
-  const items = await page.locator('.world__item').all();
-  expect(items.length, what).toBeGreaterThan(0);
-  for (const it of items) {
-    const r = (await it.boundingBox())!;
-    expect(r.x, what).toBeGreaterThanOrEqual(ring.x - 0.5);
-    expect(r.y, what).toBeGreaterThanOrEqual(ring.y - 0.5);
-    expect(r.x + r.width, what).toBeLessThanOrEqual(ring.x + ring.width + 0.5);
-    expect(r.y + r.height, what).toBeLessThanOrEqual(ring.y + ring.height + 0.5);
-  }
-}
-
-test('/all の輪：どの項目も輪の箱の中（320・640・1280）', async ({ page }) => {
+test('/all の道：縦（320・640）と横（1280）。キャラクターは1つ（v0.5.31）', async ({ page }) => {
   await page.goto('/all');
   for (const width of [320, 640, 1280]) {
     await page.setViewportSize({ width, height: 900 });
-    await expect(page.locator('.world')).toBeVisible();
-    await insideWorld(page, `/all ${width}`);
+    await expect(page.locator('.road')).toBeVisible();
+    await expect(page.locator('.road__you')).toHaveCount(1);
+    const dir = await page.locator('.road__stages').evaluate((el) => getComputedStyle(el).flexDirection);
+    expect(dir, `/all ${width}`).toBe(width >= 1024 ? 'row' : 'column');
   }
 });

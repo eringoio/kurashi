@@ -50,3 +50,13 @@ export function agendaToday(o: EngineOutput, today: string): CardView[] {
   return o.cards.filter((c) => c.plan?.planned_on === today && c.plan.status !== 'done' && c.plan.status !== 'dismissed'
     && c.section !== null && c.section !== 'done' && c.state !== 'excluded' && c.state !== 'out_of_scope');
 }
+
+/** 残りの質問の数（最初にまとめて聞く。SPEC 6A.4 v0.5.31）：最初の質問と、nowStep の 1・2 で聞く質問（同じ質問は1回） */
+export function questionsLeft(o: EngineOutput): number {
+  const ids = new Set(o.upfront.map((q) => q.id));
+  for (const c of o.cards) {
+    if (c.section === 'done' || c.state === 'excluded' || c.state === 'out_of_scope') continue;
+    if (c.state === 'ask' || ((c.section === 'today' || c.section === 'check' || c.section === 'later') && !c.plan?.deferred)) c.questions.forEach((q) => ids.add(q.id));
+  }
+  return ids.size;
+}

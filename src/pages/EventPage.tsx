@@ -3,19 +3,22 @@
    「すぐ行う行動」は、ほかの質問より先に出る（nowStep の urgent）。
    答えた・日を決めたあとは、次の1つの上に1行（6A.5 v0.5.14）。結果の画面は「済んだ」のときだけ。 */
 import { useState, type ReactNode } from 'react';
-import { nowStep } from '../core/now';
+import { nowStep, questionsLeft } from '../core/now';
 import { ABOUT_SKIPPED, aboutNext, wantsAbout } from '../core/about';
 import { DATA } from '../core/data';
 import { AboutStep } from '../ui/About';
 import type { Question } from '../core/schema';
 import { visitGroup } from '../core/visit';
-import { visitPath } from '../core/accompany';
+import { bringPlan, visitPath } from '../core/accompany';
+import type { CardView } from '../core/engine';
+import { RoadBring } from '../ui/RoadMap';
 import { useEvent, type EventGuide } from '../guide/useEvent';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, WorldMap } from '../ui/guide';
+import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
+import { ProgressMap } from '../ui/ProgressMap';
 import { MultiPick, UrgentAction } from '../ui/patterns';
 import { toPickOptions, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
@@ -131,6 +134,7 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
     body = (
       <>
         <p className="eyebrow"><One k="now.eyebrow.q" /></p>
+        <QLeft n={questionsLeft(g.out)} />
         <FocusCard c={c} />
         <div className="head"><Title><Bi t={step.q.text} /></Title></div>
         <Answers q={step.q} onPick={(v) => void ch.answer(c.card.id, step.q, v)} />
@@ -224,11 +228,26 @@ function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string
       {!onlyGuides && <EvTabs base={base} current="all" />}
       <div className="head"><p className="eyebrow"><One phrase t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
       {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi phrase t={g.event.tool.label} /></Link>}
-      <WorldMap cards={cards} base={base + '/c/'} listId="all-list" />
-      {!hasOpen(cards) && <AllEmpty />}
-      <AllGroups cards={cards} base={base + '/c/'}
-        extraRow={(c) => (g.event.checklist && c.state !== 'ask' ? { check: { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } } : {})} />
-      {!idle && !onlyGuides && <Link to={base} className="k-answer"><Bi phrase k="all.go" /></Link>}
+      <ProgressMap cards={cards} out={g.out} today={g.today} base={base + '/c/'} listId="all-list"
+        after={(road) => {
+          const check = (c: CardView) => (g.event.checklist && c.state !== 'ask' ? { check: { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } } : {});
+          const go = !idle && !onlyGuides && <Link to={base} className="k-answer"><Bi phrase k="all.go" /></Link>;
+          // 道（v0.5.31）：同じ項目の一覧は出さない。ただしチェックの一覧のできごとは、チェックのために一覧を残す
+          return road ? (
+            <>
+              {!hasOpen(cards) && <AllEmpty />}
+              {go}
+              <RoadBring plan={bringPlan(g.out, DATA().objects, {}, undefined)} known={false} />
+              <AllGroups cards={cards} base={base + '/c/'} extraRow={check} closedOnly={!g.event.checklist} />
+            </>
+          ) : (
+            <>
+              {!hasOpen(cards) && <AllEmpty />}
+              <AllGroups cards={cards} base={base + '/c/'} extraRow={check} />
+              {go}
+            </>
+          );
+        }} />
       <StartNew g={g} onLive={onLive} />
     </>
   );

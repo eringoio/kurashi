@@ -1,15 +1,19 @@
 /* これからのこと（SPEC 6A.4）：「いま」（いまの1つ）と「全体」。どの項目もいつでも開ける。
    答えた・日を決めたあとは結果の画面を出さず、次の1つの上に変わったことを1行で出す（6A.5 v0.5.14）。
    結果の画面と「つぎへ」は「済んだ」を記録したときだけ。 */
-import { nowStep, type NowStep } from '../core/now';
+import { nowStep, questionsLeft, type NowStep } from '../core/now';
 import type { CardView, Section } from '../core/engine';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { useState, type ReactNode } from 'react';
-import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, WorldMap } from '../ui/guide';
+import { useEffect, useState, type ReactNode } from 'react';
+import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
+import { ProgressMap } from '../ui/ProgressMap';
+import { RoadBring } from '../ui/RoadMap';
+import { bringPlan } from '../core/accompany';
+import { DATA } from '../core/data';
 import { visitGroup } from '../core/visit';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
 import { useSide } from '../ui/SidePanel';
@@ -44,10 +48,16 @@ export const todayViews = (step: NowStep): CardView[] | null => (step.kind === '
 
 export function Now() {
   const g = useGuide();
-  const { level } = usePrefs();
+  const { level, vault } = usePrefs();
   const ch = useChange(g);
   const [done, setDone] = useState<string | null>(null);
   const step = nowStep(g.out, g.today);
+  // 最初の質問のあと（v0.5.31）：手続きの質問をまとめて先に聞き、終わったら1回だけ全体（道と持ち物）を開く
+  const asking = step.kind === 'card_q' || step.kind === 'upfront';
+  useEffect(() => {
+    if (asking || done || ch.redo || vault.get('dates', 'seen_all_on')) return;
+    void g.markSeenAll().then((first) => { if (first) navigate('/all'); });
+  }, [asking]); // eslint-disable-line react-hooks/exhaustive-deps
   useFocusTitle('now:' + (done ? 'done' + done : ch.redo ? 'redo' + ch.redo.kind + ch.redo.cardId : step.kind + ('view' in step ? step.view.card.id : '') + ('q' in step ? step.q.id : '')));
   const Title = ({ children }: { children: ReactNode }) => <h1 id="screen-title" tabIndex={-1}>{children}</h1>;
   const today = todayViews(step);
@@ -66,7 +76,7 @@ export function Now() {
   } else if (step.kind === 'upfront') {
     body = (
       <>
-        <div className="head"><p className="eyebrow"><One k="now.eyebrow.q" /></p><Title><Bi t={step.q.text} /></Title></div>
+        <div className="head"><p className="eyebrow"><One k="now.eyebrow.q" /></p><QLeft n={questionsLeft(g.out)} /><Title><Bi t={step.q.text} /></Title></div>
         <Answers q={step.q} onPick={(v) => { ch.setLast(null); void g.answer(step.q.id, v); }} />
         <WhyAsked t={step.q.why_asked} />
       </>
@@ -76,6 +86,7 @@ export function Now() {
     body = (
       <>
         <p className="eyebrow"><One k="now.eyebrow.q" /></p>
+        <QLeft n={questionsLeft(g.out)} />
         <FocusCard c={c} />
         <div className="head">
           <Title><Bi t={step.q.text} /></Title>
@@ -148,7 +159,8 @@ export function Now() {
 const SEC_KEY: Record<Section, UiKey> = { today: 'sec.today', check: 'sec.check', wait: 'sec.wait', later: 'sec.later', info: 'sec.info', done: 'sec.done' };
 
 /** 一覧の中身（引っ越しとイベントで同じ）：見出しが状態を示すので、行は短く（K-43） */
-export function AllGroups({ cards, base, extraRow }: { cards: CardView[]; base?: string; extraRow?: (c: CardView) => Partial<Parameters<typeof CardRow>[0]> }) {
+/** closedOnly：道（v0.5.31）の下。道に出ていない「関係なかったもの」「まだ案内していないこと」だけ（理由つき） */
+export function AllGroups({ cards, base, extraRow, closedOnly }: { cards: CardView[]; base?: string; extraRow?: (c: CardView) => Partial<Parameters<typeof CardRow>[0]>; closedOnly?: boolean }) {
   const { level } = usePrefs();
   const by = (f: (c: CardView) => boolean) => cards.filter(f);
   const group = (key: UiKey, list: CardView[], open = true) =>
@@ -171,7 +183,7 @@ export function AllGroups({ cards, base, extraRow }: { cards: CardView[]; base?:
     );
   return (
     <div id="all-list" tabIndex={-1} className="all-list">
-      {SECTION_ORDER.flatMap((s) => [
+      {!closedOnly && SECTION_ORDER.flatMap((s) => [
         group(SEC_KEY[s], by((c) => c.section === s && c.state !== 'ask'), s !== 'later'),
         s === 'check' ? group('sec.ask', by((c) => c.state === 'ask')) : null,
       ])}
@@ -198,15 +210,29 @@ export function All({ onlyGuides }: { onlyGuides?: boolean } = {}) {
   useFocusTitle('all');
   const cards = g.out.cards;
   const idle = nowStep(g.out, g.today).kind === 'idle';
+  const origin = typeof g.answers['Q-origin'] === 'string' ? (g.answers['Q-origin'] as string) : undefined;
+  // 「1つずつ進める」は、いまの1つがあるときだけ。2つ目のボタン（K-43）
+  const go = !idle && !onlyGuides && <Link to="/now" className="k-answer"><Bi phrase k="all.go" /></Link>;
   return (
     <>
       {!onlyGuides && <Tabs current="all" />}
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
-      <WorldMap cards={cards} listId="all-list" />
-      {!hasOpen(cards) && <AllEmpty />}
-      <AllGroups cards={cards} />
-      {/* 「1つずつ進める」は、いまの1つがあるときだけ。2つ目のボタン（K-43） */}
-      {!idle && !onlyGuides && <Link to="/now" className="k-answer"><Bi phrase k="all.go" /></Link>}
+      <ProgressMap cards={cards} out={g.out} today={g.today} listId="all-list"
+        after={(road) => road ? (
+          // 道（v0.5.31）：道 → 次へ進むボタン → 持ち物 → 関係なかったもの（閉じた一覧）。同じ項目の一覧は出さない
+          <>
+            {!hasOpen(cards) && <AllEmpty />}
+            {go}
+            <RoadBring plan={bringPlan(g.out, DATA().objects, g.objects, origin)} />
+            <AllGroups cards={cards} closedOnly />
+          </>
+        ) : (
+          <>
+            {!hasOpen(cards) && <AllEmpty />}
+            <AllGroups cards={cards} />
+            {go}
+          </>
+        )} />
     </>
   );
 }

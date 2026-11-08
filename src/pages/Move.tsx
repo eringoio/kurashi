@@ -25,10 +25,11 @@ function Head({ eyebrow, children }: { eyebrow?: React.ReactNode; children: Reac
   );
 }
 
-/** 最初の質問が終わったら：最初の1回だけ全体を開き、あとは「いまの1つ」（6A.4） */
+/** 最初の質問が終わったら：「いま」へ（手続きの質問 → 1回だけ全体 → いまの1つ。6A.4 v0.5.31） */
 async function finish(g: ReturnType<typeof useGuide>) {
   await g.setResume(null);
-  navigate((await g.markSeenAll()) ? '/all' : '/now');
+  // v0.5.31：手続きの質問を先にまとめて聞く。質問が無ければ「いま」が1回だけ全体を開く（Plan.tsx の Now）
+  navigate('/now');
 }
 
 export function Move({ step }: { step: string }) {

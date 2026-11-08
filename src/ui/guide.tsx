@@ -586,3 +586,9 @@ export function ResultView({ eyebrow, title, sub, onNext, children, rate }: { ey
 }
 
 export const SECTION_ORDER: Section[] = ['today', 'check', 'wait', 'later', 'info', 'done'];
+
+/** 質問の画面の残りの数（v0.5.31：手続きの質問は最初にまとめて聞く）。1問なら「最後の質問」 */
+export function QLeft({ n }: { n: number }) {
+  if (n < 1) return null;
+  return <p className="sub k-qleft"><One t={n === 1 ? ui('now.qLeftOne') : fill(ui('now.qLeft'), 'n', () => String(n))} /></p>;
+}

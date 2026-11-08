@@ -124,3 +124,20 @@ export function parseVisitPath(path: string): { place: string; stage: VisitStage
   const m = /^\/visit\/([a-z_]+)(?:\/(counter|after))?$/.exec(path);
   return m ? { place: m[1], stage: (m[2] as VisitStage | undefined) ?? 'before' } : null;
 }
+
+/** 全体の画面の持ち物（SPEC 6A.4 v0.5.31）：まだの項目（済み・やめた・関係なし・範囲外・まだわからない を除く）の行く所ごと。
+    その所の項目で使う物だけ（bring_for が無い物は、所だけで決める）。持ち物の無い所は出さない */
+export function bringPlan(out: EngineOutput, objects: ObjectDef[], held: Record<string, boolean>, origin: string | undefined): { place: string; cards: CardView[]; bring: BringItem[] }[] {
+  const by = new Map<string, CardView[]>();
+  for (const c of out.cards) {
+    const p = c.card.place;
+    if (!p || c.section === null || c.section === 'done' || (c.state !== 'shown' && c.state !== 'check_at_office')) continue;
+    if (c.plan?.status === 'done' || c.plan?.status === 'dismissed') continue;
+    by.set(p, [...(by.get(p) ?? []), c]);
+  }
+  return [...by.entries()].map(([place, cs]) => {
+    const ids = new Set(cs.map((c) => c.card.id));
+    const bring = bringList(objects, place, held, origin).filter((b) => !b.object.bring_for || b.object.bring_for.some((id) => ids.has(id)));
+    return { place, cards: cs, bring };
+  }).filter((x) => x.bring.length > 0);
+}

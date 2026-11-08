@@ -52,27 +52,12 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await tap(page, '書いてある');
   // 立場と年齢は、あなたについてで答えたので聞かない
 
-  // 最初の確かめのあと、全体が1回だけ開く（6A.4）
-  await expect(h1(page)).toHaveText('これからのこと');
-  await check(page, '全体');
-  // 輪の項目は押して開ける。どの項目も輪の箱の中（K-43）
-  const ring = (await page.locator('.world').boundingBox())!;
-  const items = await page.locator('.world__item').all();
-  expect(items.length).toBeGreaterThan(0);
-  for (const it of items) {
-    const r = (await it.boundingBox())!;
-    expect(r.x).toBeGreaterThanOrEqual(ring.x - 0.5);
-    expect(r.y).toBeGreaterThanOrEqual(ring.y - 0.5);
-    expect(r.x + r.width).toBeLessThanOrEqual(ring.x + ring.width + 0.5);
-    expect(r.y + r.height).toBeLessThanOrEqual(ring.y + ring.height + 0.5);
-  }
-  await expect(page.locator('.world').getByRole('link', { name: /住所の届け/ })).toBeVisible();
   await page.getByRole('region', { name: /残しますか/ }).getByRole('button', { name: '残す', exact: true }).click();
 
-  // いまの1つ：確かめの質問を順に（国保・年金・口座・住み始めたか）。4つの質問は4回の操作（6A.5 v0.5.14）。
-  // 答えるたびに、次の1つの上に「〇〇：△△になりました」と「答えを変える」（結果の画面と「つぎへ」は出さない）
-  await page.getByRole('link', { name: 'いま', exact: true }).click();
+  // 最初の質問のあと、手続きの質問をまとめて先に聞く（国保・年金・口座・住み始めたか。v0.5.31）。残りの数を出す。
+  // 答えるたびに、次の1つの上に「〇〇：△△になりました」と「答えを変える」（結果の画面と「つぎへ」は出さない。6A.5 v0.5.14）
   await expect(h1(page)).toHaveText('健康保険はどれに入っていますか？');
+  await expect(page.locator('.k-qleft')).toHaveText('あと4問で、あなたの一覧ができます');
   await check(page, 'いまの1つ');
   const change = page.locator('.k-change__line');
   await tap(page, 'まだどれにも入っていない');
@@ -89,7 +74,16 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await expect(h1(page)).toHaveText('日本の銀行に、自分の口座はありますか？');
   await tap(page, /^ない$/);
   await expect(h1(page)).toHaveText('新しい住所に、もう住み始めましたか？');
+  await expect(page.locator('.k-qleft')).toHaveText('これが最後の質問です');
   await tap(page, /^はい$/);
+
+  // 質問が終わったら、全体が1回だけ開く（道と持ち物。6A.4 v0.5.31）。キャラクターは いまの1つ に立つ
+  await expect(h1(page)).toHaveText('これからのこと');
+  await expect(page.locator('.road [data-road-here] .road__you')).toHaveCount(1);
+  await expect(page.locator('.road [aria-current="step"]').first()).toContainText('住所の届け');
+  await expect(page.getByRole('heading', { name: '持ち物' })).toBeVisible();
+  await check(page, '全体');
+  await page.getByRole('link', { name: '1つずつ進める' }).click();
 
   // 日を決める：今日／今週のうちに／次の休みの日。選ぶと、次の項目の上に「〇〇に決めました」
   // 同じ所（区役所）の項目は、行く日を一度に聞く（6A.5）
@@ -105,7 +99,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
 
   // ほかの項目へは、いつでも移れる（全体から銀行を先に開いて、日を決める）
   await page.getByRole('link', { name: '全体', exact: true }).click();
-  await page.locator('.all-list').getByRole('link', { name: /銀行の口座/ }).click();
+  await page.locator('.road').getByRole('link', { name: /銀行の口座/ }).click();
   await expect(h1(page)).toHaveText('銀行の口座');
   await check(page, '銀行の口座');
   await tap(page, 'いつ行くか決める');
@@ -158,14 +152,15 @@ test('B1：ほかの市から来た人も、同じ画面とデータの追加だ
   await tap(page, 'つぎへ');
   await tap(page, /^学生$/);
   await tap(page, '20歳未満');
+  // 手続きの質問をまとめて先に（v0.5.31）
+  await expect(h1(page)).toHaveText('前に住んでいた市区町村で、転出届を出しましたか？');
+  await tap(page, 'マイナンバーカードを使って出した');
+  await check(page, '答えの結果（B1）');
+  // 残りの質問は最初の答えで進め、終わったら全体（道）が1回だけ開く。国外からの経路のカード（住所の届け）は
+  // 「関係なかったもの」に理由つきで入る（道の下の閉じた一覧）
+  for (let i = 0; i < 8 && (await page.locator('.k-qleft').count()); i++) await page.locator('.list .k-answer').first().click();
   await expect(h1(page)).toHaveText('これからのこと');
-  // 国外からの経路のカード（住所の届け）は「関係なかったもの」に理由つきで入る
   await page.locator('summary', { hasText: '関係なかったもの' }).click();
   await expect(page.locator('.all-list').getByRole('link', { name: /住所の届け/ })).toBeVisible();
   await check(page, '全体（B1）');
-  await page.getByRole('link', { name: 'いま', exact: true }).click();
-  await expect(h1(page)).toHaveText('前に住んでいた市区町村で、転出届を出しましたか？');
-  await tap(page, 'マイナンバーカードを使って出した');
-  await expect(page.locator('.k-change__line')).toHaveText(/になりました$/);
-  await check(page, '答えの結果（B1）');
 });

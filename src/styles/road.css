@@ -1,0 +1,101 @@
+/* 進み方の道（試作。src/ui/RoadMap.tsx）。狭い箱は縦（左に道、右に項目）、広い箱（720px〜）は横（上に道、下に項目）。
+   キャラクターは道の上の印の所に立つ（項目の箱とは別の列・行なので重ならない）。色は tokens.css の変数だけ。 */
+.road { container-type: inline-size; width: 100%; margin: 4px 0; }
+.road__stages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.road__stage { position: relative; display: grid; grid-template-columns: 60px minmax(0, 1fr); column-gap: 10px; padding-bottom: 16px; }
+/* 道：太い帯と、真ん中の点線 */
+.road__stage::before, .road__stage::after { content: ""; position: absolute; pointer-events: none; }
+.road__stage::before { left: 23px; top: 0; bottom: 0; width: 14px; background: var(--sand); }
+.road__stage::after { left: 29px; top: 0; bottom: 0; width: 2px; background: repeating-linear-gradient(to bottom, var(--white) 0 6px, transparent 6px 12px); }
+.road__stage:first-child::before, .road__stage:first-child::after { top: 24px; }
+.road__stage:last-child::before, .road__stage:last-child::after { bottom: auto; height: 24px; }
+.road__stage:first-child:last-child::before, .road__stage:first-child:last-child::after { display: none; }
+/* 済んだ所までの道は、落ち着いた色 */
+.road__stage--done::before { background: var(--cream); }
+
+.road__marker { grid-column: 1; position: relative; z-index: 1; display: flex; justify-content: center; align-items: flex-start; min-height: 48px; }
+.road__dot { display: flex; align-items: center; justify-content: center; box-sizing: border-box; width: 32px; height: 32px; margin-top: 8px;
+  border: 2px solid var(--line-dim); border-radius: 50%; background: var(--white); color: var(--ink-muted); font-weight: 700; line-height: 1; }
+.road__stage--done .road__dot { border-color: var(--orange-ink); background: var(--orange-tint); color: var(--orange-ink); }
+.road__stage--check .road__dot { border-color: var(--orange-ink); color: var(--orange-ink); }
+.road__stage--wait .road__dot, .road__stage--later .road__dot, .road__stage--ask .road__dot { border-style: dashed; }
+.road__stage--info .road__dot { border-style: dotted; }
+.road__you-wrap { display: block; }
+.road__you { display: block; width: 56px; height: auto; }
+.road__ghost { position: absolute; left: 30px; top: 24px; width: 1px; height: 1px; pointer-events: none; }
+
+.road__body { grid-column: 2; min-width: 0; }
+.road__stage-name { margin: 10px 0 4px; font-weight: 700; line-height: 1.4; }
+.road__stage--now .road__stage-name { color: var(--blue); }
+.road__count { font-weight: 500; color: var(--ink-subtle); }
+.road__note { margin: 0 0 6px; font-size: var(--fs-small, 14px); color: var(--ink-subtle); line-height: 1.5; }
+.road__cards { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+
+.road__link { display: flex; gap: 10px; align-items: flex-start; box-sizing: border-box; width: 100%; min-height: var(--target-min);
+  padding: 8px 12px; border: 2px solid var(--line-soft); border-radius: var(--radius-md); background: var(--white); color: var(--ink); text-decoration: none; }
+.road__link:hover .road__name { text-decoration: underline; }
+.road__link:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.road__card.road__card--here .road__link { border: 3px solid var(--blue); background: var(--blue-tint); }
+.road__card--done .road__link { background: var(--paper); color: var(--ink-muted); }
+.road__card--later .road__link, .road__card--wait .road__link, .road__card--ask .road__link { border-style: dashed; border-color: var(--line-dash); }
+.road__card--info .road__link { border-style: dotted; border-color: var(--line-dash); }
+.road__pic { position: relative; flex: none; display: inline-flex; }
+.road__pic img { width: 40px; height: 40px; }
+.road__pic .road__badge { position: absolute; right: -10px; top: -6px; width: 22px; height: 22px; }
+.road__text { display: flex; flex-direction: column; min-width: 0; gap: 4px; }
+.road__name { font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+.road__card--done .road__name { font-weight: 500; }
+.road__tags { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.road__tag { display: inline-block; padding: 0 8px; border: 1.5px solid currentColor; border-radius: var(--radius-pill); font-size: var(--fs-small, 14px); font-weight: 700; line-height: 1.6; }
+.road__tag--here { border-color: var(--blue); background: var(--blue); color: var(--white); }
+.road__tag--now, .road__tag--wait { color: var(--blue); }
+.road__tag--check { color: var(--orange-ink); }
+.road__tag--done { color: var(--orange-ink); background: var(--orange-tint); }
+.road__tag--ask, .road__tag--later { color: var(--ink-subtle); border-style: dashed; }
+.road__tag--info { color: var(--ink-subtle); border-style: dotted; }
+.road__tag--day { color: var(--ink); background: var(--sand-soft); border-color: var(--line-soft); }
+/* しないといけないか：必要は実線、したほうがよいは破線、案内は点線で控えめに（色だけにしない） */
+.road__tag--must { color: var(--ink); }
+.road__tag--advised { color: var(--ink-muted); border-style: dashed; font-weight: 500; }
+.road__tag--optional { color: var(--ink-subtle); border-style: dotted; font-weight: 500; }
+.road__after { font-size: var(--fs-small, 14px); color: var(--ink-muted); }
+.road__more { margin-top: 6px; padding: 8px 0; min-height: var(--target-min); background: none; border: none; font: inherit; cursor: pointer; text-align: start; }
+
+/* 広い箱：横の道。段は左から右。多いときは道の箱だけ横に動かせる */
+@container (min-width: 720px) {
+  .road__stages { flex-direction: row; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; position: relative; }
+  .road__stage { display: flex; flex-direction: column; flex: 1 0 210px; max-width: 300px; padding: 0 10px 0 0; scroll-snap-align: start; }
+  .road__stage--now { flex-basis: 250px; max-width: 340px; }
+  .road__stage:first-child { margin-left: auto; }
+  .road__stage:last-child { margin-right: auto; }
+  .road__stage::before { left: 0; right: 0; top: 25px; bottom: auto; width: auto; height: 14px; }
+  .road__stage::after { left: 0; right: 0; top: 31px; bottom: auto; width: auto; height: 2px; background: repeating-linear-gradient(to right, var(--white) 0 6px, transparent 6px 12px); }
+  .road__stage:first-child::before, .road__stage:first-child::after { left: 28px; top: 25px; }
+  .road__stage:first-child::after { top: 31px; }
+  .road__stage:last-child::before, .road__stage:last-child::after { right: auto; width: 40px; height: 14px; }
+  .road__stage:last-child::after { height: 2px; width: 40px; }
+  .road__stage:first-child:last-child::before, .road__stage:first-child:last-child::after { display: none; }
+  .road__marker { justify-content: flex-start; align-items: center; height: 64px; min-height: 0; padding-left: 12px; }
+  .road__dot { margin-top: 0; }
+  .road__you { width: 60px; margin-left: -10px; }
+  .road__ghost { left: 28px; top: 32px; }
+  .road__stage-name { margin-top: 4px; }
+}
+
+/* 段の名前と数を1行に（英語のときは名前が2段） */
+.road__stage-name { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 4px; }
+
+/* デスクトップ：道があるときだけ、本文の列を広げて道を横に。ほかの中身は今までの幅（576px）のまま真ん中に */
+@media (min-width: 1024px) {
+  .shell > .col:has(.road) { flex-basis: 1060px; max-width: 1060px; }
+  .shell > .col:has(.road) > :not(.road):not(:has(.road)) { width: 100%; max-width: 576px; align-self: center; box-sizing: border-box; }
+}
+
+/* 持ち物（道の下） */
+.road-bring { display: flex; flex-direction: column; gap: 8px; }
+.road-bring h2 { margin: 8px 0 0; }
+.road-bring h3 { margin: 4px 0 0; font-size: var(--fs-body, 16px); }
+.road-bring__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 8px; }
+.road-bring__item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 12px; border: 2px solid var(--line-soft); border-radius: var(--radius-md); background: var(--white); }
+.road-bring__item--missing { border-style: dashed; border-color: var(--line-dash); background: var(--paper); }
+.road-bring__item img { width: 36px; height: 36px; flex: none; }
