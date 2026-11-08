@@ -47,3 +47,15 @@ describe('収集日の写し', () => {
     expect(privateSchedule(undefined)).toBeNull();
   });
 });
+
+describe('公開した収集日の表（data/gomi/schedule.json）', () => {
+  it('文字化け（? など）が無く、番地はすべて英訳がある', async () => {
+    const { default: s } = await import('../../data/gomi/schedule.json');
+    const { default: n } = await import('../../data/gomi/banchi-names.json');
+    const names = (n as { names: Record<string, string> }).names;
+    for (const a of (s as PrivateSchedule).areas) {
+      expect(a.town + (a.banchi ?? '')).not.toMatch(/[?？�]/);
+      if (a.banchi) expect(names[a.banchi], a.banchi).toBeTruthy();
+    }
+  });
+});

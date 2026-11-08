@@ -467,7 +467,7 @@
     },
     "応接机・テーブル・いす": {
       "ja": "{応接|おうせつ}{机|つくえ}・テーブル・いす",
-      "en": "Reception desk, table and chair"
+      "en": "Coffee table, table and chair"
     },
     "オーディオラック": {
       "ja": "オーディオラック",
@@ -743,7 +743,7 @@
     },
     "ガスコンロ・ガステーブル": {
       "ja": "ガスコンロ・ガステーブル",
-      "en": "Gas stove and gas table"
+      "en": "Gas stove and gas cooktop"
     },
     "ガスストーブ": {
       "ja": "ガスストーブ",
@@ -1167,7 +1167,7 @@
     },
     "金庫（手提げ用）": {
       "ja": "{金庫|きんこ}（{手提|てさ}げ{用|よう}）",
-      "en": "Safe (portable)"
+      "en": "Cash box (portable)"
     },
     "銀行の紙袋": {
       "ja": "{銀行|ぎんこう}の{紙袋|かみぶくろ}",
@@ -2807,7 +2807,7 @@
     },
     "彫刻刀": {
       "ja": "{彫刻|ちょうこく}{刀|がたな}",
-      "en": "Carving knife set"
+      "en": "Carving knife"
     },
     "ちょうつがい": {
       "ja": "ちょうつがい",
