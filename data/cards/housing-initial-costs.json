@@ -62,7 +62,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
           "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-shokihi/c14"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -84,7 +84,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
           "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-shokihi/c15"
+          "ref": "internal-audit-record"
         }
       }
     }
@@ -134,7 +134,7 @@
         "fetched_at": "2026-11-07",
         "sha256": "194e3dfca7f60d02a970880fb64a67f19662764a7a5f22185bd186102933f1bd",
         "verdict": "agree",
-        "ref": "research/logs/rent_2026-11-07.md"
+        "ref": "internal-audit-record"
       }
     }
   }

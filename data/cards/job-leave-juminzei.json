@@ -47,9 +47,10 @@
       "source_ids": [
         "D-nagoya-juminzei-taishoku"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "guide",
@@ -59,8 +60,9 @@
     "source_ids": [
       "D-nagoya-juminzei-taishoku"
     ],
-    "checked_at": "2026-11-06",
-    "status": "needs_check",
-    "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。"
+    "checked_at": "2026-11-08",
+    "status": "verified",
+    "quote": "市税事務所から送付される納税通知書または納付書によって納付（普通徴収）していただきます。",
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

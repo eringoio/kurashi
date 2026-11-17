@@ -27,9 +27,9 @@
     "reading": "てんにゅうとどけ"
   },
   "summary": {
-    "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}・{支所|ししょ}の{市民|しみん}{課|か}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}して{受|う}け{取|と}った{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{持|も}って{行|い}きます（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます）。マイナンバーカードを{持|も}っている{人|ひと}は、{転入|てんにゅう}{届|とどけ}のときに、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のカードと{暗証|あんしょう}{番号|ばんごう}が{要|い}ります。{転入|てんにゅう}して14{日|にち}を{過|す}ぎてもカードの{手続|てつづ}きをしないと、カードは{失効|しっこう}します（{要|よう}{確認|かくにん}）。",
+    "ja": "ほかの{市区|しく}{町村|ちょうそん}から{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{新|あたら}しい{住所|じゅうしょ}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市区|しく}{町村|ちょうそん}で{転出|てんしゅつ}{届|とどけ}を{出|だ}して{受|う}け{取|と}った{転出|てんしゅつ}{証明|しょうめい}{書|しょ}を{持|も}って{行|い}きます（マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、{証明|しょうめい}{書|しょ}の{代|か}わりにカードを{見|み}せます）。マイナンバーカードを{持|も}っている{人|ひと}は、{転入|てんにゅう}{届|とどけ}のときに、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のカードと{暗証|あんしょう}{番号|ばんごう}が{要|い}ります。{転入|てんにゅう}して14{日|にち}を{過|す}ぎてもカードの{手続|てつづ}きをしないと、カードは{失効|しっこう}します（{要|よう}{確認|かくにん}）。",
     "ja_easy": "ほかの{市|し}から{来|き}て{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{前|まえ}の{市|し}で「{転出|てんしゅつ}{証明|しょうめい}{書|しょ}」をもらって{持|も}って{行|い}きます。マイナンバーカードで{転出|てんしゅつ}{届|とどけ}をした{人|ひと}は、カードを{見|み}せます。マイナンバーカードがある{人|ひと}は、{引|ひ}っ{越|こ}す{人|ひと}みんなのカードと{暗証|あんしょう}{番号|ばんごう}を{持|も}っていきます。14{日|にち}をすぎるとカードが{使|つか}えなくなります（{要|よう}{確認|かくにん}）。",
-    "en": "After you start living in Nagoya, submit a moving-in notice at the Citizens Section of the ward office for your new address. Bring the move-out certificate from your previous municipality (if you filed the move-out with a My Number Card, show the card instead). If you have a My Number Card, bring the cards of everyone moving and know their PINs when you file the move-in notice. If you do not complete the card procedure within 14 days of moving in, the card becomes invalid (to be checked)."
+    "en": "After you start living in Nagoya, submit a moving-in notice at the Citizens Section of the ward office for your new address (at a branch office, the Residents’ Life Section). Bring the move-out certificate from your previous municipality (if you filed the move-out with a My Number Card, show the card instead). If you have a My Number Card, bring the cards of everyone moving and know their PINs when you file the move-in notice. If you do not complete the card procedure within 14 days of moving in, the card becomes invalid (to be checked)."
   },
   "deadline": {
     "text": {
@@ -45,7 +45,22 @@
       "checked_at": "2026-11-07",
       "status": "verified",
       "quote": "転入した日から14日以内（住み始めた日の翌日を１日目とします。）",
-      "verified_by": "author 2026-11-07（FAQ id=39 の本文を確認）"
+      "verified_by": "author 2026-11-07"
+    },
+    "calc": {
+      "days": 14,
+      "from": "moved_in",
+      "count": "next_day",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-39",
+          "nagoya-lifescene-tennyu"
+        ],
+        "checked_at": "2026-11-07",
+        "status": "verified",
+        "quote": "転入した日から14日以内（住み始めた日の翌日を１日目とします。）",
+        "verified_by": "author 2026-11-07"
+      }
     }
   },
   "where": {
@@ -79,7 +94,7 @@
       "nagoya-juumin-todoke",
       "B-nagoya-mynumber-faq-pub"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-14",
     "status": "needs_check"
   },
   "methods": [
@@ -125,9 +140,10 @@
           "B-nagoya-faq-39",
           "nagoya-juumin-todoke"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ)"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "国民健康保険資格確認書(加入している方のみ) 介護保険被保険者証(加入している方のみ)",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -194,16 +210,17 @@
     {
       "type": "counter",
       "text": {
-        "ja": "14{日|にち}を{過|す}ぎても、{届出|とどけで}はできます。すみやかに{手続|てつづ}きします。",
-        "ja_easy": "14{日|にち}をすぎても、{届|とど}けは{出|だ}せます。{早|はや}く{出|だ}します。",
-        "en": "You can still file after 14 days. File as soon as possible."
+        "ja": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、できるだけ{早|はや}く{区役所|くやくしょ}の{窓口|まどぐち}で{届出|とどけで}を{済|す}ませるか、{窓口|まどぐち}に{相談|そうだん}します。{正当|せいとう}な{理由|りゆう}なく{届出|とどけで}をしないと、5{万円|まんえん}{以下|いか}の{過料|かりょう}になることがあります（{住民|じゅうみん}{基本|きほん}{台帳法|だいちょうほう}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、すぐ{区役所|くやくしょ}の{窓口|まどぐち}で{届|とど}けを{出|だ}すか、{相談|そうだん}します。{理由|りゆう}がなく{届|とど}けを{出|だ}さないと、5{万円|まんえん}までのお{金|かね}を{払|はら}うことがあります（{要|よう}{確認|かくにん}）。",
+        "en": "If you are close to the 14-day limit or past it, complete the notification at the ward office counter or ask the counter as soon as possible. Not filing without a justifiable reason can lead to an administrative fine of up to 50,000 yen (Basic Resident Registration Act; to be checked)."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-faq-6-pub"
+          "egov-juki-ho"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "正当な理由がなくて第二十二条から第二十四条まで、第二十五条又は第三十条の四十六から第三十条の四十八までの規定による届出をしない者は、五万円以下の過料に処する。"
       }
     }
   ]

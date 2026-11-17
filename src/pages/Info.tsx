@@ -8,7 +8,16 @@ import { Link, useFocusTitle } from '../ui/router';
 import { usePrefs } from '../storage/prefs';
 import { browserOptOut } from '../ui/telemetry';
 
-export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: string; link?: { k: UiKey; href: string }; dev?: boolean; more?: { k: UiKey; body: UiKey[] }; counts?: boolean; privacy?: boolean }> = {
+// TODO（作者）：運営者の連絡先（専用のメールアドレスなど）を決めたら、page.about.operator に足す。いまは、アプリの報告のフォームと GitHub の Issues だけ（個人の名前・メール・電話・住所は載せない。REL-6）
+const BUILD = (import.meta.env?.VITE_BUILD as string | undefined) ?? 'dev';
+
+/* 名古屋市の著作権・再利用の規定（ごみの情報の利用の条件。名古屋市環境局の書面による同意はこの規定にしたがう） */
+const CITY_RULE_LINKS: { k: UiKey; href: string }[] = [
+  { k: 'gomi.rules.copyright', href: 'https://www.city.nagoya.jp/about/1017985.html' },
+  { k: 'gomi.rules.reuse', href: 'https://www.city.nagoya.jp/about/1017973.html' },
+];
+
+export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: string; link?: { k: UiKey; href: string }; links?: { k: UiKey; href: string }[]; dev?: boolean; more?: { k: UiKey; body: UiKey[] }; counts?: boolean; privacy?: boolean }> = {
   'out-of-scope': {
     title: 'page.outOfScope.title', body: ['page.outOfScope.body'], icon: 'cross',
     // 範囲外は細かく列挙せず、名古屋市の公式サイトへ（作者 11/6 I-1）
@@ -16,9 +25,9 @@ export const INFO_PAGES: Record<string, { title: UiKey; body: UiKey[]; icon: str
   },
   // 準備中の一覧は出さない。公式サイトへ（作者 11/6 I-2）
   'coming-soon': { title: 'page.comingSoon.title', body: ['page.comingSoon.body'], icon: 'clock', link: { k: 'page.outOfScope.link', href: 'https://www.city.nagoya.jp/' } },
-  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'page.disclaimer.noGuarantee', 'page.disclaimer.p3', 'page.disclaimer.p5', 'page.disclaimer.p2', 'page.disclaimer.p4', 'page.disclaimer.report'], icon: 'logo' },
+  disclaimer: { title: 'page.disclaimer.title', body: ['page.disclaimer.p1', 'app.unofficial', 'page.disclaimer.noGuarantee', 'page.disclaimer.p3', 'page.disclaimer.p5', 'page.disclaimer.p2', 'page.disclaimer.p4', 'gomi.consent', 'page.disclaimer.report'], icon: 'logo', links: CITY_RULE_LINKS },
   // 使いやすさの決まり（WCAG など）は、開いたときだけ（K-52）
-  about: { title: 'page.about.title', body: ['page.about.p1', 'page.about.p2'], icon: 'bulb', more: { k: 'info.a11yMore', body: ['page.about.p3'] }, privacy: true },
+  about: { title: 'page.about.title', body: ['page.about.p1', 'app.unofficial', 'gomi.consent', 'page.about.readings', 'page.about.p2', 'page.about.operator'], icon: 'bulb', links: [...CITY_RULE_LINKS, { k: 'page.about.notices', href: 'https://github.com/eringoio/kurashi/blob/main/THIRD_PARTY_NOTICES.md' }, { k: 'page.about.issues', href: 'https://github.com/eringoio/kurashi/issues' }], more: { k: 'info.a11yMore', body: ['page.about.p3'] }, privacy: true },
   // 使う情報（作者の指示 2026-11-07。SPEC 13）：何を・どこへ・なぜ。使われ方の数は、ここで止められる
   // 書類の写真は外国（アメリカ）の Anthropic 社に送るので、その国の制度の情報を示す（個人情報保護法施行規則17条2項。SPEC 13.6）
   privacy: { title: 'page.privacy.title', body: ['page.privacy.lead'], icon: 'you', counts: true, link: { k: 'privacy.usLaw', href: 'https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_america/' } },
@@ -48,7 +57,11 @@ export function Info({ id, reason }: { id: string; reason?: Text }) {
       )}
       {page.counts && <PrivacyRows />}
       {page.counts && <CountsSwitch />}
+      {id === 'about' && <p className="sub"><One k="about.build" /><span lang="en">{BUILD}</span>　<Link to="/updates" className="link"><Bi k="updates.link" /></Link></p>}
       {page.privacy && <p><Link to="/info/privacy" className="link"><Bi k="privacy.link" /></Link></p>}
+      {page.links?.map((l) => (
+        <p key={l.href}><a className="link" href={l.href} target="_blank" rel="noopener noreferrer"><Bi k={l.k} /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></p>
+      ))}
       {page.link && (
         <p><a className="link" href={page.link.href} target="_blank" rel="noopener noreferrer"><Bi k={page.link.k} /><span aria-hidden="true"> ↗</span><span className="sr-only"><One k="here.newTab" /></span></a></p>
       )}

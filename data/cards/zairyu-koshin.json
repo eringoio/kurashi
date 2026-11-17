@@ -63,9 +63,9 @@
     "reading": "ざいりゅうきかんこうしんきょかしんせい"
   },
   "summary": {
-    "ja": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に、{更新|こうしん}の{許可|きょか}を{申請|しんせい}します。{満了|まんりょう}の3か{月|げつ}{前|まえ}から{申請|しんせい}できます。{書類|しょるい}（{在学|ざいがく}{証明|しょうめい}{書|しょ}・{成績|せいせき}{証明|しょうめい}{書|しょ}など）をそろえるのに{時間|じかん}がかかるので、{早|はや}めに{準備|じゅんび}します。{入管|にゅうかん}の{目安|めやす}は2{週間|しゅうかん}から1か{月|げつ}ですが、{留学|りゅうがく}の{更新|こうしん}は{最近|さいきん}45〜60{日|にち}ほどかかっています（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に{申請|しんせい}します。{終|お}わる3か{月|げつ}{前|まえ}から{申請|しんせい}できます。{書類|しょるい}に{時間|じかん}がかかるので、{早|はや}めに{準備|じゅんび}します。{入管|にゅうかん}の{目安|めやす}は2{週間|しゅうかん}から1か{月|げつ}です。でも、{留学|りゅうがく}の{更新|こうしん}は{最近|さいきん}、45〜60{日|にち}ぐらいかかっています（{要確認|ようかくにん}）。",
-    "en": "Apply for an extension before your period of stay ends. You can apply from 3 months before it ends. Collecting documents (certificate of enrolment, transcript, etc.) takes time, so start early. Immigration's target is 2 weeks to 1 month, but student renewals recently took about 45–60 days on average (to be checked)."
+    "ja": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に、{更新|こうしん}の{許可|きょか}を{申請|しんせい}します。6か{月|げつ}{以上|いじょう}の{在留|ざいりゅう}{期間|きかん}がある{人|ひと}は、{満了|まんりょう}の3か{月|げつ}{前|まえ}から{申請|しんせい}できます。{書類|しょるい}（{在学|ざいがく}{証明|しょうめい}{書|しょ}・{成績|せいせき}{証明|しょうめい}{書|しょ}など）をそろえるのに{時間|じかん}がかかるので、{早|はや}めに{準備|じゅんび}します。{入管|にゅうかん}の{目安|めやす}は2{週間|しゅうかん}から1か{月|げつ}ですが、{留学|りゅうがく}の{更新|こうしん}は{最近|さいきん}45〜60{日|にち}ほどかかっています（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{在留|ざいりゅう}{期間|きかん}が{終|お}わる{前|まえ}に{申請|しんせい}します。{在留|ざいりゅう}{期間|きかん}が6か{月|げつ}{以上|いじょう}の{人|ひと}は、{終|お}わる3か{月|げつ}{前|まえ}から{申請|しんせい}できます。{書類|しょるい}に{時間|じかん}がかかるので、{早|はや}めに{準備|じゅんび}します。{入管|にゅうかん}の{目安|めやす}は2{週間|しゅうかん}から1か{月|げつ}です。でも、{留学|りゅうがく}の{更新|こうしん}は{最近|さいきん}、45〜60{日|にち}ぐらいかかっています（{要確認|ようかくにん}）。",
+    "en": "Apply for an extension before your period of stay ends. If your period of stay is 6 months or longer, you can apply from 3 months before it ends. Collecting documents (certificate of enrolment, transcript, etc.) takes time, so start early. Immigration's target is 2 weeks to 1 month, but student renewals recently took about 45–60 days on average (to be checked)."
   },
   "where": {
     "text": {
@@ -134,7 +134,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "a12af40432b6452cad5410221f1709273ab07a3c25758b173dedc05b49438592",
           "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-koshin/c11"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -192,7 +192,7 @@
       "B-moj-koshin",
       "isa-processing-days-2026-08"
     ],
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-14",
     "status": "needs_check",
     "quote": "手続対象者 現に有する在留資格の活動を継続しようとする外国人"
   },

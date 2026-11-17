@@ -97,10 +97,45 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{警察|けいさつ}{署|しょ}で{更新|こうしん}できるのは、{優良|ゆうりょう}{運転|うんてん}{者|しゃ}、オンライン{更新|こうしん}{時|じ}{講習|こうしゅう}を{受|う}けた{一般|いっぱん}{運転|うんてん}{者|しゃ}、{高齢|こうれい}{者|しゃ}（{更新|こうしん}の{前後|ぜんご}で{免許|めんきょ}{証|しょう}の{持|も}ち{方|かた}が{変|か}わらない{人|ひと}）です。{違反|いはん}{運転|うんてん}{者|しゃ}・{初回|しょかい}{更新|こうしん}{者|しゃ}は{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{東|ひがし}{三|さん}{河|かわ}{運転|うんてん}{免許|めんきょ}センターで{更新|こうしん}します（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{警察署|けいさつしょ}で{更新|こうしん}できる{人|ひと}は{決|き}まっています。{違反|いはん}がある{人|ひと}・はじめての{更新|こうしん}の{人|ひと}は{運転免許試験場|うんてんめんきょしけんじょう}です（{要確認|ようかくにん}）",
-        "en": "At police stations, renewal is only for good drivers, regular drivers who finished the online course, and older drivers who keep the same licence form. Drivers with violations and first-time renewers go to the test centre or the Higashi-Mikawa centre (to be checked)."
+        "ja": "{優良|ゆうりょう}{運転|うんてん}{者|しゃ}：{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、23の{警察|けいさつ}{署|しょ}、{西|にし}・{港|みなと}{警察|けいさつ}{署|しょ}（{分|ぶん}{庁舎|ちょうしゃ}）で{更新|こうしん}できます。{名古屋|なごや}{市内|しない}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{西|にし}・{港|みなと}{警察|けいさつ}{署|しょ}（{分|ぶん}{庁舎|ちょうしゃ}）です。{警察|けいさつ}{署|しょ}は{月曜|げつよう}〜{金曜|きんよう}の12:00〜16:00です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{優良|ゆうりょう}{運転|うんてん}{者|しゃ}：{試験場|しけんじょう}か、{西|にし}・{港|みなと}{警察|けいさつ}{署|しょ}（{分|ぶん}{庁舎|ちょうしゃ}）などでできます（{要|よう}{確認|かくにん}）",
+        "en": "Excellent drivers: renew at the test centre, the Higashi-Mikawa centre, the 23 police stations, or the Nishi/Minato police station branch offices. In Nagoya: the test centre and the Nishi/Minato branch offices. Police stations: Monday to Friday, 12:00-16:00 (to be checked)."
       },
+      "when": "R-license-course-good",
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "月曜日～金曜日 12時00分～16時00分 ※日曜日は受付していません"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{一般|いっぱん}{運転|うんてん}{者|しゃ}：{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターで{更新|こうしん}します。{警察|けいさつ}{署|しょ}（{西|にし}・{港|みなと}の{分|ぶん}{庁舎|ちょうしゃ}を{含|ふく}む）で{更新|こうしん}できるのは、オンライン{更新|こうしん}{時|じ}{講習|こうしゅう}を{受|う}けた{人|ひと}だけです（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{一般|いっぱん}{運転|うんてん}{者|しゃ}：{試験場|しけんじょう}です。オンラインの{講習|こうしゅう}を{受|う}けた{人|ひと}は{警察|けいさつ}{署|しょ}でもできます（{要|よう}{確認|かくにん}）",
+        "en": "General drivers: renew at the test centre or the Higashi-Mikawa centre. At police stations (including the Nishi/Minato branch offices), only if you took the online renewal course (to be checked)."
+      },
+      "when": "R-license-course-general",
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "※オンライン更新時講習受講済みの方に限ります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{違反|いはん}{運転|うんてん}{者|しゃ}・{初回|しょかい}{更新|こうしん}{者|しゃ}：{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターだけです。{警察|けいさつ}{署|しょ}では{更新|こうしん}できません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{違反|いはん}{運転|うんてん}{者|しゃ}・はじめての{更新|こうしん}：{試験場|しけんじょう}だけです（{要|よう}{確認|かくにん}）",
+        "en": "Violators and first-time renewers: only the test centre or the Higashi-Mikawa centre. Not at police stations (to be checked)."
+      },
+      "when": "R-license-course-center",
       "evidence": {
         "source_ids": [
           "license-aichi-koshin-yoyaku",
@@ -114,7 +149,40 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{更新|こうしん}と{同時|どうじ}にマイナ{免許|めんきょ}{証|しょう}に{切|き}り{替|か}えることは、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{東|ひがし}{三|さん}{河|かわ}{運転|うんてん}{免許|めんきょ}センターでできます。{警察|けいさつ}{署|しょ}で{同時|どうじ}に{切|き}り{替|か}えられる{人|ひと}（{一般|いっぱん}{運転|うんてん}{者|しゃ}が{入|はい}るか）は、{県警|けんけい}のページの{説明|せつめい}が{食|く}い{違|ちが}っています。{警察|けいさつ}{署|しょ}で{切|き}り{替|か}えたい{人|ひと}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja": "{高齢|こうれい}{者|しゃ}：{先|さき}に{指定|してい}{自動車|じどうしゃ}{教習所|きょうしゅうじょ}で{高齢|こうれい}{者|しゃ}{講習|こうしゅう}を{受|う}けます。{持|も}ち{物|もの}に、{高齢|こうれい}{者|しゃ}{講習|こうしゅう}{終了|しゅうりょう}{証明|しょうめい}{書|しょ}と{認知|にんち}{機能|きのう}{検査|けんさ}{結果|けっか}{通知|つうち}{書|しょ}（{該当|がいとう}する{人|ひと}は{運転|うんてん}{技能|ぎのう}{検査|けんさ}{受検|じゅけん}{結果|けっか}{証明|しょうめい}{書|しょ}）を{足|た}します。{警察|けいさつ}{署|しょ}で{更新|こうしん}できるのは、{更新|こうしん}の{前後|ぜんご}で{免許|めんきょ}{証|しょう}の{持|も}ち{方|かた}が{変|か}わらない{人|ひと}だけです（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{高齢|こうれい}{者|しゃ}：{先|さき}に{教習所|きょうしゅうじょ}で{講習|こうしゅう}を{受|う}けます。その{証明|しょうめい}{書|しょ}を{持|も}っていきます（{要|よう}{確認|かくにん}）",
+        "en": "Older drivers: first take the older-driver course at a designated driving school. Also bring the course completion certificate and the cognitive test result notice (and the driving skill test certificate if it applies). At police stations, only if the form of your licence does not change (to be checked)."
+      },
+      "when": "R-license-course-elderly",
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "講習は、指定自動車教習所で受講してください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}の{受付|うけつけ}：{日曜|にちよう}〜{木曜|もくよう}の8:30〜12:00と12:45〜15:00（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{試験場|しけんじょう}：{日曜|にちよう}〜{木曜|もくよう}（{要|よう}{確認|かくにん}）",
+        "en": "Test centre: Sunday to Thursday, 8:30-12:00 and 12:45-15:00 (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-koshin"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "日曜日～木曜日 8時30分～12時00分 12時45分～15時00分"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{更新|こうしん}と{同時|どうじ}にマイナ{免許|めんきょ}{証|しょう}に{切|き}り{替|か}えることは、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターでできます。{警察|けいさつ}{署|しょ}で{同時|どうじ}に{切|き}り{替|か}えられる{人|ひと}（{一般|いっぱん}{運転|うんてん}{者|しゃ}が{入|はい}るか）は、{県警|けんけい}のページの{説明|せつめい}が{食|く}い{違|ちが}っています。{警察|けいさつ}{署|しょ}で{切|き}り{替|か}えたい{人|ひと}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
         "ja_easy": "マイナ{免許証|めんきょしょう}にするのは、{運転免許試験場|うんてんめんきょしけんじょう}でできます。{警察署|けいさつしょ}でできるかは、{試験場|しけんじょう}に{聞|き}いてください（{要確認|ようかくにん}）",
         "en": "You can switch to the My Number licence at the same time as renewal at the test centre and the Higashi-Mikawa centre. Police pages disagree on who can switch at a police station (for example regular drivers). If you want to switch at a police station, ask the test centre (to be checked)."
       },
@@ -181,7 +249,7 @@
       "type": "counter",
       "text": {
         "ja": "{更新|こうしん}{手数料|てすうりょう}：{従来|じゅうらい}の{免許証|めんきょしょう}のみ 2,850{円|えん}、マイナ{免許証|めんきょしょう}のみ 2,100{円|えん}、{両方|りょうほう} 2,950{円|えん}（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{更新|こうしん}のお{金|かね}：{従来|じゅうらい}の{免許証|めんきょしょう}は2,850円、マイナ{免許証|めんきょしょう}は2,100円、{両方|りょうほう}は2,950円（{要確認|ようかくにん}）",
+        "ja_easy": "{更新|こうしん}のお{金|かね}：{従来|じゅうらい}の{免許証|めんきょしょう}は2,850{円|えん}、マイナ{免許証|めんきょしょう}は2,100{円|えん}、{両方|りょうほう}は2,950{円|えん}（{要確認|ようかくにん}）",
         "en": "Renewal fee: conventional licence only 2,850 yen; Mynumber-linked licence only 2,100 yen; both 2,950 yen (to be checked)."
       },
       "evidence": {
@@ -197,7 +265,7 @@
       "type": "counter",
       "text": {
         "ja": "{講習|こうしゅう}{手数料|てすうりょう}（{対面|たいめん}）：{優良|ゆうりょう} 500{円|えん}、{一般|いっぱん} 800{円|えん}、{違反|いはん} 1,400{円|えん}、{初回|しょかい} 1,400{円|えん}。オンライン{講習|こうしゅう}は{優良|ゆうりょう}・{一般|いっぱん}とも 200{円|えん}（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{講習|こうしゅう}のお{金|かね}は、{区分|くぶん}で{違|ちが}います（500円〜1,400円）（{要確認|ようかくにん}）",
+        "ja_easy": "{講習|こうしゅう}のお{金|かね}は、{区分|くぶん}で{違|ちが}います（500{円|えん}〜1,400{円|えん}）（{要確認|ようかくにん}）",
         "en": "Course fee (in person): excellent 500 yen, general 800 yen, violator 1,400 yen, first-time 1,400 yen. Online course: 200 yen for excellent and general (to be checked)."
       },
       "evidence": {
@@ -265,5 +333,10 @@
     "checked_at": "2026-11-06",
     "status": "needs_check",
     "quote": "運転免許証の更新手続は予約制です。"
+  },
+  "lead": {
+    "ja": "{更新|こうしん}できるのは{有効|ゆうこう}{期限|きげん}の{日|ひ}までです。{過|す}ぎたら{更新|こうしん}できず、{期限切|きげんぎ}れの{手続|てつづ}きになります。",
+    "ja_easy": "{更新|こうしん}は、{期限|きげん}の{日|ひ}までです。{過|す}ぎたら、{別|べつ}の{手続|てつづ}きになります。",
+    "en": "You can renew only until the expiry date. After that, renewal is not possible and you need the expired-licence procedure."
   }
 }

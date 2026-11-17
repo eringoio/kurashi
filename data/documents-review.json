@@ -1,4 +1,0 @@
-{
-  "$comment": "要確認（review）・調査中（research）の書類（SPEC 6A.9a）。開発（vite dev・vitest）でだけ読む。本番のビルドと Worker には入らない。作者が確かめたら publication を public にして data/documents.json に移す。",
-  "documents": []
-}

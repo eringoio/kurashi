@@ -126,7 +126,7 @@ test('A1：日本の外から来た人の経路が、保存と一緒に動く', 
   await expect(page).toHaveURL(/\/now$/);
 });
 
-test('A1：在留カードがない人には、住民登録の根拠を1問だけ聞く。短い滞在は範囲外', async ({ page }) => {
+test('A1：在留カードがない人には、住民登録の根拠を1問だけ聞く。短い滞在は専用の画面（R-10）', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto('/move/from');
   // あなたについて（v0.5.17）は答えずに進む（この試験は道のりを見る）
@@ -136,7 +136,7 @@ test('A1：在留カードがない人には、住民登録の根拠を1問だ�
   await expect(h1(page)).toHaveText('日本での住民登録について、あてはまるものは？');
   await check(page, '住民登録の根拠');
   await tap(page, /^住むためではない/);
-  await expect(h1(page)).toHaveText('このアプリでは、まだ案内していません');
+  await expect(h1(page)).toHaveText('短期滞在の人へ');
 });
 
 test('B1：ほかの市から来た人も、同じ画面とデータの追加だけで動く', async ({ page }) => {
@@ -163,4 +163,23 @@ test('B1：ほかの市から来た人も、同じ画面とデータの追加だ
   await page.locator('summary', { hasText: '関係なかったもの' }).click();
   await expect(page.locator('.all-list').getByRole('link', { name: /住所の届出/ })).toBeVisible();
   await check(page, '全体（B1）');
+});
+
+/* Fable C-1（2026-11-15）：最初の質問が終わって /now へ移ったあと、ブラウザの「もどる」で /now に閉じこめない */
+test('最初の質問のあと、もどるで前の画面へもどれる（/now に積み直さない）', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await page.getByRole('link', { name: '引っ越し・住む場所のこと' }).click();
+  await tap(page, 'はい');
+  await tap(page, '日本以外の国籍');
+  await tap(page, '留学');
+  await tap(page, '20歳から59歳まで');
+  await tap(page, '日本の外から');
+  await page.getByRole('button', { name: /^在留カード/ }).click();
+  await tap(page, 'つぎへ');
+  await tap(page, '書いてある');
+  await expect(page).toHaveURL(/\/now$/);
+  const seen: string[] = [];
+  for (let i = 0; i < 4; i++) { await page.goBack(); await page.waitForTimeout(300); seen.push(new URL(page.url()).pathname); }
+  expect(seen.filter((p) => p !== '/now').length, seen.join(' ')).toBeGreaterThan(0);
 });

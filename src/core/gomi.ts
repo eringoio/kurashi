@@ -120,6 +120,8 @@ export interface Schedule {
   exceptions: { date: string; kind: 'skip' | 'extra' }[];
   /** 例外の一覧がそろっている期間（年末年始の日程が出る前は、その期間の日付を出さない） */
   exceptions_known_until: string | null;
+  /** この期間は例外の表が無い（その地域・区分に当てはまる市の表の行が無い）。日付を出さない。期間を過ぎれば、ふつうの決まりにもどる */
+  unknown_ranges?: { from: string; to: string }[];
   review_status: 'needs_human_review' | 'approved';
 }
 
@@ -181,6 +183,7 @@ export function nextCollection(schedules: Schedule[], status: AreaStatus, catego
     const d = addDays(today, i);
     if (s.valid_to && d > s.valid_to) return { kind: 'outside_validity' };
     if (!s.exceptions_known_until || d > s.exceptions_known_until) return { kind: 'exceptions_unknown', from: d };
+    if (s.unknown_ranges?.some((r) => r.from <= d && d <= r.to)) return { kind: 'exceptions_unknown', from: d };
     const ex = s.exceptions.find((e) => e.date === d);
     if (ex?.kind === 'skip') continue;
     if (ex?.kind === 'extra' || ruleHits(s.rule, d)) return { kind: 'date', date: d };

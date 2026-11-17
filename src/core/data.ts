@@ -145,7 +145,7 @@ export function checkRefs(d: GuideData): string[] {
       if (l.url.includes('?')) err.push(`${c.id}.links：クエリ文字列がある`);
       text3(c.id + '.links', l.label as Record<string, string>);
     }
-    const ids = ruleIds(c.eligibility).concat(c.coverage_rule_ids);
+    const ids = ruleIds(c.eligibility).concat(c.coverage_rule_ids, c.place_when ? ruleIds(c.place_when) : [], c.remote && c.remote !== true ? ruleIds(c.remote) : []);
     ids.forEach((id) => { if (id === '!nest') err.push(`${c.id}：入れ子が2段以上`); else if (!d.rules.has(id)) err.push(`${c.id}：ルール ${id} がない`); });
     if (c.awareness_type === 'must' && !['legal', 'local_rule'].includes(c.obligation)) err.push(`${c.id}：must は legal・local_rule だけ`);
     if (!d.flow.card_order.includes(c.id)) err.push(`${c.id}：flow.json の card_order にない`);
@@ -154,13 +154,42 @@ export function checkRefs(d: GuideData): string[] {
     if (c.urgent) c.urgent.contacts.forEach((k, i) => { ev(`${c.id}.urgent[${i}]`, k.evidence); if (k.type === 'link' && !k.value.startsWith('https://')) err.push(`${c.id}.urgent[${i}]：https でないリンク`); });
     (c.methods ?? []).forEach((m, i) => { ev(`${c.id}.methods[${i}]`, m.evidence); if (m.when) ruleIds(m.when).forEach((id) => { if (!d.rules.has(id)) err.push(`${c.id}.methods[${i}]：ルール ${id} がない`); }); });
     (c.alternatives ?? []).forEach((a, i) => ev(`${c.id}.alternatives[${i}]`, a.evidence));
+    (c.sections ?? []).forEach((s, i) => { text3(`${c.id}.sections[${i}]`, s.title); s.items.forEach((x, j) => { ev(`${c.id}.sections[${i}][${j}]`, x.evidence); text3(`${c.id}.sections[${i}][${j}]`, x.text); }); });
+    if (c.menu) { text3(c.id + '.menu', c.menu.title); c.menu.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${c.id}.menu：カード ${id} がない`); }); }
     (c.parts ?? []).forEach((x) => { if (x.card && !cards.has(x.card)) err.push(`${c.id}.parts.${x.id}：カード ${x.card} がない`); });
-    (c.event_links ?? []).forEach((l) => { if (!d.events.some((y) => y.id === l.event)) err.push(`${c.id}.event_links：できごと ${l.event} がない`); l.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${c.id}.event_links：カード ${id} がない`); }); });
+    (c.event_links ?? []).forEach((l) => { if (!d.events.some((y) => y.id === l.event)) err.push(`${c.id}.event_links：できごと ${l.event} がない`); l.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${c.id}.event_links：カード ${id} がない`); });
+      Object.entries(l.answers ?? {}).forEach(([qid, v]) => {
+        const q = d.questions.find((y) => y.id === qid);
+        if (!q || !d.events.find((y) => y.id === l.event)?.questions.includes(qid)) err.push(`${c.id}.event_links：${l.event} の入口の質問 ${qid} がない`);
+        else if (!q.options.some((o) => o.value === v)) err.push(`${c.id}.event_links：${qid} の選択肢 ${String(v)} がない`);
+      });
+    });
   }
   for (const id of d.flow.card_order) if (!cards.has(id)) err.push(`flow.json：カード ${id} がない`);
   for (const e of d.events) {
     ev(e.id, e.evidence);
     text3(e.id + '.title', e.title);
+    (e.add_answers ?? []).forEach((a) => {
+      const q = d.questions.find((y) => y.id === a.q);
+      if (!q || !e.questions.includes(a.q) || q.multi) err.push(`${e.id}.add_answers：1つ選ぶ入口の質問 ${a.q} がない`);
+      else for (const v of [a.from, a.add]) if (!q.options.some((o) => o.value === v)) err.push(`${e.id}.add_answers：${a.q} の選択肢 ${v} がない`);
+      text3(e.id + '.add_answers', a.label);
+    });
+    if (e.found) {
+      const f = e.found;
+      const fq = d.questions.find((y) => y.id === f.q);
+      const from = d.questions.find((y) => y.id === f.from);
+      if (!fq || !fq.multi || fq.stage !== 'object_check') err.push(`${e.id}.found：複数選択の object_check の質問 ${f.q} がない`);
+      if (!from || !e.questions.includes(f.from)) err.push(`${e.id}.found：入口の質問 ${f.from} がない`);
+      f.items.forEach((it) => {
+        if (!fq?.options.some((o) => o.value === it.value) || !from?.options.some((o) => o.value === it.value)) err.push(`${e.id}.found：${it.value} が質問の選択肢にない`);
+        it.eased.forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}.found.${it.value}：カード ${id} がイベントにない`); });
+      });
+      [...f.items.flatMap((it) => it.after.map((a) => ({ a, w: `${e.id}.found.${it.value}` }))), ...f.common.map((a) => ({ a, w: `${e.id}.found.common` }))].forEach(({ a, w }, i) => {
+        ev(`${w}[${i}]`, a.evidence); text3(`${w}[${i}]`, a.text);
+        if (a.when && !d.rules.has(a.when)) err.push(`${w}[${i}]：ルール ${a.when} がない`);
+      });
+    }
     e.card_ids.forEach((id) => { if (!cards.has(id)) err.push(`${e.id}：カード ${id} がない`); });
     e.phases?.forEach((ph) => ph.card_ids.forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：段 ${ph.id} のカード ${id} がイベントにない`); }));
     e.questions.forEach((id) => { if (!d.questions.some((q) => q.id === id)) err.push(`${e.id}：質問 ${id} がない`); });
@@ -169,6 +198,12 @@ export function checkRefs(d: GuideData): string[] {
     [...(e.goal_card_ids ?? []), ...(e.info_card_ids ?? [])].forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：目的・情報のカード ${id} がイベントにない`); });
     (e.goal_card_ids ?? []).forEach((id) => { if (e.info_card_ids?.includes(id)) err.push(`${e.id}：${id} が目的と情報の両方にある`); });
     if (e.scope_rule && !d.rules.has(e.scope_rule)) err.push(`${e.id}：範囲のルール ${e.scope_rule} がない`);
+    // 選ぶ入口（menu）は、同じできごとの中のカードだけ（開いた先から選び直せるように）
+    e.card_ids.forEach((id) => d.cards.find((c) => c.id === id)?.menu?.card_ids.forEach((m) => { if (!e.card_ids.includes(m)) err.push(`${e.id}：${id} の menu のカード ${m} がイベントにない`); }));
+    Object.entries(e.eligibility ?? {}).forEach(([id, x]) => {
+      if (!e.card_ids.includes(id)) err.push(`${e.id}：eligibility のカード ${id} がイベントにない`);
+      ruleIds(x).forEach((r) => { if (!d.rules.has(r)) err.push(`${e.id}：eligibility のルール ${r} がない`); });
+    });
     e.by_answer?.forEach((b) => {
       if (!d.rules.has(b.when)) err.push(`${e.id}：by_answer のルール ${b.when} がない`);
       [...(b.goal_card_ids ?? []), ...(b.info_card_ids ?? []), ...(b.later_card_ids ?? []), ...(b.after ?? [])].forEach((id) => { if (!e.card_ids.includes(id)) err.push(`${e.id}：by_answer のカード ${id} がイベントにない`); });

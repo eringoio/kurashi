@@ -35,14 +35,14 @@ export const TRACK: Record<StayKind, Track> = {
   designated: 'renew', cultural: 'renew', other: 'renew',
   permanent: 'card', hsp2: 'card', special_permanent: 'spc', short_stay: 'short', unknown: 'unknown',
 };
-/** 共通の質問 Q-zairyu-status に書く値（無い物は書かない：短期滞在・わからない） */
+/** 共通の質問 Q-zairyu-status に書く値（無い物は書かない：わからない。短期滞在は 2026-11-14 に足した） */
 export const PROFILE_OF: Partial<Record<StayKind, string>> = {
   student: 'student', dependent: 'family', engineer: 'work', work_other: 'work', hsp2: 'work', spouse: 'spouse', long_term: 'long_term',
-  designated: 'designated', cultural: 'cultural', other: 'other', permanent: 'permanent', special_permanent: 'permanent',
+  designated: 'designated', cultural: 'cultural', other: 'other', permanent: 'permanent', special_permanent: 'permanent', short_stay: 'short_stay',
 };
 /** 共通の答えから、1つに決まるときだけ細かい区分にする（仕事・永住者は2つ以上にあたるので聞く） */
 export const KIND_FROM_PROFILE: Record<string, StayKind> = {
-  student: 'student', family: 'dependent', spouse: 'spouse', long_term: 'long_term', designated: 'designated', cultural: 'cultural',
+  student: 'student', family: 'dependent', spouse: 'spouse', long_term: 'long_term', designated: 'designated', cultural: 'cultural', short_stay: 'short_stay',
 };
 
 const days = (a: Ymd, b: Ymd) => Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 86_400_000);

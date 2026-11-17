@@ -22,14 +22,14 @@
     "reading": "でんきのしようかいし・ていしのもうしこみ"
   },
   "summary": {
-    "ja": "{電気|でんき}の{契約|けいやく}{先|さき}は{家|いえ}と{契約|けいやく}によって{違|ちが}います。{入居|にゅうきょ}の{前|まえ}に、{不動産|ふどうさん}{会社|がいしゃ}に、どこに{連絡|れんらく}するかを{聞|き}きます。ブレーカーについているはがきで{申|もう}し{込|こ}む{方法|ほうほう}もあります（{一般的|いっぱんてき}な{説明|せつめい}。{要|よう}{確認|かくにん}）。{退去|たいきょ}するときは、{契約|けいやく}している{会社|がいしゃ}に、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{電気|でんき}の{会社|かいしゃ}は{家|いえ}によって{違|ちが}います。{入|はい}る{前|まえ}に、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。ブレーカーのはがきで{申|もう}し{込|こ}むこともあります（{要|よう}{確認|かくにん}）。{出|で}るときは、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
-    "en": "Who supplies electricity depends on the home and the contract. Before moving in, ask the real estate agent whom to contact. Some homes have a postcard on the breaker to apply (general explanation; to be confirmed). When you move out, tell the company you contract with the day you stop (to be confirmed)."
+    "ja": "{電気|でんき}の{契約|けいやく}{先|さき}は、{家|いえ}と{契約|けいやく}によって{違|ちが}います。{入居|にゅうきょ}の{前|まえ}に、{物件|ぶっけん}で{電力|でんりょく}{会社|かいしゃ}が{決|き}まっているかを{不動産|ふどうさん}{会社|かいしゃ}に{聞|き}きます。{申|もう}し{込|こ}みは、{契約|けいやく}する{電力|でんりょく}{会社|かいしゃ}の{案内|あんない}に{従|したが}います（ウェブ・{電話|でんわ}など。{方法|ほうほう}は{会社|かいしゃ}によって{違|ちが}います）。{使|つか}い{始|はじ}める{日|ひ}と{申|もう}し{込|こ}みの{方法|ほうほう}は、{早|はや}めに{確|たし}かめます。ブレーカーなどに{申込|もうしこ}みのはがきが{付|つ}いている{物件|ぶっけん}もあります（{一|ひと}つの{例|れい}です）。{退去|たいきょ}するときは、{契約|けいやく}している{会社|かいしゃ}に、やめる{日|ひ}を{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{電気|でんき}の{会社|かいしゃ}は、{家|いえ}によって{違|ちが}います。{入|はい}る{前|まえ}に、{会社|かいしゃ}が{決|き}まっているか、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。{申|もう}し{込|こ}みは、{電気|でんき}の{会社|かいしゃ}の{方法|ほうほう}でします（ウェブや{電話|でんわ}など）。{使|つか}い{始|はじ}める{日|ひ}と{申|もう}し{込|こ}みの{方法|ほうほう}を、{早|はや}めに{調|しら}べます。はがきで{申|もう}し{込|こ}む{家|いえ}もあります（{一|ひと}つの{例|れい}です）。{出|で}るときは、やめる{日|ひ}を{電気|でんき}の{会社|かいしゃ}に{知|し}らせます（{要|よう}{確認|かくにん}）。",
+    "en": "Who supplies electricity depends on the home and the contract. Before moving in, ask the real estate agent whether the property uses a set power company. Apply following the instructions of the company you contract with (for example online or by phone; methods differ by company). Check the start date and how to apply early. Some properties have an application postcard, for example on the breaker (this is one example). When you move out, tell the company you contract with the day you stop (to be checked)."
   },
   "lead": {
-    "ja": "{契約|けいやく}する{電気|でんき}の{会社|がいしゃ}に{申|もう}し{込|こ}みます。どこに{連絡|れんらく}するかは{不動産|ふどうさん}{会社|がいしゃ}に{聞|き}きます。",
-    "ja_easy": "{電気|でんき}の{会社|かいしゃ}に{申|もう}し{込|こ}みます。{不動産|ふどうさん}の{会社|かいしゃ}に、どこか{聞|き}きます。",
-    "en": "Apply to the electricity company you contract with. Ask the real estate agent whom to contact."
+    "ja": "{契約|けいやく}する{電力|でんりょく}{会社|かいしゃ}に、その{会社|かいしゃ}の{方法|ほうほう}で{申|もう}し{込|こ}みます。{物件|ぶっけん}で{会社|かいしゃ}が{決|き}まっているかは、{不動産|ふどうさん}{会社|かいしゃ}に{聞|き}きます。",
+    "ja_easy": "{電気|でんき}の{会社|かいしゃ}に、その{会社|かいしゃ}の{方法|ほうほう}で{申|もう}し{込|こ}みます。{会社|かいしゃ}が{決|き}まっているか、{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。",
+    "en": "Apply to the power company you contract with, in the way that company sets. Ask the real estate agent whether the property uses a set company."
   },
   "deadline": null,
   "where": {
@@ -49,32 +49,42 @@
         "fetched_at": "2026-11-04",
         "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
         "verdict": "agree",
-        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+        "ref": "internal-audit-record"
       }
     }
   },
   "kind": "guide",
   "methods": [
     {
+      "type": "online",
+      "text": {
+        "ja": "{例|れい}：{中部電力|ちゅうぶでんりょく}ミライズは、{引|ひ}っ{越|こ}しのときの{電気|でんき}の{開始|かいし}・{停止|ていし}を、ウェブか{電話|でんわ}で{受|う}け{付|つ}けています。ほかの{会社|かいしゃ}の{方法|ほうほう}は、その{会社|かいしゃ}に{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{例|れい}：{中部電力|ちゅうぶでんりょく}ミライズでは、{引|ひ}っ{越|こ}しの{電気|でんき}の{手続|てつづ}きを、ウェブか{電話|でんわ}でします。ほかの{会社|かいしゃ}は、その{会社|かいしゃ}に{聞|き}きます。",
+        "en": "Example: Chubu Electric Power Miraiz accepts starting and stopping electricity for a move online or by phone. For other companies, ask that company (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "miraiz-hikkoshi"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "今すぐWebで申込む"
+      }
+    },
+    {
       "type": "mail",
       "text": {
-        "ja": "{電気|でんき}：ブレーカーについているはがきに、{氏名|しめい}・{住所|じゅうしょ}・{使用|しよう}{開始日|かいしび}を{書|か}いて{郵送|ゆうそう}します（{一般的|いっぱんてき}な{説明|せつめい}。{名古屋|なごや}の{電力|でんりょく}{会社|がいしゃ}の{手続|てつづ}きは{不動産|ふどうさん}{会社|がいしゃ}に{確認|かくにん}（{要|よう}{確認|かくにん}））。",
-        "ja_easy": "{電気|でんき}：ブレーカーについているはがきに、{名前|なまえ}・{住所|じゅうしょ}・{使|つか}い{始|はじ}める{日|ひ}を{書|か}いて、ポストに{入|い}れます（{不動産|ふどうさん}の{会社|かいしゃ}に{聞|き}きます。{要|よう}{確認|かくにん}）。",
-        "en": "Electricity: write your name, address and start date on the postcard attached to the breaker and mail it (general guidance; ask the agent about the Nagoya power company; to be checked)."
+        "ja": "ブレーカーなどに{申込|もうしこ}みのはがきが{付|つ}いている{物件|ぶっけん}では、はがきに{氏名|しめい}・{住所|じゅうしょ}・{使用|しよう}{開始|かいし}{日|び}を{書|か}いて{郵送|ゆうそう}する{方法|ほうほう}もあります（{一|ひと}つの{例|れい}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "はがきが{付|つ}いている{家|いえ}では、はがきに{名前|なまえ}・{住所|じゅうしょ}・{使|つか}い{始|はじ}める{日|ひ}を{書|か}いて、ポストに{入|い}れることもあります（{一|ひと}つの{例|れい}。{要|よう}{確認|かくにん}）。",
+        "en": "Where the property has an application postcard (for example on the breaker), you can also write your name, address and start date on it and mail it (one example; to be checked)."
       },
       "evidence": {
         "source_ids": [
           "B-mlit-guidebook-en"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "To apply for electricity, write your name, address, and usage start date on the postcard attached to the breaker and mail it in.",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
-          "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-nyukyo/c3"
-        }
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "To apply for electricity, write your name, address, and usage start date on the postcard attached to the breaker and mail it in."
       }
     }
   ],
@@ -90,10 +100,22 @@
   "reasons": {},
   "evidence": {
     "source_ids": [
-      "B-mlit-guidebook-en"
+      "B-mlit-guidebook-en",
+      "miraiz-hikkoshi"
     ],
     "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "Ask the real estate agent whom to contact for each of the above services."
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{例|れい}：{中部電力|ちゅうぶでんりょく}ミライズの{引越|ひっこ}しの{手続|てつづ}き",
+        "ja_easy": "{例|れい}：{中部電力|ちゅうぶでんりょく}ミライズの{引|ひ}っ{越|こ}しの{案内|あんない}",
+        "en": "Example: Chubu Electric Power Miraiz moving procedures"
+      },
+      "url": "https://miraiz.chuden.co.jp/home/moving/",
+      "source_id": "miraiz-hikkoshi"
+    }
+  ]
 }

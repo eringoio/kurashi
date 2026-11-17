@@ -14,7 +14,8 @@
     "all": [
       "R-job-goal-biz-start",
       "R-job-has-employees",
-      "R-job-not-pt-only"
+      "R-job-not-pt-only",
+      "R-job-biz-open"
     ]
   },
   "coverage_rule_ids": [],
@@ -49,9 +50,9 @@
   },
   "where": {
     "text": {
-      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
-      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
-      "en": "The tax office for your address (or online via e-Tax)"
+      "ja": "{給与|きゅうよ}を{支払|しはら}う{事務所|じむしょ}の{所在地|しょざいち}を{所轄|しょかつ}する{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{給料|きゅうりょう}を{払|はら}う{事務所|じむしょ}がある{所|ところ}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "en": "The tax office for the location of the office that pays salaries. You can also file with e-Tax."
     },
     "evidence": {
       "source_ids": [
@@ -61,9 +62,26 @@
       "status": "needs_check"
     }
   },
+  "place": "tax_office",
+  "remote": true,
   "kind": "procedure",
   "keywords": [],
   "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "e-Tax でも{出|だ}せます。",
+        "ja_easy": "e-Tax（インターネット）でも{出|だ}せます。",
+        "en": "You can also file with e-Tax."
+      },
+      "evidence": {
+        "source_ids": [
+          "nta-2090"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check"
+      }
+    },
     {
       "type": "counter",
       "text": {

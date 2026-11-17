@@ -73,7 +73,8 @@ export function QrMaker() {
       {ok && label && (
         <a className="k-answer k-answer--primary" href={'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(label)} download={qrFileName(path) + '-label.svg'}><Bi phrase k="qr.download" /></a>
       )}
-      <div className="links"><Link to="/review" className="link"><Bi k="qr.back" /></Link></div>
+      {/* /review は公開のビルドに無い（O-6）。あるときだけもどるリンク（FD-11） */}
+      {(import.meta.env.DEV || import.meta.env.VITE_REVIEW === 'on') && <div className="links"><Link to="/review" className="link"><Bi k="qr.back" /></Link></div>}
     </>
   );
 }

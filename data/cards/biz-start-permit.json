@@ -27,9 +27,9 @@
     "reading": "しかくがいかつどうきょか（こべつきょか）"
   },
   "summary": {
-    "ja": "{個人|こじん}{事業|じぎょう}{主|ぬし}として{活動|かつどう}するときや、{働|はたら}く{時間|じかん}を{客観|きゃっかん}{的|てき}に{確|たし}かめにくい{仕事|しごと}（{業務|ぎょうむ}{委託|いたく}など）は、{包括|ほうかつ}{許可|きょか}では{足|た}りず、{資格|しかく}{外|がい}{活動|かつどう}の{個別|こべつ}{許可|きょか}が{要|い}ります。{開業|かいぎょう}{届|とどけ}は{税|ぜい}の{届|とど}けで、{入管|にゅうかん}の{許可|きょか}にはなりません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{自分|じぶん}で{事業|じぎょう}をするときは、{別|べつ}の{許可|きょか}（{個別|こべつ}{許可|きょか}）が{要|い}ります。{開業|かいぎょう}{届|とどけ}は{入管|にゅうかん}の{許可|きょか}ではありません（{要|よう}{確認|かくにん}）。",
-    "en": "Working as a sole proprietor, or work whose hours are hard to verify (such as contract work), needs individual permission, not comprehensive permission. The business-start notice is a tax filing, not immigration permission (to be checked)."
+    "ja": "{個人|こじん}{事業|じぎょう}{主|ぬし}として{活動|かつどう}するときなどで、{働|はたら}く{時間|じかん}を{客観|きゃっかん}{的|てき}に{確|たし}かめることが{難|むずか}しいときは、{包括|ほうかつ}{許可|きょか}では{足|た}りず、{資格|しかく}{外|がい}{活動|かつどう}の{個別|こべつ}{許可|きょか}が{要|い}ります。{働|はたら}く{時間|じかん}を{客観|きゃっかん}{的|てき}に{確|たし}かめられるとき（{配達|はいたつ}の{依頼|いらい}を{受|う}けて、{成果|せいか}に{応|おう}じて{報酬|ほうしゅう}を{得|え}るなど）は、{包括|ほうかつ}{許可|きょか}だけで{働|はたら}けます。どちらに{当|あ}たるかは、{始|はじ}める{前|まえ}に{入管|にゅうかん}で{確|たし}かめます。{開業|かいぎょう}{届|とどけ}は{税|ぜい}の{届|とど}けで、{入管|にゅうかん}の{許可|きょか}にはなりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{自分|じぶん}で{事業|じぎょう}をするとき、{働|はたら}く{時間|じかん}を{確|たし}かめにくい{仕事|しごと}は、{別|べつ}の{許可|きょか}（{個別|こべつ}{許可|きょか}）が{要|い}ります。{働|はたら}く{時間|じかん}がはっきりわかる{仕事|しごと}（{配達|はいたつ}など）は、いまの{許可|きょか}で{働|はたら}けます。{始|はじ}める{前|まえ}に{入管|にゅうかん}で{聞|き}きます。{開業|かいぎょう}{届|とどけ}は{入管|にゅうかん}の{許可|きょか}ではありません（{要|よう}{確認|かくにん}）。",
+    "en": "If you work as a sole proprietor or similar and your working hours are hard to verify objectively, comprehensive permission is not enough and you need individual permission. If your hours can be verified objectively (for example, taking delivery requests and being paid by results), comprehensive permission alone is enough. Ask immigration which applies before you start. The business-start notice is a tax filing, not immigration permission (to be checked)."
   },
   "lead": {
     "ja": "{事業|じぎょう}を{始|はじ}める{前|まえ}に、{入管|にゅうかん}の{許可|きょか}を{確|たし}かめます。",
@@ -125,7 +125,7 @@
       "isa-shikakugai-guide",
       "nta-kaigyo-todoke"
     ],
-    "checked_at": "2026-11-08",
+    "checked_at": "2026-11-14",
     "status": "needs_check",
     "quote": "個人事業主として活動する場合や客観的に稼働時間を確認することが困難である活動に従事する場合"
   }

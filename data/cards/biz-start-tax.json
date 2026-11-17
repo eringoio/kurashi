@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-biz-start",
-      "R-job-not-pt-only"
+      "R-job-not-pt-only",
+      "R-job-biz-open"
     ]
   },
   "coverage_rule_ids": [],
@@ -27,23 +28,24 @@
     "reading": "しょとくぜいのかくていしんこく・しょうひぜい"
   },
   "summary": {
-    "ja": "{売上|うりあげ}と{経費|けいひ}を{帳簿|ちょうぼ}につけ、{領収|りょうしゅう}{書|しょ}を{残|のこ}します。{所得|しょとく}{税|ぜい}の{確定|かくてい}{申告|しんこく}は、{原則|げんそく}として{翌年|よくねん}2{月|つき}16{日|にち}から3{月|つき}15{日|にち}までです。{消費|しょうひ}{税|ぜい}は、{前|まえ}{々|々}{年|とし}の{課税|かぜい}{売上|うりあげ}{高|だか}が1,000{万|まん}{円|えん}{以下|いか}なら、{原則|げんそく}として{納|おさ}めなくてよい（{免税|めんぜい}）ですが、インボイスの{登録|とうろく}をすると{免税|めんぜい}になりません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{帳簿|ちょうぼ}をつけて、{毎年|まいとし}2{月|つき}16{日|にち}から3{月|つき}15{日|にち}に{確定|かくてい}{申告|しんこく}をします。{消費|しょうひ}{税|ぜい}とインボイスは{税務署|ぜいむしょ}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
-    "en": "Keep books and receipts. File the income-tax return from 16 Feb to 15 Mar the next year. If taxable sales two years earlier were ¥10 million or less you are usually exempt from consumption tax, but not if you register for invoices (to be checked)."
+    "ja": "{必|かなら}ずすること：{売上|うりあげ}と{経費|けいひ}を{帳簿|ちょうぼ}につけ、{領収|りょうしゅう}{書|しょ}を{残|のこ}します。{所得|しょとく}{税|ぜい}の{確定|かくてい}{申告|しんこく}は、{原則|げんそく}として{翌年|よくねん}2{月|がつ}16{日|にち}から3{月|がつ}15{日|にち}までです。{消費|しょうひ}{税|ぜい}は、{前々年|ぜんぜんねん}の{課税|かぜい}{売上|うりあげ}{高|だか}が1,000{万|まん}{円|えん}{以下|いか}なら、{原則|げんそく}として{納|おさ}めなくてよい（{免税|めんぜい}）です（{要|よう}{確認|かくにん}）。{選|えら}ぶこと：インボイスの{登録|とうろく}と{青色|あおいろ}{申告|しんこく}は{任意|にんい}です。インボイスの{登録|とうろく}をすると、{消費|しょうひ}{税|ぜい}は{免税|めんぜい}になりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{必|かなら}ずすること：{帳簿|ちょうぼ}をつけて、{毎年|まいとし}2{月|がつ}16{日|にち}から3{月|がつ}15{日|にち}に{確定|かくてい}{申告|しんこく}をします。{選|えら}ぶこと：インボイスの{登録|とうろく}と{青色|あおいろ}{申告|しんこく}。インボイスの{登録|とうろく}をすると、{消費|しょうひ}{税|ぜい}を{納|おさ}めます（{要|よう}{確認|かくにん}）。",
+    "en": "Required: keep books and receipts, and file the income-tax return from 16 Feb to 15 Mar the next year (in principle). If taxable sales two years earlier were ¥10 million or less, you are usually exempt from consumption tax (to be checked). Your choice: invoice registration and blue-form filing are optional. If you register for invoices, you are no longer exempt from consumption tax (to be checked)."
   },
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
-      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
-      "en": "The tax office for your address (or online via e-Tax)"
+      "ja": "{確定|かくてい}{申告|しんこく}は{納税地|のうぜいち}を{所轄|しょかつ}する{税務署|ぜいむしょ}（ふつうは{住所|じゅうしょ}。{事業所|じぎょうしょ}の{所在地|しょざいち}を{納税地|のうぜいち}にすることもできます）。e-Tax でも{出|だ}せます（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{納税地|のうぜいち}（ふつうは{住所|じゅうしょ}）の{税務署|ぜいむしょ}。インターネットでも{出|だ}せます（{要|よう}{確認|かくにん}）",
+      "en": "For tax returns, the tax office that covers your tax payment place (usually your address; it can be your business location). Online filing with e-Tax is also possible (to be checked)."
     },
     "evidence": {
       "source_ids": [
         "nta-2090"
       ],
-      "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "checked_at": "2026-11-15",
+      "status": "needs_check",
+      "quote": "所轄税務署、変更後の納税地の所轄税務署"
     }
   },
   "kind": "guide",

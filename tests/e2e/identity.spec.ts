@@ -11,27 +11,32 @@ const built = events.filter((e) => (e.status ?? 'built') === 'built');
 const strings = JSON.parse(readFileSync('data/ui/strings.json', 'utf8')) as Record<string, { ja: string }>;
 const notFound = strings['card.notFound'].ja.replace(/\{([^|}]+)\|[^}]+\}/g, '$1');
 
-test('全てのできごと × 手続き：見出しがあり、見つかりませんではなく、undefined のリンクが無い', async ({ browser }) => {
-  test.setTimeout(240_000);
-  const ctx = await browser.newContext({ viewport: { width: 320, height: 720 }, locale: 'ja-JP' });
-  const page = await ctx.newPage();
-  const bad: string[] = [];
-  expect(built.length).toBeGreaterThan(0);
-  for (const e of built) {
-    for (const c of e.card_ids) {
+/* できごとごとに1つのテスト。ページを開くのは1回だけで、手続きの間は画面の中で移る（router は popstate を聞く）。
+   前は 163 回 page.goto して、忙しい機械で 240 秒を超えていた（Fable 監査 FD-4） */
+test.describe.configure({ mode: 'parallel' });
+for (const e of built) {
+  test(`${e.id} の手続き：見出しがあり、見つかりませんではなく、undefined のリンクが無い`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    const bad: string[] = [];
+    expect(e.card_ids.length).toBeGreaterThan(0);
+    for (const [i, c] of e.card_ids.entries()) {
       const to = `/e/${e.id}/c/${c}`;
-      await page.goto(to);
+      if (i === 0) await page.goto(to);
+      else {
+        await page.evaluate((p) => { history.pushState(null, '', p); window.dispatchEvent(new PopStateEvent('popstate')); }, to);
+        await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(null)))));
+      }
+      await expect(page).toHaveURL(new RegExp(to + '$'));
       const h1 = page.locator('h1');
       await expect(h1, to).toBeVisible();
-      const t = (await h1.innerText()).replace(/\s+/g, '');
-      if (t.includes(notFound.replace(/\s+/g, '')) || t === '') bad.push(`${to}: h1=${t}`);
+      const t = (await h1.innerText()).replace(/s+/g, '');
+      if (t.includes(notFound.replace(/s+/g, '')) || t === '') bad.push(`${to}: h1=${t}`);
       const n = await page.locator('a[href*="undefined"]').count();
       if (n) bad.push(`${to}: undefined href x${n}`);
     }
-  }
-  expect(bad).toEqual([]);
-  await ctx.close();
-});
+    expect(bad).toEqual([]);
+  });
+}
 
 test('検索：housing で候補が出る', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });

@@ -29,15 +29,15 @@
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}・{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター・{一部|いちぶ}の{警察|けいさつ}{署|しょ}（{名古屋|なごや}{市内|しない}は{受付|うけつけ}が{限|かぎ}られます。{警察|けいさつ}{署|しょ}では{後日|ごじつ}の{交付|こうふ}になります）（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{免許|めんきょ}の{試験場|しけんじょう}など。{警察署|けいさつしょ}では、あとの{日|ひ}に{受|う}け{取|と}ります（{要確認|ようかくにん}）",
-      "en": "License center or some police stations (limited in Nagoya; at police stations you receive it later) (to be checked)"
+      "ja": "{名古屋|なごや}{市|し}に{住|す}んでいる{人|ひと}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）。{名古屋|なごや}{市内|しない}の{警察|けいさつ}{署|しょ}では{受|う}け{付|つ}けていません（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{名古屋|なごや}{市|し}の{人|ひと}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）に{行|い}きます。{名古屋|なごや}の{警察署|けいさつしょ}ではできません（{要確認|ようかくにん}）",
+      "en": "If you live in Nagoya, go to the Driver's License Examination Center (Tempaku Ward). Police stations in Nagoya do not accept this (to be checked)"
     },
     "evidence": {
       "source_ids": [
         "C-aichi-menkyo-saikofu"
       ],
-      "checked_at": "2026-11-04",
+      "checked_at": "2026-11-08",
       "status": "needs_check"
     }
   },
@@ -88,7 +88,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "07e05ebdea03c6b0cd10d8f2a6b375ca58918f048b189d0d9ce2c3c9e9516376",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-card-stop/c4"
+          "ref": "internal-audit-record"
         }
       }
     }

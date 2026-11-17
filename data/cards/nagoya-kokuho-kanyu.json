@@ -12,6 +12,7 @@
   "requires_moved_in": false,
   "eligibility": {
     "all": [
+      "R-kokuho-sel",
       "R-kokuho-gate",
       {
         "any": [

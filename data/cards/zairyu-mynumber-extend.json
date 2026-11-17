@@ -88,7 +88,7 @@
       ],
       "checked_at": "2026-11-07",
       "status": "verified",
-      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      "verified_by": "author 2026-11-07 (experience)"
     }
   },
   "methods": [
@@ -110,7 +110,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "手続をせずに有効期限（在留期間満了日）が過ぎてしまうと、これらの利用ができないこととなります。",
-        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+        "verified_by": "author 2026-11-07 (experience)"
       }
     },
     {
@@ -145,7 +145,7 @@
         ],
         "checked_at": "2026-11-07",
         "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+        "verified_by": "author 2026-11-07 (experience)"
       }
     }
   ],

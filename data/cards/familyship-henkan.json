@@ -1,0 +1,180 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-henkan",
+  "illustration": "letter",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{受領証|じゅりょうしょう}などを{返|かえ}す（{返還|へんかん}）",
+    "ja_easy": "{受領証|じゅりょうしょう}を{返|かえ}す",
+    "en": "Return the receipt"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓書受領証等返還届",
+    "reading": "ふぁみりーしっぷせんせいしょじゅりょうしょうとうへんかんとどけ"
+  },
+  "lead": {
+    "ja": "ファミリーシップを{解消|かいしょう}したときなどに、{受領証|じゅりょうしょう}などを{返|かえ}します。{連携|れんけい}{自治体|じちたい}へ{引|ひ}っ{越|こ}すときは{要|い}りません。",
+    "ja_easy": "ふたりの{関係|かんけい}が{終|お}わったときなどに、{受領証|じゅりょうしょう}を{返|かえ}します。{連携|れんけい}している{市|し}や{町|まち}へ{引|ひ}っ{越|こ}すときは{要|い}りません。",
+    "en": "Return the receipt when the familyship ends, etc. Not needed when you move to a partner municipality."
+  },
+  "summary": {
+    "ja": "ファミリーシップを{解消|かいしょう}したときなどに、{受領証|じゅりょうしょう}などを{返|かえ}します。{連携|れんけい}{自治体|じちたい}へ{引|ひ}っ{越|こ}すときは{要|い}りません。",
+    "ja_easy": "ふたりの{関係|かんけい}が{終|お}わったときなどに、{受領証|じゅりょうしょう}を{返|かえ}します。{連携|れんけい}している{市|し}や{町|まち}へ{引|ひ}っ{越|こ}すときは{要|い}りません。",
+    "en": "Return the receipt when the familyship ends, etc. Not needed when you move to a partner municipality."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "オンライン（{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (form). Mail documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "手続きについては原則、オンラインで申請を行っていただき、必要書類等については郵送にて男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どんなとき",
+        "ja_easy": "どんなとき",
+        "en": "When"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "ファミリーシップを{解消|かいしょう}したとき、{一方|いっぽう}が{亡|な}くなったとき、ふたりとも{市内|しない}に{住所|じゅうしょ}がなくなったとき、{宣誓|せんせい}が{無効|むこう}になったとき、そのほか{宣誓|せんせい}の{条件|じょうけん}に{当|あ}てはまらなくなったとき。",
+            "ja_easy": "ふたりの{関係|かんけい}が{終|お}わったとき、1{人|にん}が{亡|な}くなったとき、ふたりとも{名古屋|なごや}{市|し}に{住|す}まなくなったとき、{条件|じょうけん}に{合|あ}わなくなったとき。",
+            "en": "When the familyship ends, one partner dies, neither of you lives in Nagoya any more, the pledge becomes invalid, or you no longer meet the conditions."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "ファミリーシップを解消したとき"
+          }
+        },
+        {
+          "text": {
+            "ja": "{一方|いっぽう}が{亡|な}くなっても、{子|こ}を{含|ふく}むファミリーシップを{続|つづ}け、{生計|せいけい}を{同|おな}じにしているときは、{返|かえ}さずに{変更|へんこう}の{届|とど}けをします。",
+            "ja_easy": "1{人|にん}が{亡|な}くなっても、{子|こ}どもといっしょに{続|つづ}けるときは、{返|かえ}さないで、{変更|へんこう}の{届|とど}けをします。",
+            "en": "If one partner dies but the family with the child continues and shares living expenses, file a change instead of returning."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "生計を同一としている場合は、返還の必要はありません。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{名古屋|なごや}{市|し}から{連携|れんけい}{自治体|じちたい}へ{引|ひ}っ{越|こ}すときは、{返還|へんかん}{届|とどけ}は{要|い}りません。{引|ひ}っ{越|こ}し{先|さき}で{継続|けいぞく}{申告|しんこく}をします（「ほかの{自治体|じちたい}から{転入|てんにゅう}・{転出|てんしゅつ}する」を{見|み}ます）。",
+            "ja_easy": "{連携|れんけい}している{市|し}や{町|まち}へ{引|ひ}っ{越|こ}すときは、{返|かえ}さなくてよいです。{引|ひ}っ{越|こ}し{先|さき}で「{継続|けいぞく}{申告|しんこく}」をします。",
+            "en": "If you move from Nagoya to a partner municipality, no return is needed. File a continuation there (see \"Moving to or from another municipality\")."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "名古屋市から連携自治体へ転出する場合、宣誓書受領証等返還届の手続きは不要です。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{郵送|ゆうそう}するもの",
+        "ja_easy": "{郵便|ゆうびん}で{送|おく}るもの",
+        "en": "What to mail"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{受領証|じゅりょうしょう}と{受領|じゅりょう}{証明|しょうめい}カード（なくしたなど、やむを{得|え}ないときを{除|のぞ}く）。{返還|へんかん}{届|とどけ}{受理|じゅり}{事実|じじつ}{証明|しょうめい}{書|しょ}が{欲|ほ}しいときは、フォームで{選|えら}び、{返信|へんしん}{用|よう}{封筒|ふうとう}（{切手|きって}180{円|えん}{分|ぶん}）も{送|おく}ります。",
+            "ja_easy": "{受領証|じゅりょうしょう}とカード（なくしたときなどは{除|のぞ}く）。{返|かえ}したことの{証明|しょうめい}{書|しょ}が{欲|ほ}しいときは、{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}）も{送|おく}ります。",
+            "en": "The receipt and card (unless lost, etc.). If you want a certificate that the return was accepted, choose it on the form and also send a return envelope (180 yen of stamps)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "「ファミリーシップ宣誓書受領証等返還届受理事実証明書」を交付しますので、申請フォームでその旨選択ください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{返還|へんかん}・{無効|むこう}になった{受領証|じゅりょうしょう}などの{交付|こうふ}{番号|ばんごう}は、{市|し}のページで{公表|こうひょう}されます（{名前|なまえ}は{出|で}ません）。",
+            "ja_easy": "{返|かえ}した{受領証|じゅりょうしょう}の{番号|ばんごう}は、{市|し}のページに{出|で}ます（{名前|なまえ}は{出|で}ません）。",
+            "en": "The numbers of returned or invalid receipts are published on the city page (names are not)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "返還された宣誓書受領証等の交付番号"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{返還|へんかん}の{申込|もうしこみ}フォーム",
+        "ja_easy": "{返|かえ}すためのフォーム",
+        "en": "Return form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/MJAV4",
+      "source_id": "B-nagoya-familyship-form-henkan"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "familyship"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-tebiki",
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "（３）受領証等の返還"
+  }
+}

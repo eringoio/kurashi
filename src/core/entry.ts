@@ -20,6 +20,10 @@ export interface PlanRecord {
   stay?: StayRecord;
   /** 本人が「あとでする」と選んだ（v0.5.30）。自動の「あとで」と分けて、再開できる。日を決めたら消す */
   deferred?: boolean;
+  /** 出す方法（v0.5.45・FE-14）。窓口・郵送・オンラインのうち、カードで確かめた方法から本人が選んだもの。無ければ未定（前の保存はこのまま読める） */
+  method?: 'counter' | 'mail' | 'online';
+  /** 期限を数え始める日（C-3）。カードの deadline.calc.from の出来事の日。本人が入れたときだけ */
+  from_on?: Ymd;
 }
 
 export interface EntryInput {
@@ -75,4 +79,13 @@ export function latestOpenEvent(occurrences: Occurrence[], legacy: Occurrence | 
 export function continuePath(occurrences: Occurrence[], legacy: Occurrence | null): string {
   const o = latestOpenEvent(occurrences, legacy);
   return !o || o.event_id === LEGACY_EVENT ? '/now' : '/e/' + o.event_id;
+}
+
+/** 今日の予定・過ぎた日の画面の「今の手続き」の行き先（C-2）。その日の項目に引っ越しの記録のものがあれば /now、
+    無ければ項目を持つ生活イベントの /e/{id}（最初のもの）。どちらも無ければ fallback（続きの行き先） */
+export function promiseHome(x: { past: boolean; today: Ymd; legacy: PlanRecord[]; events: { event_id: string; plan: PlanRecord }[]; fallback: string }): string {
+  const hit = (p: PlanRecord) => open(p) && !!p.planned_on && (x.past ? before(p.planned_on, x.today) : sameDay(p.planned_on, x.today));
+  if (x.legacy.some(hit)) return '/now';
+  const e = x.events.find((y) => hit(y.plan));
+  return e ? '/e/' + e.event_id : x.fallback;
 }

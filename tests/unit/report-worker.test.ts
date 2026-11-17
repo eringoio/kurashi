@@ -1,11 +1,14 @@
 /* 報告ボタンの Worker（作者の指示 2026-11-06 A-9） */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { clearMemory, handleReport, handleReports, MAX_TEXT, parseReport } from '../../worker/report';
+// Worker の入口は SDK などを読むので重い。テストの中で import すると、その時間が5秒の制限に入る（Fable 監査 FD-2）。集める時に読む
+import workerIndex from '../../worker/index';
+import { openCardOf, reportSteps } from '../../src/core/reportSteps';
 
 const ok = { path: '/c/nagoya-tennyu-juukyochi', scene: 'ward-office', text: '持ち物がちがいました', level: 'ja', at: '2026-11-06T10:00:00+09:00' };
 const post = (body: unknown, ip = '1.2.3.4') => new Request('http://x/api/report', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify(body) });
 const get = (token?: string) => new Request('http://x/api/reports', { headers: token ? { authorization: 'Bearer ' + token } : {} });
-const ENV = { REPORTS_TOKEN: 't0ken' };
+const ENV = { REPORTS_TOKEN: 't0ken', ADMIN_AUTH: 'token' };
 
 beforeEach(() => clearMemory());
 
@@ -51,7 +54,6 @@ describe('報告の手続きと段階（11/7 B-5）', () => {
     expect(parseReport(ok)).toEqual(ok);
   });
   it('reportSteps：plan から作る。日付・場所・答えは入れない', async () => {
-    const { reportSteps, openCardOf } = await import('../../src/core/reportSteps');
     const plan = {
       a: { card_id: 'a', status: 'done' as const },
       b: { card_id: 'b', status: 'todo' as const, planned_on: '2026-11-10' },
@@ -106,8 +108,8 @@ describe('報告の保存（本番）', () => {
     expect(REPORTS.m.size).toBe(0);
   });
   it('本番の入口（worker/index.ts）：KV が無ければ /api/report も /api/reports も 503（メモリに置かない）', async () => {
-    const worker = (await import('../../worker/index')).default;
-    const env = { ASSETS: { fetch: async () => new Response('asset') }, REPORTS_TOKEN: 't0ken' } as never;
+    const worker = workerIndex;
+    const env = { ASSETS: { fetch: async () => new Response('asset') }, REPORTS_TOKEN: 't0ken', ADMIN_AUTH: 'token' } as never;
     const a = await worker.fetch(post(ok), env);
     expect(a.status).toBe(503);
     expect(await a.json()).toEqual({ error: 'storage_unavailable' });

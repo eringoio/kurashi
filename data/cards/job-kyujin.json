@@ -33,41 +33,67 @@
     ]
   },
   "title": {
-    "ja": "{仕事|しごと}を{探|さが}す（{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター）",
-    "ja_easy": "{仕事|しごと}を{探|さが}す（{外国人|がいこくじん}のための{窓口|まどぐち}）",
-    "en": "Looking for a job (Nagoya Employment Service Center for Foreigners)"
+    "ja": "{仕事|しごと}を{探|さが}す（ハローワーク）",
+    "ja_easy": "{仕事|しごと}を{探|さが}す（ハローワーク）",
+    "en": "Looking for a job (Hello Work)"
   },
   "official_name": {
-    "ja": "名古屋外国人雇用サービスセンター",
-    "reading": "なごやがいこくじんこようさーびすせんたー"
+    "ja": "ハローワーク（公共職業安定所）",
+    "reading": "はろーわーく（こうきょうしょくぎょうあんていしょ）"
   },
   "summary": {
-    "ja": "{仕事|しごと}の{相談|そうだん}や{紹介|しょうかい}を{受|う}けるには、{求職|きゅうしょく}{登録|とうろく}をします。{在留|ざいりゅう}カードと{旅券|りょけん}を{持|も}って、{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンターか、{近|ちか}くのハローワークへ{行|い}きます。{通訳|つうやく}は10{言語|げんご}です。{通訳|つうやく}の{人|ひと}がいない{日|ひ}があるので、{事前|じぜん}に{問|と}い{合|あ}わせます。アルバイトも{紹介|しょうかい}してもらえるかは{要|よう}{確認|かくにん}です。{仕事|しごと}を{探|さが}すだけなら{許可|きょか}は{要|い}りませんが、{働|はたら}き{始|はじ}める{前|まえ}には{要|い}ります。{会社|かいしゃ}は{在留|ざいりゅう}カードを{確認|かくにん}するので、{早|はや}めに{受|う}けると{安心|あんしん}です（おすすめ）。",
-    "ja_easy": "{仕事|しごと}を{探|さが}すときは、{先|さき}に「{求職登録|きゅうしょくとうろく}」をします。{在留|ざいりゅう}カードとパスポートを{持|も}って、{外国人|がいこくじん}のための{窓口|まどぐち}かハローワークへ{行|い}きます。{通訳|つうやく}は10{言語|げんご}です。{行|い}く{前|まえ}に{問|と}い{合|あ}わせます。アルバイトの{紹介|しょうかい}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。{探|さが}すだけなら{許可|きょか}はいりません。{働|はたら}く{前|まえ}にはいります（おすすめ：{早|はや}めにもらう）。",
-    "en": "To get job counselling or referrals, register as a job seeker. Take your residence card and passport to the Nagoya Employment Service Center for Foreigners or a nearby Hello Work. Interpreters cover 10 languages, but not every day, so ask in advance. Ask at the counter whether part-time jobs are also introduced (to be checked). You need work permission before you start paid work, not to look for work. Employers check your card, so getting it early helps (advice, not a rule)."
+    "ja": "{求人|きゅうじん}は、ハローワークインターネットサービスで{探|さが}せます。ハローワークで{仕事|しごと}の{相談|そうだん}や{紹介|しょうかい}を{受|う}けるときや、{求人|きゅうじん}に{応募|おうぼ}するときは、{求職|きゅうしょく}{登録|とうろく}をします。アルバイトも{紹介|しょうかい}してもらえるかは、{窓口|まどぐち}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{日本|にほん}{以外|いがい}の{国籍|こくせき}の{人|ひと}は、{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{通訳|つうやく}あり）も{使|つか}えます。{仕事|しごと}を{探|さが}すだけなら、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}は{要|い}りません。{働|はたら}き{始|はじ}める{前|まえ}には、その{仕事|しごと}をしてよい{在留|ざいりゅう}{資格|しかく}か{許可|きょか}が{要|い}ります。",
+    "ja_easy": "{仕事|しごと}は、ハローワークのインターネットで{探|さが}せます。ハローワークで{相談|そうだん}したり、{応募|おうぼ}したりするときは、「{求職|きゅうしょく}{登録|とうろく}」をします。アルバイトの{紹介|しょうかい}は{窓口|まどぐち}で{聞|き}きます（{要確認|ようかくにん}）。{日本|にほん}ではない{国籍|こくせき}の{人|ひと}は、{外国人|がいこくじん}のための{窓口|まどぐち}（{通訳|つうやく}あり）も{使|つか}えます。{探|さが}すだけなら{許可|きょか}はいりません。{働|はたら}く{前|まえ}には、{在留資格|ざいりゅうしかく}か{許可|きょか}がいります。",
+    "en": "You can search job listings on the Hello Work Internet Service. To get job counselling or referrals at Hello Work, or to apply for a job through Hello Work, register as a job seeker. Ask at the counter whether part-time jobs are also introduced (to be checked). If you are not a Japanese national, you can also use the Nagoya Employment Service Center for Foreigners (interpreters available). You do not need permission for extra activities just to look for work. Before you start, you need a status of residence or permission that allows that work."
   },
   "where": {
     "text": {
-      "ja": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{名古屋市|なごやし}{中区|なかく}{錦|にしき}2-14-25 ヤマイチビル8{階|かい}）",
-      "ja_easy": "{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター（{中区|なかく}{錦|にしき}）",
-      "en": "Nagoya Employment Service Center for Foreigners (Yamaichi Building 8F, Nishiki 2-14-25, Naka Ward)"
+      "ja": "{近|ちか}くのハローワーク（{日本|にほん}{以外|いがい}の{国籍|こくせき}の{人|ひと}は、{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター〔{名古屋市|なごやし}{中区|なかく}{錦|にしき}2-14-25 ヤマイチビル8{階|かい}〕も）",
+      "ja_easy": "{近|ちか}くのハローワーク（{日本|にほん}ではない{国籍|こくせき}の{人|ひと}は、{名古屋|なごや}{外国人|がいこくじん}{雇用|こよう}サービスセンター〔{中区|なかく}{錦|にしき}〕も）",
+      "en": "A nearby Hello Work (non-Japanese nationals can also use the Nagoya Employment Service Center for Foreigners, Yamaichi Building 8F, Nishiki 2-14-25, Naka Ward)"
     },
     "evidence": {
       "source_ids": [
         "B-jsite-aichi-foreigner"
       ],
-      "checked_at": "2026-11-05",
-      "status": "ai_checked",
-      "quote": "所在地 〒460-8640 名古屋市中区錦二丁目14番25号 ヤマイチビル8階",
-      "ai_check": {
-        "fetched_at": "2026-11-04",
-        "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
-        "verdict": "agree",
-        "ref": "research/audits/job.json#P-job-kyujin/c6"
-      }
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "在留カード・旅券を持って、当センターまたはお近くのハローワークでお申し込みください。 / 所在地 〒460-8640 名古屋市中区錦二丁目14番25号 ヤマイチビル8階"
     }
   },
   "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{求人|きゅうじん}は、ハローワークインターネットサービス（{日本語|にほんご}）で{探|さが}せます。",
+        "ja_easy": "{求人|きゅうじん}は、ハローワークのインターネット（{日本語|にほんご}）で{探|さが}せます。",
+        "en": "Search job listings on the Hello Work Internet Service (in Japanese)."
+      },
+      "evidence": {
+        "source_ids": [
+          "mhlw-hellowork-internet"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "全国のハローワークで受け付けた求人情報を検索できます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "ハローワークで{職業|しょくぎょう}{相談|そうだん}を{受|う}けるときや、{求人|きゅうじん}に{応募|おうぼ}するときは、{求職|きゅうしょく}{登録|とうろく}が{要|い}ります。",
+        "ja_easy": "ハローワークで{相談|そうだん}するときや{応募|おうぼ}するときは、{求職|きゅうしょく}{登録|とうろく}をします。",
+        "en": "To get job counselling at Hello Work or to apply for a job through it, register as a job seeker."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jsite-aichi-foreigner"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "ハローワークで職業相談や求人に応募する際は、求職登録が必要です。"
+      }
+    },
     {
       "type": "counter",
       "text": {
@@ -86,9 +112,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyujin/c2"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -108,9 +135,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyujin/c3"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -130,9 +158,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyujin/c8"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -152,9 +181,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyujin/c7"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -174,9 +204,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyushoku-sodan/c1"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -196,7 +227,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0324342ac92ec3834b9ea3ea8d939b6ca3f6c80807c7703ebcf62a33339ac1c1",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-kyujin/c5"
+          "ref": "internal-audit-record"
         }
       }
     }

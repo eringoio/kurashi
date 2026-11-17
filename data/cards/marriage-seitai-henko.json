@@ -15,7 +15,7 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-event"
+      "R-mar-home-household"
     ]
   },
   "title": {
@@ -28,14 +28,14 @@
     "reading": "せたいぬしへんこうとどけ・せたいがっぺいとどけ・せたいぶんりとどけ"
   },
   "summary": {
-    "ja": "{結婚|けっこん}で{一緒|いっしょ}に{住|す}むなど、{世帯|せたい}の{形|かたち}が{変|か}わるときは、{世帯主|せたいぬし}{変更|へんこう}{届|とどけ}・{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}を、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に{区役所|くやくしょ}{市民課|しみんか}（{支所|ししょ}は{区民生活課|くみんせいかつか}）に{出|だ}します（{要|よう}{確認|かくにん}）。{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}は{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}し、{郵送|ゆうそう}はできません。{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しの{届出|とどけで}も14{日|にち}{以内|いない}です（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{結婚|けっこん}して{一緒|いっしょ}に{住|す}むなど、{世帯|せたい}が{変|か}わるときは、{変|か}わった{日|ひ}から14{日|にち}いないに、{区役所|くやくしょ}で{届|とど}けを{出|だ}します（{要|よう}{確認|かくにん}）。{世帯|せたい}を{合|あ}わせる{届|とど}け・{分|わ}ける{届|とど}けは、{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}します。{郵送|ゆうそう}はできません。{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しの{届|とど}けも14{日|にち}いないです（{要|よう}{確認|かくにん}）。",
-    "en": "When the make-up of your household changes, for example you start living together after marriage, file a household head change, merger or separation notice with the ward office within 14 days of the change (to be checked). Merger and separation notices must be filed at the counter; mail is not accepted. If your address changes, the move notification is also due within 14 days (to be checked)."
+    "ja": "{結婚|けっこん}しただけでは、{世帯|せたい}の{届|とどけ}は{要|い}りません。{住所|じゅうしょ}は{同|おな}じで、{世帯|せたい}を{一緒|いっしょ}にする・{分|わ}ける・{世帯主|せたいぬし}が{変|か}わるときは、{世帯主|せたいぬし}{変更|へんこう}{届|とどけ}・{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}を、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に{区役所|くやくしょ}{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）に{出|だ}します（{要|よう}{確認|かくにん}）。{世帯|せたい}{合併|がっぺい}{届|とどけ}・{世帯|せたい}{分離|ぶんり}{届|とどけ}は{窓口|まどぐち}に{直接|ちょくせつ}{出|だ}し、{郵送|ゆうそう}はできません。",
+    "ja_easy": "{結婚|けっこん}しただけでは、{世帯|せたい}の{届|とど}けは{要|い}りません。{住|す}む{所|ところ}は{同|おな}じで、{世帯|せたい}を{一緒|いっしょ}にする・{世帯主|せたいぬし}が{変|か}わるときは、14{日|にち}の{間|あいだ}に{区役所|くやくしょ}に{届|とど}けます（{要|よう}{確認|かくにん}）。{郵便|ゆうびん}ではできません。",
+    "en": "Marriage alone does not require a household notification. If you stay at the same address and merge or split households or change the head of household, submit the notification at the ward office within 14 days of the change (to be checked). Merging or splitting must be done in person, not by mail."
   },
   "lead": {
-    "ja": "{世帯|せたい}の{形|かたち}が{変|か}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}へ{届|とどけ}を{出|だ}します。",
-    "ja_easy": "{世帯|せたい}が{変|か}わったら、14{日|にち}いないに{区役所|くやくしょ}に{届|とど}けを{出|だ}します。",
-    "en": "If your household changes, file a notification at the ward office within 14 days."
+    "ja": "{住所|じゅうしょ}は{同|おな}じで{世帯|せたい}が{変|か}わるときだけ、14{日|にち}{以内|いない}に{区役所|くやくしょ}へ{届|とどけ}を{出|だ}します。",
+    "ja_easy": "{住|す}む{所|ところ}は{同|おな}じで{世帯|せたい}が{変|か}わるときだけ、{区役所|くやくしょ}に{届|とど}けます。",
+    "en": "Only if your household changes at the same address, notify the ward office within 14 days."
   },
   "deadline": {
     "text": {
@@ -69,7 +69,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c5"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -93,7 +93,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0d677676f0e2ce80303d2239531dde1ad1d6648b02857ae7aa8ea528efb58ade",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -115,7 +115,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -137,7 +137,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0d677676f0e2ce80303d2239531dde1ad1d6648b02857ae7aa8ea528efb58ade",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c12"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -159,7 +159,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -181,24 +181,8 @@
           "fetched_at": "2026-11-04",
           "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c13"
+          "ref": "internal-audit-record"
         }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{住所|じゅうしょ}が{変|か}わる{場合|ばあい}、{引|ひ}っ{越|こ}したあとは14{日|にち}{以内|いない}に{新|あたら}しい{住所|じゅうしょ}の{役所|やくしょ}へ{転入|てんにゅう}{届|とどけ}を{出|だ}します（{名古屋|なごや}{市|し}のやさしい{日本語|にほんご}のページ）（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{住所|じゅうしょ}が{変|か}わるときは、{引|ひ}っ{越|こ}しのあと14{日|にち}いないに、{新|あたら}しい{住所|じゅうしょ}の{役所|やくしょ}に{届|とど}けを{出|だ}します（{要|よう}{確認|かくにん}）。",
-        "en": "If your address changes, file the move-in notification with the office for your new address within 14 days of moving (Nagoya's easy-Japanese page) (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-nagoya-easyjp-tetsuzuki"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "ひっこした あと 14日より はやく あたらしい いえの 役所に 転入届を だします。"
       }
     }
   ],
@@ -211,13 +195,19 @@
     "household head",
     "merge households"
   ],
-  "reasons": {},
+  "reasons": {
+    "excluded": {
+      "ja": "{住所|じゅうしょ}は{同|おな}じで、{世帯|せたい}を{変|か}える{人|ひと}に{出|だ}しています。{引|ひ}っ{越|こ}す{人|ひと}は、{引|ひ}っ{越|こ}しの{届出|とどけで}のときに{世帯|せたい}のことも{届|とど}け{出|で}ます（「{結婚|けっこん}で{引|ひ}っ{越|こ}すとき」を{見|み}てください）（{要|よう}{確認|かくにん}）。{住所|じゅうしょ}も{世帯|せたい}も{変|か}わらない{人|ひと}には{要|い}りません。",
+      "ja_easy": "{住|す}む{所|ところ}は{同|おな}じで、{世帯|せたい}を{変|か}える{人|ひと}に{出|だ}しています。{引|ひ}っ{越|こ}す{人|ひと}は「{結婚|けっこん}で{引|ひ}っ{越|こ}すとき」を{見|み}ます。",
+      "en": "Shown to people who change their household at the same address. If you move, the household is handled with the moving notification (see \"Moving because of marriage\") (to be checked). Not needed if neither changes."
+    }
+  },
   "evidence": {
     "source_ids": [
       "B-nagoya-faq-47",
       "B-nagoya-faq-48"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "世帯主の変更があった日から14日以内（世帯主の変更のあった翌日を１日目とします。）"
   }

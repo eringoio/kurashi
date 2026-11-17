@@ -1,3 +1,5 @@
+import { crossSiteProblem } from './report';
+import { adminProblem, type AdminEnv } from './admin';
 /* 使われ方の数（SPEC 13.4。作者の指示 2026-11-07）。POST /api/ev：数だけ。ID・クッキー・IP・答えは受け取らない。
    本文は { k, p, f?, l, w, b, ... }。決まった項目だけを残し、ほかは捨てる。
    保存は Workers Analytics Engine（wrangler.toml の EV。約3か月で消える）。EV が無いとき（手元・テスト）は Worker のメモリの中だけ。
@@ -6,7 +8,7 @@
 export interface AeLike { writeDataPoint(p: { blobs?: string[]; doubles?: number[]; indexes?: string[] }): void }
 import { jstDay, readCount, type CounterKv } from './usage';
 
-export interface Env { EV?: AeLike; REPORTS_TOKEN?: string; CF_ACCOUNT_ID?: string; CF_API_TOKEN?: string; USAGE?: CounterKv }
+export interface Env extends AdminEnv { EV?: AeLike; CF_ACCOUNT_ID?: string; CF_API_TOKEN?: string; USAGE?: CounterKv }
 
 export const KINDS = ['view', 'error', 'outcome', 'helpful'] as const;
 export type Kind = (typeof KINDS)[number];
@@ -43,14 +45,23 @@ export function cleanError(v: unknown): string {
 const json = (status: number, body: unknown) =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' } });
 
+/** 使われ方の数の本文の上限（決まった短い項目だけなので 2KB で足りる） */
+export const EV_MAX_BYTES = 2048;
+
 /** 手元のメモリ（数えるだけ。最大 5,000 件） */
 const mem: Ev[] = [];
 export const clearEvMemory = () => { mem.length = 0; };
 
 export async function handleEv(req: Request, env: Env): Promise<Response> {
   if (req.method !== 'POST') return json(405, { error: 'method' });
+  // ほかのサイト・JSON でない送信は受け取らない。大きい本文は読む前に断る（Fable 監査 FB-4・FB-12。2026-11-15）
+  if (crossSiteProblem(req)) return json(403, { error: 'origin' });
+  const len = Number(req.headers.get('content-length') ?? '0');
+  if (len > EV_MAX_BYTES) return json(413, { error: 'size' });
+  const raw = await req.text();
+  if (new TextEncoder().encode(raw).length > EV_MAX_BYTES) return json(413, { error: 'size' });
   let body: unknown;
-  try { body = JSON.parse(await req.text()); } catch { return json(400, { error: 'body' }); }
+  try { body = JSON.parse(raw); } catch { return json(400, { error: 'body' }); }
   const e = parseEv(body);
   if (typeof e === 'string') return json(400, { error: e });
   const blobs = [e.k, e.p, e.f, e.l, e.w, e.b, e.x, e.y];
@@ -85,7 +96,8 @@ async function readAe(env: Env): Promise<Ev[]> {
 
 export async function handleUsage(req: Request, env: Env, now = Date.now()): Promise<Response> {
   if (req.method !== 'GET') return json(405, { error: 'method' });
-  if (!env.REPORTS_TOKEN || req.headers.get('authorization') !== 'Bearer ' + env.REPORTS_TOKEN) return json(401, { error: 'token' });
+  const no = await adminProblem(req, env, now);
+  if (no) return no;
   if (env.EV && !(env.CF_ACCOUNT_ID && env.CF_API_TOKEN)) return json(503, { error: 'no_reader' });
   try {
     // 写真の読み取りの回数（KV があるときだけ。目安の数え方）

@@ -43,3 +43,18 @@ export const normalize = (s: string) => s.replace(/[\s　]+/g, '');
 /** 欄に付ける印：verified＝確認済み（人）、ai_checked＝AI チェック、ほか＝印なし（「要確認」は文で出す） */
 export const trustMark = (e: Pick<Evidence, 'status'> | undefined | null): 'human' | 'ai' | null =>
   e?.status === 'verified' ? 'human' : e?.status === 'ai_checked' ? 'ai' : null;
+
+/** 確認の中身を正直に言うための種類（2026-11-14）。verified でも、まとめて機械で照合したもの（bulk）と、作者の経験・窓口で聞いたこと（experience）を分ける。
+    verified_by の文（開発用）と、公開用に短くした形「author 2026-11-08 (bulk)」のどちらでも読む */
+export function provenance(e: Pick<Evidence, 'status' | 'verified_by' | 'source_ids'>): 'bulk' | 'experience' | null {
+  if (e.status !== 'verified') return null;
+  const by = e.verified_by ?? '';
+  if (/一括承認|全部照合済み|全部確認|\(bulk\)/.test(by)) return 'bulk';
+  if (/経験|窓口|電話|\(experience\)/.test(by) || e.source_ids.some((s) => /^author-/.test(s))) return 'experience';
+  return null;
+}
+/** 画面に出す確認状態の文のキー */
+export const statusKey = (e: Pick<Evidence, 'status' | 'verified_by' | 'source_ids'>): string => {
+  const p = provenance(e);
+  return p ? 'src.prov.' + p : 'src.status.' + e.status;
+};

@@ -1,0 +1,232 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-taimen",
+  "illustration": "hall",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "イーブルなごやで{宣誓|せんせい}する（{対面|たいめん}）",
+    "ja_easy": "イーブルなごやで{宣誓|せんせい}する（{対面|たいめん}）",
+    "en": "Pledge in person at Eble Nagoya"
+  },
+  "official_name": {
+    "ja": "対面での宣誓",
+    "reading": "たいめんでのせんせい"
+  },
+  "lead": {
+    "ja": "{先|さき}に{予約|よやく}が{要|い}ります。{予約|よやく}した{日|ひ}に、ふたりそろって{書類|しょるい}を{持|も}ってイーブルなごやへ{行|い}きます。",
+    "ja_easy": "{先|さき}に{予約|よやく}します。その{日|ひ}に、ふたりで{書類|しょるい}を{持|も}って、イーブルなごやへ{行|い}きます。",
+    "en": "Book first. On the booked day, the two of you go to Eble Nagoya with the documents."
+  },
+  "summary": {
+    "ja": "{予約|よやく}した{日時|にちじ}に、ふたりそろって{必要|ひつよう}な{書類|しょるい}を{持|も}ってイーブルなごや（{中区|なかく}{大井町|おおいちょう}7-25）へ{行|い}き、{宣誓|せんせい}します。{区役所|くやくしょ}ではできません。{代理人|だいりにん}や{郵送|ゆうそう}ではできません。",
+    "ja_easy": "{予約|よやく}した{日|ひ}に、ふたりで{書類|しょるい}を{持|も}って、イーブルなごやへ{行|い}きます。{区役所|くやくしょ}ではできません。",
+    "en": "At the booked time, the two of you go to Eble Nagoya (7-25 Oicho, Naka ward) with the documents and make the pledge. Not at ward offices. A proxy or post is not possible."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{宣誓|せんせい}と{受領証|じゅりょうしょう}などの{交付|こうふ}は{無料|むりょう}です。{必要|ひつよう}な{書類|しょるい}の{発行|はっこう}{手数料|てすうりょう}、{返信|へんしん}{用|よう}{封筒|ふうとう}、{切手|きって}{代|だい}（180{円|えん}{分|ぶん}）は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{宣誓|せんせい}と{受領証|じゅりょうしょう}は{無料|むりょう}です。{書類|しょるい}を{取|と}るお{金|かね}と、{封筒|ふうとう}と{切手|きって}（180{円|えん}）は{自分|じぶん}で{払|はら}います。",
+      "en": "The pledge and the receipt are free. You pay the fees for the documents, the return envelope and the stamps (180 yen)."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "（注）宣誓に必要な書類の交付手数料、返信用封筒及び切手代などは、宣誓者の自己負担となります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "イーブルなごや（{名古屋|なごや}{市|し}{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}センター。{中区|なかく}{大井町|おおいちょう}7-25。{地下鉄|ちかてつ}{名城|めいじょう}{線|せん}「{東別院|ひがしべついん}」1{番|ばん}{出口|でぐち}から{東|ひがし}へ3{分|ふん}）",
+      "ja_easy": "イーブルなごや（{中区|なかく}{大井町|おおいちょう}7-25。{地下鉄|ちかてつ}{名城|めいじょう}{線|せん}「{東別院|ひがしべついん}」1{番|ばん}{出口|でぐち}から3{分|ふん}）",
+      "en": "Eble Nagoya (Nagoya Gender Equality Promotion Center, 7-25 Oicho, Naka ward; 3 minutes east of Exit 1, Higashi Betsuin Station, Meijo Line)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "宣誓場所：原則イーブルなごや（名古屋市男女平等参画推進センター、名古屋市中区大井町7―25）"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "{予約|よやく}",
+        "ja_easy": "{予約|よやく}",
+        "en": "Booking"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}する{日|ひ}の{原則|げんそく}3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに{予約|よやく}します。ふたりとも{出|で}られる{日|ひ}を{選|えら}びます。",
+            "ja_easy": "{宣誓|せんせい}する{日|ひ}の3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{予約|よやく}します。ふたりとも{出|で}られる{日|ひ}にします。",
+            "en": "Book between 3 months and 1 week before the pledge date, on a day you can both attend."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓予定日の原則3か月前から1週間前までに、次の方法で事前予約してください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{予約|よやく}は、{電話|でんわ}（052-972-2234。{平日|へいじつ}9{時|じ}〜17{時|じ}、12{時|じ}〜13{時|じ}を{除|のぞ}く）、ファクス（052-972-4206）、または{予約|よやく}{申込|もうしこみ}フォームで。",
+            "ja_easy": "{予約|よやく}は、{電話|でんわ}（052-972-2234。{平日|へいじつ}9{時|じ}〜17{時|じ}。12{時|じ}〜13{時|じ}は{休|やす}み）、ファクス（052-972-4206）、フォームでします。",
+            "en": "Book by phone (052-972-2234, weekdays 9:00–17:00, closed 12:00–13:00), fax (052-972-4206) or the booking form."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "電話番号：052－972－2234　平日の午前9時から午後5時（正午から午後1時除く）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}できる{時間|じかん}は{平日|へいじつ}10{時|じ}〜16{時|じ}30{分|ふん}です。{希望|きぼう}の{日時|にちじ}を{第|だい}3{希望|きぼう}まで{伝|つた}えます。{外国|がいこく}{籍|せき}の{人|ひと}は{日本|にほん}{国籍|こくせき}でないこと、{通称|つうしょう}{名|めい}や{子|こ}の{氏名|しめい}を{載|の}せるときはそのことも{伝|つた}えます。",
+            "ja_easy": "{宣誓|せんせい}できるのは{平日|へいじつ}10{時|じ}〜16{時|じ}30{分|ふん}です。{希望|きぼう}の{日|ひ}を3つまで{伝|つた}えます。{外国|がいこく}の{国籍|こくせき}の{人|ひと}は「{日本|にほん}の{国籍|こくせき}ではない」と{伝|つた}えます。",
+            "en": "Pledges are on weekdays 10:00–16:30. Give up to three preferred dates and times. Foreign nationals say they are not Japanese nationals; also say if you use a commonly used name or want a child's name on the receipt."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓希望日・時間帯（第3希望まで）宣誓できる時間（平日午前10時から午後4時30分）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{予約|よやく}のあと、2{開庁日|かいちょうび}{以内|いない}に{市|し}から{日時|にちじ}と{必要|ひつよう}な{書類|しょるい}の{連絡|れんらく}があります。{連絡|れんらく}が{来|こ}ないときは、{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}に{連絡|れんらく}します。",
+            "ja_easy": "{予約|よやく}のあと、2{日|にち}（{市役所|しやくしょ}が{開|ひら}いている{日|ひ}）{以内|いない}に、{市|し}から{連絡|れんらく}があります。{来|こ}ないときは、{電話|でんわ}します。",
+            "en": "Within 2 working days after booking, the city contacts you about the date and documents. If you hear nothing, contact the division."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "予約の連絡をいただいた後、名古屋市から「宣誓日時、場所、必要書類等」の調整・確認のため、2開庁日以内にご連絡します。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{当日|とうじつ}とそのあと",
+        "ja_easy": "その{日|ひ}と、そのあと",
+        "en": "On the day and after"
+      },
+      "ordered": true,
+      "items": [
+        {
+          "text": {
+            "ja": "{予約|よやく}した{日時|にちじ}に、{必要|ひつよう}な{書類|しょるい}を{持|も}って、{必|かなら}ずふたりそろって{行|い}きます。{宣誓|せんせい}は{原則|げんそく}{個室|こしつ}で{行|おこな}います。{区役所|くやくしょ}では{宣誓|せんせい}できません。{代理人|だいりにん}や{郵送|ゆうそう}ではできません。",
+            "ja_easy": "{予約|よやく}した{日|ひ}に、{書類|しょるい}を{持|も}って、ふたりで{行|い}きます。{部屋|へや}は{個室|こしつ}です。{区役所|くやくしょ}ではできません。ほかの{人|ひと}が{代|か}わりに{行|い}くことはできません。",
+            "en": "On the booked day, both of you must come with the documents. The pledge is normally done in a private room. Not at ward offices. A proxy or post is not possible."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "予約した日時に必要書類をお持ちのうえ、必ずお二人そろっておいでください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）を{出|だ}します。",
+            "ja_easy": "{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}。{自分|じぶん}の{住所|じゅうしょ}と{名前|なまえ}）を{出|だ}します。",
+            "en": "Hand in a return envelope (A4 size, 180 yen of stamps, your address)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "送付するために必要な「返信先の住所」を記載した返信用封筒（定形外規格内）と切手代180円（定形外規格内）のご負担が必要です。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}から10{日|にち}ほどで、{受領証|じゅりょうしょう}などが{郵送|ゆうそう}で{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "10{日|にち}ぐらいで、{受領証|じゅりょうしょう}が{郵便|ゆうびん}で{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "en": "About 10 days after the pledge, the receipt is mailed to you (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓から交付まで10日ほどかかります。"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{予約|よやく}{申込|もうしこみ}フォーム（{対面|たいめん}）",
+        "ja_easy": "{予約|よやく}のフォーム（{対面|たいめん}）",
+        "en": "Booking form for in person (Japanese)"
+      },
+      "url": "https://logoform.jp/f/upw0A",
+      "source_id": "B-nagoya-familyship-form-taimen"
+    },
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "ja_easy": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "en": "Nagoya city page on the system"
+      },
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028139.html",
+      "source_id": "B-nagoya-familyship"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "宣誓",
+    "イーブルなごや",
+    "対面",
+    "予約",
+    "familyship",
+    "in person",
+    "eble"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship",
+      "B-nagoya-familyship-tebiki"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "宣誓手続きの流れ（対面）"
+  }
+}

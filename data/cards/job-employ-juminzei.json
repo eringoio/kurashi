@@ -42,9 +42,10 @@
       "source_ids": [
         "D-nagoya-juminzei-taishoku"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "毎月の給与等の支払の際に差し引いて納付（特別徴収）していただきます。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "毎月の給与等の支払の際に差し引いて納付（特別徴収）していただきます。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "guide",

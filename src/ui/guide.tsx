@@ -1,13 +1,15 @@
 /* ガイドの部品：状態のラベル、答えのボタン、一覧の行、日を選ぶ、理由、出典のシート */
-import { useLayoutEffect, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { DATA } from '../core/data';
 import { briefText, cardLead } from '../core/brief';
 import { DOCUMENTS } from '../core/documents';
 import type { CardView, EngineOutput, Note, Section } from '../core/engine';
+import { validFromOn } from '../core/engine';
+import type { PlanRecord } from '../core/entry';
 import type { Evidence, Question, Text, Value } from '../core/schema';
-import { trustMark } from '../core/trust';
+import { statusKey, trustMark } from '../core/trust';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { LEVELS, line, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
+import { LEVELS, line, markName, ui, type Level, type LocalizedText, type UiKey } from '../i18n/text';
 import { daySuggestions } from '../core/date';
 import { earliestDay } from '../core/visit';
 import { usePrefs } from '../storage/prefs';
@@ -30,17 +32,20 @@ const CLS: Record<StateKey, string> = { today: 'now', check: 'check', ask: 'ask'
 
 /** 「いま」の印の言葉は、義務の強さで分ける（AI レビューの指摘：すすめ・案内まで「必要」と言い切らない）。
     legal・local_rule：必要／practical：したほうがよい／check・optional・none：案内 */
-export const todayWord = (ob: CardView['card']['obligation']): UiKey =>
-  (ob === 'legal' || ob === 'local_rule' ? 'st.today' : ob === 'practical' ? 'st.todayAdvised' : 'st.todayInfo') as UiKey;
+export const todayWord = (ob: CardView['card']['obligation'], uv?: boolean): UiKey =>
+  (ob === 'legal' || ob === 'local_rule' ? (uv ? 'st.todayCheck' : 'st.today') : ob === 'practical' ? 'st.todayAdvised' : 'st.todayInfo') as UiKey;
+/** 義務（legal・local_rule）だが、カードの根拠がまだ確認済みでない（HB-5）：「必要」と言い切らず「必要（要確認）」にする。確認状態は変えない */
+export const unverifiedOb = (c: CardView): boolean =>
+  (c.card.obligation === 'legal' || c.card.obligation === 'local_rule') && c.card.evidence.status !== 'verified';
 /** A-6 の見本（作者が決めるまでの一時の形）：おすすめの形（札「窓口で確認」）。VITE_KAKUNIN_ALT=on、
     または開発のときだけ sessionStorage の kurashi:kakunin_alt=on（見本のフロー用。本番のビルドでは読まない）。決まったら片方を消す */
 export const KAKUNIN_ALT = import.meta.env.VITE_KAKUNIN_ALT === 'on'
   || (import.meta.env.DEV && typeof sessionStorage !== 'undefined' && sessionStorage.getItem('kurashi:kakunin_alt') === 'on');
 /** 状態の言葉のキー（印の文字と一緒に出す。変わったことの1行にも使う） */
-export const stateWord = (k: StateKey, ob?: CardView['card']['obligation']): UiKey =>
-  (k === 'today' && ob ? todayWord(ob) : k === 'check' && KAKUNIN_ALT ? 'st.check_alt' : 'st.' + k) as UiKey;
-export function StateLabel({ k, ob }: { k: StateKey; ob?: CardView['card']['obligation'] }) {
-  const key = stateWord(k, ob);
+export const stateWord = (k: StateKey, ob?: CardView['card']['obligation'], uv?: boolean): UiKey =>
+  (k === 'today' && ob ? todayWord(ob, uv) : k === 'check' && KAKUNIN_ALT ? 'st.check_alt' : 'st.' + k) as UiKey;
+export function StateLabel({ k, ob, uv }: { k: StateKey; ob?: CardView['card']['obligation']; uv?: boolean }) {
+  const key = stateWord(k, ob, uv);
   return (
     <span className={'k-state k-state--' + CLS[k]}>
       <span aria-hidden="true">{MARK[k]}</span>
@@ -70,11 +75,11 @@ export function fmtDay(ymd: string, level: Level): string {
 }
 
 /** 質問の答えのボタン。1画面に1つの判断（15.2） */
-export function Answers({ q, onPick }: { q: Question; onPick: (v: Value) => void }) {
+export function Answers({ q, onPick, current }: { q: Question; onPick: (v: Value) => void; /** いまの答え（答えを変える画面。押されている状態で示す） */ current?: Value }) {
   return (
     <div className="list">
       {q.options.map((o) => (
-        <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')} onClick={() => onPick(o.value)}>
+        <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')} aria-pressed={current === undefined ? undefined : Array.isArray(current) ? current.includes(o.value as string) : o.value === current} onClick={() => onPick(o.value)}>
           {o.icon && <img src={art(o.icon)} alt="" />}
           <Bi phrase t={o.label} />
         </button>
@@ -126,13 +131,13 @@ export function CardRow({ c, extra, current, base = '/c/', check, compact, note 
         <span className="row__name"><Bi phrase t={c.card.title} /></span>
         {compact ? (
           <>
-            <span className="sr-only">（<One k={stateWord(k, c.card.obligation)} />）</span>
+            <span className="sr-only">（<One k={stateWord(k, c.card.obligation, unverifiedOb(c))} />）</span>
             {extra && <span className="row__extra">{extra}</span>}
             {note && <span className="row__note">{note}</span>}
           </>
         ) : (
           <span className="row__side">
-            <StateLabel k={k} ob={c.card.obligation} />
+            <StateLabel k={k} ob={c.card.obligation} uv={unverifiedOb(c)} />
             {extra && <span className="row__extra">{extra}</span>}
           </span>
         )}
@@ -152,6 +157,14 @@ export function factLabel(fact: string, value: Value, objects: Record<string, bo
     return t;
   }
   const q = d.questions.find((x) => x.fact === fact);
+  // 目的を足した答え（配列。O-8）：選んだ名前を「・」でつなぐ
+  if (Array.isArray(value) && q && !q.multi) {
+    const ls = value.map((v) => q.options.find((x) => x.value === v)?.label).filter((l): l is Text => !!l);
+    if (!ls.length) return null;
+    const t: Text = { ja: ls.map((l) => l.ja).join('・') };
+    for (const k of Object.keys(ls[0])) if (k !== 'ja') t[k] = ls.map((l) => l[k] ?? l.ja).join(k.startsWith('ja') ? '・' : ' / ');
+    return t;
+  }
   const o = q?.options.find((x) => x.value === value);
   return o ? o.label : null;
 }
@@ -161,7 +174,7 @@ export function whyText(c: CardView): LocalizedText {
   if (c.state === 'excluded') {
     // カード固有の文 → 入口のルールの文（制度の対象ではないと読める文にしない）→ 既定の文
     const f = c.falseRule;
-    return c.card.reasons.excluded ?? (f?.kind === 'entry' && f.reason_when_false ? f.reason_when_false : ui('why.excluded'));
+    return c.card.reasons.excluded ?? ((f?.kind === 'entry' || f?.kind === 'selection') && f.reason_when_false ? f.reason_when_false : ui('why.excluded'));
   }
   if (c.state === 'out_of_scope') return ui('why.out');
   if (c.state === 'ask') return ui('why.ask');
@@ -262,20 +275,66 @@ const UI_HAS_PLACE = (place: string): LocalizedText | undefined => (ui(('place.'
 
 /** 日を聞く見出し：行く所があれば「いつ、区役所に行きますか？」 */
 export function dayTitle(c: CardView): LocalizedText {
-  const place = c.card.place;
+  // 出す方法が選べる手続き（v0.5.45・FE-14）：方法がまだなら方法を聞く。郵送・オンラインなら「行く」と聞かない
+  if (c.ways.length > 1 && !c.way) return ui('day.titleWay');
+  if (c.way === 'mail') return ui('day.titleMail');
+  if (c.way === 'online') return ui('day.titleOnline');
+  // 行く所は、この人の答えで決まった所（FF-3：勤務先の保険の人に「区役所に行きますか」と聞かない）
+  const place = c.visitPlace;
   if (!place) return ui('day.title');
   const p = UI_HAS_PLACE(place);
   if (!p) return ui('day.title');
   return fill(ui('day.titlePlace'), 'place', (_lv, id) => p[id] ?? p.ja_easy ?? p.ja) as LocalizedText;
 }
 
+/** 見出しへフォーカスを移す（画面の中身が変わったとき。BODY に落とさない。FF-5） */
+const focusTitle = () => setTimeout(() => document.getElementById('screen-title')?.focus(), 0);
+
+/** 期限より後の日の知らせ（C-3・FF-4）。止めない。カレンダーのすぐ下に出し、そこへ移る（上の候補のボタンから押しても見える） */
+function LateNotice({ day, deadline, onKeep, onOther }: { day: string; deadline: string; onKeep: () => void; onOther: () => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => { ref.current?.scrollIntoView({ block: 'nearest' }); ref.current?.focus({ preventScroll: true }); }, [day]);
+  return (
+    <div ref={ref} tabIndex={-1} className="k-notice k-notice--warn" role="alert">
+      <p><One t={fill(fill(ui('day.late'), 'date', (lv) => fmtDay(deadline, lv)), 'pick', (lv) => fmtDay(day, lv))} /></p>
+      <div className="pair">
+        <button type="button" className="k-answer" onClick={onKeep}><Bi k="day.lateKeep" /></button>
+        <button type="button" className="k-answer k-answer--primary" onClick={onOther}><Bi k="day.lateOther" /></button>
+      </div>
+    </div>
+  );
+}
+
 /** いつ行く？（6A.5）：今日／今週のうちに／次の休みの日。ほかの日も選べる。制度上の前提（確認済み）より前の日は選べない。
     同じ所でする項目（group）は、一度に聞く。一緒にしない項目は外せる */
-export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void }) {
+export function DayChoice({ group, today, onPick, onLater, onPatch }: { group: CardView[]; today: string; onPick: (d: string, ids: string[]) => void; onLater: () => void;
+  /** 方法・数え始める日を記録する（v0.5.45）。無いときは方法を聞かず、数え始める日も聞かない */
+  onPatch?: (ids: string[], patch: Partial<PlanRecord>) => void }) {
   const { level } = usePrefs();
   const [off, setOff] = useState<Set<string>>(new Set());
   const [blockedPressed, setBlockedPressed] = useState(false);
+  const [late, setLate] = useState<string | null>(null);
   const c = group[0];
+  // 出す方法（FE-14）：選べるのにまだなら、日より先に方法を聞く。期限は方法によらず同じ
+  if (onPatch && c.ways.length > 1 && !c.way) {
+    return (
+      <>
+        <div className="list">
+          {c.ways.map((w) => (
+            <button key={w} type="button" className="k-answer" onClick={() => { onPatch([c.card.id], { method: w }); focusTitle(); }}>
+              <span className="bi"><Bi phrase k={('way.' + w) as UiKey} />
+                {/* 方法の条件（出典つきのカードの文。例：マイナンバーカードがある人だけ） */}
+                {w !== 'counter' && (() => { const m = c.methods.find((x) => x.method.type === w && x.v !== 'F'); return m ? <span className="sub way-cond"><One t={m.method.text} /></span> : null; })()}
+              </span>
+            </button>
+          ))}
+        </div>
+        <p className="sub"><Bi k="way.note" /></p>
+        {c.card.deadline && <div className="k-notice" role="note"><p><One k="day.deadline" /><Bi t={c.card.deadline.text} /></p></div>}
+        <button type="button" className="k-answer k-answer--small" onClick={onLater}><Bi k="day.later" /></button>
+      </>
+    );
+  }
   const sel = group.filter((x) => !off.has(x.card.id));
   const ids = new Set(sel.map((x) => x.card.id));
   const rule = c.dayRule;
@@ -290,9 +349,22 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
   }
   const min = earliestDay(sel);
   const minFrom = sel.find((x) => x.dayRule.kind === 'min' && x.dayRule.day === min)?.dayRule;
-  const hours = c.card.place ? HOURS()[c.card.place] : undefined;
+  // 郵送・オンラインは窓口の開いている時間で日を止めない
+  const hours = c.visitPlace ? HOURS()[c.visitPlace] : undefined;
   const hol = HOLIDAYS();
-  const pick = (d: string) => onPick(d, sel.map((x) => x.card.id));
+  const calc = c.card.deadline?.calc;
+  // 期限の日（C-3）：数え始める日を入れたときだけ。同じ出来事から数える手続き（いっしょに決める項目）には同じ日を入れる
+  const deadlineOn = c.deadlineOn;
+  const sameFrom = calc ? sel.filter((x) => x.card.deadline?.calc?.from === calc.from).map((x) => x.card.id) : [];
+  const doPick = (d: string) => {
+    // 行かない方法もある手続きを同じ日に入れたら、窓口へ行く（方法＝窓口）と記録する（FE-16）
+    const alt = sel.filter((x) => x !== c && x.altPlace && !x.way).map((x) => x.card.id);
+    if (alt.length && onPatch) onPatch(alt, { method: 'counter' });
+    onPick(d, sel.map((x) => x.card.id));
+  };
+  // 期限より後の日：止めないで知らせる（遅れても届け出は要る）
+  // 期限より後の日は、いつも知らせを出して、ボタンで決める（同じ日をもう一度押しても、知らせを飛ばさない。FF-4）
+  const pick = (d: string) => (deadlineOn && d > deadlineOn ? setLate(d) : doPick(d));
   return (
     <>
       {group.length > 1 && (
@@ -304,7 +376,7 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
                 <>
                   <span className="k-check__box" aria-hidden="true">{ids.has(x.card.id) ? '✓' : ''}</span>
                   <img src={art(x.card.illustration)} alt="" />
-                  <Bi phrase t={x.card.title} />
+                  <span className="bi"><Bi phrase t={x.card.title} />{x.altPlace && !x.way && <span className="sub way-cond"><One k="day.altNote" /></span>}</span>
                 </>
               );
               // 最初の1つ（いま開いている項目）は、いつも入る。外せるのは、ほかの項目だけ
@@ -321,6 +393,20 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
           <p className="sub"><Bi k="day.togetherNote" /></p>
         </fieldset>
       )}
+      {/* 期限のある手続きは、日を選ぶ前に期限を見せる（Fable C-3。数え始める日はまだ聞いていないので、日は止めない） */}
+      {onPatch && c.way && c.ways.length > 1 && (
+        <p className="sub"><One t={fill(ui('way.now'), 'n', (_lv, id) => pickText(ui(('way.' + c.way) as UiKey), id))} /> <button type="button" className="link" onClick={() => { onPatch([c.card.id], { method: undefined }); focusTitle(); }}><Bi k="way.change" /></button></p>
+      )}
+      {c.card.deadline && <div className="k-notice" role="note"><p><One k="day.deadline" /><Bi t={c.card.deadline.text} /></p>
+        {deadlineOn && calc ? <p><One t={fill(fill(ui('day.deadlineOn'), 'date', (lv) => fmtDay(deadlineOn, lv)), 'n', () => String(calc.days))} /></p> : <p className="sub"><Bi k="day.deadlineNote" /></p>}
+      </div>}
+      {onPatch && calc && (
+        <label className="field-row">
+          <span className="label"><One t={fill(ui('day.fromLabel'), 'n', (_lv, id) => pickText(ui(('deadline.from.' + calc.from) as UiKey), id))} /></span>
+          <input className="field" type="date" max={today} value={c.plan?.from_on ?? ''} onChange={(e) => { const v = e.target.value; if (v && !validFromOn(v, today)) return; setLate(null); onPatch(sameFrom, { from_on: v || undefined }); }} />
+        </label>
+      )}
+
       <Notes c={c} where="day" />
       <div className="list list--days">
         {daySuggestions(today).map((s) => {
@@ -344,14 +430,16 @@ export function DayChoice({ group, today, onPick, onLater }: { group: CardView[]
       </p>
       {hours?.open && <HoursLine h={hours} />}
       {/* カレンダーは最初から出す（作者の指示 11/7：日を選ぶときすぐ見える） */}
-      <CalendarGrid today={today} current={c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
+      {/* 期限より後の日の知らせ（FF-4）：押した日のすぐ下（カレンダーの直前）に出し、そこへ移る。選んだ日を文に入れる */}
+      <CalendarGrid today={today} current={late ?? c.plan?.planned_on} min={min} hours={hours} holidays={hol} onPick={pick} />
+      {late && deadlineOn && <LateNotice day={late} deadline={deadlineOn} onKeep={() => doPick(late)} onOther={() => { setLate(null); focusTitle(); }} />}
       <button type="button" className="k-answer k-answer--small" onClick={onLater}><Bi k="day.later" /></button>
     </>
   );
 }
 
 /** 文の中の、その言語の文（無ければやさしい日本語、ふつうの日本語） */
-const pickText = (t: Text | LocalizedText, id: string): string => String((t as Record<string, unknown>)[id] ?? t.ja_easy ?? t.ja);
+export const pickText = (t: Text | LocalizedText, id: string): string => String((t as Record<string, unknown>)[id] ?? t.ja_easy ?? t.ja);
 
 /** いま見ている1つ（試作 D の重ねたカード）：絵・名前・状態 */
 export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
@@ -367,7 +455,7 @@ export function FocusCard({ c, title }: { c: CardView; title?: boolean }) {
       </span>
       {/* 開いた項目では、名前がその画面の見出し（h1） */}
       {title ? <h1 id="screen-title" tabIndex={-1} className="focus__name"><Bi phrase t={c.card.title} /></h1> : <span className="focus__name"><Bi phrase t={c.card.title} /></span>}
-      <StateLabel k={k} ob={c.card.obligation} />
+      <StateLabel k={k} ob={c.card.obligation} uv={unverifiedOb(c)} />
       {/* 義務（しないといけないか）の印。開いた項目でだけ、要確認でないとき（A-8） */}
       {title && k !== 'check' && k !== 'ask' && <TrustMark e={worstEvidence(c.reasonRules.map((r) => r.evidence))} />}
     </div>
@@ -420,7 +508,7 @@ export function WorldMap({ cards, base = '/c/', listId }: { cards: CardView[]; b
                   {k === 'wait' && <img className="world__badge" src={art('clock')} alt="" />}
                 </span>
                 <span className="world__label"><span aria-hidden="true">{MARK[k]}</span> <One t={c.card.title} /></span>
-                <span className="sr-only">（<One k={stateWord(k, c.card.obligation)} />）</span>
+                <span className="sr-only">（<One k={stateWord(k, c.card.obligation, unverifiedOb(c))} />）</span>
               </Link>
             </li>
           );
@@ -452,7 +540,7 @@ export function officialLink(c: CardView): { url: string; label?: Text; owner?: 
 }
 
 /** 確認した日（日付だけ。曜日なし） */
-const fmtDate = (ymd: string, lv: Level) =>
+export const fmtDate = (ymd: string, lv: Level) =>
   new Intl.DateTimeFormat(lv.kind === 'foreign' ? lv.lang : 'ja', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(ymd + 'T00:00:00Z'));
 
 /** 項目の大事な事実（11/8 作者：くわしくのシートをやめ、ページの中に短く）。いつまで・お金・どこで・もらう書類・正式な名前。
@@ -469,7 +557,7 @@ export function CardFacts({ c, where }: { c: CardView; where: boolean }) {
       <div><dt><One k="card.official" /></dt><dd className="k-facts__name"><span lang="ja">{n.ja.length > 12
         // 長い正式名は、名前全体のふりがなが折り返せないので、読みを下の行に出す（320px）
         ? <>{n.ja}<span className="k-facts__reading">{n.reading}</span></>
-        : <Ruby s={`{${n.ja}|${n.reading}}`} />}</span><Speak ja={`{${n.ja}|${n.reading}}`} /></dd></div>
+        : <Ruby s={markName(n)} />}</span><Speak ja={markName(n)} /></dd></div>
     </dl>
   );
 }
@@ -479,7 +567,7 @@ export function CardFacts({ c, where }: { c: CardView; where: boolean }) {
 export function CardSources({ c }: { c: CardView }) {
   const { level } = usePrefs();
   const d = DATA();
-  const evs: (Pick<Evidence, 'source_ids'> | undefined)[] = [c.card.evidence, ...c.reasonRules.map((r) => r.evidence), c.card.deadline?.evidence, c.card.fee?.evidence, c.card.where.evidence, ...(c.card.methods ?? []).map((m) => m.evidence), ...(c.card.alternatives ?? []).map((a) => a.evidence)];
+  const evs: (Pick<Evidence, 'source_ids'> | undefined)[] = [c.card.evidence, ...c.reasonRules.map((r) => r.evidence), c.card.deadline?.evidence, c.card.fee?.evidence, c.card.where.evidence, ...(c.card.methods ?? []).map((m) => m.evidence), ...(c.card.alternatives ?? []).map((a) => a.evidence), ...(c.card.sections ?? []).flatMap((s) => s.items.map((x) => x.evidence))];
   const ids = [...new Set(evs.flatMap((e) => e?.source_ids ?? []))];
   const srcs = ids.map((id) => d.sources.find((x) => x.source_id === id)).filter((x): x is NonNullable<typeof x> => !!x);
   if (!srcs.length) return null;
@@ -496,7 +584,7 @@ export function CardSources({ c }: { c: CardView }) {
           </li>
         ))}
       </ul>
-      <p className="sub"><One k="src.checked" />：{fmtDate(c.card.evidence.checked_at, level)}・<One k={('src.status.' + c.card.evidence.status) as UiKey} /></p>
+      <p className="sub"><One k="src.checked" />：{fmtDate(c.card.evidence.checked_at, level)}・<One k={statusKey(c.card.evidence) as UiKey} /></p>
     </section>
   );
 }
@@ -509,7 +597,7 @@ export type Redo = { kind: 'q'; cardId: string; q: Question } | { kind: 'day'; c
 
 export function changedText(c: CardView): Text {
   const k = stateKey(c);
-  return fill(fill(ui('res.changed.line'), 'card', (_lv, id) => pickText(c.card.title, id)), 'state', (_lv, id) => pickText(ui(stateWord(k, c.card.obligation)), id));
+  return fill(fill(ui('res.changed.line'), 'card', (_lv, id) => pickText(c.card.title, id)), 'state', (_lv, id) => pickText(ui(stateWord(k, c.card.obligation, unverifiedOb(c))), id));
 }
 
 /** 変わったことの1行。読み上げは role=status で知らせる（いつも置いておき、中身だけ変える） */

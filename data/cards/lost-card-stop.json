@@ -22,9 +22,9 @@
     "reading": ""
   },
   "summary": {
-    "ja": "キャッシュカード・クレジットカードは、{発行|はっこう}{元|もと}の{銀行|ぎんこう}やクレジット{会社|かいしゃ}にすぐ{連絡|れんらく}して、{利用|りよう}{停止|ていし}の{手続|てつづ}きをします。{警察|けいさつ}への{届出|とどけいで}とは{別|べつ}です。",
-    "ja_easy": "カードを{出|だ}した{会社|かいしゃ}（{銀行|ぎんこう}・クレジット{会社|かいしゃ}）に、すぐ{連絡|れんらく}して、カードを{止|と}めます。{警察|けいさつ}に{届|とど}けるのとは、べつです。",
-    "en": "Contact the bank or credit card company that issued the card right away and have it suspended. This is separate from the police report."
+    "ja": "キャッシュカード・クレジットカードは、{発行|はっこう}{元|もと}の{銀行|ぎんこう}やクレジット{会社|かいしゃ}にすぐ{連絡|れんらく}して、{利用|りよう}{停止|ていし}の{手続|てつづ}きをします。{警察|けいさつ}への{届出|とどけいで}とは{別|べつ}です。{新|あたら}しいカードの{再|さい}{発行|はっこう}は、{止|と}めたあとで{別|べつ}に{頼|たの}みます（「{再|さい}{発行|はっこう}」の{段|だん}）。",
+    "ja_easy": "カードを{出|だ}した{会社|かいしゃ}（{銀行|ぎんこう}・クレジット{会社|かいしゃ}）に、すぐ{連絡|れんらく}して、カードを{止|と}めます。{警察|けいさつ}に{届|とど}けるのとは、べつです。{新|あたら}しいカードは、そのあとで{頼|たの}みます。",
+    "en": "Contact the bank or credit card company that issued the card right away and have it suspended. This is separate from the police report. Ask for a new card separately after stopping it (see \"Get new cards\")."
   },
   "deadline": null,
   "where": {
@@ -44,7 +44,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
         "verdict": "agree",
-        "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -89,7 +89,7 @@
             "fetched_at": "2026-11-04",
             "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
             "verdict": "agree",
-            "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+            "ref": "internal-audit-record"
           }
         }
       }
@@ -114,7 +114,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-card-stop/c1"
+          "ref": "internal-audit-record"
         }
       }
     }

@@ -3,6 +3,7 @@
    ＋ 病院の体の場所・言う文・診療科・受付の言葉（data/clinic.json）。
    記録：画面に出た言葉を phrases ストアに自動で残す（同意のあとだけ。vault）。どの画面の言葉かは pageWordIds（道から決める）。★で大事にする。点数・連続日数は作らない（6A.8）。 */
 import { z } from 'zod';
+import { markName } from '../i18n/text';
 import { CLINIC } from './clinic';
 import { DATA } from './data';
 import { DOCUMENTS } from './documents';
@@ -67,7 +68,7 @@ export function allWords(): WordView[] {
   const official: Row[] = cards.map((card) => {
     const group = events.find((e) => e.card_ids.includes(card.id))?.group ?? '';
     const topic: WordTopic = card.place === 'bank' ? 'bank' : card.place === 'immigration' ? 'immigration' : GROUP_TOPIC[group] ?? 'other';
-    return { id: 'card:' + card.id, kind: 'official' as const, ja: `{${card.official_name.ja}|${card.official_name.reading}}`, meaning: card.title, scene: [], topic, rank: 1 };
+    return { id: 'card:' + card.id, kind: 'official' as const, ja: markName(card.official_name), meaning: card.title, scene: [], topic, rank: 1 };
   });
   // 書類：名前と、書類の大事な言葉（同じ言葉は1つ。書類の画面が残す）
   const docs: Row[] = [];

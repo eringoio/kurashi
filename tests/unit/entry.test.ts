@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { chooseEntry, type EntryInput } from '../../src/core/entry';
+import { chooseEntry, promiseHome, type EntryInput } from '../../src/core/entry';
 import { todayJst } from '../../src/core/date';
 
 const base: EntryInput = { today: '2026-11-05', url: null, resume: null, hasProgress: true, plan: [], waiting: false, allDone: false };
@@ -74,5 +74,17 @@ describe('続きの行き先（K-39）', async () => {
   it('引っ越しのほうが新しい、または銀行が閉じていれば /now', () => {
     expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-01')], legacy)).toBe('/now');
     expect(continuePath([occ('occ-bank-1', 'E-bank', '2026-11-05', '2026-11-06')], legacy)).toBe('/now');
+  });
+});
+
+// C-2：今日・過ぎた日の「今の手続き」は、その日の項目のできごとへ（財布の人を引っ越しの質問へ送らない）
+describe('今日の予定の行き先（promiseHome）', () => {
+  const T = '2026-11-05';
+  const ev = (event_id: string, card_id: string, planned_on: string) => ({ event_id, plan: { card_id, status: 'todo' as const, planned_on } });
+  it('財布の項目だけなら /e/E-lost-wallet。引っ越しの項目があれば /now。過ぎた日は過ぎた項目で決める', () => {
+    expect(promiseHome({ past: false, today: T, legacy: [], events: [ev('E-lost-wallet', 'lost-zairyu-reissue', T)], fallback: '/now' })).toBe('/e/E-lost-wallet');
+    expect(promiseHome({ past: false, today: T, legacy: [{ card_id: 'x', status: 'todo', planned_on: T }], events: [ev('E-lost-wallet', 'y', T)], fallback: '/now' })).toBe('/now');
+    expect(promiseHome({ past: true, today: T, legacy: [{ card_id: 'x', status: 'todo', planned_on: T }], events: [ev('E-license', 'license-koshin', '2026-11-01')], fallback: '/now' })).toBe('/e/E-license');
+    expect(promiseHome({ past: false, today: T, legacy: [], events: [], fallback: '/e/E-marriage' })).toBe('/e/E-marriage');
   });
 });

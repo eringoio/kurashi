@@ -13,7 +13,12 @@
   "eligibility": {
     "all": [
       "R-job-goal-biz-end",
-      "R-job-biz-invoice"
+      {
+        "any": [
+          "R-job-biz-taxable",
+          "R-job-biz-invoice"
+        ]
+      }
     ]
   },
   "coverage_rule_ids": [],
@@ -48,16 +53,17 @@
   },
   "where": {
     "text": {
-      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
-      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
-      "en": "The tax office for your address (or online via e-Tax)"
+      "ja": "{納税地|のうぜいち}を{所轄|しょかつ}する{税務署|ぜいむしょ}（ふつうは{住所|じゅうしょ}。e-Tax でも{出|だ}せます）",
+      "ja_easy": "{納税地|のうぜいち}（ふつうは{住所|じゅうしょ}）の{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office that covers your tax payment place (usually your address). You can also file online with e-Tax."
     },
     "evidence": {
       "source_ids": [
-        "nta-2090"
+        "nta-1461-06"
       ],
-      "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "checked_at": "2026-11-15",
+      "status": "needs_check",
+      "quote": "納税地を所轄する税務署長"
     }
   },
   "kind": "procedure",

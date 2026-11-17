@@ -44,11 +44,13 @@
         "fetched_at": "2026-11-04",
         "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
         "verdict": "agree",
-        "ref": "research/audits/hoken.json#P-hoken-kokuho-jusho-henko/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
   "place": "ward_office",
+  "place_when": "R-lost-hoken-kokuho",
+  "remote": "R-lost-hoken-kokuho",
   "kind": "procedure",
   "keywords": [],
   "reasons": {},
@@ -63,7 +65,7 @@
       "fetched_at": "2026-11-04",
       "sha256": "368c058c6a80348830d85800401dfb697a69afedd581cb3c4653e0cf13b71e8a",
       "verdict": "agree",
-      "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c1"
+      "ref": "internal-audit-record"
     }
   },
   "methods": [
@@ -85,9 +87,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "368c058c6a80348830d85800401dfb697a69afedd581cb3c4653e0cf13b71e8a",
           "verdict": "agree",
-          "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c2"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-hoken-not-employer"
     },
     {
       "type": "counter",
@@ -107,9 +110,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
           "verdict": "agree",
-          "ref": "research/audits/hoken.json#P-hoken-shikaku-kakunin-saikofu/c11"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-hoken-not-employer"
     },
     {
       "type": "counter",
@@ -125,6 +129,55 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "速やかに警察への届出を行うとともに、健康保険証の場合には、発行元となる勤務先会社や市区町村役場にも届出をしてください。"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-hoken-employer",
+      "text": {
+        "ja": "{勤務|きんむ}{先|さき}の{健康|けんこう}{保険|ほけん}（{協会|きょうかい}けんぽ・{健康|けんこう}{保険|ほけん}{組合|くみあい}など）のときは、{勤務|きんむ}{先|さき}か{保険|ほけん}{者|しゃ}に{連絡|れんらく}して、{再|さい}{交付|こうふ}の{手続|てつづ}きを{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}のときは、{会社|かいしゃ}か{保険|ほけん}の{窓口|まどぐち}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "For workplace health insurance (Japan Health Insurance Association, a health insurance society, etc.), contact your employer or the insurer and ask how to get a new one (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-soudan-sonota",
+          "kyokai-kenpo-mynahokensho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "速やかに警察への届出を行うとともに、健康保険証の場合には、発行元となる勤務先会社や市区町村役場にも届出をしてください。"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-lost-hoken-unsure",
+      "text": {
+        "ja": "どの{保険|ほけん}かわからないときは、{勤務|きんむ}{先|さき}で{健康|けんこう}{保険|ほけん}に{入|はい}っているかを{勤務|きんむ}{先|さき}に{聞|き}きます。{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているかは、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "どの{保険|ほけん}かわからないときは、{会社|かいしゃ}か{区役所|くやくしょ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If you are not sure which insurance it is, ask your employer whether you are in workplace insurance, or ask the ward office insurance and pension section whether you are in National Health Insurance (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナ{保険|ほけん}{証|しょう}（マイナンバーカード）をなくしたときは、マイナンバーカードの{一時|いちじ}{停止|ていし}と{再|さい}{交付|こうふ}の{手続|てつづ}きをします。",
+        "ja_easy": "マイナ{保険|ほけん}{証|しょう}は、マイナンバーカードの{手続|てつづ}きです。",
+        "en": "If you lost your My Number health insurance card, follow the steps for suspending and reissuing the My Number Card."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
       }
     }
   ]

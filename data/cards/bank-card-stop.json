@@ -26,6 +26,11 @@
     "ja_easy": "カードや{通帳|つうちょう}をなくしたら、すぐ{銀行|ぎんこう}に{電話|でんわ}します。アプリで{止|と}められる{銀行|ぎんこう}もあります。{時間|じかん}や{方法|ほうほう}は{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
     "en": "Call your bank's lost-card line at once. Some banks also let you stop the card in their app. Hours and options differ by bank (to be checked). After stopping it, apply for a new one."
   },
+  "lead": {
+    "ja": "なくしたら、ほかの{手続|てつづ}きを{待|ま}たずに、すぐ{銀行|ぎんこう}に{連絡|れんらく}して{止|と}めます。",
+    "ja_easy": "なくしたら、すぐ{銀行|ぎんこう}に{連絡|れんらく}して{止|と}めます。",
+    "en": "If you lose it, contact your bank and stop it right away. Do not wait for other procedures."
+  },
   "deadline": null,
   "where": {
     "text": {

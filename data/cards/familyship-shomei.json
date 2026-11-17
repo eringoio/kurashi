@@ -1,0 +1,151 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-shomei",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{宣誓|せんせい}{書|しょ}{記載|きさい}{内容|ないよう}{等|とう}{証明|しょうめい}{書|しょ}をもらう",
+    "ja_easy": "{宣誓|せんせい}の{証明|しょうめい}{書|しょ}をもらう",
+    "en": "Get a certificate of the pledge contents"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓書記載内容等証明書",
+    "reading": "ふぁみりーしっぷせんせいしょきさいないようとうしょうめいしょ"
+  },
+  "lead": {
+    "ja": "{最新|さいしん}の{日付|ひづけ}で{宣誓|せんせい}していることの{証明|しょうめい}が{要|い}るときに{申|もう}し{込|こ}みます。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みなどで{使|つか}います。",
+    "ja_easy": "{宣誓|せんせい}していることの{証明|しょうめい}が{要|い}るときに、{申|もう}し{込|こ}みます。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みなどで{使|つか}います。",
+    "en": "Apply when you need dated proof of your pledge, for example for a city housing application."
+  },
+  "summary": {
+    "ja": "{最新|さいしん}の{日付|ひづけ}で{宣誓|せんせい}していることの{証明|しょうめい}が{要|い}るときに{申|もう}し{込|こ}みます。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みなどで{使|つか}います。",
+    "ja_easy": "{宣誓|せんせい}していることの{証明|しょうめい}が{要|い}るときに、{申|もう}し{込|こ}みます。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みなどで{使|つか}います。",
+    "en": "Apply when you need dated proof of your pledge, for example for a city housing application."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{返信|へんしん}{用|よう}{封筒|ふうとう}の{切手|きって}180{円|えん}{分|ぶん}は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{切手|きって}180{円|えん}は{自分|じぶん}で{払|はら}います。",
+      "en": "No fee is mentioned (to be checked). You pay 180 yen of stamps for the return envelope."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-tebiki"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "切手代１８０円（定形外規格内）のご負担が必要です。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "オンライン（{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (form). Mail documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "手続きについては原則、オンラインで申請を行っていただき、必要書類等については郵送にて男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どんなとき",
+        "ja_easy": "どんなとき",
+        "en": "When"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{最新|さいしん}の{日付|ひづけ}で{宣誓|せんせい}したことを{証明|しょうめい}するものが{欲|ほ}しいとき。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みでは、この{証明|しょうめい}{書|しょ}を{出|だ}します（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{宣誓|せんせい}していることの、{新|あたら}しい{日付|ひづけ}の{証明|しょうめい}が{欲|ほ}しいとき。{市営|しえい}{住宅|じゅうたく}の{申込|もうしこ}みで{使|つか}います（{要|よう}{確認|かくにん}）。",
+            "en": "When you need dated proof of your pledge. A city housing application requires this certificate (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki",
+              "B-nagoya-shiei-shikaku-mar"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "最新の日付で宣誓したことを証明するものが欲しいといった理由等で"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{郵送|ゆうそう}するもの",
+        "ja_easy": "{郵便|ゆうびん}で{送|おく}るもの",
+        "en": "What to mail"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）。",
+            "ja_easy": "{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}。{自分|じぶん}の{住所|じゅうしょ}と{名前|なまえ}）。",
+            "en": "A return envelope (A4 size, 180 yen of stamps, your address)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "切手１８０円分（定形外規格内）を貼付し、返信先の住所・氏名を記載した返"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{証明|しょうめい}{書|しょ}{交付|こうふ}の{申込|もうしこみ}フォーム",
+        "ja_easy": "{証明|しょうめい}{書|しょ}のフォーム",
+        "en": "Certificate form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/uYdLG",
+      "source_id": "B-nagoya-familyship-form-shomei"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "familyship"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-tebiki",
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "（４）宣誓書記載内容等証明書の交付"
+  }
+}

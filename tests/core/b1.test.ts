@@ -15,12 +15,13 @@ const st = (o: ReturnType<typeof run>) => Object.fromEntries(o.cards.map((c) => 
 
 describe('B1（公開時点のデータ）', () => {
   const o = run(data, input());
-  it('国外からの経路のカードは入口で excluded（制度の対象ではないとは言わない）。国保・年金は、未確認のルールでは除外しない（10.4）', () => {
+  it('国外からの経路のカードは入口で excluded（制度の対象ではないとは言わない）。国保・年金は、本人の答え（家族の扶養・20歳未満）で除外する。制度のルールは未確認のまま（kaizen hikkoshi 11/8）', () => {
     const s = st(o);
     expect(s['nagoya-tennyu-juukyochi'][0]).toBe('excluded');
     expect(o.cards.find((c) => c.card.id === 'nagoya-tennyu-juukyochi')!.falseRule!.kind).toBe('entry');
-    expect(s['nagoya-kokuho-kanyu'][0]).toBe('check_at_office');
-    expect(s['kokumin-nenkin-kanyu'][0]).toBe('check_at_office');
+    expect(s['nagoya-kokuho-kanyu'][0]).toBe('excluded');
+    expect(s['kokumin-nenkin-kanyu'][0]).toBe('excluded');
+    for (const id of ['nagoya-kokuho-kanyu', 'kokumin-nenkin-kanyu']) expect(o.cards.find((c) => c.card.id === id)!.falseRule!.kind).toBe('selection');
   });
   it('転入届・転出届は、公式のルールが未確認なので「窓口で確認」。20歳の予告は確認済み（作者 11/5）なので、20歳未満には出る', () => {
     const s = st(o);

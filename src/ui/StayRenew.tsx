@@ -19,9 +19,12 @@ import { usePrefs } from '../storage/prefs';
 import { art } from './art';
 import { CalendarGrid } from './CalendarGrid';
 import { fill, fmtDay, HoursLine } from './guide';
+import { Link } from './router';
 
 export interface StayGuide {
   today: string;
+  /** いまの答え（同意の前でも、この画面の中の答えは入っている） */
+  answers?: Record<string, unknown>;
   answer(qid: string, v: string): Promise<void>;
   setPlan(cardId: string, patch: Partial<PlanRecord>): Promise<void>;
 }
@@ -42,6 +45,35 @@ function Ext({ src, k, hint }: { src: string; k: UiKey; hint?: UiKey }) {
 }
 const Fact = ({ t, warn }: { t: Text; warn?: boolean }) => <p className={'k-notice' + (warn ? ' k-notice--warn' : '')} role="note"><Bi t={t} /></p>;
 
+/** 在留期間の更新の流れが「在留期間の更新ではない」段（永住者など）にいるか。開いた項目で、更新の方法・期限の一般の説明を隠すために使う（HB-1） */
+export function stayAtStop(c: CardView, today: string, profile: string | undefined): boolean {
+  const profileKind: StayKind | undefined = profile ? KIND_FROM_PROFILE[profile] ?? (profile === 'permanent' ? 'permanent' : undefined) : undefined;
+  return currentStep(c.plan?.stay ?? {}, today, { planned: c.plan?.planned_on, status: c.plan?.status, profileKind }) === 'stop';
+}
+
+/** 入口：永住者・特別永住者と答えたとき、「いまはすることはありません」の代わりに出す案内（HB-1）。在留カードの更新と特別永住者証明書の更新の両方 */
+export function StayPermanentGuide({ title }: { title: Text }) {
+  const D = STAY();
+  return (
+    <>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase t={title} /></h1></div>
+      <section className="qblock" aria-labelledby="sr-perm-q">
+        <h2 id="sr-perm-q" className="qblock__title"><Bi phrase k="sr.notThis" /></h2>
+        <p className="sub"><Bi t={D.facts.card.text} /></p>
+        <div className="k-notice" role="note">
+          <p className="label"><One t={D.nagoya.scope} /></p>
+          <p><strong><Bi t={D.nagoya.name} /></strong></p>
+          <p><One k="sr.exp.address" />：<One t={D.nagoya.address} /></p>
+        </div>
+        <div className="list"><Ext src={TRACK_SOURCE.card} k="sr.link.card" /></div>
+        <p className="sub"><Bi t={D.facts.spc.text} /></p>
+        <div className="list"><Ext src={TRACK_SOURCE.spc} k="sr.link.spc" /></div>
+      </section>
+      <div className="links"><Link to="/about" className="link"><Bi k="shortStay.change" /></Link></div>
+    </>
+  );
+}
+
 export function StayRenewFlow({ c, g, onPermit, onLive }: { c: CardView; g: StayGuide; onPermit: () => void; onLive: (s: string) => void }) {
   const { level, vault } = usePrefs();
   const D = STAY();
@@ -51,7 +83,8 @@ export function StayRenewFlow({ c, g, onPermit, onLive }: { c: CardView; g: Stay
   const planned = c.plan?.planned_on;
   const L = (k: UiKey) => line(ui(k), level);
   // 「あなたについて」の答え：1つに決まるときは選んだ形で出す。永住者・特別永住者なら満了日を聞かない
-  const profile = vault.get<string>('profile', 'Q-zairyu-status');
+  const ans = g.answers?.['Q-zairyu-status'];
+  const profile = typeof ans === 'string' ? ans : vault.get<string>('profile', 'Q-zairyu-status');
   const profileKind: StayKind | undefined = profile ? KIND_FROM_PROFILE[profile] ?? (profile === 'permanent' ? 'permanent' : undefined) : undefined;
   const [edit, setEdit] = useState<Step | null>(null);
   const [draft, setDraft] = useState(s.expires_on && s.expires_on !== 'none' ? s.expires_on : '');
@@ -163,8 +196,15 @@ export function StayRenewFlow({ c, g, onPermit, onLive }: { c: CardView; g: Stay
           <section className="qblock" aria-labelledby="sr-q">
             {track !== 'unknown' && <h2 id="sr-q" className="qblock__title"><Bi phrase k="sr.notThis" /></h2>}
             <p className="sub"><Bi t={t.text} /></p>
+            {track === 'card' && (
+              <div className="k-notice" role="note">
+                <p className="label"><One t={D.nagoya.scope} /></p>
+                <p><strong><Bi t={D.nagoya.name} /></strong></p>
+                <p><One k="sr.exp.address" />：<One t={D.nagoya.address} /></p>
+              </div>
+            )}
             <div className="list">{link}</div>
-            {track === 'unknown' && <button type="button" className="k-answer" onClick={() => setEdit('status')}><Bi phrase k="sr.status.q" /></button>}
+            {track !== 'short' && <button type="button" className={'k-answer' + (track === 'unknown' ? '' : ' k-answer--small')} onClick={() => setEdit('status')}><Bi phrase k="sr.status.q" /></button>}
           </section>
         );
       }

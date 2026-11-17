@@ -1,5 +1,4 @@
 {
-  "$comment": "知っている書類（SPEC 9.12・6A.9）。写真から返させるのは、この一覧の id と確からしさだけ。期限・金額・名前・番号は返させない・出さない。look_for は書類の見出しにある言葉（本人が書類で確かめる）。内容はすべて needs_check。",
   "documents": [
     {
       "id": "kokuho-shikaku",
@@ -9,6 +8,16 @@
         "en": "National Health Insurance eligibility certificate"
       },
       "look_for": "{資格|しかく}{確認|かくにん}{書|しょ}",
+      "search_words": [
+        "国保",
+        "こくほ",
+        "kokuho",
+        "kokumin kenko hoken",
+        "NHI",
+        "health insurance",
+        "保険証",
+        "ほけんしょう"
+      ],
       "summary": {
         "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っていることを{示|しめ}す{書類|しょるい}です。{病院|びょういん}で{見|み}せます。{大切|たいせつ}に{持|も}っていてください。",
         "ja_easy": "{国民健康保険|こくみんけんこうほけん}に{入|はい}っているという{書類|しょるい}です。{病院|びょういん}で{見|み}せます。",
@@ -76,10 +85,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "WARD_SUPPORT-002",
-        "NHI_MAIL-014"
-      ],
       "about_evidence": {
         "source_ids": [
           "nagoya-kokuho-kanyu-page"
@@ -96,6 +101,16 @@
         "en": "National Health Insurance premium notice and payment slips"
       },
       "look_for": "納入通知書・納付書",
+      "search_words": [
+        "国保",
+        "こくほ",
+        "kokuho",
+        "kokumin kenko hoken",
+        "NHI",
+        "health insurance",
+        "保険証",
+        "ほけんしょう"
+      ],
       "summary": {
         "ja": "{毎年|まいとし}6{月|がつ}に{届|とど}く「{国民|こくみん}{健康|けんこう}{保険|ほけん}{料|りょう}{納入|のうにゅう}{通知|つうち}{書|しょ}」で、1{年|ねん}の{保険|ほけん}{料|りょう}が{決|き}まります。6{月|がつ}から3{月|がつ}まで10{回|かい}に{分|わ}けて{払|はら}います。{払|はら}い{方|かた}は{口座|こうざ}{振替|ふりかえ}がふつうで、{納付|のうふ}{書|しょ}でも{払|はら}えます。{払|はら}う{期限|きげん}と{金額|きんがく}は、{書類|しょるい}に{書|か}いてあるものを{見|み}てください。",
         "ja_easy": "6{月|がつ}に、{保険|ほけん}のお{金|かね}を{知|し}らせる{紙|かみ}が{届|とど}きます。6{月|がつ}から3{月|がつ}まで10{回|かい}に{分|わ}けて{払|はら}います。ふつうは{銀行|ぎんこう}の{口座|こうざ}から{引|ひ}かれます。{納付|のうふ}{書|しょ}でも{払|はら}えます。いつまでに、いくらかは、{紙|かみ}を{見|み}てください。",
@@ -113,7 +128,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "保険料は、毎月、口座振替(自動払込)により納付していただきます。",
-        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+        "verified_by": "author 2026-11-07 (experience)"
       },
       "issued_by_card": [
         "nagoya-kokuho-kanyu"
@@ -166,10 +181,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "WARD_SUPPORT-009",
-        "NHI_MAIL-001"
-      ],
       "about_evidence": {
         "source_ids": [
           "nagoya-kokuho-nofu",
@@ -187,6 +198,13 @@
         "en": "National Pension enrollment notice"
       },
       "look_for": "国民年金加入のお知らせ",
+      "search_words": [
+        "年金",
+        "ねんきん",
+        "nenkin",
+        "pension",
+        "national pension"
+      ],
       "summary": {
         "ja": "{国民|こくみん}{年金|ねんきん}に{入|はい}ったこと、または{入|はい}る{手続|てつづ}きについてのお{知|し}らせです。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。",
         "ja_easy": "{国民年金|こくみんねんきん}のお{知|し}らせです。{日本年金機構|にほんねんきんきこう}から{届|とど}きます。",
@@ -251,9 +269,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "PENSION_MAIL-030"
-      ],
       "about_evidence": {
         "source_ids": [
           "nenkin-hatachi-page",
@@ -289,7 +304,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "転出証明書の交付を受けた後、新たにお住まいになる市区町村にて転入の届出を行っていただく必要があります。",
-        "verified_by": "author 2026-11-07（FAQ id=54 の本文を確認）"
+        "verified_by": "author 2026-11-07"
       },
       "sample": "/samples/tenshutsu-shomeisho-sample.svg",
       "key_words": [
@@ -350,6 +365,16 @@
         "en": "National Health Insurance eligibility information notice"
       },
       "look_for": "{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+      "search_words": [
+        "国保",
+        "こくほ",
+        "kokuho",
+        "kokumin kenko hoken",
+        "NHI",
+        "health insurance",
+        "保険証",
+        "ほけんしょう"
+      ],
       "summary": {
         "ja": "マイナ{保険証|ほけんしょう}を{持|も}っている{人|ひと}に{届|とど}く、{国民|こくみん}{健康|けんこう}{保険|ほけん}の{情報|じょうほう}の{紙|かみ}です。{大切|たいせつ}に{持|も}っていてください。",
         "ja_easy": "マイナ{保険証|ほけんしょう}がある{人|ひと}に{届|とど}く、{保険|ほけん}の{紙|かみ}です。",
@@ -412,10 +437,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "WARD_SUPPORT-002",
-        "NHI_MAIL-013"
-      ],
       "about_evidence": {
         "source_ids": [
           "nagoya-kokuho-kanyu-page"
@@ -432,6 +453,16 @@
         "en": "Individual Number notice (My Number)"
       },
       "look_for": "{個人|こじん}{番号|ばんごう}{通知|つうち}{書|しょ}",
+      "search_words": [
+        "マイナンバー",
+        "まいなんばー",
+        "マイナ",
+        "個人番号",
+        "こじんばんごう",
+        "My Number",
+        "マイナンバー My Number",
+        "mynumber"
+      ],
       "summary": {
         "ja": "{初|はじ}めて{住民|じゅうみん}{登録|とうろく}をして、マイナンバーが{付|つ}いた{人|ひと}に{届|とど}く{書類|しょるい}です。マイナンバーが{書|か}いてあります。{大切|たいせつ}に{持|も}っていてください（{本人|ほんにん}{確認|かくにん}{書類|しょるい}には{使|つか}えません。{要|よう}{確認|かくにん}）。",
         "ja_easy": "マイナンバーが{書|か}いてある{書類|しょるい}です。{大切|たいせつ}に{持|も}っていてください。",
@@ -486,10 +517,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "MYNUMBER_MAIL-001",
-        "MYNUMBER_MAIL-010"
-      ],
       "about_evidence": {
         "source_ids": [
           "B-nagoya-kojinbango-tsuchisho"
@@ -524,7 +551,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "義務教育のお子さんがいる場合は、転入学通知書をお渡ししますので",
-        "verified_by": "author 2026-11-07（FAQ id=39 の本文を確認）"
+        "verified_by": "author 2026-11-07"
       },
       "sample": "/samples/tennyugaku-tsuchisho-sample.svg",
       "key_words": [
@@ -678,10 +705,6 @@
           "kind": "reference"
         }
       ],
-      "catalogue_ids": [
-        "WARD_RESIDENCE-001",
-        "WARD_RESIDENCE-002"
-      ],
       "key_words": [
         {
           "word": "{転入|てんにゅう}",
@@ -721,6 +744,13 @@
         "en": "National Pension payment slip"
       },
       "look_for": "{国民|こくみん}{年金|ねんきん}{保険料|ほけんりょう}{納付|のうふ}{書|しょ}",
+      "search_words": [
+        "年金",
+        "ねんきん",
+        "nenkin",
+        "pension",
+        "national pension"
+      ],
       "summary": {
         "ja": "{国民|こくみん}{年金|ねんきん}の{保険|ほけん}{料|りょう}を{払|はら}うための{紙|かみ}です。{日本|にほん}{年金|ねんきん}{機構|きこう}から{届|とど}きます。",
         "ja_easy": "{国民年金|こくみんねんきん}のお{金|かね}を{払|はら}う{紙|かみ}です。",
@@ -780,10 +810,6 @@
           "kind": "reference"
         }
       ],
-      "catalogue_ids": [
-        "PENSION_MAIL-001",
-        "PENSION_MAIL-032"
-      ],
       "key_words": [
         {
           "word": "{納付|のうふ}{期限|きげん}",
@@ -824,6 +850,13 @@
         "en": "Nenkin Teikibin (pension record statement)"
       },
       "look_for": "ねんきん{定期便|ていきびん}",
+      "search_words": [
+        "年金",
+        "ねんきん",
+        "nenkin",
+        "pension",
+        "national pension"
+      ],
       "summary": {
         "ja": "{国民|こくみん}{年金|ねんきん}・{厚生|こうせい}{年金|ねんきん}の{加入|かにゅう}の{記録|きろく}などを{知|し}らせる{書類|しょるい}です。{払|はら}うための{紙|かみ}ではありません。",
         "ja_easy": "{年金|ねんきん}の{記録|きろく}のお{知|し}らせです。お{金|かね}を{払|はら}う{紙|かみ}ではありません。",
@@ -868,10 +901,6 @@
           "source_id": "nenkin-teikibin-kaito",
           "kind": "procedure"
         }
-      ],
-      "catalogue_ids": [
-        "PENSION_MAIL-003",
-        "PENSION_MAIL-004"
       ],
       "key_words": [
         {
@@ -956,9 +985,6 @@
           "kind": "procedure"
         }
       ],
-      "catalogue_ids": [
-        "DRIVER_MAIL-001"
-      ],
       "key_words": [
         {
           "word": "{講習|こうしゅう}{区分|くぶん}",
@@ -1040,9 +1066,6 @@
           "kind": "reference"
         }
       ],
-      "catalogue_ids": [
-        "IMMIGRATION-005"
-      ],
       "key_words": [
         {
           "word": "{審査|しんさ}{完了|かんりょう}",
@@ -1116,9 +1139,6 @@
           "source_id": "nagoya-water-shiharai",
           "kind": "procedure"
         }
-      ],
-      "catalogue_ids": [
-        "WATER-001"
       ],
       "key_words": [
         {
@@ -1198,10 +1218,6 @@
           "source_id": "aichi-police-ishitsu-qa",
           "kind": "procedure"
         }
-      ],
-      "catalogue_ids": [
-        "POLICE-001",
-        "POLICE-002"
       ],
       "key_words": [
         {
@@ -1293,11 +1309,6 @@
           "kind": "reference"
         }
       ],
-      "catalogue_ids": [
-        "WARD_RESIDENCE-007",
-        "WARD_RESIDENCE-008",
-        "WARD_RESIDENCE-032"
-      ],
       "key_words": [
         {
           "word": "{続柄|つづきがら}",
@@ -1376,10 +1387,6 @@
           "source_id": "nagoya-kokuho-sagi",
           "kind": "reference"
         }
-      ],
-      "catalogue_ids": [
-        "SCAM-001",
-        "SCAM-002"
       ],
       "key_words": [
         {

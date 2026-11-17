@@ -12,8 +12,7 @@
   "requires_moved_in": false,
   "eligibility": {
     "all": [
-      "R-bank-has-account",
-      "R-foreign-national"
+      "R-bank-has-account"
     ]
   },
   "coverage_rule_ids": [],
@@ -27,9 +26,9 @@
     "reading": "きょじゅうしゃ・ひきょじゅうしゃのくぶんのへんこう"
   },
   "summary": {
-    "ja": "{銀行|ぎんこう}の{口座|こうざ}には「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。これは{外為法|がいためほう}の{区分|くぶん}で、{在留|ざいりゅう}{資格|しかく}や{税金|ぜいきん}の{居住者|きょじゅうしゃ}とは{別|べつ}です。{銀行|ぎんこう}の{案内|あんない}では、{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{日本|にほん}{国内|こくない}に{勤務|きんむ}する{場合|ばあい}（アルバイト・パートを{除|のぞ}く）か、{入国|にゅうこく}から6か{月|げつ}{以上|いじょう}たった{場合|ばあい}を{除|のぞ}き、{非居住者|ひきょじゅうしゃ}です。{来日|らいにち}から{長|なが}くたっていても、{銀行|ぎんこう}の{登録|とうろく}が{非居住者|ひきょじゅうしゃ}のままのことがあります。{届|とど}けは{法令|ほうれい}の{期限|きげん}ではありません。{手数料|てすうりょう}や{送金|そうきん}の{扱|あつか}いは{銀行|ぎんこう}ごとに{違|ちが}います。まず{銀行|ぎんこう}に{登録|とうろく}を{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}には「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。{在留|ざいりゅう}{資格|しかく}とは{別|べつ}です。{日本|にほん}で{会社|かいしゃ}に{勤|つと}める{人|ひと}（アルバイトは{入|はい}りません）か、{日本|にほん}に{来|き}て6か{月|げつ}{以上|いじょう}たった{人|ひと}は、ふつう{居住者|きょじゅうしゃ}です。でも、{銀行|ぎんこう}の{登録|とうろく}が{変|か}わっていないことがあります。{手数料|てすうりょう}は{銀行|ぎんこう}によって{違|ちが}います。{銀行|ぎんこう}で{登録|とうろく}を{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-    "en": "Bank accounts are registered as \"resident\" or \"non-resident\". This is the category under the Foreign Exchange Act, separate from your residence status or tax residency. According to bank guidance, a non-Japanese national is a non-resident unless they work in Japan (excluding part-time jobs) or 6 months or more have passed since entry. Even if you have lived in Japan for a long time, your bank may still have you registered as non-resident. This is not a legal deadline. Fees and transfer rules differ by bank. First ask your bank how you are registered (to be checked)."
+    "ja": "{銀行|ぎんこう}の{口座|こうざ}には、{外為法|がいためほう}（{外国|がいこく}{為替|かわせ}の{法律|ほうりつ}）の「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。{在留|ざいりゅう}{資格|しかく}や{税金|ぜいきん}の{居住者|きょじゅうしゃ}とは{別|べつ}の{区分|くぶん}で、{国籍|こくせき}や{来日|らいにち}からの{月数|つきすう}だけでは{決|き}まりません。{銀行|ぎんこう}の{案内|あんない}では、{日本|にほん}{国籍|こくせき}でない{人|ひと}は、{入国|にゅうこく}から6か{月|げつ}たつか、{日本|にほん}{国内|こくない}の{事務所|じむしょ}に{勤|つと}めると{居住者|きょじゅうしゃ}です。{日本|にほん}{国籍|こくせき}の{人|ひと}でも、{外国|がいこく}に{住|す}んでいた{人|ひと}は{非居住者|ひきょじゅうしゃ}のことがあります。{銀行|ぎんこう}の{登録|とうろく}が、{今|いま}の{状況|じょうきょう}と{合|あ}っていないことがあります。{届|とど}けは{法令|ほうれい}の{期限|きげん}ではありません。{手数料|てすうりょう}や{送金|そうきん}の{扱|あつか}いは{銀行|ぎんこう}ごとに{違|ちが}います。まず{銀行|ぎんこう}に{登録|とうろく}を{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{銀行|ぎんこう}の{口座|こうざ}には「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」の{登録|とうろく}があります。{在留|ざいりゅう}{資格|しかく}や{税金|ぜいきん}とは{別|べつ}です。{日本|にほん}の{国籍|こくせき}でない{人|ひと}は、{日本|にほん}に{来|き}て6か{月|げつ}たつか、{日本|にほん}の{会社|かいしゃ}などに{勤|つと}めると、{居住者|きょじゅうしゃ}です。{日本|にほん}の{国籍|こくせき}の{人|ひと}でも、{外国|がいこく}に{住|す}んでいた{人|ひと}は{非居住者|ひきょじゅうしゃ}のことがあります。{銀行|ぎんこう}の{登録|とうろく}が{変|か}わっていないことがあります。{期限|きげん}はありません。{手数料|てすうりょう}は{銀行|ぎんこう}によって{違|ちが}います。{銀行|ぎんこう}で{登録|とうろく}を{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "Bank accounts are registered as \"resident\" or \"non-resident\" under the Foreign Exchange Act. This is separate from your residence status and from tax residency, and it is not decided by nationality or months in Japan alone. According to bank guidance, a person without Japanese nationality is a resident after 6 months from entry, or when working at an office in Japan. Japanese nationals who lived abroad may be non-residents. Your bank's registration may not match your current situation. Telling the bank is not a legal deadline. Fees and transfer rules differ by bank. First ask your bank how you are registered (to be checked)."
   },
   "lead": {
     "ja": "{銀行|ぎんこう}の{登録|とうろく}が「{居住者|きょじゅうしゃ}」か「{非居住者|ひきょじゅうしゃ}」か、{銀行|ぎんこう}に{確|たし}かめましょう。",
@@ -39,9 +38,9 @@
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます）",
-      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます）",
-      "en": "Your bank's counter (bring your residence card and passbook)"
+      "ja": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{本人|ほんにん}{確認|かくにん}{書類|しょるい}〔{在留|ざいりゅう}カードなど〕と{通帳|つうちょう}を{持|も}って{行|い}きます）",
+      "ja_easy": "{口座|こうざ}のある{銀行|ぎんこう}の{窓口|まどぐち}（{在留|ざいりゅう}カードなどと{通帳|つうちょう}を{持|も}って{行|い}きます）",
+      "en": "Your bank's counter (bring ID such as your residence card, and your passbook)"
     },
     "evidence": {
       "source_ids": [
@@ -49,7 +48,7 @@
       ],
       "checked_at": "2026-11-07",
       "status": "verified",
-      "verified_by": "author 2026-11-07（author-2026-11-07）"
+      "verified_by": "author 2026-11-07"
     }
   },
   "place": "bank",
@@ -66,25 +65,61 @@
       "author-2026-11-07",
       "B-jpb-hikyojusha"
     ],
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "日本国籍をお持ちでないお客さまは、法令により、日本国内に勤務（アルバイト・パートを除く）もしくは入国後6ヶ月以上経過の場合を除き、非居住者となります。"
   },
   "methods": [
     {
       "type": "counter",
+      "when": "R-foreign-national",
       "text": {
-        "ja": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます（{必要|ひつよう}なものは{銀行|ぎんこう}で{確|たし}かめます）。",
-        "ja_easy": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{在留|ざいりゅう}カードと{通帳|つうちょう}を{持|も}って{行|い}きます（{銀行|ぎんこう}で{確|たし}かめます）。",
-        "en": "To change the registration, go to your bank's counter. Bring your residence card and passbook (ask your bank what is needed)."
+        "ja": "{日本|にほん}{国籍|こくせき}でない{人|ひと}：{入国|にゅうこく}から6か{月|げつ}{未満|みまん}で、{日本|にほん}{国内|こくない}の{事務所|じむしょ}に{勤|つと}めていない{人|ひと}は{非居住者|ひきょじゅうしゃ}です（ゆうちょ{銀行|ぎんこう}の{案内|あんない}）。6か{月|げつ}{未満|みまん}でも、{日本|にほん}{国内|こくない}の{事務所|じむしょ}に{勤|つと}める{人|ひと}は{居住者|きょじゅうしゃ}です。アルバイト・パートを{勤務|きんむ}に{入|い}れない{銀行|ぎんこう}があります（{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}。{要|よう}{確認|かくにん}）。6か{月|げつ}は{入国|にゅうこく}した{日|ひ}から{数|かぞ}えます。{住所|じゅうしょ}を{届|とど}けた{日|ひ}からではありません。{外国|がいこく}の{政府|せいふ}の{公務|こうむ}の{人|ひと}や{外交官|がいこうかん}などは、{別|べつ}の{扱|あつか}いです。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}でない{人|ひと}：{日本|にほん}に{来|き}て6か{月|げつ}より{前|まえ}で、{日本|にほん}の{会社|かいしゃ}などに{勤|つと}めていない{人|ひと}は{非居住者|ひきょじゅうしゃ}です。6か{月|げつ}より{前|まえ}でも、{日本|にほん}の{会社|かいしゃ}などに{勤|つと}める{人|ひと}は{居住者|きょじゅうしゃ}です。アルバイトは{入|い}れない{銀行|ぎんこう}があります（{要|よう}{確認|かくにん}）。6か{月|げつ}は、{日本|にほん}に{来|き}た{日|ひ}から{数|かぞ}えます。{住所|じゅうしょ}を{届|とど}けた{日|ひ}からではありません。",
+        "en": "If you do not have Japanese nationality: you are a non-resident if less than 6 months have passed since you entered Japan and you do not work at an office in Japan (Japan Post Bank guidance). Even before 6 months, you are a resident if you work at an office in Japan. Some banks do not count part-time jobs for this (example: MUFG Bank; to be checked). The 6 months count from the day you entered Japan, not from the day you registered your address. Foreign government officials and diplomats are treated differently."
       },
       "evidence": {
         "source_ids": [
-          "author-2026-11-07"
+          "B-jpb-hikyojusha",
+          "B-mufg-kouza-shorui"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "日本に入国後６か月未満で日本国内にある事務所に勤務されていないお客さま"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-japanese-national",
+      "text": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}：ふつうは{居住者|きょじゅうしゃ}です。ただし、{外国|がいこく}の{事務所|じむしょ}に{勤|つと}めるために{出国|しゅっこく}した{人|ひと}、2{年|ねん}{以上|いじょう}{外国|がいこく}に{滞在|たいざい}するつもりで{出国|しゅっこく}した{人|ひと}、{出国|しゅっこく}して2{年|ねん}{以上|いじょう}{外国|がいこく}にいる{人|ひと}は{非居住者|ひきょじゅうしゃ}です。この{人|ひと}が{休暇|きゅうか}などで6か{月|げつ}{未満|みまん}{一時|いちじ}{帰国|きこく}しても、{非居住者|ひきょじゅうしゃ}のままです（ゆうちょ{銀行|ぎんこう}の{案内|あんない}）。{日本|にほん}に{戻|もど}って{住|す}むときは、{銀行|ぎんこう}の{登録|とうろく}を{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}は、ふつう{居住者|きょじゅうしゃ}です。でも、{外国|がいこく}で{働|はたら}くために{出国|しゅっこく}した{人|ひと}や、2{年|ねん}{以上|いじょう}{外国|がいこく}にいる{人|ひと}は{非居住者|ひきょじゅうしゃ}です。6か{月|げつ}より{短|みじか}く{日本|にほん}に{帰|かえ}っているときも、{非居住者|ひきょじゅうしゃ}のままです。{日本|にほん}に{戻|もど}って{住|す}むときは、{銀行|ぎんこう}に{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+        "en": "Japanese nationals are usually residents. However, you are a non-resident if you left Japan to work at an office abroad, left intending to stay abroad for 2 years or more, or have stayed abroad for 2 years or more since leaving. A temporary visit to Japan of less than 6 months (for example on holiday) does not change this (Japan Post Bank guidance). When you come back to live in Japan, ask your bank about your registration (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jpb-hikyojusha"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "日本出国後、外国に２年以上滞在するに至ったお客さま"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{本人|ほんにん}{確認|かくにん}{書類|しょるい}（{在留|ざいりゅう}カードなど）と{通帳|つうちょう}を{持|も}って{行|い}きます（{必要|ひつよう}なものは{銀行|ぎんこう}で{確|たし}かめます）。",
+        "ja_easy": "{登録|とうろく}を{変|か}えるときは、{銀行|ぎんこう}の{窓口|まどぐち}で{手続|てつづ}きします。{在留|ざいりゅう}カードなどと{通帳|つうちょう}を{持|も}って{行|い}きます（{銀行|ぎんこう}で{確|たし}かめます）。",
+        "en": "To change the registration, go to your bank's counter. Bring ID such as your residence card, and your passbook (ask your bank what is needed)."
+      },
+      "evidence": {
+        "source_ids": [
+          "author-2026-11-07",
+          "B-jpb-hikyojusha"
         ],
         "checked_at": "2026-11-07",
         "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     },
     {
@@ -100,8 +135,9 @@
         ],
         "checked_at": "2026-11-07",
         "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
-      }
+        "verified_by": "author 2026-11-07"
+      },
+      "when": "R-foreign-national"
     },
     {
       "type": "counter",
@@ -116,7 +152,7 @@
         ],
         "checked_at": "2026-11-07",
         "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     }
   ]

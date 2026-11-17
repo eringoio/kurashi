@@ -15,7 +15,7 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-japanese-foreign"
+      "R-mar-name-jp-optional"
     ]
   },
   "title": {
@@ -82,7 +82,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c1"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -120,7 +120,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -142,7 +142,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c5"
+          "ref": "internal-audit-record"
         }
       }
     }
@@ -157,16 +157,16 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と{外国|がいこく}{籍|せき}の{人|ひと}の{結婚|けっこん}の{場合|ばあい}だけ{出|だ}しています。",
-      "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}と{外国|がいこく}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}の{場合|ばあい}だけ{出|だ}しています。",
-      "en": "Shown only for a marriage between a Japanese national and a foreign national."
+      "ja": "{外国|がいこく}{籍|せき}の{人|ひと}と{結婚|けっこん}する{日本|にほん}{国籍|こくせき}の{人|ひと}が、{外国|がいこく}{籍|せき}の{配偶|はいぐう}{者|しゃ}の{氏|うじ}に{変|か}えたい（まだ{決|き}めていない）ときに{出|だ}しています。{日本|にほん}{国籍|こくせき}どうしの{結婚|けっこん}では、{氏|うじ}は{婚姻|こんいん}{届|とどけ}で{選|えら}びます。",
+      "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}と{結婚|けっこん}する{日本|にほん}の{国籍|こくせき}の{人|ひと}が、{名字|みょうじ}を{変|か}えたいときに{出|だ}しています。",
+      "en": "Shown when the Japanese national marrying a foreign national wants (or has not decided whether) to take the foreign spouse's surname. Two Japanese nationals choose the surname on the marriage registration."
     }
   },
   "evidence": {
     "source_ids": [
       "B-moj-minji15"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "外国人と婚姻しても日本人の氏は当然には変わりません。"
   }

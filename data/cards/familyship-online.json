@@ -1,0 +1,191 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-online",
+  "illustration": "search",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{申込|もうしこみ}フォームで{宣誓|せんせい}する（オンライン）",
+    "ja_easy": "フォームで{宣誓|せんせい}する（オンライン）",
+    "en": "Pledge with the online form"
+  },
+  "official_name": {
+    "ja": "宣誓用申込フォーム",
+    "reading": "せんせいようもうしこみふぉーむ"
+  },
+  "lead": {
+    "ja": "ふたりがそれぞれ{申込|もうしこみ}フォームで{手続|てつづ}きし、{書類|しょるい}は{郵送|ゆうそう}します。{日時|にちじ}の{予約|よやく}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ふたりが、それぞれフォームで{手続|てつづ}きします。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります。{予約|よやく}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。",
+    "en": "Each of you applies with the online form and you mail the documents. The city page has no booking step (to be checked)."
+  },
+  "summary": {
+    "ja": "ふたりがそれぞれ{宣誓|せんせい}{用|よう}{申込|もうしこみ}フォームに{入力|にゅうりょく}し、{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{画像|がぞう}と{顔|かお}{写真|しゃしん}を{貼|は}ります。ふたりで{決|き}めたキーワードを{入|い}れます。{必要|ひつよう}な{書類|しょるい}と{返信|へんしん}{用|よう}{封筒|ふうとう}を{郵送|ゆうそう}します。",
+    "ja_easy": "ふたりがそれぞれフォームに{入力|にゅうりょく}し、{写真|しゃしん}を{貼|は}ります。{書類|しょるい}と{返信|へんしん}{用|よう}の{封筒|ふうとう}を{郵便|ゆうびん}で{送|おく}ります。",
+    "en": "Each of you fills in the pledge form and attaches an ID image and a face photo, with a keyword you both chose. Mail the documents and a return envelope."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{宣誓|せんせい}と{受領証|じゅりょうしょう}などの{交付|こうふ}は{無料|むりょう}です。{必要|ひつよう}な{書類|しょるい}の{発行|はっこう}{手数料|てすうりょう}、{返信|へんしん}{用|よう}{封筒|ふうとう}、{切手|きって}{代|だい}（180{円|えん}{分|ぶん}）は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{宣誓|せんせい}と{受領証|じゅりょうしょう}は{無料|むりょう}です。{書類|しょるい}を{取|と}るお{金|かね}と、{封筒|ふうとう}と{切手|きって}（180{円|えん}）は{自分|じぶん}で{払|はら}います。",
+      "en": "The pledge and the receipt are free. You pay the fees for the documents, the return envelope and the stamps (180 yen)."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "（注）宣誓に必要な書類の交付手数料、返信用封筒及び切手代などは、宣誓者の自己負担となります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "オンライン（{宣誓|せんせい}{用|よう}{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (pledge form). Mail the documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "お二人から宣誓申込用フォームにてそれぞれ手続きをいただき、必要書類等については郵送にて名古屋市役所男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "{手順|てじゅん}",
+        "ja_easy": "すること",
+        "en": "Steps"
+      },
+      "ordered": true,
+      "items": [
+        {
+          "text": {
+            "ja": "ふたりで、5{文字|もじ}{以上|いじょう}20{文字|もじ}{以下|いか}のキーワードを{決|き}めます（{受領証|じゅりょうしょう}には{載|の}りません）。",
+            "ja_easy": "ふたりで、5〜20{文字|もじ}の「キーワード」を{決|き}めます（{受領証|じゅりょうしょう}には{書|か}かれません）。",
+            "en": "Decide a keyword of 5 to 20 characters together (it is not printed on the receipt)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "ご自由に決めていただく5文字以上20文字以下の文字を、キーワードとしてご入力いただく必要がございます。"
+          }
+        },
+        {
+          "text": {
+            "ja": "ふたりがそれぞれ、{宣誓|せんせい}{用|よう}{申込|もうしこみ}フォームに{入力|にゅうりょく}します。1{人|にん}だけでは{終|お}わりません。{宣誓|せんせい}{日|び}は、{原則|げんそく}2{人|にん}{目|め}の{入力|にゅうりょく}が{終|お}わった{日|ひ}です。ふたりの{手続|てつづ}きが2{週間|しゅうかん}{以上|いじょう}{離|はな}れると、{受|う}け{付|つ}けられないことがあります。",
+            "ja_easy": "ふたりが、それぞれフォームに{入力|にゅうりょく}します。1{人|にん}だけでは{終|お}わりません。ふたりの{入力|にゅうりょく}が2{週間|しゅうかん}{以上|いじょう}{離|はな}れると、{受|う}け{付|つ}けられないことがあります。",
+            "en": "Each of you fills in the form. It is not complete with one person only. The pledge date is normally the day the second person finishes. If your two entries are 2 weeks or more apart, they may not be accepted."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "お二人の手続きの期間が2週間以上離れている場合は、受付できない場合がございます。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{画像|がぞう}と、{別|べつ}に{撮|と}った{顔|かお}{写真|しゃしん}（3か{月|げつ}{以内|いない}、{正面|しょうめん}、{胸|むね}から{上|うえ}、{帽子|ぼうし}なし、{背景|はいけい}なし、カラー。{自撮|じど}りでもよい）を{貼|は}ります。",
+            "ja_easy": "{本人|ほんにん}{確認|かくにん}の{書類|しょるい}の{写真|しゃしん}と、{顔|かお}の{写真|しゃしん}（3か{月|げつ}{以内|いない}。{前|まえ}から、{胸|むね}から{上|うえ}、{帽子|ぼうし}なし、{背景|はいけい}なし、カラー。{自分|じぶん}で{撮|と}ってもよい）を{貼|は}ります。",
+            "en": "Attach an image of your ID and a separate face photo (taken within 3 months, from the front, chest up, no hat, plain background, colour; a selfie is OK)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "3か月以内に撮影した、正面、上三分身（おおむね胸から上）、無帽、無背景、カラーのものとし、ご本人の顔が鮮明に分かるものをご提出ください。自撮り写真でもかまいません。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{必要|ひつよう}な{書類|しょるい}と、{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}の{封筒|ふうとう}に、{切手|きって}180{円|えん}{分|ぶん}を{貼|は}り、{返信|へんしん}{先|さき}を{書|か}く）を、{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}します。",
+            "ja_easy": "{書類|しょるい}と、{返信|へんしん}{用|よう}の{封筒|ふうとう}（A4が{入|はい}る{封筒|ふうとう}。{切手|きって}180{円|えん}。{自分|じぶん}の{住所|じゅうしょ}と{名前|なまえ}を{書|か}く）を、{郵便|ゆうびん}で{送|おく}ります。",
+            "en": "Mail the documents and a return envelope (large enough for A4, with 180 yen of stamps and your address) to the Gender Equality Promotion Division."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "切手180円分（定形外規格内）を貼付し、返信先の住所・氏名を記載した返信用封筒（定形外規格内）"
+          }
+        },
+        {
+          "text": {
+            "ja": "ふたりの{手続|てつづ}きと{書類|しょるい}がそろってから、10{日|にち}ほどで{受領証|じゅりょうしょう}などが{郵送|ゆうそう}で{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{手続|てつづ}きと{書類|しょるい}がそろってから、10{日|にち}ぐらいで{受領証|じゅりょうしょう}が{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "en": "About 10 days after both entries and the documents arrive, the receipt is mailed to you (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "不備がなければ10日程度でファミリーシップ宣誓書受領証等を原則郵送にて交付いたします。"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{宣誓|せんせい}{用|よう}{申込|もうしこみ}フォーム",
+        "ja_easy": "{宣誓|せんせい}のフォーム",
+        "en": "Pledge form (Japanese)"
+      },
+      "url": "https://logoform.jp/form/mX9C/226959",
+      "source_id": "B-nagoya-familyship-form-sensei"
+    },
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "ja_easy": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "en": "Nagoya city page on the system"
+      },
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028139.html",
+      "source_id": "B-nagoya-familyship"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "宣誓",
+    "オンライン",
+    "申込フォーム",
+    "familyship",
+    "online",
+    "form"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "オンライン（宣誓用申込フォーム）を用いた宣誓"
+  }
+}

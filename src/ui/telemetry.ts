@@ -8,6 +8,8 @@ export interface EvFields { p?: string; f?: string; x?: string; y?: string }
 /** 送ってよいか（App が設定と保存の状態から決める） */
 let allowed: () => boolean = () => false;
 let levelOf: () => string = () => '';
+/** 使われ方の数を送ってよいか（O-7）：保存に同意したあと（kept）で、設定で「送らない」にしていないときだけ。同意の前は送らない */
+export const countsConsented = (mode: string, setting: unknown) => mode === 'kept' && setting !== false;
 export function initTelemetry(o: { allowed: () => boolean; level: () => string }) { allowed = o.allowed; levelOf = o.level; }
 
 /** ブラウザが「追跡しない」を求めているか */

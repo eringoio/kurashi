@@ -58,9 +58,10 @@
       "source_ids": [
         "B-jsite-aichi-saichin"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check",
-      "quote": "愛知県内の事業場で働くすべての労働者 に適用されます。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "愛知県内の事業場で働くすべての労働者 に適用されます。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "evidence": {

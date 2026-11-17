@@ -1,0 +1,135 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-ko-sakujo",
+  "illustration": "you",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{子|こ}が{自分|じぶん}の{氏名|しめい}を{消|け}すよう{申|もう}し{立|た}てる",
+    "ja_easy": "{子|こ}どもが{自分|じぶん}の{名前|なまえ}を{消|け}してもらう",
+    "en": "A child asks to remove their name"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓に関する申立",
+    "reading": "ふぁみりーしっぷせんせいにかんするもうしたて"
+  },
+  "lead": {
+    "ja": "{受領証|じゅりょうしょう}などに{氏名|しめい}が{載|の}っている15{歳|さい}{以上|いじょう}の{子|こ}が、{本人|ほんにん}で{申|もう}し{立|た}てます。",
+    "ja_easy": "{受領証|じゅりょうしょう}に{名前|なまえ}がある15{歳|さい}{以上|いじょう}の{子|こ}どもが、{自分|じぶん}で{申|もう}し{込|こ}みます。",
+    "en": "A child aged 15 or over whose name is on the receipt applies by themselves."
+  },
+  "summary": {
+    "ja": "{受領証|じゅりょうしょう}などに{氏名|しめい}が{載|の}っている15{歳|さい}{以上|いじょう}の{子|こ}が、{本人|ほんにん}で{申|もう}し{立|た}てます。",
+    "ja_easy": "{受領証|じゅりょうしょう}に{名前|なまえ}がある15{歳|さい}{以上|いじょう}の{子|こ}どもが、{自分|じぶん}で{申|もう}し{込|こ}みます。",
+    "en": "A child aged 15 or over whose name is on the receipt applies by themselves."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "オンライン（{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (form). Mail documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "手続きについては原則、オンラインで申請を行っていただき、必要書類等については郵送にて男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どんなとき",
+        "ja_easy": "どんなとき",
+        "en": "When"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}{書|しょ}・{受領証|じゅりょうしょう}・{受領|じゅりょう}{証明|しょうめい}カードに{氏名|しめい}が{載|の}っている15{歳|さい}{以上|いじょう}の{子|こ}が、{自分|じぶん}の{氏名|しめい}を{消|け}したいとき。{子|こ}{本人|ほんにん}が{申|もう}し{込|こ}みます。",
+            "ja_easy": "{名前|なまえ}が{載|の}っている15{歳|さい}{以上|いじょう}の{子|こ}どもが、{名前|なまえ}を{消|け}したいとき。{子|こ}ども{本人|ほんにん}が{申|もう}し{込|こ}みます。",
+            "en": "When a child aged 15 or over whose name is on the pledge, receipt or card wants it removed. The child applies."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "１５歳以上のお子さんは、「ファミリーシップ宣誓に関する申立」の申請を行うことで、自分の氏名の削除を申し出ることができます。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "そのあと",
+        "ja_easy": "そのあと",
+        "en": "After"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{郵送|ゆうそう}する{書類|しょるい}は{特|とく}にありません。{手続|てつづ}きのあと、{市|し}から{宣誓|せんせい}したふたりに{連絡|れんらく}があり、{受領証|じゅりょうしょう}などを{返|かえ}すよう{求|もと}められます。",
+            "ja_easy": "{郵便|ゆうびん}で{送|おく}る{書類|しょるい}はありません。そのあと、{市|し}から{親|おや}（{宣誓|せんせい}したふたり）に{連絡|れんらく}があり、{受領証|じゅりょうしょう}を{返|かえ}します。",
+            "en": "No documents need to be mailed. Afterwards, the city contacts the pledged couple and asks them to return the receipt."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "受領証等の返還をお願いさせていただきます。"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{氏名|しめい}{削除|さくじょ}の{申込|もうしこみ}フォーム",
+        "ja_easy": "{名前|なまえ}を{消|け}すフォーム",
+        "en": "Name removal form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/WEC9i",
+      "source_id": "B-nagoya-familyship-form-sakujo"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "familyship"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-tebiki",
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "（５）宣誓書等から自分の氏名を削除したい場合（１５歳以上のお子さん本人）"
+  }
+}

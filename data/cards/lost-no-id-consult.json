@@ -73,7 +73,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -95,7 +95,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-pickup/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -117,7 +117,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-foreign/c4"
+          "ref": "internal-audit-record"
         }
       }
     },

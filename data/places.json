@@ -1,5 +1,4 @@
 {
-  "$comment": "場所（SPEC 9章・場所）。名古屋市の16区役所（支所は含まない）。順番は市の区役所一覧のとおり。座標は国土地理院の住所検索の結果で、建物の入口ではなく番地の代表点。新しい場所は needs_check。",
   "places": [
     {
       "id": "chikusa-ward-office",
@@ -21,7 +20,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -44,7 +43,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -66,7 +65,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -88,7 +87,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -110,7 +109,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -132,7 +131,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -154,7 +153,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -176,7 +175,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -198,7 +197,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -220,7 +219,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -242,7 +241,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -264,7 +263,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -286,7 +285,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -308,7 +307,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -330,7 +329,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     },
     {
@@ -352,7 +351,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author 2026-11-06（地図で確かめた。docs/TODO_2026-11-06.md 1章 33）"
+        "verified_by": "author 2026-11-06"
       }
     }
   ]

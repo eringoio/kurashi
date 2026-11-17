@@ -9,6 +9,8 @@ const files: Record<string, unknown> = import.meta.glob(['../../data/gomi/items.
 import opendataJson from '../../data/gomi/opendata.json';
 /** 早見表の品目の名前の英語と、ふりがな付きの日本語（早見表は日本語だけのため。Claude が訳した。名前だけで、区分・出し方は変えない） */
 import itemNamesJson from '../../data/gomi/item-names.json';
+import cityLinkNamesJson from '../../data/gomi/city-link-names.json';
+const CITY_LINK_NAMES: string[] = cityLinkNamesJson.names;
 
 const Link = z.object({ label: Text, url: z.string().url(), evidence: Evidence });
 export const GomiAreas = z.object({
@@ -79,4 +81,27 @@ export function gomiData(): GomiBundle | null {
   const get = (n: string) => files[`../../data/gomi/${n}.json`];
   cached = get('items') && get('areas') && get('delivery') ? parseGomi({ items: get('items'), areas: get('areas'), delivery: get('delivery'), opendata: opendataJson, names: itemNamesJson }) : null;
   return cached;
+}
+
+/** 名古屋市が案内しているごみ分別アプリ「さんあ～る」の市の紹介ページ（ストアへ直接は送らない） */
+export const SANARU_URL = 'https://www.city.nagoya.jp/kurashi/gomi/1012183/1012187/1012188.html';
+
+/** 品目の備考が、市の分別検索の表（1035233）の備考の原文そのままか。そうなら画面で引用として区別する（市の著作権・再利用の規定） */
+export function cityNote(it: GomiItem): boolean {
+  const ja = it.note?.ja;
+  return !!ja && it.evidence.source_ids.includes('gomi-search-1035233') && typeof it.evidence.quote === 'string' && it.evidence.quote.endsWith(' | ' + ja);
+}
+
+/** 市の備考の終わりに続けて入っているリンクの名前（G-15。data/gomi/city-link-names.json）を、文を変えずに分ける。
+    本文＋名前を順につなぐと、もとの文と1字も違わない（間の空白も body に残す）。終わりが名前の並びでなければ分けない */
+export function splitCityLinks(text: string, names: string[] = CITY_LINK_NAMES): { body: string; links: string[] } {
+  const links: string[] = [];
+  let rest = text;
+  for (;;) {
+    const hit = names.find((n) => rest.endsWith(n));
+    if (!hit) break;
+    links.unshift(hit);
+    rest = rest.slice(0, rest.length - hit.length);
+  }
+  return links.length && /\s$/.test(rest) ? { body: rest, links } : { body: text, links: [] };
 }

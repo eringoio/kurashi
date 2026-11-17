@@ -70,7 +70,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
         "verdict": "agree",
-        "ref": "research/audits/job.json#P-job-rodo-joken/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -93,7 +93,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-rodo-joken/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -115,7 +115,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-rodo-joken/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -137,7 +137,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "50be23225ee91567f395ee27c01457ed8b380142cefdbc974e06cc2145c7ebab",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-rodo-joken/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -169,9 +169,10 @@
         "source_ids": [
           "B-mhlw-keiyaku-index"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "なお、明示された労働条件が事実と異なっていた場合には、労働者は、労働基準法第15条第２項の規定により、即時に労働契約を解除"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "なお、明示された労働条件が事実と異なっていた場合には、労働者は、労働基準法第15条第２項の規定により、即時に労働契約を解除",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     }
   ],

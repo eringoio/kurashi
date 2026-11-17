@@ -28,10 +28,11 @@ function answerAll(id: string, first: Record<string, Value>) {
 }
 
 describe('運転免許：選んだ目的の手続きへ進む', () => {
-  const GOALS: Record<string, string> = { new: 'license-shinki', switch: 'license-gaimen-kirikae', renew: 'license-koshin', change: 'license-kisai-henko', lost: 'license-saikofu' };
+  const GOALS: Record<string, string> = { new: 'license-shinki', switch: 'license-gaimen-kirikae', renew: 'license-koshin', expired: 'license-shikko', change: 'license-kisai-henko', lost: 'license-saikofu', abroad: 'license-kokugai-shutoku' };
   for (const [goal, card] of Object.entries(GOALS)) {
-    it(`${goal} → ${card}（目的。あとでにしない。中間の一覧を挟まない）`, () => {
-      const o = go('E-license', { 'Q-license-goal': goal });
+    it(`${goal} → ${card}（目的。あとでにしない。中間の一覧を挟まない。目的のあとの質問は2問まで）`, () => {
+      const { a, o } = answerAll('E-license', { 'Q-license-goal': goal });
+      expect(Object.keys(a).length).toBeLessThanOrEqual(3);
       const c = v(o, card);
       expect(c.section).toBe('today');
       expect(c.goal).toBe(true);
@@ -65,11 +66,14 @@ describe('ファミリーシップ：手続きの画面へ直接', () => {
   });
 });
 
-describe('結婚：婚姻届を先に。結婚したあとの手続きは婚姻届のあと', () => {
-  const KINDS = ['japanese_foreign', 'foreign_foreign', 'both_japanese', 'unknown'];
-  for (const k of KINDS) {
-    it(`${k}：婚姻届が目的（いま）。結婚したあとは「あとで（婚姻届のあと）」`, () => {
-      const { o } = answerAll('E-marriage', { 'Q-marriage-kind': k });
+describe('結婚：婚姻届を先に。名前が変わる人の手続きは婚姻届のあと', () => {
+  // kaizen 2026-11-08：段階（これから）× ふたりの国籍。名前が変わる人＝あなた、住所・世帯は変わらない
+  const NATS = ['jp_foreign', 'foreign_jp', 'both_foreign', 'both_japanese', 'unknown'];
+  const base = (nat: string): Record<string, Value> => ({ 'Q-marriage-stage': 'before', 'Q-marriage-nat': nat, 'Q-marriage-name-who': 'self', 'Q-marriage-home': 'none', 'Q-marriage-zairyu-card': 'yes', 'Q-marriage-mynumber': true });
+  for (const k of NATS) {
+    it(`${k}：婚姻届が目的（いま）。名前が変わる人の手続きは「あとで（婚姻届のあと）」`, () => {
+      const o = go('E-marriage', base(k));
+      expect(o.upfront).toEqual([]);
       const todoke = v(o, 'marriage-konin-todoke');
       expect(todoke.section).toBe('today');
       expect(todoke.goal).toBe(true);
@@ -83,16 +87,16 @@ describe('結婚：婚姻届を先に。結婚したあとの手続きは婚姻�
     });
   }
   it('婚姻届を済んだにしたら、当てはまる人だけ次の手続きが出る。選べる手続き（氏の変更）は必須にしない', () => {
-    const { a } = answerAll('E-marriage', { 'Q-marriage-kind': 'japanese_foreign' });
-    const o = go('E-marriage', a, { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'done', planned_on: '2026-11-10' } } });
+    const o = go('E-marriage', base('foreign_jp'), { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'done', planned_on: '2026-11-10' } } });
     expect(v(o, 'marriage-zairyu-shimei').section).toBe('today');
-    expect(v(o, 'marriage-ujino-henkou').section).toBe('info');
-    const f = go('E-marriage', { ...a, 'Q-marriage-kind': 'both_japanese' }, { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'done' } } });
+    const j = go('E-marriage', base('jp_foreign'), { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'done' } } });
+    expect(v(j, 'marriage-ujino-henkou').section).toBe('info');
+    expect(v(j, 'marriage-zairyu-shimei').state).toBe('excluded');
+    const f = go('E-marriage', base('both_japanese'), { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'done' } } });
     expect(v(f, 'marriage-zairyu-shimei').state).toBe('excluded');
   });
-  it('婚姻届の日を決めたら、結婚したあとの手続きはその日より前を選べない（日を混同しない）', () => {
-    const { a } = answerAll('E-marriage', { 'Q-marriage-kind': 'japanese_foreign' });
-    const o = go('E-marriage', a, { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'todo', planned_on: '2026-11-20' } } });
+  it('婚姻届の日を決めたら、名前が変わる人の手続きはその日より前を選べない（日を混同しない）', () => {
+    const o = go('E-marriage', base('foreign_jp'), { plan: { 'marriage-konin-todoke': { card_id: 'marriage-konin-todoke', status: 'todo', planned_on: '2026-11-20' } } });
     expect(v(o, 'marriage-zairyu-shimei').dayRule).toEqual({ kind: 'min', day: '2026-11-20', from: 'marriage-konin-todoke' });
   });
 });
@@ -167,16 +171,18 @@ describe('引っ越し・そのほか', () => {
   });
   it('本人の「あとでする」：自動の「あとで」と分け、次の一歩から外す。日を決めれば戻る', () => {
     const plan = { 'move-within-tenkyo': { card_id: 'move-within-tenkyo', status: 'todo' as const, deferred: true } };
-    const o = go('E-move-within', { 'Q-ward-move': 'same_ward' }, { plan });
+    const o = go('E-move-within', { 'Q-ward-move': 'same_ward', 'Q-moved-in': 'yes' }, { plan });
     expect([v(o, 'move-within-tenkyo').section, v(o, 'move-within-tenkyo').sectionWhy]).toEqual(['later', 'deferred']);
     const st = nowStep(o, T);
     expect('view' in st && st.view.card.id).not.toBe('move-within-tenkyo');
-    const back = go('E-move-within', { 'Q-ward-move': 'same_ward' }, { plan: { 'move-within-tenkyo': { ...plan['move-within-tenkyo'], deferred: false } } });
+    const back = go('E-move-within', { 'Q-ward-move': 'same_ward', 'Q-moved-in': 'yes' }, { plan: { 'move-within-tenkyo': { ...plan['move-within-tenkyo'], deferred: false } } });
     expect(v(back, 'move-within-tenkyo').section).toBe('today');
   });
   it('法令の期限・対象者の判定は変えない（同じ区：転居届／別の区：転入届）', () => {
     expect(v(go('E-move-within', { 'Q-ward-move': 'same_ward' }), 'move-within-tennyu').state).toBe('excluded');
-    expect(v(go('E-move-within', { 'Q-ward-move': 'other_ward' }), 'move-within-tennyu').section).toBe('today');
+    expect(v(go('E-move-within', { 'Q-ward-move': 'other_ward', 'Q-moved-in': 'yes' }), 'move-within-tennyu').section).toBe('today');
+    // まだ住み始めていない：届けは住み始めてから（kaizen hikkoshi 11/8）
+    expect([v(go('E-move-within', { 'Q-ward-move': 'same_ward', 'Q-moved-in': 'not_yet' }), 'move-within-tenkyo').section, v(go('E-move-within', { 'Q-ward-move': 'same_ward', 'Q-moved-in': 'not_yet' }), 'move-within-tenkyo').sectionWhy]).toEqual(['later', 'moved_in_not_yet']);
     expect(v(go('E-move-within', { 'Q-ward-move': 'other_ward' }), 'move-within-tenkyo').state).toBe('excluded');
   });
   it('型と参照の検査を通る', () => {

@@ -9,10 +9,11 @@ import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { Answers, WhyAsked } from '../ui/guide';
-import { Link, navigate, useFocusTitle } from '../ui/router';
+import { Link, navigate, takeHandoff, useFocusTitle } from '../ui/router';
 import { eventForOrigin, hasEntryExtras, noChangeEvents } from './moveEntry';
 import { ABOUT_SKIPPED, aboutNext } from '../core/about';
 import { AboutStep } from '../ui/About';
+import { isShortStay, SHORT_STAY_PATH } from '../core/shortStay';
 
 const q = (id: string) => DATA().questions.find((x) => x.id === id)!;
 
@@ -29,7 +30,8 @@ function Head({ eyebrow, children }: { eyebrow?: React.ReactNode; children: Reac
 async function finish(g: ReturnType<typeof useGuide>) {
   await g.setResume(null);
   // v0.5.31：手続きの質問を先にまとめて聞く。質問が無ければ「いま」が1回だけ全体を開く（Plan.tsx の Now）
-  navigate('/now');
+  // 履歴に積まない：もどるでこの画面に来ても、すぐ /now に積み直して閉じこめない（Fable C-1）
+  navigate('/now', undefined, { replace: true });
 }
 
 export function Move({ step }: { step: string }) {
@@ -40,6 +42,30 @@ export function Move({ step }: { step: string }) {
   useEffect(() => { void g.setResume(step === 'nochange' || step === 'unsure' ? null : '/move' + (step ? '/' + step : '')); }, [step]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const answerAndGo = async (qid: string, v: Value, to: string) => { await g.answer(qid, v); navigate(to); };
+  // 出発地を選んだとき。出発地に対応するイベントがあれば（名古屋市の中・名古屋市から出ていく）、共通の /e/{id} へ。イベントの名前では分岐しない
+  const pickOrigin = (v: Value) => {
+    const ev = eventForOrigin(String(v));
+    if (ev) { void g.setResume(null); navigate('/e/' + ev.id); return; }
+    const built = DATA().flow.built_origins;
+    const to = v === 'out_of_area' ? '/info/out-of-scope' : built.includes(String(v)) ? '/move/objects' : '/info/coming-soon';
+    if (to !== '/move/objects') void g.setResume(null);
+    void answerAndGo('Q-origin', v, to);
+  };
+  // 住まいの「住所の届出」から来たとき（kaizen sumai 5）：あなたについての質問のあと、選んだ出発地で進む。
+  // 前に別の出発地を答えていれば書き換えず、いつもの質問を出す。もどるで、この質問にもどって選び直せる
+  const aboutId = step === 'from' && !skipped ? aboutNext(DATA().questions, g.answers)?.id : undefined;
+  useEffect(() => {
+    if (step !== 'from' || aboutId) return;
+    const v = takeHandoff('/move/from')?.['Q-origin'];
+    if (v === undefined || !q('Q-origin').options.some((o) => o.value === v)) return;
+    const cur = g.answers['Q-origin'];
+    if (cur === undefined || cur === v) pickOrigin(v);
+  }, [step, aboutId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // 在留資格か住民登録の形が短期滞在なら、国籍・立場・年齢・出発地を聞かずに専用の画面へ（R-10）
+  const shortStay = step === 'from' && isShortStay(g.answers);
+  useEffect(() => { if (shortStay) { void g.setResume(null); navigate(SHORT_STAY_PATH, undefined, { replace: true }); } }, [shortStay]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (shortStay) return null;
 
   if (step === '') {
     return (
@@ -60,21 +86,13 @@ export function Move({ step }: { step: string }) {
     const about = !skipped ? aboutNext(DATA().questions, g.answers) : undefined;
     if (about) return <AboutStep key={about.id} q={about} onAnswer={(val) => g.answer(about.id, val)} />;
     const qo = q('Q-origin');
-    const built = DATA().flow.built_origins;
     return (
       <>
         <Head eyebrow={<One k="move.step" />}><Bi phrase t={qo.text} /></Head>
         <QuestionBlockNoTitle>
           {qo.options.map((o) => (
             <button key={String(o.value)} type="button" className={'k-answer' + (o.small ? ' k-answer--small' : '')}
-              onClick={() => {
-                // 出発地に対応するイベントがあれば（名古屋市の中・名古屋市から出ていく）、共通の /e/{id} へ。イベントの名前では分岐しない
-                const ev = eventForOrigin(String(o.value));
-                if (ev) { void g.setResume(null); navigate('/e/' + ev.id); return; }
-                const to = o.value === 'out_of_area' ? '/info/out-of-scope' : built.includes(String(o.value)) ? '/move/objects' : '/info/coming-soon';
-                if (to !== '/move/objects') void g.setResume(null);
-                void answerAndGo('Q-origin', o.value, to);
-              }}>
+              onClick={() => pickOrigin(o.value)}>
               {o.icon && <img src={art(o.icon)} alt="" />}
               <Bi phrase t={o.label} />
             </button>
@@ -96,7 +114,7 @@ export function Move({ step }: { step: string }) {
         <QuestionBlockNoTitle>
           {/* 日本以外の国籍と答えた人には「日本国籍」を出さない（日本国籍なら、この質問は出ない。implied） */}
           {qb.options.filter((o) => !(o.value === 'japanese' && g.answers['Q-nationality'] === 'foreign')).map((o) => (
-            <button key={String(o.value)} type="button" className="k-answer" onClick={() => void answerAndGo('Q-residence-basis', o.value, o.value === 'short_stay' ? '/info/out-of-scope' : '/move/q')}>
+            <button key={String(o.value)} type="button" className="k-answer" onClick={() => void answerAndGo('Q-residence-basis', o.value, o.value === 'short_stay' ? SHORT_STAY_PATH : '/move/q')}>
               <Bi phrase t={o.label} />
             </button>
           ))}
@@ -133,7 +151,7 @@ function Upfront() {
   const next = g.out.upfront.find((x) => x.id !== 'Q-origin');
   const out = g.out.scope === 'F';
   useEffect(() => {
-    if (out) { void g.setResume(null); navigate('/info/out-of-scope'); }
+    if (out) { void g.setResume(null); navigate(isShortStay(g.answers) ? SHORT_STAY_PATH : '/info/out-of-scope'); }
     else if (!next) void finish(g);
   }, [out, next]); // eslint-disable-line react-hooks/exhaustive-deps
   if (out || !next) return null;
@@ -164,7 +182,9 @@ function Objects() {
     await g.setObjects(held);
     const card = list.find((o) => o.check_question);
     // 在留カードがない人には、住民登録の根拠を1問だけ聞く（6A.2）。ある人には裏の住所を確かめる（6A.3）
-    if (origin === 'abroad' && !held['zairyu-card'] && g.answers['Q-nationality'] !== 'japanese') navigate('/move/basis');
+    // 住民登録の形は、在留資格などで決まっていれば聞かない（同じことを2回聞かない。R-10）。短期滞在なら専用の画面
+    if (isShortStay(g.answers)) navigate(SHORT_STAY_PATH, undefined, { replace: true });
+    else if (origin === 'abroad' && !held['zairyu-card'] && g.answers['Q-nationality'] !== 'japanese' && g.out.facts.get('residence_basis') === undefined) navigate('/move/basis');
     else if (card && held[card.id]) navigate('/move/check');
     else navigate('/move/q');
   };

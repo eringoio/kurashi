@@ -1,6 +1,8 @@
 /* 進み方の道（SPEC 6A.4 v0.5.31。前の形は輪（WorldMap）。VITE_ROAD=off で輪にもどせる）。
-   済んだ → 次はこれ（いまの1つ。キャラクターが立つ）→ そのあと → 確かめる → まだわからない → 待つ → あとで → 案内 の段に分ける。
-   段の中の項目は順番を決めない（「どの順でもできます」）。前の手続きが要る項目だけ「◯◯のあと」と書く（dayRule の from）。
+   済んだ → 次はこれ（いまの1つ。キャラクターが立つ）→ そのあと → まだわからない → 待つ → あとで → 案内 の段に分ける。
+   v0.5.44：いま・確かめる の手続きは、行く所（カードの place）ごとのまとまりで出す。「次はこれ」は、いまの1つと同じ所の手続き全部。
+   まとまりの中は上から順（エンジンの順：緊急 → 前提 → 期限のある義務 → 同じ所）。要確認・義務の強さの札は今までどおり（まとめても変えない）。
+   項目ごとに「完了」のチェック（onDone）。一部だけ済んでも、残りはそのまま。前の手続きが要る項目は「◯◯のあと」（dayRule の from）。
    キャラクターは「いまの1つ」（nowStep）の段に立つ。項目を押して開いても、いまの1つが変わらなければ動かない。
    決まらないとき（最初の質問の前など）は、はじめに立って理由の一文を出す。全部済んだら最後に立つ。
    狭い箱は縦（左に道、右に項目）、広い箱（720px〜）は横（上に道、下に項目。多いときは横に動かせる）。色は tokens.css の変数だけ。
@@ -11,17 +13,28 @@ import type { CardView, EngineOutput } from '../core/engine';
 import type { bringPlan } from '../core/accompany';
 import type { Text } from '../core/schema';
 import { nowStep } from '../core/now';
+import { visitGroups } from '../core/visitOrder';
+import { CheckBox } from './Checklist';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type LocalizedText, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art, artDim } from './art';
-import { fill, fmtDay, stateKey, todayWord, type StateKey } from './guide';
+import { fill, fmtDay, stateKey, todayWord, unverifiedOb, type StateKey } from './guide';
 import { Link } from './router';
 import '../styles/road.css';
 
 /** いまの1つ：項目の id（同じ日の予定などは複数）。null は「決まらない」（最初の質問・待つだけ など） */
 export function roadNow(out: EngineOutput, today: string): string[] | null {
   const s = nowStep(out, today);
+  // 質問が残っている項目（card_q）は「次はこれ」にしない（v0.5.44・C-4）：答えるまで手続きか決まらない。
+  // 期限のある義務より任意の項目が先に「次はこれ」に見えないように。道では「まだわからない」の段に出る
+  if (s.kind === 'card_q') return null;
+  // 日を決める・決めた日を待つ とき（FE-1）：「次はこれ」は並びの最初の手続き（行く日が決まっていても）。
+  // 区役所の日を決めたあと、任意の銀行（日がまだ）が「次はこれ」に上がらないように。日を決める画面（nowStep）は今までどおり
+  if (s.kind === 'plan' || s.kind === 'until') {
+    const first = out.cards.find((c) => (c.section === 'today' || c.section === 'check') && c.state !== 'ask' && c.state !== 'excluded' && c.state !== 'out_of_scope' && c.plan?.status !== 'done');
+    if (first) return [first.card.id];
+  }
   if ('view' in s) return [s.view.card.id];
   if ('views' in s) return s.views.map((c) => c.card.id);
   return null;
@@ -44,7 +57,12 @@ const ORDER: StageKey[] = ['done', 'now', 'today', 'check', 'ask', 'wait', 'late
 /** 前のキャラクターの位置（画面を移っても、いまの1つが変わったときだけ動かすため） */
 const lastNow = new Map<string, string>();
 
-export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: CardView[]; now: string[] | null; base?: string; listId?: string; /** キャラクターの前の位置を覚える名前（既定は base） */ track?: string }) {
+/** 行く所でまとめる項目か（いま・確かめる で、質問が残っていない） */
+const visitable = (c: CardView) => (c.section === 'today' || c.section === 'check') && c.state !== 'ask';
+const MUST_OB = new Set(['legal', 'local_rule']);
+
+export function RoadMap({ cards, now, base = '/c/', listId, track, onDone }: { cards: CardView[]; now: string[] | null; base?: string; listId?: string; /** キャラクターの前の位置を覚える名前（既定は base） */ track?: string;
+  /** 項目ごとに「完了」を記録する（v0.5.44）。無ければチェックを出さない */ onDone?: (id: string, done: boolean) => void }) {
   const { level } = usePrefs();
   const box = useRef<HTMLDivElement>(null);
   const [opened, setOpened] = useState<Set<StageKey>>(new Set());
@@ -52,8 +70,13 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
   const hidden = cards.length - shown.length;
   const nowSet = new Set(now ?? []);
   const groups = new Map<StageKey, CardView[]>();
+  // いまの1つと同じ所の手続き（v0.5.44）：まとめて「次はこれ」に
+  const nowCard = shown.find((c) => nowSet.has(c.card.id) && c.section !== 'done');
+  const nowPlace = nowCard && visitable(nowCard) ? nowCard.visitPlace : null;
   for (const c of shown) {
-    const k: StageKey = nowSet.has(c.card.id) && c.section !== 'done' ? 'now' : stageOf(c);
+    const k: StageKey = nowSet.has(c.card.id) && c.section !== 'done' ? 'now'
+      : nowPlace && visitable(c) && (c.visitPlace === nowPlace || c.altPlace === nowPlace) ? 'now'
+      : visitable(c) ? 'today' : stageOf(c);
     groups.set(k, [...(groups.get(k) ?? []), c]);
   }
   const stages = ORDER.filter((k) => groups.get(k)?.length);
@@ -99,13 +122,15 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
   );
 
   // 部品にせず関数で出す（描くたびに作り直さない）
-  const stop = (c: CardView, isNow: boolean) => {
+  const stop = (c: CardView, isNow: boolean, inVisit = false, altAt?: LocalizedText) => {
     const k = stateKey(c);
     const dim = k === 'check' || k === 'later';
     const from = c.dayRule.kind === 'min' || c.dayRule.kind === 'need_first' ? titleOf(c.dayRule.from) : undefined;
     // 進み方（済み・次はこれ・日付・要確認 など）と、しないといけないか（必要・したほうがよい・案内）は別の札
     const progress: UiKey = isNow ? 'road.next' : k === 'today' ? 'road.todo' : k === 'check' ? 'st.check' : ('st.' + k) as UiKey;
-    const showOb = k !== 'done' && k !== 'info' && k !== 'ask';
+    // 当てはまるかがまだ分からない（要確認の原因が「わからない」など。FE-6）ときは、必要・期限の札を出さない（10.3 の規則3）
+    const unsure = c.state === 'check_at_office' && (c.cause === 'unknown' || c.cause === 'no_question' || c.cause === 'coverage');
+    const showOb = k !== 'done' && k !== 'info' && k !== 'ask' && !unsure;
     return (
       <li key={c.card.id} data-card={c.card.id} className={'road__card road__card--' + CLS[k] + (isNow ? ' road__card--here' : '')}>
         <Link to={base + c.card.id} className="road__link" aria-current={isNow ? 'step' : undefined}>
@@ -123,17 +148,92 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
                 <span className={'road__tag road__tag--' + CLS[k]}><span aria-hidden="true">{STAGE_MARK[stageOf(c)]}</span> <One k={k === 'check' ? 'st.check' : ('st.' + k) as UiKey} /></span>
               )}
               {c.plan?.planned_on && k !== 'done' && <span className="road__tag road__tag--day">{fmtDay(c.plan.planned_on, level)}</span>}
-              {showOb && <span className={'road__tag road__tag--' + OB_CLS[c.card.obligation]}><One k={todayWord(c.card.obligation)} /></span>}
+              {showOb && <span className={'road__tag road__tag--' + OB_CLS[c.card.obligation]}><One k={todayWord(c.card.obligation, unverifiedOb(c))} /></span>}
+              {/* 出す方法（v0.5.45）：選んだ方法、または行かない方法（出典つきの方法だけ。FE-17） */}
+              {k !== 'done' && c.way && c.ways.length > 1 && <span className="road__tag road__tag--day"><One k={('way.' + c.way) as UiKey} /></span>}
+              {k !== 'done' && c.remote && !c.way && <span className="road__tag road__tag--advised"><One k={(c.remoteWays.includes('online') && c.remoteWays.includes('mail') ? 'road.remote.both' : c.remoteWays.includes('online') ? 'road.remote.online' : 'road.remote.mail') as UiKey} /></span>}
+              {showOb && MUST_OB.has(c.card.obligation) && c.card.deadline && (c.deadlineOn
+                ? <span className="road__tag road__tag--must"><span aria-hidden="true">⏱</span> <One t={fill(ui('road.deadlineOn'), 'date', (lv) => fmtDay(c.deadlineOn!, lv))} /></span>
+                : <span className="road__tag road__tag--must"><span aria-hidden="true">⏱</span> <One k="road.deadline" /></span>)}
+              {k !== 'done' && c.lateRisk && <span className="road__tag road__tag--late"><span aria-hidden="true">!</span> <One k="road.late" /></span>}
             </span>
+            {/* 窓口（同じ建物でも手続きごとに別。v0.5.44） */}
+            {inVisit && k !== 'done' && <span className="road__where"><One t={c.card.where.text} /></span>}
+            {/* 行かない方法もある手続き：窓口に行くなら同じ所でできる場合がある（FE-16。同じ窓口・1回で済むとは言わない） */}
+            {altAt && k !== 'done' && <span className="road__where"><One t={fill(ui('road.visit.maybe'), 'n', (_lv, id) => String((altAt as Record<string, unknown>)[id] ?? altAt.ja))} /></span>}
             {from && k !== 'done' && <span className="road__after"><One t={fill(ui('road.after'), 'n', (_lv, id) => String((from as Record<string, unknown>)[id] ?? from.ja_easy ?? from.ja))} /></span>}
           </span>
         </Link>
+        {/* 自分で完了にした項目は、もうできた の段でも外せる（答えから済んだとわかったものは外せないので出さない） */}
+        {onDone && (k === 'done' ? c.plan?.status === 'done' : k !== 'info' && k !== 'ask') && (
+          <div className="road__check">
+            <CheckBox name={line(ui('ov.track.done'), level) + '：' + line(c.card.title, level)} checked={c.plan?.status === 'done'} onChange={(v) => { onDone(c.card.id, v); keepFocus(c.card.id); }}>
+              <One k="ov.track.done" />
+            </CheckBox>
+          </div>
+        )}
       </li>
     );
   };
+  /** 完了を押すと項目の段が変わる（もうできた へ・もとへ）。フォーカスを移った先の同じチェックへ（FE-5。BODY に落とさない） */
+  const keepFocus = (id: string) => {
+    const orig = document.activeElement;
+    let n = 0;
+    const tick = () => {
+      const el = box.current?.querySelector<HTMLInputElement>(`[data-card="${CSS.escape(id)}"] input[type=checkbox]`);
+      // 段が変わって、押したチェックが作り直されたら、新しいチェックへ。フォーカスがほかへ移っていたら動かさない
+      if (el && el !== orig) {
+        const a = document.activeElement;
+        if (!a || a === document.body || a === orig) el.focus();
+        return;
+      }
+      if (++n < 60) setTimeout(tick, 50);
+    };
+    setTimeout(tick, 0);
+  };
+  /** 行く所ごとのまとまり。場所の無い手続きが続くときは「別の所・方法で（1つずつ）」にまとめて見出しを1つ */
+  const visits = (list: CardView[], here: boolean) => {
+    // 行かない方法もあり方法がまだの手続き（altPlace）は、同じ所へ行くまとまりがあれば、そのまとまりの後ろに「できる場合がある」として付ける
+    const firm = new Set(list.map((c) => c.visitPlace).filter(Boolean));
+    const alt = list.filter((c) => !c.visitPlace && c.altPlace && firm.has(c.altPlace));
+    const chunks: { place: string | null; cards: CardView[]; alt: CardView[] }[] = [];
+    for (const g of visitGroups(list.filter((c) => !alt.includes(c)))) {
+      const last = chunks.at(-1);
+      if (!g.place && last && !last.place) last.cards.push(...g.cards);
+      else chunks.push({ place: g.place, cards: [...g.cards], alt: g.place ? alt.filter((c) => c.altPlace === g.place) : [] });
+    }
+    return chunks.map((ch, i) => {
+      const name = ch.place ? ((ui(('placeTitle.' + ch.place) as UiKey) ?? ui(('place.' + ch.place) as UiKey)) as LocalizedText | undefined) : undefined;
+      const title = name ? fill(ui('road.visit.at'), 'n', (_lv, id) => String((name as Record<string, unknown>)[id] ?? name.ja)) : ui('road.visit.other');
+      return (
+        <div key={(ch.place ?? 'other') + i} className={'road__visit' + (ch.place ? '' : ' road__visit--other')}>
+          <p className="road__visit-name"><Bi phrase t={title} /></p>
+          {ch.place && ch.cards.length > 1 && <p className="road__note"><One k="road.visit.same" /></p>}
+          <ul className="road__cards" role="list">
+            {ch.cards.map((c) => stop(c, here && nowSet.has(c.card.id), !!ch.place && ch.cards.length > 1))}
+            {name && ch.alt.map((c) => stop(c, here && nowSet.has(c.card.id), false, name))}
+          </ul>
+        </div>
+      );
+    });
+  };
 
+  // まだ答えていない質問・窓口で確かめる項目を見つけやすく（V-5）
+  const nAsk = shown.filter((c) => c.state === 'ask' && c.section !== 'done').length;
+  const nCheck = shown.filter((c) => c.state === 'check_at_office' && c.section !== 'done' && c.section !== null && c.section !== 'info').length;
+  const goAsk = () => {
+    const el = box.current?.querySelector<HTMLElement>('.road__stage--ask a');
+    el?.scrollIntoView({ block: 'center' });
+    el?.focus({ preventScroll: true });
+  };
   return (
     <div className="road" ref={box}>
+      {(nAsk > 0 || nCheck > 0) && (
+        <p className="road__summary">
+          <One t={fill(fill(ui('road.summary'), 'q', () => String(nAsk)), 'c', () => String(nCheck))} />
+          {nAsk > 0 && groups.has('ask') && <> <button type="button" className="link road__summary-go" onClick={goAsk}><One k="road.summary.go" /></button></>}
+        </p>
+      )}
       <ol className="road__stages" aria-label={line(ui('road.label'), level)}>
         {youAt === 'start' && (
           <li className="road__stage road__stage--start" data-road-here="" data-road-stop="start">
@@ -158,11 +258,13 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
                 {here ? you : <span className="road__dot" aria-hidden="true">{STAGE_MARK[k]}</span>}
               </span>
               <div className="road__body">
-                <p className="road__stage-name"><Bi k={STAGE_TITLE[k]} /> <span className="road__count">（{list.length}）</span></p>
-                {list.length > 1 && k !== 'done' && <p className="road__note"><One k="road.anyOrder" /></p>}
-                <ul className="road__cards" role="list">
-                  {vis.map((c) => stop(c, here))}
-                </ul>
+                <p className="road__stage-name"><Bi k={k === 'today' && !groups.has('now') ? 'road.todo' : STAGE_TITLE[k]} /> <span className="road__count">（{list.length}）</span></p>
+                {list.length > 1 && k !== 'done' && k !== 'now' && k !== 'today' && <p className="road__note"><One k="road.anyOrder" /></p>}
+                {k === 'now' || k === 'today' ? visits(vis, here) : (
+                  <ul className="road__cards" role="list">
+                    {vis.map((c) => stop(c, here))}
+                  </ul>
+                )}
                 {rest > 0 && (
                   <button type="button" className="road__more link" aria-expanded="false" onClick={() => {
                     // 段を全部出し、出てきた最初の項目へ移る（キーボードで続けて進める）
@@ -196,8 +298,8 @@ export function RoadMap({ cards, now, base = '/c/', listId, track }: { cards: Ca
 }
 
 /** 画面から使う形：いまの1つは nowStep から決める（輪と同じデータ。判定は変えない） */
-export function RoadFor({ cards, out, today, base, listId }: { cards: CardView[]; out: EngineOutput; today: string; base?: string; listId?: string }) {
-  return <RoadMap cards={cards} now={roadNow(out, today)} base={base} listId={listId} />;
+export function RoadFor({ cards, out, today, base, listId, onDone }: { cards: CardView[]; out: EngineOutput; today: string; base?: string; listId?: string; onDone?: (id: string, done: boolean) => void }) {
+  return <RoadMap cards={cards} now={roadNow(out, today)} base={base} listId={listId} onDone={onDone} />;
 }
 
 /** 道の下の持ち物（SPEC 6A.4 v0.5.31）：行く所ごとに、まだの手続きで使う物。持っているか（入口で答えた物）を札で。

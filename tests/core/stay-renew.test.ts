@@ -2,6 +2,7 @@
 // B-13（11/6）：在留資格は共通の質問 Q-zairyu-status。旧 Q-sr-status の limited→student（期間が決まっている在留資格）、special_permanent→japanese の代わりに確かめる
    マイナンバーカードのカードは作者の知見（2026-11-05。公式の本文で確認待ち）なので、needs_check。 */
 import { describe, expect, it } from 'vitest';
+import { verifiedNotBulk } from './bulk';
 import { checkRefs, loadData } from '../../src/core/data';
 import { run, type EngineInput } from '../../src/core/engine';
 import { collectEvidence } from '../../src/core/quotes';
@@ -27,7 +28,7 @@ describe('在留期間を更新する（下書き）', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.card_ids).toEqual(BOTH);
     const s = JSON.stringify(json);
-    expect(s.split('"verified"').length - 1).toBe(3); // where・methods[0]・methods[2]（作者 11/7）
+    expect(verifiedNotBulk(s).length).toBe(3); // where・methods[0]・methods[2]（作者 11/7）。ほかは作者の一括承認（2026-11-08）
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
     expect(s).not.toMatch(/https?:\/\/[^"]*\?/);
   });
@@ -91,6 +92,8 @@ describe('在留期間を更新する（下書き）', () => {
       expect(e.status).toBe('verified');
       expect(e.source_ids).toContain('author-2026-11-07');
     }
+    // 内部のメモ（note）は公開用の書き出しで外れる。あるときだけ確かめる
+    if (c.evidence.note !== undefined) expect(c.evidence.note).toContain('作者の知見（2026-11-05）。2026-11-06 に作者が確認'); // B-5（11/6）
   });
   it('順番：先に在留期間の更新。カードの延長はその後（関係は注記だけ）', () => {
     const o = go('student', 'yes');

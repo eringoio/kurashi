@@ -1,9 +1,11 @@
 /* 住まい探し（11/7 C-7 で公開のデータへ移した）。民間の契約。日を聞かない案内（kind: guide）7枚。
    制度の正しさや作者の承認の代わりにはならない。 */
 import { describe, expect, it } from 'vitest';
+import { isBulk, verifiedNotBulk } from './bulk';
 import { baseRaw, checkRefs, loadData } from '../../src/core/data';
 import { run } from '../../src/core/engine';
 import { nowStep } from '../../src/core/now';
+import { handoffPlan } from '../../src/core/handoff';
 
 const data = loadData();
 const ev = data.events.find((e) => e.id === 'E-house-search')!;
@@ -21,8 +23,8 @@ describe('住まい探し（下書き）', () => {
   it('型と参照の検査を通る。確認済み（verified）は作者の答え（2026-11-07）だけ', () => {
     expect(checkRefs(data)).toEqual([]);
     const all = JSON.stringify(json);
-    expect((all.match(/"status":"verified"/g) ?? []).length).toBe((all.match(/"verified_by":"author 2026-11-07/g) ?? []).length);
-    expect(json.cards.every((c) => c.evidence.status === 'needs_check')).toBe(true);
+    expect(verifiedNotBulk(all).length).toBe((all.match(/"verified_by":"author 2026-11-07/g) ?? []).length);
+    expect(json.cards.every((c) => c.evidence.status === 'needs_check' || isBulk(c.evidence))).toBe(true);
   });
   it('入口のメニュー（menu 8・group housing・built）と7枚', () => {
     expect(ev).toMatchObject({ menu: 8, group: 'housing', status: 'built' });
@@ -103,5 +105,66 @@ describe('住まい探し（下書き）', () => {
       expect(c.evidence.status).toBe('needs_check');
       expect(c.deadline ? c.deadline.evidence.status : 'needs_check').toBe('needs_check');
     }
+  });
+});
+
+/* docs/kaizen/sumai.md（2026-11-08）：入居・退去は任意のチェックリスト、引っ越しの種類の引き継ぎ、文の直し */
+describe('住まい：kaizen sumai', () => {
+  const v = (o: ReturnType<typeof out>, id: string) => o.cards.find((c) => c.card.id === id)!;
+  const withPlan = (plan: Parameters<typeof run>[1]['plan']) => run(data, { answers: {}, objects: {}, plan, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
+  it('1：入居・退去は「いま」でも「あとで」でもなく、段の中の任意のチェックリスト。途中までチェックしても「いま」にしない', () => {
+    for (const id of ['housing-move-in', 'housing-move-out']) expect(v(out(), id).section, id).toBe('info');
+    const o = withPlan({ 'housing-move-in': { card_id: 'housing-move-in', status: 'preparing', parts: { water: 'done' } } });
+    expect(v(o, 'housing-move-in').section).toBe('info');
+    const st = nowStep(o, TODAY);
+    expect(st.kind === 'goal' && st.view.card.id).toBe('housing-search');
+    // 全部チェックしたら済んだ（記録は消さない）
+    const all = Object.fromEntries(card('housing-move-out').parts!.map((p) => [p.id, 'done' as const]));
+    expect(v(withPlan({ 'housing-move-out': { card_id: 'housing-move-out', status: 'done', parts: all } }), 'housing-move-out').section).toBe('done');
+    // 段には残る（いつでも開ける）
+    expect(ev.phases!.find((p) => p.id === 'move_in')!.card_ids).toContain('housing-move-in');
+    expect(ev.phases!.find((p) => p.id === 'move_out')!.card_ids).toContain('housing-move-out');
+  });
+  it('5：住所の届出の6つのリンクは、行き先の入口の質問の答えを持つ（既存の質問・選択肢）', () => {
+    const links = ['housing-move-in', 'housing-move-out'].flatMap((id) => card(id).event_links!).filter((l) => l.answers);
+    expect(new Set(links.map((l) => l.event + ':' + JSON.stringify(l.answers)))).toEqual(new Set([
+      'E-move:{"Q-origin":"abroad"}', 'E-move:{"Q-origin":"other_city"}',
+      'E-move-within:{"Q-ward-move":"same_ward"}', 'E-move-within:{"Q-ward-move":"other_ward"}',
+      'E-move-out:{"Q-move-dest":"other_city"}', 'E-move-out:{"Q-move-dest":"abroad"}',
+    ]));
+  });
+  it('5：引き継ぐ答えは、まだ答えていない質問だけに入れる。前の答えは書き換えない。入口に無い質問・無い選択肢は使わない', () => {
+    const within = data.events.find((e) => e.id === 'E-move-within')!;
+    const qs = data.questions;
+    expect(handoffPlan(within.questions, qs, {}, { 'Q-ward-move': 'same_ward' }).map((x) => [x.q.id, x.value, x.kind])).toEqual([['Q-ward-move', 'same_ward', 'apply']]);
+    expect(handoffPlan(within.questions, qs, { 'Q-ward-move': 'other_ward' }, { 'Q-ward-move': 'same_ward' }).map((x) => [x.value, x.kind])).toEqual([['other_ward', 'kept']]);
+    expect(handoffPlan(within.questions, qs, { 'Q-ward-move': 'same_ward' }, { 'Q-ward-move': 'same_ward' }).map((x) => x.kind)).toEqual(['same']);
+    expect(handoffPlan(within.questions, qs, {}, { 'Q-ward-move': 'moon', 'Q-move-dest': 'abroad' })).toEqual([]);
+    // 引き継いだ答えで、質問が残らず、その届け出が出る（同じ区：転居届）
+    const o = run(data, { answers: { 'Q-ward-move': 'same_ward' }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: within });
+    expect(o.upfront).toEqual([]);
+    expect(o.cards.find((c) => c.card.id === 'move-within-tenkyo')!.state).toBe('shown');
+  });
+  it('3・7：部屋探しで、全員に在留カード・パスポートを求めない。入居までの日数を言い切らない', () => {
+    for (const l of ['ja', 'ja_easy', 'en'] as const) {
+      expect(plain(card('housing-search').summary[l]), l).not.toMatch(/在留カードかパスポート|residence card or passport|1〜2週間|1 to 2 weeks/);
+    }
+    expect(plain(card('housing-search').summary.ja)).toContain('物件や審査の状況によって違います');
+  });
+  it('4：電気は契約する会社の案内に従う。はがきは一つの例（入居の案内と同じ説明）', () => {
+    for (const id of ['life-electricity', 'housing-move-in']) {
+      const t = plain(JSON.stringify(card(id)));
+      expect(t, id).toContain('一つの例');
+      expect(t, id).not.toContain('ブレーカーについているはがきに');
+    }
+    expect(card('life-electricity').evidence.status).toBe('needs_check');
+  });
+  it('6：県営住宅と UR 賃貸住宅は、市営住宅と別の項目で、それぞれの公式の案内へ', () => {
+    const c = card('housing-public');
+    expect(plain(c.summary.ja)).toContain('それぞれ別の制度');
+    const m = c.methods!.map((x) => plain(x.text.ja));
+    expect(m.some((t) => t.startsWith('愛知県営住宅（愛知県の制度）'))).toBe(true);
+    expect(m.some((t) => t.startsWith('UR賃貸住宅（UR都市機構）') && t.includes('以上'))).toBe(true);
+    expect(c.links!.map((l) => l.source_id)).toEqual(expect.arrayContaining(['aichi-kousha-about', 'ur-requirements']));
   });
 });

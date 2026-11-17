@@ -1,0 +1,129 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "procedure",
+  "id": "marriage-kaigai-todoke",
+  "illustration": "doc",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-stage-abroad",
+      "R-mar-has-japanese"
+    ]
+  },
+  "title": {
+    "ja": "{海外|かいがい}で{成立|せいりつ}した{婚姻|こんいん}の{届|とどけ}（{日本|にほん}{国籍|こくせき}の{人|ひと}）",
+    "ja_easy": "{外国|がいこく}で{結婚|けっこん}したときの{届|とど}け（{日本|にほん}の{国籍|こくせき}の{人|ひと}）",
+    "en": "Reporting a marriage made abroad (Japanese nationals)"
+  },
+  "official_name": {
+    "ja": "外国の方式による婚姻の報告的届出（婚姻証書の謄本の提出）",
+    "reading": "がいこくのほうしきによるこんいんのほうこくてきとどけで"
+  },
+  "summary": {
+    "ja": "{外国|がいこく}の{方式|ほうしき}で{婚姻|こんいん}が{成立|せいりつ}したときは、{日本|にほん}{国籍|こくせき}の{人|ひと}が、{婚姻|こんいん}{成立|せいりつ}の{日|ひ}から3か{月|げつ}{以内|いない}に、{婚姻|こんいん}に{関|かん}する{証書|しょうしょ}の{謄本|とうほん}（{日本語|にほんご}{訳|やく}つき）を、{日本|にほん}の{在外|ざいがい}{公館|こうかん}に{出|だ}すか、{本籍地|ほんせきち}の{市区|しく}{町村|ちょうそん}の{役所|やくしょ}に{出|だ}します（{郵送|ゆうそう}もできます）（{要|よう}{確認|かくにん}）。{新|あたら}しく{婚姻|こんいん}{届|とどけ}を{出|だ}すのではありません。ふたりとも{外国|がいこく}{籍|せき}のときは、{日本|にほん}の{戸籍|こせき}の{届出|とどけで}はありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{外国|がいこく}の{法律|ほうりつ}で{結婚|けっこん}したときは、{日本|にほん}の{国籍|こくせき}の{人|ひと}が、{結婚|けっこん}した{日|ひ}から3か{月|げつ}の{間|あいだ}に、{結婚|けっこん}の{証明|しょうめい}{書|しょ}の{写|うつ}し（{日本語|にほんご}の{訳|やく}もつける）を、{日本|にほん}の{大使館|たいしかん}・{領事館|りょうじかん}か、{本籍地|ほんせきち}の{役所|やくしょ}に{出|だ}します（{要|よう}{確認|かくにん}）。",
+    "en": "If the marriage was established under a foreign country's law, the Japanese national submits a certified copy of the marriage certificate (with a Japanese translation) within 3 months of the marriage, to a Japanese embassy or consulate or to the municipal office of their registered domicile (mail is possible) (to be checked). This is not a new marriage registration. If both of you are foreign nationals, there is no Japanese family register filing (to be checked)."
+  },
+  "lead": {
+    "ja": "{外国|がいこく}で{結婚|けっこん}した{日本|にほん}{国籍|こくせき}の{人|ひと}は、3か{月|げつ}{以内|いない}に{証書|しょうしょ}の{謄本|とうほん}を{出|だ}します。",
+    "ja_easy": "{外国|がいこく}で{結婚|けっこん}した{日本|にほん}の{国籍|こくせき}の{人|ひと}は、3か{月|げつ}の{間|あいだ}に{届|とど}けます。",
+    "en": "A Japanese national who married abroad reports it within 3 months."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{婚姻|こんいん}{成立|せいりつ}の{日|ひ}から3か{月|げつ}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{結婚|けっこん}した{日|ひ}から3か{月|げつ}の{間|あいだ}（{要|よう}{確認|かくにん}）",
+      "en": "Within 3 months of the marriage (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-minji15"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "婚姻成立の日から３か月以内に、婚姻に関する証書の謄本（日本語訳の添付が必要です。）を、日本の在外公館に提出するか、本籍地の市役所、区役所又は町村役場に提出又は郵送する必要があります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{日本|にほん}の{在外|ざいがい}{公館|こうかん}、または{本籍地|ほんせきち}の{市区|しく}{町村|ちょうそん}の{役所|やくしょ}（{名古屋|なごや}{市|し}が{本籍地|ほんせきち}なら{区役所|くやくしょ}{市民|しみん}{課|か}・{支所|ししょ}{区民|くみん}{生活|せいかつ}{課|か}）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{日本|にほん}の{大使館|たいしかん}・{領事館|りょうじかん}、または{本籍地|ほんせきち}の{役所|やくしょ}（{要|よう}{確認|かくにん}）",
+      "en": "A Japanese embassy or consulate, or the municipal office of your registered domicile (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-minji15"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "婚姻成立の日から３か月以内に、婚姻に関する証書の謄本（日本語訳の添付が必要です。）を、日本の在外公館に提出するか、本籍地の市役所、区役所又は町村役場に提出又は郵送する必要があります。"
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{婚姻|こんいん}に{関|かん}する{証書|しょうしょ}の{謄本|とうほん}には、{日本語|にほんご}{訳|やく}を{付|つ}けます。",
+        "ja_easy": "{結婚|けっこん}の{証明|しょうめい}{書|しょ}の{写|うつ}しには、{日本語|にほんご}の{訳|やく}をつけます。",
+        "en": "Attach a Japanese translation to the certified copy of the marriage certificate."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "婚姻成立の日から３か月以内に、婚姻に関する証書の謄本（日本語訳の添付が必要です。）を、日本の在外公館に提出するか、本籍地の市役所、区役所又は町村役場に提出又は郵送する必要があります。"
+      }
+    },
+    {
+      "type": "mail",
+      "text": {
+        "ja": "{本籍地|ほんせきち}の{市区|しく}{町村|ちょうそん}の{役所|やくしょ}へは、{郵送|ゆうそう}でも{出|だ}せます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{本籍地|ほんせきち}の{役所|やくしょ}へは、{郵便|ゆうびん}でも{出|だ}せます（{要|よう}{確認|かくにん}）。",
+        "en": "You can also send it by mail to the municipal office of your registered domicile (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "婚姻成立の日から３か月以内に、婚姻に関する証書の謄本（日本語訳の添付が必要です。）を、日本の在外公館に提出するか、本籍地の市役所、区役所又は町村役場に提出又は郵送する必要があります。"
+      }
+    }
+  ],
+  "keywords": [
+    "海外で結婚",
+    "外国で結婚",
+    "報告的届出",
+    "婚姻証書",
+    "married abroad",
+    "marriage certificate"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{海外|かいがい}で{婚姻|こんいん}が{成立|せいりつ}し、ふたりのどちらかが{日本|にほん}{国籍|こくせき}のときに{出|だ}しています。",
+      "ja_easy": "{外国|がいこく}で{結婚|けっこん}して、どちらかが{日本|にほん}の{国籍|こくせき}のときに{出|だ}しています。",
+      "en": "Shown when you married abroad and at least one of you is a Japanese national."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-minji15"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "婚姻成立の日から３か月以内に、婚姻に関する証書の謄本（日本語訳の添付が必要です。）を、日本の在外公館に提出するか、本籍地の市役所、区役所又は町村役場に提出又は郵送する必要があります。"
+  }
+}

@@ -9,6 +9,8 @@ export const KnownDocument = z.object({
   title: Text,
   /** 書類の見出しにある言葉（日本語。{漢字|よみ}）。本人が書類で確かめる */
   look_for: z.string(),
+  /** 探すときの別の言い方（国保・こくほ・kokuho・tax など。画面には出さない。強い手がかり） */
+  search_words: z.array(z.string()).default([]),
   summary: Text,
   card_ids: z.array(z.string()).default([]),
   /** この書類を出す（もらえる）手続きのカード（作者 11/6 B-12）。カードのページに「この手続きでもらう書類」として出す */
@@ -73,6 +75,7 @@ export function docSearchItems(docs: KnownDocument[]): DocSearchItem[] {
     const plain = (s: string) => s.replace(RUBY, '$1');
     const reading = (s: string) => s.replace(RUBY, '$2');
     const keywords = [
+      ...d.search_words,
       ...textsOf(d.issuer).flatMap((s) => [plain(s), reading(s)]),
       ...d.key_words.flatMap((k) => [plain(k.word), reading(k.word), ...textsOf(k.meaning).map(plain)]),
     ];

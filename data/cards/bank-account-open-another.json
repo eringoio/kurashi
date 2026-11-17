@@ -22,9 +22,9 @@
     "reading": "こうざかいせつ"
   },
   "summary": {
-    "ja": "もう1つ{口座|こうざ}を{作|つく}るときの{手続|てつづ}きは、「{口座|こうざ}を{作|つく}る」と{同|おな}じです。ゆうちょ{銀行|ぎんこう}は1{人|ひとり}1{口座|こうざ}です。ほかの{銀行|ぎんこう}は、{目的|もくてき}を{聞|き}いたり{断|ことわ}ったりすることがあります。{条件|じょうけん}は{銀行|ぎんこう}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "もう1つ{作|つく}るときも、{手続|てつづ}きは{同|おな}じです。ゆうちょ{銀行|ぎんこう}は、1{人|ひとり}1つです。ほかの{銀行|ぎんこう}は、{理由|りゆう}を{聞|き}いたり、{断|ことわ}ったりすることがあります（{要|よう}{確認|かくにん}）。",
-    "en": "Opening another account works the same way as the first. Japan Post Bank allows only one account per person. Other banks may ask why you want a second account and can refuse. Conditions differ by bank (to be checked)."
+    "ja": "{別|べつ}の{口座|こうざ}を{作|つく}れるかは、{銀行|ぎんこう}ごとに{違|ちが}います。{例|れい}：ゆうちょ{銀行|ぎんこう}は1{人|ひとり}1{口座|こうざ}をお{願|ねが}いしていて、すでに{口座|こうざ}がある{人|ひと}は{新|あたら}しく{申|もう}し{込|こ}めません（{事業用|じぎょうよう}は{窓口|まどぐち}に{相談|そうだん}）。ほかの{銀行|ぎんこう}でも、{目的|もくてき}を{聞|き}かれたり、{断|ことわ}られたりすることがあります。{書類|しょるい}と{申|もう}し{込|こ}みの{方法|ほうほう}は「{銀行|ぎんこう}の{口座|こうざ}」（{口座|こうざ}を{作|つく}る）と{同|おな}じです。{作|つく}りたい{銀行|ぎんこう}に{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "もう1つ{作|つく}れるかは、{銀行|ぎんこう}によって{違|ちが}います。ゆうちょ{銀行|ぎんこう}は、1{人|ひとり}1つです。ほかの{銀行|ぎんこう}も、{理由|りゆう}を{聞|き}いたり、{断|ことわ}ったりすることがあります。{書類|しょるい}は「{口座|こうざ}を{作|つく}る」と{同|おな}じです。{銀行|ぎんこう}に{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "Whether you can open another account differs by bank. For example, Japan Post Bank asks for one account per person, so you cannot apply if you already have one (for business use, ask at the counter). Other banks may also ask why you want it, or refuse. Documents and how to apply are the same as for \"Bank account\" (opening an account). Check with the bank (to be checked)."
   },
   "deadline": null,
   "where": {
@@ -58,7 +58,7 @@
       "B-mizuho-kouza-attention",
       "B-fsa-multi-account-request"
     ],
-    "checked_at": "2026-11-07",
+    "checked_at": "2026-11-08",
     "status": "needs_check"
   },
   "notices": [

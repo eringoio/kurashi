@@ -108,7 +108,8 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "予約が必要になる方は普通第一種の学科試験を受験される方で、他県の指定教習所の卒業者及び愛知県内の指定教習所を卒業した再受験者（２回目以降）です"
-      }
+      },
+      "when": "R-license-route-school"
     },
     {
       "type": "counter",
@@ -124,6 +125,40 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "※以下のPDFに記載の手数料は令和７年３月24日からのものです"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{指定|してい}{自動車|じどうしゃ}{教習所|きょうしゅうじょ}の{卒業|そつぎょう}{証明|しょうめい}{書|しょ}があれば、{試験場|しけんじょう}の{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。{卒業|そつぎょう}の{技能|ぎのう}{検定|けんてい}を{受|う}けた{日|ひ}から1{年|ねん}{以内|いない}に{受|う}けます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{教習所|きょうしゅうじょ}の{卒業|そつぎょう}から1{年|ねん}{以内|いない}なら、{試験場|しけんじょう}の{運転|うんてん}の{試験|しけん}はありません（{要|よう}{確認|かくにん}）",
+        "en": "With a graduation certificate from a designated driving school, the driving skill test at the centre is waived. Take the test within 1 year of the school's skill test (to be checked)."
+      },
+      "when": "R-license-route-school",
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "第九十九条の五第五項に規定する卒業証明書（同項後段に規定する技能検定員の書面による証明が付されているものに限る。）を有する者で当該卒業証明書に係る技能検定を受けた日から起算して一年を経過しないもの"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{教習所|きょうしゅうじょ}の{卒業|そつぎょう}{証明|しょうめい}{書|しょ}がない{人|ひと}は、{試験場|しけんじょう}で{技能|ぎのう}{試験|しけん}も{受|う}けます。{普通|ふつう}{免許|めんきょ}などは、{先|さき}に{仮免許|かりめんきょ}を{取|と}ります。{受|う}け{方|かた}と{予約|よやく}は{愛知|あいち}{県|けん}{警察|けいさつ}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{教習所|きょうしゅうじょ}に{行|い}かない{人|ひと}は、{試験場|しけんじょう}で{運転|うんてん}の{試験|しけん}も{受|う}けます（{要|よう}{確認|かくにん}）",
+        "en": "Without a graduation certificate, you also take the driving skill test at the centre. For ordinary licences and similar, you first get a provisional licence. Check how to apply and reserve on the Aichi Prefectural Police page (to be checked)."
+      },
+      "when": "R-license-route-direct",
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "第九十九条の五第五項に規定する卒業証明書（同項後段に規定する技能検定員の書面による証明が付されているものに限る。）を有する者で当該卒業証明書に係る技能検定を受けた日から起算して一年を経過しないもの"
       }
     }
   ],

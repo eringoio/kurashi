@@ -1,0 +1,138 @@
+{
+  "id": "nagoya-tennyu-kikoku",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "must",
+  "obligation": "legal",
+  "domain": "government",
+  "depth": "L3",
+  "first_week": false,
+  "scope": "nagoya_resident",
+  "per_move": true,
+  "requires_moved_in": true,
+  "eligibility": {
+    "all": [
+      "R-origin-abroad",
+      "R-basis-japanese"
+    ]
+  },
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{転入|てんにゅう}{届|とどけ}（{日本|にほん}{国籍|こくせき}の{人|ひと}が{国外|こくがい}から）",
+    "ja_easy": "{転入|てんにゅう}{届|とどけ}（{日本|にほん}{国籍|こくせき}の{人|ひと}が{外国|がいこく}から）",
+    "en": "Moving-in notice (Japanese nationals returning from abroad)"
+  },
+  "official_name": {
+    "ja": "転入届（国外からの転入）",
+    "reading": "てんにゅうとどけ（こくがいからのてんにゅう）"
+  },
+  "summary": {
+    "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}が{日本|にほん}の{外|そと}から{帰|かえ}って{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{住|す}む{区|く}の{区役所|くやくしょ}（{支所|ししょ}がある{区|く}は{区役所|くやくしょ}か{支所|ししょ}）で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{転入|てんにゅう}する{全員|ぜんいん}の{旅券|りょけん}を{持|も}って{行|い}きます。{在留|ざいりゅう}カードの{手続|てつづ}きはありません。",
+    "ja_easy": "{日本|にほん}{国籍|こくせき}の{人|ひと}が{外国|がいこく}から{帰|かえ}って{名古屋|なごや}{市|し}に{住|す}み{始|はじ}めたら、{区役所|くやくしょ}で{転入|てんにゅう}{届|とどけ}を{出|だ}します。{引|ひ}っ{越|こ}す{人|ひと}みんなのパスポートを{持|も}って{行|い}きます。{在留|ざいりゅう}カードの{手続|てつづ}きはありません。",
+    "en": "When a Japanese national comes back from abroad and starts living in Nagoya, file a moving-in notice at the ward office of the ward you live in (or its branch office). Bring the passport of everyone moving in. There is no residence card procedure."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{住|す}み{始|はじ}めた{日|ひ}から{数|かぞ}えて14{日|にち}{以内|いない}。",
+      "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}から14{日|にち}{以内|いない}です。",
+      "en": "Within 14 days of the day you start living there."
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "異動した日から数えて14日以内"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{住|す}む{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
+      "ja_easy": "{住|す}む{区|く}の{区役所|くやくしょ}の{市民|しみん}{課|か}（{支所|ししょ}は{区民|くみん}{生活|せいかつ}{課|か}）",
+      "en": "Citizens Section of your ward office (Ward Residents Section at a branch office)"
+    },
+    "evidence": {
+      "source_ids": [
+        "nagoya-juumin-todoke"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "新しくお住まいになる区の区役所(支所を設置する区においては区役所又は支所)"
+    }
+  },
+  "place": "ward_office",
+  "keywords": [
+    "てんにゅう",
+    "きこく",
+    "帰国",
+    "tennyu",
+    "returning to Japan",
+    "moving in from abroad",
+    "住民登録",
+    "住民票"
+  ],
+  "reasons": {
+    "check_at_office": {
+      "ja": "{日本|にほん}{国籍|こくせき}かどうかや、{住民|じゅうみん}{登録|とうろく}のしかたがまだわからないので、{届|とど}けの{種類|しゅるい}を{決|き}められません。{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "どの{届|とど}けかまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We cannot tell which notice applies yet. Please ask at your ward office (to be checked)."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "nagoya-juumin-todoke"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}ち{物|もの}：{転入|てんにゅう}する{全員|ぜんいん}の{旅券|りょけん}と、{入国|にゅうこく}{日|び}がわかるもの（{旅券|りょけん}でわかれば、{航空|こうくう}{券|けん}の{半|はん}{券|けん}は{要|い}りません）。",
+        "ja_easy": "{持|も}ち{物|もの}：{引|ひ}っ{越|こ}す{人|ひと}みんなのパスポートと、{日本|にほん}に{入|はい}った{日|ひ}がわかるもの（パスポートでわかれば、{航空|こうくう}{券|けん}の{半|はん}{券|けん}は{要|い}りません）。",
+        "en": "Bring: the passport of everyone moving in, and something that shows the date of entry (not needed if the passport shows it)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "転入される方全員の旅券"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "マイナンバーカードを{国外|こくがい}{転出|てんしゅつ}のときに{返|かえ}した{人|ひと}、または{継続|けいぞく}{利用|りよう}の{手続|てつづ}きをした{人|ひと}は、そのカードも{持|も}って{行|い}きます。",
+        "ja_easy": "マイナンバーカードを、{日本|にほん}を{出|で}るときに{返|かえ}した{人|ひと}、または{続|つづ}けて{使|つか}う{手続|てつづ}きをした{人|ひと}は、カードも{持|も}って{行|い}きます。",
+        "en": "If you handed in your My Number Card when you left Japan, or filed to keep using it, bring it too."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "マイナンバーカード（国外転出時に返戻または継続利用手続きをされたものをお持ちの方）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{本籍|ほんせき}が{名古屋|なごや}{市|し}の{外|そと}にある{人|ひと}は、{戸籍|こせき}の{書類|しょるい}が{要|い}るかを{窓口|まどぐち}で{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{本籍|ほんせき}が{名古屋|なごや}{市|し}ではない{人|ひと}は、{戸籍|こせき}の{書類|しょるい}が{要|い}るか、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If your family register (honseki) is outside Nagoya, ask at the counter whether you need family register documents (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "nagoya-juumin-todoke"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    }
+  ]
+}

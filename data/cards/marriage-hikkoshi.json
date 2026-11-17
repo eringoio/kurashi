@@ -1,0 +1,157 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "marriage-hikkoshi",
+  "illustration": "homemove",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-home-move"
+    ]
+  },
+  "title": {
+    "ja": "{結婚|けっこん}で{引|ひ}っ{越|こ}すとき",
+    "ja_easy": "{結婚|けっこん}で{引|ひ}っ{越|こ}すとき",
+    "en": "Moving because of marriage"
+  },
+  "official_name": {
+    "ja": "住所の異動の届出（転入届・転居届・転出届）",
+    "reading": "じゅうしょのいどうのとどけで"
+  },
+  "summary": {
+    "ja": "{結婚|けっこん}で{引|ひ}っ{越|こ}すときは、{引|ひ}っ{越|こ}しの{届出|とどけで}（{転居|てんきょ}{届|とどけ}・{転入|てんにゅう}{届|とどけ}・{転出|てんしゅつ}{届|とどけ}）を{出|だ}します。だれが{世帯主|せたいぬし}になるか、だれと{同|おな}じ{世帯|せたい}になるかも、そのときに{窓口|まどぐち}で{確|たし}かめて{届|とど}け{出|で}ます（{要|よう}{確認|かくにん}）。{同|おな}じ{手続|てつづ}きを{二|に}{度|ど}しないように、{引|ひ}っ{越|こ}しの{案内|あんない}で{進|すす}めてください。マイナンバーカードを{持|も}っている{人|ひと}は、{引|ひ}っ{越|こ}しの{届出|とどけで}のときに{持|も}っていきます。",
+    "ja_easy": "{結婚|けっこん}で{引|ひ}っ{越|こ}すときは、{引|ひ}っ{越|こ}しの{届|とど}けを{出|だ}します。{世帯|せたい}のことも、そのときに{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。{引|ひ}っ{越|こ}しの{案内|あんない}で{進|すす}めてください。",
+    "en": "If you move because of marriage, file the moving notification (moving-in or moving-out). Confirm the head of household and household members at the counter at the same time (to be checked). Use the moving guide so you do not do the same procedure twice. Bring your My Number Card to the moving notification if you have one."
+  },
+  "lead": {
+    "ja": "{引|ひ}っ{越|こ}しの{届出|とどけで}は、{引|ひ}っ{越|こ}しの{案内|あんない}で{進|すす}めます。",
+    "ja_easy": "{引|ひ}っ{越|こ}しの{届|とど}けは、{引|ひ}っ{越|こ}しの{案内|あんない}で{進|すす}めます。",
+    "en": "Use the moving guide for the moving notification."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{市民|しみん}{課|か}・{支所|ししょ}{区民|くみん}{生活|せいかつ}{課|か}（{引|ひ}っ{越|こ}しの{案内|あんない}を{見|み}てください）",
+      "ja_easy": "{区役所|くやくしょ}（{引|ひ}っ{越|こ}しの{案内|あんない}を{見|み}ます）",
+      "en": "Ward office (see the moving guide)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-45"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{引|ひ}っ{越|こ}しの{届出|とどけで}のときは、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のマイナンバーカードを{持|も}っていきます。",
+        "ja_easy": "{引|ひ}っ{越|こ}す{人|ひと}みんなのマイナンバーカードを{持|も}っていきます。",
+        "en": "Bring the My Number Cards of everyone who moves."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-faq-mar"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "引っ越しの手続きの際（住民異動届出の際）には、引っ越しする方全員のカードをお持ちください。"
+      }
+    }
+  ],
+  "keywords": [
+    "結婚",
+    "引っ越し",
+    "転居",
+    "転入",
+    "世帯",
+    "moving",
+    "marriage"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{結婚|けっこん}で{引|ひ}っ{越|こ}す{人|ひと}に{出|だ}しています。",
+      "ja_easy": "{結婚|けっこん}で{引|ひ}っ{越|こ}す{人|ひと}に{出|だ}しています。",
+      "en": "Shown to people who move because of the marriage."
+    }
+  },
+  "event_links": [
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}からほかの{市町村|しちょうそん}へ",
+        "ja_easy": "{名古屋|なごや}からほかの{町|まち}へ",
+        "en": "From Nagoya to another city or town"
+      },
+      "card_ids": [
+        "move-out-city-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}から{国外|こくがい}へ",
+        "ja_easy": "{名古屋|なごや}から{外国|がいこく}へ",
+        "en": "From Nagoya to another country"
+      },
+      "card_ids": [
+        "move-out-abroad-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{同|おな}じ{区|く}の{中|なか}",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{同|おな}じ{区|く}",
+        "en": "Within Nagoya, inside the same ward"
+      },
+      "card_ids": [
+        "move-within-tenkyo"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "en": "Within Nagoya, to another ward"
+      },
+      "card_ids": [
+        "move-within-tennyu"
+      ]
+    },
+    {
+      "event": "E-move",
+      "label": {
+        "ja": "ほかの{市町村|しちょうそん}から{名古屋|なごや}へ",
+        "ja_easy": "ほかの{町|まち}から{名古屋|なごや}へ",
+        "en": "From another city or town to Nagoya"
+      },
+      "card_ids": [
+        "move-out-notice",
+        "nagoya-tennyu-todoke"
+      ]
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-faq-45",
+      "B-nagoya-faq-41",
+      "A-nagoya-faq-40"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

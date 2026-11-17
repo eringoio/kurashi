@@ -44,7 +44,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
         "verdict": "agree",
-        "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -69,7 +69,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -92,7 +92,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ba74645901585f255f16b26f73a0d996ab5fa77d2dc9a72d2dd728c28ce49496",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-sodai/c8"
+          "ref": "internal-audit-record"
         }
       }
     },

@@ -1,5 +1,4 @@
 {
-  "$comment": "画面の固定文言。キーごとに表示レベルの文を持つ。ふりがなは {漢字|よみ}。外国語の行の下には ja_easy が2段目として出る。status が draft の文は、作者の確認待ち（docs/TODO.md）。",
   "app.name": {
     "ja": "Kurashi",
     "ja_easy": "Kurashi",
@@ -86,9 +85,9 @@
     "en": "Keep this guide on this device?"
   },
   "consent.note": {
-    "ja": "アカウントは{要|い}りません。この{端末|たんまつ}の{中|なか}だけに{残|のこ}し、いつでも{消|け}せます。",
-    "ja_easy": "アカウントは{要|い}りません。このスマホの{中|なか}だけです。いつでも{消|け}せます。",
-    "en": "No account. Kept only on this device. Erase any time."
+    "ja": "アカウントは{要|い}りません。{答|こた}えはこの{端末|たんまつ}の{中|なか}だけに{残|のこ}し、いつでも{消|け}せます。「{残|のこ}す」を{選|えら}ぶと、{使|つか}われ{方|かた}の{数|かず}（{画面|がめん}の{種類|しゅるい}など。{答|こた}えは{含|ふく}みません）も{送|おく}ります。{送|おく}らない{設定|せってい}もできます。",
+    "ja_easy": "アカウントは{要|い}りません。{答|こた}えは、このスマホの{中|なか}だけです。いつでも{消|け}せます。「{残|のこ}す」を{選|えら}ぶと、{使|つか}われ{方|かた}の{数|かず}も{送|おく}ります。{答|こた}えは{送|おく}りません。{送|おく}らない{設定|せってい}もできます。",
+    "en": "No account. Your answers stay only on this device. Erase any time. If you choose Keep, anonymous usage counts (page types and similar, never your answers) are also sent. You can turn that off."
   },
   "consent.keep": {
     "ja": "{残|のこ}す",
@@ -350,6 +349,96 @@
     "ja_easy": "{名古屋市|なごやし}の{公式|こうしき}サイト",
     "en": "City of Nagoya official website"
   },
+  "shortStay.title": {
+    "ja": "{短期|たんき}{滞在|たいざい}の{人|ひと}へ",
+    "ja_easy": "{短|みじか}い{滞在|たいざい}の{人|ひと}へ",
+    "en": "For short-term visitors"
+  },
+  "shortStay.lead": {
+    "ja": "{短期|たんき}{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{日本|にほん}に{住|す}む{人|ひと}のための{手続|てつづ}きの{対象|たいしょう}ではありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{短|みじか}い{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{住|す}む{人|ひと}の{手続|てつづ}きは{関係|かんけい}ありません（{要確認|ようかくにん}）。",
+    "en": "If you are staying for a short period (up to 90 days), procedures for people who live in Japan do not apply to you (to be checked)."
+  },
+  "shortStay.not.title": {
+    "ja": "このアプリの、{対象|たいしょう}ではない{手続|てつづ}き（{要|よう}{確認|かくにん}）",
+    "ja_easy": "{関係|かんけい}ない{手続|てつづ}き（{要確認|ようかくにん}）",
+    "en": "Procedures in this app that do not apply (to be checked)"
+  },
+  "shortStay.not.juminhyo": {
+    "ja": "{住民|じゅうみん}{登録|とうろく}（{転入届|てんにゅうとどけ}・{転居届|てんきょとどけ}・{転出届|てんしゅつとどけ}）",
+    "ja_easy": "{住所|じゅうしょ}を{届|とど}ける（{転入届|てんにゅうとどけ}など）",
+    "en": "Resident registration (moving in, moving within, moving out)"
+  },
+  "shortStay.not.kokuho": {
+    "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}",
+    "ja_easy": "{国民健康保険|こくみんけんこうほけん}",
+    "en": "National Health Insurance"
+  },
+  "shortStay.not.nenkin": {
+    "ja": "{国民|こくみん}{年金|ねんきん}",
+    "ja_easy": "{国民年金|こくみんねんきん}",
+    "en": "National Pension"
+  },
+  "shortStay.not.mynumber": {
+    "ja": "マイナンバーカード",
+    "ja_easy": "マイナンバーカード",
+    "en": "My Number Card"
+  },
+  "shortStay.not.zairyu": {
+    "ja": "{在留|ざいりゅう}カードの{住居地|じゅうきょち}の{届出|とどけで}",
+    "ja_easy": "{在留|ざいりゅう}カードの{住所|じゅうしょ}の{届|とど}け",
+    "en": "Reporting your address on a residence card"
+  },
+  "shortStay.use.title": {
+    "ja": "{使|つか}える{入口|いりぐち}",
+    "ja_easy": "{使|つか}える{入口|いりぐち}",
+    "en": "Entrances you can use"
+  },
+  "shortStay.more": {
+    "ja": "もっと{長|なが}くいたいとき・{在留|ざいりゅう}{資格|しかく}を{変|か}えたいとき",
+    "ja_easy": "もっと{長|なが}くいたいとき",
+    "en": "If you want to stay longer or change your status"
+  },
+  "shortStay.more.p1": {
+    "ja": "{短期|たんき}{滞在|たいざい}の{在留|ざいりゅう}{期間|きかん}は、90{日|にち}、30{日|にち}または15{日|にち}です。{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}について、{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}は「{原則|げんそく}として、{人道上|じんどうじょう}の{真|しん}にやむをえない{事情|じじょう}{又|また}はこれに{相当|そうとう}する{特別|とくべつ}な{事情|じじょう}がある{場合|ばあい}に{認|みと}められるものであり」と{案内|あんない}しています（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{短|みじか}い{滞在|たいざい}の{期間|きかん}は、90{日|にち}、30{日|にち}、15{日|にち}です。{期間|きかん}を{延|の}ばせるのは、{原則|げんそく}として、とても{特別|とくべつ}な{事情|じじょう}があるときだけと、{入管|にゅうかん}は{案内|あんない}しています（{要確認|ようかくにん}）。",
+    "en": "The period of stay for a Temporary Visitor is 90, 30 or 15 days. The Immigration Services Agency says an extension is, in principle, granted only for truly unavoidable humanitarian reasons or comparable special circumstances (to be checked)."
+  },
+  "shortStay.more.p2": {
+    "ja": "ほかの{在留|ざいりゅう}{資格|しかく}に{変|か}えられるかどうかは、このアプリでは{案内|あんない}していません。{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}の{案内|あんない}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "ほかの{在留資格|ざいりゅうしかく}に{変|か}えられるかは、このアプリでは{案内|あんない}していません。{入管|にゅうかん}に{確認|かくにん}してください（{要確認|ようかくにん}）。",
+    "en": "This app does not say whether you can change to another status. Please check with the Immigration Services Agency (to be checked)."
+  },
+  "shortStay.more.link": {
+    "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}：{在留|ざいりゅう}{資格|しかく}「{短期|たんき}{滞在|たいざい}」",
+    "ja_easy": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}：「{短期滞在|たんきたいざい}」",
+    "en": "Immigration Services Agency: Temporary Visitor"
+  },
+  "shortStay.change": {
+    "ja": "{在留|ざいりゅう}{資格|しかく}の{答|こた}えを{変|か}える",
+    "ja_easy": "{在留資格|ざいりゅうしかく}の{答|こた}えを{変|か}える",
+    "en": "Change my answer about residence status"
+  },
+  "shortStay.cause.status": {
+    "ja": "この{画面|がめん}が{出|で}ているのは、「{在留|ざいりゅう}{資格|しかく}」を「{短期|たんき}{滞在|たいざい}」と{答|こた}えたからです。",
+    "ja_easy": "この{画面|がめん}が{出|で}ているのは、「{在留資格|ざいりゅうしかく}」を「{短期滞在|たんきたいざい}」と{答|こた}えたからです。",
+    "en": "You see this screen because you answered \"Short-term Stay\" for your residence status."
+  },
+  "shortStay.cause.basis": {
+    "ja": "この{画面|がめん}が{出|で}ているのは、「{日本|にほん}での{住民|じゅうみん}{登録|とうろく}」を「{住|す}むためではない、{短|みじか}い{滞在|たいざい}」と{答|こた}えたからです。",
+    "ja_easy": "この{画面|がめん}が{出|で}ているのは、「{日本|にほん}での{住民登録|じゅうみんとうろく}」を「{住|す}むためではない、{短|みじか}い{滞在|たいざい}」と{答|こた}えたからです。",
+    "en": "You see this screen because you answered \"Staying briefly, not to live here\" about resident registration in Japan."
+  },
+  "shortStay.changeBasis": {
+    "ja": "{住民|じゅうみん}{登録|とうろく}の{答|こた}えを{変|か}える",
+    "ja_easy": "{住民登録|じゅうみんとうろく}の{答|こた}えを{変|か}える",
+    "en": "Change my answer about resident registration"
+  },
+  "shortStay.homeLine": {
+    "ja": "{短期|たんき}{滞在|たいざい}の{人|ひと}へ：{対象|たいしょう}ではない{手続|てつづ}きと、{使|つか}える{入口|いりぐち}",
+    "ja_easy": "{短|みじか}い{滞在|たいざい}の{人|ひと}へ：{関係|かんけい}ない{手続|てつづ}きと、{使|つか}える{入口|いりぐち}",
+    "en": "For short-term visitors: what does not apply, and entrances you can use"
+  },
   "page.comingSoon.title": {
     "ja": "{準備|じゅんび}{中|ちゅう}です",
     "ja_easy": "じゅんびしています",
@@ -409,6 +498,16 @@
     "ja": "{答|こた}えはこの{端末|たんまつ}の{中|なか}だけにあります。アカウントは{要|い}りません。{名前|なまえ}・{住所|じゅうしょ}・{番号|ばんごう}は{聞|き}きません。くわしくは「{使|つか}う{情報|じょうほう}について」を{見|み}てください。",
     "ja_easy": "{答|こた}えは、このスマホの{中|なか}だけです。{名前|なまえ}や{住所|じゅうしょ}は{聞|き}きません。",
     "en": "Answers stay on this device. No account. We never ask your name, address or numbers. See “What information we use”."
+  },
+  "page.about.operator": {
+    "ja": "{運営|うんえい}：eringo.io（プロジェクト）。まちがいや{連絡|れんらく}は、アプリの「まちがいを{知|し}らせる」か、{公開|こうかい}リポジトリの Issues（GitHub）で{受|う}け{付|つ}けています。",
+    "ja_easy": "このアプリは eringo.io というプロジェクトが{作|つく}っています。まちがいや{連絡|れんらく}は、アプリの「ちがうところを{知|し}らせる」か、GitHub の Issues でお{願|ねが}いします。",
+    "en": "Operated by eringo.io (a project). Send mistakes and messages with “Report a mistake” in the app, or through Issues on the public GitHub repository."
+  },
+  "page.about.issues": {
+    "ja": "GitHub の Issues（eringoio/kurashi）",
+    "ja_easy": "GitHub の Issues（eringoio/kurashi）",
+    "en": "GitHub Issues (eringoio/kurashi)"
   },
   "page.about.p3": {
     "ja": "WCAG 2.2 AA を{目標|もくひょう}にしています。{確|たし}かめた{範囲|はんい}は、キーボード、axe、{幅|はば} 320px、200% の{拡大|かくだい}、グレースケールです（iPhone の VoiceOver は{確認|かくにん}{中|ちゅう}）。",
@@ -471,9 +570,9 @@
     "en": "Usage counts"
   },
   "privacy.r5.how": {
-    "ja": "{開|ひら}いた{画面|がめん}の{種類|しゅるい}・{前|まえ}の{画面|がめん}・{表示|ひょうじ}の{言葉|ことば}・{画面|がめん}の{幅|はば}・エラーの{種類|しゅるい}を、{数|かず}として{送|おく}ります。ID・クッキー・IP アドレス・{答|こた}えは{使|つか}いません。{困|こま}るところを{直|なお}すためです。",
-    "ja_easy": "{開|ひら}いた{画面|がめん}の{数|かず}だけ。だれかは{分|わ}かりません。アプリを{直|なお}すためです。",
-    "en": "Counts of page types, the page before, display language, screen width and error types. No ID, cookie, IP address or answers. To find and fix problems."
+    "ja": "{開|ひら}いた{画面|がめん}の{種類|しゅるい}・{前|まえ}の{画面|がめん}・{表示|ひょうじ}の{言葉|ことば}・{画面|がめん}の{幅|はば}・エラーの{種類|しゅるい}を、{数|かず}として{送|おく}ります。ID・クッキー・IP アドレス・{答|こた}えは{使|つか}いません。{困|こま}るところを{直|なお}すためです。{保存|ほぞん}に{同意|どうい}したあと（「{残|のこ}す」を{選|えら}んだあと）だけ{送|おく}ります。",
+    "ja_easy": "{開|ひら}いた{画面|がめん}の{数|かず}だけ。だれかは{分|わ}かりません。アプリを{直|なお}すためです。「{残|のこ}す」を{選|えら}んだあとだけです。",
+    "en": "Counts of page types, the page before, display language, screen width and error types. No ID, cookie, IP address or answers. To find and fix problems. Sent only after you agree to keep your answers on this device."
   },
   "page.privacy.never": {
     "ja": "{集|あつ}めないもの：{名前|なまえ}・{住所|じゅうしょ}・{電話|でんわ}{番号|ばんごう}・{在留|ざいりゅう}カードやマイナンバーの{番号|ばんごう}・{答|こた}えの{中身|なかみ}。{広告|こうこく}はありません。",
@@ -755,6 +854,11 @@
     "ja_easy": "{必要|ひつよう}",
     "en": "Needed"
   },
+  "st.todayCheck": {
+    "ja": "{必要|ひつよう}（{要|よう}{確認|かくにん}）",
+    "ja_easy": "{必要|ひつよう}（{要|よう}{確認|かくにん}）",
+    "en": "Needed (to be checked)"
+  },
   "st.todayAdvised": {
     "ja": "したほうがよい",
     "ja_easy": "したほうがいい",
@@ -1001,9 +1105,9 @@
     "en": "Check status"
   },
   "src.status.verified": {
-    "ja": "{作者|さくしゃ}が{公式|こうしき}ページと{照合|しょうごう}しました",
-    "ja_easy": "{作者|さくしゃ}が{公式|こうしき}ページと{比|くら}べました",
-    "en": "The author compared it with the official page"
+    "ja": "{出典|しゅってん}と{照合|しょうごう}しました",
+    "ja_easy": "{出典|しゅってん}と{比|くら}べました",
+    "en": "Checked against the listed sources"
   },
   "src.status.needs_check": {
     "ja": "{要|よう}{確認|かくにん}",
@@ -1590,6 +1694,16 @@
     "ja_easy": "パスポートの{窓口|まどぐち}",
     "en": "the passport office"
   },
+  "place.tax_office": {
+    "ja": "{税務署|ぜいむしょ}",
+    "ja_easy": "{税務署|ぜいむしょ}",
+    "en": "the tax office"
+  },
+  "place.hello_work": {
+    "ja": "ハローワーク",
+    "ja_easy": "ハローワーク",
+    "en": "Hello Work"
+  },
   "gomi.title": {
     "ja": "ごみの{出|だ}し{方|かた}",
     "ja_easy": "ごみの{出|だ}し{方|かた}",
@@ -2106,9 +2220,9 @@
     "en": "There is no guidance on where to go yet."
   },
   "src.status.ai_checked": {
-    "ja": "{出典|しゅってん}と AI で{照合|しょうごう}しました",
+    "ja": "{出典|しゅってん}と AI で{照合|しょうごう}しました（{正|ただ}しさの{保証|ほしょう}ではありません）",
     "ja_easy": "{出典|しゅってん}と AI で{確|たし}かめました",
-    "en": "Checked against the source by AI"
+    "en": "Checked against the source by AI (not a guarantee)"
   },
   "pat.aiChecked": {
     "ja": "AIチェック",
@@ -2643,7 +2757,7 @@
   "trust.human": {
     "ja": "{照合済|しょうごうず}み",
     "ja_easy": "{照合済|しょうごうず}み",
-    "en": "Compared"
+    "en": "Checked against source"
   },
   "trust.label": {
     "ja": "{確認|かくにん}",
@@ -2651,9 +2765,9 @@
     "en": "Check"
   },
   "page.disclaimer.p5": {
-    "ja": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページの{本文|ほんぶん}と{照合|しょうごう}しています（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}ページと{照合|しょうごう}した{文|ぶん}には、{照合済|しょうごうず}みの{印|しるし}があります。{印|しるし}があっても、{内容|ないよう}が{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、とくに{窓口|まどぐち}で{確|たし}かめてください。",
-    "ja_easy": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページと{比|くら}べました（AIチェックの{印|しるし}）。{作者|さくしゃ}が{公式|こうしき}のページと{比|くら}べた{文|ぶん}には、{照合済|しょうごうず}みの{印|しるし}があります。{印|しるし}があっても、{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{聞|き}いてください。",
-    "en": "Some text has been compared by AI with the official page (AI-check mark). Text the author compared with the official page has the \"compared\" mark. A mark does not mean the text is always correct. Please confirm text without a mark, and anything marked \"to be checked\", at the office."
+    "ja": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページの{本文|ほんぶん}と{照合|しょうごう}しています（AIチェックの{印|しるし}）。{照合済|しょうごうず}みの{印|しるし}は、{出典|しゅってん}と{照合|しょうごう}した{文|ぶん}です。{機械|きかい}でまとめて{照合|しょうごう}したもの・{作者|さくしゃ}の{経験|けいけん}にもとづくものは、そう{書|か}いています。{印|しるし}があっても、{内容|ないよう}が{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、とくに{窓口|まどぐち}で{確|たし}かめてください。",
+    "ja_easy": "{文|ぶん}の{一部|いちぶ}は、AI が{公式|こうしき}のページと{比|くら}べました（AIチェックの{印|しるし}）。{照合済|しょうごうず}みの{印|しるし}は、{出典|しゅってん}と{比|くら}べた{文|ぶん}です。{機械|きかい}で{比|くら}べたものや、{作者|さくしゃ}の{経験|けいけん}のものもあります。{印|しるし}があっても、{正|ただ}しいとは{限|かぎ}りません。{印|しるし}の{無|な}い{文|ぶん}と「{要|よう}{確認|かくにん}」は、{窓口|まどぐち}で{聞|き}いてください。",
+    "en": "Some text has been compared by AI with the official page (AI-check mark). The \"compared\" mark means the text was compared with its sources; where this was done by automated checks or is based on the author's experience, the app says so. A mark does not mean the text is always correct. Please confirm text without a mark, and anything marked \"to be checked\", at the office."
   },
   "help.site": {
     "ja": "{公式|こうしき}ページ",
@@ -2766,19 +2880,19 @@
     "en": "So you do not forget"
   },
   "rem.from.arrival": {
-    "ja": "{日本|にほん}に{住|す}み{始|はじ}めた{日|ひ}",
-    "ja_easy": "{日本|にほん}に{来|き}た{日|ひ}",
-    "en": "The day you started living in Japan"
+    "ja": "{日本|にほん}に{入国|にゅうこく}した{日|ひ}（{住所|じゅうしょ}を{届|とど}けた{日|ひ}ではありません）",
+    "ja_easy": "{日本|にほん}に{来|き}た{日|ひ}（{入国|にゅうこく}した{日|ひ}）",
+    "en": "The day you entered Japan (not the day you registered your address)"
   },
   "rem.day": {
-    "ja": "{date}ごろです（{住|す}み{始|はじ}めた{日|ひ}から{months}か{月|げつ}）。",
-    "ja_easy": "{date}ごろです（{months}か{月|げつ}{後|ご}）。",
-    "en": "Around {date} ({months} months after you started living here)."
+    "ja": "{date}ごろです（{入国|にゅうこく}した{日|ひ}から{months}か{月|げつ}）。{法令|ほうれい}の{期限|きげん}ではありません。{銀行|ぎんこう}に{確|たし}かめる{目安|めやす}です。",
+    "ja_easy": "{date}ごろです（{months}か{月|げつ}{後|ご}）。{期限|きげん}ではありません。{銀行|ぎんこう}に{聞|き}く{目安|めやす}です。",
+    "en": "Around {date} ({months} months after you entered Japan). This is not a legal deadline; it is a reminder to check with your bank."
   },
   "rem.past": {
-    "ja": "もう{months}か{月|げつ}たっています。{早|はや}めに{手続|てつづ}きをしてください（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "もう{months}か{月|げつ}たちました。{早|はや}めに{手続|てつづ}きをしてください。",
-    "en": "{months} months have already passed. Please do it soon (to be checked)."
+    "ja": "もう{months}か{月|げつ}たっています。{銀行|ぎんこう}に{登録|とうろく}を{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "もう{months}か{月|げつ}たちました。{銀行|ぎんこう}に{登録|とうろく}を{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "{months} months have already passed. Ask your bank how you are registered (to be checked)."
   },
   "report.open": {
     "ja": "まちがいを{知|し}らせる",
@@ -2791,9 +2905,9 @@
     "en": "Something is different"
   },
   "report.note": {
-    "ja": "{窓口|まどぐち}で{言|い}われたことと{違|ちが}った{所|ところ}などを{書|か}いてください。{名前|なまえ}・{連絡先|れんらくさき}は{書|か}かないでください。{送|おく}るのはこの{画面|がめん}の{場所|ばしょ}・{書|か}いた{文|ぶん}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}・{手続|てつづ}きの{状態|じょうたい}（{済|す}んだかなど）だけです。{返事|へんじ}はしません。",
-    "ja_easy": "{違|ちが}ったことを{書|か}いてください。{名前|なまえ}や{電話|でんわ}{番号|ばんごう}は{書|か}かないでください。{返事|へんじ}はしません。",
-    "en": "Write what was different (for example, what the counter told you). Do not write your name or contact details. We send only this page, your text, the display language, the time and the state of your procedures (for example, done or not). We will not reply."
+    "ja": "{名前|なまえ}・{連絡|れんらく}{先|さき}・{在留|ざいりゅう}{資格|しかく}・{答|こた}えた{内容|ないよう}は{書|か}かないでください。{送|おく}るのは、この{画面|がめん}の{場所|ばしょ}・{選|えら}んだ{種類|しゅるい}・{書|か}いた{文|ぶん}・{表示|ひょうじ}の{言葉|ことば}・{日時|にちじ}・アプリの{版|はん}・{手続|てつづ}きの{状態|じょうたい}（{済|す}んだかなど）だけです。{返事|へんじ}はしません。",
+    "ja_easy": "{名前|なまえ}や{電話|でんわ}{番号|ばんごう}は{書|か}かないでください。{返事|へんじ}はしません。",
+    "en": "Do not write your name, contact details, residence status or your answers. We send only this page, the type you chose, your text, the display language, the time, the app version and the state of your procedures (for example, done or not). We will not reply."
   },
   "report.label": {
     "ja": "{違|ちが}ったところ",
@@ -2831,9 +2945,9 @@
     "en": "Reports"
   },
   "review.reportsNote": {
-    "ja": "{利用|りよう}{者|しゃ}からの「{案内|あんない}とちがうところ」。トークンは{保存|ほぞん}しません。",
+    "ja": "{利用|りよう}{者|しゃ}からの{報告|ほうこく}。{新|あたら}しい{順|じゅん}です。トークンは{保存|ほぞん}しません。",
     "ja_easy": "{使|つか}う{人|ひと}からの{知|し}らせ",
-    "en": "Reports from users. The token is not saved."
+    "en": "Reports from users, newest first. The token is not saved."
   },
   "review.usage": {
     "ja": "{使|つか}われ{方|かた}",
@@ -2916,9 +3030,9 @@
     "en": "Collection days (2 weeks)"
   },
   "gomi.week.note": {
-    "ja": "{市|し}の{表|ひょう}の{写|うつ}しから{出|だ}しています（{要|よう}{確認|かくにん}）。{年末|ねんまつ}{年始|ねんし}は{別|べつ}の{日|ひ}になることがあります。",
+    "ja": "{名古屋|なごや}{市|し}の「ごみ{収集日|しゅうしゅうび}{検索|けんさく}」の{表|ひょう}から{出|だ}しています（{要|よう}{確認|かくにん}）。",
     "ja_easy": "{市|し}の{表|ひょう}から{出|だ}しています（{要|よう}{確認|かくにん}）。",
-    "en": "From a copy of the city table (to be checked). Days around New Year may differ."
+    "en": "From the City of Nagoya collection day table (to be checked)."
   },
   "gomi.kinds.title": {
     "ja": "ごみの{種類|しゅるい}と{袋|ふくろ}",
@@ -3426,9 +3540,9 @@
     "en": "No match"
   },
   "gomi.license": {
-    "ja": "{名古屋市|なごやし}のオープンデータ（CC BY 4.0）を{加工|かこう}して{作成|さくせい}",
-    "ja_easy": "{名古屋市|なごやし}のデータ（CC BY 4.0）から{作|つく}りました",
-    "en": "Made from Nagoya City open data (CC BY 4.0)"
+    "ja": "{品目|ひんもく}の{名前|なまえ}は、{名古屋|なごや}{市|し}のオープンデータ（{作者|さくしゃ}：{名古屋|なごや}{市|し}、CC BY 4.0）を Kurashi が{加工|かこう}して{作成|さくせい}しました（{読|よ}み・{英語|えいご}・ふりがなを{追加|ついか}し、{区分|くぶん}・{備考|びこう}は{市|し}の{分別|ぶんべつ}{検索|けんさく}の{表|ひょう}に{合|あ}わせました）：",
+    "ja_easy": "{品目|ひんもく}の{名前|なまえ}は、{名古屋|なごや}{市|し}のデータ（CC BY 4.0）に、Kurashi が{読|よ}みや{英語|えいご}を{足|た}して{作|つく}りました：",
+    "en": "Item names: City of Nagoya open data (author: City of Nagoya, CC BY 4.0), modified by Kurashi (readings, English and furigana added; categories and notes aligned with the city's sorting search table):"
   },
   "gomi.sodaiHint": {
     "ja": "{粗大|そだい}ごみの{出|だ}し{方|かた}を{見|み}る",
@@ -3489,6 +3603,16 @@
     "ja": "{年金事務所|ねんきんじむしょ}",
     "ja_easy": "{年金事務所|ねんきんじむしょ}",
     "en": "Pension office"
+  },
+  "placeTitle.tax_office": {
+    "ja": "{税務署|ぜいむしょ}",
+    "ja_easy": "{税務署|ぜいむしょ}",
+    "en": "Tax office"
+  },
+  "placeTitle.hello_work": {
+    "ja": "ハローワーク",
+    "ja_easy": "ハローワーク",
+    "en": "Hello Work (public employment office)"
   },
   "visit.stage.beforeAt": {
     "ja": "{行|い}く{前|まえ}：{place}",
@@ -3740,6 +3864,11 @@
     "ja_easy": "{一覧|いちらん}から{選|えら}んでください",
     "en": "Choose a town from the list"
   },
+  "gomi.area.loading": {
+    "ja": "{町名|ちょうめい}の{一覧|いちらん}を{読|よ}み{込|こ}んでいます。",
+    "ja_easy": "{町|まち}の{名前|なまえ}の{一覧|いちらん}を{読|よ}んでいます。{少|すこ}し{待|ま}ってください。",
+    "en": "Loading the list of towns."
+  },
   "gomi.area.fromHere": {
     "ja": "{区|く}は{現在地|げんざいち}から{入|い}れました。{家|いえ}にいないときは{選|えら}び{直|なお}してください。{町名|ちょうめい}・{番地|ばんち}はご{自分|じぶん}で{入|い}れてください。",
     "ja_easy": "{区|く}は、いまいる{所|ところ}から{入|い}れました。{町|まち}と{番地|ばんち}は、{自分|じぶん}で{入|い}れてください。",
@@ -3945,6 +4074,46 @@
     "ja_easy": "{前|まえ}にすること：",
     "en": "Needs first: "
   },
+  "ov.found.h": {
+    "ja": "{見|み}つかった{物|もの}",
+    "ja_easy": "{見|み}つかった{物|もの}",
+    "en": "Items found"
+  },
+  "ov.found.sub": {
+    "ja": "{見|み}つかった{物|もの}を{選|えら}ぶと、{見|み}つかったあとのことを{出|だ}します。{再|さい}{発行|はっこう}などの{記録|きろく}は{消|き}えません。{完了|かんりょう}にもしません。",
+    "ja_easy": "{見|み}つかった{物|もの}を{選|えら}ぶと、そのあとのことを{出|だ}します。{記録|きろく}は{消|き}えません。",
+    "en": "Choose what was found to see what comes next. Your records stay and are not marked as done."
+  },
+  "ov.found.check": {
+    "ja": "{見|み}つかった",
+    "ja_easy": "{見|み}つかった",
+    "en": "Found"
+  },
+  "ov.found.eased": {
+    "ja": "{見|み}つかったと{答|こた}えました。まだ{申|もう}し{込|こ}んでいなければ、この{手続|てつづ}きは{要|い}らないかもしれません（{要|よう}{確認|かくにん}）。{止|と}めた・{届|とど}け{出|で}たあとは、「{見|み}つかったあとのこと」を{見|み}てください。",
+    "ja_easy": "{見|み}つかったと{答|こた}えました。まだ{申|もう}し{込|こ}んでいなければ、いらないかもしれません（{要|よう}{確認|かくにん}）。{下|した}の「{見|み}つかったあとのこと」も{見|み}てください。",
+    "en": "You said this was found. If you have not applied yet, you may not need this step (to be checked). If you already stopped or reported it, see \"After it is found\"."
+  },
+  "ov.found.after": {
+    "ja": "{見|み}つかったあとのこと",
+    "ja_easy": "{見|み}つかったあとのこと",
+    "en": "After it is found"
+  },
+  "ov.found.common": {
+    "ja": "{警察|けいさつ}への{連絡|れんらく}",
+    "ja_easy": "{警察|けいさつ}に{知|し}らせる",
+    "en": "Telling the police"
+  },
+  "ov.found.said": {
+    "ja": "{見|み}つかった{物|もの}：{answer}。{記録|きろく}しました。{手続|てつづ}きの{記録|きろく}は{変|か}えていません。",
+    "ja_easy": "{見|み}つかった{物|もの}：{answer}。{記録|きろく}しました。{手続|てつづ}きの{記録|きろく}は{同|おな}じです。",
+    "en": "Found: {answer}. Saved. Your procedure records are unchanged."
+  },
+  "ov.found.nothing": {
+    "ja": "まだない",
+    "ja_easy": "まだない",
+    "en": "nothing yet"
+  },
   "ov.ask": {
     "ja": "{答|こた}えると{絞|しぼ}れます（{答|こた}えなくても{進|すす}められます）",
     "ja_easy": "{答|こた}えると、することが{少|すく}なくなります",
@@ -3961,9 +4130,9 @@
     "en": "Back to all steps"
   },
   "ov.redo": {
-    "ja": "{最初|さいしょ}の{答|こた}えを{変|か}える",
-    "ja_easy": "{最初|さいしょ}の{答|こた}えを{変|か}える",
-    "en": "Change your first answer"
+    "ja": "{答|こた}えを{変|か}える",
+    "ja_easy": "{答|こた}えを{変|か}える",
+    "en": "Change answers"
   },
   "ov.other": {
     "ja": "そのほか",
@@ -3974,6 +4143,11 @@
     "ja": "{記録|きろく}しました",
     "ja_easy": "{記録|きろく}しました",
     "en": "Saved"
+  },
+  "ov.added": {
+    "ja": "{目的|もくてき}を{足|た}しました：",
+    "ja_easy": "することを{足|た}しました：",
+    "en": "Added: "
   },
   "ck.count": {
     "ja": "このリストで {n}/{m} {完了|かんりょう}",
@@ -4221,9 +4395,9 @@
     "en": "Renewal of the residence card validity (Immigration Services Agency)"
   },
   "sr.link.spc": {
-    "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}{申請|しんせい}（{入管|にゅうかん}）",
-    "ja_easy": "{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}（{入管|にゅうかん}）",
-    "en": "Renewal of the Special Permanent Resident Certificate (Immigration Services Agency)"
+    "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}{申請|しんせい}（{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}の{案内|あんない}）",
+    "ja_easy": "{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}（{入管|にゅうかん}の{案内|あんない}。{出|だ}すのは{区役所|くやくしょ}）",
+    "en": "Renewal of the Special Permanent Resident Certificate (Immigration Services Agency guide; you apply at the ward office)"
   },
   "sr.link.general": {
     "ja": "{在留|ざいりゅう}{期間|きかん}{更新|こうしん}{許可|きょか}{申請|しんせい}（{入管|にゅうかん}）",
@@ -4376,9 +4550,24 @@
     "en": "Address notification (where are you moving from and to?)"
   },
   "card.moveLinksNote": {
-    "ja": "{選|えら}ぶと、その{引|ひ}っ{越|こ}しの{手続|てつづ}きの{画面|がめん}へ{進|すす}みます。もどるで、この{画面|がめん}にもどれます。",
-    "ja_easy": "{押|お}すと、その{引|ひ}っ{越|こ}しの{画面|がめん}へ{行|い}きます。もどるで、ここにもどれます。",
-    "en": "Choose one to go to that move. Use Back to come back to this page."
+    "ja": "{選|えら}ぶと、その{引|ひ}っ{越|こ}しの{手続|てつづ}きの{画面|がめん}へ{進|すす}みます。{選|えら}んだ{引|ひ}っ{越|こ}しの{種類|しゅるい}は、{次|つぎ}の{画面|がめん}に{引|ひ}き{継|つ}ぎます。もどるで、この{画面|がめん}にもどれます。",
+    "ja_easy": "{押|お}すと、その{引|ひ}っ{越|こ}しの{画面|がめん}へ{行|い}きます。{選|えら}んだものは、{次|つぎ}の{画面|がめん}でも{選|えら}んだままです。もどるで、ここにもどれます。",
+    "en": "Choose one to go to that move. Your choice is carried over to the next page. Use Back to come back to this page."
+  },
+  "handoff.set": {
+    "ja": "{前|まえ}の{画面|がめん}で{選|えら}んだ{答|こた}えです：",
+    "ja_easy": "{前|まえ}の{画面|がめん}で{選|えら}んだ{答|こた}えです：",
+    "en": "Your choice on the previous page:"
+  },
+  "handoff.kept": {
+    "ja": "{前|まえ}に{答|こた}えた{答|こた}えのままです：",
+    "ja_easy": "{前|まえ}に{答|こた}えた{答|こた}えのままです：",
+    "en": "Your earlier answer is kept:"
+  },
+  "card.menuHere": {
+    "ja": "（いま{見|み}ている）",
+    "ja_easy": "（いま{見|み}ている）",
+    "en": " (you are here)"
   },
   "card.parts": {
     "ja": "することの{記録|きろく}",
@@ -4474,6 +4663,161 @@
     "ja": "そのあと",
     "ja_easy": "そのあと",
     "en": "After that"
+  },
+  "road.visit.at": {
+    "ja": "{n}で",
+    "ja_easy": "{n}で",
+    "en": "At {n}"
+  },
+  "road.visit.other": {
+    "ja": "{別|べつ}の{所|ところ}・{方法|ほうほう}で（1つずつ）",
+    "ja_easy": "ほかの{所|ところ}・やり{方|かた}で（1つずつ）",
+    "en": "Elsewhere or another way (one by one)"
+  },
+  "road.visit.same": {
+    "ja": "{同|おな}じ{建物|たてもの}で、{上|うえ}から{順|じゅん}にします。{窓口|まどぐち}は{手続|てつづ}きごとに{別|べつ}です。1{回|かい}で{済|す}むかは{要|よう}{確認|かくにん}です。",
+    "ja_easy": "{同|おな}じ{建物|たてもの}で、{上|うえ}から{順|じゅん}にします。{窓口|まどぐち}は{手続|てつづ}きごとにちがいます。1{回|かい}で{終|お}わるかは、{窓口|まどぐち}で{確|たし}かめてください。",
+    "en": "Same building: do these from the top. Each has its own counter. Whether one trip is enough is not confirmed."
+  },
+  "road.deadline": {
+    "ja": "{期限|きげん}あり",
+    "ja_easy": "{期限|きげん}あり",
+    "en": "Deadline"
+  },
+  "day.titleWay": {
+    "ja": "どの{方法|ほうほう}で{出|だ}しますか？",
+    "ja_easy": "どうやって{出|だ}しますか？",
+    "en": "How will you submit it?"
+  },
+  "day.titleMail": {
+    "ja": "いつ{郵送|ゆうそう}しますか？",
+    "ja_easy": "いつ{郵便|ゆうびん}で{送|おく}りますか？",
+    "en": "When will you mail it?"
+  },
+  "day.titleOnline": {
+    "ja": "いつオンラインで{出|だ}しますか？",
+    "ja_easy": "いつインターネットで{出|だ}しますか？",
+    "en": "When will you submit it online?"
+  },
+  "way.counter": {
+    "ja": "{窓口|まどぐち}に{行|い}く",
+    "ja_easy": "{窓口|まどぐち}に{行|い}く",
+    "en": "Go to the counter"
+  },
+  "way.mail": {
+    "ja": "{郵送|ゆうそう}で{出|だ}す",
+    "ja_easy": "{郵便|ゆうびん}で{送|おく}る",
+    "en": "Send by mail"
+  },
+  "way.online": {
+    "ja": "オンラインで{出|だ}す",
+    "ja_easy": "インターネットで{出|だ}す",
+    "en": "Submit online"
+  },
+  "way.note": {
+    "ja": "{期限|きげん}は、どの{方法|ほうほう}でも{同|おな}じです。{方法|ほうほう}ごとの{条件|じょうけん}は、{手続|てつづ}きの{説明|せつめい}で{確|たし}かめてください。",
+    "ja_easy": "{期限|きげん}は、どの{方法|ほうほう}でも{同|おな}じです。{方法|ほうほう}ごとの{条件|じょうけん}は、{説明|せつめい}で{確|たし}かめてください。",
+    "en": "The deadline is the same for every method. Check the conditions of each method in the procedure details."
+  },
+  "way.now": {
+    "ja": "{方法|ほうほう}：{n}",
+    "ja_easy": "{方法|ほうほう}：{n}",
+    "en": "Method: {n}"
+  },
+  "way.change": {
+    "ja": "{方法|ほうほう}を{変|か}える",
+    "ja_easy": "{方法|ほうほう}を{変|か}える",
+    "en": "Change the method"
+  },
+  "deadline.from.moved_in": {
+    "ja": "{住|す}み{始|はじ}めた{日|ひ}",
+    "ja_easy": "{住|す}み{始|はじ}めた{日|ひ}",
+    "en": "The day you started living there"
+  },
+  "deadline.from.lost_known": {
+    "ja": "なくしたと{気|き}づいた{日|ひ}",
+    "ja_easy": "なくしたと{気|き}づいた{日|ひ}",
+    "en": "The day you noticed the loss"
+  },
+  "deadline.from.qualified": {
+    "ja": "{資格|しかく}を{得|え}た{日|ひ}（{前|まえ}の{保険|ほけん}をやめた{日|ひ}など）",
+    "ja_easy": "{前|まえ}の{保険|ほけん}をやめた{日|ひ}など",
+    "en": "The day you became eligible (for example, the day your previous insurance ended)"
+  },
+  "deadline.from.org_change": {
+    "ja": "{所属|しょぞく}{機関|きかん}が{変|か}わった{日|ひ}（{契約|けいやく}が{終|お}わった{日|ひ}・{始|はじ}まった{日|ひ}）",
+    "ja_easy": "{仕事|しごと}の{契約|けいやく}が{終|お}わった{日|ひ}・{始|はじ}まった{日|ひ}",
+    "en": "The day your organization changed (contract ended or started)"
+  },
+  "deadline.from.divorced": {
+    "ja": "{離婚|りこん}した{日|ひ}",
+    "ja_easy": "{離婚|りこん}した{日|ひ}",
+    "en": "The day of the divorce"
+  },
+  "day.fromLabel": {
+    "ja": "{数|かぞ}え{始|はじ}める{日|ひ}：{n}（{入|い}れると{期限|きげん}の{日|ひ}を{出|だ}します。{入|い}れなくても{進|すす}めます）",
+    "ja_easy": "{数|かぞ}え{始|はじ}める{日|ひ}：{n}（{入|い}れると{期限|きげん}の{日|ひ}がわかります。{入|い}れなくてもいいです）",
+    "en": "Start date: {n} (enter it to see the deadline date; you can skip it)"
+  },
+  "day.deadlineOn": {
+    "ja": "{期限|きげん}の{日|ひ}：{date}（{n}{日|にち}{目|め}）。{最後|さいご}の{日|ひ}が{休|やす}みの{日|ひ}のときの{扱|あつか}いは{要|よう}{確認|かくにん}です。",
+    "ja_easy": "{期限|きげん}の{日|ひ}：{date}（{n}{日|にち}{目|め}）。{最後|さいご}の{日|ひ}がお{休|やす}みのときは、{窓口|まどぐち}で{確|たし}かめてください。",
+    "en": "Deadline: {date} (day {n}). What happens if the last day is a closed day is not confirmed."
+  },
+  "day.late": {
+    "ja": "{pick}は、{期限|きげん}の{日|ひ}（{date}）より{後|あと}です。{遅|おく}れても{届|とど}け{出|で}は{必要|ひつよう}です。できるだけ{早|はや}い{日|ひ}にしてください。",
+    "ja_easy": "{pick}は、{期限|きげん}（{date}）より{後|あと}です。{遅|おく}れても{届|とど}けは{必要|ひつよう}です。できるだけ{早|はや}い{日|ひ}にしてください。",
+    "en": "{pick} is after the deadline ({date}). You still need to file if you are late. Choose the earliest day you can."
+  },
+  "day.lateKeep": {
+    "ja": "この{日|ひ}にする",
+    "ja_easy": "この{日|ひ}にする",
+    "en": "Use this day"
+  },
+  "day.lateOther": {
+    "ja": "ほかの{日|ひ}を{選|えら}ぶ",
+    "ja_easy": "ほかの{日|ひ}を{選|えら}ぶ",
+    "en": "Choose another day"
+  },
+  "road.late": {
+    "ja": "{期限|きげん}より{後|あと}の{予定|よてい}",
+    "ja_easy": "{期限|きげん}より{後|あと}の{予定|よてい}",
+    "en": "Planned after the deadline"
+  },
+  "road.deadlineOn": {
+    "ja": "{期限|きげん} {date}",
+    "ja_easy": "{期限|きげん} {date}",
+    "en": "Due {date}"
+  },
+  "road.remote.online": {
+    "ja": "オンラインでもできる",
+    "ja_easy": "インターネットでもできる",
+    "en": "Also online"
+  },
+  "road.remote.mail": {
+    "ja": "{郵送|ゆうそう}でもできる",
+    "ja_easy": "{郵便|ゆうびん}でもできる",
+    "en": "Also by mail"
+  },
+  "road.remote.both": {
+    "ja": "オンライン・{郵送|ゆうそう}でもできる",
+    "ja_easy": "インターネット・{郵便|ゆうびん}でもできる",
+    "en": "Also online or by mail"
+  },
+  "road.visit.maybe": {
+    "ja": "{窓口|まどぐち}に{行|い}くなら、{同|おな}じ{n}で{手続|てつづ}きできる{場合|ばあい}があります",
+    "ja_easy": "{窓口|まどぐち}に{行|い}くなら、{同|おな}じ{n}でできることがあります",
+    "en": "If you go in person, this may also be possible at the same {n}"
+  },
+  "road.summary": {
+    "ja": "まだ{答|こた}えていない{質問|しつもん}がある{項目|こうもく}：{q}　{窓口|まどぐち}で{確|たし}かめる{項目|こうもく}：{c}",
+    "ja_easy": "まだ{答|こた}えていない{質問|しつもん}：{q}　{窓口|まどぐち}で{確|たし}かめること：{c}",
+    "en": "Items with unanswered questions: {q}  Items to confirm at the counter: {c}"
+  },
+  "road.summary.go": {
+    "ja": "まだわからない{項目|こうもく}へ",
+    "ja_easy": "まだわからない{項目|こうもく}へ",
+    "en": "Go to undecided items"
   },
   "dev.view.label": {
     "ja": "{表示|ひょうじ}（{開発|かいはつ}だけ）",
@@ -4686,9 +5030,9 @@
     "en": " uses"
   },
   "bousai.stock.formula": {
-    "ja": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。{携帯|けいたい}トイレ：{人数|にんずう}×{日数|にっすう}×5〜6{回|かい}。",
-    "ja_easy": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。トイレ：{人数|にんずう}×{日数|にっすう}×5〜6{回|かい}。",
-    "en": "Water: people × days × 3 L. Toilet bags: people × days × 5–6."
+    "ja": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。{携帯|けいたい}トイレ：{人数|にんずう}×{日数|にっすう}×5{回|かい}。",
+    "ja_easy": "{水|みず}：{人数|にんずう}×{日数|にっすう}×3リットル。トイレ：{人数|にんずう}×{日数|にっすう}×5{回|かい}。",
+    "en": "Water: people × days × 3 L. Toilet bags: people × days × 5."
   },
   "bousai.stock.note": {
     "ja": "{目安|めやす}です。{年齢|ねんれい}・{体|からだ}・{季節|きせつ}で{変|か}わります。{水|みず}を{全部|ぜんぶ}、{持|も}ち{出|だ}す{袋|ふくろ}に{入|い}れません。",
@@ -4754,5 +5098,360 @@
     "ja": "{市町村|しちょうそん}の{情報|じょうほう}",
     "ja_easy": "{市|し}の{情報|じょうほう}",
     "en": "From the city"
+  },
+  "src.prov.bulk": {
+    "ja": "{出典|しゅってん}と{機械|きかい}で{照合|しょうごう}しました（{人|ひと}が1{件|けん}ずつ{見|み}たものではありません）",
+    "ja_easy": "{出典|しゅってん}と{機械|きかい}で{比|くら}べました",
+    "en": "Compared with the source by automated checks (not reviewed one by one by a person)"
+  },
+  "src.prov.experience": {
+    "ja": "{作者|さくしゃ}の{経験|けいけん}や、{窓口|まどぐち}で{聞|き}いたことにもとづきます。{公式|こうしき}のページや{窓口|まどぐち}で{確|たし}かめてください",
+    "ja_easy": "{作者|さくしゃ}の{経験|けいけん}です。{窓口|まどぐち}で{確|たし}かめてください",
+    "en": "Based on the author’s experience or what an office said. Please confirm with the office"
+  },
+  "report.kind": {
+    "ja": "どんなことですか",
+    "ja_easy": "どんなことですか",
+    "en": "What kind of problem?"
+  },
+  "report.kind.wrong": {
+    "ja": "{情報|じょうほう}がまちがっている",
+    "ja_easy": "まちがっている",
+    "en": "Wrong information"
+  },
+  "report.kind.outdated": {
+    "ja": "{期限|きげん}や{料金|りょうきん}が{古|ふる}い",
+    "ja_easy": "{期限|きげん}やお{金|かね}が{古|ふる}い",
+    "en": "Outdated deadline or fee"
+  },
+  "report.kind.missing": {
+    "ja": "{手順|てじゅん}が{足|た}りない",
+    "ja_easy": "することが{足|た}りない",
+    "en": "A step is missing"
+  },
+  "report.kind.link": {
+    "ja": "{公式|こうしき}のリンクが{開|ひら}けない",
+    "ja_easy": "リンクが{開|ひら}けない",
+    "en": "Official link is broken"
+  },
+  "report.kind.unclear": {
+    "ja": "わかりにくい",
+    "ja_easy": "わかりにくい",
+    "en": "Hard to understand"
+  },
+  "report.kind.other": {
+    "ja": "そのほか",
+    "ja_easy": "そのほか",
+    "en": "Other"
+  },
+  "report.optional": {
+    "ja": "{文|ぶん}は{書|か}かなくても{送|おく}れます（「そのほか」のときは{書|か}いてください）。",
+    "ja_easy": "{文|ぶん}は{書|か}かなくてもいいです。",
+    "en": "You can send without text (please write something for “Other”)."
+  },
+  "report.about": {
+    "ja": "この{手続|てつづ}きについて{送|おく}ります：",
+    "ja_easy": "この{手続|てつづ}きについて{送|おく}ります：",
+    "en": "This report is about:"
+  },
+  "report.ref": {
+    "ja": "{報告|ほうこく}の{番号|ばんごう}：",
+    "ja_easy": "{番号|ばんごう}：",
+    "en": "Report reference:"
+  },
+  "review.reportsMore": {
+    "ja": "{続|つづ}きを{読|よ}む",
+    "ja_easy": "{続|つづ}きを{読|よ}む",
+    "en": "Load more"
+  },
+  "review.reportsNew": {
+    "ja": "{新|あたら}しい{報告|ほうこく}：",
+    "ja_easy": "{新|あたら}しい{報告|ほうこく}：",
+    "en": "New reports:"
+  },
+  "review.reportsFilter": {
+    "ja": "{状態|じょうたい}で{絞|しぼ}る",
+    "ja_easy": "{状態|じょうたい}で{選|えら}ぶ",
+    "en": "Filter by status"
+  },
+  "review.reportsAll": {
+    "ja": "すべて",
+    "ja_easy": "すべて",
+    "en": "All"
+  },
+  "review.reportsOpen": {
+    "ja": "この{画面|がめん}を{開|ひら}く",
+    "ja_easy": "この{画面|がめん}を{開|ひら}く",
+    "en": "Open this page"
+  },
+  "review.reportsStatus.new": {
+    "ja": "{新|あたら}しい",
+    "ja_easy": "{新|あたら}しい",
+    "en": "New"
+  },
+  "review.reportsStatus.reviewing": {
+    "ja": "{確認|かくにん}{中|ちゅう}",
+    "ja_easy": "{確認|かくにん}{中|ちゅう}",
+    "en": "Reviewing"
+  },
+  "review.reportsStatus.fixed": {
+    "ja": "{直|なお}した",
+    "ja_easy": "{直|なお}した",
+    "en": "Fixed"
+  },
+  "review.reportsStatus.cannot_reproduce": {
+    "ja": "{再現|さいげん}できない",
+    "ja_easy": "{同|おな}じにならない",
+    "en": "Cannot reproduce"
+  },
+  "review.reportsStatus.no_change": {
+    "ja": "{変|か}えない",
+    "ja_easy": "{変|か}えない",
+    "en": "No change"
+  },
+  "updates.title": {
+    "ja": "{更新|こうしん}{情報|じょうほう}",
+    "ja_easy": "{新|あたら}しくなったこと",
+    "en": "Updates"
+  },
+  "updates.lead": {
+    "ja": "{案内|あんない}を{足|た}したり{直|なお}したりした{記録|きろく}です。",
+    "ja_easy": "{案内|あんない}を{足|た}したり{直|なお}したりした{記録|きろく}です。",
+    "en": "A record of what we added or corrected in the guide."
+  },
+  "updates.type.added": {
+    "ja": "{追加|ついか}",
+    "ja_easy": "{足|た}した",
+    "en": "Added"
+  },
+  "updates.type.updated": {
+    "ja": "{更新|こうしん}",
+    "ja_easy": "{新|あたら}しくした",
+    "en": "Updated"
+  },
+  "updates.type.corrected": {
+    "ja": "{訂正|ていせい}",
+    "ja_easy": "{直|なお}した",
+    "en": "Corrected"
+  },
+  "updates.none": {
+    "ja": "まだありません。",
+    "ja_easy": "まだありません。",
+    "en": "No updates yet."
+  },
+  "updates.link": {
+    "ja": "{更新|こうしん}{情報|じょうほう}を{見|み}る",
+    "ja_easy": "{新|あたら}しくなったことを{見|み}る",
+    "en": "See updates"
+  },
+  "updates.open": {
+    "ja": "この{手続|てつづ}きを{開|ひら}く",
+    "ja_easy": "この{手続|てつづ}きを{開|ひら}く",
+    "en": "Open this procedure"
+  },
+  "updates.draft": {
+    "ja": "{下書|したが}き（{作者|さくしゃ}の{確認|かくにん}{前|まえ}。{本番|ほんばん}には{出|で}ません）",
+    "ja_easy": "{下書|したが}き",
+    "en": "Draft (not approved yet; not shown in production)"
+  },
+  "about.build": {
+    "ja": "このアプリの{版|はん}：",
+    "ja_easy": "このアプリの{版|はん}：",
+    "en": "App version:"
+  },
+  "app.unofficial": {
+    "ja": "Kurashi は{個人|こじん}が{開発|かいはつ}・{運営|うんえい}する{非公式|ひこうしき}のアプリです。{名古屋|なごや}{市|し}が{提供|ていきょう}・{監修|かんしゅう}・{公認|こうにん}するアプリではありません。",
+    "ja_easy": "Kurashi は{個人|こじん}が{作|つく}った{非公式|ひこうしき}のアプリです。{名古屋|なごや}{市|し}が{作|つく}ったアプリではありません。{市|し}が{確|たし}かめたり、{認|みと}めたりしたアプリでもありません。",
+    "en": "Kurashi is an unofficial app developed and run by an individual. It is not provided, supervised or endorsed by the City of Nagoya."
+  },
+  "gomi.sanaru": {
+    "ja": "{名古屋|なごや}{市|し}が{案内|あんない}しているごみ{分別|ぶんべつ}アプリ「さんあ～る」",
+    "ja_easy": "{名古屋|なごや}{市|し}が{案内|あんない}しているごみ{分別|ぶんべつ}アプリ「さんあ～る」",
+    "en": "“San-aru (3R)”, the garbage sorting app introduced by the City of Nagoya"
+  },
+  "gomi.quote.attr": {
+    "ja": "{名古屋|なごや}{市|し}:{名古屋|なごや}{市|し}{公式|こうしき}ウェブサイトから{引用|いんよう}",
+    "ja_easy": "{名古屋|なごや}{市|し}:{名古屋|なごや}{市|し}{公式|こうしき}ウェブサイトから{引用|いんよう}",
+    "en": "Quoted from the City of Nagoya official website"
+  },
+  "gomi.copyright": {
+    "ja": "{分別|ぶんべつ}の{区分|くぶん}・{備考|びこう}と{収集日|しゅうしゅうび}の{表|ひょう}は、{名古屋|なごや}{市|し}{公式|こうしき}ウェブサイトのページ（{下|した}の{出典|しゅってん}）をもとにしています。{備考|びこう}は{原文|げんぶん}のまま{引用|いんよう}の{枠|わく}で{出|だ}し、{収集日|しゅうしゅうび}は{値|あたい}を{変|か}えずに{表示|ひょうじ}の{形|かたち}だけ{変|か}えています。{区分|くぶん}の{名前|なまえ}は、Kurashi が{短|みじか}く{言|い}いかえたものがあります。{著作権者|ちょさくけんしゃ}：{名古屋|なごや}{市|し}。",
+    "ja_easy": "{分|わ}け{方|かた}と{集|あつ}める{日|ひ}は、{名古屋|なごや}{市|し}のページをもとにしています。{市|し}の{文|ぶん}は、そのまま{枠|わく}の{中|なか}に{出|だ}します。{著作権|ちょさくけん}は{名古屋|なごや}{市|し}にあります。",
+    "en": "Sorting categories, notes and collection days are based on pages of the City of Nagoya website (sources below). Notes are quoted unchanged in a quote box; collection days keep their values and change only the display format. Some category names are shortened by Kurashi. Copyright: City of Nagoya."
+  },
+  "gomi.consent": {
+    "ja": "{名古屋|なごや}{市|し}の2つのページ（ごみ{収集日|しゅうしゅうび}の{検索|けんさく}・ごみの{分別|ぶんべつ}の{検索|けんさく}）の{情報|じょうほう}は、{名古屋|なごや}{市|し}{環境局|かんきょうきょく}の{書面|しょめん}による{同意|どうい}を{得|え}て、{名古屋|なごや}{市|し}の{再利用|さいりよう}の{規定|きてい}にしたがって{使|つか}っています。",
+    "ja_easy": "{名古屋|なごや}{市|し}の2つのページ（ごみを{集|あつ}める{日|ひ}・ごみの{分|わ}け{方|かた}）の{情報|じょうほう}は、{名古屋|なごや}{市|し}{環境局|かんきょうきょく}から{書|か}いた{同意|どうい}をもらい、{市|し}の{決|き}まりにしたがって{使|つか}っています。",
+    "en": "The information from two City of Nagoya pages (garbage collection days and garbage sorting search) is used with the written consent of the Environmental Bureau of the City of Nagoya, under the city's reuse rules."
+  },
+  "gomi.readings": {
+    "ja": "{町名|ちょうめい}の{読|よ}みとローマ{字|じ}は、Geolonia「{住所|じゅうしょ}データ」（{作者|さくしゃ}：{株式会社|かぶしきがいしゃ} Geolonia、CC BY 4.0）と、ウィキペディア{日本語版|にほんごばん}の{記事|きじ}「{大高町|おおだかちょう} ({名古屋市|なごやし})」「{鳴海町|なるみちょう} ({名古屋市|なごやし})」（{作者|さくしゃ}：ウィキペディアの{執筆者|しっぴつしゃ}、CC BY-SA 4.0）の{読|よ}みを、Kurashi が{加工|かこう}して{作成|さくせい}しました（{町名|ちょうめい}ごとにまとめ、ローマ{字|じ}にしました）。{鳴海町|なるみちょう}・{大高町|おおだかちょう}の{字|あざ}の{読|よ}み（235{件|けん}）と、そのローマ{字|じ}は CC BY-SA 4.0 です：",
+    "ja_easy": "{町|まち}の{名前|なまえ}の{読|よ}み{方|かた}とローマ{字|じ}は、Geolonia の「{住所|じゅうしょ}データ」（CC BY 4.0）と、ウィキペディアの{記事|きじ}（CC BY-SA 4.0）から、Kurashi が{直|なお}して{作|つく}りました。{鳴海町|なるみちょう}と{大高町|おおだかちょう}の{読|よ}み{方|かた}とそのローマ{字|じ}は CC BY-SA 4.0 です：",
+    "en": "Town-name readings and romaji were made by Kurashi from Geolonia \"japanese-addresses\" (author: Geolonia Inc., CC BY 4.0) and the Japanese Wikipedia articles \"大高町 (名古屋市)\" and \"鳴海町 (名古屋市)\" (authors: Wikipedia contributors, CC BY-SA 4.0), with changes (collected per town and converted to romaji). The 235 readings for Narumi-cho and Odaka-cho, and their romaji, are under CC BY-SA 4.0:"
+  },
+  "gomi.readings.geolonia": {
+    "ja": "Geolonia「{住所|じゅうしょ}データ」",
+    "ja_easy": "Geolonia「{住所|じゅうしょ}データ」",
+    "en": "Geolonia japanese-addresses"
+  },
+  "gomi.readings.odaka": {
+    "ja": "ウィキペディア「{大高町|おおだかちょう} ({名古屋市|なごやし})」",
+    "ja_easy": "ウィキペディア「{大高町|おおだかちょう}」",
+    "en": "Wikipedia: 大高町 (名古屋市)"
+  },
+  "gomi.readings.narumi": {
+    "ja": "ウィキペディア「{鳴海町|なるみちょう} ({名古屋市|なごやし})」",
+    "ja_easy": "ウィキペディア「{鳴海町|なるみちょう}」",
+    "en": "Wikipedia: 鳴海町 (名古屋市)"
+  },
+  "gomi.license.deedSa": {
+    "ja": "CC BY-SA 4.0 ライセンスの{内容|ないよう}",
+    "ja_easy": "CC BY-SA 4.0 ライセンスの{内容|ないよう}",
+    "en": "CC BY-SA 4.0 licence terms"
+  },
+  "page.about.readings": {
+    "ja": "ごみの{画面|がめん}の{町名|ちょうめい}の{読|よ}みとローマ{字|じ}は、Geolonia「{住所|じゅうしょ}データ」（CC BY 4.0）とウィキペディア{日本語版|にほんごばん}の{記事|きじ}（CC BY-SA 4.0）を Kurashi が{加工|かこう}したものです。{作者|さくしゃ}・ライセンス・{変更|へんこう}は、ごみの{画面|がめん}の{下|した}と THIRD_PARTY_NOTICES に{書|か}いています。",
+    "ja_easy": "ごみの{画面|がめん}の{町|まち}の{名前|なまえ}の{読|よ}み{方|かた}とローマ{字|じ}は、Geolonia のデータ（CC BY 4.0）とウィキペディア（CC BY-SA 4.0）から{作|つく}りました。くわしくは、ごみの{画面|がめん}の{下|した}と THIRD_PARTY_NOTICES にあります。",
+    "en": "Town-name readings and romaji on the garbage screen were made by Kurashi from Geolonia japanese-addresses (CC BY 4.0) and Japanese Wikipedia articles (CC BY-SA 4.0), with changes. Authors, licences and changes are listed at the bottom of the garbage screen and in THIRD_PARTY_NOTICES."
+  },
+  "page.about.notices": {
+    "ja": "THIRD_PARTY_NOTICES（{使|つか}っているデータとライセンス）",
+    "ja_easy": "THIRD_PARTY_NOTICES（{使|つか}っているデータとライセンス）",
+    "en": "THIRD_PARTY_NOTICES (data and licences used)"
+  },
+  "gomi.rules.copyright": {
+    "ja": "{名古屋|なごや}{市|し}「{著作権|ちょさくけん}・リンク・{免責|めんせき}{事項|じこう}」",
+    "ja_easy": "{名古屋|なごや}{市|し}「{著作権|ちょさくけん}・リンク・{免責|めんせき}{事項|じこう}」",
+    "en": "City of Nagoya: Copyright, links and disclaimer"
+  },
+  "gomi.rules.reuse": {
+    "ja": "{名古屋|なごや}{市|し}「コンテンツの{再利用|さいりよう}に{関|かん}して({著作権|ちょさくけん})」",
+    "ja_easy": "{名古屋|なごや}{市|し}「コンテンツの{再利用|さいりよう}に{関|かん}して({著作権|ちょさくけん})」",
+    "en": "City of Nagoya: Reuse of content (copyright)"
+  },
+  "gomi.license.deed": {
+    "ja": "CC BY 4.0 ライセンスの{内容|ないよう}",
+    "ja_easy": "CC BY 4.0 ライセンスの{内容|ないよう}",
+    "en": "CC BY 4.0 licence terms"
+  },
+  "gomi.ownText": {
+    "ja": "{説明|せつめい}・{英語|えいご}の{訳|やく}・{画面|がめん}は Kurashi が{作|つく}りました。{名古屋|なごや}{市|し}の{公式|こうしき}の{訳|やく}ではありません。",
+    "ja_easy": "{説明|せつめい}と{英語|えいご}は Kurashi が{書|か}きました。{市|し}の{訳|やく}ではありません。",
+    "en": "Explanations, English translations and screens are written by Kurashi. They are not official translations by the City of Nagoya."
+  },
+  "gomi.week.unknown": {
+    "ja": "{市|し}の{表|ひょう}で{確|たし}かめて",
+    "ja_easy": "{市|し}のページで{見|み}て",
+    "en": "Check the city page"
+  },
+  "gomi.yearEnd": {
+    "ja": "{年末|ねんまつ}{年始|ねんし}は、{市|し}の「{年末|ねんまつ}{年始|ねんし}の{資源|しげん}・ごみ{収集日|しゅうしゅうび}のお{知|し}らせ」の{日|ひ}で{出|だ}しています。{当日|とうじつ}の{朝|あさ}8{時|じ}（{中区|なかく}は7{時|じ}）までに{出|だ}してください。",
+    "ja_easy": "{年末|ねんまつ}{年始|ねんし}は、{集|あつ}める{日|ひ}が{変|か}わります。{市|し}のお{知|し}らせの{日|ひ}です。{朝|あさ}8{時|じ}（{中区|なかく}は7{時|じ}）までに{出|だ}してください。",
+    "en": "Around New Year, the days follow the city's New Year collection notice. Put garbage out by 8 a.m. on the day (Naka Ward: 7 a.m.)."
+  },
+  "gomi.yearEnd.link": {
+    "ja": "{年末|ねんまつ}{年始|ねんし}の{収集日|しゅうしゅうび}（{名古屋|なごや}{市|し}）",
+    "ja_easy": "{年末|ねんまつ}{年始|ねんし}の{集|あつ}める{日|ひ}（{名古屋|なごや}{市|し}）",
+    "en": "New Year collection days (City of Nagoya)"
+  },
+  "gomi.yearEnd.model": {
+    "ja": "{瑞穂区|みずほく}の{資源|しげん}{各戸|かっこ}{収集|しゅうしゅう}モデル{地域|ちいき}の{年末|ねんまつ}{年始|ねんし}（{名古屋|なごや}{市|し}）",
+    "ja_easy": "{瑞穂区|みずほく}のモデル{地域|ちいき}の{年末|ねんまつ}{年始|ねんし}（{名古屋|なごや}{市|し}）",
+    "en": "New Year days in the Mizuho Ward model areas (City of Nagoya)"
+  },
+  "gomi.next.unknown": {
+    "ja": "この{時期|じき}の{収集日|しゅうしゅうび}は、アプリではまだ{分|わ}かりません。{市|し}の「ごみ{収集日|しゅうしゅうび}{検索|けんさく}」で{確|たし}かめてください。",
+    "ja_easy": "この{時期|じき}の{集|あつ}める{日|ひ}は、まだ{分|わ}かりません。{市|し}のページで{見|み}てください。",
+    "en": "The app does not know the collection days for this period yet. Please check the city's collection day search."
+  },
+  "ov.answered": {
+    "ja": "{答|こた}えました：{answer}。{手続|てつづ}きが{n}{件|けん}{変|か}わりました。",
+    "ja_easy": "{答|こた}えました：{answer}。{手続|てつづ}きが{n}つ{変|か}わりました。",
+    "en": "Answered: {answer}. {n} procedure(s) changed."
+  },
+  "ov.answeredSame": {
+    "ja": "{答|こた}えました：{answer}。{手続|てつづ}きは{変|か}わりませんでした。",
+    "ja_easy": "{答|こた}えました：{answer}。{手続|てつづ}きは{同|おな}じです。",
+    "en": "Answered: {answer}. No procedures changed."
+  },
+  "ov.day": {
+    "ja": "{行|い}く{日|ひ}：{date}",
+    "ja_easy": "{行|い}く{日|ひ}：{date}",
+    "en": "Day to go: {date}"
+  },
+  "ov.dayToday": {
+    "ja": "{今日|きょう}は{行|い}く{日|ひ}です",
+    "ja_easy": "{今日|きょう}は{行|い}く{日|ひ}です",
+    "en": "Today is the day to go"
+  },
+  "gomi.result.experience": {
+    "ja": "{作者|さくしゃ}の{経験|けいけん}にもとづく（{市|し}のページで{確|たし}かめてください）",
+    "ja_easy": "{作者|さくしゃ}の{経験|けいけん}です（{市|し}のページで{確|たし}かめて）",
+    "en": "Based on the author's experience (please check the city page)"
+  },
+  "gomi.updated": {
+    "ja": "{更新|こうしん}{日|び}",
+    "ja_easy": "{更新|こうしん}した{日|ひ}",
+    "en": "updated"
+  },
+  "ev.startNewConfirm": {
+    "ja": "{最初|さいしょ}からにすると、このできごとの{答|こた}え・{決|き}めた{日|ひ}・{記録|きろく}が{消|き}えます。{最初|さいしょ}からにしますか？",
+    "ja_easy": "{答|こた}えと{決|き}めた{日|ひ}が{消|き}えます。{最初|さいしょ}からにしますか？",
+    "en": "Starting over clears your answers, chosen days and records for this event. Start over?"
+  },
+  "ev.startNewYes": {
+    "ja": "{消|け}して{最初|さいしょ}から",
+    "ja_easy": "{消|け}して{最初|さいしょ}から",
+    "en": "Clear and start over"
+  },
+  "ev.startNewNo": {
+    "ja": "やめる",
+    "ja_easy": "やめる",
+    "en": "Cancel"
+  },
+  "day.deadline": {
+    "ja": "{期限|きげん}：",
+    "ja_easy": "{期限|きげん}：",
+    "en": "Deadline: "
+  },
+  "day.deadlineNote": {
+    "ja": "{期限|きげん}より{前|まえ}の{日|ひ}を{選|えら}んでください。",
+    "ja_easy": "{期限|きげん}の{前|まえ}の{日|ひ}にしてください。",
+    "en": "Choose a day before the deadline."
+  },
+  "now.today.titleSend": {
+    "ja": "{今日|きょう}は{出|だ}す{日|ひ}です",
+    "ja_easy": "{今日|きょう}は{出|だ}す{日|ひ}です",
+    "en": "Today is the day to submit"
+  },
+  "ov.daySend": {
+    "ja": "{出|だ}す{日|ひ}：{date}",
+    "ja_easy": "{出|だ}す{日|ひ}：{date}",
+    "en": "Submit on: {date}"
+  },
+  "ov.dayTodaySend": {
+    "ja": "{今日|きょう}は{出|だ}す{日|ひ}です",
+    "ja_easy": "{今日|きょう}は{出|だ}す{日|ひ}です",
+    "en": "Today is the day to submit"
+  },
+  "card.plannedSend": {
+    "ja": "{出|だ}す{日|ひ}",
+    "ja_easy": "{出|だ}す{日|ひ}",
+    "en": "Submit on"
+  },
+  "day.chooseSend": {
+    "ja": "いつ{出|だ}すか{決|き}める",
+    "ja_easy": "いつ{出|だ}すか{決|き}める",
+    "en": "Decide when to submit"
+  },
+  "day.chooseWay": {
+    "ja": "{出|だ}す{方法|ほうほう}と{日|ひ}を{決|き}める",
+    "ja_easy": "{出|だ}す{方法|ほうほう}と{日|ひ}を{決|き}める",
+    "en": "Decide how and when to submit"
+  },
+  "day.altNote": {
+    "ja": "{窓口|まどぐち}に{行|い}かない{方法|ほうほう}もあります。{同|おな}じ{日|ひ}にしないときは{外|はず}してください。",
+    "ja_easy": "{窓口|まどぐち}に{行|い}かない{方法|ほうほう}もあります。{同|おな}じ{日|ひ}にしないときは{外|はず}してください。",
+    "en": "This can also be done without going. Remove it if you will not do it on the same day."
   }
 }

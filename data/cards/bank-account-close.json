@@ -45,7 +45,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "9af0545b16df745097cbe6ddfc0d86606c2bdc1c6f8dab2d50d64037eabdb319",
         "verdict": "agree",
-        "ref": "research/audits/bank.json#P-bank-kaiyaku-yucho/c6"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -75,7 +75,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "7ff1afe55ad88737bf9b7fd53ebced007b5c383234c67cc69f0af6fe62f0f20c",
           "verdict": "agree",
-          "ref": "research/audits/bank.json#P-bank-kaiyaku-yucho/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -90,9 +90,10 @@
         "source_ids": [
           "B-yucho-faq-10026"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "以下の持ち物が必要です。 通帳 ※ 、キャッシュカード、口座のお届け印および本人確認書類(運転免許証・マイナンバーカード等)"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "以下の持ち物が必要です。 通帳 ※ 、キャッシュカード、口座のお届け印および本人確認書類(運転免許証・マイナンバーカード等)",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -113,7 +114,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "3824f297c0aa567a042c53742552215d18932f90cd6a8172c7a127fc5cc45dd6",
           "verdict": "agree",
-          "ref": "research/audits/bank.json#P-bank-kokugai-tenshutsu-yucho/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -135,7 +136,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "3824f297c0aa567a042c53742552215d18932f90cd6a8172c7a127fc5cc45dd6",
           "verdict": "agree",
-          "ref": "research/audits/bank.json#P-bank-kokugai-tenshutsu-yucho/c4"
+          "ref": "internal-audit-record"
         }
       }
     }

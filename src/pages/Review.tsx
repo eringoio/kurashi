@@ -4,7 +4,7 @@ import { DATA } from '../core/data';
 import { ALL_DOCUMENTS } from '../core/documents';
 
 import { authorQueue, collectEvidence, type EvidenceAt } from '../core/quotes';
-import { AI_CHECK_COUNTS, FIELD_KINDS } from '../core/trust';
+import { AI_CHECK_COUNTS, FIELD_KINDS, statusKey } from '../core/trust';
 import { CLINIC, departmentsFor } from '../core/clinic';
 import type { Evidence, Text } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
@@ -21,7 +21,7 @@ function Status({ e }: { e: Evidence }) {
   return (
     <span className={'k-state k-state--' + (e.status === 'verified' ? 'done' : 'check')}>
       <span aria-hidden="true">{e.status === 'verified' ? '✓' : '！'}</span>
-      <One k={('src.status.' + e.status) as UiKey} />
+      <One k={statusKey(e) as UiKey} />
       {product && <>・<One k="src.product" /></>}
     </span>
   );

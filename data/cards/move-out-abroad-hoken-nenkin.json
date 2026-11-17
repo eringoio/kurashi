@@ -10,7 +10,12 @@
   "scope": "nagoya_resident",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-mo-abroad",
+  "eligibility": {
+    "all": [
+      "R-mo-abroad",
+      "R-mo-hn-sel"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}の{手続|てつづ}きを{窓口|まどぐち}で{確認|かくにん}する",
@@ -44,7 +49,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
         "verdict": "agree",
-        "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c17"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -60,9 +65,9 @@
   ],
   "reasons": {
     "check_at_office": {
-      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+      "ja": "{行|ゆ}き{先|さき}や、{健康|けんこう}{保険|ほけん}・{年金|ねんきん}の{入|はい}り{方|かた}がまだわからないので、この{手続|てつづ}きが{要|い}るか{決|き}められません。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{保険|ほけん}と{年金|ねんきん}の{手続|てつづ}きが{要|い}るか、まだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We do not yet know your destination or your health insurance and pension, so we cannot tell if you need this. Please ask the insurance and pension section of your ward office (to be checked)."
     }
   },
   "evidence": {
@@ -96,7 +101,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "dffff0ecc801590eedb21cbad71e33f351bfc7ba8f1af5de8fab37f84b74e504",
           "verdict": "agree",
-          "ref": "research/audits/nenkin.json#P-nenkin-ninni-kanyu/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -118,7 +123,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "da256f53a11bc4ff62f9ea9eec6b302289883dfb70872407c1b8d94c9c87836d",
           "verdict": "agree",
-          "ref": "research/audits/nenkin.json#P-nenkin-dattai-ichijikin/c17"
+          "ref": "internal-audit-record"
         }
       }
     }

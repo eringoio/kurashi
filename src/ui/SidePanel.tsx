@@ -8,7 +8,7 @@ import { useEvent } from '../guide/useEvent';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One } from '../i18n/Ruby';
 import { usePrefs } from '../storage/prefs';
-import { fmtDay, SECTION_ORDER, StateLabel, stateKey, type StateKey } from './guide';
+import { fmtDay, SECTION_ORDER, StateLabel, stateKey, unverifiedOb, type StateKey } from './guide';
 import { Link } from './router';
 
 const WIDE = '(min-width: 1024px)';
@@ -84,7 +84,7 @@ function SideRow({ c, base }: { c: CardView; base: string }) {
       <Link to={base + c.card.id} className={'row row--compact row--' + CLS[k]}>
         <span className="row__name"><One phrase t={c.card.title} /></span>
         <span className="row__side">
-          <StateLabel k={k} ob={c.card.obligation} />
+          <StateLabel k={k} ob={c.card.obligation} uv={unverifiedOb(c)} />
           {c.plan?.planned_on && <span className="row__extra">{fmtDay(c.plan.planned_on, level)}</span>}
         </span>
       </Link>
@@ -100,8 +100,9 @@ export function SidePanel({ current }: { current: string }) {
   const src = t.eventId ? eg : g;
   if (!src) return null;
   const base = t.eventId ? '/e/' + t.eventId + '/c/' : '/c/';
-  // 全体の画面と同じ順（いま → 確かめる → 待つ → あとで）。関係なかったものは出さない（全体の画面で、理由と一緒に見られる）
-  const rank = (c: CardView) => (c.state === 'ask' ? 1.5 : SECTION_ORDER.indexOf(c.section ?? 'later'));
+  // 全体の画面と同じ順。いま・確かめる は分けずにエンジンの順（行く所でまとめた順。v0.5.44：区役所の国保・年金が銀行の後ろにならない）
+  // → まだわからない → 待つ → あとで。関係なかったものは出さない（全体の画面で、理由と一緒に見られる）
+  const rank = (c: CardView) => (c.state === 'ask' ? 1.5 : c.section === 'check' ? SECTION_ORDER.indexOf('today') : SECTION_ORDER.indexOf(c.section ?? 'later'));
   const cards = sideCards(src.out, src.today, t.cardId);
   const rest = cards.filter((c) => c.section !== 'done').sort((a, b) => rank(a) - rank(b));
   const done = cards.filter((c) => c.section === 'done');

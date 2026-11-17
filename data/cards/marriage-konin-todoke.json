@@ -15,7 +15,8 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-event"
+      "R-mar-event",
+      "R-mar-stage-japan-any"
     ]
   },
   "title": {
@@ -64,7 +65,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c1"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -88,7 +89,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -110,7 +111,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -132,7 +133,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -154,7 +155,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -176,7 +177,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c11"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -198,7 +199,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-todoke/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -233,6 +234,40 @@
         "status": "needs_check",
         "quote": "翌受付時間帯に記載内容を確認してから正式に受理をします。"
       }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}{国籍|こくせき}どうしの{結婚|けっこん}では、{婚姻|こんいん}{届|とどけ}で、{夫|おっと}か{妻|つま}のどちらかの{氏|うじ}を{夫婦|ふうふ}の{氏|うじ}に{選|えら}びます。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}どうしの{結婚|けっこん}では、{婚姻|こんいん}{届|とどけ}で、{夫|おっと}か{妻|つま}のどちらかの{名字|みょうじ}を{選|えら}びます。",
+        "en": "When two Japanese nationals marry, they choose either the husband's or the wife's surname as the couple's surname on the registration."
+      },
+      "when": "R-mar-nat-both-jp",
+      "evidence": {
+        "source_ids": [
+          "B-moj-fufu-uji"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "夫婦は、婚姻の際に定めるところに従い、夫又は妻の氏を称する。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と{外国|がいこく}{籍|せき}の{人|ひと}の{結婚|けっこん}では、{日本|にほん}{国籍|こくせき}の{人|ひと}の{氏|うじ}は{自動的|じどうてき}には{変|か}わりません。{外国|がいこく}{籍|せき}の{人|ひと}の{氏|うじ}に{変|か}えたいときは、{別|べつ}の{届出|とどけで}をします（「{日本人|にほんじん}の{氏|うじ}の{変更|へんこう}」）。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}の{名字|みょうじ}は、{外国|がいこく}の{国籍|こくせき}の{人|ひと}と{結婚|けっこん}しても{自動|じどう}では{変|か}わりません。{変|か}えたいときは、{別|べつ}の{届|とど}けをします。",
+        "en": "In a marriage between a Japanese national and a foreign national, the Japanese national's surname does not change automatically. A separate notification is needed to take the foreign spouse's surname."
+      },
+      "when": "R-mar-has-foreign",
+      "evidence": {
+        "source_ids": [
+          "B-moj-minji15"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "外国人と婚姻しても日本人の氏は当然には変わりません。"
+      }
     }
   ],
   "keywords": [
@@ -244,7 +279,13 @@
     "marriage registration",
     "get married"
   ],
-  "reasons": {},
+  "reasons": {
+    "excluded": {
+      "ja": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}を{出|だ}す{人|ひと}に{出|だ}しています。{海外|かいがい}で{婚姻|こんいん}が{成立|せいりつ}した{人|ひと}は、「{海外|かいがい}で{成立|せいりつ}した{婚姻|こんいん}の{届|とどけ}」を{見|み}てください。",
+      "ja_easy": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}を{出|だ}す{人|ひと}に{出|だ}しています。{外国|がいこく}で{結婚|けっこん}した{人|ひと}は、「{外国|がいこく}で{結婚|けっこん}したときの{届|とど}け」を{見|み}ます。",
+      "en": "Shown to people who submit a marriage registration in Japan. If you married abroad, see \"Reporting a marriage made abroad\"."
+    }
+  },
   "evidence": {
     "source_ids": [
       "B-nagoya-konin-rikon"

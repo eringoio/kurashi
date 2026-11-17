@@ -1,0 +1,246 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-zoom",
+  "illustration": "calendar",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "Zoomで{宣誓|せんせい}する（オンライン）",
+    "ja_easy": "Zoomで{宣誓|せんせい}する（オンライン）",
+    "en": "Pledge by Zoom"
+  },
+  "official_name": {
+    "ja": "オンライン（ウェブ会議システム）を用いた宣誓",
+    "reading": "おんらいん（うぇぶかいぎしすてむ）をもちいたせんせい"
+  },
+  "lead": {
+    "ja": "{先|さき}に{予約|よやく}が{要|い}ります。{平日|へいじつ}の{昼|ひる}に、ふたりでZoomにつないで{宣誓|せんせい}し、{書類|しょるい}は{郵送|ゆうそう}します。",
+    "ja_easy": "{先|さき}に{予約|よやく}します。{平日|へいじつ}の{昼|ひる}に、ふたりでZoomで{宣誓|せんせい}します。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります。",
+    "en": "Book first. On a weekday, the two of you join Zoom and make the pledge, then mail the documents."
+  },
+  "summary": {
+    "ja": "{予約|よやく}した{日時|にちじ}に、ふたりが{同時|どうじ}に{話|はな}せる{所|ところ}からZoomにつなぎ、{宣誓|せんせい}{書|しょ}に{自署|じしょ}します。{市|し}の{職員|しょくいん}が{画面|がめん}{越|ご}しに{本人|ほんにん}{確認|かくにん}をします。{自署|じしょ}した{宣誓|せんせい}{書|しょ}と{必要|ひつよう}な{書類|しょるい}を{郵送|ゆうそう}します。",
+    "ja_easy": "{予約|よやく}した{日|ひ}に、ふたりでZoomにつなぎ、{宣誓|せんせい}{書|しょ}に{名前|なまえ}を{書|か}きます。そのあと、{書類|しょるい}を{郵便|ゆうびん}で{送|おく}ります。",
+    "en": "At the booked time, the two of you join Zoom from a place where you can both talk, sign the pledge form, and a city officer checks your ID on screen. Mail the signed form and documents."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{宣誓|せんせい}と{受領証|じゅりょうしょう}などの{交付|こうふ}は{無料|むりょう}です。{必要|ひつよう}な{書類|しょるい}の{発行|はっこう}{手数料|てすうりょう}、{返信|へんしん}{用|よう}{封筒|ふうとう}、{切手|きって}{代|だい}（180{円|えん}{分|ぶん}）は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{宣誓|せんせい}と{受領証|じゅりょうしょう}は{無料|むりょう}です。{書類|しょるい}を{取|と}るお{金|かね}と、{封筒|ふうとう}と{切手|きって}（180{円|えん}）は{自分|じぶん}で{払|はら}います。",
+      "en": "The pledge and the receipt are free. You pay the fees for the documents, the return envelope and the stamps (180 yen)."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "（注）宣誓に必要な書類の交付手数料、返信用封筒及び切手代などは、宣誓者の自己負担となります。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "オンライン（Zoom）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（Zoom）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (Zoom). Mail the documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "事前にご予約いただいた宣誓日時に、ウェブ会議システム（Zoom）を用いて、宣誓（宣誓書への自署）及び本人確認を名古屋市職員が行います。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "{予約|よやく}",
+        "ja_easy": "{予約|よやく}",
+        "en": "Booking"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}する{日|ひ}の{原則|げんそく}3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに{予約|よやく}します。ふたりとも{出|で}られる{日|ひ}を{選|えら}びます。",
+            "ja_easy": "{宣誓|せんせい}する{日|ひ}の3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{予約|よやく}します。ふたりとも{出|で}られる{日|ひ}にします。",
+            "en": "Book between 3 months and 1 week before the pledge date, on a day you can both attend."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓予定日の原則3か月前から1週間前までに、次の方法で事前予約してください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{予約|よやく}は、{電話|でんわ}（052-972-2234。{平日|へいじつ}9{時|じ}〜17{時|じ}、12{時|じ}〜13{時|じ}を{除|のぞ}く）、ファクス（052-972-4206）、または{予約|よやく}{申込|もうしこみ}フォームで。",
+            "ja_easy": "{予約|よやく}は、{電話|でんわ}（052-972-2234。{平日|へいじつ}9{時|じ}〜17{時|じ}。12{時|じ}〜13{時|じ}は{休|やす}み）、ファクス（052-972-4206）、フォームでします。",
+            "en": "Book by phone (052-972-2234, weekdays 9:00–17:00, closed 12:00–13:00), fax (052-972-4206) or the booking form."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "電話番号：052－972－2234　平日の午前9時から午後5時（正午から午後1時除く）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}できる{時間|じかん}は{平日|へいじつ}10{時|じ}〜16{時|じ}30{分|ふん}です。{希望|きぼう}の{日時|にちじ}を{第|だい}3{希望|きぼう}まで{伝|つた}えます。{外国|がいこく}{籍|せき}の{人|ひと}は{日本|にほん}{国籍|こくせき}でないこと、{通称|つうしょう}{名|めい}や{子|こ}の{氏名|しめい}を{載|の}せるときはそのことも{伝|つた}えます。",
+            "ja_easy": "{宣誓|せんせい}できるのは{平日|へいじつ}10{時|じ}〜16{時|じ}30{分|ふん}です。{希望|きぼう}の{日|ひ}を3つまで{伝|つた}えます。{外国|がいこく}の{国籍|こくせき}の{人|ひと}は「{日本|にほん}の{国籍|こくせき}ではない」と{伝|つた}えます。",
+            "en": "Pledges are on weekdays 10:00–16:30. Give up to three preferred dates and times. Foreign nationals say they are not Japanese nationals; also say if you use a commonly used name or want a child's name on the receipt."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓希望日・時間帯（第3希望まで）宣誓できる時間（平日午前10時から午後4時30分）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{予約|よやく}のあと、2{開庁日|かいちょうび}{以内|いない}に{市|し}から{日時|にちじ}と{必要|ひつよう}な{書類|しょるい}の{連絡|れんらく}があります（ZoomのIDとパスコードも）。{連絡|れんらく}が{来|こ}ないときは、{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}に{連絡|れんらく}します。",
+            "ja_easy": "{予約|よやく}のあと、2{日|にち}（{市役所|しやくしょ}が{開|ひら}いている{日|ひ}）{以内|いない}に、{市|し}から{連絡|れんらく}があります（Zoomの{番号|ばんごう}も）。{来|こ}ないときは、{電話|でんわ}します。",
+            "en": "Within 2 working days after booking, the city contacts you about the date and documents (and the Zoom ID and passcode). If you hear nothing, contact the division."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "予約の連絡をいただいた後、名古屋市から「宣誓日時、必要書類等」の調整・確認のため、2開庁日以内にご連絡します。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{当日|とうじつ}とそのあと",
+        "ja_easy": "その{日|ひ}と、そのあと",
+        "en": "On the day and after"
+      },
+      "ordered": true,
+      "items": [
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}{書|しょ}を{市|し}のページから{印刷|いんさつ}し、{本人|ほんにん}{確認|かくにん}{書類|しょるい}を{用意|ようい}します。ふたりが{同時|どうじ}に{話|はな}せる{所|ところ}から、{知|し}らされたIDとパスコードでZoomにつなぎます。",
+            "ja_easy": "{宣誓|せんせい}{書|しょ}を{市|し}のページから{印刷|いんさつ}します。ふたりが{同時|どうじ}に{話|はな}せる{所|ところ}から、Zoomにつなぎます。",
+            "en": "Print the pledge form from the city page and prepare your ID. Join Zoom with the ID and passcode you were given, from a place where you can both talk."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "お二人同時に会話できる環境において事前にお知らせするZoomミーティングルームのID及びパスコードを用いて、Zoomに接続してください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{宣誓|せんせい}{書|しょ}に{自署|じしょ}し、{市|し}の{職員|しょくいん}が{画面|がめん}{越|ご}しに{本人|ほんにん}{確認|かくにん}をします。",
+            "ja_easy": "{宣誓|せんせい}{書|しょ}に{名前|なまえ}を{書|か}きます。{市|し}の{人|ひと}が、{画面|がめん}で{本人|ほんにん}か{確|たし}かめます。",
+            "en": "Sign the pledge form. A city officer checks your identity on screen."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "お二人には宣誓書に自著いただくほか、Zoomを用いて画面越しに名古屋市職員が本人確認をいたします。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{自署|じしょ}した{宣誓|せんせい}{書|しょ}、{必要|ひつよう}な{書類|しょるい}、{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）を{郵送|ゆうそう}します。",
+            "ja_easy": "{名前|なまえ}を{書|か}いた{宣誓|せんせい}{書|しょ}、{書類|しょるい}、{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}）を、{郵便|ゆうびん}で{送|おく}ります。",
+            "en": "Mail the signed pledge form, the documents and a return envelope (A4 size, 180 yen of stamps, your address)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "自著いただいた宣誓書及び、他の必要書類については郵送等によりご提出いただきます。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{書類|しょるい}が{届|とど}いてから10{日|にち}ほどで、{受領証|じゅりょうしょう}などが{郵送|ゆうそう}で{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{書類|しょるい}が{届|とど}いてから10{日|にち}ぐらいで、{受領証|じゅりょうしょう}が{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "en": "About 10 days after the documents arrive, the receipt is mailed to you (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "交付手続きから交付まで10日ほどかかります。"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{予約|よやく}{申込|もうしこみ}フォーム（Zoom）",
+        "ja_easy": "{予約|よやく}のフォーム（Zoom）",
+        "en": "Booking form for Zoom (Japanese)"
+      },
+      "url": "https://logoform.jp/form/mX9C/529686",
+      "source_id": "B-nagoya-familyship-form-zoom"
+    },
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "ja_easy": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "en": "Nagoya city page on the system"
+      },
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028139.html",
+      "source_id": "B-nagoya-familyship"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "宣誓",
+    "Zoom",
+    "オンライン",
+    "予約",
+    "familyship",
+    "zoom",
+    "booking"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "オンライン（ウェブ会議システム）を用いた宣誓"
+  }
+}

@@ -69,7 +69,7 @@
         "fetched_at": "2026-11-05",
         "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
         "verdict": "agree",
-        "ref": "research/audits/job.json#P-job-trouble/c4"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -92,7 +92,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-trouble/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -114,7 +114,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "52f99d0b4b5214ddd68fa061d7e58b07e45ce2f8b2c2584c3c91126af33b615f",
           "verdict": "agree",
-          "ref": "research/audits/job.json#P-job-trouble/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -145,9 +145,10 @@
         "source_ids": [
           "B-check-roudou-foreigner"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "開設時間： 午前10時〜午後3時 (正午〜午後1時は除く)"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "開設時間： 午前10時〜午後3時 (正午〜午後1時は除く)",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     }
   ],
@@ -155,8 +156,9 @@
     "source_ids": [
       "B-mhlw-keiyaku-index"
     ],
-    "checked_at": "2026-11-05",
-    "status": "needs_check",
-    "quote": "解雇は、客観的に合理的な理由を欠き、社会通念上相当であると認められない場合、 権利を濫用したものとして無効 となります。"
+    "checked_at": "2026-11-08",
+    "status": "verified",
+    "quote": "解雇は、客観的に合理的な理由を欠き、社会通念上相当であると認められない場合、 権利を濫用したものとして無効 となります。",
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

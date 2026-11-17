@@ -90,6 +90,8 @@ p { margin: 0; }
 .seg { min-height: var(--target-min); padding: 0 14px; border-radius: var(--radius-sm); border: 2px solid var(--line-dim); background: var(--white); color: var(--ink); font-size: max(var(--fs-small), 15px); font-weight: 700; }
 .seg[aria-pressed="true"] { border: 3px solid var(--blue); background: var(--blue-tint); color: var(--blue-deep); }
 .seg[aria-pressed="true"]::before { content: "✓ "; }
+.k-answer[aria-pressed="true"] { border-color: var(--blue); background: var(--blue-tint); color: var(--blue-deep); }
+.k-answer[aria-pressed="true"]::after { content: "✓"; margin-left: auto; }
 .store { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1.5px dashed var(--line-dim); padding: 4px 0; }
 .store__name { font-weight: 700; }
 .store__n { font-size: var(--fs-small); color: var(--ink-subtle); }
@@ -478,6 +480,12 @@ fieldset legend svg { vertical-align: -0.2em; }
 .gomi-week__cats { display: flex; gap: 8px; flex-wrap: wrap; }
 .gomi-week__cat { display: inline-flex; align-items: center; gap: 4px; }
 .gomi-week__cat img { width: 28px; height: 28px; }
+.ov-item__ob { margin: 2px 0 0; font-size: 0.85em; color: var(--ink-subtle); }
+.ov-item__day { margin: 2px 0 0; font-size: 0.95em; }
+.gomi-week__unknown { color: var(--ink-subtle); font-size: 0.9em; }
+.gomi-quote { margin: 0; padding-inline-start: 0.8em; border-inline-start: 3px solid var(--line-dash); }
+.gomi-quote p { margin: 0; }
+.gomi-quote footer { font-size: 0.85em; color: var(--ink-subtle); }
 .gomi-kind { display: flex; gap: 10px; align-items: flex-start; }
 .gomi-kind img { width: 44px; height: 44px; flex: none; }
 .gomi-kind > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
@@ -765,3 +773,15 @@ ul.list:has(> li > .k-answer) > li:last-child:nth-child(odd) { grid-column: 1 / 
 .bousai-levels__row--4 .bousai-levels__n { background: var(--art-pink); border-width: 3px; }
 .bousai-levels__row--5 .bousai-levels__n { background: var(--art-lilac); border-width: 3px; border-style: double; }
 .bousai-levels__row--4, .bousai-levels__row--5 { border-color: var(--line-dim); }
+
+.updates__item { border-bottom: 1.5px dashed var(--line-dash); padding: 8px 0; }
+.updates__item p { margin: 4px 0 0; }
+
+/* 全体の画面：同じ所へ行く手続きのまとまり（v0.5.44） */
+.ov-visit { margin: 8px 0; padding: 8px 0 0; border-top: 1px dashed var(--line-dash); }
+.ov-visit__name { margin: 0 0 2px; font-size: var(--fs-body, 16px); }
+.ov-visit > .sub { margin: 0 0 6px; }
+.ov-visit { padding-bottom: 8px; border-bottom: 1px dashed var(--line-dash); }
+.field-row { display: flex; flex-direction: column; gap: 4px; margin: 8px 0 12px; }
+.gomi-quote__links { list-style: none; margin: 4px 0 0; padding: 0; font-size: var(--fs-small, 14px); }
+.way-cond { display: block; margin-top: 2px; font-weight: 500; }

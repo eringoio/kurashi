@@ -145,7 +145,7 @@ export function MethodChooser({ methods, value, onChange }: { methods: MethodVM[
             <span className="pt-grow">
               <strong>{name(m)}</strong>
               {m.when && <span className="pt-hint"><One t={m.when} /></span>}
-              {m.unverified && <span className="pt-tag"><One k="pat.confirm" /></span>}
+              {tagged(m) && <span className="pt-tag"><One k="pat.confirm" /></span>}
             </span>
             <span className="pt-method__mark" aria-hidden="true">{m.id === value ? '✓' : ''}</span>
           </button>
@@ -160,6 +160,9 @@ export function MethodChooser({ methods, value, onChange }: { methods: MethodVM[
     </fieldset>
   );
 }
+
+/** 方法の「要確認」の札：未確認で、方法の文の中にまだ「要確認」と書いていないときだけ（同じ警告を重ねない。2026-11-08） */
+const tagged = (m: MethodVM) => m.unverified && !/要確認/.test((m.label as { ja?: string } | undefined)?.ja ?? '');
 
 const METHOD_ORDER: MethodKind[] = ['window', 'online', 'mail', 'phone'];
 
@@ -178,7 +181,7 @@ export function MethodList({ methods }: { methods: MethodVM[] }) {
           <p className="pt-methods__kind">
             <span className="pt-method__icon" aria-hidden="true">{METHOD_ICON[k]}</span>
             <strong><One k={('pat.method.' + k) as UiKey} /></strong>
-            {list.some((m) => m.unverified) && <span className="pt-tag"><One k="pat.confirm" /></span>}
+            {list.some(tagged) && <span className="pt-tag"><One k="pat.confirm" /></span>}
           </p>
           <ul className="pt-methods__list">{list.slice(0, 2).map(item)}</ul>
           {list.length > 2 && (

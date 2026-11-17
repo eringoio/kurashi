@@ -1,5 +1,4 @@
 {
-  "$comment": "質問バンク（SPEC 8.2）。並びは質問バンクの順（最初の質問はこの順で聞く）。文と選択肢を直すときは、このファイルだけを開く。",
   "questions": [
     {
       "id": "Q-origin",
@@ -69,6 +68,13 @@
             "eq": "japanese"
           },
           "value": "japanese"
+        },
+        {
+          "when": {
+            "fact": "zairyu_status",
+            "eq": "short_stay"
+          },
+          "value": "short_stay"
         }
       ],
       "ask_when": {
@@ -284,6 +290,15 @@
           "icon": "status-other"
         },
         {
+          "value": "short_stay",
+          "label": {
+            "ja": "{短期|たんき}{滞在|たいざい}（{観光|かんこう}・{訪問|ほうもん}など。90{日|にち}まで）",
+            "ja_easy": "{短|みじか}い{滞在|たいざい}（{旅行|りょこう}など。90{日|にち}まで）",
+            "en": "Temporary visitor (tourism, visits; up to 90 days)"
+          },
+          "icon": "status-other"
+        },
+        {
           "value": "other",
           "label": {
             "ja": "そのほかの{在留|ざいりゅう}{資格|しかく}",
@@ -301,6 +316,15 @@
           },
           "icon": "status-other"
         }
+      ],
+      "implied": [
+        {
+          "when": {
+            "fact": "residence_basis",
+            "eq": "short_stay"
+          },
+          "value": "short_stay"
+        }
       ]
     },
     {
@@ -310,7 +334,12 @@
       "scope": "person",
       "group": "about",
       "ask_when": {
-        "all": []
+        "all": [
+          {
+            "fact": "zairyu_status",
+            "ne": "short_stay"
+          }
+        ]
       },
       "text": {
         "ja": "{今|いま}のおもな{立場|たちば}は？（{学校|がっこう}と{仕事|しごと}の{両方|りょうほう}なら、おもなほう）",
@@ -400,7 +429,12 @@
       "scope": "person",
       "group": "about",
       "ask_when": {
-        "all": []
+        "all": [
+          {
+            "fact": "zairyu_status",
+            "ne": "short_stay"
+          }
+        ]
       },
       "text": {
         "ja": "{年齢|ねんれい}は？",
@@ -577,25 +611,87 @@
         {
           "value": "none",
           "label": {
-            "ja": "どちらでもない（{厚生|こうせい}{年金|ねんきん}でも{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}でもない）",
-            "ja_easy": "どちらでもない",
-            "en": "Neither (not in the Employees' Pension, not a dependent spouse)"
+            "ja": "どちらでもない（{厚生|こうせい}{年金|ねんきん}でも{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}でもない。{国民|こくみん}{年金|ねんきん}の{第|だい}1{号|ごう}にあたる）",
+            "ja_easy": "どちらでもない（{自分|じぶん}で{国民|こくみん}{年金|ねんきん}に{入|はい}る{人|ひと}。{第|だい}1{号|ごう}）",
+            "en": "Neither (not in the Employees' Pension, not a dependent spouse: National Pension Category 1)"
           }
         },
         {
           "value": "kosei",
           "label": {
-            "ja": "{職場|しょくば}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っている",
-            "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}（{厚生年金|こうせいねんきん}）に{入|はい}っている",
-            "en": "I am in my workplace's Employees' Pension"
+            "ja": "{職場|しょくば}の{厚生|こうせい}{年金|ねんきん}に{入|はい}っている（{第|だい}2{号|ごう}）",
+            "ja_easy": "{会社|かいしゃ}の{年金|ねんきん}（{厚生年金|こうせいねんきん}）に{入|はい}っている（{第|だい}2{号|ごう}）",
+            "en": "I am in my workplace's Employees' Pension (Category 2)"
           }
         },
         {
           "value": "spouse_dependent",
           "label": {
-            "ja": "{厚生|こうせい}{年金|ねんきん}に{入|はい}っている{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}に{入|はい}っている",
-            "ja_easy": "{夫|おっと}か{妻|つま}の{扶養|ふよう}に{入|はい}っている",
-            "en": "I am a dependent spouse of someone in the Employees' Pension"
+            "ja": "{厚生|こうせい}{年金|ねんきん}に{入|はい}っている{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}に{入|はい}っている（{第|だい}3{号|ごう}）",
+            "ja_easy": "{夫|おっと}か{妻|つま}の{扶養|ふよう}に{入|はい}っている（{第|だい}3{号|ごう}）",
+            "en": "I am a dependent spouse of someone in the Employees' Pension (Category 3)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-nenkin-enrolled",
+      "fact": "nenkin_enrolled",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "age_band",
+            "eq": "20_59"
+          },
+          {
+            "fact": "pension_type",
+            "eq": "none"
+          },
+          {
+            "fact": "origin",
+            "in": [
+              "other_city",
+              "within_nagoya",
+              "out_of_area"
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "{引|ひ}っ{越|こ}す{前|まえ}から、{国民|こくみん}{年金|ねんきん}に{入|はい}っていますか？",
+        "ja_easy": "{引|ひ}っ{越|こ}す{前|まえ}から、{国民|こくみん}{年金|ねんきん}に{入|はい}っていますか？",
+        "en": "Were you already in the National Pension before you moved?"
+      },
+      "why_asked": {
+        "ja": "もう{入|はい}っている{人|ひと}は、{加入|かにゅう}の{手続|てつづ}きは{要|い}りません。{学生|がくせい}{納付|のうふ}{特例|とくれい}や{免除|めんじょ}を{受|う}けている{人|ひと}も「{入|はい}っている」です。",
+        "ja_easy": "もう{入|はい}っている{人|ひと}は、{入|はい}る{手続|てつづ}きは{要|い}りません。{学生|がくせい}の{特例|とくれい}などを{受|う}けている{人|ひと}も「{入|はい}っている」です。",
+        "en": "If you are already in it, you do not need to join again. People with the student payment exception or an exemption are also in it."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "{入|はい}っている（{第|だい}1{号|ごう}。{学生|がくせい}{納付|のうふ}{特例|とくれい}・{免除|めんじょ}を{受|う}けている{人|ひと}も）",
+            "ja_easy": "{入|はい}っています（{学生|がくせい}の{特例|とくれい}などを{受|う}けている{人|ひと}も）",
+            "en": "Yes, I am in it (Category 1, including the student exception or an exemption)"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "{入|はい}っていない（20{歳|さい}になったばかり・{会社|かいしゃ}を{辞|や}めた など）",
+            "ja_easy": "{入|はい}っていません",
+            "en": "No (for example, I just turned 20 or left a company job)"
           }
         },
         {
@@ -944,6 +1040,15 @@
           }
         },
         {
+          "value": "pending",
+          "icon": "cashcard-dim",
+          "label": {
+            "ja": "{申|もう}し{込|こ}んで、{待|ま}っている（{結果|けっか}・カード）",
+            "ja_easy": "{申|もう}し{込|こ}んで、{待|ま}っている",
+            "en": "I applied and am waiting (result or card)"
+          }
+        },
+        {
           "value": false,
           "label": {
             "ja": "ない",
@@ -1088,8 +1193,7 @@
             "ja": "{個人|こじん}{事業|じぎょう}を{始|はじ}める",
             "ja_easy": "{自分|じぶん}で{事業|じぎょう}を{始|はじ}める",
             "en": "Start self-employment"
-          },
-          "when": "R-job-not-pt-only"
+          }
         },
         {
           "value": "biz_end",
@@ -1109,8 +1213,7 @@
             "ja_easy": "{会社|かいしゃ}をつくる",
             "en": "Start or run a company"
           },
-          "icon": "hall",
-          "when": "R-job-not-pt-only"
+          "icon": "hall"
         },
         {
           "value": "basics",
@@ -1146,7 +1249,8 @@
                 "permanent",
                 "long_term",
                 "cultural",
-                "trainee"
+                "trainee",
+                "short_stay"
               ]
             }
           }
@@ -1251,7 +1355,8 @@
                                 "permanent",
                                 "long_term",
                                 "cultural",
-                                "trainee"
+                                "trainee",
+                                "short_stay"
                               ]
                             }
                           },
@@ -1294,7 +1399,8 @@
                                 "permanent",
                                 "long_term",
                                 "cultural",
-                                "trainee"
+                                "trainee",
+                                "short_stay"
                               ]
                             }
                           },
@@ -1366,8 +1472,8 @@
       ]
     },
     {
-      "id": "Q-biz-invoice",
-      "fact": "biz_invoice",
+      "id": "Q-biz-taxable",
+      "fact": "biz_taxable",
       "stage": "in_card",
       "scope": "event",
       "ask_when": {
@@ -1375,12 +1481,66 @@
         "eq": "biz_end"
       },
       "text": {
-        "ja": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか。またはインボイス（{適格|てきかく}{請求|せいきゅう}{書|しょ}{発行|はっこう}{事業|じぎょう}{者|しゃ}）の{登録|とうろく}をしていますか？",
-        "ja_easy": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか？インボイスの{登録|とうろく}がありますか？",
-        "en": "Do you pay consumption tax, or are you registered as a qualified invoice issuer?"
+        "ja": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか（{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}ですか）？",
+        "ja_easy": "{消費|しょうひ}{税|ぜい}を{納|おさ}めていますか？",
+        "en": "Do you pay consumption tax (are you a taxable business for consumption tax)?"
       },
       "why_asked": {
-        "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}やインボイスの{登録|とうろく}がある{人|ひと}は、やめるときに{税務署|ぜいむしょ}への{届|とど}けが{別|べつ}に{要|い}るためです。",
+        "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}は、やめるときに{税務署|ぜいむしょ}への{届|とど}けが{別|べつ}に{要|い}るためです。",
+        "ja_easy": "{届|とど}けが{別|べつ}に{要|い}るからです。",
+        "en": "If so, closing the business needs a separate filing with the tax office."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-biz-invoice",
+      "fact": "biz_invoice",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "job_goal",
+            "eq": "biz_end"
+          },
+          {
+            "fact": "biz_taxable",
+            "eq": "no"
+          }
+        ]
+      },
+      "text": {
+        "ja": "インボイス（{適格|てきかく}{請求|せいきゅう}{書|しょ}{発行|はっこう}{事業|じぎょう}{者|しゃ}）の{登録|とうろく}をしていますか？",
+        "ja_easy": "インボイスの{登録|とうろく}がありますか？",
+        "en": "Are you registered as a qualified invoice issuer?"
+      },
+      "why_asked": {
+        "ja": "インボイスの{登録|とうろく}がある{人|ひと}は、やめるときに{税務署|ぜいむしょ}への{届|とど}けが{別|べつ}に{要|い}るためです。",
         "ja_easy": "{届|とど}けが{別|べつ}に{要|い}るからです。",
         "en": "If so, closing the business needs a separate filing with the tax office."
       },
@@ -1422,7 +1582,7 @@
       },
       "text": {
         "ja": "{青色|あおいろ}{申告|しんこく}をしていますか？",
-        "ja_easy": "青色申告をしていますか？",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}をしていますか？",
         "en": "Do you file blue-form tax returns?"
       },
       "why_asked": {
@@ -1530,7 +1690,7 @@
           "value": "planning",
           "label": {
             "ja": "これから{始|はじ}める",
-            "ja_easy": "これから始める",
+            "ja_easy": "これから{始|はじ}める",
             "en": "Not yet, I will start soon"
           }
         },
@@ -1538,7 +1698,7 @@
           "value": "started",
           "label": {
             "ja": "もう{始|はじ}めた",
-            "ja_easy": "もう始めた",
+            "ja_easy": "もう{始|はじ}めた",
             "en": "Yes, I have started"
           }
         },
@@ -1599,6 +1759,52 @@
       ]
     },
     {
+      "id": "Q-biz-aoiro-start",
+      "fact": "biz_aoiro_plan",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "job_goal",
+        "eq": "biz_start"
+      },
+      "text": {
+        "ja": "{確定|かくてい}{申告|しんこく}は、{青色|あおいろ}{申告|しんこく}にしますか？",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}にしますか？",
+        "en": "Will you file a blue-form tax return?"
+      },
+      "why_asked": {
+        "ja": "{青色|あおいろ}{申告|しんこく}は{選|えら}べる{制度|せいど}です。{青色|あおいろ}{申告|しんこく}にしたい{人|ひと}だけ、{期限|きげん}までに{申請|しんせい}{書|しょ}を{出|だ}します。",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}は、{選|えら}べます。したい{人|ひと}だけ、{申請|しんせい}{書|しょ}を{出|だ}します。",
+        "en": "Blue-form filing is optional. Only people who want it submit an application by the deadline."
+      },
+      "options": [
+        {
+          "value": "want",
+          "label": {
+            "ja": "{青色|あおいろ}{申告|しんこく}にしたい",
+            "ja_easy": "{青色|あおいろ}{申告|しんこく}にしたい",
+            "en": "I want blue-form filing"
+          }
+        },
+        {
+          "value": "white",
+          "label": {
+            "ja": "{白色|しろいろ}{申告|しんこく}にする",
+            "ja_easy": "{白色|しろいろ}{申告|しんこく}にする",
+            "en": "I will file a white-form return"
+          }
+        },
+        {
+          "value": "undecided",
+          "label": {
+            "ja": "まだ{決|き}めていない",
+            "ja_easy": "まだ{決|き}めていない",
+            "en": "Not decided yet"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-job-next",
       "fact": "job_next",
       "stage": "in_card",
@@ -1649,28 +1855,15 @@
       "stage": "in_card",
       "scope": "event",
       "ask_when": {
-        "any": [
-          {
-            "fact": "job_goal",
-            "eq": "leave"
-          },
-          {
-            "all": [
-              {
-                "fact": "job_goal",
-                "eq": "pt_end"
-              },
-              {
-                "fact": "insurance",
-                "eq": "employer_self"
-              }
-            ]
-          }
+        "fact": "job_goal",
+        "in": [
+          "leave",
+          "pt_end"
         ]
       },
       "text": {
         "ja": "{辞|や}める{仕事|しごと}で、{雇用|こよう}{保険|ほけん}に{入|はい}っていましたか？",
-        "ja_easy": "辞める仕事で、雇用保険に入っていましたか？",
+        "ja_easy": "{辞|や}める{仕事|しごと}で、{雇用|こよう}{保険|ほけん}に{入|はい}っていましたか？",
         "en": "Were you in employment insurance at the job you are leaving?"
       },
       "why_asked": {
@@ -1797,7 +1990,8 @@
                         "permanent",
                         "long_term",
                         "cultural",
-                        "trainee"
+                        "trainee",
+                        "short_stay"
                       ]
                     }
                   },
@@ -1957,6 +2151,106 @@
       ]
     },
     {
+      "id": "Q-mo-mynumber",
+      "fact": "has_mynumber_card",
+      "stage": "in_card",
+      "scope": "person",
+      "ask_when": {
+        "fact": "nationality",
+        "eq": "japanese"
+      },
+      "text": {
+        "ja": "マイナンバーカードを{持|も}っていますか？",
+        "ja_easy": "マイナンバーカードがありますか？",
+        "en": "Do you have a My Number Card?"
+      },
+      "why_asked": {
+        "ja": "{持|も}っている{日本|にほん}{国籍|こくせき}の{人|ひと}は、{国外|こくがい}{転出|てんしゅつ}のときに{手続|てつづ}きをすると、{国外|こくがい}でもカードを{使|つか}い{続|つづ}けられるためです。",
+        "ja_easy": "カードがある{人|ひと}は、{日本|にほん}を{出|で}たあとも{使|つか}い{続|つづ}ける{手続|てつづ}きができます。",
+        "en": "If you have the card, you can file to keep using it after you move abroad."
+      },
+      "options": [
+        {
+          "value": true,
+          "label": {
+            "ja": "はい",
+            "ja_easy": "はい",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": false,
+          "label": {
+            "ja": "いいえ",
+            "ja_easy": "いいえ",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-mo-reentry",
+      "fact": "mo_reentry",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "nationality",
+        "eq": "foreign"
+      },
+      "text": {
+        "ja": "{日本|にほん}を{出|で}るとき、{在留|ざいりゅう}カードについてあてはまるものは？",
+        "ja_easy": "{日本|にほん}を{出|で}るとき、{在留|ざいりゅう}カードはどれですか？",
+        "en": "When you leave Japan, which describes your residence card?"
+      },
+      "why_asked": {
+        "ja": "{再|さい}{入国|にゅうこく}{許可|きょか}（みなし{再|さい}{入国|にゅうこく}{許可|きょか}を{含|ふく}む）で{出国|しゅっこく}するときは、{出国|しゅっこく}のときに{在留|ざいりゅう}カードを{返|かえ}しません。{許可|きょか}の{期間|きかん}の{中|なか}に{戻|もど}らなかったときは、{失効|しっこう}した{日|ひ}から14{日|にち}{以内|いない}に{返|かえ}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{再入国許可|さいにゅうこくきょか}で{出|で}るときは、カードを{返|かえ}しません。{期間|きかん}の{中|なか}に{戻|もど}らなかったときは、14{日|にち}{以内|いない}に{返|かえ}します（{要|よう}{確認|かくにん}）。",
+        "en": "If you leave with a re-entry permit (including a deemed re-entry permit), you do not return the card when you leave. If you do not come back within the permit period, return it within 14 days of it expiring (to be checked)."
+      },
+      "options": [
+        {
+          "value": "reentry",
+          "label": {
+            "ja": "{日本|にほん}に{戻|もど}る{予定|よてい}で、{再|さい}{入国|にゅうこく}{許可|きょか}（みなし{再|さい}{入国|にゅうこく}{許可|きょか}を{含|ふく}む）で{出国|しゅっこく}する",
+            "ja_easy": "{日本|にほん}に{戻|もど}る{予定|よてい}で、{再入国許可|さいにゅうこくきょか}で{出|で}る",
+            "en": "I plan to come back and will leave with a re-entry permit (or a deemed re-entry permit)"
+          }
+        },
+        {
+          "value": "no_return",
+          "label": {
+            "ja": "{日本|にほん}に{戻|もど}らない（{再|さい}{入国|にゅうこく}{許可|きょか}を{使|つか}わない）",
+            "ja_easy": "{日本|にほん}に{戻|もど}らない",
+            "en": "I will not come back (no re-entry permit)"
+          }
+        },
+        {
+          "value": "no_card",
+          "label": {
+            "ja": "{在留|ざいりゅう}カードを{持|も}っていない（{特別|とくべつ}{永住|えいじゅう}{者|しゃ}など）",
+            "ja_easy": "{在留|ざいりゅう}カードがない（{特別|とくべつ}{永住|えいじゅう}{者|しゃ}など）",
+            "en": "I do not have a residence card (e.g. special permanent resident)"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-marriage-type",
       "fact": "marriage_type",
       "stage": "upfront",
@@ -2002,8 +2296,8 @@
       ]
     },
     {
-      "id": "Q-marriage-kind",
-      "fact": "marriage_kind",
+      "id": "Q-marriage-stage",
+      "fact": "marriage_stage",
       "stage": "upfront",
       "scope": "event",
       "ask_when": {
@@ -2014,53 +2308,53 @@
         ]
       },
       "text": {
-        "ja": "{結婚|けっこん}するふたりの{国籍|こくせき}は？",
-        "ja_easy": "{結婚|けっこん}するふたりの{国籍|こくせき}は？",
-        "en": "What are the nationalities of the two people marrying?"
+        "ja": "{結婚|けっこん}の{手続|てつづ}きは、いまどの{段階|だんかい}ですか？",
+        "ja_easy": "{結婚|けっこん}の{手続|てつづ}きは、いまどこまで{進|すす}んでいますか？",
+        "en": "Where are you in the marriage process?"
       },
       "why_asked": {
-        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}が{含|ふく}まれると、{婚姻届|こんいんとどけ}に{必要|ひつよう}な{書類|しょるい}が{違|ちが}うためです。わからないときは「わからない」を{選|えら}んでください。",
-        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}がいると、{出|だ}す{書類|しょるい}が{違|ちが}うからです。わからないときは「わからない」を{選|えら}びます。",
-        "en": "The documents are different if a foreign national is included. If you are not sure, choose \"Not sure\"."
+        "ja": "{婚姻|こんいん}{届|とどけ}をこれから{出|だ}すか、もう{出|だ}したか、{海外|かいがい}で{結婚|けっこん}したかで、{要|い}る{手続|てつづ}きが{違|ちが}うためです。{海外|かいがい}で{結婚式|けっこんしき}を{挙|あ}げただけで、その{国|くに}の{法律|ほうりつ}で{婚姻|こんいん}が{成立|せいりつ}していないときは、「{日本|にほん}でこれから{婚姻|こんいん}{届|とどけ}を{出|だ}す」か「まだ{考|かんが}えている・わからない」を{選|えら}んでください。",
+        "ja_easy": "{婚姻|こんいん}{届|とどけ}をこれから{出|だ}すか、もう{出|だ}したか、{外国|がいこく}で{結婚|けっこん}したかで、{要|い}る{手続|てつづ}きが{変|か}わるからです。{外国|がいこく}で{式|しき}をしただけのときは、「これから{婚姻|こんいん}{届|とどけ}を{出|だ}す」か「まだ{考|かんが}えている」を{選|えら}びます。",
+        "en": "The steps differ depending on whether you will submit a marriage registration, have already submitted it, or married abroad. If you only held a ceremony abroad and the marriage was not legally established there, choose \"I will submit a marriage registration in Japan\" or \"Still thinking / not sure\"."
       },
       "options": [
         {
-          "value": "japanese_foreign",
+          "value": "before",
           "label": {
-            "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と、{外国|がいこく}{籍|せき}の{人|ひと}",
-            "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}と、{外国|がいこく}の{国籍|こくせき}の{人|ひと}",
-            "en": "One Japanese national and one foreign national"
+            "ja": "{日本|にほん}でこれから{婚姻|こんいん}{届|とどけ}を{出|だ}す",
+            "ja_easy": "{日本|にほん}で、これから{婚姻|こんいん}{届|とどけ}を{出|だ}す",
+            "en": "I will submit a marriage registration in Japan"
           }
         },
         {
-          "value": "foreign_foreign",
+          "value": "submitted",
           "label": {
-            "ja": "どちらも{外国|がいこく}{籍|せき}",
-            "ja_easy": "どちらも{外国|がいこく}の{国籍|こくせき}",
-            "en": "Both are foreign nationals"
+            "ja": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}をもう{出|だ}した",
+            "ja_easy": "{日本|にほん}で、{婚姻|こんいん}{届|とどけ}をもう{出|だ}した",
+            "en": "I have already submitted it in Japan"
           }
         },
         {
-          "value": "both_japanese",
+          "value": "abroad",
           "label": {
-            "ja": "どちらも{日本|にほん}{国籍|こくせき}",
-            "ja_easy": "どちらも{日本|にほん}の{国籍|こくせき}",
-            "en": "Both are Japanese nationals"
+            "ja": "{海外|かいがい}で、その{国|くに}の{法律|ほうりつ}で{婚姻|こんいん}が{成立|せいりつ}した",
+            "ja_easy": "{外国|がいこく}で、その{国|くに}の{法律|ほうりつ}で{結婚|けっこん}した",
+            "en": "We married abroad under that country's law"
           }
         },
         {
-          "value": "unknown",
+          "value": "considering",
           "label": {
-            "ja": "わからない",
-            "ja_easy": "わからない",
-            "en": "Not sure"
+            "ja": "まだ{考|かんが}えている・わからない",
+            "ja_easy": "まだ{考|かんが}えている・わからない",
+            "en": "Still thinking / not sure"
           }
         }
       ]
     },
     {
-      "id": "Q-marriage-name",
-      "fact": "name_changed",
+      "id": "Q-marriage-nat",
+      "fact": "marriage_nat",
       "stage": "upfront",
       "scope": "event",
       "ask_when": {
@@ -2071,30 +2365,111 @@
         ]
       },
       "text": {
-        "ja": "{結婚|けっこん}で、あなたの{氏名|しめい}（{名前|なまえ}）が{変|か}わりますか？",
-        "ja_easy": "{結婚|けっこん}で、あなたの{名前|なまえ}が{変|か}わりますか？",
-        "en": "Will your name change because of the marriage?"
+        "ja": "あなたと{相手|あいて}の{国籍|こくせき}は？",
+        "ja_easy": "あなたと{相手|あいて}の{国籍|こくせき}は？",
+        "en": "What are your and your partner's nationalities?"
       },
       "why_asked": {
-        "ja": "{氏名|しめい}が{変|か}わると、{在留|ざいりゅう}カードやマイナンバーカードの{届出|とどけで}が{要|い}るためです。{決|き}まっていないときは「まだわからない」を{選|えら}んでください。",
-        "ja_easy": "{名前|なまえ}が{変|か}わると、{在留|ざいりゅう}カードなどの{届|とど}けが{要|い}るからです。まだ{決|き}まっていないときは「まだわからない」を{選|えら}びます。",
-        "en": "If your name changes, you must report it for your residence card and My Number Card. If it is not decided, choose \"Not decided yet\"."
+        "ja": "あなたと{相手|あいて}のどちらが{外国|がいこく}{籍|せき}かで、{婚姻|こんいん}{届|とどけ}の{書類|しょるい}と、{在留|ざいりゅう}カードなどの{届出|とどけで}をする{人|ひと}が{違|ちが}うためです。{答|こた}えたくないときは「わからない・{答|こた}えたくない」を{選|えら}んでください。",
+        "ja_easy": "どちらが{外国|がいこく}の{国籍|こくせき}かで、{書類|しょるい}と、{届|とど}けをする{人|ひと}が{変|か}わるからです。{答|こた}えたくないときは「わからない・{答|こた}えたくない」を{選|えら}びます。",
+        "en": "Which of you is a foreign national changes the documents for the registration and who has to report changes (such as for the residence card). If you prefer not to say, choose \"Not sure / prefer not to say\"."
       },
       "options": [
         {
-          "value": "yes",
+          "value": "jp_foreign",
           "label": {
-            "ja": "{変|か}わる",
-            "ja_easy": "{変|か}わる",
-            "en": "Yes, it will change"
+            "ja": "あなたは{日本|にほん}{国籍|こくせき}、{相手|あいて}は{外国|がいこく}{籍|せき}",
+            "ja_easy": "あなたは{日本|にほん}の{国籍|こくせき}、{相手|あいて}は{外国|がいこく}の{国籍|こくせき}",
+            "en": "I am Japanese; my partner is a foreign national"
           }
         },
         {
-          "value": "no",
+          "value": "foreign_jp",
           "label": {
-            "ja": "{変|か}わらない",
-            "ja_easy": "{変|か}わらない",
-            "en": "No, it will stay the same"
+            "ja": "あなたは{外国|がいこく}{籍|せき}、{相手|あいて}は{日本|にほん}{国籍|こくせき}",
+            "ja_easy": "あなたは{外国|がいこく}の{国籍|こくせき}、{相手|あいて}は{日本|にほん}の{国籍|こくせき}",
+            "en": "I am a foreign national; my partner is Japanese"
+          }
+        },
+        {
+          "value": "both_japanese",
+          "label": {
+            "ja": "ふたりとも{日本|にほん}{国籍|こくせき}",
+            "ja_easy": "ふたりとも{日本|にほん}の{国籍|こくせき}",
+            "en": "We are both Japanese nationals"
+          }
+        },
+        {
+          "value": "both_foreign",
+          "label": {
+            "ja": "ふたりとも{外国|がいこく}{籍|せき}",
+            "ja_easy": "ふたりとも{外国|がいこく}の{国籍|こくせき}",
+            "en": "We are both foreign nationals"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない・{答|こた}えたくない",
+            "ja_easy": "わからない・{答|こた}えたくない",
+            "en": "Not sure / prefer not to say"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-marriage-name-who",
+      "fact": "name_who",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "fact": "marriage_type",
+        "in": [
+          "konin",
+          "unknown"
+        ]
+      },
+      "text": {
+        "ja": "{結婚|けっこん}で{氏名|しめい}（{名字|みょうじ}）が{変|か}わる{人|ひと}は？",
+        "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる{人|ひと}は？",
+        "en": "Whose name will change because of the marriage?"
+      },
+      "why_asked": {
+        "ja": "{氏名|しめい}が{変|か}わる{人|ひと}だけに、{在留|ざいりゅう}カードやマイナンバーカードの{変更|へんこう}の{届出|とどけで}が{要|い}るためです。{日本|にほん}{国籍|こくせき}の{人|ひと}が{外国|がいこく}{籍|せき}の{人|ひと}と{結婚|けっこん}しても、{日本|にほん}{国籍|こくせき}の{人|ひと}の{氏|うじ}は{自動的|じどうてき}には{変|か}わりません。{変|か}えたい{人|ひと}は、{別|べつ}の{届出|とどけで}をします。",
+        "ja_easy": "{名前|なまえ}が{変|か}わる{人|ひと}だけ、{在留|ざいりゅう}カードなどの{届|とど}けが{要|い}るからです。{日本|にほん}の{国籍|こくせき}の{人|ひと}は、{外国|がいこく}の{国籍|こくせき}の{人|ひと}と{結婚|けっこん}しても、{名字|みょうじ}は{自動|じどう}では{変|か}わりません。",
+        "en": "Only the person whose name changes needs to report it for the residence card or My Number Card. A Japanese national who marries a foreign national does not change surname automatically; a separate notification is needed if they want to."
+      },
+      "options": [
+        {
+          "value": "self",
+          "label": {
+            "ja": "あなた",
+            "ja_easy": "あなた",
+            "en": "Me"
+          }
+        },
+        {
+          "value": "partner",
+          "label": {
+            "ja": "{相手|あいて}",
+            "ja_easy": "{相手|あいて}",
+            "en": "My partner"
+          }
+        },
+        {
+          "value": "both",
+          "label": {
+            "ja": "ふたりとも",
+            "ja_easy": "ふたりとも",
+            "en": "Both of us"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ja": "どちらも{変|か}わらない",
+            "ja_easy": "どちらも{変|か}わらない",
+            "en": "Neither"
           }
         },
         {
@@ -2108,38 +2483,50 @@
       ]
     },
     {
-      "id": "Q-divorce-route",
-      "fact": "divorce_route",
+      "id": "Q-marriage-home",
+      "fact": "marriage_home",
       "stage": "upfront",
       "scope": "event",
       "ask_when": {
-        "all": []
+        "fact": "marriage_type",
+        "in": [
+          "konin",
+          "unknown"
+        ]
       },
       "text": {
-        "ja": "{離婚|りこん}の{方法|ほうほう}は？",
-        "ja_easy": "{離婚|りこん}の{方法|ほうほう}は？",
-        "en": "How is the divorce being made?"
+        "ja": "{住所|じゅうしょ}や{世帯|せたい}は{変|か}わりますか？",
+        "ja_easy": "{住|す}む{所|ところ}や{世帯|せたい}は{変|か}わりますか？",
+        "en": "Will your address or household change?"
       },
       "why_asked": {
-        "ja": "{話|はな}し{合|あ}いで{離婚|りこん}するときと、{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}するときでは、{届出|とどけで}の{期限|きげん}と{書類|しょるい}が{違|ちが}うためです。あてはまるかどうかは、{窓口|まどぐち}か{裁判所|さいばんしょ}で{確認|かくにん}してください。",
-        "ja_easy": "{話|はな}し{合|あ}いのときと、{調停|ちょうてい}・{裁判|さいばん}のときで、{届|とど}けの{期限|きげん}と{書類|しょるい}が{違|ちが}うからです。わからないときは「わからない」を{選|えら}びます。",
-        "en": "The deadline and documents differ between divorce by agreement and divorce by mediation or court. Confirm which applies at the counter or the court."
+        "ja": "{結婚|けっこん}しただけでは、{世帯|せたい}の{届|とどけ}は{要|い}りません。{引|ひ}っ{越|こ}すときは{引|ひ}っ{越|こ}しの{届出|とどけで}、{住所|じゅうしょ}は{同|おな}じで{世帯|せたい}を{変|か}えるときは{世帯|せたい}の{届|とどけ}が{要|い}るためです。",
+        "ja_easy": "{結婚|けっこん}しただけでは、{世帯|せたい}の{届|とど}けは{要|い}りません。{引|ひ}っ{越|こ}すときと、{世帯|せたい}を{変|か}えるときで、{届|とど}けが{違|ちが}うからです。",
+        "en": "Marriage alone does not require a household notification. Moving needs a moving notification; changing the household at the same address needs a household notification."
       },
       "options": [
         {
-          "value": "agreement",
+          "value": "move",
           "label": {
-            "ja": "{話|はな}し{合|あ}いで{決|き}める（{協議|きょうぎ}{離婚|りこん}）",
-            "ja_easy": "{話|はな}し{合|あ}いで{決|き}める（{協議|きょうぎ}{離婚|りこん}）",
-            "en": "By agreement between the two of us"
+            "ja": "{引|ひ}っ{越|こ}す・{引|ひ}っ{越|こ}した",
+            "ja_easy": "{引|ひ}っ{越|こ}す・{引|ひ}っ{越|こ}した",
+            "en": "We will move / have moved"
           }
         },
         {
-          "value": "court",
+          "value": "household",
           "label": {
-            "ja": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}や{裁判|さいばん}で{決|き}まった（{決|き}まる{予定|よてい}）",
-            "ja_easy": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}や{裁判|さいばん}で{決|き}まった（{決|き}まる{予定|よてい}）",
-            "en": "By family court mediation or a court ruling (decided or expected)"
+            "ja": "{住所|じゅうしょ}は{同|おな}じで、{世帯|せたい}を{一緒|いっしょ}にする・{世帯主|せたいぬし}が{変|か}わる",
+            "ja_easy": "{住|す}む{所|ところ}は{同|おな}じで、{世帯|せたい}を{一緒|いっしょ}にする・{世帯主|せたいぬし}が{変|か}わる",
+            "en": "Same address; we will merge households or change the head of household"
+          }
+        },
+        {
+          "value": "none",
+          "label": {
+            "ja": "どちらも{変|か}わらない",
+            "ja_easy": "どちらも{変|か}わらない",
+            "en": "Neither changes"
           }
         },
         {
@@ -2153,26 +2540,87 @@
       ]
     },
     {
-      "id": "Q-divorce-japanese",
-      "fact": "divorce_japanese",
-      "stage": "upfront",
-      "scope": "event",
+      "id": "Q-marriage-zairyu-card",
+      "fact": "holds_zairyu_card",
+      "stage": "in_card",
+      "scope": "person",
       "ask_when": {
-        "all": []
+        "fact": "marriage_nat",
+        "in": [
+          "foreign_jp",
+          "both_foreign"
+        ]
       },
       "text": {
-        "ja": "あなたか{相手|あいて}は、{日本|にほん}{国籍|こくせき}ですか？",
-        "ja_easy": "あなたか{相手|あいて}は、{日本|にほん}の{国籍|こくせき}ですか？",
-        "en": "Is either you or your spouse a Japanese national?"
+        "ja": "{在留|ざいりゅう}カードを{持|も}っていますか？",
+        "ja_easy": "{在留|ざいりゅう}カードがありますか？",
+        "en": "Do you have a residence card?"
       },
       "why_asked": {
-        "ja": "{離婚|りこん}{後|ご}の{氏|うじ}の{届|とどけ}は、{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きのためです。",
-        "ja_easy": "{離婚|りこん}のあとの{名字|みょうじ}の{届|とど}けは、{日本|にほん}の{戸籍|こせき}がある{人|ひと}の{手続|てつづ}きだからです。",
-        "en": "The notification about the family name after divorce is for people with a Japanese family register."
+        "ja": "{在留|ざいりゅう}カードの{記載|きさい}{事項|じこう}の{変更|へんこう}の{届出|とどけで}は、{在留|ざいりゅう}カードを{持|も}つ{中長期|ちゅうちょうき}{在留|ざいりゅう}{者|しゃ}の{手続|てつづ}きです。{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{人|ひと}は、{届|とど}け{出|で}る{所|ところ}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードの{名前|なまえ}を{変|か}える{届|とど}けは、{在留|ざいりゅう}カードを{持|も}っている{人|ひと}の{手続|てつづ}きだからです。{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{人|ひと}は、{届|とど}ける{所|ところ}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "en": "The residence card change report is for mid- to long-term residents who hold a residence card. Holders of a Special Permanent Resident Certificate report elsewhere (to be checked)."
       },
       "options": [
         {
           "value": "yes",
+          "label": {
+            "ja": "{在留|ざいりゅう}カードを{持|も}っている",
+            "ja_easy": "{在留|ざいりゅう}カードがある",
+            "en": "Yes, a residence card"
+          }
+        },
+        {
+          "value": "tokubetsu",
+          "label": {
+            "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}を{持|も}っている",
+            "ja_easy": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}がある",
+            "en": "A Special Permanent Resident Certificate"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "どちらも{持|も}っていない",
+            "ja_easy": "どちらもない",
+            "en": "Neither"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-marriage-mynumber",
+      "fact": "has_mynumber_card",
+      "stage": "in_card",
+      "scope": "person",
+      "ask_when": {
+        "fact": "name_who",
+        "in": [
+          "self",
+          "both"
+        ]
+      },
+      "text": {
+        "ja": "マイナンバーカードを{持|も}っていますか？",
+        "ja_easy": "マイナンバーカードがありますか？",
+        "en": "Do you have a My Number Card?"
+      },
+      "why_asked": {
+        "ja": "マイナンバーカードを{持|も}っている{人|ひと}だけ、カードの{記載|きさい}{事項|じこう}の{変更|へんこう}が{要|い}るためです。",
+        "ja_easy": "カードがある{人|ひと}だけ、カードの{名前|なまえ}を{変|か}える{手続|てつづ}きが{要|い}るからです。",
+        "en": "Only people who have a My Number Card need to update it."
+      },
+      "options": [
+        {
+          "value": true,
           "label": {
             "ja": "はい",
             "ja_easy": "はい",
@@ -2180,7 +2628,7 @@
           }
         },
         {
-          "value": "no",
+          "value": false,
           "label": {
             "ja": "いいえ",
             "ja_easy": "いいえ",
@@ -2191,8 +2639,271 @@
           "value": "unknown",
           "label": {
             "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-divorce-stage",
+      "fact": "divorce_stage",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{離婚|りこん}は、いまどの{段階|だんかい}ですか？",
+        "ja_easy": "{離婚|りこん}は、いまどこまで{進|すす}んでいますか？",
+        "en": "Where are you in the divorce process?"
+      },
+      "why_asked": {
+        "ja": "これから{届|とどけ}を{出|だ}すか、もう{成立|せいりつ}したか、どの{方法|ほうほう}で{離婚|りこん}するかで、{届|とどけ}の{期限|きげん}と、そのあとの{手続|てつづ}きの{時期|じき}が{違|ちが}うためです。わからないときは「わからない」を{選|えら}んでください。",
+        "ja_easy": "これから{届|とど}けを{出|だ}すか、もう{離婚|りこん}したか、どの{方法|ほうほう}かで、{期限|きげん}と、あとの{手続|てつづ}きが{変|か}わるからです。わからないときは「わからない」を{選|えら}びます。",
+        "en": "The deadline and the timing of later steps depend on whether the divorce is still to be registered, already finalized, and how it is made. If you are not sure, choose \"Not sure\"."
+      },
+      "options": [
+        {
+          "value": "agreement_plan",
+          "label": {
+            "ja": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）。{離婚|りこん}{届|とどけ}はこれから",
+            "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）。{離婚|りこん}{届|とどけ}はこれから",
+            "en": "Divorce by agreement; the registration is not submitted yet"
+          }
+        },
+        {
+          "value": "agreement_done",
+          "label": {
+            "ja": "{話|はな}し{合|あ}いで{離婚|りこん}し、{離婚|りこん}{届|とどけ}をもう{出|だ}した",
+            "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}して、{離婚|りこん}{届|とどけ}をもう{出|だ}した",
+            "en": "Divorced by agreement; the registration is already submitted"
+          }
+        },
+        {
+          "value": "court_ongoing",
+          "label": {
+            "ja": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}・{裁判|さいばん}で{進|すす}めている",
+            "ja_easy": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}・{裁判|さいばん}をしている",
+            "en": "Family court mediation or a court case is in progress"
+          }
+        },
+        {
+          "value": "court_done",
+          "label": {
+            "ja": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{成立|せいりつ}した",
+            "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった",
+            "en": "The divorce was finalized by mediation or court"
+          }
+        },
+        {
+          "value": "abroad",
+          "label": {
+            "ja": "{海外|かいがい}で{離婚|りこん}が{成立|せいりつ}した",
+            "ja_easy": "{外国|がいこく}で{離婚|りこん}した",
+            "en": "The divorce was finalized abroad"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
             "ja_easy": "わからない",
             "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-divorce-children",
+      "fact": "divorce_children",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "ふたりの{間|あいだ}に、{未成年|みせいねん}（18{歳|さい}{未満|みまん}）の{子|こ}どもはいますか？",
+        "ja_easy": "ふたりの{子|こ}どもで、18{歳|さい}より{下|した}の{子|こ}どもはいますか？",
+        "en": "Do you have a child under 18 together?"
+      },
+      "why_asked": {
+        "ja": "{未成年|みせいねん}の{子|こ}どもがいるときは、{親権|しんけん}や{養育費|よういくひ}などを{決|き}めることと、{子|こ}どもの{手続|てつづ}きがあるためです。",
+        "ja_easy": "18{歳|さい}より{下|した}の{子|こ}どもがいるときは、{親権|しんけん}などを{決|き}めることと、{子|こ}どもの{手続|てつづ}きがあるからです。",
+        "en": "If you have a child under 18, you need to decide parental authority and other matters, and there are procedures for the child."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "いる",
+            "ja_easy": "いる",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "いない",
+            "ja_easy": "いない",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない・{答|こた}えたくない",
+            "ja_easy": "わからない・{答|こた}えたくない",
+            "en": "Not sure / prefer not to say"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-status-as-spouse",
+      "fact": "status_as_spouse",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          },
+          {
+            "fact": "zairyu_status",
+            "in": [
+              "family",
+              "spouse"
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "いまの{在留|ざいりゅう}{資格|しかく}は、{配偶|はいぐう}{者|しゃ}（{夫|おっと}・{妻|つま}）として{持|も}っていますか？",
+        "ja_easy": "いまの{在留|ざいりゅう}{資格|しかく}は、{夫|おっと}や{妻|つま}として{持|も}っていますか？",
+        "en": "Do you hold your current status of residence as a spouse (husband or wife)?"
+      },
+      "why_asked": {
+        "ja": "{入管|にゅうかん}への{配偶|はいぐう}{者|しゃ}に{関|かん}する{届出|とどけで}は、「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」を{配偶|はいぐう}{者|しゃ}として{持|も}っている{人|ひと}の{手続|てつづ}きです。{子|こ}どもとして{持|も}っている{人|ひと}は、この{届出|とどけで}の{対象|たいしょう}ではありません。",
+        "ja_easy": "{入管|にゅうかん}への{届|とど}けは、{夫|おっと}や{妻|つま}としてこの{在留|ざいりゅう}{資格|しかく}を{持|も}っている{人|ひと}の{手続|てつづ}きです。{子|こ}どもとして{持|も}っている{人|ひと}は、ちがいます。",
+        "en": "The Immigration notification about a spouse is for people who hold \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\" as a spouse. People who hold it as a child are not covered."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "{配偶|はいぐう}{者|しゃ}として",
+            "ja_easy": "{夫|おっと}・{妻|つま}として",
+            "en": "As a spouse"
+          }
+        },
+        {
+          "value": "child",
+          "label": {
+            "ja": "{子|こ}どもとして",
+            "ja_easy": "{子|こ}どもとして",
+            "en": "As a child"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-divorce-surname",
+      "fact": "divorce_changed_surname",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "nationality",
+        "eq": "japanese"
+      },
+      "text": {
+        "ja": "{結婚|けっこん}のときに、あなたの{氏|うじ}（{名字|みょうじ}）を{変|か}えましたか？",
+        "ja_easy": "{結婚|けっこん}したとき、あなたの{名字|みょうじ}は{変|か}わりましたか？",
+        "en": "Did you change your surname when you married?"
+      },
+      "why_asked": {
+        "ja": "{離婚|りこん}{後|ご}の{氏|うじ}の{届|とどけ}は、{婚姻|こんいん}で{氏|うじ}を{改|あらた}めた{人|ひと}の{手続|てつづ}きだからです。",
+        "ja_easy": "{結婚|けっこん}で{名字|みょうじ}が{変|か}わった{人|ひと}の{手続|てつづ}きだからです。",
+        "en": "The notification about the surname after divorce is for people who changed their surname at marriage."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "{変|か}えた",
+            "ja_easy": "{変|か}わった",
+            "en": "Yes"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "{変|か}えていない",
+            "ja_easy": "{変|か}わっていない",
+            "en": "No"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わかりません",
+            "en": "I'm not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-divorce-keep-name",
+      "fact": "divorce_keep_name",
+      "stage": "in_card",
+      "scope": "event",
+      "ask_when": {
+        "fact": "divorce_changed_surname",
+        "eq": "yes"
+      },
+      "text": {
+        "ja": "{離婚|りこん}のあとも、いまの{氏|うじ}（{名字|みょうじ}）を{使|つか}いたいですか？",
+        "ja_easy": "{離婚|りこん}のあとも、いまの{名字|みょうじ}を{使|つか}いたいですか？",
+        "en": "Do you want to keep your current surname after the divorce?"
+      },
+      "why_asked": {
+        "ja": "{離婚|りこん}のあとも{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{使|つか}うときだけ、{離婚|りこん}{届|とどけ}とは{別|べつ}の{届|とどけ}が{要|い}るためです。",
+        "ja_easy": "いまの{名字|みょうじ}を{使|つか}うときだけ、{別|べつ}の{届|とど}けが{要|い}るからです。",
+        "en": "A separate notification is needed only if you keep your married surname."
+      },
+      "options": [
+        {
+          "value": "yes",
+          "label": {
+            "ja": "{使|つか}いたい",
+            "ja_easy": "{使|つか}いたい",
+            "en": "Yes, keep it"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "ja": "{元|もと}の{氏|うじ}に{戻|もど}る",
+            "ja_easy": "もとの{名字|みょうじ}にもどる",
+            "en": "No, go back to my former surname"
+          }
+        },
+        {
+          "value": "undecided",
+          "label": {
+            "ja": "まだ{決|き}めていない",
+            "ja_easy": "まだ{決|き}めていない",
+            "en": "Not decided yet"
           }
         }
       ]
@@ -2212,9 +2923,9 @@
         "en": "What was in the wallet?"
       },
       "why_asked": {
-        "ja": "{物|もの}ごとに、{止|と}める{所|ところ}と{再|さい}{発行|はっこう}の{手続|てつづ}きが{違|ちが}うためです。{選|えら}ばなかった{物|もの}の{手続|てつづ}きは{出|だ}しません。わからないときは「よくわからない」を{選|えら}んでください。",
-        "ja_easy": "{物|もの}によって、{手続|てつづ}きが{違|ちが}うからです。わからないときは「わからない」を{選|えら}びます。",
-        "en": "Each item has its own steps. We do not show steps for items you did not choose. If you are not sure, choose \"Not sure\"."
+        "ja": "{物|もの}ごとに、{止|と}める{所|ところ}と{再|さい}{発行|はっこう}の{手続|てつづ}きが{違|ちが}うためです。{選|えら}ばなかった{物|もの}の{手続|てつづ}きは{出|だ}しません。マイナ{保険|ほけん}{証|しょう}（マイナンバーカード）は「マイナンバーカード」を{選|えら}びます。わからないときは「よくわからない」を{選|えら}んでください。あとで{選|えら}び{直|なお}せます。",
+        "ja_easy": "{物|もの}によって、{手続|てつづ}きが{違|ちが}うからです。マイナ{保険|ほけん}{証|しょう}は「マイナンバーカード」を{選|えら}びます。わからないときは「わからない」を{選|えら}びます。あとで{変|か}えられます。",
+        "en": "Each item has its own steps. We do not show steps for items you did not choose. For the My Number health insurance card, choose \"My Number Card\". If you are not sure, choose \"Not sure\". You can change this later."
       },
       "options": [
         {
@@ -2265,9 +2976,9 @@
         {
           "value": "health_insurance",
           "label": {
-            "ja": "{資格|しかく}{確認|かくにん}{書|しょ}など（{健康|けんこう}{保険|ほけん}）",
-            "ja_easy": "{保険|ほけん}の{紙|かみ}・カード",
-            "en": "Health insurance certificate"
+            "ja": "{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}・{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+            "ja_easy": "{保険|ほけん}の{紙|かみ}・カード（マイナンバーカードではない）",
+            "en": "Health insurance certificate or eligibility notice (not the My Number Card)"
           },
           "icon": "hcard"
         },
@@ -2290,11 +3001,105 @@
           "icon": "box"
         },
         {
-          "value": "unknown",
+          "value": "unsure",
           "label": {
             "ja": "ほかに{何|なに}が{入|はい}っていたか、よくわからない",
             "ja_easy": "ほかに{何|なに}があったか、わからない",
             "en": "Not sure what else was inside"
+          },
+          "icon": "ask"
+        }
+      ]
+    },
+    {
+      "id": "Q-lost-found",
+      "fact": "lost_found",
+      "stage": "object_check",
+      "scope": "event",
+      "multi": true,
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "{見|み}つかった{物|もの}はありますか",
+        "ja_easy": "{見|み}つかった{物|もの}は？",
+        "en": "Has anything been found?"
+      },
+      "why_asked": {
+        "ja": "{見|み}つかった{物|もの}を{選|えら}ぶと、{再|さい}{発行|はっこう}が{要|い}らないかもしれない{手続|てつづ}きと、{見|み}つかったあとに{要|い}ることを{出|だ}します。{記録|きろく}した{手続|てつづ}きは{消|き}えません。{完了|かんりょう}にもしません。",
+        "ja_easy": "{見|み}つかった{物|もの}を{選|えら}ぶと、いらないかもしれない{手続|てつづ}きと、そのあとのことを{出|だ}します。{記録|きろく}は{消|き}えません。",
+        "en": "If you choose what was found, we show the steps you may no longer need and what comes next. Your records are kept. Nothing is marked as done."
+      },
+      "options": [
+        {
+          "value": "cash_card",
+          "label": {
+            "ja": "キャッシュカード",
+            "ja_easy": "キャッシュカード",
+            "en": "Bank cash card"
+          },
+          "icon": "cashcard"
+        },
+        {
+          "value": "credit_card",
+          "label": {
+            "ja": "クレジットカード",
+            "ja_easy": "クレジットカード",
+            "en": "Credit card"
+          },
+          "icon": "cashcard"
+        },
+        {
+          "value": "zairyu_card",
+          "label": {
+            "ja": "{在留|ざいりゅう}カード",
+            "ja_easy": "{在留|ざいりゅう}カード",
+            "en": "Residence card"
+          },
+          "icon": "card"
+        },
+        {
+          "value": "mynumber_card",
+          "label": {
+            "ja": "マイナンバーカード",
+            "ja_easy": "マイナンバーカード",
+            "en": "My Number Card"
+          },
+          "icon": "mycard"
+        },
+        {
+          "value": "license",
+          "label": {
+            "ja": "{運転|うんてん}{免許|めんきょ}{証|しょう}",
+            "ja_easy": "{運転免許証|うんてんめんきょしょう}",
+            "en": "Driver's license"
+          },
+          "icon": "card"
+        },
+        {
+          "value": "health_insurance",
+          "label": {
+            "ja": "{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}・{資格|しかく}{情報|じょうほう}のお{知|し}らせ",
+            "ja_easy": "{保険|ほけん}の{紙|かみ}・カード（マイナンバーカードではない）",
+            "en": "Health insurance certificate or eligibility notice (not the My Number Card)"
+          },
+          "icon": "hcard"
+        },
+        {
+          "value": "passport",
+          "label": {
+            "ja": "パスポート（{旅券|りょけん}）",
+            "ja_easy": "パスポート",
+            "en": "Passport"
+          },
+          "icon": "passport"
+        },
+        {
+          "value": "none",
+          "label": {
+            "ja": "まだ{見|み}つかっていない",
+            "ja_easy": "まだ{見|み}つかっていない",
+            "en": "Nothing found yet"
           },
           "icon": "ask"
         }
@@ -2347,12 +3152,122 @@
       ]
     },
     {
+      "id": "Q-lost-place",
+      "fact": "lost_place",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": []
+      },
+      "text": {
+        "ja": "どこでなくしたと{思|おも}いますか？",
+        "ja_easy": "どこでなくしたと{思|おも}いますか？",
+        "en": "Where do you think you lost it?"
+      },
+      "why_asked": {
+        "ja": "{家|いえ}の{中|なか}なら、{警察|けいさつ}は{遺失|いしつ}{物|ぶつ}として{受|う}け{付|つ}けません。{駅|えき}や{店|みせ}なら、その{場所|ばしょ}にも{問|と}い{合|あ}わせます。{盗|ぬす}まれたかもしれないときは、{警察|けいさつ}に{届|とど}け、カードが{使|つか}われていないか{確|たし}かめます。",
+        "ja_easy": "{場所|ばしょ}によって、することが{違|ちが}うからです。",
+        "en": "Inside your home, the police do not accept a lost-property report. At a station or shop, ask there too. If it may have been stolen, report it to the police and check for misuse of your cards."
+      },
+      "options": [
+        {
+          "value": "home",
+          "label": {
+            "ja": "{家|いえ}の{中|なか}",
+            "ja_easy": "{家|いえ}の{中|なか}",
+            "en": "Inside my home"
+          }
+        },
+        {
+          "value": "outside",
+          "label": {
+            "ja": "{外|そと}（{道|みち}など）",
+            "ja_easy": "{外|そと}（{道|みち}など）",
+            "en": "Outside (on the street, etc.)"
+          }
+        },
+        {
+          "value": "facility",
+          "label": {
+            "ja": "{駅|えき}・{電車|でんしゃ}・バス・{店|みせ}など",
+            "ja_easy": "{駅|えき}・{電車|でんしゃ}・バス・{店|みせ}など",
+            "en": "Station, train, bus, shop, etc."
+          }
+        },
+        {
+          "value": "stolen",
+          "label": {
+            "ja": "{盗|ぬす}まれたかもしれない",
+            "ja_easy": "{盗|ぬす}まれたかもしれない",
+            "en": "It may have been stolen"
+          }
+        },
+        {
+          "value": "unsure",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-lost-hoken-type",
+      "fact": "lost_hoken_type",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "fact": "lost_items",
+        "has": "health_insurance"
+      },
+      "text": {
+        "ja": "なくした{資格|しかく}{確認|かくにん}{書|しょ}などは、どの{健康|けんこう}{保険|ほけん}のものですか？",
+        "ja_easy": "どの{保険|ほけん}の{紙|かみ}ですか？",
+        "en": "Which health insurance is the lost certificate from?"
+      },
+      "why_asked": {
+        "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}は{区役所|くやくしょ}、{勤務|きんむ}{先|さき}の{健康|けんこう}{保険|ほけん}は{勤務|きんむ}{先|さき}か{保険|ほけん}{者|しゃ}で{手続|てつづ}きをするためです。",
+        "ja_easy": "{保険|ほけん}によって、{行|い}く{所|ところ}が{違|ちが}うからです。",
+        "en": "Nagoya National Health Insurance is handled at the ward office. Workplace insurance is handled by your employer or the insurer."
+      },
+      "options": [
+        {
+          "value": "kokuho",
+          "label": {
+            "ja": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}",
+            "ja_easy": "{名古屋|なごや}{市|し}の{国民|こくみん}{健康|けんこう}{保険|ほけん}（{区役所|くやくしょ}）",
+            "en": "Nagoya National Health Insurance"
+          }
+        },
+        {
+          "value": "employer",
+          "label": {
+            "ja": "{勤務|きんむ}{先|さき}の{健康|けんこう}{保険|ほけん}（{会社|かいしゃ}の{保険|ほけん}）",
+            "ja_easy": "{会社|かいしゃ}の{保険|ほけん}",
+            "en": "Workplace health insurance (through my employer)"
+          }
+        },
+        {
+          "value": "unsure",
+          "label": {
+            "ja": "ほか・わからない",
+            "ja_easy": "ほか・わからない",
+            "en": "Other / not sure"
+          }
+        }
+      ]
+    },
+    {
       "id": "Q-police-reported",
       "fact": "police_reported",
       "stage": "upfront",
       "scope": "event",
       "ask_when": {
-        "all": []
+        "not": {
+          "fact": "lost_place",
+          "eq": "home"
+        }
       },
       "text": {
         "ja": "{警察|けいさつ}にはもう{届|とど}けましたか？",
@@ -2390,7 +3305,7 @@
           }
         },
         {
-          "value": "unknown",
+          "value": "unsure",
           "label": {
             "ja": "わからない",
             "ja_easy": "わからない",
@@ -2413,9 +3328,9 @@
         "en": "What do you need to do about your driving licence?"
       },
       "why_asked": {
-        "ja": "{取|と}る・{切|き}り{替|か}える・{更新|こうしん}・{変更|へんこう}・{再交付|さいこうふ}で、{行|い}く{手続|てつづ}きと{持|も}ち{物|もの}が{違|ちが}うためです。",
+        "ja": "{取|と}る・{切|き}り{替|か}える・{更新|こうしん}・{期限切|きげんぎ}れ・{変更|へんこう}・{再|さい}{交付|こうふ}・{外国|がいこく}で{運転|うんてん}で、{行|い}く{手続|てつづ}きと{持|も}ち{物|もの}が{違|ちが}うためです。",
         "ja_easy": "することで、{手続|てつづ}きが{違|ちが}うからです。",
-        "en": "The procedures and documents differ for getting, converting, renewing, changing details on, and reissuing a licence."
+        "en": "The procedures and documents differ for getting, converting, renewing, an expired licence, changing details, reissuing, and driving abroad."
       },
       "options": [
         {
@@ -2446,6 +3361,15 @@
           "icon": "calendar"
         },
         {
+          "value": "expired",
+          "label": {
+            "ja": "{有効|ゆうこう}{期限|きげん}が{切|き}れた",
+            "ja_easy": "{期限|きげん}が{切|き}れた",
+            "en": "My licence has expired"
+          },
+          "icon": "calendar"
+        },
+        {
           "value": "change",
           "label": {
             "ja": "{住所|じゅうしょ}・{名前|なまえ}が{変|か}わった",
@@ -2462,6 +3386,457 @@
             "en": "I lost or damaged my licence"
           },
           "icon": "search"
+        },
+        {
+          "value": "abroad",
+          "label": {
+            "ja": "{外国|がいこく}で{運転|うんてん}したい（{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}）",
+            "ja_easy": "{外国|がいこく}で{運転|うんてん}したい（{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}）",
+            "en": "I want to drive abroad (international driving permit)"
+          },
+          "icon": "plane"
+        }
+      ]
+    },
+    {
+      "id": "Q-license-valid",
+      "fact": "license_valid",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "renew"
+          }
+        ]
+      },
+      "text": {
+        "ja": "{免許|めんきょ}{証|しょう}の{有効|ゆうこう}{期限|きげん}は、まだ{過|す}ぎていませんか？",
+        "ja_easy": "{免許|めんきょ}{証|しょう}の{期限|きげん}は、まだ{過|す}ぎていませんか？",
+        "en": "Is your licence still valid (not past its expiry date)?"
+      },
+      "why_asked": {
+        "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}は{更新|こうしん}できず、{期限切|きげんぎ}れの{手続|てつづ}きになるためです。{期限|きげん}の{日|ひ}は{免許|めんきょ}{証|しょう}の{色|いろ}の{帯|おび}に{書|か}いてあります。",
+        "ja_easy": "{期限|きげん}が{過|す}ぎると、{更新|こうしん}ではなく{別|べつ}の{手続|てつづ}きになるからです。{期限|きげん}の{日|ひ}は{免許|めんきょ}{証|しょう}に{書|か}いてあります。",
+        "en": "An expired licence cannot be renewed; it needs the expired-licence procedure. The expiry date is printed on the coloured band of the licence."
+      },
+      "options": [
+        {
+          "value": "valid",
+          "label": {
+            "ja": "まだ{過|す}ぎていない",
+            "ja_easy": "まだ{過|す}ぎていない",
+            "en": "Still valid"
+          },
+          "icon": "calendar"
+        },
+        {
+          "value": "expired",
+          "label": {
+            "ja": "もう{過|す}ぎた",
+            "ja_easy": "もう{過|す}ぎた",
+            "en": "Already expired"
+          },
+          "icon": "ask"
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-course",
+      "fact": "license_course",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "renew"
+          },
+          {
+            "fact": "license_valid",
+            "eq": "valid"
+          }
+        ]
+      },
+      "text": {
+        "ja": "{更新|こうしん}{連絡|れんらく}{書|しょ}（はがき）に{書|か}いてある{講習|こうしゅう}の{区分|くぶん}はどれですか？",
+        "ja_easy": "{更新|こうしん}のはがきに{書|か}いてある{講習|こうしゅう}は、どれですか？",
+        "en": "Which course category is on your renewal notice (postcard)?"
+      },
+      "why_asked": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}で、{更新|こうしん}できる{場所|ばしょ}と{講習|こうしゅう}の{手数料|てすうりょう}が{違|ちが}うためです。",
+        "ja_easy": "{講習|こうしゅう}によって、{行|い}ける{所|ところ}とお{金|かね}が{違|ちが}うからです。",
+        "en": "Where you can renew and the course fee depend on the course category."
+      },
+      "options": [
+        {
+          "value": "good",
+          "label": {
+            "ja": "{優良|ゆうりょう}{運転|うんてん}{者|しゃ}",
+            "ja_easy": "{優良|ゆうりょう}{運転|うんてん}{者|しゃ}（ゴールド）",
+            "en": "Excellent driver (gold)"
+          }
+        },
+        {
+          "value": "general",
+          "label": {
+            "ja": "{一般|いっぱん}{運転|うんてん}{者|しゃ}",
+            "ja_easy": "{一般|いっぱん}{運転|うんてん}{者|しゃ}",
+            "en": "General driver"
+          }
+        },
+        {
+          "value": "violation",
+          "label": {
+            "ja": "{違反|いはん}{運転|うんてん}{者|しゃ}",
+            "ja_easy": "{違反|いはん}{運転|うんてん}{者|しゃ}",
+            "en": "Violator"
+          }
+        },
+        {
+          "value": "first",
+          "label": {
+            "ja": "{初回|しょかい}{更新|こうしん}{者|しゃ}",
+            "ja_easy": "はじめての{更新|こうしん}",
+            "en": "First-time renewer"
+          }
+        },
+        {
+          "value": "elderly",
+          "label": {
+            "ja": "{高齢|こうれい}{者|しゃ}",
+            "ja_easy": "{高齢|こうれい}{者|しゃ}",
+            "en": "Older driver"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-lapse",
+      "fact": "license_lapse",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "any": [
+          {
+            "fact": "license_goal",
+            "eq": "expired"
+          },
+          {
+            "all": [
+              {
+                "fact": "license_goal",
+                "eq": "renew"
+              },
+              {
+                "fact": "license_valid",
+                "eq": "expired"
+              }
+            ]
+          }
+        ]
+      },
+      "text": {
+        "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎてから、どのくらいたちましたか？",
+        "ja_easy": "{期限|きげん}が{過|す}ぎてから、どのくらいですか？",
+        "en": "How long ago did your licence expire?"
+      },
+      "why_asked": {
+        "ja": "{期限|きげん}が{過|す}ぎてからの{長|なが}さで、{免除|めんじょ}される{試験|しけん}が{違|ちが}うためです。わからないときは、{全部|ぜんぶ}の{場合|ばあい}を{出|だ}します。",
+        "ja_easy": "{長|なが}さによって、{試験|しけん}が{違|ちが}うからです。",
+        "en": "Which tests are waived depends on how long ago it expired. If you are not sure, we show every case."
+      },
+      "options": [
+        {
+          "value": "within_6m",
+          "label": {
+            "ja": "6か{月|げつ}{以内|いない}",
+            "ja_easy": "6か{月|げつ}{以内|いない}",
+            "en": "6 months or less"
+          }
+        },
+        {
+          "value": "within_1y",
+          "label": {
+            "ja": "6か{月|げつ}を{超|こ}えて1{年|ねん}{以内|いない}",
+            "ja_easy": "6か{月|げつ}より{長|なが}く、1{年|ねん}{以内|いない}",
+            "en": "More than 6 months, up to 1 year"
+          }
+        },
+        {
+          "value": "over_1y",
+          "label": {
+            "ja": "1{年|ねん}を{超|こ}えた",
+            "ja_easy": "1{年|ねん}より{長|なが}い",
+            "en": "More than 1 year"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-change",
+      "fact": "license_change",
+      "stage": "upfront",
+      "scope": "event",
+      "multi": true,
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "change"
+          }
+        ]
+      },
+      "text": {
+        "ja": "{変|か}わったことを{選|えら}んでください",
+        "ja_easy": "{変|か}わったことを{選|えら}んでください",
+        "en": "What has changed?"
+      },
+      "why_asked": {
+        "ja": "{変|か}わったことで、{持|も}っていく{書類|しょるい}が{違|ちが}うためです。",
+        "ja_easy": "{変|か}わったことで、{書類|しょるい}が{違|ちが}うからです。",
+        "en": "The documents you bring depend on what changed."
+      },
+      "options": [
+        {
+          "value": "address",
+          "label": {
+            "ja": "{住所|じゅうしょ}",
+            "ja_easy": "{住所|じゅうしょ}",
+            "en": "Address"
+          },
+          "icon": "homemove"
+        },
+        {
+          "value": "name",
+          "label": {
+            "ja": "{氏名|しめい}",
+            "ja_easy": "{名前|なまえ}",
+            "en": "Name"
+          },
+          "icon": "card"
+        },
+        {
+          "value": "honseki",
+          "label": {
+            "ja": "{本籍|ほんせき}・{国籍|こくせき}",
+            "ja_easy": "{本籍|ほんせき}・{国籍|こくせき}",
+            "en": "Registered domicile or nationality"
+          },
+          "icon": "doc"
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-form",
+      "fact": "license_form",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "change"
+          }
+        ]
+      },
+      "text": {
+        "ja": "{持|も}っている{免許|めんきょ}{証|しょう}はどれですか？",
+        "ja_easy": "{持|も}っている{免許|めんきょ}{証|しょう}はどれですか？",
+        "en": "Which licence do you hold?"
+      },
+      "why_asked": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{先|さき}に{区役所|くやくしょ}でマイナンバーカードを{変|か}えるなど、{手順|てじゅん}が{違|ちが}うためです。",
+        "ja_easy": "マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{手順|てじゅん}が{違|ちが}うからです。",
+        "en": "If you hold a My Number licence, the steps are different (for example, update the My Number Card at the ward office first)."
+      },
+      "options": [
+        {
+          "value": "card",
+          "label": {
+            "ja": "{従来|じゅうらい}の{免許|めんきょ}{証|しょう}（カード）",
+            "ja_easy": "{前|まえ}からある{免許|めんきょ}{証|しょう}（カード）",
+            "en": "Conventional licence card"
+          },
+          "icon": "card"
+        },
+        {
+          "value": "myna",
+          "label": {
+            "ja": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）",
+            "ja_easy": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）",
+            "en": "My Number licence (My Number Card)"
+          },
+          "icon": "mycard"
+        },
+        {
+          "value": "both",
+          "label": {
+            "ja": "{両方|りょうほう}",
+            "ja_easy": "{両方|りょうほう}",
+            "en": "Both"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-lost",
+      "fact": "license_lost",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "lost"
+          }
+        ]
+      },
+      "text": {
+        "ja": "どれをなくした・{汚|よご}しましたか？",
+        "ja_easy": "どれをなくした・{汚|よご}しましたか？",
+        "en": "Which did you lose or damage?"
+      },
+      "why_asked": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）をなくしたときは、カードの{一時|いちじ}{停止|ていし}などもするためです。",
+        "ja_easy": "マイナンバーカードをなくしたときは、ほかの{手続|てつづ}きもあるからです。",
+        "en": "If you lost the My Number licence (My Number Card), you also need to suspend the card, among other steps."
+      },
+      "options": [
+        {
+          "value": "card",
+          "label": {
+            "ja": "{従来|じゅうらい}の{免許|めんきょ}{証|しょう}をなくした",
+            "ja_easy": "{前|まえ}からある{免許|めんきょ}{証|しょう}をなくした",
+            "en": "I lost my conventional licence card"
+          },
+          "icon": "card"
+        },
+        {
+          "value": "myna",
+          "label": {
+            "ja": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）をなくした",
+            "ja_easy": "マイナンバーカード（マイナ{免許|めんきょ}{証|しょう}）をなくした",
+            "en": "I lost my My Number licence (My Number Card)"
+          },
+          "icon": "mycard"
+        },
+        {
+          "value": "both",
+          "label": {
+            "ja": "{両方|りょうほう}なくした",
+            "ja_easy": "{両方|りょうほう}なくした",
+            "en": "I lost both"
+          }
+        },
+        {
+          "value": "damaged",
+          "label": {
+            "ja": "{汚|よご}した・{壊|こわ}した",
+            "ja_easy": "{汚|よご}した・{壊|こわ}した",
+            "en": "It is soiled or damaged"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q-license-route",
+      "fact": "license_route",
+      "stage": "upfront",
+      "scope": "event",
+      "ask_when": {
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "new"
+          }
+        ]
+      },
+      "text": {
+        "ja": "{教習所|きょうしゅうじょ}（{指定|してい}{自動車|じどうしゃ}{教習所|きょうしゅうじょ}）はどうしますか？",
+        "ja_easy": "{教習所|きょうしゅうじょ}はどうしますか？",
+        "en": "Will you use a designated driving school?"
+      },
+      "why_asked": {
+        "ja": "{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した{人|ひと}は、{試験場|しけんじょう}で{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されるためです。",
+        "ja_easy": "{教習所|きょうしゅうじょ}を{卒業|そつぎょう}すると、{試験場|しけんじょう}の{運転|うんてん}の{試験|しけん}がないからです。",
+        "en": "Graduates of a designated driving school are exempt from the driving skill test at the centre."
+      },
+      "options": [
+        {
+          "value": "school",
+          "label": {
+            "ja": "{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した・{通|かよ}っている",
+            "ja_easy": "{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した・{通|かよ}っている",
+            "en": "I graduated from or attend a driving school"
+          },
+          "icon": "student"
+        },
+        {
+          "value": "direct",
+          "label": {
+            "ja": "{教習所|きょうしゅうじょ}に{通|かよ}わず、{試験場|しけんじょう}で{試験|しけん}を{受|う}ける",
+            "ja_easy": "{教習所|きょうしゅうじょ}に{行|い}かないで、{試験場|しけんじょう}で{試験|しけん}を{受|う}ける",
+            "en": "I will take the tests at the centre without a school"
+          },
+          "icon": "doc"
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "ja": "わからない",
+            "ja_easy": "わからない",
+            "en": "Not sure"
+          }
         }
       ]
     }

@@ -9,7 +9,7 @@
   "first_week": true,
   "scope": "nagoya_resident",
   "per_move": false,
-  "requires_moved_in": false,
+  "requires_moved_in": true,
   "eligibility": "R-mw-same",
   "coverage_rule_ids": [],
   "title": {
@@ -36,9 +36,22 @@
       "source_ids": [
         "B-nagoya-faq-45"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-15",
       "status": "needs_check",
       "quote": "転居した日から14日以内（お住まいになった日の翌日が１日目となります。）"
+    },
+    "calc": {
+      "days": 14,
+      "from": "moved_in",
+      "count": "next_day",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-45"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "転居した日から14日以内（お住まいになった日の翌日が１日目となります。）"
+      }
     }
   },
   "where": {
@@ -58,7 +71,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "6f1e74996c4bb71732529f4faa2c5e7eefc54fc5fb4e6ae2d933f215468a8bd0",
         "verdict": "agree",
-        "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c1"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -117,25 +130,40 @@
           "fetched_at": "2026-11-04",
           "sha256": "d308b08b76b1523a3eb09d5f629e87d9b7c6277859ed0e16f5a054fc27a41e1f",
           "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenkyo-same-ward/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。{期限|きげん}を{過|す}ぎても{届出|とどけで}はできます。すみやかに{手続|てつづ}きをします。",
-        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。{期限|きげん}をすぎても{出|だ}せます。{早|はや}く{出|だ}します。",
-        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed. You can still file after the deadline. Do it promptly."
+        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。",
+        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。",
+        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-faq-45",
-          "B-nagoya-faq-6-pub"
+          "B-nagoya-faq-45"
         ],
         "checked_at": "2026-11-07",
         "status": "needs_check",
         "quote": "印鑑登録の住所は、この届で自動変更されるので、改めて手続する必要はありません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、できるだけ{早|はや}く{区役所|くやくしょ}の{窓口|まどぐち}で{届出|とどけで}を{済|す}ませるか、{窓口|まどぐち}に{相談|そうだん}します。{正当|せいとう}な{理由|りゆう}なく{届出|とどけで}をしないと、5{万円|まんえん}{以下|いか}の{過料|かりょう}になることがあります（{住民|じゅうみん}{基本|きほん}{台帳法|だいちょうほう}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、すぐ{区役所|くやくしょ}の{窓口|まどぐち}で{届|とど}けを{出|だ}すか、{相談|そうだん}します。{理由|りゆう}がなく{届|とど}けを{出|だ}さないと、5{万円|まんえん}までのお{金|かね}を{払|はら}うことがあります（{要|よう}{確認|かくにん}）。",
+        "en": "If you are close to the 14-day limit or past it, complete the notification at the ward office counter or ask the counter as soon as possible. Not filing without a justifiable reason can lead to an administrative fine of up to 50,000 yen (Basic Resident Registration Act; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-juki-ho"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "正当な理由がなくて第二十二条から第二十四条まで、第二十五条又は第三十条の四十六から第三十条の四十八までの規定による届出をしない者は、五万円以下の過料に処する。"
       }
     }
   ],

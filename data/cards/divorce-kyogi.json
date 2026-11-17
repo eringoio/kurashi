@@ -77,7 +77,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -131,7 +131,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -169,7 +169,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -191,7 +191,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "aabdb1b1e07f6968ae57907ae1522e1d048a4c3b29e105959fbd89e91bd67a9a",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c12"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -213,7 +213,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -235,7 +235,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-kyogi/c14"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -258,8 +258,8 @@
     {
       "type": "counter",
       "text": {
-        "ja": "2026{年|ねん}4{月|つき}1{日|にち}{以降|いこう}は、{離婚届|りこんとどけ}のときに、{未成年|みせいねん}の{子|こ}の{親権|しんけん}を、{父母|ちちはは}の{一方|いっぽう}（{単独|たんどく}{親権|しんけん}）にするか{双方|そうほう}（{共同|きょうどう}{親権|しんけん}）にするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "2026{年|ねん}4{月|つき}1{日|にち}からは、{離婚届|りこんとどけ}のときに、{子|こ}の{親権|しんけん}を、ひとりにするか、ふたりにするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "ja": "2026{年|ねん}4{月|がつ}1{日|ついたち}{以降|いこう}は、{離婚届|りこんとどけ}のときに、{未成年|みせいねん}の{子|こ}の{親権|しんけん}を、{父母|ちちはは}の{一方|いっぽう}（{単独|たんどく}{親権|しんけん}）にするか{双方|そうほう}（{共同|きょうどう}{親権|しんけん}）にするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "2026{年|ねん}4{月|がつ}1{日|ついたち}からは、{離婚届|りこんとどけ}のときに、{子|こ}の{親権|しんけん}を、ひとりにするか、ふたりにするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
         "en": "From 1 April 2026 you can choose, on the divorce form, sole or joint parental authority for minor children (Nagoya City guidance) (to be checked)."
       },
       "evidence": {

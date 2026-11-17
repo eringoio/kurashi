@@ -1,0 +1,112 @@
+{
+  "id": "lost-credit-reissue",
+  "data_version": 1,
+  "illustration": "cashcard",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-credit",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "クレジットカードの{再|さい}{発行|はっこう}・{不正|ふせい}{利用|りよう}の{確認|かくにん}",
+    "ja_easy": "クレジットカードを{新|あたら}しくする・{使|つか}われていないか{見|み}る",
+    "en": "Credit card: get a new one and check for misuse"
+  },
+  "official_name": {
+    "ja": "クレジットカードの再発行",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "カードを{止|と}めたあと、{新|あたら}しいカードの{再|さい}{発行|はっこう}をカード{会社|かいしゃ}に{頼|たの}みます。{方法|ほうほう}はカード{会社|かいしゃ}ごとに{違|ちが}います（{要|よう}{確認|かくにん}）。{利用|りよう}{明細|めいさい}を{見|み}て、{覚|おぼ}えのない{請求|せいきゅう}があれば、すぐにカード{会社|かいしゃ}に{連絡|れんらく}します。",
+    "ja_easy": "カードを{止|と}めたあと、カード{会社|かいしゃ}に{新|あたら}しいカードを{頼|たの}みます（{要|よう}{確認|かくにん}）。{明細|めいさい}を{見|み}て、{知|し}らないお{金|かね}があれば、すぐ{会社|かいしゃ}に{言|い}います。",
+    "en": "After stopping the card, ask the card company for a new one. The steps differ by company (to be checked). Check your statements, and if there is a charge you do not recognize, contact the card company right away."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "カードを{発行|はっこう}したクレジット{会社|かいしゃ}",
+      "ja_easy": "カードを{出|だ}した{会社|かいしゃ}",
+      "en": "The company that issued the card"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "クレジットカード",
+    "再発行",
+    "不正利用",
+    "credit card"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "C-jcredit-meisai",
+      "C-jcredit-kanri"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "万一、お客様控えと金額が異なる請求や、利用覚えのない請求が含まれていた場合は、速やかに契約しているクレジットカード会社に連絡する"
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "{再|さい}{発行|はっこう}の{方法|ほうほう}と、{新|あたら}しいカードが{届|とど}くまでの{日数|にっすう}は、カード{会社|かいしゃ}ごとに{違|ちが}います。カード{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{新|あたら}しいカードの{頼|たの}み{方|かた}は、{会社|かいしゃ}ごとに{違|ちが}います。{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "How to get a new card and how long it takes differ by company. Ask the card company (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "type": "online",
+      "text": {
+        "ja": "{利用|りよう}{明細|めいさい}は、{紙|かみ}なら{届|とど}いたらすぐ、Web{明細|めいさい}ならこまめに{見|み}ます。{金額|きんがく}が{違|ちが}う{請求|せいきゅう}や、{覚|おぼ}えのない{請求|せいきゅう}があれば、{速|すみ}やかにカード{会社|かいしゃ}に{連絡|れんらく}します。",
+        "ja_easy": "{明細|めいさい}をよく{見|み}ます。{知|し}らないお{金|かね}があれば、すぐ{会社|かいしゃ}に{言|い}います。",
+        "en": "Check paper statements as soon as they arrive, and online statements often. If a charge is wrong or you do not recognize it, contact the card company promptly."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-jcredit-meisai"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "万一、お客様控えと金額が異なる請求や、利用覚えのない請求が含まれていた場合は、速やかに契約しているクレジットカード会社に連絡する"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-stolen",
+      "text": {
+        "ja": "{盗|ぬす}まれたかもしれないときは、カード{会社|かいしゃ}と{警察|けいさつ}の{両方|りょうほう}に{連絡|れんらく}します。",
+        "ja_easy": "{盗|ぬす}まれたかもしれないときは、カード{会社|かいしゃ}と{警察|けいさつ}に{言|い}います。",
+        "en": "If it may have been stolen, contact both the card company and the police."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-jcredit-kanri"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "カードの紛失・盗難に気付いたら、すぐにクレジットカード会社と警察に連絡を！"
+      }
+    }
+  ]
+}

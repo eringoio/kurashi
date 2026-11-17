@@ -10,7 +10,13 @@
   "scope": "nagoya_resident",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-mo-abroad",
+  "eligibility": {
+    "all": [
+      "R-mo-abroad",
+      "R-mo-japanese",
+      "R-mo-has-mynumber"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "マイナンバーカードを{国外|こくがい}でも{使|つか}い{続|つづ}ける（{日本|にほん}{国籍|こくせき}の{人|ひと}）",
@@ -58,7 +64,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
         "verdict": "agree",
-        "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c4"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -72,9 +78,9 @@
   ],
   "reasons": {
     "check_at_office": {
-      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+      "ja": "{行|ゆ}き{先|さき}・{国籍|こくせき}・マイナンバーカードを{持|も}っているかがわからないので、この{手続|てつづ}きが{要|い}るか{決|き}められません。{国外|こくがい}での{継続|けいぞく}{利用|りよう}は{日本|にほん}{国籍|こくせき}の{人|ひと}が{対象|たいしょう}です。{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "この{手続|てつづ}きが{要|い}るか、まだわかりません。{日本|にほん}{国籍|こくせき}で、カードを{持|も}っている{人|ひと}の{手続|てつづ}きです。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "We do not yet know your destination, nationality, or whether you have a My Number Card, so we cannot tell if you need this. Continued use abroad is for Japanese nationals. Please ask at your ward office (to be checked)."
     }
   },
   "evidence": {
@@ -104,7 +110,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -126,7 +132,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -164,7 +170,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "df2c368d9f7f3e2bac73877177ac33eb3ee6d41ba00ddfc06791a80dc9117781",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-kaigai-tenshutsu/c15"
+          "ref": "internal-audit-record"
         }
       }
     }

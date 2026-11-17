@@ -9,7 +9,7 @@ import { DATA } from '../core/data';
 import { AboutStep } from '../ui/About';
 import type { Question } from '../core/schema';
 import { visitGroup } from '../core/visit';
-import { bringPlan, visitPath } from '../core/accompany';
+import { bringPlan } from '../core/accompany';
 import type { CardView } from '../core/engine';
 import { RoadBring } from '../ui/RoadMap';
 import { useEvent, type EventGuide } from '../guide/useEvent';
@@ -17,14 +17,14 @@ import { Bi, One } from '../i18n/Ruby';
 import { line, ui } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
+import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SectionWhy, StateLabel, stateKey, unverifiedOb, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
 import { ProgressMap } from '../ui/ProgressMap';
 import { MultiPick, UrgentAction } from '../ui/patterns';
 import { toPickOptions, toUrgent } from '../ui/patterns/map';
 import { Link, navigate, useFocusTitle, usePath } from '../ui/router';
 import { useSide } from '../ui/SidePanel';
 import { AllEmpty, AllGroups, hasOpen, TodayStep, todayViews } from './Plan';
-import { PinnedLinks, UrgentStrip } from './EventOverview';
+import { AddAnswers, PinnedLinks, UrgentStrip } from './EventOverview';
 
 function EvTabs({ base, current, wideHide }: { base: string; current: 'now' | 'all'; wideHide?: boolean }) {
   const { level } = usePrefs();
@@ -41,11 +41,22 @@ function EvTabs({ base, current, wideHide }: { base: string; current: 'now' | 'a
 /** 前の出来事があるときだけ：同じ出来事をもう一度、新しく始める（前の「済んだ」を使わない） */
 function StartNew({ g, onLive }: { g: EventGuide; onLive: (s: string) => void }) {
   const { level } = usePrefs();
+  const [asking, setAsking] = useState(false);
   const has = !!g.occ && (Object.keys(g.occ.answers).length > 0 || Object.keys(g.occ.plan).length > 0);
   if (!has) return null;
+  // 1回押しただけでは消さない。何が消えるかを言って、もう一度確かめる（Fable C-2）
+  if (asking) return (
+    <div className="k-notice" role="alert">
+      <p><Bi k="ev.startNewConfirm" /></p>
+      <div className="links">
+        <button type="button" className="k-answer k-answer--small" onClick={async () => { setAsking(false); await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNewYes" /></button>
+        <button type="button" className="k-answer k-answer--small" autoFocus onClick={() => setAsking(false)}><Bi k="ev.startNewNo" /></button>
+      </div>
+    </div>
+  );
   return (
     <div className="links">
-      <button type="button" className="k-answer k-answer--small" onClick={async () => { await g.startNew(); onLive(line(ui('ev.startedNew'), level)); navigate('/e/' + g.event.id); }}><Bi k="ev.startNewShort" /></button>
+      <button type="button" className="k-answer k-answer--small" onClick={() => setAsking(true)}><Bi k="ev.startNewShort" /></button>
     </div>
   );
 }
@@ -100,7 +111,7 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
   if (done) {
     const c = g.out.cards.find((x) => x.card.id === done)!;
     body = (
-      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
+      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} uv={unverifiedOb(c)} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
         <Link to={cp + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -163,9 +174,10 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
           <p className="eyebrow"><One k="now.eyebrow.plan" /></p>
           <Title><Bi t={dayTitle(c)} /></Title>
         </div>
-        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
+        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} uv={unverifiedOb(c)} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={(d, ids) => void ch.plan(c.card.id, d, ids)}
+          onPatch={(ids, p) => void g.setPlans(ids, p)}
           onLater={async () => { await g.setPlan(c.card.id, { deferred: true }); ch.setLast(null); onLive(line(ui('card.deferred'), level)); }} />
       </>
     );
@@ -183,9 +195,9 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
       </>
     );
   } else if (today) {
-    // 今日が行く日：行く所があれば付き添いの「行く前」、無ければ今日の予定
-    const place = today.find((c) => c.card.place)?.card.place;
-    body = <TodayStep views={today} base={cp} go={place ? visitPath(place, 'before') : '/today'} />;
+    // 今日が行く日：今日の予定（/today はできごとごとに項目をまとめる）。付き添い（/visit）は引っ越しの記録だけを読むので、
+    // ここからは送らない（免許の人が「ここで行う手続きはありません」になった。C-2）
+    body = <TodayStep views={today} base={cp} go="/today" />;
   } else if (step.kind === 'until') {
     body = (
       <>
@@ -219,6 +231,7 @@ function EventNow({ g, onLive, stepMode }: { g: EventGuide; onLive: (s: string) 
 
 function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string) => void; onlyGuides?: boolean }) {
   const base = '/e/' + g.event.id;
+  const { level } = usePrefs();
   useFocusTitle('ev-all:' + g.event.id);
   const cards = g.out.cards;
   const idle = nowStep(g.out, g.today).kind === 'idle';
@@ -229,6 +242,7 @@ function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string
       <div className="head"><p className="eyebrow"><One phrase t={g.event.title} /></p><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
       {g.event.tool && <Link to={g.event.tool.path} className="k-answer k-answer--primary"><Bi phrase t={g.event.tool.label} /></Link>}
       <ProgressMap cards={cards} out={g.out} today={g.today} base={base + '/c/'} listId="all-list"
+        onDone={(id, v) => { void g.setPlan(id, { status: v ? 'done' : 'todo' }); onLive(line(ui(v ? 'card.recordedDone' : 'ov.saved'), level)); }}
         after={(road) => {
           const check = (c: CardView) => (g.event.checklist && c.state !== 'ask' ? { check: { done: c.plan?.status === 'done', onToggle: () => void g.setPlan(c.card.id, { status: c.plan?.status === 'done' ? 'todo' : 'done' }) } } : {});
           const go = !idle && !onlyGuides && <Link to={base} className="k-answer"><Bi phrase k="all.go" /></Link>;
@@ -248,6 +262,7 @@ function EventAll({ g, onLive, onlyGuides }: { g: EventGuide; onLive: (s: string
             </>
           );
         }} />
+      <AddAnswers g={g} onLive={onLive} />
       <StartNew g={g} onLive={onLive} />
     </>
   );

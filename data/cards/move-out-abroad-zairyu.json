@@ -10,7 +10,13 @@
   "scope": "nagoya_resident",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-mo-abroad",
+  "eligibility": {
+    "all": [
+      "R-mo-abroad",
+      "R-mo-foreign",
+      "R-mo-zairyu-return"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{在留|ざいりゅう}カードを{返|かえ}す（{在留|ざいりゅう}カードを{持|も}つ{人|ひと}が{出国|しゅっこく}するとき）",
@@ -58,7 +64,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
         "verdict": "agree",
-        "ref": "research/audits/zairyu.json#P-zairyu-henno/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -72,9 +78,9 @@
   ],
   "reasons": {
     "check_at_office": {
-      "ja": "{行|ゆ}き{先|さき}が{国内|こくない}か{国外|こくがい}かが{分|わ}かるまで、どの{届|とど}けか{決|き}められません。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "{行|ゆ}き{先|さき}がまだわかりません。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-      "en": "We cannot tell which report you need until we know the destination. Please ask at your ward office (to be checked)."
+      "ja": "{出国|しゅっこく}のときに{在留|ざいりゅう}カードを{返|かえ}すかは、{再|さい}{入国|にゅうこく}{許可|きょか}（みなし{再|さい}{入国|にゅうこく}{許可|きょか}を{含|ふく}む）で{出国|しゅっこく}するかで{変|か}わります。まだわからないので{決|き}められません。{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{庁|ちょう}の{案内|あんない}を{見|み}るか、{入管|にゅうかん}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{再入国許可|さいにゅうこくきょか}で{出|で}るかで、カードを{返|かえ}すかが{変|か}わります。{入管|にゅうかん}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+      "en": "Whether you return your residence card when you leave depends on whether you leave with a re-entry permit (including a deemed re-entry permit). We do not know yet. Check the Immigration Services Agency guidance or ask Immigration (to be checked)."
     }
   },
   "evidence": {
@@ -104,7 +110,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
           "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-henno/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -126,7 +132,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "713e58b7188fe25d8acead96a495da8ec5e0193fae6a8bd8d5594e653ad5b186",
           "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-henno/c6"
+          "ref": "internal-audit-record"
         }
       }
     },

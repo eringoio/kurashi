@@ -11,9 +11,15 @@
   "per_move": false,
   "requires_moved_in": false,
   "eligibility": {
-    "any": [
-      "R-nenkin-1go",
-      "R-nenkin-3go"
+    "all": [
+      "R-nenkin-sel",
+      "R-nenkin-not-enrolled",
+      {
+        "any": [
+          "R-nenkin-1go",
+          "R-nenkin-3go"
+        ]
+      }
     ]
   },
   "coverage_rule_ids": [
@@ -63,9 +69,10 @@
         "B-nenkin-kanyu",
         "B-nagoya-nenkin-1011839"
       ],
-      "checked_at": "2026-11-07",
-      "status": "needs_check",
-      "quote": "お住まいの区の区役所保険年金課または支所区民福祉課で加入手続きをしてください"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "お住まいの区の区役所保険年金課または支所区民福祉課で加入手続きをしてください",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "place": "ward_office",
@@ -80,6 +87,11 @@
       "ja": "あなたの{場合|ばあい}の{年金|ねんきん}の{手続|てつづ}きは、このアプリではまだ{詳|くわ}しく{案内|あんない}していません。{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{確認|かくにん}してください。",
       "ja_easy": "あなたの{年金|ねんきん}のことは、{区役所|くやくしょ}で{聞|き}いてください。",
       "en": "This app does not cover your pension case in detail yet. Ask the Insurance and Pension Section of the ward office."
+    },
+    "check_at_office": {
+      "ja": "{年金|ねんきん}の{種類|しゅるい}（{第|だい}1{号|ごう}・{第|だい}2{号|ごう}・{第|だい}3{号|ごう}）や、もう{入|はい}っているかが{分|わ}からないので、{加入|かにゅう}の{手続|てつづ}きが{要|い}るかは{言|い}えません（{要|よう}{確認|かくにん}）。{先|さき}に{種類|しゅるい}を{確|たし}かめてください。{年金|ねんきん}{手帳|てちょう}や{年金|ねんきん}{事務所|じむしょ}・ねんきんネット、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{聞|き}けます。{会社|かいしゃ}に{勤|つと}めている{人|ひと}は{第|だい}2{号|ごう}、その{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}は{第|だい}3{号|ごう}のことが{多|おお}いです。",
+      "ja_easy": "{年金|ねんきん}の{種類|しゅるい}（{第|だい}1{号|ごう}・{第|だい}2{号|ごう}・{第|だい}3{号|ごう}）や、もう{入|はい}っているかが{分|わ}かりません。だから、{入|はい}る{手続|てつづ}きが{要|い}るか{言|い}えません（{要確認|ようかくにん}）。{先|さき}に{種類|しゅるい}を{聞|き}いてください。{年金事務所|ねんきんじむしょ}・ねんきんネット・{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}で{聞|き}けます。",
+      "en": "We cannot say whether you need to join, because your pension category (1, 2 or 3) or whether you are already in it is not known (to be checked). Check the category first: ask a pension office, use Nenkin Net, or ask the Insurance and Pension Section of your ward office. People employed by a company are often Category 2, and their dependent spouses Category 3."
     }
   },
   "evidence": {
@@ -88,7 +100,8 @@
       "B-nenkin-gakusei",
       "B-nenkin-tekiyojogai",
       "B-nagoya-nenkin-1011839",
-      "nenkin-menjo-nofuyuyo"
+      "nenkin-menjo-nofuyuyo",
+      "nagoya-nenkin-jusho-henko"
     ],
     "checked_at": "2026-11-07",
     "status": "needs_check"

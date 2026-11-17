@@ -30,16 +30,19 @@ test('ファミリーシップ：入口から手続きの画面へ直接。も�
   await expect(page).toHaveURL(/\/$/);
 });
 
-const GOALS: [string, RegExp, string][] = [
-  ['外国', /license-gaimen-kirikae$/, 'license-switch'],
-  ['更新', /license-koshin$/, 'license-renew'],
-  ['なくした', /license-saikofu$/, 'license-lost'],
+// 目的のあとの質問（0〜2問。kaizen unten 11/8）に答える
+const GOALS: [string, RegExp, string, string[]][] = [
+  ['外国の免許', /license-gaimen-kirikae$/, 'license-switch', []],
+  ['更新', /license-koshin$/, 'license-renew', ['まだ過ぎていない', '優良運転者']],
+  ['期限が切れた', /license-shikko$/, 'license-expired', ['6か月以内']],
+  ['なくした', /license-saikofu$/, 'license-lost', ['従来の免許証をなくした']],
 ];
-for (const [label, url, name] of GOALS) {
+for (const [label, url, name, next] of GOALS) {
   test(`運転免許：「${label}」を選ぶと、その手続きの画面へ`, async ({ page }) => {
     await page.goto('/e/E-license');
     await shot(page, 'license-question');
     await page.getByRole('button', { name: new RegExp(label) }).first().click();
+    for (const n of next) await page.getByRole('button', { name: new RegExp(n) }).first().click();
     await expect(page).toHaveURL(url);
     await keep(page);
     await shot(page, name);
@@ -50,18 +53,20 @@ for (const [label, url, name] of GOALS) {
   });
 }
 
-test('結婚：答えたら全体の画面。婚姻届を出す が先、結婚したあと は「婚姻届のあと」', async ({ page }) => {
+test('結婚：答えたら婚姻届（目的の手続き）。一覧では、名前が変わる人の手続きは「婚姻届のあと」', async ({ page }) => {
   await page.goto('/e/E-marriage');
   await shot(page, 'marriage-question');
-  await page.getByRole('button').filter({ hasText: /日本|外国/ }).first().click();
+  // kaizen（v0.5.40）：段階 → ふたりの国籍 → 名前が変わる人 → 住所と世帯。最初の選択肢（これから婚姻届を出す）で答えていく
+  const todoke = page.getByRole('heading', { level: 1, name: /婚姻届/ });
+  await page.locator('.k-answer').first().click();
   await keep(page);
-  for (let i = 0; i < 3; i++) {
-    const ov = page.getByRole('heading', { name: /婚姻届を出す/ });
-    if (await ov.count()) break;
+  for (let i = 0; i < 8 && !(await todoke.count()); i++) {
     const b = page.locator('.ov-ask button, .k-answer').first();
     if (await b.count()) await b.click();
   }
-  await expect(page.getByRole('heading', { name: /婚姻届を出す/ })).toBeVisible();
+  // 目的の手続きが1つなので、その画面へ直接（v0.5.30）
+  await expect(todoke).toBeVisible();
+  await page.getByRole('link', { name: '一覧', exact: true }).click();
   await expect(page.getByText(/のあとでします/).first()).toBeVisible();
   await shot(page, 'marriage');
 });
@@ -78,8 +83,31 @@ test('住まい：はじめから全体の画面。公的住宅をすぐ開け�
   await shot(page, 'house-move-in');
   await page.getByRole('link', { name: /別の区へ/ }).click();
   await expect(page).toHaveURL(/\/e\/E-move-within$/);
+  // 選んだ「別の区へ」を引き継ぐ（kaizen sumai 5）：区の質問を聞き直さず、上に1行。答えを変えられる
+  await expect(page.getByText(/前の画面で選んだ答えです/)).toBeVisible();
+  await expect(page.getByRole('button', { name: '答えを変える' })).toBeVisible();
   await page.goBack();
   await expect(page).toHaveURL(/housing-move-in$/);
+});
+
+test('住まい：入居・退去の「住所の届出」から、選んだ引っ越しの種類を引き継ぐ。答えを変えられる', async ({ page }) => {
+  await page.goto('/e/E-house-search/c/housing-move-out');
+  await page.getByRole('link', { name: /同じ区の中/ }).click();
+  await expect(page).toHaveURL(/\/e\/E-move-within$/);
+  await expect(page.getByText(/前の画面で選んだ答えです/)).toBeVisible();
+  await page.getByRole('button', { name: '答えを変える' }).click();
+  await expect(page.locator('h1')).toBeVisible();
+  await page.getByRole('button', { name: /別の区/ }).first().click();
+  await expect(page.getByText(/前の画面で選んだ答えです/)).toHaveCount(0);
+  // 国外へ：E-move-out の行き先の質問を聞き直さない
+  await page.goto('/e/E-house-search/c/housing-move-out');
+  await page.getByRole('link', { name: /国外へ/ }).click();
+  await expect(page).toHaveURL(/\/e\/E-move-out$/);
+  await expect(page.getByText(/前の画面で選んだ答えです/)).toBeVisible();
+  // 直接の URL・再読み込みでは引き継がない（質問をいつもどおり出す）
+  await page.reload();
+  await expect(page.getByText(/前の画面で選んだ答えです/)).toHaveCount(0);
+  await shot(page, 'house-handoff');
 });
 
 test('住まい：入居の電気・水道を記録すると、再読み込みしても残る', async ({ page }) => {
@@ -97,7 +125,7 @@ test('住まい：入居の電気・水道を記録すると、再読み込み�
   await page.getByRole('checkbox', { name: /^ガス/ }).check();
   await page.getByRole('checkbox', { name: /インターネット/ }).check();
   // リンクの無い項目は、名前を押してもチェックできる
-  await page.getByText('郵便の転送', { exact: true }).click();
+  await page.getByText('郵便の転送（前の住所があるとき。任意）', { exact: true }).click();
   await expect(page.getByText(/このリストで 4\/7 完了/)).toBeVisible();
   await page.reload();
   for (const n of [/水道/, /^ガス/]) await expect(page.getByRole('checkbox', { name: n })).toBeChecked();
@@ -117,8 +145,7 @@ test('財布：すぐ行う行動（カードの停止）が最初のまま', as
 
 test('銀行（口座がある）：一覧の上は いま の案内。もしものときは「関連する情報」', async ({ page }) => {
   await page.goto('/e/E-bank');
-  // あなたについて（国籍など）は答えずに進む
-  await page.getByRole('button', { name: '日本国籍' }).click();
+  // kaizen（v0.5.40）：銀行では国籍・あなたについてを聞かない。最初の質問は口座があるか
   for (let i = 0; i < 4 && !(await page.getByRole('button', { name: 'ある', exact: true }).isVisible()); i++) await page.getByRole('button', { name: '答えずに進む' }).click({ timeout: 3000 }).catch(() => {});
   await page.getByRole('button', { name: 'ある', exact: true }).click();
   // 道（v0.5.31）では、関連する情報は道の段の名前

@@ -1,5 +1,4 @@
 {
-  "$comment": "相談窓口（上の帯の「相談」）。作者の指示 2026-11-06（docs/TODO_2026-11-06.md の I-4）。電話番号・時間は公式ページの本文で取り直したものだけ。取れなかったもの（FRESC ヘルプデスク・名古屋市の多文化共生の担当）は入れていない。学校の留学生係は入れない（作者）。",
   "contacts": [
     {
       "id": "nic",
@@ -26,7 +25,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "verified_by": "author 2026-11-06",
         "quote": "お問い合わせ（開館時間 09:00 - 19:00）TEL: 052-581-0100"
       }
     },
@@ -55,7 +54,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "verified_by": "author 2026-11-06",
         "quote": "TEL ０５７０－０１３９０４"
       }
     },
@@ -84,7 +83,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "verified_by": "author 2026-11-06",
         "quote": "The consultation hours for the Foreign Language Line are available from 10:00 a.m. to 10:00 p.m. everyday."
       }
     },
@@ -113,7 +112,7 @@
         ],
         "checked_at": "2026-11-06",
         "status": "verified",
-        "verified_by": "author-instruction-2026-11-06 (I-4)",
+        "verified_by": "author 2026-11-06",
         "quote": "#7119をダイヤルすることで、24時間365日体制で看護師等からアドバイスを受けることが"
       }
     },

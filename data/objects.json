@@ -1,5 +1,4 @@
 {
-  "$comment": "持ち物（SPEC 9.10）。並びはこのファイルの順。物と事実の対応は本アプリの定義（出典は本書）。持っていないときの事実は書かない（v0.4.2）。",
   "objects": [
     {
       "id": "zairyu-card",
@@ -74,6 +73,7 @@
       },
       "bring_for": [
         "nagoya-tennyu-juukyochi",
+        "nagoya-tennyu-kikoku",
         "nagoya-tennyu-todoke",
         "move-within-tennyu",
         "move-within-tenkyo",

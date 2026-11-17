@@ -95,3 +95,52 @@ export function singleGoal(out: EngineOutput, step: { kind: string; view?: CardV
 /** 前に要ること（前提の関係で、まだ済んでいない）。カードを開いて準備するのは止めない */
 export const prereqFrom = (c: CardView): string[] =>
   [...new Set(c.notes.filter((n) => n.kind === 'legal_prereq' || n.kind === 'practical_prereq' || n.kind === 'prereq_unknown').map((n) => (n.relation as { from: string }).from))];
+
+/** 段の中で、同じ所（カードの place）へ行く手続きを1つのまとまりに（v0.5.44）。並びは段の順のまま、
+    同じ所の2つ目からは、最初のものの所へ寄せる。すぐ行う行動と場所の無いものは1つずつ。
+    見出しを出すのは同じ所が2つ以上のときだけ（place）。1つだけのときは place: null */
+export function phaseVisits(cards: CardView[]): { place: string | null; cards: CardView[]; alt: CardView[] }[] {
+  // 行かない方法もあり方法がまだの手続き（altPlace）は、同じ所へ行く手続きが段にあれば、そのまとまりの後ろに付ける（FE-16）
+  const firm = new Set(cards.map((c) => c.visitPlace).filter(Boolean));
+  const alt = cards.filter((c) => !c.visitPlace && c.altPlace && firm.has(c.altPlace));
+  const out: { place: string | null; cards: CardView[]; alt: CardView[] }[] = [];
+  const at = new Map<string, { place: string | null; cards: CardView[]; alt: CardView[] }>();
+  for (const c of cards) {
+    if (alt.includes(c)) continue;
+    const p = c.visitPlace;
+    const g = p ? at.get(p) : undefined;
+    if (g) { g.cards.push(c); continue; }
+    const n = { place: p, cards: [c], alt: p ? alt.filter((x) => x.altPlace === p) : [] };
+    if (p) at.set(p, n);
+    out.push(n);
+  }
+  // 見出しは、同じ所が2つ以上（できる場合があるものを含む）のときだけ
+  return out.map((g) => (g.cards.length + g.alt.length > 1 ? g : { place: null, cards: [...g.cards, ...g.alt], alt: [] }));
+}
+
+/* 「見つかった」を答えにする（財布の紛失。G-11・O-3）。答えは Q-lost-found（複数選択）。記録（plan）は変えない・完了にしない。
+   昔の保存には答えが無い：[] として読む。いまの「なくした物」から外した物は数えない */
+
+/** 見つかったと答えた物（いま「なくした」の中にある物だけ。順は event.found.items） */
+export function foundItems(ev: EventDef, answers: Record<string, Value>): string[] {
+  const f = ev.found;
+  if (!f) return [];
+  const lost = answers[f.from];
+  const got = answers[f.q];
+  const set = new Set(Array.isArray(got) ? got.map(String) : []);
+  const lostSet = new Set(Array.isArray(lost) ? lost.map(String) : []);
+  return f.items.map((i) => i.value).filter((v) => set.has(v) && lostSet.has(v));
+}
+
+/** 「再発行は要らないかもしれない」と添える手続き。表示だけ。状態・チェックは変えない */
+export function foundEased(ev: EventDef, answers: Record<string, Value>): Set<string> {
+  const got = new Set(foundItems(ev, answers));
+  return new Set((ev.found?.items ?? []).filter((i) => got.has(i.value)).flatMap((i) => i.eased));
+}
+
+type After = NonNullable<EventDef['found']>['common'][number];
+/** 見つかったあとのこと（物ごと）。when のルールが F の文は出さない（U は出す） */
+export function foundAfter(ev: EventDef, answers: Record<string, Value>, facts: Map<string, Value>, rule: (id: string) => Parameters<typeof evalCond>[0] | undefined): { value: string; list: After[] }[] {
+  const ok = (a: After) => !a.when || (rule(a.when) ? evalCond(rule(a.when)!, facts).v !== 'F' : true);
+  return foundItems(ev, answers).map((v) => ({ value: v, list: (ev.found!.items.find((i) => i.value === v)?.after ?? []).filter(ok) })).filter((x) => x.list.length > 0);
+}

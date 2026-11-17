@@ -2,6 +2,8 @@
 
 名古屋市に住む人（とくに来日した留学生）が、生活の出来事から「知らなかった手続き」に気づくための Web アプリです。Built with Claude: Japan 2026 の提出物です。
 
+**Kurashi は個人が開発・運営する非公式のアプリです。名古屋市が提供・監修・公認するアプリではありません。** 内容の正確さ・新しさは保証できません。手続きの前に、公式のページと窓口で確かめてください。
+
 - 公開の URL：https://kurashi.eringo.io/ （https://kurashi.eringo-io.workers.dev/ でも開けます）
 - ライセンス：MIT（`LICENSE`）。第三者の著作物と出典は `THIRD_PARTY_NOTICES.md`
 
@@ -40,7 +42,7 @@ npm run build        # 型の検査とビルド（dist/）
 npm run test:a11y    # 画面の検査（Playwright＋axe。Windows の Edge を使う設定）
 ```
 
-ごみの収集日の表（`data/gomi/schedule.json`）は、名古屋市の許可を得て掲載しています。
+ごみの収集日の表（`data/gomi/schedule.json`）と分別の区分・備考は、名古屋市公式ウェブサイトの2つのページ（ごみ収集日検索・ごみ・資源分別検索）から、名古屋市環境局の書面による同意を得て、名古屋市の著作権・再利用の規定（https://www.city.nagoya.jp/about/1017985.html 、https://www.city.nagoya.jp/about/1017973.html ）に従って使っています（値は変えず、表示の形だけ変えています。著作権者：名古屋市。Kurashi は名古屋市が提供・監修・公認するアプリではありません。Kurashi の説明・英語の訳は名古屋市の公式のものではありません）。年末年始の収集日（`data/gomi/year-end.json`）は、市の年末年始のお知らせの日付だけを使っています。くわしくは `THIRD_PARTY_NOTICES.md`。名古屋市が案内しているごみ分別アプリは「さんあ～る」です（https://www.city.nagoya.jp/kurashi/gomi/1012183/1012187/1012188.html ）。
 
 ## 公開（Cloudflare Workers）
 
@@ -49,8 +51,11 @@ npm run test:a11y    # 画面の検査（Playwright＋axe。Windows の Edge を
 ```bash
 npm run worker:dev   # 手元で確かめる（http://localhost:8787）。アカウントは要らない
 npx wrangler login
-npm run deploy
+npm run predeploy:check   # 公開の前の検査だけを動かす
+KURASHI_DEPLOY_APPROVED=<release.json の release_id> npm run deploy
 ```
+
+`npm run deploy` は、公開の前の検査（`scripts/predeploy.mjs`）・単体テスト・ビルドを通ったときだけ公開します。検査が見るのは、`wrangler.toml` の名前・`release.json`（版の印）・git の origin・未コミットの変更がないこと・作者の承認（`KURASHI_DEPLOY_APPROVED`）です。公開した版は `release.json` の `release_id` で、画面の「このアプリについて」にも出ます。
 
 ### 写真の読み取り（Anthropic API）の守り
 
@@ -63,7 +68,7 @@ npm run deploy
 | `public` | だれでも使えます。IP ごとの制限と、1日の数を数える KV（`USAGE`）が無いと 503 です |
 
 - キーとトークンは Worker のシークレットにだけ入れます（`npx wrangler secret put ANTHROPIC_API_KEY`・`npx wrangler secret put READ_TEST_TOKEN`）。ファイルにも GitHub にも書きません。
-- テストでは、`/review` の「写真の読み取りのテスト」にトークンを入れると、そのタブだけ「届いた書類」に写真の欄が出ます。
+- 公開のビルドには作者用の画面（`/review`）が入っていません。本番で写真の読み取りを試す入口は、まだ決めていません（`READ_MODE = "test"` のあいだ、ほかの人は使えません）。
 - IP ごとの制限（1分に5回）と1日の上限（100回）は目安です。費用を確実に止めるのは、Anthropic Console の Workspace の支出の上限です。
 - すぐ止めるときは、次のどれか1つをします。
   - Cloudflare のダッシュボードで `READ_MODE` を `off` にする
@@ -75,7 +80,7 @@ npm run deploy
 - 報告は KV（`REPORTS`）に保存し、1年で自動で消えます。名前・連絡先・IP は保存しません。
 - KV が無いとき、本番は 503 を返します（受け付けたように見せません）。
 - 回数の制限は IP ごとに1分3件です（Cloudflare の Rate Limiting。目安で、IP は残しません）。
-- 作者は `/review` の「報告」で、Worker のシークレット `REPORTS_TOKEN` を入れて読みます。
+- 報告の一覧（`GET /api/reports`）は `kurashi.eringo.io` だけで開き、Cloudflare Access のログインと Worker のシークレット `REPORTS_TOKEN` の両方が要ります。作者は Access を通るコマンド（`cloudflared access curl`）か、Access のサービストークンで読みます。workers.dev では開きません。
 
 ## データ
 

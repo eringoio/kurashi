@@ -6,6 +6,7 @@ import type { Card, EventDef, Evidence, Notice, Question, Relation, Rule, RuleEx
 import { activeNotices } from './notice';
 import { effectiveStatus, type FieldKind } from './trust';
 import type { PlanRecord } from './entry';
+import { clusterByVisit } from './visitOrder';
 
 export type DisplayState = 'shown' | 'check_at_office' | 'ask' | 'excluded' | 'out_of_scope';
 /** 区分け（10.3。v0.4 の表示名：いま・確かめる・届くのを待つ・あとで・もうできた）。
@@ -66,6 +67,22 @@ export interface CardView {
   notices: Notice[];
   /** 手続きの方法（card.methods）を、使える条件（when）で評価したもの。F の方法は入れない。U は「窓口で確認」 */
   methods: { method: NonNullable<Card['methods']>[number]; v: TV }[];
+  /** 行く所でまとめるときの所（v0.5.44）。すぐ行う行動・行かずに済むもの（remote）・place_when が T でないものは null */
+  visitPlace: string | null;
+  /** 行かずに（オンライン・郵送で）済ませられる（カードの remote が T で、カードに online・mail の方法〔出典つき〕が当てはまる） */
+  remote: boolean;
+  /** 選べる出す方法（v0.5.45・FE-14）。remote のときだけ：窓口（place があれば）＋当てはまる online・mail。それ以外は空 */
+  ways: ('counter' | 'mail' | 'online')[];
+  /** 行かない方法のうち、この人に当てはまると決まったもの（札に使う。条件つきのものは入れない。FF-1） */
+  remoteWays: ('mail' | 'online')[];
+  /** 本人が選んだ方法（ways の中のときだけ）。無ければ null */
+  way: 'counter' | 'mail' | 'online' | null;
+  /** 行かない方法もあり、方法がまだのとき：窓口ならこの所（FE-16。「同じ区役所で手続きできる場合があります」）。それ以外は null */
+  altPlace: string | null;
+  /** 期限の日（C-3）。deadline.calc と、本人が入れた数え始める日（plan.from_on）があるときだけ */
+  deadlineOn: string | null;
+  /** 決めた日が期限の日より後（止めない。知らせるだけ） */
+  lateRisk: boolean;
 }
 
 export interface EngineOutput {
@@ -79,6 +96,13 @@ export interface EngineOutput {
 
 const DAY = 86_400_000;
 const addDays = (ymd: string, n: number) => new Date(Date.parse(ymd + 'T00:00:00Z') + n * DAY).toISOString().slice(0, 10);
+
+/** 数え始める日として使える日か（YYYY-MM-DD の実在の日で、今日より後ではない）。保存された値は何が来るかわからないので、投げずに false を返す */
+export function validFromOn(v: unknown, today: string): v is string {
+  if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return false;
+  const t = Date.parse(v + 'T00:00:00Z');
+  return Number.isFinite(t) && new Date(t).toISOString().slice(0, 10) === v && v <= today;
+}
 
 export function run(data: GuideData, x: EngineInput): EngineOutput {
   const mode = x.mode ?? 'public';
@@ -129,7 +153,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     data.questions.find((q) => q.fact === fact && stages.includes(q.stage) && !facts.has(fact) && evalCond(q.ask_when, facts).v === 'T');
 
   // 3. 範囲（イベントの範囲のルール。無ければ名古屋市に住む人）
-  const scopeEval = conf.get(x.event?.scope_rule ?? 'R-scope-nagoya-resident')!;
+  const scopeEval = conf.get(x.event?.scope_rule ?? 'R-scope-move-resident')!;
   const scope = scopeEval.v;
 
   // 関係の確認状態
@@ -138,8 +162,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
 
   // 4. 表示状態
   const inEvent = x.event ? new Set(x.event.card_ids) : null;
+  /** 適用条件。できごとが別の条件を決めていれば、そちら（events.json の eligibility） */
+  const eligOf = (card: Card): RuleExpr => x.event?.eligibility?.[card.id] ?? card.eligibility;
   const pre = data.cards.filter((c) => !inEvent || inEvent.has(c.id)).map((card) => {
-    const elig = evalExpr(card.eligibility);
+    const elig = evalExpr(eligOf(card));
     const cov = card.coverage_rule_ids.length ? combineAll(card.coverage_rule_ids.map((id) => conf.get(id)!)) : null;
     let state: DisplayState;
     let cause: Cause | null = null;
@@ -148,12 +174,16 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     else if (elig.v === 'T' && (!cov || cov.v === 'T')) state = 'shown';
     else if (elig.v === 'T' && cov?.v === 'F') { state = 'check_at_office'; cause = 'coverage'; }
     else {
-      const both = combineAll(cov ? [elig, cov] : [elig]);
+      // 範囲（coverage）が F でも、適用の条件がまだ決まらないなら、その質問を先に聞く（2026-11-14 A-1。
+      // 前は F が未回答の事実を消して、会社員にも国民年金を「窓口で確かめる」と出していた）。範囲の F は、条件が T になったときに使う
+      const both = cov && cov.v !== 'F' ? combineAll([elig, cov]) : elig;
       const canAsk = [...both.unanswered].some((f) => askable(f, ['upfront', 'in_card']));
       if (canAsk) state = 'ask';
       else {
         state = 'check_at_office';
-        cause = both.unknown.size ? 'unknown' : both.unverified ? 'unverified' : 'no_question';
+        // 範囲が確認済みで F、適用は U（制度のルールが未確認）で、「わからない」も聞ける質問も残っていないなら、
+        // 状態は 7 のまま（check_at_office）、理由だけ範囲の外にする（例：国外から来た第3号。HB-4）
+        cause = both.unknown.size ? 'unknown' : cov?.v === 'F' && elig.v === 'U' ? 'coverage' : both.unverified ? 'unverified' : 'no_question';
       }
       return { card, state, cause, elig: both };
     }
@@ -197,7 +227,7 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
   const eventFacts = new Set(data.questions.filter((q) => q.scope === 'event').map((q) => q.fact));
   const bySelection = (id: string) => { const r = data.rules.get(id)!; return r.kind === 'selection' && [...factsIn(r.condition)].every((f) => eventFacts.has(f)); };
   const maskExpr = (e: RuleExpr): Eval => (typeof e === 'string' ? (bySelection(e) ? { v: 'U', unanswered: new Set(), unknown: new Set(), unverified: false } : conf.get(e)!) : 'all' in e ? combineAll(e.all.map(maskExpr)) : combineAny(e.any.map(maskExpr)));
-  const offBySelection = (card: Card) => maskExpr(card.eligibility).v !== 'F';
+  const offBySelection = (card: Card) => maskExpr(eligOf(card)).v !== 'F';
   x.event?.phases?.forEach((ph) => ph.after && ph.card_ids.forEach((id) => afterOf.set(id, ph.after!)));
   const visibleState = (st: DisplayState | undefined) => st === 'shown' || st === 'check_at_office' || st === 'ask';
   /** 段の after の手続き（この人に関係するもの）が、まだどれも済んでいない → そのうち最初のもの */
@@ -217,7 +247,8 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     const goal = goals.has(card.id);
     const afterFrom = afterPending(card.id);
     // 段の after（できごとが起きたあとに生じる手続き）：その日より前の日は選べない（日が無ければ先にその日）
-    if (afterFrom) { const d = x.plan[afterFrom]?.planned_on; dayRule = d ? { kind: 'min', day: d, from: afterFrom } : { kind: 'need_first', from: afterFrom }; }
+    // 前の項目が日を聞かない案内（guide）なら、日の制限はつけない（例：会社の保険に入ったあとの国保をやめる届け。2026-11-08）
+    if (afterFrom && data.cards.find((y) => y.id === afterFrom)?.kind !== 'guide') { const d = x.plan[afterFrom]?.planned_on; dayRule = d ? { kind: 'min', day: d, from: afterFrom } : { kind: 'need_first', from: afterFrom }; }
 
     // 関係の注記（needs_check の関係は注記だけ。9.6 の規則1）
     for (const r of data.relations) {
@@ -267,6 +298,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (plan?.visit_told && !plan.planned_on) { section = 'check'; sectionWhy = plan.visit_told === 'need_document' ? 'visit_need_document' : 'visit_wrong_place'; }
       // 段の after：〇〇のあとで生じる（例：できごとが起きたあとの届け出）。窓口で確かめる手続きでも、まだ生じていないので先に出さない
       else if (afterFrom) { section = 'later'; sectionWhy = 'after_card'; }
+      // 関連する情報（できごとの info）は、本人の「わからない」で未定でも「確かめる」に並べない（kaizen/ginkou 2026-11-08。例：口座の有無が「わからない」人に、口座がある人の手続きを6枚並べない）
+      else if (x.event && state === 'check_at_office' && cause === 'unknown' && infos.has(card.id) && !['preparing', 'submitted', 'waiting'].includes(status)) section = 'info';
+      // 住み始めてから出す届け（requires_moved_in）：まだ住み始めていないなら、窓口で確かめる手続きでも「あとで（住み始めたら）」（kaizen hikkoshi 11/8）
+      else if (!changed && card.requires_moved_in && moved !== 'yes' && status !== 'submitted' && status !== 'waiting') { section = 'later'; sectionWhy = moved === 'not_yet' ? 'moved_in_not_yet' : moved === 'unknown' ? 'moved_in_unknown' : 'moved_in_unanswered'; }
       else if (state === 'check_at_office' || changed) { section = 'check'; if (changed) c = 'answer_changed'; }
       // 本人が「あとでする」と選んだ（自動の「あとで」と分ける。v0.5.30）
       else if (plan?.deferred) { section = 'later'; sectionWhy = 'deferred'; }
@@ -274,9 +309,10 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       else if (status === 'submitted' || status === 'waiting') section = 'wait';
       else if (waits) { section = 'wait'; sectionWhy = 'waits'; notes.push({ kind: 'waits_for', relation: waits, verified: true }); }
       else if (legalNotMet) { section = 'later'; sectionWhy = 'after_prereq'; }
-      else if (card.requires_moved_in && moved !== 'yes') { section = 'later'; sectionWhy = moved === 'not_yet' ? 'moved_in_not_yet' : moved === 'unknown' ? 'moved_in_unknown' : 'moved_in_unanswered'; }
       // 答えから、あとでする（v0.5.32。例：まだ事業を始めていない人の開業届）
       else if (laters.has(card.id) && status !== 'preparing') { section = 'later'; sectionWhy = 'answer_later'; }
+      // 関連する情報の任意のチェックリスト（parts のある案内。例：住まいの入居・退去）：途中までチェックしても「いま」のタスクにしない（kaizen sumai 1）。parts の無い案内は、本人が始めたら「いま」（kaizen ginkou）
+      else if (x.event && infos.has(card.id) && card.kind === 'guide' && card.parts?.length) section = 'info';
       else if (status === 'preparing') section = 'today';
       // 目的の手続き（本人が選んだ）：期限や義務がなくても「いま」（v0.5.30）
       else if (goal) section = 'today';
@@ -303,10 +339,11 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
       if (card.requires_moved_in) want.add('moved_in');
     }
     // 同じ事実を聞く質問は、質問バンクの最初の1つだけ（11/6：Q-bank-account と Q-bank-has）
-    const questions = data.questions.filter((q, i, all) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T' && all.findIndex((y) => y.stage === 'in_card' && y.fact === q.fact) === i).map((q) => shownOptions(data, q, facts));
+    // 同じ事実を聞く質問が複数あるとき（例：has_mynumber_card は引っ越しと結婚で別の文）、いま聞ける（ask_when が合う）最初の1つ（2026-11-08 kaizen のマージ）
+    const questions = data.questions.filter((q) => q.stage === 'in_card' && want.has(q.fact) && !facts.has(q.fact) && evalCond(q.ask_when, facts).v === 'T').filter((q, i, all) => all.findIndex((y) => y.fact === q.fact) === i).map((q) => shownOptions(data, q, facts));
 
     // 理由（10.5）：判定に使った答えの事実と、適用条件のルール
-    const ids = exprIds(card.eligibility).concat(card.coverage_rule_ids);
+    const ids = exprIds(eligOf(card)).concat(card.coverage_rule_ids);
     const used = new Set<string>();
     ids.forEach((id) => factsIn(data.rules.get(id)!.condition).forEach((f) => { if (facts.has(f)) used.add(f); }));
     const reasonRules = ids.map((id) => data.rules.get(id)!).filter((r) => r.kind === 'eligibility' && (state !== 'shown' || raw.get(r.id)!.v === 'T'));
@@ -314,28 +351,70 @@ export function run(data: GuideData, x: EngineInput): EngineOutput {
     const falseRule = state === 'excluded' ? ids.map((id) => data.rules.get(id)!).find((r) => conf.get(r.id)!.v === 'F') ?? null : null;
     const methods = (card.methods ?? []).map((m) => ({ method: m, v: m.when ? evalExpr(m.when).v : ('T' as TV) })).filter((m) => m.v !== 'F');
     const outdated = [card.evidence, card.where.evidence, card.deadline?.evidence, ...reasonRules.map((r) => r.evidence)].some((e) => e && statusOf(e, false, 'card_text') === 'outdated');
-    return { card, state, section, sectionWhy, goal, afterFrom: sectionWhy === 'after_card' ? afterFrom : null, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated, notices: activeNotices(card.notices, x.today) };
+    // 行かない方法（FE-17）：カードの remote が T で、出典つきの online・mail の方法が当てはまるときだけ（言い切れないときは言わない）
+    const awayOf = (v: TV) => [...new Set(methods.filter((m) => m.v === v && (m.method.type === 'online' || m.method.type === 'mail')).map((m) => m.method.type as 'online' | 'mail'))];
+    const away = awayOf('T');
+    // 当てはまるか答えで決まる方法（例：マイナンバーカードがある人だけオンライン。FF-1）は、選べる方法には入れて条件の文を出す。札（remote）には数えない
+    const awayMaybe = awayOf('U').filter((t) => !away.includes(t));
+    const remoteRule = card.remote === true || (!!card.remote && evalExpr(card.remote).v === 'T');
+    const remote = away.length > 0 && remoteRule;
+    const placeOk = !card.urgent && !!card.place && (!card.place_when || evalExpr(card.place_when).v === 'T');
+    const ways: CardView['ways'] = remoteRule && away.length + awayMaybe.length > 0 ? [...(placeOk ? ['counter' as const] : []), ...away, ...awayMaybe] : [];
+    const way = plan?.method && ways.includes(plan.method) ? plan.method : null;
+    // 行く所でまとめるのは、窓口へ行くと決まっているとき（行かない方法が無い・窓口を選んだ）
+    const visitPlace = placeOk && (ways.length < 2 || way === 'counter') ? card.place! : null;
+    const altPlace = placeOk && ways.length >= 2 && !way ? card.place! : null;
+    const calc = card.deadline?.calc;
+    // 確認済みの計算規則のときだけ日付を出す（9章：未確認の期限は日付を出さない）
+    const deadlineOn = calc && validFromOn(plan?.from_on, x.today) && statusOf(calc.evidence, false, 'deadline') === 'verified' ? addDays(plan!.from_on!, calc.days) : null;
+    const lateRisk = !!deadlineOn && !!plan?.planned_on && plan.planned_on > deadlineOn && status !== 'done';
+    return { card, state, section, sectionWhy, goal, afterFrom: sectionWhy === 'after_card' ? afterFrom : null, cause: c, reasonFacts: [...used], reasonRules, falseRule, questions, notes, dayRule, plan, methods, questionRank: 0, outdated, notices: activeNotices(card.notices, x.today), visitPlace, remote, ways, remoteWays: remote ? away : [], way, altPlace, deadlineOn, lateRisk };
   });
 
   // 並び順（10.3 v0.4.8）：前提の段（先にすることが残っている数）→ obligation → flow.json の順。
   // 前提の関係は確認状態にかかわらず「おすすめの順」にだけ使う（区分け・日の制限は今までどおり確認済みのときだけ）。
   // 例：在留カードの再交付（法令上の義務）でも、警察への届がまだなら、その後に並べる。
   const open = (id: string) => { const v = cards.find((c) => c.card.id === id); return !!v && v.section !== null && v.section !== 'done' && v.state !== 'excluded' && v.state !== 'out_of_scope'; };
-  const depthMemo = new Map<string, number>();
-  const depth = (id: string, seen: Set<string> = new Set()): number => {
-    if (depthMemo.has(id)) return depthMemo.get(id)!;
-    if (seen.has(id)) return 0; // 循環は読み込みの検査で止めている。ここでは念のため打ち切る
-    seen.add(id);
-    let d = 0;
-    for (const r of data.relations) if (isPrereq(r) && r.to === id && open(r.from) && satisfied(r) !== 'yes') d = Math.max(d, depth(r.from, seen) + 1);
-    depthMemo.set(id, d);
-    return d;
-  };
   const ob = ['legal', 'local_rule', 'practical', 'check', 'optional', 'none'];
   // 目的の手続きは、法令の義務の次（v0.5.30。全体の優先順位の3）。関連する情報は最後
   const obRank = (c: CardView) => (c.section === 'info' ? ob.length : c.goal ? 0.5 : ob.indexOf(c.card.obligation));
-  [...cards].sort((a, b) => ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id)).forEach((c, i) => { c.questionRank = i; });
-  cards.sort((a, b) => depth(a.card.id) - depth(b.card.id) || obRank(a) - obRank(b) || data.flow.card_order.indexOf(a.card.id) - data.flow.card_order.indexOf(b.card.id));
+  const flowIdx = (c: CardView) => data.flow.card_order.indexOf(c.card.id);
+  [...cards].sort((a, b) => ob.indexOf(a.card.obligation) - ob.indexOf(b.card.obligation) || flowIdx(a) - flowIdx(b)).forEach((c, i) => { c.questionRank = i; });
+  // 並び順（v0.5.44。前は「前提の段 → 義務 → flow」）：前提を先にする範囲で、優先の高いものから。
+  // 優先：A すぐ行う行動 → 義務の強さ（目的は法令の次）→ B 法令の義務で期限があるもの → flow.json の順。
+  // 前に要る手続きは、それを待っている手続きの優先を受け継ぐ（例：警察への届は、在留カードの再交付〔14日以内〕の前に要るので、任意の手続きより先）
+  const before = (id: string) => data.relations.filter((r): r is Prereq => isPrereq(r) && r.to === id && open(r.from) && satisfied(r) !== 'yes').map((r) => r.from);
+  const byId = new Map(cards.map((c) => [c.card.id, c]));
+  const actionable = (c: CardView) => c.section === 'today' || c.section === 'check';
+  const key = (c: CardView): number[] => [c.card.urgent && actionable(c) ? 0 : 1, obRank(c), (c.card.obligation === 'legal' || c.card.obligation === 'local_rule') && c.card.deadline ? 0 : 1, flowIdx(c)];
+  const cmp = (a: number[], b: number[]) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
+  const dependents = new Map<string, string[]>();
+  for (const c of cards) for (const f of before(c.card.id)) dependents.set(f, [...(dependents.get(f) ?? []), c.card.id]);
+  const effMemo = new Map<string, number[]>();
+  const eff = (c: CardView, seen: Set<string> = new Set()): number[] => {
+    if (effMemo.has(c.card.id)) return effMemo.get(c.card.id)!;
+    let best = key(c);
+    if (!seen.has(c.card.id)) { // 循環は読み込みの検査で止めている。ここでは念のため打ち切る
+      seen.add(c.card.id);
+      for (const id of dependents.get(c.card.id) ?? []) {
+        const d = byId.get(id);
+        if (d && actionable(d)) { const e = eff(d, seen); if (cmp(e, best) < 0) best = [...e.slice(0, 3), key(c)[3]]; }
+      }
+    }
+    effMemo.set(c.card.id, best);
+    return best;
+  };
+  const ordered: CardView[] = [];
+  const placed = new Set<string>();
+  const rest = new Set(cards);
+  while (rest.size) {
+    const ready = [...rest].filter((c) => before(c.card.id).every((f) => placed.has(f) || !byId.has(f)));
+    const pool = ready.length ? ready : [...rest]; // 循環のときは、残りから選ぶ
+    pool.sort((a, b) => cmp(eff(a), eff(b)) || cmp(key(a), key(b)));
+    ordered.push(pool[0]); placed.add(pool[0].card.id); rest.delete(pool[0]);
+  }
+  // 行く所でまとめる（v0.5.44）：同じ所の手続きを、その所の最初の手続きのすぐ後ろへ。急ぐもの・期限のある義務・前提は追い越さない
+  cards.splice(0, cards.length, ...clusterByVisit(ordered, before));
 
   // 最初の質問：upfront で、未回答で、未定のルールの原因になっているもの（質問バンクの順）。範囲が F なら聞かない
   const pending = new Set<string>();

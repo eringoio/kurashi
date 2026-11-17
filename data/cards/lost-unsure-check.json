@@ -1,0 +1,143 @@
+{
+  "id": "lost-unsure-check",
+  "data_version": 1,
+  "illustration": "ask",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-unsure",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{入|はい}っていた{物|もの}を{確|たし}かめる",
+    "ja_easy": "{入|はい}っていた{物|もの}を{確|たし}かめる",
+    "en": "Check what was in the wallet"
+  },
+  "official_name": {
+    "ja": "財布の中身を確かめる",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{入|はい}っていたかもしれないカードは、{先|さき}に{止|と}めておきます。いつも{持|も}ち{歩|ある}くカード（キャッシュカード・クレジットカード・{在留|ざいりゅう}カード・マイナンバーカード・{運転|うんてん}{免許|めんきょ}{証|しょう}・{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}など）が{家|いえ}に{残|のこ}っているか{確|たし}かめます。なくした{物|もの}がわかったら「{答|こた}えを{変|か}える」で{選|えら}ぶと、その{物|もの}の{手続|てつづ}きが{出|で}ます。",
+    "ja_easy": "{入|はい}っていたかもしれないカードは、{先|さき}に{止|と}めます。{家|いえ}にあるか{見|み}ます。なくした{物|もの}がわかったら「{答|こた}えを{変|か}える」で{選|えら}びます。",
+    "en": "Stop any card that may have been inside first. Check whether the cards you usually carry (cash card, credit card, residence card, My Number Card, driver's license, health insurance certificate, etc.) are still at home. When you know what you lost, choose it with \"Change answers\" to see its steps."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "カードを{発行|はっこう}した{会社|かいしゃ}・マイナンバー{総合|そうごう}フリーダイヤル",
+      "ja_easy": "カードを{出|だ}した{会社|かいしゃ}・マイナンバーの{電話|でんわ}",
+      "en": "The card issuer and the My Number toll-free line"
+    },
+    "evidence": {
+      "source_ids": [
+        "C-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "わからない",
+    "中身",
+    "not sure"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "kurashi-spec",
+      "A-aichi-police-ishitsu",
+      "B-kojinbango-faq-lost"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  },
+  "urgent": {
+    "text": {
+      "ja": "{入|はい}っていたかもしれないカードは、{先|さき}に{止|と}めます。",
+      "ja_easy": "{入|はい}っていたかもしれないカードは、{先|さき}に{止|と}めます。",
+      "en": "Stop any card that may have been inside first."
+    },
+    "contacts": [
+      {
+        "type": "link",
+        "label": {
+          "ja": "カードを{止|と}めるときの{案内|あんない}（{愛知|あいち}{県警|けんけい}）。{連絡|れんらく}{先|さき}はカードの{裏|うら}や{発行|はっこう}した{会社|かいしゃ}の{公式|こうしき}サイト",
+          "ja_easy": "カードの{止|と}め{方|かた}（{愛知県|あいちけん}の{警察|けいさつ}）",
+          "en": "How to stop cards (Aichi Police). Contact the issuer shown on the card or its official site"
+        },
+        "value": "https://www.pref.aichi.jp/police/soudan/qa/kyoninka/ishitsu.html",
+        "evidence": {
+          "source_ids": [
+            "C-aichi-police-ishitsu"
+          ],
+          "checked_at": "2026-11-05",
+          "status": "ai_checked",
+          "quote": "銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。",
+          "ai_check": {
+            "fetched_at": "2026-11-04",
+            "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
+            "verdict": "agree",
+            "ref": "internal-audit-record"
+          }
+        }
+      }
+    ]
+  },
+  "methods": [
+    {
+      "type": "phone",
+      "text": {
+        "ja": "キャッシュカード・クレジットカードが{入|はい}っていたかもしれないときは、{発行|はっこう}{元|もと}の{銀行|ぎんこう}・クレジット{会社|かいしゃ}に{連絡|れんらく}して、{利用|りよう}{停止|ていし}の{手続|てつづ}きをします。",
+        "ja_easy": "お{金|かね}のカードがあったかもしれないときは、カードの{会社|かいしゃ}に{電話|でんわ}して{止|と}めます。",
+        "en": "If a cash card or credit card may have been inside, contact the issuing bank or card company and have it suspended."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "落とした物の中に、キャッシュカードやクレジットカード、携帯電話などが含まれている場合には、それらが悪用されないように銀行やクレジット会社といったカードの発行元や携帯電話会社などへ速やかに連絡し、利用停止の手続を必ず行ってください。"
+      }
+    },
+    {
+      "type": "phone",
+      "text": {
+        "ja": "マイナンバーカードが{入|はい}っていたかもしれないときは、マイナンバー{総合|そうごう}フリーダイヤル（0120-95-0178）で{一時|いちじ}{停止|ていし}できます。24{時間|じかん}{受|う}け{付|つ}けています。",
+        "ja_easy": "マイナンバーカードがあったかもしれないときは、0120-95-0178 に{電話|でんわ}して{止|と}めます。いつでも{電話|でんわ}できます。",
+        "en": "If your My Number Card may have been inside, you can suspend it through the My Number toll-free line (0120-95-0178), open 24 hours."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-kojinbango-faq-lost"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "マイナンバーカード及びスマートフォンのマイナンバーカードの一時利用停止をコールセンターにて 24時間365日受け付けています。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードが{入|はい}っていたとわかったら、なくしたと{知|し}った{日|ひ}から14{日|にち}{以内|いない}に{再|さい}{交付|こうふ}を{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードがなかったら、14{日|にち}{以内|いない}に{入管|にゅうかん}に{行|い}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If you find that your residence card was inside, apply for a reissue within 14 days of learning of the loss (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "申請期間 当該事実を知った日（本邦から出国している間に当該事実を知った場合は、その後最初に入国した日）から１４日以内"
+      }
+    }
+  ]
+}

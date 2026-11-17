@@ -49,7 +49,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
         "verdict": "agree",
-        "ref": "research/audits/housing.json#P-housing-nyukyo/c6"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -73,7 +73,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "66f71c3dd1e393d642ed5b8097d98fd2383805c3a3e89bb71baa207bae42b319",
           "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-nyukyo/c4"
+          "ref": "internal-audit-record"
         }
       }
     },

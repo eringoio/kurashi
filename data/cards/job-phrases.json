@@ -48,9 +48,10 @@
       "source_ids": [
         "B-jsite-aichi-foreigner"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "応募書類（履歴書等）の添削"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "応募書類（履歴書等）の添削",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "guide",

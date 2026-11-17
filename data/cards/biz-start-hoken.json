@@ -14,7 +14,8 @@
     "all": [
       "R-job-goal-biz-start",
       "R-job-biz-hoken-change",
-      "R-job-not-pt-only"
+      "R-job-not-pt-only",
+      "R-job-biz-open"
     ]
   },
   "coverage_rule_ids": [],

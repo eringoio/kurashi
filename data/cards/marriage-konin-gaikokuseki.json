@@ -15,7 +15,8 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-foreign"
+      "R-mar-stage-japan",
+      "R-mar-has-foreign"
     ]
   },
   "title": {
@@ -50,7 +51,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -74,7 +75,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c1"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -96,7 +97,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -118,7 +119,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "fd4a74afffebe83b3e003607fed77487162432655cd765f30cf585afd255fd66",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -140,7 +141,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -162,7 +163,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -184,7 +185,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -206,7 +207,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0ea4c8d3565b4a46f473aa04de5e4879fadcddbd63653348c5a22108187bfb48",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -228,7 +229,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-konin-gaikokuseki/c14"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -275,9 +276,9 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "どちらも{日本|にほん}{国籍|こくせき}の{人|ひと}の{結婚|けっこん}には{出|だ}していません。",
-      "ja_easy": "どちらも{日本|にほん}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}には{出|だ}していません。",
-      "en": "Not shown when both people are Japanese nationals."
+      "ja": "{日本|にほん}でこれから{婚姻|こんいん}{届|とどけ}を{出|だ}す{人|ひと}で、ふたりのどちらかが{外国|がいこく}{籍|せき}のときに{出|だ}しています。どちらも{日本|にほん}{国籍|こくせき}の{人|ひと}、{婚姻|こんいん}{届|とどけ}をもう{出|だ}した{人|ひと}、{海外|かいがい}で{結婚|けっこん}した{人|ひと}には{出|だ}していません。",
+      "ja_easy": "{日本|にほん}でこれから{婚姻|こんいん}{届|とどけ}を{出|だ}す{人|ひと}で、どちらかが{外国|がいこく}の{国籍|こくせき}のときに{出|だ}しています。",
+      "en": "Shown when you will submit a marriage registration in Japan and at least one of you is a foreign national. Not shown to two Japanese nationals, to people who have already submitted it, or to people who married abroad."
     }
   },
   "evidence": {

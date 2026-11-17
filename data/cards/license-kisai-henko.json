@@ -95,7 +95,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ae8d6dfd7c45b09efd1cdd404fb278423e552938f29a85b523a1c62ad31017f5",
           "verdict": "agree",
-          "ref": "research/logs/license_2026-11-07.md"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -129,7 +129,8 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "ご本人の新住所を確認することができる書類（個人番号が印字されていない住民票の写し（コピーしたものは不可）、マイナンバーカード（通知カードは除く）又は新住所に届いた郵便物などのいずれか1つ）"
-      }
+      },
+      "when": "R-license-change-address"
     },
     {
       "type": "counter",
@@ -145,6 +146,12 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "※上記書類に記載されている住所に変更します。提示がない場合、住所変更ができません。"
+      },
+      "when": {
+        "all": [
+          "R-license-change-address",
+          "R-license-form-card"
+        ]
       }
     },
     {
@@ -161,6 +168,12 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "新氏名が記載されたマイナンバーカード又は本籍（又は国籍）記載の個人番号が印字されていない住民票の写し"
+      },
+      "when": {
+        "any": [
+          "R-license-change-name",
+          "R-license-change-honseki"
+        ]
       }
     },
     {
@@ -177,7 +190,8 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "自治体でマイナンバーカードの記載事項変更後に手続をしてください。"
-      }
+      },
+      "when": "R-license-form-myna"
     },
     {
       "type": "counter",

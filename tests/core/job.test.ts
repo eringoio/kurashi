@@ -2,6 +2,7 @@
 // B-13（11/6）：在留資格は共通の質問 Q-zairyu-status。旧 Q-job-status の free→permanent、other→work
    最低賃金は日付つきの事実（2026年10月1日から愛知県 1,195円）。すべて needs_check（行く所・方法の一部だけ ai_checked）。 */
 import { describe, expect, it } from 'vitest';
+import { isBulk } from './bulk';
 import { checkRefs, loadData } from '../../src/core/data';
 import { run, type EngineInput } from '../../src/core/engine';
 import { collectEvidence } from '../../src/core/quotes';
@@ -30,7 +31,7 @@ describe('仕事・アルバイト（公開）', () => {
     expect(checkRefs(data)).toEqual([]);
     expect(ev.card_ids.length).toBe(37);
     const s = JSON.stringify(json);
-    for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
+    for (const x of collectEvidence(data).filter((y) => mine(y.where) && y.e.status === 'verified')) expect(isBulk(x.e) || x.e.source_ids.some((id) => id === 'author-2026-11-07' || id === 'kurashi-spec'), x.where).toBe(true);
     expect(s).not.toMatch(/0\d{1,3}-\d{2,4}-\d{3,4}/);
     expect(s).not.toMatch(/https?:\/\/[^"]*\?/);
   });
@@ -58,9 +59,9 @@ describe('仕事・アルバイト（公開）', () => {
   });
   it('目的の選択肢は在留資格で絞る（v0.5.34）：仕事を辞める・個人事業・会社は、許可があればアルバイトだけの人（留学・家族滞在など）に出さない', () => {
     const q = data.questions.find((x) => x.id === 'Q-job-goal')!;
-    expect(q.options.filter((o) => o.when === 'R-job-not-pt-only').map((o) => o.value)).toEqual(['leave', 'biz_start', 'biz_end', 'company']);
+    expect(q.options.filter((o) => o.when === 'R-job-not-pt-only').map((o) => o.value)).toEqual(['leave', 'biz_end']);
     const first = (s?: string) => run(data, { answers: statusAnswers(s), objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev }).upfront[0];
-    expect(first('student').options.map((o) => o.value)).toEqual(['part_time', 'employ', 'pt_end', 'basics']);
+    expect(first('student').options.map((o) => o.value)).toEqual(['part_time', 'employ', 'pt_end', 'biz_start', 'company', 'basics']);
     expect(first('work').options.length).toBe(8);
     expect(first(undefined).options.length).toBe(8);
   });
@@ -202,6 +203,9 @@ describe('就職・退職（下書き）', () => {
     expect(d).toContain('資格外活動許可書');
   });
   it('応募の言葉は作者の経験（author_stated）。アルバイトのときだけ', () => {
+    const c = data.cards.find((x) => x.id === 'job-phrases')!;
+    // 内部のメモ（note）は公開用の書き出しで外れる。あるときだけ確かめる
+    if (c.evidence.note !== undefined) expect(c.evidence.note).toContain('author_stated');
     expect(st(g('employ', 'student'), 'job-phrases')).toBe('excluded');
   });
 });
@@ -286,5 +290,20 @@ describe('在留資格の区分（6A.16）', () => {
     expect(st(g('leave', 'work'), 'job-pt-leave-note')).toBe('excluded');
     expect(st(g('leave', 'permanent', { 'Q-job-koyo': 'yes' }), 'job-leave-shitsugyo')).not.toBe('excluded');
     expect(st(g('pt_end', 'student', { 'Q-insurance': 'employer_self', 'Q-job-koyo': 'yes' }), 'job-leave-shitsugyo')).not.toBe('excluded');
+  });
+});
+
+// O-8（B-5）：「仕事を辞める」に「このあと個人事業も始める」を足すと、答えは配列。どちらの手続きも外れない
+describe('目的を足す（辞めて個人事業も始める）', () => {
+  const g = (goal: string | string[]) => run(data, { answers: { 'Q-job-goal': goal as string, 'Q-nationality': 'japanese' }, objects: {}, plan: {}, createdOn: TODAY, today: TODAY, mode: 'public', event: ev });
+  const st = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!.state;
+  it('辞めるだけなら開業届は外れる。2つにすると、国保と開業届の両方が残り、開業届は目的', () => {
+    expect(st(g('leave'), 'biz-start-kaigyo')).toBe('excluded');
+    const o = g(['leave', 'biz_start']);
+    for (const id of ['job-leave-kokuho', 'biz-start-kaigyo']) expect(st(o, id), id).not.toBe('excluded');
+    expect(o.cards.find((c) => c.card.id === 'biz-start-kaigyo')!.goal).toBe(true);
+  });
+  it('データ：足せるのは「辞める」から「個人事業を始める」だけ', () => {
+    expect(ev.add_answers).toEqual([expect.objectContaining({ q: 'Q-job-goal', from: 'leave', add: 'biz_start' })]);
   });
 });

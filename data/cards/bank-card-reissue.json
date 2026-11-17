@@ -51,8 +51,9 @@
       "B-yucho-funshitsu",
       "B-mufg-card-loss"
     ],
-    "checked_at": "2026-11-06",
-    "status": "needs_check",
-    "quote": "マイナンバーカード・運転免許証・在留カード・ゆうちょ認証アプリのいずれかをご用意のうえ、アプリの画面に従ってお手続きください。"
+    "checked_at": "2026-11-08",
+    "status": "verified",
+    "quote": "マイナンバーカード・運転免許証・在留カード・ゆうちょ認証アプリのいずれかをご用意のうえ、アプリの画面に従ってお手続きください。",
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

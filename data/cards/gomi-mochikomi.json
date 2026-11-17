@@ -115,7 +115,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be9c7264f03cf79925c92d1a66efab1b654e76e8bb2d7ec6502bf0234f494b41",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -153,7 +153,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -175,7 +175,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c11"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -197,7 +197,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c12"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -219,7 +219,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c13"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -257,7 +257,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "be892e691afc0c0b23e9c60ad32d2bc49d13342cb9965cef9ed0a7834ade9ce1",
           "verdict": "agree",
-          "ref": "research/audits/gomi.json#P-gomi-mochikomi/c15"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -315,7 +315,7 @@
         "fetched_at": "2026-11-07",
         "sha256": "c9f2bfb3a1447bd5b14573b540ca912938145d636a9a090f911e6dafc3cfae24",
         "verdict": "agree",
-        "ref": "research/logs/gomi_fee_2026-11-07.md"
+        "ref": "internal-audit-record"
       }
     }
   },

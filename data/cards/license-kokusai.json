@@ -47,7 +47,7 @@
   },
   "lead": {
     "ja": "{日本|にほん}では{日本|にほん}の{免許|めんきょ}{証|しょう}や{国際|こくさい}{運転|うんてん}{免許|めんきょ}{証|しょう}などで{運転|うんてん}できます。",
-    "ja_easy": "日本の免許証か、国際免許証で運転できます。",
+    "ja_easy": "{日本|にほん}の{免許|めんきょ}{証|しょう}か、{国際|こくさい}{免許|めんきょ}{証|しょう}で{運転|うんてん}できます。",
     "en": "In Japan you can drive with a Japanese licence or an international driving permit, among others."
   },
   "deadline": {

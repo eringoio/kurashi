@@ -44,7 +44,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
         "verdict": "agree",
-        "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -78,7 +78,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -100,7 +100,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -122,7 +122,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -160,7 +160,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "1417a19526231819df7fe6f86493c9e3f486137bae7302717a58c2250cba6d18",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-saihakko-lost/c15"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -199,7 +199,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-card-stop/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -221,7 +221,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-card-stop/c10"
+          "ref": "internal-audit-record"
         }
       }
     }

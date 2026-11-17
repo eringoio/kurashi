@@ -18,8 +18,8 @@ describe('同じ所の項目は、行く日を一度に聞く', () => {
   it('区役所の3つが1つのまとまりになる。銀行は入らない', () => {
     const o = out();
     const c = o.cards.find((x) => x.card.id === 'nagoya-tennyu-juukyochi')!;
-    // v0.4.8：前提の関係（住居地の届出 → 国保）は、確認前でも並び順にだけ使う。国保は前提が残っているので後ろ
-    expect(ids(visitGroup(o.cards, c))).toEqual(['nagoya-tennyu-juukyochi', 'kokumin-nenkin-kanyu', 'nagoya-kokuho-kanyu']);
+    // v0.5.44：前提（住居地の届出 → 国保）を先にしたうえで、優先の順（国保・年金はどちらも期限のある義務。flow.json の順）。same_visit の order と同じ
+    expect(ids(visitGroup(o.cards, c))).toEqual(['nagoya-tennyu-juukyochi', 'nagoya-kokuho-kanyu', 'kokumin-nenkin-kanyu']);
     const bank = o.cards.find((x) => x.card.id === 'bank-account-open')!;
     expect(ids(visitGroup(o.cards, bank))).toEqual(['bank-account-open']);
   });

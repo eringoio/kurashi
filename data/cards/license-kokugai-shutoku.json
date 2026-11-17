@@ -1,0 +1,138 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-kokugai-shutoku",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "kind": "procedure",
+  "keywords": [
+    "国外運転免許証",
+    "こくがいうんてんめんきょしょう",
+    "国際免許",
+    "海外 運転",
+    "international driving permit",
+    "drive abroad",
+    "kokugai"
+  ],
+  "eligibility": "R-license-goal-abroad",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は、{日本|にほん}の{免許|めんきょ}で{外国|がいこく}を{運転|うんてん}したい{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{日本|にほん}の{免許|めんきょ}で{外国|がいこく}で{運転|うんてん}したい{人|ひと}のためのものです。",
+      "en": "This guide is for people who want to drive abroad with a Japanese licence."
+    }
+  },
+  "title": {
+    "ja": "{外国|がいこく}で{運転|うんてん}するため、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}を{取|と}る",
+    "ja_easy": "{外国|がいこく}で{運転|うんてん}するため、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}を{取|と}る",
+    "en": "Get an international driving permit to drive abroad"
+  },
+  "official_name": {
+    "ja": "国外運転免許証の交付",
+    "reading": "こくがいうんてんめんきょしょうのこうふ"
+  },
+  "lead": {
+    "ja": "{日本|にほん}の{免許|めんきょ}を{持|も}っている{人|ひと}が、{外国|がいこく}で{運転|うんてん}するための{手続|てつづ}きです。",
+    "ja_easy": "{日本|にほん}の{免許|めんきょ}で、{外国|がいこく}で{運転|うんてん}するための{手続|てつづ}きです。",
+    "en": "This is for holders of a Japanese licence who want to drive abroad."
+  },
+  "summary": {
+    "ja": "{日本|にほん}の{免許|めんきょ}を{持|も}っている{人|ひと}が{外国|がいこく}で{運転|うんてん}するときは、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}を{申請|しんせい}します。{住所|じゅうしょ}{地|ち}の{公安|こうあん}{委員|いいん}{会|かい}に、{外国|がいこく}へ{行|い}くことがわかる{書類|しょるい}を{付|つ}けて{申請|しんせい}します。{有効|ゆうこう}{期間|きかん}は{発給|はっきゅう}の{日|ひ}から1{年|ねん}です。{原付|げんつき}{免許|めんきょ}・{小型|こがた}{特殊|とくしゅ}{免許|めんきょ}・{仮免許|かりめんきょ}だけの{人|ひと}は{申請|しんせい}できません（{要|よう}{確認|かくにん}）。{外国|がいこく}の{免許|めんきょ}を{日本|にほん}の{免許|めんきょ}に{切|き}り{替|か}える{手続|てつづ}き（{外免|がいめん}{切替|きりかえ}）とは{別|べつ}の{手続|てつづ}きです。{受付|うけつけ}の{場所|ばしょ}・{時間|じかん}・{手数料|てすうりょう}・{写真|しゃしん}は、{愛知|あいち}{県|けん}{警察|けいさつ}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}の{免許|めんきょ}で{外国|がいこく}で{運転|うんてん}するときは、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}をもらいます。{外国|がいこく}へ{行|い}くことがわかる{書類|しょるい}がいります（{要|よう}{確認|かくにん}）。1{年|ねん}{使|つか}えます。{場所|ばしょ}とお{金|かね}は、{愛知|あいち}{県|けん}{警察|けいさつ}のページで{見|み}ます（{要|よう}{確認|かくにん}）。",
+    "en": "To drive abroad with a Japanese licence, apply for an international driving permit. Apply to the Public Safety Commission for your address, with a document showing that you are travelling abroad. It is valid for 1 year from the date of issue. Holders of only a moped, small special or provisional licence cannot apply (to be checked). This is a different procedure from converting a foreign licence to a Japanese one. Check the place, hours, fee and photo on the Aichi Prefectural Police page (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{住所|じゅうしょ}{地|ち}の{公安|こうあん}{委員|いいん}{会|かい}。{愛知|あいち}{県|けん}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}など（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}など（{要|よう}{確認|かくにん}）",
+      "en": "The Public Safety Commission for your address. In Aichi, the driving licence test centre and others (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "egov-doro-kotsu-ho",
+        "license-aichi-kokugai"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "国外運転免許証の交付を受けようとする者は、その者の住所地を管轄する公安委員会に"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申請|しんせい}できるのは、{日本|にほん}の{免許|めんきょ}（{原付|げんつき}{免許|めんきょ}・{小型|こがた}{特殊|とくしゅ}{免許|めんきょ}・{仮免許|かりめんきょ}を{除|のぞ}く）を{持|も}っている{人|ひと}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{日本|にほん}の{免許|めんきょ}を{持|も}っている{人|ひと}です（{原付|げんつき}・{仮免許|かりめんきょ}だけの{人|ひと}はできません）（{要|よう}{確認|かくにん}）",
+        "en": "You can apply if you hold a Japanese licence other than a moped, small special or provisional licence (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "免許（小型特殊免許、原付免許及び仮免許を除く。）を現に受けている者"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{持|も}っていく{物|もの}：{申請|しんせい}{書|しょ}と、{外国|がいこく}へ{行|い}くことがわかる{書類|しょるい}（パスポートなど）。{写真|しゃしん}・{手数料|てすうりょう}は{愛知|あいち}{県|けん}{警察|けいさつ}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{持|も}ち{物|もの}：{外国|がいこく}へ{行|い}くことがわかる{書類|しょるい}（パスポートなど）（{要|よう}{確認|かくにん}）",
+        "en": "Bring: the application form and a document showing you are travelling abroad (such as a passport). Check the photo and fee on the Aichi Prefectural Police page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "その者が外国に渡航するものであることを証する書面を添えて、内閣府令で定める様式の交付申請書を提出しなければならない。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{有効|ゆうこう}{期間|きかん}は、{発給|はっきゅう}の{日|ひ}から1{年|ねん}です。{日本|にほん}の{免許|めんきょ}の{期限|きげん}が{先|さき}に{来|く}る{人|ひと}は、{愛知|あいち}{県|けん}{警察|けいさつ}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "1{年|ねん}{使|つか}えます（{要|よう}{確認|かくにん}）",
+        "en": "It is valid for 1 year from the date of issue. If your Japanese licence expires sooner, ask the Aichi Prefectural Police (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "国外運転免許証の有効期間は、当該国外運転免許証の発給の日から起算して一年とする。"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "egov-doro-kotsu-ho"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "国外運転免許証の交付を受けようとする者は、その者の住所地を管轄する公安委員会に、その者が外国に渡航するものであることを証する書面を添えて、内閣府令で定める様式の交付申請書を提出しなければならない。"
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{愛知|あいち}{県|けん}{警察|けいさつ}：{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}の{交付|こうふ}",
+        "ja_easy": "{愛知|あいち}{県|けん}の{警察|けいさつ}：{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}",
+        "en": "Aichi Police: international driving permit"
+      },
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kokugai/koufu.html",
+      "source_id": "license-aichi-kokugai"
+    }
+  ]
+}

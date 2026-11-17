@@ -1,0 +1,210 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-henko",
+  "illustration": "doc",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{宣誓|せんせい}した{内容|ないよう}を{変更|へんこう}する",
+    "ja_easy": "{宣誓|せんせい}した{内容|ないよう}を{変|か}える",
+    "en": "Change the pledge details"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓事項変更届",
+    "reading": "ふぁみりーしっぷせんせいじこうへんこうとどけ"
+  },
+  "lead": {
+    "ja": "{住所|じゅうしょ}・{氏名|しめい}など{宣誓|せんせい}した{内容|ないよう}が{変|か}わったとき、{子|こ}の{氏名|しめい}を{加|くわ}える・{消|け}すときに{届|とど}け{出|で}ます。",
+    "ja_easy": "{住所|じゅうしょ}や{名前|なまえ}が{変|か}わったとき、{子|こ}どもの{名前|なまえ}を{加|くわ}える・{消|け}すときに{届|とど}けます。",
+    "en": "Notify when your address, name or other pledge details change, or to add or remove a child's name."
+  },
+  "summary": {
+    "ja": "{住所|じゅうしょ}・{氏名|しめい}など{宣誓|せんせい}した{内容|ないよう}が{変|か}わったとき、{子|こ}の{氏名|しめい}を{加|くわ}える・{消|け}すときに{届|とど}け{出|で}ます。",
+    "ja_easy": "{住所|じゅうしょ}や{名前|なまえ}が{変|か}わったとき、{子|こ}どもの{名前|なまえ}を{加|くわ}える・{消|け}すときに{届|とど}けます。",
+    "en": "Notify when your address, name or other pledge details change, or to add or remove a child's name."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{返信|へんしん}{用|よう}{封筒|ふうとう}の{切手|きって}180{円|えん}{分|ぶん}は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{切手|きって}180{円|えん}は{自分|じぶん}で{払|はら}います。",
+      "en": "No fee is mentioned (to be checked). You pay 180 yen of stamps for the return envelope."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-tebiki"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "切手代１８０円（定形外規格内）のご負担が必要です。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "オンライン（{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (form). Mail documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "手続きについては原則、オンラインで申請を行っていただき、必要書類等については郵送にて男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どんなとき",
+        "ja_easy": "どんなとき",
+        "en": "When"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{住所|じゅうしょ}や{氏名|しめい}など、{宣誓|せんせい}した{内容|ないよう}が{変|か}わったとき。",
+            "ja_easy": "{住所|じゅうしょ}や{名前|なまえ}など、{宣誓|せんせい}した{内容|ないよう}が{変|か}わったとき。",
+            "en": "When pledge details such as your address or name change."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓内容に変更があった場合、下記申請用申込フォームからファミリーシップ宣誓事項変更届の申請を行ってください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{子|こ}の{氏名|しめい}を{加|くわ}える・{消|け}すとき。",
+            "ja_easy": "{子|こ}どもの{名前|なまえ}を{加|くわ}える・{消|け}すとき。",
+            "en": "To add or remove a child's name."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓時以降にお子さんの氏名の追記や削除等を希望される場合は、ファミリーシップ宣誓事項変更届をご提出ください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "パートナーの{一方|いっぽう}が{亡|な}くなっても、{子|こ}を{含|ふく}むファミリーシップを{続|つづ}けるときは、{返還|へんかん}ではなく{変更|へんこう}の{届|とど}けをします。",
+            "ja_easy": "パートナーが{亡|な}くなっても、{子|こ}どもといっしょに{続|つづ}けるときは、{変更|へんこう}の{届|とど}けをします。",
+            "en": "If one partner dies but the family with the child continues, file a change instead of returning the receipt."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "引き続きファミリーシップの関係の継続を希"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{郵送|ゆうそう}するもの",
+        "ja_easy": "{郵便|ゆうびん}で{送|おく}るもの",
+        "en": "What to mail"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{変更|へんこう}{前|まえ}の{受領証|じゅりょうしょう}と{受領|じゅりょう}{証明|しょうめい}カード（なくしたなど、やむを{得|え}ないときを{除|のぞ}く）。",
+            "ja_easy": "{前|まえ}の{受領証|じゅりょうしょう}とカード（なくしたときなどは{除|のぞ}く）。",
+            "en": "The old receipt and card (unless lost or for another unavoidable reason)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "変更前の宣誓書受領証と宣誓書受領証明カ"
+          }
+        },
+        {
+          "text": {
+            "ja": "{変更|へんこう}がわかる{書類|しょるい}：{住所|じゅうしょ}なら{新|あたら}しい{住所|じゅうしょ}の{住民|じゅうみん}{票|ひょう}の{写|うつ}しなど（{発行|はっこう}から3か{月|げつ}{以内|いない}）。{子|こ}を{加|くわ}えるなら{関係|かんけい}がわかる{書類|しょるい}（{戸籍|こせき}{抄本|しょうほん}など）。15{歳|さい}{以上|いじょう}の{子|こ}を{加|くわ}えるときは、{子|こ}{本人|ほんにん}が{書|か}いた{変更|へんこう}{届|とどけ}（{様式|ようしき}5）も。",
+            "ja_easy": "{変|か}わったことがわかる{書類|しょるい}：{住所|じゅうしょ}なら{住民|じゅうみん}{票|ひょう}の{写|うつ}し（3か{月|げつ}{以内|いない}）。{子|こ}どもを{加|くわ}えるなら{戸籍|こせき}{抄本|しょうほん}など。15{歳|さい}{以上|いじょう}の{子|こ}どもは、{本人|ほんにん}が{書|か}いた{届|とど}けも。",
+            "en": "Proof of the change: for an address, a copy of your resident record with the new address (issued within 3 months); to add a child, proof of relationship (such as a family register extract); for a child aged 15 or over, the change form (Form 5) written by the child."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "お子さんご本人が自ら記入した、ファミリーシップ宣誓事項変更届（様式５）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）。",
+            "ja_easy": "{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}）。",
+            "en": "A return envelope (A4 size, 180 yen of stamps, your address)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "切手１８０円分（定形外規格内）を貼付し、返信先の住所・氏名を記載した返"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{宣誓|せんせい}{事項|じこう}{変更|へんこう}の{申込|もうしこみ}フォーム",
+        "ja_easy": "{変更|へんこう}のフォーム",
+        "en": "Change form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/dEhXQ",
+      "source_id": "B-nagoya-familyship-form-henko"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "familyship"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-tebiki",
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "（２）宣誓事項の変更"
+  }
+}

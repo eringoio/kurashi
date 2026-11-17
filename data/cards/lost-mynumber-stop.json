@@ -44,7 +44,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "8ab02d07fb21dbbc294b69cf24d2043bbb4097941b3eaed26f523bc34f83637d",
         "verdict": "agree",
-        "ref": "research/audits/mynumber.json#P-mynumber-teishi/c6"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -119,7 +119,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c1"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -141,7 +141,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -163,7 +163,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "8b2ad81b9155bc05605107942630f644d38c92a209f04872c63a3539605e4d48",
           "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-teishi/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -185,29 +185,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-card-stop/c7"
-        }
-      }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "カードが{見|み}つかったときは、{見|み}つかったカードを{持|も}って{市区町村|しくちょうそん}の{窓口|まどぐち}へ{行|い}き、{一時|いちじ}{停止|ていし}の{解除|かいじょ}をしてもらいます。フリーダイヤルへの{連絡|れんらく}は{要|い}りません。{名古屋市|なごやし}のどの{窓口|まどぐち}かは、{区役所|くやくしょ}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "カードが{見|み}つかったら、そのカードを{持|も}って{区役所|くやくしょ}に{行|い}き、{止|と}めたのをもどしてもらいます。{電話|でんわ}は{要|い}りません（{要確認|ようかくにん}）。",
-        "en": "If the card is found, take it to your municipality and have the suspension lifted. You do not need to call the hotline again. Ask your ward office which counter handles it in Nagoya (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "B-jlis-lost2"
-        ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "お住まいの市区町村に見つかったマイナンバーカードをお持ちいただき、一時停止の解除をしていただくことで、引き続きカードをご利用いただけます。※マイナンバー総合フリーダイヤルへのご連絡は不要です。",
-        "ai_check": {
-          "fetched_at": "2026-11-04",
-          "sha256": "92e267f9187ff6aaa08e8d7275bf030413bef7b25ff5bb51b0bcfbfb0543c0b8",
-          "verdict": "agree",
-          "ref": "research/audits/mynumber.json#P-mynumber-kaijo-found/c1"
+          "ref": "internal-audit-record"
         }
       }
     }

@@ -1,5 +1,4 @@
 {
-  "$comment": "在留期間の更新の流れ（SPEC 6A.18 v0.5.29。src/core/stayRenew.ts・src/ui/StayRenew.tsx）。在留資格の選択肢・基本の書類・分かれ道の事実。すべて出典つき（sources.json）。2026-11-08 に公式の本文で確かめた（needs_check。作者の確認待ち）。追加の書類は一律に必須にしない（公式のページへ）。",
   "statuses": [
     {
       "id": "student",
@@ -356,32 +355,33 @@
     },
     "card": {
       "text": {
-        "ja": "{永住|えいじゅう}{者|しゃ}・{高度|こうど}{専門|せんもん}{職|しょく}2{号|ごう}の{人|ひと}に、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{有効|ゆうこう}{期間|きかん}の{更新|こうしん}を、カードの{有効|ゆうこう}{期間|きかん}が{終|お}わる3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までに、{入管|にゅうかん}で{申請|しんせい}します。{手数料|てすうりょう}はかかりません。オンラインではできません。",
-        "ja_easy": "{永住者|えいじゅうしゃ}・{高度専門職|こうどせんもんしょく}2{号|ごう}の{人|ひと}は、{在留期間|ざいりゅうきかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{有効期間|ゆうこうきかん}が{終|お}わる3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までに、{入管|にゅうかん}でカードを{更新|こうしん}します。お{金|かね}はかかりません。",
-        "en": "Permanent Residents and Highly Skilled Professional (ii) have no period-of-stay renewal. Renew the residence card itself at immigration, from 3 months before the card’s validity date until that date. No fee. Not available online."
+        "ja": "{永住者|えいじゅうしゃ}・{高度|こうど}{専門職|せんもんしょく}2{号|ごう}の{人|ひと}に、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{有効|ゆうこう}{期間|きかん}の{更新|こうしん}を、カードの{有効|ゆうこう}{期間|きかん}が{終|お}わる{日|ひ}の3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までに、{住|す}んでいる{所|ところ}の{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{愛知県|あいちけん}は{名古屋|なごや}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{局|きょく}）に{申請|しんせい}します。{手数料|てすうりょう}はかかりません。オンラインではできません。16{歳|さい}の{誕生日|たんじょうび}に{関係|かんけい}するときは、{申請|しんせい}できる{時期|じき}が{変|か}わります。16{歳|さい}{未満|みまん}の{人|ひと}は、{同居|どうきょ}する16{歳|さい}{以上|いじょう}の{親族|しんぞく}が{代|か}わりに{申請|しんせい}できます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{永住者|えいじゅうしゃ}・{高度専門職|こうどせんもんしょく}2{号|ごう}の{人|ひと}は、{在留期間|ざいりゅうきかん}の{更新|こうしん}はありません。{在留|ざいりゅう}カードの{更新|こうしん}を、カードの{期限|きげん}の3か{月|げつ}{前|まえ}から{期限|きげん}の{日|ひ}までに、{入管|にゅうかん}でします。{お金|おかね}はいりません。インターネットではできません。16{歳|さい}の{誕生日|たんじょうび}のころは、{時期|じき}が{変|か}わります。16{歳|さい}より{小|ちい}さい{人|ひと}は、{一緒|いっしょ}に{住|す}む16{歳|さい}{以上|いじょう}の{家族|かぞく}が{代|か}わりにできます（{要確認|ようかくにん}）。",
+        "en": "Permanent Residents and Highly Skilled Professional (ii) have no period-of-stay renewal. Renew the residence card itself at the regional immigration bureau for your place of residence (for Aichi: Nagoya Regional Immigration Services Bureau), from 3 months before the card's validity date until that date. No fee. Not available online. The window differs around the 16th birthday. For a person under 16, a relative aged 16 or over who lives with them can apply (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "isa-card-renewal",
           "isa-online-qa"
         ],
-        "checked_at": "2026-11-08",
+        "checked_at": "2026-11-15",
         "status": "needs_check",
         "quote": "現に有する在留カードの有効期間の満了日の３か月前から有効期間の満了日まで"
       }
     },
     "spc": {
       "text": {
-        "ja": "{特別|とくべつ}{永住|えいじゅう}{者|しゃ}は、{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}です。{住|す}んでいる{区|く}の{区役所|くやくしょ}で{申請|しんせい}します（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{特別永住者|とくべつえいじゅうしゃ}は、{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}です。{区役所|くやくしょ}で{申請|しんせい}します（{要確認|ようかくにん}）。",
-        "en": "Special Permanent Residents renew the Special Permanent Resident Certificate. Apply at your ward office (to be checked)."
+        "ja": "{特別|とくべつ}{永住者|えいじゅうしゃ}の{人|ひと}に、{在留|ざいりゅう}{期間|きかん}の{更新|こうしん}はありません。{特別|とくべつ}{永住者|えいじゅうしゃ}{証明書|しょうめいしょ}の{有効|ゆうこう}{期間|きかん}の{更新|こうしん}は、{住|す}んでいる{市区町村|しくちょうそん}の{窓口|まどぐち}（{名古屋市|なごやし}は{区役所|くやくしょ}。{課|か}の{名前|なまえ}は{要|よう}{確認|かくにん}）に{申請|しんせい}します。{原則|げんそく}として、{有効|ゆうこう}{期間|きかん}が{終|お}わる{日|ひ}の3か{月|げつ}{前|まえ}から{終|お}わる{日|ひ}までです。16{歳|さい}{未満|みまん}の{人|ひと}は、{同居|どうきょ}する16{歳|さい}{以上|いじょう}の{親族|しんぞく}が{代|か}わりに{申請|しんせい}できます。16{歳|さい}の{誕生日|たんじょうび}に{関係|かんけい}するときは、{時期|じき}が{変|か}わります（{要|よう}{確認|かくにん}）。{入管|にゅうかん}ではありません。",
+        "ja_easy": "{特別永住者|とくべつえいじゅうしゃ}の{人|ひと}は、{在留期間|ざいりゅうきかん}の{更新|こうしん}はありません。{特別永住者証明書|とくべつえいじゅうしゃしょうめいしょ}の{更新|こうしん}は、{住|す}んでいる{区|く}の{区役所|くやくしょ}でします（{課|か}の{名前|なまえ}は{要確認|ようかくにん}）。{期限|きげん}の3か{月|げつ}{前|まえ}から{期限|きげん}の{日|ひ}までです。16{歳|さい}より{小|ちい}さい{人|ひと}は、{一緒|いっしょ}に{住|す}む16{歳|さい}{以上|いじょう}の{家族|かぞく}が{代|か}わりにできます。16{歳|さい}の{誕生日|たんじょうび}のころは、{時期|じき}が{変|か}わります（{要確認|ようかくにん}）。{入管|にゅうかん}ではありません。",
+        "en": "Special Permanent Residents have no period-of-stay renewal. Renew the Special Permanent Resident Certificate at the municipal office for your place of residence (in Nagoya, the ward office; the section name is to be checked), generally from 3 months before its validity date until that date. For a person under 16, a relative aged 16 or over who lives with them can apply. The window differs around the 16th birthday (to be checked). This is not done at the immigration bureau."
       },
       "evidence": {
         "source_ids": [
           "isa-spc-renewal"
         ],
-        "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "原則として、有効期間満了日の３か月前から有効期間満了日までの間。"
       }
     },
     "short": {

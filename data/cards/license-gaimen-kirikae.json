@@ -162,6 +162,22 @@
     {
       "type": "counter",
       "text": {
+        "ja": "{日本語|にほんご}の{翻訳|ほんやく}{文|ぶん}は、{免許|めんきょ}{証|しょう}を{出|だ}した{国|くに}の{役所|やくしょ}、その{国|くに}の{在日|ざいにち}{大使館|たいしかん}・{領事館|りょうじかん}、JAF など、{決|き}められたところが{作|つく}ったものだけ{使|つか}えます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{翻訳|ほんやく}は、{決|き}められたところ（{大使館|たいしかん}やJAFなど）で{作|つく}ります（{要|よう}{確認|かくにん}）",
+        "en": "The Japanese translation must be made by a designated body, such as the authority that issued the licence, that country's embassy or consulate in Japan, or JAF (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-npa-gaimen"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "当該免許証を発給した外国等の行政庁等、当該外国の領事機関等政令で定める者"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
         "ja": "{持|も}っていく{物|もの}（4）：{外国|がいこく}に{通算|つうさん}3か{月|げつ}{以上|いじょう}{滞在|たいざい}したことがわかる、{出入国|しゅつにゅうこく}の{証印|しょういん}のある{旅券|りょけん}など（{要|よう}{確認|かくにん}）",
         "ja_easy": "{持|も}ち{物|もの}：{出入国|しゅつにゅうこく}のはんこがあるパスポート（{要確認|ようかくにん}）",
         "en": "What to bring (4): a passport with entry/exit stamps or similar showing a total stay of at least 3 months abroad (to be checked)."

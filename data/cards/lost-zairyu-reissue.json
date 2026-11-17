@@ -13,18 +13,18 @@
   "eligibility": "R-lost-zairyu",
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}",
-    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらう",
-    "en": "Reissue your residence card"
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}（14{日|にち}{以内|いない}）",
+    "ja_easy": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}（14{日|にち}{以内|いない}）",
+    "en": "Residence card reissue (within 14 days)"
   },
   "official_name": {
     "ja": "在留カードの再交付",
     "reading": "ざいりゅうかーどのさいこうふ"
   },
   "summary": {
-    "ja": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}をもらいます。{届出|とどけで}を{受理|じゅり}したことの{証明|しょうめい}{書|しょ}（{届|とど}けた{警察|けいさつ}{署|しょ}でもらえます）か{受理|じゅり}{番号|ばんごう}を{持|も}って、{住居|じゅうきょ}{地|ち}を{管轄|かんかつ}する{入管|にゅうかん}で{再|さい}{交付|こうふ}を{申請|しんせい}します。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}をもらいます。{警察|けいさつ}の{証明|しょうめい}{書|しょ}か{受理|じゅり}{番号|ばんごう}を{持|も}って、{入管|にゅうかん}に{行|い}きます。お{金|かね}はかかりません（{要|よう}{確認|かくにん}）。",
-    "en": "First report it to the police and get a receipt number. Take the police certificate of the report (from the police station where you reported) or the receipt number to the immigration office for your address and apply for a new card. There is no fee (to be checked)."
+    "ja": "なくしたと{知|し}った{日|ひ}から14{日|にち}{以内|いない}に、{住居|じゅうきょ}{地|ち}を{管轄|かんかつ}する{入管|にゅうかん}で{再|さい}{交付|こうふ}を{申請|しんせい}します。{紛失|ふんしつ}・{盗難|とうなん}の{陳述|ちんじゅつ}{書|しょ}に、{警察|けいさつ}の{届出|とどけで}{受理|じゅり}{番号|ばんごう}を{書|か}きます。{家|いえ}の{中|なか}でなくしたなど、{遺失|いしつ}{届|とどけ}の{対象|たいしょう}にならないときは、そのことを{書|か}きます。{受理|じゅり}{番号|ばんごう}がまだ{届|とど}かなくても、{期限|きげん}を{過|す}ぎないように{入管|にゅうかん}に{相談|そうだん}します（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}はかかりません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "なくしたとわかった{日|ひ}から14{日|にち}{以内|いない}に、{入管|にゅうかん}で{新|あたら}しいカードを{頼|たの}みます。{警察|けいさつ}の{番号|ばんごう}を{書|か}きます。{家|いえ}の{中|なか}でなくしたときは、そう{書|か}きます。{番号|ばんごう}がまだでも、{入管|にゅうかん}に{相談|そうだん}します（{要|よう}{確認|かくにん}）。",
+    "en": "Apply at the immigration office for your area within 14 days of learning of the loss. On the loss/theft statement, write the police report receipt number. If the loss cannot be reported as lost property (for example, it is somewhere in your home), write that instead. If the receipt number has not come yet, contact immigration before the deadline (to be checked). There is no fee (to be checked)."
   },
   "deadline": {
     "text": {
@@ -36,7 +36,7 @@
       "source_ids": [
         "B-moj-zairyu-reissue-lost"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-08",
       "status": "needs_check",
       "quote": "申請期間 当該事実を知った日（本邦から出国している間に当該事実を知った場合は、その後最初に入国した日）から１４日以内"
     }
@@ -105,17 +105,49 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{警察|けいさつ}に{届|とど}けて{受理|じゅり}{番号|ばんごう}をもらい、{紛失|ふんしつ}・{盗難|とうなん}の{陳述書|ちんじゅつしょ}に{書|か}きます。{遺失|いしつ}{届出|とどけで}などの{対象|たいしょう}にならないときは、そのことを{陳述書|ちんじゅつしょ}に{書|か}きます（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "{警察|けいさつ}でもらった{番号|ばんごう}を、{陳述書|ちんじゅつしょ}に{書|か}きます（{要確認|ようかくにん}）。",
-        "en": "Get a receipt number from the police and write it on the loss/theft statement. If a loss report does not apply, say so on the statement (to be checked)."
+        "ja": "{紛失|ふんしつ}・{盗難|とうなん}の{陳述|ちんじゅつ}{書|しょ}に、{警察|けいさつ}の{届出|とどけで}{受理|じゅり}{番号|ばんごう}を{書|か}きます。{家|いえ}の{中|なか}でなくしたなど、{遺失|いしつ}{届出|とどけで}などの{対象|たいしょう}にならないときは、そのことを{陳述|ちんじゅつ}{書|しょ}に{書|か}きます。",
+        "ja_easy": "{陳述|ちんじゅつ}{書|しょ}に、{警察|けいさつ}の{番号|ばんごう}を{書|か}きます。{家|いえ}の{中|なか}でなくしたときは、そう{書|か}きます。",
+        "en": "Write the police report receipt number on the loss/theft statement. If a loss report does not apply (for example, it is somewhere in your home), write that on the statement."
       },
       "evidence": {
         "source_ids": [
           "B-moj-zairyu-reissue-lost"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check",
         "quote": "紛失・盗難に係る陳述書（紛失や盗難の場合は警察へ届出の上、届出受理番号が必要です。）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}がまだ{届|とど}かなくても、14{日|にち}の{期限|きげん}は{変|か}わりません。{期限|きげん}を{過|す}ぎそうなときは、{早|はや}めに{入管|にゅうかん}に{問|と}い{合|あ}わせます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{警察|けいさつ}の{番号|ばんごう}がまだでも、14{日|にち}の{期限|きげん}は{同|おな}じです。{早|はや}めに{入管|にゅうかん}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "The 14-day deadline does not change even if the police receipt number has not come yet. If you may miss the deadline, contact immigration early (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "申請期間 当該事実を知った日（本邦から出国している間に当該事実を知った場合は、その後最初に入国した日）から１４日以内"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{申請|しんせい}の{内容|ないよう}によっては、{遺失|いしつ}{届出|とどけで}{証明|しょうめい}{書|しょ}などの{資料|しりょう}を{求|もと}められることがあります。",
+        "ja_easy": "{警察|けいさつ}の{証明|しょうめい}{書|しょ}を{頼|たの}まれることがあります。",
+        "en": "Depending on the application, you may be asked for documents such as a lost-property report certificate."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "申請内容に応じて遺失届出証明書等の資料の提出をお願いする場合があります。"
       }
     },
     {
@@ -136,7 +168,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "600bcab0468ad413beaeb492458eeac2e552faacd672b5e1a66b37195bb773e1",
           "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-reissue-lost/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -158,7 +190,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "600bcab0468ad413beaeb492458eeac2e552faacd672b5e1a66b37195bb773e1",
           "verdict": "agree",
-          "ref": "research/audits/zairyu.json#P-zairyu-reissue-lost/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -196,8 +228,24 @@
           "fetched_at": "2026-11-04",
           "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-foreign/c4"
+          "ref": "internal-audit-record"
         }
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{旅券|りょけん}を{見|み}せられないときは、{理由書|りゆうしょ}のほかに、{身分|みぶん}を{証|しょう}する{文書|ぶんしょ}なども{見|み}せます（どの{文書|ぶんしょ}が{使|つか}えるかは{入管|にゅうかん}で{確|たし}かめます。{要|よう}{確認|かくにん}）。{旅券|りょけん}もなくした{人|ひと}も、{在留|ざいりゅう}カードの14{日|にち}の{期限|きげん}は{同|おな}じです。{大使館|たいしかん}への{連絡|れんらく}は、{在留|ざいりゅう}カードの{手続|てつづ}きが{終|お}わるのを{待|ま}たずに、{同時|どうじ}に{進|すす}められます。",
+        "ja_easy": "パスポートを{見|み}せられないときは、わけを{書|か}いた{紙|かみ}（{理由書|りゆうしょ}）のほかに、{身分|みぶん}がわかる{物|もの}も{見|み}せます（どの{物|もの}が{使|つか}えるかは{入管|にゅうかん}で{聞|き}きます。{要|よう}{確認|かくにん}）。パスポートもなくした{人|ひと}も、14{日|にち}の{期限|きげん}は{同|おな}じです。{大使館|たいしかん}への{連絡|れんらく}は、{待|ま}たずに{同時|どうじ}にできます。",
+        "en": "If you cannot show your passport, you also show identity documents in addition to the written explanation (ask Immigration which documents are accepted; to be checked). The 14-day deadline is the same if you also lost your passport. You can contact your embassy at the same time, without waiting for the residence card procedure to finish."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "旅券（又は在留資格証明書）を提示できないとき（自宅に忘れた等の理由を除く）は、その理由を記載した理由書"
       }
     },
     {
@@ -218,7 +266,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "93db44e6f2e2b750c3025b7bbf9ba97413ffca47374d3bcbcb70b2e7808abd69",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -240,7 +288,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "aef80db9cf49622fee6cd52de6953fafb02481ac3f741401e6940946eff8038a",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-disaster/c4"
+          "ref": "internal-audit-record"
         }
       }
     }

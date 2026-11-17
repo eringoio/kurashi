@@ -9,7 +9,7 @@ import type { Card, Text } from '../core/schema';
 import { visitGroup } from '../core/visit';
 import { useGuide } from '../guide/useGuide';
 import { Bi, One, Ruby } from '../i18n/Ruby';
-import { line, ui, type LocalizedText, type UiKey } from '../i18n/text';
+import { line, markName, ui, type LocalizedText, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { CardRow, DayChoice, dayTitle, fill, fillDate, ResultView } from '../ui/guide';
@@ -37,7 +37,7 @@ export function withPlace(t: LocalizedText, place: string): Text {
 /** 窓口で言うこと：日本語は正式名（よみ付き）で、意味は表示レベルの名前で */
 export function counterPhrase(card: Card): Text {
   const o = card.official_name;
-  return fill(ui('visit.counter.phrase'), 'name', (_lv, id) => (id === 'ja' ? `{${o.ja}|${o.reading}}` : card.title[id] ?? card.title.ja_easy ?? card.title.ja));
+  return fill(ui('visit.counter.phrase'), 'name', (_lv, id) => (id === 'ja' ? markName(o) : card.title[id] ?? card.title.ja_easy ?? card.title.ja));
 }
 
 type Result = { kind: 'done' | 'check' | 'replan'; ids: string[]; told?: VisitOutcome } | { kind: 'planned'; day: string; ids: string[] }
@@ -125,7 +125,7 @@ function Counter({ v }: { v: Visit }) {
           <section key={c.card.id} className="k-counter" aria-labelledby={'say-' + i}>
             <h2 id={'say-' + i} className="label"><One phrase k="visit.counter.say" /></h2>
             <p className="k-counter__ja" lang="ja"><Ruby s={ph.ja} furigana /></p>
-            <p className="k-counter__name" lang="ja"><span className="sr-only"><One k="visit.counter.official" />：</span><Ruby s={`{${c.card.official_name.ja}|${c.card.official_name.reading}}`} /></p>
+            <p className="k-counter__name" lang="ja"><span className="sr-only"><One k="visit.counter.official" />：</span><Ruby s={markName(c.card.official_name)} /></p>
             {mean && <p className="k-counter__mean" lang="en">{mean}</p>}
             <Speak ja={ph.ja} />
           </section>

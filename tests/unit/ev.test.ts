@@ -3,7 +3,7 @@ import { describe, expect, it, beforeEach } from 'vitest';
 import { clearEvMemory, cleanError, handleEv, handleUsage, parseEv } from '../../worker/ev';
 import { browserOptOut, initTelemetry, routeOf, setSender, track } from '../../src/ui/telemetry';
 
-const post = (body: unknown, headers: Record<string, string> = {}) => new Request('http://x/api/ev', { method: 'POST', body: JSON.stringify(body), headers });
+const post = (body: unknown, headers: Record<string, string> = {}) => new Request('http://x/api/ev', { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json', ...headers } });
 
 describe('/api/ev', () => {
   beforeEach(() => clearEvMemory());
@@ -24,8 +24,8 @@ describe('/api/ev', () => {
     expect(JSON.stringify(written)).not.toContain('9.9.9.9');
     await handleEv(post({ k: 'view', p: '/gomi', f: '/' }), {});
     await handleEv(post({ k: 'helpful', p: '/c/kokuho', x: 'kokuho', y: 'no' }), {});
-    expect((await handleUsage(new Request('http://x/api/usage'), { REPORTS_TOKEN: 't' })).status).toBe(401);
-    const u = await (await handleUsage(new Request('http://x/api/usage', { headers: { authorization: 'Bearer t' } }), { REPORTS_TOKEN: 't' })).json();
+    expect((await handleUsage(new Request('http://x/api/usage'), { REPORTS_TOKEN: 't', ADMIN_AUTH: 'token' })).status).toBe(401);
+    const u = await (await handleUsage(new Request('http://x/api/usage', { headers: { authorization: 'Bearer t' } }), { REPORTS_TOKEN: 't', ADMIN_AUTH: 'token' })).json();
     expect(u.pairs).toEqual([['/ → /gomi', 1]]);
     expect(u.helpful).toEqual([['kokuho', 0, 1]]);
   });
@@ -50,5 +50,29 @@ describe('telemetry（画面の側）', () => {
     expect(browserOptOut({ globalPrivacyControl: true })).toBe(true);
     expect(browserOptOut({ doNotTrack: '1' })).toBe(true);
     expect(browserOptOut({})).toBe(false);
+  });
+});
+
+/* O-7（2026-11-15）：保存に同意する前は、使われ方の数を送らない */
+import { countsConsented } from '../../src/ui/telemetry';
+describe('使われ方の数は同意のあとだけ', () => {
+  it('kept で「送らない」でないときだけ true', () => {
+    expect(countsConsented('kept', undefined)).toBe(true);
+    expect(countsConsented('kept', true)).toBe(true);
+    expect(countsConsented('kept', false)).toBe(false);
+    for (const m of ['undecided', 'not_kept', 'unavailable', 'view_only']) expect(countsConsented(m, undefined)).toBe(false);
+  });
+});
+
+/* FB-4・FB-12（2026-11-15）：ほかのサイト・JSON でない・大きい本文は断る */
+import { EV_MAX_BYTES } from '../../worker/ev';
+describe('/api/ev の守り', () => {
+  it('text/plain・ほかのサイトは 403、大きい本文は 413', async () => {
+    const plain = new Request('http://x/api/ev', { method: 'POST', body: '{"k":"view","p":"/"}', headers: { 'content-type': 'text/plain' } });
+    expect((await handleEv(plain, {})).status).toBe(403);
+    expect((await handleEv(post({ k: 'view', p: '/' }, { origin: 'https://evil.example' }), {})).status).toBe(403);
+    expect((await handleEv(post({ k: 'view', p: '/' }, { 'sec-fetch-site': 'cross-site' }), {})).status).toBe(403);
+    expect((await handleEv(post({ k: 'view', p: '/', x: 'あ'.repeat(EV_MAX_BYTES) }), {})).status).toBe(413);
+    expect((await handleEv(post({ k: 'view', p: '/' }, { origin: 'http://x' }), {})).status).toBe(204);
   });
 });

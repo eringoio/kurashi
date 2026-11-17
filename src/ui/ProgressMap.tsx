@@ -19,8 +19,9 @@ function initial(): boolean {
   return ROAD_DEFAULT;
 }
 
-export function ProgressMap({ cards, out, today, base = '/c/', listId, after }: {
+export function ProgressMap({ cards, out, today, base = '/c/', listId, after, onDone }: {
   cards: CardView[]; out: EngineOutput; today: string; base?: string; listId?: string; after?: (road: boolean) => ReactNode;
+  /** 道の項目ごとの「完了」（v0.5.44） */ onDone?: (id: string, done: boolean) => void;
 }) {
   const [road, setRoad] = useState(initial);
   const pick = (on: boolean) => {
@@ -37,7 +38,7 @@ export function ProgressMap({ cards, out, today, base = '/c/', listId, after }: 
         </div>
       )}
       {road
-        ? <RoadFor cards={cards} out={out} today={today} base={base} listId={listId} />
+        ? <RoadFor cards={cards} out={out} today={today} base={base} listId={listId} onDone={onDone} />
         : <WorldMap cards={cards} base={base} listId={listId} />}
       {after?.(road)}
     </>

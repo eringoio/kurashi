@@ -48,16 +48,17 @@
   },
   "where": {
     "text": {
-      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
-      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
-      "en": "The tax office for your address (or online via e-Tax)"
+      "ja": "{給与|きゅうよ}を{支払|しはら}う{事務所|じむしょ}の{所在地|しょざいち}を{所轄|しょかつ}する{税務署|ぜいむしょ}（{移転|いてん}のときは{移転前|いてんまえ}の{所在地|しょざいち}。e-Tax でも{出|だ}せます）",
+      "ja_easy": "{給与|きゅうよ}を{払|はら}う{事務所|じむしょ}がある{場所|ばしょ}の{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
+      "en": "The tax office that covers the location of the office that pays salaries (the former location if it moved). You can also file online with e-Tax."
     },
     "evidence": {
       "source_ids": [
-        "nta-2090"
+        "nta-kyuyo-jimusho"
       ],
-      "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "checked_at": "2026-11-15",
+      "status": "needs_check",
+      "quote": "給与支払事務所等の所在地の所轄税務署（移転の場合には、移転前の事務所等の所在地の所轄税務署）へ提出してください"
     }
   },
   "kind": "procedure",

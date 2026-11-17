@@ -10,7 +10,12 @@
   "scope": "nagoya_resident",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-mo-city",
+  "eligibility": {
+    "all": [
+      "R-mo-city",
+      "R-mo-kokuho"
+    ]
+  },
   "coverage_rule_ids": [],
   "title": {
     "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}を{返|かえ}す（{入|はい}っている{人|ひと}）",
@@ -58,7 +63,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
         "verdict": "agree",
-        "ref": "research/audits/hoken.json#P-hoken-kokuho-jusho-henko/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -73,9 +78,9 @@
   ],
   "reasons": {
     "check_at_office": {
-      "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているかどうかは、このアプリでは{聞|き}いていません（{要|よう}{確認|かくにん}）。",
-      "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているか、{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
-      "en": "We do not ask whether you are in National Health Insurance (to be checked)."
+      "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているかがわからないので、この{手続|てつづ}きが{要|い}るか{決|き}められません。{保険|ほけん}の{証|しょう}や{資格|しかく}{確認|かくにん}{書|しょ}を{見|み}るか、{区役所|くやくしょ}の{保険|ほけん}{年金|ねんきん}{課|か}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っているか、{確|たし}かめてください。{区役所|くやくしょ}で{聞|き}けます（{要|よう}{確認|かくにん}）。",
+      "en": "We do not know whether you are in National Health Insurance, so we cannot tell if you need this. Check your insurance documents or ask the insurance and pension section of your ward office (to be checked)."
     }
   },
   "evidence": {
@@ -89,7 +94,7 @@
       "fetched_at": "2026-11-04",
       "sha256": "7db71a09c3268724515b3a5a62b102e898669c078bdf66eb5d2fdf66e003ebcc",
       "verdict": "agree",
-      "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c5"
+      "ref": "internal-audit-record"
     }
   },
   "methods": [
@@ -111,7 +116,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "4a6c91c4c0ee7ffe372197d73ebfde84c7f7637aae51de31906435e0c5f05857",
           "verdict": "agree",
-          "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -133,7 +138,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ea4766c31b5bdd458f07437e16d01ca5249de748c53fd3f1845760a8cda88a77",
           "verdict": "agree",
-          "ref": "research/audits/hoken.json#P-hoken-kokuho-dattai/c11"
+          "ref": "internal-audit-record"
         }
       }
     }

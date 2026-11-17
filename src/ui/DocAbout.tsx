@@ -3,14 +3,16 @@
    → 関係する書類・手続き → 公式の情報 → 大事な言葉。
    期限・金額・番号は、本人の書類を見る（このアプリは読まない）。することは、公式の資料で確かめたことだけ。 */
 import { DATA } from '../core/data';
+import { statusKey } from '../core/trust';
 import { documentById, type KnownDocument } from '../core/documents';
 import { docWordIds } from '../core/words';
-import { useGuide } from '../guide/useGuide';
+import { cardHome } from '../guide/catalogue';
+import type { Card } from '../core/schema';
 import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from './art';
-import { CardRow, TrustMark } from './guide';
+import { TrustMark } from './guide';
 import { Link } from './router';
 import { WordList } from './Words';
 
@@ -28,11 +30,12 @@ function Part({ id, k, children, mark }: { id: string; k: UiKey; children: React
 }
 
 export function DocAbout({ doc, sample = false }: { doc: KnownDocument; sample?: boolean }) {
-  const g = useGuide();
   const { level } = usePrefs();
   const d = DATA();
   const id = (s: string) => `doc-${doc.id}-${s}`;
-  const cards = g.out.cards.filter((c) => doc.card_ids.includes(c.card.id));
+  // 引っ越しのガイドの中だけでなく、どのできごとのカードも出す（免許の更新・遺失届・在留期間の更新。C-5）
+  const cards = doc.card_ids.map((cid) => ({ card: d.cards.find((c) => c.id === cid), to: cardHome(cid) }))
+    .filter((x): x is { card: Card; to: string } => !!x.card && !!x.to);
   const related = doc.related_docs.map(documentById).filter((x): x is KnownDocument => !!x);
   const links = doc.links.map((l) => ({ ...l, s: d.sources.find((x) => x.source_id === l.source_id) })).filter((l) => l.s?.url);
   // 説明の欄の確認状態（名前だけ確かめた書類に説明を足したときは要確認）
@@ -101,7 +104,10 @@ export function DocAbout({ doc, sample = false }: { doc: KnownDocument; sample?:
       {cards.length > 0 && (
         <section aria-labelledby="letter-cards">
           <h2 id="letter-cards" className="label"><One phrase k="letter.related" /></h2>
-          <ul className="list" role="list">{cards.map((c) => <CardRow key={c.card.id} c={c} />)}</ul>
+          {/* 書類の画面では、本人の答えによる印（まだわからない など）を出さない。行き先はそのカードの入っているできごと（C-5） */}
+          <ul className="list" role="list">{cards.map(({ card, to }) => (
+            <li key={card.id}><Link to={to} className="row"><img src={art(card.illustration)} alt="" /><span className="row__name"><Bi phrase t={card.title} /></span></Link></li>
+          ))}</ul>
         </section>
       )}
 
@@ -116,7 +122,7 @@ export function DocAbout({ doc, sample = false }: { doc: KnownDocument; sample?:
               </li>
             ))}
           </ul>
-          <p className="sub"><One k="src.checked" />：{FMT(ev.checked_at, lang)}・<One k={('src.status.' + ev.status) as UiKey} /></p>
+          <p className="sub"><One k="src.checked" />：{FMT(ev.checked_at, lang)}・<One k={statusKey(ev) as UiKey} /></p>
         </section>
       )}
 

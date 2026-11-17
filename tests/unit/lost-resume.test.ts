@@ -53,13 +53,13 @@ async function play(script: Record<string, Value>, reloadAt: number | null) {
 }
 
 const SCENES: Record<string, Record<string, Value>> = {
-  'A カードだけ': { 'Q-lost-items': ['cash_card'], 'Q-police-reported': 'not_yet' },
-  'B 在留カードだけ': { 'Q-lost-items': ['zairyu_card'], 'Q-police-reported': 'not_yet' },
-  'C 外国旅券だけ': { 'Q-lost-items': ['passport'], 'Q-passport-country': 'other_country', 'Q-police-reported': 'not_yet' },
-  'D 在留カード＋外国旅券': { 'Q-lost-items': ['zairyu_card', 'passport'], 'Q-passport-country': 'other_country', 'Q-police-reported': 'not_yet' },
-  'E 日本旅券': { 'Q-lost-items': ['passport'], 'Q-passport-country': 'japan', 'Q-police-reported': 'not_yet' },
-  'F 不明': { 'Q-lost-items': ['unknown'], 'Q-police-reported': 'not_yet' },
-  'G すでに警察へ届けた': { 'Q-lost-items': ['zairyu_card'], 'Q-police-reported': 'yes' },
+  'A カードだけ': { 'Q-lost-items': ['cash_card'], 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'B 在留カードだけ': { 'Q-lost-items': ['zairyu_card'], 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'C 外国旅券だけ': { 'Q-lost-items': ['passport'], 'Q-passport-country': 'other_country', 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'D 在留カード＋外国旅券': { 'Q-lost-items': ['zairyu_card', 'passport'], 'Q-passport-country': 'other_country', 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'E 日本旅券': { 'Q-lost-items': ['passport'], 'Q-passport-country': 'japan', 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'F 不明': { 'Q-lost-items': ['unsure'], 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet' },
+  'G すでに警察へ届けた': { 'Q-lost-items': ['zairyu_card'], 'Q-lost-place': 'outside', 'Q-police-reported': 'yes' },
 };
 
 describe('保存と再開（7つの場面）', () => {

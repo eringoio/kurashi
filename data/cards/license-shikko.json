@@ -1,0 +1,195 @@
+{
+  "data_version": 1,
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "domain": "government",
+  "illustration": "card",
+  "place": "license_center",
+  "id": "license-shikko",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "kind": "procedure",
+  "keywords": [
+    "期限切れ",
+    "きげんぎれ",
+    "失効",
+    "しっこう",
+    "免許 期限切れ",
+    "expired licence",
+    "expired driving license",
+    "shikko",
+    "うっかり失効"
+  ],
+  "eligibility": "R-license-goal-expired",
+  "reasons": {
+    "excluded": {
+      "ja": "この{案内|あんない}は、{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{人|ひと}{向|む}けです。",
+      "ja_easy": "この{案内|あんない}は、{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{人|ひと}のためのものです。",
+      "en": "This guide is for people whose licence has expired."
+    }
+  },
+  "title": {
+    "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{手続|てつづ}き（{期限切|きげんぎ}れ{手続|てつづ}き）",
+    "ja_easy": "{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{手続|てつづ}き",
+    "en": "Expired licence: getting it back"
+  },
+  "official_name": {
+    "ja": "失効した運転免許の再取得（期限切れ手続き）",
+    "reading": "しっこうしたうんてんめんきょのさいしゅとく（きげんぎれてつづき）"
+  },
+  "lead": {
+    "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}で{運転|うんてん}してはいけません。{手続|てつづ}きが{済|す}むまで{運転|うんてん}しないでください。",
+    "ja_easy": "{期限|きげん}が{過|す}ぎた{免許|めんきょ}で{運転|うんてん}してはいけません。{手続|てつづ}きが{終|お}わるまで{運転|うんてん}しないでください。",
+    "en": "Do not drive on an expired licence. Do not drive until the procedure is finished."
+  },
+  "summary": {
+    "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}で{運転|うんてん}してはいけません。{期限|きげん}が{過|す}ぎた{免許|めんきょ}は{更新|こうしん}できず、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}で{期限切|きげんぎ}れの{手続|てつづ}きをします。{期限|きげん}が{過|す}ぎてから6か{月|げつ}{以内|いない}なら、{学科|がっか}{試験|しけん}と{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。6か{月|げつ}を{超|こ}えて1{年|ねん}{以内|いない}なら、{普通|ふつう}{免許|めんきょ}などは{仮免許|かりめんきょ}の{学科|がっか}{試験|しけん}と{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。{海外|かいがい}{滞在|たいざい}・{入院|にゅういん}などのやむを{得|え}ない{理由|りゆう}があったときは、{別|べつ}の{決|き}まりがあります（{要|よう}{確認|かくにん}）。{受付|うけつけ}の{日|ひ}・{時間|じかん}・{持|も}ち{物|もの}は、{愛知|あいち}{県|けん}{警察|けいさつ}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{期限|きげん}が{過|す}ぎた{免許|めんきょ}で{運転|うんてん}してはいけません。{更新|こうしん}はできません。{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}で{手続|てつづ}きをします。6か{月|げつ}{以内|いない}なら、{学科|がっか}と{運転|うんてん}の{試験|しけん}はありません（{要|よう}{確認|かくにん}）。{行|い}く{日|ひ}と{持|も}ち{物|もの}は、{愛知|あいち}{県|けん}{警察|けいさつ}のページで{見|み}ます（{要|よう}{確認|かくにん}）。",
+    "en": "Do not drive on an expired licence. An expired licence cannot be renewed; apply for the expired-licence procedure at the driving licence test centre. Within 6 months of expiry, the written and driving skill tests are waived. From 6 months to 1 year, for ordinary licences and similar, the provisional licence written and skill tests are waived. Different rules apply if you could not renew for an unavoidable reason such as a stay abroad or hospitalisation (to be checked). Check days, hours and what to bring on the Aichi Prefectural Police page (to be checked)."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{期限|きげん}が{過|す}ぎてから6か{月|げつ}{以内|いない}なら、{学科|がっか}{試験|しけん}と{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。1{年|ねん}を{超|こ}えると、やむを{得|え}ない{理由|りゆう}のときを{除|のぞ}き、{免除|めんじょ}はありません（{要|よう}{確認|かくにん}）",
+      "ja_easy": "6か{月|げつ}{以内|いない}なら、{試験|しけん}の{一部|いちぶ}がありません（{要|よう}{確認|かくにん}）",
+      "en": "Within 6 months of expiry the written and skill tests are waived. After 1 year there is no waiver, except for unavoidable reasons (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "egov-doro-kotsu-ho"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "その者の免許が第百五条の規定により効力を失つた日から起算して六月"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{名古屋|なごや}{市|し}{天白|てんぱく}{区|く}）か{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）（{要|よう}{確認|かくにん}）",
+      "en": "The driving licence test centre (Tempaku Ward, Nagoya) or the Higashi-Mikawa centre (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "license-aichi-koshin",
+        "license-aichi-kigengire"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "期限切れ手続き"
+    }
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "6か{月|げつ}{以内|いない}のとき：{学科|がっか}{試験|しけん}と{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。{適性|てきせい}{試験|しけん}（{視力|しりょく}など）は{受|う}けます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "6か{月|げつ}{以内|いない}：{学科|がっか}と{運転|うんてん}の{試験|しけん}はありません。{目|め}の{検査|けんさ}などは{受|う}けます（{要|よう}{確認|かくにん}）",
+        "en": "Within 6 months: the written and driving skill tests are waived. You still take the aptitude test (eyesight and so on) (to be checked)."
+      },
+      "when": "R-license-lapse-6m",
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "その者が受けていた免許に係る運転免許試験（前条第一項第一号に掲げる事項についてのものを除く。）"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "6か{月|げつ}を{超|こ}えて1{年|ねん}{以内|いない}のとき：{大型|おおがた}・{中型|ちゅうがた}・{準|じゅん}{中型|ちゅうがた}・{普通|ふつう}{免許|めんきょ}は、{仮免許|かりめんきょ}の{学科|がっか}{試験|しけん}と{技能|ぎのう}{試験|しけん}が{免除|めんじょ}されます。ほかの{種類|しゅるい}の{免許|めんきょ}は、{愛知|あいち}{県|けん}{警察|けいさつ}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "6か{月|げつ}より{長|なが}く1{年|ねん}{以内|いない}：{普通|ふつう}{免許|めんきょ}などは、{仮免許|かりめんきょ}の{試験|しけん}の{一部|いちぶ}がありません（{要|よう}{確認|かくにん}）",
+        "en": "More than 6 months, up to 1 year: for large, medium, semi-medium and ordinary licences, the provisional licence written and skill tests are waived. For other licence types, ask the Aichi Prefectural Police (to be checked)."
+      },
+      "when": "R-license-lapse-1y",
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "その者が受けていた免許の区分に応じ大型仮免許、中型仮免許、準中型仮免許又は普通仮免許のいずれかに係る前条第一項第二号及び第三号に掲げる事項についての運転免許試験"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "1{年|ねん}を{超|こ}えたとき：やむを{得|え}ない{理由|りゆう}がなければ、{試験|しけん}の{免除|めんじょ}はありません。{新|あたら}しく{免許|めんきょ}を{取|と}るのと{同|おな}じ{手続|てつづ}きです（{要|よう}{確認|かくにん}）",
+        "ja_easy": "1{年|ねん}より{長|なが}い：{新|あたら}しく{免許|めんきょ}を{取|と}るのと{同|おな}じです（{要|よう}{確認|かくにん}）",
+        "en": "More than 1 year: without an unavoidable reason there is no waiver. It is the same as getting a new licence (to be checked)."
+      },
+      "when": "R-license-lapse-over",
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "その者の免許が第百五条の規定により効力を失つた日から起算して六月"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{海外|かいがい}{滞在|たいざい}・{災害|さいがい}・{入院|にゅういん}などのやむを{得|え}ない{理由|りゆう}で{更新|こうしん}できなかったとき：{期限|きげん}が{過|す}ぎてから3{年|ねん}{以内|いない}で、その{理由|りゆう}がなくなってから1か{月|げつ}{以内|いない}なら、{試験|しけん}の{一部|いちぶ}が{免除|めんじょ}されます。{理由|りゆう}がわかる{書類|しょるい}は、{愛知|あいち}{県|けん}{警察|けいさつ}のページで{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{外国|がいこく}にいた・{入院|にゅういん}していたなどのとき：3{年|ねん}{以内|いない}で、{理由|りゆう}がなくなってから1か{月|げつ}{以内|いない}なら、{試験|しけん}の{一部|いちぶ}がありません（{要|よう}{確認|かくにん}）",
+        "en": "If you could not renew because of an unavoidable reason such as a stay abroad, a disaster or hospitalisation: within 3 years of expiry and within 1 month after the reason ends, part of the tests is waived. Check the documents that show the reason on the Aichi Prefectural Police page (to be checked)."
+      },
+      "when": {
+        "any": [
+          "R-license-lapse-1y",
+          "R-license-lapse-over"
+        ]
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "海外旅行、災害その他政令で定めるやむを得ない理由のため、その期間内に運転免許試験を受けることができなかつた者にあつては、当該効力を失つた日から起算して三年を経過しない場合に限り、当該事情がやんだ日から起算して一月"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{年齢|ねんれい}などで、{講習|こうしゅう}や{検査|けんさ}の{条件|じょうけん}が{違|ちが}う{人|ひと}がいます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{年齢|ねんれい}などで、{条件|じょうけん}が{違|ちが}う{人|ひと}がいます（{要|よう}{確認|かくにん}）",
+        "en": "Conditions such as courses and tests differ for some people, for example by age (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "第百一条第一項の免許証等の更新を受けなかつた者（政令で定める者を除く。）"
+      }
+    }
+  ],
+  "evidence": {
+    "source_ids": [
+      "egov-doro-kotsu-ho"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "何人も、第八十四条第一項の規定による公安委員会の運転免許を受けないで"
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{愛知|あいち}{県|けん}{警察|けいさつ}：{期限切|きげんぎ}れ{手続|てつづ}き",
+        "ja_easy": "{愛知|あいち}{県|けん}の{警察|けいさつ}：{期限|きげん}が{切|き}れた{免許|めんきょ}の{手続|てつづ}き",
+        "en": "Aichi Police: expired licence procedure"
+      },
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/koushin/shikenjou/kigengire.html",
+      "source_id": "license-aichi-kigengire"
+    }
+  ]
+}

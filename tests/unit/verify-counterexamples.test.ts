@@ -13,7 +13,7 @@ const lost = data.events.find((e) => e.id === 'E-lost-wallet')!;
 const T = '2026-11-04';
 /** v0.4.8：パスポートは1つの選択肢＋発行国の質問。警察にまだ届けていない（not_yet）を既定にする */
 const go = (items: string[] | 'unknown' | undefined, over: Partial<EngineInput> = {}) => {
-  const answers: Record<string, Value> = { 'Q-passport-country': 'japan', 'Q-police-reported': 'not_yet', ...(over.answers ?? {}) };
+  const answers: Record<string, Value> = { 'Q-passport-country': 'japan', 'Q-lost-place': 'outside', 'Q-police-reported': 'not_yet', ...(over.answers ?? {}) };
   if (items) answers['Q-lost-items'] = items;
   return run(data, { objects: {}, plan: {}, createdOn: T, today: T, mode: 'verified', event: lost, ...over, answers });
 };
@@ -57,16 +57,18 @@ describe('反例', () => {
       const o = go(['zairyu_card'], { plan: pr('lost-police-report-zairyu', s) });
       expect(v(o, 'lost-police-report-zairyu').section, s).not.toBe('done');
     }
-    // 提出済みだけでは、在留カードの再交付の前提（警察の届）を済みとして進めない
+    // 提出済みだけでは、在留カードの再交付の前提（警察の届）を済みとしない（前に要ることが残る）。
+    // 11/8 kaizen D：再交付は14日の期限があるので、警察の受理を待って「あとで」にはしない
     const sub = go(['zairyu_card'], { plan: pr('lost-police-report-zairyu', 'submitted') });
-    expect(v(sub, 'lost-zairyu-reissue').section).toBe('later');
+    expect(v(sub, 'lost-zairyu-reissue').notes.map((n) => n.relation.id)).toContain('rel-police-before-zairyu-reissue');
+    expect(v(sub, 'lost-zairyu-reissue').section).toBe('today');
   });
   it('6 再紛失：進捗が空なら前の done が出ない。別の出来事の plan を渡さなければ混ざらない', () => {
     const first = go(['zairyu_card'], { plan: pr('lost-police-report-zairyu', 'done') });
     expect(v(first, 'lost-police-report-zairyu').section).toBe('done');
     const second = go(['zairyu_card'], { plan: {} });
     expect(v(second, 'lost-police-report-zairyu').section).not.toBe('done');
-    expect(v(second, 'lost-zairyu-reissue').section).toBe('later');
+    expect(v(second, 'lost-zairyu-reissue').notes.map((n) => n.relation.id)).toContain('rel-police-before-zairyu-reissue');
   });
   it('7 結婚の検証データ：src に結婚専用のコードが無い（自前の走査）', () => {
     const hits: string[] = [];

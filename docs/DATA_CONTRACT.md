@@ -1,4 +1,4 @@
-# データ契約 v1.4（v1：2026-11-04、統括。v1.3：2026-11-06。v1.4：2026-11-07）
+# データ契約 v1.6（v1：2026-11-04、統括。v1.3：2026-11-06。v1.4：2026-11-07。v1.5・v1.6：2026-11-08）
 
 アプリ用データの共通形式（11/4 の計画 T3・T6 から）。SPEC 9章・10章を広げる。
 **作者が承認した（2026-11-04）。SPEC v0.4.7 に反映済み。**
@@ -12,6 +12,8 @@
 | `src/pages/Move.tsx` | 引っ越し専用の画面。`Q-origin`・`built_origins` を直接読む | 引っ越しはそのまま動かす。新しい出来事は共通の `/e/{event_id}` で、イベントの `questions` を順に聞く |
 | `src/core/engine.ts` | `Q-origin` で持ち物を絞る。範囲のルール `R-scope-nagoya-resident` を直書き | イベントの `scope_rule` と `object_filter_fact` に移す（既定値は今と同じ） |
 | `schema.ts` の `place` | `ward_office`・`bank`・`prev_city` の列挙 | 文字列（`[a-z_]+`）。表示名は `strings.json` の `place.<id>`。無ければ「行く所」 |
+| カードの `deadline.calc`（SPEC v0.5.45） | — | 任意。`days`・`from`（数え始める出来事）・`count: next_day`・`evidence`。公式の文に日数と数え方があるときだけ。日付を出すのは evidence が verified のときだけ。保存の `plan.method`・`plan.from_on` も任意（前の保存はそのまま読める） |
+| カードの `place_when`・`remote`（SPEC v0.5.44） | — | 任意。`place_when`（RuleExpr）：T のときだけ `place` を行く所のまとめに使う。`remote`（true か RuleExpr）：行かずに（オンライン・郵送で）済ませられる。T ならまとめに入れず「窓口に行かない方法もある」。どちらもカードの文（where・methods）の出典に書いてあることだけに付ける |
 | 進捗（`plan`・`profile`） | カードIDと質問IDだけで保存。出来事を区別しない | 出来事（occurrence）ごとに分ける（4章） |
 | `useGuide` の `review_mode` | 本番でも `verified`（見本）を選べる | 本番ビルドでは常に `public`（T6） |
 | `data/cards/*.json` を全部読む | 下書きも混ざりうる | `data/` は公開用だけ。下書きは `drafts/`（5章） |
@@ -55,6 +57,7 @@
 |---|---|---|
 | 複数選択の質問 | `Question.multi: true`。答えは文字列の配列 | 財布の中にあった物 |
 | 条件 `has` | `{ "fact": "lost_items", "has": "zairyu_card" }`：配列が含むか | カードごとの停止・再交付 |
+| 条件 `ne` | `{ "fact": "zairyu_status", "ne": "short_stay" }`：答えがその値と違うか。**未回答・「わからない」も T**（範囲から外すのは、本人がその値と答えたときだけ） | 範囲のルール（短期滞在）、あなたについての質問の出し分け |
 | 質問の範囲 | `Question.scope: "person" \| "event"`（既定 `event`） | 年齢・国籍は人、出発地・住み始めたかは出来事 |
 | すぐ行う行動 | `Card.urgent: { contacts: [{ type: "phone"\|"link", label, value, evidence }] }` | カードの利用停止。質問より先に出す |
 | 手続きの方法 | `Card.methods: [{ type: "counter"\|"online"\|"mail"\|"phone", text, when?: RuleExpr, evidence }]` | 窓口・電子申請・郵送 |
@@ -80,6 +83,7 @@
 - `data/` と `public/` は**公開用だけ**。AI の下書き・調査の結果は `drafts/`（制作）と `research/`（調査）。Vite は読まない。
 - 検査（`tests/core/publish.test.ts`）：`data/` に `status: "draft"` が無い／`drafts/` のIDが `data/` に無い／ビルド結果に `drafts/` の文字列が無い。
 - `verified` にできるのは作者だけ。`verified` の根拠には `checked_at`・`verified_by`・`quote` が要る（出典が `kurashi-spec` だけのものは `quote` 不要）。
+- **作者の一括承認**（2026-11-08。SPEC v0.5.37）：作者が範囲と方法を決めて指示したときは、機械の照合・Claude の確認で条件を満たしたものを `verified` にしてよい。`verified_by` には「作者の一括承認」と実際の確認の方法を書き、作者が1件ずつ見たとは書かない（例：`author 2026-11-08（作者の一括承認の指示。確認は機械の照合で、人は1件ずつ見ていない）`）。テストは `tests/core/bulk.ts` の `isBulk`・`verifiedNotBulk` で、一括承認でない `verified` を探す。制度の対象者・義務・期限・費用・関係は一括承認の対象にしない。
 - 本番ビルド（`import.meta.env.PROD`）では `review_mode` を無視し、`/review` の見本の切り替えを出さない。
 
 ## 6. データの検査（`checkRefs` に足す）
@@ -139,6 +143,18 @@ SPEC v0.4.9 の決定の範囲だけを足す。今のデータはそのまま�
 すべて任意の項目。前のデータと保存はそのまま読める。
 
 - できごと：`goal_card_ids`（本人が選んだ目的の手続き。区分けは「いま」、次の一歩は `goal`）、`info_card_ids`（関連する情報・選択肢。区分け `info`）、段の `after`（その手続きのどれかが済むまで「あとで（〇〇のあと）」。日の下限にもなる）。
+- カード：`official_link_none`（文。v0.5.33）があるときは、公式ページのボタンを出さず、この文を出す（出典はリンクにしない。根拠の記録は残す）。銀行の口座のように、行く所によって条件が違うときに使う。
 - カード：`parts[].card`（物のくわしい案内のカード）、`parts[].when` は省略できる（いつも出す）、`event_links`（別のできごとへの入口。答えは書き換えない）。
 - 保存：`PlanRecord.deferred`（本人が「あとでする」にした。日を決めると消える）。
 - 検査（`checkRefs`）：目的・情報・after のカードがそのできごとにある、目的と情報に重ねない、parts の card と event_links の参照がある。
+
+## 13. v1.6（2026-11-08。SPEC v0.5.40。kaizen）
+
+すべて任意の項目。前のデータと保存はそのまま読める。
+
+- カード：`sections`（`{ title, ordered?, items: Fact[] }[]`）。読むだけの説明を見出しごとに書く。項目ごとに根拠を持つ。`methods` には手続きの方法だけを書く（ファミリーシップ）。
+- カード：`menu`（`{ title, note?, card_ids, after? }`）。目的・方法を選ぶ入口。`card_ids` は同じできごとの中のカード。`after` は sections の何個目のあとに出すか。
+- カード：`event_links[].answers`（行き先の入口の質問 ID → 選択肢の値）。まだ答えていない質問だけに入れる。メモリの中だけで渡す（URL・history.state・保存に入れない。SPEC 13.4）。
+- できごと：`eligibility`（card_id → ルール式）。ほかのできごとのカードを、このできごとでは別の適用条件で出す（財布の紛失の `bank-card-reissue`）。
+- selection のルール：本人の答えで明らかに対象外とわかる絞り込み（国籍・保険の種類・年齢の区分・カードの有無など）にも使ってよい（SPEC 10.4）。
+- 検査（`checkRefs`）：sections の根拠と3つのレベルの文、menu のカードがあって同じできごとにある、`answers` の質問が行き先の入口にあり値が選択肢にある、できごとの `eligibility` のカードとルールがある。

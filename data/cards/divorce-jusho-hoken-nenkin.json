@@ -7,40 +7,40 @@
   "per_move": false,
   "requires_moved_in": false,
   "coverage_rule_ids": [],
-  "kind": "procedure",
+  "kind": "guide",
   "id": "divorce-jusho-hoken-nenkin",
   "illustration": "hcard",
   "awareness_type": "applies",
-  "obligation": "practical",
+  "obligation": "check",
   "eligibility": "R-div-event",
   "title": {
-    "ja": "{離婚|りこん}と{住所|じゅうしょ}・{世帯|せたい}・{保険|ほけん}・{年金|ねんきん}",
-    "ja_easy": "{離婚|りこん}のあとの{住所|じゅうしょ}・{世帯|せたい}・{保険|ほけん}・{年金|ねんきん}",
-    "en": "After divorce: address, household, insurance and pension"
+    "ja": "{離婚|りこん}と{住所|じゅうしょ}・{世帯|せたい}・{保険|ほけん}・{年金|ねんきん}（{変|か}わる{人|ひと}だけ）",
+    "ja_easy": "{離婚|りこん}と{住所|じゅうしょ}・{世帯|せたい}・{保険|ほけん}・{年金|ねんきん}（{変|か}わる{人|ひと}だけ）",
+    "en": "Divorce, address, household, insurance and pension (only if something changes)"
   },
   "official_name": {
     "ja": "離婚と住所・世帯・保険・年金",
     "reading": "りこんとじゅうしょせたいほけんねんきん"
   },
   "summary": {
-    "ja": "{離婚|りこん}のあとは、{住所|じゅうしょ}・{世帯|せたい}・{健康|けんこう}{保険|ほけん}・{年金|ねんきん}の{確認|かくにん}が{要|い}ります。{世帯主|せたいぬし}や{世帯|せたい}が{変|か}わるときは、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に{区役所|くやくしょ}へ{届|とど}けます（{要|よう}{確認|かくにん}）。{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被扶養者|ひふようしゃ}でなくなったときは、14{日|にち}{以内|いない}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}をします。{離婚|りこん}が{当|あ}てはまるかは、{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。{第3号|だいさんごう}{被保険者|ひほけんしゃ}だった{人|ひと}は、{配偶|はいぐう}{者|しゃ}の{勤|つと}め{先|さき}に{届出|とどけで}をします。{離婚|りこん}{時|じ}の{年金|ねんきん}{分割|ぶんかつ}は、{離婚|りこん}の{翌日|よくじつ}から5{年|ねん}{以内|いない}に{請求|せいきゅう}します（2026{年|ねん}4{月|つき}1{日|にち}より{前|まえ}の{離婚|りこん}は2{年|ねん}{以内|いない}）（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{離婚|りこん}のあとは、{住所|じゅうしょ}・{世帯|せたい}・{健康|けんこう}{保険|ほけん}・{年金|ねんきん}を{確|たし}かめます。{世帯主|せたいぬし}や{世帯|せたい}が{変|か}わるときは、{変|か}わった{日|ひ}から14{日|にち}いないに{区役所|くやくしょ}へ{届|とど}けます（{要|よう}{確認|かくにん}）。{会社|かいしゃ}の{保険|ほけん}の{家族|かぞく}でなくなったときは、14{日|にち}いないに{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けをします。{離婚|りこん}のときにあてはまるかは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。{年金|ねんきん}{分割|ぶんかつ}は、{離婚|りこん}の{次|つぎ}の{日|ひ}から5{年|ねん}いないに{申|もう}し{出|で}ます（2026{年|ねん}4{月|つき}1{日|にち}より{前|まえ}の{離婚|りこん}は2{年|ねん}）（{要|よう}{確認|かくにん}）。",
-    "en": "After a divorce, check your address, household, health insurance and pension. If the household head or household changes, notify the ward office within 14 days of the change (to be checked). If you stop being a dependant on workplace insurance, file for National Health Insurance within 14 days; ask at the counter whether divorce applies (to be checked). A former Category 3 insured person notifies the former spouse's employer. A pension split on divorce must be requested within 5 years of the day after the divorce (2 years for divorces before 1 April 2026) (to be checked)."
+    "ja": "{離婚|りこん}しても、だれにでも{同|おな}じ{手続|てつづ}きが{要|い}るわけではありません。{引|ひ}っ{越|こ}すときは{引|ひ}っ{越|こ}しの{届出|とどけで}、{住所|じゅうしょ}は{同|おな}じで{世帯主|せたいぬし}や{世帯|せたい}が{変|か}わるときは、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に{区役所|くやくしょ}へ{世帯|せたい}の{届|とどけ}を{出|だ}します（{要|よう}{確認|かくにん}）。{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被|ひ}{扶養|ふよう}{者|しゃ}でなくなったときは、14{日|にち}{以内|いない}に{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}をします（{離婚|りこん}が{当|あ}てはまるかは{窓口|まどぐち}で{確認|かくにん}）（{要|よう}{確認|かくにん}）。{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}からはずれた{人|ひと}（{第|だい}3{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}だった{人|ひと}）は、{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}（{支所|ししょ}は{区民福祉課|くみんふくしか}）で{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。{離婚|りこん}{時|じ}の{年金|ねんきん}{分割|ぶんかつ}は、{原則|げんそく}として{離婚|りこん}の{翌日|よくじつ}から5{年|ねん}{以内|いない}に{請求|せいきゅう}します（2026{年|ねん}4{月|がつ}1{日|ついたち}より{前|まえ}の{離婚|りこん}は2{年|ねん}{以内|いない}。{調停|ちょうてい}・{審判|しんぱん}を{申|もう}し{立|た}てているときなどの{例外|れいがい}があります）（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{離婚|りこん}しても、みんなに{同|おな}じ{手続|てつづ}きが{要|い}るわけではありません。{引|ひ}っ{越|こ}す・{世帯|せたい}が{変|か}わる・{保険|ほけん}が{変|か}わる{人|ひと}だけ、{手続|てつづ}きがあります（{要|よう}{確認|かくにん}）。{年金|ねんきん}{分割|ぶんかつ}は、{離婚|りこん}の{次|つぎ}の{日|ひ}から5{年|ねん}の{間|あいだ}です（2026{年|ねん}4{月|がつ}1{日|ついたち}より{前|まえ}の{離婚|りこん}は2{年|ねん}）（{要|よう}{確認|かくにん}）。",
+    "en": "Divorce does not mean everyone needs the same procedures. If you move, file a moving notification; if you stay at the same address but the head of household or household changes, notify the ward office within 14 days (to be checked). If you stop being a dependent under workplace health insurance, file for National Health Insurance within 14 days (ask whether divorce applies) (to be checked). A person removed from a spouse's support (a former Category 3 insured person) enrols in National Pension at the ward office's insurance and pension section (branch: resident welfare section) (to be checked). Pension splitting must in principle be claimed within 5 years from the day after the divorce (2 years for divorces before April 1, 2026; there are exceptions, such as when mediation or a ruling has been requested) (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{世帯|せたい}・{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}は14{日|にち}{以内|いない}。{年金|ねんきん}{分割|ぶんかつ}は{離婚|りこん}の{翌日|よくじつ}から5{年|ねん}{以内|いない}（2026{年|ねん}4{月|つき}1{日|にち}より{前|まえ}の{離婚|りこん}は2{年|ねん}{以内|いない}）（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{世帯|せたい}・{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届|とど}けは14{日|にち}いない。{年金|ねんきん}{分割|ぶんかつ}は{離婚|りこん}の{次|つぎ}の{日|ひ}から5{年|ねん}いない（2026{年|ねん}4{月|つき}1{日|にち}より{前|まえ}は2{年|ねん}）（{要|よう}{確認|かくにん}）",
-      "en": "Household and National Health Insurance notices within 14 days; pension split within 5 years of the day after the divorce (2 years for divorces before 1 April 2026) (to be checked)"
+      "ja": "{世帯|せたい}・{国民|こくみん}{健康|けんこう}{保険|ほけん}の{届出|とどけで}は14{日|にち}{以内|いない}。{年金|ねんきん}{分割|ぶんかつ}は{原則|げんそく}として{離婚|りこん}の{翌日|よくじつ}から5{年|ねん}{以内|いない}（2026{年|ねん}4{月|がつ}1{日|ついたち}より{前|まえ}の{離婚|りこん}は2{年|ねん}{以内|いない}。{例外|れいがい}あり）（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{世帯|せたい}・{保険|ほけん}の{届|とど}けは14{日|にち}の{間|あいだ}。{年金|ねんきん}{分割|ぶんかつ}は5{年|ねん}の{間|あいだ}（2026{年|ねん}4{月|がつ}1{日|ついたち}より{前|まえ}の{離婚|りこん}は2{年|ねん}）（{要|よう}{確認|かくにん}）",
+      "en": "Household and National Health Insurance: within 14 days. Pension splitting: in principle within 5 years from the day after the divorce (2 years for divorces before April 1, 2026; exceptions apply) (to be checked)"
     },
     "evidence": {
       "source_ids": [
         "B-nenkin-rikon-bunkatsu",
         "B-nagoya-kokuho-kanyu-div"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-08",
       "status": "needs_check",
-      "quote": "請求期限 （原則、離婚等をした日の翌日から起算して 5年以内 （※））を経過していないこと。"
+      "quote": "分割請求の期限は、原則として、次の事由に該当した日の翌日から起算して5年以内（令和8年4月1日前に離婚等をした場合は2年以内）です。"
     }
   },
   "where": {
@@ -60,7 +60,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c5"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -84,7 +84,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0d677676f0e2ce80303d2239531dde1ad1d6648b02857ae7aa8ea528efb58ade",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -106,7 +106,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -128,30 +128,24 @@
           "fetched_at": "2026-11-04",
           "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c13"
+          "ref": "internal-audit-record"
         }
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{第3号|だいさんごう}{被保険者|ひほけんしゃ}の{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}{届|とどけ}は、{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}の{事業|じぎょう}{主|ぬし}（{事務|じむ}{担当|たんとう}{者|しゃ}）に{出|だ}します。",
-        "ja_easy": "{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っていた{人|ひと}（{第3号|だいさんごう}{被保険者|ひほけんしゃ}）は、{名前|なまえ}や{住所|じゅうしょ}の{変更|へんこう}の{届|とど}けを、{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}に{出|だ}します。",
-        "en": "A Category 3 insured person submits the name or address change form to the spouse's employer (the person in charge of administration)."
+        "ja": "20{歳|さい}{以上|いじょう}60{歳|さい}{未満|みまん}で、{厚生|こうせい}{年金|ねんきん}のある{会社|かいしゃ}などに{勤|つと}める{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}からはずれた{人|ひと}は、{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}（{支所|ししょ}は{区民福祉課|くみんふくしか}）で{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}{手続|てつづ}きをします。{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}で{出|だ}してもらう、{扶養|ふよう}からはずれた{日|ひ}を{証明|しょうめい}できる{書類|しょるい}（{健康|けんこう}{保険|ほけん}{喪失|そうしつ}{証明書|しょうめいしょ}など）と、{基礎|きそ}{年金|ねんきん}{番号|ばんごう}{通知書|つうちしょ}か{年金|ねんきん}{手帳|てちょう}を{持|も}っていきます。{期限|きげん}は{確認|かくにん}できていません（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "20{歳|さい}から59{歳|さい}の{人|ひと}で、{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っている{配偶者|はいぐうしゃ}の{扶養|ふよう}からはずれたときは、{区役所|くやくしょ}の{保険年金課|ほけんねんきんか}（{支所|ししょ}は{区民福祉課|くみんふくしか}）で{国民年金|こくみんねんきん}に{入|はい}ります。{持|も}っていくもの：{配偶者|はいぐうしゃ}の{会社|かいしゃ}で{出|だ}してもらう、はずれた{日|ひ}がわかる{書類|しょるい}（{健康保険喪失証明書|けんこうほけんそうしつしょうめいしょ}など）と、{基礎年金番号通知書|きそねんきんばんごうつうちしょ}か{年金手帳|ねんきんてちょう}。いつまでかは{要確認|ようかくにん}です。",
+        "en": "If you are aged 20 to under 60 and are removed from the support of a spouse who works for a company with employees' pension, enrol in National Pension at the ward office's insurance and pension section (branch: resident welfare section). Bring a document from the spouse's employer that proves the date you were removed (e.g. a certificate of loss of health insurance) and your basic pension number notice or pension book. The deadline is not confirmed (to be checked)."
       },
       "evidence": {
         "source_ids": [
-          "B-nenkin-jusho-henko-div"
+          "B-nagoya-nenkin-1011839"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "国民年金第3号被保険者については、配偶者の勤務先の事業主（事務担当者）へ変更届を提出する必要があります。",
-        "ai_check": {
-          "fetched_at": "2026-11-05",
-          "sha256": "a7edd8086ae7d0241b2730246e224b330df67b8fdc40451821c7ec695e61ba6b",
-          "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-hoken-nenkin-zairyu/c13"
-        }
+        "checked_at": "2026-11-16",
+        "status": "needs_check",
+        "quote": "20歳以上60歳未満で厚生年金のある会社等に勤める配偶者の扶養からはずれた人　お住まいの区の区役所保険年金課または支所区民福祉課で加入手続きをしてください。その際、配偶者の勤務先で発行される扶養からはずれた日を証明できる書類(健康保険喪失証明書など)と基礎年金番号通知書または年金手帳をお持ちください。"
       }
     },
     {
@@ -189,8 +183,8 @@
     {
       "type": "counter",
       "text": {
-        "ja": "3{号|ごう}{分割|ぶんかつ}は、{平成|へいせい}20{年|ねん}4{月|つき}1{日|にち}{以後|いご}の{国民|こくみん}{年金|ねんきん}の{第3号|だいさんごう}{被保険者|ひほけんしゃ}{期間|きかん}がある{人|ひと}が{請求|せいきゅう}でき、{当事者|とうじしゃ}の{合意|ごうい}は{不要|ふよう}です（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "3{号|ごう}{分割|ぶんかつ}は、2008{年|ねん}4{月|つき}1{日|にち}{以後|いご}に{第3号|だいさんごう}{被保険者|ひほけんしゃ}だった{期間|きかん}がある{人|ひと}が{申|もう}し{出|で}られます。ふたりの{合意|ごうい}は{要|い}りません（{要|よう}{確認|かくにん}）。",
+        "ja": "3{号|ごう}{分割|ぶんかつ}は、{平成|へいせい}20{年|ねん}4{月|がつ}1{日|ついたち}{以後|いご}の{国民|こくみん}{年金|ねんきん}の{第3号|だいさんごう}{被保険者|ひほけんしゃ}{期間|きかん}がある{人|ひと}が{請求|せいきゅう}でき、{当事者|とうじしゃ}の{合意|ごうい}は{不要|ふよう}です（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "3{号|ごう}{分割|ぶんかつ}は、2008{年|ねん}4{月|がつ}1{日|ついたち}{以後|いご}に{第3号|だいさんごう}{被保険者|ひほけんしゃ}だった{期間|きかん}がある{人|ひと}が{申|もう}し{出|で}られます。ふたりの{合意|ごうい}は{要|い}りません（{要|よう}{確認|かくにん}）。",
         "en": "A \"Category 3 split\" can be requested by a person with Category 3 insured periods after 1 April 2008, without the other party's agreement (to be checked)."
       },
       "evidence": {
@@ -233,6 +227,22 @@
         "status": "needs_check",
         "quote": "ひっこした あと 14日より はやく あたらしい いえの 役所に 転入届を だします。"
       }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{離婚|りこん}の{調停|ちょうてい}・{審判|しんぱん}を{期限|きげん}の{前|まえ}に{申|もう}し{立|た}て、{期限|きげん}の{近|ちか}くや{期限|きげん}の{後|あと}に{終|お}わったときなどは、その{日|ひ}の{翌日|よくじつ}から6か{月|げつ}を{過|す}ぎるまで、{年金|ねんきん}{分割|ぶんかつ}を{請求|せいきゅう}できる{場合|ばあい}があります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{調停|ちょうてい}などをしていたときは、{期限|きげん}のあとでも{請求|せいきゅう}できることがあります（{要|よう}{確認|かくにん}）。",
+        "en": "If mediation or a ruling was requested before the deadline and ended near or after it, you may be able to claim pension splitting until 6 months from the next day (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nenkin-rikon-bunkatsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "次の事例に該当した場合、その日の翌日から起算して、6カ月経過するまでに限り、分割請求することができます。"
+      }
     }
   ],
   "keywords": [
@@ -252,8 +262,71 @@
       "B-nagoya-kokuho-kanyu-div",
       "B-nagoya-faq-48-div"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "請求期限 （原則、離婚等をした日の翌日から起算して 5年以内 （※））を経過していないこと。"
-  }
+  },
+  "lead": {
+    "ja": "{住所|じゅうしょ}・{世帯|せたい}・{扶養|ふよう}・{年金|ねんきん}が{変|か}わる{人|ひと}だけ、{手続|てつづ}きがあります。",
+    "ja_easy": "{住|す}む{所|ところ}・{世帯|せたい}・{保険|ほけん}・{年金|ねんきん}が{変|か}わる{人|ひと}だけ、{手続|てつづ}きがあります。",
+    "en": "Only people whose address, household, dependency or pension changes have a procedure."
+  },
+  "event_links": [
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}からほかの{市町村|しちょうそん}へ",
+        "ja_easy": "{名古屋|なごや}からほかの{町|まち}へ",
+        "en": "From Nagoya to another city or town"
+      },
+      "card_ids": [
+        "move-out-city-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-out",
+      "label": {
+        "ja": "{名古屋|なごや}から{国外|こくがい}へ",
+        "ja_easy": "{名古屋|なごや}から{外国|がいこく}へ",
+        "en": "From Nagoya to another country"
+      },
+      "card_ids": [
+        "move-out-abroad-tenshutsu"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{同|おな}じ{区|く}の{中|なか}",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{同|おな}じ{区|く}",
+        "en": "Within Nagoya, inside the same ward"
+      },
+      "card_ids": [
+        "move-within-tenkyo"
+      ]
+    },
+    {
+      "event": "E-move-within",
+      "label": {
+        "ja": "{名古屋市|なごやし}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "ja_easy": "{名古屋|なごや}の{中|なか}で、{別|べつ}の{区|く}へ",
+        "en": "Within Nagoya, to another ward"
+      },
+      "card_ids": [
+        "move-within-tennyu"
+      ]
+    },
+    {
+      "event": "E-move",
+      "label": {
+        "ja": "ほかの{市町村|しちょうそん}から{名古屋|なごや}へ",
+        "ja_easy": "ほかの{町|まち}から{名古屋|なごや}へ",
+        "en": "From another city or town to Nagoya"
+      },
+      "card_ids": [
+        "move-out-notice",
+        "nagoya-tennyu-todoke"
+      ]
+    }
+  ]
 }

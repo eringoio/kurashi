@@ -28,7 +28,7 @@
   },
   "lead": {
     "ja": "{契約|けいやく}を{終|お}えるときは、{決|き}められた{期間|きかん}の{前|まえ}に{書面|しょめん}で{知|し}らせます。",
-    "ja_easy": "部屋を出るときは、早めに紙で知らせます。",
+    "ja_easy": "{部屋|へや}を{出|で}るときは、{早|はや}めに{紙|かみ}で{知|し}らせます。",
     "en": "To end the lease, give written notice within the period in your contract."
   },
   "deadline": {
@@ -56,9 +56,10 @@
       "source_ids": [
         "B-mlit-guidebook-en"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check",
-      "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance)."
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "you will need to notify the landlord or real estate agent in writing within the period specified in the rental agreement (usually 1 to 2 months in advance).",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "guide",
@@ -81,7 +82,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "d0fa336d323c5091b21897c520f7ad6e0caa5926bc04d72f3cb9189062be29bb",
           "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-taikyo/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -103,7 +104,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "d0fa336d323c5091b21897c520f7ad6e0caa5926bc04d72f3cb9189062be29bb",
           "verdict": "agree",
-          "ref": "research/audits/housing.json#P-housing-taikyo/c13"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -120,7 +121,7 @@
         ],
         "checked_at": "2026-11-07",
         "status": "verified",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     }
   ],
@@ -204,25 +205,25 @@
     {
       "id": "mail",
       "label": {
-        "ja": "{郵便|ゆうびん}の{転送|てんそう}",
-        "ja_easy": "{郵便|ゆうびん}の{転送|てんそう}",
-        "en": "Mail forwarding"
+        "ja": "{郵便|ゆうびん}の{転送|てんそう}（{任意|にんい}）",
+        "ja_easy": "{郵便|ゆうびん}の{転送|てんそう}（したい{人|ひと}だけ）",
+        "en": "Mail forwarding (optional)"
       }
     },
     {
       "id": "address",
       "label": {
-        "ja": "{住所|じゅうしょ}の{届出|とどけで}（{区役所|くやくしょ}など）",
-        "ja_easy": "{住所|じゅうしょ}の{届出|とどけで}（{区役所|くやくしょ}など）",
-        "en": "Address notification (ward office etc.)"
+        "ja": "{住所|じゅうしょ}の{届出|とどけで}（{引|ひ}っ{越|こ}しの{種類|しゅるい}で{違|ちが}います）",
+        "ja_easy": "{住所|じゅうしょ}の{届出|とどけで}（{引|ひ}っ{越|こ}しのしかたで{違|ちが}います）",
+        "en": "Address notification (depends on the kind of move)"
       }
     },
     {
       "id": "refund",
       "label": {
-        "ja": "{敷金|しききん}の{精算|せいさん}を{確|たし}かめる",
-        "ja_easy": "{敷金|しききん}が{返|かえ}るか{見|み}る",
-        "en": "Check the deposit settlement"
+        "ja": "{敷金|しききん}の{精算|せいさん}を{確|たし}かめる（{敷金|しききん}を{払|はら}ったとき）",
+        "ja_easy": "{敷金|しききん}が{返|かえ}るか{見|み}る（{敷金|しききん}を{払|はら}ったとき）",
+        "en": "Check the deposit settlement (if you paid a deposit)"
       }
     }
   ],
@@ -236,7 +237,10 @@
       },
       "card_ids": [
         "move-out-city-tenshutsu"
-      ]
+      ],
+      "answers": {
+        "Q-move-dest": "other_city"
+      }
     },
     {
       "event": "E-move-out",
@@ -247,7 +251,10 @@
       },
       "card_ids": [
         "move-out-abroad-tenshutsu"
-      ]
+      ],
+      "answers": {
+        "Q-move-dest": "abroad"
+      }
     },
     {
       "event": "E-move-within",
@@ -258,7 +265,10 @@
       },
       "card_ids": [
         "move-within-tenkyo"
-      ]
+      ],
+      "answers": {
+        "Q-ward-move": "same_ward"
+      }
     },
     {
       "event": "E-move-within",
@@ -269,7 +279,10 @@
       },
       "card_ids": [
         "move-within-tennyu"
-      ]
+      ],
+      "answers": {
+        "Q-ward-move": "other_ward"
+      }
     }
   ]
 }

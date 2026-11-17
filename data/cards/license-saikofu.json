@@ -42,39 +42,87 @@
     "reading": "うんてんめんきょしょうのさいこうふ"
   },
   "summary": {
-    "ja": "{免許証|めんきょしょう}をなくした・{汚|よご}した・{壊|こわ}したときは、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}などで{再交付|さいこうふ}を{申請|しんせい}します。{試験場|しけんじょう}と{東三河|ひがしみかわ}センターは{当日|とうじつ}に{受|う}け{取|と}れ、{警察署|けいさつしょ}で{申請|しんせい}すると{後日|ごじつ}の{受|う}け{取|と}りです（{要|よう}{確認|かくにん}）。{西|にし}・{港|みなと}{警察署|けいさつしょ}は{再交付|さいこうふ}を{受|う}け{付|つ}けていません。{手数料|てすうりょう}の{金額|きんがく}は{本文|ほんぶん}にありません（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{免許証|めんきょしょう}をなくしたら、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{警察署|けいさつしょ}へ{行|い}きます。{警察署|けいさつしょ}では{後日|ごじつ}の{受|う}け{取|と}りです（{要確認|ようかくにん}）。",
-    "en": "If you lost, soiled or damaged your licence, apply for reissue at the driving licence test centre or similar. The test centre and the Higashi-Mikawa centre issue it the same day; applying at a police station means collecting it later (to be checked). Nishi and Minato police stations do not handle reissues. The fee amount is not on the page (to be checked)."
+    "ja": "{免許|めんきょ}{証|しょう}をなくした・{汚|よご}した・{壊|こわ}したときは、{再|さい}{交付|こうふ}を{申請|しんせい}します。{名古屋|なごや}{市内|しない}の{警察|けいさつ}{署|しょ}（{西|にし}・{港|みなと}を{含|ふく}む）では{受|う}け{付|つ}けていません。{名古屋|なごや}{市|し}では{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）へ{行|い}きます。{試験場|しけんじょう}と{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターは{当日|とうじつ}に{受|う}け{取|と}れます。{名古屋|なごや}{市|し}の{外|そと}の23の{警察|けいさつ}{署|しょ}（{愛知|あいち}{県内|けんない}）で{申請|しんせい}すると、{後日|ごじつ}の{受|う}け{取|と}りです（{要|よう}{確認|かくにん}）。{手数料|てすうりょう}の{金額|きんがく}はページにありません（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{免許|めんきょ}{証|しょう}をなくしたら、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）へ{行|い}きます。{名古屋|なごや}の{警察|けいさつ}{署|しょ}ではできません。{試験場|しけんじょう}では、その{日|ひ}にもらえます（{要|よう}{確認|かくにん}）。",
+    "en": "If you lost, soiled or damaged your licence, apply for a reissue. Police stations in Nagoya (including Nishi and Minato) do not accept reissues. In Nagoya, go to the driving licence test centre (Tempaku Ward). The test centre and the Higashi-Mikawa centre issue it the same day. At the 23 police stations outside Nagoya you collect it on a later day (to be checked). The fee amount is not on the page (to be checked)."
   },
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、23の{警察署|けいさつしょ}。{西|にし}・{港|みなと}{警察署|けいさつしょ}では{受|う}け{付|つ}けていません（{要|よう}{確認|かくにん}）",
-      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}か{警察署|けいさつしょ}。{西|にし}・{港|みなと}{警察署|けいさつしょ}では{受|う}け{付|つ}けていません（{要確認|ようかくにん}）",
-      "en": "The driving licence test centre, the Higashi-Mikawa centre, or 23 police stations. Nishi and Minato police stations do not accept reissues (to be checked)"
+      "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）、{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター、または{次|つぎ}の23の{警察|けいさつ}{署|しょ}：{瀬戸|せと}{警察|けいさつ}{署|しょ}、{犬山|いぬやま}{警察|けいさつ}{署|しょ}、{半田|はんだ}{警察|けいさつ}{署|しょ}、{碧南|へきなん}{警察|けいさつ}{署|しょ}、{足助|あすけ}{警察|けいさつ}{署|しょ}、{春日井|かすがい}{警察|けいさつ}{署|しょ}、{一宮|いちのみや}{警察|けいさつ}{署|しょ}、{東海|とうかい}{警察|けいさつ}{署|しょ}、{安城|あんじょう}{警察|けいさつ}{署|しょ}、{設楽|したら}{警察|けいさつ}{署|しょ}、{小牧|こまき}{警察|けいさつ}{署|しょ}、{稲沢|いなざわ}{警察|けいさつ}{署|しょ}、{知多|ちた}{警察|けいさつ}{署|しょ}、{西尾|にしお}{警察|けいさつ}{署|しょ}、{田原|たはら}{警察|けいさつ}{署|しょ}、{西枇杷島|にしびわしま}{警察|けいさつ}{署|しょ}、{津島|つしま}{警察|けいさつ}{署|しょ}、{常滑|とこなめ}{警察|けいさつ}{署|しょ}、{岡崎|おかざき}{警察|けいさつ}{署|しょ}、{江南|こうなん}{警察|けいさつ}{署|しょ}、{蟹江|かにえ}{警察|けいさつ}{署|しょ}、{刈谷|かりや}{警察|けいさつ}{署|しょ}、{豊田|とよた}{警察|けいさつ}{署|しょ}。{名古屋|なごや}{市内|しない}の{警察|けいさつ}{署|しょ}はありません（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}（{天白|てんぱく}{区|く}）。{名古屋|なごや}の{警察|けいさつ}{署|しょ}ではできません（{要|よう}{確認|かくにん}）",
+      "en": "The driving licence test centre (Tempaku Ward), the Higashi-Mikawa centre, or these 23 police stations: Seto, Inuyama, Handa, Hekinan, Asuke, Kasugai, Ichinomiya, Tokai, Anjo, Shitara, Komaki, Inazawa, Chita, Nishio, Tahara, Nishibiwajima, Tsushima, Tokoname, Okazaki, Konan, Kanie, Kariya and Toyota. None of them is in Nagoya (to be checked)"
     },
     "evidence": {
       "source_ids": [
         "license-aichi-saikofu"
       ],
-      "checked_at": "2026-11-06",
+      "checked_at": "2026-11-08",
       "status": "needs_check",
-      "quote": "西・港警察署は、再交付の受付はしていません。"
+      "quote": "瀬戸警察署、犬山警察署、半田警察署、碧南警察署、足助警察署、春日井警察署、一宮警察署、東海警察署、安城警察署、設楽警察署、小牧警察署、稲沢警察署、知多警察署、西尾警察署、田原警察署、西枇杷島警察署、津島警察署、常滑警察署、岡崎警察署、江南警察署、蟹江警察署、刈谷警察署、豊田警察署"
     }
   },
   "methods": [
     {
       "type": "counter",
       "text": {
-        "ja": "{当日|とうじつ}に{受|う}け{取|と}れるのは{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}と{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センターです。23の{警察署|けいさつしょ}で{申請|しんせい}すると、{後日|ごじつ}の{交付|こうふ}になります（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{警察署|けいさつしょ}で{申請|しんせい}すると、{後日|ごじつ}に{受|う}け{取|と}ります（{要確認|ようかくにん}）",
-        "en": "The test centre and the Higashi-Mikawa centre issue the licence the same day. Applying at one of the 23 police stations means collecting it on a later day (to be checked)."
+        "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}：{月曜|げつよう}〜{木曜|もくよう}の8:45〜12:00と12:45〜15:00。その{日|ひ}に{受|う}け{取|と}れます。{県|けん}{外|がい}から{住所|じゅうしょ}を{変|か}える{人|ひと}は、{後日|ごじつ}の{受|う}け{取|と}りになることがあります（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{試験場|しけんじょう}：{月曜|げつよう}〜{木曜|もくよう}。その{日|ひ}にもらえます（{要|よう}{確認|かくにん}）",
+        "en": "Test centre: Monday to Thursday, 8:45-12:00 and 12:45-15:00. Issued the same day. If you also change your address from another prefecture, it may be issued later (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "license-aichi-saikofu"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "ただし、申請時に県外からの住所変更をする場合は後日交付（交付日に写真撮影を行います。）となる場合があります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}の{日曜日|にちようび}（8:30〜12:00）は{予約|よやく}{制|せい}です。{直近|ちょっきん}の{金曜日|きんようび}の9{時|じ}〜11{時|じ}に{電話|でんわ}で{予約|よやく}します。{定員|ていいん}になったら{予約|よやく}できません。{県|けん}{外|がい}から{住所|じゅうしょ}を{変|か}える{人|ひと}は、{日曜|にちよう}の{予約|よやく}の{対象|たいしょう}{外|がい}です（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{試験場|しけんじょう}の{日曜日|にちようび}は、{前|まえ}の{金曜日|きんようび}に{電話|でんわ}で{予約|よやく}します（{要|よう}{確認|かくにん}）",
+        "en": "Test centre on Sundays (8:30-12:00): by reservation only. Call on the Friday before, 9:00-11:00. Reservations close when full. People changing their address from another prefecture cannot reserve a Sunday (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "直近の金曜日（９時～11時の間）に受付します。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター：{月曜|げつよう}〜{金曜|きんよう}の8:45〜12:00と12:45〜15:00。その{日|ひ}に{受|う}け{取|と}れます（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{東三河|ひがしみかわ}{運転|うんてん}{免許|めんきょ}センター：{月曜|げつよう}〜{金曜|きんよう}（{要|よう}{確認|かくにん}）",
+        "en": "Higashi-Mikawa centre: Monday to Friday, 8:45-12:00 and 12:45-15:00. Issued the same day (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "即日交付"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "23の{警察|けいさつ}{署|しょ}：{月曜|げつよう}〜{金曜|きんよう}の9:00〜16:00。{後日|ごじつ}の{受|う}け{取|と}りで、{受|う}け{取|と}る{日|ひ}に{写真|しゃしん}を{撮|と}ります。{県|けん}{外|がい}から{住所|じゅうしょ}を{変|か}える{人|ひと}は、{警察|けいさつ}{署|しょ}では{申請|しんせい}できません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{警察|けいさつ}{署|しょ}：{月曜|げつよう}〜{金曜|きんよう}。あとの{日|ひ}にもらいます（{要|よう}{確認|かくにん}）",
+        "en": "23 police stations: Monday to Friday, 9:00-16:00. Collected on a later day; the photo is taken on that day. If you change your address from another prefecture, you cannot apply at a police station (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check",
         "quote": "23警察署で再交付申請を行う場合には、後日交付となります。"
       }
@@ -82,15 +130,31 @@
     {
       "type": "counter",
       "text": {
-        "ja": "{写真|しゃしん}1{枚|まい}（{申請|しんせい}の6か{月|げつ}{以内|いない}、{無帽|むぼう}、{正面|しょうめん}、{無背景|むはいけい}）が{要|い}ります。{持|も}ち{込|こ}みの{写真|しゃしん}は{使|つか}えず、{専用|せんよう}の{写真機|しゃしんき}で{撮影|さつえい}します（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{写真|しゃしん}は、その{場|ば}で{撮|と}ります（{要確認|ようかくにん}）",
-        "en": "One photo is required (taken within 6 months, bareheaded, facing front, plain background). Your own photo is not accepted; it is taken at a dedicated photo machine (to be checked)."
+        "ja": "{土曜日|どようび}・{祝日|しゅくじつ}・{振替|ふりかえ}{休日|きゅうじつ}・{年末年始|ねんまつねんし}（12{月|がつ}29{日|にち}〜1{月|つき}3{日|にち}）は{受付|うけつけ}しません。{日曜日|にちようび}は{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}の{予約|よやく}の{人|ひと}だけです（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{土曜日|どようび}・{祝日|しゅくじつ}・{年末年始|ねんまつねんし}は{休|やす}みです（{要|よう}{確認|かくにん}）",
+        "en": "No service on Saturdays, public holidays, substitute holidays or 29 December to 3 January. On Sundays, only the test centre by reservation (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "license-aichi-saikofu"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "※土曜日、日曜日、祝日、振替休日及び年末年始（12月29日～1月3日）は、受付をしていません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{写真|しゃしん}：{申請|しんせい}{用|よう}の{写真|しゃしん}を1{枚|まい}{持|も}っていきます（{申請|しんせい}{日|ひ}の{前|まえ}6か{月|げつ}{以内|いない}に{撮|と}った、{無|む}{帽|ぼう}・{正面|しょうめん}・{上三分身|じょうさんぶんしん}・{無|む}{背景|はいけい}、{縦|たて}3cm×{横|よこ}2.4cm）。{免許|めんきょ}{証|しょう}に{載|の}る{写真|しゃしん}は{窓口|まどぐち}で{撮|と}ります。{持|も}ち{込|こ}みの{写真|しゃしん}では{免許|めんきょ}{証|しょう}を{作|つく}りません（{要|よう}{確認|かくにん}）",
+        "ja_easy": "{写真|しゃしん}を1{枚|まい}{持|も}っていきます（たて3cm×よこ2.4cm）。{免許|めんきょ}{証|しょう}の{写真|しゃしん}は、{窓口|まどぐち}で{撮|と}ります（{要|よう}{確認|かくにん}）",
+        "en": "Photo: bring one application photo (taken within 6 months, no hat, facing front, upper body, plain background, 3 cm x 2.4 cm). The photo on the licence is taken at the counter; your own photo is not used for the licence (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check",
         "quote": "持ち込み写真による再交付は行っておりません。"
       }
@@ -146,6 +210,23 @@
     {
       "type": "counter",
       "text": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）をなくしたときも、{再|さい}{交付|こうふ}の{対象|たいしょう}です。マイナンバーカードは{先|さき}に{一時|いちじ}{停止|ていし}します（{財布|さいふ}の{紛失|ふんしつ}の{案内|あんない}）。カードの{再|さい}{発行|はっこう}は{区役所|くやくしょ}です。{免許|めんきょ}の{情報|じょうほう}をカードに{入|い}れ{直|なお}す{順番|じゅんばん}は、{運転|うんてん}{免許|めんきょ}{試験場|しけんじょう}に{確|たし}かめてください（{要|よう}{確認|かくにん}）",
+        "ja_easy": "マイナンバーカードをなくしたときは、{先|さき}にカードを{止|と}めます。{免許|めんきょ}のことは{試験場|しけんじょう}に{聞|き}きます（{要|よう}{確認|かくにん}）",
+        "en": "Losing a My Number licence (My Number Card) is also a reason for reissue. Suspend the My Number Card first (see the lost wallet guide). The card is reissued at the ward office. Ask the test centre about the order for recording the licence on the card again (to be checked)."
+      },
+      "when": "R-license-lost-myna",
+      "evidence": {
+        "source_ids": [
+          "license-aichi-saikofu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "マイナ免許証を亡失等したとき"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
         "ja": "マイナ{免許証|めんきょしょう}にしたいときは、マイナンバーカードを{持|も}っていきます（{要|よう}{確認|かくにん}）",
         "ja_easy": "マイナ{免許証|めんきょしょう}にしたいときは、マイナンバーカードも{持|も}っていきます（{要確認|ようかくにん}）",
         "en": "If you want a Mynumber-linked licence, bring your My Number Card (to be checked)."
@@ -158,30 +239,33 @@
         "status": "needs_check",
         "quote": "マイナンバーカード（マイナ免許証を希望する場合）"
       }
-    },
-    {
-      "type": "counter",
-      "text": {
-        "ja": "{土曜日|どようび}・{祝日|しゅくじつ}・{振替|ふりかえ}{休日|きゅうじつ}・{年末年始|ねんまつねんし}（12{月|がつ}29{日|にち}〜1{月|がつ}3{日|にち}）は{受付|うけつけ}していません。{試験場|しけんじょう}の{受付|うけつけ}{曜日|ようび}は{変|か}わることがあるので、{行|い}く{前|まえ}に{確認|かくにん}してください（{要|よう}{確認|かくにん}）",
-        "ja_easy": "{行|い}く{前|まえ}に、{受付|うけつけ}の{曜日|ようび}を{確認|かくにん}します（{要確認|ようかくにん}）",
-        "en": "No service on Saturdays, public holidays, substitute holidays or 29 December to 3 January. The test centre's service days can change, so check before you go (to be checked)."
-      },
-      "evidence": {
-        "source_ids": [
-          "license-aichi-saikofu"
-        ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "※土曜日、日曜日、祝日、振替休日及び年末年始（12月29日～1月3日）は、受付をしていません。"
-      }
     }
   ],
   "evidence": {
     "source_ids": [
       "license-aichi-saikofu"
     ],
-    "checked_at": "2026-11-06",
+    "checked_at": "2026-11-14",
     "status": "needs_check",
     "quote": "免許証を亡失、滅失、汚損、破損したとき"
-  }
+  },
+  "lead": {
+    "ja": "{運転|うんてん}するときは、{免許|めんきょ}{証|しょう}を{持|も}っている{決|き}まりです。なくしたままで{運転|うんてん}しないでください。",
+    "ja_easy": "{運転|うんてん}するときは、{免許|めんきょ}{証|しょう}を{持|も}っていなければなりません。なくしたら、{運転|うんてん}しないでください。",
+    "en": "You must carry your licence when you drive. Do not drive while it is lost."
+  },
+  "event_links": [
+    {
+      "event": "E-lost-wallet",
+      "label": {
+        "ja": "{財布|さいふ}ごとなくした・{盗|ぬす}まれた（{遺失|いしつ}{届|とどけ}・{盗難|とうなん}{届|とどけ}、カードの{停止|ていし}）",
+        "ja_easy": "{財布|さいふ}ごとなくした・とられた（{警察|けいさつ}への{届|とど}け、カードを{止|と}める）",
+        "en": "Lost or stolen with your wallet (police report, stopping cards)"
+      },
+      "card_ids": [
+        "lost-police-report",
+        "lost-mynumber-stop"
+      ]
+    }
+  ]
 }

@@ -34,22 +34,24 @@
     "reading": "こくみんけんこうほけんのかにゅう・こくみんねんきんのしゅべつへんこう"
   },
   "summary": {
-    "ja": "{会社|かいしゃ}を{辞|や}めて{会社|かいしゃ}の{保険|ほけん}が{終|お}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}り、{国民|こくみん}{年金|ねんきん}の{届|とど}けをします（{要|よう}{確認|かくにん}）。すぐ{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}と{年金|ねんきん}の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}にすぐ{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
-    "en": "After you leave a job and your workplace insurance ends, join National Health Insurance and file the National Pension notice at the ward office within 14 days (to be checked). People who join a new employer's insurance right away, or become a dependant of a family member, follow a different procedure. Check at the counter (to be checked)."
+    "ja": "{会社|かいしゃ}を{辞|や}めて{会社|かいしゃ}の{保険|ほけん}が{終|お}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}り、{国民|こくみん}{年金|ねんきん}の{届|とど}け（20{歳|さい}から59{歳|さい}の{人|ひと}）をします（{要|よう}{確認|かくにん}）。すぐ{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{確認|かくにん}（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{辞|や}めたら、14{日|にち}{以内|いない}に{区役所|くやくしょ}で{国保|こくほ}と{年金|ねんきん}（20{歳|さい}から59{歳|さい}の{人|ひと}）の{手続|てつづ}きをします（{要|よう}{確認|かくにん}）。{次|つぎ}の{会社|かいしゃ}の{保険|ほけん}にすぐ{入|はい}る{人|ひと}や、{家族|かぞく}の{扶養|ふよう}に{入|はい}る{人|ひと}は{手続|てつづ}きが{違|ちが}います。{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+    "en": "After you leave a job and your workplace insurance ends, join National Health Insurance and file the National Pension notice (if you are 20 to 59) at the ward office within 14 days (to be checked). People who join a new employer's insurance right away, or become a dependant of a family member, follow a different procedure. Check at the counter (to be checked)."
   },
   "deadline": {
     "text": {
-      "ja": "{辞|や}めた{日|ひ}の{次|つぎ}の{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "ja_easy": "14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
-      "en": "Within 14 days of the day after you leave (to be checked)"
+      "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}をやめるなど、{加入|かにゅう}の{事実|じじつ}が{発生|はっせい}した{日|ひ}から14{日|にち}{以内|いない}（{名古屋市|なごやし}の{案内|あんない}。{要|よう}{確認|かくにん}）",
+      "ja_easy": "{職場|しょくば}の{保険|ほけん}をやめた{日|ひ}など、{加入|かにゅう}する{事情|じじょう}ができた{日|ひ}から14{日|にち}{以内|いない}（{要|よう}{確認|かくにん}）",
+      "en": "Within 14 days of the day the fact occurs, such as leaving your workplace health insurance (Nagoya City guidance; to be checked)"
     },
     "evidence": {
       "source_ids": [
-        "kurashi-spec"
+        "nagoya-kokuho-kanyu-page",
+        "B-nagoya-kokuho-hitsuyo"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check"
+      "checked_at": "2026-11-15",
+      "status": "needs_check",
+      "quote": "届出は、原則として事実(転居、退職、出生、死亡等)が発生した日から14日以内にしてください。"
     }
   },
   "where": {

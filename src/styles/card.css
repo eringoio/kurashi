@@ -56,3 +56,9 @@ div.focus > :not(.focus__art) { grid-column: 2; min-width: 0; }
 .k-sources h2.label { margin: 0 0 4px; }
 .k-sources ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
 .k-sources .sub { margin: 6px 0 0; }
+
+/* 読むだけの説明（見出しごと）と、目的・方法を選ぶ入口（v0.5.40 の案：ファミリーシップ） */
+.card-sec { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.card-sec h2 { margin: 0; font-size: var(--fs-answer); line-height: 1.6; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; }
+.card-sec__list { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 6px; line-height: 1.7; overflow-wrap: anywhere; min-width: 0; }
+.card-menu__here { font-weight: 700; }

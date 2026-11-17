@@ -1,5 +1,6 @@
 /* ごみの基本案内（11/7 C-7 で公開のデータへ移した）。日を聞かない案内（kind: guide）だけ。 */
 import { describe, expect, it } from 'vitest';
+import { isBulk, verifiedNotBulk } from './bulk';
 import { checkRefs, loadData } from '../../src/core/data';
 import { run } from '../../src/core/engine';
 import { nowStep } from '../../src/core/now';
@@ -20,9 +21,9 @@ const o = run(data, { answers: {}, objects: {}, plan: {}, createdOn: TODAY, toda
 const card = (id: string) => data.cards.find((c) => c.id === id)!;
 
 describe('ごみの基本案内（下書き）', () => {
-  it('型と参照の検査を通る。すべて needs_check', () => {
+  it('型と参照の検査を通る。verified は作者の一括承認（2026-11-08）だけ', () => {
     expect(checkRefs(data)).toEqual([]);
-    expect(JSON.stringify(json)).not.toContain('"verified"');
+    expect(verifiedNotBulk(json)).toEqual([]);
   });
   it('質問せず、すべて日を聞かない案内で、すべて出る', () => {
     expect(o.upfront).toEqual([]);
@@ -92,11 +93,12 @@ const item = (id: string) => d.items.items.find((x) => x.id === id)!;
 const cat = (id: string, choice?: string) => { const r = judgeItem(d.items, item(id), choice); return r.kind === 'result' ? r.category.id : r.kind; };
 
 describe('下書きのデータ', () => {
-  it('型と参照を通る。verified は作者の確認（author-2026-11-07）だけ', () => {
+  it('型と参照を通る。verified は作者の確認（author-2026-11-07）か、作者の一括承認（2026-11-08。市の表との機械照合。引用あり）だけ', () => {
     expect(JSON.stringify([areas, delivery])).not.toContain('"verified"');
     for (const x of d.items.items) {
-      if (x.evidence.status === 'verified') expect(x.evidence.source_ids, x.id).toContain('author-2026-11-07');
-      else expect(x.evidence.status === 'needs_check' && !!x.evidence.quote, x.id).toBe(true);
+      const e = x.evidence;
+      if (e.status === 'verified') expect(e.source_ids.includes('author-2026-11-07') || (!!e.quote && isBulk(e)), x.id).toBe(true);
+      else expect(e.status === 'needs_check' && !!e.quote, x.id).toBe(true);
     }
   });
   it('古い30cmの基準を、いまの判定に使わない（2026年10月以降は45L）', () => {

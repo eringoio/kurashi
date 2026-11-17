@@ -1,0 +1,162 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "divorce-kodomo",
+  "illustration": "doc",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "eligibility": "R-div-children",
+  "title": {
+    "ja": "{未成年|みせいねん}の{子|こ}どもがいるときの{離婚|りこん}",
+    "ja_easy": "18{歳|さい}より{下|した}の{子|こ}どもがいるときの{離婚|りこん}",
+    "en": "Divorce with a child under 18"
+  },
+  "official_name": {
+    "ja": "離婚後の子の養育（親権・監護・養育費・親子交流）",
+    "reading": "りこんごのこのよういく"
+  },
+  "summary": {
+    "ja": "{未成年|みせいねん}の{子|こ}どもがいるときは、{離婚|りこん}{届|とどけ}に{親権|しんけん}{者|しゃ}を{書|か}きます。2026{年|ねん}4{月|がつ}1{日|ついたち}{以降|いこう}は、{親権|しんけん}を{父母|ちちはは}の{一方|いっぽう}（{単独|たんどく}{親権|しんけん}）にするか、{双方|そうほう}（{共同|きょうどう}{親権|しんけん}）にするかを{選|えら}べます（{要|よう}{確認|かくにん}）。{子|こ}どもの{監護|かんご}、{養育費|よういくひ}、{親子|おやこ}{交流|こうりゅう}も{決|き}めておくことが{大切|たいせつ}です。{話|はな}し{合|あ}いで{決|き}まらないときは、{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}を{使|つか}えます。{子|こ}どもを{離婚|りこん}{後|ご}の{新|あたら}しい{戸籍|こせき}に{移|うつ}すときは、{別|べつ}に{入籍|にゅうせき}{届|とどけ}が{要|い}ります。{児童|じどう}{手当|てあて}、{子|こ}ども{医療|いりょう}、{子|こ}どもの{健康|けんこう}{保険|ほけん}、{住所|じゅうしょ}や{世帯|せたい}が{変|か}わるときは、{区役所|くやくしょ}で{手続|てつづ}きがあるか{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "18{歳|さい}より{下|した}の{子|こ}どもがいるときは、{離婚|りこん}{届|とどけ}に{親権|しんけん}{者|しゃ}を{書|か}きます。2026{年|ねん}4{月|がつ}1{日|ついたち}からは、{親権|しんけん}を{父|ちち}か{母|はは}のひとり（{単独|たんどく}{親権|しんけん}）か、ふたり（{共同|きょうどう}{親権|しんけん}）か{選|えら}べます（{要|よう}{確認|かくにん}）。{養育費|よういくひ}や、{子|こ}どもと{会|あ}うことも{決|き}めます。{子|こ}どもの{手当|てあて}や{保険|ほけん}は、{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "If you have a child under 18, write the person with parental authority on the divorce registration. From April 1, 2026 you can choose sole parental authority (one parent) or joint parental authority (both parents) (to be checked). It is also important to decide on custody, child support and parent-child contact. If you cannot agree, you can use family court mediation. A separate notification is needed to move the child into the new family register after the divorce. Ask the ward office whether there are procedures for child allowance, child medical expense subsidies, the child's health insurance, or changes of address or household (to be checked)."
+  },
+  "lead": {
+    "ja": "{親権|しんけん}{者|しゃ}を{離婚|りこん}{届|とどけ}に{書|か}きます。{養育費|よういくひ}や{親子|おやこ}{交流|こうりゅう}も{決|き}めます。",
+    "ja_easy": "{離婚|りこん}{届|とどけ}に{親権|しんけん}{者|しゃ}を{書|か}きます。",
+    "en": "Write the person with parental authority on the divorce registration, and decide on child support and contact."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{区役所|くやくしょ}{市民|しみん}{課|か}・{支所|ししょ}{区民|くみん}{生活|せいかつ}{課|か}（{離婚|りこん}{届|とどけ}・{入籍|にゅうせき}{届|とどけ}）、{家庭|かてい}{裁判所|さいばんしょ}（{調停|ちょうてい}）",
+      "ja_easy": "{区役所|くやくしょ}、{家庭|かてい}{裁判所|さいばんしょ}",
+      "en": "Ward office (divorce and family register notifications), family court (mediation)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-faq-94"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "未成年の子どもがいる場合は親権者を定める必要があります。離婚届出用紙の所定の欄に記入してください。"
+    }
+  },
+  "place": "ward_office",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{未成年|みせいねん}の{子|こ}どもがいる{場合|ばあい}は{親権|しんけん}{者|しゃ}を{定|さだ}める{必要|ひつよう}があり、{離婚|りこん}{届|とどけ}の{所定|しょてい}の{欄|らん}に{書|か}きます。",
+        "ja_easy": "{子|こ}どもの{親権|しんけん}{者|しゃ}を{決|き}めて、{離婚|りこん}{届|とどけ}に{書|か}きます。",
+        "en": "You must decide who has parental authority for a child under 18 and write it in the divorce registration form."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-94"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "未成年の子どもがいる場合は親権者を定める必要があります。離婚届出用紙の所定の欄に記入してください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "2026{年|ねん}4{月|がつ}1{日|ついたち}{以降|いこう}は、{離婚|りこん}{届|とどけ}のときに、{未成年|みせいねん}の{子|こ}の{親権|しんけん}を{父母|ちちはは}の{一方|いっぽう}（{単独|たんどく}{親権|しんけん}）にするか{双方|そうほう}（{共同|きょうどう}{親権|しんけん}）にするかを{選|えら}べます（{名古屋|なごや}{市|し}の{案内|あんない}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "2026{年|ねん}4{月|がつ}1{日|ついたち}からは、{単独|たんどく}{親権|しんけん}か{共同|きょうどう}{親権|しんけん}かを{選|えら}べます（{要|よう}{確認|かくにん}）。",
+        "en": "From April 1, 2026, you can choose sole or joint parental authority when filing the divorce registration (Nagoya City guidance) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-konin-rikon-div"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "令和8年4月1日以降、離婚届出の際に未成年の子の親権を父母の一方（単独親権）とするか双方（共同親権）とするか選択できるようになります。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{父母|ちちはは}の{離婚|りこん}{後|ご}の{子|こ}の{養育|よういく}について、{親権|しんけん}・{監護|かんご}、{養育費|よういくひ}、{親子|おやこ}{交流|こうりゅう}などの{民法|みんぽう}の{規定|きてい}が{見直|みなお}され、2026{年|ねん}4{月|がつ}1{日|ついたち}に{施行|しこう}されました（{法務省|ほうむしょう}）（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{親権|しんけん}・{養育費|よういくひ}・{子|こ}どもと{会|あ}うことのきまりが、2026{年|ねん}4{月|がつ}1{日|ついたち}に{変|か}わりました（{要|よう}{確認|かくにん}）。",
+        "en": "The Civil Code rules on parental authority and custody, child support, parent-child contact and more were revised, effective April 1, 2026 (Ministry of Justice) (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-kodomo-2026"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "親権・監護、養育費、親子交流、養子縁組、財産分与等に関する民法等の規定を見直すものです。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}では、{離婚|りこん}のほか、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育費|よういくひ}なども{話|はな}し{合|あ}えます。",
+        "ja_easy": "{家庭|かてい}{裁判所|さいばんしょ}の{調停|ちょうてい}で、{親権|しんけん}や{養育費|よういくひ}も{話|はな}し{合|あ}えます。",
+        "en": "In family court mediation, you can also discuss parental authority, contact with the child and child support."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-courts-rikon-chotei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "親権者を父母の双方とするか一方とするかを定める必要があるほか"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{子|こ}どもを{離婚|りこん}{後|ご}の{新|あたら}しい{戸籍|こせき}に{移|うつ}すときは、{別|べつ}に「{入籍|にゅうせき}{届|とどけ}」が{要|い}ります。{離婚|りこん}{届|とどけ}だけでは、{子|こ}どもの{戸籍|こせき}は{動|うご}きません。",
+        "ja_easy": "{子|こ}どもの{戸籍|こせき}を{移|うつ}すときは、{別|べつ}の{届|とど}け（{入籍|にゅうせき}{届|とどけ}）が{要|い}ります。",
+        "en": "To move the child into the new family register after the divorce, a separate notification is needed. The divorce registration alone does not move the child's register."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-97"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "子を離婚後の新しい戸籍に移すときは別途、「入籍届」が必要になります。"
+      }
+    }
+  ],
+  "keywords": [
+    "親権",
+    "共同親権",
+    "養育費",
+    "親子交流",
+    "面会交流",
+    "児童手当",
+    "custody",
+    "child support",
+    "joint custody"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{未成年|みせいねん}の{子|こ}どもがいるときに{出|だ}しています。",
+      "ja_easy": "18{歳|さい}より{下|した}の{子|こ}どもがいるときに{出|だ}しています。",
+      "en": "Shown when you have a child under 18."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-konin-rikon-div",
+      "B-moj-kodomo-2026",
+      "B-nagoya-faq-94"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "令和8年4月1日以降、離婚届出の際に未成年の子の親権を父母の一方（単独親権）とするか双方（共同親権）とするか選択できるようになります。"
+  }
+}

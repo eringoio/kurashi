@@ -1,7 +1,7 @@
 /* 収集日の写し（作者の決定 2026-11-06 F）。data/private/ は Git に入らないので、見本の小さな表で確かめる */
 import { describe, expect, it } from 'vitest';
-import { nextCollection } from '../../src/core/gomi';
-import { areaIdToSave, areaRow, banchiOf, privateSchedule, rowsOf, searchTowns, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
+import { addDays, nextCollection } from '../../src/core/gomi';
+import { EXCEPTIONS_UNTIL, areaIdToSave, areaRow, banchiOf, privateSchedule, rowsOf, searchTowns, toSchedules, townsOf, type PrivateSchedule } from '../../src/core/gomiSchedule';
 
 const P: PrivateSchedule = {
   source: { url: 'https://www.city.nagoya.jp/kurashi/gomi/1012183/1037098.html', title: 'ごみ収集日検索', fetched_at: '2026-11-06', valid_from: null },
@@ -36,12 +36,13 @@ describe('収集日の写し', () => {
     // 行がまだ決まらないときも、保存を消さない
     expect(areaIdToSave(saved.area_id, null)).toBeUndefined();
   });
-  it('次の収集日（施行日が無ければ取得日から。年末年始より後は出さない）', () => {
+  it('次の収集日（施行日が無ければ取得日から。年末年始は市の表の日。表がそろう日より後は出さない）', () => {
     const s = toSchedules(P);
     const ready = { kind: 'ready', area_id: 'naka-1' } as const;
     expect(nextCollection(s, ready, 'kanen', '2026-11-06', { allowUnapproved: true })).toEqual({ kind: 'date', date: '2026-11-09' });
     expect(nextCollection(s, ready, 'kanen', '2026-11-06')).toEqual({ kind: 'not_approved' }); // on でないときは出さない
-    expect(nextCollection(s, ready, 'kanen', '2026-12-29', { allowUnapproved: true }).kind).toBe('exceptions_unknown');
+    expect(nextCollection(s, ready, 'kanen', '2026-12-29', { allowUnapproved: true })).toEqual({ kind: 'date', date: '2027-01-04' }); // 市の年末年始の表（月・木の地域）
+    expect(nextCollection(s, ready, 'kanen', addDays(EXCEPTIONS_UNTIL, 1), { allowUnapproved: true }).kind).toBe('exceptions_unknown');
   });
   it('写しが無いときは null（ビルドも画面もそのまま）', () => {
     expect(privateSchedule(undefined)).toBeNull();

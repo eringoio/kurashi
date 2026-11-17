@@ -87,6 +87,22 @@
     {
       "type": "counter",
       "text": {
+        "ja": "{仕事|しごと}の{在留|ざいりゅう}{資格|しかく}の{人|ひと}の{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}は、ふつう、{勤|つと}め{先|さき}や{仕事|しごと}の{内容|ないよう}を{決|き}めて{受|う}ける「{個別|こべつ}{許可|きょか}」です。「1{週|しゅう}28{時間|じかん}{以内|いない}」の{包括|ほうかつ}{許可|きょか}は、{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}などの{人|ひと}のためのものです（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{仕事|しごと}の{在留資格|ざいりゅうしかく}の{人|ひと}の{許可|きょか}は、ふつう、{仕事|しごと}ごとの「{個別許可|こべつきょか}」です。「1{週|しゅう}28{時間|じかん}まで」の{許可|きょか}は、{留学|りゅうがく}・{家族|かぞく}{滞在|たいざい}などの{人|ひと}のものです（{要確認|ようかくにん}）。",
+        "en": "For people with a work status, permission for extra activities is usually individual permission, which names the employer and the work. The comprehensive permission (up to 28 hours a week) is for people with Student or Dependent status and some others (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "isa-shikakugai-guide"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "「留学」の在留資格の方 / 「家族滞在」の在留資格の方 / 当該活動を行う本邦の公私の機関の名称及び事業内容その他必要な事項を定めて個々に許可されます。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
         "ja": "{個人|こじん}{事業|じぎょう}{主|ぬし}として{活動|かつどう}するときや、{働|はたら}く{時間|じかん}がはっきりしない{仕事|しごと}（{業務|ぎょうむ}{委託|いたく}など）は、{資格|しかく}{外|がい}{活動|かつどう}の{個別|こべつ}{許可|きょか}になります（{要|よう}{確認|かくにん}）。",
         "ja_easy": "{自分|じぶん}で{仕事|しごと}をするときは、{別|べつ}の{許可|きょか}（{個別許可|こべつきょか}）です（{要確認|ようかくにん}）。",
         "en": "Working as a sole proprietor, or work without clear hours (such as contract work), needs individual permission (to be checked)."

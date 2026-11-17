@@ -3,7 +3,6 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { DATA } from '../../src/core/data';
 import { ALL_DOCUMENTS, isShown, loadDocuments } from '../../src/core/documents';
-import candidates from '../../data/document-candidates.json';
 
 const docs = ALL_DOCUMENTS();
 const by = (id: string) => docs.find((d) => d.id === id)!;
@@ -11,8 +10,7 @@ const draftCards = new Set((existsSync('drafts/data') ? readdirSync('drafts/data
   .flatMap((f) => (JSON.parse(readFileSync('drafts/data/' + f, 'utf8')).cards ?? []).map((c: { id: string }) => c.id)));
 
 describe('書類のデータ', () => {
-  it('リンク・カード・調査資料の id はみな在る。リンクは公式の URL', () => {
-    const cand = new Set(candidates.candidates.map((c) => c.id));
+  it('リンク・カードの id はみな在る。リンクは公式の URL（調査資料の候補の id は document-candidates.test.ts。公開用には入れない FB-9）', () => {
     const cards = new Set(DATA().cards.map((c) => c.id));
     for (const d of docs) {
       for (const l of d.links) {
@@ -21,17 +19,12 @@ describe('書類のデータ', () => {
         expect(['government', 'public_corp'], d.id + ' ' + l.source_id).toContain(s!.owner_type);
       }
       for (const c of d.card_ids) expect(cards.has(c) || draftCards.has(c), d.id + ' ' + c).toBe(true);
-      for (const c of d.catalogue_ids) expect(cand.has(c), d.id + ' ' + c).toBe(true);
     }
   });
 
-  it('調査資料の候補は 388 件で、すべて research（画面に出さない）', () => {
-    expect(candidates.count).toBe(388);
-    expect(candidates.candidates.every((c) => c.status === 'research')).toBe(true);
-  });
-
-  it('公開は16件（作者が 11/8 に9件を確認）。要確認（review）の書類は本番に出さない', () => {
+  it('公開は16件（作者が 11/8 に9件を確認。住民税の通知は 11/15 に作者の決定 R-12 で review〔data/documents-review.json。開発だけ〕）。要確認（review）の書類は本番に出さない', () => {
     expect(docs.filter((d) => isShown(d, false)).length).toBe(16);
+    expect(docs.find((d) => d.id === 'juminzei-tsuchi')?.publication ?? 'review').toBe('review');
     // 公開の書類は、作者が確かめた（verified_by）か、要確認の札が出る（needs_check）
     for (const d of docs.filter((x) => x.publication === 'public')) expect(d.evidence.status === 'verified' ? d.evidence.verified_by : d.evidence.status, d.id).toBeTruthy();
     expect(isShown({ ...by('tennyu-todoke'), publication: 'review' }, false)).toBe(false);

@@ -15,7 +15,7 @@
       {
         "any": [
           "R-job-goal-leave",
-          "R-job-pt-end-employer-ins"
+          "R-job-goal-pt-end"
         ]
       },
       "R-job-koyo-yes",
@@ -33,9 +33,9 @@
     "reading": "こようほけんのきほんてあて"
   },
   "summary": {
-    "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{前|まえ}の{会社|かいしゃ}から{離職|りしょく}{票|ひょう}をもらい、{住所|じゅうしょ}の{近|ちか}くのハローワークで{求職|きゅうしょく}の{申|もう}し{込|こ}みをすると、{基本|きほん}{手当|てあて}を{受|う}けられることがあります。{辞|や}める{前|まえ}の2{年|ねん}で12か{月|げつ}{以上|いじょう}{入|はい}っていたことなどが{条件|じょうけん}です。{遅|おく}れると{全部|ぜんぶ}は{受|う}けられないことがあります（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{前|まえ}の{会社|かいしゃ}の{書類|しょるい}を{持|も}って、ハローワークへ{行|い}きます。{早|はや}めに{行|い}きます（{要|よう}{確認|かくにん}）。",
-    "en": "If you had employment insurance, get the separation notice from your former employer and apply for work at the Hello Work office for your address; you may receive the basic allowance. One condition is 12 months of coverage in the 2 years before leaving. Applying late can cost you days (to be checked)."
+    "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、{前|まえ}の{会社|かいしゃ}から{離職|りしょく}{票|ひょう}をもらい、{住所|じゅうしょ}の{近|ちか}くのハローワークで{求職|きゅうしょく}の{申|もう}し{込|こ}みをすると、{基本|きほん}{手当|てあて}を{受|う}けられることがあります。{辞|や}める{前|まえ}の2{年|ねん}で12か{月|げつ}{以上|いじょう}{入|はい}っていたことなどが{条件|じょうけん}です。{遅|おく}れると{全部|ぜんぶ}は{受|う}けられないことがあります。{受|う}けられるかは、ハローワークで{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{前|まえ}の{会社|かいしゃ}の{書類|しょるい}を{持|も}って、ハローワークへ{行|い}きます。{早|はや}めに{行|い}きます。もらえるかは、ハローワークで{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+    "en": "If you had employment insurance, get the separation notice from your former employer and apply for work at the Hello Work office for your address; you may receive the basic allowance. One condition is 12 months of coverage in the 2 years before leaving. Applying late can cost you days. Hello Work decides whether you can receive it (to be checked)."
   },
   "lead": {
     "ja": "{雇用|こよう}{保険|ほけん}に{入|はい}っていた{人|ひと}は、ハローワークで{手続|てつづ}きすると{基本|きほん}{手当|てあて}を{受|う}けられることがあります。",
@@ -53,11 +53,13 @@
       "source_ids": [
         "D-hellowork-kihonteate"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "住所地を管轄するハローワークで「求職申込み」をしたのち、「離職票」を提出します。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "住所地を管轄するハローワークで「求職申込み」をしたのち、「離職票」を提出します。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
+  "place": "hello_work",
   "kind": "procedure",
   "methods": [
     {
@@ -91,6 +93,23 @@
         "status": "needs_check",
         "quote": "離職日が令和７年４月１日以降である場合は原則１か月 / 離職票の提出と求職の申込みを行った日（受給資格決定日）から通算して7日間を待期期間といい"
       }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "どのハローワークかは、{住所|じゅうしょ}を{管轄|かんかつ}するハローワークです。{名古屋市|なごやし}のどこが{自分|じぶん}の{管轄|かんかつ}かは、このページの{一覧|いちらん}か{電話|でんわ}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{離職票|りしょくひょう}を{郵送|ゆうそう}やインターネットで{出|だ}せるかは、{公式|こうしき}のページで{確認|かくにん}できていません。ハローワークに{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{住所|じゅうしょ}を{担当|たんとう}するハローワークに{行|い}きます。どこかは、{一覧|いちらん}か{電話|でんわ}で{聞|き}きます（{要|よう}{確認|かくにん}）。{離職票|りしょくひょう}を{郵送|ゆうそう}やインターネットで{出|だ}せるかは、ハローワークに{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "The office is the Hello Work office that covers your address. Check which one covers you with the list on this page or by phone (to be checked). Whether the separation certificate can be submitted by mail or online is not confirmed on the official page; ask Hello Work (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "D-hellowork-kihonteate",
+          "jsite-aichi-hellowork-list"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "住所地を管轄するハローワークで「求職申込み」をしたのち、「離職票」を提出します。"
+      }
     }
   ],
   "keywords": [],
@@ -102,5 +121,16 @@
     "checked_at": "2026-11-06",
     "status": "needs_check",
     "quote": "離職の日以前2年間に、「被保険者期間」が通算して12か月以上あること"
-  }
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{愛知|あいち}のハローワークの{一覧|いちらん}（{愛知|あいち}{労働局|ろうどうきょく}）",
+        "ja_easy": "{愛知|あいち}のハローワークの{一覧|いちらん}",
+        "en": "List of Hello Work offices in Aichi (Aichi Labour Bureau)"
+      },
+      "url": "https://jsite.mhlw.go.jp/aichi-hellowork/list.html",
+      "source_id": "jsite-aichi-hellowork-list"
+    }
+  ]
 }

@@ -28,9 +28,9 @@
   },
   "deadline": {
     "text": {
-      "ja": "{出国|しゅっこく}する{前|まえ}。{届出|とどけで}の{目安|めやす}は{市|し}のページで「{転出|てんしゅつ}する{日|ひ}の30{日|にち}{前|まえ}から」と「お{引越|ひっこ}しの2{週間|しゅうかん}{前|まえ}から」と{違|ちが}います。{日数|にっすう}は{要|よう}{確認|かくにん}です。{出国|しゅっこく}の{日|ひ}より{後|のち}でも{届出|とどけで}はできますが、{速|すみ}やかに{届|とど}けます。",
+      "ja": "{出国|しゅっこく}する{前|まえ}。{届出|とどけで}の{目安|めやす}は{市|し}のページで「{転出|てんしゅつ}する{日|ひ}の30{日|にち}{前|まえ}から」と「お{引越|ひっこ}しの2{週間|しゅうかん}{前|まえ}から」と{違|ちが}います。{日数|にっすう}は{要|よう}{確認|かくにん}です。{出国|しゅっこく}したあとは、{代理人|だいりにん}が{手続|てつづ}きできます。{必|かなら}ず{届|とど}けます。",
       "ja_easy": "{出国|しゅっこく}する{前|まえ}です。いつから{出|だ}せるかは、ページで{書|か}き{方|かた}がちがいます。{区役所|くやくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
-      "en": "Before you leave. City pages give different guides (\"from 30 days before\" and \"from 2 weeks before\"). Please check the number of days at the office (to be checked). You can still file after departure, but do so promptly."
+      "en": "Before you leave. City pages give different guides (\"from 30 days before\" and \"from 2 weeks before\"). Please check the number of days at the office (to be checked). After you leave, a proxy can file for you. Be sure to file."
     },
     "evidence": {
       "source_ids": [
@@ -59,7 +59,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
         "verdict": "agree",
-        "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c4"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -84,30 +84,26 @@
           "fetched_at": "2026-11-04",
           "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
           "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
     {
       "type": "mail",
       "text": {
-        "ja": "{郵送|ゆうそう}でも{出|だ}せます。{本人|ほんにん}{確認|かくにん}ができるもののコピーを{同封|どうふう}します。{海外|かいがい}へ{引|ひ}っ{越|こ}す{人|ひと}は、オンラインでは{申請|しんせい}できません。",
-        "ja_easy": "{郵送|ゆうそう}でも{出|だ}せます。{本人|ほんにん}だとわかるもののコピーを{入|い}れます。インターネットでは{出|だ}せません。",
-        "en": "You can also file by mail; enclose a copy of your ID. Online filing is not available for people moving abroad."
+        "ja": "{郵送|ゆうそう}でも{出|だ}せると{書|か}いている{市|し}のページがあります。{一方|いっぽう}、{届出|とどけで}のページには「{郵送|ゆうそう}でできるのは{市外|しがい}への{転出届|てんしゅつとどけ}のみ」とあり、{国外|こくがい}が{含|ふく}まれるかは{書|か}いてありません。{郵送|ゆうそう}を{使|つか}えるかは、{区役所|くやくしょ}で{確|たし}かめます（{要|よう}{確認|かくにん}）。{郵送|ゆうそう}のときに{市|し}のページが{挙|あ}げている{物|もの}は、{転出届|てんしゅつとどけ}、{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{写|うつ}し、{代理|だいり}の{人|ひと}が{出|だ}すときの{委任状|いにんじょう}、{返信用|へんしんよう}の{封筒|ふうとう}と{切手|きって}です（{要|よう}{確認|かくにん}）。{海外|かいがい}へ{引|ひ}っ{越|こ}す{人|ひと}は、オンラインでは{出|だ}せません。",
+        "ja_easy": "{郵送|ゆうそう}でも{出|だ}せると{書|か}いてある{市|し}のページがあります。でも、ほかのページには「{郵送|ゆうそう}は{市外|しがい}への{転出届|てんしゅつとどけ}だけ」とあり、{外国|がいこく}に{行|い}く{人|ひと}も{使|つか}えるか、{書|か}いてありません。{区役所|くやくしょ}で{聞|き}きます（{要|よう}{確認|かくにん}）。{郵送|ゆうそう}のときは、{転出届|てんしゅつとどけ}、{本人|ほんにん}だとわかる{物|もの}の{写|うつ}し、{返事|へんじ}をもらう{封筒|ふうとう}と{切手|きって}を{送|おく}ります（{要|よう}{確認|かくにん}）。インターネットでは{出|だ}せません。",
+        "en": "Some Nagoya City pages say you can file by mail. But the notification page says mail is possible only for move-outs to another city, and does not say whether moving abroad is included. Ask the ward office whether you can use mail (to be checked). For mail, the city page lists: the move-out notice, a copy of your ID, a power of attorney if someone else files, and a return envelope with a stamp (to be checked). Online filing is not available for people moving abroad."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-online-jizen"
+          "B-nagoya-online-jizen",
+          "B-nagoya-faq-37",
+          "nagoya-juumin-todoke"
         ],
-        "checked_at": "2026-11-05",
-        "status": "ai_checked",
-        "quote": "海外に引越す方は、オンラインで申請できません。窓口または郵送で手続きしてください。",
-        "ai_check": {
-          "fetched_at": "2026-11-05",
-          "sha256": "b504629f024943da11b1f32f986f0b79b6b6abfd7250393261e879b6c4e687cc",
-          "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c12"
-        }
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "海外に引越す方は、オンラインで申請できません。窓口または郵送で手続きしてください。"
       }
     },
     {
@@ -128,7 +124,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
           "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -150,7 +146,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "d1ffa5bd6fbbc76ca5eed8a8b1d94e6a126f643e6711f958c9f28c100ded99cb",
           "verdict": "agree",
-          "ref": "research/audits/move.json#P-move-tenshutsu-abroad/c10"
+          "ref": "internal-audit-record"
         }
       }
     },

@@ -59,7 +59,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c7"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -83,7 +83,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "0a9dc08276f7781ace650164c5d3ed324189eed83c8d85910cb5a4d78af3edb8",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -121,7 +121,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c8"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -143,15 +143,15 @@
           "fetched_at": "2026-11-05",
           "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c9"
+          "ref": "internal-audit-record"
         }
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{調停|ちょうてい}では{離婚|りこん}そのもののほか、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育|よういく}{費|ひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
-        "ja_easy": "{調停|ちょうてい}では、{離婚|りこん}のほかに、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育|よういく}{費|ひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
+        "ja": "{調停|ちょうてい}では{離婚|りこん}そのもののほか、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育費|よういくひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
+        "ja_easy": "{調停|ちょうてい}では、{離婚|りこん}のほかに、{親権|しんけん}{者|しゃ}、{子|こ}との{交流|こうりゅう}、{養育費|よういくひ}、{財産|ざいさん}{分与|ぶんよ}、{年金|ねんきん}{分割|ぶんかつ}の{割合|わりあい}、{慰謝|いしゃ}{料|りょう}などを{話|はな}し{合|あ}います。",
         "en": "In mediation, besides the divorce itself, the parties discuss parental authority, contact with children, child support, property division, pension split ratio and compensation."
       },
       "evidence": {
@@ -165,7 +165,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "b8b550f8dbe108dbf2c6932e59a079de07cb222c5434ce9fa49b99cc9b518421",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c12"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -187,7 +187,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "d102ab3aaab5cd56c4379b5821a6928c5724c4c5c1d69fee59357fde10a6596d",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c13"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -209,7 +209,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "88de6fd3f2b7c712bf80ef9e92f9a6ab6d833e0a1f34f060be406e288a822216",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-saiban/c18"
+          "ref": "internal-audit-record"
         }
       }
     },

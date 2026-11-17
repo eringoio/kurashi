@@ -46,12 +46,13 @@
       "checked_at": "2026-11-07",
       "status": "verified",
       "quote": "申請期間 在留資格の変更の事由が生じたときから在留期間満了日以前",
-      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      "verified_by": "author 2026-11-07 (experience)"
     }
   },
   "id": "job-shushoku",
   "illustration": "student",
   "place": "immigration",
+  "remote": true,
   "eligibility": {
     "all": [
       "R-job-needs-permit",
@@ -74,9 +75,9 @@
   },
   "where": {
     "text": {
-      "ja": "{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{入管|にゅうかん}）。オンライン{申請|しんせい}もできます",
-      "ja_easy": "{入管|にゅうかん}（オンラインもできます）",
-      "en": "The regional immigration office for your address (online application is also possible)"
+      "ja": "{住|す}んでいる{所|ところ}を{管轄|かんかつ}する{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}（{入管|にゅうかん}）。オンライン{申請|しんせい}には{条件|じょうけん}があります（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{入管|にゅうかん}（オンラインには{条件|じょうけん}があります。{要|よう}{確認|かくにん}）",
+      "en": "The regional immigration office for your address (online application has conditions; to be checked)"
     },
     "evidence": {
       "source_ids": [
@@ -84,12 +85,28 @@
         "author-2026-11-07"
       ],
       "checked_at": "2026-11-07",
-      "status": "verified",
-      "quote": "提出先 住居地を管轄する地方出入国在留管理官署",
-      "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+      "status": "needs_check",
+      "quote": "提出先 住居地を管轄する地方出入国在留管理官署"
     }
   },
   "methods": [
+    {
+      "type": "online",
+      "text": {
+        "ja": "{入管|にゅうかん}のページに「オンラインで{申請|しんせい}できます」とあります。ただし、{使|つか}える{人|ひと}（{本人|ほんにん}・{家族|かぞく}・{取次|とりつぎ}の{人|ひと}など）、{本人|ほんにん}{確認|かくにん}、{対象|たいしょう}の{申請|しんせい}の{種類|しゅるい}には{条件|じょうけん}があります。{在留|ざいりゅう}{期間|きかん}の{最後|さいご}の{日|ひ}は、オンラインでは{申請|しんせい}できません。{自分|じぶん}が{使|つか}えるかは、{入管|にゅうかん}の「{在留|ざいりゅう}{申請|しんせい}のオンライン{手続|てつづき}」のページで{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{入管|にゅうかん}のページに「オンラインで{申請|しんせい}できます」とあります。でも、{使|つか}える{人|ひと}と{本人|ほんにん}{確認|かくにん}には{条件|じょうけん}があります。{在留|ざいりゅう}{期間|きかん}の{最後|さいご}の{日|ひ}は、オンラインでは{申請|しんせい}できません。{自分|じぶん}が{使|つか}えるかは、{入管|にゅうかん}のページで{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+        "en": "The Immigration Services Agency page says you can apply online. However, there are conditions on who can use it (the person, relatives, authorized agents and others), on identity verification, and on the types of application covered. You cannot apply online on the last day of your period of stay. Check whether you can use it on the agency's online application page (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikaku-henko",
+          "isa-online-shinsei"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "在留資格変更許可申請は、オンラインで申請できます。"
+      }
+    },
     {
       "type": "counter",
       "text": {
@@ -105,7 +122,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "許可期間 手数料 ３月以下 １０，０００円 ３月超６月以下 １８，０００円 ６月超１年未満 ２５，０００円 １年 ３３，０００円 １年超３年未満 ４８，０００円 ３年以上５年未満 ６４，０００円 ５年以上 ７５，０００円",
-        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+        "verified_by": "author 2026-11-07 (experience)"
       }
     },
     {
@@ -123,7 +140,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "（注）本来の在留資格に基づく活動を行っていない場合には、在留資格を取り消される場合があります。",
-        "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+        "verified_by": "author 2026-11-07 (experience)"
       }
     }
   ],
@@ -135,6 +152,6 @@
     "checked_at": "2026-11-07",
     "status": "verified",
     "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。",
-    "verified_by": "author 2026-11-07（author-2026-11-07。作者の経験で確認）"
+    "verified_by": "author 2026-11-07 (experience)"
   }
 }

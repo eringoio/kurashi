@@ -4,7 +4,7 @@ import { DATA, DRAFTS_LOADED } from './core/data';
 import { documentById } from './core/documents';
 import { DocPage } from './pages/DocPage';
 import STRINGS from '../data/ui/strings.json';
-import { chooseEntry, continuePath, type Resume } from './core/entry';
+import { chooseEntry, continuePath, promiseHome, type Resume } from './core/entry';
 import { legacyOccurrence, openEventPlans, type Occurrence } from './core/occurrence';
 import type { Vault } from './storage/vault';
 import { useGuide, type Guide } from './guide/useGuide';
@@ -14,8 +14,8 @@ import { Consent } from './ui/Consent';
 import { PageNav, type NavSpec } from './ui/PageNav';
 import { useEvent } from './guide/useEvent';
 import { AboutDoneLine, AboutPage } from './ui/About';
-import { initTelemetry, trackView } from './ui/telemetry';
-import { Link, useFocusTitle, usePath } from './ui/router';
+import { countsConsented, initTelemetry, trackView } from './ui/telemetry';
+import { Link, useFocusTitle, usePath, useScreenAnnounce } from './ui/router';
 import { Settings } from './ui/Settings';
 import { line, ui } from './i18n/text';
 import { GlobeIcon, HelpIcon, ShareIcon } from './ui/icons';
@@ -29,11 +29,14 @@ import { HomeSearch } from './pages/HomeSearch';
 const COMBINED_HOME = true;
 import { Info, INFO_PAGES } from './pages/Info';
 import { Move } from './pages/Move';
+import { ShortStayPage } from './pages/ShortStay';
+import { isShortStay, SHORT_STAY_PATH } from './core/shortStay';
+import type { Value } from './core/schema';
 import { All, Now } from './pages/Plan';
 import { CardPage, EventCardPage } from './pages/CardPage';
 import { EventEntry } from './pages/EventEntry';
 import { PromisePage, ResumePage } from './pages/Entry';
-import { Review } from './pages/Review';
+import { UpdatesPage } from './pages/Updates';
 import { Search } from './pages/Search';
 import { Gomi } from './pages/Gomi';
 import { eventShowsAll, SidePanel, useSide } from './ui/SidePanel';
@@ -49,6 +52,9 @@ import { CalendarPage } from './pages/Calendar';
 import { ClinicPage } from './pages/Clinic';
 
 /** 部品の見本ページ。開発のときだけ（本番ビルドには入らない） */
+/* 作者用の確認の画面（/review。受信箱を含む）は、公開のビルドに入れない（O-6。2026-11-15）。開発のサーバーと、VITE_REVIEW=on で作ったビルドだけ */
+const REVIEW_ON = import.meta.env.DEV || import.meta.env.VITE_REVIEW === 'on';
+const Review = REVIEW_ON ? lazy(() => import('./pages/Review').then((m) => ({ default: m.Review }))) : null;
 const DevPatterns = import.meta.env.DEV ? lazy(() => import('./pages/DevPatterns')) : null;
 const DevRoad = import.meta.env.DEV ? lazy(() => import('./pages/DevRoad')) : null;
 
@@ -79,15 +85,24 @@ function continueOf(g: Guide, v: Pick<Vault, 'entries' | 'get'>): string {
 /** 下の道案内（PageNav）の中身。どの画面も同じ形で、関係のないボタンだけ省く（11/8 作者）。
     入口（/）は報告だけ。作者用（/review・/qr・/dev）には出さない。いまの画面と同じ行き先のボタンは出さない。
     guidesOnly：/e/{id} が一覧を出すとき（案内だけ・すぐにやることの一覧）は「いまの手続き」を出さない */
-function pageNavOf(path: string, guidesOnly: boolean): NavSpec | null {
+function pageNavOf(path: string, guidesOnly: boolean, home = '/now'): NavSpec | null {
   if (path === '/') return { home: false, report: path };
   if (path === '/review' || path === '/qr' || path.startsWith('/dev/')) return null;
   let now: string | undefined;
   let all: string | undefined;
   const e = /^\/e\/(E-[a-z0-9-]+)/.exec(path);
   if (e) { const base = '/e/' + e[1]; now = guidesOnly ? undefined : base; all = guidesOnly ? base : base + '/all'; }
-  else if (/^\/(now|all|calendar|today|past)$/.test(path) || /^\/(c|visit)\//.test(path)) { now = '/now'; all = '/all'; }
+  // 今日・過ぎた日・カレンダーは、その項目のできごとへ（C-2。財布・結婚・免許の人を引っ越しの画面へ送らない）
+  else if (/^\/(calendar|today|past)$/.test(path)) { now = home; all = home === '/now' ? '/all' : home + '/all'; }
+  else if (/^\/(now|all)$/.test(path) || /^\/(c|visit)\//.test(path)) { now = '/now'; all = '/all'; }
   return { now: now === path ? undefined : now, all: all === path ? undefined : all, home: true, report: path };
+}
+
+/** 入口の上の1行：在留資格か住民登録の形が「短期滞在」と答えてあるとき、専用の画面へ（R-10） */
+function ShortStayLine({ path }: { path: string }) {
+  const { vault: v } = usePrefs();
+  if (path !== '/' || !isShortStay(Object.fromEntries(v.entries('profile')) as Record<string, Value>)) return null;
+  return <p className="sub"><Link to={SHORT_STAY_PATH} className="link"><Bi k="shortStay.homeLine" /></Link></p>;
 }
 
 /** まとめた項目（/g/{group}）が無いとき（U12）。見出しと入口へのリンク */
@@ -136,11 +151,13 @@ function Route({ path, onLive }: { path: string; onLive: (s: string) => void }) 
   if (scene) return <ScenePage key={scene} id={scene} />;
   const visit = parseVisitPath(path);
   if (visit) return <VisitPage key={path} place={visit.place} stage={visit.stage} onLive={onLive} />;
+  if (path === SHORT_STAY_PATH) return <ShortStayPage />;
   if (path === '/about') return <AboutPage />;
   if (path === '/now') return <Now />;
-  if (path === '/all') return <All />;
+  if (path === '/all') return <All onLive={onLive} />;
   if (path === '/resume') return <ResumePage />;
-  if (path === '/review') return <Review />;
+  if (Review && path === '/review') return <Suspense fallback={null}><Review /></Suspense>;
+  if (path === '/updates') return <UpdatesPage />;
   if (path === '/qr') return <QrMaker />;
   if (path === '/here') return <Here />;
   if (path === '/letter') return <Letter />;
@@ -172,6 +189,7 @@ export function App() {
   // 画面の大事な言葉を「ことば」に残す（道から決める。core/words.ts の pageWordIds）
   // 病院の画面は保存しない（AT-clinic-05）。/words の「この画面のことば」には出る
   useSeen(pageWordIds(path), !path.startsWith('/clinic'));
+  useScreenAnnounce();
   const [live, setLive] = useState('');
   const close = useCallback(() => setSheet(null), []);
   // 同じ文を続けて知らせるときも読まれるように、いったん空にする
@@ -184,9 +202,12 @@ export function App() {
   const evId = /^\/e\/(E-[a-z0-9-]+)/.exec(path)?.[1] ?? '';
   const eg = useEvent(evId);
   const guidesOnly = !!eg && eventShowsAll(eg);
-  const nav = pageNavOf(path, guidesOnly);
-  // 使われ方の数（13.4）：送ってよいかは、設定の「送らない」・見るだけ・ブラウザの「追跡しない」で決める
-  useEffect(() => { initTelemetry({ allowed: () => v.mode !== 'view_only' && v.get('settings', 'counts') !== false, level: () => level.id }); }, [v, level]);
+  const home = path === '/today' || path === '/past'
+    ? promiseHome({ past: path === '/past', today: g.today, legacy: Object.values(g.plan), events: openEventPlans(v.entries('occurrences').map(([, o]) => o as Occurrence)), fallback: continueOf(g, v) })
+    : path === '/calendar' ? continueOf(g, v) : '/now';
+  const nav = pageNavOf(path, guidesOnly, home);
+  // 使われ方の数（13.4）：保存に同意したあと（kept）だけ送る。同意の前・残さない・見るだけ・設定の「送らない」・ブラウザの「追跡しない」では送らない（O-7。2026-11-15）
+  useEffect(() => { initTelemetry({ allowed: () => countsConsented(v.mode, v.get('settings', 'counts')), level: () => level.id }); }, [v, level]);
   useEffect(() => { trackView(path); }, [path]);
   const routed = useRef(false);
   useEffect(() => {
@@ -230,6 +251,7 @@ export function App() {
           {/* 保存の同意は本文の上の細い帯（試作 D。11/7 作者：上に） */}
           <Consent onLive={onLive} />
           <AboutDoneLine />
+          <ShortStayLine path={path} />
           <Route path={path} onLive={onLive} />
           {/* 下の道案内（報告ボタン A-9 を含む）。どの画面も同じ形（11/8） */}
           {nav && <PageNav {...nav} />}

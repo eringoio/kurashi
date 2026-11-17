@@ -1,0 +1,72 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "divorce-kaigai",
+  "illustration": "doc",
+  "awareness_type": "applies",
+  "obligation": "check",
+  "eligibility": "R-div-abroad",
+  "title": {
+    "ja": "{海外|かいがい}で{成立|せいりつ}した{離婚|りこん}の{届|とどけ}",
+    "ja_easy": "{外国|がいこく}で{離婚|りこん}したときの{届|とど}け",
+    "en": "Reporting a divorce made abroad"
+  },
+  "official_name": {
+    "ja": "外国で成立した離婚の届出",
+    "reading": "がいこくでせいりつしたりこんのとどけで"
+  },
+  "summary": {
+    "ja": "{海外|かいがい}で{離婚|りこん}が{成立|せいりつ}したとき、{日本|にほん}の{戸籍|こせき}がある{人|ひと}は、{日本|にほん}の{役所|やくしょ}への{届出|とどけで}が{要|い}ることがあります。{届|とど}け{出|で}る{時期|じき}と{要|い}る{書類|しょるい}は、{離婚|りこん}の{方法|ほうほう}（{裁判|さいばん}か{協議|きょうぎ}か）や{国|くに}によって{違|ちが}います。{本籍地|ほんせきち}の{区役所|くやくしょ}・{市町村|しちょうそん}{役場|やくば}か{法務局|ほうむきょく}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。{外国|がいこく}{籍|せき}の{人|ひと}で、{配偶|はいぐう}{者|しゃ}としての{在留|ざいりゅう}{資格|しかく}の{人|ひと}は、{入管|にゅうかん}への{届出|とどけいで}も{見|み}てください。",
+    "ja_easy": "{外国|がいこく}で{離婚|りこん}したとき、{日本|にほん}の{戸籍|こせき}がある{人|ひと}は、{役所|やくしょ}への{届|とど}けが{要|い}ることがあります。いつまでに{何|なに}を{出|だ}すかは、{本籍地|ほんせきち}の{役所|やくしょ}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "If your divorce was finalized abroad and you have a Japanese family register, you may need to report it to a Japanese office. The deadline and documents depend on how the divorce was made (court or agreement) and the country. Ask the office of your registered domicile or the Legal Affairs Bureau (to be checked). Foreign nationals whose status is based on being a spouse should also see the Immigration notification."
+  },
+  "lead": {
+    "ja": "{日本|にほん}の{戸籍|こせき}がある{人|ひと}は、{届出|とどけで}が{要|い}ることがあります（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{日本|にほん}の{戸籍|こせき}がある{人|ひと}は、{届|とど}けが{要|い}ることがあります（{要|よう}{確認|かくにん}）。",
+    "en": "If you have a Japanese family register, a report may be needed (to be checked)."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{本籍地|ほんせきち}の{区役所|くやくしょ}・{市町村|しちょうそん}{役場|やくば}、または{法務局|ほうむきょく}（{要|よう}{確認|かくにん}）",
+      "ja_easy": "{本籍地|ほんせきち}の{役所|やくしょ}（{要|よう}{確認|かくにん}）",
+      "en": "Office of your registered domicile, or the Legal Affairs Bureau (to be checked)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-konin-rikon-div"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check"
+    }
+  },
+  "place": "ward_office",
+  "methods": [],
+  "keywords": [
+    "海外で離婚",
+    "外国で離婚",
+    "報告的届出",
+    "divorce abroad"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "{海外|かいがい}で{離婚|りこん}が{成立|せいりつ}した{人|ひと}に{出|だ}しています。",
+      "ja_easy": "{外国|がいこく}で{離婚|りこん}した{人|ひと}に{出|だ}しています。",
+      "en": "Shown to people whose divorce was finalized abroad."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-konin-rikon-div"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check"
+  }
+}

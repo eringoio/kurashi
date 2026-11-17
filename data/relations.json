@@ -1,5 +1,4 @@
 {
-  "$comment": "カードの間の関係（SPEC 9.6）。1か所だけに書く。verified の関係だけが、順番・待ち・日を選べるかを変える。needs_check は注記だけ。",
   "relations": [
     {
       "id": "rel-moveout-before-tennyu",
@@ -70,8 +69,7 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-05",
-        "status": "verified",
-        "note": "作者の判断（2026-11-05）：在留カードに住所が入る前に口座は作れないので、口座の日を住所の届出の日より前にしない。関係そのもの（銀行の条件）は needs_check のまま。INT-005（作者 2026-11-06、author_stated）：住所の届出が無いと、銀行が住所を確かめられず、審査を通らない（作者の6年の経験）"
+        "status": "verified"
       }
     },
     {
@@ -83,9 +81,9 @@
         "R-bank-pending"
       ],
       "explain": {
-        "ja": "キャッシュカードが{届|とど}くのを{待|ま}っています。{届|とど}く{日数|にっすう}は{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
-        "ja_easy": "カードが{届|とど}くのを{待|ま}っています。",
-        "en": "Waiting for your cash card. Delivery time differs by bank (to be checked)."
+        "ja": "{申|もう}し{込|こ}みの{結果|けっか}やキャッシュカードを{待|ま}っています。{同|おな}じ{銀行|ぎんこう}にもう{一度|いちど}{申|もう}し{込|こ}む{前|まえ}に、{審査|しんさ}の{状況|じょうきょう}やカードの{発送|はっそう}の{状況|じょうきょう}を、{申|もう}し{込|こ}んだ{銀行|ぎんこう}に{確|たし}かめてください。{日数|にっすう}は{銀行|ぎんこう}によって{違|ちが}います（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{申|もう}し{込|こ}んだ{結果|けっか}やカードを{待|ま}っています。もう{一度|いちど}{申|もう}し{込|こ}む{前|まえ}に、{銀行|ぎんこう}に{今|いま}の{状況|じょうきょう}を{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+        "en": "You are waiting for the result of your application or for your cash card. Before applying again, ask the bank about the status of your application or card delivery. How long it takes differs by bank (to be checked)."
       },
       "evidence": {
         "source_ids": [
@@ -162,6 +160,43 @@
       }
     },
     {
+      "id": "rel-bank-stop-reissue",
+      "type": "related",
+      "from": "bank-card-stop",
+      "to": "bank-card-reissue",
+      "explain": {
+        "ja": "カードを{止|と}めたあとで、{新|あたら}しいカード（{再|さい}{発行|はっこう}）を{頼|たの}めます。{止|と}めるのは、ほかの{手続|てつづ}きを{待|ま}たずに、すぐにします。",
+        "ja_easy": "カードを{止|と}めたあとで、{新|あたら}しいカードを{頼|たの}めます。{止|と}めるのは、すぐにします。",
+        "en": "After stopping the card, you can ask for a new one (reissue). Stop the card right away; do not wait for other procedures."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-mufg-card-loss",
+          "B-yucho-funshitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "rel-bank-another-open",
+      "type": "related",
+      "from": "bank-account-open-another",
+      "to": "bank-account-open",
+      "explain": {
+        "ja": "{書類|しょるい}と{申|もう}し{込|こ}みの{方法|ほうほう}は、「{銀行|ぎんこう}の{口座|こうざ}」（{口座|こうざ}を{作|つく}る）と{同|おな}じです。",
+        "ja_easy": "{書類|しょるい}と{申|もう}し{込|こ}み{方|かた}は、「{口座|こうざ}を{作|つく}る」と{同|おな}じです。",
+        "en": "Documents and how to apply are the same as in \"Bank account\" (opening an account)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
       "id": "rel-tennyu-before-mail",
       "type": "related",
       "from": "nagoya-tennyu-todoke",
@@ -179,7 +214,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "転居届を提出されてから登録までに3～7営業日",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     },
     {
@@ -200,7 +235,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "転居届を提出されてから登録までに3～7営業日",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     },
     {
@@ -221,7 +256,7 @@
         "checked_at": "2026-11-07",
         "status": "verified",
         "quote": "転居届を提出されてから登録までに3～7営業日",
-        "verified_by": "author 2026-11-07（author-2026-11-07）"
+        "verified_by": "author 2026-11-07"
       }
     },
     {
@@ -686,7 +721,10 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "婚姻により氏名を変更した場合 氏名変更後の記載のなされた旅券及び結婚証明書（日本人と結婚した場合は戸籍謄本）"
-      }
+      },
+      "satisfied_when_rule_ids": [
+        "R-mar-stage-submitted"
+      ]
     },
     {
       "id": "rel-mar-14days-parallel",
@@ -755,19 +793,22 @@
     },
     {
       "id": "rel-div-kyogi-nyukan",
-      "type": "related",
+      "type": "practical_prerequisite",
       "from": "divorce-kyogi",
       "to": "divorce-nyukan-todoke",
+      "satisfied_when_rule_ids": [
+        "R-div-agreement-done"
+      ],
       "explain": {
-        "ja": "{入管|にゅうかん}への{届出|とどけで}の14{日|にち}は、{離婚|りこん}の{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{離婚届|りこんとどけ}を{出|だ}した{日|ひ}を、{区役所|くやくしょ}で{確認|かくにん}してください。",
-        "ja_easy": "{入管|にゅうかん}への{届|とど}けの14{日|にち}は、{離婚|りこん}した{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。",
-        "en": "The 14 days for the Immigration notification are counted from the day of the divorce (to be checked)."
+        "ja": "{入管|にゅうかん}への{届出|とどけで}の14{日|にち}は、{離婚|りこん}の{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{協議|きょうぎ}{離婚|りこん}は、{離婚|りこん}{届|とどけ}を{出|だ}した{日|ひ}に{成立|せいりつ}します。{離婚|りこん}{届|とどけ}を{出|だ}してから{届|とど}け{出|で}ます。",
+        "ja_easy": "{入管|にゅうかん}への{届|とど}けの14{日|にち}は、{離婚|りこん}した{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{協議|きょうぎ}{離婚|りこん}は、{離婚|りこん}{届|とどけ}を{出|だ}した{日|ひ}に{離婚|りこん}になります。",
+        "en": "The 14 days for the Immigration notification count from the day of the divorce (to be checked). A divorce by agreement takes effect on the day the registration is submitted, so report after that."
       },
       "evidence": {
         "source_ids": [
           "B-moj-haigusha-todoke"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check",
         "quote": "配偶者と離婚した場合、死別した場合は、１４日以内に法務省令で定める手続きにより、出入国在留管理庁長官に対し、届出を行う必要があります。"
       }
@@ -830,24 +871,44 @@
       }
     },
     {
+      "id": "rel-div-kodomo-kyogi",
+      "type": "related",
+      "from": "divorce-kodomo",
+      "to": "divorce-kyogi",
+      "explain": {
+        "ja": "{協議|きょうぎ}{離婚|りこん}の{離婚|りこん}{届|とどけ}には、{未成年|みせいねん}の{子|こ}の{親権|しんけん}{者|しゃ}を{書|か}きます。{子|こ}どもが{複数|ふくすう}のときは、それぞれ{決|き}めます。",
+        "ja_easy": "{協議|きょうぎ}{離婚|りこん}の{離婚|りこん}{届|とどけ}には、{子|こ}どもの{親権|しんけん}{者|しゃ}を{書|か}きます。",
+        "en": "The divorce-by-agreement registration form includes the person with parental authority for each child under 18."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-94"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "未成年の子どもがいる場合は親権者を定める必要があります。離婚届出用紙の所定の欄に記入してください。"
+      }
+    },
+    {
       "id": "rel-police-before-zairyu-reissue",
-      "type": "legal_prerequisite",
+      "type": "practical_prerequisite",
       "from": "lost-police-report-zairyu",
       "to": "lost-zairyu-reissue",
       "explain": {
-        "ja": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}を{確|たし}かめます。",
-        "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}を{確|たし}かめます。",
-        "en": "Report to the police first and check the receipt number."
+        "ja": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{受理|じゅり}{番号|ばんごう}を{確|たし}かめます。{受理|じゅり}{番号|ばんごう}を{待|ま}っているあいだも、14{日|にち}の{期限|きげん}は{進|すす}みます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{先|さき}に{警察|けいさつ}に{届|とど}けて、{番号|ばんごう}を{確|たし}かめます。{待|ま}っているあいだも、14{日|にち}の{期限|きげん}は{進|すす}みます（{要|よう}{確認|かくにん}）。",
+        "en": "Report to the police first and check the receipt number. The 14-day deadline keeps running while you wait (to be checked)."
       },
       "evidence": {
         "source_ids": [
           "C-isa-reissue-lost"
         ],
-        "checked_at": "2026-11-04",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       },
       "satisfied_when_rule_ids": [
-        "R-lost-reported"
+        "R-lost-reported",
+        "R-lost-at-home"
       ]
     },
     {
@@ -868,7 +929,8 @@
         "status": "needs_check"
       },
       "satisfied_when_rule_ids": [
-        "R-lost-reported"
+        "R-lost-reported",
+        "R-lost-at-home"
       ]
     },
     {
@@ -889,7 +951,8 @@
         "status": "needs_check"
       },
       "satisfied_when_rule_ids": [
-        "R-lost-reported"
+        "R-lost-reported",
+        "R-lost-at-home"
       ]
     },
     {
@@ -954,7 +1017,8 @@
         "status": "needs_check"
       },
       "satisfied_when_rule_ids": [
-        "R-lost-reported"
+        "R-lost-reported",
+        "R-lost-at-home"
       ]
     },
     {
@@ -975,7 +1039,8 @@
         "status": "needs_check"
       },
       "satisfied_when_rule_ids": [
-        "R-lost-reported"
+        "R-lost-reported",
+        "R-lost-at-home"
       ]
     },
     {
@@ -1036,6 +1101,47 @@
         "checked_at": "2026-11-06",
         "status": "needs_check",
         "quote": "住所を変更する場合ご本人の新住所を確認できる書類"
+      }
+    },
+    {
+      "id": "rel-license-koshin-shikko",
+      "type": "related",
+      "from": "license-koshin",
+      "to": "license-shikko",
+      "explain": {
+        "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎたら{更新|こうしん}できず、{期限切|きげんぎ}れの{手続|てつづ}きになります（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{期限|きげん}が{過|す}ぎたら、{更新|こうしん}ではなく{別|べつ}の{手続|てつづ}きです（{要|よう}{確認|かくにん}）。",
+        "en": "Once the licence has expired, you cannot renew it; you need the expired-licence procedure (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-doro-kotsu-ho"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "その者の免許が第百五条の規定により効力を失つた日から起算して六月"
+      }
+    },
+    {
+      "id": "rel-lost-zairyu-passport-parallel",
+      "type": "parallel",
+      "card_ids": [
+        "lost-zairyu-reissue",
+        "lost-passport-foreign"
+      ],
+      "explain": {
+        "ja": "{在留|ざいりゅう}カードの{再交付|さいこうふ}と、{大使館|たいしかん}・{領事館|りょうじかん}への{旅券|りょけん}の{連絡|れんらく}は、{同時|どうじ}に{進|すす}められます。{在留|ざいりゅう}カードの{再交付|さいこうふ}で{旅券|りょけん}を{見|み}せられないときは、その{理由|りゆう}を{書|か}いた{理由書|りゆうしょ}を{出|だ}し、{身分|みぶん}を{証|しょう}する{文書|ぶんしょ}などを{見|み}せます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードの{再交付|さいこうふ}と、{大使館|たいしかん}へのパスポートの{連絡|れんらく}は、{同|おな}じころに{進|すす}められます。パスポートを{見|み}せられないときは、わけを{書|か}いた{紙|かみ}（{理由書|りゆうしょ}）を{出|だ}して、{身分|みぶん}がわかる{物|もの}を{見|み}せます（{要|よう}{確認|かくにん}）。",
+        "en": "You can work on the residence card reissue and contact your embassy or consulate about the passport at the same time. If you cannot show a passport for the residence card, submit a written explanation and show another identity document (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-isa-reissue-lost",
+          "B-moj-zairyu-reissue-lost"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "旅券（又は在留資格証明書）を提示できないとき（自宅に忘れた等の理由を除く）は、その理由を記載した理由書"
       }
     }
   ]

@@ -1,5 +1,4 @@
 {
-  "$comment": "判定ルール（SPEC 9.4）。status は人が原文と照合するまで needs_check。本アプリの定義（出典 kurashi-spec だけ）は、作者が SPEC との一致を確かめて verified にできる。keep_needs_check：確認済みデータの fixture でも needs_check のまま（SPEC 18）。",
   "rules": [
     {
       "id": "R-scope-nagoya-resident",
@@ -40,6 +39,93 @@
         ],
         "checked_at": "2026-11-04",
         "status": "verified"
+      }
+    },
+    {
+      "id": "R-scope-not-short-stay",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "zairyu_status",
+            "ne": "short_stay"
+          },
+          {
+            "fact": "residence_basis",
+            "ne": "short_stay"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{短期|たんき}{滞在|たいざい}ではない（まだ{答|こた}えていない{人|ひと}にも{出|だ}します）。",
+        "ja_easy": "{短|みじか}い{滞在|たいざい}ではない（まだ{答|こた}えていない{人|ひと}にも{出|だ}します）。",
+        "en": "Not a short-term visitor (also shown if you have not answered yet)."
+      },
+      "reason_when_false": {
+        "ja": "{短期|たんき}{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{住民|じゅうみん}{登録|とうろく}などの{住|す}む{人|ひと}の{手続|てつづ}きの{対象|たいしょう}ではありません（{要|よう}{確認|かくにん}）。{専用|せんよう}の{画面|がめん}で、{使|つか}える{入口|いりぐち}を{見|み}てください。",
+        "ja_easy": "{短|みじか}い{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{住|す}む{人|ひと}の{手続|てつづ}きは{関係|かんけい}ありません（{要確認|ようかくにん}）。{専用|せんよう}の{画面|がめん}を{見|み}てください。",
+        "en": "People on a short stay (up to 90 days) are not covered by procedures for residents, such as resident registration (to be checked). See the dedicated screen for entrances you can use."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-scope-move-resident",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "zairyu_status",
+            "ne": "short_stay"
+          },
+          {
+            "any": [
+              {
+                "fact": "origin",
+                "in": [
+                  "other_city",
+                  "within_nagoya"
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "origin",
+                    "eq": "abroad"
+                  },
+                  {
+                    "not": {
+                      "fact": "residence_basis",
+                      "eq": "short_stay"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "このアプリは{名古屋|なごや}{市|し}に{住|す}む{人|ひと}の{手続|てつづ}きを{案内|あんない}します。",
+        "ja_easy": "このアプリは、{名古屋市|なごやし}に{住|す}む{人|ひと}のためのものです。",
+        "en": "This app guides people who live in Nagoya City."
+      },
+      "reason_when_false": {
+        "ja": "{短期|たんき}{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{住民|じゅうみん}{登録|とうろく}などの{住|す}む{人|ひと}の{手続|てつづ}きの{対象|たいしょう}ではありません（{要|よう}{確認|かくにん}）。{専用|せんよう}の{画面|がめん}で、{使|つか}える{入口|いりぐち}を{見|み}てください。",
+        "ja_easy": "{短|みじか}い{滞在|たいざい}（90{日|にち}まで）の{人|ひと}は、{住|す}む{人|ひと}の{手続|てつづ}きは{関係|かんけい}ありません（{要確認|ようかくにん}）。{専用|せんよう}の{画面|がめん}を{見|み}てください。",
+        "en": "People on a short stay (up to 90 days) are not covered by procedures for residents, such as resident registration (to be checked). See the dedicated screen for entrances you can use."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check"
       }
     },
     {
@@ -532,8 +618,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -552,8 +639,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -572,8 +660,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -592,8 +681,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -611,8 +701,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -631,8 +722,29 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-bank-none",
+      "kind": "selection",
+      "condition": {
+        "fact": "has_own_bank_account",
+        "eq": false
+      },
+      "statement": {
+        "ja": "{日本|にほん}の{銀行|ぎんこう}に{自分|じぶん}の{口座|こうざ}がない（まだ{申|もう}し{込|こ}んでいない）",
+        "ja_easy": "{自分|じぶん}の{口座|こうざ}がない（まだ{申|もう}し{込|こ}んでいない）",
+        "en": "You have no bank account of your own in Japan and have not applied yet"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "verified"
       }
     },
     {
@@ -654,8 +766,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -679,6 +792,26 @@
       }
     },
     {
+      "id": "R-japanese-national",
+      "kind": "eligibility",
+      "condition": {
+        "fact": "nationality",
+        "eq": "japanese"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{国籍|こくせき}です。",
+        "ja_easy": "{日本|にほん}の{国籍|こくせき}です。",
+        "en": "You have Japanese nationality."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "verified"
+      }
+    },
+    {
       "id": "R-job-scope",
       "kind": "selection",
       "condition": {
@@ -693,8 +826,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -728,7 +862,8 @@
                         "permanent",
                         "long_term",
                         "cultural",
-                        "trainee"
+                        "trainee",
+                        "short_stay"
                       ]
                     }
                   },
@@ -866,8 +1001,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -886,8 +1022,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -906,8 +1043,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -938,7 +1076,8 @@
                         "permanent",
                         "long_term",
                         "cultural",
-                        "trainee"
+                        "trainee",
+                        "short_stay"
                       ]
                     }
                   },
@@ -997,7 +1136,8 @@
                           "permanent",
                           "long_term",
                           "cultural",
-                          "trainee"
+                          "trainee",
+                          "short_stay"
                         ]
                       }
                     },
@@ -1073,7 +1213,8 @@
                     "permanent",
                     "long_term",
                     "cultural",
-                    "trainee"
+                    "trainee",
+                    "short_stay"
                   ]
                 }
               },
@@ -1164,7 +1305,8 @@
                     "permanent",
                     "long_term",
                     "cultural",
-                    "trainee"
+                    "trainee",
+                    "short_stay"
                   ]
                 }
               },
@@ -1195,7 +1337,8 @@
                     "permanent",
                     "long_term",
                     "cultural",
-                    "trainee"
+                    "trainee",
+                    "short_stay"
                   ]
                 }
               },
@@ -1269,7 +1412,8 @@
                         "permanent",
                         "long_term",
                         "cultural",
-                        "trainee"
+                        "trainee",
+                        "short_stay"
                       ]
                     }
                   },
@@ -1282,6 +1426,10 @@
                     "eq": "no"
                   }
                 ]
+              },
+              {
+                "fact": "zairyu_status",
+                "eq": "short_stay"
               }
             ]
           }
@@ -1297,6 +1445,100 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-open",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "any": [
+            {
+              "all": [
+                {
+                  "fact": "nationality",
+                  "eq": "foreign"
+                },
+                {
+                  "any": [
+                    {
+                      "fact": "zairyu_status",
+                      "eq": "trainee"
+                    },
+                    {
+                      "all": [
+                        {
+                          "fact": "zairyu_status",
+                          "eq": "cultural"
+                        },
+                        {
+                          "fact": "job_permit",
+                          "eq": "no"
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "not": {
+                            "fact": "zairyu_status",
+                            "in": [
+                              "student",
+                              "family",
+                              "work",
+                              "spouse",
+                              "permanent",
+                              "long_term",
+                              "cultural",
+                              "trainee",
+                              "short_stay"
+                            ]
+                          }
+                        },
+                        {
+                          "fact": "work_limit",
+                          "eq": "not_allowed"
+                        },
+                        {
+                          "fact": "job_permit",
+                          "eq": "no"
+                        }
+                      ]
+                    },
+                    {
+                      "fact": "zairyu_status",
+                      "eq": "short_stay"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "fact": "nationality",
+                  "eq": "foreign"
+                },
+                {
+                  "fact": "zairyu_status",
+                  "eq": "designated"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "statement": {
+        "ja": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」や、{資格|しかく}{外|がい}{活動|かつどう}{許可|きょか}で{働|はたら}く{人|ひと}ではない",
+        "ja_easy": "「{留学|りゅうがく}」「{家族|かぞく}{滞在|たいざい}」や、{許可|きょか}で{働|はたら}く{人|ひと}ではない",
+        "en": "Not working only with permission (Student, Dependent and similar)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-14",
         "status": "needs_check"
       }
     },
@@ -1323,8 +1565,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1347,7 +1590,8 @@
               "designated",
               "cultural",
               "trainee",
-              "other"
+              "other",
+              "short_stay"
             ]
           }
         ]
@@ -1361,7 +1605,7 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "status": "needs_check"
       }
     },
@@ -1381,8 +1625,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1401,8 +1646,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1420,8 +1666,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1440,8 +1687,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1459,8 +1707,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1479,8 +1728,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1499,8 +1749,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1523,8 +1774,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1543,7 +1795,343 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-mo-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "origin",
+        "eq": "out_of_area"
+      },
+      "statement": {
+        "ja": "{名古屋|なごや}{市|し}から{出|で}ていく{引|ひ}っ{越|こ}しです。",
+        "ja_easy": "{名古屋|なごや}{市|し}から{出|で}ていく{引|ひ}っ{越|こ}しです。",
+        "en": "You are moving out of Nagoya."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-basis-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "residence_basis",
+        "in": [
+          "card_has",
+          "card_later",
+          "other_resident"
+        ]
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}カードなどで{住民|じゅうみん}{登録|とうろく}をする{外国|がいこく}{籍|せき}の{人|ひと}です。",
+        "ja_easy": "{在留|ざいりゅう}カードなどで{住民|じゅうみん}{登録|とうろく}をする{人|ひと}です。",
+        "en": "You register as a foreign resident (residence card or similar)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-basis-japanese",
+      "kind": "selection",
+      "condition": {
+        "fact": "residence_basis",
+        "eq": "japanese"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{国籍|こくせき}で、{国外|こくがい}から{帰|かえ}ってきた{人|ひと}です。",
+        "ja_easy": "{日本|にほん}{国籍|こくせき}で、{外国|がいこく}から{帰|かえ}ってきた{人|ひと}です。",
+        "en": "You are a Japanese national returning from abroad."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-kokuho-sel",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "any": [
+              {
+                "fact": "insurance",
+                "eq": "none"
+              },
+              {
+                "all": [
+                  {
+                    "fact": "insurance",
+                    "eq": "kokuho"
+                  },
+                  {
+                    "fact": "origin",
+                    "eq": "other_city"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "any": [
+              {
+                "fact": "age_band",
+                "in": [
+                  "under_20",
+                  "20_59"
+                ]
+              },
+              {
+                "fact": "age_75_plus",
+                "eq": false
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}っていない、75{歳|さい}{未満|みまん}の{人|ひと}です。",
+        "ja_easy": "{職場|しょくば}の{健康|けんこう}{保険|ほけん}に{入|はい}っていない、75{歳|さい}より{下|した}の{人|ひと}です。",
+        "en": "You are under 75 and not in a workplace health insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-nenkin-sel",
+      "kind": "selection",
+      "condition": {
+        "all": [
+          {
+            "fact": "age_band",
+            "eq": "20_59"
+          },
+          {
+            "fact": "pension_type",
+            "in": [
+              "none",
+              "spouse_dependent"
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "20{歳|さい}から59{歳|さい}までで、{自分|じぶん}で{厚生|こうせい}{年金|ねんきん}に{入|はい}っていない{人|ひと}です。",
+        "ja_easy": "20{歳|さい}から59{歳|さい}までで、{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っていない{人|ひと}です。",
+        "en": "You are 20 to 59 and not in an employee pension yourself."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-nenkin-not-enrolled",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "fact": "origin",
+            "eq": "abroad"
+          },
+          {
+            "all": [
+              {
+                "fact": "pension_type",
+                "eq": "none"
+              },
+              {
+                "fact": "nenkin_enrolled",
+                "eq": "no"
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{国外|こくがい}から{来|き}た{人|ひと}か、{国民|こくみん}{年金|ねんきん}の{第|だい}1{号|ごう}にあたるのに、まだ{入|はい}っていない{人|ひと}です。",
+        "ja_easy": "{外国|がいこく}から{来|き}た{人|ひと}か、{自分|じぶん}で{国民|こくみん}{年金|ねんきん}に{入|はい}る{人|ひと}で、まだ{入|はい}っていない{人|ひと}です。",
+        "en": "You came from abroad, or you are a Category 1 member who is not in the National Pension yet."
+      },
+      "reason_when_false": {
+        "ja": "{国内|こくない}から{引|ひ}っ{越|こ}した{人|ひと}で、もう{年金|ねんきん}に{入|はい}っている{人|ひと}（{第|だい}1{号|ごう}・{第|だい}2{号|ごう}・{第|だい}3{号|ごう}）は、{引|ひ}っ{越|こ}しだけでは{国民|こくみん}{年金|ねんきん}の{加入|かにゅう}の{手続|てつづ}きは{要|い}りません。{名古屋市|なごやし}の{案内|あんない}では、{第|だい}1{号|ごう}の{人|ひと}の{住所|じゅうしょ}の{変更|へんこう}は{手続|てつづ}き{不要|ふよう}です（マイナンバーが{無|な}い{人|ひと}などは{要|よう}{確認|かくにん}）。{第|だい}2{号|ごう}は{勤務|きんむ}{先|さき}、{第|だい}3{号|ごう}は{配偶|はいぐう}{者|しゃ}の{勤務|きんむ}{先|さき}を{通|とお}して{届|とど}けます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{日本|にほん}の{中|なか}で{引|ひ}っ{越|こ}した{人|ひと}で、もう{年金|ねんきん}に{入|はい}っている{人|ひと}は、{入|はい}る{手続|てつづ}きは{要|い}りません。{第|だい}1{号|ごう}の{人|ひと}は、{住所|じゅうしょ}が{変|か}わったときも、ふつうは{手続|てつづ}きは{要|い}りません（{要確認|ようかくにん}）。{第|だい}2{号|ごう}と{第|だい}3{号|ごう}は、{会社|かいしゃ}を{通|とお}して{届|とど}けます（{要確認|ようかくにん}）。",
+        "en": "If you moved within Japan and are already in a pension (Category 1, 2 or 3), moving alone does not require you to join the National Pension. Nagoya City says Category 1 members do not need to report a new address (to be checked if you have no My Number). Category 2 is handled through your employer and Category 3 through your spouse's employer (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-kokuho",
+      "kind": "selection",
+      "condition": {
+        "fact": "insurance",
+        "eq": "kokuho"
+      },
+      "statement": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っています。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}に{入|はい}っています。",
+        "en": "You are in National Health Insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-japanese",
+      "kind": "selection",
+      "condition": {
+        "fact": "nationality",
+        "eq": "japanese"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}です。",
+        "ja_easy": "{日本|にほん}{国籍|こくせき}の{人|ひと}です。",
+        "en": "You are a Japanese national."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "nationality",
+        "eq": "foreign"
+      },
+      "statement": {
+        "ja": "{日本|にほん}{以外|いがい}の{国籍|こくせき}の{人|ひと}です。",
+        "ja_easy": "{日本|にほん}{以外|いがい}の{国籍|こくせき}の{人|ひと}です。",
+        "en": "You are not a Japanese national."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-has-mynumber",
+      "kind": "selection",
+      "condition": {
+        "fact": "has_mynumber_card",
+        "eq": true
+      },
+      "statement": {
+        "ja": "マイナンバーカードを{持|も}っています。",
+        "ja_easy": "マイナンバーカードがあります。",
+        "en": "You have a My Number Card."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-zairyu-return",
+      "kind": "selection",
+      "condition": {
+        "fact": "mo_reentry",
+        "eq": "no_return"
+      },
+      "statement": {
+        "ja": "{在留|ざいりゅう}カードを{持|も}っていて、{再|さい}{入国|にゅうこく}{許可|きょか}（みなし{再|さい}{入国|にゅうこく}{許可|きょか}を{含|ふく}む）を{使|つか}わずに{出国|しゅっこく}します。",
+        "ja_easy": "{在留|ざいりゅう}カードがあって、{再入国許可|さいにゅうこくきょか}を{使|つか}わずに{日本|にほん}を{出|で}ます。",
+        "en": "You have a residence card and will leave without a re-entry permit (including a deemed re-entry permit)."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mo-hn-sel",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "fact": "insurance",
+            "eq": "kokuho"
+          },
+          {
+            "all": [
+              {
+                "fact": "age_band",
+                "eq": "20_59"
+              },
+              {
+                "fact": "pension_type",
+                "eq": "none"
+              }
+            ]
+          },
+          {
+            "fact": "age_band",
+            "eq": "60_plus"
+          },
+          {
+            "fact": "nationality",
+            "eq": "foreign"
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{国民|こくみん}{年金|ねんきん}の{手続|てつづ}き、または{脱退|だったい}{一時|いちじ}{金|きん}が{関係|かんけい}するかもしれない{人|ひと}です。",
+        "ja_easy": "{国民|こくみん}{健康|けんこう}{保険|ほけん}・{年金|ねんきん}の{手続|てつづ}きが{関係|かんけい}するかもしれない{人|ひと}です。",
+        "en": "National Health Insurance, the National Pension, or the lump-sum withdrawal payment may apply to you."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1562,8 +2150,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1582,70 +2171,339 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-mar-stage-japan",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_stage",
+        "in": [
+          "before",
+          "considering"
+        ]
+      },
+      "statement": {
+        "ja": "{日本|にほん}でこれから{婚姻|こんいん}{届|とどけ}を{出|だ}す（{考|かんが}えている）",
+        "ja_easy": "{日本|にほん}で、これから{婚姻|こんいん}{届|とどけ}を{出|だ}す（{考|かんが}えている）",
+        "en": "Will submit a marriage registration in Japan (or still thinking)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
     {
-      "id": "R-mar-foreign",
+      "id": "R-mar-stage-japan-any",
       "kind": "selection",
       "condition": {
-        "fact": "marriage_kind",
+        "fact": "marriage_stage",
         "in": [
-          "japanese_foreign",
-          "foreign_foreign"
+          "before",
+          "considering",
+          "submitted"
+        ]
+      },
+      "statement": {
+        "ja": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}を{出|だ}す・{出|だ}した",
+        "ja_easy": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}を{出|だ}す・{出|だ}した",
+        "en": "Submitting or submitted a marriage registration in Japan"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-stage-submitted",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_stage",
+        "eq": "submitted"
+      },
+      "statement": {
+        "ja": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}をもう{出|だ}した",
+        "ja_easy": "{日本|にほん}で{婚姻|こんいん}{届|とどけ}をもう{出|だ}した",
+        "en": "Already submitted the marriage registration in Japan"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-stage-abroad",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_stage",
+        "eq": "abroad"
+      },
+      "statement": {
+        "ja": "{海外|かいがい}で{婚姻|こんいん}が{成立|せいりつ}した",
+        "ja_easy": "{外国|がいこく}で{結婚|けっこん}した",
+        "en": "Married abroad"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-has-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_nat",
+        "in": [
+          "jp_foreign",
+          "foreign_jp",
+          "both_foreign"
         ]
       },
       "statement": {
         "ja": "ふたりのどちらかが{外国|がいこく}{籍|せき}",
         "ja_easy": "ふたりのどちらかが{外国|がいこく}の{国籍|こくせき}",
-        "en": "At least one of the two is a foreign national"
+        "en": "At least one of you is a foreign national"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
     {
-      "id": "R-mar-japanese-foreign",
+      "id": "R-mar-has-japanese",
       "kind": "selection",
       "condition": {
-        "fact": "marriage_kind",
-        "eq": "japanese_foreign"
+        "fact": "marriage_nat",
+        "in": [
+          "jp_foreign",
+          "foreign_jp",
+          "both_japanese"
+        ]
       },
       "statement": {
-        "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}と{外国|がいこく}{籍|せき}の{人|ひと}の{結婚|けっこん}",
-        "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}と{外国|がいこく}の{国籍|こくせき}の{人|ひと}の{結婚|けっこん}",
-        "en": "One Japanese national and one foreign national"
+        "ja": "ふたりのどちらかが{日本|にほん}{国籍|こくせき}",
+        "ja_easy": "ふたりのどちらかが{日本|にほん}の{国籍|こくせき}",
+        "en": "At least one of you is a Japanese national"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
     {
-      "id": "R-mar-name-changed",
+      "id": "R-mar-nat-both-jp",
       "kind": "selection",
       "condition": {
-        "fact": "name_changed",
+        "fact": "marriage_nat",
+        "eq": "both_japanese"
+      },
+      "statement": {
+        "ja": "ふたりとも{日本|にほん}{国籍|こくせき}",
+        "ja_easy": "ふたりとも{日本|にほん}の{国籍|こくせき}",
+        "en": "Both of you are Japanese nationals"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-self-foreign",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_nat",
+        "in": [
+          "foreign_jp",
+          "both_foreign"
+        ]
+      },
+      "statement": {
+        "ja": "あなたが{外国|がいこく}{籍|せき}",
+        "ja_easy": "あなたが{外国|がいこく}の{国籍|こくせき}",
+        "en": "You are a foreign national"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-name-self",
+      "kind": "selection",
+      "condition": {
+        "fact": "name_who",
+        "in": [
+          "self",
+          "both"
+        ]
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}であなたの{氏名|しめい}が{変|か}わる",
+        "ja_easy": "{結婚|けっこん}であなたの{名前|なまえ}が{変|か}わる",
+        "en": "Your name changes because of the marriage"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-name-jp-optional",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "all": [
+              {
+                "fact": "marriage_nat",
+                "eq": "jp_foreign"
+              },
+              {
+                "fact": "name_who",
+                "in": [
+                  "self",
+                  "both"
+                ]
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "fact": "marriage_nat",
+                "eq": "foreign_jp"
+              },
+              {
+                "fact": "name_who",
+                "in": [
+                  "partner",
+                  "both"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{外国|がいこく}{籍|せき}の{人|ひと}と{結婚|けっこん}する{日本|にほん}{国籍|こくせき}の{人|ひと}が、{氏|うじ}を{変|か}えたい",
+        "ja_easy": "{外国|がいこく}の{国籍|こくせき}の{人|ひと}と{結婚|けっこん}する{日本|にほん}の{国籍|こくせき}の{人|ひと}が、{名字|みょうじ}を{変|か}えたい",
+        "en": "The Japanese national marrying a foreign national wants to change surname"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-zairyu-card",
+      "kind": "selection",
+      "condition": {
+        "fact": "holds_zairyu_card",
         "eq": "yes"
       },
       "statement": {
-        "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる",
-        "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる",
-        "en": "My name will change because of the marriage"
+        "ja": "{在留|ざいりゅう}カードを{持|も}っている",
+        "ja_easy": "{在留|ざいりゅう}カードがある",
+        "en": "You have a residence card"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-has-mynumber",
+      "kind": "selection",
+      "condition": {
+        "fact": "has_mynumber_card",
+        "eq": true
+      },
+      "statement": {
+        "ja": "マイナンバーカードを{持|も}っている",
+        "ja_easy": "マイナンバーカードがある",
+        "en": "You have a My Number Card"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-home-household",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_home",
+        "eq": "household"
+      },
+      "statement": {
+        "ja": "{住所|じゅうしょ}は{同|おな}じで、{世帯|せたい}を{変|か}える",
+        "ja_easy": "{住|す}む{所|ところ}は{同|おな}じで、{世帯|せたい}を{変|か}える",
+        "en": "Same address; the household changes"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-mar-home-move",
+      "kind": "selection",
+      "condition": {
+        "fact": "marriage_home",
+        "eq": "move"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}で{引|ひ}っ{越|こ}す",
+        "ja_easy": "{結婚|けっこん}で{引|ひ}っ{越|こ}す",
+        "en": "Moving because of the marriage"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1665,8 +2523,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1685,7 +2544,47 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-fam-scope",
+      "kind": "scope",
+      "condition": {
+        "all": []
+      },
+      "statement": {
+        "ja": "この{案内|あんない}は、だれでも{見|み}られます。{宣誓|せんせい}できるかどうかは、{名古屋|なごや}{市|し}の{条件|じょうけん}で{決|き}まります（「{初|はじ}めて{宣誓|せんせい}する」の{条件|じょうけん}を{見|み}ます）。",
+        "ja_easy": "この{案内|あんない}は、だれでも{見|み}られます。{宣誓|せんせい}できるかは、{名古屋市|なごやし}の{条件|じょうけん}で{決|き}まります（「はじめて{宣誓|せんせい}する」を{見|み}ます）。",
+        "en": "Anyone can read this guide. Whether you can make the pledge depends on Nagoya's conditions (see \"Pledge for the first time\")."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-fam-event",
+      "kind": "selection",
+      "condition": {
+        "fact": "event",
+        "eq": "familyship"
+      },
+      "statement": {
+        "ja": "ファミリーシップ{制度|せいど}について{調|しら}べる",
+        "ja_easy": "ファミリーシップ{制度|せいど}について{調|しら}べる",
+        "en": "Looking up the familyship system"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1704,8 +2603,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1724,8 +2624,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1743,19 +2644,23 @@
               "family",
               "spouse"
             ]
+          },
+          {
+            "fact": "status_as_spouse",
+            "eq": "yes"
           }
         ]
       },
       "statement": {
-        "ja": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」",
-        "ja_easy": "{在留|ざいりゅう}{資格|しかく}が「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」",
-        "en": "My status is \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\""
+        "ja": "{在留|ざいりゅう}{資格|しかく}「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」を、{配偶|はいぐう}{者|しゃ}として{持|も}っている",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}「{家族|かぞく}{滞在|たいざい}」「{日本人|にほんじん}の{配偶|はいぐう}{者|しゃ}{等|とう}」「{永住|えいじゅう}{者|しゃ}の{配偶|はいぐう}{者|しゃ}{等|とう}」を、{夫|おっと}・{妻|つま}として{持|も}っている",
+        "en": "You hold \"Dependent\", \"Spouse or Child of Japanese National\" or \"Spouse or Child of Permanent Resident\" as a spouse"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1763,19 +2668,22 @@
       "id": "R-div-agreement",
       "kind": "selection",
       "condition": {
-        "fact": "divorce_route",
-        "eq": "agreement"
+        "fact": "divorce_stage",
+        "in": [
+          "agreement_plan",
+          "agreement_done"
+        ]
       },
       "statement": {
-        "ja": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）",
-        "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}する（{協議|きょうぎ}{離婚|りこん}）",
+        "ja": "{話|はな}し{合|あ}いで{離婚|りこん}する・した（{協議|きょうぎ}{離婚|りこん}）",
+        "ja_easy": "{話|はな}し{合|あ}いで{離婚|りこん}する・した（{協議|きょうぎ}{離婚|りこん}）",
         "en": "Divorce by agreement"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1783,19 +2691,22 @@
       "id": "R-div-court",
       "kind": "selection",
       "condition": {
-        "fact": "divorce_route",
-        "eq": "court"
+        "fact": "divorce_stage",
+        "in": [
+          "court_ongoing",
+          "court_done"
+        ]
       },
       "statement": {
-        "ja": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった",
-        "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}が{決|き}まった",
-        "en": "Divorce decided by mediation or court"
+        "ja": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}する・した",
+        "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}で{離婚|りこん}する・した",
+        "en": "Divorce by mediation or court"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1803,19 +2714,162 @@
       "id": "R-div-japanese",
       "kind": "selection",
       "condition": {
-        "fact": "divorce_japanese",
-        "eq": "yes"
+        "fact": "nationality",
+        "eq": "japanese"
       },
       "statement": {
-        "ja": "あなたか{相手|あいて}が{日本|にほん}{国籍|こくせき}",
-        "ja_easy": "あなたか{相手|あいて}が{日本|にほん}の{国籍|こくせき}",
-        "en": "You or your spouse is a Japanese national"
+        "ja": "あなたが{日本|にほん}{国籍|こくせき}",
+        "ja_easy": "あなたが{日本|にほん}の{国籍|こくせき}",
+        "en": "You are a Japanese national"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-agreement-plan",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_stage",
+        "eq": "agreement_plan"
+      },
+      "statement": {
+        "ja": "{協議|きょうぎ}{離婚|りこん}の{届|とどけ}はこれから",
+        "ja_easy": "{協議|きょうぎ}{離婚|りこん}の{届|とど}けはこれから",
+        "en": "The divorce-by-agreement registration is still to be submitted"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-agreement-done",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_stage",
+        "eq": "agreement_done"
+      },
+      "statement": {
+        "ja": "{協議|きょうぎ}{離婚|りこん}の{届|とどけ}をもう{出|だ}した",
+        "ja_easy": "{協議|きょうぎ}{離婚|りこん}の{届|とど}けをもう{出|だ}した",
+        "en": "The divorce-by-agreement registration is already submitted"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-court-ongoing",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_stage",
+        "eq": "court_ongoing"
+      },
+      "statement": {
+        "ja": "{調停|ちょうてい}・{裁判|さいばん}で{進|すす}めている（まだ{成立|せいりつ}していない）",
+        "ja_easy": "{調停|ちょうてい}・{裁判|さいばん}をしている（まだ{決|き}まっていない）",
+        "en": "Mediation or court case in progress (not finalized)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-abroad",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_stage",
+        "eq": "abroad"
+      },
+      "statement": {
+        "ja": "{海外|かいがい}で{離婚|りこん}が{成立|せいりつ}した",
+        "ja_easy": "{外国|がいこく}で{離婚|りこん}した",
+        "en": "The divorce was finalized abroad"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-children",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_children",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{未成年|みせいねん}の{子|こ}どもがいる",
+        "ja_easy": "18{歳|さい}より{下|した}の{子|こ}どもがいる",
+        "en": "You have a child under 18"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-surname-changed",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_changed_surname",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{結婚|けっこん}のときに{氏|うじ}を{変|か}えた",
+        "ja_easy": "{結婚|けっこん}で{名字|みょうじ}が{変|か}わった",
+        "en": "You changed your surname at marriage"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-div-keep-name",
+      "kind": "selection",
+      "condition": {
+        "fact": "divorce_keep_name",
+        "in": [
+          "yes",
+          "undecided"
+        ]
+      },
+      "statement": {
+        "ja": "{離婚|りこん}のあとも{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{使|つか}いたい（まだ{決|き}めていない）",
+        "ja_easy": "{離婚|りこん}のあとも、いまの{名字|みょうじ}を{使|つか}いたい（まだ{決|き}めていない）",
+        "en": "You want to keep your married surname (or have not decided)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -1834,8 +2888,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1854,8 +2909,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1882,8 +2938,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1902,8 +2959,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1922,8 +2980,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1942,8 +3001,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1962,8 +3022,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -1990,8 +3051,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2018,8 +3080,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2038,8 +3101,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2058,8 +3122,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2080,7 +3145,255 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-lost-cash",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "cash_card"
+      },
+      "statement": {
+        "ja": "キャッシュカードが{入|はい}っていた",
+        "ja_easy": "キャッシュカードがあった",
+        "en": "A bank cash card was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-credit",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "credit_card"
+      },
+      "statement": {
+        "ja": "クレジットカードが{入|はい}っていた",
+        "ja_easy": "クレジットカードがあった",
+        "en": "A credit card was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-unsure",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_items",
+        "has": "unsure"
+      },
+      "statement": {
+        "ja": "ほかに{何|なに}が{入|はい}っていたか、よくわからない",
+        "ja_easy": "ほかに{何|なに}があったか、わからない",
+        "en": "You are not sure what else was inside"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-at-home",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_place",
+        "eq": "home"
+      },
+      "statement": {
+        "ja": "{家|いえ}の{中|なか}でなくしたと{思|おも}う",
+        "ja_easy": "{家|いえ}の{中|なか}でなくしたと{思|おも}う",
+        "en": "You think you lost it inside your home"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-not-home",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "fact": "lost_place",
+          "eq": "home"
+        }
+      },
+      "statement": {
+        "ja": "{家|いえ}の{外|そと}でなくした・{盗|ぬす}まれたかもしれない・{場所|ばしょ}がわからない",
+        "ja_easy": "{家|いえ}の{外|そと}でなくしたかもしれない",
+        "en": "You may have lost it outside your home (or it may have been stolen)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-facility",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_place",
+        "in": [
+          "facility",
+          "unsure"
+        ]
+      },
+      "statement": {
+        "ja": "{駅|えき}・{電車|でんしゃ}・{店|みせ}などでなくしたかもしれない",
+        "ja_easy": "{駅|えき}や{店|みせ}でなくしたかもしれない",
+        "en": "You may have lost it at a station, on a train or in a shop"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-stolen",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_place",
+        "eq": "stolen"
+      },
+      "statement": {
+        "ja": "{盗|ぬす}まれたかもしれない",
+        "ja_easy": "{盗|ぬす}まれたかもしれない",
+        "en": "It may have been stolen"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-reported-unsure",
+      "kind": "selection",
+      "condition": {
+        "fact": "police_reported",
+        "eq": "unsure"
+      },
+      "statement": {
+        "ja": "{警察|けいさつ}に{届|とど}けたかどうか、わからない",
+        "ja_easy": "{警察|けいさつ}に{言|い}ったか、わからない",
+        "en": "You are not sure whether it was reported to the police"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-hoken-employer",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_hoken_type",
+        "eq": "employer"
+      },
+      "statement": {
+        "ja": "{勤務|きんむ}{先|さき}の{健康|けんこう}{保険|ほけん}の{資格|しかく}{確認|かくにん}{書|しょ}など",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}の{紙|かみ}",
+        "en": "Your workplace health insurance certificate"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-hoken-not-employer",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "fact": "lost_hoken_type",
+          "eq": "employer"
+        }
+      },
+      "statement": {
+        "ja": "{勤務|きんむ}{先|さき}の{健康|けんこう}{保険|ほけん}ではない（{国民|こくみん}{健康|けんこう}{保険|ほけん}など）",
+        "ja_easy": "{会社|かいしゃ}の{保険|ほけん}ではない",
+        "en": "Not workplace insurance (for example, National Health Insurance)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-hoken-unsure",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_hoken_type",
+        "eq": "unsure"
+      },
+      "statement": {
+        "ja": "どの{健康|けんこう}{保険|ほけん}かわからない",
+        "ja_easy": "どの{保険|ほけん}かわからない",
+        "en": "You are not sure which health insurance it is"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-lost-hoken-kokuho",
+      "kind": "selection",
+      "condition": {
+        "fact": "lost_hoken_type",
+        "eq": "kokuho"
+      },
+      "statement": {
+        "ja": "なくしたのは{名古屋市|なごやし}の{国民|こくみん}{健康|けんこう}{保険|ほけん}のものです。",
+        "ja_easy": "なくしたのは{名古屋市|なごやし}の{国民|こくみん}{健康|けんこう}{保険|ほけん}のものです。",
+        "en": "What you lost is for Nagoya National Health Insurance."
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-15",
         "status": "needs_check"
       }
     },
@@ -2099,8 +3412,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2119,8 +3433,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2139,27 +3454,38 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
       "id": "R-license-goal-renew",
       "kind": "selection",
       "condition": {
-        "fact": "license_goal",
-        "eq": "renew"
+        "all": [
+          {
+            "fact": "license_goal",
+            "eq": "renew"
+          },
+          {
+            "not": {
+              "fact": "license_valid",
+              "eq": "expired"
+            }
+          }
+        ]
       },
       "statement": {
-        "ja": "{免許|めんきょ}を{更新|こうしん}する",
-        "ja_easy": "{免許|めんきょ}を{更新|こうしん}する",
-        "en": "You want to renew your licence"
+        "ja": "{免許|めんきょ}を{更新|こうしん}する（{有効|ゆうこう}{期限|きげん}がまだ{過|す}ぎていない）",
+        "ja_easy": "{免許|めんきょ}を{更新|こうしん}する（{期限|きげん}がまだ{過|す}ぎていない）",
+        "en": "You want to renew your licence (it has not expired yet)"
       },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -2179,8 +3505,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2199,7 +3526,373 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "id": "R-license-goal-expired",
+      "kind": "selection",
+      "condition": {
+        "any": [
+          {
+            "fact": "license_goal",
+            "eq": "expired"
+          },
+          {
+            "all": [
+              {
+                "fact": "license_goal",
+                "eq": "renew"
+              },
+              {
+                "fact": "license_valid",
+                "eq": "expired"
+              }
+            ]
+          }
+        ]
+      },
+      "statement": {
+        "ja": "{有効|ゆうこう}{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{手続|てつづ}きをする",
+        "ja_easy": "{期限|きげん}が{過|す}ぎた{免許|めんきょ}の{手続|てつづ}きをする",
+        "en": "Your licence has expired"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-goal-abroad",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_goal",
+        "eq": "abroad"
+      },
+      "statement": {
+        "ja": "{外国|がいこく}で{運転|うんてん}するため、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}を{取|と}る",
+        "ja_easy": "{外国|がいこく}で{運転|うんてん}するため、{国外|こくがい}{運転|うんてん}{免許|めんきょ}{証|しょう}を{取|と}る",
+        "en": "You want an international driving permit to drive abroad"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-course-good",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_course",
+        "eq": "good"
+      },
+      "statement": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}は{優良|ゆうりょう}{運転|うんてん}{者|しゃ}",
+        "ja_easy": "{講習|こうしゅう}は{優良|ゆうりょう}{運転|うんてん}{者|しゃ}",
+        "en": "Your course category is excellent driver"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-course-general",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_course",
+        "eq": "general"
+      },
+      "statement": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}は{一般|いっぱん}{運転|うんてん}{者|しゃ}",
+        "ja_easy": "{講習|こうしゅう}は{一般|いっぱん}{運転|うんてん}{者|しゃ}",
+        "en": "Your course category is general driver"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-course-center",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_course",
+        "in": [
+          "violation",
+          "first"
+        ]
+      },
+      "statement": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}は{違反|いはん}{運転|うんてん}{者|しゃ}か{初回|しょかい}{更新|こうしん}{者|しゃ}",
+        "ja_easy": "{講習|こうしゅう}は{違反|いはん}{運転|うんてん}{者|しゃ}か{初回|しょかい}{更新|こうしん}{者|しゃ}",
+        "en": "Your course category is violator or first-time renewer"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-course-elderly",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_course",
+        "eq": "elderly"
+      },
+      "statement": {
+        "ja": "{講習|こうしゅう}の{区分|くぶん}は{高齢|こうれい}{者|しゃ}",
+        "ja_easy": "{講習|こうしゅう}は{高齢|こうれい}{者|しゃ}",
+        "en": "Your course category is older driver"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-lapse-6m",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_lapse",
+        "eq": "within_6m"
+      },
+      "statement": {
+        "ja": "{期限|きげん}が{過|す}ぎてから6か{月|げつ}{以内|いない}",
+        "ja_easy": "{期限|きげん}が{過|す}ぎてから6か{月|げつ}{以内|いない}",
+        "en": "It expired 6 months ago or less"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-lapse-1y",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_lapse",
+        "eq": "within_1y"
+      },
+      "statement": {
+        "ja": "{期限|きげん}が{過|す}ぎてから6か{月|げつ}を{超|こ}えて1{年|ねん}{以内|いない}",
+        "ja_easy": "{期限|きげん}が{過|す}ぎてから6か{月|げつ}より{長|なが}く、1{年|ねん}{以内|いない}",
+        "en": "It expired more than 6 months but not more than 1 year ago"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-lapse-over",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_lapse",
+        "eq": "over_1y"
+      },
+      "statement": {
+        "ja": "{期限|きげん}が{過|す}ぎてから1{年|ねん}を{超|こ}えた",
+        "ja_easy": "{期限|きげん}が{過|す}ぎてから1{年|ねん}より{長|なが}い",
+        "en": "It expired more than 1 year ago"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-change-address",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_change",
+        "has": "address"
+      },
+      "statement": {
+        "ja": "{住所|じゅうしょ}が{変|か}わった",
+        "ja_easy": "{住所|じゅうしょ}が{変|か}わった",
+        "en": "Your address changed"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-change-name",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_change",
+        "has": "name"
+      },
+      "statement": {
+        "ja": "{氏名|しめい}が{変|か}わった",
+        "ja_easy": "{名前|なまえ}が{変|か}わった",
+        "en": "Your name changed"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-change-honseki",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_change",
+        "has": "honseki"
+      },
+      "statement": {
+        "ja": "{本籍|ほんせき}・{国籍|こくせき}が{変|か}わった",
+        "ja_easy": "{本籍|ほんせき}・{国籍|こくせき}が{変|か}わった",
+        "en": "Your registered domicile or nationality changed"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-form-card",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_form",
+        "eq": "card"
+      },
+      "statement": {
+        "ja": "{従来|じゅうらい}の{免許|めんきょ}{証|しょう}だけを{持|も}っている",
+        "ja_easy": "{前|まえ}からある{免許|めんきょ}{証|しょう}だけを{持|も}っている",
+        "en": "You hold only a conventional licence card"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-form-myna",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_form",
+        "in": [
+          "myna",
+          "both"
+        ]
+      },
+      "statement": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}を{持|も}っている",
+        "ja_easy": "マイナ{免許|めんきょ}{証|しょう}を{持|も}っている",
+        "en": "You hold a My Number licence"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-lost-myna",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_lost",
+        "in": [
+          "myna",
+          "both"
+        ]
+      },
+      "statement": {
+        "ja": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）をなくした",
+        "ja_easy": "マイナ{免許|めんきょ}{証|しょう}（マイナンバーカード）をなくした",
+        "en": "You lost your My Number licence (My Number Card)"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-route-school",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_route",
+        "eq": "school"
+      },
+      "statement": {
+        "ja": "{指定|してい}{自動車|じどうしゃ}{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した・{通|かよ}っている",
+        "ja_easy": "{教習所|きょうしゅうじょ}を{卒業|そつぎょう}した・{通|かよ}っている",
+        "en": "You graduated from or attend a designated driving school"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-license-route-direct",
+      "kind": "selection",
+      "condition": {
+        "fact": "license_route",
+        "eq": "direct"
+      },
+      "statement": {
+        "ja": "{教習所|きょうしゅうじょ}に{通|かよ}わず、{試験場|しけんじょう}で{試験|しけん}を{受|う}ける",
+        "ja_easy": "{教習所|きょうしゅうじょ}に{行|い}かないで、{試験場|しけんじょう}で{試験|しけん}を{受|う}ける",
+        "en": "You take the tests at the centre without a driving school"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       }
     },
@@ -2245,7 +3938,8 @@
                     "permanent",
                     "long_term",
                     "cultural",
-                    "trainee"
+                    "trainee",
+                    "short_stay"
                   ]
                 }
               },
@@ -2319,7 +4013,8 @@
                           "permanent",
                           "long_term",
                           "cultural",
-                          "trainee"
+                          "trainee",
+                          "short_stay"
                         ]
                       }
                     },
@@ -2396,7 +4091,8 @@
                           "permanent",
                           "long_term",
                           "cultural",
-                          "trainee"
+                          "trainee",
+                          "short_stay"
                         ]
                       }
                     },
@@ -2435,7 +4131,8 @@
                               "permanent",
                               "long_term",
                               "cultural",
-                              "trainee"
+                              "trainee",
+                              "short_stay"
                             ]
                           }
                         },
@@ -2484,7 +4181,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2506,7 +4204,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2529,7 +4228,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2549,7 +4249,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2569,7 +4270,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2589,7 +4291,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2609,7 +4312,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2629,7 +4333,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2658,7 +4363,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2684,7 +4390,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2710,7 +4417,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2735,7 +4443,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2758,7 +4467,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2778,7 +4488,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2798,7 +4509,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2818,7 +4530,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2852,7 +4565,8 @@
                               "permanent",
                               "long_term",
                               "cultural",
-                              "trainee"
+                              "trainee",
+                              "short_stay"
                             ]
                           }
                         },
@@ -2908,7 +4622,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2928,7 +4643,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2948,7 +4664,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -2959,9 +4676,94 @@
         "eq": "yes"
       },
       "statement": {
-        "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}か、インボイスの{登録|とうろく}をしている",
-        "ja_easy": "{消費税|しょうひぜい}を{納|おさ}めている・インボイスの{登録|とうろく}がある",
-        "en": "You are a consumption-tax payer or registered for invoices"
+        "ja": "インボイス（{適格|てきかく}{請求|せいきゅう}{書|しょ}{発行|はっこう}{事業|じぎょう}{者|しゃ}）の{登録|とうろく}をしている",
+        "ja_easy": "インボイスの{登録|とうろく}がある",
+        "en": "You are registered as a qualified invoice issuer"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-taxable",
+      "kind": "selection",
+      "condition": {
+        "fact": "biz_taxable",
+        "eq": "yes"
+      },
+      "statement": {
+        "ja": "{消費|しょうひ}{税|ぜい}の{課税|かぜい}{事業|じぎょう}{者|しゃ}",
+        "ja_easy": "{消費税|しょうひぜい}を{納|おさ}めている",
+        "en": "You are a taxable business for consumption tax"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-started-known",
+      "kind": "selection",
+      "condition": {
+        "fact": "biz_started",
+        "in": [
+          "planning",
+          "started"
+        ]
+      },
+      "statement": {
+        "ja": "{事業|じぎょう}をもう{始|はじ}めたか、これから{始|はじ}めるかがわかっている",
+        "ja_easy": "{事業|じぎょう}を{始|はじ}めたかがわかっている",
+        "en": "You know whether you have started the business"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-aoiro-not-white",
+      "kind": "selection",
+      "condition": {
+        "not": {
+          "fact": "biz_aoiro_plan",
+          "eq": "white"
+        }
+      },
+      "statement": {
+        "ja": "{白色|しろいろ}{申告|しんこく}にすると{決|き}めた{人|ひと}ではない",
+        "ja_easy": "{白色|しろいろ}{申告|しんこく}と{決|き}めていない",
+        "en": "You have not chosen white-form filing"
+      },
+      "evidence": {
+        "source_ids": [
+          "kurashi-spec"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check"
+      }
+    },
+    {
+      "id": "R-job-biz-aoiro-undecided",
+      "kind": "selection",
+      "condition": {
+        "fact": "biz_aoiro_plan",
+        "eq": "undecided"
+      },
+      "statement": {
+        "ja": "{青色|あおいろ}{申告|しんこく}にするか、まだ{決|き}めていない",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}か、まだ{決|き}めていない",
+        "en": "You have not decided on blue-form filing yet"
       },
       "evidence": {
         "source_ids": [
@@ -2992,7 +4794,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3053,7 +4856,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3081,7 +4885,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3121,7 +4926,8 @@
                             "permanent",
                             "long_term",
                             "cultural",
-                            "trainee"
+                            "trainee",
+                            "short_stay"
                           ]
                         }
                       },
@@ -3193,7 +4999,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3213,7 +5020,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3233,7 +5041,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3284,7 +5093,7 @@
       },
       "statement": {
         "ja": "{青色|あおいろ}{申告|しんこく}をしている",
-        "ja_easy": "青色申告をしている",
+        "ja_easy": "{青色|あおいろ}{申告|しんこく}をしている",
         "en": "You file blue-form returns"
       },
       "evidence": {
@@ -3292,7 +5101,8 @@
           "kurashi-spec"
         ],
         "checked_at": "2026-11-08",
-        "status": "needs_check"
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -3364,7 +5174,8 @@
                               "permanent",
                               "long_term",
                               "cultural",
-                              "trainee"
+                              "trainee",
+                              "short_stay"
                             ]
                           }
                         },
@@ -3437,7 +5248,7 @@
         ],
         "checked_at": "2026-11-08",
         "status": "verified",
-        "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     }
   ]

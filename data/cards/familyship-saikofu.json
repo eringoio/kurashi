@@ -1,0 +1,180 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-saikofu",
+  "illustration": "card",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "{受領証|じゅりょうしょう}などを{再|さい}{交付|こうふ}してもらう",
+    "ja_easy": "{受領証|じゅりょうしょう}をもう{一度|いちど}もらう",
+    "en": "Get the receipt reissued"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓書受領証等再交付申請",
+    "reading": "ふぁみりーしっぷせんせいしょじゅりょうしょうとうさいこうふしんせい"
+  },
+  "lead": {
+    "ja": "{受領証|じゅりょうしょう}や{受領|じゅりょう}{証明|しょうめい}カードをなくした・{汚|よご}れた・{壊|こわ}れたときに、{再|さい}{交付|こうふ}を{申|もう}し{込|こ}みます。",
+    "ja_easy": "{受領証|じゅりょうしょう}やカードをなくした・{汚|よご}れた・こわれたときに、もう{一度|いちど}もらいます。",
+    "en": "Apply for a reissue when you lose, soil or damage the receipt or card."
+  },
+  "summary": {
+    "ja": "{受領証|じゅりょうしょう}や{受領|じゅりょう}{証明|しょうめい}カードをなくした・{汚|よご}れた・{壊|こわ}れたときに、{再|さい}{交付|こうふ}を{申|もう}し{込|こ}みます。",
+    "ja_easy": "{受領証|じゅりょうしょう}やカードをなくした・{汚|よご}れた・こわれたときに、もう{一度|いちど}もらいます。",
+    "en": "Apply for a reissue when you lose, soil or damage the receipt or card."
+  },
+  "deadline": null,
+  "fee": {
+    "text": {
+      "ja": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{返信|へんしん}{用|よう}{封筒|ふうとう}の{切手|きって}180{円|えん}{分|ぶん}は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{切手|きって}180{円|えん}は{自分|じぶん}で{払|はら}います。",
+      "en": "No fee is mentioned (to be checked). You pay 180 yen of stamps for the return envelope."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-tebiki"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "切手代１８０円（定形外規格内）のご負担が必要です。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "オンライン（{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}",
+      "ja_easy": "オンライン（フォーム）。{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります",
+      "en": "Online (form). Mail documents to the Gender Equality Promotion Division"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "手続きについては原則、オンラインで申請を行っていただき、必要書類等については郵送にて男女平等参画推進課へ送付いただきます。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どんなとき",
+        "ja_easy": "どんなとき",
+        "en": "When"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{受領証|じゅりょうしょう}などをなくした、{汚|よご}れた、{壊|こわ}れたとき。{宣誓|せんせい}したふたりが{申|もう}し{込|こ}みます。",
+            "ja_easy": "{受領証|じゅりょうしょう}などをなくした、{汚|よご}れた、こわれたとき。",
+            "en": "When the receipt or card is lost, soiled or damaged. The pledged couple applies."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "受領証等の紛失や汚損・毀損などの事情により再交付を希望される場合には、再交付を行いますので"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{郵送|ゆうそう}するもの",
+        "ja_easy": "{郵便|ゆうびん}で{送|おく}るもの",
+        "en": "What to mail"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{汚|よご}れた・{壊|こわ}れたとき：{今|いま}の{受領証|じゅりょうしょう}と{受領|じゅりょう}{証明|しょうめい}カード。",
+            "ja_easy": "{汚|よご}れた・こわれたとき：{今|いま}の{受領証|じゅりょうしょう}とカード。",
+            "en": "If soiled or damaged: the current receipt and card."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "なお、汚損・毀損を再交付理由とする場合は、当該宣誓書受領証と宣誓書受領証明カードについて、ご提出いただく必要がございます"
+          }
+        },
+        {
+          "text": {
+            "ja": "{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）。",
+            "ja_easy": "{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}。{自分|じぶん}の{住所|じゅうしょ}と{名前|なまえ}）。",
+            "en": "A return envelope (A4 size, 180 yen of stamps, your address)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "切手１８０円分（定形外規格内）を貼付し、返信先の住所・氏名を記載した返"
+          }
+        },
+        {
+          "text": {
+            "ja": "なくして{再|さい}{交付|こうふ}を{受|う}けたあとに、{古|ふる}い{受領証|じゅりょうしょう}などが{見|み}つかったら、すぐに{郵送|ゆうそう}で{返|かえ}します。",
+            "ja_easy": "もう{一度|いちど}もらったあとに、{古|ふる}いものが{見|み}つかったら、すぐに{郵便|ゆうびん}で{返|かえ}します。",
+            "en": "If you find the lost receipt after the reissue, mail it back promptly."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "再交付後に紛失した受領証等を発見した場"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{再|さい}{交付|こうふ}{申請|しんせい}の{申込|もうしこみ}フォーム",
+        "ja_easy": "もう{一度|いちど}もらうフォーム",
+        "en": "Reissue form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/doZ92",
+      "source_id": "B-nagoya-familyship-form-saikofu"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "familyship"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-tebiki",
+      "B-nagoya-familyship"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "（１）受領証等の再交付"
+  }
+}

@@ -13,14 +13,15 @@
   "eligibility": {
     "all": [
       "R-lost-wallet",
-      "R-lost-no-zairyu"
+      "R-lost-no-zairyu",
+      "R-lost-not-home"
     ]
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}す",
+    "ja": "{警察|けいさつ}に{届|とど}ける",
     "ja_easy": "{警察|けいさつ}に{届|とど}ける",
-    "en": "Report the loss to the police"
+    "en": "Report to the police"
   },
   "official_name": {
     "ja": "警察に遺失届を出す",
@@ -63,7 +64,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
         "verdict": "agree",
-        "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -104,7 +105,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -126,7 +127,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -148,7 +149,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -170,7 +171,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "24cd0365171b20eb28907d70f298ad7063573ba7fb48022aa862edd7f437ce76",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-online/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -192,7 +193,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -214,6 +215,57 @@
       }
     },
     {
+      "type": "phone",
+      "when": "R-lost-reported-unsure",
+      "text": {
+        "ja": "{届|とど}けたかどうかわからないときは、{最寄|もよ}りの{警察|けいさつ}{署|しょ}の{会計|かいけい}{課|か}に{問|と}い{合|あ}わせます。オンラインで{送|おく}ったときは、{受付|うけつけ}{番号|ばんごう}と{受理|じゅり}{番号|ばんごう}のメールが{届|とど}いていないか{探|さが}します。",
+        "ja_easy": "{届|とど}けたかわからないときは、{近|ちか}くの{警察|けいさつ}{署|しょ}に{聞|き}きます。インターネットで{送|おく}ったときは、メールを{探|さが}します。",
+        "en": "If you are not sure whether you reported it, ask the accounting section of the nearest police station. If you sent it online, look for the emails with the reception number and the receipt number."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "不明な点、質問等がありましたら、最寄りの警察署の会計課にお尋ねください。"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-lost-stolen",
+      "text": {
+        "ja": "{盗|ぬす}まれたかもしれないときは、{警察|けいさつ}に{盗難|とうなん}の{被害|ひがい}を{届|とど}け{出|で}ます（{被害|ひがい}{届|とどけ}）。どの{届|とど}けになるかは、{警察|けいさつ}で{確|たし}かめます。{在留|ざいりゅう}カードなどの{再|さい}{交付|こうふ}で{警察|けいさつ}の{証明|しょうめい}を{求|もと}められたときは、{届|とど}け{出|で}た{警察|けいさつ}{署|しょ}に{問|と}い{合|あ}わせます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{盗|ぬす}まれたかもしれないときは、{警察|けいさつ}に{言|い}います。どの{届|とど}けかは、{警察|けいさつ}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If it may have been stolen, report the theft to the police (damage report). Ask the police which report applies. If you are asked for a police certificate (for example, for a residence card reissue), ask the station where you reported (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "盗難により再交付を受ける際や、盗難又は横領の被害により税務署に雑損控除の申告をする場合など、公的機関から、警察の証明書の提出を求められる場合があります。このような場合には、遺失届、被害届等の届出をした警察署に問い合わせてください。"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-stolen",
+      "text": {
+        "ja": "{警察|けいさつ}への{相談|そうだん}は、{警察|けいさつ}{相談|そうだん}{専用|せんよう}{電話|でんわ} #9110（{平日|へいじつ}の{昼|ひる}）でもできます。{事件|じけん}・{事故|じこ}で{急|いそ}ぐときは110{番|ばん}です。",
+        "ja_easy": "{警察|けいさつ}に{相談|そうだん}する{電話|でんわ}は #9110 です。{急|いそ}ぐときは110{番|ばん}です。",
+        "en": "You can also call the police consultation line #9110 (weekday daytime). For an emergency, call 110."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "警察相談専用電話（警察本部の住民サービス課相談係(住民コーナー)につながります） ＃９１１０"
+      }
+    },
+    {
       "type": "counter",
       "text": {
         "ja": "{届出|とどけで}のあとで{住所|じゅうしょ}が{変|か}わったときは、{届|とど}け{出|で}た{警察|けいさつ}{署|しょ}または{交番|こうばん}に{届|とど}け{出|で}ます。",
@@ -231,7 +283,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c10"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -253,7 +305,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -275,7 +327,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c11"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -297,7 +349,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -319,7 +371,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c9"
+          "ref": "internal-audit-record"
         }
       }
     }

@@ -15,11 +15,12 @@ const out = (answers: Record<string, Value>, plan: Record<string, PlanRecord> = 
 const view = (o: ReturnType<typeof run>, id: string) => o.cards.find((c) => c.card.id === id)!;
 
 describe('段', () => {
-  it('イベントのカードはすべて、ちょうど1つの段に入る。見つかったときの段はいつも出す（pin）', () => {
+  it('イベントのカードはすべて、ちょうど1つの段に入る。見つかったとき・困ったときは最後の段（上に重ねて出さない。11/8 kaizen H）', () => {
     const ids = ev.phases!.flatMap((p) => p.card_ids);
     expect([...ids].sort()).toEqual([...ev.card_ids].sort());
     expect(new Set(ids).size).toBe(ids.length);
-    expect(ev.phases!.find((p) => p.pin)!.card_ids).toEqual(['lost-found-later']);
+    expect(ev.phases!.some((p) => p.pin)).toBe(false);
+    expect(ev.phases!.at(-1)!.card_ids).toEqual(['lost-found-later', 'lost-no-id-consult']);
   });
   it('中身に答えたら全体の画面。答える前は質問', () => {
     expect(overviewReady(ev, {})).toBe(false);
@@ -52,6 +53,7 @@ describe('カードの停止：物ごとに記録する', () => {
   it('選んだ物だけ。わからないは要確認（U）で、対象・対象外にしない', () => {
     const one = out({ 'Q-lost-items': ['credit_card'] });
     expect(partViews(view(one, 'lost-card-stop'), one.facts).map((p) => [p.id, p.applies])).toEqual([['credit_card', 'T']]);
+    // 前の版の答え（'unknown'）は、今までどおり要確認（U）
     const unk = out({ 'Q-lost-items': ['unknown'] });
     expect(partViews(view(unk, 'lost-card-stop'), unk.facts).map((p) => p.applies)).toEqual(['U', 'U']);
   });

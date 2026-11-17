@@ -119,7 +119,8 @@ describe('最初の質問と範囲', () => {
     const o = run(data, input({ answers: { 'Q-origin': 'abroad', 'Q-residence-basis': 'short_stay' }, objects: {} }));
     expect(o.scope).toBe('F');
     expect(o.upfront).toEqual([]);
-    expect(new Set(o.cards.map((c) => c.state))).toEqual(new Set(['out_of_scope']));
+    // 電気・ガスなどの生活の情報（範囲を問わない関連する情報。kaizen hikkoshi 11/8）は除く
+    expect(new Set(o.cards.filter((c) => c.section !== 'info').map((c) => c.state))).toEqual(new Set(['out_of_scope']));
   });
   it('住み始めていない人の住所の届出は「あとで」（fixture）', () => {
     const o = run(data, input({ mode: 'verified', answers: { ...A1, 'Q-moved-in': 'not_yet', 'Q-zairyu-back-address': 'no' } }));

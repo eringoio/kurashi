@@ -1,5 +1,4 @@
 {
-  "$comment": "場面ごとの QR（SPEC 9.8・docs/QR_SCENES.md）。QR には https://kurashi.eringo.io/s/{id} だけを入れる。開いたら、その場面のページから始める。場所・学校などの固有の名前は入れない（どこに置いても使える）。場面を足したら npm run qr で QR を作り直す。",
   "scenes": [
     {
       "id": "ward-office",

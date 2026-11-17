@@ -29,6 +29,8 @@ for (const f of files) {
   for (const id of reviewDocs) if (new RegExp(`[{,]\s*"?id"?\s*:\s*"${id}"`).test(s)) hits.push(`${f}: 要確認の書類 ${id}`);
   for (const m of candidateMarks) if (s.includes(m)) hits.push(`${f}: 調査資料の候補（${m}）`);
 }
-const devOnly = files.filter((f) => /DevPatterns|dev\/patterns/.test(readFileSync(f, 'utf8')));
+// 作者用の確認の画面と受信箱（/review・/api/reports）は、VITE_REVIEW=on のときだけ入る（O-6）
+const reviewOk = process.env.VITE_REVIEW === 'on';
+const devOnly = files.filter((f) => { const t = readFileSync(f, 'utf8'); return /DevPatterns|dev\/patterns/.test(t) || (!reviewOk && /\/api\/reports/.test(t)); });
 if (hits.length || devOnly.length) { console.error('配信物に下書き・検証用・開発用が入っている：\n' + [...hits, ...devOnly].join('\n')); process.exit(1); }
 console.log(`check-dist: OK（${files.length} ファイル、下書き・検証用のID ${ids.size} 件・要確認の書類 ${reviewDocs.length} 件・調査資料の候補を確かめた）`);

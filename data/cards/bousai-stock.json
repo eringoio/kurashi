@@ -22,9 +22,9 @@
     "reading": "びちくひん"
   },
   "summary": {
-    "ja": "{電気|でんき}・{水道|すいどう}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。{最低|さいてい}3{日|にち}、できれば7{日|にち}{分|ぶん}を{用意|ようい}します。{水|みず}は1{人|にん}1{日|にち}{約|やく}3リットル（{飲|の}む・{料理|りょうり}）、{携帯|けいたい}トイレは1{人|にん}1{日|にち}5〜6{回|かい}が{目安|めやす}です。{食|た}べ{物|もの}は、ふだん{食|た}べる{物|もの}を{多|おお}めに{買|か}い、{使|つか}ったら{買|か}い{足|た}します（ローリングストック）。{期限|きげん}と{電池|でんち}を、ときどき{確|たし}かめます。",
-    "ja_easy": "{電気|でんき}・{水|みず}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。3{日|にち}{分|ぶん}、できれば7{日|にち}{分|ぶん}です。{水|みず}は1{人|にん}1{日|にち}3リットルぐらい、{袋|ふくろ}のトイレは1{人|にん}1{日|にち}5〜6{回|かい}ぐらいです。ふだん{食|た}べる{物|もの}を{多|おお}く{買|か}って、{使|つか}ったら{買|か}い{足|た}します。ときどき、{期限|きげん}と{電池|でんち}を{見|み}ます。",
-    "en": "These are things you keep at home so you can live even if electricity, water and gas stop. Prepare at least 3 days' worth, ideally 7. Guide amounts: about 3 litres of water per person per day (drinking and cooking), and portable toilet bags for 5 to 6 uses per person per day. For food, buy a little more of what you usually eat and replace it as you use it (\"rolling stock\"). Check expiry dates and batteries from time to time."
+    "ja": "{電気|でんき}・{水道|すいどう}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。{最低|さいてい}3{日|にち}、できれば7{日|にち}{分|ぶん}を{用意|ようい}します。{水|みず}は1{人|にん}1{日|にち}{約|やく}3リットル（{飲|の}む・{料理|りょうり}）、{携帯|けいたい}トイレは1{人|にん}1{日|にち}5{回|かい}が{目安|めやす}です。{食|た}べ{物|もの}は、ふだん{食|た}べる{物|もの}を{多|おお}めに{買|か}い、{使|つか}ったら{買|か}い{足|た}します（ローリングストック）。{期限|きげん}と{電池|でんち}を、ときどき{確|たし}かめます。",
+    "ja_easy": "{電気|でんき}・{水|みず}・ガスが{止|と}まっても{暮|く}らせるように、{家|いえ}に{置|お}いておく{物|もの}です。3{日|にち}{分|ぶん}、できれば7{日|にち}{分|ぶん}です。{水|みず}は1{人|にん}1{日|にち}3リットルぐらい、{袋|ふくろ}のトイレは1{人|にん}1{日|にち}5{回|かい}ぐらいです。ふだん{食|た}べる{物|もの}を{多|おお}く{買|か}って、{使|つか}ったら{買|か}い{足|た}します。ときどき、{期限|きげん}と{電池|でんち}を{見|み}ます。",
+    "en": "These are things you keep at home so you can live even if electricity, water and gas stop. Prepare at least 3 days' worth, ideally 7. Guide amounts: about 3 litres of water per person per day (drinking and cooking), and portable toilet bags for 5 uses per person per day. For food, buy a little more of what you usually eat and replace it as you use it (\"rolling stock\"). Check expiry dates and batteries from time to time."
   },
   "lead": {
     "ja": "{最低|さいてい}3{日|にち}、できれば7{日|にち}{分|ぶん}。{水|みず}は1{人|にん}1{日|にち}{約|やく}3リットルが{目安|めやす}です。",
@@ -44,7 +44,7 @@
       ],
       "checked_at": "2026-11-08",
       "status": "verified",
-      "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "guide",
@@ -170,6 +170,6 @@
     ],
     "checked_at": "2026-11-08",
     "status": "verified",
-    "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

@@ -9,7 +9,7 @@ import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
 import { useEffect, useState, type ReactNode } from 'react';
-import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
+import { Answers, CardRow, DayChoice, dayTitle, FocusCard, fmtDay, RedoStep, ResultView, SECTION_ORDER, SectionWhy, StateLabel, stateKey, unverifiedOb, useChange, WhyAsked, whyText, QLeft } from '../ui/guide';
 import { ProgressMap } from '../ui/ProgressMap';
 import { VisitInfo } from '../ui/VisitInfo';
 import { RoadBring } from '../ui/RoadMap';
@@ -38,7 +38,7 @@ export function TodayStep({ views, base, go }: { views: CardView[]; base?: strin
   return (
     <>
       <div className="art" aria-hidden="true"><img src={art('calendar')} alt="" /></div>
-      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k="now.today.title" /></h1></div>
+      <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi k={views.every((c) => c.way === 'mail' || c.way === 'online') ? 'now.today.titleSend' : 'now.today.title'} /></h1></div>
       <ul className="list" role="list">{views.map((c) => <CardRow key={c.card.id} c={c} base={base} />)}</ul>
       <Link to={go} className="k-answer k-answer--primary"><img src={art('hall')} alt="" /><Bi phrase k="now.today.go" /></Link>
     </>
@@ -68,7 +68,7 @@ export function Now() {
     // 済んだと記録したときだけ、結果の画面と「つぎへ」（6A.5 v0.5.14）
     const c = g.out.cards.find((x) => x.card.id === done)!;
     body = (
-      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
+      <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} uv={unverifiedOb(c)} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => setDone(null)} rate={c.card.id}>
         <Link to={'/c/' + c.card.id} className="link"><Bi k="card.more" /></Link>
       </ResultView>
     );
@@ -106,11 +106,12 @@ export function Now() {
           <p className="eyebrow"><One k="now.eyebrow.plan" /></p>
           <Title><Bi t={dayTitle(c)} /></Title>
         </div>
-        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} /></p>}
+        {group.length === 1 && <p className="sub"><Bi phrase t={c.card.title} /> <StateLabel k={stateKey(c)} ob={c.card.obligation} uv={unverifiedOb(c)} /></p>}
         <DayChoice group={group} today={g.today}
           onPick={(d, ids) => void ch.plan(c.card.id, d, ids)}
+          onPatch={(ids, p) => void g.setPlans(ids, p)}
           onLater={() => navigate('/all')} />
-        {c.card.place && <VisitInfo place={c.card.place} cards={group} />}
+        {c.card.place && (!c.way || c.way === 'counter') && <VisitInfo place={c.card.place} cards={group} />}
       </>
     );
   } else if (step.kind === 'wait') {
@@ -213,8 +214,9 @@ export function AllEmpty() {
   );
 }
 
-export function All({ onlyGuides }: { onlyGuides?: boolean } = {}) {
+export function All({ onlyGuides, onLive }: { onlyGuides?: boolean; onLive?: (s: string) => void } = {}) {
   const g = useGuide();
+  const { level } = usePrefs();
   useFocusTitle('all');
   const cards = g.out.cards;
   const idle = nowStep(g.out, g.today).kind === 'idle';
@@ -226,6 +228,7 @@ export function All({ onlyGuides }: { onlyGuides?: boolean } = {}) {
       {!onlyGuides && <Tabs current="all" />}
       <div className="head"><h1 id="screen-title" tabIndex={-1}><Bi phrase k="all.title" /></h1></div>
       <ProgressMap cards={cards} out={g.out} today={g.today} listId="all-list"
+        onDone={(id, v) => { void g.setPlan(id, { status: v ? 'done' : 'todo' }); onLive?.(line(ui(v ? 'card.recordedDone' : 'ov.saved'), level)); }}
         after={(road) => road ? (
           // 道（v0.5.31）：道 → 次へ進むボタン → 持ち物 → 関係なかったもの（閉じた一覧）。同じ項目の一覧は出さない
           <>

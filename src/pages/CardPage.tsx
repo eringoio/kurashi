@@ -12,7 +12,7 @@ import { Bi, One } from '../i18n/Ruby';
 import { line, ui, type UiKey } from '../i18n/text';
 import { usePrefs } from '../storage/prefs';
 import { art } from '../ui/art';
-import { ChangeLine, DayChoice, dayTitle, FocusCard, fmtDay, Notes, officialLink, QuestionBlock, ResultView, SectionWhy, CardFacts, CardSources, StateLabel, stateKey, whyText, type Last } from '../ui/guide';
+import { ChangeLine, DayChoice, dayTitle, FocusCard, fmtDay, Notes, officialLink, QuestionBlock, ResultView, SectionWhy, CardFacts, CardSources, StateLabel, stateKey, unverifiedOb, whyText, type Last } from '../ui/guide';
 import { visitGroup } from '../core/visit';
 import { Reminder } from '../ui/Reminder';
 import { CostChart, FloorPlan } from '../ui/HouseVisual';
@@ -20,12 +20,13 @@ import { AlertLevels, StockCalc } from '../ui/BousaiVisual';
 import { DATA } from '../core/data';
 import type { CardView } from '../core/engine';
 import { LifeGuide, MethodList, UrgentAction } from '../ui/patterns';
-import { toAlternatives, toGuide, toMethods, toUrgent } from '../ui/patterns/map';
+import { toAlternatives, toGuide, toMethods, toUrgent, unverified } from '../ui/patterns/map';
+import { cardLead } from '../core/brief';
 import { Link, navigate, useFocusTitle } from '../ui/router';
 import { Checklist } from '../ui/Checklist';
 import { checkPart, partViews, type Track } from '../core/overview';
 import { useSeen } from '../ui/Words';
-import { StayRenewFlow } from '../ui/StayRenew';
+import { StayRenewFlow, stayAtStop } from '../ui/StayRenew';
 import { stayExpired } from '../core/stayRenew';
 import { EventOutOfScope } from './EventEntry';
 import '../styles/card.css';
@@ -38,6 +39,7 @@ export interface CardGuide {
   out: EngineOutput;
   mode: 'public' | 'verified';
   objects: Record<string, boolean>;
+  answers: Record<string, Value>;
   answer(qid: string, v: Value): Promise<void>;
   setPlan(cardId: string, patch: Partial<PlanRecord>): Promise<void>;
   setPlans(cardIds: string[], patch: Partial<PlanRecord>): Promise<void>;
@@ -63,8 +65,8 @@ export function EventCardPage({ eventId, id, onLive }: { eventId: string; id: st
   const goalQ = q0Def ? shownOptions(DATA(), q0Def, ev.out.facts) : undefined;
   return <CardPageView id={id} onLive={onLive} g={{ ...ev, objects: {} }} paths={{ card: base + '/c/', now: base, all: base + '/all' }} goalQ={goalQ} />;
 }
-/** できごとの入口の道（引っ越しは /move） */
-const eventPath = (id: string) => (id === 'E-move' ? '/move' : '/e/' + id);
+/** できごとの入口の道（引っ越しは /move。答えを引き継ぐときは、出発地の質問 /move/from） */
+const eventPath = (id: string, withAnswers?: boolean) => (id === 'E-move' ? (withAnswers ? '/move/from' : '/move') : '/e/' + id);
 
 /** 物ごとの記録（parts。入居のとき：鍵・電気・ガス…）。案内のカードなのでチェックボックス（v0.5.35）。
     くわしい案内のカードがあれば名前から開ける（v0.5.30） */
@@ -88,7 +90,8 @@ function PartsList({ c, g, base, onLive }: { c: CardView; g: CardGuide; base: st
   );
 }
 
-/** 別のできごとへの入口（入居・退去 → 引っ越しの届け出。v0.5.30）。答えは書き換えない（行った先で聞く） */
+/** 別のできごとへの入口（入居・退去 → 引っ越しの届け出。v0.5.30）。選んだ引っ越しの種類（answers）は行き先の入口の質問に引き継ぐ。
+    まだ答えていない質問だけに入れ、保存済みの答えは書き換えない（kaizen sumai 5。行き先の EventEntry・Move が受け取る） */
 function EventLinks({ c }: { c: CardView }) {
   const list = c.card.event_links ?? [];
   if (!list.length) return null;
@@ -98,7 +101,7 @@ function EventLinks({ c }: { c: CardView }) {
       <h2 id="card-moves-h" className="qblock__title"><Bi phrase k="card.moveLinks" /></h2>
       <div className="list">
         {list.map((l, i) => (
-          <Link key={i} to={eventPath(l.event)} className="k-answer">
+          <Link key={i} to={eventPath(l.event, !!l.answers)} answers={l.answers} className="k-answer">
             <span className="pt-grow"><Bi phrase t={l.label} />
               <span className="pt-hint">{l.card_ids.map((id, j) => { const x = cards.find((y) => y.id === id); return x ? <span key={id}>{j > 0 && '・'}<One t={x.title} /></span> : null; })}</span>
             </span>
@@ -109,6 +112,64 @@ function EventLinks({ c }: { c: CardView }) {
     </section>
   );
 }
+/** 読むだけの説明（見出しごと。v0.5.40 の案）。要確認の項目がある見出しには印。from：見出しの id を重ねないための番号のはじめ */
+function Sections({ c, mode, from, to }: { c: CardView; mode: CardGuide['mode']; from: number; to?: number }) {
+  return (
+    <>
+      {(c.card.sections ?? []).slice(from, to).map((s, i) => {
+        const List = s.ordered ? 'ol' : 'ul';
+        const hid = 'card-sec-' + (from + i);
+        return (
+          <section key={hid} className="card-sec" aria-labelledby={hid}>
+            <h2 id={hid}><Bi phrase t={s.title} />{s.items.some((x) => unverified(x.evidence, mode)) && <span className="pt-tag"><One k="pat.confirm" /></span>}</h2>
+            <List className="card-sec__list">{s.items.map((x, j) => <li key={j}><Bi t={x.text} /></li>)}</List>
+          </section>
+        );
+      })}
+    </>
+  );
+}
+
+const shownIn = (g: CardGuide, ids: string[]) => ids.flatMap((id) => g.out.cards.filter((x) => x.card.id === id && x.state !== 'excluded' && x.state !== 'out_of_scope'));
+
+/** 目的・方法を選ぶ入口（v0.5.40 の案）。同じできごとの中のカードへ */
+function CardMenu({ c, g, base }: { c: CardView; g: CardGuide; base: string }) {
+  const m = c.card.menu;
+  const list = m ? shownIn(g, m.card_ids) : [];
+  if (!m || !list.length) return null;
+  return (
+    <section className="qblock" aria-labelledby="card-menu-h">
+      <h2 id="card-menu-h" className="qblock__title"><Bi phrase t={m.title} /></h2>
+      {m.note && <p className="sub"><Bi t={m.note} /></p>}
+      <div className="list">
+        {list.map((x) => (
+          <Link key={x.card.id} to={base + x.card.id} className="k-answer">
+            <span className="pt-grow"><Bi phrase t={x.card.title} /><span className="pt-hint"><One t={cardLead(x.card)} /></span></span>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/** 選んだ先のカード：同じ入口のほかの選択肢へ選び直す道と、選ぶ前のカードへもどる道 */
+function MenuSiblings({ c, g, base }: { c: CardView; g: CardGuide; base: string }) {
+  const parent = g.out.cards.find((x) => x.card.menu?.card_ids.includes(c.card.id));
+  if (!parent) return null;
+  const sibs = shownIn(g, parent.card.menu!.card_ids);
+  return (
+    <section className="card-sec" aria-labelledby="card-sibs-h">
+      <h2 id="card-sibs-h"><Bi phrase t={parent.card.menu!.title} /></h2>
+      <ul className="clinic__links" role="list">
+        {sibs.map((x) => (x.card.id === c.card.id
+          ? <li key={x.card.id} aria-current="page" className="card-menu__here"><span><One t={x.card.title} /><One k="card.menuHere" /></span></li>
+          : <li key={x.card.id}><Link to={base + x.card.id} className="link"><One t={x.card.title} /></Link></li>))}
+      </ul>
+      <Link to={base + parent.card.id} className="link"><span aria-hidden="true">← </span><One t={parent.card.title} /></Link>
+    </section>
+  );
+}
+
 function NotFound() {
   return (
     <>
@@ -137,6 +198,8 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
   const isGuide = c.card.kind === 'guide';
   // 決まった流れのある手続き（在留期間の更新。6A.18）：質問・できることの所を、その流れにする
   const isFlow = c.card.flow === 'stay_renew';
+  // 永住者など、在留期間の更新ではない段：更新の方法（オンライン）・期限の一般の説明は、案内と食い違うので出さない（HB-1）
+  const stayStop = isFlow && stayAtStop(c, g.today, typeof g.answers['Q-zairyu-status'] === 'string' ? g.answers['Q-zairyu-status'] : undefined);
   const recordDone = () => { void g.setPlan(c.card.id, { status: 'done' }); onLive(L('card.recordedDone')); setLast(null); setMode({ kind: 'done' }); };
   const urgent = toUrgent(c.card, recordDone);
   const urgentShown = !!urgent && c.plan?.status !== 'done' && c.questions.length === 0;
@@ -149,7 +212,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
     // 済んだと記録したときだけ、結果の画面と「つぎへ」（6A.5 v0.5.14）
     return (
       <>
-        <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => navigate(paths.now)} rate={c.card.id}>
+        <ResultView eyebrow="res.done.eyebrow" title={<><Bi phrase t={c.card.title} /> <StateLabel k={k} ob={c.card.obligation} uv={unverifiedOb(c)} /></>} sub={<><Bi phrase t={whyText(c)} /><SectionWhy c={c} /></>} onNext={() => navigate(paths.now)} rate={c.card.id}>
           <div className="links">
             <button type="button" className="link" onClick={() => setMode({ kind: 'main' })}><Bi k="card.backItem" /></button>
           </div>
@@ -167,6 +230,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
         {/* 日を変えるときは、この項目だけ。初めて決めるときは、同じ所の項目も一緒に聞く */}
         <DayChoice group={c.plan?.planned_on ? [c] : visitGroup(g.out.cards, c)} today={g.today}
           onPick={async (d, ids) => { await g.setPlans(ids, { planned_on: d, deferred: false }); onLive(L('day.set') + fmtDay(d, level)); setLast({ kind: 'planned', cardId: c.card.id, day: d, ids }); setMode({ kind: 'main' }); }}
+          onPatch={(ids, p) => void g.setPlans(ids, p)}
           onLater={() => setMode({ kind: 'main' })} />
       </>
     );
@@ -214,6 +278,10 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
       {c.card.visual === 'levels' && <AlertLevels />}
       {c.card.reminder && c.state !== 'excluded' && c.questions.length === 0 && <Reminder card={c.card} />}
       <Notes c={c} where="page" />
+      {/* 読むだけの説明と、目的・方法を選ぶ入口（v0.5.40 の案）。入口は menu.after 個目の説明のあと */}
+      <Sections c={c} mode={g.mode} from={0} to={c.card.menu?.after ?? 0} />
+      <CardMenu c={c} g={g} base={paths.card} />
+      <Sections c={c} mode={g.mode} from={c.card.menu?.after ?? 0} />
 
       {isFlow ? (
         <>
@@ -237,11 +305,11 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
             </a>
           ))}
           {canPlan && !c.plan?.planned_on && (
-            <button type="button" className="k-answer k-answer--primary" onClick={() => setMode({ kind: 'pick' })}><img src={art('calendar')} alt="" /><Bi phrase k="day.choose" /></button>
+            <button type="button" className="k-answer k-answer--primary" onClick={() => setMode({ kind: 'pick' })}><img src={art('calendar')} alt="" /><Bi phrase k={c.ways.length > 1 && !c.way ? 'day.chooseWay' : c.way === 'mail' || c.way === 'online' ? 'day.chooseSend' : 'day.choose'} /></button>
           )}
           {canPlan && c.plan?.planned_on && (
             <>
-              <p className="planned"><One k="card.planned" />：<strong>{fmtDay(c.plan.planned_on, level)}</strong></p>
+              <p className="planned"><One k={c.way === 'mail' || c.way === 'online' ? 'card.plannedSend' : 'card.planned'} />：<strong>{fmtDay(c.plan.planned_on, level)}</strong></p>
               <button type="button" className="k-answer" onClick={() => setMode({ kind: 'pick' })}><Bi phrase k="day.change" /></button>
             </>
           )}
@@ -265,6 +333,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
           )}
         </div>
       )}
+      <MenuSiblings c={c} g={g} base={paths.card} />
       {c.card.parts && c.card.kind === 'guide' && (c.state === 'shown' || c.state === 'check_at_office') && <PartsList c={c} g={g} base={paths.card} onLive={onLive} />}
       <EventLinks c={c} />
       {/* ほかの公式ページ（K-12・K-13）。最初の1つは上のボタン */}
@@ -276,7 +345,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
         </ul>
       )}
       {/* 在留期限を過ぎたときは、オンラインを含む方法の一覧を出さない（期限後のオンライン申請へ誘導しない。6A.18） */}
-      {methods.length > 0 && (c.questions.length === 0 || isFlow) && !(isFlow && stayExpired(c.plan?.stay, g.today, c.plan?.status)) && <MethodList methods={methods} />}
+      {methods.length > 0 && (c.questions.length === 0 || isFlow) && !(isFlow && (stayStop || stayExpired(c.plan?.stay, g.today, c.plan?.status))) && <MethodList methods={methods} />}
       {alts.length > 0 && (
         <div className="k-notice" role="note">
           <p className="label"><One k="ev.alt" />{alts.some((a) => a.unverified) && <> <span className="pt-tag"><One k="pat.confirm" /></span></>}</p>
@@ -285,7 +354,7 @@ function CardPageView({ id, onLive, g, paths, goalQ }: { id: string; onLive: (s:
       )}
       {/* 大事な事実と出典はページの中に（11/8：くわしくのシートをやめた）。質問があるときは質問だけにする（1画面に1つの判断） */}
       {c.questions.length === 0 && methods.length === 0 && !isGuide && <p className="sub"><Bi t={c.card.summary} /></p>}
-      {(c.questions.length === 0 || isFlow) && !(isFlow && stayExpired(c.plan?.stay, g.today, c.plan?.status)) && <CardFacts c={c} where={!isGuide} />}
+      {(c.questions.length === 0 || isFlow) && !(isFlow && (stayStop || stayExpired(c.plan?.stay, g.today, c.plan?.status))) && <CardFacts c={c} where={!isGuide} />}
       <CardSources c={c} />
     </>
   );

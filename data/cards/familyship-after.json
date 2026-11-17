@@ -1,0 +1,163 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-after",
+  "illustration": "badge",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "すでに{宣誓|せんせい}している",
+    "ja_easy": "もう{宣誓|せんせい}している",
+    "en": "Already pledged"
+  },
+  "official_name": {
+    "ja": "宣誓した後の手続き",
+    "reading": "せんせいしたあとのてつづき"
+  },
+  "lead": {
+    "ja": "{再|さい}{交付|こうふ}・{変更|へんこう}・{返還|へんかん}・{証明|しょうめい}{書|しょ}・{子|こ}の{氏名|しめい}の{削除|さくじょ}は、{原則|げんそく}オンラインで{申|もう}し{込|こ}み、{書類|しょるい}は{郵送|ゆうそう}します。",
+    "ja_easy": "あとの{手続|てつづ}きは、オンラインで{申|もう}し{込|こ}み、{書類|しょるい}は{郵便|ゆうびん}で{送|おく}ります。",
+    "en": "Reissue, changes, return, certificates and removing a child's name: apply online and mail the documents."
+  },
+  "summary": {
+    "ja": "{宣誓|せんせい}したあとの{受領証|じゅりょうしょう}などの{手続|てつづ}きは5つです。どれも{原則|げんそく}オンラインで{申|もう}し{込|こ}み、{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{画像|がぞう}と{顔|かお}{写真|しゃしん}が{要|い}ります。",
+    "ja_easy": "{宣誓|せんせい}のあとの{手続|てつづ}きは5つです。どれもオンラインで{申|もう}し{込|こ}みます。",
+    "en": "There are five procedures after the pledge. All are normally applied for online, with an ID image and a face photo."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "オンライン（{手続|てつづ}きごとの{申込|もうしこみ}フォーム）。{書類|しょるい}は{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}へ{郵送|ゆうそう}。オンラインが{難|むずか}しいときは{窓口|まどぐち}でも{対応|たいおう}します",
+      "ja_easy": "オンライン（{手続|てつづ}きごとのフォーム）。{書類|しょるい}は{郵便|ゆうびん}。オンラインが{難|むずか}しいときは、{窓口|まどぐち}でもできます",
+      "en": "Online (a form for each procedure). Mail documents to the division. If online is difficult, the counter can help"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-tebiki"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "※オンラインでの手続き等が難しい場合は、窓口でも対応いたしますので、男女平等参画推進課までご相談ください。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "どの{手続|てつづ}きも",
+        "ja_easy": "どの{手続|てつづ}きも",
+        "en": "For every procedure"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{本人|ほんにん}{確認|かくにん}{書類|しょるい}の{画像|がぞう}と、{別|べつ}に{撮|と}った{顔|かお}{写真|しゃしん}（3か{月|げつ}{以内|いない}、{正面|しょうめん}、{胸|むね}から{上|うえ}）をフォームに{貼|は}ります。",
+            "ja_easy": "{本人|ほんにん}{確認|かくにん}の{書類|しょるい}の{写真|しゃしん}と、{顔|かお}の{写真|しゃしん}（3か{月|げつ}{以内|いない}）をフォームに{貼|は}ります。",
+            "en": "Attach an image of your ID and a separate face photo (taken within 3 months, from the front, chest up) to the form."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "全ての手続きにおいて、本人確認のため、本人確認書類の画像データの貼付及び、本人確認書類とは別の顔写真の貼付が必要となりますので"
+          }
+        },
+        {
+          "text": {
+            "ja": "{書類|しょるい}を{受|う}け{取|と}る{手続|てつづ}きは、{返信|へんしん}{用|よう}{封筒|ふうとう}（A4が{入|はい}る{定形|ていけい}{外|がい}。{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）を{郵送|ゆうそう}します。{申請|しんせい}や{書類|しょるい}が{届|とど}いてから10{日|にち}ほどかかります（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{書類|しょるい}をもらう{手続|てつづ}きは、{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}）を{送|おく}ります。10{日|にち}ぐらいかかります（{要|よう}{確認|かくにん}）。",
+            "en": "For procedures where you receive a document, mail a return envelope (A4 size, 180 yen of stamps, your address). It takes about 10 days after the application or documents arrive (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "申請または必要書類の到着の確認から、10 日ほどかかります。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{市|し}から{年|ねん}に1{回|かい}ほど、{宣誓|せんせい}の{内容|ないよう}に{変|か}わりがないかメールなどで{連絡|れんらく}がある{予定|よてい}です。",
+            "ja_easy": "{市|し}から{年|ねん}に1{回|かい}ぐらい、{変|か}わったことがないか、メールなどで{聞|き}かれます。",
+            "en": "About once a year, the city plans to ask by email or other means whether anything in your pledge has changed."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-tebiki"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "宣誓内容等の変更がないか、年一回程度メール等でご連絡する予定です。"
+          }
+        }
+      ]
+    }
+  ],
+  "menu": {
+    "title": {
+      "ja": "{手続|てつづ}きを{選|えら}ぶ",
+      "ja_easy": "{手続|てつづ}きを{選|えら}ぶ",
+      "en": "Choose a procedure"
+    },
+    "card_ids": [
+      "familyship-saikofu",
+      "familyship-henko",
+      "familyship-henkan",
+      "familyship-shomei",
+      "familyship-ko-sakujo"
+    ]
+  },
+  "links": [
+    {
+      "label": {
+        "ja": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "ja_easy": "{名古屋|なごや}{市|し}の{制度|せいど}のページ",
+        "en": "Nagoya city page on the system"
+      },
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028139.html",
+      "source_id": "B-nagoya-familyship"
+    },
+    {
+      "label": {
+        "ja": "{利用|りよう}の{手引|てび}き（PDF）",
+        "ja_easy": "{利用|りよう}の{手引|てび}き（PDF）",
+        "en": "User guide (PDF, Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "source_id": "B-nagoya-familyship-tebiki"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "再交付",
+    "変更",
+    "返還",
+    "証明書",
+    "familyship",
+    "reissue",
+    "change",
+    "return",
+    "certificate"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship",
+      "B-nagoya-familyship-tebiki"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "宣誓後の受領証等に関する手続きは次のとおりです。"
+  }
+}

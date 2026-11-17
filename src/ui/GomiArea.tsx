@@ -1,8 +1,8 @@
 /* ごみの画面の住所と収集日（作者の決定 2026-11-06 F）。住所は区＋町名（丁目まで）。番地で曜日が分かれる町だけ番地を聞く（番地の文字は保存しない。保存するのは表の行の area_id だけ）。
-   収集日は data/gomi/schedule.json（名古屋市の掲載の許可 2026-11-08）。既定で出す。VITE_GOMI_SCHEDULE=off のときだけ出さない（SPEC v0.5.24）。 */
+   収集日は data/gomi/schedule.json（名古屋市の収集日検索 1037098 の表。市の著作権・再利用の規定に従って使う）。年末年始は data/gomi/year-end.json。既定で出す。VITE_GOMI_SCHEDULE=off のときだけ出さない（SPEC v0.5.24）。 */
 import { useEffect, useId, useRef, useState } from 'react';
 import { nextCollection, type AreaStatus, type GomiCategory, type Schedule } from '../core/gomi';
-import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, searchTowns, toSchedules, townsOf, type PrivateSchedule } from '../core/gomiSchedule';
+import { areaRow, banchiOf, loadSchedule, romajiOf, rowsOf, scheduleNow, searchTowns, toSchedules, townsOf, YEAR_END, yearEndInView, type PrivateSchedule } from '../core/gomiSchedule';
 import { nearest, PLACES } from '../core/places';
 import { getPosition } from './Location';
 import { Bi, One } from '../i18n/Ruby';
@@ -35,14 +35,16 @@ export interface Place { ward_id: string; town?: string; area_id?: string | null
 /** 町名・番地から、収集日の表の地域。番地で分かれていて選んでいなければ null。画面でまだ選んでいなければ、保存した area_id から戻す（K-21） */
 export function useArea(saved: Place | null) {
   const [p, setP] = useState<PrivateSchedule | null>(() => scheduleNow() ?? null);
-  useEffect(() => { let live = true; void loadSchedule().then((x) => { if (live) setP(x); }); return () => { live = false; }; }, []);
+  // 表（1.8MB）を読んでいる間。町名の欄が出ないまま黙らないように「読み込んでいます」を出す（11/16。遅い端末・e2e の待ち合わせ）
+  const [loading, setLoading] = useState(() => scheduleNow() === undefined);
+  useEffect(() => { let live = true; void loadSchedule().then((x) => { if (live) { setP(x); setLoading(false); } }); return () => { live = false; }; }, []);
   const [picked, setBanchi] = useState<string | null>(null);
   const banchi = banchiOf(picked, saved?.area_id);
   const rows = p && saved?.town ? rowsOf(p, saved.ward_id, saved.town) : [];
   const row = areaRow(p, saved?.ward_id, saved?.town, banchi);
   const schedules: Schedule[] = p ? toSchedules(p) : [];
   const status: AreaStatus = !saved ? { kind: 'unset' } : !p ? { kind: 'ward_only' } : row ? { kind: 'ready', area_id: row.id } : { kind: 'ward_only' };
-  return { p, rows, row, banchi, setBanchi, schedules, status };
+  return { p, loading, rows, row, banchi, setBanchi, schedules, status };
 }
 
 /** 自宅の住所（区・町名・番地）。ごみの日を決めるために要る欄は、空のあいだ赤い枠と「入れてください」を出す（色だけにしない）。
@@ -70,7 +72,7 @@ export function GomiAreaFields({ wards, saved, onSet, area, autoSuggest = false 
   const banchiMissing = area.rows.length > 1 && !area.banchi;
   const Need = ({ k, at }: { k: 'gomi.area.need' | 'gomi.area.pickTown'; at: string }) => <span id={at} className="gomi-need"><One k={k} /></span>;
   return (
-    <div className="gomi-area">
+    <div className="gomi-area" data-schedule={area.p ? 'ready' : area.loading ? 'loading' : 'none'}>
       <label className={'qrfield' + (wardMissing ? ' is-missing' : '')}>
         <span className="label"><One k="gomi.area.ward" /></span>
         <select className="field" value={saved?.ward_id ?? ''} aria-invalid={wardMissing || undefined} aria-describedby={wardMissing ? id + 'w' : undefined} onChange={(e) => { area.setBanchi(null); setFromHere(false); onSet(e.target.value ? { ward_id: e.target.value, set_on: new Date().toISOString().slice(0, 10) } : null); }}>
@@ -82,6 +84,7 @@ export function GomiAreaFields({ wards, saved, onSet, area, autoSuggest = false 
       {/* 現在地から区を入れる（押したときだけ位置を使う。位置は残さない。SPEC 6A.11） */}
       <button type="button" className="link link--icon" onClick={() => void fillHere()}><PinIcon /><One k="cal.icsHere" /></button>
       {fromHere && saved && <p className="sub" role="status"><Bi k="gomi.area.fromHere" /></p>}
+      {saved && !area.p && area.loading && <p className="sub gomi-area__loading" role="status" aria-busy="true"><Bi k="gomi.area.loading" /></p>}
       {area.p && saved && (
         <TownPicker key={saved.ward_id} p={area.p} ward={saved.ward_id} town={saved.town} missing={townMissing} unknown={townUnknown} needId={id + 't'} onPick={(t) => { area.setBanchi(null); onSet({ ...saved, town: t, area_id: null }); }} />
       )}
@@ -129,7 +132,7 @@ function TownPicker({ p, ward, town, missing, unknown, needId, onPick }: { p: Pr
   return (
     <div className={'qrfield town-picker' + ((missing || unknown) && !editing ? ' is-missing' : '')}>
       <label htmlFor={id} className="label"><One k="gomi.area.town" /></label>
-      <input id={id} className="field" type="search" value={q} placeholder={line(ui('gomi.town.placeholder'), level)} onChange={(e) => setQ(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} enterKeyHint="search" aria-controls={listId}
+      <input id={id} className="field" type="search" value={q} placeholder={line(ui('gomi.town.placeholder'), level)} onChange={(e) => setQ(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} enterKeyHint="search" aria-controls={found.length > 0 ? listId : undefined /* 一覧が無いときに無い id を指さない（HC-6） */}
         aria-invalid={((missing || unknown) && !editing) || undefined} aria-describedby={id + 'h' + (((missing || unknown) && !editing) ? ' ' + needId : '')}
         onKeyDown={(e) => {
           if (e.key === 'Enter') { e.preventDefault(); if (found.length === 1) pick(found[0]); }
@@ -149,28 +152,42 @@ function TownPicker({ p, ward, town, missing, unknown, needId, onPick }: { p: Pr
   );
 }
 
-/** 収集日のカレンダー（今日から14日。その日に出せる区分の絵と名前）。要確認を付ける */
+/** 収集日のカレンダー（今日から14日。その日に出せる区分の絵と名前）。要確認を付ける。
+    日付が決まらない日（年末年始の表に当てはまらない・表がそろう日より後）は、空にせず「市の表で確かめて」と出す（収集が無いように見せない） */
 export function GomiWeek({ area, categories, today }: { area: ReturnType<typeof useArea>; categories: GomiCategory[]; today: string }) {
   const { level } = usePrefs();
   if (area.status.kind !== 'ready') return null;
   const days = Array.from({ length: 14 }, (_, i) => new Date(Date.parse(today + 'T00:00:00Z') + i * 86_400_000).toISOString().slice(0, 10));
   const regular = categories.filter((c) => c.route === 'regular');
-  const on = (cat: string, day: string) => { const n = nextCollection(area.schedules, area.status, cat, day, { allowUnapproved: true, horizonDays: 0 }); return n.kind === 'date' && n.date === day; };
+  const at = (cat: string, day: string) => nextCollection(area.schedules, area.status, cat, day, { allowUnapproved: true, horizonDays: 0 });
+  const on = (cat: string, day: string) => { const n = at(cat, day); return n.kind === 'date' && n.date === day; };
+  const unknown = (day: string) => regular.some((c) => at(c.id, day).kind === 'exceptions_unknown');
+  const yearEnd = yearEndInView(today);
+  const mizuho = area.row?.ward === 'mizuho';
   return (
     <section className="group" aria-labelledby="gomi-week">
       <h2 id="gomi-week"><Bi phrase k="gomi.week.title" /></h2>
+      {yearEnd && <p className="k-notice" role="note"><Bi k="gomi.yearEnd" /></p>}
       <ul className="gomi-week" role="list">
         {days.map((d) => {
           const cats = regular.filter((c) => on(c.id, d));
+          const unsure = unknown(d);
           return (
-            <li key={d} className={cats.length ? '' : 'gomi-week__none'}>
+            <li key={d} className={cats.length || unsure ? '' : 'gomi-week__none'}>
               <span className="gomi-week__day">{fmtDay(d, level)}</span>
               <span className="gomi-week__cats">{cats.map((c) => <span key={c.id} className="gomi-week__cat"><img src={gomiIcon(c.id)} alt="" /><One t={c.label} /></span>)}</span>
+              {unsure && <span className="gomi-week__unknown"><One k="gomi.week.unknown" /></span>}
             </li>
           );
         })}
       </ul>
       <p className="sub"><Bi k="gomi.week.note" /></p>
+      {yearEnd && (
+        <ul className="links" role="list">
+          <li><a className="link" href={YEAR_END.sources[0].url} target="_blank" rel="noopener noreferrer"><Bi k="gomi.yearEnd.link" /> <span aria-hidden="true">↗</span><span className="sr-only"><One k="here.newTab" /></span></a></li>
+          {mizuho && <li><a className="link" href={YEAR_END.model_page.url} target="_blank" rel="noopener noreferrer"><Bi k="gomi.yearEnd.model" /> <span aria-hidden="true">↗</span><span className="sr-only"><One k="here.newTab" /></span></a></li>}
+        </ul>
+      )}
     </section>
   );
 }

@@ -10,7 +10,7 @@
   "scope": "any",
   "per_move": false,
   "requires_moved_in": false,
-  "eligibility": "R-lost-wallet",
+  "eligibility": "R-lost-facility",
   "coverage_rule_ids": [],
   "title": {
     "ja": "{駅|えき}・{店|てん}などに{問|と}い{合|あ}わせる",
@@ -44,7 +44,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
         "verdict": "agree",
-        "ref": "research/audits/lost.json#P-lost-facility-inquiry/c2"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -84,7 +84,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-facility-inquiry/c1"
+          "ref": "internal-audit-record"
         }
       }
     }

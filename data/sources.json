@@ -1,5 +1,4 @@
 {
-  "$comment": "出典（SPEC 9.2）。URL は調査資料（docs/deep-research/）にあるものだけを使う。題名・更新日は、原文で確かめるまで仮。",
   "sources": [
     {
       "source_id": "kurashi-spec",
@@ -15,6 +14,14 @@
       "owner": "出入国在留管理庁",
       "owner_type": "government",
       "title": "住居地の届出",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-short-stay",
+      "url": "https://www.moj.go.jp/isa/applications/status/temporaryvisitor.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留資格「短期滞在」",
       "language": "ja"
     },
     {
@@ -1107,10 +1114,10 @@
     },
     {
       "source_id": "isa-card-point",
-      "url": "https://www.moj.go.jp/isa/applications/faq/newimmiact_4_point.html",
+      "url": "https://www.moj.go.jp/isa/applications/procedures/whatzairyu_00001.html",
       "owner": "出入国在留管理庁",
       "owner_type": "government",
-      "title": "「在留カード」はどういうカード？（就労制限の有無）",
+      "title": "在留カードとは？（就労制限の有無・資格外活動許可）",
       "language": "ja"
     },
     {
@@ -1275,10 +1282,10 @@
     },
     {
       "source_id": "nagoya-mynumber-service-corner",
-      "url": "https://www.city.nagoya.jp/higashi/oshirase/1019531/1044824.html",
+      "url": "https://www.city.nagoya.jp/kurashi/todokede/1007874/1007875/1007879.html",
       "owner": "名古屋市",
       "owner_type": "government",
-      "title": "マイナンバーカードサービスコーナー（予約制。在留期間の延長は区役所などでの変更後）",
+      "title": "マイナンバーカードの受け取りの予約（マイナンバーカードサービスコーナーは予約制）",
       "language": "ja"
     },
     {
@@ -1655,6 +1662,118 @@
       "owner": "名古屋市",
       "owner_type": "government",
       "title": "名古屋市ファミリーシップ制度　制度の内容",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-renkei",
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028140.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "パートナーシップ・ファミリーシップ制度にかかる自治体間連携",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-tebiki",
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/tebiki081001.pdf",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "名古屋市ファミリーシップ制度利用の手引き",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-services",
+      "url": "https://www.city.nagoya.jp/_res/projects/default_project/_page_/001/028/139/senseisuruto.pdf",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "ファミリーシップ宣誓書受領証等の提示などにより利用可能となる名古屋市の行政サービス等",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-sensei",
+      "url": "https://logoform.jp/form/mX9C/226959",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "宣誓用申込フォーム",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-zoom",
+      "url": "https://logoform.jp/form/mX9C/529686",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "予約申込フォーム（オンライン宣誓用）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-taimen",
+      "url": "https://logoform.jp/f/upw0A",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "名古屋市ファミリーシップ制度予約申込フォーム",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-saikofu",
+      "url": "https://logoform.jp/f/doZ92",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "受領証等の再交付【申込フォーム】",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-henko",
+      "url": "https://logoform.jp/f/dEhXQ",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "宣誓事項の変更【申込フォーム】",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-henkan",
+      "url": "https://logoform.jp/f/MJAV4",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "受領証等の返還【申込フォーム】",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-shomei",
+      "url": "https://logoform.jp/f/uYdLG",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "宣誓書記載内容等証明書の交付【申込フォーム】",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-sakujo",
+      "url": "https://logoform.jp/f/WEC9i",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "宣誓書等から自分の氏名を削除したい場合（15歳以上のお子さん本人）【申込フォーム】",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-keizoku",
+      "url": "https://logoform.jp/f/Vdz0A",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "継続申告用フォーム",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-keizoku-zoom",
+      "url": "https://logoform.jp/f/YdbPZ",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "予約申込フォーム（オンライン（ウェブ会議システムを用いた）継続申告）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-nagoya-familyship-form-keizoku-taimen",
+      "url": "https://logoform.jp/f/w1dcR",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "予約申込フォーム（対面による継続申告）",
       "language": "ja"
     },
     {
@@ -2791,6 +2910,150 @@
       "owner": "NTT東日本",
       "owner_type": "private",
       "title": "災害用伝言ダイヤル（171）・災害用伝言板（web171）",
+      "language": "ja"
+    },
+    {
+      "source_id": "mhlw-hellowork-internet",
+      "url": "https://www.hellowork.mhlw.go.jp/",
+      "owner": "厚生労働省",
+      "owner_type": "government",
+      "title": "ハローワークインターネットサービス",
+      "language": "ja"
+    },
+    {
+      "source_id": "egov-doro-kotsu-ho",
+      "url": "https://laws.e-gov.go.jp/law/335AC0000000105",
+      "owner": "デジタル庁（e-Gov 法令検索）",
+      "owner_type": "government",
+      "title": "道路交通法",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-kigengire",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/koushin/shikenjou/kigengire.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "期限切れ手続き",
+      "language": "ja"
+    },
+    {
+      "source_id": "license-aichi-kokugai",
+      "url": "https://www.pref.aichi.jp/police/menkyo/tetsuzuki/kokugai/koufu.html",
+      "owner": "愛知県警察",
+      "owner_type": "government",
+      "title": "国外運転免許証の交付",
+      "language": "ja"
+    },
+    {
+      "source_id": "miraiz-hikkoshi",
+      "url": "https://miraiz.chuden.co.jp/home/moving/",
+      "owner": "中部電力ミライズ株式会社",
+      "owner_type": "private",
+      "title": "引越しのお手続き（電力会社の1つの例）",
+      "language": "ja"
+    },
+    {
+      "source_id": "aichi-kousha-about",
+      "url": "https://www.aichi-kousha.or.jp/prefectural/about_prefectual.html",
+      "owner": "愛知県住宅供給公社",
+      "owner_type": "public_corp",
+      "title": "県営住宅について",
+      "language": "ja"
+    },
+    {
+      "source_id": "ur-requirements",
+      "url": "https://www.ur-net.go.jp/chintai/rent/requirements/",
+      "owner": "UR都市機構",
+      "owner_type": "public_corp",
+      "title": "お申込み資格",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-fufu-uji",
+      "url": "https://www.moj.go.jp/MINJI/minji36.html",
+      "owner": "法務省民事局",
+      "owner_type": "government",
+      "title": "選択的夫婦別氏制度（いわゆる選択的夫婦別姓制度）について",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-moj-kodomo-2026",
+      "url": "https://www.moj.go.jp/MINJI/minji07_00357.html",
+      "owner": "法務省民事局",
+      "owner_type": "government",
+      "title": "民法等の一部を改正する法律（父母の離婚後等の子の養育に関する見直し）について〔令和８年４月１日施行〕",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jlis-change1",
+      "url": "https://www.kojinbango-card.go.jp/faq_change1/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp",
+      "title": "マイナンバーカードの記載内容に変更があったとき（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-jlis-certificate7",
+      "url": "https://www.kojinbango-card.go.jp/faq_certificate7/",
+      "owner": "地方公共団体情報システム機構",
+      "owner_type": "public_corp",
+      "title": "電子証明書とは何ですか（FAQ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-jcredit-meisai",
+      "url": "https://www.j-credit.or.jp/customer/5countermeasures-creditcard_fraud/creditcard-usage-details_confirm/Points_to_check_usage-details.html",
+      "owner": "一般社団法人日本クレジット協会",
+      "owner_type": "private",
+      "title": "利用明細確認のポイント",
+      "language": "ja"
+    },
+    {
+      "source_id": "C-jcredit-kanri",
+      "url": "https://www.j-credit.or.jp/customer/5countermeasures-creditcard_fraud/Strengthen_creditcard_and_pin-management/key-points_for_creditcard-management.html",
+      "owner": "一般社団法人日本クレジット協会",
+      "owner_type": "private",
+      "title": "クレジットカード管理のポイント",
+      "language": "ja"
+    },
+    {
+      "source_id": "nagoya-nenkin-jusho-henko",
+      "url": "https://www.city.nagoya.jp/kurashi/hoken/1011824/1011836/1011840.html",
+      "owner": "名古屋市",
+      "owner_type": "government",
+      "title": "住所や氏名が変わったとき（国民年金）",
+      "language": "ja"
+    },
+    {
+      "source_id": "B-mufg-faq-17",
+      "url": "https://faq01.bk.mufg.jp/faq/show/17?site_domain=default",
+      "owner": "三菱UFJ銀行",
+      "owner_type": "private",
+      "title": "キャッシュカードの紛失を連絡した後、再発行の前に見つかった場合（よくあるお問い合わせ）",
+      "language": "ja"
+    },
+    {
+      "source_id": "nta-1461-06",
+      "url": "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_06.htm",
+      "owner": "国税庁",
+      "owner_type": "government",
+      "title": "事業廃止届出手続（消費税）",
+      "language": "ja"
+    },
+    {
+      "source_id": "jsite-aichi-hellowork-list",
+      "url": "https://jsite.mhlw.go.jp/aichi-hellowork/list.html",
+      "owner": "厚生労働省 愛知労働局 ハローワーク",
+      "owner_type": "government",
+      "title": "愛知労働局 ハローワークの所在地一覧",
+      "language": "ja"
+    },
+    {
+      "source_id": "isa-online-shinsei",
+      "url": "https://www.moj.go.jp/isa/applications/online/onlineshinsei.html",
+      "owner": "出入国在留管理庁",
+      "owner_type": "government",
+      "title": "在留申請のオンライン手続",
       "language": "ja"
     }
   ]

@@ -37,7 +37,8 @@ export type Condition =
   | { not: Condition }
   | { fact: string; eq: Scalar }
   | { fact: string; in: Scalar[] }
-  | { fact: string; has: string };
+  | { fact: string; has: string }
+  | { fact: string; ne: Scalar };
 const ValueZ = z.union([z.string(), z.boolean()]);
 export const Condition: z.ZodType<Condition> = z.lazy(() =>
   z.union([
@@ -48,6 +49,8 @@ export const Condition: z.ZodType<Condition> = z.lazy(() =>
     z.object({ fact: z.string(), in: z.array(ValueZ) }).strict(),
     /** 複数選択の答え（配列）が、その値を含むか */
     z.object({ fact: z.string(), has: z.string() }).strict(),
+    /** 答えが値と違う。未回答・「わからない」も T（範囲から外すのは、本人がその値と答えたときだけ。R-10 の短期滞在） */
+    z.object({ fact: z.string(), ne: ValueZ }).strict(),
   ]),
 );
 
@@ -81,6 +84,16 @@ export const RuleExpr: z.ZodType<RuleExpr> = z.lazy(() =>
 );
 
 const Fact = z.object({ text: Text, evidence: Evidence });
+/** 期限の日を計算する決まり（C-3。SPEC v0.5.45）。公式の文で、日数・数え始める出来事・数え方が分かるときだけ付ける。
+    from：数え始める出来事（画面の文は strings の deadline.from.<id>）。count next_day：その出来事の次の日を1日目とする。
+    最後の日が閉庁日のときの扱いは、公式の文に無ければ計算に入れない（画面で要確認と書く） */
+export const DeadlineCalc = z.object({
+  days: z.number().int().positive(),
+  from: z.enum(['moved_in', 'lost_known', 'qualified', 'org_change', 'divorced']),
+  count: z.literal('next_day'),
+  evidence: Evidence,
+});
+export type DeadlineCalc = z.infer<typeof DeadlineCalc>;
 const IsoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 /** お知らせ（11/7 B-7c）：制度の変更などを、決めた期間だけ出す（src/core/notice.ts）。DATA_CONTRACT v1.4 */
 export const Notice = z.object({ text: Text, show_from: IsoDate.optional(), show_until: IsoDate.optional(), evidence: Evidence.optional() });
@@ -107,13 +120,17 @@ export const Card = z.object({
   summary: Text,
   /** 短い一文（10d。作者 11/6「文字が多い」）。開いた項目・カードに出す。無ければ summary の最初の一文。summary の全文はシート */
   lead: Text.optional(),
-  deadline: Fact.nullable(),
+  deadline: Fact.extend({ calc: DeadlineCalc.optional() }).nullable(),
   /** 費用（手数料など。11/7 B-7b）。ai_checked なら値を言い切る（trust.ts の fee） */
   fee: Fact.optional(),
   where: Fact,
   /** 行く所（区役所・銀行・警察など）。同じ所の項目は、行く日を一度に聞く（6A.5）。同じ窓口で済むという意味ではない。
       表示名は strings.json の place.<id>（DATA_CONTRACT 1章） */
   place: z.string().regex(/^[a-z_]+$/).optional(),
+  /** 行く所でまとめる（10.3 v0.5.44）のは、このルールが T のときだけ（例：保険証の再交付は国保のときだけ区役所）。U・F ならまとめない */
+  place_when: RuleExpr.optional(),
+  /** 行かずに（オンライン・郵送で）済ませられる（v0.5.44）。true か、T になるルール。行く所のまとまりに入れず「オンライン・郵送でもできる」と出す */
+  remote: z.union([z.literal(true), RuleExpr]).optional(),
   /** procedure：手続き（行く日を聞く）／guide：相談・準備の案内（日を聞かない。DATA_CONTRACT 3章） */
   kind: z.enum(['procedure', 'guide']).default('procedure'),
   /** すぐ行う行動（カードの利用停止など）。質問より先に出す */
@@ -125,7 +142,16 @@ export const Card = z.object({
     card: z.string().optional() })).optional(),
   /** 別のできごとへの入口（v0.5.30：入居・退去から、引っ越しの届け出のできごとへ）。label は場合の名前、card_ids はそのできごとで出す主な届け出（名前を添える）。
       答えは書き換えない（行った先で聞く） */
-  event_links: z.array(z.object({ event: z.string().regex(/^E-[a-z0-9-]+$/), label: Text, card_ids: z.array(z.string()) })).optional(),
+  event_links: z.array(z.object({ event: z.string().regex(/^E-[a-z0-9-]+$/), label: Text, card_ids: z.array(z.string()),
+    /** 行き先のできごとの入口の質問に、選んだ答えを引き継ぐ（kaizen sumai 5）。まだ答えていない質問だけに入れる（保存済みの答えは変えない）。
+        URL には入れず、履歴の state で渡す（13.4） */
+    answers: z.record(z.string(), ValueZ).optional() })).optional(),
+  /** 読むだけの説明を見出しごとに（v0.5.40 の案：ファミリーシップ。対象の条件・必要な書類・手順・注意など）。methods には手続きの方法だけを書く。
+      ordered：手順なので番号を付ける。項目ごとに根拠を持つ（要確認の印） */
+  sections: z.array(z.object({ title: Text, ordered: z.boolean().optional(), items: z.array(Fact).min(1) })).optional(),
+  /** 目的・方法を選ぶ（v0.5.40 の案）：同じできごとの中のカードへの入口。開いた先では、ほかの選択肢へ選び直せる（CardPage）。
+      after：sections の何個目のあとに出すか（無ければ sections の前） */
+  menu: z.object({ title: Text, note: Text.optional(), card_ids: z.array(z.string()).min(1), after: z.number().int().min(0).optional() }).optional(),
   /** 手続きの方法（窓口・電子申請・郵送・電話）。when が偽の方法は出さない */
   methods: z.array(z.object({ type: z.enum(['counter', 'online', 'mail', 'phone']), text: Text, when: RuleExpr.optional(), evidence: Evidence })).optional(),
   /** 必要な物が無いときの代わり（身分証をなくしたときなど） */
@@ -221,7 +247,7 @@ export const EventDef = z.object({
   /** 入口で聞く質問（順に） */
   questions: z.array(z.string()).default([]),
   card_ids: z.array(z.string()),
-  /** 範囲のルール（無ければ R-scope-nagoya-resident） */
+  /** 範囲のルール（無ければ R-scope-move-resident） */
   scope_rule: z.string().optional(),
   /** このイベントで使う道具の画面（例：ごみの品目検索 /gomi）。一覧の上に入口を出す。契約 v1 への追加の案（作者の承認待ち。research/integration/claude_priority_review/implementation.md） */
   tool: z.object({ path: z.string().regex(/^\/[a-z-]+$/), label: Text }).optional(),
@@ -243,8 +269,22 @@ export const EventDef = z.object({
   by_answer: z.array(z.object({ when: z.string(), goal_card_ids: z.array(z.string()).optional(), info_card_ids: z.array(z.string()).optional(), later_card_ids: z.array(z.string()).optional(),
     /** later_card_ids を「〇〇のあと」にする手続き（v0.5.34。例：留学から就職するときの会社の保険は、在留資格の変更のあと） */
     after: z.array(z.string()).optional() })).optional(),
+  /** 目的を足す（O-8）：1つ選ぶ質問 q の答えが from のとき、全体の画面に「add も足す」を出す。押すと答えは [from, add]（配列）。
+      ルールの eq・in は、配列のどれかが合えば T（logic.ts） */
+  add_answers: z.array(z.object({ q: z.string(), from: z.string(), add: z.string(), label: Text })).optional(),
+  /** 「見つかった」を答えにする（財布の紛失。G-11・O-3）：q（複数選択・object_check）の答えは 見つかった物。from の質問で選んだ物だけが対象。
+      items[].eased：その物が見つかったら「再発行は要らないかもしれない」と添える手続き（記録は変えない・完了にしない）。after：見つかったあとのこと（when は ruleId）。
+      common：どの物にも言うこと（警察への連絡）。文は公式の引用（evidence）つき。確認状態は needs_check のまま */
+  found: z.object({
+    q: z.string(), from: z.string(),
+    items: z.array(z.object({ value: z.string(), eased: z.array(z.string()).default([]), after: z.array(z.object({ text: Text, evidence: Evidence, when: z.string().optional() })).default([]) })),
+    common: z.array(z.object({ text: Text, evidence: Evidence, when: z.string().optional() })).default([]),
+  }).optional(),
   /** false：「あなたについて」をまとめて聞かない。要る質問だけを、目的の質問のあとに聞く（v0.5.32：仕事） */
   about_step: z.boolean().optional(),
+  /** ほかのできごとのカードを、このできごとでは別の適用条件で出す（card_id → ルール式）。カードの文は変えない
+      （財布の紛失：銀行のカードの再発行を「キャッシュカードをなくした」で出す。銀行の口座の質問を聞かない） */
+  eligibility: z.record(z.string(), RuleExpr).optional(),
   evidence: Evidence,
 });
 export type EventDef = z.infer<typeof EventDef>;

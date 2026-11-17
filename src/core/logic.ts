@@ -45,6 +45,8 @@ export function evalCond(c: Condition, facts: Facts): Eval {
     return { ...e, v: e.v === 'T' ? 'F' : e.v === 'F' ? 'T' : 'U' };
   }
   const val = facts.get(c.fact);
+  // ne：本人がその値と答えたときだけ F。未回答・わからないは T（範囲から外さない）
+  if ('ne' in c) return mk(val === c.ne || (Array.isArray(val) && val.includes(c.ne as string)) ? 'F' : 'T');
   if (val === undefined) return mk('U', new Set([c.fact]));
   if (val === 'unknown') return mk('U', new Set(), new Set([c.fact]));
   if ('has' in c && Array.isArray(val)) {
@@ -52,7 +54,8 @@ export function evalCond(c: Condition, facts: Facts): Eval {
     if (val.includes(c.has)) return mk('T');
     return val.includes('unknown') ? mk('U', new Set(), new Set([c.fact])) : mk('F');
   }
-  const hit = 'has' in c ? false : Array.isArray(val) ? false : 'eq' in c ? val === c.eq : c.in.includes(val);
+  // 1つ選ぶ質問に、目的を足した答え（配列。O-8：辞めて個人事業も始める）：どれかが合えば T
+  const hit = 'has' in c ? false : Array.isArray(val) ? ('eq' in c ? val.includes(c.eq as string) : val.some((v) => c.in.includes(v))) : 'eq' in c ? val === c.eq : c.in.includes(val);
   return mk(hit ? 'T' : 'F');
 }
 

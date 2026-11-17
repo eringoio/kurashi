@@ -12,7 +12,13 @@
   "illustration": "doc",
   "awareness_type": "option",
   "obligation": "optional",
-  "eligibility": "R-div-japanese",
+  "eligibility": {
+    "all": [
+      "R-div-japanese",
+      "R-div-surname-changed",
+      "R-div-keep-name"
+    ]
+  },
   "title": {
     "ja": "{離婚|りこん}{後|ご}の{氏|うじ}の{届|とどけ}（{日本|にほん}の{戸籍|こせき}がある{人|ひと}{向|む}け）",
     "ja_easy": "{離婚|りこん}のあとの{名字|みょうじ}の{届|とど}け（{日本|にほん}の{戸籍|こせき}がある{人|ひと}）",
@@ -64,7 +70,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "1716c28255730738ee16f034cd6d205d35ab7f041a874608ed0a2b51b61da666",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-rikon-shimei/c3"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -104,7 +110,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "1716c28255730738ee16f034cd6d205d35ab7f041a874608ed0a2b51b61da666",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-rikon-shimei/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -151,16 +157,16 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "あなたか{相手|あいて}が{日本|にほん}{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
-      "ja_easy": "あなたか{相手|あいて}が{日本|にほん}の{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
-      "en": "Shown when you or your spouse is a Japanese national."
+      "ja": "{日本|にほん}{国籍|こくせき}の{人|ひと}で、{結婚|けっこん}のときに{氏|うじ}を{変|か}え、{離婚|りこん}のあとも{婚姻|こんいん}{中|ちゅう}の{氏|うじ}を{使|つか}いたい（まだ{決|き}めていない）{人|ひと}に{出|だ}しています。{元|もと}の{氏|うじ}に{戻|もど}る{人|ひと}は、この{届|とどけ}は{要|い}りません。{外国|がいこく}{籍|せき}の{人|ひと}の{氏|うじ}の{扱|あつか}いは、この{届|とどけ}とは{別|べつ}です（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "{日本|にほん}の{国籍|こくせき}の{人|ひと}で、{結婚|けっこん}で{名字|みょうじ}が{変|か}わって、{離婚|りこん}のあとも{同|おな}じ{名字|みょうじ}を{使|つか}いたい{人|ひと}に{出|だ}しています。",
+      "en": "Shown to Japanese nationals who changed their surname at marriage and want to keep it after the divorce (or have not decided). Not needed if you return to your former surname. Foreign nationals' names are handled separately (to be checked)."
     }
   },
   "evidence": {
     "source_ids": [
       "B-nagoya-faq-95"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "婚姻により姓を改められた方は、離婚と同時または離婚後3ヶ月以内に「離婚の際に称していた氏を称する届」を提出することにより、婚姻中の姓をそのまま使用することができます。"
   }

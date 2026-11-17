@@ -1,11 +1,14 @@
-# kurashi の公開（Cloudflare Workers。SPEC 16章・13.3）。作者の手順は README.md の「公開」。
-# 静的なファイル（npm run build の dist/）と、/api/*（worker/index.ts）を1つの Worker で配る。
+# kurashi の本番の公開（Cloudflare Workers。SPEC 16章・13.3）。公開用リポジトリ（eringoio/kurashi）では、これが wrangler.toml になる（scripts/release/export-public.mjs）。
+# 開発用リポジトリ（kurashi_proto）からは使わない。静的なファイル（npm run build の dist/）と、/api/*（worker/index.ts）を1つの Worker で配る。
 # 保存の仕組みは、報告ボタン（A-9）の KV「REPORTS」、写真の読み取りの1日の数の KV「USAGE」（数字だけ）、使われ方の数（Analytics Engine「EV」）だけ。名前・連絡先・IP は入れない。ログ・監視は切る（13.3）。
 name = "kurashi"
 main = "worker/index.ts"
 compatibility_date = "2026-11-01"
 # 本番のキーとテストのトークンは Worker のシークレット（npx wrangler secret put ANTHROPIC_API_KEY・READ_TEST_TOKEN）。ここにも GitHub にも書かない
 workers_dev = true
+# 前の版のプレビューの URL（<版>-kurashi.eringo-io.workers.dev）を開かない。開いていると、古い版（同意の前に数を送る・/review・トークンだけの受信箱）が
+# 公開の後も残る（Fable 監査 HA-1。2026-11-16）。この設定は次のデプロイから効く。デプロイのあと、前の版の URL が開かないことを確かめる
+preview_urls = false
 
 [vars]
 # 写真を読むモデル（SPEC 6A.9）。アプリの中は安いモデル（作者の指示）
@@ -15,6 +18,15 @@ READ_MODEL = "claude-haiku-5-5"
 READ_MODE = "test"
 # 1日の上限（全体。KV「USAGE」があるときだけ数える。目安）。費用の確実な上限は Anthropic の Workspace の支出の上限
 READ_DAILY_LIMIT = "100"
+
+# 作者だけの入口（GET・PATCH /api/reports、GET /api/usage）の守り（Fable 監査 FB-2。docs/release/ADMIN_ACCESS_1115.md）。
+# access＝Cloudflare Access の JWT と REPORTS_TOKEN の2つが要る（未設定・不明な値もこれ）。
+ADMIN_AUTH = "access"
+# このホスト名だけが作者の入口を開ける。workers.dev（kurashi.eringo-io.workers.dev）では 404 になるので、workers_dev = true のままでも作者の入口は開かない
+ADMIN_HOSTS = "kurashi.eringo.io"
+# 待ち：作者が Zero Trust で Access のアプリケーションを作ったあと、次の2つを書く（どちらも秘密ではない）。書くまで作者の入口は 503（閉じたまま。意図どおり）
+# ACCESS_TEAM_DOMAIN = "https://<チーム名>.cloudflareaccess.com"
+# ACCESS_AUD = "<Access アプリケーションの Application Audience (AUD) Tag>"
 
 # 写真の読み取りの IP ごとの制限（1分に5回）。Cloudflare の Rate Limiting は場所ごとに数える目安で、厳密な上限ではない
 [[ratelimits]]

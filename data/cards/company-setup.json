@@ -13,7 +13,8 @@
   "eligibility": {
     "all": [
       "R-job-goal-company",
-      "R-job-not-pt-only"
+      "R-job-not-pt-only",
+      "R-job-biz-open"
     ]
   },
   "coverage_rule_ids": [],
@@ -34,17 +35,18 @@
   "deadline": null,
   "where": {
     "text": {
-      "ja": "{本店|ほんてん}の{地域|ちいき}の{法務局|ほうむきょく}（{登記|とうき}）・{税務署|ぜいむしょ}",
-      "ja_easy": "{法務局|ほうむきょく}・{税務署|ぜいむしょ}",
-      "en": "Legal Affairs Bureau (registration) and tax office"
+      "ja": "{登記|とうき}は{本店|ほんてん}の{所在地|しょざいち}を{管轄|かんかつ}する{法務局|ほうむきょく}（{書面|しょめん}〔{持参|じさん}・{郵送|ゆうそう}〕かオンライン）。{株式会社|かぶしきがいしゃ}の{定款|ていかん}の{認証|にんしょう}は、{本店|ほんてん}の{所在地|しょざいち}を{管轄|かんかつ}する{区域内|くいきない}の{公証|こうしょう}{役場|やくば}。{税務署|ぜいむしょ}の{届出|とどけで}は{納税地|のうぜいち}を{所轄|しょかつ}する{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{登記|とうき}は、{会社|かいしゃ}の{本店|ほんてん}がある{場所|ばしょ}の{法務局|ほうむきょく}（{書類|しょるい}かインターネット）。{税務署|ぜいむしょ}は、{納税地|のうぜいち}の{税務署|ぜいむしょ}です。",
+      "en": "Registration: the Legal Affairs Bureau that covers the head office location (on paper in person or by mail, or online). Notarization of a stock company's articles: a notary office in the area covering the head office location. Tax notice: the tax office that covers the corporation's tax payment place (e-Tax is also possible)."
     },
     "evidence": {
       "source_ids": [
         "moj-kabushiki",
-        "moj-godo"
+        "nta-hojin-setsuritsu"
       ],
-      "checked_at": "2026-11-08",
-      "status": "needs_check"
+      "checked_at": "2026-11-15",
+      "status": "needs_check",
+      "quote": "書面（持参又は郵送）又はオンラインによりすることができます"
     }
   },
   "kind": "guide",

@@ -1,5 +1,4 @@
 {
-  "$comment": "生活イベント（入口。docs/DATA_CONTRACT.md 2.1）。同じカードを複数のイベントから参照する。イベントごとに React の画面や判定の関数を足さない。",
   "events": [
     {
       "id": "E-move",
@@ -22,19 +21,32 @@
         "move-out-notice",
         "nagoya-tennyu-todoke",
         "nagoya-tennyu-juukyochi",
+        "nagoya-tennyu-kikoku",
         "nagoya-kokuho-kanyu",
         "kokumin-nenkin-kanyu",
         "nenkin-at-20",
         "bank-account-open",
-        "mail-forward"
+        "mail-forward",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
       ],
-      "scope_rule": "R-scope-nagoya-resident",
+      "info_card_ids": [
+        "mail-forward",
+        "life-electricity",
+        "life-gas",
+        "life-water",
+        "life-internet"
+      ],
+      "scope_rule": "R-scope-move-resident",
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -53,6 +65,7 @@
           "value": "within_nagoya"
         }
       ],
+      "scope_rule": "R-scope-not-short-stay",
       "questions": [
         "Q-ward-move"
       ],
@@ -69,8 +82,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "tool": {
         "path": "/gomi",
@@ -81,6 +95,7 @@
         }
       },
       "info_card_ids": [
+        "mail-forward",
         "life-electricity",
         "life-gas",
         "life-water",
@@ -105,8 +120,7 @@
         }
       ],
       "questions": [
-        "Q-bank-has",
-        "Q-arrival"
+        "Q-bank-has"
       ],
       "card_ids": [
         "bank-account-open",
@@ -118,19 +132,25 @@
         "bank-account-open-another"
       ],
       "scope_rule": "R-bank-scope",
+      "about_step": false,
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "goal_card_ids": [
         "bank-account-open"
       ],
       "info_card_ids": [
         "bank-card-stop",
-        "bank-card-reissue"
+        "bank-card-reissue",
+        "bank-info-change",
+        "bank-resident-change",
+        "bank-account-close",
+        "bank-account-open-another"
       ]
     },
     {
@@ -152,7 +172,6 @@
       ],
       "questions": [
         "Q-job-goal",
-        "Q-biz-started",
         "Q-job-permit"
       ],
       "card_ids": [
@@ -206,6 +225,18 @@
         "job-kyujin"
       ],
       "about_step": false,
+      "add_answers": [
+        {
+          "q": "Q-job-goal",
+          "from": "leave",
+          "add": "biz_start",
+          "label": {
+            "ja": "このあと{個人|こじん}{事業|じぎょう}も{始|はじ}める",
+            "ja_easy": "このあと{自分|じぶん}で{事業|じぎょう}も{始|はじ}める",
+            "en": "I will also start self-employment"
+          }
+        }
+      ],
       "by_answer": [
         {
           "when": "R-job-goal-basics",
@@ -219,7 +250,14 @@
         {
           "when": "R-job-goal-pt",
           "info_card_ids": [
-            "job-shakai-hoken"
+            "job-shakai-hoken",
+            "job-saitei-chingin"
+          ]
+        },
+        {
+          "when": "R-job-goal-pt-or-end",
+          "info_card_ids": [
+            "job-leave-juminzei"
           ]
         },
         {
@@ -231,7 +269,14 @@
         {
           "when": "R-job-biz-planning",
           "later_card_ids": [
-            "biz-start-kaigyo"
+            "biz-start-kaigyo",
+            "biz-start-aoiro"
+          ]
+        },
+        {
+          "when": "R-job-biz-aoiro-undecided",
+          "info_card_ids": [
+            "biz-start-aoiro"
           ]
         },
         {
@@ -249,6 +294,18 @@
           ],
           "after": [
             "job-shushoku"
+          ]
+        },
+        {
+          "when": "R-job-goal-employ",
+          "info_card_ids": [
+            "job-employ-juminzei"
+          ],
+          "later_card_ids": [
+            "job-employ-kokuho-stop"
+          ],
+          "after": [
+            "job-employ-hoken"
           ]
         }
       ]
@@ -284,9 +341,13 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check"
-      }
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
+      },
+      "goal_card_ids": [
+        "zairyu-koshin"
+      ]
     },
     {
       "id": "E-house-search",
@@ -324,8 +385,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "goal_card_ids": [
         "housing-search"
@@ -335,6 +397,8 @@
         "housing-initial-costs",
         "housing-guarantor",
         "housing-contract-check",
+        "housing-move-in",
+        "housing-move-out",
         "life-electricity",
         "life-gas",
         "life-water",
@@ -349,9 +413,9 @@
             "en": "Find a room"
           },
           "note": {
-            "ja": "{民間|みんかん}の{部屋|へや}のほかに、{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}も{選|えら}べます（{条件|じょうけん}あり）。",
-            "ja_easy": "{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}もあります（{条件|じょうけん}があります）。",
-            "en": "Besides private rooms, city, prefectural and UR housing are also options (conditions apply)."
+            "ja": "{民間|みんかん}の{部屋|へや}のほかに、{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}もあります。それぞれ{別|べつ}の{制度|せいど}で、{申|もう}し{込|こ}みの{条件|じょうけん}が{違|ちが}います。",
+            "ja_easy": "{市営|しえい}・{県営|けんえい}・UR{住宅|じゅうたく}もあります。それぞれ{決|き}まりが{違|ちが}います。",
+            "en": "Besides private rooms, there is city, prefectural and UR housing. Each is a separate system with its own conditions."
           },
           "card_ids": [
             "housing-search",
@@ -378,6 +442,11 @@
             "ja_easy": "{部屋|へや}に{入|はい}るとき",
             "en": "When you move in"
           },
+          "note": {
+            "ja": "{入居|にゅうきょ}が{決|き}まったら{使|つか}える、{自分|じぶん}のためのチェックリストです。チェックしても、{届出|とどけで}などの{手続|てつづ}きが{済|す}んだことにはなりません。",
+            "ja_easy": "{入|はい}る{日|ひ}が{決|き}まったら{使|つか}うリストです。チェックしても、{役所|やくしょ}の{届|とど}けをしたことにはなりません。",
+            "en": "An optional checklist for when your move-in is fixed. Checking an item is your own record; it does not mean an official notification is done."
+          },
           "card_ids": [
             "housing-move-in",
             "life-electricity",
@@ -394,9 +463,9 @@
             "en": "When you move out"
           },
           "note": {
-            "ja": "{電気|でんき}・ガス・{水道|すいどう}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{入居|にゅうきょ}のときの{各|かく}{案内|あんない}にあります。",
-            "ja_easy": "{電気|でんき}・ガス・{水|みず}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{案内|あんない}にあります。",
-            "en": "How to stop electricity, gas, water and internet is in the guides under \"When you move in\" above."
+            "ja": "{部屋|へや}を{出|で}ることが{決|き}まったら{使|つか}う、{自分|じぶん}のためのチェックリストです。{解約|かいやく}の{連絡|れんらく}の{期間|きかん}や{敷金|しききん}の{精算|せいさん}は、{契約|けいやく}によって{違|ちが}います。{電気|でんき}・ガス・{水道|すいどう}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{入居|にゅうきょ}のときの{各|かく}{案内|あんない}にあります。",
+            "ja_easy": "{出|で}ることが{決|き}まったら{使|つか}うリストです。いつまでに{知|し}らせるかなどは、{契約|けいやく}によって{違|ちが}います。{電気|でんき}・ガス・{水|みず}・インターネットをやめる{方法|ほうほう}は、{上|うえ}の{案内|あんない}にあります。",
+            "en": "An optional checklist for when you decide to move out. The notice period and the deposit settlement depend on your lease. How to stop electricity, gas, water and internet is in the guides under \"When you move in\" above."
           },
           "card_ids": [
             "housing-move-out"
@@ -431,8 +500,9 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "tool": {
         "path": "/gomi",
@@ -472,18 +542,20 @@
         "move-other-tenshutsu",
         "move-other-tennyu",
         "move-other-after",
+        "mail-forward",
         "life-electricity",
         "life-gas",
         "life-water",
         "life-internet"
       ],
-      "scope_rule": "R-mo-scope",
+      "scope_rule": "R-scope-not-short-stay",
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "tool": {
         "path": "/gomi",
@@ -494,6 +566,7 @@
         }
       },
       "info_card_ids": [
+        "mail-forward",
         "life-electricity",
         "life-gas",
         "life-water",
@@ -522,16 +595,21 @@
         }
       ],
       "questions": [
-        "Q-marriage-kind",
-        "Q-marriage-name"
+        "Q-marriage-stage",
+        "Q-marriage-nat",
+        "Q-marriage-name-who",
+        "Q-marriage-home"
       ],
       "card_ids": [
         "marriage-konin-gaikokuseki",
         "marriage-konin-todoke",
+        "marriage-kaigai-todoke",
         "marriage-zairyu-shimei",
         "marriage-mynumber-card",
         "marriage-seitai-henko",
+        "marriage-hikkoshi",
         "marriage-hoken-nenkin",
+        "marriage-zairyu-shikaku",
         "marriage-ujino-henkou"
       ],
       "scope_rule": "R-mar-scope",
@@ -539,11 +617,12 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       },
       "goal_card_ids": [
-        "marriage-konin-todoke"
+        "marriage-konin-todoke",
+        "marriage-kaigai-todoke"
       ],
       "phases": [
         {
@@ -565,37 +644,64 @@
         {
           "id": "todoke",
           "title": {
-            "ja": "{婚姻届|こんいんとどけ}を{出|だ}す",
-            "ja_easy": "{婚姻届|こんいんとどけ}を{出|だ}す",
-            "en": "Submit the marriage registration"
+            "ja": "{婚姻|こんいん}の{届|とどけ}",
+            "ja_easy": "{結婚|けっこん}の{届|とど}け",
+            "en": "Marriage registration"
           },
           "card_ids": [
-            "marriage-konin-todoke"
+            "marriage-konin-todoke",
+            "marriage-kaigai-todoke"
           ]
         },
         {
           "id": "after",
           "title": {
-            "ja": "{結婚|けっこん}したあと（{当|あ}てはまる{人|ひと}だけ）",
-            "ja_easy": "{結婚|けっこん}したあと（{関係|かんけい}する{人|ひと}だけ）",
-            "en": "After you marry (only if it applies)"
+            "ja": "{名前|なまえ}が{変|か}わる{人|ひと}の{手続|てつづ}き（{当|あ}てはまる{人|ひと}だけ）",
+            "ja_easy": "{名前|なまえ}が{変|か}わる{人|ひと}の{手続|てつづ}き（{関係|かんけい}する{人|ひと}だけ）",
+            "en": "If a name changes (only if it applies)"
           },
           "note": {
-            "ja": "{婚姻届|こんいんとどけ}を{出|だ}したあとに{生|しょう}じます。{期限|きげん}は、{婚姻届|こんいんとどけ}を{出|だ}した{日|ひ}からではなく、それぞれの{変更|へんこう}が{生|しょう}じた{日|ひ}から{数|かぞ}えるものがあります（{要|よう}{確認|かくにん}）。",
-            "ja_easy": "{婚姻届|こんいんとどけ}のあとにします。いつから{数|かぞ}えるかは、それぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
-            "en": "These arise after the marriage registration. Some deadlines count from the day each change happened, not the day you submitted the registration (to be confirmed)."
+            "ja": "{婚姻|こんいん}{届|とどけ}を{出|だ}したあとに{生|しょう}じます。{期限|きげん}は、{婚姻|こんいん}{届|とどけ}を{出|だ}した{日|ひ}からではなく、{氏名|しめい}が{変|か}わった{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。{在留|ざいりゅう}カードの{届出|とどけで}は、{先|さき}に{旅券|りょけん}の{氏名|しめい}を{変|か}えておくと、その{日|ひ}に{交付|こうふ}を{受|う}けやすくなります。",
+            "ja_easy": "{婚姻|こんいん}{届|とどけ}のあとにします。{期限|きげん}は、{名前|なまえ}が{変|か}わった{日|ひ}から{数|かぞ}えます（{要|よう}{確認|かくにん}）。{決|き}まった{順番|じゅんばん}はありません。",
+            "en": "These arise after the marriage registration. Deadlines count from the day the name changed, not the registration day (to be checked). There is no fixed order. For the residence card, updating your passport first makes same-day issuance more likely."
           },
           "card_ids": [
             "marriage-zairyu-shimei",
             "marriage-mynumber-card",
-            "marriage-seitai-henko",
-            "marriage-hoken-nenkin",
             "marriage-ujino-henkou"
           ],
           "after": [
             "marriage-konin-todoke"
           ]
+        },
+        {
+          "id": "home",
+          "title": {
+            "ja": "{住所|じゅうしょ}・{世帯|せたい}が{変|か}わるとき",
+            "ja_easy": "{住|す}む{所|ところ}・{世帯|せたい}が{変|か}わるとき",
+            "en": "If your address or household changes"
+          },
+          "card_ids": [
+            "marriage-hikkoshi",
+            "marriage-seitai-henko"
+          ]
+        },
+        {
+          "id": "info",
+          "title": {
+            "ja": "{参考|さんこう}（{保険|ほけん}・{年金|ねんきん}・{在留|ざいりゅう}{資格|しかく}）",
+            "ja_easy": "{参考|さんこう}（{保険|ほけん}・{年金|ねんきん}・{在留|ざいりゅう}{資格|しかく}）",
+            "en": "For reference (insurance, pension, status of residence)"
+          },
+          "card_ids": [
+            "marriage-hoken-nenkin",
+            "marriage-zairyu-shikaku"
+          ]
         }
+      ],
+      "info_card_ids": [
+        "marriage-hoken-nenkin",
+        "marriage-zairyu-shikaku"
       ]
     },
     {
@@ -612,27 +718,47 @@
       "facts": [
         {
           "fact": "event",
-          "value": "marriage"
-        },
-        {
-          "fact": "marriage_type",
-          "value": "partnership"
+          "value": "familyship"
         }
       ],
       "questions": [],
       "card_ids": [
-        "marriage-familyship"
+        "marriage-familyship",
+        "familyship-first",
+        "familyship-online",
+        "familyship-zoom",
+        "familyship-taimen",
+        "familyship-after",
+        "familyship-saikofu",
+        "familyship-henko",
+        "familyship-henkan",
+        "familyship-shomei",
+        "familyship-ko-sakujo",
+        "familyship-renkei"
       ],
-      "scope_rule": "R-mar-scope",
+      "scope_rule": "R-fam-scope",
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       },
       "goal_card_ids": [
         "marriage-familyship"
+      ],
+      "info_card_ids": [
+        "familyship-first",
+        "familyship-online",
+        "familyship-zoom",
+        "familyship-taimen",
+        "familyship-after",
+        "familyship-saikofu",
+        "familyship-henko",
+        "familyship-henkan",
+        "familyship-shomei",
+        "familyship-ko-sakujo",
+        "familyship-renkei"
       ]
     },
     {
@@ -653,16 +779,19 @@
         }
       ],
       "questions": [
-        "Q-divorce-route",
+        "Q-divorce-stage",
         "Q-nationality",
         "Q-zairyu-status",
-        "Q-divorce-japanese"
+        "Q-divorce-children"
       ],
       "card_ids": [
         "divorce-kyogi",
-        "divorce-nyukan-todoke",
-        "divorce-jusho-hoken-nenkin",
         "divorce-saiban",
+        "divorce-kaigai",
+        "divorce-kodomo",
+        "divorce-nyukan-todoke",
+        "divorce-zairyu-shikaku",
+        "divorce-jusho-hoken-nenkin",
         "divorce-shimei"
       ],
       "scope_rule": "R-div-scope",
@@ -670,12 +799,13 @@
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       },
       "goal_card_ids": [
         "divorce-kyogi",
-        "divorce-saiban"
+        "divorce-saiban",
+        "divorce-kaigai"
       ],
       "phases": [
         {
@@ -687,7 +817,9 @@
           },
           "card_ids": [
             "divorce-kyogi",
-            "divorce-saiban"
+            "divorce-saiban",
+            "divorce-kaigai",
+            "divorce-kodomo"
           ]
         },
         {
@@ -698,17 +830,40 @@
             "en": "After the divorce (only if it applies)"
           },
           "note": {
-            "ja": "{離婚|りこん}の{届|とど}けのあとに{生|しょう}じます。{期限|きげん}の{数|かぞ}え{方|かた}はそれぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
-            "ja_easy": "{離婚|りこん}の{届|とど}けのあとにします（{要|よう}{確認|かくにん}）。",
-            "en": "These arise after the divorce registration. Deadlines are counted differently for each (to be confirmed)."
+            "ja": "{離婚|りこん}が{成立|せいりつ}したあとに{生|しょう}じます。{離婚|りこん}{届|とどけ}がこれからの{人|ひと}は、{届|とどけ}を{出|だ}したあと（{調停|ちょうてい}・{裁判|さいばん}の{人|ひと}は、{成立|せいりつ}して{届|とどけ}を{出|だ}したあと）です。{期限|きげん}の{数|かぞ}え{方|かた}はそれぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{離婚|りこん}したあとにします。{期限|きげん}の{数|かぞ}え{方|かた}は、それぞれ{違|ちが}います（{要|よう}{確認|かくにん}）。",
+            "en": "These arise after the divorce is finalized. If the registration is still to come, they follow it. Deadlines are counted differently for each (to be checked)."
           },
           "card_ids": [
             "divorce-nyukan-todoke",
-            "divorce-jusho-hoken-nenkin",
+            "divorce-shimei",
+            "divorce-zairyu-shikaku",
+            "divorce-jusho-hoken-nenkin"
+          ]
+        }
+      ],
+      "info_card_ids": [
+        "divorce-jusho-hoken-nenkin",
+        "divorce-zairyu-shikaku"
+      ],
+      "by_answer": [
+        {
+          "when": "R-div-agreement-plan",
+          "later_card_ids": [
+            "divorce-nyukan-todoke",
             "divorce-shimei"
           ],
           "after": [
-            "divorce-kyogi",
+            "divorce-kyogi"
+          ]
+        },
+        {
+          "when": "R-div-court-ongoing",
+          "later_card_ids": [
+            "divorce-nyukan-todoke",
+            "divorce-shimei"
+          ],
+          "after": [
             "divorce-saiban"
           ]
         }
@@ -734,30 +889,40 @@
       "questions": [
         "Q-lost-items",
         "Q-passport-country",
+        "Q-lost-hoken-type",
+        "Q-lost-place",
         "Q-police-reported"
       ],
       "card_ids": [
+        "lost-unsure-check",
         "lost-card-stop",
         "lost-mynumber-stop",
+        "lost-search-home",
         "lost-police-report",
         "lost-police-report-zairyu",
+        "lost-facility-ask",
         "lost-zairyu-reissue",
+        "bank-card-reissue",
+        "lost-credit-reissue",
         "lost-mynumber-reissue",
         "lost-license-reissue",
         "lost-hoken-reissue",
         "lost-passport-jp",
         "lost-passport-foreign",
-        "lost-no-id-consult",
-        "lost-facility-ask",
-        "lost-found-later"
+        "lost-found-later",
+        "lost-no-id-consult"
       ],
       "scope_rule": "R-lost-scope",
+      "eligibility": {
+        "bank-card-reissue": "R-lost-cash"
+      },
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-04",
-        "status": "needs_check"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "checklist": true,
       "phases": [
@@ -770,7 +935,8 @@
           },
           "card_ids": [
             "lost-card-stop",
-            "lost-mynumber-stop"
+            "lost-mynumber-stop",
+            "lost-unsure-check"
           ]
         },
         {
@@ -786,6 +952,7 @@
             "en": "You can report to the police, ask the station or shop, and search for lost items at the same time."
           },
           "card_ids": [
+            "lost-search-home",
             "lost-police-report",
             "lost-police-report-zairyu",
             "lost-facility-ask"
@@ -805,27 +972,254 @@
           },
           "card_ids": [
             "lost-zairyu-reissue",
+            "bank-card-reissue",
+            "lost-credit-reissue",
             "lost-mynumber-reissue",
             "lost-license-reissue",
             "lost-hoken-reissue",
             "lost-passport-jp",
-            "lost-passport-foreign",
-            "lost-no-id-consult"
+            "lost-passport-foreign"
           ]
         },
         {
           "id": "found",
           "title": {
-            "ja": "{見|み}つかったとき",
-            "ja_easy": "{見|み}つかったとき",
-            "en": "If you find it"
+            "ja": "{見|み}つかったとき・{困|こま}ったとき",
+            "ja_easy": "{見|み}つかったとき・{困|こま}ったとき",
+            "en": "If you find it / if you need help"
           },
           "card_ids": [
-            "lost-found-later"
-          ],
-          "pin": true
+            "lost-found-later",
+            "lost-no-id-consult"
+          ]
         }
-      ]
+      ],
+      "found": {
+        "q": "Q-lost-found",
+        "from": "Q-lost-items",
+        "items": [
+          {
+            "value": "zairyu_card",
+            "eased": [
+              "lost-zairyu-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{再|さい}{交付|こうふ}を{受|う}けたあとで{古|ふる}い{在留|ざいりゅう}カードが{見|み}つかったら、{発見|はっけん}の{日|ひ}から14{日|にち}{以内|いない}に、{古|ふる}いカードを{入管|にゅうかん}に{返納|へんのう}します。",
+                  "ja_easy": "{新|あたら}しいカードをもらったあとで{古|ふる}い{在留|ざいりゅう}カードが{見|み}つかったら、14{日|にち}の{間|あいだ}に{入管|にゅうかん}に{返|かえ}します。",
+                  "en": "If you find the old residence card after receiving a reissued one, return the old card to the Immigration Services Agency within 14 days of finding it."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "B-moj-henno"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check",
+                  "quote": "在留カードの紛失を理由として新たに在留カードの再交付を受けた後に、紛失した旧在留カードを発見した場合には、発見の日から１４日以内に古い在留カードを返納する必要があります。"
+                }
+              },
+              {
+                "text": {
+                  "ja": "まだ{再|さい}{交付|こうふ}を{申請|しんせい}していないときは、{見|み}つかったことを{入管|にゅうかん}に{伝|つた}えて、{申請|しんせい}が{要|い}るかどうかを{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "まだ{申請|しんせい}していないときは、{入管|にゅうかん}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "If you have not applied for a reissue yet, tell the immigration office you found it and ask whether the application is still needed (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "kurashi-spec"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check"
+                }
+              }
+            ]
+          },
+          {
+            "value": "passport",
+            "eased": [
+              "lost-passport-jp",
+              "lost-passport-foreign"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{日本|にほん}のパスポート：{紛失|ふんしつ}の{届出|とどけで}のあとで{見|み}つかっても、そのパスポートは{使|つか}えません。{穴|あな}あけの{処理|しょり}のために、{旅券|りょけん}{窓口|まどぐち}に{持|も}って{行|い}きます。",
+                  "ja_easy": "{日本|にほん}のパスポート：{届|とど}けたあとで{見|み}つかっても、そのパスポートは{使|つか}えません。{穴|あな}をあける{処理|しょり}のために、{旅券|りょけん}の{窓口|まどぐち}に{持|も}って{行|い}きます。",
+                  "en": "Japanese passport: even if you find it after filing the loss notice, you cannot use it. Take it to a passport counter to be punched."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "C-aichi-passport-funshitsu"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check",
+                  "quote": "紛失の届出後に紛失したパスポートを発見した場合でも、そのパスポートは使用することができません"
+                },
+                "when": "R-lost-passport-jp"
+              },
+              {
+                "text": {
+                  "ja": "{外国|がいこく}のパスポート：{見|み}つかったことを{大使館|たいしかん}・{領事館|りょうじかん}に{伝|つた}え、{届出|とどけで}をしたあとの{扱|あつか}いを{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "{外国|がいこく}のパスポート：{大使館|たいしかん}・{領事館|りょうじかん}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "Foreign passport: tell your embassy or consulate it was found and ask how it is handled after a loss report (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "kurashi-spec"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check"
+                },
+                "when": "R-lost-passport-foreign"
+              }
+            ]
+          },
+          {
+            "value": "cash_card",
+            "eased": [
+              "bank-card-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{止|と}めたキャッシュカードを{使|つか}い{続|つづ}けるには、{銀行|ぎんこう}で{利用|りよう}{再開|さいかい}の{手続|てつづ}きが{要|い}ることがあります。{再|さい}{発行|はっこう}のあとは、{見|み}つかったカードを{使|つか}えないことがあります。{例|れい}：{三菱|みつびし}UFJ{銀行|ぎんこう}の{案内|あんない}。{銀行|ぎんこう}ごとに{違|ちが}うので、{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "{止|と}めたキャッシュカードは、{銀行|ぎんこう}で{手続|てつづ}きをしないと{使|つか}えないことがあります。{再|さい}{発行|はっこう}のあとは{使|つか}えないことがあります。{銀行|ぎんこう}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "To use a stopped cash card again, the bank may require a resumption procedure. After a reissue, the found card may not be usable. Example: MUFG Bank's guidance. Banks differ, so ask your bank (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "B-mufg-faq-17"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check",
+                  "quote": "なお、「再発行手続き」「改印手続き」が完了している場合、見つかったキャッシュカード・通帳・ご印鑑の利用再開はできませんので、再発行されたキャッシュカード・通帳、改印されたご印鑑をご利用ください。"
+                }
+              }
+            ]
+          },
+          {
+            "value": "credit_card",
+            "eased": [
+              "lost-credit-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{止|と}めたクレジットカードをまた{使|つか}えるかは、{会社|かいしゃ}によって{違|ちが}います。{再|さい}{発行|はっこう}のあとは、{見|み}つかったカードを{使|つか}わずに、{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "{止|と}めたクレジットカードをまた{使|つか}えるかは、{会社|かいしゃ}によって{違|ちが}います。{会社|かいしゃ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "Whether a stopped credit card can be used again depends on the company. After a reissue, do not use the found card; ask the company (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "kurashi-spec"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check"
+                }
+              }
+            ]
+          },
+          {
+            "value": "mynumber_card",
+            "eased": [
+              "lost-mynumber-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{一時|いちじ}{停止|ていし}だけなら、{見|み}つかったカードを{市区|しく}{町村|ちょうそん}の{窓口|まどぐち}（{名古屋|なごや}{市|し}では{区役所|くやくしょ}）に{持|も}って{行|い}き、{一時|いちじ}{停止|ていし}を{解除|かいじょ}してもらうと、{引|ひ}き{続|つづ}き{使|つか}えます。{解除|かいじょ}のときに、フリーダイヤルへの{連絡|れんらく}は{要|い}りません。",
+                  "ja_easy": "{止|と}めただけなら、{見|み}つかったカードを{区役所|くやくしょ}に{持|も}って{行|い}って、{止|と}めたのをもどしてもらうと、また{使|つか}えます。{電話|でんわ}は{要|い}りません。",
+                  "en": "If it was only suspended, take the found card to your municipality (Nagoya: ward office) and have the suspension lifted; you can keep using it. You do not need to call the hotline."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "B-jlis-lost2"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check",
+                  "quote": "お住まいの市区町村に見つかったマイナンバーカードをお持ちいただき、一時停止の解除をしていただくことで、引き続きカードをご利用いただけます。※マイナンバー総合フリーダイヤルへのご連絡は不要です。"
+                }
+              },
+              {
+                "text": {
+                  "ja": "{廃止|はいし}・{再|さい}{交付|こうふ}の{手続|てつづ}きをしたあとで{見|み}つかったときは、{窓口|まどぐち}で{扱|あつか}いを{確|たし}かめます（{要|よう}{確認|かくにん}）。マイナンバーカードの{再|さい}{交付|こうふ}には、なくしたカードの{廃止|はいし}{手続|てつづ}きが{必要|ひつよう}です。",
+                  "ja_easy": "{廃止|はいし}や{再|さい}{交付|こうふ}のあとで{見|み}つかったときは、{窓口|まどぐち}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "If it is found after cancellation or reissue, ask the counter how it is handled (to be checked). Reissuing a My Number Card requires cancelling the lost card."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "C-kojinbango-lost1"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check",
+                  "quote": "再交付にあたっては、紛失したカードの廃止手続きが必要ですのでご注意ください。"
+                }
+              }
+            ]
+          },
+          {
+            "value": "health_insurance",
+            "eased": [
+              "lost-hoken-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "{保険|ほけん}を{出|だ}している{所|ところ}（{市|し}の{国保|こくほ}、{会社|かいしゃ}の{保険|ほけん}など）に{見|み}つかったことを{伝|つた}え、{再|さい}{発行|はっこう}のあとの{古|ふる}い{物|もの}の{扱|あつか}いを{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "{保険|ほけん}を{出|だ}している{所|ところ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "Tell the insurer (city National Health Insurance, your employer's plan, etc.) that it was found, and ask how to handle the old document after a reissue (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "kurashi-spec"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check"
+                }
+              }
+            ]
+          },
+          {
+            "value": "license",
+            "eased": [
+              "lost-license-reissue"
+            ],
+            "after": [
+              {
+                "text": {
+                  "ja": "まだ{再|さい}{交付|こうふ}を{申請|しんせい}していないときは、{免許|めんきょ}センターか{警察|けいさつ}{署|しょ}に{見|み}つかったことを{伝|つた}えます。{再|さい}{交付|こうふ}のあとで{見|み}つかった{古|ふる}い{免許証|めんきょしょう}の{扱|あつか}いも、そこで{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+                  "ja_easy": "{免許|めんきょ}センターか{警察|けいさつ}{署|しょ}に{聞|き}きます（{要|よう}{確認|かくにん}）。",
+                  "en": "Tell the driver's license center or a police station that it was found, and ask how to handle an old license found after a reissue (to be checked)."
+                },
+                "evidence": {
+                  "source_ids": [
+                    "kurashi-spec"
+                  ],
+                  "checked_at": "2026-11-15",
+                  "status": "needs_check"
+                }
+              }
+            ]
+          }
+        ],
+        "common": [
+          {
+            "text": {
+              "ja": "{遺失届|いしつとどけ}を{出|だ}していたら、{見|み}つかったことを{届|とど}けた{警察|けいさつ}{署|しょ}に{知|し}らせます。{知|し}らせ{方|かた}は{警察|けいさつ}{署|しょ}に{確|たし}かめます（{要|よう}{確認|かくにん}）。",
+              "ja_easy": "{警察|けいさつ}に{届|とど}けていたら、{見|み}つかったことを{警察|けいさつ}{署|しょ}に{知|し}らせます。やり{方|かた}は{聞|き}きます（{要|よう}{確認|かくにん}）。",
+              "en": "If you filed a loss report, tell the police station that took it that the item was found. Ask the station how (to be checked)."
+            },
+            "evidence": {
+              "source_ids": [
+                "kurashi-spec"
+              ],
+              "checked_at": "2026-11-15",
+              "status": "needs_check"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "E-license",
@@ -844,22 +1238,31 @@
         }
       ],
       "questions": [
-        "Q-license-goal"
+        "Q-license-goal",
+        "Q-license-valid",
+        "Q-license-course",
+        "Q-license-lapse",
+        "Q-license-change",
+        "Q-license-form",
+        "Q-license-lost",
+        "Q-license-route"
       ],
       "card_ids": [
         "license-shinki",
         "license-gaimen-kirikae",
         "license-kokusai",
         "license-koshin",
+        "license-shikko",
         "license-kisai-henko",
-        "license-saikofu"
+        "license-saikofu",
+        "license-kokugai-shutoku"
       ],
       "scope_rule": "R-license-scope",
       "evidence": {
         "source_ids": [
           "kurashi-spec"
         ],
-        "checked_at": "2026-11-06",
+        "checked_at": "2026-11-08",
         "status": "needs_check"
       },
       "menu": 13,
@@ -867,8 +1270,10 @@
         "license-shinki",
         "license-gaimen-kirikae",
         "license-koshin",
+        "license-shikko",
         "license-kisai-henko",
-        "license-saikofu"
+        "license-saikofu",
+        "license-kokugai-shutoku"
       ],
       "info_card_ids": [
         "license-kokusai"
@@ -917,7 +1322,7 @@
         ],
         "checked_at": "2026-11-08",
         "status": "verified",
-        "verified_by": "author 2026-11-08（作者の指示：調査資料 kurashi_bousai_research_2026-11-08 の情報は作者が全部照合済み）"
+        "verified_by": "author 2026-11-08 (bulk)"
       },
       "goal_card_ids": [
         "bousai-hazard",

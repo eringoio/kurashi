@@ -11,7 +11,7 @@ test('/letter：書類だけの中を、説明の言葉でも探せる。選ぶ�
   const box = page.getByRole('searchbox', { name: /書類を探す/ });
   await expect(box).toBeVisible();
   const list = page.locator('ul.list').last();
-  await expect(list.getByRole('button')).toHaveCount(17); // 16件と「わからない」
+  await expect(list.getByRole('button')).toHaveCount(18); // 17件と「わからない」
   await box.fill('訴訟');
   await expect(list.getByRole('button', { name: /架空請求/ })).toBeVisible();
   await expect(list.getByRole('button')).toHaveCount(2);
@@ -56,4 +56,14 @@ test('戻る・進む：/letter の検索 → 詳細（/doc/{id}）→ 戻る = 
   await expect(page.locator('#screen-title')).toContainText('ねんきん定期便');
   await page.goBack(); // 再読み込みのあとはメモリが空。入口に戻る（エラーなし）
   await expect(page).toHaveURL(/\/letter$/);
+});
+
+// C-5：書類から、ほかのできごとの手続きへ（印は出さない）
+test('書類の「関係する手続き」：免許の更新・遺失届・在留期間の更新へ。国保の納付書に「まだわからない」の印が無い', async ({ page }) => {
+  for (const [doc, href] of [['menkyo-koshin-renrakusho', '/e/E-license/c/license-koshin'], ['ishitsu-todoke', '/e/E-lost-wallet/c/lost-police-report'], ['zairyu-shinsa-kanryo', '/e/E-stay-renew/c/zairyu-koshin']]) {
+    await page.goto('/doc/' + doc);
+    await expect(page.locator('section[aria-labelledby="letter-cards"] a[href="' + href + '"]'), doc).toHaveCount(1);
+  }
+  await page.goto('/doc/kokuho-nofu');
+  await expect(page.locator('section[aria-labelledby="letter-cards"]')).not.toContainText('まだわからない');
 });

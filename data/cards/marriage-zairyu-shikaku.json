@@ -1,0 +1,97 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "marriage-zairyu-shikaku",
+  "illustration": "card",
+  "awareness_type": "option",
+  "obligation": "none",
+  "eligibility": {
+    "all": [
+      "R-mar-konin",
+      "R-mar-has-foreign"
+    ]
+  },
+  "title": {
+    "ja": "{結婚|けっこん}と{在留|ざいりゅう}{資格|しかく}（{参考|さんこう}）",
+    "ja_easy": "{結婚|けっこん}と{在留|ざいりゅう}{資格|しかく}（{参考|さんこう}）",
+    "en": "Marriage and status of residence (for reference)"
+  },
+  "official_name": {
+    "ja": "在留資格変更許可申請",
+    "reading": "ざいりゅうしかくへんこうきょかしんせい"
+  },
+  "summary": {
+    "ja": "{結婚|けっこん}しても、{在留|ざいりゅう}{資格|しかく}は{自動的|じどうてき}には{変|か}わりません。いまの{在留|ざいりゅう}{資格|しかく}のままでよいか、{変更|へんこう}が{必要|ひつよう}かは、いまの{在留|ざいりゅう}{資格|しかく}とこれからの{活動|かつどう}によって{違|ちが}います。{入管|にゅうかん}の{公式|こうしき}の{案内|あんない}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。{別|べつ}の{在留|ざいりゅう}{資格|しかく}に{変|か}えるときは、{在留|ざいりゅう}{資格|しかく}{変更|へんこう}{許可|きょか}{申請|しんせい}をします。",
+    "ja_easy": "{結婚|けっこん}しても、{在留|ざいりゅう}{資格|しかく}は{自動|じどう}では{変|か}わりません。{変|か}える{必要|ひつよう}があるかは、{人|ひと}によって{違|ちが}います。{入管|にゅうかん}の{案内|あんない}で{確|たし}かめてください（{要|よう}{確認|かくにん}）。",
+    "en": "Marriage does not change your status of residence automatically. Whether you can keep your current status or need to change it depends on your current status and what you will do. Check the official Immigration guidance (to be checked). To change to another status, you apply for a change of status of residence."
+  },
+  "lead": {
+    "ja": "{結婚|けっこん}しても、{在留|ざいりゅう}{資格|しかく}は{自動的|じどうてき}には{変|か}わりません。",
+    "ja_easy": "{結婚|けっこん}しても、{在留|ざいりゅう}{資格|しかく}は{自動|じどう}では{変|か}わりません。",
+    "en": "Marriage does not change your status of residence automatically."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理庁|かんりちょう}（{地方|ちほう}{出入国|しゅつにゅうこく}{在留|ざいりゅう}{管理|かんり}{官署|かんしょ}）",
+      "ja_easy": "{入管|にゅうかん}",
+      "en": "Immigration Services Agency (regional immigration office)"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-moj-shikaku-henko"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。"
+    }
+  },
+  "place": "immigration",
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}{資格|しかく}{変更|へんこう}{許可|きょか}{申請|しんせい}は、いまの{在留|ざいりゅう}{資格|しかく}で{在留|ざいりゅう}している{人|ひと}が、{活動|かつどう}を{変|か}えて{別|べつ}の{在留|ざいりゅう}{資格|しかく}に{当|あ}たる{活動|かつどう}をするときに、{新|あたら}しい{在留|ざいりゅう}{資格|しかく}に{変|か}えるための{申請|しんせい}です。",
+        "ja_easy": "{在留|ざいりゅう}{資格|しかく}を{変|か}えるときは、{入管|にゅうかん}に{申請|しんせい}します。",
+        "en": "A change of status application is for people who will change their activities to those of another status of residence."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-shikaku-henko"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。"
+      }
+    }
+  ],
+  "keywords": [
+    "在留資格",
+    "配偶者ビザ",
+    "日本人の配偶者等",
+    "status of residence",
+    "spouse visa"
+  ],
+  "reasons": {
+    "excluded": {
+      "ja": "ふたりのどちらかが{外国|がいこく}{籍|せき}のときに{出|だ}しています。",
+      "ja_easy": "どちらかが{外国|がいこく}の{国籍|こくせき}のときに{出|だ}しています。",
+      "en": "Shown when at least one of you is a foreign national."
+    }
+  },
+  "evidence": {
+    "source_ids": [
+      "B-moj-shikaku-henko"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "いずれかの在留資格で在留している外国人の方が、在留目的とする活動を変更して別の在留資格に該当する活動を行おうとする場合に、新しい在留資格に変更するために行う申請です。"
+  }
+}

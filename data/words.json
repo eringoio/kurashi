@@ -1,5 +1,4 @@
 {
-  "$comment": "語学学習（作者が OK 2026-11-06）。heard＝窓口で聞こえてくる言葉、say＝自分が言う文、word＝画面に出る大事な単語。scene はその言葉を出す画面（basic・ward_office・move・bank・clinic・gomi・calendar・job・housing・immigration・letter。src/core/words.ts の pageScenes）。手続きの正式名（カード）・書類の名前と書類の言葉（data/documents.json）・病院の体の場所・診療科・受付の言葉（data/clinic.json）は画面で作る。訳は Claude が公式のページとアプリのデータで確かめて verified（作者の指示 2026-11-07）。名古屋のごみの言葉は市のページ（朝8時まで・中区は7時・赤色の注意シール・指定袋）で確かめた。",
   "evidence": {
     "source_ids": [
       "kurashi-spec"

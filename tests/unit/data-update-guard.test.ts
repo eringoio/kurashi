@@ -71,9 +71,9 @@ describe('/api/usage に写真の読み取りの回数', () => {
   it('作者のトークンで読むと、今日と昨日の数（KV があるとき）', async () => {
     const m = new Map([['usage:read:2026-11-08', '3'], ['usage:read:2026-11-07', '5']]);
     const USAGE = { get: async (k: string) => m.get(k) ?? null, put: async () => {} };
-    const r = await handleUsage(new Request('http://x/api/usage', { headers: { authorization: 'Bearer t' } }), { REPORTS_TOKEN: 't', USAGE }, Date.UTC(2026, 10, 7, 20, 0));
+    const r = await handleUsage(new Request('http://x/api/usage', { headers: { authorization: 'Bearer t' } }), { REPORTS_TOKEN: 't', ADMIN_AUTH: 'token', USAGE }, Date.UTC(2026, 10, 7, 20, 0));
     const j = await r.json() as { read_today: number; read_yesterday: number };
     expect([j.read_today, j.read_yesterday]).toEqual([3, 5]);
-    expect((await handleUsage(new Request('http://x/api/usage'), { REPORTS_TOKEN: 't', USAGE })).status).toBe(401);
+    expect((await handleUsage(new Request('http://x/api/usage'), { REPORTS_TOKEN: 't', ADMIN_AUTH: 'token', USAGE })).status).toBe(401);
   });
 });

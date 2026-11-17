@@ -1,0 +1,287 @@
+{
+  "data_version": 1,
+  "domain": "government",
+  "depth": "L2",
+  "first_week": false,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "coverage_rule_ids": [],
+  "kind": "guide",
+  "id": "familyship-renkei",
+  "illustration": "homemove",
+  "awareness_type": "option",
+  "obligation": "optional",
+  "eligibility": "R-fam-event",
+  "title": {
+    "ja": "ほかの{自治体|じちたい}から{転入|てんにゅう}・{転出|てんしゅつ}する",
+    "ja_easy": "ほかの{市|し}や{町|まち}から・へ{引|ひ}っ{越|こ}す",
+    "en": "Moving to or from another municipality"
+  },
+  "official_name": {
+    "ja": "ファミリーシップ宣誓継続申告",
+    "reading": "ふぁみりーしっぷせんせいけいぞくしんこく"
+  },
+  "lead": {
+    "ja": "{連携|れんけい}している{自治体|じちたい}との{間|あいだ}なら、{転入|てんにゅう}{先|さき}で{継続|けいぞく}{申告|しんこく}をします。{返還|へんかん}や{新|あたら}しい{宣誓|せんせい}が{要|い}らない{場合|ばあい}があります。",
+    "ja_easy": "{連携|れんけい}している{市|し}や{町|まち}との{間|あいだ}なら、{引|ひ}っ{越|こ}し{先|さき}で「{継続|けいぞく}{申告|しんこく}」をします。{返|かえ}さなくてよい{場合|ばあい}があります。",
+    "en": "Between partner municipalities, file a continuation at the new place. You may not need to return the receipt or pledge again."
+  },
+  "summary": {
+    "ja": "{名古屋|なごや}{市|し}は、{同|おな}じような{制度|せいど}のある{自治体|じちたい}と{連携|れんけい}しています。{連携|れんけい}{自治体|じちたい}との{間|あいだ}の{引|ひ}っ{越|こ}しでは、{転入|てんにゅう}{先|さき}の{手続|てつづ}きだけでよく、{転出|てんしゅつ}{元|もと}への{返還|へんかん}は{要|い}りません。{連携|れんけい}{自治体|じちたい}は{変|か}わることがあるため、{一覧|いちらん}で{確|たし}かめます。",
+    "ja_easy": "{名古屋|なごや}{市|し}は、ほかの{市|し}や{町|まち}と{連携|れんけい}しています。{連携|れんけい}している{所|ところ}への{引|ひ}っ{越|こ}しなら、{引|ひ}っ{越|こ}し{先|さき}だけで{手続|てつづ}きします。{連携|れんけい}{先|さき}は{変|か}わるので、{一覧|いちらん}を{見|み}ます。",
+    "en": "Nagoya partners with municipalities that have similar systems. When moving between partner municipalities, you only file at the new place and do not need to return the receipt to the old one. The partner list can change, so check it."
+  },
+  "deadline": {
+    "text": {
+      "ja": "{連携|れんけい}{自治体|じちたい}から{名古屋|なごや}{市|し}に{転入|てんにゅう}するとき：{転入|てんにゅう}{後|ご}3か{月|げつ}{以内|いない}に{継続|けいぞく}{申告|しんこく}をします。",
+      "ja_easy": "{名古屋|なごや}{市|し}に{引|ひ}っ{越|こ}してきたとき：3か{月|げつ}{以内|いない}に{継続|けいぞく}{申告|しんこく}をします。",
+      "en": "When moving to Nagoya from a partner municipality: file the continuation within 3 months after moving in."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-renkei"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "名古屋市に転入される場合は、転入後3か月以内に継続申告の手続きをお済ませください。"
+    }
+  },
+  "fee": {
+    "text": {
+      "ja": "{継続|けいぞく}{申告|しんこく}の{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{住民|じゅうみん}{票|ひょう}の{写|うつ}しなどの{発行|はっこう}{手数料|てすうりょう}と、{返信|へんしん}{用|よう}{封筒|ふうとう}の{切手|きって}180{円|えん}{分|ぶん}は{自分|じぶん}で{払|はら}います。",
+      "ja_easy": "{手数料|てすうりょう}の{案内|あんない}はありません（{要|よう}{確認|かくにん}）。{書類|しょるい}を{取|と}るお{金|かね}と、{切手|きって}180{円|えん}は{自分|じぶん}で{払|はら}います。",
+      "en": "No fee for the continuation is mentioned (to be checked). You pay for documents such as the resident record and 180 yen of stamps for the return envelope."
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-renkei"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "切手代180円（定形外規格内）のご負担が必要です。"
+    }
+  },
+  "where": {
+    "text": {
+      "ja": "{転入|てんにゅう}：{名古屋|なごや}{市|し} {男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}（オンライン・Zoom・イーブルなごや）。{転出|てんしゅつ}：{転入|てんにゅう}{先|さき}の{自治体|じちたい}",
+      "ja_easy": "{名古屋|なごや}{市|し}へ{来|く}る：{男女|だんじょ}{平等|びょうどう}{参画|さんかく}{推進|すいしん}{課|か}。{名古屋|なごや}{市|し}から{出|で}る：{引|ひ}っ{越|こ}し{先|さき}の{市|し}や{町|まち}",
+      "en": "Moving in: Gender Equality Promotion Division, Nagoya (online, Zoom or Eble Nagoya). Moving out: the new municipality"
+    },
+    "evidence": {
+      "source_ids": [
+        "B-nagoya-familyship-renkei"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "連携自治体から名古屋市に転入する場合は、継続申告によって名古屋市の宣誓書受領証等を発行します。"
+    }
+  },
+  "sections": [
+    {
+      "title": {
+        "ja": "{連携|れんけい}{自治体|じちたい}から{名古屋|なごや}{市|し}へ{転入|てんにゅう}する",
+        "ja_easy": "{連携|れんけい}している{所|ところ}から{名古屋|なごや}{市|し}へ{来|く}る",
+        "en": "Moving to Nagoya from a partner municipality"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{前|まえ}の{自治体|じちたい}への{返還|へんかん}の{手続|てつづ}きは{要|い}りません。{名古屋|なごや}{市|し}で{継続|けいぞく}{申告|しんこく}をすると、{名古屋|なごや}{市|し}の{受領証|じゅりょうしょう}などが{出|で}ます。{継続|けいぞく}{申告|しんこく}のあとは、{再|さい}{交付|こうふ}や{返還|へんかん}などは{名古屋|なごや}{市|し}の{制度|せいど}で{扱|あつか}います。",
+            "ja_easy": "{前|まえ}の{市|し}や{町|まち}に{返|かえ}す{手続|てつづ}きは{要|い}りません。{名古屋|なごや}{市|し}で{継続|けいぞく}{申告|しんこく}をすると、{名古屋|なごや}{市|し}の{受領証|じゅりょうしょう}が{出|で}ます。",
+            "en": "No return procedure is needed at the old municipality. After the continuation, Nagoya issues its receipt, and reissue, return, etc. follow Nagoya's system."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "継続申告の手続きが完了した後は、再交付や返還などについて名古屋市ファミリーシップ制度の取扱いとなります。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{方法|ほうほう}は3つ：{継続|けいぞく}{申告|しんこく}{用|よう}フォーム（ふたりそれぞれ。{書類|しょるい}は{郵送|ゆうそう}）、Zoom（{予約|よやく}が{要|い}る）、イーブルなごやで{対面|たいめん}（{予約|よやく}が{要|い}る）。{予約|よやく}は{希望|きぼう}{日|び}の{原則|げんそく}3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{電話|でんわ}（052-972-2234）・ファクス・フォームで。{手続|てつづ}きの{時間|じかん}は{平日|へいじつ}10{時|じ}〜16{時|じ}30{分|ふん}です。",
+            "ja_easy": "{方法|ほうほう}は3つ：フォーム（ふたりそれぞれ）、Zoom（{予約|よやく}）、イーブルなごや（{予約|よやく}）。{予約|よやく}は3か{月|げつ}{前|まえ}から1{週間|しゅうかん}{前|まえ}までに、{電話|でんわ}（052-972-2234）かフォームで。",
+            "en": "Three methods: the continuation form (each of you; mail the documents), Zoom (booking needed) or in person at Eble Nagoya (booking needed). Book 3 months to 1 week before, by phone (052-972-2234), fax or form. Sessions are on weekdays 10:00–16:30."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "【1】から【3】のいずれかの方法で継続申告をすることができます。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{書類|しょるい}（ふたり{分|ぶん}。{共通|きょうつう}の{書類|しょるい}は1{通|つう}でよい）：{前|まえ}の{自治体|じちたい}の{受領証|じゅりょうしょう}など、{住民|じゅうみん}{票|ひょう}の{写|うつ}しなど（{発行|はっこう}から3か{月|げつ}{以内|いない}）、{返信|へんしん}{用|よう}{封筒|ふうとう}（{切手|きって}180{円|えん}{分|ぶん}、{返信|へんしん}{先|さき}を{書|か}く）。{対面|たいめん}のときは{本人|ほんにん}{確認|かくにん}{書類|しょるい}も{持|も}って{行|い}きます。",
+            "ja_easy": "{書類|しょるい}：{前|まえ}の{市|し}や{町|まち}の{受領証|じゅりょうしょう}、{住民|じゅうみん}{票|ひょう}の{写|うつ}し（3か{月|げつ}{以内|いない}）、{返信|へんしん}{用|よう}の{封筒|ふうとう}（{切手|きって}180{円|えん}）。{対面|たいめん}のときは{本人|ほんにん}{確認|かくにん}の{書類|しょるい}も。",
+            "en": "Documents (for both; one copy of shared documents is enough): the receipt from the old municipality, a copy of your resident record (issued within 3 months), and a return envelope (180 yen of stamps, your address). Bring ID if in person."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "転出元の自治体で交付された宣誓書受領証等"
+          }
+        },
+        {
+          "text": {
+            "ja": "ふたりとも{転入|てんにゅう}{予定|よてい}のときは、{転入|てんにゅう}{予定|よてい}の{住所|じゅうしょ}がわかる{書類|しょるい}（{転出|てんしゅつ}{証明|しょうめい}{書|しょ}、{賃貸借|ちんたいしゃく}{契約|けいやく}{書|しょ}の{写|うつ}しなど）も{出|だ}し、{継続|けいぞく}{申告|しんこく}から3か{月|げつ}{以内|いない}に{住民|じゅうみん}{票|ひょう}の{写|うつ}しなどを{出|だ}します。{子|こ}の{氏名|しめい}を{載|の}せるときは、{別|べつ}の{手続|てつづ}きが{要|い}る{場合|ばあい}があるので{予約|よやく}のときに{聞|き}きます。",
+            "ja_easy": "ふたりとも{引|ひ}っ{越|こ}す{予定|よてい}のときは、{新|あたら}しい{住所|じゅうしょ}がわかる{書類|しょるい}も{出|だ}し、3か{月|げつ}{以内|いない}に{住民|じゅうみん}{票|ひょう}の{写|うつ}しを{出|だ}します。{子|こ}どもの{名前|なまえ}は、{予約|よやく}のときに{聞|き}きます。",
+            "en": "If both of you are still to move in, also submit a document showing the new address, and a copy of the resident record within 3 months of the continuation. If a child's name is to be included, ask when booking, as another procedure may be needed."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "（注）転入後に住民票の写し又は住民票記載事項証明書を提出する必要があります（継続申告後3か月以内）"
+          }
+        },
+        {
+          "text": {
+            "ja": "{継続|けいぞく}{申告|しんこく}や{予約|よやく}をすると、{名古屋|なごや}{市|し}から{前|まえ}の{自治体|じちたい}に、{名前|なまえ}と{予約|よやく}があったことを{連絡|れんらく}します。{受領証|じゅりょうしょう}などは、{書類|しょるい}が{届|とど}いてから10{日|にち}ほどで{郵送|ゆうそう}されます（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{名古屋|なごや}{市|し}から{前|まえ}の{市|し}や{町|まち}に、{名前|なまえ}と{予約|よやく}のことを{連絡|れんらく}します。{受領証|じゅりょうしょう}は10{日|にち}ぐらいで{届|とど}きます（{要|よう}{確認|かくにん}）。",
+            "en": "When you book or file, Nagoya tells the old municipality your names and that you booked. The receipt is mailed about 10 days after the documents arrive (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "継続申告をいただくと、名古屋市から転出元自治体にお名前や「継続申告の予約があったこと」を連絡します。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{名古屋|なごや}{市|し}から{連携|れんけい}{自治体|じちたい}へ{転出|てんしゅつ}する",
+        "ja_easy": "{名古屋|なごや}{市|し}から{連携|れんけい}している{所|ところ}へ{出|で}る",
+        "en": "Moving from Nagoya to a partner municipality"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{名古屋|なごや}{市|し}への{返還|へんかん}{届|とどけ}は{要|い}りません。{転入|てんにゅう}{先|さき}で{継続|けいぞく}{申告|しんこく}をし、{名古屋|なごや}{市|し}の{受領証|じゅりょうしょう}などを{出|だ}します。くわしくは{転入|てんにゅう}{先|さき}の{自治体|じちたい}のページで{確|たし}かめます。",
+            "ja_easy": "{名古屋|なごや}{市|し}に{返|かえ}す{届|とど}けは{要|い}りません。{引|ひ}っ{越|こ}し{先|さき}で{継続|けいぞく}{申告|しんこく}をして、{名古屋|なごや}{市|し}の{受領証|じゅりょうしょう}を{出|だ}します。くわしくは{引|ひ}っ{越|こ}し{先|さき}で{聞|き}きます。",
+            "en": "No return to Nagoya is needed. File a continuation at the new municipality and hand in the Nagoya receipt. Check the details on the new municipality's page."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "転入先の自治体で継続申告（届出）の手続き及び名古屋市の受領証等の提出を行ってください。"
+          }
+        },
+        {
+          "text": {
+            "ja": "{省|はぶ}ける{手続|てつづ}きは{自治体|じちたい}によって{違|ちが}い、{省|はぶ}けないこともあります。{転入|てんにゅう}{先|さき}の{制度|せいど}の{条件|じょうけん}によっては、{続|つづ}けられないこともあります（{要|よう}{確認|かくにん}）。",
+            "ja_easy": "{省|はぶ}ける{手続|てつづ}きは、{市|し}や{町|まち}で{違|ちが}います。{続|つづ}けられないこともあります（{要|よう}{確認|かくにん}）。",
+            "en": "Which steps can be skipped depends on the municipality, and some cannot be skipped. Depending on its conditions, you may not be able to continue (to be checked)."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "ただし転入先の自治体の制度要件によっては、継続ができない場合があります。"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "ja": "{連携|れんけい}していない{自治体|じちたい}との{間|あいだ}",
+        "ja_easy": "{連携|れんけい}していない{所|ところ}との{間|あいだ}",
+        "en": "Municipalities that are not partners"
+      },
+      "items": [
+        {
+          "text": {
+            "ja": "{通常|つうじょう}は、{前|まえ}の{自治体|じちたい}に{受領証|じゅりょうしょう}などを{返|かえ}し、{転入|てんにゅう}{先|さき}であらためて{書類|しょるい}をそろえて{宣誓|せんせい}します。{名古屋|なごや}{市|し}から{出|で}て、ふたりとも{市内|しない}に{住所|じゅうしょ}がなくなるときは「{受領証|じゅりょうしょう}などを{返|かえ}す」を{見|み}ます。",
+            "ja_easy": "ふつうは、{前|まえ}の{所|ところ}に{受領証|じゅりょうしょう}を{返|かえ}して、{引|ひ}っ{越|こ}し{先|さき}でもう{一度|いちど}{宣誓|せんせい}します。{名古屋|なごや}{市|し}から{出|で}るときは「{受領証|じゅりょうしょう}を{返|かえ}す」を{見|み}ます。",
+            "en": "Normally you return the receipt to the old municipality and pledge again at the new one with new documents. If both of you leave Nagoya, see \"Return the receipt\"."
+          },
+          "evidence": {
+            "source_ids": [
+              "B-nagoya-familyship-renkei"
+            ],
+            "checked_at": "2026-11-08",
+            "status": "needs_check",
+            "quote": "通常は転出元の自治体への宣誓書受領証等の返還等の手続を行い、あらためて必要書類等を揃え、転入先の自治体で宣誓を行う必要があります。"
+          }
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": {
+        "ja": "{自治体|じちたい}{間|かん}{連携|れんけい}と{連携|れんけい}{自治体|じちたい}の{一覧|いちらん}",
+        "ja_easy": "{連携|れんけい}と、{連携|れんけい}している{市|し}や{町|まち}の{一覧|いちらん}",
+        "en": "Partner municipalities and how continuation works (Japanese)"
+      },
+      "url": "https://www.city.nagoya.jp/shisei/jinken/1027990/1028137/1028140.html",
+      "source_id": "B-nagoya-familyship-renkei"
+    },
+    {
+      "label": {
+        "ja": "{継続|けいぞく}{申告|しんこく}{用|よう}フォーム",
+        "ja_easy": "{継続|けいぞく}{申告|しんこく}のフォーム",
+        "en": "Continuation form (Japanese)"
+      },
+      "url": "https://logoform.jp/f/Vdz0A",
+      "source_id": "B-nagoya-familyship-form-keizoku"
+    },
+    {
+      "label": {
+        "ja": "{予約|よやく}{申込|もうしこみ}フォーム（Zoomの{継続|けいぞく}{申告|しんこく}）",
+        "ja_easy": "{予約|よやく}のフォーム（Zoom）",
+        "en": "Booking form for Zoom continuation (Japanese)"
+      },
+      "url": "https://logoform.jp/f/YdbPZ",
+      "source_id": "B-nagoya-familyship-form-keizoku-zoom"
+    },
+    {
+      "label": {
+        "ja": "{予約|よやく}{申込|もうしこみ}フォーム（{対面|たいめん}の{継続|けいぞく}{申告|しんこく}）",
+        "ja_easy": "{予約|よやく}のフォーム（{対面|たいめん}）",
+        "en": "Booking form for in-person continuation (Japanese)"
+      },
+      "url": "https://logoform.jp/f/w1dcR",
+      "source_id": "B-nagoya-familyship-form-keizoku-taimen"
+    }
+  ],
+  "keywords": [
+    "ファミリーシップ",
+    "パートナーシップ",
+    "継続申告",
+    "自治体間連携",
+    "転入",
+    "転出",
+    "familyship",
+    "continuation",
+    "move"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "B-nagoya-familyship-renkei"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "自治体間の連携により、連携自治体に転居する場合は、転入先の自治体への手続のみ行い、転出元の自治体への手続きは不要となります。"
+  }
+}

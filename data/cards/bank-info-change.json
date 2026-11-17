@@ -38,9 +38,10 @@
         "B-yucho-gaikokujin-pub",
         "B-mufg-jusho"
       ],
-      "checked_at": "2026-11-05",
-      "status": "needs_check",
-      "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "place": "bank",
@@ -64,7 +65,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "28aa193c2d74b000f9df845b98a8259f09a6ce5038df2aaa94421ba609e21d41",
           "verdict": "agree",
-          "ref": "research/audits/bank.json#P-bank-joho-henko-mufg/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -80,9 +81,10 @@
           "B-yucho-gaikokujin-pub",
           "B-yucho-henko"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "在留カードを更新した場合、または住所を変更した場合は、更新後の在留カードをご準備のうえ、速やかにゆうちょ手続きアプリまたは窓口で、在留期間等の情報更新や住所変更のお手続きをお願いいたします。",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -96,9 +98,10 @@
         "source_ids": [
           "B-yucho-henko"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "※日本国籍の方に限ります。"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "※日本国籍の方に限ります。",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     }
   ],
@@ -132,8 +135,9 @@
       "B-yucho-gaikokujin-pub",
       "B-mufg-jusho"
     ],
-    "checked_at": "2026-11-05",
-    "status": "needs_check",
-    "quote": "変更のお手続きは、総合口座のほか、（自動積立）定額定期貯金・投資信託口座・国債口座等、すべての口座に対して必要です。"
+    "checked_at": "2026-11-08",
+    "status": "verified",
+    "quote": "変更のお手続きは、総合口座のほか、（自動積立）定額定期貯金・投資信託口座・国債口座等、すべての口座に対して必要です。",
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

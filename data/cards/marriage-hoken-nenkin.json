@@ -19,18 +19,18 @@
     ]
   },
   "title": {
-    "ja": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}の{確認|かくにん}",
-    "ja_easy": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}",
-    "en": "Marriage, health insurance and pension: check"
+    "ja": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}（{変|か}わる{人|ひと}だけ）",
+    "ja_easy": "{結婚|けっこん}と{健康|けんこう}{保険|ほけん}・{年金|ねんきん}（{変|か}わる{人|ひと}だけ）",
+    "en": "Marriage, health insurance and pension (only if something changes)"
   },
   "official_name": {
     "ja": "結婚と健康保険・年金",
     "reading": "けっこんとけんこうほけんねんきん"
   },
   "summary": {
-    "ja": "{結婚|けっこん}すると、{健康|けんこう}{保険|ほけん}と{年金|ねんきん}の{入|はい}り{方|かた}が{変|か}わることがあります。{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被扶養者|ひふようしゃ}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}が{要|い}ります（{要|よう}{確認|かくにん}）。{第3号|だいさんごう}{被保険者|ひほけんしゃ}の{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}{届|とどけ}は、{配偶|はいぐう}{者|しゃ}の{勤|つと}め{先|さき}に{出|だ}します。マイナンバーと{基礎|きそ}{年金|ねんきん}{番号|ばんごう}が{結|むす}びついている{人|ひと}は、{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}の{手続|てつづき}が{原則|げんそく}{不要|ふよう}です（{要|よう}{確認|かくにん}）。{結|むす}びつきはねんきんネットか{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{確認|かくにん}できます。",
-    "ja_easy": "{結婚|けっこん}すると、{健康|けんこう}{保険|ほけん}や{年金|ねんきん}の{入|はい}り{方|かた}が{変|か}わることがあります。{会社|かいしゃ}の{健康|けんこう}{保険|ほけん}の{家族|かぞく}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けが{要|い}ります（{要|よう}{確認|かくにん}）。{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}の{年金|ねんきん}に{入|はい}っている{人|ひと}は、{名前|なまえ}や{住所|じゅうしょ}が{変|か}わったら{配偶|はいぐう}{者|しゃ}の{会社|かいしゃ}に{伝|つた}えます。マイナンバーと{年金|ねんきん}の{番号|ばんごう}が{結|むす}びついている{人|ひと}は、{名前|なまえ}や{住所|じゅうしょ}の{手続|てつづ}きがいらないことがあります（{要|よう}{確認|かくにん}）。",
-    "en": "Marriage can change how you are covered by health insurance and pension. If you become a dependant on a workplace health insurance, you must file to leave National Health Insurance (to be checked). A Category 3 insured person reports name and address changes to the spouse's employer. If your My Number and basic pension number are linked, name and address changes generally need no procedure (to be checked). You can check the link on Nenkin Net or at a pension office."
+    "ja": "{結婚|けっこん}しても、だれにでも{保険|ほけん}・{年金|ねんきん}の{手続|てつづ}きが{要|い}るわけではありません。いまの{健康|けんこう}{保険|ほけん}（{国民|こくみん}{健康|けんこう}{保険|ほけん}か{職場|しょくば}の{健康|けんこう}{保険|ほけん}か）、{配偶|はいぐう}{者|しゃ}の{扶養|ふよう}に{入|はい}るか、{働|はたら}き{方|かた}、{年金|ねんきん}の{区分|くぶん}が{変|か}わるかで{違|ちが}います。{職場|しょくば}の{健康|けんこう}{保険|ほけん}の{被|ひ}{扶養|ふよう}{者|しゃ}になったときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届出|とどけで}が{要|い}ります（{要|よう}{確認|かくにん}）。{第|だい}3{号|ごう}{被|ひ}{保険|ほけん}{者|しゃ}の{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}{届|とどけ}は、{配偶|はいぐう}{者|しゃ}の{勤|つと}め{先|さき}に{出|だ}します。マイナンバーと{基礎|きそ}{年金|ねんきん}{番号|ばんごう}が{結|むす}びついている{人|ひと}は、{氏名|しめい}・{住所|じゅうしょ}の{変更|へんこう}の{手続|てつづき}が{原則|げんそく}{不要|ふよう}です（{要|よう}{確認|かくにん}）。{結|むす}びつきはねんきんネットか{近|ちか}くの{年金|ねんきん}{事務所|じむしょ}で{確認|かくにん}できます。",
+    "ja_easy": "{結婚|けっこん}しても、みんなに{保険|ほけん}・{年金|ねんきん}の{手続|てつづ}きが{要|い}るわけではありません。{家族|かぞく}の{会社|かいしゃ}の{保険|ほけん}に{入|はい}るときは、{国民|こくみん}{健康|けんこう}{保険|ほけん}をやめる{届|とど}けが{要|い}ります（{要|よう}{確認|かくにん}）。わからないときは、{区役所|くやくしょ}か{年金|ねんきん}{事務所|じむしょ}で{聞|き}きます。",
+    "en": "Marriage does not mean everyone needs an insurance or pension procedure. It depends on your current health insurance (National Health Insurance or workplace insurance), whether you become your spouse's dependent, how you work, and whether your pension category changes. If you become a dependent under workplace health insurance, you must withdraw from National Health Insurance (to be checked). Name or address changes for Category 3 insured persons are filed through the spouse's employer. If your My Number is linked to your Basic Pension Number, name and address changes are in principle not needed (to be checked). You can check the link on Nenkin Net or at a pension office."
   },
   "deadline": null,
   "where": {
@@ -50,7 +50,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "bd2bc05771212c5cd4bd9e48b83b3ff113d983dd4eba7d9b7bad72e2777cd959",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-jusho-setai/c13"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -74,7 +74,7 @@
           "fetched_at": "2026-11-05",
           "sha256": "a7edd8086ae7d0241b2730246e224b330df67b8fdc40451821c7ec695e61ba6b",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -96,7 +96,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "2f526718021a2811ad6ec1d87a386672e0dec67186940bf17c8da0d95c129825",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -134,7 +134,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ae6a2f38eb553309fc46f03ce4a73ac626224beca5404dd381fa3b8ba0ec85fe",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-hoken-nenkin/c1"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -204,8 +204,13 @@
       "B-nenkin-jusho-henko",
       "B-nagoya-kokuho-kanyu-mar"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "結婚するとき チェック すること リンク先 □ 婚姻届 □ 住民票 □ 印鑑登録 □ 健康保険・年金・介護保険"
+  },
+  "lead": {
+    "ja": "{保険|ほけん}や{年金|ねんきん}の{入|はい}り{方|かた}が{変|か}わる{人|ひと}だけ、{手続|てつづ}きがあります。",
+    "ja_easy": "{保険|ほけん}や{年金|ねんきん}が{変|か}わる{人|ひと}だけ、{手続|てつづ}きがあります。",
+    "en": "Only people whose insurance or pension changes have a procedure."
   }
 }

@@ -1,5 +1,4 @@
 {
-  "$comment": "日本の祝日（内閣府 syukujitsu.csv から npm run holidays で作る。毎年2月ごろ更新される）",
   "source": {
     "url": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
     "fetched_at": "2026-11-05",

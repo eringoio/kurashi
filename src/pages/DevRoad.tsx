@@ -17,7 +17,7 @@ function mk([id, section, state = 'shown', extra]: S): CardView {
   if (!card) throw new Error('カードがない：' + id);
   return {
     card, state, section, sectionWhy: null, goal: false, afterFrom: null, cause: null, reasonFacts: [], reasonRules: [], falseRule: null,
-    questions: [], notes: [], dayRule: { kind: 'free' }, plan: null, questionRank: 0, outdated: false, notices: [], methods: [], ...extra,
+    questions: [], notes: [], dayRule: { kind: 'free' }, plan: null, questionRank: 0, outdated: false, notices: [], methods: [], visitPlace: card.urgent ? null : card.place ?? null, remote: false, ways: [], remoteWays: [], way: null, altPlace: null, deadlineOn: null, lateRisk: false, ...extra,
   };
 }
 const done = { plan: { status: 'done' } } as Partial<CardView>;

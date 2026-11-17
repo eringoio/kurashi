@@ -2,8 +2,8 @@
   "id": "lost-police-report-zairyu",
   "data_version": 1,
   "illustration": "hall",
-  "awareness_type": "must",
-  "obligation": "legal",
+  "awareness_type": "applies",
+  "obligation": "practical",
   "domain": "government",
   "depth": "L2",
   "first_week": true,
@@ -13,23 +13,24 @@
   "eligibility": {
     "all": [
       "R-lost-wallet",
-      "R-lost-zairyu"
+      "R-lost-zairyu",
+      "R-lost-not-home"
     ]
   },
   "coverage_rule_ids": [],
   "title": {
-    "ja": "{警察|けいさつ}に{遺失|いしつ}{届|とどけ}を{出|だ}す（{在留|ざいりゅう}カード）",
-    "ja_easy": "{警察|けいさつ}に{届|とど}ける（{在留|ざいりゅう}カード）",
-    "en": "Report the loss to the police (residence card)"
+    "ja": "{警察|けいさつ}に{届|とど}ける（{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}のため）",
+    "ja_easy": "{警察|けいさつ}に{届|とど}ける（{在留|ざいりゅう}カードのため）",
+    "en": "Report to the police (for the residence card reissue)"
   },
   "official_name": {
     "ja": "警察に遺失届を出す",
     "reading": "いしつとどけ"
   },
   "summary": {
-    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{警察|けいさつ}への{届出|とどけで}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{届出|とどけで}は{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}のどこでもでき、オンラインや{電話|でんわ}でもできます。{受理|じゅり}{番号|ばんごう}を{紙|かみ}に{控|ひか}えます。{入管|にゅうかん}から{届出|とどけで}の{証明|しょうめい}{書|しょ}を{求|もと}められたときは、{届|とど}けた{警察|けいさつ}{署|しょ}で{申請|しんせい}します（{交番|こうばん}では{申請|しんせい}できません）（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}の{番号|ばんごう}（{受理|じゅり}{番号|ばんごう}）が{要|い}ります。{交番|こうばん}でも{警察署|けいさつしょ}でも{届|とど}けられます。{番号|ばんごう}を{紙|かみ}に{書|か}いておきます。",
-    "en": "To get a new residence card you need the acceptance number (juri bango) of your police report. You can report at any police station, koban (police box) or rural police box, and also online or by phone. Write down the acceptance number. If immigration asks for a certificate of the report, apply at the police station where you reported (a koban cannot issue it) (to be checked)."
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}の{申請|しんせい}では、{紛失|ふんしつ}・{盗難|とうなん}の{陳述|ちんじゅつ}{書|しょ}に{警察|けいさつ}の{届出|とどけで}{受理|じゅり}{番号|ばんごう}を{書|か}きます。{届出|とどけで}は{警察|けいさつ}{署|しょ}・{交番|こうばん}・{駐在|ちゅうざい}{所|しょ}のどこでもでき、オンラインや{電話|でんわ}でもできます。{受理|じゅり}{番号|ばんごう}を{紙|かみ}に{控|ひか}えます。{入管|にゅうかん}から{届出|とどけいで}の{証明|しょうめい}{書|しょ}を{求|もと}められたときは、{届|とど}けた{警察|けいさつ}{署|しょ}で{申請|しんせい}します（{交番|こうばん}では{申請|しんせい}できません）（{要|よう}{確認|かくにん}）。{警察|けいさつ}の{受理|じゅり}を{待|ま}っているあいだも、{再|さい}{交付|こうふ}の14{日|にち}の{期限|きげん}は{進|すす}みます。",
+    "ja_easy": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}では、{警察|けいさつ}の{番号|ばんごう}を{書|か}きます。{交番|こうばん}でも{警察|けいさつ}{署|しょ}でも、インターネットや{電話|でんわ}でも{届|とど}けられます。{番号|ばんごう}を{紙|かみ}に{書|か}いておきます。{証明|しょうめい}{書|しょ}は、{届|とど}けた{警察|けいさつ}{署|しょ}でもらいます（{交番|こうばん}ではもらえません）（{要|よう}{確認|かくにん}）。{待|ま}っているあいだも、14{日|にち}の{期限|きげん}は{進|すす}みます。",
+    "en": "When you apply for a residence card reissue, you write the police report receipt number on the loss/theft statement. You can report at any police station, koban or residential police box, or online or by phone. Write down the receipt number. If immigration asks for a certificate of the report, apply at the police station where you reported (not at a koban) (to be checked). The 14-day reissue deadline keeps running while you wait for the police."
   },
   "deadline": {
     "text": {
@@ -63,7 +64,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
         "verdict": "agree",
-        "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -105,7 +106,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -127,7 +128,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "24cd0365171b20eb28907d70f298ad7063573ba7fb48022aa862edd7f437ce76",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-online/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -149,7 +150,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -171,7 +172,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c4"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -193,8 +194,76 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-ishitsu/c3"
+          "ref": "internal-audit-record"
         }
+      }
+    },
+    {
+      "type": "online",
+      "when": "R-lost-reported-online",
+      "text": {
+        "ja": "もう{送|おく}っています。{受理|じゅり}{番号|ばんごう}のメールが{来|く}るまで{待|ま}ちます。メールが{来|き}ていなくても、{受理|じゅり}されていないとは{限|かぎ}りません。{届|とど}いたら、この{手続|てつづ}きを「{済|す}んだ」にします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "もう{送|おく}りました。メールを{待|ま}ちます。{来|き}たら「{済|す}んだ」にします。",
+        "en": "Already sent. Wait for the receipt-number email. No email yet does not mean it was rejected. When it arrives, mark this as done (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-04",
+        "status": "needs_check",
+        "quote": "オンラインによる届出は警察署で受理されるまで数日かかる場合があります。・入力されたアドレスにメールで受付番号と届出先警察署の受理番号をお知らせします。"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-reported-unsure",
+      "text": {
+        "ja": "{届|とど}けたかどうかわからないときは、{最寄|もよ}りの{警察|けいさつ}{署|しょ}の{会計|かいけい}{課|か}に{問|と}い{合|あ}わせます。オンラインで{送|おく}ったときは、{受付|うけつけ}{番号|ばんごう}と{受理|じゅり}{番号|ばんごう}のメールが{届|とど}いていないか{探|さが}します。",
+        "ja_easy": "{届|とど}けたかわからないときは、{近|ちか}くの{警察|けいさつ}{署|しょ}に{聞|き}きます。インターネットで{送|おく}ったときは、メールを{探|さが}します。",
+        "en": "If you are not sure whether you reported it, ask the accounting section of the nearest police station. If you sent it online, look for the emails with the reception number and the receipt number."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "不明な点、質問等がありましたら、最寄りの警察署の会計課にお尋ねください。"
+      }
+    },
+    {
+      "type": "counter",
+      "when": "R-lost-stolen",
+      "text": {
+        "ja": "{盗|ぬす}まれたかもしれないときは、{警察|けいさつ}に{盗難|とうなん}の{被害|ひがい}を{届|とど}け{出|で}ます（{被害|ひがい}{届|とどけ}）。どの{届|とど}けになるかは、{警察|けいさつ}で{確|たし}かめます。{在留|ざいりゅう}カードなどの{再|さい}{交付|こうふ}で{警察|けいさつ}の{証明|しょうめい}を{求|もと}められたときは、{届|とど}け{出|で}た{警察|けいさつ}{署|しょ}に{問|と}い{合|あ}わせます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{盗|ぬす}まれたかもしれないときは、{警察|けいさつ}に{言|い}います。どの{届|とど}けかは、{警察|けいさつ}で{聞|き}きます（{要|よう}{確認|かくにん}）。",
+        "en": "If it may have been stolen, report the theft to the police (damage report). Ask the police which report applies. If you are asked for a police certificate (for example, for a residence card reissue), ask the station where you reported (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "C-aichi-keisatsu-shomei"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "盗難により再交付を受ける際や、盗難又は横領の被害により税務署に雑損控除の申告をする場合など、公的機関から、警察の証明書の提出を求められる場合があります。このような場合には、遺失届、被害届等の届出をした警察署に問い合わせてください。"
+      }
+    },
+    {
+      "type": "phone",
+      "when": "R-lost-stolen",
+      "text": {
+        "ja": "{警察|けいさつ}への{相談|そうだん}は、{警察|けいさつ}{相談|そうだん}{専用|せんよう}{電話|でんわ} #9110（{平日|へいじつ}の{昼|ひる}）でもできます。{事件|じけん}・{事故|じこ}で{急|いそ}ぐときは110{番|ばん}です。",
+        "ja_easy": "{警察|けいさつ}に{相談|そうだん}する{電話|でんわ}は #9110 です。{急|いそ}ぐときは110{番|ばん}です。",
+        "en": "You can also call the police consultation line #9110 (weekday daytime). For an emergency, call 110."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "警察相談専用電話（警察本部の住民サービス課相談係(住民コーナー)につながります） ＃９１１０"
       }
     },
     {
@@ -215,7 +284,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -237,7 +306,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c11"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -259,7 +328,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c6"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -281,15 +350,15 @@
           "fetched_at": "2026-11-04",
           "sha256": "4573d63696dcb30e8d3c4beae265a5f2630aa77922f906dc4636b065d90695a8",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-shoumei/c9"
+          "ref": "internal-audit-record"
         }
       }
     }
   ],
   "lead": {
-    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}には、{届出|とどけで}の{受理|じゅり}{番号|ばんごう}が{必要|ひつよう}です。{交番|こうばん}でも{警察|けいさつ}{署|しょ}でも{届|とど}けられます。",
-    "ja_easy": "{在留|ざいりゅう}カードをもう{一度|いちど}もらうには、{警察|けいさつ}の{番号|ばんごう}が{要|い}ります。{交番|こうばん}でも{警察署|けいさつしょ}でもいいです。",
-    "en": "To get a new residence card you need the acceptance number of your police report. A koban or a police station can take the report."
+    "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}の{申請|しんせい}に、{警察|けいさつ}の{受理|じゅり}{番号|ばんごう}を{書|か}きます。{交番|こうばん}でも{警察|けいさつ}{署|しょ}でも{届|とど}けられます。",
+    "ja_easy": "{在留|ざいりゅう}カードの{申請|しんせい}に、{警察|けいさつ}の{番号|ばんごう}を{書|か}きます。{交番|こうばん}でも{警察|けいさつ}{署|しょ}でも{届|とど}けられます。",
+    "en": "You write the police receipt number on the residence card reissue application. You can report at a koban or a police station."
   },
   "notices": [
     {

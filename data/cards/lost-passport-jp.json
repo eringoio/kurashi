@@ -22,9 +22,9 @@
     "reading": ""
   },
   "summary": {
-    "ja": "すぐに{警察|けいさつ}{署|しょ}へ{届|とど}け、そのあと{愛知|あいち}{県|けん}の{旅券|りょけん}{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。{紛失|ふんしつ}{届|とどけ}を{出|だ}すと、そのパスポートは{失効|しっこう}します。{新|あたら}しい{旅券|りょけん}の{申請|しんせい}も{同時|どうじ}にできます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "すぐに{警察|けいさつ}{署|しょ}に{届|とど}けます。そのあと、{愛知|あいち}{県|けん}の{旅券|りょけん}の{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。{届|とど}けると、そのパスポートは{使|つか}えなくなります。{新|あたら}しい{旅券|りょけん}の{申請|しんせい}も{同時|どうじ}にできます（{要|よう}{確認|かくにん}）。",
-    "en": "Report it to the police right away, then file a loss notice at the Aichi passport counter. Once you file, that passport is invalidated. You can apply for a new one at the same time (to be checked)."
+    "ja": "{家|いえ}の{外|そと}でなくした・{盗|ぬす}まれたときは、{先|さき}に{警察|けいさつ}に{届|とど}けます。そのあと、{愛知|あいち}{県|けん}の{旅券|りょけん}{窓口|まどぐち}に{紛失|ふんしつ}{届|とどけ}を{出|だ}します。{紛失|ふんしつ}{届|とどけ}を{出|だ}すと、そのパスポートは{失効|しっこう}します。{新|あたら}しい{旅券|りょけん}の{申請|しんせい}も{同時|どうじ}にできます（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "{外|そと}でなくしたときは、{先|さき}に{警察|けいさつ}に{言|い}います。そのあと、{愛知|あいち}{県|けん}の{窓口|まどぐち}に{届|とど}けます。{届|とど}けると、そのパスポートは{使|つか}えなくなります（{要|よう}{確認|かくにん}）。",
+    "en": "If you lost it outside your home or it was stolen, report to the police first. Then submit a loss report at an Aichi passport office. After the report, the passport is no longer valid. You can apply for a new one at the same time (to be checked)."
   },
   "deadline": null,
   "where": {
@@ -71,9 +71,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "5ee5841e7656834911b4101ecfa3149187c1748044e83d7cd73bcbb20bf5d32a",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-jp/c2"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",
@@ -93,9 +94,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-jp/c4"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",
@@ -115,7 +117,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-jp/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -137,7 +139,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-passport-jp/c12"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -155,7 +157,8 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "警察に遺失（盗難）届を提出したことを証明する書類又は警察の受理番号の控え"
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",

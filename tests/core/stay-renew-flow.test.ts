@@ -136,3 +136,26 @@ describe('在留期間の更新の流れ', () => {
     expect(sec('done')).toBe('done');
   });
 });
+
+describe('永住者・高度専門職2号・特別永住者：行き止まりにしない（R-9。2026-11-15）', () => {
+  const f = STAY().facts;
+  it('在留カードの有効期間の更新（永住者・高度専門職2号）：入管、3か月前から、16歳未満は親族が代理。更新の出典は ISA', () => {
+    const t = plain(f.card.text.ja);
+    for (const w of ['在留期間の更新はありません', '3か月前', '出入国在留管理官署', '16歳未満', '手数料はかかりません']) expect(t, w).toContain(w);
+    expect(f.card.evidence.source_ids).toContain('isa-card-renewal');
+    expect(f.card.evidence.status).toBe('needs_check');
+    expect(f.card.evidence.checked_at).toBe('2026-11-15');
+  });
+  it('特別永住者証明書の更新：窓口は区役所（入管ではない）、3か月前から、16歳未満は親族が代理', () => {
+    const t = plain(f.spc.text.ja);
+    for (const w of ['在留期間の更新はありません', '区役所', '3か月前', '16歳未満', '入管ではありません']) expect(t, w).toContain(w);
+    expect(f.spc.evidence.source_ids).toContain('isa-spc-renewal');
+    expect(f.spc.evidence.status).toBe('needs_check');
+    expect(f.spc.evidence.quote).toContain('３か月前');
+    expect(f.spc.text.en).toContain('ward office');
+  });
+  it('分かれ道：永住者・高度専門職2号は card、特別永住者は spc、短期滞在は今までどおり short', () => {
+    expect([TRACK.permanent, TRACK.hsp2, TRACK.special_permanent, TRACK.short_stay]).toEqual(['card', 'card', 'spc', 'short']);
+    for (const kind of ['permanent', 'hsp2', 'special_permanent'] as const) expect(currentStep({ kind }, TODAY)).toBe('stop');
+  });
+});

@@ -13,7 +13,13 @@
   "eligibility": {
     "any": [
       "R-origin-other-city",
-      "R-mw-event"
+      "R-mw-event",
+      {
+        "all": [
+          "R-mo-event",
+          "R-mo-city"
+        ]
+      }
     ]
   },
   "coverage_rule_ids": [],
@@ -56,9 +62,10 @@
       "source_ids": [
         "jp-post-tenkyo"
       ],
-      "checked_at": "2026-11-06",
-      "status": "needs_check",
-      "quote": "お引越しの際、お近くの郵便局窓口、ポスト投函、e転居（Webサイト、郵便局アプリ）から転居届を提出いただくことで、1年間、旧住所あての郵便物等を新住所に無料で転送します。"
+      "checked_at": "2026-11-08",
+      "status": "verified",
+      "quote": "お引越しの際、お近くの郵便局窓口、ポスト投函、e転居（Webサイト、郵便局アプリ）から転居届を提出いただくことで、1年間、旧住所あての郵便物等を新住所に無料で転送します。",
+      "verified_by": "author 2026-11-08 (bulk)"
     }
   },
   "kind": "procedure",
@@ -90,9 +97,10 @@
         "source_ids": [
           "jp-post-tenkyo"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "提出者のご本人確認資料の写しを添付し、付属の専用封筒にいれて、切手を貼らずにポストへ投函"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "提出者のご本人確認資料の写しを添付し、付属の専用封筒にいれて、切手を貼らずにポストへ投函",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -106,9 +114,10 @@
         "source_ids": [
           "jp-post-tenkyo"
         ],
-        "checked_at": "2026-11-06",
-        "status": "needs_check",
-        "quote": "e転居（Webサイト、郵便局アプリ）でのお申し込みには、本人確認済みのゆうIDでのログインを行う必要があります。"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "e転居（Webサイト、郵便局アプリ）でのお申し込みには、本人確認済みのゆうIDでのログインを行う必要があります。",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     }
   ],

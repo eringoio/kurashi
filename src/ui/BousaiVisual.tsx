@@ -1,5 +1,5 @@
 /* 防災の見て分かる形（SPEC 6A.20 v0.5.38）。
-   備蓄の量：人数と日数を選ぶと、水（人数×日数×3L）と携帯トイレ（人数×日数×5〜6回）の目安。答えは保存しない（端末にも書かない）。
+   備蓄の量：人数と日数を選ぶと、水（人数×日数×3L）と携帯トイレ（人数×日数×5回）の目安。答えは保存しない（端末にも書かない）。
    警戒レベル：1〜5 の行。番号・市町村の情報・すること を文字で出す（色だけにしない）。 */
 import { useState } from 'react';
 import { Bi, One } from '../i18n/Ruby';
@@ -15,8 +15,7 @@ export function StockCalc() {
   const [days, setDays] = useState<3 | 7>(3);
   const water = people * days * 3;
   const bottles = Math.ceil(water / 2);
-  const toiletMin = people * days * 5;
-  const toiletMax = people * days * 6;
+  const toilet = people * days * 5;
   return (
     <section className="group bousai-visual" aria-labelledby="bousai-stock">
       <h2 id="bousai-stock"><Bi phrase k="bousai.stock.title" /></h2>
@@ -51,7 +50,7 @@ export function StockCalc() {
         <li>
           <img src={art('bousai-bag')} alt="" />
           <span className="bousai-amounts__name"><Bi k="bousai.stock.toilet" /></span>
-          <span className="bousai-amounts__n"><span><strong>{toiletMin}〜{toiletMax}</strong><One k="bousai.stock.toiletUnit" /></span></span>
+          <span className="bousai-amounts__n"><span><strong>{toilet}</strong><One k="bousai.stock.toiletUnit" /></span></span>
         </li>
       </ul>
       <p className="sub"><Bi k="bousai.stock.formula" /></p>

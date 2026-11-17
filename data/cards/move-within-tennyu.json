@@ -9,7 +9,7 @@
   "first_week": true,
   "scope": "nagoya_resident",
   "per_move": false,
-  "requires_moved_in": false,
+  "requires_moved_in": true,
   "eligibility": "R-mw-other",
   "coverage_rule_ids": [],
   "title": {
@@ -41,9 +41,22 @@
       "source_ids": [
         "B-nagoya-faq-41"
       ],
-      "checked_at": "2026-11-05",
+      "checked_at": "2026-11-15",
       "status": "needs_check",
       "quote": "引越した日から14日以内（お住まいになった翌日を１日目とします。）"
+    },
+    "calc": {
+      "days": 14,
+      "from": "moved_in",
+      "count": "next_day",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-faq-41"
+        ],
+        "checked_at": "2026-11-15",
+        "status": "needs_check",
+        "quote": "引越した日から14日以内（お住まいになった翌日を１日目とします。）"
+      }
     }
   },
   "where": {
@@ -63,7 +76,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "52fdd8c82cf82085fd45ba70d603550283e1f281b1d20ecc167a49828bcbd2f5",
         "verdict": "agree",
-        "ref": "research/audits/move.json#P-move-tennyu-ward/c1"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -82,9 +95,10 @@
           "nagoya-juumin-todoke",
           "B-nagoya-faq-41"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "転入届（市外から名古屋市への異動、国外から名古屋市への異動、市内他区への異動）、転居届（同一区内での異動）は、窓口でのみ受け付けております。"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "転入届（市外から名古屋市への異動、国外から名古屋市への異動、市内他区への異動）、転居届（同一区内での異動）は、窓口でのみ受け付けております。",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -98,9 +112,10 @@
         "source_ids": [
           "B-nagoya-faq-41"
         ],
-        "checked_at": "2026-11-05",
-        "status": "needs_check",
-        "quote": "引越しをする本人 引越しをする人と同じ世帯の人（新しい住所で同じ世帯の人に限ります。） ※代理人による届出も可能ですが、その場合、委任状が必要です。"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "引越しをする本人 引越しをする人と同じ世帯の人（新しい住所で同じ世帯の人に限ります。） ※代理人による届出も可能ですが、その場合、委任状が必要です。",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
@@ -115,26 +130,43 @@
           "B-nagoya-faq-41",
           "nagoya-juumin-todoke"
         ],
-        "checked_at": "2026-11-07",
-        "status": "needs_check",
-        "quote": "〇窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等） 〇引越しをする人の在留カードまたは特別永住者証明書（外国籍の方のみ）"
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "〇窓口に来られる方の本人確認書類（マイナンバーカード、運転免許証、在留カード等） 〇引越しをする人の在留カードまたは特別永住者証明書（外国籍の方のみ）",
+        "verified_by": "author 2026-11-08 (bulk)"
       }
     },
     {
       "type": "counter",
       "text": {
-        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。{期限|きげん}を{過|す}ぎても{届出|とどけで}はできます。すみやかに{手続|てつづ}きをします。",
-        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。{期限|きげん}をすぎても{出|だ}せます。{早|はや}く{出|だ}します。",
-        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed. You can still file after the deadline. Do it promptly."
+        "ja": "{印鑑|いんかん}{登録|とうろく}の{住所|じゅうしょ}は、この{届|とどけ}で{自動的|じどうてき}に{変|か}わります。{改|あらた}めて{手続|てつづ}きをする{必要|ひつよう}はありません。",
+        "ja_easy": "はんこの{登録|とうろく}（{印鑑|いんかん}{登録|とうろく}）の{住所|じゅうしょ}は、この{届|とどけ}で{自動|じどう}で{変|か}わります。",
+        "en": "Your seal registration (inkan) address is changed automatically by this notice. No separate procedure is needed."
       },
       "evidence": {
         "source_ids": [
-          "B-nagoya-faq-41",
-          "B-nagoya-faq-6-pub"
+          "B-nagoya-faq-41"
         ],
-        "checked_at": "2026-11-07",
+        "checked_at": "2026-11-08",
+        "status": "verified",
+        "quote": "印鑑登録の住所はこの届で自動変更されるので、改めて手続する必要はありません。",
+        "verified_by": "author 2026-11-08 (bulk)"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、できるだけ{早|はや}く{区役所|くやくしょ}の{窓口|まどぐち}で{届出|とどけで}を{済|す}ませるか、{窓口|まどぐち}に{相談|そうだん}します。{正当|せいとう}な{理由|りゆう}なく{届出|とどけで}をしないと、5{万円|まんえん}{以下|いか}の{過料|かりょう}になることがあります（{住民|じゅうみん}{基本|きほん}{台帳法|だいちょうほう}。{要|よう}{確認|かくにん}）。",
+        "ja_easy": "14{日|にち}を{過|す}ぎそうなとき、{過|す}ぎたときは、すぐ{区役所|くやくしょ}の{窓口|まどぐち}で{届|とど}けを{出|だ}すか、{相談|そうだん}します。{理由|りゆう}がなく{届|とど}けを{出|だ}さないと、5{万円|まんえん}までのお{金|かね}を{払|はら}うことがあります（{要|よう}{確認|かくにん}）。",
+        "en": "If you are close to the 14-day limit or past it, complete the notification at the ward office counter or ask the counter as soon as possible. Not filing without a justifiable reason can lead to an administrative fine of up to 50,000 yen (Basic Resident Registration Act; to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "egov-juki-ho"
+        ],
+        "checked_at": "2026-11-15",
         "status": "needs_check",
-        "quote": "印鑑登録の住所はこの届で自動変更されるので、改めて手続する必要はありません。"
+        "quote": "正当な理由がなくて第二十二条から第二十四条まで、第二十五条又は第三十条の四十六から第三十条の四十八までの規定による届出をしない者は、五万円以下の過料に処する。"
       }
     }
   ],
@@ -163,8 +195,9 @@
     "source_ids": [
       "B-nagoya-faq-41"
     ],
-    "checked_at": "2026-11-04",
-    "status": "needs_check",
-    "quote": "※今までお住まいだった住所での転出届は不要です。"
+    "checked_at": "2026-11-08",
+    "status": "verified",
+    "quote": "※今までお住まいだった住所での転出届は不要です。",
+    "verified_by": "author 2026-11-08 (bulk)"
   }
 }

@@ -15,7 +15,8 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-name-changed"
+      "R-mar-name-self",
+      "R-mar-has-mynumber"
     ]
   },
   "title": {
@@ -28,9 +29,9 @@
     "reading": "まいなんばーかーどのきさいじこうへんこう"
   },
   "summary": {
-    "ja": "{氏名|しめい}など{記載|きさい}{事項|じこう}に{変更|へんこう}があったときは、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に、{住|す}んでいる{区|く}の{区役所|くやくしょ}または{支所|ししょ}でカードの{記載|きさい}{事項|じこう}を{変更|へんこう}します（{要|よう}{確認|かくにん}）。カードを{持|も}っていきます。{届出|とどけで}のときはカードの{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}が{要|い}ります（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{名前|なまえ}などが{変|か}わったときは、{変|か}わった{日|ひ}から14{日|にち}いないに、{住|す}んでいる{区|く}の{区役所|くやくしょ}（{支所|ししょ}）で、カードの{内容|ないよう}を{変|か}えます（{要|よう}{確認|かくにん}）。カードを{持|も}っていきます。{暗証|あんしょう}{番号|ばんごう}を{入|い}れます（{要|よう}{確認|かくにん}）。",
-    "en": "When your name or other details change, update your card at the ward or branch office where you live within 14 days (to be checked). Bring the card. You must enter the card's PIN (to be checked)."
+    "ja": "{結婚|けっこん}であなたの{氏名|しめい}が{変|か}わり、マイナンバーカードを{持|も}っているときは、{変更|へんこう}があった{日|ひ}から14{日|にち}{以内|いない}に、{住|す}んでいる{区|く}の{区役所|くやくしょ}または{支所|ししょ}でカードの{記載|きさい}{事項|じこう}を{変更|へんこう}します（{要|よう}{確認|かくにん}）。カードを{持|も}っていきます。{届出|とどけで}のときはカードの{暗証|あんしょう}{番号|ばんごう}の{入力|にゅうりょく}が{要|い}ります（{要|よう}{確認|かくにん}）。{氏名|しめい}が{変|か}わると{署名|しょめい}{用|よう}{電子|でんし}{証明|しょうめい}{書|しょ}が{使|つか}えなくなることがあります。{新|あたら}しく{発行|はっこう}を{受|う}けるかを{窓口|まどぐち}で{確認|かくにん}してください（{要|よう}{確認|かくにん}）。",
+    "ja_easy": "あなたの{名前|なまえ}が{変|か}わって、マイナンバーカードがあるときは、14{日|にち}の{間|あいだ}に{区役所|くやくしょ}でカードを{変|か}えます（{要|よう}{確認|かくにん}）。カードと{暗証|あんしょう}{番号|ばんごう}が{要|い}ります。{電子|でんし}{証明|しょうめい}{書|しょ}が{使|つか}えなくなることがあるので、{窓口|まどぐち}で{聞|き}いてください（{要|よう}{確認|かくにん}）。",
+    "en": "If your name changes through marriage and you have a My Number Card, update the card at your ward office or branch within 14 days of the change (to be checked). Bring the card; you need to enter its PIN (to be checked). The signature certificate on the card may stop working after a name change; ask at the counter whether to have a new one issued (to be checked)."
   },
   "lead": {
     "ja": "{名前|なまえ}などが{変|か}わったら、14{日|にち}{以内|いない}に{区役所|くやくしょ}でカードを{変更|へんこう}します。",
@@ -69,7 +70,7 @@
         "fetched_at": "2026-11-04",
         "sha256": "07d8f1ae8cb2df300cd174525a8058828fb1b96c297e56e1942859383bb66609",
         "verdict": "agree",
-        "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c2"
+        "ref": "internal-audit-record"
       }
     }
   },
@@ -93,7 +94,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "07d8f1ae8cb2df300cd174525a8058828fb1b96c297e56e1942859383bb66609",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c2"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -128,6 +129,39 @@
         "status": "needs_check",
         "quote": "自治体でマイナンバーカードの記載事項変更後に手続をしてください。"
       }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{氏名|しめい}が{変|か}わったあとの{署名|しょめい}{用|よう}{電子|でんし}{証明|しょうめい}{書|しょ}は、{使|つか}えなくなることがあります。{電子|でんし}{証明|しょうめい}{書|しょ}の{発行|はっこう}（{再|さい}{発行|はっこう}）は、{住民|じゅうみん}{登録|とうろく}のある{市区|しく}{町村|ちょうそん}の{窓口|まどぐち}でします（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{電子|でんし}{証明|しょうめい}{書|しょ}が{使|つか}えなくなることがあります。{電子|でんし}{証明|しょうめい}{書|しょ}を{新|あたら}しくもらうのは、{住|す}んでいる{町|まち}の{役所|やくしょ}の{窓口|まどぐち}です（{要|よう}{確認|かくにん}）。",
+        "en": "The signature certificate may stop working after a name change. Certificates are issued (reissued) at the counter of the municipality where you are registered (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-jlis-certificate7"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "なお、電子証明書の発行（再発行）手続きや更新手続きにつきましては、住民登録のある市区町村窓口にて手続きをしてください。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{引|ひ}っ{越|こ}しの{届出|とどけで}のときは、{引|ひ}っ{越|こ}す{人|ひと}{全員|ぜんいん}のカードを{持|も}っていきます。{氏名|しめい}などが{変|か}わったときも{同|おな}じです。",
+        "ja_easy": "{引|ひ}っ{越|こ}しの{届|とど}けのときは、{引|ひ}っ{越|こ}す{人|ひと}みんなのカードを{持|も}っていきます。",
+        "en": "When you file a moving notification, bring the cards of everyone who moves. The same applies when your name changes."
+      },
+      "when": "R-mar-home-move",
+      "evidence": {
+        "source_ids": [
+          "B-nagoya-mynumber-faq-mar"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "引っ越しの手続きの際（住民異動届出の際）には、引っ越しする方全員のカードをお持ちください。"
+      }
     }
   ],
   "keywords": [
@@ -139,16 +173,16 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる{人|ひと}に{出|だ}しています。",
-      "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる{人|ひと}に{出|だ}しています。",
-      "en": "Shown to people whose name changes through marriage."
+      "ja": "{結婚|けっこん}であなたの{氏名|しめい}が{変|か}わり、マイナンバーカードを{持|も}っている{人|ひと}に{出|だ}しています。カードを{持|も}っていない{人|ひと}は、カードの{変更|へんこう}は{要|い}りません。{相手|あいて}の{名前|なまえ}だけが{変|か}わるときは、{相手|あいて}{本人|ほんにん}の{手続|てつづ}きです。",
+      "ja_easy": "あなたの{名前|なまえ}が{変|か}わって、マイナンバーカードがある{人|ひと}に{出|だ}しています。",
+      "en": "Shown when your own name changes through marriage and you have a My Number Card. If you have no card, there is nothing to update. If only your partner's name changes, it is your partner's procedure."
     }
   },
   "evidence": {
     "source_ids": [
       "B-nagoya-faq-2892-mar"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "氏名など記載事項に変更があったときは、変更があった日から14日以内にマイナンバーカードの記載事項を変更する必要がありますので、お住まいの区の区役所または支所にお持ちください。"
   }

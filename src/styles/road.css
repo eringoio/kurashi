@@ -99,3 +99,15 @@
 .road-bring__item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 12px; border: 2px solid var(--line-soft); border-radius: var(--radius-md); background: var(--white); }
 .road-bring__item--missing { border-style: dashed; border-color: var(--line-dash); background: var(--paper); }
 .road-bring__item img { width: 36px; height: 36px; flex: none; }
+
+/* 行く所ごとのまとまり（v0.5.44）。見出しは所の名前。窓口は項目ごとに小さく。完了のチェックは項目の下 */
+.road__visit { margin: 0 0 12px; }
+.road__visit:last-child { margin-bottom: 0; }
+.road__visit-name { margin: 2px 0 4px; font-weight: 700; line-height: 1.4; }
+.road__visit + .road__visit { padding-top: 8px; border-top: 1px dashed var(--line-dash); }
+.road__where { font-size: var(--fs-small, 14px); color: var(--ink-muted); overflow-wrap: anywhere; }
+.road__check { padding: 2px 0 0 12px; }
+/* 期限より後の予定（v0.5.45・C-3）。色だけにしない（! の印と文） */
+.road__tag--late { color: var(--orange-ink); border-style: double; border-width: 3px; }
+.road__summary { margin: 0 0 8px; font-size: var(--fs-small, 14px); color: var(--ink-muted); }
+.road__summary-go { min-height: var(--target-min); padding: 0 4px; background: none; border: none; font: inherit; cursor: pointer; }

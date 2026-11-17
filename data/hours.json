@@ -1,5 +1,4 @@
 {
-  "$comment": "場所ごとの開いている時間（「日を選ぶ」カレンダー用）。weekdays: 0=日曜…6=土曜。closed の \"holidays\" は祝日（data/holidays.json）、\"MM-DD..MM-DD\" は毎年の休みの期間。銀行・前の市の窓口は店・市で違うので載せない（アプリは「開いている日は窓口で確認」と出す）。すべて要確認。",
   "places": {
     "ward_office": {
       "weekdays": [

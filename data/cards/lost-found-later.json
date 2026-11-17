@@ -68,7 +68,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "d6c979ceaf49aef0eaf911254392067eb8937ddc534e9590078d3d005005bcf6",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-found-after/c3"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -91,7 +91,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "837c95c74c6ddae49e285490d8b0d93effee99737368e7360354984a1878f6d5",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-found-after/c5"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -147,7 +147,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "ccce8d6225c0e6a7d76e52c8fbadd4af267bfff7c3a881192e3e4b85ae0be42e",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-found-after/c1"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -169,9 +169,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-search/c1"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",
@@ -191,9 +192,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-police-search/c2"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "phone",
@@ -213,9 +215,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-pickup/c9"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-payment"
     },
     {
       "type": "counter",
@@ -235,9 +238,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-pickup/c8"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-payment"
     },
     {
       "type": "counter",
@@ -257,9 +261,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-pickup/c2"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",
@@ -279,9 +284,10 @@
           "fetched_at": "2026-11-04",
           "sha256": "edc57311ad24c8c51677a0e3a600e5e7869c7ac4f8738a883ea752053d45b1b7",
           "verdict": "agree",
-          "ref": "research/audits/lost.json#P-lost-pickup/c5"
+          "ref": "internal-audit-record"
         }
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "counter",
@@ -297,7 +303,8 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "受付時間内（土曜日、日曜日、休日及び12月29日～1月3日を除く、平日の午前９時から正午まで及び午後１時から午後４時までの間）に警察署へ引き取りに来てください。"
-      }
+      },
+      "when": "R-lost-not-home"
     },
     {
       "type": "mail",
@@ -313,7 +320,8 @@
         "checked_at": "2026-11-05",
         "status": "needs_check",
         "quote": "事情があって、警察署へ落とし物（拾い物）を受け取りに行くことが困難な場合には、代理人へ受け取りを依頼（委任状等が必要です。）又は警察署から落とし物（拾い物）を郵送等で送付することも可能です。"
-      }
+      },
+      "when": "R-lost-not-home"
     }
   ],
   "evidence": {

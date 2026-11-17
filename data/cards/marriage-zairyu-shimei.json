@@ -15,8 +15,9 @@
   "eligibility": {
     "all": [
       "R-mar-konin",
-      "R-mar-foreign",
-      "R-mar-name-changed"
+      "R-mar-self-foreign",
+      "R-mar-name-self",
+      "R-mar-zairyu-card"
     ]
   },
   "title": {
@@ -29,9 +30,9 @@
     "reading": "ざいりゅうかーどのきさいじこうのへんこうとどけで"
   },
   "summary": {
-    "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わった{外国|がいこく}{籍|せき}の{人|ひと}は、{在留|ざいりゅう}カードの{記載|きさい}{事項|じこう}の{変更|へんこう}を、{変更|へんこう}が{生|しょう}じた{日|ひ}から14{日|にち}{以内|いない}に{届|とど}け{出|で}ます（{要|よう}{確認|かくにん}）。{変更|へんこう}{後|ご}の{氏名|しめい}が{書|か}かれた{旅券|りょけん}と、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}した{場合|ばあい}は{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{名前|なまえ}が{変|か}わったら、{在留|ざいりゅう}カード → マイナンバーカード → {運転|うんてん}{免許|めんきょ}{証|しょう} → {銀行|ぎんこう} の{順|じゅん}に{変|か}えます。マイナ{免許|めんきょ}{証|しょう}の{人|ひと}は、{先|さき}にマイナンバーカードを{変|か}えます（{要|よう}{確認|かくにん}）。",
-    "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わった{外国|がいこく}の{国籍|こくせき}の{人|ひと}は、{変|か}わった{日|ひ}から14{日|にち}いないに、{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。{新|あたら}しい{名前|なまえ}のパスポートと、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}したときは{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{名前|なまえ}が{変|か}わったら、{在留|ざいりゅう}カード、マイナンバーカード、{運転|うんてん}{免許|めんきょ}{証|しょう}、{銀行|ぎんこう}の{順|じゅん}に{変|か}えます（{要|よう}{確認|かくにん}）。",
-    "en": "If your name changed through marriage and you are a foreign national, report the change of your residence card details within 14 days of the change (to be checked). Submit your passport showing the new name and a marriage certificate (a family register transcript if you married a Japanese national). When your name changes, update in this order: residence card, My Number Card, driving licence, bank. If your licence is on your My Number Card, update the My Number Card first (to be checked)."
+    "ja": "{結婚|けっこん}であなたの{氏名|しめい}が{変|か}わり、あなたが{在留|ざいりゅう}カードを{持|も}つ{中長期|ちゅうちょうき}{在留|ざいりゅう}{者|しゃ}のときは、{変更|へんこう}が{生|しょう}じた{日|ひ}から14{日|にち}{以内|いない}に、{在留|ざいりゅう}カードの{記載|きさい}{事項|じこう}の{変更|へんこう}を{届|とど}け{出|で}ます（{要|よう}{確認|かくにん}）。{変更|へんこう}{後|ご}の{氏名|しめい}が{書|か}かれた{旅券|りょけん}と、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}した{場合|ばあい}は{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{先|さき}に{旅券|りょけん}の{訂正|ていせい}または{再|さい}{交付|こうふ}を{受|う}けていないと、その{日|ひ}に{交付|こうふ}されない{場合|ばあい}があります。",
+    "ja_easy": "{結婚|けっこん}であなたの{名前|なまえ}が{変|か}わって、あなたが{在留|ざいりゅう}カードを{持|も}っているときは、{変|か}わった{日|ひ}から14{日|にち}の{間|あいだ}に、{入管|にゅうかん}に{届|とど}けます（{要|よう}{確認|かくにん}）。{新|あたら}しい{名前|なまえ}のパスポートと、{結婚|けっこん}{証明|しょうめい}{書|しょ}（{日本人|にほんじん}と{結婚|けっこん}したときは{戸籍|こせき}{謄本|とうほん}）を{出|だ}します。{先|さき}にパスポートの{名前|なまえ}を{変|か}えていないと、その{日|ひ}にカードがもらえないことがあります。",
+    "en": "If your name changes through marriage and you are a mid- to long-term resident with a residence card, report the change of your residence card details within 14 days of the change (to be checked). Submit your passport showing the new name and a marriage certificate (a family register transcript if you married a Japanese national). If your passport has not been corrected or reissued first, the card may not be issued the same day."
   },
   "deadline": {
     "text": {
@@ -83,7 +84,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "573ec4d5c280d213e97f2c356155a190cdfa5ab9711cd5ea9fc0856186e01e80",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-gaikokujin-shimei/c7"
+          "ref": "internal-audit-record"
         }
       }
     },
@@ -105,7 +106,7 @@
           "fetched_at": "2026-11-04",
           "sha256": "573ec4d5c280d213e97f2c356155a190cdfa5ab9711cd5ea9fc0856186e01e80",
           "verdict": "agree",
-          "ref": "research/audits/marriage.json#P-marriage-mynumber-menkyo-bank/c10"
+          "ref": "internal-audit-record"
         }
       }
     }
@@ -120,17 +121,22 @@
   ],
   "reasons": {
     "excluded": {
-      "ja": "{結婚|けっこん}で{氏名|しめい}が{変|か}わる{外国|がいこく}{籍|せき}の{人|ひと}に{出|だ}しています。ほかの{人|ひと}には{出|だ}していません。",
-      "ja_easy": "{結婚|けっこん}で{名前|なまえ}が{変|か}わる{外国|がいこく}の{国籍|こくせき}の{人|ひと}に{出|だ}しています。",
-      "en": "Shown to foreign nationals whose name changes through marriage."
+      "ja": "{結婚|けっこん}であなたの{氏名|しめい}が{変|か}わり、あなたが{在留|ざいりゅう}カードを{持|も}つ{外国|がいこく}{籍|せき}の{人|ひと}のときに{出|だ}しています。{日本|にほん}{国籍|こくせき}の{人|ひと}には{出|だ}していません。{相手|あいて}の{名前|なまえ}だけが{変|か}わるときは、{相手|あいて}{本人|ほんにん}の{手続|てつづ}きです。{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{人|ひと}は、{届|とど}け{出|で}る{所|ところ}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+      "ja_easy": "あなたの{名前|なまえ}が{変|か}わって、あなたが{在留|ざいりゅう}カードを{持|も}っているときに{出|だ}しています。{相手|あいて}の{名前|なまえ}だけが{変|か}わるときは、{相手|あいて}の{手続|てつづ}きです。{特別|とくべつ}{永住|えいじゅう}{者|しゃ}{証明|しょうめい}{書|しょ}の{人|ひと}は、{届|とど}ける{所|ところ}が{違|ちが}います（{要|よう}{確認|かくにん}）。",
+      "en": "Shown when your own name changes through marriage and you are a foreign national with a residence card. Not shown to Japanese nationals. If only your partner's name changes, it is your partner's procedure. Special Permanent Resident Certificate holders report elsewhere (to be checked)."
     }
   },
   "evidence": {
     "source_ids": [
       "B-moj-kisai-henko"
     ],
-    "checked_at": "2026-11-05",
+    "checked_at": "2026-11-08",
     "status": "needs_check",
     "quote": "届出時期 上記の記載事項に変更が生じた日から１４日以内"
+  },
+  "lead": {
+    "ja": "あなたの{氏名|しめい}が{変|か}わったら、14{日|にち}{以内|いない}に{入管|にゅうかん}へ{届|とど}け{出|で}ます。",
+    "ja_easy": "あなたの{名前|なまえ}が{変|か}わったら、14{日|にち}の{間|あいだ}に{入管|にゅうかん}に{届|とど}けます。",
+    "en": "If your name changes, report it to Immigration within 14 days."
   }
 }

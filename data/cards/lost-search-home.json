@@ -1,0 +1,95 @@
+{
+  "id": "lost-search-home",
+  "data_version": 1,
+  "illustration": "house",
+  "awareness_type": "applies",
+  "obligation": "practical",
+  "domain": "life",
+  "depth": "L2",
+  "first_week": true,
+  "scope": "any",
+  "per_move": false,
+  "requires_moved_in": false,
+  "eligibility": "R-lost-at-home",
+  "coverage_rule_ids": [],
+  "title": {
+    "ja": "{家|いえ}の{中|なか}を{探|さが}す",
+    "ja_easy": "{家|いえ}の{中|なか}を{探|さが}す",
+    "en": "Search your home"
+  },
+  "official_name": {
+    "ja": "家の中を探す",
+    "reading": ""
+  },
+  "summary": {
+    "ja": "{家|いえ}の{中|なか}にあると{思|おも}うときは、{警察|けいさつ}は{遺失|いしつ}{物|ぶつ}として{受|う}け{付|つ}けません。{家|いえ}の{中|なか}を{探|さが}しながら、カードの{停止|ていし}など{急|いそ}ぐことを{先|さき}にします。{家|いえ}の{外|そと}でなくしたかもしれないときは「{答|こた}えを{変|か}える」で{場所|ばしょ}を{選|えら}び{直|なお}すと、{警察|けいさつ}への{届出|とどけで}が{出|で}ます。",
+    "ja_easy": "{家|いえ}の{中|なか}にあると{思|おも}うときは、{警察|けいさつ}には{届|とど}けません。{探|さが}しながら、カードを{先|さき}に{止|と}めます。{外|そと}でなくしたかもしれないときは「{答|こた}えを{変|か}える」で{選|えら}び{直|なお}します。",
+    "en": "If you think it is inside your home, the police do not accept a lost-property report. Search your home, and do urgent things such as stopping cards first. If you may have lost it outside, choose the place again with \"Change answers\" to see the police report."
+  },
+  "deadline": null,
+  "where": {
+    "text": {
+      "ja": "{自宅|じたく}",
+      "ja_easy": "{家|いえ}",
+      "en": "Your home"
+    },
+    "evidence": {
+      "source_ids": [
+        "A-aichi-police-ishitsu"
+      ],
+      "checked_at": "2026-11-08",
+      "status": "needs_check",
+      "quote": "自宅内にはあるため、占有を離れたとはいえず、遺失物として受理することはできません。"
+    }
+  },
+  "kind": "guide",
+  "keywords": [
+    "家",
+    "自宅",
+    "home"
+  ],
+  "reasons": {},
+  "evidence": {
+    "source_ids": [
+      "A-aichi-police-ishitsu"
+    ],
+    "checked_at": "2026-11-08",
+    "status": "needs_check",
+    "quote": "自宅内にはあるため、占有を離れたとはいえず、遺失物として受理することはできません。"
+  },
+  "methods": [
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{愛知|あいち}{県警|けんけい}の{案内|あんない}では、{自宅|じたく}{内|ない}にある{物|もの}は、{遺失|いしつ}{物|ぶつ}として{受理|じゅり}できません。",
+        "ja_easy": "{家|いえ}の{中|なか}にある{物|もの}は、{警察|けいさつ}に{届|とど}けられません。",
+        "en": "Aichi Police say that items inside your home cannot be accepted as lost property."
+      },
+      "evidence": {
+        "source_ids": [
+          "A-aichi-police-ishitsu"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "自宅内にはあるため、占有を離れたとはいえず、遺失物として受理することはできません。"
+      }
+    },
+    {
+      "type": "counter",
+      "text": {
+        "ja": "{在留|ざいりゅう}カードの{再|さい}{交付|こうふ}では、{遺失|いしつ}{届|とどけ}の{対象|たいしょう}にならないことを{陳述|ちんじゅつ}{書|しょ}に{書|か}きます。マイナンバーカードの{再|さい}{交付|こうふ}では、そのことを{窓口|まどぐち}で{伝|つた}えます（{要|よう}{確認|かくにん}）。",
+        "ja_easy": "{在留|ざいりゅう}カードやマイナンバーカードは、{警察|けいさつ}に{届|とど}けられないことを{窓口|まどぐち}で{言|い}います（{要|よう}{確認|かくにん}）。",
+        "en": "For a residence card reissue, write on the statement that a loss report does not apply. For a My Number Card reissue, tell the office (to be checked)."
+      },
+      "evidence": {
+        "source_ids": [
+          "B-moj-zairyu-reissue-lost",
+          "C-nagoya-faq-2917"
+        ],
+        "checked_at": "2026-11-08",
+        "status": "needs_check",
+        "quote": "遺失届出等の対象とならない場合は、その旨陳述書に記載してください。"
+      }
+    }
+  ]
+}

@@ -44,9 +44,9 @@
   },
   "where": {
     "text": {
-      "ja": "{住所|じゅうしょ}の{地域|ちいき}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
-      "ja_easy": "{税務署|ぜいむしょ}（インターネットでも{出|だ}せます）",
-      "en": "The tax office for your address (or online via e-Tax)"
+      "ja": "{納税|のうぜい}{地|ち}（ふつうは{住所|じゅうしょ}）を{所轄|しょかつ}する{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "ja_easy": "{住|す}んでいる{所|ところ}の{税務署|ぜいむしょ}（e-Tax でも{出|だ}せます）",
+      "en": "The tax office for your place of tax payment (usually your address). You can also file with e-Tax."
     },
     "evidence": {
       "source_ids": [
@@ -56,6 +56,8 @@
       "status": "needs_check"
     }
   },
+  "place": "tax_office",
+  "remote": true,
   "kind": "procedure",
   "keywords": [],
   "methods": [

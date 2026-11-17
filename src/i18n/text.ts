@@ -62,6 +62,8 @@ export function segs(s: string): Seg[] {
 }
 /** ふりがなを外した文（漢字のまま） */
 export const plain = (s: string) => s.replace(RUBY, '$1');
+/** 正式な名前を {漢字|よみ} にする。よみが空なら印を付けず文字だけ（空の {x|} を画面や読み上げに出さない） */
+export const markName = (n: { ja: string; reading?: string }) => (n.reading ? `{${n.ja}|${n.reading}}` : n.ja);
 
 /** 数と単位（「4〜7か月分」「14日以内」「052-951-7119」「#7119」「2,850円」）。表示の段階で <span class="nb"> に包み、途中で改行しない（11/7 6章） */
 const NB = /#?\d[\d,.]*(?:[-〜~～][\d,.]+)*(?:か月分|か月|ヶ月|日以内|日間|週間|時間|キログラム|リットル|万円|円|日|年|月|歳|分|kg|㎡|帖|畳|%)?/g;
